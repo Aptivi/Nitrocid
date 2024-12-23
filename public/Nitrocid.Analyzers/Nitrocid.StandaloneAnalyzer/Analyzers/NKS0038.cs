@@ -20,6 +20,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Nitrocid.Analyzers.Common;
 using System;
 using System.Linq;
 using System.Threading;
@@ -75,10 +76,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(PlatformID.Unix))
                         {
-                            var lineSpan = location.GetLineSpan();
-                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix()", true, ConsoleColors.Yellow);
-                            if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix()");
                             found = true;
                         }
                     }

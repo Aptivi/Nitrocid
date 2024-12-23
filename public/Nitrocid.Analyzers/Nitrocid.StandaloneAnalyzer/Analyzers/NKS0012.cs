@@ -20,6 +20,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Nitrocid.Analyzers.Common;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -53,10 +54,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(File.Copy))
                         {
-                            var lineSpan = location.GetLineSpan();
-                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses File.Copy instead of Copying.CopyFileOrDir()", true, ConsoleColors.Yellow);
-                            if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Copy instead of Copying.CopyFileOrDir()");
                             found = true;
                         }
                     }

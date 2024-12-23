@@ -27,6 +27,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.MiscWriters;
 using System.Globalization;
+using Nitrocid.Analyzers.Common;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
@@ -61,10 +62,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         // RS1035 occurs when we try to use nameof(CultureInfo.CurrentUICulture). Use "CurrentUICulture" instead.
                         if (idName == "CurrentUICulture" && rightExpIdName.Identifier.Text == nameof(CultureInfo.GetCultureInfo))
                         {
-                            var lineSpan = location.GetLineSpan();
-                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses CultureInfo.CurrentUICulture instead of CultureManager.UpdateCulture()", true, ConsoleColors.Yellow);
-                            if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture instead of CultureManager.UpdateCulture()");
                             found = true;
                         }
                     }

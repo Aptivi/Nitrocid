@@ -43,4 +43,6 @@
     <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false" />
   </ItemGroup>
 
+  <Import Project="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems" Label="Shared" />
+
 </Project>

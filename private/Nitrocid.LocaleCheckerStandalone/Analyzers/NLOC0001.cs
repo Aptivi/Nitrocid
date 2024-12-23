@@ -19,6 +19,7 @@
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Nitrocid.Analyzers.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,10 +73,7 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                             text = text[1..^1].Replace("\\\"", "\"");
                             if (!EntryPoint.localizationList.Contains(text))
                             {
-                                var lineSpan = location.GetLineSpan();
-                                TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Unlocalized string found: {text}", true, ConsoleColors.Yellow);
-                                if (!string.IsNullOrEmpty(document.FilePath))
-                                    LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                                AnalyzerTools.PrintFromLocation(location, document, GetType(), $"Unlocalized string found: {text}");
                                 found = true;
                                 unlocalizedStrings.Add(text);
                             }

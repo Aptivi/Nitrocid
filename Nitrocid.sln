@@ -210,6 +210,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nitrocid.LocaleCommon", "pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Chemistry", "public\Nitrocid.Addons\Nitrocid.Extras.Chemistry\Nitrocid.Extras.Chemistry.csproj", "{D7BC8CF1-C12C-435F-BB53-9F0EA4B8EF20}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nitrocid.Analyzers.Common", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.shproj", "{47D3DE1A-07AB-42A1-BE6E-7F5256B82DD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -545,13 +547,17 @@ Global
 		{73E76BBD-BCFD-4E43-9F17-F937A87A2D1B} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 		{709AC61B-B746-46A7-A5A0-390B9091BE99} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 		{D7BC8CF1-C12C-435F-BB53-9F0EA4B8EF20} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{47D3DE1A-07AB-42A1-BE6E-7F5256B82DD3} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		private\Nitrocid.LocaleCommon\Nitrocid.LocaleCommon.projitems*{22744969-682d-4974-895e-53079da9ea3c}*SharedItemsImports = 5
+		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{47d3de1a-07ab-42a1-be6e-7f5256b82dd3}*SharedItemsImports = 13
 		private\Nitrocid.LocaleCommon\Nitrocid.LocaleCommon.projitems*{6524403f-f55e-4e8d-8a63-8a7d2fa518d3}*SharedItemsImports = 5
 		private\Nitrocid.LocaleCommon\Nitrocid.LocaleCommon.projitems*{709ac61b-b746-46a7-a5a0-390b9091be99}*SharedItemsImports = 13
+		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{73e76bbd-bcfd-4e43-9f17-f937a87a2d1b}*SharedItemsImports = 5
+		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{df07f4e1-47b2-452d-a200-f15f558c4977}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

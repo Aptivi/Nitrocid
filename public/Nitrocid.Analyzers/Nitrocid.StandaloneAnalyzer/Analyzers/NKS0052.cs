@@ -20,6 +20,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Nitrocid.Analyzers.Common;
 using System;
 using System.Linq;
 using System.Threading;
@@ -70,10 +71,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var argToken = argSyntax.Token;
                         if (argToken.ValueText == "TMUX" && location is not null)
                         {
-                            var lineSpan = location.GetLineSpan();
-                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS()", true, ConsoleColors.Yellow);
-                            if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS()");
                             found = true;
                         }
                     }

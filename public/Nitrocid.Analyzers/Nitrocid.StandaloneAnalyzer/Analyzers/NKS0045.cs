@@ -27,6 +27,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.MiscWriters;
 using System.Globalization;
+using Nitrocid.Analyzers.Common;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
@@ -65,10 +66,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = identifier.Identifier.Text;
                         if (idName == "Name")
                         {
-                            var lineSpan = location.GetLineSpan();
-                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr", true, ConsoleColors.Yellow);
-                            if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr");
                             found = true;
                         }
                     }

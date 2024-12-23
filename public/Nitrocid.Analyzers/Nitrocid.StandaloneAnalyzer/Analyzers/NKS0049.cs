@@ -20,6 +20,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Nitrocid.Analyzers.Common;
 using System;
 using System.Linq;
 using System.Threading;
@@ -65,10 +66,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     var idName = identifier.Identifier.Text;
                     if (idName == nameof(string.Split))
                     {
-                        var lineSpan = location.GetLineSpan();
-                        TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Environment.NewLine instead of TextTools.SplitNewLines()", true, ConsoleColors.Yellow);
-                        if (!string.IsNullOrEmpty(document.FilePath))
-                            LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                        AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Environment.NewLine instead of TextTools.SplitNewLines()");
                         found = true;
                     }
                 }
