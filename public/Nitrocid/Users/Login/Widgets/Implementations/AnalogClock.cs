@@ -25,10 +25,11 @@ using System;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Graphics;
-using Terminaux.Graphics.Shapes;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Shapes;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {
@@ -40,10 +41,10 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
         private Color secondsHandColor = Color.Empty;
         private bool clear = false;
         private string lastRendered = "";
-        private (int x, int y) lastCenter = (0, 0);
-        private (int x, int y) lastHours = (0, 0);
-        private (int x, int y) lastMinutes = (0, 0);
-        private (int x, int y) lastSeconds = (0, 0);
+        private Coordinate lastCenter = new(0, 0);
+        private Coordinate lastHours = new(0, 0);
+        private Coordinate lastMinutes = new(0, 0);
+        private Coordinate lastSeconds = new(0, 0);
 
         public override string Cleanup(int left, int top, int width, int height) =>
             "";
@@ -54,10 +55,10 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             bezelColor = ChangeAnalogClockColor();
             handsColor = ChangeAnalogClockColor();
             secondsHandColor = ChangeAnalogClockColor();
-            lastCenter = (0, 0);
-            lastHours = (0, 0);
-            lastMinutes = (0, 0);
-            lastSeconds = (0, 0);
+            lastCenter = new(0, 0);
+            lastHours = new(0, 0);
+            lastMinutes = new(0, 0);
+            lastSeconds = new(0, 0);
             clear = false;
             return "";
         }
@@ -79,18 +80,34 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 // Clear old date/time
                 int oldPosX = (left + width) / 2 - lastRendered.Length / 2;
-                builder.Append(CenteredTextColor.RenderCentered(posY, new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
+                var timeDateClear = new AlignedText()
+                {
+                    Text = new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)),
+                    Top = posY,
+                    LeftMargin = left,
+                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    ForegroundColor = timeColor
+                };
+                builder.Append(timeDateClear.Render());
 
                 // Clear old bezels
-                builder.Append(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
-                builder.Append(GraphicsTools.RenderLine(lastCenter, lastMinutes, ColorTools.CurrentBackgroundColor));
+                builder.Append(GetLineFrom(lastCenter, lastHours).Render());
+                builder.Append(GetLineFrom(lastCenter, lastMinutes).Render());
                 if (Config.WidgetConfig.AnalogShowSecondsHand)
-                    builder.Append(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
+                    builder.Append(GetLineFrom(lastCenter, lastSeconds).Render());
             }
             clear = true;
 
             // Write date and time
-            builder.Append(CenteredTextColor.RenderCentered(posY, rendered, timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
+            var timeDate = new AlignedText()
+            {
+                Text = rendered,
+                Top = posY,
+                LeftMargin = left,
+                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                ForegroundColor = timeColor
+            };
+            builder.Append(timeDate.Render());
             lastRendered = rendered;
 
             // Now, draw the bezel
@@ -102,7 +119,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             int bezelRadius = radius.y - bezelTop;
             var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
             builder.Append(bezel.Render());
-            lastCenter = radius;
+            lastCenter = new(radius.x, radius.y);
 
             // Draw the hands (hours and minutes)
             int hoursPos = TimeDateTools.KernelDateTime.Hour % 12;
@@ -113,12 +130,12 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             int minutesAngle = (int)(360 * (minutesPos / 60d)) - 90;
             (int x, int y) hours = ((int)(radius.x + hoursRadius * Math.Cos(ToRad(hoursAngle))), (int)(radius.y + hoursRadius * Math.Sin(ToRad(hoursAngle))));
             (int x, int y) minutes = ((int)(radius.x + minutesRadius * Math.Cos(ToRad(minutesAngle))), (int)(radius.y + minutesRadius * Math.Sin(ToRad(minutesAngle))));
-            hours.x += (hours.x - radius.x);
-            minutes.x += (minutes.x - radius.x);
-            builder.Append(GraphicsTools.RenderLine(radius, hours, handsColor));
-            builder.Append(GraphicsTools.RenderLine(radius, minutes, handsColor));
-            lastHours = hours;
-            lastMinutes = minutes;
+            hours.x += hours.x - radius.x;
+            minutes.x += minutes.x - radius.x;
+            builder.Append(GetLineFrom(radius, hours, handsColor).Render());
+            builder.Append(GetLineFrom(radius, minutes, handsColor).Render());
+            lastHours = new(hours.x, hours.y);
+            lastMinutes = new(minutes.x, minutes.y);
 
             // Draw the seconds hand (optional)
             if (Config.WidgetConfig.AnalogShowSecondsHand)
@@ -127,9 +144,9 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 int secondsRadius = (int)(bezelRadius * 2.5 / 3d);
                 int secondsAngle = (int)(360 * (secondsPos / 60d)) - 90;
                 (int x, int y) seconds = ((int)(radius.x + secondsRadius * Math.Cos(ToRad(secondsAngle))), (int)(radius.y + secondsRadius * Math.Sin(ToRad(secondsAngle))));
-                seconds.x += (seconds.x - radius.x);
-                builder.Append(GraphicsTools.RenderLine(radius, seconds, secondsHandColor));
-                lastSeconds = seconds;
+                seconds.x += seconds.x - radius.x;
+                builder.Append(GetLineFrom(radius, seconds, secondsHandColor).Render());
+                lastSeconds = new(seconds.x, seconds.y);
             }
 
             // Return the results
@@ -155,6 +172,19 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 ColorInstance = new Color(ColorNum);
             }
             return ColorInstance;
+        }
+
+        private Line GetLineFrom(Coordinate startPos, Coordinate endPos) =>
+            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ColorTools.CurrentBackgroundColor);
+
+        private Line GetLineFrom((int x, int y) startPos, (int x, int y) endPos, Color color)
+        {
+            return new()
+            {
+                StartPos = new(startPos.x, startPos.y),
+                EndPos = new(endPos.x, endPos.y),
+                Color = color
+            };
         }
     }
 }

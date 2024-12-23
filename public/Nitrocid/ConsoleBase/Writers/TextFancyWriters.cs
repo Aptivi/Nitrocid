@@ -21,7 +21,7 @@ using Textify.Data.Figlet.Utilities.Lines;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
@@ -29,6 +29,8 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -325,8 +327,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var figlet = new AlignedFigletText(FigletFont)
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(figlet.Render());
+        }
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -339,8 +352,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var figlet = new AlignedFigletText(FigletFont)
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(figlet.Render());
+        }
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -351,8 +375,18 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var figlet = new AlignedFigletText(FigletFont)
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(figlet.Render());
+        }
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -364,8 +398,18 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var figlet = new AlignedFigletText(FigletFont)
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(figlet.Render());
+        }
 
         /// <summary>
         /// Draws a centered text
@@ -376,8 +420,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCentered(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text
@@ -389,8 +444,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text
@@ -400,8 +466,18 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCentered(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text
@@ -412,8 +488,18 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -424,8 +510,20 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+                OneLine = true,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -437,8 +535,20 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Top = top,
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+                OneLine = true,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -448,8 +558,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+                OneLine = true,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -460,8 +581,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
+        public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var text = new AlignedText()
+            {
+                Text = Text.FormatString(Vars),
+                ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                LeftMargin = leftMargin,
+                RightMargin = rightMargin,
+                OneLine = true,
+            };
+            TextWriterRaw.WriteRaw(text.Render());
+        }
 
         /// <summary>
         /// Writes the figlet text

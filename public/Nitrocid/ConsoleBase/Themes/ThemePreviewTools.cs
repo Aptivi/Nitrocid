@@ -32,6 +32,7 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs.Styles;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -134,16 +135,33 @@ namespace Nitrocid.ConsoleBase.Themes
 
                 // Render the bindings
                 string bindings = $"[ENTER] {Translate.DoTranslation("Done")} - [<-|->] {Translate.DoTranslation("Switch Types")}";
-                CenteredTextColor.WriteCentered(bindingsY, bindings);
+                var bindingsText = new AlignedText()
+                {
+                    Top = bindingsY,
+                    Text = bindings,
+                };
+                TextWriterRaw.WriteRaw(bindingsText.Render());
 
                 // Render the theme name
                 int nameY = 1;
-                CenteredTextColor.WriteCentered(nameY, $"{theme.Name} - {(theme.Localizable ? Translate.DoTranslation(theme.Description) : theme.Description)}");
+                string name = $"{theme.Name} - {(theme.Localizable ? Translate.DoTranslation(theme.Description) : theme.Description)}";
+                var themeText = new AlignedText()
+                {
+                    Top = nameY,
+                    Text = name,
+                };
+                TextWriterRaw.WriteRaw(themeText.Render());
 
                 // Render the type name and some info
                 int typeY = ConsoleWrapper.WindowHeight - 6;
+                string type = $"{colorType} - {colorInstance.PlainSequence} [{colorInstance.PlainSequenceTrueColor}]";
                 TextWriterWhereColor.WriteWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, typeY);
-                CenteredTextColor.WriteCentered(typeY, $"{colorType} - {colorInstance.PlainSequence} [{colorInstance.PlainSequenceTrueColor}]");
+                var typeText = new AlignedText()
+                {
+                    Top = typeY,
+                    Text = type,
+                };
+                TextWriterRaw.WriteRaw(typeText.Render());
 
                 // Render the color box
                 int startExteriorX = 4;
@@ -152,8 +170,25 @@ namespace Nitrocid.ConsoleBase.Themes
                 int endExteriorY = typeY - 1;
                 int diffInteriorX = endExteriorX - startExteriorX - 2;
                 int diffInteriorY = endExteriorY - startExteriorY - 2;
-                BorderColor.WriteBorder(startExteriorX, startExteriorY, diffInteriorX, diffInteriorY);
-                BoxColor.WriteBox(startExteriorX + 1, startExteriorY, diffInteriorX, diffInteriorY, colorInstance);
+                var colorFrame = new Border()
+                {
+                    Left = startExteriorX,
+                    Top = startExteriorY,
+                    InteriorWidth = diffInteriorX,
+                    InteriorHeight = diffInteriorY,
+                };
+                var colorBox = new Box()
+                {
+                    Left = startExteriorX + 1,
+                    Top = startExteriorY,
+                    InteriorWidth = diffInteriorX,
+                    InteriorHeight = diffInteriorY,
+                    Color = colorInstance,
+                };
+                TextWriterRaw.WriteRaw(
+                    colorFrame.Render() +
+                    colorBox.Render()
+                );
 
                 // Wait for input
                 var input = Input.ReadKey();

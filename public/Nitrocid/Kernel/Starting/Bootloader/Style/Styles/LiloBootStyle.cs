@@ -25,7 +25,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles

@@ -36,6 +36,8 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -103,7 +105,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", col, black);
+                            var xText = new AlignedFigletText(figFont)
+                            {
+                                Text = "X",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -121,7 +133,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Pulse the X character, alternating between darkGreen and Green colors
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", finalCol, black);
+                            var xText = new AlignedFigletText(figFont)
+                            {
+                                Text = "X",
+                                ForegroundColor = finalCol,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -149,7 +171,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", col, black);
+                            var xText = new AlignedFigletText(figFont)
+                            {
+                                Text = "X",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);

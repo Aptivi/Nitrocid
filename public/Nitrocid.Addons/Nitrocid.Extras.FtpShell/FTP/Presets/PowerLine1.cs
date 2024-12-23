@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Presets

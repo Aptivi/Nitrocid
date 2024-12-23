@@ -31,6 +31,8 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -56,7 +58,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, word, ConsoleColors.Green);
+            var wordText = new AlignedFigletText(figFont)
+            {
+                Top = consoleY,
+                Text = word,
+                ForegroundColor = ConsoleColors.Green,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            TextWriterRaw.WriteRaw(wordText.Render());
             TextWriterWhereColor.WriteWhereColor(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, ConsoleColors.Green);
         }
 
@@ -74,7 +86,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             ConsoleWrapper.Clear();
-            CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, word, hasherColor);
+            var wordText = new AlignedFigletText(figFont)
+            {
+                Top = consoleY,
+                Text = word,
+                ForegroundColor = hasherColor,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            TextWriterRaw.WriteRaw(wordText.Render());
             TextWriterWhereColor.WriteWhereColor(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
 
             // Delay

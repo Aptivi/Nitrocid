@@ -33,6 +33,8 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -97,8 +99,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 // Check to see if we're on the rest mode or on the race mode
                 string bindings = Translate.DoTranslation("[ENTER] Start the race | [ESC] Exit | [UP/DOWN] Move selection");
-                int bindingsPositionX = ConsoleWrapper.WindowWidth / 2 - bindings.Length / 2;
                 int bindingsPositionY = ConsoleWrapper.WindowHeight - 2;
+                var alignedText = new AlignedText()
+                {
+                    Text = bindings,
+                    Top = bindingsPositionY,
+                    ForegroundColor = color,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
                 if (racing)
                 {
                     // Write the positions
@@ -108,17 +119,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
                         positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
-                    string renderedPositions = string.Join(" | ", positions);
-                    builder.Append(
-                        CenteredTextColor.RenderCenteredOneLine(bindingsPositionY, renderedPositions, color)
-                    );
+                    alignedText.Text = string.Join(" | ", positions);
                 }
-                else
-                {
-                    builder.Append(
-                        TextWriterWhereColor.RenderWhereColor(bindings, bindingsPositionX, bindingsPositionY, color)
-                    );
-                }
+                builder.Append(
+                    alignedText.Render()
+                );
 
                 // Return the result
                 return builder.ToString();

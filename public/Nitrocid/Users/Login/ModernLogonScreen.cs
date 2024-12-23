@@ -39,6 +39,8 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Users.Login
 {
@@ -121,18 +123,32 @@ namespace Nitrocid.Users.Login
                                     cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                                     var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                                     int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                                    display.Append(
-                                        KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
-                                        CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
-                                    );
+                                    var timeFiglet = new AlignedFigletText(figFont)
+                                    {
+                                        Text = timeStr,
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Stage),
+                                        Settings = new()
+                                        {
+                                            Alignment = TextAlignment.Middle,
+                                        }
+                                    };
+                                    display.Append(timeFiglet.Render());
 
                                     // Print the date
                                     string dateStr = $"{TimeDateRenderers.RenderDate()}";
                                     int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                                    display.Append(
-                                        CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
-                                        KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-                                    );
+                                    var dateText = new AlignedText()
+                                    {
+                                        Top = consoleInfoY,
+                                        Text = dateStr,
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Stage),
+                                        OneLine = true,
+                                        Settings = new()
+                                        {
+                                            Alignment = TextAlignment.Middle,
+                                        }
+                                    };
+                                    display.Append(dateText.Render());
 
                                     // Print the headline
                                     if (Config.MainConfig.ShowHeadlineOnLogin)
@@ -143,9 +159,18 @@ namespace Nitrocid.Users.Login
                                             Config.MainConfig.MotdHeadlineBottom ?
                                             ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
                                             ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
-                                        display.Append(
-                                            CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
-                                        );
+                                        var headlineText = new AlignedText()
+                                        {
+                                            Top = consoleHeadlineInfoY,
+                                            Text = headlineStr,
+                                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                            OneLine = true,
+                                            Settings = new()
+                                            {
+                                                Alignment = TextAlignment.Middle,
+                                            }
+                                        };
+                                        display.Append(headlineText.Render());
                                     }
 
                                     // Print the MOTD
@@ -157,17 +182,35 @@ namespace Nitrocid.Users.Login
                                             Config.MainConfig.MotdHeadlineBottom ?
                                             ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
                                             ConsoleWrapper.WindowHeight / 2 - figHeight - (Config.MainConfig.ShowHeadlineOnLogin ? 4 : 2) + i;
-                                        display.Append(
-                                            CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
-                                        );
+                                        var motdText = new AlignedText()
+                                        {
+                                            Top = consoleMotdInfoY,
+                                            Text = motdStr,
+                                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                            OneLine = true,
+                                            Settings = new()
+                                            {
+                                                Alignment = TextAlignment.Middle,
+                                            }
+                                        };
+                                        display.Append(motdText.Render());
                                     }
 
                                     // Print the instructions
                                     string instStr = Translate.DoTranslation("Press any key to start, or ESC for more options...");
                                     int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-                                    display.Append(
-                                        CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
-                                    );
+                                    var instText = new AlignedText()
+                                    {
+                                        Top = consoleInstY,
+                                        Text = instStr,
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                        OneLine = true,
+                                        Settings = new()
+                                        {
+                                            Alignment = TextAlignment.Middle,
+                                        }
+                                    };
+                                    display.Append(instText.Render());
 
                                     // Print everything
                                     return display.ToString();
@@ -209,7 +252,19 @@ namespace Nitrocid.Users.Login
                             // Unknown screen!
                             screen.RemoveBufferedParts();
                             var part = new ScreenPart();
-                            part.AddDynamicText(() => CenteredTextColor.RenderCentered(Translate.DoTranslation("Unknown screen number.")));
+                            part.AddDynamicText(() =>
+                            {
+                                var errorText = new AlignedText()
+                                {
+                                    Text = Translate.DoTranslation("Unknown screen number."),
+                                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                    Settings = new()
+                                    {
+                                        Alignment = TextAlignment.Middle,
+                                    }
+                                };
+                                return errorText.Render();
+                            });
                             screen.AddBufferedPart("Unknown widget updater", part);
 
                             // Render it now
@@ -221,7 +276,19 @@ namespace Nitrocid.Users.Login
                         // An error occurred!
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
-                        part.AddDynamicText(() => CenteredTextColor.RenderCentered(Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "")));
+                        part.AddDynamicText(() =>
+                        {
+                            var errorText = new AlignedText()
+                            {
+                                Text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : ""),
+                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            return errorText.Render();
+                        });
                         DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
                         DebugWriter.WriteDebugStackTrace(ex);
                         screen.AddBufferedPart("Error updater", part);

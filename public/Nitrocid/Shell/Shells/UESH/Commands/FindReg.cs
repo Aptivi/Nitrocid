@@ -26,6 +26,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 using Textify.General;
+using Lists = Terminaux.Writer.CyclicWriters.Listing;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -66,7 +67,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
             }
             else
-                ListWriterColor.WriteList(AllFileEntries, true);
+            {
+                var listing = new Lists()
+                {
+                    Objects = AllFileEntries,
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
+            }
             variableValue = string.Join('\n', AllFileEntries);
             return 0;
         }

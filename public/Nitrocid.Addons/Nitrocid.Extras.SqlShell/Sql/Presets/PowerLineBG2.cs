@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Presets
 {

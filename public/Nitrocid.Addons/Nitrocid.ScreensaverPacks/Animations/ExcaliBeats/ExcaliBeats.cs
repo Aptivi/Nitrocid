@@ -28,6 +28,9 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {
@@ -123,7 +126,18 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, exStr, CurrentColorOut, 0);
+                {
+                    var exText = new AlignedFigletText(figFont)
+                    {
+                        Text = exStr,
+                        ForegroundColor = CurrentColorOut,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle,
+                        }
+                    };
+                    TextWriterRaw.WriteRaw(exText.Render());
+                }
             }
 
             // Reset resize sync

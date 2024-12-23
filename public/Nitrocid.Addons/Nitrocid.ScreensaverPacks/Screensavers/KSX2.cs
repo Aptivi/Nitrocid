@@ -32,6 +32,8 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -351,7 +353,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentFigletR, currentFigletG, currentFigletB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "0.0.16.0 M5", col, red);
+                            var xText = new AlignedFigletText(figFont)
+                            {
+                                Text = "0.0.16.0 M5",
+                                ForegroundColor = col,
+                                BackgroundColor = red,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);

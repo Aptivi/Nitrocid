@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Kernel.Time.Calendars;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;

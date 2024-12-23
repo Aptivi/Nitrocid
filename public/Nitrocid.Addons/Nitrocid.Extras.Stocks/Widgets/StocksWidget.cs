@@ -28,6 +28,8 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.Stocks.Widgets
@@ -48,8 +50,21 @@ namespace Nitrocid.Extras.Stocks.Widgets
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
+            var displayer = new AlignedText()
+            {
+                Top = top + (height / 2),
+                LeftMargin = left,
+                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
             if (!isReady)
-                display.Append(CenteredTextColor.RenderCentered(top + (height / 2), Translate.DoTranslation("API Key is required. Configure from the settings."), left, ConsoleWrapper.WindowWidth - (left + width)));
+            {
+                displayer.Text = Translate.DoTranslation("API Key is required. Configure from the settings.");
+                display.Append(displayer.Render());
+            }
             else
             {
                 // Get the stock info
@@ -57,43 +72,29 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 var stocksToken = JToken.Parse(stocksJson);
                 var stocksIntervalToken = stocksToken["Time Series (60min)"];
                 if (stocksIntervalToken is null)
-                    display.Append(CenteredTextColor.RenderCentered(top + (height / 2), Translate.DoTranslation("No stock data available."), left, ConsoleWrapper.WindowWidth - (left + width)));
+                {
+                    displayer.Text = Translate.DoTranslation("No stock data available.");
+                    display.Append(displayer.Render());
+                }
                 else
                 {
                     string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"] ?? "";
                     string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
                     string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
-                    display.Append(CenteredTextColor.RenderCentered(top + (height / 2),
+                    displayer.Text =
                         $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
                         $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}"
-                    , left, ConsoleWrapper.WindowWidth - (left + width)));
+                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}";
+                    display.Append(displayer.Render());
                     if (top + (height / 2) + 1 <= top + height)
-                        display.Append(CenteredTextColor.RenderCentered(top + (height / 2) + 1, ianaTimeZone, left, ConsoleWrapper.WindowWidth - (left + width)));
+                    {
+                        displayer.Top += 1;
+                        displayer.Text = ianaTimeZone;
+                        display.Append(displayer.Render());
+                    }
                 }
             }
             return display.ToString();
-        }
-
-        /// <summary>
-        /// Changes the color of date and time
-        /// </summary>
-        private Color ChangeDateAndTimeColor()
-        {
-            Color ColorInstance;
-            if (Config.WidgetConfig.DigitalTrueColor)
-            {
-                int RedColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumRedColorLevel, Config.WidgetConfig.DigitalMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumGreenColorLevel, Config.WidgetConfig.DigitalMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumBlueColorLevel, Config.WidgetConfig.DigitalMaximumBlueColorLevel);
-                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            }
-            else
-            {
-                int ColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumColorLevel, Config.WidgetConfig.DigitalMaximumColorLevel);
-                ColorInstance = new Color(ColorNum);
-            }
-            return ColorInstance;
         }
     }
 }

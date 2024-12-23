@@ -45,33 +45,6 @@ namespace Nitrocid.ConsoleBase.Colors
         internal static bool allowBackground = false;
 
         /// <summary>
-        /// Enables color blindness
-        /// </summary>
-        public static bool ColorBlind
-        {
-            get => Config.MainConfig.ColorBlind;
-            set => Config.MainConfig.ColorBlind = value;
-        }
-
-        /// <summary>
-        /// Color blindness transformation formula
-        /// </summary>
-        public static TransformationFormula BlindnessTransformationFormula
-        {
-            get => (TransformationFormula)Config.MainConfig.BlindnessTransformationFormula;
-            set => Config.MainConfig.BlindnessTransformationFormula = (int)value;
-        }
-
-        /// <summary>
-        /// Color blindness severity
-        /// </summary>
-        public static double BlindnessSeverity
-        {
-            get => Config.MainConfig.BlindnessSeverity;
-            set => Config.MainConfig.BlindnessSeverity = value;
-        }
-
-        /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>

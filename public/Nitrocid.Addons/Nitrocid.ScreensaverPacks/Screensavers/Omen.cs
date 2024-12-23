@@ -25,6 +25,8 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -78,7 +80,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorTools.SetConsoleColorDry(gradient.IntermediateColor, true, true);
                 TextWriterWhereColor.WriteWherePlain(new(' ', ConsoleWrapper.WindowWidth), 0, i);
                 ColorTools.SetConsoleColorDry(currentTextColor);
-                CenteredTextColor.WriteCenteredOneLine(i, renderedText);
+                var omenText = new AlignedText()
+                {
+                    Top = i,
+                    Text = renderedText,
+                    ForegroundColor = currentTextColor,
+                    BackgroundColor = gradient.IntermediateColor,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle,
+                    }
+                };
+                TextWriterRaw.WriteRaw(omenText.Render());
             }
 
             // If step is 100, stop, but render in case of a resize.

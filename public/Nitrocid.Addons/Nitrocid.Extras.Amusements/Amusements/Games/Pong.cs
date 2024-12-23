@@ -32,6 +32,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -61,10 +63,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var fieldColor = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
 
             // Draw the field
-            part.BackgroundColor(fieldColor);
             part.AddDynamicText(() =>
             {
-                StringBuilder field = new();
+                StringBuilder field = new(ColorTools.RenderSetConsoleColor(fieldColor, true));
 
                 int FieldTopLeftEdge = 2;
                 int FieldBottomLeftEdge = 2;
@@ -122,15 +123,23 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     );
                 }
 
-                // Now, print the score
-                field.Append(
-                    ColorTools.RenderRevertBackground() +
-                    ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText)) +
-                    CenteredTextColor.RenderCenteredOneLine(1,
+                // Now, print the scores
+                var scores = new AlignedText()
+                {
+                    Text =
                         Translate.DoTranslation("Score") + $": {p1Score,3}" +
                         "           " +
-                        Translate.DoTranslation("Score") + $": {p2Score,3}"
-                    )
+                        Translate.DoTranslation("Score") + $": {p2Score,3}",
+                    Top = 1,
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
+                field.Append(
+                    ColorTools.RenderRevertBackground() +
+                    scores.Render()
                 );
 
                 // Render the result

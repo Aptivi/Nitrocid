@@ -25,6 +25,8 @@ using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 
@@ -52,22 +54,37 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
             int consoleY = height / 2 - figHeight;
-            display.Append(
-                clockColor.VTSequenceForeground +
-                CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, timeStr) +
-                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-            );
+            var timeText = new AlignedFigletText(figFont)
+            {
+                Text = timeStr,
+                ForegroundColor = clockColor,
+                Top = consoleY,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            display.Append(timeText.Render());
 
             // Print the date
             if (Config.WidgetConfig.DigitalDisplayDate)
             {
                 string dateStr = $"{TimeDateRenderers.RenderDate()}";
                 int consoleInfoY = (height / 2) + figHeight + 2;
-                display.Append(
-                    clockColor.VTSequenceForeground +
-                    CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr, left, ConsoleWrapper.WindowWidth - (left + width)) +
-                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-                );
+                var dateText = new AlignedText()
+                {
+                    Text = dateStr,
+                    ForegroundColor = clockColor,
+                    Top = consoleInfoY,
+                    OneLine = true,
+                    LeftMargin = left,
+                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle,
+                    }
+                };
+                display.Append(dateText.Render());
             }
 
             // Print everything

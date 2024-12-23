@@ -32,6 +32,8 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -116,7 +118,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.1",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -133,7 +145,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.1",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -150,7 +172,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.16",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -167,7 +199,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.16",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -184,7 +226,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.24",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -216,7 +268,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentBackR, currentBackG, currentBackB);
                             ColorTools.LoadBackDry(col);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", pink, col);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.24",
+                                ForegroundColor = pink,
+                                BackgroundColor = col,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -248,7 +310,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
                             ColorTools.LoadBackDry(pink);
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, pink);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "v0.0.24",
+                                ForegroundColor = col,
+                                BackgroundColor = pink,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -346,7 +418,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int s8figHeight = FigletTools.GetFigletHeight(renderedTarget, s8figFont) / 2;
                         int s8consoleX = ConsoleWrapper.WindowWidth / 2 - s8figWidth;
                         int s8consoleY = ConsoleWrapper.WindowHeight / 2 - s8figHeight;
-                        CenteredFigletTextColor.WriteCenteredFiglet(s8figFont, "...");
+                        {
+                            var xText = new AlignedFigletText(s8figFont)
+                            {
+                                Text = "...",
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
+                        }
 
                         // Select a random date
                         for (int delayed = 0; delayed < 15000; delayed += 10)
@@ -479,7 +561,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "X",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -499,7 +591,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", col, black);
+                            var xText = new AlignedFigletText(font)
+                            {
+                                Text = "X",
+                                ForegroundColor = col,
+                                BackgroundColor = black,
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);

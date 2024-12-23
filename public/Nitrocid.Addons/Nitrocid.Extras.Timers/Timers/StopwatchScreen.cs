@@ -30,7 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs.Styles.Infobox;

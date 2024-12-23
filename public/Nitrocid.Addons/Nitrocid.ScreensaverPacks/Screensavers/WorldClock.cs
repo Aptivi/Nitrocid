@@ -27,6 +27,8 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -70,7 +72,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             ConsoleWrapper.Clear();
-            CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, time, color);
+            var wordText = new AlignedFigletText(figFont)
+            {
+                Top = consoleY,
+                Text = time,
+                ForegroundColor = color,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            TextWriterRaw.WriteRaw(wordText.Render());
             TextWriterWhereColor.WriteWhereColor($"{date} @ {timeZoneName}", (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - $"{date} @ {timeZoneName}".Length / 2d), hashY, color);
 
             // Delay

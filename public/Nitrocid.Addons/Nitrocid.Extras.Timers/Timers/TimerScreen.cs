@@ -35,7 +35,7 @@ using Terminaux.Base;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.Extras.Timers.Timers

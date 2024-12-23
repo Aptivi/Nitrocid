@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

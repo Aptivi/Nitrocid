@@ -35,6 +35,10 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.General;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -76,20 +80,33 @@ namespace Nitrocid.SplashPacks.Splashes
                 // Write the figlet.
                 consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
                 consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+                var figletText = new FigletText(figFont)
+                {
+                    Text = text,
+                    ForegroundColor = col,
+                };
                 builder.Append(
-                    col.VTSequenceForeground +
-                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
+                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }
+
+            // Render the kernel version
+            var versionText = new AlignedText()
+            {
+                Text =
+                    context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
+                    context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
+                    $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}...",
+                Top = consoleY + 2,
+                ForegroundColor = col,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
             builder.Append(
-                CenteredTextColor.RenderCentered(
-                    consoleY + 2,
-                    (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
-                     context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
-                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."),
-                    col
-                )
+                versionText.Render()
             );
             return builder.ToString();
         }
@@ -160,6 +177,11 @@ namespace Nitrocid.SplashPacks.Splashes
             int height = ConsoleWrapper.WindowHeight;
             int consoleX = (width / 2) - figWidth;
             int consoleY = (height / 2) - figHeight;
+            var figletText = new FigletText(figFont)
+            {
+                Text = text,
+                ForegroundColor = col,
+            };
             if (consoleX < 0 || consoleY < 0)
             {
                 // The figlet won't fit, so use small text
@@ -171,16 +193,15 @@ namespace Nitrocid.SplashPacks.Splashes
                     consoleX = (width / 2) - (text.Length / 2);
                     consoleY = height / 2;
                     builder.Append(
-                        col.VTSequenceForeground +
                         TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                     );
                 }
                 else
                 {
                     // Write the figlet.
+                    figletText.Font = figFontFallback;
                     builder.Append(
-                        col.VTSequenceForeground +
-                        FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFontFallback)
+                        ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
                     );
                     consoleY += figHeightFallback * 2;
                 }
@@ -189,14 +210,24 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 // Write the figlet.
                 builder.Append(
-                    col.VTSequenceForeground +
-                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
+                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }
+
+            // Render the kernel version
+            var versionText = new AlignedText()
+            {
+                Text = KernelReleaseInfo.ConsoleTitle,
+                Top = consoleY + 2,
+                ForegroundColor = col,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
             builder.Append(
-                col.VTSequenceForeground +
-                CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
+                versionText.Render()
             );
             delayRequired = true;
             return builder.ToString();
@@ -215,19 +246,35 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             var builder = new StringBuilder();
             Color col = KernelColorTools.GetColor(colorType);
-            string text = $"{Progress}%";
+            string percentage = $"{Progress}%";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int figHeight = FigletTools.GetFigletHeight(percentage, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            builder.Append(
-                col.VTSequenceForeground
-            );
             for (int i = consoleY; i <= consoleY + figHeight; i++)
                 builder.Append(TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, i, true));
+            var percentageFiglet = new AlignedFigletText(figFont, percentage)
+            {
+                Top = consoleY,
+                ForegroundColor = col,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
+            var progressText = new AlignedText()
+            {
+                Text = ProgressReport.FormatString(Vars),
+                Top = consoleY - 2,
+                ForegroundColor = col,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
             builder.Append(
-                CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, 0, 0, Vars) +
+                percentageFiglet.Render() +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
-                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, 0, 0, Vars)
+                progressText.Render()
             );
             return builder.ToString();
         }

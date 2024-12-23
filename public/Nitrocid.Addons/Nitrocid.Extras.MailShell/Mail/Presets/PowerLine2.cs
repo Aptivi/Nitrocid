@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.Extras.MailShell.Tools;
 using Nitrocid.Shell.Prompts;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.MailShell.Mail.Presets

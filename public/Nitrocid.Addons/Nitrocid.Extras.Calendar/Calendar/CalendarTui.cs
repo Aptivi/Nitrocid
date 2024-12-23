@@ -41,7 +41,7 @@ using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Collections.Generic;
 using Terminaux.Inputs;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar
@@ -406,7 +406,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             // Show the available keys list
             if (bindings.Length == 0)
                 return;
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(KeybindingsWriter.RenderKeybindingHelpText(bindings),
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(KeybindingTools.RenderKeybindingHelpText(bindings),
                 KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             return;

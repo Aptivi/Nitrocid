@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.LocaleTrim
 {
@@ -63,7 +64,15 @@ namespace Nitrocid.LocaleTrim
 
                 // Now, either list or delete all redundant files
                 if (dry)
-                    ListWriterColor.WriteList(redundant, ConsoleColors.Yellow, ConsoleColors.Red, false);
+                {
+                    var listing = new Listing()
+                    {
+                        Objects = redundant,
+                        KeyColor = ConsoleColors.Yellow,
+                        ValueColor = ConsoleColors.Red,
+                    };
+                    TextWriterRaw.WriteRaw(listing.Render());
+                }
                 else
                 {
                     foreach (var languagePath in redundant)
