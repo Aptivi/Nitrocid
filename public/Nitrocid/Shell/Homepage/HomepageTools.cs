@@ -139,6 +139,7 @@ namespace Nitrocid.Shell.Homepage
                         OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                         Left = 0,
                         Top = ConsoleWrapper.WindowHeight - 1,
+                        Width = ConsoleWrapper.WindowWidth - 1,
                     };
                     builder.Append(keybindings.Render());
 
@@ -267,6 +268,10 @@ namespace Nitrocid.Shell.Homepage
                         BackgroundColor = backgroundSettings,
                         LeftMargin = settingsButtonPosX + 1,
                         RightMargin = buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        },
                     };
                     builder.Append(
                         settingsBorder.Render() +
@@ -294,6 +299,10 @@ namespace Nitrocid.Shell.Homepage
                         BackgroundColor = backgroundAbout,
                         LeftMargin = aboutButtonPosX + 1,
                         RightMargin = buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        },
                     };
                     builder.Append(
                         aboutBorder.Render() +
@@ -315,6 +324,7 @@ namespace Nitrocid.Shell.Homepage
                         Left = settingsButtonPosX + 1,
                         Top = widgetTop + 1,
                         CurrentSelection = choiceIdx,
+                        AltChoicePos = availableChoices.Length,
                         Height = widgetHeight + 2,
                         Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
                         Settings = new()

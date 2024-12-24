@@ -28,6 +28,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Shapes;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
@@ -104,16 +105,20 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 Top = posY,
                 LeftMargin = left,
                 RightMargin = ConsoleWrapper.WindowWidth - (left + width),
-                ForegroundColor = timeColor
+                ForegroundColor = timeColor,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                },
             };
             builder.Append(timeDate.Render());
             lastRendered = rendered;
 
             // Now, draw the bezel
-            int bezelTop = top + 2;
+            int bezelTop = top + 1;
             int bezelHeight = height - 6;
             int bezelWidth = bezelHeight * 2;
-            int bezelLeft = width / 2 - bezelHeight + left;
+            int bezelLeft = width / 2 - bezelHeight + left + 1;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
             int bezelRadius = radius.y - bezelTop;
             var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
