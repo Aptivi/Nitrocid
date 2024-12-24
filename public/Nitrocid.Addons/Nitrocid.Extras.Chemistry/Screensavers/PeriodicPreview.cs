@@ -33,6 +33,8 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using Textify.Data.Figlet;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Chemistry.Screensavers
 {
@@ -66,9 +68,16 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
             int height = ConsoleWrapper.WindowHeight - 4;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2;
             int posY = 1;
-            periodicItem.Append(
-                BorderColor.RenderBorder(posX, posY, width, height, ConsoleColors.Black, color)
-            );
+            var border = new Border()
+            {
+                Left = posX,
+                Top = posY,
+                InteriorWidth = width,
+                InteriorHeight = height,
+                Color = ConsoleColors.Black,
+                BackgroundColor = color,
+            };
+            periodicItem.Append(border.Render());
 
             // Render the element properties in small fonts first
             int elementAtomicNumberPosX = posX + 3;
@@ -88,9 +97,13 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
             int elementSymbolFigletHeight = FigletTools.GetFigletHeight(substance.Symbol, font);
             int elementSymbolFigletPosX = ConsoleWrapper.WindowWidth / 2 - elementSymbolFigletWidth / 2 + 1;
             int elementSymbolFigletPosY = ConsoleWrapper.WindowHeight / 2 - elementSymbolFigletHeight / 2 - 1;
-            periodicItem.Append(
-                FigletWhereColor.RenderFigletWhere(substance.Symbol, elementSymbolFigletPosX, elementSymbolFigletPosY, true, font, ConsoleColors.Black, color)
-            );
+            var figletSubstance = new FigletText(font)
+            {
+                Text = substance.Symbol,
+                ForegroundColor = ConsoleColors.Black,
+                BackgroundColor = color,
+            };
+            periodicItem.Append(ContainerTools.RenderRenderable(figletSubstance, new(elementSymbolFigletPosX, elementSymbolFigletPosY)));
 
             // Render the chemical element preview
             TextWriterRaw.WriteRaw(periodicItem.ToString());

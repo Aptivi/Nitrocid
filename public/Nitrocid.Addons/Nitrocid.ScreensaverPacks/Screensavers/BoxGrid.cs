@@ -22,6 +22,8 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -60,7 +62,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
                     var color = ColorTools.GetRandomColor(ColorType.TrueColor);
-                    BorderColor.WriteBorder(i * (boxWidthExterior + 1), j * boxHeightExterior, boxWidth, boxHeight, color);
+                    var border = new Border()
+                    {
+                        Left = i * (boxWidthExterior + 1),
+                        Top = j * boxHeightExterior,
+                        InteriorWidth = boxWidth,
+                        InteriorHeight = boxHeight,
+                        Color = color,
+                    };
+                    TextWriterRaw.WriteRaw(border.Render());
                 }
             }
 

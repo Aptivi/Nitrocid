@@ -61,10 +61,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenPart part = new();
 
             // Draw the floor
-            part.BackgroundColor(FloorColor);
             part.AddDynamicText(() =>
             {
-                StringBuilder floor = new();
+                StringBuilder floor = new(ColorTools.RenderSetConsoleColor(FloorColor, true));
 
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;

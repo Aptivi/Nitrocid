@@ -28,6 +28,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -42,12 +43,17 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             try
             {
                 var stickScreenPart = new ScreenPart();
-                stickScreenPart.Position(0, 1);
-                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Silver));
-                stickScreenPart.AddDynamicText(GenerateWidthStick);
-                stickScreenPart.AddDynamicText(GenerateHeightStick);
-                stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
-                stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+                stickScreenPart.AddDynamicText(() =>
+                {
+                    var builder = new StringBuilder();
+                    builder.Append(
+                        ConsolePositioning.RenderChangePosition(0, 1) +
+                        ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
+                        GenerateWidthStick() + GenerateHeightStick() +
+                        ColorTools.RenderResetColors()
+                    );
+                    return builder.ToString();
+                });
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();

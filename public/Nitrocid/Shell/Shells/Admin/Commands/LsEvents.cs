@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -34,7 +35,12 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
+            var events = EventsManager.ListAllFiredEvents();
+            var listing = new Listing()
+            {
+                Objects = events,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
             return 0;
         }
 

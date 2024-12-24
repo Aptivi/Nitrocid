@@ -26,6 +26,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -62,9 +63,28 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("The two files are different."));
             foreach (var (line, one, two) in compared)
             {
-                ListEntryWriterColor.WriteListEntry($"[{line}]", Translate.DoTranslation("Different"));
-                ListEntryWriterColor.WriteListEntry($"[-]", one, 1);
-                ListEntryWriterColor.WriteListEntry($"[+]", two, 1);
+                var lineNumber = new ListEntry()
+                {
+                    Entry = $"[{line}]",
+                    Value = Translate.DoTranslation("Different"),
+                };
+                var oldValue = new ListEntry()
+                {
+                    Entry = "[-]",
+                    Value = one,
+                    Indentation = 1,
+                };
+                var newValue = new ListEntry()
+                {
+                    Entry = "[+]",
+                    Value = two,
+                    Indentation = 1,
+                };
+                TextWriterRaw.WriteRaw(
+                    lineNumber.Render() +
+                    oldValue.Render() +
+                    newValue.Render()
+                );
             }
             return 0;
         }

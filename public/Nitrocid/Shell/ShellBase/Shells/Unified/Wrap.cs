@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {
@@ -45,7 +46,11 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             var currentType = currentShell.ShellType;
             var WrappableCmds = CommandExecutor.GetWrappableCommands(currentType);
             TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:"));
-            ListWriterColor.WriteList(WrappableCmds);
+            var listing = new Listing()
+            {
+                Objects = WrappableCmds,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
         }
 
     }

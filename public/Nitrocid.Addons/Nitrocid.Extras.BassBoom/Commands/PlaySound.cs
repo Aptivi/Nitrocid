@@ -33,6 +33,7 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using BassBoom.Basolia;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -96,10 +97,32 @@ namespace Nitrocid.Extras.BassBoom.Commands
                         Translate.DoTranslation("Unknown Genre");
                     var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(media, total);
                     string duration = totalSpan.ToString();
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Name"), musicName);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Artist"), musicArtist);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Genre"), musicGenre);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Duration"), duration);
+                    var musicNameEntry = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Name"),
+                        Value = musicName,
+                    };
+                    var musicArtistEntry = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Artist"),
+                        Value = musicArtist,
+                    };
+                    var musicGenreEntry = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Genre"),
+                        Value = musicGenre,
+                    };
+                    var musicDurationEntry = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Duration"),
+                        Value = duration,
+                    };
+                    TextWriterRaw.WriteRaw(
+                        musicNameEntry.Render() +
+                        musicArtistEntry.Render() +
+                        musicGenreEntry.Render() +
+                        musicDurationEntry.Render()
+                    );
 
                     // Wait until the song stops or the user bails
                     TextWriters.Write(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);

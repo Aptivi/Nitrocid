@@ -26,6 +26,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {
@@ -66,7 +67,11 @@ namespace Nitrocid.Extras.Caffeine.Commands
                 {
                     TextWriters.Write(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
                     TextWriters.Write(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
-                    ListWriterColor.WriteList(caffeines);
+                    var listing = new Listing()
+                    {
+                        Objects = caffeines,
+                    };
+                    TextWriterRaw.WriteRaw(listing.Render());
                     return 26;
                 }
                 AlarmTools.StartAlarm("Caffeine", Translate.DoTranslation("Your cup is now ready!"), alarmSeconds, nameSpecified ? Translate.DoTranslation(secsOrName) : "");

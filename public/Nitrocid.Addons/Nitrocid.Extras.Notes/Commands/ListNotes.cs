@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
@@ -28,7 +29,11 @@ namespace Nitrocid.Extras.Notes.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ListWriterColor.WriteList(NoteManagement.notes);
+            var listing = new Listing()
+            {
+                Objects = NoteManagement.notes,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
             return 0;
         }
 

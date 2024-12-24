@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -49,10 +50,32 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     var key = ConfigTools.GetSettingsKey(config, varName);
                     var value = ConfigTools.GetValueFromEntry(key, config);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key name"), key.Name);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key description"), key.Description);
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}");
-                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]");
+                    var keyName = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Key name"),
+                        Value = key.Name,
+                    };
+                    var keyDesc = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Key description"),
+                        Value = key.Description,
+                    };
+                    var keyType = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Key type"),
+                        Value = $"{key.Type}",
+                    };
+                    var keyVar = new ListEntry()
+                    {
+                        Entry = Translate.DoTranslation("Key variable"),
+                        Value = $"{key.Variable} [{value}]",
+                    };
+                    TextWriterRaw.WriteRaw(
+                        keyName.Render() +
+                        keyDesc.Render() +
+                        keyType.Render() +
+                        keyVar.Render()
+                    );
                     variableValue = $"{value}";
                 }
                 else

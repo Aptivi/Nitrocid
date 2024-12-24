@@ -33,6 +33,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -165,13 +166,40 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 // Hours
-                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11, ConsoleWrapper.WindowWidth - 10, 1, hoursBorder, ColorStorageHours);
+                var hoursBoxFrame = new BoxFrame()
+                {
+                    Left = 4,
+                    Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11,
+                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
+                    InteriorHeight = 1,
+                    Settings = hoursBorder,
+                    FrameColor = ColorStorageHours,
+                };
+                TextWriterRaw.WriteRaw(hoursBoxFrame.Render());
 
                 // Minutes
-                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2, ConsoleWrapper.WindowWidth - 10, 1, minutesBorder, ColorStorageMinutes);
+                var minutesBoxFrame = new BoxFrame()
+                {
+                    Left = 4,
+                    Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2,
+                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
+                    InteriorHeight = 1,
+                    Settings = minutesBorder,
+                    FrameColor = ColorStorageMinutes,
+                };
+                TextWriterRaw.WriteRaw(minutesBoxFrame.Render());
 
                 // Seconds
-                BoxFrameColor.WriteBoxFrame(4, (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7, ConsoleWrapper.WindowWidth - 10, 1, secondsBorder, ColorStorageSeconds);
+                var secondsBoxFrame = new BoxFrame()
+                {
+                    Left = 4,
+                    Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7,
+                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
+                    InteriorHeight = 1,
+                    Settings = secondsBorder,
+                    FrameColor = ColorStorageSeconds,
+                };
+                TextWriterRaw.WriteRaw(secondsBoxFrame.Render());
 
                 // Fill progress for hours, minutes, and seconds
                 if (TimeDateTools.KernelDateTime.Hour != 0)

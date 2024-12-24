@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -120,10 +121,17 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                    builder.Append(
-                        new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut).VTSequenceForeground +
-                        BoxColor.RenderBox(left, top, width, height)
-                    );
+                    
+                    var box = new Box()
+                    {
+                        Left = left,
+                        Top = top,
+                        InteriorWidth = width,
+                        InteriorHeight = height,
+                        Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
+                    };
+                    builder.Append(box.Render());
+
                     _currentStep++;
                     if (_currentStep > _squareCornerMaxSteps)
                     {
@@ -143,10 +151,17 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                    builder.Append(
-                        new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn).VTSequenceForeground +
-                        BoxColor.RenderBox(left, top, width, height)
-                    );
+
+                    var box = new Box()
+                    {
+                        Left = left,
+                        Top = top,
+                        InteriorWidth = width,
+                        InteriorHeight = height,
+                        Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
+                    };
+                    builder.Append(box.Render());
+
                     _currentStep++;
                     if (_currentStep > _squareCornerMaxSteps)
                     {

@@ -33,6 +33,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Files.Folders
 {
@@ -231,10 +232,26 @@ namespace Nitrocid.Files.Folders
                             switch (Entry.Type)
                             {
                                 case FileSystemEntryType.File:
-                                    ListEntryWriterColor.WriteListEntry(name, Entry.FileSize.SizeString(), level);
+                                    {
+                                        var entry = new ListEntry()
+                                        {
+                                            Entry = name,
+                                            Value = Entry.FileSize.SizeString(),
+                                            Indentation = level,
+                                        };
+                                        TextWriterRaw.WriteRaw(entry.Render());
+                                    }
                                     break;
                                 case FileSystemEntryType.Directory:
-                                    ListEntryWriterColor.WriteListEntry(name, "[/]", level);
+                                    {
+                                        var entry = new ListEntry()
+                                        {
+                                            Entry = name,
+                                            Value = "[/]",
+                                            Indentation = level,
+                                        };
+                                        TextWriterRaw.WriteRaw(entry.Render());
+                                    }
                                     ListTree(Entry.FilePath, SuppressUnauthorizedMessage, Sort, level + 1);
                                     break;
                             }
@@ -242,13 +259,26 @@ namespace Nitrocid.Files.Folders
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Unauthorized"), level);
+                            {
+                                var entry = new ListEntry()
+                                {
+                                    Entry = name,
+                                    Value = Translate.DoTranslation("Unauthorized"),
+                                    Indentation = level,
+                                };
+                                TextWriterRaw.WriteRaw(entry.Render());
+                            }
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
-                            if (!SuppressUnauthorizedMessage)
-                                ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Error"), level);
+                            var entry = new ListEntry()
+                            {
+                                Entry = name,
+                                Value = Translate.DoTranslation("Error"),
+                                Indentation = level,
+                            };
+                            TextWriterRaw.WriteRaw(entry.Render());
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -265,18 +295,36 @@ namespace Nitrocid.Files.Folders
                 string name = Path.GetFileName(entry.FilePath);
                 try
                 {
-                    ListEntryWriterColor.WriteListEntry(name, entry.FileSize.SizeString());
+                    var file = new ListEntry()
+                    {
+                        Entry = name,
+                        Value = entry.FileSize.SizeString(),
+                    };
+                    TextWriterRaw.WriteRaw(file.Render());
                 }
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Unauthorized"));
+                    {
+                        var file = new ListEntry()
+                        {
+                            Entry = name,
+                            Value = Translate.DoTranslation("Unauthorized"),
+                            Indentation = level,
+                        };
+                        TextWriterRaw.WriteRaw(file.Render());
+                    }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
-                    if (!SuppressUnauthorizedMessage)
-                        ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Error"));
+                    var file = new ListEntry()
+                    {
+                        Entry = name,
+                        Value = Translate.DoTranslation("Error"),
+                        Indentation = level,
+                    };
+                    TextWriterRaw.WriteRaw(file.Render());
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

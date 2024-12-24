@@ -28,6 +28,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -131,7 +132,15 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     int boxExteriorLength = 3;
                     int currentX = marginX + (boxExteriorLength + 2) * (l - 1);
                     int currentY = marginY + boxExteriorLength * (g - 1);
-                    BorderColor.WriteBorder(currentX, currentY, 3, 1, finalColor);
+                    var border = new Border()
+                    {
+                        Left = currentX,
+                        Top = currentY,
+                        InteriorWidth = 3,
+                        InteriorHeight = 1,
+                        Color = finalColor,
+                    };
+                    TextWriterRaw.WriteRaw(border.Render());
 
                     // Render a character inside it
                     TextWriterWhereColor.WriteWhere(currChar.ToString(), currentX + 2, currentY + 1);

@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -51,10 +52,36 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key name"), key.Name, 1);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key description"), key.Description, 1);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}", 1);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]", 1);
+                        var keyName = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Key name"),
+                            Value = key.Name,
+                            Indentation = 1,
+                        };
+                        var keyDesc = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Key description"),
+                            Value = key.Description,
+                            Indentation = 1,
+                        };
+                        var keyType = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Key type"),
+                            Value = $"{key.Type}",
+                            Indentation = 1,
+                        };
+                        var keyVar = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Key variable"),
+                            Value = $"{key.Variable} [{value}]",
+                            Indentation = 1,
+                        };
+                        TextWriterRaw.WriteRaw(
+                            keyName.Render() +
+                            keyDesc.Render() +
+                            keyType.Render() +
+                            keyVar.Render()
+                        );
                     }
                 }
             }

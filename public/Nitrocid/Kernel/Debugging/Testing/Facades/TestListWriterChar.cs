@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,9 +33,17 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };
             TextWriterColor.Write(Translate.DoTranslation("Normal char list:"));
-            ListWriterColor.WriteList(NormalCharList);
+            var listing = new Listing()
+            {
+                Objects = NormalCharList,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
             TextWriterColor.Write(Translate.DoTranslation("Array char list:"));
-            ListWriterColor.WriteList(ArrayCharList);
+            var listing2 = new Listing()
+            {
+                Objects = ArrayCharList,
+            };
+            TextWriterRaw.WriteRaw(listing2.Render());
         }
     }
 }

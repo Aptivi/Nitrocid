@@ -26,6 +26,8 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {
@@ -94,7 +96,16 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                BoxColor.WriteBox(left, top, width, height, new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
+
+                var box = new Box()
+                {
+                    Left = left,
+                    Top = top,
+                    InteriorWidth = width,
+                    InteriorHeight = height,
+                    Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
+                };
+                TextWriterRaw.WriteRaw(box.Render());
             }
 
             // Wait until fade out
@@ -115,7 +126,16 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                BoxColor.WriteBox(left, top, width, height, new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+
+                var box = new Box()
+                {
+                    Left = left,
+                    Top = top,
+                    InteriorWidth = width,
+                    InteriorHeight = height,
+                    Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
+                };
+                TextWriterRaw.WriteRaw(box.Render());
             }
 
             // Reset resize sync

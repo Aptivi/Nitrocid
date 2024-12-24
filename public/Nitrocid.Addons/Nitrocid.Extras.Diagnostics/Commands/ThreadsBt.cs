@@ -27,6 +27,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Diagnostics.Commands
 {
@@ -55,8 +56,11 @@ namespace Nitrocid.Extras.Diagnostics.Commands
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
                 TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
-                ListWriterColor.WriteList(threadTrace);
-                TextWriterRaw.Write();
+                var listing = new Listing()
+                {
+                    Objects = threadTrace,
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
             }
             return 0;
         }

@@ -38,6 +38,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -245,7 +246,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
                         int s4consoleX = ConsoleWrapper.WindowWidth / 2 - s4figWidth;
                         int s4consoleY = ConsoleWrapper.WindowHeight / 2 - s4figHeight;
-                        FigletWhereColor.WriteFigletWhereColorBack("2018", s4consoleX, s4consoleY, true, s4figFont, green, black);
+                        var figlet = new FigletText(s4figFont)
+                        {
+                            Text = "2018",
+                            ForegroundColor = green,
+                            BackgroundColor = black,
+                        };
+                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                     case 5:
@@ -361,7 +368,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             // Some power function to make the glitches intense
                             double currentProg = Math.Pow((double)iteration / maxProg * 10, 2);
-                            ProgressBarColor.WriteProgress(currentProg, progPosX, progPosY, black, black, darkGreen);
+                            var progress = new SimpleProgress((int)currentProg, 100)
+                            {
+                                LeftMargin = 5,
+                                RightMargin = 5,
+                                ProgressActiveForegroundColor = green,
+                                ProgressForegroundColor = black,
+                                ProgressBackgroundColor = darkGreen,
+                            };
+                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(progPosX, progPosY)));
 
                             // Show current date
                             long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
@@ -397,7 +412,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int s8figHeight = FigletTools.GetFigletHeight("SYSTEM ERROR", s8figFont) / 2;
                         int s8consoleX = ConsoleWrapper.WindowWidth / 2 - s8figWidth;
                         int s8consoleY = ConsoleWrapper.WindowHeight / 2 - s8figHeight;
-                        FigletWhereColor.WriteFigletWhereColor("SYSTEM ERROR", s8consoleX, s8consoleY, true, s8figFont, red);
+                        var s8Figlet = new FigletText(s8figFont)
+                        {
+                            Text = "SYSTEM ERROR",
+                            ForegroundColor = red,
+                        };
+                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
                             ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -419,7 +439,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             // Some power function to make the glitches intense
                             double currentProg = (double)iteration / sysWipeMaxProg * 100;
-                            ProgressBarColor.WriteProgress(currentProg, sysWipeProgPosX, sysWipeProgPosY, black, black, darkGreen);
+                            var progress = new SimpleProgress((int)currentProg, 100)
+                            {
+                                LeftMargin = 5,
+                                RightMargin = 5,
+                                ProgressActiveForegroundColor = green,
+                                ProgressForegroundColor = black,
+                                ProgressBackgroundColor = darkGreen,
+                            };
+                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(sysWipeProgPosX, sysWipeProgPosY)));
 
                             // Now, do the glitch
                             Glitch.GlitchAt();

@@ -26,6 +26,8 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -94,16 +96,48 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     var windows11Color = new Color($"0;120;212");
 
                     // First, draw the upper left box
-                    BoxColor.WriteBox(UpperLeftBoxStartX, UpperLeftBoxStartY, UpperLeftBoxEndX - UpperLeftBoxStartX, UpperLeftBoxEndY - UpperLeftBoxStartY, windows11Color);
+                    var upperLeftBox = new Box()
+                    {
+                        Left = UpperLeftBoxStartX,
+                        Top = UpperLeftBoxStartY,
+                        InteriorWidth = UpperLeftBoxEndX - UpperLeftBoxStartX,
+                        InteriorHeight = UpperLeftBoxEndY - UpperLeftBoxStartY,
+                        Color = windows11Color,
+                    };
+                    TextWriterRaw.WriteRaw(upperLeftBox.Render());
 
                     // Second, draw the lower left box
-                    BoxColor.WriteBox(LowerLeftBoxStartX, LowerLeftBoxStartY, LowerLeftBoxEndX - LowerLeftBoxStartX, LowerLeftBoxEndY - LowerLeftBoxStartY, windows11Color);
+                    var lowerLeftBox = new Box()
+                    {
+                        Left = LowerLeftBoxStartX,
+                        Top = LowerLeftBoxStartY,
+                        InteriorWidth = LowerLeftBoxEndX - LowerLeftBoxStartX,
+                        InteriorHeight = LowerLeftBoxEndY - LowerLeftBoxStartY,
+                        Color = windows11Color,
+                    };
+                    TextWriterRaw.WriteRaw(lowerLeftBox.Render());
 
                     // Third, draw the upper right box
-                    BoxColor.WriteBox(UpperRightBoxStartX, UpperRightBoxStartY, UpperRightBoxEndX - UpperRightBoxStartX, UpperRightBoxEndY - UpperRightBoxStartY, windows11Color);
+                    var upperRightBox = new Box()
+                    {
+                        Left = UpperRightBoxStartX,
+                        Top = UpperRightBoxStartY,
+                        InteriorWidth = UpperRightBoxEndX - UpperRightBoxStartX,
+                        InteriorHeight = UpperRightBoxEndY - UpperRightBoxStartY,
+                        Color = windows11Color,
+                    };
+                    TextWriterRaw.WriteRaw(upperRightBox.Render());
 
                     // Fourth, draw the lower right box
-                    BoxColor.WriteBox(LowerRightBoxStartX, LowerRightBoxStartY, LowerRightBoxEndX - LowerRightBoxStartX, LowerRightBoxEndY - LowerRightBoxStartY, windows11Color);
+                    var lowerRightBox = new Box()
+                    {
+                        Left = LowerRightBoxStartX,
+                        Top = LowerRightBoxStartY,
+                        InteriorWidth = LowerRightBoxEndX - LowerRightBoxStartX,
+                        InteriorHeight = LowerRightBoxEndY - LowerRightBoxStartY,
+                        Color = windows11Color,
+                    };
+                    TextWriterRaw.WriteRaw(lowerRightBox.Render());
 
                     // Set drawn
                     Drawn = true;

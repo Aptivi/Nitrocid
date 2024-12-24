@@ -29,6 +29,9 @@ using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -126,20 +129,19 @@ namespace Nitrocid.SplashPacks.Splashes
             );
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) &
-                ColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
+            Color progressColor =
+                ColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) ?
+                SplashPackInit.SplashConfig.PowerLineProgressProgressColor :
+                KernelColorTools.GetColor(KernelColorType.Progress);
+            var progress = new SimpleProgress(Progress, 100)
             {
-                var ProgressColor = new Color(SplashPackInit.SplashConfig.PowerLineProgressProgressColor);
-                builder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 8, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
-                );
-            }
-            else
-            {
-                builder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 8, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
-                );
-            }
+                LeftMargin = 4,
+                RightMargin = 4,
+                ProgressActiveForegroundColor = progressColor,
+                ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
+                ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+            };
+            builder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
             return builder.ToString();
         }
 

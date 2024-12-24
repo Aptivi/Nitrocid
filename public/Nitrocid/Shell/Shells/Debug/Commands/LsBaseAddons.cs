@@ -25,6 +25,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System;
 using Terminaux.Colors.Data;
+using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -50,10 +52,16 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
                 // Now, check the status
                 string[] addons = AddonTools.GetAddons();
-                if (addons.Contains(name))
-                    ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, ConsoleColors.DarkGreen, ConsoleColors.Green);
-                else
-                    ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, ConsoleColors.DarkRed, ConsoleColors.Red);
+                Color finalKeyColor = addons.Contains(name) ? ConsoleColors.DarkGreen : ConsoleColors.DarkRed;
+                Color finalValueColor = addons.Contains(name) ? ConsoleColors.Green : ConsoleColors.Red;
+                var listing = new ListEntry()
+                {
+                    Entry = enumValue.ToString(),
+                    Value = localizedName,
+                    KeyColor = finalKeyColor,
+                    ValueColor = finalValueColor,
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
             }
             return 0;
         }

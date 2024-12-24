@@ -24,6 +24,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {
@@ -76,14 +77,22 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         if (DefinitionBase.Synonyms is not null && DefinitionBase.Synonyms.Length != 0)
                         {
                             TextWriters.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
-                            ListWriterColor.WriteList(DefinitionBase.Synonyms);
+                            var listing = new Listing()
+                            {
+                                Objects = DefinitionBase.Synonyms,
+                            };
+                            TextWriterRaw.WriteRaw(listing.Render());
                         }
 
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms is not null && DefinitionBase.Antonyms.Length != 0)
                         {
                             TextWriters.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
-                            ListWriterColor.WriteList(DefinitionBase.Antonyms);
+                            var listing = new Listing()
+                            {
+                                Objects = DefinitionBase.Antonyms,
+                            };
+                            TextWriterRaw.WriteRaw(listing.Render());
                         }
                     }
 
@@ -91,20 +100,32 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     if (MeaningBase.Synonyms is not null && MeaningBase.Synonyms.Length != 0)
                     {
                         TextWriters.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
-                        ListWriterColor.WriteList(MeaningBase.Synonyms);
+                        var listing = new Listing()
+                        {
+                            Objects = MeaningBase.Synonyms,
+                        };
+                        TextWriterRaw.WriteRaw(listing.Render());
                     }
 
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms is not null && MeaningBase.Antonyms.Length != 0)
                     {
                         TextWriters.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
-                        ListWriterColor.WriteList(MeaningBase.Antonyms);
+                        var listing = new Listing()
+                        {
+                            Objects = MeaningBase.Antonyms,
+                        };
+                        TextWriterRaw.WriteRaw(listing.Render());
                     }
                 }
 
                 // Sources...
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", true);
-                ListWriterColor.WriteList(Word.SourceUrls ?? []);
+                var sources = new Listing()
+                {
+                    Objects = Word.SourceUrls ?? [],
+                };
+                TextWriterRaw.WriteRaw(sources.Render());
             }
             return 0;
         }

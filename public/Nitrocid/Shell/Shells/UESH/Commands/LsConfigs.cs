@@ -23,6 +23,7 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -44,15 +45,40 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (config is null || config.SettingsEntries is null)
                     continue;
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", true);
-                ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Entries count"), $"{config.SettingsEntries.Length}");
+                var entriesCount = new ListEntry()
+                {
+                    Entry = Translate.DoTranslation("Entries count"),
+                    Value = $"{config.SettingsEntries.Length}",
+                };
+                TextWriterRaw.WriteRaw(entriesCount.Render());
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}", true);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Displaying as"), entry.DisplayAs, 1);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Description"), entry.Desc, 1);
-                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Keys count"), $"{entry.Keys.Length}", 1);
+                        var entryDisplay = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Displaying as"),
+                            Value = entry.DisplayAs,
+                            Indentation = 1,
+                        };
+                        var entryDesc = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Description"),
+                            Value = entry.Desc,
+                            Indentation = 1,
+                        };
+                        var entryKeys = new ListEntry()
+                        {
+                            Entry = Translate.DoTranslation("Keys count"),
+                            Value = $"{entry.Keys.Length}",
+                            Indentation = 1,
+                        };
+                        TextWriterRaw.WriteRaw(
+                            entryDisplay.Render() +
+                            entryDesc.Render() +
+                            entryKeys.Render()
+                        );
                     }
                 }
             }

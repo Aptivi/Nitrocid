@@ -23,6 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -51,7 +52,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             if (NotFound.Count > 0)
             {
                 TextWriters.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
-                ListWriterColor.WriteList(NotFound);
+                var invalidConfigWriter = new Listing()
+                {
+                    Objects = NotFound,
+                };
+                TextWriterRaw.WriteRaw(invalidConfigWriter.Render());
             }
 
             TestActualValue = NotFound.Count != 0;

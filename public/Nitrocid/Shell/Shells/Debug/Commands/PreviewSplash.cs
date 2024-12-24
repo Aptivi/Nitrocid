@@ -26,6 +26,7 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -64,8 +65,13 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override void HelpHelper()
         {
+            var splashes = SplashManager.GetNamesOfSplashes();
             TextWriterColor.Write(Translate.DoTranslation("Available splashes:"));
-            ListWriterColor.WriteList(SplashManager.GetNamesOfSplashes());
+            var listing = new Listing()
+            {
+                Objects = splashes,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
         }
 
     }

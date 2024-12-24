@@ -30,6 +30,7 @@ using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
@@ -55,9 +56,15 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             );
 
             // Now, render a box
-            builder.Append(
-                BorderColor.RenderBorder(2, 3, ConsoleWrapper.WindowWidth - 6, ConsoleWrapper.WindowHeight - 8, KernelColorTools.GetColor(KernelColorType.Separator))
-            );
+            var border = new Border()
+            {
+                Left = 2,
+                Top = 3,
+                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
+                InteriorHeight = ConsoleWrapper.WindowHeight - 8,
+                Color = KernelColorTools.GetColor(KernelColorType.Separator)
+            };
+            builder.Append(border.Render());
 
             // Offer help for new users
             string help = Translate.DoTranslation("SHIFT + H for help. Version") + $" {KernelMain.Version}";
@@ -78,9 +85,21 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             int maxItemsPerPage = lowerLeftCornerInterior.Item2 - upperLeftCornerInterior.Item2;
             int pages = (int)Math.Truncate(bootApps.Count / (double)maxItemsPerPage);
             int currentPage = (int)Math.Truncate(chosenBootEntry / (double)maxItemsPerPage);
-            builder.Append(
-                SelectionInputTools.RenderSelections(bootApps.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", kvp.Key)).ToArray(), upperLeftCornerInterior.Item1, upperLeftCornerInterior.Item2, chosenBootEntry, maxItemsPerPage, ConsoleWrapper.WindowWidth - 6, foregroundColor: KernelColorTools.GetColor(KernelColorType.Option), selectedForegroundColor: KernelColorTools.GetColor(KernelColorType.SelectedOption))
-            );
+            var bootChoices = bootApps.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", kvp.Key)).ToArray();
+            var selections = new Selection(bootChoices)
+            {
+                Left = upperLeftCornerInterior.Item1,
+                Top = upperLeftCornerInterior.Item2,
+                CurrentSelection = chosenBootEntry,
+                Height = maxItemsPerPage,
+                Width = ConsoleWrapper.WindowWidth - 6,
+                Settings = new()
+                {
+                    OptionColor = KernelColorTools.GetColor(KernelColorType.Option),
+                    SelectedOptionColor = KernelColorTools.GetColor(KernelColorType.SelectedOption),
+                }
+            };
+            builder.Append(selections.Render());
 
             // Populate page number
             string renderedNumber = $"[{chosenBootEntry + 1}/{bootApps.Count}]═[{currentPage + 1}/{pages}]";
@@ -104,7 +123,16 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
             int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-            return BorderTextColor.RenderBorder(content, borderX, borderY, maxWidth, maxHeight, KernelColorTools.GetColor(KernelColorType.Separator));
+            var border = new Border()
+            {
+                Text = content,
+                Left = borderX,
+                Top = borderY,
+                InteriorWidth = maxWidth,
+                InteriorHeight = maxHeight,
+                Color = KernelColorTools.GetColor(KernelColorType.Separator)
+            };
+            return border.Render();
         }
 
         /// <inheritdoc/>

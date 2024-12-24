@@ -31,6 +31,8 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -88,9 +90,17 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                // StringBuilder to put out the final rendering text
-                string rendered = BorderColor.RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, settings);
-                TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, KernelColorTools.GetColor(BoxBorderColor), KernelColorTools.GetColor(BackgroundColor));
+                var border = new Border()
+                {
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Settings = settings,
+                    Color = KernelColorTools.GetColor(BoxBorderColor),
+                    BackgroundColor = KernelColorTools.GetColor(BackgroundColor)
+                };
+                TextWriterRaw.WriteRaw(border.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -156,9 +166,19 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                // StringBuilder to put out the final rendering text
-                string rendered = BorderColor.RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings, vars);
-                TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, KernelColorTools.GetColor(BoxBorderColor), KernelColorTools.GetColor(BackgroundColor));
+                var border = new Border()
+                {
+                    Text = text.FormatString(vars),
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Settings = settings,
+                    Color = KernelColorTools.GetColor(BoxBorderColor),
+                    TextColor = KernelColorTools.GetColor(BoxBorderColor),
+                    BackgroundColor = KernelColorTools.GetColor(BackgroundColor)
+                };
+                TextWriterRaw.WriteRaw(border.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -179,8 +199,15 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(BoxColor.RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(BoxColorType));
+                var box = new Box()
+                {
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Color = KernelColorTools.GetColor(BoxColorType),
+                };
+                TextWriterRaw.WriteRaw(box.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -238,9 +265,17 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                // Render the box frame
-                string frame = BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, settings);
-                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor));
+                var boxFrame = new BoxFrame()
+                {
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Settings = settings,
+                    FrameColor = KernelColorTools.GetColor(FrameColor),
+                    BackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+                };
+                TextWriterRaw.WriteRaw(boxFrame.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -306,9 +341,19 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                // Render the box frame
-                string frame = BoxFrameColor.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, vars);
-                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor));
+                var boxFrame = new BoxFrame()
+                {
+                    Text = text.FormatString(vars),
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Settings = settings,
+                    FrameColor = KernelColorTools.GetColor(FrameColor),
+                    TitleColor = KernelColorTools.GetColor(FrameColor),
+                    BackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+                };
+                TextWriterRaw.WriteRaw(boxFrame.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -608,7 +653,15 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterRaw.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars), false);
+                var figlet = new FigletText(FigletFont)
+                {
+                    Text = Text.FormatString(Vars),
+                    ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                    LeftMargin = leftMargin,
+                    RightMargin = rightMargin,
+                };
+                TextWriterRaw.WriteRaw(figlet.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -631,7 +684,15 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterRaw.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars), false);
+                var figlet = new FigletText(FigletFont)
+                {
+                    Text = Text.FormatString(Vars),
+                    ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                    BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                    LeftMargin = leftMargin,
+                    RightMargin = rightMargin,
+                };
+                TextWriterRaw.WriteRaw(figlet.Render());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -646,21 +707,24 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, FigletFont FigletFont, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColorDry(ColTypes);
-
-                // Actually write
-                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, leftMargin, rightMargin, Vars);
+                var figlet = new FigletText(FigletFont)
+                {
+                    Text = Text.FormatString(Vars),
+                    ForegroundColor = KernelColorTools.GetColor(ColTypes),
+                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                    LeftMargin = leftMargin,
+                    RightMargin = rightMargin,
+                };
+                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(Left, Top)));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -675,23 +739,25 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="leftMargin">Left margin</param>
         /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColorDry(colorTypeForeground);
-                KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
-
-                // Actually write
-                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, leftMargin, rightMargin, Vars);
+                var figlet = new FigletText(FigletFont)
+                {
+                    Text = Text.FormatString(Vars),
+                    ForegroundColor = KernelColorTools.GetColor(colorTypeForeground),
+                    BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                    LeftMargin = leftMargin,
+                    RightMargin = rightMargin,
+                };
+                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(Left, Top)));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -706,8 +772,17 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Segments">List of PowerLine segments</param>
         /// <param name="EndingColor">A type of colors that will be changed at the end of the transition</param>
         /// <param name="Line">Write new line after writing the segments</param>
-        public static void WritePowerLine(List<PowerLineSegment> Segments, KernelColorType EndingColor, bool Line = false) =>
-            PowerLineColor.WritePowerLine(Segments, KernelColorTools.GetColor(EndingColor), Line);
+        public static void WritePowerLine(List<PowerLineSegment> Segments, KernelColorType EndingColor, bool Line = false)
+        {
+            var powerLine = new PowerLine()
+            {
+                EndingColor = KernelColorTools.GetColor(EndingColor),
+                Segments = Segments
+            };
+            TextWriterRaw.WriteRaw(powerLine.Render());
+            if (Line)
+                TextWriterRaw.Write();
+        }
 
         /// <summary>
         /// Writes the progress bar
@@ -716,9 +791,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the progress bar
@@ -728,9 +802,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="width">Progress bar width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, width, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor) =>
+            WriteProgress(Progress, Left, Top, width, ProgressColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the progress bar
@@ -739,36 +812,9 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="width">Progress bar width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteProgress(Progress, Left, Top, width, ProgressColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType BackgroundColor) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, BackgroundColor);
 
         /// <summary>
         /// Writes the progress bar
@@ -777,15 +823,20 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="width">Progress bar width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true)
+        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, KernelColorType BackgroundColor)
         {
             try
             {
-                TextWriterRaw.WritePlain(ProgressBarColor.RenderProgress(Progress, Left, Top, width, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder));
+                var progress = new ProgressBarNoText((int)Progress, 100)
+                {
+                    LeftMargin = ConsoleWrapper.WindowWidth - width,
+                    ProgressActiveForegroundColor = KernelColorTools.GetColor(ProgressColor),
+                    ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(ProgressColor)),
+                    ProgressBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+                };
+                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(Left, Top)));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -801,9 +852,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the progress bar
@@ -813,9 +863,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="height">Progress bar height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, height, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor) =>
+            WriteVerticalProgress(Progress, Left, Top, height, ProgressColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the progress bar
@@ -824,10 +873,9 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, FrameColor, DrawBorder);
+        /// <param name="BackgroundColor">The progress bar background color</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType BackgroundColor) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, BackgroundColor);
 
         /// <summary>
         /// Writes the progress bar
@@ -836,14 +884,21 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="height">Progress bar height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true)
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor, KernelColorType BackgroundColor)
         {
             try
             {
-                TextWriterRaw.WritePlain(ProgressBarVerticalColor.RenderVerticalProgress(Progress, Left, Top, height, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), DrawBorder));
+                var progress = new SimpleProgress((int)Progress, 100)
+                {
+                    Vertical = true,
+                    Height = height,
+                    ProgressActiveForegroundColor = KernelColorTools.GetColor(ProgressColor),
+                    ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(ProgressColor)),
+                    ProgressBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+                };
+                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(Left, Top)));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -886,8 +941,25 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeHeaderForeground">A type of colors that will be changed for the header foreground color.</param>
         /// <param name="colorTypeValueForeground">A type of colors that will be changed for the value foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, List<CellOptions>? CellOptions = null, BorderSettings? borderSettings = null) =>
-            TableColor.WriteTable(Rows, left, top, width, height, enableHeader, KernelColorTools.GetColor(colorTypeSeparatorForeground), KernelColorTools.GetColor(colorTypeHeaderForeground), KernelColorTools.GetColor(colorTypeValueForeground), KernelColorTools.GetColor(colorTypeBackground), CellOptions, borderSettings);
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, List<CellOptions>? CellOptions = null, BorderSettings? borderSettings = null)
+        {
+            var table = new Table()
+            {
+                Rows = Rows,
+                Left = left,
+                Top = top,
+                InteriorWidth = width,
+                InteriorHeight = height,
+                Header = enableHeader,
+                SeparatorColor = KernelColorTools.GetColor(colorTypeSeparatorForeground),
+                HeaderColor = KernelColorTools.GetColor(colorTypeHeaderForeground),
+                ValueColor = KernelColorTools.GetColor(colorTypeValueForeground),
+                BackgroundColor = KernelColorTools.GetColor(colorTypeBackground),
+                Settings = CellOptions ?? [],
+                BorderSettings = borderSettings ?? new(),
+            };
+            TextWriterRaw.WriteRaw(table.Render());
+        }
 
         /// <summary>
         /// Writes the slider (absolute)
@@ -898,97 +970,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, int minPos = 0) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, sliderColor, KernelColorType.Separator, minPos);
 
         /// <summary>
         /// Writes the slider (absolute)
@@ -1000,10 +983,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
         /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, int minPos = 0) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, sliderColor, KernelColorType.Separator, minPos);
 
         /// <summary>
         /// Writes the slider (absolute)
@@ -1014,11 +995,9 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, minPos, DrawBorder);
+        /// <param name="BackgroundColor">The slider background color</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType BackgroundColor, int minPos = 0) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, sliderColor, BackgroundColor, minPos);
 
         /// <summary>
         /// Writes the slider (absolute)
@@ -1029,45 +1008,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, sliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            SliderColor.WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, KernelColorTools.GetColor(sliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), minPos, DrawBorder);
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType BackgroundColor, int minPos = 0)
+        {
+            var slider = new Slider(width * ((currPos - minPos) / (maxPos - minPos)), minPos, width + 1)
+            {
+                Width = width,
+                SliderActiveForegroundColor = KernelColorTools.GetColor(sliderColor),
+                SliderForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(sliderColor)),
+                SliderBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+            };
+            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(slider, new(Left, Top)));
+        }
 
         /// <summary>
         /// Writes the slider
@@ -1077,9 +1030,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, DrawBorder);
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, sliderColor, KernelColorType.Separator);
 
         /// <summary>
         /// Writes the slider
@@ -1090,9 +1042,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
         /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, DrawBorder);
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, sliderColor, KernelColorType.Separator);
 
         /// <summary>
         /// Writes the slider
@@ -1102,38 +1053,9 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, KernelColorType.Background, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType BackgroundColor) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, sliderColor, BackgroundColor);
 
         /// <summary>
         /// Writes the slider
@@ -1143,99 +1065,19 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, width, settings, sliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, width, settings, sliderColor, FrameColor, KernelColorType.Background, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="sliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="width">Slider width</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="settings">Border settings</param>
-        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            SliderColor.WriteSlider(currPos, maxPos, Left, Top, width, settings, KernelColorTools.GetColor(sliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder);
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType BackgroundColor)
+        {
+            var slider = new Slider(currPos, 0, maxPos)
+            {
+                Width = width,
+                SliderActiveForegroundColor = KernelColorTools.GetColor(sliderColor),
+                SliderForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(sliderColor)),
+                SliderBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+            };
+            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(slider, new(Left, Top)));
+        }
 
         /// <summary>
         /// Writes the vertical slider (absolute)
@@ -1246,9 +1088,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, int minPos = 0) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, KernelColorType.Separator, minPos);
 
         /// <summary>
         /// Writes the vertical slider (absolute)
@@ -1260,9 +1101,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, int minPos = 0) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, SliderColor, KernelColorType.Separator, minPos);
 
         /// <summary>
         /// Writes the vertical slider (absolute)
@@ -1273,40 +1113,9 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType BackgroundColor, int minPos = 0) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, BackgroundColor, minPos);
 
         /// <summary>
         /// Writes the vertical slider (absolute)
@@ -1317,272 +1126,77 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType BackgroundColor, int minPos = 0)
+        {
+            var slider = new Slider(height * ((currPos - minPos) / (maxPos - minPos)), minPos, height + 1)
+            {
+                Vertical = true,
+                Height = height,
+                SliderActiveForegroundColor = KernelColorTools.GetColor(SliderColor),
+                SliderForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(SliderColor)),
+                SliderBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+            };
+            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(slider, new(Left, Top)));
+        }
 
         /// <summary>
-        /// Writes the vertical slider (absolute)
+        /// Writes the vertical slider
         /// </summary>
         /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, KernelColorType.Separator);
 
         /// <summary>
-        /// Writes the vertical slider (absolute)
+        /// Writes the vertical slider
         /// </summary>
         /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, KernelColorType.Separator);
 
         /// <summary>
-        /// Writes the vertical slider (absolute)
+        /// Writes the vertical slider
         /// </summary>
         /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, SliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider (absolute)
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType BackgroundColor) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, BackgroundColor);
 
         /// <summary>
-        /// Writes the vertical slider (absolute)
+        /// Writes the vertical slider
         /// </summary>
         /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="minPos">Minimum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="height">Slider height</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
-            SliderVerticalColor.WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, KernelColorTools.GetColor(SliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), minPos, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, KernelColorType.Background, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, SliderColor, KernelColorType.Separator, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, SliderColor, FrameColor, KernelColorType.Background, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the vertical slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="height">Slider height</param>
-        /// <param name="settings">Border settings</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
-            SliderVerticalColor.WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, KernelColorTools.GetColor(SliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType BackgroundColor)
+        {
+            var slider = new Slider(currPos, 0, maxPos)
+            {
+                Vertical = true,
+                Height = height,
+                SliderActiveForegroundColor = KernelColorTools.GetColor(SliderColor),
+                SliderForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(SliderColor)),
+                SliderBackgroundColor = KernelColorTools.GetColor(BackgroundColor),
+            };
+            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(slider, new(Left, Top)));
+        }
     }
 }

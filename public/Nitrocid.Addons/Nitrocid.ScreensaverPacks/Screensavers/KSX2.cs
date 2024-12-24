@@ -34,6 +34,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -223,7 +224,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
                                 int s5consoleX = ConsoleWrapper.WindowWidth / 2 - s5figWidth;
                                 int s5consoleY = ConsoleWrapper.WindowHeight / 2 - s5figHeight;
-                                FigletWhereColor.WriteFigletWhereColorBack("2021", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
+                                var s5Figlet = new FigletText(s5figFont)
+                                {
+                                    Text = "2021",
+                                    ForegroundColor = darkRed,
+                                    BackgroundColor = black,
+                                };
+                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s5Figlet, new(s5consoleX, s5consoleY)));
                             }
                             else
                                 ColorTools.LoadBackDry(darkRed);
@@ -266,7 +273,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
 
                         // Print the target date
-                        FigletWhereColor.WriteFigletWhereColorBack(renderedTarget, s7consoleX, s7consoleY, true, s7figFont, darkRed, black);
+                        var s7Figlet = new FigletText(s7figFont)
+                        {
+                            Text = renderedTarget,
+                            ForegroundColor = darkRed,
+                            BackgroundColor = black,
+                        };
+                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s7Figlet, new(s7consoleX, s7consoleY)));
                         TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s7consoleY + 5, darkRed, black);
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
@@ -305,12 +318,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 color = new Color(currentRotR, currentRotG, currentRotB);
                             }
                             ColorTools.LoadBackDry(color);
-                            var s5figFont = FigletTools.GetFigletFont("banner");
-                            int s5figWidth = FigletTools.GetFigletWidth("X", s5figFont) / 2;
-                            int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
-                            int s5consoleX = ConsoleWrapper.WindowWidth / 2 - s5figWidth;
-                            int s5consoleY = ConsoleWrapper.WindowHeight / 2 - s5figHeight;
-                            FigletWhereColor.WriteFigletWhereColorBack("X", s5consoleX, s5consoleY, true, s5figFont, darkRed, color);
+                            var s9figFont = FigletTools.GetFigletFont("banner");
+                            int s9figWidth = FigletTools.GetFigletWidth("X", s9figFont) / 2;
+                            int s9figHeight = FigletTools.GetFigletHeight("X", s9figFont) / 2;
+                            int s9consoleX = ConsoleWrapper.WindowWidth / 2 - s9figWidth;
+                            int s9consoleY = ConsoleWrapper.WindowHeight / 2 - s9figHeight;
+                            var s9Figlet = new FigletText(s9figFont)
+                            {
+                                Text = "X",
+                                ForegroundColor = darkRed,
+                                BackgroundColor = black,
+                            };
+                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s9Figlet, new(s9consoleX, s9consoleY)));
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;

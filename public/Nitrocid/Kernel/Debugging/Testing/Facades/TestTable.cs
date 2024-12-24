@@ -24,6 +24,8 @@ using System;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -44,7 +46,25 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 { "22.04 (Jammy Jellyfish)", TimeDateRenderers.Render(new DateTime(2022, 4, 21)), TimeDateRenderers.Render(new DateTime(2027, 4, 21)), TimeDateRenderers.Render(new DateTime(2032, 4, 21)) },
                 { "24.04 (Noble Numbat)", TimeDateRenderers.Render(new DateTime(2024, 4, 18)), TimeDateRenderers.Render(new DateTime(2029, 4, 18)), TimeDateRenderers.Render(new DateTime(2034, 4, 18)) },
             };
-            TableColor.WriteTable(Rows, 4, 2, ConsoleWrapper.WindowWidth - 7, ConsoleWrapper.WindowHeight - 5, true, [new CellOptions(2, 2) { CellColor = ConsoleColors.Red, CellBackgroundColor = ConsoleColors.DarkRed, ColoredCell = true }]);
+            var table = new Table()
+            {
+                Rows = Rows,
+                Left = 4,
+                Top = 2,
+                InteriorWidth = ConsoleWrapper.WindowWidth - 7,
+                InteriorHeight = ConsoleWrapper.WindowHeight - 5,
+                Header = true,
+                Settings =
+                [
+                    new CellOptions(2, 2)
+                    {
+                        CellColor = ConsoleColors.Red,
+                        CellBackgroundColor = ConsoleColors.DarkRed,
+                        ColoredCell = true
+                    }
+                ],
+            };
+            TextWriterRaw.WriteRaw(table.Render());
         }
     }
 }

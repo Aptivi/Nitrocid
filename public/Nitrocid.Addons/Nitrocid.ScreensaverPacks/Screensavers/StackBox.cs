@@ -27,6 +27,9 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -94,10 +97,30 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
 
                     // Draw the box
+                    IStaticRenderable stackBox;
                     if (ScreensaverPackInit.SaversConfig.StackBoxFill)
-                        BoxColor.WriteBox(BoxStartX, BoxStartY, BoxEndX - BoxStartX, BoxEndY - BoxStartY, color);
+                    {
+                        stackBox = new Box()
+                        {
+                            Left = BoxStartX,
+                            Top = BoxStartY,
+                            InteriorWidth = BoxEndX - BoxStartX,
+                            InteriorHeight = BoxEndY - BoxStartY,
+                            Color = color,
+                        };
+                    }
                     else
-                        BoxFrameColor.WriteBoxFrame(BoxStartX, BoxStartY, BoxEndX - BoxStartX, BoxEndY - BoxStartY, color);
+                    {
+                        stackBox = new BoxFrame()
+                        {
+                            Left = BoxStartX,
+                            Top = BoxStartY,
+                            InteriorWidth = BoxEndX - BoxStartX,
+                            InteriorHeight = BoxEndY - BoxStartY,
+                            FrameColor = color,
+                        };
+                    }
+                    TextWriterRaw.WriteRaw(stackBox.Render());
                 }
             }
             ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.StackBoxDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

@@ -26,6 +26,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -50,7 +51,11 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     {
                         // Write the field names and their values
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of fields for") + $" {type.Name}", true);
-                        ListWriterColor.WriteList(fields);
+                        var listing = new Listing()
+                        {
+                            Objects = fields,
+                        };
+                        TextWriterRaw.WriteRaw(listing.Render());
                     }
                 }
                 catch (Exception ex)

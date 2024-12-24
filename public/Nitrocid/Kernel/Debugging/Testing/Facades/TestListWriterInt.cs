@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,9 +33,17 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };
             TextWriterColor.Write(Translate.DoTranslation("Normal integer list:"));
-            ListWriterColor.WriteList(NormalIntegerList);
+            var listing = new Listing()
+            {
+                Objects = NormalIntegerList,
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
             TextWriterColor.Write(Translate.DoTranslation("Array integer list:"));
-            ListWriterColor.WriteList(ArrayIntegerList);
+            var listing2 = new Listing()
+            {
+                Objects = ArrayIntegerList,
+            };
+            TextWriterRaw.WriteRaw(listing2.Render());
         }
     }
 }

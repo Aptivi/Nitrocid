@@ -25,6 +25,7 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -44,8 +45,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Two boxes, one for the initial color, and one for the bit-shifted color
-            BorderColor.WriteBorder(2, 1, 8, 3);
-            BorderColor.WriteBorder(13, 1, 8, 3);
+            var dumpInitialColorBorder = new Border()
+            {
+                Left = 2,
+                Top = 1,
+                InteriorWidth = 8,
+                InteriorHeight = 3,
+            };
+            var dumpShiftedColorBorder = new Border()
+            {
+                Left = 13,
+                Top = 1,
+                InteriorWidth = 8,
+                InteriorHeight = 3,
+            };
+            TextWriterRaw.WriteRaw(
+                dumpInitialColorBorder.Render() +
+                dumpShiftedColorBorder.Render()
+            );
 
             // Some positions
             int infoTop = 6;

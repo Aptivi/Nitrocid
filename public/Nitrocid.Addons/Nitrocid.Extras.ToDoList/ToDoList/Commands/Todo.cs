@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {
@@ -147,7 +148,11 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                         var tasks = ToDoManager.GetTaskNames()
                             .Select((name) => ToDoManager.GetTask(name).TaskDone ? $"[*] {name}" : $"[ ] {name}")
                             .ToArray();
-                        ListWriterColor.WriteList(tasks);
+                        var listing = new Listing()
+                        {
+                            Objects = tasks,
+                        };
+                        TextWriterRaw.WriteRaw(listing.Render());
                         return 0;
                     }
                 case "save":

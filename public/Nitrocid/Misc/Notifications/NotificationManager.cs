@@ -43,6 +43,9 @@ using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.Misc.Notifications
 {
@@ -218,11 +221,17 @@ namespace Nitrocid.Misc.Notifications
                                     BorderLeftFrameChar = CurrentNotifyLeftFrameChar,
                                     BorderRightFrameChar = CurrentNotifyRightFrameChar,
                                 };
-                                printBuffer.Append(
-                                    BorderColor.RenderBorder(
-                                        notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3, borderSettings, NotifyBorderColor, background
-                                    )
-                                );
+                                var border = new Border()
+                                {
+                                    Left = notifLeftAgnostic - 1,
+                                    Top = notifTopAgnostic,
+                                    InteriorWidth = notifWidth,
+                                    InteriorHeight = 3,
+                                    Color = NotifyBorderColor,
+                                    BackgroundColor = background,
+                                    Settings = borderSettings
+                                };
+                                printBuffer.Append(border.Render());
                             }
 
                             // Write notification to console
@@ -257,13 +266,19 @@ namespace Nitrocid.Misc.Notifications
                             {
                                 // Some variables
                                 bool indeterminate = NewNotification.ProgressIndeterminate;
-                                int indeterminateStep = 0;
                                 string ProgressTitle = Title;
                                 string renderedProgressTitle = ProgressTitle.Truncate(36);
                                 string renderedProgressTitleSuccess = $"{ProgressTitle} ({Translate.DoTranslation("Success")})".Truncate(36);
                                 string renderedProgressTitleFailure = $"{ProgressTitle} ({Translate.DoTranslation("Failure")})".Truncate(36);
 
                                 // Loop until the progress is finished
+                                var progress = new SimpleProgress(NewNotification.Progress, 100)
+                                {
+                                    Indeterminate = indeterminate,
+                                    LeftMargin = ConsoleWrapper.WindowWidth - 42,
+                                    ProgressActiveForegroundColor = NotifyProgressColor,
+                                    ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),
+                                };
                                 while (NewNotification.ProgressState == NotificationProgressState.Progressing)
                                 {
                                     // Change the title according to the current progress percentage
@@ -280,10 +295,8 @@ namespace Nitrocid.Misc.Notifications
                                     printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progresses, flash the box inside the progress bar
-                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, 42, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), Config.MainConfig.DrawBorderNotification);
-                                    indeterminateStep++;
-                                    if (indeterminateStep > 1)
-                                        indeterminateStep = 0;
+                                    progress.Position = NewNotification.Progress;
+                                    TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(notifLeftAgnostic, notifTipTop)));
                                     Thread.Sleep(indeterminate ? 250 : 1);
 
                                     // Print the buffer

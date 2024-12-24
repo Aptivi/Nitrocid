@@ -39,6 +39,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters;
+using Listing = Nitrocid.Files.Folders.Listing;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -116,7 +118,15 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             var lyricLines = lyric.Lines;
             var shownLines = new List<LyricLine>();
             DebugWriter.WriteDebug(DebugLevel.I, "{0} lyric lines", lyricLines.Count);
-            BoxFrameColor.WriteBoxFrame(fileName, 2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
+            var boxFrame = new BoxFrame()
+            {
+                Text = fileName,
+                Left = 2,
+                Top = ConsoleWrapper.WindowHeight - 4,
+                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
+                InteriorHeight = 1,
+            };
+            TextWriterRaw.WriteRaw(boxFrame.Render());
             DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // Start the elapsed time in 3...

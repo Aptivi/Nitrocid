@@ -35,6 +35,8 @@ using System.Text;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -89,11 +91,26 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     int height = consoleSixthsHeight * i + 3;
                     var horse = horses[i];
                     var finalColor = i + 1 == selected ? ConsoleColors.White : horse.HorseColor;
+                    var border = new Border()
+                    {
+                        Left = boxLeft,
+                        Top = height,
+                        InteriorWidth = boxWidth,
+                        InteriorHeight = 1,
+                        Color = finalColor
+                    };
+                    var progress = new SimpleProgress(horse.HorseProgress, 100)
+                    {
+                        LeftMargin = 5,
+                        RightMargin = 5,
+                        ProgressActiveForegroundColor = finalColor,
+                        ProgressForegroundColor = TransformationTools.GetDarkBackground(finalColor),
+                    };
                     builder.Append(
                         TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
-                        BorderColor.RenderBorder(boxLeft, height, boxWidth, 1, finalColor) +
+                        border.Render() +
                         TextWriterWhereColor.RenderWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor) +
-                        ProgressBarColor.RenderProgress(horse.HorseProgress, progressLeft, height, ConsoleWrapper.WindowWidth - 10, finalColor, finalColor)
+                        ContainerTools.RenderRenderable(progress, new(progressLeft, height))
                     );
                 }
 

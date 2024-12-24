@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -132,9 +133,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             TextWriters.Write(Translate.DoTranslation("You can use the type switch to open the following settings") + ": ", true, KernelColorType.Tip);
             TextWriters.Write("- " + Translate.DoTranslation("Base settings") + ": ", true, KernelColorType.ListTitle);
-            ListWriterColor.WriteList(Config.baseConfigurations.Keys);
+            var baseSettings = new Listing()
+            {
+                Objects = Config.baseConfigurations.Keys,
+            };
+            TextWriterRaw.WriteRaw(baseSettings.Render());
             TextWriters.Write("- " + Translate.DoTranslation("Custom settings") + ": ", true, KernelColorType.ListTitle);
-            ListWriterColor.WriteList(Config.customConfigurations.Keys);
+            var customSettings = new Listing()
+            {
+                Objects = Config.customConfigurations.Keys,
+            };
+            TextWriterRaw.WriteRaw(customSettings.Render());
         }
 
     }

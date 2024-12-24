@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -31,15 +32,44 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             var NormalStringListEntries = new List<string>() { "String 1", "String 2", "String 3" };
             var NormalStringListValues = new List<string>() { "Value 1", "Value 2", "Value 3" };
+
+            // Normal listing
             TextWriterColor.Write(Translate.DoTranslation("Normal string list:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i]);
+            {
+                var listing = new ListEntry()
+                {
+                    Entry = NormalStringListEntries[i],
+                    Value = NormalStringListValues[i],
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
+            }
+
+            // Indent level 1
             TextWriterColor.Write(Translate.DoTranslation("Indent 1:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 1);
+            {
+                var listing = new ListEntry()
+                {
+                    Entry = NormalStringListEntries[i],
+                    Value = NormalStringListValues[i],
+                    Indentation = 1,
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
+            }
+
+            // Indent level 2
             TextWriterColor.Write(Translate.DoTranslation("Indent 2:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 2);
+            {
+                var listing = new ListEntry()
+                {
+                    Entry = NormalStringListEntries[i],
+                    Value = NormalStringListValues[i],
+                    Indentation = 2,
+                };
+                TextWriterRaw.WriteRaw(listing.Render());
+            }
         }
     }
 }
