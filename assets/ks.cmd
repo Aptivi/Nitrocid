@@ -1,6 +1,6 @@
 @echo off
 
-REM    Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+REM    Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 REM
 REM    This file is part of Nitrocid KS
 REM
