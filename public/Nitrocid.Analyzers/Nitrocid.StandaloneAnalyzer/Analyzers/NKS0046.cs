@@ -25,7 +25,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.MiscWriters;
 using System.Globalization;
 using Nitrocid.Analyzers.Common;
 

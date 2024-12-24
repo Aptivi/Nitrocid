@@ -27,7 +27,6 @@ using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
 using Textify.General;

@@ -20,7 +20,6 @@
 using System;
 using System.Text;
 using System.Threading;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;

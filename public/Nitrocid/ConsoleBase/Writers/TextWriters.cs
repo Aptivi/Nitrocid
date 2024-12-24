@@ -26,7 +26,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Nitrocid.Drivers.Console;
 using Terminaux.Base;
-using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ConsoleBase.Writers

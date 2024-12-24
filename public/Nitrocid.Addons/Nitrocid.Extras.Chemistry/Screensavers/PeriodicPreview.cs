@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
@@ -29,7 +28,6 @@ using Nitrocid.Kernel.Configuration;
 using ChemiStar;
 using ChemiStar.Data;
 using System.Text;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using Textify.Data.Figlet;

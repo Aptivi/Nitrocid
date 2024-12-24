@@ -25,7 +25,6 @@ using Textify.Versioning;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Arguments;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Starting;
@@ -33,13 +32,11 @@ using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Users.Windows;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.ConsoleWriters;
 using Aptivestigate.CrashHandler;
 
 namespace Nitrocid.Kernel

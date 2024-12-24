@@ -23,7 +23,6 @@ using System.Linq;
 using Terminaux.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;

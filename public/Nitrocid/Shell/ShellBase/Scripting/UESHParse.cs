@@ -26,7 +26,6 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Terminaux.Writer.MiscWriters;
 using Nitrocid.Kernel.Events;
 using Textify.General;
 using Nitrocid.ConsoleBase.Writers;

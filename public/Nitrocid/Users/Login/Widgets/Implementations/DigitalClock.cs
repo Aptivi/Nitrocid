@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
@@ -27,7 +26,6 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations

@@ -19,8 +19,6 @@
 
 using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Users.Login.Widgets;
@@ -30,7 +28,6 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.Stocks.Widgets
 {

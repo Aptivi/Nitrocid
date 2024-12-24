@@ -17,18 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using Nitrocid.Kernel.Time;
-using System;
-using Terminaux.Graphics;
-using Terminaux.Writer.CyclicWriters.Shapes;
 using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

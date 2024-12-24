@@ -25,7 +25,6 @@ using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;

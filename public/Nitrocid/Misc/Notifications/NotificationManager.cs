@@ -33,7 +33,6 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;

@@ -37,7 +37,6 @@ using Terminaux.Sequences;
 using System.Text;
 using TextifyDep::Textify.General;
 using Nitrocid.ConsoleBase;
-using System.Diagnostics;
 
 namespace Nitrocid.Drivers.Console
 {

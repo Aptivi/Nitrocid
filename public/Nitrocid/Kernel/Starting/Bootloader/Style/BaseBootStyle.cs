@@ -28,10 +28,8 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style

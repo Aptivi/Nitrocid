@@ -28,8 +28,6 @@ using System.Linq;
 using System.Text;
 using Textify.General;
 using Nitrocid.Network.Connections;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
-using Nitrocid.Kernel;
 using Nitrocid.ConsoleBase.Colors;
 using SpecProbe.Software.Platform;
 

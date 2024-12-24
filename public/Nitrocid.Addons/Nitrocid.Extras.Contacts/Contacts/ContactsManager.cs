@@ -32,7 +32,6 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using VisualCard.Parts.Implementations;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;

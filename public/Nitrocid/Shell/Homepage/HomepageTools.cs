@@ -40,7 +40,6 @@ using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
@@ -48,11 +47,8 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters;
@@ -69,9 +65,9 @@ namespace Nitrocid.Shell.Homepage
         internal static bool isHomepageRssFeedEnabled = true;
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
-        private static Dictionary<string, Action> choiceActionsAddons = [];
-        private static Dictionary<string, Action> choiceActionsCustom = [];
-        private static Dictionary<string, Action> choiceActionsBuiltin = new()
+        private static readonly Dictionary<string, Action> choiceActionsAddons = [];
+        private static readonly Dictionary<string, Action> choiceActionsCustom = [];
+        private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
             { /* Localizable */ "File Manager", OpenFileManagerCli },
             { /* Localizable */ "Alarm Manager", OpenAlarmCli },

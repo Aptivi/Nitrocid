@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;

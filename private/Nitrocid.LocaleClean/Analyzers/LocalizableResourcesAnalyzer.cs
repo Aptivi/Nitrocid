@@ -19,16 +19,10 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.LocaleClean;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.LocaleClean.Analyzers
 {

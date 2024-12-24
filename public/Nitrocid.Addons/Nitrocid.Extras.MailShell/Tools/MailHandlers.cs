@@ -29,8 +29,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Textify.General;
-using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.MailShell.Tools

@@ -26,7 +26,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {

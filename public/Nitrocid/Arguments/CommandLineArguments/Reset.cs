@@ -20,7 +20,6 @@
 using System.IO;
 using System;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Files.Paths;

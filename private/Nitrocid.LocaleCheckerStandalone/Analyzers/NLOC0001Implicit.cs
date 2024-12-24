@@ -21,12 +21,8 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Nitrocid.Analyzers.Common;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.LocaleCheckerStandalone.Analyzers
 {

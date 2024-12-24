@@ -23,7 +23,6 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using System;
-using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.Languages;

@@ -27,7 +27,6 @@ using Terminaux.Colors.Gradients;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

@@ -29,14 +29,12 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Base.Buffered;
 using System.Text;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters;
 

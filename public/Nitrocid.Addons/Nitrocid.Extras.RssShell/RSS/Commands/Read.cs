@@ -20,12 +20,10 @@
 using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands

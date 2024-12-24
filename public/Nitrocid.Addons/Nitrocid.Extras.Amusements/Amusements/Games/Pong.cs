@@ -29,7 +29,6 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;

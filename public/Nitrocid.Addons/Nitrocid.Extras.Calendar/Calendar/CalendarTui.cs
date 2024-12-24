@@ -23,7 +23,6 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Sequences;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Inputs.Styles.Infobox;
@@ -31,7 +30,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
 using Textify.General;
@@ -42,7 +40,6 @@ using Nitrocid.Kernel.Time.Renderers;
 using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar

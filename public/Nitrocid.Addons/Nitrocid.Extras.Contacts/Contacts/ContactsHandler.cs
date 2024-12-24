@@ -24,7 +24,6 @@ using Nitrocid.Languages;
 using System;
 using System.Text;
 using VisualCard;
-using VisualCard.Parts.Implementations;
 using VisualCard.Parts.Enums;
 
 namespace Nitrocid.Extras.Contacts.Contacts
