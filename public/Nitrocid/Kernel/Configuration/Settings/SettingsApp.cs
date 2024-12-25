@@ -328,7 +328,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                     // Now, set the value if input is provided correctly
                     if (KeyFinished)
+                    {
                         keyInput.SetValue(KeyToken, keyInputUser, settingsType);
+                        SettingsAppTools.SaveSettings();
+                    }
                 }
             }
             catch (Exception ex)

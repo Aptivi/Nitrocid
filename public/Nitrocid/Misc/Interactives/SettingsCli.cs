@@ -208,6 +208,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     key.KeyInput.SetValue(key, input, config);
                     lastFirstPaneIdx = -1;
+                    SettingsAppTools.SaveSettings();
                 }
             }
             catch (Exception ex)
