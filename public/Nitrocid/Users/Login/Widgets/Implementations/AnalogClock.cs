@@ -187,6 +187,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 StartPos = new(startPos.x, startPos.y),
                 EndPos = new(endPos.x, endPos.y),
+                DoubleWidth = false,
                 Color = color
             };
         }
