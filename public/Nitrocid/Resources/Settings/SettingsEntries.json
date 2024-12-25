@@ -258,304 +258,311 @@
                 "Description": "When this is set to true, the current background color is honored. Else, it uses your terminal's default colors."
             },
             {
-                "Name": "User Name Shell Color",
-                "Type": "SColor",
-                "Variable": "UserNameShellColor"
-            },
-            {
-                "Name": "Host Name Shell Color",
-                "Type": "SColor",
-                "Variable": "HostNameShellColor"
-            },
-            {
-                "Name": "Continuable Kernel Error Color",
-                "Type": "SColor",
-                "Variable": "ContinuableKernelErrorColor"
-            },
-            {
-                "Name": "Uncontinuable Kernel Error Color",
-                "Type": "SColor",
-                "Variable": "UncontinuableKernelErrorColor"
-            },
-            {
-                "Name": "Text Color",
-                "Type": "SColor",
-                "Variable": "TextColor"
-            },
-            {
-                "Name": "License Color",
-                "Type": "SColor",
-                "Variable": "LicenseColor"
-            },
-            {
-                "Name": "Background Color",
-                "Type": "SColor",
-                "Variable": "BackgroundColor"
-            },
-            {
-                "Name": "Input Color",
-                "Type": "SColor",
-                "Variable": "InputColor"
-            },
-            {
-                "Name": "List Entry Color",
-                "Type": "SColor",
-                "Variable": "ListEntryColor"
-            },
-            {
-                "Name": "List Value Color",
-                "Type": "SColor",
-                "Variable": "ListValueColor"
-            },
-            {
-                "Name": "Kernel Stage Color",
-                "Type": "SColor",
-                "Variable": "KernelStageColor"
-            },
-            {
-                "Name": "Error Text Color",
-                "Type": "SColor",
-                "Variable": "ErrorTextColor"
-            },
-            {
-                "Name": "Warning Text Color",
-                "Type": "SColor",
-                "Variable": "WarningTextColor"
-            },
-            {
-                "Name": "Option Color",
-                "Type": "SColor",
-                "Variable": "OptionColor"
-            },
-            {
-                "Name": "Banner Color",
-                "Type": "SColor",
-                "Variable": "BannerColor"
-            },
-            {
-                "Name": "Notification Title Color",
-                "Type": "SColor",
-                "Variable": "NotificationTitleColor"
-            },
-            {
-                "Name": "Notification Description Color",
-                "Type": "SColor",
-                "Variable": "NotificationDescriptionColor"
-            },
-            {
-                "Name": "Notification Progress Color",
-                "Type": "SColor",
-                "Variable": "NotificationProgressColor"
-            },
-            {
-                "Name": "Notification Failure Color",
-                "Type": "SColor",
-                "Variable": "NotificationFailureColor"
-            },
-            {
-                "Name": "Question Color",
-                "Type": "SColor",
-                "Variable": "QuestionColor"
-            },
-            {
-                "Name": "Success Color",
-                "Type": "SColor",
-                "Variable": "SuccessColor"
-            },
-            {
-                "Name": "User Dollar Color",
-                "Type": "SColor",
-                "Variable": "UserDollarColor"
-            },
-            {
-                "Name": "Tip Color",
-                "Type": "SColor",
-                "Variable": "TipColor"
-            },
-            {
-                "Name": "Separator Text Color",
-                "Type": "SColor",
-                "Variable": "SeparatorTextColor"
-            },
-            {
-                "Name": "Separator Color",
-                "Type": "SColor",
-                "Variable": "SeparatorColor"
-            },
-            {
-                "Name": "List Title Color",
-                "Type": "SColor",
-                "Variable": "ListTitleColor"
-            },
-            {
-                "Name": "Development Warning Color",
-                "Type": "SColor",
-                "Variable": "DevelopmentWarningColor"
-            },
-            {
-                "Name": "Stage Time Color",
-                "Type": "SColor",
-                "Variable": "StageTimeColor"
-            },
-            {
-                "Name": "Progress Color",
-                "Type": "SColor",
-                "Variable": "ProgressColor"
-            },
-            {
-                "Name": "Back Option Color",
-                "Type": "SColor",
-                "Variable": "BackOptionColor"
-            },
-            {
-                "Name": "Low Priority Border Color",
-                "Type": "SColor",
-                "Variable": "LowPriorityBorderColor"
-            },
-            {
-                "Name": "Medium Priority Border Color",
-                "Type": "SColor",
-                "Variable": "MediumPriorityBorderColor"
-            },
-            {
-                "Name": "High Priority Border Color",
-                "Type": "SColor",
-                "Variable": "HighPriorityBorderColor"
-            },
-            {
-                "Name": "Table Separator Color",
-                "Type": "SColor",
-                "Variable": "TableSeparatorColor"
-            },
-            {
-                "Name": "Table Header Color",
-                "Type": "SColor",
-                "Variable": "TableHeaderColor"
-            },
-            {
-                "Name": "Table Value Color",
-                "Type": "SColor",
-                "Variable": "TableValueColor"
-            },
-            {
-                "Name": "Selected Option Color",
-                "Type": "SColor",
-                "Variable": "SelectedOptionColor"
-            },
-            {
-                "Name": "Alternative Option Color",
-                "Type": "SColor",
-                "Variable": "AlternativeOptionColor"
-            },
-            {
-                "Name": "Weekend Day Color",
-                "Type": "SColor",
-                "Variable": "WeekendDayColor"
-            },
-            {
-                "Name": "Event Day Color",
-                "Type": "SColor",
-                "Variable": "EventDayColor"
-            },
-            {
-                "Name": "Table Title Color",
-                "Type": "SColor",
-                "Variable": "TableTitleColor"
-            },
-            {
-                "Name": "Today Day Color",
-                "Type": "SColor",
-                "Variable": "TodayDayColor"
-            },
-            {
-                "Name": "Interactive TUI background color",
-                "Type": "SColor",
-                "Variable": "TuiBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI foreground color",
-                "Type": "SColor",
-                "Variable": "TuiForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI option background color",
-                "Type": "SColor",
-                "Variable": "TuiOptionBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI option foreground color",
-                "Type": "SColor",
-                "Variable": "TuiOptionForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI option binding name color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingOptionColor"
-            },
-            {
-                "Name": "Interactive TUI box background color",
-                "Type": "SColor",
-                "Variable": "TuiBoxBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI box foreground color",
-                "Type": "SColor",
-                "Variable": "TuiBoxForegroundColor"
-            },
-            {
-                "Name": "Disabled option color",
-                "Type": "SColor",
-                "Variable": "DisabledOptionColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding background color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding foreground color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding name color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinColor"
+                "Name": "Kernel color schemes",
+                "Type": "SMultivar",
+                "Description": "This allows you to set multiple kernel color schemes",
+                "Variables": [
+                    {
+                        "Name": "User Name Shell Color",
+                        "Type": "SColor",
+                        "Variable": "UserNameShellColor"
+                    },
+                    {
+                        "Name": "Host Name Shell Color",
+                        "Type": "SColor",
+                        "Variable": "HostNameShellColor"
+                    },
+                    {
+                        "Name": "Continuable Kernel Error Color",
+                        "Type": "SColor",
+                        "Variable": "ContinuableKernelErrorColor"
+                    },
+                    {
+                        "Name": "Uncontinuable Kernel Error Color",
+                        "Type": "SColor",
+                        "Variable": "UncontinuableKernelErrorColor"
+                    },
+                    {
+                        "Name": "Text Color",
+                        "Type": "SColor",
+                        "Variable": "TextColor"
+                    },
+                    {
+                        "Name": "License Color",
+                        "Type": "SColor",
+                        "Variable": "LicenseColor"
+                    },
+                    {
+                        "Name": "Background Color",
+                        "Type": "SColor",
+                        "Variable": "BackgroundColor"
+                    },
+                    {
+                        "Name": "Input Color",
+                        "Type": "SColor",
+                        "Variable": "InputColor"
+                    },
+                    {
+                        "Name": "List Entry Color",
+                        "Type": "SColor",
+                        "Variable": "ListEntryColor"
+                    },
+                    {
+                        "Name": "List Value Color",
+                        "Type": "SColor",
+                        "Variable": "ListValueColor"
+                    },
+                    {
+                        "Name": "Kernel Stage Color",
+                        "Type": "SColor",
+                        "Variable": "KernelStageColor"
+                    },
+                    {
+                        "Name": "Error Text Color",
+                        "Type": "SColor",
+                        "Variable": "ErrorTextColor"
+                    },
+                    {
+                        "Name": "Warning Text Color",
+                        "Type": "SColor",
+                        "Variable": "WarningTextColor"
+                    },
+                    {
+                        "Name": "Option Color",
+                        "Type": "SColor",
+                        "Variable": "OptionColor"
+                    },
+                    {
+                        "Name": "Banner Color",
+                        "Type": "SColor",
+                        "Variable": "BannerColor"
+                    },
+                    {
+                        "Name": "Notification Title Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationTitleColor"
+                    },
+                    {
+                        "Name": "Notification Description Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationDescriptionColor"
+                    },
+                    {
+                        "Name": "Notification Progress Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationProgressColor"
+                    },
+                    {
+                        "Name": "Notification Failure Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationFailureColor"
+                    },
+                    {
+                        "Name": "Question Color",
+                        "Type": "SColor",
+                        "Variable": "QuestionColor"
+                    },
+                    {
+                        "Name": "Success Color",
+                        "Type": "SColor",
+                        "Variable": "SuccessColor"
+                    },
+                    {
+                        "Name": "User Dollar Color",
+                        "Type": "SColor",
+                        "Variable": "UserDollarColor"
+                    },
+                    {
+                        "Name": "Tip Color",
+                        "Type": "SColor",
+                        "Variable": "TipColor"
+                    },
+                    {
+                        "Name": "Separator Text Color",
+                        "Type": "SColor",
+                        "Variable": "SeparatorTextColor"
+                    },
+                    {
+                        "Name": "Separator Color",
+                        "Type": "SColor",
+                        "Variable": "SeparatorColor"
+                    },
+                    {
+                        "Name": "List Title Color",
+                        "Type": "SColor",
+                        "Variable": "ListTitleColor"
+                    },
+                    {
+                        "Name": "Development Warning Color",
+                        "Type": "SColor",
+                        "Variable": "DevelopmentWarningColor"
+                    },
+                    {
+                        "Name": "Stage Time Color",
+                        "Type": "SColor",
+                        "Variable": "StageTimeColor"
+                    },
+                    {
+                        "Name": "Progress Color",
+                        "Type": "SColor",
+                        "Variable": "ProgressColor"
+                    },
+                    {
+                        "Name": "Back Option Color",
+                        "Type": "SColor",
+                        "Variable": "BackOptionColor"
+                    },
+                    {
+                        "Name": "Low Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "LowPriorityBorderColor"
+                    },
+                    {
+                        "Name": "Medium Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "MediumPriorityBorderColor"
+                    },
+                    {
+                        "Name": "High Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "HighPriorityBorderColor"
+                    },
+                    {
+                        "Name": "Table Separator Color",
+                        "Type": "SColor",
+                        "Variable": "TableSeparatorColor"
+                    },
+                    {
+                        "Name": "Table Header Color",
+                        "Type": "SColor",
+                        "Variable": "TableHeaderColor"
+                    },
+                    {
+                        "Name": "Table Value Color",
+                        "Type": "SColor",
+                        "Variable": "TableValueColor"
+                    },
+                    {
+                        "Name": "Selected Option Color",
+                        "Type": "SColor",
+                        "Variable": "SelectedOptionColor"
+                    },
+                    {
+                        "Name": "Alternative Option Color",
+                        "Type": "SColor",
+                        "Variable": "AlternativeOptionColor"
+                    },
+                    {
+                        "Name": "Weekend Day Color",
+                        "Type": "SColor",
+                        "Variable": "WeekendDayColor"
+                    },
+                    {
+                        "Name": "Event Day Color",
+                        "Type": "SColor",
+                        "Variable": "EventDayColor"
+                    },
+                    {
+                        "Name": "Table Title Color",
+                        "Type": "SColor",
+                        "Variable": "TableTitleColor"
+                    },
+                    {
+                        "Name": "Today Day Color",
+                        "Type": "SColor",
+                        "Variable": "TodayDayColor"
+                    },
+                    {
+                        "Name": "Interactive TUI background color",
+                        "Type": "SColor",
+                        "Variable": "TuiBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane separator color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSeparatorColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane separator color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedSeparatorColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane item foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedItemForeColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane item background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedItemBackColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane item foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneItemForeColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane item background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneItemBackColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option background color",
+                        "Type": "SColor",
+                        "Variable": "TuiOptionBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiOptionForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option binding name color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingOptionColor"
+                    },
+                    {
+                        "Name": "Interactive TUI box background color",
+                        "Type": "SColor",
+                        "Variable": "TuiBoxBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI box foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiBoxForegroundColor"
+                    },
+                    {
+                        "Name": "Disabled option color",
+                        "Type": "SColor",
+                        "Variable": "DisabledOptionColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding background color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding name color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinColor"
+                    }
+                ]
             }
         ]
     },

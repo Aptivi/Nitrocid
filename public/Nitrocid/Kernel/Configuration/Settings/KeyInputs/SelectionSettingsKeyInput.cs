@@ -48,7 +48,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         string[]? selectFallbacks;
         object? Selections;
 
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             PopulateInfo(key);
 

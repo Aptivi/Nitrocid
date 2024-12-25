@@ -94,8 +94,7 @@
                     },
                     "required": [
                         "Name",
-                        "Type",
-                        "Variable"
+                        "Type"
                     ]
                 }
             }

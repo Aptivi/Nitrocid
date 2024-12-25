@@ -88,6 +88,12 @@ namespace Nitrocid.Kernel.Configuration
         public static object? GetValueFromEntry(SettingsKey Setting, BaseKernelConfig configType)
         {
             object? CurrentValue = "Unknown";
+
+            // Check to see if we're dealing with Multivar
+            if (Setting.Type == SettingsKeyType.SMultivar)
+                return "Multivar...";
+
+            // This is not a multivar, so go ahead
             string Variable = Setting.Variable;
             var configTypeInstance = configType.GetType();
             string configTypeName = configTypeInstance.Name;
@@ -222,7 +228,7 @@ namespace Nitrocid.Kernel.Configuration
 
                     // Check the variable
                     DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
-                    KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
+                    KeyFound = key.Type == SettingsKeyType.SMultivar || PropertyManager.CheckProperty(KeyVariable, config.GetType());
                     Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
                     // Check the enumeration

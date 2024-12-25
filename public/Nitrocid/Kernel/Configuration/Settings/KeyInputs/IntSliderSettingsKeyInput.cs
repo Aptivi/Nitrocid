@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class IntSliderSettingsKeyInput : ISettingsKeyInput
     {
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             var PressedKey = default(ConsoleKeyInfo);
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);

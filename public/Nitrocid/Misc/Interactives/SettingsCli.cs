@@ -203,7 +203,7 @@ namespace Nitrocid.Misc.Interactives
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                 var key = configs[entryIdx].Keys[keyIdx];
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
-                var input = key.KeyInput.PromptForSet(key, defaultValue, out bool provided);
+                var input = key.KeyInput.PromptForSet(key, defaultValue, config, out bool provided);
                 if (provided)
                 {
                     key.KeyInput.SetValue(key, input, config);
