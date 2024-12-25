@@ -42,10 +42,14 @@ namespace Nitrocid.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
-
         private bool cleared = false;
         private int dotStep = 0;
         private int currMs = 0;
+        private ProgressBarNoText progress = new(0, 100)
+        {
+            LeftMargin = 3,
+            RightMargin = 3,
+        };
 
         // Standalone splash information
         public override string SplashName => "Welcome";
@@ -54,6 +58,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
+            progress.Position = 0;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -263,11 +268,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             {
                 int posX = 2;
                 int posY = ConsoleWrapper.WindowHeight - 2;
-                var progress = new ProgressBarNoText(Progress, 100)
-                {
-                    LeftMargin = 3,
-                    RightMargin = 3,
-                };
+                progress.Position = Progress;
                 builder.Append(
                     ContainerTools.RenderRenderable(progress, new(posX, posY))
                 );
