@@ -47,6 +47,7 @@ namespace Nitrocid.ScreensaverPacks
             { "bouncingtext", new BouncingTextDisplay() },
             { "boxgrid", new BoxGridDisplay() },
             { "bsod", new BSODDisplay() },
+            { "clochroma", new ClochromaDisplay() },
             { "colorbleed", new ColorBleedDisplay() },
             { "colormix", new ColorMixDisplay() },
             { "commitmilestone", new CommitMilestoneDisplay() },

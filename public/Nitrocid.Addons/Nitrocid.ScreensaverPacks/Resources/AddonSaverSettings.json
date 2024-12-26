@@ -6468,5 +6468,23 @@
                 "Variable": "GlitterCharForegroundColor"
             }
         ]
+    },
+    {
+        "Name": "Clochroma",
+        "Desc": "Simple date and time in the middle of the screen and changes the color based on the current time.",
+        "Keys": [
+            {
+                "Name": "Bright date and time",
+                "Type": "SBoolean",
+                "Variable": "ClochromaBright",
+                "Description": "Whether to use bright or dark version."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "ClochromaDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 ]
