@@ -191,6 +191,20 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new ChAttrCommand()),
 
+            new CommandInfo("chculture", /* Localizable */ "Changes culture",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "culture"),
+                    ],
+                    [
+                        new SwitchInfo("user", /* Localizable */ "Changes the user culture instead of the system culture", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new ChCultureCommand(), CommandFlags.Strict),
+
             new CommandInfo("chdir", /* Localizable */ "Changes directory",
                 [
                     new CommandArgumentInfo(new[]

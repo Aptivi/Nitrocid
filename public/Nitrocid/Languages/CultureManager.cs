@@ -22,6 +22,7 @@ using System.Globalization;
 using System.Linq;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Users.Login;
 
 namespace Nitrocid.Languages
 {
@@ -30,37 +31,41 @@ namespace Nitrocid.Languages
     /// </summary>
     public static class CultureManager
     {
+        internal static CultureInfo currentCulture = GetCulturesDictionary()[Config.MainConfig.CurrentCultureName];
+        internal static CultureInfo currentUserCulture = GetCulturesDictionary()[Config.MainConfig.CurrentCultureName];
+
         /// <summary>
         /// Current culture
         /// </summary>
         public static CultureInfo CurrentCulture =>
-            new(Config.MainConfig.CurrentCultureName);
+            Login.LoggedIn ? currentUserCulture : currentCulture;
 
         /// <summary>
-        /// Updates current culture based on current language and custom culture
+        /// Updates current culture based on selected culture
         /// </summary>
-        /// <param name="culture">Full culture name</param>
+        /// <param name="culture">Full culture name or code</param>
         public static void UpdateCultureDry(string culture)
         {
             var cultures = GetCultures();
             foreach (CultureInfo cultureInfo in cultures)
             {
-                if (cultureInfo.EnglishName == culture)
+                if (cultureInfo.EnglishName == culture || cultureInfo.Name == culture)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    Config.MainConfig.CurrentCultureName = cultureInfo.Name;
+                    currentCulture = cultureInfo;
                     break;
                 }
             }
         }
 
         /// <summary>
-        /// Updates current culture based on current language and custom culture
+        /// Updates current culture based on selected culture
         /// </summary>
-        /// <param name="Culture">Full culture name</param>
+        /// <param name="Culture">Full culture name or code</param>
         public static void UpdateCulture(string Culture)
         {
             UpdateCultureDry(Culture);
+            Config.MainConfig.CurrentCultureName = currentCulture.Name;
             Config.CreateConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
         }
@@ -88,5 +93,12 @@ namespace Nitrocid.Languages
         /// <returns>An array of culture codes</returns>
         public static string[] GetCultureCodes() =>
             GetCultures().Select((ci) => ci.Name).ToArray();
+
+        /// <summary>
+        /// Gets the culture dictionary
+        /// </summary>
+        /// <returns>An array of culture codes</returns>
+        public static Dictionary<string, CultureInfo> GetCulturesDictionary() =>
+            GetCultures().ToDictionary((ci) => ci.Name, (ci) => ci);
     }
 }

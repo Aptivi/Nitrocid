@@ -40,6 +40,10 @@ namespace Nitrocid.Users
         /// The preferred language
         /// </summary>
         public string? PreferredLanguage { get; set; }
+        /// <summary>
+        /// The preferred culture
+        /// </summary>
+        public string? PreferredCulture { get; set; }
         [JsonProperty]
         internal string[] Groups { get; set; }
         [JsonProperty]
@@ -55,13 +59,14 @@ namespace Nitrocid.Users
         /// Makes a new class instance of current user info
         /// </summary>
         [JsonConstructor]
-        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, UserFlags flags, Dictionary<string, object[]> customSettings)
+        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string preferredCulture, string[] groups, UserFlags flags, Dictionary<string, object[]> customSettings)
         {
             Username = username;
             Password = password;
             Permissions = permissions;
             FullName = fullName;
             PreferredLanguage = preferredLanguage;
+            PreferredCulture = preferredCulture;
             Groups = groups;
             Flags = flags;
             CustomSettings = customSettings;

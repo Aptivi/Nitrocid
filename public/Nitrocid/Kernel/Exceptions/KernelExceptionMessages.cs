@@ -150,6 +150,7 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.Alarm,                            Translate.DoTranslation("There was an error when trying to process an alarm system operation.") },
                 { KernelExceptionType.Widget,                           Translate.DoTranslation("There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.") },
                 { KernelExceptionType.Homepage,                         Translate.DoTranslation("The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.") },
+                { KernelExceptionType.NoSuchCulture,                    Translate.DoTranslation("There is no culture by this name.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception? e, params object[] vars)

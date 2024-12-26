@@ -229,6 +229,14 @@ namespace Nitrocid.Users.Login
             else
                 LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
 
+            // Set preferred culture
+            string preferredCulture = UserManagement.CurrentUser.PreferredCulture ?? "";
+            DebugWriter.WriteDebug(DebugLevel.I, "Preferred culture {0}. Trying to set dryly...", preferredCulture);
+            if (!string.IsNullOrWhiteSpace(preferredCulture))
+                CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[preferredCulture];
+            else
+                CultureManager.currentUserCulture = CultureManager.currentCulture;
+
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, UserManagement.CurrentUser.Username);
             DebugWriter.WriteDebug(DebugLevel.I, "Out of login flow.");

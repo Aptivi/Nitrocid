@@ -575,10 +575,11 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Reset languages
+                    // Reset languages and cultures
                     SplashManager.BeginSplashOut(context);
                     LanguageManager.SetLangDry(Config.MainConfig.CurrentLanguage);
                     LanguageManager.currentUserLanguage = LanguageManager.Languages[Config.MainConfig.CurrentLanguage];
+                    CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[Config.MainConfig.CurrentCultureName];
                     SplashManager.EndSplashOut(context);
                 }
                 catch (Exception exc)

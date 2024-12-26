@@ -126,6 +126,15 @@ namespace Nitrocid.Shell.Shells.Admin
                         new CommandArgumentPart(true, "lang/clear")
                     })
                 ], new UserLangCommand()),
+
+            new CommandInfo("userculture", /* Localizable */ "Changes the preferred user culture",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "user"),
+                        new CommandArgumentPart(true, "culture/clear")
+                    })
+                ], new UserCultureCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -131,6 +131,7 @@ namespace Nitrocid.Tests.Users
             user.Groups.ShouldNotBeNull();
             user.Groups.ShouldBeEmpty();
             user.PreferredLanguage.ShouldBeNullOrEmpty();
+            user.PreferredCulture.ShouldBeNullOrEmpty();
             user.Flags.HasFlag(UserFlags.Administrator).ShouldBeTrue();
             user.Flags.HasFlag(UserFlags.Anonymous).ShouldBeFalse();
             user.Flags.HasFlag(UserFlags.Disabled).ShouldBeFalse();
@@ -164,6 +165,7 @@ namespace Nitrocid.Tests.Users
             user.Groups.ShouldNotBeNull();
             user.Groups.ShouldBeEmpty();
             user.PreferredLanguage.ShouldBeNullOrEmpty();
+            user.PreferredCulture.ShouldBeNullOrEmpty();
             user.Flags.HasFlag(UserFlags.Administrator).ShouldBeTrue();
             user.Flags.HasFlag(UserFlags.Anonymous).ShouldBeFalse();
             user.Flags.HasFlag(UserFlags.Disabled).ShouldBeFalse();
