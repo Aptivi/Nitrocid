@@ -34,11 +34,6 @@
   <ItemGroup>
     <None Remove="Resources\SshSettings.json" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="AddonMetadata.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <!-- Extras.SSH addon Platform Information End -->
 
   <ItemGroup>

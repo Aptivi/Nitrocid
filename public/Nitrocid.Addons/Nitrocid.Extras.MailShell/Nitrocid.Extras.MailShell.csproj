@@ -31,11 +31,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="AddonMetadata.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <!-- Extras.MailShell addon Platform Information End -->
 
   <ItemGroup>

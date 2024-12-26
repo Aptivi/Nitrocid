@@ -28,11 +28,6 @@
     <ProjectReference Include="..\..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="AddonMetadata.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <!-- Extras.LanguageStudio addon Platform Information End -->
 
 </Project>

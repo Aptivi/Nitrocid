@@ -34,9 +34,6 @@
     <EmbeddedResource Include="Resources\Languages\*" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="AddonMetadata.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Resources\Languages\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

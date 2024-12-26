@@ -31,11 +31,6 @@
 
   <!-- ThemePacks addon metadata -->
   <ItemGroup>
-    <None Update="AddonMetadata.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\Themes\*" />
   </ItemGroup>
   <!-- ThemePacks addon metadata End -->
