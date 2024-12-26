@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetMethodStatic()
         {
-            var value = MethodManager.GetMethod(nameof(CultureManager.GetCulturesFromCurrentLang));
+            var value = MethodManager.GetMethod(nameof(CultureManager.GetCultures));
             value.ShouldNotBeNull();
         }
 
@@ -62,7 +62,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestInvokeMethodStatic()
         {
-            var value = MethodManager.InvokeMethodStatic(nameof(CultureManager.GetCulturesFromCurrentLang));
+            var value = MethodManager.InvokeMethodStatic(nameof(CultureManager.GetCultures));
             value.ShouldNotBeNull();
             value.ShouldBeOfType(typeof(CultureInfo[]));
         }

@@ -44,7 +44,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool inferSysLang = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-usesyslang");
             bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
             bool useCountry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-country");
             string language = "eng";
@@ -53,14 +52,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Country selection is entirely different, because a country might contain more than one language
                 var countries = LanguageManager.ListAllCountries();
                 string country = parameters.ArgumentsList[0];
-                if (!countries.ContainsKey(country))
+                if (!countries.TryGetValue(country, out LanguageInfo[]? countryLanguages))
                 {
                     TextWriters.Write(Translate.DoTranslation("Invalid country") + $" {country}", true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
                 }
 
-                // Check to see if a country has more than one language
-                var countryLanguages = countries[country];
                 if (countryLanguages.Length > 1)
                 {
                     var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName} [{li.ThreeLetterLanguageName}]")).ToArray();
@@ -82,7 +79,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 // Language selection takes only one language
-                language = inferSysLang ? LanguageManager.InferLanguageFromSystem() : parameters.ArgumentsList[0];
+                language = parameters.ArgumentsList[0];
                 var languages = LanguageManager.ListAllLanguages();
                 if (!languages.ContainsKey(language))
                 {

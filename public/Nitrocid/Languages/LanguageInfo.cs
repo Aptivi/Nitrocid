@@ -41,8 +41,6 @@ namespace Nitrocid.Languages
         private readonly string fullLanguageName;
         [JsonProperty(nameof(Codepage))]
         private readonly int codepage;
-        [JsonProperty(nameof(CultureCode))]
-        private readonly string cultureCode;
         [JsonProperty(nameof(Country))]
         private readonly string country;
         [JsonIgnore]
@@ -51,8 +49,6 @@ namespace Nitrocid.Languages
         private readonly bool custom;
         [JsonIgnore]
         private readonly Dictionary<string, string> strings;
-        [JsonIgnore]
-        private readonly CultureInfo[] cultures;
 
         /// <summary>
         /// The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.
@@ -74,13 +70,6 @@ namespace Nitrocid.Languages
         [JsonIgnore]
         public int Codepage =>
             codepage;
-
-        /// <summary>
-        /// Culture code to use. If blank, the language manager will find the appropriate culture.
-        /// </summary>
-        [JsonIgnore]
-        public string CultureCode =>
-            cultureCode;
 
         /// <summary>
         /// Country
@@ -111,22 +100,14 @@ namespace Nitrocid.Languages
             strings;
 
         /// <summary>
-        /// List of cultures of language
-        /// </summary>
-        [JsonIgnore]
-        public CultureInfo[] Cultures =>
-            cultures;
-
-        /// <summary>
         /// Initializes the new instance of language information
         /// </summary>
         /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="Codepage">Appropriate codepage number for language</param>
-        /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
         /// <param name="country">The country</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "", string country = "")
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string country = "")
         {
             // Check to see if the language being installed is found in resources
             string localizationTokenValue = ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages) ??
@@ -139,26 +120,6 @@ namespace Nitrocid.Languages
                 transliterable = Transliterable;
                 codepage = Codepage;
                 this.country = string.IsNullOrEmpty(country) ? "World" : country;
-
-                // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
-                // the current culture is assumed.
-                var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
-                var Cultures = new List<CultureInfo>();
-                foreach (CultureInfo Cult in Cults)
-                {
-                    if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()) || Cult.Name == cultureCode)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
-                        Cultures.Add(Cult);
-                    }
-                }
-                if (Cultures.Count == 0)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
-                    Cultures.Add(CultureInfo.CurrentCulture);
-                }
-                cultures = [.. Cultures];
-                this.cultureCode = cultureCode;
 
                 // Get instance of language resource
                 var localizations = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue) ??
@@ -177,10 +138,8 @@ namespace Nitrocid.Languages
                 {
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageResource[i];
-                    if (langStrings.ContainsKey(UntranslatedProperty))
+                    if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
                         DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
-                    else
-                        langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 strings = langStrings;
@@ -199,35 +158,14 @@ namespace Nitrocid.Languages
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="LanguageToken">The language token containing localization information</param>
-        /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
         /// <param name="country">The country</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string cultureCode = "", string country = "")
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string country = "")
         {
             // Install values to the object instance
             threeLetterLanguageName = LangName;
             fullLanguageName = FullLanguageName;
             transliterable = Transliterable;
             this.country = string.IsNullOrEmpty(country) ? "World" : country;
-
-            // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
-            // the current culture is assumed.
-            var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            var Cultures = new List<CultureInfo>();
-            foreach (CultureInfo Cult in Cults)
-            {
-                if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()) || Cult.Name == cultureCode)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
-                    Cultures.Add(Cult);
-                }
-            }
-            if (Cultures.Count == 0)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
-                Cultures.Add(CultureInfo.CurrentCulture);
-            }
-            cultures = [.. Cultures];
-            this.cultureCode = cultureCode;
 
             // Install it
             var englishData = ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
@@ -247,10 +185,8 @@ namespace Nitrocid.Languages
                 {
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageToken[i];
-                    if (langStrings.ContainsKey(UntranslatedProperty))
+                    if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
                         DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
-                    else
-                        langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);

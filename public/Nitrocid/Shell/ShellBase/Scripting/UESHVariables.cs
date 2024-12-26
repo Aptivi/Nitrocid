@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         {
             { "$FrameworkSpecificRid", KernelPlatform.GetCurrentRid() },
             { "$FrameworkRid", KernelPlatform.GetCurrentGenericRid() },
-            { "$CurrentCulture", Config.MainConfig.CurrentCultStr },
+            { "$CurrentCulture", Config.MainConfig.CurrentCultureName },
             { "$CurrentSysCulture", CultureInfo.CurrentCulture.Name },
             { "$CurrentUiSysCulture", CultureInfo.CurrentUICulture.Name },
         };

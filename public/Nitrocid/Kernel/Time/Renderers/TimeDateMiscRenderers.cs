@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         public static string RenderRemainingTimeFrom(DateTime moment, int Milliseconds, string format)
         {
             var RemainingTime = moment.AddMilliseconds(Milliseconds) - moment;
-            string RemainingTimeString = RemainingTime.ToString(format, CultureManager.CurrentCult);
+            string RemainingTimeString = RemainingTime.ToString(format, CultureManager.CurrentCulture);
             return RemainingTimeString;
         }
 

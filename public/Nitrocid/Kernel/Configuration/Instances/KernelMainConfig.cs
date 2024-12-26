@@ -85,10 +85,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => WelcomeMessage.customBanner = value;
         }
         /// <summary>
-        /// When switching languages, change the month names, calendar, etc.
-        /// </summary>
-        public bool LangChangeCulture { get; set; }
-        /// <summary>
         /// Specifies the kernel language.
         /// </summary>
         public string CurrentLanguage
@@ -97,9 +93,9 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => LanguageManager.SetLangDry(value);
         }
         /// <summary>
-        /// Which variant of the current language is being used to change the month names, calendar, etc.?
+        /// Which culture is being used to change the month names, calendar, etc.?
         /// </summary>
-        public string CurrentCultStr { get; set; } = "en-US";
+        public string CurrentCultureName { get; set; } = "en-US";
         /// <summary>
         /// Shows brief information about the application on boot.
         /// </summary>

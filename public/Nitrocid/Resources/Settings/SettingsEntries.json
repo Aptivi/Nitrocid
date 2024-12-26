@@ -17,12 +17,6 @@
                 "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
             },
             {
-                "Name": "Change Culture when Switching Languages",
-                "Type": "SBoolean",
-                "Variable": "LangChangeCulture",
-                "Description": "When switching languages, change the month names, calendar, etc."
-            },
-            {
                 "Name": "Language",
                 "Type": "SSelection",
                 "Variable": "CurrentLanguage",
@@ -36,12 +30,12 @@
             {
                 "Name": "Culture",
                 "Type": "SSelection",
-                "Variable": "CurrentCultStr",
+                "Variable": "CurrentCultureName",
                 "IsEnumeration": false,
-                "SelectionFunctionName": "GetCultureNamesFromCurrentLang",
+                "SelectionFunctionName": "GetCultureCodes",
                 "SelectionFunctionType": "CultureManager",
                 "SelectionFallback": [ "en-US" ],
-                "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
+                "Description": "Which culture is being used to change the month names, calendar, etc.?"
             },
             {
                 "Name": "Show app information during boot",

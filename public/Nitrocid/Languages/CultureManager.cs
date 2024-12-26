@@ -30,60 +30,25 @@ namespace Nitrocid.Languages
     /// </summary>
     public static class CultureManager
     {
-
         /// <summary>
         /// Current culture
         /// </summary>
-        public static CultureInfo CurrentCult =>
-            new(Config.MainConfig.CurrentCultStr);
-
-        /// <summary>
-        /// Updates current culture based on current language. If there are no cultures in the current language, assume current culture.
-        /// </summary>
-        public static void UpdateCultureDry()
-        {
-            var cultures = GetCulturesFromCurrentLang();
-            string StrCult =
-                cultures.Length != 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)) ?
-                cultures.First((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)).EnglishName :
-                CultureInfo.CurrentCulture.EnglishName;
-            DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguageInfo, StrCult);
-            var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);
-            foreach (CultureInfo Cult in Cults)
-            {
-                if (Cult.EnglishName == StrCult)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    Config.MainConfig.CurrentCultStr = Cult.Name;
-                    break;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
-        /// </summary>
-        public static void UpdateCulture()
-        {
-            UpdateCultureDry();
-            Config.CreateConfig();
-            DebugWriter.WriteDebug(DebugLevel.I, "Saved new culture.");
-        }
+        public static CultureInfo CurrentCulture =>
+            new(Config.MainConfig.CurrentCultureName);
 
         /// <summary>
         /// Updates current culture based on current language and custom culture
         /// </summary>
-        /// <param name="Culture">Full culture name</param>
-        public static void UpdateCultureDry(string Culture)
+        /// <param name="culture">Full culture name</param>
+        public static void UpdateCultureDry(string culture)
         {
-            var Cultures = GetCulturesFromCurrentLang();
-            foreach (CultureInfo Cult in Cultures)
+            var cultures = GetCultures();
+            foreach (CultureInfo cultureInfo in cultures)
             {
-                if (Cult.EnglishName == Culture)
+                if (cultureInfo.EnglishName == culture)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found. Changing culture...");
-                    Config.MainConfig.CurrentCultStr = Cult.Name;
+                    Config.MainConfig.CurrentCultureName = cultureInfo.Name;
                     break;
                 }
             }
@@ -101,42 +66,27 @@ namespace Nitrocid.Languages
         }
 
         /// <summary>
-        /// Gets all cultures available for the current language
+        /// Gets the installed cultures according to <see cref="CultureInfo.GetCultures(CultureTypes)"/>
         /// </summary>
-        public static CultureInfo[] GetCulturesFromCurrentLang() =>
-            LanguageManager.CurrentLanguageInfo.Cultures;
-
-        /// <summary>
-        /// Gets all cultures available for the current language
-        /// </summary>
-        public static CultureInfo[]? GetCulturesFromLang(string Language)
+        /// <returns>An array of <see cref="CultureInfo"/> containing all installed lectures</returns>
+        public static CultureInfo[] GetCultures()
         {
-            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo? langInfo))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Returning cultures for lang {0}", Language);
-                return langInfo.Cultures;
-            }
-            return null;
+            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            return cultures;
         }
 
         /// <summary>
-        /// Gets all culture names available for the current language
+        /// Gets the culture names
         /// </summary>
-        public static List<string> GetCultureNamesFromCurrentLang() =>
-            LanguageManager.CurrentLanguageInfo.Cultures.Select((culture) => culture.Name).ToList();
+        /// <returns>An array of culture names</returns>
+        public static string[] GetCultureNames() =>
+            GetCultures().Select((ci) => ci.EnglishName).ToArray();
 
         /// <summary>
-        /// Gets all culture names available for the current language
+        /// Gets the culture codes
         /// </summary>
-        public static List<string>? GetCultureNamesFromLang(string Language)
-        {
-            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo? langInfo))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Returning culture names for lang {0}", Language);
-                return langInfo.Cultures.Select((culture) => culture.Name).ToList();
-            }
-            return null;
-        }
-
+        /// <returns>An array of culture codes</returns>
+        public static string[] GetCultureCodes() =>
+            GetCultures().Select((ci) => ci.Name).ToArray();
     }
 }

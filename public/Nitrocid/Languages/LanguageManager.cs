@@ -119,13 +119,6 @@ namespace Nitrocid.Languages
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
                     currentLanguage = langInfo;
-
-                    // Update Culture if applicable
-                    if (Config.MainConfig.LangChangeCulture)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
-                        CultureManager.UpdateCultureDry();
-                    }
                     return true;
                 }
                 catch (Exception ex)
@@ -150,8 +143,6 @@ namespace Nitrocid.Languages
         {
             Config.MainConfig.CurrentLanguage = lang;
             Config.CreateConfig();
-            DebugWriter.WriteDebug(DebugLevel.I, "Saved new language. Updating culture...");
-            CultureManager.UpdateCulture();
             return true;
         }
 
@@ -420,39 +411,6 @@ namespace Nitrocid.Languages
             return listedCountries.ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value.ToArray());
         }
 
-        /// <summary>
-        /// Infers the language from the system's current culture settings
-        /// </summary>
-        /// <returns>Language name if the system culture can be used to infer the language. Otherwise, English (eng).</returns>
-        public static string InferLanguageFromSystem()
-        {
-            string currentCult = CultureInfo.CurrentUICulture.Name;
-            DebugWriter.WriteDebug(DebugLevel.I, "Inferring language from current UI culture {0}, {1}...", currentCult);
-
-            // Get all the languages and compare
-            var langs = ListAllLanguages();
-            string finalLang = "eng";
-            foreach (var language in langs.Keys)
-            {
-                // Get the available cultures
-                var cults = CultureManager.GetCulturesFromLang(language);
-                if (cults is null)
-                    continue;
-                foreach (var cult in cults)
-                {
-                    if (cult.Name == currentCult)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found language {0} from culture {1}...", language, currentCult);
-                        finalLang = language;
-                        return finalLang;
-                    }
-                }
-            }
-
-            // Return the result
-            return finalLang;
-        }
-
         internal static string[] ProbeLocalizations(LanguageLocalizations loc)
         {
             DebugCheck.Assert(loc.Localizations.Length != 0, "language has no localizations!!!");
@@ -466,7 +424,6 @@ namespace Nitrocid.Languages
             string LanguageFullName = Language.Name;
             bool LanguageTransliterable = Language.Transliterable;
             int LanguageCodepage = Language.Codepage;
-            string LanguageCultureCode = Language.Culture ?? "";
             string LanguageCountry = Language.Country ?? "";
 
             // If the language is not found in the base languages cache dictionary, add it
@@ -474,9 +431,9 @@ namespace Nitrocid.Languages
             {
                 LanguageInfo LanguageInfo;
                 if (useLocalizationObject)
-                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCultureCode, LanguageCountry);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCountry);
                 else
-                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode, LanguageCountry);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCountry);
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", shortName, LanguageFullName, LanguageTransliterable);
                 BaseLanguages.Add(shortName, LanguageInfo);
             }

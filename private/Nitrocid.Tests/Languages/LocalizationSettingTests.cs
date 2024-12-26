@@ -38,8 +38,8 @@ namespace Nitrocid.Tests.Languages
         {
             LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
-            CultureManager.UpdateCulture();
-            CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);
+            CultureManager.UpdateCulture(ExpectedCulture);
+            CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
         }
 
         /// <summary>
@@ -51,8 +51,8 @@ namespace Nitrocid.Tests.Languages
         {
             LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
-            CultureManager.UpdateCultureDry();
-            CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);
+            CultureManager.UpdateCultureDry(ExpectedCulture);
+            CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.Languages
             LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
             CultureManager.UpdateCulture(ExpectedCulture);
-            CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);
+            CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
         }
 
         /// <summary>
@@ -82,7 +82,6 @@ namespace Nitrocid.Tests.Languages
             var InfoInstance = LanguageManager.CurrentLanguageInfo;
             InfoInstance.ShouldNotBeNull();
             InfoInstance.Strings.ShouldNotBeNull();
-            InfoInstance.Cultures.ShouldNotBeNull();
 
             // Check for property correctness
             InfoInstance.Transliterable.ShouldBeFalse();
@@ -90,7 +89,6 @@ namespace Nitrocid.Tests.Languages
             InfoInstance.FullLanguageName.ShouldBe("Spanish");
             InfoInstance.ThreeLetterLanguageName.ShouldBe("spa");
             InfoInstance.Strings.ShouldNotBeEmpty();
-            InfoInstance.Cultures.ShouldNotBeEmpty();
         }
 
         /// <summary>
@@ -107,7 +105,6 @@ namespace Nitrocid.Tests.Languages
             var InfoInstance = LanguageManager.CurrentLanguageInfo;
             InfoInstance.ShouldNotBeNull();
             InfoInstance.Strings.ShouldNotBeNull();
-            InfoInstance.Cultures.ShouldNotBeNull();
 
             // Check for property correctness
             InfoInstance.Transliterable.ShouldBeTrue();
@@ -115,7 +112,6 @@ namespace Nitrocid.Tests.Languages
             InfoInstance.FullLanguageName.ShouldBe("Arabic");
             InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
             InfoInstance.Strings.ShouldNotBeEmpty();
-            InfoInstance.Cultures.ShouldNotBeEmpty();
         }
 
         /// <summary>

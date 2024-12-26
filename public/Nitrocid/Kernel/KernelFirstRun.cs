@@ -77,8 +77,7 @@ namespace Nitrocid.Kernel
                                     Translate.DoTranslation("Language"), Translate.DoTranslation("Select your language."),
                                     new SelectionInputMethod()
                                     {
-                                        Question = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " +
-                                                   Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. ",
+                                        Question = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here."),
                                         Choices = LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.FullLanguageName)).ToArray()
                                     }, true
                                 )

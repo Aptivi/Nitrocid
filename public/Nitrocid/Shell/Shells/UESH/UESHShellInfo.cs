@@ -228,11 +228,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "language"),
                     ],
                     [
-                        new SwitchInfo("usesyslang", /* Localizable */ "Uses the system language settings to try to infer the language from", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 1,
-                            AcceptsValues = false
-                        }),
                         new SwitchInfo("user", /* Localizable */ "Changes the user language instead of the system language", new SwitchOptions()
                         {
                             AcceptsValues = false
