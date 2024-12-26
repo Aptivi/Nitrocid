@@ -203,7 +203,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             }
             else
             {
-                var listObj = MethodManager.InvokeMethodStatic(ListFunctionName);
+                var arguments = SettingsAppTools.ParseParameters(key);
+                var listObj = MethodManager.InvokeMethodStatic(ListFunctionName, args: arguments);
                 if (SelectionFunctionDict)
                 {
                     if (listObj is null || listObj is IEnumerable<object> objs && !objs.Any())

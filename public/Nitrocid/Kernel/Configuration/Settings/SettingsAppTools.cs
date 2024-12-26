@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Kernel.Exceptions;
 
 #if SPECIFIERREL
 #if !PACKAGEMANAGERBUILD
@@ -257,6 +258,29 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     KernelColorTools.GetColor(KernelColorType.Error)
                 );
             }
+        }
+
+        internal static object[] ParseParameters(SettingsKey key)
+        {
+            // Don't do anything if we don't have arguments
+            if (key.SelectionFunctionArgs is null || key.SelectionFunctionArgs.Length == 0)
+                return [];
+
+            // Check the parameters and convert them
+            object[] objects = new object[key.SelectionFunctionArgs.Length];
+            for (int i = 0; i < key.SelectionFunctionArgs.Length; i++)
+            {
+                SettingsFunctionArgs? arg = key.SelectionFunctionArgs[i];
+
+                // Try to get the type
+                Type type = Type.GetType(arg.ArgType) ??
+                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Specified argument type is not valid") + $": {arg.ArgType}");
+
+                // Use this type to convert the string value to that type
+                var converted = Convert.ChangeType(arg.ArgValue, type);
+                objects[i] = converted;
+            }
+            return objects;
         }
     }
 }

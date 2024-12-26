@@ -52,6 +52,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
         internal string[]? selectionFallback;
         [JsonProperty(nameof(IsSelectionFunctionDict))]
         internal bool isSelectionFunctionDict;
+        [JsonProperty(nameof(SelectionFunctionArgs))]
+        internal SettingsFunctionArgs[] selectionFunctionArgs = [];
 
         // Enumeration
         [JsonProperty(nameof(IsEnumeration))]
@@ -164,6 +166,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public bool IsSelectionFunctionDict =>
             isSelectionFunctionDict;
+
+        /// <summary>
+        /// Specifies function arguments for selection
+        /// </summary>
+        [JsonIgnore]
+        public SettingsFunctionArgs[] SelectionFunctionArgs =>
+            selectionFunctionArgs;
 
         /// <summary>
         /// Fallback values for selection

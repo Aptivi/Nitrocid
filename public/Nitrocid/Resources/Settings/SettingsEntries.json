@@ -24,7 +24,13 @@
                 "SelectionFunctionName": "ListAllLanguages",
                 "SelectionFunctionType": "LanguageManager",
                 "IsSelectionFunctionDict": true,
-                "SelectionFallback": [ "en-US" ],
+                "SelectionFunctionArgs": [
+                    {
+                        "ArgType": "System.Boolean",
+                        "ArgValue": "False"
+                    }
+                ],
+                "SelectionFallback": [ "eng" ],
                 "Description": "Specifies the kernel language."
             },
             {
