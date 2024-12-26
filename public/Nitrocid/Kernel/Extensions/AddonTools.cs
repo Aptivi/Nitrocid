@@ -100,25 +100,10 @@ namespace Nitrocid.Kernel.Extensions
                     return;
                 }
 
-                // Now, verify that we have the addon metadata
-                string metadataPath = $"{addon}/AddonMetadata.json";
-                DebugWriter.WriteDebug(DebugLevel.I, "Verifying addon folder {0} for metadata...", addon);
-                if (!(Checking.FileExists(metadataPath) && Parsing.IsJson(metadataPath)))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of invalid metadata [{1}]...", addon, metadataPath);
-                    return;
-                }
-
-                // Read the metadata
-                DebugWriter.WriteDebug(DebugLevel.I, "Metadata {0} found!", metadataPath);
-                string metadataContents = Reading.ReadContentsText(metadataPath);
-                JToken metadataToken = JToken.Parse(metadataContents) ??
-                    throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to get addon metadata"));
-
-                // Check the metadata value
-                string addonPath = $"{addon}/{(string?)(metadataToken["DllPath"] ?? Path.GetFileName($"{addon}.dll"))}";
-
-                // Now, check the addon path
+                // Now, guess and check the addon path
+                DebugWriter.WriteDebug(DebugLevel.I, "Guessing addon path {0}...", addon);
+                string addonPath = $"{addon}/Nitrocid.{Path.GetFileName($"{addon}.dll")}";
+                DebugWriter.WriteDebug(DebugLevel.I, "Addon entry {0} is using path [{1}].", addon, addonPath);
                 if (!Checking.FileExists(addonPath))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of nonexistent file [{1}]...", addon, addonPath);
