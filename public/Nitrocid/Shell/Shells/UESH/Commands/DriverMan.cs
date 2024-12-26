@@ -27,6 +27,7 @@ using Nitrocid.Security.Permissions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers;
 using System;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         }
                     case "list":
                         {
-                            TextFancyWriters.WriteSeparator(Translate.DoTranslation("Drivers for") + $" {typeTerm}", KernelColorType.Separator);
+                            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Drivers for") + $" {typeTerm}", KernelColorTools.GetColor(KernelColorType.Separator));
                             foreach (var driver in DriverHandler.GetDrivers(typeTerm))
                             {
                                 if (!driver.DriverInternal)

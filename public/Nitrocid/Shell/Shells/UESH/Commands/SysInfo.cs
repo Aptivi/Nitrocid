@@ -30,6 +30,7 @@ using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Windows;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -68,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowSystemInfo)
             {
                 // Kernel section
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel settings"), KernelColorType.Separator);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Kernel settings"), KernelColorTools.GetColor(KernelColorType.Separator));
                 TextWriters.Write(Translate.DoTranslation("Kernel Version:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
@@ -83,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowHardwareInfo)
             {
                 // Hardware section
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Hardware settings"), KernelColorType.Separator);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Hardware settings"), KernelColorTools.GetColor(KernelColorType.Separator));
                 HardwareList.ListHardware();
 
                 if (!WindowsUserTools.IsAdministrator())
@@ -96,7 +97,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowUserInfo)
             {
                 // User section
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("User settings"), KernelColorType.Separator);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("User settings"), KernelColorTools.GetColor(KernelColorType.Separator));
                 TextWriters.Write(Translate.DoTranslation("Current user name:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(UserManagement.CurrentUser.Username, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Current host name:") + " ", false, KernelColorType.ListEntry);
@@ -109,7 +110,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowMessageOfTheDay)
             {
                 // Show MOTD
-                TextFancyWriters.WriteSeparator("MOTD", KernelColorType.Separator);
+                SeparatorWriterColor.WriteSeparatorColor("MOTD", KernelColorTools.GetColor(KernelColorType.Separator));
                 TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.NeutralText);
                 TextWriterRaw.Write();
             }
@@ -117,7 +118,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowMal)
             {
                 // Show MAL
-                TextFancyWriters.WriteSeparator("MAL", KernelColorType.Separator);
+                SeparatorWriterColor.WriteSeparatorColor("MAL", KernelColorTools.GetColor(KernelColorType.Separator));
                 TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.NeutralText);
             }
             return 0;

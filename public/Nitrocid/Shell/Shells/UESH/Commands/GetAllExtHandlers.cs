@@ -23,6 +23,7 @@ using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             for (int i = 0; i < handlers.Length; i++)
             {
                 ExtensionHandler handler = handlers[i];
-                TextFancyWriters.WriteSeparator($"{i + 1}/{handlers.Length}", KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.Write("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Extension, KernelColorType.ListValue);
                 TextWriters.Write("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);

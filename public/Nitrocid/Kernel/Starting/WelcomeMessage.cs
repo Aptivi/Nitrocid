@@ -31,6 +31,7 @@ using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -65,7 +66,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Finally, write the message
                 if (Config.MainConfig.StartScroll)
-                    TextDynamicWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
+                    TextWriterSlowColor.WriteSlowlyColor(MessageWrite, true, 10d, KernelColorTools.GetColor(KernelColorType.Banner), KernelMain.VersionFullStr);
                 else
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
 
@@ -77,7 +78,7 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void WriteLicense()
         {
-            TextFancyWriters.WriteSeparator(Translate.DoTranslation("License information"), KernelColorType.Stage);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("License information"), KernelColorTools.GetColor(KernelColorType.Stage));
             TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 

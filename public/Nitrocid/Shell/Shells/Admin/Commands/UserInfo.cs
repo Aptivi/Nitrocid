@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             if (user is not null)
             {
                 // First off, basic user information
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Basic user info"), KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Basic user info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.Write(Translate.DoTranslation("Username") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.Username, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
@@ -59,13 +60,13 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 TextWriterRaw.Write();
 
                 // Now, the permissions.
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Permissions"), KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Permissions"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (string perm in user.Permissions)
                     TextWriters.Write($"  - {perm}", true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the groups.
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Groups"), KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Groups"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (string group in user.Groups)
                     TextWriters.Write($"  - {group}", true, KernelColorType.ListValue);
             }

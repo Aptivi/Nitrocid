@@ -396,7 +396,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
                 // Now, print the output
                 DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
-                TextDynamicWriters.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
+                TextWriters.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
             }
             catch (Exception ex)
             {

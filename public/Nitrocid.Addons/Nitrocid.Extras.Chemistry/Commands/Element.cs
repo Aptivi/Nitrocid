@@ -23,6 +23,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Chemistry.Commands
 {
@@ -54,19 +56,30 @@ namespace Nitrocid.Extras.Chemistry.Commands
             }
 
             // Print information
-            TextWriters.WriteListEntry(Translate.DoTranslation("Name"), substance.Name, KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}", KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}", KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol, KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary, KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}", KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}", KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})", KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer, KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy, KernelColorType.ListEntry, KernelColorType.ListValue);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Name"), substance.Name, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}", KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}", KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}", KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}", KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})", KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy, KernelColorType.ListEntry, KernelColorType.ListValue);
+            WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration, KernelColorType.ListEntry, KernelColorType.ListValue);
             return 0;
         }
 
+        private void WriteListEntry(string entry, string value, KernelColorType entryColor, KernelColorType valueColor)
+        {
+            var listEntry = new ListEntry()
+            {
+                Entry = entry,
+                Value = value,
+                KeyColor = KernelColorTools.GetColor(entryColor),
+                ValueColor = KernelColorTools.GetColor(valueColor),
+            };
+            TextWriterRaw.WritePlain(listEntry.Render());
+        }
     }
 }

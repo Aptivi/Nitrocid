@@ -24,6 +24,7 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -66,7 +67,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 var renamed = tree.Renamed;
 
                 // List the general changes
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("General changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("General changes in") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var change in modified)
                     TextWriters.Write($"[M] * {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in added)
@@ -82,7 +83,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
             if (doPatch)
             {
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Content changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Content changes in") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriterColor.Write(patch.Content);
             }
 

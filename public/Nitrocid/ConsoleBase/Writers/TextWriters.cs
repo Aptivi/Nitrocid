@@ -27,6 +27,7 @@ using System.Threading;
 using Nitrocid.Drivers.Console;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.Drivers;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -35,62 +36,6 @@ namespace Nitrocid.ConsoleBase.Writers
     /// </summary>
     public static class TextWriters
     {
-        /// <summary>
-        /// Outputs a list entry and value into the terminal prompt.
-        /// </summary>
-        /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
-        /// <param name="value">A list value that will be listed to the terminal prompt.</param>
-        /// <param name="indent">Indentation level</param>
-        /// <param name="ListKeyColor">A key color.</param>
-        /// <param name="ListValueColor">A value color.</param>
-        public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor, KernelColorType ListValueColor, int indent = 0)
-        {
-            var listing = new ListEntry()
-            {
-                Entry = entry,
-                Value = value,
-                KeyColor = KernelColorTools.GetColor(ListKeyColor),
-                ValueColor = KernelColorTools.GetColor(ListValueColor),
-                Indentation = indent,
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
-        }
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        /// <param name="ListKeyColor">A key color.</param>
-        /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
-            where TKey : notnull
-        {
-            var listing = new Listing()
-            {
-                Objects = List,
-                KeyColor = KernelColorTools.GetColor(ListKeyColor),
-                ValueColor = KernelColorTools.GetColor(ListValueColor),
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
-        }
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        /// <param name="ListKeyColor">A key color.</param>
-        /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor)
-        {
-            var listing = new Listing()
-            {
-                Objects = List,
-                KeyColor = KernelColorTools.GetColor(ListKeyColor),
-                ValueColor = KernelColorTools.GetColor(ListValueColor),
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
-        }
-
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
         /// </summary>
@@ -304,6 +249,62 @@ namespace Nitrocid.ConsoleBase.Writers
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), vars));
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
+        {
+            lock (BaseConsoleDriver.WriteLock)
+            {
+                try
+                {
+                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    KernelColorTools.SetConsoleColorDry(colorType);
+
+                    // Write wrapped output
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        {
+            lock (BaseConsoleDriver.WriteLock)
+            {
+                try
+                {
+                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
+
+                    // Write wrapped output
+                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

@@ -24,6 +24,8 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -68,7 +70,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
-            TextWriters.WriteListEntry(Translate.DoTranslation("Available configuration types"), string.Join(", ", names), KernelColorType.ListEntry, KernelColorType.ListValue);
+            var listEntry = new ListEntry()
+            {
+                Entry = Translate.DoTranslation("Available configuration types"),
+                Value = string.Join(", ", names),
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
+            };
+            TextWriterRaw.WriteRaw(listEntry.Render());
         }
 
     }
