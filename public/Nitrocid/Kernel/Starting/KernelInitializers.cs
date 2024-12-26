@@ -52,7 +52,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Threading.Watchdog;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RPC;

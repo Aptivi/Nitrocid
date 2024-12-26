@@ -22,7 +22,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
@@ -31,27 +30,18 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
+using Nitrocid.ConsoleBase.Writers;
 
-namespace Nitrocid.ConsoleBase.Writers.MiscWriters
+namespace Nitrocid.Kernel.Starting
 {
-    /// <summary>
-    /// Welcome message writer
-    /// </summary>
-    public static class WelcomeMessage
+    internal static class WelcomeMessage
     {
-
         internal static string customBanner = "";
         internal static string[] tips = [];
 
-        /// <summary>
-        /// Show tips on log-in
-        /// </summary>
-        public static bool ShowTip { get; internal set; }
+        internal static bool ShowTip { get; set; }
 
-        /// <summary>
-        /// Gets the custom banner actual text with placeholders parsed
-        /// </summary>
-        public static string GetCustomBanner()
+        internal static string GetCustomBanner()
         {
             // The default message to write
             string MessageWrite = "     --> " + Translate.DoTranslation("Welcome to Nitrocid Kernel! - Version") + " v{0} <--     ";
@@ -64,10 +54,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             return MessageWrite;
         }
 
-        /// <summary>
-        /// Writes the welcoming message to the console (welcome to kernel)
-        /// </summary>
-        public static void WriteMessage()
+        internal static void WriteMessage()
         {
             if (!Config.MainConfig.EnableSplash)
             {
@@ -88,20 +75,13 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             }
         }
 
-        /// <summary>
-        /// Writes the license
-        /// </summary>
-        public static void WriteLicense()
+        internal static void WriteLicense()
         {
             TextFancyWriters.WriteSeparator(Translate.DoTranslation("License information"), KernelColorType.Stage);
             TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 
-        /// <summary>
-        /// Gets the license string
-        /// </summary>
-        /// <returns></returns>
-        public static string GetLicenseString() =>
+        internal static string GetLicenseString() =>
             $"""
             {Translate.DoTranslation("This program is licensed under GNU General Public License 3.0 or later.")}
 
@@ -212,6 +192,5 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             TextWriters.Write(
                 "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + GetRandomTip(), true, KernelColorType.Tip);
         }
-
     }
 }

@@ -24,7 +24,7 @@ using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Kernel.Starting;
 
 namespace Nitrocid.Extras.Tips
 {

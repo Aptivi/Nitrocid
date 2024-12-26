@@ -28,7 +28,6 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Groups;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Starting.Bootloader;

@@ -70,11 +70,6 @@ namespace Nitrocid.Kernel.Starting
                 ReportNewStage(stageNum, "");
         }
 
-        /// <summary>
-        /// Reports the new kernel stage
-        /// </summary>
-        /// <param name="StageNumber">The stage number</param>
-        /// <param name="StageText">The stage text</param>
         internal static void ReportNewStage(int StageNumber, string StageText)
         {
             // Show the stage finish times

@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Kernel.Starting;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {

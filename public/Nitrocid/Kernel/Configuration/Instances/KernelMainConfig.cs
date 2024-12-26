@@ -43,7 +43,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
@@ -54,6 +53,7 @@ using Nitrocid.Shell.Homepage;
 using Terminaux.Inputs;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
+using Nitrocid.Kernel.Starting;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
