@@ -52,6 +52,7 @@ namespace Nitrocid.ScreensaverPacks
             { "colormix", new ColorMixDisplay() },
             { "commitmilestone", new CommitMilestoneDisplay() },
             { "dancelines", new DanceLinesDisplay() },
+            { "dancenumbers", new DanceNumbersDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
             { "diamond", new DiamondDisplay() },
             { "disco", new DiscoDisplay() },
