@@ -67,7 +67,7 @@ namespace Nitrocid.Analyzers.Languages
             {
                 // Build the replacement syntax
                 var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
-                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCult");
+                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCulture");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
 
                 // Actually replace

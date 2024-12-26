@@ -65,7 +65,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = identifier.Identifier.Text;
                         if (idName == "Name")
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultureName");
                             found = true;
                         }
                     }
@@ -87,7 +87,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                 // We need to have a syntax that calls CultureManager.CurrentCult
                 var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
-                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCultStr");
+                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCultureName");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
                     .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())

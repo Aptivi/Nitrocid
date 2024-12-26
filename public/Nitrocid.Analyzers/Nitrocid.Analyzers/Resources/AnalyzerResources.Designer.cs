@@ -277,7 +277,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system..
+        ///   Looks up a localized string similar to CultureManager.CurrentCultureName gives you a current culture that is set by the kernel settings without affecting the host system..
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerDescription {
             get {
@@ -286,7 +286,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr.
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultureName.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerMessageFormat {
             get {
@@ -295,7 +295,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultureName instead of CultureInfo.CurrentUICulture.Name.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerTitle {
             get {
@@ -304,7 +304,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system..
+        ///   Looks up a localized string similar to CultureManager.CurrentCulture gives you a current culture that is set by the kernel settings without affecting the host system..
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerDescription {
             get {
@@ -313,7 +313,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult.
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerMessageFormat {
             get {
@@ -322,7 +322,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCulture instead of CultureInfo.CurrentUICulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerTitle {
             get {

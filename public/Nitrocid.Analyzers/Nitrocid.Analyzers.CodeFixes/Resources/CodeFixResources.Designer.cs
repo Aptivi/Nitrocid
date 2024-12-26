@@ -133,7 +133,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultureName.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageCodeFixTitle {
             get {
@@ -142,7 +142,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCult.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageCodeFixTitle {
             get {

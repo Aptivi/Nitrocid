@@ -57,7 +57,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         // RS1035 occurs when we try to use nameof(CultureInfo.CurrentUICulture). Use "CurrentUICulture" instead.
                         if (idName == "CurrentUICulture")
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCulture");
                             found = true;
                         }
                     }
@@ -77,9 +77,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
                     continue;
 
-                // We need to have a syntax that calls CultureManager.CurrentCult
+                // We need to have a syntax that calls CultureManager.CurrentCulture
                 var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
-                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCult");
+                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCulture");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
                     .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())

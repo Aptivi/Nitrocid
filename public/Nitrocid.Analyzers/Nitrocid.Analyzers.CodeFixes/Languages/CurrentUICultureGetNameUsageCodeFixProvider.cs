@@ -66,7 +66,7 @@ namespace Nitrocid.Analyzers.Languages
             if (typeDecl.Expression is IdentifierNameSyntax identifier)
             {
                 // Build the replacement syntax
-                var resultSyntax = SyntaxFactory.ParseExpression("Config.MainConfig.CurrentCultStr");
+                var resultSyntax = SyntaxFactory.ParseExpression("Config.MainConfig.CurrentCultureName");
 
                 // Actually replace
                 if (typeDecl.Parent is null)

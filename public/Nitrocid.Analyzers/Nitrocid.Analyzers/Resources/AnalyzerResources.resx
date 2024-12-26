@@ -629,26 +629,26 @@
       CurrentUICultureGet usage analyzer
   -->
   <data name="CurrentUICultureGetUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture</value>
+    <value>Use CultureManager.CurrentCulture instead of CultureInfo.CurrentUICulture</value>
   </data>
   <data name="CurrentUICultureGetUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult</value>
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCulture</value>
   </data>
   <data name="CurrentUICultureGetUsageAnalyzerDescription" xml:space="preserve">
-    <value>CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+    <value>CultureManager.CurrentCulture gives you a current culture that is set by the kernel settings without affecting the host system.</value>
   </data>
 
   <!--
       CurrentUICultureGetName usage analyzer
   -->
   <data name="CurrentUICultureGetNameUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name</value>
+    <value>Use CultureManager.CurrentCultureName instead of CultureInfo.CurrentUICulture.Name</value>
   </data>
   <data name="CurrentUICultureGetNameUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr</value>
+    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultureName</value>
   </data>
   <data name="CurrentUICultureGetNameUsageAnalyzerDescription" xml:space="preserve">
-    <value>CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+    <value>CultureManager.CurrentCultureName gives you a current culture that is set by the kernel settings without affecting the host system.</value>
   </data>
 
   <!--
