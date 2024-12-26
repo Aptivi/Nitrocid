@@ -233,5 +233,10 @@
         "name": "ExtrasChemistry",
         "display": "Extras - Chemistry",
         "project": "Extras.Chemistry"
+    },
+    {
+        "name": "ExtrasMods",
+        "display": "Extras - Mods",
+        "project": "Extras.Mods"
     }
 ]
