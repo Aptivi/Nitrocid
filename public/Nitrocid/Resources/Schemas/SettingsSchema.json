@@ -31,6 +31,9 @@
                         "Description": {
                             "type": "string"
                         },
+                        "Masked": {
+                            "type": "boolean"
+                        },
                         "IsEnumeration": {
                             "type": "boolean"
                         },

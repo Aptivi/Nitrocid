@@ -71,7 +71,7 @@ namespace Nitrocid.Misc.Interactives
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
-                        object? currentValue = ConfigTools.GetValueFromEntry(key, config);
+                        object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
                         return ($"{key.Name} [{currentValue}]", idx);
                     }).ToArray();
                     entryNames.Clear();

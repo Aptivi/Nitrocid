@@ -43,6 +43,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonProperty(nameof(Description))]
         internal string description = "";
 
+        // String
+        [JsonProperty(nameof(Masked))]
+        internal bool masked;
+
         // Selection
         [JsonProperty(nameof(SelectionFunctionName))]
         internal string selectionFunctionName = "";
@@ -138,6 +142,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public LocalizedString Description =>
             description;
+
+        /// <summary>
+        /// Is this string masked? (useful for passwords)
+        /// </summary>
+        [JsonIgnore]
+        public bool Masked =>
+            masked;
 
         /// <summary>
         /// Is this variable an enumeration?

@@ -227,7 +227,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                             continue;
 
                         // Now, populate the input choice info
-                        object? CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
+                        object? CurrentValue =
+                            Setting.Masked ? "***" : ConfigTools.GetValueFromEntry(Setting, settingsType);
                         string choiceName = $"{SectionIndex + 1}";
                         string choiceTitle = $"{Setting.Name} [{CurrentValue}]";
                         string choiceDesc = Setting.Description;

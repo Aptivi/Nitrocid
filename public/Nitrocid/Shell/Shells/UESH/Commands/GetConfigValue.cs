@@ -68,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     var keyVar = new ListEntry()
                     {
                         Entry = Translate.DoTranslation("Key variable"),
-                        Value = $"{key.Variable} [{value}]",
+                        Value = $"{key.Variable} [{(key.Masked ? "***" : value)}]",
                     };
                     TextWriterRaw.WriteRaw(
                         keyName.Render() +

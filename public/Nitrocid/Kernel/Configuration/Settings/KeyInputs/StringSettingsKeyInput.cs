@@ -44,7 +44,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+            string? AnswerString =
+                key.Masked ?
+                InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}") :
+                InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
