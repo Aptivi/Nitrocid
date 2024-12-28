@@ -204,7 +204,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 var arguments = SettingsAppTools.ParseParameters(key);
-                var listObj = MethodManager.InvokeMethodStatic(ListFunctionName, args: arguments);
+                var type = Type.GetType(key.SelectionFunctionType);
+                var listObj =
+                    type is not null ?
+                    MethodManager.InvokeMethodStatic(ListFunctionName, type, args: arguments) :
+                    MethodManager.InvokeMethodStatic(ListFunctionName, args: arguments);
                 if (SelectionFunctionDict)
                 {
                     if (listObj is null || listObj is IEnumerable<object> objs && !objs.Any())
