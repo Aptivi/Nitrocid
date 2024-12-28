@@ -29,6 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {

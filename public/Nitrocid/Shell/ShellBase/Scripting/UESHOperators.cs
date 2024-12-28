@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Drivers.Encryption;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.ShellBase.Scripting

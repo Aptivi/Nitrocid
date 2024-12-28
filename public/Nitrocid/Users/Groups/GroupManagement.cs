@@ -19,6 +19,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;

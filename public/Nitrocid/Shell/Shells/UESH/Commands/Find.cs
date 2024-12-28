@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     Objects = FileEntries,
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
             variableValue = string.Join('\n', FileEntries);
             return 0;

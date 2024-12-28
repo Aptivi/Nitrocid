@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Events;
 using Textify.General;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.ShellBase.Scripting
 {

@@ -403,7 +403,7 @@ namespace Nitrocid.Misc.Interactives
         {
             // Now, render the search box
             string root = CurrentPane == 2 ? secondPanePath : firstPanePath;
-            string path = Selection.SelectFolder(root);
+            string path = FilesystemTools.SelectFolder(root);
             path = FilesystemTools.NeutralizePath(path, root);
             if (FilesystemTools.FolderExists(path))
             {
@@ -644,7 +644,7 @@ namespace Nitrocid.Misc.Interactives
             }
 
             // Render the preview box
-            string preview = FileContentPrinter.RenderContents(currentEntry.FilePath);
+            string preview = FilesystemTools.RenderContents(currentEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
             InfoBoxModalColor.WriteInfoBoxModalColorBack(filtered, Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }

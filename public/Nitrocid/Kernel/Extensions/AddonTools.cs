@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Files;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;

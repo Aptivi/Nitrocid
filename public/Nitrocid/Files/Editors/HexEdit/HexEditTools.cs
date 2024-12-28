@@ -329,7 +329,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
+                FilesystemTools.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
@@ -621,7 +621,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                FileContentPrinter.DisplayInHex(StartByte, EndByte, bytes);
+                FilesystemTools.DisplayInHex(StartByte, EndByte, bytes);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));

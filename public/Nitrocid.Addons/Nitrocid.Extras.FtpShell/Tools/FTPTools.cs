@@ -228,7 +228,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriters.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
+                                TextWriters.Write(Translate.DoTranslation("Invalid profile FilesystemTools.") + CharManager.NewLine, true, KernelColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }

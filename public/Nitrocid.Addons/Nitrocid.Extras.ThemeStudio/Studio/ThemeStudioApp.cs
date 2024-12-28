@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using System;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

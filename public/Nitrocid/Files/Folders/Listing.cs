@@ -112,10 +112,10 @@ namespace Nitrocid.Files
                             {
                                 case FileSystemEntryType.File:
                                     TotalSize += ((FileInfo)Entry.BaseEntry).Length;
-                                    FileInfoPrinter.PrintFileInfo(Entry);
+                                    FilesystemTools.PrintFileInfo(Entry);
                                     break;
                                 case FileSystemEntryType.Directory:
-                                    DirectoryInfoPrinter.PrintDirectoryInfo(Entry);
+                                    FilesystemTools.PrintDirectoryInfo(Entry);
                                     break;
                             }
                         }
@@ -147,7 +147,7 @@ namespace Nitrocid.Files
             {
                 try
                 {
-                    FileInfoPrinter.PrintFileInfo(new FileSystemEntry(folder), ShowFileDetails);
+                    FilesystemTools.PrintFileInfo(new FileSystemEntry(folder), ShowFileDetails);
                 }
                 catch (UnauthorizedAccessException ex)
                 {

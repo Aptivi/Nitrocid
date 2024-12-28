@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             {
                 Objects = events,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
             return 0;
         }
 

@@ -38,7 +38,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 Objects = ListArgsOnly,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
         }
     }
 }

@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {

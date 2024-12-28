@@ -182,7 +182,7 @@
                 "Name": "Bootloader default selection timeout",
                 "Type": "SIntSlider",
                 "Variable": "BootSelectTimeoutSeconds",
-                "Description": "Timeout in seconds to boot to the default selection.",
+                "Description": "Timeout in seconds to boot to the default FilesystemTools.",
                 "MinimumValue": 0,
                 "MaximumValue": 600
             },
@@ -190,7 +190,7 @@
                 "Name": "Bootloader default selection",
                 "Type": "SInt",
                 "Variable": "BootSelect",
-                "Description": "Default boot entry selection. This number is zero-based, so the first element is index 0, and so on."
+                "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
             },
             {
                 "Name": "Enable 'The Nitrocid Homepage'",

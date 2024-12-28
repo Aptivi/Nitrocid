@@ -27,6 +27,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

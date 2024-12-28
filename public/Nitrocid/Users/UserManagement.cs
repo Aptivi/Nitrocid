@@ -34,6 +34,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
+using Nitrocid.Files;
 
 namespace Nitrocid.Users
 {

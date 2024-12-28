@@ -81,7 +81,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         continue;
 
                     // We need to have a syntax that calls FilesystemTools.GetInvalidPathChars
-                    var classSyntax = SyntaxFactory.IdentifierName("Parsing");
+                    var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("GetInvalidPathChars");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax

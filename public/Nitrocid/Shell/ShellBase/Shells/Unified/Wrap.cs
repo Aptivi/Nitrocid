@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             {
                 Objects = WrappableCmds,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
         }
 
     }

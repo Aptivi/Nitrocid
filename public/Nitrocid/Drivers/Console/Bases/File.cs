@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Textify.General;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Console.Bases
 {

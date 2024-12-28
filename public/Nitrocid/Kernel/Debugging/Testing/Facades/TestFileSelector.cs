@@ -19,6 +19,7 @@
 
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -28,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Files;
         public override void Run(params string[] args)
         {
-            string selected = Selection.SelectFile();
+            string selected = FilesystemTools.SelectFile();
             InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've selected") + $" {selected}");
         }
     }

@@ -81,7 +81,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         continue;
 
                     // We need to have a syntax that calls FilesystemTools.MakeFile
-                    var classSyntax = SyntaxFactory.IdentifierName("Making");
+                    var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("MakeFile");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax

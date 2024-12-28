@@ -19,6 +19,7 @@
 
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;

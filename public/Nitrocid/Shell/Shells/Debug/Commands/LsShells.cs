@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = shellNames,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
             return 0;
         }
 

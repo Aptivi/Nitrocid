@@ -30,6 +30,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
 {

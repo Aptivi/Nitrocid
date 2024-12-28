@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Files;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Shell.ShellBase.Commands;
 

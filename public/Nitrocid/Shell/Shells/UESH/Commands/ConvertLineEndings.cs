@@ -19,6 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
 using Nitrocid.Files.LineEndings;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -78,7 +79,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
                 return 7;
             }
-            LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
+            FilesystemTools.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
             return 0;
         }
 

@@ -146,7 +146,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             {
                                 Objects = unsatisfied.UnknownSwitchesList,
                             };
-                            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                            TextWriterRaw.WriteRaw(listing.Render());
                         }
 
                         // Check for conflicting switches
@@ -158,7 +158,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             {
                                 Objects = unsatisfied.ConflictingSwitchesList,
                             };
-                            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                            TextWriterRaw.WriteRaw(listing.Render());
                         }
 
                         // Check for switches that don't accept values
@@ -170,7 +170,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             {
                                 Objects = unsatisfied.NoValueSwitchesList,
                             };
-                            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                            TextWriterRaw.WriteRaw(listing.Render());
                         }
 
                         // Check for invalid number in numeric arguments
@@ -365,7 +365,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 {
                     Objects = WrappableCmds,
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
                 return;
             }
 

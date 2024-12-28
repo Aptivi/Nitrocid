@@ -20,6 +20,7 @@
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

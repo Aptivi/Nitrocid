@@ -34,7 +34,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             {
                 Objects = users,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
             variableValue = string.Join('\n', users);
             return 0;
         }

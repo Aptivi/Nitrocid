@@ -72,7 +72,7 @@ namespace Nitrocid.Users.Login.Handlers
                 {
                     Objects = UsersList,
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
             return true;
         }

@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = addonNames,
             };
-            TextWriterRaw.WriteRaw(FilesystemTools.Render());
+            TextWriterRaw.WriteRaw(listing.Render());
             return 0;
         }
 

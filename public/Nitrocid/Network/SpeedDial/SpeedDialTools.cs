@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Network.Connections;
+using Nitrocid.Files;
 
 namespace Nitrocid.Network.SpeedDial
 {

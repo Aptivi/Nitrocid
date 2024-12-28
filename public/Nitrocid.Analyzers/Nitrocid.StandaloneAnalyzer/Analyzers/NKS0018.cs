@@ -81,7 +81,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         continue;
 
                     // We need to have a syntax that calls FilesystemTools.FileExists
-                    var classSyntax = SyntaxFactory.IdentifierName("Checking");
+                    var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("FileExists");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax

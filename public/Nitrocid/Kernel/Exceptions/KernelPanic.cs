@@ -40,6 +40,7 @@ using System.Text;
 using System.Threading;
 using Textify.General;
 using Terminaux.Inputs;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Exceptions
 {

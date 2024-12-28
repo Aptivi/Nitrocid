@@ -554,7 +554,7 @@ namespace Nitrocid.Misc.Interactives
             }
 
             // Render the preview box
-            string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
+            string preview = FilesystemTools.RenderContents(currentFileSystemEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
             InfoBoxModalColor.WriteInfoBoxModalColorBack(filtered, Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }

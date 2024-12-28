@@ -81,7 +81,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         continue;
 
                     // We need to have a syntax that calls FilesystemTools.RemoveFile
-                    var classSyntax = SyntaxFactory.IdentifierName("Removing");
+                    var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("RemoveFile");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax

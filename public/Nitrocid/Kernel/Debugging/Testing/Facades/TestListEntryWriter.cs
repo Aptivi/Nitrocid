@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Entry = NormalStringListEntries[i],
                     Value = NormalStringListValues[i],
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
 
             // Indent level 1
@@ -55,7 +55,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Value = NormalStringListValues[i],
                     Indentation = 1,
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
 
             // Indent level 2
@@ -68,7 +68,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Value = NormalStringListValues[i],
                     Indentation = 2,
                 };
-                TextWriterRaw.WriteRaw(FilesystemTools.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
         }
     }

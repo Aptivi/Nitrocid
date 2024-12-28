@@ -192,7 +192,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public int BootSelectTimeoutSeconds { get; set; } = 10;
         /// <summary>
-        /// The default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+        /// The default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on.
         /// </summary>
         public int BootSelect { get; set; } = 0;
         /// <summary>
