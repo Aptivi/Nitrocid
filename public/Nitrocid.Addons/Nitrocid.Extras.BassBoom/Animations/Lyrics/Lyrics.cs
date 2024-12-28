@@ -28,7 +28,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
@@ -38,7 +37,6 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters;
-using Listing = Nitrocid.Files.Folders.Listing;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -59,8 +57,8 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             get => BassBoomInit.BassBoomConfig.LyricsPath;
             set
             {
-                BassBoomInit.BassBoomConfig.LyricsPath = Checking.FolderExists(value) ? FilesystemTools.NeutralizePath(value) : BassBoomInit.BassBoomConfig.LyricsPath;
-                lyricsLrc = Listing.GetFilesystemEntries(BassBoomInit.BassBoomConfig.LyricsPath, "*.lrc");
+                BassBoomInit.BassBoomConfig.LyricsPath = FilesystemTools.FolderExists(value) ? FilesystemTools.NeutralizePath(value) : BassBoomInit.BassBoomConfig.LyricsPath;
+                lyricsLrc = FilesystemTools.GetFilesystemEntries(BassBoomInit.BassBoomConfig.LyricsPath, "*.lrc");
             }
         }
 
@@ -74,7 +72,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                 return;
 
             // Select random lyric file from $HOME/Music/*.LRC
-            lyricsLrc ??= Listing.GetFilesystemEntries(LyricsPath, "*.lrc");
+            lyricsLrc ??= FilesystemTools.GetFilesystemEntries(LyricsPath, "*.lrc");
             var lyricPath = lyricsLrc.Length > 0 ? lyricsLrc[RandomDriver.RandomIdx(lyricsLrc.Length)] : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Lyric path is {0}", lyricPath);
 
@@ -103,7 +101,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 
             // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
             // lyrics folder.
-            if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
+            if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", path);
                 InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."), false);
@@ -192,7 +190,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             path = FilesystemTools.NeutralizePath(path);
 
             // If there is no lyric file, bail
-            if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
+            if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", path);
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("This lyrics file doesn't exist.") + $" {path}");

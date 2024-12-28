@@ -17,11 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json.Linq;
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Instances;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -60,9 +56,9 @@ namespace Nitrocid.Kernel.Extensions
         internal static void ProcessAddons(ModLoadPriority type)
         {
             var addonFolder = PathsManagement.AddonsPath;
-            if (!Checking.FolderExists(addonFolder))
+            if (!FilesystemTools.FolderExists(addonFolder))
                 return;
-            var addonFolders = Listing.GetFilesystemEntries(addonFolder);
+            var addonFolders = FilesystemTools.GetFilesystemEntries(addonFolder);
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} files under the addon folder {1}.", addonFolders.Length, addonFolder);
             for (int i = 0; i < addonFolders.Length; i++)
             {
@@ -79,7 +75,7 @@ namespace Nitrocid.Kernel.Extensions
             {
                 // First, check the platform
                 string windowsAddonPath = addon + windowsSuffix;
-                if (KernelPlatform.IsOnWindows() && Checking.FolderExists(windowsAddonPath))
+                if (KernelPlatform.IsOnWindows() && FilesystemTools.FolderExists(windowsAddonPath))
                     addon = windowsAddonPath;
                 if (addon.EndsWith(windowsSuffix) && !KernelPlatform.IsOnWindows())
                 {
@@ -104,7 +100,7 @@ namespace Nitrocid.Kernel.Extensions
                 DebugWriter.WriteDebug(DebugLevel.I, "Guessing addon path {0}...", addon);
                 string addonPath = $"{addon}/Nitrocid.{Path.GetFileName($"{addon}.dll")}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Addon entry {0} is using path [{1}].", addon, addonPath);
-                if (!Checking.FileExists(addonPath))
+                if (!FilesystemTools.FileExists(addonPath))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of nonexistent file [{1}]...", addon, addonPath);
                     return;

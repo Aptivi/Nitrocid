@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(Path.IsPathRooted))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Path.IsPathRooted instead of Checking.Rooted()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Path.IsPathRooted instead of FilesystemTools.Rooted()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Path.IsPathRooted))
                         continue;
 
-                    // We need to have a syntax that calls Checking.Rooted
+                    // We need to have a syntax that calls FilesystemTools.Rooted
                     var classSyntax = SyntaxFactory.IdentifierName("Checking");
                     var methodSyntax = SyntaxFactory.IdentifierName("Rooted");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

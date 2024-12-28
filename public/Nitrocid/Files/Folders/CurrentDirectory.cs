@@ -24,12 +24,12 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 
-namespace Nitrocid.Files.Folders
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Current directory module
     /// </summary>
-    public static class CurrentDirectory
+    public static partial class FilesystemTools
     {
 
         internal static string _CurrentDirectory = PathsManagement.HomePath;

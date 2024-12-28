@@ -24,7 +24,6 @@ using System.Text;
 using System.Reflection;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
@@ -57,7 +56,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
         /// <param name="Args">Arguments, if any</param>
         /// <returns>Application exit code. -1 if internal error occurred.</returns>
         public static int ExecuteProcess(string File, string Args) =>
-            ExecuteProcess(File, Args, CurrentDirectory.CurrentDir);
+            ExecuteProcess(File, Args, FilesystemTools.CurrentDir);
 
         /// <summary>
         /// Executes a file with specified arguments
@@ -142,7 +141,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
         /// <param name="includeStdErr">Include output printed to StdErr</param>
         /// <returns>Output of a command from stdout</returns>
         public static string ExecuteProcessToString(string File, string Args, ref int exitCode, bool includeStdErr) =>
-            ExecuteProcessToString(File, Args, CurrentDirectory.CurrentDir, ref exitCode, includeStdErr);
+            ExecuteProcessToString(File, Args, FilesystemTools.CurrentDir, ref exitCode, includeStdErr);
 
         /// <summary>
         /// Executes a file with specified arguments and puts the output to the string
@@ -244,7 +243,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
         /// <param name="Args">Arguments, if any</param>
         /// <returns>Application exit code. -1 if internal error occurred.</returns>
         public static void ExecuteProcessForked(string File, string Args) =>
-            ExecuteProcessForked(File, Args, CurrentDirectory.CurrentDir);
+            ExecuteProcessForked(File, Args, FilesystemTools.CurrentDir);
 
         /// <summary>
         /// Executes a file with specified arguments to a separate window. Doesn't block.

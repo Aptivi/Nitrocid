@@ -22,13 +22,14 @@ using Nitrocid.Drivers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Textify.General;
+using Nitrocid.Files.LineEndings;
 
-namespace Nitrocid.Files.LineEndings
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Line endings tools module
     /// </summary>
-    public static class LineEndingsTools
+    public static partial class FilesystemTools
     {
 
         /// <summary>

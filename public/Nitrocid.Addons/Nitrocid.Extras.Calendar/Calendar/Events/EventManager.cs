@@ -26,9 +26,6 @@ using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -145,8 +142,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void LoadEvents()
         {
-            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Events), false);
-            var EventFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Events), "*", true);
+            FilesystemTools.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Events), false);
+            var EventFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Events), "*", true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Length);
 
             // Load all the events
@@ -173,9 +170,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                 DebugWriter.WriteDebug(DebugLevel.I, "Loading event {0}...", EventFile);
 
                 // If file exists, convert the file to the event instance
-                if (Checking.FileExists(EventFile))
+                if (FilesystemTools.FileExists(EventFile))
                 {
-                    var eventContents = Reading.ReadContentsText(EventFile);
+                    var eventContents = FilesystemTools.ReadContentsText(EventFile);
                     EventInfo? ConvertedEvent = JsonConvert.DeserializeObject<EventInfo>(eventContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedEvent;
@@ -211,11 +208,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
 
                 // First, remove all files
                 foreach (string FilePath in EventFiles)
-                    Removing.RemoveFile(FilePath);
+                    FilesystemTools.RemoveFile(FilePath);
 
                 // Then, remove all empty folders
                 foreach (string FolderPath in EventFolders)
-                    Removing.RemoveDirectory(FolderPath);
+                    FilesystemTools.RemoveDirectory(FolderPath);
             }
 
             // Enumerate through every event and save them
@@ -245,7 +242,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
             var contents = JsonConvert.SerializeObject(EventInstance, Formatting.Indented);
-            Writing.WriteContentsText(File, contents);
+            FilesystemTools.WriteContentsText(File, contents);
         }
 
     }

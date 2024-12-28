@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 Objects = Encodings,
             };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriterRaw.WriteRaw(FilesystemTools.Render());
         }
     }
 }

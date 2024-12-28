@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(File.Copy))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Copy instead of Copying.CopyFileOrDir()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Copy instead of FilesystemTools.CopyFileOrDir()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(File.Copy))
                         continue;
 
-                    // We need to have a syntax that calls Copying.CopyFileOrDir
+                    // We need to have a syntax that calls FilesystemTools.CopyFileOrDir
                     var classSyntax = SyntaxFactory.IdentifierName("Copying");
                     var methodSyntax = SyntaxFactory.IdentifierName("CopyFileOrDir");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

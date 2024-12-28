@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
@@ -28,7 +28,7 @@ namespace Nitrocid.Extras.BeepSynth.Tools
     {
         public static SynthInfo GetSynthInfoFromFile(string path)
         {
-            string contents = Reading.ReadContentsText(path);
+            string contents = FilesystemTools.ReadContentsText(path);
             return GetSynthInfo(contents);
         }
 

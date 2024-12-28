@@ -29,19 +29,14 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Drivers;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Drivers.Encryption;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
-using Nitrocid.Files.LineEndings;
 using Nitrocid.Files.Extensions;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;
 
@@ -67,7 +62,7 @@ namespace Nitrocid.Misc.Interactives
                     if (refreshFirstPaneListing)
                     {
                         refreshFirstPaneListing = false;
-                        firstPaneListing = Listing.CreateList(firstPanePath, true);
+                        firstPaneListing = FilesystemTools.CreateList(firstPanePath, true);
                     }
                     return firstPaneListing;
                 }
@@ -153,7 +148,7 @@ namespace Nitrocid.Misc.Interactives
                         $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {item.BaseEntry.Name} | " +
 
                         // File size or directory size
-                        $"{(!isDirectory ? ((FileInfo)item.BaseEntry).Length.SizeString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)item.BaseEntry).SizeString())}"
+                        $"{(!isDirectory ? ((FileInfo)item.BaseEntry).Length.SizeString() : FilesystemTools.GetAllSizesInFolder((DirectoryInfo)item.BaseEntry).SizeString())}"
                     ;
                 else
                     return $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {item.BaseEntry.Name}";
@@ -226,13 +221,13 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 string fullPath = currentFileSystemEntry.FilePath;
-                if (Checking.FolderExists(fullPath))
+                if (FilesystemTools.FolderExists(fullPath))
                 {
                     // The file system info instance points to a folder
                     var DirInfo = new DirectoryInfo(fullPath);
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), DirInfo.Name));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(DirInfo.FullName)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).SizeString()));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Size: {0}"), FilesystemTools.GetAllSizesInFolder(DirInfo).SizeString()));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
@@ -244,7 +239,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     // The file system info instance points to a file
                     FileInfo fileInfo = new(fullPath);
-                    bool isBinary = Parsing.IsBinaryFile(fileInfo.FullName);
+                    bool isBinary = FilesystemTools.IsBinaryFile(fileInfo.FullName);
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(fileInfo.FullName)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File size: {0}"), fileInfo.Length.SizeString()));
@@ -255,7 +250,7 @@ namespace Nitrocid.Misc.Interactives
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(fileInfo.DirectoryName)));
                     if (!isBinary)
                     {
-                        var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
+                        var Style = FilesystemTools.GetLineEndingFromFile(fullPath);
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
                     }
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
@@ -306,7 +301,7 @@ namespace Nitrocid.Misc.Interactives
 
             try
             {
-                Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
+                FilesystemTools.RemoveFileOrDir(currentFileSystemEntry.FilePath);
                 refreshFirstPaneListing = true;
             }
             catch (Exception ex)
@@ -323,7 +318,7 @@ namespace Nitrocid.Misc.Interactives
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             path = FilesystemTools.NeutralizePath(path, firstPanePath);
-            if (Checking.FolderExists(path))
+            if (FilesystemTools.FolderExists(path))
             {
                 InteractiveTuiTools.SelectionMovement(this, 1);
                 firstPanePath = path;
@@ -346,11 +341,11 @@ namespace Nitrocid.Misc.Interactives
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                if (Checking.FolderExists(path))
+                if (FilesystemTools.FolderExists(path))
                 {
-                    if (Parsing.TryParsePath(path))
+                    if (FilesystemTools.TryParsePath(path))
                     {
-                        Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
+                        FilesystemTools.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                         refreshFirstPaneListing = true;
                     }
                     else
@@ -381,11 +376,11 @@ namespace Nitrocid.Misc.Interactives
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                if (Checking.FolderExists(path))
+                if (FilesystemTools.FolderExists(path))
                 {
-                    if (Parsing.TryParsePath(path))
+                    if (FilesystemTools.TryParsePath(path))
                     {
-                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
+                        FilesystemTools.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
                         refreshFirstPaneListing = true;
                     }
                     else
@@ -413,11 +408,11 @@ namespace Nitrocid.Misc.Interactives
             {
                 string filename = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
-                if (!Checking.FileExists(filename))
+                if (!FilesystemTools.FileExists(filename))
                 {
-                    if (Parsing.TryParseFileName(filename))
+                    if (FilesystemTools.TryParseFileName(filename))
                     {
-                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
+                        FilesystemTools.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                         refreshFirstPaneListing = true;
                     }
                     else
@@ -440,9 +435,9 @@ namespace Nitrocid.Misc.Interactives
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             path = FilesystemTools.NeutralizePath(path, firstPanePath);
-            if (!Checking.FolderExists(path))
+            if (!FilesystemTools.FolderExists(path))
             {
-                Making.TryMakeDirectory(path);
+                FilesystemTools.TryMakeDirectory(path);
                 refreshFirstPaneListing = true;
             }
             else
@@ -456,7 +451,7 @@ namespace Nitrocid.Misc.Interactives
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
@@ -485,7 +480,7 @@ namespace Nitrocid.Misc.Interactives
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
@@ -520,7 +515,7 @@ namespace Nitrocid.Misc.Interactives
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;

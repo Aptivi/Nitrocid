@@ -26,14 +26,12 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
 
@@ -127,11 +125,11 @@ namespace Nitrocid.Users
 
             // First, check to see if we have the file
             string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
-            if (!Checking.FileExists(UsersPath))
+            if (!FilesystemTools.FileExists(UsersPath))
                 SaveUsers();
 
             // Get the content and parse it
-            string UsersTokenContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
+            string UsersTokenContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
             JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info array"));
 
@@ -648,7 +646,7 @@ namespace Nitrocid.Users
         {
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
+            FilesystemTools.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
         }
     }
 }

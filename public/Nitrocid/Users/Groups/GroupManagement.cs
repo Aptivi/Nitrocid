@@ -19,8 +19,6 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -210,11 +208,11 @@ namespace Nitrocid.Users.Groups
         internal static void InitializeGroups()
         {
             // First, check to see if we have the groups file
-            if (!Checking.FileExists(PathsManagement.UserGroupsPath))
+            if (!FilesystemTools.FileExists(PathsManagement.UserGroupsPath))
                 SaveGroups();
 
             // Get the group information instances to the user groups path
-            string groupInfosJson = Reading.ReadContentsText(PathsManagement.UserGroupsPath);
+            string groupInfosJson = FilesystemTools.ReadContentsText(PathsManagement.UserGroupsPath);
             JArray? groupInfoArrays = (JArray?)JsonConvert.DeserializeObject(groupInfosJson) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info array"));
             List<GroupInfo> groups = [];
@@ -231,7 +229,7 @@ namespace Nitrocid.Users.Groups
         {
             // Make a JSON file to save all group information files
             string groupInfosSerialized = JsonConvert.SerializeObject(AvailableGroups.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.UserGroupsPath, groupInfosSerialized);
+            FilesystemTools.WriteContentsText(PathsManagement.UserGroupsPath, groupInfosSerialized);
         }
 
         internal static void ChangePermissionInternal(string groupName, string[] newPermissions)

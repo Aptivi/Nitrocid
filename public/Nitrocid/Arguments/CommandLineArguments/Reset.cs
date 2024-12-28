@@ -25,11 +25,10 @@ using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Debugging;
 using ListWriter = Terminaux.Writer.CyclicWriters.Listing;
-using Listing = Nitrocid.Files.Folders.Listing;
+using Nitrocid.Files;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -51,20 +50,20 @@ namespace Nitrocid.Arguments.CommandLineArguments
                     {
                         case KernelPathType.NotificationRecents:
                             TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
-                            string[] recents = Listing.GetFilesystemEntries(TargetPath);
+                            string[] recents = FilesystemTools.GetFilesystemEntries(TargetPath);
                             foreach (string recent in recents)
                                 File.Delete(recent);
                             break;
                         case KernelPathType.Journaling:
                             TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
-                            string[] journals = Listing.GetFilesystemEntries(TargetPath);
+                            string[] journals = FilesystemTools.GetFilesystemEntries(TargetPath);
                             foreach (string journal in journals)
                                 File.Delete(journal);
                             break;
                         default:
-                            if (Checking.FileExists(TargetPath))
+                            if (FilesystemTools.FileExists(TargetPath))
                                 File.Delete(TargetPath);
-                            else if (Checking.FolderExists(TargetPath))
+                            else if (FilesystemTools.FolderExists(TargetPath))
                                 Directory.Delete(TargetPath, true);
                             break;
                     }
@@ -77,7 +76,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
             // Delete every dump file
             string dumpPath = $"{PathsManagement.AppDataPath}/dmp_*.txt";
-            string[] dumps = Listing.GetFilesystemEntries(dumpPath);
+            string[] dumps = FilesystemTools.GetFilesystemEntries(dumpPath);
             foreach (string dump in dumps)
             {
                 try
@@ -101,7 +100,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
             }
 
             // Inform user that the wipe was not complete if there are files.
-            string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
+            string[] files = FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath);
             if (files.Length > 0)
             {
                 TextWriters.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);

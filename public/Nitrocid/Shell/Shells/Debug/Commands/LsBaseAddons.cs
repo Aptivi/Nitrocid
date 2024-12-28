@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     KeyColor = finalKeyColor,
                     ValueColor = finalValueColor,
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WriteRaw(FilesystemTools.Render());
             }
             return 0;
         }

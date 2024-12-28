@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Folders
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Listing.GetFilesystemEntries
+                // We need to have a syntax that calls FilesystemTools.GetFilesystemEntries
                 var classSyntax = SyntaxFactory.IdentifierName("Listing");
                 var methodSyntax = SyntaxFactory.IdentifierName("GetFilesystemEntries");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

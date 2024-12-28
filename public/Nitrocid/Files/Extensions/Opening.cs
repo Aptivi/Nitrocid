@@ -19,7 +19,6 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
@@ -27,12 +26,12 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.IO;
 
-namespace Nitrocid.Files.Extensions
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Routines related to opening the files
     /// </summary>
-    public static class Opening
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Opens the editor deterministically
@@ -44,7 +43,7 @@ namespace Nitrocid.Files.Extensions
         /// <param name="forceSql">Forces SQL shell</param>
         public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false, bool forceSql = false)
         {
-            bool fileExists = Checking.FileExists(path);
+            bool fileExists = FilesystemTools.FileExists(path);
 
             // Check the addons
             bool hasJsonShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell)) is not null;
@@ -90,11 +89,11 @@ namespace Nitrocid.Files.Extensions
                 return;
 
             // Determine the type
-            if (hasSqlShell && Parsing.IsSql(path))
+            if (hasSqlShell && FilesystemTools.IsSql(path))
                 ShellManager.StartShell("SqlShell", path);
-            else if (Parsing.IsBinaryFile(path))
+            else if (FilesystemTools.IsBinaryFile(path))
                 ShellManager.StartShell(ShellType.HexShell, path);
-            else if (Parsing.IsJson(path))
+            else if (FilesystemTools.IsJson(path))
             {
                 if (!hasJsonShell)
                 {
@@ -116,12 +115,12 @@ namespace Nitrocid.Files.Extensions
         public static void OpenDeterministically(string file)
         {
             // Check the file for existence
-            bool fileExists = Checking.FileExists(file);
+            bool fileExists = FilesystemTools.FileExists(file);
             if (!fileExists)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
 
             // Now, check to see if the file is a text or a binary file
-            if (Parsing.IsBinaryFile(file))
+            if (FilesystemTools.IsBinaryFile(file))
             {
                 // This file is a binary file.
                 string extension = Path.GetExtension(file);

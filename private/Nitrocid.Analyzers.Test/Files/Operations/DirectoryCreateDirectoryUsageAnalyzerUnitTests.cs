@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Making.MakeDirectory("test");
+                            FilesystemTools.MakeDirectory("test");
                         }
                     }
                 }

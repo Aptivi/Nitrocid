@@ -24,10 +24,8 @@ using System.Threading;
 using Terminaux.Sequences;
 using TextEncoding = System.Text.Encoding;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 
 namespace Nitrocid.Drivers.Console.Bases
@@ -166,8 +164,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
@@ -215,8 +213,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true);
@@ -242,8 +240,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
@@ -301,8 +299,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 try
                 {
@@ -340,8 +338,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 try
                 {
@@ -365,8 +363,8 @@ namespace Nitrocid.Drivers.Console.Bases
             lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
-                if (!Checking.FileExists(PathToWrite))
-                    Making.MakeFile(PathToWrite);
+                if (!FilesystemTools.FileExists(PathToWrite))
+                    FilesystemTools.MakeFile(PathToWrite);
 
                 try
                 {

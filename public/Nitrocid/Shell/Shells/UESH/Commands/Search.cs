@@ -23,7 +23,6 @@ using System.Text.RegularExpressions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -43,7 +42,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             try
             {
-                var Matches = Searching.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
+                var Matches = FilesystemTools.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
                 foreach ((string, MatchCollection) matchTuple in Matches)
                 {
                     string matchLine = matchTuple.Item1;

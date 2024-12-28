@@ -18,8 +18,6 @@
 //
 
 using System;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
@@ -27,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Files;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -56,11 +55,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
-            if (Parsing.TryParsePath(ScreensaverPackInit.SaversConfig.SpotWriteWrite) && Checking.FileExists(ScreensaverPackInit.SaversConfig.SpotWriteWrite))
+            if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.SpotWriteWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.SpotWriteWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
-                TypeWrite = Reading.ReadContentsText(ScreensaverPackInit.SaversConfig.SpotWriteWrite);
+                TypeWrite = FilesystemTools.ReadContentsText(ScreensaverPackInit.SaversConfig.SpotWriteWrite);
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.

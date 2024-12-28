@@ -21,7 +21,6 @@ using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -44,7 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             try
             {
-                var Matches = Searching.SearchFileForString(fileName, lookup);
+                var Matches = FilesystemTools.SearchFileForString(fileName, lookup);
                 foreach (string Match in Matches)
                 {
                     var matchColor = KernelColorTools.GetColor(KernelColorType.Success);

@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = splashes,
             };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriterRaw.WriteRaw(FilesystemTools.Render());
         }
 
     }

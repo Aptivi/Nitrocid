@@ -19,8 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
@@ -44,17 +42,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string pathOne = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string pathTwo = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
-            if (!Checking.FileExists(pathOne))
+            if (!FilesystemTools.FileExists(pathOne))
             {
                 TextWriters.Write(Translate.DoTranslation("Source file doesn't exist."), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
-            if (!Checking.FileExists(pathTwo))
+            if (!FilesystemTools.FileExists(pathTwo))
             {
                 TextWriters.Write(Translate.DoTranslation("Target file doesn't exist."), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
-            var compared = Manipulation.Compare(pathOne, pathTwo);
+            var compared = FilesystemTools.Compare(pathOne, pathTwo);
             if (compared.Length == 0)
             {
                 TextWriters.Write(Translate.DoTranslation("The two files are identical."), KernelColorType.Warning);

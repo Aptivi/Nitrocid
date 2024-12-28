@@ -31,10 +31,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
@@ -46,7 +43,6 @@ using Nitrocid.Kernel.Time.Alarm;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Journaling;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Power;
@@ -89,11 +85,11 @@ namespace Nitrocid.Kernel.Starting
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                 // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(PathsManagement.AppDataPath))
-                    Making.MakeDirectory(PathsManagement.AppDataPath, false);
+                if (!FilesystemTools.FolderExists(PathsManagement.AppDataPath))
+                    FilesystemTools.MakeDirectory(PathsManagement.AppDataPath, false);
 
                 // Set the first time run variable
-                if (Listing.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
+                if (FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
                     KernelEntry.FirstTime = true;
 
                 // Initialize debug
@@ -147,7 +143,7 @@ namespace Nitrocid.Kernel.Starting
                     KernelEntry.SafeMode = true;
 
                 // Initialize journal path
-                JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
+                JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
 
                 // Initialize custom languages
                 try

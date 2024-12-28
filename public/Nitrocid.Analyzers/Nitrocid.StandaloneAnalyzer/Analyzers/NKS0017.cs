@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(Directory.Delete))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.Delete instead of Removing.RemoveDirectory()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.Delete instead of FilesystemTools.RemoveDirectory()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Directory.Delete))
                         continue;
 
-                    // We need to have a syntax that calls Removing.RemoveDirectory
+                    // We need to have a syntax that calls FilesystemTools.RemoveDirectory
                     var classSyntax = SyntaxFactory.IdentifierName("Removing");
                     var methodSyntax = SyntaxFactory.IdentifierName("RemoveDirectory");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

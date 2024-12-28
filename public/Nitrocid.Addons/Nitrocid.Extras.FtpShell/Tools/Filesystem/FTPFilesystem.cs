@@ -28,7 +28,6 @@ using FluentFTP.Helpers;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -198,7 +197,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                 FilesystemTools.ThrowOnInvalidPath(targetDir);
 
                 // Check if folder exists
-                if (Checking.FolderExists(targetDir))
+                if (FilesystemTools.FolderExists(targetDir))
                 {
                     // Parse written directory
                     var parser = new DirectoryInfo(targetDir);

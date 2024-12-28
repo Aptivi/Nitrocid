@@ -20,7 +20,7 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
@@ -45,12 +45,12 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;
-            List<string> lines = [.. Reading.ReadAllLinesNoBlock(path)];
+            List<string> lines = [.. FilesystemTools.ReadAllLinesNoBlock(path)];
             TextEditInteractive.OpenInteractive(ref lines);
 
             // Save the changes
             JsonTools.CloseJsonFile();
-            Writing.WriteAllLinesNoBlock(path, [.. lines]);
+            FilesystemTools.WriteAllLinesNoBlock(path, [.. lines]);
             JsonTools.OpenJsonFile(path);
             return 0;
         }

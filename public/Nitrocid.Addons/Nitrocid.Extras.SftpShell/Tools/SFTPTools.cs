@@ -31,7 +31,6 @@ using Nitrocid.Network.Connections;
 using System.Collections.Generic;
 using Textify.General;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.SftpShell.Tools
@@ -159,7 +158,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                         TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
-                        if (Checking.FileExists(PrivateKeyFile))
+                        if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
                             TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);

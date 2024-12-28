@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.LocaleGen.Core.Serializer;
 using Terminaux.Inputs.Interactive;
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 string language = translatedLine.Key;
                 List<string> localizations = translatedLine.Value;
                 string languagePath = $"{pathToTranslations}/{language}.txt";
-                Writing.WriteContents(languagePath, [.. localizations]);
+                FilesystemTools.WriteContents(languagePath, [.. localizations]);
             }
             LanguageGenerator.GenerateLocaleFiles(pathToTranslations);
         }

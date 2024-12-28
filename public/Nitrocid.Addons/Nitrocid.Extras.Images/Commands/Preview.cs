@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Text;
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Images.Commands
                 TextWriters.Write(Translate.DoTranslation("Path to the image is not provided."), KernelColorType.Error);
                 return 39;
             }
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
             {
                 TextWriters.Write(Translate.DoTranslation("Image file doesn't exist."), KernelColorType.Error);
                 return 39;

@@ -22,12 +22,12 @@ using System.IO;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Moving file operations module
     /// </summary>
-    public static class Moving
+    public static partial class FilesystemTools
     {
 
         /// <summary>

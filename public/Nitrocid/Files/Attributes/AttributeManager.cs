@@ -22,12 +22,12 @@ using System.IO;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 
-namespace Nitrocid.Files.Attributes
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Attribute management module
     /// </summary>
-    public static class AttributeManager
+    public static partial class FilesystemTools
     {
 
         /// <summary>

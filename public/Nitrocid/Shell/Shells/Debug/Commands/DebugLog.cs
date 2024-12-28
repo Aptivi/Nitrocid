@@ -19,8 +19,6 @@
 
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
@@ -52,7 +50,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             }
 
             // Now, check to see if we have this session GUID. Get all the debug logs and compare.
-            var debugs = Listing.GetFilesystemEntries(FilesystemTools.NeutralizePath(PathsManagement.AppDataPath + "/../Aptivi/Logs/") + "log_Nitrocid_*.txt");
+            var debugs = FilesystemTools.GetFilesystemEntries(FilesystemTools.NeutralizePath(PathsManagement.AppDataPath + "/../Aptivi/Logs/") + "log_Nitrocid_*.txt");
             string finalDebug = "";
             foreach (string debug in debugs)
             {
@@ -74,7 +72,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             }
 
             // Get the contents of the file and write it to the console
-            string contents = Reading.ReadContentsText(finalDebug);
+            string contents = FilesystemTools.ReadContentsText(finalDebug);
             TextWriterColor.Write(contents);
             return 0;
         }

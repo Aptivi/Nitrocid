@@ -24,8 +24,6 @@ using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -53,18 +51,18 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             string englishFile = $"{pathToTranslations}/eng.txt";
 
             // Check the translations path and the two necessary files
-            if (!Checking.FolderExists(pathToTranslations))
+            if (!FilesystemTools.FolderExists(pathToTranslations))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Path to translations, {0}, is going to be created", pathToTranslations);
-                Making.MakeDirectory(pathToTranslations);
+                FilesystemTools.MakeDirectory(pathToTranslations);
             }
-            if (!Checking.FileExists(manifestFile))
+            if (!FilesystemTools.FileExists(manifestFile))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Manifest file, {0}, is going to be copied", manifestFile);
-                Copying.CopyFileOrDir(initialManifestFile, manifestFile);
+                FilesystemTools.CopyFileOrDir(initialManifestFile, manifestFile);
             }
 
-            if (!Checking.FileExists(englishFile))
+            if (!FilesystemTools.FileExists(englishFile))
             {
                 string answer = ChoiceStyle.PromptChoice(
                     Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), [("e", "Empty"), ("n", "Nitrocid's English strings")]
@@ -74,18 +72,18 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     case "E":
                         // User chose Nitrocid's English strings
                         DebugWriter.WriteDebug(DebugLevel.I, "English strings, {0}, is going to be copied", englishFile);
-                        Copying.CopyFileOrDir(initialEnglishFile, englishFile);
+                        FilesystemTools.CopyFileOrDir(initialEnglishFile, englishFile);
                         break;
                     default:
                         // User chose to create a new one
                         DebugWriter.WriteDebug(DebugLevel.I, "Empty English strings file...");
-                        Making.MakeFile(englishFile, false);
+                        FilesystemTools.MakeFile(englishFile, false);
                         break;
                 }
             }
 
             // Check the provided languages
-            string metadataStr = Reading.ReadContentsText(manifestFile);
+            string metadataStr = FilesystemTools.ReadContentsText(manifestFile);
             JArray metadata = JArray.Parse(metadataStr);
             string[] finalLangs = metadata
                 .Select((token) => token["three"]?.ToString() ?? "")
@@ -100,7 +98,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Populate the English strings and fill the translated lines
-            List<string> englishLines = [.. Reading.ReadContents(englishFile)];
+            List<string> englishLines = [.. FilesystemTools.ReadContents(englishFile)];
             Dictionary<string, List<string>> translatedLines = [];
             foreach (string language in finalLangs)
             {
@@ -108,8 +106,8 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 string languagePath = $"{pathToTranslations}/{language}.txt";
                 List<string> finalLangLines = [];
                 DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
-                if (Checking.FileExists(languagePath))
-                    finalLangLines.AddRange(Reading.ReadContents(languagePath));
+                if (FilesystemTools.FileExists(languagePath))
+                    finalLangLines.AddRange(FilesystemTools.ReadContents(languagePath));
                 else
                     finalLangLines.AddRange(new string[englishLines.Count]);
 
@@ -200,7 +198,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string language = translatedLine.Key;
                         List<string> localizations = translatedLine.Value;
                         string languagePath = $"{pathToTranslations}/{language}.txt";
-                        Writing.WriteContents(languagePath, [.. localizations]);
+                        FilesystemTools.WriteContents(languagePath, [.. localizations]);
                     }
                     LanguageGenerator.GenerateLocaleFiles(pathToTranslations);
                 }

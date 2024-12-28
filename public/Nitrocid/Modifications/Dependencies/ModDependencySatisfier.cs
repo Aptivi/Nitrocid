@@ -18,8 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -45,11 +43,11 @@ namespace Nitrocid.Modifications.Dependencies
             // Get the mod dependency metadata
             string metadataPath = $"{modDirectory}{Path.GetFileNameWithoutExtension(mod.ModFilePath)}-moddeps.json";
             DebugWriter.WriteDebug(DebugLevel.I, "Metadata path: {0}", metadataPath);
-            if (!Checking.FileExists(metadataPath))
+            if (!FilesystemTools.FileExists(metadataPath))
                 return [];
 
             // Parse it and return all dependencies
-            string metadataContents = Reading.ReadContentsText(metadataPath);
+            string metadataContents = FilesystemTools.ReadContentsText(metadataPath);
             ModDependency[]? deps = JsonConvert.DeserializeObject<ModDependency[]>(metadataContents);
             if (deps is null)
                 return [];

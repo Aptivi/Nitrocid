@@ -36,7 +36,6 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Misc.Reflection.Internal;
 
@@ -286,7 +285,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 Config.CreateConfig(kernelConfig);
             Config.ReadConfig(kernelConfig, path);
         }
@@ -478,7 +477,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 Config.CreateConfig(kernelConfig);
             Config.ReadConfig(kernelConfig, path);
         }

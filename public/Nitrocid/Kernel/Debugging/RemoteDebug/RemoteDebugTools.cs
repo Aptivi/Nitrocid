@@ -23,12 +23,10 @@ using System.Linq;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug
@@ -347,13 +345,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         }
 
         internal static void SaveAllDevices() =>
-            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
+            FilesystemTools.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
 
         internal static void LoadAllDevices()
         {
             string devicesPath = PathsManagement.GetKernelPath(KernelPathType.DebugDevices);
-            if (Checking.FileExists(devicesPath))
-                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(Reading.ReadContentsText(devicesPath)) ??
+            if (FilesystemTools.FileExists(devicesPath))
+                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(FilesystemTools.ReadContentsText(devicesPath)) ??
                     throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Can't get remote debug devices from") + $" {devicesPath}");
         }
     }

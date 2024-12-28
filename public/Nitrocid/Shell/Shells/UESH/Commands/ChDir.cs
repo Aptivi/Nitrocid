@@ -20,7 +20,6 @@
 using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -40,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             try
             {
-                CurrentDirectory.SetCurrDir(parameters.ArgumentsList[0]);
+                FilesystemTools.SetCurrDir(parameters.ArgumentsList[0]);
                 return 0;
             }
             catch (Exception ex)

@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Copying.CopyFileOrDir
+                // We need to have a syntax that calls FilesystemTools.CopyFileOrDir
                 var classSyntax = SyntaxFactory.IdentifierName("Copying");
                 var methodSyntax = SyntaxFactory.IdentifierName("CopyFileOrDir");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

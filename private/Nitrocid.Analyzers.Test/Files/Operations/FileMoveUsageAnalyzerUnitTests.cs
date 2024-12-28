@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Moving.MoveFileOrDir("test.txt", PathsManagement.AppDataPath);
+                            FilesystemTools.MoveFileOrDir("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }

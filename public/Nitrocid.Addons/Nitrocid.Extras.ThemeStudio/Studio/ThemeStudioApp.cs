@@ -24,7 +24,6 @@ using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
@@ -122,9 +121,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
+                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
-                    DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
+                    DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                     ThemeStudioTools.SaveThemeToAnotherDirectory(ThemeName, DirectoryName);
                 }
@@ -142,9 +141,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory as...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
+                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
-                    DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
+                    DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                     TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
@@ -201,7 +200,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     if (targetColors.Length == 0)
                         continue;
 
-                    // Copying...
+                    // FilesystemTools...
                     foreach (int idx in targetColors)
                     {
                         var type = (KernelColorType)idx;

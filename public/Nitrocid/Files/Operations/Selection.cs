@@ -24,12 +24,12 @@ using System;
 using Nitrocid.Languages;
 using Nitrocid.Files.Instances;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File and folder selection class
     /// </summary>
-    public static class Selection
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Opens the file selector

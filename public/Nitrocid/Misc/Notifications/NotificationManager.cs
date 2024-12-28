@@ -30,14 +30,12 @@ using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
@@ -438,12 +436,12 @@ namespace Nitrocid.Misc.Notifications
         public static void SaveRecents()
         {
             string recentsPath =
-                Getting.GetNumberedFileName(
+                FilesystemTools.GetNumberedFileName(
                     Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.NotificationRecents)),
                     PathsManagement.GetKernelPath(KernelPathType.NotificationRecents)
                 );
             string serialized = JsonConvert.SerializeObject(NotifRecents, Formatting.Indented);
-            Writing.WriteContentsText(recentsPath, serialized);
+            FilesystemTools.WriteContentsText(recentsPath, serialized);
         }
 
     }

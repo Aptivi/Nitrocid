@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(File.Create))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Create instead of Making.MakeFile()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Create instead of FilesystemTools.MakeFile()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(File.Create))
                         continue;
 
-                    // We need to have a syntax that calls Making.MakeFile
+                    // We need to have a syntax that calls FilesystemTools.MakeFile
                     var classSyntax = SyntaxFactory.IdentifierName("Making");
                     var methodSyntax = SyntaxFactory.IdentifierName("MakeFile");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

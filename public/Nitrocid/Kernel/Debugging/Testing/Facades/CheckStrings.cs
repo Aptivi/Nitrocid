@@ -19,7 +19,6 @@
 
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -34,7 +33,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             string TextPath = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
-            var Texts = Reading.ReadContents(TextPath);
+            var Texts = FilesystemTools.ReadContents(TextPath);
             bool hasMissingEntries = false;
             foreach (string Text in Texts)
             {

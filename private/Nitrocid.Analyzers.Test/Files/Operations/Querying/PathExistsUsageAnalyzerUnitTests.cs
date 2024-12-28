@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations.Querying
                     {   
                         public static void Main()
                         {
-                            Checking.Exists("test.txt");
+                            FilesystemTools.Exists("test.txt");
                         }
                     }
                 }

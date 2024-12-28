@@ -37,7 +37,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 Objects = NormalIntegerList,
             };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriterRaw.WriteRaw(FilesystemTools.Render());
             TextWriterColor.Write(Translate.DoTranslation("Array integer list:"));
             var listing2 = new Listing()
             {

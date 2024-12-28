@@ -23,12 +23,12 @@ using Nitrocid.Languages;
 using Nitrocid.Security.Privacy;
 using Nitrocid.Security.Privacy.Consents;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Writing tools for files
     /// </summary>
-    public static class Writing
+    public static partial class FilesystemTools
     {
 
         /// <summary>

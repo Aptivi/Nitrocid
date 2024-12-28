@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -44,7 +42,7 @@ namespace Nitrocid.Modifications.ManPages
             ManualFile = FilesystemTools.NeutralizePath(ManualFile);
             if (!ModManager.Mods.ContainsKey(modName))
                 throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} for nonexistent mod {1}."), ManualFile, modName);
-            if (!Checking.FileExists(ManualFile))
+            if (!FilesystemTools.FileExists(ManualFile))
                 throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} which doesn't exist for mod {1}."), ManualFile, modName);
 
             // File found, but we need to verify that we're actually dealing with the manual page. If not, ignore it.
@@ -75,7 +73,7 @@ namespace Nitrocid.Modifications.ManPages
                 DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", ManualFile);
 
                 // First, get all lines in the file
-                var ManLines = Reading.ReadContents(ManualFile);
+                var ManLines = FilesystemTools.ReadContents(ManualFile);
                 var BodyParsing = false;
                 foreach (string ManLine in ManLines)
                 {

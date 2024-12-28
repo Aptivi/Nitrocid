@@ -27,13 +27,11 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Shell.ShellBase.Scripting;
 using Nitrocid.Users;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
 using Textify.General;
@@ -52,8 +50,8 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         [
             new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
             new PlaceInfo("host", (_) => Config.MainConfig.HostName),
-            new PlaceInfo("currentdirectory", (_) => CurrentDirectory.CurrentDir),
-            new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""),
+            new PlaceInfo("currentdirectory", (_) => FilesystemTools.CurrentDir),
+            new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(FilesystemTools.CurrentDir) ? new DirectoryInfo(FilesystemTools.CurrentDir).Name : ""),
             new PlaceInfo("shortdate", (_) => TimeDateRenderers.RenderDate(FormatType.Short)),
             new PlaceInfo("longdate", (_) => TimeDateRenderers.RenderDate(FormatType.Long)),
             new PlaceInfo("shorttime", (_) => TimeDateRenderers.RenderTime(FormatType.Short)),
@@ -65,8 +63,8 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
             new PlaceInfo("system", (_) => Environment.OSVersion.ToString()),
             new PlaceInfo("newline", (_) => CharManager.NewLine),
             new PlaceInfo("dollar", (_) => UserManagement.GetUserDollarSign()),
-            new PlaceInfo("randomfile", (_) => Getting.GetRandomFileName()),
-            new PlaceInfo("randomfolder", (_) => Getting.GetRandomFolderName()),
+            new PlaceInfo("randomfile", (_) => FilesystemTools.GetRandomFileName()),
+            new PlaceInfo("randomfolder", (_) => FilesystemTools.GetRandomFolderName()),
             new PlaceInfo("rid", (_) => KernelPlatform.GetCurrentRid()),
             new PlaceInfo("ridgeneric", (_) => KernelPlatform.GetCurrentGenericRid()),
             new PlaceInfo("termemu", (_) => KernelPlatform.GetTerminalEmulator()),

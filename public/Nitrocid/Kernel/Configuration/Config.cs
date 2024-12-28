@@ -26,7 +26,6 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
@@ -35,7 +34,6 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using TextifyDep::Textify.Tools;
 
 namespace Nitrocid.Kernel.Configuration
@@ -122,7 +120,7 @@ namespace Nitrocid.Kernel.Configuration
                 return;
 
             FilesystemTools.ThrowOnInvalidPath(ConfigFolder);
-            if (!Checking.FolderExists(ConfigFolder))
+            if (!FilesystemTools.FolderExists(ConfigFolder))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
             DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", ConfigFolder);
 
@@ -152,7 +150,7 @@ namespace Nitrocid.Kernel.Configuration
             DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
 
             // Save Config
-            Writing.WriteContentsText(ConfigPath, serialized);
+            FilesystemTools.WriteContentsText(ConfigPath, serialized);
             EventsManager.FireEvent(EventType.ConfigSaved);
         }
 
@@ -259,7 +257,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Open the config JSON file
             FilesystemTools.ThrowOnInvalidPath(ConfigPath);
-            if (!Checking.FileExists(ConfigPath))
+            if (!FilesystemTools.FileExists(ConfigPath))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
 
             // Fix up and read!
@@ -270,7 +268,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 // First, fix the configuration file up
                 RepairConfig(baseType);
-                string jsonContents = Reading.ReadContentsText(ConfigPath);
+                string jsonContents = FilesystemTools.ReadContentsText(ConfigPath);
 
                 // Now, deserialize the config state.
                 string typeName = type.GetType().Name;
@@ -320,7 +318,7 @@ namespace Nitrocid.Kernel.Configuration
             foreach (var baseConfig in baseConfigurations)
             {
                 string finalPath = ConfigTools.GetPathToCustomSettingsFile(baseConfig.Value);
-                if (!Checking.FileExists(finalPath))
+                if (!FilesystemTools.FileExists(finalPath))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", baseConfig.Key, finalPath);
                     CreateConfig(baseConfig.Value);
@@ -388,7 +386,7 @@ namespace Nitrocid.Kernel.Configuration
             // Get the current kernel config JSON file vs the serialized config JSON string
             string path = ConfigTools.GetPathToCustomSettingsFile(type);
             string serialized = GetSerializedConfig(type);
-            string current = Reading.ReadContentsText(path);
+            string current = FilesystemTools.ReadContentsText(path);
 
             // Compare the two config JSON files
             try
@@ -430,7 +428,7 @@ namespace Nitrocid.Kernel.Configuration
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
                     string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
-                    Writing.WriteContentsText(path, modified);
+                    FilesystemTools.WriteContentsText(path, modified);
                 }
             }
             catch (Exception ex)

@@ -25,9 +25,6 @@ using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -153,8 +150,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static void LoadReminders()
         {
-            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Reminders), false);
-            var ReminderFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Reminders), "*", true);
+            FilesystemTools.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Reminders), false);
+            var ReminderFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Reminders), "*", true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Length);
 
             // Load all the reminders
@@ -180,9 +177,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                 DebugWriter.WriteDebug(DebugLevel.I, "Loading reminder {0}...", ReminderFile);
 
                 // If file exists, convert the file to the reminder instance
-                if (Checking.FileExists(ReminderFile))
+                if (FilesystemTools.FileExists(ReminderFile))
                 {
-                    var reminderContents = Reading.ReadContentsText(ReminderFile);
+                    var reminderContents = FilesystemTools.ReadContentsText(ReminderFile);
                     ReminderInfo? ConvertedReminder = JsonConvert.DeserializeObject<ReminderInfo>(reminderContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedReminder;
@@ -218,11 +215,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 
                 // First, remove all files
                 foreach (string FilePath in ReminderFiles)
-                    Removing.RemoveFile(FilePath);
+                    FilesystemTools.RemoveFile(FilePath);
 
                 // Then, remove all empty folders
                 foreach (string FolderPath in ReminderFolders)
-                    Removing.RemoveDirectory(FolderPath);
+                    FilesystemTools.RemoveDirectory(FolderPath);
             }
 
             // Enumerate through every reminder and save them
@@ -252,7 +249,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
             var contents = JsonConvert.SerializeObject(ReminderInstance, Formatting.Indented);
-            Writing.WriteContentsText(File, contents);
+            FilesystemTools.WriteContentsText(File, contents);
         }
 
     }

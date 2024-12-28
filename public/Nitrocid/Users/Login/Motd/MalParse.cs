@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -54,7 +52,7 @@ namespace Nitrocid.Users.Login.Motd
         /// </summary>
         public static void InitMal()
         {
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.MAL)))
+            if (!FilesystemTools.FileExists(PathsManagement.GetKernelPath(KernelPathType.MAL)))
                 SetMal(Translate.DoTranslation("Enjoy your day") + ", <user>!");
         }
 
@@ -72,7 +70,7 @@ namespace Nitrocid.Users.Login.Motd
 
                 // Set the message
                 MalMessage = Message;
-                Writing.WriteContentsText(Config.MainConfig.MalFilePath, Message);
+                FilesystemTools.WriteContentsText(Config.MainConfig.MalFilePath, Message);
             }
             catch (Exception ex)
             {
@@ -94,7 +92,7 @@ namespace Nitrocid.Users.Login.Motd
 
                 // Read the message
                 InitMal();
-                MalMessage = Reading.ReadContentsText(Config.MainConfig.MalFilePath);
+                MalMessage = FilesystemTools.ReadContentsText(Config.MainConfig.MalFilePath);
             }
             catch (Exception ex)
             {

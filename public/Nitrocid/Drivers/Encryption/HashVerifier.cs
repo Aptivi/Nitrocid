@@ -21,7 +21,7 @@ using System.IO;
 using FS = Nitrocid.Files.FilesystemTools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Encryption
 {
@@ -48,12 +48,12 @@ namespace Nitrocid.Drivers.Encryption
             HashesFile = FS.NeutralizePath(HashesFile);
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
-            if (Checking.FileExists(FileName))
+            if (FilesystemTools.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
 
                 // Verify the hash
-                if (Checking.FileExists(HashesFile))
+                if (FilesystemTools.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
@@ -115,7 +115,7 @@ namespace Nitrocid.Drivers.Encryption
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            if (Checking.FileExists(FileName))
+            if (FilesystemTools.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
 
@@ -145,12 +145,12 @@ namespace Nitrocid.Drivers.Encryption
             HashesFile = FS.NeutralizePath(HashesFile);
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
-            if (Checking.FileExists(FileName))
+            if (FilesystemTools.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
 
                 // Verify the hash
-                if (Checking.FileExists(HashesFile))
+                if (FilesystemTools.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
@@ -211,7 +211,7 @@ namespace Nitrocid.Drivers.Encryption
             FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            if (Checking.FileExists(FileName))
+            if (FilesystemTools.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
 

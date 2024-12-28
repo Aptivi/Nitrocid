@@ -17,21 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
-using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
-using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs

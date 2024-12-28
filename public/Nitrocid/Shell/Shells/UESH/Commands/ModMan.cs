@@ -30,7 +30,6 @@ using Nitrocid.Modifications;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -70,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 TargetMod = parameters.ArgumentsList[1];
                                 TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
-                                if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
+                                if (!(FilesystemTools.TryParsePath(TargetModPath) && FilesystemTools.FileExists(TargetModPath)))
                                 {
                                     TextWriters.Write(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);

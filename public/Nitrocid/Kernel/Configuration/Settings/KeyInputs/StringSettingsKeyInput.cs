@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
@@ -60,7 +59,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? FilesystemTools.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
             return value;
@@ -71,7 +70,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? FilesystemTools.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
 

@@ -27,20 +27,18 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
-using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Files.Instances;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters;
 
-namespace Nitrocid.Files.Folders
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File listing module
     /// </summary>
-    public static class Listing
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Creates a list of files and directories
@@ -91,7 +89,7 @@ namespace Nitrocid.Files.Folders
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
                 SeparatorWriterColor.WriteSeparator(folder, true);
@@ -145,7 +143,7 @@ namespace Nitrocid.Files.Folders
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
-            else if (Checking.FileExists(folder))
+            else if (FilesystemTools.FileExists(folder))
             {
                 try
                 {
@@ -167,7 +165,7 @@ namespace Nitrocid.Files.Folders
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", FilesystemTools.FolderExists(folder));
             }
         }
 
@@ -209,7 +207,7 @@ namespace Nitrocid.Files.Folders
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
                 if (level == 0)
@@ -289,7 +287,7 @@ namespace Nitrocid.Files.Folders
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
-            else if (Checking.FileExists(folder))
+            else if (FilesystemTools.FileExists(folder))
             {
                 var entry = new FileSystemEntry(folder);
                 string name = Path.GetFileName(entry.FilePath);
@@ -331,7 +329,7 @@ namespace Nitrocid.Files.Folders
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", FilesystemTools.FolderExists(folder));
             }
         }
 

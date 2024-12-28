@@ -23,14 +23,11 @@ using System.Collections.Generic;
 using Nitrocid.Shell.ShellBase.Scripting.Conditions;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Events;
 using Textify.General;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.ShellBase.Scripting
@@ -55,7 +52,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 EventsManager.FireEvent(EventType.UESHPreExecute, ScriptPath, ScriptArguments);
 
                 // Open the script file for reading
-                var FileLines = Reading.ReadAllLinesNoBlock(ScriptPath);
+                var FileLines = FilesystemTools.ReadAllLinesNoBlock(ScriptPath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened. Parsing script");
 
                 // Look for $variables and initialize them

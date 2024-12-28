@@ -37,7 +37,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 Objects = NormalStringDict,
             };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriterRaw.WriteRaw(FilesystemTools.Render());
             TextWriterColor.Write(Translate.DoTranslation("Array string dictionary:"));
             var listing2 = new Listing()
             {

@@ -24,7 +24,6 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Calendars;
@@ -33,6 +32,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Nitrocid.Files;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -162,7 +162,7 @@ namespace Nitrocid.ConsoleBase.Themes
         /// </summary>
         /// <param name="themePath">Theme file path</param>
         public ThemeInfo(string themePath) :
-            this(JToken.Parse(Reading.ReadContentsText(themePath)))
+            this(JToken.Parse(FilesystemTools.ReadContentsText(themePath)))
         { }
 
         /// <summary>

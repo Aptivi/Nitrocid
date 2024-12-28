@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Shell.ShellBase.Commands;
 
@@ -35,7 +34,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            Copying.CopyFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            FilesystemTools.CopyFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
     }

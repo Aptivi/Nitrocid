@@ -24,7 +24,6 @@ using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
-using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;

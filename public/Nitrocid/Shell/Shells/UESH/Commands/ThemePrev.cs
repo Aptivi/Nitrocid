@@ -21,7 +21,6 @@ using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
@@ -148,7 +147,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Load the theme to the instance
                 ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
                 ThemeInfo Theme;
-                if (Checking.FileExists(ThemePath))
+                if (FilesystemTools.FileExists(ThemePath))
                     Theme = new ThemeInfo(ThemePath);
                 else
                     Theme = ThemeTools.GetThemeInfo(selectedTheme, true);

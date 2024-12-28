@@ -18,8 +18,6 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
@@ -73,10 +71,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             if (!string.IsNullOrEmpty(finalCommandArgs))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with argument {0} [{1}]...", LastArgument, LastArgument.Length);
-                string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) ?? "" : FilesystemTools.NeutralizePath(LastArgument, CurrentDirectory.CurrentDir);
-                lookupPath = Checking.FolderExists(lookupPath) ? lookupPath : Path.GetDirectoryName(CurrentDirectory.CurrentDir + "/" + LastArgument) ?? "";
-                finalCompletions = Listing.CreateList(lookupPath, true)
-                    .Select(x => Path.IsPathRooted(LastArgument) ? FilesystemTools.NeutralizePath(x.FilePath) : FilesystemTools.NeutralizePath(x.FilePath).Replace(CurrentDirectory.CurrentDir + "/", ""))
+                string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) ?? "" : FilesystemTools.NeutralizePath(LastArgument, FilesystemTools.CurrentDir);
+                lookupPath = FilesystemTools.FolderExists(lookupPath) ? lookupPath : Path.GetDirectoryName(FilesystemTools.CurrentDir + "/" + LastArgument) ?? "";
+                finalCompletions = FilesystemTools.CreateList(lookupPath, true)
+                    .Select(x => Path.IsPathRooted(LastArgument) ? FilesystemTools.NeutralizePath(x.FilePath) : FilesystemTools.NeutralizePath(x.FilePath).Replace(FilesystemTools.CurrentDir + "/", ""))
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x[LastArgument.Length..])
                     .ToArray();

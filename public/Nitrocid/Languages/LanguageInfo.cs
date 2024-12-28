@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Globalization;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Nitrocid.Kernel.Debugging;

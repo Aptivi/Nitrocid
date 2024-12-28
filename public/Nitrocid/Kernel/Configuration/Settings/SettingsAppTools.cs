@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -108,7 +107,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorTools.GetColor(KernelColorType.Question));
             Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
-            if (!Checking.FileExists(Location))
+            if (!FilesystemTools.FileExists(Location))
                 SaveSettings(Location);
             else
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), KernelColorTools.GetColor(KernelColorType.Error));
@@ -118,7 +117,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         {
             string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorTools.GetColor(KernelColorType.Question));
             Location = FilesystemTools.NeutralizePath(Location);
-            if (Checking.FileExists(Location))
+            if (FilesystemTools.FileExists(Location))
             {
                 try
                 {

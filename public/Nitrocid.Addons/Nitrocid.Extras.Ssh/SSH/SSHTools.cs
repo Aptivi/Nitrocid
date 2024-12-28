@@ -30,7 +30,6 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Textify.General;
@@ -134,7 +133,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                         TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
-                        if (Checking.FileExists(PrivateKeyFile))
+                        if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
                             TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);

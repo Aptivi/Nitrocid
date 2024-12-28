@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(Path.GetInvalidPathChars))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Path.GetInvalidPathChars instead of FilesystemTools.GetInvalidPathChars()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Path.GetInvalidPathChars))
                         continue;
 
-                    // We need to have a syntax that calls Parsing.GetInvalidPathChars
+                    // We need to have a syntax that calls FilesystemTools.GetInvalidPathChars
                     var classSyntax = SyntaxFactory.IdentifierName("Parsing");
                     var methodSyntax = SyntaxFactory.IdentifierName("GetInvalidPathChars");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

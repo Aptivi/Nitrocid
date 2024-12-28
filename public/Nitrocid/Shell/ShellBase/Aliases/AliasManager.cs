@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Newtonsoft.Json;
-using Nitrocid.Files.Operations;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -49,8 +48,8 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         public static void InitAliases()
         {
             // Get all aliases from file
-            Making.MakeJsonFile(PathsManagement.GetKernelPath(KernelPathType.Aliases), false, true);
-            string AliasJsonContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases));
+            FilesystemTools.MakeJsonFile(PathsManagement.GetKernelPath(KernelPathType.Aliases), false, true);
+            string AliasJsonContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases));
             var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent);
             aliases = [.. aliasesArray];
         }
@@ -63,7 +62,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             // Save all aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases...");
             string serialized = JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases), serialized);
+            FilesystemTools.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases), serialized);
         }
 
         /// <summary>

@@ -25,7 +25,6 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -69,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), UserManagement.CurrentUser.Username, default, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Config.MainConfig.HostName, PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}", default, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), $"{FilesystemTools.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}", default, TransitionPartChar),
             ];
 
             // Builder

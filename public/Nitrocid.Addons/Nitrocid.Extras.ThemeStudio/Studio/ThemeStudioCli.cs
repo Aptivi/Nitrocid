@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Folders;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;
@@ -94,8 +94,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     {
                         // Save theme to another directory...
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [CurrentDirectory.CurrentDir]);
-                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
+                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                         ThemeStudioTools.SaveThemeToAnotherDirectory(themeName, DirectoryName);
                         break;
@@ -114,8 +114,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     {
                         // Save theme to another directory as...
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [CurrentDirectory.CurrentDir]);
-                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
+                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [themeName]);
@@ -179,7 +179,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             if (targetColors.Length == 0)
                 return;
 
-            // Copying...
+            // FilesystemTools...
             foreach (int idx in targetColors)
             {
                 var targetType = (KernelColorType)idx;

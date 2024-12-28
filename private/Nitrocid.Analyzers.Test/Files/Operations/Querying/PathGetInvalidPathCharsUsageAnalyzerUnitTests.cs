@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations.Querying
                     {   
                         public static void Main()
                         {
-                            var invalidChars = Parsing.GetInvalidPathChars();
+                            var invalidChars = FilesystemTools.GetInvalidPathChars();
                         }
                     }
                 }

@@ -27,7 +27,6 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -62,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 TargetLanguage = parameters.ArgumentsList[1];
                                 TargetLanguagePath = FilesystemTools.NeutralizePath(TargetLanguage + ".json", PathsManagement.GetKernelPath(KernelPathType.CustomLanguages));
-                                if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
+                                if (!(FilesystemTools.TryParsePath(TargetLanguagePath) && FilesystemTools.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
                                     TextWriters.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);

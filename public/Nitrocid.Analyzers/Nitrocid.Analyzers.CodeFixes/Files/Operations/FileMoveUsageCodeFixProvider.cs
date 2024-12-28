@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Moving.MoveFileOrDir
+                // We need to have a syntax that calls FilesystemTools.MoveFileOrDir
                 var classSyntax = SyntaxFactory.IdentifierName("Moving");
                 var methodSyntax = SyntaxFactory.IdentifierName("MoveFileOrDir");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

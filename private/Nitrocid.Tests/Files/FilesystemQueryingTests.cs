@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.IO;
 using Nitrocid.Kernel;
+using Nitrocid.Files;
 
 namespace Nitrocid.Tests.Files
 {
@@ -41,8 +41,8 @@ namespace Nitrocid.Tests.Files
         {
             string TargetFile = Path.GetFullPath("TestData/TestText.txt");
             string TargetFile2 = Path.GetFullPath("TestData/TestTexts.txt");
-            Checking.FileExists(TargetFile).ShouldBeTrue();
-            Checking.FileExists(TargetFile2).ShouldBeFalse();
+            FilesystemTools.FileExists(TargetFile).ShouldBeTrue();
+            FilesystemTools.FileExists(TargetFile2).ShouldBeFalse();
         }
 
         /// <summary>
@@ -54,8 +54,8 @@ namespace Nitrocid.Tests.Files
         {
             string TargetDirectory = Path.GetFullPath("EmptyFiles");
             string TargetDirectory2 = Path.GetFullPath("EmptyFile");
-            Checking.FolderExists(TargetDirectory).ShouldBeTrue();
-            Checking.FolderExists(TargetDirectory2).ShouldBeFalse();
+            FilesystemTools.FolderExists(TargetDirectory).ShouldBeTrue();
+            FilesystemTools.FolderExists(TargetDirectory2).ShouldBeFalse();
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestGetNumberedFileName()
         {
-            string numbered = Getting.GetNumberedFileName(InitTest.PathToTestSlotFolder, "testnum.txt");
+            string numbered = FilesystemTools.GetNumberedFileName(InitTest.PathToTestSlotFolder, "testnum.txt");
             numbered.ShouldContain("testnum-0.txt");
         }
 
@@ -138,9 +138,9 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestGetRandomFileName()
         {
-            string numbered = Getting.GetRandomFileName();
+            string numbered = FilesystemTools.GetRandomFileName();
             numbered.ShouldNotBeEmpty();
-            Parsing.TryParsePath(numbered).ShouldBeTrue();
+            FilesystemTools.TryParsePath(numbered).ShouldBeTrue();
         }
 
         /// <summary>
@@ -150,9 +150,9 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestGetRandomFolderName()
         {
-            string numbered = Getting.GetRandomFolderName();
+            string numbered = FilesystemTools.GetRandomFolderName();
             numbered.ShouldNotBeEmpty();
-            Parsing.TryParsePath(numbered).ShouldBeTrue();
+            FilesystemTools.TryParsePath(numbered).ShouldBeTrue();
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Nitrocid.Tests.Files
         {
             if (KernelPlatform.IsOnUnix())
             {
-                bool actual = Parsing.TryParsePath(Path);
+                bool actual = FilesystemTools.TryParsePath(Path);
                 actual.ShouldBe(expected);
             }
         }
@@ -182,7 +182,7 @@ namespace Nitrocid.Tests.Files
         {
             if (KernelPlatform.IsOnWindows())
             {
-                bool actual = Parsing.TryParsePath(Path);
+                bool actual = FilesystemTools.TryParsePath(Path);
                 actual.ShouldBe(expected);
             }
         }
@@ -196,7 +196,7 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestTryParseFileName(string Path, bool expected)
         {
-            bool actual = Parsing.TryParseFileName(Path);
+            bool actual = FilesystemTools.TryParseFileName(Path);
             actual.ShouldBe(expected);
         }
     }

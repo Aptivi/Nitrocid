@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         {
                             Objects = fields,
                         };
-                        TextWriterRaw.WriteRaw(listing.Render());
+                        TextWriterRaw.WriteRaw(FilesystemTools.Render());
                     }
                 }
                 catch (Exception ex)

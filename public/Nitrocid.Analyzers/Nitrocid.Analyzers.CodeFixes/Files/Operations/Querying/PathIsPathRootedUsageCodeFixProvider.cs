@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations.Querying
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Checking.Rooted
+                // We need to have a syntax that calls FilesystemTools.Rooted
                 var classSyntax = SyntaxFactory.IdentifierName("Checking");
                 var methodSyntax = SyntaxFactory.IdentifierName("Rooted");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

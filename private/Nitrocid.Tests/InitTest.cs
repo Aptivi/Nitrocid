@@ -25,8 +25,6 @@ using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Modifications;
 using Terminaux.Base.Checks;
@@ -54,9 +52,9 @@ namespace Nitrocid.Tests
 
             // We need not to use real user config directory
             PathsManagement.isTest = true;
-            if (Checking.FolderExists(PathsManagement.AppDataPath))
-                Removing.RemoveDirectory(PathsManagement.AppDataPath, false);
-            Making.MakeDirectory(PathsManagement.AppDataPath, false);
+            if (FilesystemTools.FolderExists(PathsManagement.AppDataPath))
+                FilesystemTools.RemoveDirectory(PathsManagement.AppDataPath, false);
+            FilesystemTools.MakeDirectory(PathsManagement.AppDataPath, false);
 
             // Create config
             Config.CreateConfig();
@@ -66,8 +64,8 @@ namespace Nitrocid.Tests
             PathToTestSlotFolder = FilesystemTools.NeutralizePath(PathToTestSlotFolder);
 
             // Make a slot for filesystem-related tests
-            if (!Checking.FolderExists(PathToTestSlotFolder))
-                Making.MakeDirectory(PathToTestSlotFolder, false);
+            if (!FilesystemTools.FolderExists(PathToTestSlotFolder))
+                FilesystemTools.MakeDirectory(PathToTestSlotFolder, false);
 
             // Enable debugging
             KernelEntry.DebugMode = true;
@@ -86,8 +84,8 @@ namespace Nitrocid.Tests
         [AssemblyCleanup]
         public static void CleanEverything()
         {
-            if (Checking.FolderExists(Path.GetFullPath("ResultSlot")))
-                Removing.RemoveDirectory(Path.GetFullPath("ResultSlot"));
+            if (FilesystemTools.FolderExists(Path.GetFullPath("ResultSlot")))
+                FilesystemTools.RemoveDirectory(Path.GetFullPath("ResultSlot"));
             Directory.Move(PathToTestSlotFolder, Path.GetFullPath("ResultSlot"));
         }
     }

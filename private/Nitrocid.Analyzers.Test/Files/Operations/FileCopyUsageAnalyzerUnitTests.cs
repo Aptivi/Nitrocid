@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Copying.CopyFileOrDir("test.txt", PathsManagement.AppDataPath);
+                            FilesystemTools.CopyFileOrDir("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }

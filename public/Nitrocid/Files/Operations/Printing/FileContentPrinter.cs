@@ -20,12 +20,12 @@
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Configuration;
 
-namespace Nitrocid.Files.Operations.Printing
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File content printing module
     /// </summary>
-    public static class FileContentPrinter
+    public static partial class FilesystemTools
     {
 
         /// <summary>

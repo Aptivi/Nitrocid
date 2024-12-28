@@ -23,7 +23,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -93,7 +92,7 @@ namespace Nitrocid.Misc.Reflection
                 try
                 {
                     // Check to see if the dependency file exists
-                    if (!Checking.FileExists(path))
+                    if (!FilesystemTools.FileExists(path))
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", path);
                         return;

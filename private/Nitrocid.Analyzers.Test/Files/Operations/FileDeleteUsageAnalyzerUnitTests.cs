@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Removing.RemoveFile("test.txt");
+                            FilesystemTools.RemoveFile("test.txt");
                         }
                     }
                 }

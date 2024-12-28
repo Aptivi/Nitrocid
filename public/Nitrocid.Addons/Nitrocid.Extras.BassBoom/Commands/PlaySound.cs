@@ -24,7 +24,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
@@ -51,7 +50,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             string path = parameters.ArgumentsList[0];
             var media = new BasoliaMedia();
             path = FilesystemTools.NeutralizePath(path);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
             {
                 TextWriters.Write(Translate.DoTranslation("Can't play sound because the file is not found."), KernelColorType.Error);
                 return 29;

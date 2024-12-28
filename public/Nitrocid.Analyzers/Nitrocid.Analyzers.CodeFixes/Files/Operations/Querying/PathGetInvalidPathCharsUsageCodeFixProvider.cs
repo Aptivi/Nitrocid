@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations.Querying
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Parsing.GetInvalidPathChars
+                // We need to have a syntax that calls FilesystemTools.GetInvalidPathChars
                 var classSyntax = SyntaxFactory.IdentifierName("Parsing");
                 var methodSyntax = SyntaxFactory.IdentifierName("GetInvalidPathChars");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

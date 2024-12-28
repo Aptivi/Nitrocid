@@ -21,12 +21,12 @@ using Nitrocid.Drivers;
 using Nitrocid.Files.Instances;
 using Nitrocid.Kernel.Configuration;
 
-namespace Nitrocid.Files.Operations.Printing
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Directory information printing module
     /// </summary>
-    public static class DirectoryInfoPrinter
+    public static partial class FilesystemTools
     {
 
         /// <summary>

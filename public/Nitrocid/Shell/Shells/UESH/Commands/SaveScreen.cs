@@ -69,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 Objects = screensavers,
             };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriterRaw.WriteRaw(FilesystemTools.Render());
         }
 
         private void PressAndBailHelper()

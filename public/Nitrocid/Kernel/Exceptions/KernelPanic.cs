@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -416,7 +415,7 @@ namespace Nitrocid.Kernel.Exceptions
 
                 // Save the dump file
                 string filePath = $"{PathsManagement.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
-                Writing.WriteContentsText(filePath, dumpBuilder.ToString());
+                FilesystemTools.WriteContentsText(filePath, dumpBuilder.ToString());
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", filePath);
             }
             catch (Exception ex)

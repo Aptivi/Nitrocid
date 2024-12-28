@@ -24,7 +24,6 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -170,7 +169,7 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             FilesystemTools.ThrowOnInvalidPath(targetDir);
 
             // Check if folder exists
-            if (Checking.FolderExists(targetDir))
+            if (FilesystemTools.FolderExists(targetDir))
             {
                 // Parse written directory
                 var parser = new System.IO.DirectoryInfo(targetDir);

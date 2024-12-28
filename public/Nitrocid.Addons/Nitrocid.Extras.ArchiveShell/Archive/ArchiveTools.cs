@@ -23,8 +23,6 @@ using System.IO;
 using System.Linq;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -107,9 +105,9 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
 
             // Try to extract file
             Directory.CreateDirectory(LocalDestination);
-            if (!Checking.FolderExists(LocalDestination + "/" + localDirDestination))
+            if (!FilesystemTools.FolderExists(LocalDestination + "/" + localDirDestination))
                 Directory.CreateDirectory(LocalDestination + "/" + localDirDestination);
-            Making.MakeFile(LocalDestination + ArchiveEntry.Key);
+            FilesystemTools.MakeFile(LocalDestination + ArchiveEntry.Key);
             ArchiveShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
             var ArchiveReader = ReaderFactory.Open(ArchiveShellCommon.FileStream);
             while (ArchiveReader.MoveToNextEntry())
@@ -252,7 +250,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             if (string.IsNullOrWhiteSpace(Target))
                 Target = ArchiveShellCommon.CurrentArchiveDirectory ??
                     throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't determine current archive directory."));
-            if (Checking.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
+            if (FilesystemTools.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", Target);
                 ArchiveShellCommon.CurrentDirectory = Target;

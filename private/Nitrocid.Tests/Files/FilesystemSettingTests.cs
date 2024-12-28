@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Nitrocid.Files;
 
 namespace Nitrocid.Tests.Files
 {
@@ -39,8 +39,8 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string Path = PathsManagement.ExecPath;
-            CurrentDirectory.SetCurrDir(Path);
-            Path.ShouldBe(CurrentDirectory.CurrentDir);
+            FilesystemTools.SetCurrDir(Path);
+            Path.ShouldBe(FilesystemTools.CurrentDir);
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string Path = PathsManagement.ExecPath;
-            CurrentDirectory.TrySetCurrDir(Path).ShouldBeTrue();
-            Path.ShouldBe(CurrentDirectory.CurrentDir);
+            FilesystemTools.TrySetCurrDir(Path).ShouldBeTrue();
+            Path.ShouldBe(FilesystemTools.CurrentDir);
         }
 
         /// <summary>

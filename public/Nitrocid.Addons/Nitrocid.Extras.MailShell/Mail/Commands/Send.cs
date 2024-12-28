@@ -23,7 +23,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -107,7 +106,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                     {
                         PathLine = FilesystemTools.NeutralizePath(PathLine);
                         DebugWriter.WriteDebug(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length);
-                        if (Checking.FileExists(PathLine))
+                        if (FilesystemTools.FileExists(PathLine))
                         {
                             Body.Attachments.Add(PathLine);
                         }

@@ -40,7 +40,6 @@ using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Network.Types.RPC;
@@ -894,15 +893,15 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get
             {
-                return CurrentDirectory._CurrentDirectory;
+                return FilesystemTools._CurrentDirectory;
             }
             set
             {
                 FilesystemTools.ThrowOnInvalidPath(value);
                 value = FilesystemTools.NeutralizePath(value);
-                if (Checking.FolderExists(value))
+                if (FilesystemTools.FolderExists(value))
                 {
-                    CurrentDirectory._CurrentDirectory = value;
+                    FilesystemTools._CurrentDirectory = value;
                 }
                 else
                 {

@@ -31,7 +31,6 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -55,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }
-            if (Checking.FolderExists(folder))
+            if (FilesystemTools.FolderExists(folder))
             {
                 foreach (string file in Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {

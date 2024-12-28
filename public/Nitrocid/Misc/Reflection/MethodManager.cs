@@ -20,7 +20,6 @@
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Misc.Reflection

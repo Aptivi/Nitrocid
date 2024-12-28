@@ -28,7 +28,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -54,7 +53,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }
-            if (Checking.FileExists(file))
+            if (FilesystemTools.FileExists(file))
             {
                 if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                 {

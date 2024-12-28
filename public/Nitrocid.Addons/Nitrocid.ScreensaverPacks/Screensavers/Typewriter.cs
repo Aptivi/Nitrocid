@@ -19,8 +19,6 @@
 
 using System;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
@@ -28,6 +26,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Files;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -60,11 +59,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             // Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", ScreensaverPackInit.SaversConfig.TypewriterWrite);
-            if (Parsing.TryParsePath(ScreensaverPackInit.SaversConfig.TypewriterWrite) && Checking.FileExists(ScreensaverPackInit.SaversConfig.TypewriterWrite))
+            if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.TypewriterWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.TypewriterWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.TypewriterWrite);
-                TypeWrite = Reading.ReadContentsText(ScreensaverPackInit.SaversConfig.TypewriterWrite);
+                TypeWrite = FilesystemTools.ReadContentsText(ScreensaverPackInit.SaversConfig.TypewriterWrite);
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.

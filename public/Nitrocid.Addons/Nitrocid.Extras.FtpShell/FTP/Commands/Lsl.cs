@@ -20,7 +20,6 @@
 using System;
 using System.Linq;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 
@@ -59,14 +58,14 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
             {
-                Listing.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);
+                FilesystemTools.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);
             }
             else
             {
                 foreach (string Directory in parameters.ArgumentsList ?? [])
                 {
                     string direct = FilesystemTools.NeutralizePath(Directory);
-                    Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
+                    FilesystemTools.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
                 }
             }
             return 0;

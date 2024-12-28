@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Making.MakeFile
+                // We need to have a syntax that calls FilesystemTools.MakeFile
                 var classSyntax = SyntaxFactory.IdentifierName("Making");
                 var methodSyntax = SyntaxFactory.IdentifierName("MakeFile");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

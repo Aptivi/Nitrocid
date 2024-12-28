@@ -19,8 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -74,8 +73,8 @@ namespace Nitrocid.Extras.Pastebin.Commands
             string field = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
 
             // Get the contents
-            if (Checking.FileExists(contents))
-                contents = Reading.ReadAllTextNoBlock(contents);
+            if (FilesystemTools.FileExists(contents))
+                contents = FilesystemTools.ReadAllTextNoBlock(contents);
 
             // Now, form a URI and choose how to send the request
             if (type == "raw")

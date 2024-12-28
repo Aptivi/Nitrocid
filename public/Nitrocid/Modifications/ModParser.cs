@@ -28,14 +28,12 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Security.Signing;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Modifications.Dependencies;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Kernel.Configuration;
@@ -181,14 +179,14 @@ namespace Nitrocid.Modifications
                     // Locate the mod's localization files
                     string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
                     Dictionary<string, string[]> localizations = [];
-                    if (Checking.FolderExists(ModLocalizationPath))
+                    if (FilesystemTools.FolderExists(ModLocalizationPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);
                         foreach (string ModLocFile in Directory.GetFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
                         {
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
                             string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
-                            string ModLocFileContents = Reading.ReadContentsText(ModLocFile);
+                            string ModLocFileContents = FilesystemTools.ReadContentsText(ModLocFile);
                             var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents) ??
                                 throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't load mod localizations"));
                             DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", modLocs.Length);

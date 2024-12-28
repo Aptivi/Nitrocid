@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(Directory.CreateDirectory))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.CreateDirectory instead of Making.MakeDirectory()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.CreateDirectory instead of FilesystemTools.MakeDirectory()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Directory.CreateDirectory))
                         continue;
 
-                    // We need to have a syntax that calls Making.MakeDirectory
+                    // We need to have a syntax that calls FilesystemTools.MakeDirectory
                     var classSyntax = SyntaxFactory.IdentifierName("Making");
                     var methodSyntax = SyntaxFactory.IdentifierName("MakeDirectory");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

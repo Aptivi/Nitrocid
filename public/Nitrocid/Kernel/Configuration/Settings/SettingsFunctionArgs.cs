@@ -18,11 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Configuration.Settings.KeyInputs;
-using Nitrocid.Languages;
-using System;
 using System.Diagnostics;
 
 namespace Nitrocid.Kernel.Configuration.Settings

@@ -23,7 +23,6 @@ using System.Linq;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Time.Converters;
 
 namespace Nitrocid.Kernel.Time.Timezones
@@ -132,7 +131,7 @@ namespace Nitrocid.Kernel.Time.Timezones
         internal static void CheckZoneInfoDirectory()
         {
             // Check to see if tzdata is installed (only on Unix)
-            if (KernelPlatform.IsOnUnix() && !Checking.FolderExists("/usr/share/zoneinfo"))
+            if (KernelPlatform.IsOnUnix() && !FilesystemTools.FolderExists("/usr/share/zoneinfo"))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "System is on Unix but /usr/share/zoneinfo is not installed!");
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager."));

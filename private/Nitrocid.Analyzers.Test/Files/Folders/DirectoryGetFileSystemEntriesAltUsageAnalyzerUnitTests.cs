@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
+                            string[] files = FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath);
                         }
                     }
                 }

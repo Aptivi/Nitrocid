@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Diagnostics;
@@ -40,7 +39,7 @@ namespace Nitrocid.Files.Instances
         /// Does this file or directory entry exist?
         /// </summary>
         public bool Exists =>
-            Checking.Exists(filePath);
+            FilesystemTools.Exists(filePath);
 
         /// <summary>
         /// Gets the file entry type
@@ -92,8 +91,8 @@ namespace Nitrocid.Files.Instances
             filePathUnneutralized = filePath;
             fileSize = -1;
             fileType =
-                Checking.FolderExists(filePath) ? FileSystemEntryType.Directory :
-                Checking.FileExists(filePath) ? FileSystemEntryType.File :
+                FilesystemTools.FolderExists(filePath) ? FileSystemEntryType.Directory :
+                FilesystemTools.FileExists(filePath) ? FileSystemEntryType.File :
                 FileSystemEntryType.Nonexistent;
             if (Type == FileSystemEntryType.File)
                 fileSize = new FileInfo(FilePath).Length;

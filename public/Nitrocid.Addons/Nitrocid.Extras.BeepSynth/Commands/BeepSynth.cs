@@ -21,7 +21,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.BeepSynth.Tools;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
@@ -41,7 +40,7 @@ namespace Nitrocid.Extras.BeepSynth.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
             {
                 TextWriters.Write(Translate.DoTranslation("Beep synth file doesn't exist."), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);

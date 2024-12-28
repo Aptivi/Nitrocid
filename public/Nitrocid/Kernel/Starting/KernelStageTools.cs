@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;

@@ -24,9 +24,6 @@ using Aptivestigate.Logging;
 using Aptivestigate.Serilog;
 using Nitrocid.Drivers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
@@ -385,11 +382,11 @@ namespace Nitrocid.Kernel.Debugging
 
         internal static void RemoveDebugLogs()
         {
-            var files = Listing.GetFilesystemEntries(FilesystemTools.NeutralizePath(PathsManagement.AppDataPath + "/../Aptivi/Logs/") + "log_Nitrocid_*.txt");
+            var files = FilesystemTools.GetFilesystemEntries(FilesystemTools.NeutralizePath(PathsManagement.AppDataPath + "/../Aptivi/Logs/") + "log_Nitrocid_*.txt");
             foreach (var file in files)
             {
-                if (Checking.FileExists(file))
-                    Removing.RemoveFile(file);
+                if (FilesystemTools.FileExists(file))
+                    FilesystemTools.RemoveFile(file);
             }
         }
     }

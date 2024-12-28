@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.SqlShell.Tools;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Inputs.Styles.Editor;
 
@@ -36,12 +36,12 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = SqlShellCommon.DatabasePath;
-            byte[] bytes = Reading.ReadAllBytesNoBlock(path);
+            byte[] bytes = FilesystemTools.ReadAllBytesNoBlock(path);
             HexEditInteractive.OpenInteractive(ref bytes);
 
             // Save the results
             SqlEditTools.SqlEdit_CloseSqlFile();
-            Writing.WriteAllBytesNoBlock(path, bytes);
+            FilesystemTools.WriteAllBytesNoBlock(path, bytes);
             SqlEditTools.SqlEdit_OpenSqlFile(path);
             return 0;
         }

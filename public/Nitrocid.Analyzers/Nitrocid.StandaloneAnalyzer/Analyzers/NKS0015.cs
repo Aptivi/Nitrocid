@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(File.Move))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Move instead of Moving.MoveFileOrDir()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Move instead of FilesystemTools.MoveFileOrDir()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(File.Move))
                         continue;
 
-                    // We need to have a syntax that calls Moving.MoveFileOrDir
+                    // We need to have a syntax that calls FilesystemTools.MoveFileOrDir
                     var classSyntax = SyntaxFactory.IdentifierName("Moving");
                     var methodSyntax = SyntaxFactory.IdentifierName("MoveFileOrDir");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

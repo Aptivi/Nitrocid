@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
@@ -52,7 +51,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
                 return 0;
             }
-            else if (Checking.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
+            else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);

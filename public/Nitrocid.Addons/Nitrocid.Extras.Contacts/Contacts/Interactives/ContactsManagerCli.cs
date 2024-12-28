@@ -26,7 +26,6 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using VisualCard.Parts.Implementations;
 using Terminaux.Images;
@@ -35,6 +34,7 @@ using System.IO;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
 using VisualCard.Parts.Enums;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -130,7 +130,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
-            if (Checking.FileExists(path))
+            if (FilesystemTools.FileExists(path))
             {
                 try
                 {

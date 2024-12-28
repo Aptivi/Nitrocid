@@ -68,7 +68,7 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Removing.RemoveDirectory
+                // We need to have a syntax that calls FilesystemTools.RemoveDirectory
                 var classSyntax = SyntaxFactory.IdentifierName("Removing");
                 var methodSyntax = SyntaxFactory.IdentifierName("RemoveDirectory");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

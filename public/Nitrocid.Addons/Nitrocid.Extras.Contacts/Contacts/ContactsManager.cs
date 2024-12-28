@@ -24,11 +24,8 @@ using System;
 using System.Linq;
 using System.IO;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Misc.Text.Probers.Regexp;
@@ -36,6 +33,7 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts.Enums;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -56,9 +54,9 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             // Get the contact files
             string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-            if (!Checking.FolderExists(contactsPath))
-                Making.MakeDirectory(contactsPath);
-            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+            if (!FilesystemTools.FolderExists(contactsPath))
+                FilesystemTools.MakeDirectory(contactsPath);
+            var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
 
             // Now, enumerate through each contact file
@@ -77,10 +75,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             // Get the contact files
             string contactsImportPath = PathsManagement.GetKernelPath(KernelPathType.ContactsImport);
-            if (!Checking.FolderExists(contactsImportPath))
-                Making.MakeDirectory(contactsImportPath);
-            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
-            var androidContactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
+            if (!FilesystemTools.FolderExists(contactsImportPath))
+                FilesystemTools.MakeDirectory(contactsImportPath);
+            var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
+            var androidContactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts and {1} Android databases.", contactFiles.Length, androidContactFiles.Length);
 
             // Now, enumerate through each contact file
@@ -122,7 +120,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         public static void InstallContacts(string pathToContactFile, bool saveToPath = true)
         {
             // Check to see if we're dealing with the non-existent contacts file
-            if (!Checking.FileExists(pathToContactFile))
+            if (!FilesystemTools.FileExists(pathToContactFile))
                 throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
 
             // Check to see if we're given the Android contacts2.db file
@@ -163,8 +161,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got {0} cards.", cards.Length);
                 if (cards is null || cards.Length == 0)
                 {
@@ -192,7 +190,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                         Card card = cards[i];
                         string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
                         DebugWriter.WriteDebug(DebugLevel.I, "Saving contact to {0}...", path);
-                        if (!Checking.FileExists(path))
+                        if (!FilesystemTools.FileExists(path))
                             card.SaveTo(path);
                     }
                 }
@@ -216,8 +214,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
@@ -229,8 +227,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 // Now, remove the contacts from the contacts path if possible
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0} from filesystem since we've already removed contact {1} from the list, which caused the cards count to go to {2}... However, removeFromPath, {3}, judges whether to really remove this contact file or not.", contactPath, contactIndex, cards.Count, removeFromPath);
                 if (removeFromPath)
-                    if (Checking.FileExists(contactPath))
-                        Removing.RemoveFile(contactPath);
+                    if (FilesystemTools.FileExists(contactPath))
+                        FilesystemTools.RemoveFile(contactPath);
             }
             catch (Exception ex)
             {
@@ -250,8 +248,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
                 if (cards.Count <= 0)
                     return;
 
@@ -263,11 +261,11 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts from filesystem since we've already removed contacts from the list, which caused the cards count to go to 0... However, removeFromPath, {0}, judges whether to really remove this contact file or not.", removeFromPath);
                 if (removeFromPath)
                 {
-                    if (Checking.FolderExists(contactsPath))
+                    if (FilesystemTools.FolderExists(contactsPath))
                     {
-                        var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+                        var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
                         foreach (var contactFile in contactFiles)
-                            Removing.RemoveFile(contactFile);
+                            FilesystemTools.RemoveFile(contactFile);
                     }
                 }
             }

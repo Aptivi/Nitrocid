@@ -19,12 +19,12 @@
 
 using Nitrocid.Drivers;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Miscellaneous file manipulation routines
     /// </summary>
-    public static class Manipulation
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Clears the contents of a file

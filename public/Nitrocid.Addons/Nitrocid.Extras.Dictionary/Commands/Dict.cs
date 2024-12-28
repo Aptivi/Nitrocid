@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {

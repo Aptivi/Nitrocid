@@ -31,14 +31,12 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Modifications.ManPages;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Modifications
@@ -82,7 +80,7 @@ namespace Nitrocid.Modifications
                 return;
             }
 
-            if (!Checking.FileExists(PathToMod))
+            if (!FilesystemTools.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
                 SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), ModFilename);
@@ -126,7 +124,7 @@ namespace Nitrocid.Modifications
                 SplashReport.ReportProgressError(Translate.DoTranslation("Stopping mods not allowed on safe mode."));
                 return;
             }
-            if (!Checking.FileExists(PathToMod))
+            if (!FilesystemTools.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
                 SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} not found."), ModFilename);
@@ -270,7 +268,7 @@ namespace Nitrocid.Modifications
             DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
 
             // Check for upgrade
-            if (Checking.FileExists(TargetModPath))
+            if (FilesystemTools.FileExists(TargetModPath))
             {
                 TextWriters.Write(Translate.DoTranslation("Trying to install an already-installed mod. Updating mod..."), true, KernelColorType.Warning);
                 StopMod(Path.GetFileName(TargetModPath));
@@ -308,7 +306,7 @@ namespace Nitrocid.Modifications
                 File.Copy(ModPath, TargetModPath, true);
 
                 // Check for the manual pages
-                if (Checking.FolderExists(ModPath + ".manual"))
+                if (FilesystemTools.FolderExists(ModPath + ".manual"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath);
                     Directory.CreateDirectory(TargetModPath + ".manual");
@@ -318,7 +316,7 @@ namespace Nitrocid.Modifications
                         var ManualInstance = new Manual(ModName, ModManualFile);
                         if (!ManualInstance.ValidManpage)
                             throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The manual page {0} is invalid."), ManualFileName);
-                        Copying.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
+                        FilesystemTools.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
                     }
                 }
 
@@ -352,7 +350,7 @@ namespace Nitrocid.Modifications
                 File.Delete(TargetModPath);
 
                 // Finally, check for the manual pages and remove them
-                if (Checking.FolderExists(ModPath + ".manual"))
+                if (FilesystemTools.FolderExists(ModPath + ".manual"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath);
                     var modManuals = PageManager.ListAllPagesByMod(ModName);
@@ -443,7 +441,7 @@ namespace Nitrocid.Modifications
                 }
                 else
                 {
-                    if (!Checking.FolderExists(ModPath))
+                    if (!FilesystemTools.FolderExists(ModPath))
                         Directory.CreateDirectory(ModPath);
                     foreach (string modFilePath in Directory.GetFiles(ModPath))
                     {

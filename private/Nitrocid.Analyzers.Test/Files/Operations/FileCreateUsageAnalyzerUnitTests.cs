@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Making.MakeFile("test.txt");
+                            FilesystemTools.MakeFile("test.txt");
                         }
                     }
                 }

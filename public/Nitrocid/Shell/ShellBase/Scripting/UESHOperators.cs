@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.ShellBase.Scripting
@@ -162,7 +161,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = Checking.FileExists(VarValue, true);
+            Satisfied = FilesystemTools.FileExists(VarValue, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -178,7 +177,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !Checking.FileExists(VarValue, true);
+            Satisfied = !FilesystemTools.FileExists(VarValue, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -194,7 +193,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = Checking.FolderExists(VarValue, true);
+            Satisfied = FilesystemTools.FolderExists(VarValue, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -210,7 +209,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !Checking.FolderExists(VarValue, true);
+            Satisfied = !FilesystemTools.FolderExists(VarValue, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -264,7 +263,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = Parsing.TryParsePath(VarValue);
+            Satisfied = FilesystemTools.TryParsePath(VarValue);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -280,7 +279,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !Parsing.TryParsePath(VarValue);
+            Satisfied = !FilesystemTools.TryParsePath(VarValue);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -296,7 +295,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = Parsing.TryParseFileName(VarValue);
+            Satisfied = FilesystemTools.TryParseFileName(VarValue);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }
@@ -312,7 +311,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
             string VarValue = UESHVariables.GetVariable(Variable);
             DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
-            Satisfied = !Parsing.TryParseFileName(VarValue);
+            Satisfied = !FilesystemTools.TryParseFileName(VarValue);
             DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
             return Satisfied;
         }

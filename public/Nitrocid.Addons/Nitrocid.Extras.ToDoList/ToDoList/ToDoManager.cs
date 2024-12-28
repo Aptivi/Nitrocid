@@ -18,8 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Languages;
 using System;
@@ -118,7 +117,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         public static void SaveTasks()
         {
             string serializedTasks = JsonConvert.SerializeObject(toDoTasks, Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.ToDoList), serializedTasks);
+            FilesystemTools.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.ToDoList), serializedTasks);
         }
 
         /// <summary>
@@ -127,9 +126,9 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         public static void LoadTasks()
         {
             string path = PathsManagement.GetKernelPath(KernelPathType.ToDoList);
-            if (!Checking.FileExists(path))
-                Making.MakeJsonFile(path, true, true);
-            string serializedTasks = Reading.ReadContentsText(path);
+            if (!FilesystemTools.FileExists(path))
+                FilesystemTools.MakeJsonFile(path, true, true);
+            string serializedTasks = FilesystemTools.ReadContentsText(path);
             toDoTasks = JsonConvert.DeserializeObject<List<ToDoTask>>(serializedTasks) ??
                 throw new Exception(Translate.DoTranslation("Can't get a list of tasks"));
         }

@@ -24,9 +24,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Users;
-using Terminaux.Inputs.Styles.Choice;
 using System.Linq;
-using Terminaux.Inputs.Styles;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

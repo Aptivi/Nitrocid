@@ -25,7 +25,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -50,7 +49,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 JsonShellCommon.FileStream = new FileStream(File, FileMode.Open);
                 var JsonFileReader = new StreamReader(JsonShellCommon.FileStream);
-                string JsonFileContents = Reading.ReadToEndAndSeek(ref JsonFileReader);
+                string JsonFileContents = FilesystemTools.ReadToEndAndSeek(ref JsonFileReader);
                 JsonShellCommon.FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 JsonShellCommon.FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.FileStream.Length, JsonShellCommon.FileStream.Position);

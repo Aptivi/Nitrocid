@@ -26,7 +26,6 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Interactives;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using System.IO;
 using Nitrocid.Modifications.ManPages;
@@ -55,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             // Check for accompanying manual pages for mods
             string ModManualPath = FilesystemTools.NeutralizePath(mod.ModFilePath + ".manual");
-            if (Checking.FolderExists(ModManualPath))
+            if (FilesystemTools.FolderExists(ModManualPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
                 foreach (string ModManualFile in Directory.GetFiles(ModManualPath, "*.man", SearchOption.AllDirectories))

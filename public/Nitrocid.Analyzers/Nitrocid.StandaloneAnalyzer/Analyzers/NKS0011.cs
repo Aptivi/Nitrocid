@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(Directory.GetFileSystemEntries))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses Directory.GetFileSystemEntries instead of FilesystemTools.GetFileSystemEntries()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Directory.GetFileSystemEntries))
                         continue;
 
-                    // We need to have a syntax that calls Listing.GetFilesystemEntries
+                    // We need to have a syntax that calls FilesystemTools.GetFilesystemEntries
                     var classSyntax = SyntaxFactory.IdentifierName("Listing");
                     var methodSyntax = SyntaxFactory.IdentifierName("GetFilesystemEntries");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

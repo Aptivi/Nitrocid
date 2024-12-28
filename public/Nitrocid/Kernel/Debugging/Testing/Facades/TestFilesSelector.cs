@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

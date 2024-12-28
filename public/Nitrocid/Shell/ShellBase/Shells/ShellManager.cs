@@ -23,7 +23,6 @@ using System.IO;
 using System.Text;
 using File = Nitrocid.Drivers.Console.Bases.File;
 using FileIO = System.IO.File;
-using Manipulation = Nitrocid.Files.Operations.Manipulation;
 using System.Text.RegularExpressions;
 using System.Linq;
 using Terminaux.Reader;
@@ -50,7 +49,6 @@ using Nitrocid.Drivers.Console.Bases;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Shell.ShellBase.Switches;
@@ -456,7 +454,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     // Get the target file and path
                     TargetFile = RegexpTools.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
-                    bool pathValid = Parsing.TryParsePath(TargetFile ?? "");
+                    bool pathValid = FilesystemTools.TryParsePath(TargetFile ?? "");
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
                         TargetFile = FilesystemTools.NeutralizePath(commandName);
                     if (pathValid)
@@ -532,7 +530,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         else if (pathValid & ShellType == "Shell")
                         {
                             // If we're in the UESH shell, parse the script file or executable file
-                            if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
+                            if (FilesystemTools.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", commandName);
                                 try
@@ -562,7 +560,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                         UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
                                 }
                             }
-                            else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
+                            else if (FilesystemTools.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
                             {
                                 try
                                 {
@@ -856,7 +854,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         internal static void LoadHistories()
         {
             string path = PathsManagement.ShellHistoriesPath;
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 return;
             histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path)) ?? [];
             foreach (string history in histories.Keys)
@@ -980,7 +978,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     string OutputFilePath = FilesystemTools.NeutralizePath(outputFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
                     if (isOverwrite)
-                        Manipulation.ClearFile(OutputFilePath);
+                        FilesystemTools.ClearFile(OutputFilePath);
                     filePaths.Add(OutputFilePath);
                 }
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("FileSequence");

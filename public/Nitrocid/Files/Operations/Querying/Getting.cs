@@ -19,12 +19,12 @@
 
 using Nitrocid.Drivers;
 
-namespace Nitrocid.Files.Operations.Querying
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Module related to getting information
     /// </summary>
-    public static class Getting
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Gets the file name with the file number suffix applied

@@ -19,7 +19,6 @@
 
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
@@ -65,7 +64,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
                 // Current directory and shell stack
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("]{0}:", CurrentDirectory.CurrentDir);
+                PresetStringBuilder.AppendFormat("]{0}:", FilesystemTools.CurrentDir);
 
                 // User dollar sign
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
