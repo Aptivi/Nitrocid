@@ -460,10 +460,19 @@ namespace Nitrocid.Modifications
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being started or stopped. Total mods = {0}", count);
                     foreach (string mod in modFiles)
                     {
-                        if (start)
-                            StartMod(mod, priority);
-                        else
-                            StopMod(mod);
+                        try
+                        {
+                            if (start)
+                                StartMod(mod, priority);
+                            else
+                                StopMod(mod);
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, "Can't start or stop mod {0}!", mod);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Can't start or stop this mod!"));
+                        }
                     }
                 }
                 else
