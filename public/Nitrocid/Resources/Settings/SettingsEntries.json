@@ -193,32 +193,39 @@
                 "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
             },
             {
-                "Name": "Enable 'The Nitrocid Homepage'",
-                "Type": "SBoolean",
-                "Variable": "EnableHomepage",
-                "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
-            },
-            {
-                "Name": "Enable 'The Nitrocid Homepage' widgets",
-                "Type": "SBoolean",
-                "Variable": "EnableHomepageWidgets",
-                "Description": "Enables 'The Nitrocid Homepage' widgets at the right side of the screen."
-            },
-            {
-                "Name": "Enable 'The Nitrocid Homepage' RSS feed",
-                "Type": "SBoolean",
-                "Variable": "EnableHomepageRssFeed",
-                "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
-            },
-            {
-                "Name": "'The Nitrocid Homepage' widget",
-                "Type": "SSelection",
-                "Variable": "HomepageWidget",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetWidgetNames",
-                "SelectionFunctionType": "WidgetTools",
-                "SelectionFallback": [ "AnalogClock" ],
-                "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
+                "Name": "The Nitrocid Homepage",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure The Nitrocid Homepage",
+                "Variables": [
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage'",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepage",
+                        "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
+                    },
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage' widgets",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepageWidgets",
+                        "Description": "Enables 'The Nitrocid Homepage' widgets at the right side of the screen."
+                    },
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage' RSS feed",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepageRssFeed",
+                        "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
+                    },
+                    {
+                        "Name": "'The Nitrocid Homepage' widget",
+                        "Type": "SSelection",
+                        "Variable": "HomepageWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock" ],
+                        "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
+                    }
+                ]
             }
         ]
     },
@@ -661,12 +668,6 @@
                 "Description": "Includes the disabled users in the list"
             },
             {
-                "Name": "MOTD and Headline at the bottom of the modern logon clock",
-                "Type": "SBoolean",
-                "Variable": "MotdHeadlineBottom",
-                "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
-            },
-            {
                 "Name": "Login handler",
                 "Type": "SSelection",
                 "Variable": "CurrentLoginHandler",
@@ -677,30 +678,43 @@
                 "Description": "Login handler to use for sign-in prompts."
             },
             {
-                "Name": "Enable widgets",
-                "Type": "SBoolean",
-                "Variable": "EnableWidgets",
-                "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
-            },
-            {
-                "Name": "First widget",
-                "Type": "SSelection",
-                "Variable": "FirstWidget",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetWidgetNames",
-                "SelectionFunctionType": "WidgetTools",
-                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
-            },
-            {
-                "Name": "Second widget",
-                "Type": "SSelection",
-                "Variable": "SecondWidget",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetWidgetNames",
-                "SelectionFunctionType": "WidgetTools",
-                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                "Name": "Modern logon handler settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the modern logon handler",
+                "Variables": [
+                    {
+                        "Name": "MOTD and Headline at the bottom of the modern logon clock",
+                        "Type": "SBoolean",
+                        "Variable": "MotdHeadlineBottom",
+                        "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
+                    },
+                    {
+                        "Name": "Enable widgets",
+                        "Type": "SBoolean",
+                        "Variable": "EnableWidgets",
+                        "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
+                    },
+                    {
+                        "Name": "First widget",
+                        "Type": "SSelection",
+                        "Variable": "FirstWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                        "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                    },
+                    {
+                        "Name": "Second widget",
+                        "Type": "SSelection",
+                        "Variable": "SecondWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                        "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                    }
+                ]
             }
         ]
     },
@@ -709,12 +723,6 @@
         "Desc": "This section lists the shell settings.",
         "DisplayAs": "General shell settings",
         "Keys": [
-            {
-                "Name": "Simplified Help Command",
-                "Type": "SBoolean",
-                "Variable": "SimHelp",
-                "Description": "Simplified help command for all the shells"
-            },
             {
                 "Name": "Current Directory",
                 "Type": "SString",
@@ -754,48 +762,103 @@
                 "Type": "SBoolean",
                 "Variable": "ShowShellCount",
                 "Description": "Shows the shell count in the normal UESH shell (depending on the preset)"
-            }
-        ]
-    },
-    {
-        "Name": "Shell Presets",
-        "Desc": "This section lists the shell preset settings.",
-        "DisplayAs": "Shell preset settings",
-        "Keys": [
-            {
-                "Name": "Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "PromptPreset",
-                "ShellType": "Shell",
-                "Description": ""
             },
             {
-                "Name": "Text Edit Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "TextEditPromptPreset",
-                "ShellType": "TextShell",
-                "Description": ""
+                "Name": "Input history enabled",
+                "Type": "SBoolean",
+                "Variable": "InputHistoryEnabled",
+                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
             },
             {
-                "Name": "Hex Edit Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "HexEditPromptPreset",
-                "ShellType": "HexShell",
-                "Description": ""
+                "Name": "Help system",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the shell help system",
+                "Variables": [
+                    {
+                        "Name": "Simplified Help Command",
+                        "Type": "SBoolean",
+                        "Variable": "SimHelp",
+                        "Description": "Simplified help command for all the shells"
+                    },
+                    {
+                        "Name": "Show the commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowCommandsCount",
+                        "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
+                    },
+                    {
+                        "Name": "Show the shell commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowShellCommandsCount",
+                        "Description": "Show the count of shell commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the mod commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowModCommandsCount",
+                        "Description": "Show the count of kernel modification commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the aliases count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowShellAliasesCount",
+                        "Description": "Show the count of aliased commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the unified commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowUnifiedCommandsCount",
+                        "Description": "Show the count of unified shell commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the addon commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowAddonCommandsCount",
+                        "Description": "Show the count of kernel addon commands when listing them in the help command"
+                    }
+                ]
             },
             {
-                "Name": "Admin Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "AdminShellPromptPreset",
-                "ShellType": "AdminShell",
-                "Description": ""
-            },
-            {
-                "Name": "Debug Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "DebugShellPromptPreset",
-                "ShellType": "DebugShell",
-                "Description": ""
+                "Name": "Shell presets",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the shell presets",
+                "Variables": [
+                    {
+                        "Name": "Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "PromptPreset",
+                        "ShellType": "Shell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Text Edit Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "TextEditPromptPreset",
+                        "ShellType": "TextShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Hex Edit Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "HexEditPromptPreset",
+                        "ShellType": "HexShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Admin Shell Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "AdminShellPromptPreset",
+                        "ShellType": "AdminShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Debug Shell Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "DebugShellPromptPreset",
+                        "ShellType": "DebugShell",
+                        "Description": ""
+                    }
+                ]
             }
         ]
     },
@@ -886,18 +949,6 @@
         "DisplayAs": "General networking settings",
         "Keys": [
             {
-                "Name": "Debug Port",
-                "Type": "SInt",
-                "Variable": "DebugPort",
-                "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
-            },
-            {
-                "Name": "Debug Chat Port",
-                "Type": "SInt",
-                "Variable": "DebugChatPort",
-                "Description": "Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port."
-            },
-            {
                 "Name": "Download Retry Times",
                 "Type": "SInt",
                 "Variable": "DownloadRetries",
@@ -916,12 +967,6 @@
                 "Description": "If true, it makes \"get\" or \"put\" show the progress bar while downloading or uploading."
             },
             {
-                "Name": "Record chat to debug log",
-                "Type": "SBoolean",
-                "Variable": "RecordChatToDebugLog",
-                "Description": "Records remote debug chat to debug log."
-            },
-            {
                 "Name": "Show SSH banner",
                 "Type": "SBoolean",
                 "Variable": "SSHBanner",
@@ -938,18 +983,6 @@
                 "Type": "SInt",
                 "Variable": "RPCPort",
                 "Description": "Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."
-            },
-            {
-                "Name": "Automatically start remote debug on startup",
-                "Type": "SBoolean",
-                "Variable": "RDebugAutoStart",
-                "Description": "If you want remote debug to start on boot, enable this."
-            },
-            {
-                "Name": "Remote debug message format",
-                "Type": "SString",
-                "Variable": "RDebugMessageFormat",
-                "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
             },
             {
                 "Name": "Ping timeout",
@@ -982,10 +1015,47 @@
                 "Description": "Shows the notification showing the upload progress."
             },
             {
-                "Name": "Notify on remote debug connection error",
-                "Type": "SBoolean",
-                "Variable": "NotifyOnRemoteDebugConnectionError",
-                "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+                "Name": "Remote debugger settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the remote debugger",
+                "Variables": [
+                    {
+                        "Name": "Debug Port",
+                        "Type": "SInt",
+                        "Variable": "DebugPort",
+                        "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
+                    },
+                    {
+                        "Name": "Debug Chat Port",
+                        "Type": "SInt",
+                        "Variable": "DebugChatPort",
+                        "Description": "Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port."
+                    },
+                    {
+                        "Name": "Record chat to debug log",
+                        "Type": "SBoolean",
+                        "Variable": "RecordChatToDebugLog",
+                        "Description": "Records remote debug chat to debug log."
+                    },
+                    {
+                        "Name": "Automatically start remote debug on startup",
+                        "Type": "SBoolean",
+                        "Variable": "RDebugAutoStart",
+                        "Description": "If you want remote debug to start on boot, enable this."
+                    },
+                    {
+                        "Name": "Remote debug message format",
+                        "Type": "SString",
+                        "Variable": "RDebugMessageFormat",
+                        "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
+                    },
+                    {
+                        "Name": "Notify on remote debug connection error",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyOnRemoteDebugConnectionError",
+                        "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+                    }
+                ]
             }
         ]
     },
@@ -1054,48 +1124,6 @@
         "DisplayAs": "Miscellaneous settings",
         "Keys": [
             {
-                "Name": "Marquee on startup",
-                "Type": "SBoolean",
-                "Variable": "StartScroll",
-                "Description": "Enables eyecandy on startup"
-            },
-            {
-                "Name": "Long Time and Date",
-                "Type": "SBoolean",
-                "Variable": "LongTimeDate",
-                "Description": "The time and date will be longer, showing full month names, etc."
-            },
-            {
-                "Name": "Enable text editor autosave",
-                "Type": "SBoolean",
-                "Variable": "TextEditAutoSaveFlag",
-                "Description": "Turns on or off the text editor autosave feature."
-            },
-            {
-                "Name": "Text editor autosave interval",
-                "Type": "SInt",
-                "Variable": "TextEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
-            },
-            {
-                "Name": "Enable hex editor autosave",
-                "Type": "SBoolean",
-                "Variable": "HexEditAutoSaveFlag",
-                "Description": "Turns on or off the hex editor autosave feature."
-            },
-            {
-                "Name": "Hex editor autosave interval",
-                "Type": "SInt",
-                "Variable": "HexEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
-            },
-            {
-                "Name": "Draw notification border",
-                "Type": "SBoolean",
-                "Variable": "DrawBorderNotification",
-                "Description": "Covers the notification with the border."
-            },
-            {
                 "Name": "Blacklisted mods",
                 "Type": "SList",
                 "Variable": "BlacklistedModsString",
@@ -1108,228 +1136,284 @@
                 "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
             },
             {
-                "Name": "Upper left corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperLeftCornerChar",
-                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper right corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperRightCornerChar",
-                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower left corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower right corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerRightCornerChar",
-                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperFrameChar",
-                "Description": "A character that resembles the upper frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerFrameChar",
-                "Description": "A character that resembles the lower frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Left frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLeftFrameChar",
-                "Description": "A character that resembles the left frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Right frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyRightFrameChar",
-                "Description": "A character that resembles the right frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Show latest RSS headline on login",
-                "Type": "SBoolean",
-                "Variable": "ShowHeadlineOnLogin",
-                "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
-            },
-            {
-                "Name": "RSS headline URL",
-                "Type": "SString",
-                "Variable": "RssHeadlineUrl",
-                "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
-            },
-            {
-                "Name": "Show the commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowCommandsCount",
-                "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
-            },
-            {
-                "Name": "Show the shell commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowShellCommandsCount",
-                "Description": "Show the count of shell commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the mod commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowModCommandsCount",
-                "Description": "Show the count of kernel modification commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the aliases count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowShellAliasesCount",
-                "Description": "Show the count of aliased commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the unified commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowUnifiedCommandsCount",
-                "Description": "Show the count of unified shell commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the addon commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowAddonCommandsCount",
-                "Description": "Show the count of kernel addon commands when listing them in the help command"
-            },
-            {
-                "Name": "Password mask character",
-                "Type": "SChar",
-                "Variable": "CurrentMask",
-                "Description": "A character that masks the password. Leave blank for more security."
-            },
-            {
-                "Name": "Input history enabled",
-                "Type": "SBoolean",
-                "Variable": "InputHistoryEnabled",
-                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
-            },
-            {
-                "Name": "Enable scroll bar in selection",
-                "Type": "SBoolean",
-                "Variable": "EnableScrollBarInSelection",
-                "Description": "Enables the scroll bar in selection screens"
-            },
-            {
                 "Name": "Do Not Disturb",
                 "Type": "SBoolean",
                 "Variable": "DoNotDisturb",
                 "Description": "If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus."
             },
             {
-                "Name": "Upper left corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperLeftCornerChar",
-                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                "Name": "Text editor settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the text editor",
+                "Variables": [
+                    {
+                        "Name": "Enable text editor autosave",
+                        "Type": "SBoolean",
+                        "Variable": "TextEditAutoSaveFlag",
+                        "Description": "Turns on or off the text editor autosave feature."
+                    },
+                    {
+                        "Name": "Text editor autosave interval",
+                        "Type": "SInt",
+                        "Variable": "TextEditAutoSaveInterval",
+                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                    }
+                ]
             },
             {
-                "Name": "Upper right corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperRightCornerChar",
-                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                "Name": "Hex editor settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the hex editor",
+                "Variables": [
+                    {
+                        "Name": "Enable hex editor autosave",
+                        "Type": "SBoolean",
+                        "Variable": "HexEditAutoSaveFlag",
+                        "Description": "Turns on or off the hex editor autosave feature."
+                    },
+                    {
+                        "Name": "Hex editor autosave interval",
+                        "Type": "SInt",
+                        "Variable": "HexEditAutoSaveInterval",
+                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                    }
+                ]
             },
             {
-                "Name": "Lower left corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                "Name": "RSS headline settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the RSS headlines",
+                "Variables": [
+                    {
+                        "Name": "Show latest RSS headline on login",
+                        "Type": "SBoolean",
+                        "Variable": "ShowHeadlineOnLogin",
+                        "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
+                    },
+                    {
+                        "Name": "RSS headline URL",
+                        "Type": "SString",
+                        "Variable": "RssHeadlineUrl",
+                        "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
+                    }
+                ]
             },
             {
-                "Name": "Lower right corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerRightCornerChar",
-                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                "Name": "Mouse settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the mouse",
+                "Variables": [
+                    {
+                        "Name": "Mouse support",
+                        "Type": "SBoolean",
+                        "Variable": "InitializeCursorHandler",
+                        "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
+                    },
+                    {
+                        "Name": "Mouse movement support",
+                        "Type": "SBoolean",
+                        "Variable": "HandleCursorMovement",
+                        "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
+                    }
+                ]
             },
             {
-                "Name": "Upper frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperFrameChar",
-                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                "Name": "Debug settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the debugging routine",
+                "Variables": [
+                    {
+                        "Name": "Censor private info on debug logs",
+                        "Type": "SBoolean",
+                        "Variable": "DebugCensorPrivateInfo",
+                        "Description": "Censor private information that may be printed to the debug logs."
+                    },
+                    {
+                        "Name": "CPU usage debug enabled",
+                        "Type": "SBoolean",
+                        "Variable": "CpuUsageDebugEnabled",
+                        "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
+                    },
+                    {
+                        "Name": "CPU usage debug update interval",
+                        "Type": "SIntSlider",
+                        "Variable": "CpuUsageUpdateInterval",
+                        "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
+                        "MinimumValue": 1000,
+                        "MaximumValue": 1000000
+                    }
+                ]
             },
             {
-                "Name": "Lower frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerFrameChar",
-                "Description": "A character that resembles the lower frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Left frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLeftFrameChar",
-                "Description": "A character that resembles the left frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Right frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderRightFrameChar",
-                "Description": "A character that resembles the right frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Censor private info on debug logs",
-                "Type": "SBoolean",
-                "Variable": "DebugCensorPrivateInfo",
-                "Description": "Censor private information that may be printed to the debug logs."
-            },
-            {
-                "Name": "Display new notifications as asterisks",
-                "Type": "SBoolean",
-                "Variable": "NotifyDisplayAsAsterisk",
-                "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
-            },
-            {
-                "Name": "Show file size in the file manager",
-                "Type": "SBoolean",
-                "Variable": "IfmShowFileSize",
-                "Description": "Whether to show the file size in the status."
-            },
-            {
-                "Name": "Use classic style of headers in the Settings app",
-                "Type": "SBoolean",
-                "Variable": "ClassicSettingsHeaderStyle",
-                "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
-            },
-            {
-                "Name": "Default figlet font",
-                "Type": "SFiglet",
-                "Variable": "DefaultFigletFontName",
-                "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
-            },
-            {
-                "Name": "CPU usage debug enabled",
-                "Type": "SBoolean",
-                "Variable": "CpuUsageDebugEnabled",
-                "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
-            },
-            {
-                "Name": "CPU usage debug update interval",
-                "Type": "SIntSlider",
-                "Variable": "CpuUsageUpdateInterval",
-                "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
-                "MinimumValue": 1000,
-                "MaximumValue": 1000000
-            },
-            {
-                "Name": "Mouse support",
-                "Type": "SBoolean",
-                "Variable": "InitializeCursorHandler",
-                "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
-            },
-            {
-                "Name": "Mouse movement support",
-                "Type": "SBoolean",
-                "Variable": "HandleCursorMovement",
-                "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
+                "Name": "Aesthetics",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel aesthetics",
+                "Variables": [
+                    {
+                        "Name": "Marquee on startup",
+                        "Type": "SBoolean",
+                        "Variable": "StartScroll",
+                        "Description": "Enables eyecandy on startup"
+                    },
+                    {
+                        "Name": "Long Time and Date",
+                        "Type": "SBoolean",
+                        "Variable": "LongTimeDate",
+                        "Description": "The time and date will be longer, showing full month names, etc."
+                    },
+                    {
+                        "Name": "Draw notification border",
+                        "Type": "SBoolean",
+                        "Variable": "DrawBorderNotification",
+                        "Description": "Covers the notification with the border."
+                    },
+                    {
+                        "Name": "Notification border settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the notification border",
+                        "Variables": [
+                            {
+                                "Name": "Upper left corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperLeftCornerChar",
+                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper right corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperRightCornerChar",
+                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower left corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerLeftCornerChar",
+                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower right corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerRightCornerChar",
+                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperFrameChar",
+                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerFrameChar",
+                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Left frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLeftFrameChar",
+                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Right frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyRightFrameChar",
+                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Password mask character",
+                        "Type": "SChar",
+                        "Variable": "CurrentMask",
+                        "Description": "A character that masks the password. Leave blank for more security."
+                    },
+                    {
+                        "Name": "Enable scroll bar in selection",
+                        "Type": "SBoolean",
+                        "Variable": "EnableScrollBarInSelection",
+                        "Description": "Enables the scroll bar in selection screens"
+                    },
+                    {
+                        "Name": "General border settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the general border",
+                        "Variables": [
+                            {
+                                "Name": "Upper left corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperLeftCornerChar",
+                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper right corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperRightCornerChar",
+                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower left corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerLeftCornerChar",
+                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower right corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerRightCornerChar",
+                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperFrameChar",
+                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerFrameChar",
+                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Left frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLeftFrameChar",
+                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Right frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderRightFrameChar",
+                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Display new notifications as asterisks",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyDisplayAsAsterisk",
+                        "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
+                    },
+                    {
+                        "Name": "Show file size in the file manager",
+                        "Type": "SBoolean",
+                        "Variable": "IfmShowFileSize",
+                        "Description": "Whether to show the file size in the status."
+                    },
+                    {
+                        "Name": "Use classic style of headers in the Settings app",
+                        "Type": "SBoolean",
+                        "Variable": "ClassicSettingsHeaderStyle",
+                        "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
+                    },
+                    {
+                        "Name": "Default figlet font",
+                        "Type": "SFiglet",
+                        "Variable": "DefaultFigletFontName",
+                        "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
+                    }
+                ]
             }
         ]
     }
