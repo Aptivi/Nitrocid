@@ -5,166 +5,10 @@
         "DisplayAs": "General kernel settings",
         "Keys": [
             {
-                "Name": "Check for Updates on Startup",
-                "Type": "SBoolean",
-                "Variable": "CheckUpdateStart",
-                "Description": "Each startup, it will check for updates."
-            },
-            {
-                "Name": "Custom Startup Banner",
-                "Type": "SString",
-                "Variable": "CustomBanner",
-                "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
-            },
-            {
-                "Name": "Language",
-                "Type": "SSelection",
-                "Variable": "CurrentLanguage",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "ListAllLanguages",
-                "SelectionFunctionType": "LanguageManager",
-                "IsSelectionFunctionDict": true,
-                "SelectionFunctionArgs": [
-                    {
-                        "ArgType": "System.Boolean",
-                        "ArgValue": "False"
-                    }
-                ],
-                "SelectionFallback": [ "eng" ],
-                "Description": "Specifies the kernel language."
-            },
-            {
-                "Name": "Culture",
-                "Type": "SSelection",
-                "Variable": "CurrentCultureName",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetCultureCodes",
-                "SelectionFunctionType": "CultureManager",
-                "SelectionFallback": [ "en-US" ],
-                "Description": "Which culture is being used to change the month names, calendar, etc.?"
-            },
-            {
-                "Name": "Show app information during boot",
-                "Type": "SBoolean",
-                "Variable": "ShowAppInfoOnBoot",
-                "Description": "Shows brief information about the application on boot."
-            },
-            {
-                "Name": "Show stage finish times",
-                "Type": "SBoolean",
-                "Variable": "ShowStageFinishTimes",
-                "Description": "Shows how much time did the kernel take to finish a stage."
-            },
-            {
-                "Name": "Start kernel modifications on boot",
-                "Type": "SBoolean",
-                "Variable": "StartKernelMods",
-                "Description": "Automatically start the kernel modifications on boot."
-            },
-            {
-                "Name": "Show current time before login",
-                "Type": "SBoolean",
-                "Variable": "ShowCurrentTimeBeforeLogin",
-                "Description": "Shows the current time, time zone, and date before logging in."
-            },
-            {
-                "Name": "Notify for any fault during boot",
-                "Type": "SBoolean",
-                "Variable": "NotifyFaultsBoot",
-                "Description": "If there is a minor fault during kernel boot, notifies the user about it."
-            },
-            {
-                "Name": "Show stack trace on kernel error",
-                "Type": "SBoolean",
-                "Variable": "ShowStackTraceOnKernelError",
-                "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
-            },
-            {
-                "Name": "Automatically download updates",
-                "Type": "SBoolean",
-                "Variable": "AutoDownloadUpdate",
-                "Description": "If there is any update, the kernel will automatically download it."
-            },
-            {
-                "Name": "Enable event debugging",
-                "Type": "SBoolean",
-                "Variable": "EventDebug",
-                "Description": "Enables debugging for the kernel event system"
-            },
-            {
-                "Name": "Stylish splash screen",
-                "Type": "SBoolean",
-                "Variable": "EnableSplash",
-                "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
-            },
-            {
-                "Name": "Splash name",
-                "Type": "SSelection",
-                "Variable": "SplashName",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetNamesOfSplashes",
-                "SelectionFunctionType": "SplashManager",
-                "SelectionFallback": [ "Simple" ],
-                "Description": "Splash name from the available splashes implemented in the kernel."
-            },
-            {
-                "Name": "Simulate No APM Mode",
-                "Type": "SBoolean",
-                "Variable": "SimulateNoAPM",
-                "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
-            },
-            {
-                "Name": "Beep on shutdown or reboot",
-                "Type": "SBoolean",
-                "Variable": "BeepOnShutdown",
-                "Description": "Enables beeping upon shutting down the kernel."
-            },
-            {
-                "Name": "Delay on shutdown or reboot",
-                "Type": "SBoolean",
-                "Variable": "DelayOnShutdown",
-                "Description": "Enables delaying upon shutting down the kernel."
-            },
-            {
-                "Name": "Console supports true color",
-                "Type": "SBoolean",
-                "Variable": "ConsoleSupportsTrueColor",
-                "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
-            },
-            {
-                "Name": "Set codepage",
-                "Type": "SBoolean",
-                "Variable": "SetCodepage",
-                "Description": "Set the language codepage upon switching languages.",
-                "UnsupportedPlatforms": [ "Unix", "macOS" ]
-            },
-            {
                 "Name": "Development notice acknowledged",
                 "Type": "SBoolean",
                 "Variable": "DevNoticeConsented",
                 "Description": "If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions."
-            },
-            {
-                "Name": "Allow loading untrusted mods",
-                "Type": "SBoolean",
-                "Variable": "AllowUntrustedMods",
-                "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
-            },
-            {
-                "Name": "Use system time zone",
-                "Type": "SBoolean",
-                "Variable": "UseSystemTimeZone",
-                "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
-            },
-            {
-                "Name": "Kernel-wide time zone",
-                "Type": "SSelection",
-                "Variable": "KernelWideTimeZone",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetTimeZoneNames",
-                "SelectionFunctionType": "TimeZones",
-                "SelectionFallback": [ "Etc/UTC", "GMT" ],
-                "Description": "The kernel-wide time zone to use"
             },
             {
                 "Name": "Show the license information box",
@@ -173,24 +17,95 @@
                 "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
             },
             {
-                "Name": "Bootloader style",
-                "Type": "SString",
-                "Variable": "BootStyle",
-                "Description": "Select a bootloader style to match your preference."
+                "Name": "Culture and language settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the culture and language",
+                "Variables": [
+                    {
+                        "Name": "Language",
+                        "Type": "SSelection",
+                        "Variable": "CurrentLanguage",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "ListAllLanguages",
+                        "SelectionFunctionType": "LanguageManager",
+                        "IsSelectionFunctionDict": true,
+                        "SelectionFunctionArgs": [
+                            {
+                                "ArgType": "System.Boolean",
+                                "ArgValue": "False"
+                            }
+                        ],
+                        "SelectionFallback": [ "eng" ],
+                        "Description": "Specifies the kernel language."
+                    },
+                    {
+                        "Name": "Culture",
+                        "Type": "SSelection",
+                        "Variable": "CurrentCultureName",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetCultureCodes",
+                        "SelectionFunctionType": "CultureManager",
+                        "SelectionFallback": [ "en-US" ],
+                        "Description": "Which culture is being used to change the month names, calendar, etc.?"
+                    },
+                    {
+                        "Name": "Set codepage",
+                        "Type": "SBoolean",
+                        "Variable": "SetCodepage",
+                        "Description": "Set the language codepage upon switching languages.",
+                        "UnsupportedPlatforms": [ "Unix", "macOS" ]
+                    }
+                ]
             },
             {
-                "Name": "Bootloader default selection timeout",
-                "Type": "SIntSlider",
-                "Variable": "BootSelectTimeoutSeconds",
-                "Description": "Timeout in seconds to boot to the default FilesystemTools.",
-                "MinimumValue": 0,
-                "MaximumValue": 600
+                "Name": "Time and date settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the time and date",
+                "Variables": [
+                    {
+                        "Name": "Use system time zone",
+                        "Type": "SBoolean",
+                        "Variable": "UseSystemTimeZone",
+                        "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
+                    },
+                    {
+                        "Name": "Kernel-wide time zone",
+                        "Type": "SSelection",
+                        "Variable": "KernelWideTimeZone",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetTimeZoneNames",
+                        "SelectionFunctionType": "TimeZones",
+                        "SelectionFallback": [ "Etc/UTC", "GMT" ],
+                        "Description": "The kernel-wide time zone to use"
+                    }
+                ]
             },
             {
-                "Name": "Bootloader default selection",
-                "Type": "SInt",
-                "Variable": "BootSelect",
-                "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
+                "Name": "Bootloader settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the bootloader",
+                "Variables": [
+                    {
+                        "Name": "Bootloader style",
+                        "Type": "SString",
+                        "Variable": "BootStyle",
+                        "Description": "Select a bootloader style to match your preference."
+                    },
+                    {
+                        "Name": "Bootloader default selection timeout",
+                        "Type": "SIntSlider",
+                        "Variable": "BootSelectTimeoutSeconds",
+                        "Description": "Timeout in seconds to boot to the default FilesystemTools.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 600
+                    },
+                    {
+                        "Name": "Bootloader default selection",
+                        "Type": "SInt",
+                        "Variable": "BootSelect",
+                        "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
+                    }
+                ]
             },
             {
                 "Name": "The Nitrocid Homepage",
@@ -224,6 +139,69 @@
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock" ],
                         "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel update settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel updates",
+                "Variables": [
+                    {
+                        "Name": "Check for Updates on Startup",
+                        "Type": "SBoolean",
+                        "Variable": "CheckUpdateStart",
+                        "Description": "Each startup, it will check for updates."
+                    },
+                    {
+                        "Name": "Automatically download updates",
+                        "Type": "SBoolean",
+                        "Variable": "AutoDownloadUpdate",
+                        "Description": "If there is any update, the kernel will automatically download it."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel error settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel errors",
+                "Variables": [
+                    {
+                        "Name": "Notify for any fault during boot",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyFaultsBoot",
+                        "Description": "If there is a minor fault during kernel boot, notifies the user about it."
+                    },
+                    {
+                        "Name": "Show stack trace on kernel error",
+                        "Type": "SBoolean",
+                        "Variable": "ShowStackTraceOnKernelError",
+                        "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel power settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel power mechanism",
+                "Variables": [
+                    {
+                        "Name": "Simulate No APM Mode",
+                        "Type": "SBoolean",
+                        "Variable": "SimulateNoAPM",
+                        "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
+                    },
+                    {
+                        "Name": "Beep on shutdown or reboot",
+                        "Type": "SBoolean",
+                        "Variable": "BeepOnShutdown",
+                        "Description": "Enables beeping upon shutting down the kernel."
+                    },
+                    {
+                        "Name": "Delay on shutdown or reboot",
+                        "Type": "SBoolean",
+                        "Variable": "DelayOnShutdown",
+                        "Description": "Enables delaying upon shutting down the kernel."
                     }
                 ]
             }
@@ -263,6 +241,12 @@
                 "Type": "SBoolean",
                 "Variable": "AllowBackgroundColor",
                 "Description": "When this is set to true, the current background color is honored. Else, it uses your terminal's default colors."
+            },
+            {
+                "Name": "Console supports true color",
+                "Type": "SBoolean",
+                "Variable": "ConsoleSupportsTrueColor",
+                "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
             },
             {
                 "Name": "Kernel color schemes",
@@ -1124,22 +1108,41 @@
         "DisplayAs": "Miscellaneous settings",
         "Keys": [
             {
-                "Name": "Blacklisted mods",
-                "Type": "SList",
-                "Variable": "BlacklistedModsString",
-                "SelectionFunctionName": "GetBlacklistedMods",
-                "SelectionFunctionType": "ModManager",
-                "Delimiter": ";",
-                "IsValuePath": true,
-                "IsPathCurrentPath": false,
-                "ValuePathType": "Mods",
-                "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
-            },
-            {
                 "Name": "Do Not Disturb",
                 "Type": "SBoolean",
                 "Variable": "DoNotDisturb",
                 "Description": "If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus."
+            },
+            {
+                "Name": "Kernel modification settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel modifications",
+                "Variables": [
+                    {
+                        "Name": "Start kernel modifications on boot",
+                        "Type": "SBoolean",
+                        "Variable": "StartKernelMods",
+                        "Description": "Automatically start the kernel modifications on boot."
+                    },
+                    {
+                        "Name": "Allow loading untrusted mods",
+                        "Type": "SBoolean",
+                        "Variable": "AllowUntrustedMods",
+                        "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
+                    },
+                    {
+                        "Name": "Blacklisted mods",
+                        "Type": "SList",
+                        "Variable": "BlacklistedModsString",
+                        "SelectionFunctionName": "GetBlacklistedMods",
+                        "SelectionFunctionType": "ModManager",
+                        "Delimiter": ";",
+                        "IsValuePath": true,
+                        "IsPathCurrentPath": false,
+                        "ValuePathType": "Mods",
+                        "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
+                    }
+                ]
             },
             {
                 "Name": "Text editor settings",
@@ -1241,6 +1244,12 @@
                         "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
                         "MinimumValue": 1000,
                         "MaximumValue": 1000000
+                    },
+                    {
+                        "Name": "Enable event debugging",
+                        "Type": "SBoolean",
+                        "Variable": "EventDebug",
+                        "Description": "Enables debugging for the kernel event system"
                     }
                 ]
             },
@@ -1249,6 +1258,46 @@
                 "Type": "SMultivar",
                 "Description": "This allows you to configure the kernel aesthetics",
                 "Variables": [
+                    {
+                        "Name": "Stylish splash screen",
+                        "Type": "SBoolean",
+                        "Variable": "EnableSplash",
+                        "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
+                    },
+                    {
+                        "Name": "Splash name",
+                        "Type": "SSelection",
+                        "Variable": "SplashName",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetNamesOfSplashes",
+                        "SelectionFunctionType": "SplashManager",
+                        "SelectionFallback": [ "Simple" ],
+                        "Description": "Splash name from the available splashes implemented in the kernel."
+                    },
+                    {
+                        "Name": "Custom Startup Banner",
+                        "Type": "SString",
+                        "Variable": "CustomBanner",
+                        "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
+                    },
+                    {
+                        "Name": "Show app information during boot",
+                        "Type": "SBoolean",
+                        "Variable": "ShowAppInfoOnBoot",
+                        "Description": "Shows brief information about the application on boot."
+                    },
+                    {
+                        "Name": "Show stage finish times",
+                        "Type": "SBoolean",
+                        "Variable": "ShowStageFinishTimes",
+                        "Description": "Shows how much time did the kernel take to finish a stage."
+                    },
+                    {
+                        "Name": "Show current time before login",
+                        "Type": "SBoolean",
+                        "Variable": "ShowCurrentTimeBeforeLogin",
+                        "Description": "Shows the current time, time zone, and date before logging in."
+                    },
                     {
                         "Name": "Marquee on startup",
                         "Type": "SBoolean",
