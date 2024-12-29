@@ -216,11 +216,14 @@ namespace Nitrocid.Kernel.Configuration
             var Results = new Dictionary<string, bool>();
 
             // Parse all the settings
-            foreach (var entry in entries)
+            for (int entryIdx = 0; entryIdx < entries.Length; entryIdx++)
             {
+                SettingsEntry? entry = entries[entryIdx];
                 var keys = entry.Keys;
-                foreach (var key in keys)
+                for (int keyIdx = 0; keyIdx < keys.Length; keyIdx++)
                 {
+                    // TODO: Proper support for SMultivar. Iterate through all keys.
+                    SettingsKey? key = keys[keyIdx];
                     string KeyName = key.Name.Original;
                     string KeyVariable = key.Variable;
                     string KeyEnumeration = key.Enumeration;
@@ -231,7 +234,7 @@ namespace Nitrocid.Kernel.Configuration
                     // Check the variable
                     DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
                     KeyFound = key.Type == SettingsKeyType.SMultivar || PropertyManager.CheckProperty(KeyVariable, config.GetType());
-                    Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
+                    Results.Add($"[{entryIdx}.{keyIdx}] {entry.Name}.{KeyName}, {KeyVariable}", KeyFound);
 
                     // Check the enumeration
                     if (!string.IsNullOrEmpty(KeyEnumeration))
@@ -246,7 +249,7 @@ namespace Nitrocid.Kernel.Configuration
                         {
                             Result = Type.GetType($"{KeyEnumeration}, {KeyEnumerationAssembly}") is not null;
                         }
-                        Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
+                        Results.Add($"[{entryIdx}.{keyIdx}] {entry.Name}.{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
                     }
                 }
             }
