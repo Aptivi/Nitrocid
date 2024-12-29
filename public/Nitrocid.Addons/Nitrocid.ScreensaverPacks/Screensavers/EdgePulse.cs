@@ -60,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             Animations.EdgePulse.EdgePulse.Simulate(EdgePulseSettingsInstance);
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.EdgePulseDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.EdgePulseDelay);
         }
 
     }

@@ -175,10 +175,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Delay writing
                 RampCurrentPositionLeft = RampFrameStartWidth + 1;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BarRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BarRotDelay);
             }
             if (!ConsoleResizeHandler.WasResized(false))
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BarRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BarRotNextRampDelay);
 
             // Clear the scene
             ColorTools.LoadBack();

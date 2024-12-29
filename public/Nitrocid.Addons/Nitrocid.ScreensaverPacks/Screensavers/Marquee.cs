@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // If the text is at the right and is longer than the console width, crop it until it's complete.
             while (CurrentLeftOtherEnd != 0)
             {
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MarqueeDelay);
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 if (ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
@@ -140,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MarqueeDelay);
         }
 
     }

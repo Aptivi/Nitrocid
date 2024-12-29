@@ -118,7 +118,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string infoMessage = $"<< {presetName} >>";
             int infoMessageWidth = ConsoleWrapper.WindowWidth / 2 - infoMessage.Length / 2;
             TextWriterWhereColor.WriteWhere(infoMessage, infoMessageWidth, infoMessageHeight);
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay);
         }
 
     }

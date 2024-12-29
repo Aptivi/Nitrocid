@@ -71,7 +71,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.FaderDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -82,7 +82,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
 
             // Wait until fade out
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.FaderFadeOutDelay);
-            ThreadManager.SleepNoBlock(Settings.FaderFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Settings.FaderFadeOutDelay);
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= Settings.FaderMaxSteps; CurrentStep++)
@@ -90,7 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.FaderDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -101,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.FaderDelay);
         }
 
     }

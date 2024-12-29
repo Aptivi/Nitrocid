@@ -331,7 +331,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Write the final character to the console and wait
                         if (StruckChar != Convert.ToChar(0))
                             ConsoleWrapper.Write(StruckChar);
-                        ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(WriteMs);
 
                         // If we're on the character counter mode, increment this for every character until the "line fill" mode starts
                         if (CountingCharacters)
@@ -398,7 +398,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoDelay);
         }
 
         /// <summary>
@@ -416,7 +416,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // ...wait until retry
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
                         ConsoleWrapper.WriteLine();
-                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
 
                         // ...and make a new screen
                         ConsoleWrapper.Clear();
@@ -438,7 +438,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // We're on the bottom, so wait until retry...
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
                 ConsoleWrapper.WriteLine();
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
 
                 // ...and make a new screen
                 ConsoleWrapper.Clear();

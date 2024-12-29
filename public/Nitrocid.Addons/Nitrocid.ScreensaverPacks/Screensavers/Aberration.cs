@@ -77,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 TextWriterRaw.WriteRaw(glitch.ToString());
             }
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.AberrationDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AberrationDelay);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
         }
 

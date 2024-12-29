@@ -46,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatPulseMaxSteps);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.BeatPulseDelay, BeatInterval);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.BeatPulseDelay, BeatIntervalStep);
-            ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(BeatIntervalStep);
 
             // If we're cycling colors, set them. Else, use the user-provided color
             int RedColorNum, GreenColorNum, BlueColorNum;
@@ -105,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, BeatIntervalStep);
-                ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(BeatIntervalStep);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, Settings.BeatPulseMaxSteps, BeatIntervalStep);
-                ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(BeatIntervalStep);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -131,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.BeatPulseDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.BeatPulseDelay);
         }
 
     }

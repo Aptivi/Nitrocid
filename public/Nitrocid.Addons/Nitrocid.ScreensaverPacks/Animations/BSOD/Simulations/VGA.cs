@@ -28,26 +28,19 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            int millisecondsElapsed = 0;
-            while (millisecondsElapsed < ScreensaverPackInit.SaversConfig.BSODDelay || !ConsoleResizeHandler.WasResized(false))
+            int times = 0;
+            while (times < ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight)
             {
-                if (!ConsoleResizeHandler.WasResized(false))
-                {
-                    // Select random position to cover
-                    int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-
-                    // Glitch!
-                    Glitch.Glitch.GlitchAt(CoverX, CoverY);
-                }
-                else
+                if (ConsoleResizeHandler.WasResized(false))
                 {
                     // We're resizing.
                     ConsoleWrapper.CursorVisible = false;
                     break;
                 }
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                millisecondsElapsed += ScreensaverPackInit.SaversConfig.GlitchDelay;
+
+                // Glitch!
+                Glitch.Glitch.GlitchAt();
+                times++;
             }
         }
     }

@@ -96,7 +96,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
                         {
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
-                            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay);
                             ConsoleWrapper.Clear();
                             ConsoleWrapper.WriteLine();
                             if (SentenceIndex == 0)
@@ -112,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                         // Write the final character to the console and wait
                         ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
-                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpotWriteDelay);
                     }
                     ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
                 }
@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpotWriteDelay);
         }
 
     }

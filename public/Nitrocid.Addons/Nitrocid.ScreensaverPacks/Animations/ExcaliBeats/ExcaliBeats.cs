@@ -53,7 +53,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)maxSteps);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.ExcaliBeatsDelay, BeatInterval);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.ExcaliBeatsDelay, BeatIntervalStep);
-            ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(BeatIntervalStep);
 
             // If we're cycling colors, set them. Else, use the user-provided color
             int RedColorNum, GreenColorNum, BlueColorNum;
@@ -105,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 
             // Flash!
             ColorTools.LoadBackDry("255;255;255");
-            ThreadManager.SleepNoBlock(20, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(20);
             ColorTools.LoadBackDry(0);
 
             // Populate the text
@@ -118,7 +118,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, maxSteps, BeatIntervalStep);
-                ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(BeatIntervalStep);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);

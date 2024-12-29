@@ -59,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Delay
             int delay = ScreensaverPackInit.SaversConfig.TextRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.TextDelay;
-            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(delay);
         }
 
         /// <inheritdoc/>

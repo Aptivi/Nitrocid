@@ -90,7 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int figHeight = FigletTools.GetFigletHeight(finalWord, figFont) / 2;
                 int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                ThreadManager.SleepNoBlock(250, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(250);
                 ConsoleWrapper.Clear();
                 var wordText = new AlignedFigletText(figFont)
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Delay
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WordHasherWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WordHasherWriteDelay);
 
             // Destruct word
             for (int i = builtWord.Length - 1; i >= 0; i--)
@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int figHeight = FigletTools.GetFigletHeight(finalWord, figFont) / 2;
                 int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                ThreadManager.SleepNoBlock(250, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(250);
                 ConsoleWrapper.Clear();
                 var wordText = new AlignedFigletText(figFont)
                 {

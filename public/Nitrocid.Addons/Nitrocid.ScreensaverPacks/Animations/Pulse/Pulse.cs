@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Pulse
 {
@@ -59,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.PulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.PulseDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -74,7 +75,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.PulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.PulseDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -85,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.PulseDelay);
         }
 
     }

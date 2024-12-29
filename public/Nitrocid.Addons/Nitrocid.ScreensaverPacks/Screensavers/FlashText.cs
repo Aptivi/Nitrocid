@@ -85,9 +85,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     TextWriterWhereColor.WriteWhereColorBack(ScreensaverPackInit.SaversConfig.FlashTextWrite, Left, Top, true, new Color(ColorNum), ScreensaverPackInit.SaversConfig.FlashTextBackgroundColor);
                 }
             }
-            ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(HalfDelay);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-            ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(HalfDelay);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

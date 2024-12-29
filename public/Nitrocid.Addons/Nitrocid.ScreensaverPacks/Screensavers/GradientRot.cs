@@ -177,11 +177,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Delay writing
                 RampCurrentPositionLeft = 0;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GradientRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientRotDelay);
             }
 
             // Clear the scene
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
 
             // Reset resize sync

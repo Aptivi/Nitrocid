@@ -137,7 +137,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset
-            ThreadManager.SleepNoBlock(500, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(500);
             ConsoleResizeHandler.WasResized();
         }
 

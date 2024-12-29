@@ -92,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterRaw.WriteRaw(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AuroraDelay);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

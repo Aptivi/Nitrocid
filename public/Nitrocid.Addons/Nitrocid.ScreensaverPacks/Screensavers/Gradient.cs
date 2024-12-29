@@ -92,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 
             // Reset resize sync
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GradientNextRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientNextRotDelay);
             ConsoleResizeHandler.WasResized();
         }
 

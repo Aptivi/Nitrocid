@@ -73,7 +73,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 ConsoleResizeHandler.WasResized();
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BouncingBlockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BouncingBlockDelay);
                 return;
             }
 
@@ -131,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BouncingBlockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BouncingBlockDelay);
         }
 
         private static Color GetRandomBlockColor()

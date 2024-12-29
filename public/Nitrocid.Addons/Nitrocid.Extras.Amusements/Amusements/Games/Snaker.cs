@@ -225,7 +225,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Delay
                 if (Simulation)
-                    ThreadManager.SleepNoBlock((int)(AmusementsInit.SaversConfig.SnakerDelay * factor), ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 else
                     Thread.Sleep((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 ScreenTools.Render();
@@ -380,7 +380,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Show the stage for few seconds before wiping
             if (Simulation)
-                ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(AmusementsInit.SaversConfig.SnakerStageDelay);
             else
                 Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 

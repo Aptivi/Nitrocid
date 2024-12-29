@@ -168,19 +168,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                         // Write the rendered strike
                         TextWriterRaw.WritePlain(strike.ToString(), false);
-                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LightningDelay);
                     }
                     else
                     {
                         // Show only the white background
                         ColorTools.LoadBackDry(new Color(ConsoleColors.White));
-                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LightningDelay);
                         ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                     }
                 }
                 ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             }
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LightningDelay);
         }
 
     }

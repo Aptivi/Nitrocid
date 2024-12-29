@@ -99,7 +99,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ConsoleWrapper.Write(new string(' ', Column));
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Column);
                             }
-                            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
 
                         break;
@@ -121,7 +121,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth - Column + 1));
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth - Column + 1);
                             }
-                            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
 
                         break;
@@ -138,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ConsoleWrapper.SetCursorPosition(0, Row);
                             ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth));
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth);
-                            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
 
                         break;
@@ -153,7 +153,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Do the actual writing
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth);
                             ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth));
-                            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
                         ConsoleWrapper.SetCursorPosition(0, 0);
                         break;
@@ -180,7 +180,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
         }
 
         /// <summary>

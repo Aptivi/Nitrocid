@@ -69,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.BSODDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Settings.BSODDelay);
         }
 
     }

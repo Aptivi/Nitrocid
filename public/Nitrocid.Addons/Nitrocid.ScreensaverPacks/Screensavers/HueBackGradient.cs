@@ -91,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 
             // Set the hue angle
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.HueBackGradientDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.HueBackGradientDelay);
             currentHueAngle++;
             if (currentHueAngle > 360)
                 currentHueAngle = 0;

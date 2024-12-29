@@ -44,7 +44,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // TODO: Add back configuration
             WidgetTools.RenderWidget("AnalogClock");
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.AnalogClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AnalogClockDelay);
         }
 
         /// <inheritdoc/>

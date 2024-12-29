@@ -139,7 +139,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             int delay = ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.CommitMilestoneDelay;
-            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(delay);
         }
 
         /// <inheritdoc/>

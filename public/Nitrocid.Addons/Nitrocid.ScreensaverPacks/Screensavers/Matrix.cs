@@ -83,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 CoveredPositions.Add(PositionTuple);
 
                 // Delay
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MatrixDelay);
             }
 
             // Fade the line down. Please note that this requires true-color support in the terminal to work properly.
@@ -123,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, CurrentFadeColor, background);
 
                 // Delay
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MatrixDelay);
             }
 
             // Reset covered positions
@@ -131,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MatrixDelay);
         }
 
         /// <inheritdoc/>

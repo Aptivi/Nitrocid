@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 
             // Visualize it!
             VisualizeLyric(lyricPath);
-            ThreadManager.SleepNoBlock(Settings.LyricsDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Settings.LyricsDelay);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

@@ -95,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             int delay = ScreensaverPackInit.SaversConfig.FigletRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.FigletDelay;
-            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(delay);
         }
 
         /// <inheritdoc/>

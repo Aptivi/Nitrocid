@@ -110,13 +110,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int PosHorizontal = CurrentPosHorizontal[posIdxHorizontal] + Math.Abs(CurrentPosHorizontal.Min()) + 2;
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SwivelDelay);
                 TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, ColorStorage);
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SwivelDelay);
         }
 
     }

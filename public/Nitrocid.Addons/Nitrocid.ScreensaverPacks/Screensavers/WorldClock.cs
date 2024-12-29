@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterWhereColor.WriteWhereColor($"{date} @ {timeZoneName}", (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - $"{date} @ {timeZoneName}".Length / 2d), hashY, color);
 
             // Delay
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WorldClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WorldClockDelay);
             times++;
         }
 

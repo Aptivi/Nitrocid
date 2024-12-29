@@ -59,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterWhereColor.WriteWhereColorBack(renderedTime, timePosX, halfConsoleY + 1, timeColor, bgColor);
 
             // Delay
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.ClochromaDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ClochromaDelay);
         }
     }
 }

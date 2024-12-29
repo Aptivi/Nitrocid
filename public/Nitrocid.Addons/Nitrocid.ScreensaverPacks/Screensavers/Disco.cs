@@ -170,11 +170,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 int BeatInterval = (int)Math.Round(60000d / ScreensaverPackInit.SaversConfig.DiscoDelay);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", ScreensaverPackInit.SaversConfig.DiscoDelay, BeatInterval);
-                ThreadManager.SleepNoBlock(BeatInterval, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(BeatInterval);
             }
             else
             {
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DiscoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DiscoDelay);
             }
         }
 

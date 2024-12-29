@@ -90,7 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.SquareCornerMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.SquareCornerDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -111,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.SquareCornerFadeOutDelay);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(Settings.SquareCornerFadeOutDelay);
             }
 
             // Fade out
@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.SquareCornerMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.SquareCornerDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -139,7 +139,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.SquareCornerDelay);
         }
 
     }

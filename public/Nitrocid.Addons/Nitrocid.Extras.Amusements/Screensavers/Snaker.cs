@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         public override void ScreensaverLogic()
         {
             Snaker.InitializeSnaker(true);
-            ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(AmusementsInit.SaversConfig.SnakerDelay);
         }
 
     }

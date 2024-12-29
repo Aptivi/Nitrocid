@@ -122,7 +122,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     TextWriterRaw.WriteRaw(stackBox.Render());
                 }
             }
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.StackBoxDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.StackBoxDelay);
         }
 
     }

@@ -135,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     posX += differenceX2;
                     posY += differenceY2;
                 }
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.FollowingDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.FollowingDelay);
             }
 
             // Reset resize sync

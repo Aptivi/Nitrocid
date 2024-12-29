@@ -118,7 +118,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
                         break;
                     case 2:
@@ -146,7 +146,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
                         break;
                     case 3:
@@ -184,7 +184,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
 
                         // Print the 2018s
@@ -201,7 +201,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
 
                                 // Sleep
-                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                ScreensaverManager.Delay(10);
 
                                 // Check to see if we're at the end
                                 if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1)
@@ -252,7 +252,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             BackgroundColor = black,
                         };
                         TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
-                        ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(5000);
                         break;
                     case 5:
                         // Fade the console out
@@ -279,7 +279,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ColorTools.LoadBackDry(col);
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
                         break;
                     case 6:
@@ -343,7 +343,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             }
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(selectedFirst ? 3000 : 250, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(selectedFirst ? 3000 : 250);
                             ColorTools.LoadBackDry(black);
                         }
                         break;
@@ -394,14 +394,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 5000; delayed += 10)
                                 {
-                                    ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                    ScreensaverManager.Delay(10);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
                                 }
                                 break;
                             }
                             else
-                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                ScreensaverManager.Delay(10);
                         }
                         break;
                     case 8:
@@ -419,7 +419,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(10);
                             if (RandomDriver.RandomChance(90))
                                 Glitch.GlitchAt();
                         }
@@ -456,14 +456,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 1000; delayed += 10)
                                 {
-                                    ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                    ScreensaverManager.Delay(10);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
                                 }
                                 break;
                             }
                             else
-                                ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                                ScreensaverManager.Delay(10);
                         }
                         break;
                     case 10:
@@ -474,7 +474,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (dumpIter % 10 == 0)
                                 TextWriterWhereColor.WriteWhere("{0}", width, height, dumpIter);
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
                         TextWriterWhereColor.WriteWhere("Physical memory dump FAILED with status 0xC0000010", 0, height);
                         break;
@@ -484,7 +484,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                             TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, white, black);
-                            ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(10);
                         }
                         break;
                     case 12:
@@ -512,22 +512,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ColorTools.LoadBackDry(col);
 
                             // Sleep
-                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            ScreensaverManager.Delay(100);
                         }
                         break;
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
-                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(100);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(40);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(100);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(50);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(1000);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ScreensaverManager.Delay(5000);
                         break;
                 }
             }

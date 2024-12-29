@@ -91,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int Pos = CurrentPos[posIdx] + Math.Abs(CurrentPos.Min()) + 2;
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveDelay);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
                         TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
@@ -100,7 +100,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveDelay);
         }
 
     }

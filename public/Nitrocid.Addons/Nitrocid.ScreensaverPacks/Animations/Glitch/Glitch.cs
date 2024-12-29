@@ -67,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                     ConsoleWrapper.CursorVisible = false;
                     break;
                 }
-                ThreadManager.SleepNoBlock(Settings.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(Settings.GlitchDelay);
             }
 
             // Reset resize sync

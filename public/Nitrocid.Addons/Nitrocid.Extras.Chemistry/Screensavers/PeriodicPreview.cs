@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
             TextWriterRaw.WriteRaw(periodicItem.ToString());
 
             // Delay for 10 seconds (this should be enough for almost everyone to be able to read the element)
-            ThreadManager.SleepNoBlock(10000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(10000);
 
             // Clear the scene
             ColorTools.LoadBack();

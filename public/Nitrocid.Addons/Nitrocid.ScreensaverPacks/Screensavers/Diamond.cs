@@ -205,7 +205,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     buffer.Clear();
 
                     // Sleep
-                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DiamondDelay);
                 }
                 for (int currentStep = 1; currentStep <= maxShineSteps; currentStep++)
                 {
@@ -253,13 +253,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     buffer.Clear();
 
                     // Sleep
-                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DiamondDelay);
                 }
             }
 
             // Delay
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DiamondDelay);
         }
 
     }

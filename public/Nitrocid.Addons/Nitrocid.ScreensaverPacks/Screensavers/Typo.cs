@@ -132,17 +132,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Write the final character to the console and wait
                 if (StruckCharAssigned != Convert.ToChar(0))
                     ConsoleWrapper.Write(StruckCharAssigned);
-                ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(WriteMs);
             }
 
             // Wait until retry
             ConsoleWrapper.WriteLine();
             if (!ConsoleResizeHandler.WasResized(false))
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.TypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypoDelay);
         }
 
     }

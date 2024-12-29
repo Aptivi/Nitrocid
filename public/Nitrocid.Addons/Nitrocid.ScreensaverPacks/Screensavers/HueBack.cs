@@ -47,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Now, change the background color accordingly
             ColorTools.LoadBackDry(color);
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.HueBackDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.HueBackDelay);
             currentHueAngle++;
             if (currentHueAngle > 360)
                 currentHueAngle = 0;

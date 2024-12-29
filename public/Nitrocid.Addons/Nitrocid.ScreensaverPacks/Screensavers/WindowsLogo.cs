@@ -144,7 +144,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
             if (Drawn)
-                ThreadManager.SleepNoBlock(1000L, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(1000);
         }
 
         /// <inheritdoc/>

@@ -64,7 +64,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Delay
             lastRenderedDate = renderedDate;
             lastRenderedTime = renderedTime;
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DateAndTimeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DateAndTimeDelay);
         }
 
         /// <summary>

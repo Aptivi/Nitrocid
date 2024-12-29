@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
 {
@@ -61,7 +62,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.EdgePulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.EdgePulseDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -79,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.EdgePulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.EdgePulseDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -93,7 +94,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.EdgePulseDelay);
         }
 
         private static void FillIn()

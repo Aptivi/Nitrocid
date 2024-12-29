@@ -156,7 +156,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Delay writing
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.IndeterminateDelay);
             }
 
             // Change the direction enumeration
@@ -173,7 +173,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset the background
             ColorTools.LoadBack();
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.IndeterminateDelay);
         }
 
         private enum IndeterminateDirection

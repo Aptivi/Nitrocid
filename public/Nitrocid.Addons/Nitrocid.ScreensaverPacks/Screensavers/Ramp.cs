@@ -132,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     step++;
-                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.RampDelay);
                 }
             }
             else
@@ -162,13 +162,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
 
                     // Delay writing
-                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.RampDelay);
                 }
             }
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.RampNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.RampNextRampDelay);
             ColorTools.LoadBack();
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.RampDelay);
         }
 
     }

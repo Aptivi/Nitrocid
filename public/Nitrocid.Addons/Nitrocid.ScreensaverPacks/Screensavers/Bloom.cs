@@ -80,13 +80,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorTools.LoadBackDry(col);
 
                 // Sleep
-                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BloomDelay);
             }
 
             // Generate new colors
             currentColor = nextColor;
             nextColor = ColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BloomDelay);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

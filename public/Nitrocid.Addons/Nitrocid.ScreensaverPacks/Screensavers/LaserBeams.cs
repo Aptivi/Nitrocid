@@ -126,7 +126,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             laserEnds.Clear();
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LaserBeamsDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LaserBeamsDelay);
         }
 
         /// <inheritdoc/>

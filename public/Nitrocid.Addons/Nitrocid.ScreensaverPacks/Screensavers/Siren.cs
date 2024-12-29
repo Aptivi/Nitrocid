@@ -68,7 +68,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ColorTools.LoadBackDry(sirenColors[step]);
 
             // Delay
-            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SirenDelay);
         }
 
     }

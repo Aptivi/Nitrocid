@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
 
             // Delay
             lastQuote = renderedQuote;
-            ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.QuoteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(AmusementsInit.SaversConfig.QuoteDelay);
         }
 
         /// <summary>

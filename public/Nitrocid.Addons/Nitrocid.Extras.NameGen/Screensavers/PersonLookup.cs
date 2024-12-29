@@ -105,11 +105,11 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                 );
 
                 // Lookup delay
-                ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupDelay);
             }
 
             // Wait until we run the lookup again
-            ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupLookedUpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupLookedUpDelay);
         }
 
     }
