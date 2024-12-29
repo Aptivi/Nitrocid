@@ -90,7 +90,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Check to see if we're dealing with Multivar
             if (Setting.Type == SettingsKeyType.SMultivar)
-                return "Multivar...";
+                return $"{Setting.Variables.Length} entries...";
 
             // This is not a multivar, so go ahead
             string Variable = Setting.Variable;
