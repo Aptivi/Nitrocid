@@ -1113,6 +1113,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         #endregion
 
         #region Screensaver
+        private int screensaverDelay = 10;
+
         /// <summary>
         /// Which screensaver do you want to lock your screen with?
         /// </summary>
@@ -1175,6 +1177,26 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// After locking the screen, ask for password
         /// </summary>
         public bool PasswordLock { get; set; } = true;
+        /// <summary>
+        /// If true, enables unified writing delay for all screensavers. Otherwise, it uses screensaver-specific configured delay values.
+        /// </summary>
+        public bool ScreensaverUnifiedDelay { get; set; } = true;
+        /// <summary>
+        /// How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ScreensaverDelay
+        {
+            get
+            {
+                return screensaverDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                screensaverDelay = value;
+            }
+        }
         #endregion
 
         #region Misc

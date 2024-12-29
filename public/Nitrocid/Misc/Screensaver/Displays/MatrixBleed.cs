@@ -104,7 +104,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Config.SaverConfig.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Config.SaverConfig.MatrixBleedDelay);
         }
 
         /// <inheritdoc/>

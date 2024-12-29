@@ -71,7 +71,7 @@ namespace Nitrocid.Misc.Screensaver
         /// Screensaver logic
         /// </summary>
         public virtual void ScreensaverLogic() =>
-            ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(10);
 
         /// <summary>
         /// Screensaver outro
