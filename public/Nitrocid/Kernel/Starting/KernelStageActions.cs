@@ -36,8 +36,7 @@ using Nitrocid.Kernel.Power;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles;
 #endif
