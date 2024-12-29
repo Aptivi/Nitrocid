@@ -84,9 +84,5 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// The value consists of multiple variables.
         /// </summary>
         SMultivar,
-        /// <summary>
-        /// The value consists of variant function that parses the input and converts it to its appropriate config value
-        /// </summary>
-        SVariant,
     }
 }
