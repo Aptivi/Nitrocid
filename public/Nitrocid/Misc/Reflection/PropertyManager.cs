@@ -289,7 +289,7 @@ namespace Nitrocid.Misc.Reflection
             PropertyInfo? PossibleProperty;
 
             // Get types of possible flag locations
-            PossibleTypes = ReflectionCommon.KernelConfigTypes;
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get properties of flag modules
             foreach (Type PossibleType in PossibleTypes)

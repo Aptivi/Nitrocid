@@ -213,10 +213,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
             var configTypeInstance = configType.GetType();
             string configTypeName = configTypeInstance.Name;
 
-            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
-                PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value);
-            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
-                PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
+            if (PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+            {
+                if (ConfigTools.IsCustomSettingBuiltin(configTypeName))
+                    PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value, configTypeInstance);
+                else if (ConfigTools.IsCustomSettingRegistered(configTypeName))
+                    PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
+            }
         }
 
         internal static object? GetPropertyValue(string KeyVar, BaseKernelConfig configType)
@@ -224,10 +227,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
             var configTypeInstance = configType.GetType();
             string configTypeName = configTypeInstance.Name;
 
-            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
-                return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar);
-            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
-                return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
+            if (PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+            {
+                if (ConfigTools.IsCustomSettingBuiltin(configTypeName))
+                    return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar, configTypeInstance);
+                else if (ConfigTools.IsCustomSettingRegistered(configTypeName))
+                    return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
+            }
             return null;
         }
 

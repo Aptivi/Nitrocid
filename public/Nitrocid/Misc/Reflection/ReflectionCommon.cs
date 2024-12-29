@@ -19,7 +19,6 @@
 
 using Nitrocid.Files;
 using Nitrocid.Kernel;
-using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Exceptions;
 using System;
 using System.Linq;
@@ -29,11 +28,6 @@ namespace Nitrocid.Misc.Reflection
 {
     internal static class ReflectionCommon
     {
-        internal static Type[] KernelConfigTypes =
-        [
-            typeof(KernelMainConfig),
-            typeof(KernelSaverConfig),
-        ];
         internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName?.StartsWith($"{KernelMain.rootNameSpace}.") ?? false).ToArray();
 
         /// <summary>

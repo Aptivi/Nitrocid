@@ -289,7 +289,7 @@ namespace Nitrocid.Misc.Reflection
             FieldInfo? PossibleField;
 
             // Get types of possible flag locations
-            PossibleTypes = ReflectionCommon.KernelConfigTypes;
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)

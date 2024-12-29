@@ -100,22 +100,25 @@ namespace Nitrocid.Kernel.Configuration
             // Print the option by determining how to get the current value. "as dynamic" will need to stay as we're passing the
             // configuration type instance to the generic version of the below PropertyManager function, because if we're passing
             // it as it is, we're passing the base class of it, not the one that we need.
-            if (IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(Variable))
-                CurrentValue = PropertyManager.GetPropertyValueInstance(configType as dynamic, Variable);
-            else if (IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(Variable, configTypeInstance))
-                CurrentValue = PropertyManager.GetPropertyValueInstanceExplicit(configType, Variable, configTypeInstance);
+            if (PropertyManager.CheckProperty(Variable, configTypeInstance))
+            {
+                if (IsCustomSettingBuiltin(configTypeName))
+                    CurrentValue = PropertyManager.GetPropertyValueInstance(configType as dynamic, Variable, configTypeInstance);
+                else if (IsCustomSettingRegistered(configTypeName))
+                    CurrentValue = PropertyManager.GetPropertyValueInstanceExplicit(configType, Variable, configTypeInstance);
 
-            // Get the plain sequence from the color
-            if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
-                CurrentValue = color.Value.PlainSequence;
-            if (CurrentValue is Color color2)
-                CurrentValue = color2.PlainSequence;
+                // Get the plain sequence from the color
+                if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
+                    CurrentValue = color.Value.PlainSequence;
+                if (CurrentValue is Color color2)
+                    CurrentValue = color2.PlainSequence;
 
-            // Get the language name
-            if (CurrentValue is LanguageInfo lang)
-                CurrentValue = lang.ThreeLetterLanguageName;
+                // Get the language name
+                if (CurrentValue is LanguageInfo lang)
+                    CurrentValue = lang.ThreeLetterLanguageName;
 
-            DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", CurrentValue, CurrentValue?.GetType().Name, Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", CurrentValue, CurrentValue?.GetType().Name, Variable);
+            }
             return CurrentValue;
         }
 
