@@ -4,12 +4,6 @@
         "Desc": "A snake game.",
         "Keys": [
             {
-                "Name": "Activate true colors",
-                "Type": "SBoolean",
-                "Variable": "SnakerTrueColor",
-                "Description": "Activates the true color support."
-            },
-            {
                 "Name": "Delay in Milliseconds",
                 "Type": "SInt",
                 "Variable": "SnakerDelay",
@@ -22,68 +16,81 @@
                 "Description": "How many milliseconds to wait before drawing the next stage?"
             },
             {
-                "Name": "Minimum red color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum green color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum blue color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum red color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum green color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum blue color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum color level",
-                "Type": "SIntSlider",
-                "Variable": "SnakerMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
+                "Name": "Color settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the colors",
+                "Variables": [
+                    {
+                        "Name": "Activate true colors",
+                        "Type": "SBoolean",
+                        "Variable": "SnakerTrueColor",
+                        "Description": "Activates the true color support."
+                    },
+                    {
+                        "Name": "Minimum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMinimumRedColorLevel",
+                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMinimumGreenColorLevel",
+                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMinimumBlueColorLevel",
+                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMinimumColorLevel",
+                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMaximumRedColorLevel",
+                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMaximumGreenColorLevel",
+                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMaximumBlueColorLevel",
+                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "SnakerMaximumColorLevel",
+                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
             }
         ]
     },
@@ -92,80 +99,87 @@
         "Desc": "Shows you nice famous quotes.",
         "Keys": [
             {
-                "Name": "Activate true colors",
-                "Type": "SBoolean",
-                "Variable": "QuoteTrueColor",
-                "Description": "Activates the true color support."
-            },
-            {
                 "Name": "Delay in Milliseconds",
                 "Type": "SInt",
                 "Variable": "QuoteDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
             },
             {
-                "Name": "Minimum red color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum green color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum blue color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Minimum color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum red color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum green color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum blue color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
-            },
-            {
-                "Name": "Maximum color level",
-                "Type": "SIntSlider",
-                "Variable": "QuoteMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
-                "MinimumValue": 0,
-                "MaximumValue": 255
+                "Name": "Color settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the colors",
+                "Variables": [
+                    {
+                        "Name": "Activate true colors",
+                        "Type": "SBoolean",
+                        "Variable": "QuoteTrueColor",
+                        "Description": "Activates the true color support."
+                    },
+                    {
+                        "Name": "Minimum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMinimumRedColorLevel",
+                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMinimumGreenColorLevel",
+                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMinimumBlueColorLevel",
+                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMinimumColorLevel",
+                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMaximumRedColorLevel",
+                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMaximumGreenColorLevel",
+                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMaximumBlueColorLevel",
+                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "QuoteMaximumColorLevel",
+                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
             }
         ]
     }
