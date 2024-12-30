@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
+using System.Linq;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -36,30 +37,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             var Results = ConfigTools.CheckConfigVariables();
-            var NotFound = new List<string>();
-
-            // Go through each and every result
-            foreach (string Variable in Results.Keys)
-            {
-                bool IsFound = Results[Variable];
-                if (!IsFound)
-                {
-                    NotFound.Add(Variable);
-                }
-            }
-
-            // Warn if not found
-            if (NotFound.Count > 0)
-            {
-                TextWriters.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
-                var invalidConfigWriter = new Listing()
-                {
-                    Objects = NotFound,
-                };
-                TextWriterRaw.WriteRaw(invalidConfigWriter.Render());
-            }
-
-            TestActualValue = NotFound.Count != 0;
+            bool failed = Results.Any((res) => !res);
+            if (failed)
+                TextWriters.Write(Translate.DoTranslation("One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info."), true, KernelColorType.Warning);
+            TestActualValue = failed;
         }
     }
 }
