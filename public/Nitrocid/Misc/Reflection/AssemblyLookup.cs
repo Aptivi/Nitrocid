@@ -113,13 +113,13 @@ namespace Nitrocid.Misc.Reflection
             var paths = baseAssemblyLookupPaths.Union(AssemblyLookupPaths).ToArray();
             foreach (string LookupPath in paths)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Lookup Path: {0}", LookupPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Lookup Path: {0}", LookupPath);
                 string DepAssemblyFilePath = Path.Combine(LookupPath, DepAssemblyName + ".dll");
                 AssignAsm(DepAssemblyFilePath);
             }
             if (FinalAssembly is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Using Nitrocid execuable path {0} for lookup", PathsManagement.ExecPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Using Nitrocid execuable path {0} for lookup", PathsManagement.ExecPath);
                 string DepAssemblyFilePath = Path.Combine(PathsManagement.ExecPath, DepAssemblyName + ".dll");
                 AssignAsm(DepAssemblyFilePath);
             }
