@@ -1,7 +1,7 @@
 [
     {
-        "Name": "Timers",
-        "Desc": "This section lets you configure how the timers work.",
+        "Name": "Timer",
+        "Desc": "This section lets you configure how the timer application works.",
         "Keys": [
             {
                 "Name": "Enable Figlet for timer",
@@ -13,6 +13,24 @@
                 "Name": "Figlet font for timer",
                 "Type": "SFiglet",
                 "Variable": "TimerFigletFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            }
+        ]
+    },
+    {
+        "Name": "Pomodoro Timer",
+        "Desc": "This section lets you configure how the pomodoro timer application works.",
+        "Keys": [
+            {
+                "Name": "Enable Figlet for the pomodoro timer",
+                "Type": "SBoolean",
+                "Variable": "EnableFigletPomodoro",
+                "Description": "If enabled, will use figlet for the pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled."
+            },
+            {
+                "Name": "Figlet font for the pomodoro timer",
+                "Type": "SFiglet",
+                "Variable": "PomodoroFigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             }
         ]

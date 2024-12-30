@@ -46,5 +46,13 @@ namespace Nitrocid.Extras.Timers.Settings
         /// Write a figlet font that is supported by the Figlet library. Consult the library documentation for more information
         /// </summary>
         public string TimerFigletFont { get; set; } = "small";
+        /// <summary>
+        /// If enabled, will use figlet for pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
+        /// </summary>
+        public bool EnableFigletPomodoro { get; set; } = true;
+        /// <summary>
+        /// Write a figlet font that is supported by the Figlet library. Consult the library documentation for more information
+        /// </summary>
+        public string PomodoroFigletFont { get; set; } = "small";
     }
 }

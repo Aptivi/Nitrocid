@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Timers.Timers;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.Timers.Commands
@@ -29,7 +30,7 @@ namespace Nitrocid.Extras.Timers.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Populate this
+            PomodoroScreen.OpenPomodoro();
             return 0;
         }
     }
