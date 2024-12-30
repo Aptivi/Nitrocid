@@ -254,7 +254,7 @@ namespace Nitrocid.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key name: {2}.", keyIdx + 1, keys.Length, KeyName);
                 if (key.Type == SettingsKeyType.SMultivar)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {0} variables...", keyIdx + 1, keys.Length, key.Variables.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {2} variables...", keyIdx + 1, keys.Length, key.Variables.Length);
                     Results.AddRange(CheckConfigVariables(key.Variables, config));
                     continue;
                 }
