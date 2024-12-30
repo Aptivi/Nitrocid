@@ -142,6 +142,8 @@ namespace Nitrocid.Kernel.Debugging
                             message.Clear();
                             if (fileName is not null && fileLineNumber != 0)
                                 message.Append($"({routineName} - {fileName}:{fileLineNumber}): ");
+                            if (Level == DebugLevel.D || Level == DebugLevel.T)
+                                message.Append($"[{Level}] ");
                             message.Append($"{splitText}");
 
                             // Write the result
@@ -349,9 +351,9 @@ namespace Nitrocid.Kernel.Debugging
                 case DebugLevel.T:
                 case DebugLevel.D:
                     if (vars is null)
-                        debugLogger?.Debug($"[{level}] {text}");
+                        debugLogger?.Debug(text);
                     else
-                        debugLogger?.Debug($"[{level}] {text}", vars);
+                        debugLogger?.Debug(text, vars);
                     break;
                 case DebugLevel.I:
                     if (vars is null)
