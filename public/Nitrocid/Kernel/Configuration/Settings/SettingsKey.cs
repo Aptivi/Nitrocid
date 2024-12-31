@@ -84,6 +84,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
         // List
         [JsonProperty(nameof(DelimiterVariable))]
         internal string delimiterVariable = "";
+        [JsonProperty(nameof(DelimiterVariableType))]
+        internal string delimiterVariableType = "";
         [JsonProperty(nameof(Delimiter))]
         internal string delimiter = "";
 
@@ -254,6 +256,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public string DelimiterVariable =>
             delimiterVariable;
+
+        /// <summary>
+        /// The variable type that contains the <see cref="DelimiterVariable"/>
+        /// </summary>
+        [JsonIgnore]
+        public string DelimiterVariableType =>
+            delimiterVariableType;
 
         /// <summary>
         /// The shell type to work on (for shell-related settings)

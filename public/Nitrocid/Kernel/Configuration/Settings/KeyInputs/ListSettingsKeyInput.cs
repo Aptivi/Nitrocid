@@ -148,11 +148,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string? FinalDelimiter;
             string ListJoinString = key.Delimiter;
             string ListJoinStringVariable = key.DelimiterVariable;
+            var type = Type.GetType(key.DelimiterVariableType);
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
 
             // Get the delimiter
-            if (ListJoinString is null)
-                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable));
+            if (string.IsNullOrEmpty(ListJoinString))
+                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, type));
             else
                 FinalDelimiter = ListJoinString;
             return FinalDelimiter ?? ";";

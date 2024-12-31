@@ -93,6 +93,9 @@
                         "DelimiterVariable": {
                             "type": "string"
                         },
+                        "DelimiterVariableType": {
+                            "type": "string"
+                        },
                         "ShellType": {
                             "type": "string"
                         },
