@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using Nitrocid.Security.Permissions;
 using System;
 using System.Collections.Generic;
@@ -360,7 +361,7 @@ namespace Nitrocid.Kernel.Extensions
                 return null;
 
             // The function instance is valid. Try to dynamically invoke it.
-            return function.Invoke(null, parameters);
+            return MethodManager.InvokeMethodStatic(function, parameters);
         }
 
         /// <summary>
@@ -413,13 +414,8 @@ namespace Nitrocid.Kernel.Extensions
             if (property is null)
                 return null;
 
-            // Check to see if this property is static
-            var get = property.GetGetMethod();
-            if (get is null)
-                return null;
-
-            // The property instance is valid. Try to get a value from it.
-            return get.Invoke(null, null);
+            // Try to get a value from it.
+            return PropertyManager.GetPropertyValue(property);
         }
 
         /// <summary>
@@ -476,13 +472,8 @@ namespace Nitrocid.Kernel.Extensions
             if (property is null)
                 return;
 
-            // Check to see if this property is static
-            var set = property.GetSetMethod();
-            if (set is null)
-                return;
-
-            // The property instance is valid. Try to get a value from it.
-            set.Invoke(null, [value]);
+            // Try to set a value in it.
+            PropertyManager.SetPropertyValue(property, value);
         }
 
         /// <summary>
@@ -534,9 +525,8 @@ namespace Nitrocid.Kernel.Extensions
             var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
 
-            // The field instance is valid. Try to get a value from it.
-            var get = field.GetValue(null);
-            return get;
+            // Try to get a value from it.
+            return FieldManager.GetFieldValue(field);
         }
 
         /// <summary>
@@ -592,8 +582,8 @@ namespace Nitrocid.Kernel.Extensions
             var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
 
-            // The field instance is valid. Try to set a value.
-            field.SetValue(null, value);
+            // Try to set a value in it.
+            FieldManager.SetFieldValue(field, value);
         }
 
         /// <summary>
