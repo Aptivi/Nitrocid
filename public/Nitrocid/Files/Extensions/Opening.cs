@@ -59,53 +59,51 @@ namespace Nitrocid.Files
             if (!fileExists)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
 
-            // First, forced types
-            if (forceText)
-                ShellManager.StartShell(ShellType.TextShell, path);
-            else if (forceHex)
-                ShellManager.StartShell(ShellType.HexShell, path);
-            else if (forceJson)
+            // This variable chooses opening mode, with forced types first
+            OpeningMode mode =
+                forceText ? OpeningMode.Text :
+                forceHex ? OpeningMode.Binary :
+                forceJson ? OpeningMode.Json :
+                forceSql ? OpeningMode.Sql :
+                OpeningMode.None;
+
+            // If none, assume type from file contents
+            if (mode == OpeningMode.None)
             {
-                if (!hasJsonShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                    ShellManager.StartShell(ShellType.TextShell, path);
-                }
+                if (IsBinaryFile(path))
+                    mode = IsSql(path) ? OpeningMode.Sql : OpeningMode.Binary;
                 else
-                    ShellManager.StartShell("JsonShell", path);
+                    mode = IsJson(path) ? OpeningMode.Json : OpeningMode.Text;
             }
-            else if (forceSql)
+
+            // Now, select how we open the file
+            switch (mode)
             {
-                if (!hasSqlShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                case OpeningMode.Text:
+                    ShellManager.StartShell(ShellType.TextShell, path);
+                    break;
+                case OpeningMode.Binary:
                     ShellManager.StartShell(ShellType.HexShell, path);
-                }
-                else
-                    ShellManager.StartShell("SqlShell", path);
+                    break;
+                case OpeningMode.Json:
+                    if (!hasJsonShell)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        ShellManager.StartShell(ShellType.TextShell, path);
+                    }
+                    else
+                        ShellManager.StartShell("JsonShell", path);
+                    break;
+                case OpeningMode.Sql:
+                    if (!hasSqlShell)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        ShellManager.StartShell(ShellType.HexShell, path);
+                    }
+                    else
+                        ShellManager.StartShell("SqlShell", path);
+                    break;
             }
-
-            // Exit if forced types
-            if (forceText || forceJson || forceHex || forceSql)
-                return;
-
-            // Determine the type
-            if (hasSqlShell && FilesystemTools.IsSql(path))
-                ShellManager.StartShell("SqlShell", path);
-            else if (FilesystemTools.IsBinaryFile(path))
-                ShellManager.StartShell(ShellType.HexShell, path);
-            else if (FilesystemTools.IsJson(path))
-            {
-                if (!hasJsonShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                    ShellManager.StartShell(ShellType.TextShell, path);
-                }
-                else
-                    ShellManager.StartShell("JsonShell", path);
-            }
-            else
-                ShellManager.StartShell(ShellType.TextShell, path);
         }
 
         /// <summary>
@@ -137,5 +135,14 @@ namespace Nitrocid.Files
                 OpenEditor(file);
             }
         }
+    }
+
+    internal enum OpeningMode
+    {
+        None,
+        Binary,
+        Sql,
+        Text,
+        Json,
     }
 }
