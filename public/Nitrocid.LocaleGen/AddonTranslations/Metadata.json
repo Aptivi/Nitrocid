@@ -160,6 +160,12 @@
         "country": "Turkey"
     },
     {
+        "three": "ukr",
+        "name": "Ukrainian",
+        "transliterable": false,
+        "country": "Ukraine"
+    },
+    {
         "three": "vtn",
         "name": "Vietnamese",
         "transliterable": false,
