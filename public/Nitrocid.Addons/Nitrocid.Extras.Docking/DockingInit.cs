@@ -54,24 +54,6 @@ namespace Nitrocid.Extras.Docking
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(DockTools.DockScreen), new Action<string>(DockTools.DockScreen) },
-            { nameof(DockTools.DockScreen) + "2", new Action<BaseWidget>(DockTools.DockScreen) },
-            { nameof(DockTools.DoesDockScreenExist), new Func<string, (bool, BaseWidget?)>((target) =>
-                {
-                    bool result = DockTools.DoesDockScreenExist(target, out BaseWidget? instance);
-                    return (result, instance);
-                })
-            },
-            { nameof(DockTools.GetDockScreenNames), new Func<string[]>(DockTools.GetDockScreenNames) },
-            { nameof(DockTools.GetDockScreens), new Func<ReadOnlyDictionary<string, BaseWidget>>(DockTools.GetDockScreens) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.FinalizeAddon()
         { }
 

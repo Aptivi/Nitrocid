@@ -57,19 +57,6 @@ namespace Nitrocid.Extras.ArchiveShell
         internal static ArchiveConfig ArchiveConfig =>
             (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(ArchiveTools.ListArchiveEntries), new Func<string, List<IArchiveEntry>>(ArchiveTools.ListArchiveEntries) },
-            { nameof(ArchiveTools.ExtractFileEntry), new Func<string, string, bool, bool>(ArchiveTools.ExtractFileEntry) },
-            { nameof(ArchiveTools.PackFile), new Func<string, string, bool>(ArchiveTools.PackFile) },
-            { nameof(ArchiveTools.ChangeWorkingArchiveDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveDirectory) },
-            { nameof(ArchiveTools.ChangeWorkingArchiveLocalDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveLocalDirectory) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.FinalizeAddon()
         {
             var config = new ArchiveConfig();

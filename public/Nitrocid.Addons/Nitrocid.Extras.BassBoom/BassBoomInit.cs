@@ -111,12 +111,6 @@ namespace Nitrocid.Extras.BassBoom
         internal static BassBoomConfig BassBoomConfig =>
             (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);

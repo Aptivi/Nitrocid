@@ -37,10 +37,10 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}", true);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", true);
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0]);
+            var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
             var listing = new Listing()
             {
                 Objects = list,
@@ -51,12 +51,12 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}");
+            TextWriterColor.Write(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}");
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0]);
-            foreach (string field in list)
-                TextWriterColor.Write($"  - {field}");
+            var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            foreach (var field in list)
+                TextWriterColor.Write($"  - {field.Key}");
             return 0;
         }
 

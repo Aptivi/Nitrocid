@@ -195,7 +195,8 @@ namespace Nitrocid.Shell.Homepage
                                     rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
                                 else
                                 {
-                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
+                                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
+                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", addonType, Config.MainConfig.RssHeadlineUrl);
                                     bool found = false;
                                     if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
                                     {

@@ -40,12 +40,6 @@ namespace Nitrocid.LanguagePacks
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             // Add them all!

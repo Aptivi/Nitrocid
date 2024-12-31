@@ -78,7 +78,8 @@ namespace Nitrocid.Users.Login
                 {
                     try
                     {
-                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", Config.MainConfig.RssHeadlineUrl);
+                        var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
+                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                         if (Feed is (string feedTitle, string articleTitle))
                             return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
                         return Translate.DoTranslation("No feed.");

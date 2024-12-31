@@ -60,25 +60,6 @@ namespace Nitrocid.Extras.SftpShell
         internal static SftpConfig SftpConfig =>
             (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(SFTPFilesystem.SFTPListRemote), new Func<string, List<string>>(SFTPFilesystem.SFTPListRemote) },
-            { nameof(SFTPFilesystem.SFTPListRemote) + "2", new Func<string, bool, List<string>>(SFTPFilesystem.SFTPListRemote) },
-            { nameof(SFTPFilesystem.SFTPDeleteRemote), new Func<string, bool>(SFTPFilesystem.SFTPDeleteRemote) },
-            { nameof(SFTPFilesystem.SFTPChangeRemoteDir), new Func<string, bool>(SFTPFilesystem.SFTPChangeRemoteDir) },
-            { nameof(SFTPFilesystem.SFTPChangeLocalDir), new Func<string, bool>(SFTPFilesystem.SFTPChangeLocalDir) },
-            { nameof(SFTPFilesystem.SFTPGetCanonicalPath), new Func<string, string>(SFTPFilesystem.SFTPGetCanonicalPath) },
-            { nameof(SFTPTransfer.SFTPGetFile), new Func<string, bool>(SFTPTransfer.SFTPGetFile) },
-            { nameof(SFTPTransfer.SFTPUploadFile), new Func<string, bool>(SFTPTransfer.SFTPUploadFile) },
-            { nameof(SFTPTransfer.SFTPDownloadToString), new Func<string, string>(SFTPTransfer.SFTPDownloadToString) },
-            { nameof(SFTPTools.PromptConnectionInfo), new Func<string, int, string, ConnectionInfo>(SFTPTools.PromptConnectionInfo) },
-            { nameof(SFTPTools.SFTPTryToConnect), new Func<string, NetworkConnection?>(SFTPTools.SFTPTryToConnect) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.FinalizeAddon()
         {
             var config = new SftpConfig();

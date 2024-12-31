@@ -141,12 +141,6 @@ namespace Nitrocid.ScreensaverPacks
         internal static ExtraSaversConfig SaversConfig =>
             (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             // First, initialize screensavers

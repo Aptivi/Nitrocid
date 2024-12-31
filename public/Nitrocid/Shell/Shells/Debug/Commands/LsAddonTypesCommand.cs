@@ -23,27 +23,29 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Writer.CyclicWriters;
+using System;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
     /// <summary>
-    /// You can list all the available public properties from an addon
+    /// You can list all the available public types from an addon
     /// </summary>
     /// <remarks>
-    /// This command lets you list all the public properties from an addon.
+    /// This command lets you list all the public types from an addon.
     /// </remarks>
-    class LsAddonPropsCommand : BaseCommand, ICommand
+    class LsAddonTypesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of properties for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", true);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of types for") + $" {parameters.ArgumentsList[0]}", true);
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableProperties(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
+            var list = InterAddonTools.ListAvailableTypes(parameters.ArgumentsList[0]);
             var listing = new Listing()
             {
                 Objects = list,
+                Stringifier = (type) => ((Type)type).FullName ?? Translate.DoTranslation("Unknown type"),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;
@@ -51,12 +53,12 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of properties for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}");
+            TextWriterColor.Write(Translate.DoTranslation("List of types for") + $" {parameters.ArgumentsList[0]}");
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableProperties(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            foreach (var property in list)
-                TextWriterColor.Write($"  - {property.Key}");
+            var list = InterAddonTools.ListAvailableTypes(parameters.ArgumentsList[0]);
+            foreach (var type in list)
+                TextWriterColor.Write($"  - {type.FullName ?? Translate.DoTranslation("Unknown type")}");
             return 0;
         }
 

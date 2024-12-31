@@ -89,26 +89,6 @@ namespace Nitrocid.Extras.Contacts
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(ContactsManager.GetContacts), new Func<Card[]>(ContactsManager.GetContacts) },
-            { nameof(ContactsManager.ImportContacts), new Action(ContactsManager.ImportContacts) },
-            { nameof(ContactsManager.InstallContacts), new Action<string, bool>(ContactsManager.InstallContacts) },
-            { nameof(ContactsManager.InstallContacts) + "2", new Action<Card[], bool>(ContactsManager.InstallContacts) },
-            { nameof(ContactsManager.InstallContactFromMeCard), new Action<string, bool>(ContactsManager.InstallContactFromMeCard) },
-            { nameof(ContactsManager.RemoveContact), new Action<int, bool>(ContactsManager.RemoveContact) },
-            { nameof(ContactsManager.RemoveContacts), new Action<bool>(ContactsManager.RemoveContacts) },
-            { nameof(ContactsManager.GetContact), new Func<int, Card>(ContactsManager.GetContact) },
-            { nameof(ContactsManager.SearchNext), new Func<Card?>(ContactsManager.SearchNext) },
-            { nameof(ContactsManager.SearchNext) + "2", new Func<string, Card?>(ContactsManager.SearchNext) },
-            { nameof(ContactsManager.SearchPrevious), new Func<Card?>(ContactsManager.SearchPrevious) },
-            { nameof(ContactsManager.SearchPrevious) + "2", new Func<string, Card?>(ContactsManager.SearchPrevious) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         internal static ContactsConfig ContactsConfig =>
             (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)];
 

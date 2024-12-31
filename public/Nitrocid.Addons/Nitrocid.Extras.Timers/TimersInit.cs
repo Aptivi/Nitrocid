@@ -63,12 +63,6 @@ namespace Nitrocid.Extras.Timers
         internal static TimersConfig TimersConfig =>
             (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             var config = new TimersConfig();

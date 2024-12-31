@@ -27,6 +27,7 @@ using Nitrocid.Shell.Shells.Debug.Commands;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Shell.Shells.Debug.Presets;
+using System.Linq;
 
 namespace Nitrocid.Shell.Shells.Debug
 {
@@ -104,7 +105,11 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                        })
+                        }),
+                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        }),
                     })
                 ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
@@ -115,7 +120,11 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                        })
+                        }),
+                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        }),
                     })
                 ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
@@ -127,9 +136,13 @@ namespace Nitrocid.Shell.Shells.Debug
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
                         }),
+                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        }),
                         new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0]),
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
                         }),
                     })
                 ], new LsAddonFuncParamsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -141,9 +154,24 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                        })
+                        }),
+                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        }),
                     })
                 ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("lsaddontypes", /* Localizable */ "Lists all available types from the specified addon",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
+                        }),
+                    })
+                ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status",
                 [

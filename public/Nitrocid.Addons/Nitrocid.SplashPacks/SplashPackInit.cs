@@ -58,12 +58,6 @@ namespace Nitrocid.SplashPacks
         internal static ExtraSplashesConfig SplashConfig =>
             (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             // First, initialize splashes

@@ -56,12 +56,6 @@ namespace Nitrocid.Extras.Stocks
         internal static StocksConfig StocksConfig =>
             (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             var config = new StocksConfig();

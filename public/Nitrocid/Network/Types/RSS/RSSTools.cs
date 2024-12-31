@@ -42,7 +42,8 @@ namespace Nitrocid.Network.Types.RSS
             {
                 try
                 {
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", Config.MainConfig.RssHeadlineUrl);
+                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
                         TextWriters.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);

@@ -42,18 +42,6 @@ namespace Nitrocid.Extras.SqlShell
         internal static SqlConfig SqlConfig =>
             (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(SqlShellCommon.IsSql), new Func<string, bool>(SqlShellCommon.IsSql) },
-            { nameof(SqlEditTools.SqlEdit_OpenSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_OpenSqlFile) },
-            { nameof(SqlEditTools.SqlEdit_CheckSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_CheckSqlFile) },
-            { nameof(SqlEditTools.SqlEdit_SqlCommand), new Func<string, string[], SqliteParameter[], bool>((query, replies, parameters) => SqlEditTools.SqlEdit_SqlCommand(query, ref replies, parameters)) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.FinalizeAddon()
         {
             var config = new SqlConfig();

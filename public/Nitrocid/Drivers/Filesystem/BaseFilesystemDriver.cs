@@ -1050,7 +1050,8 @@ namespace Nitrocid.Drivers.Filesystem
             try
             {
                 // Use inter-addon communication
-                var result = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasSqlShell, "IsSql", Path);
+                var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasSqlShell, "Nitrocid.Extras.SqlShell.Sql.SqlShellCommon");
+                var result = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasSqlShell, "IsSql", addonType, Path);
                 if (result is bool sql)
                     return sql;
                 return false;

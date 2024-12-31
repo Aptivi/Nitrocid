@@ -49,12 +49,6 @@ namespace Nitrocid.Extras.BeepSynth
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
