@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         continue;
 
                     // Write the field name and its value
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Field info for") + $" {type.Name}::{fieldName}", true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Field info for") + $" {type.Name}::{fieldName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                     TextWriters.Write(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{field.GetValue(null)}", KernelColorType.ListValue);
                 }

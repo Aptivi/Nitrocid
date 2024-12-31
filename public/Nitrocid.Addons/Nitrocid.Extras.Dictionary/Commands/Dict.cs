@@ -47,17 +47,17 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 // First, print the license out
                 if (Word.LicenseInfo is not null)
                 {
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("License information"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
                 }
 
                 // Now, we can write the word information
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
                 TextWriters.Write($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings ?? [])
                 {
                     // Base part of speech
@@ -120,7 +120,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 }
 
                 // Sources...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 var sources = new Listing()
                 {
                     Objects = Word.SourceUrls ?? [],

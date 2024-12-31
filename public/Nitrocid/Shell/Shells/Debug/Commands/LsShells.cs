@@ -23,6 +23,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of shells"), true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of shells"), KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available shells
             var shellNames = ShellManager.AvailableShells.Keys;

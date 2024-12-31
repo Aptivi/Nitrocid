@@ -124,7 +124,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         foreach (var alarm in AlarmTools.alarms)
                         {
-                            SeparatorWriterColor.WriteSeparator(alarm.Key, true);
+                            SeparatorWriterColor.WriteSeparatorColor(alarm.Key, KernelColorTools.GetColor(KernelColorType.ListTitle));
                             TextWriters.Write("- " + Translate.DoTranslation("Alarm name:") + " ", false, KernelColorType.ListEntry);
                             TextWriters.Write(alarm.Value.Name, true, KernelColorType.ListValue);
                             TextWriters.Write("- " + Translate.DoTranslation("Alarm description:") + " ", false, KernelColorType.ListEntry);

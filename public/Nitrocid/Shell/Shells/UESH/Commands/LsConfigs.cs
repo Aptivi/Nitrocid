@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (config is null || config.SettingsEntries is null)
                     continue;
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 var entriesCount = new ListEntry()
                 {
                     Entry = Translate.DoTranslation("Entries count"),
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
-                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}", true);
+                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                         var entryDisplay = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Displaying as"),

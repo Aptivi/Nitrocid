@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string DirectoryPath = FilesystemTools.NeutralizePath(Dir);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, FilesystemTools.FolderExists(DirectoryPath));
-                SeparatorWriterColor.WriteSeparator(Dir, true);
+                SeparatorWriterColor.WriteSeparatorColor(Dir, KernelColorTools.GetColor(KernelColorType.ListTitle));
                 if (FilesystemTools.FolderExists(DirectoryPath))
                 {
                     var DirInfo = new DirectoryInfo(DirectoryPath);

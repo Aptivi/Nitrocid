@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {
-                    SeparatorWriterColor.WriteSeparator(PingedAddress, true);
+                    SeparatorWriterColor.WriteSeparatorColor(PingedAddress, KernelColorTools.GetColor(KernelColorType.ListTitle));
                     for (int CurrentTime = 1; CurrentTime <= PingTimes; CurrentTime++)
                     {
                         try

@@ -109,7 +109,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             foreach (string Language in LanguageManager.ListLanguages(LanguageListTerm).Keys)
                             {
-                                SeparatorWriterColor.WriteSeparator(Language, true);
+                                SeparatorWriterColor.WriteSeparatorColor(Language, KernelColorTools.GetColor(KernelColorType.ListTitle));
                                 TextWriters.Write("- " + Translate.DoTranslation("Language short name:") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(LanguageManager.Languages[Language].ThreeLetterLanguageName, true, KernelColorType.ListValue);
                                 TextWriters.Write("- " + Translate.DoTranslation("Language full name:") + " ", false, KernelColorType.ListEntry);

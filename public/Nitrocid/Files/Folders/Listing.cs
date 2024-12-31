@@ -92,7 +92,7 @@ namespace Nitrocid.Files
             if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
-                SeparatorWriterColor.WriteSeparator(folder, true);
+                SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
 
                 // Try to create a list
                 try
@@ -211,7 +211,7 @@ namespace Nitrocid.Files
             {
                 List<FileSystemEntry> enumeration;
                 if (level == 0)
-                    SeparatorWriterColor.WriteSeparator(folder, true);
+                    SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
 
                 // Try to create a list
                 try

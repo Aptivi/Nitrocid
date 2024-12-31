@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         continue;
 
                     // Write the property name and its value
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Property info for") + $" {type.Name}::{propertyName}", true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Property info for") + $" {type.Name}::{propertyName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                     TextWriters.Write(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{property.GetValue(null)}", KernelColorType.ListValue);
                 }

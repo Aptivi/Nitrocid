@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             if (internetFm is not null)
             {
                 internetFm.Refresh();
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}");
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Station type") + ": ", false, KernelColorType.ListEntry);
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 // Now, the stream info
                 foreach (var stream in internetFm.Streams)
                 {
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}");
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                     TextWriters.Write(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{stream.StreamTitle}", true, KernelColorType.ListValue);
                     TextWriters.Write(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);

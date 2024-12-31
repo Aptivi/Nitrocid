@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 foreach (string file in Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {
                     string finalFile = FilesystemTools.NeutralizePath(file);
-                    SeparatorWriterColor.WriteSeparator(finalFile, true);
+                    SeparatorWriterColor.WriteSeparatorColor(finalFile, KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                     {
                         // Time when you're on a breakpoint is counted

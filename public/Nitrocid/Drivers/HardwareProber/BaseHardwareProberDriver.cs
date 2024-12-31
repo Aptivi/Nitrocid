@@ -259,7 +259,7 @@ namespace Nitrocid.Drivers.HardwareProber
 
         private void ListHardwareInternal(string hardwareType)
         {
-            SeparatorWriterColor.WriteSeparator(hardwareType, true);
+            SeparatorWriterColor.WriteSeparatorColor(hardwareType, KernelColorTools.GetColor(KernelColorType.ListTitle));
             switch (hardwareType)
             {
                 case "CPU":

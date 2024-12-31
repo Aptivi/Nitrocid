@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (fields.Count > 0)
                     {
                         // Write the field names and their values
-                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of fields for") + $" {type.Name}", true);
+                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of fields for") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                         var listing = new Listing()
                         {
                             Objects = fields,
@@ -78,7 +78,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (fields.Count > 0)
                     {
                         // Write the field names and their values
-                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of fields for") + $" {type.Name}", true);
+                        TextWriterColor.Write(Translate.DoTranslation("List of fields for") + $" {type.Name}");
                         foreach (var field in fields)
                             TextWriterColor.Write($"  - {field.Key} [{field.Value}]");
                     }

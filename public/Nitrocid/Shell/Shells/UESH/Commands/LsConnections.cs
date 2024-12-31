@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (var shellType in shellTypes)
             {
                 var connections = NetworkConnectionTools.GetNetworkConnections(shellType);
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Connections for type") + $" {shellType}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Connections for type") + $" {shellType}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var connection in connections)
                 {
                     TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");

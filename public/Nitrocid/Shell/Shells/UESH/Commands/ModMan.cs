@@ -112,7 +112,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
-                                    SeparatorWriterColor.WriteSeparator(script, true);
+                                    SeparatorWriterColor.WriteSeparatorColor(script, KernelColorTools.GetColor(KernelColorType.ListTitle));
                                     TextWriters.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
                                     TextWriters.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
@@ -145,7 +145,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
-                                SeparatorWriterColor.WriteSeparator(Mod, true);
+                                SeparatorWriterColor.WriteSeparatorColor(Mod, KernelColorTools.GetColor(KernelColorType.ListTitle));
                                 TextWriters.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
                                 TextWriters.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);

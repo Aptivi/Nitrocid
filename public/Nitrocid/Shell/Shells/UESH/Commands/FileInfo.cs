@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string FilePath = FilesystemTools.NeutralizePath(FileName);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FilesystemTools.FileExists(FilePath));
-                SeparatorWriterColor.WriteSeparator(FileName, true);
+                SeparatorWriterColor.WriteSeparatorColor(FileName, KernelColorTools.GetColor(KernelColorType.ListTitle));
                 if (FilesystemTools.FileExists(FilePath))
                 {
                     var FileInfo = new FileInfo(FilePath);
@@ -76,7 +76,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterRaw.Write();
 
                     // .NET managed info
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(".NET assembly info"), true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation(".NET assembly info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name ?? "");
@@ -86,13 +86,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
                     }
                     else
-                    {
                         TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
-                    }
                     TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Extra info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??

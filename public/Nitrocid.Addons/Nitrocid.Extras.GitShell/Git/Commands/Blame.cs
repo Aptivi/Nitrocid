@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 MinLine = start,
                 MaxLine = end,
             });
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Blame status for file") + $" {Path.GetFileName(file)}", true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Blame status for file") + $" {Path.GetFileName(file)}", KernelColorTools.GetColor(KernelColorType.ListTitle));
             foreach (var hunk in blameHunks)
             {
                 int lines = hunk.LineCount;
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 var finalCommit = hunk.FinalCommit;
 
                 // Display some info about the blame hunk
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Hunk number") + $" {hunkNum}/{blameHunks.Count()}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Hunk number") + $" {hunkNum}/{blameHunks.Count()}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.Write("- " + Translate.DoTranslation("Number of lines") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{lines}", true, KernelColorType.ListValue);
                 TextWriters.Write("- " + Translate.DoTranslation("Initial line number") + ": ", false, KernelColorType.ListEntry);

@@ -23,6 +23,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of functions for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of functions for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
