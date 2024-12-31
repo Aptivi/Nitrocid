@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Updates
                 NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
                 // Populate the following variables with information
-                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases", false);
+                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/Nitrocid/releases", false);
                 var UpdateToken = JToken.Parse(UpdateStr);
                 var UpdateInstance = new KernelUpdate(UpdateToken, kind);
 

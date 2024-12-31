@@ -45,8 +45,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
             TextWriters.Write(
                 KernelPlatform.IsOnUnix() ?
-                $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/NitrocidKS{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
-                "    https://aptivi.github.io/NitrocidKS",
+                $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
+                "    https://aptivi.github.io/Nitrocid",
                 true, KernelColorType.Tip);
             return 0;
         }
@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
             TextWriters.Write("    https://aptivi.gitbook.io/kernel-simulator-manual/", true, KernelColorType.Tip);
             TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
-            TextWriters.Write("    https://aptivi.github.io/NitrocidKS", true, KernelColorType.Tip);
+            TextWriters.Write("    https://aptivi.github.io/Nitrocid", true, KernelColorType.Tip);
             return 0;
         }
 
