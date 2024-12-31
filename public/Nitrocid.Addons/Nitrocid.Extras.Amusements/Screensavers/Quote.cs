@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;

@@ -23,16 +23,11 @@ using Nitrocid.Extras.Forecast.Forecast.Commands;
 using Nitrocid.Extras.Forecast.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
-using Nettify.Weather;
-using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Forecast
 {

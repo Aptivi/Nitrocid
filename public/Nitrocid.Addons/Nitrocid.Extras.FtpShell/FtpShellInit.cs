@@ -17,24 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FluentFTP;
 using Nitrocid.Extras.FtpShell.FTP;
-using Nitrocid.Extras.FtpShell.Tools;
-using Nitrocid.Extras.FtpShell.Tools.Filesystem;
-using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
 using Nitrocid.Modifications;
-using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using FtpConfig = Nitrocid.Extras.FtpShell.Settings.FtpConfig;
 
 namespace Nitrocid.Extras.FtpShell

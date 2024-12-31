@@ -20,20 +20,13 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
 using Nitrocid.Extras.Ssh.Commands;
-using Nitrocid.Extras.Ssh.SSH;
-using Renci.SshNet;
-using static Nitrocid.Extras.Ssh.SSH.SSHTools;
-using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.Ssh
 {

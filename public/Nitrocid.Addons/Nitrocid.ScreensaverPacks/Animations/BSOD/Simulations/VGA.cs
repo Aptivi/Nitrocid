@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations

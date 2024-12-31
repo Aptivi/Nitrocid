@@ -19,11 +19,8 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
 using System.Linq;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

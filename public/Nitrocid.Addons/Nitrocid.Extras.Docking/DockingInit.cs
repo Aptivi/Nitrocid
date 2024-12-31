@@ -21,15 +21,11 @@ using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Docking.Commands;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
-using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.Extras.Docking
 {

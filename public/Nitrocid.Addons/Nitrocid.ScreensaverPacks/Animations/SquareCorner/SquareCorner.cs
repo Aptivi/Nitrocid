@@ -22,7 +22,6 @@ using System;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters;

@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Themes;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 

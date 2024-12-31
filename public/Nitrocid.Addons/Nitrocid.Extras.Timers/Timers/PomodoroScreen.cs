@@ -31,7 +31,6 @@ using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

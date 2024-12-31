@@ -27,7 +27,6 @@ using Nitrocid.Shell.ShellBase.Switches;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Writer.CyclicWriters;
-using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {

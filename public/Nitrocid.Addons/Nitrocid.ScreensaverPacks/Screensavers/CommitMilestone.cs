@@ -20,7 +20,6 @@
 using Textify.Data.Figlet;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;

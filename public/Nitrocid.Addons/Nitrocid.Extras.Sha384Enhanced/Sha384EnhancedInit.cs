@@ -21,9 +21,6 @@ using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.Extras.Sha384Enhanced
 {

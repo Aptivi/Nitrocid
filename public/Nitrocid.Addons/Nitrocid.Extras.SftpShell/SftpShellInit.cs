@@ -23,19 +23,11 @@ using Nitrocid.Extras.SftpShell.Settings;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
-using Nitrocid.Extras.SftpShell.Tools.Filesystem;
-using Nitrocid.Extras.SftpShell.Tools.Transfer;
-using Nitrocid.Extras.SftpShell.Tools;
-using Nitrocid.Network.Connections;
-using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell
 {

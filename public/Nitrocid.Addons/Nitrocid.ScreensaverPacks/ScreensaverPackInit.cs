@@ -23,10 +23,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Modifications;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.ScreensaverPacks
 {

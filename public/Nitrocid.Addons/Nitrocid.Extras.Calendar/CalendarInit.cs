@@ -26,17 +26,12 @@ using Nitrocid.Extras.Calendar.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Extras.Calendar.Calendar;
-using Nitrocid.Kernel.Time.Calendars;
-using EventInfo = Nitrocid.Extras.Calendar.Calendar.Events.EventInfo;
 using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Calendar

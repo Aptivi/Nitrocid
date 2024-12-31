@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.Extras.Amusements.Screensavers

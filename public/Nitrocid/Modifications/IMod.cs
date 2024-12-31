@@ -18,8 +18,6 @@
 //
 
 using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.Modifications
 {

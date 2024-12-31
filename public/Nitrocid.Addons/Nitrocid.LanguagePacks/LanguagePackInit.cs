@@ -25,10 +25,7 @@ using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using Textify.General;
 
 namespace Nitrocid.LanguagePacks

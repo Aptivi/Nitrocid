@@ -17,18 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Settings;
 using Nitrocid.Extras.SqlShell.Sql;
-using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Shells;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.Extras.SqlShell
 {

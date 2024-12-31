@@ -23,7 +23,6 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;

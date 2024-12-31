@@ -21,9 +21,6 @@ using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Starting;
 
 namespace Nitrocid.Extras.Tips

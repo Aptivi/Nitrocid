@@ -19,12 +19,8 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Diagnostics.Commands;
-using Nitrocid.Extras.Diagnostics.Tools;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;

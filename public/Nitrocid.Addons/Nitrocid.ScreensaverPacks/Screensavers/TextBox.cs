@@ -19,7 +19,6 @@
 
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 

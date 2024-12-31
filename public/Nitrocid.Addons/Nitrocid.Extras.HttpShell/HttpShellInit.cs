@@ -19,20 +19,14 @@
 
 using Nitrocid.Extras.HttpShell.HTTP;
 using Nitrocid.Extras.HttpShell.Settings;
-using Nitrocid.Extras.HttpShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
-using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Nitrocid.Extras.HttpShell
 {

@@ -18,9 +18,6 @@
 //
 
 using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.Kernel.Extensions
 {
