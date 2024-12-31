@@ -27,7 +27,6 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
 {
     class LsUsersCommand : BaseCommand, ICommand
     {
-
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
@@ -39,6 +38,14 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             };
             TextWriterRaw.WriteRaw(listing.Render());
             variableValue = string.Join('\n', users);
+            return 0;
+        }
+
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        {
+            var users = UserManagement.ListAllUsers();
+            foreach (var user in users)
+                TextWriterColor.Write($"  - {user}");
             return 0;
         }
     }

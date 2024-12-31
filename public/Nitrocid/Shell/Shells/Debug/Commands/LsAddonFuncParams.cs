@@ -46,11 +46,22 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             var listing = new Listing()
             {
                 Objects = list,
-                Stringifier = (para) => ((ParameterInfo)para).Name ?? Translate.DoTranslation("Unknown function"),
+                Stringifier = (para) => $"[{((ParameterInfo)para).ParameterType.FullName ?? Translate.DoTranslation("Unknown type")}] {((ParameterInfo)para).Name ?? Translate.DoTranslation("Unknown parameter")}",
                 KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                 ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
+            return 0;
+        }
+
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        {
+            TextWriterColor.Write(Translate.DoTranslation("List of function parameters for") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}");
+
+            // List all the available addons
+            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
+            foreach (var parameter in list)
+                TextWriterColor.Write($"  - [{parameter.ParameterType.FullName ?? Translate.DoTranslation("Unknown type")}] {parameter.Name ?? Translate.DoTranslation("Unknown parameter")}");
             return 0;
         }
 
