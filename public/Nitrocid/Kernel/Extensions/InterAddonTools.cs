@@ -140,7 +140,7 @@ namespace Nitrocid.Kernel.Extensions
 
                 // Make sure that overloaded methods that have the same name don't conflict with another method
                 int iter = 1;
-                while (functions.ContainsKey(name))
+                while (functions.ContainsKey(finalName))
                 {
                     iter++;
                     finalName = name + iter;
