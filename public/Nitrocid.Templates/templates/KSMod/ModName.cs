@@ -10,13 +10,7 @@ namespace KSMod
         public string Name { get; set; } = "My Mod";
         public string Version { get; set; } = "1.0.0";
 
-        public Version MinimumSupportedApiVersion => new(3, 0, 27, 24);
-
-        public ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions => null;
-
-        public ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties => null;
-
-        public ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields => null;
+        public Version MinimumSupportedApiVersion => new(3, 0, 27, 25);
 
         public ModLoadPriority LoadPriority => ModLoadPriority.Optional;
 
