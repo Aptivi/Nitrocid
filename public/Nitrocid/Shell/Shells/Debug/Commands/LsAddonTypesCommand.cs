@@ -47,6 +47,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = list,
                 Stringifier = (type) => ((Type)type).FullName ?? Translate.DoTranslation("Unknown type"),
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -39,6 +40,8 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             var listing = new Listing()
             {
                 Objects = events,
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

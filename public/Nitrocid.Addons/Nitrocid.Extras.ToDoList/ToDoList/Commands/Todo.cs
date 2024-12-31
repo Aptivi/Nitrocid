@@ -151,6 +151,8 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                         var listing = new Listing()
                         {
                             Objects = tasks,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         TextWriterRaw.WriteRaw(listing.Render());
                         return 0;

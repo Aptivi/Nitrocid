@@ -71,6 +71,8 @@ namespace Nitrocid.Users.Login.Handlers
                 var listing = new Listing()
                 {
                     Objects = UsersList,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
                 TextWriterRaw.WriteRaw(listing.Render());
             }

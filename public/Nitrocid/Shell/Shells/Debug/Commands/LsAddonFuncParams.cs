@@ -46,7 +46,9 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             var listing = new Listing()
             {
                 Objects = list,
-                Stringifier = (para) => ((ParameterInfo)para).Name ?? Translate.DoTranslation("Unknown function")
+                Stringifier = (para) => ((ParameterInfo)para).Name ?? Translate.DoTranslation("Unknown function"),
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
@@ -32,6 +33,8 @@ namespace Nitrocid.Extras.Notes.Commands
             var listing = new Listing()
             {
                 Objects = NoteManagement.notes,
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

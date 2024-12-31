@@ -29,6 +29,7 @@ using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -68,6 +69,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var listing = new Listing()
             {
                 Objects = screensavers,
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
         }

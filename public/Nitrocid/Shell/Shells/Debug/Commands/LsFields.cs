@@ -54,6 +54,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         var listing = new Listing()
                         {
                             Objects = fields,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         TextWriterRaw.WriteRaw(listing.Render());
                     }

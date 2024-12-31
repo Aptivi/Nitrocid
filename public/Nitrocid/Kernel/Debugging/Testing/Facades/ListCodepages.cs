@@ -22,6 +22,7 @@ using Nitrocid.Languages;
 using System.Linq;
 using System.Text;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -35,6 +36,8 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var listing = new Listing()
             {
                 Objects = Encodings,
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
         }

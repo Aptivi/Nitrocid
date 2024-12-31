@@ -145,6 +145,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             var listing = new Listing()
                             {
                                 Objects = unsatisfied.UnknownSwitchesList,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                             };
                             TextWriterRaw.WriteRaw(listing.Render());
                         }
@@ -157,6 +159,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             var listing = new Listing()
                             {
                                 Objects = unsatisfied.ConflictingSwitchesList,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                             };
                             TextWriterRaw.WriteRaw(listing.Render());
                         }
@@ -169,6 +173,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
                             var listing = new Listing()
                             {
                                 Objects = unsatisfied.NoValueSwitchesList,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                             };
                             TextWriterRaw.WriteRaw(listing.Render());
                         }
@@ -364,6 +370,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 var listing = new Listing()
                 {
                     Objects = WrappableCmds,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
                 TextWriterRaw.WriteRaw(listing.Render());
                 return;

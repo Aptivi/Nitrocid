@@ -58,7 +58,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                     ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WritePlain(listing.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
 
             // Indent level 2
@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                     ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WritePlain(listing.Render());
+                TextWriterRaw.WriteRaw(listing.Render());
             }
         }
     }

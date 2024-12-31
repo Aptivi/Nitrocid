@@ -80,6 +80,8 @@ namespace Nitrocid.Extras.Dictionary.Commands
                             var listing = new Listing()
                             {
                                 Objects = DefinitionBase.Synonyms,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                             };
                             TextWriterRaw.WriteRaw(listing.Render());
                         }
@@ -91,6 +93,8 @@ namespace Nitrocid.Extras.Dictionary.Commands
                             var listing = new Listing()
                             {
                                 Objects = DefinitionBase.Antonyms,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                             };
                             TextWriterRaw.WriteRaw(listing.Render());
                         }
@@ -103,6 +107,8 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         var listing = new Listing()
                         {
                             Objects = MeaningBase.Synonyms,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         TextWriterRaw.WriteRaw(listing.Render());
                     }
@@ -114,6 +120,8 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         var listing = new Listing()
                         {
                             Objects = MeaningBase.Antonyms,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         TextWriterRaw.WriteRaw(listing.Render());
                     }
@@ -124,6 +132,8 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 var sources = new Listing()
                 {
                     Objects = Word.SourceUrls ?? [],
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
                 TextWriterRaw.WriteRaw(sources.Render());
             }
