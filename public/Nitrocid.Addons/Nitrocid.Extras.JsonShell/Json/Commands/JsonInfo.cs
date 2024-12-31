@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Base info
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"), true);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"));
             TextWriterColor.Write(Translate.DoTranslation("Base type") + ": {0}", JsonShellCommon.FileToken.Type);
             TextWriterColor.Write(Translate.DoTranslation("Base has values") + ": {0}", true, false, JsonShellCommon.FileToken.HasValues);
             TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", JsonShellCommon.FileToken.Count());
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             {
                 foreach (var token in JsonShellCommon.FileToken)
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Individual JSON token information") + " [{0}]", token.Path);
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Individual JSON token information") + " [{0}]", true, token.Path);
                     TextWriterColor.Write(Translate.DoTranslation("Token type") + ": {0}", token.Type);
                     TextWriterColor.Write(Translate.DoTranslation("Token has values") + ": {0}", true, false, token.HasValues);
                     TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", token.Count());
@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
                     // Check to see if the token is a property
                     if (token.Type == JTokenType.Property)
                     {
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Property information for") + " [{0}]", token.Path);
+                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Property information for") + " [{0}]", true, token.Path);
                         TextWriterColor.Write(Translate.DoTranslation("Property type") + ": {0}", ((JProperty)token).Value.Type);
                         TextWriterColor.Write(Translate.DoTranslation("Property count") + ": {0}", ((JProperty)token).Count);
                         TextWriterColor.Write(Translate.DoTranslation("Property name") + ": {0}", ((JProperty)token).Name);
