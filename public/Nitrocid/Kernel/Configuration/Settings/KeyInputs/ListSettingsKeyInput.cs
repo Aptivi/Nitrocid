@@ -152,7 +152,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Get the delimiter
             if (ListJoinString is null)
-                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, null, true));
+                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable));
             else
                 FinalDelimiter = ListJoinString;
             return FinalDelimiter ?? ";";

@@ -70,7 +70,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object? InvokeMethod(string method, object obj, params object[] args) =>
+        public static object? InvokeMethod(string method, object obj, params object?[]? args) =>
             InvokeMethod(method, obj, obj.GetType(), args);
 
         /// <summary>
@@ -82,17 +82,28 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object? InvokeMethod(string method, object obj, Type methodType, params object[] args)
+        public static object? InvokeMethod(string method, object obj, Type methodType, params object?[]? args) =>
+            InvokeMethod(GetMethod(method, methodType), obj, args);
+
+        /// <summary>
+        /// Invokes a non-static method with arguments
+        /// </summary>
+        /// <param name="method">The method to find and execute</param>
+        /// <param name="obj">The object on which to invoke the method</param>
+        /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
+        /// <returns>The value of the returned object from the method</returns>
+        /// <exception cref="KernelException"></exception>
+        public static object? InvokeMethod(MethodBase? method, object obj, params object?[]? args)
         {
-            var methodInstance = GetMethod(method, methodType) ??
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
-            if (methodInstance.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is static. Use the non-object overload.") + $" {method}");
+            if (method is null)
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent."));
+            if (method.IsStatic)
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is static. Use the non-object overload.") + $" {method.Name}");
 
             // Now, invoke the method.
-            if (args.Length > 0)
-                return methodInstance.Invoke(obj, args);
-            return methodInstance.Invoke(obj, null);
+            if (args is not null && args.Length > 0)
+                return method.Invoke(obj, args);
+            return method.Invoke(obj, null);
         }
 
         /// <summary>
@@ -102,18 +113,8 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object? InvokeMethodStatic(string method, params object[] args)
-        {
-            var methodInstance = GetMethod(method) ??
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
-            if (!methodInstance.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is not static. Use the object overload.") + $" {method}");
-
-            // Now, invoke the method.
-            if (args.Length > 0)
-                return methodInstance.Invoke(null, args);
-            return methodInstance.Invoke(null, null);
-        }
+        public static object? InvokeMethodStatic(string method, params object?[]? args) =>
+            InvokeMethodStatic(GetMethod(method), args);
 
         /// <summary>
         /// Invokes a static method with arguments
@@ -123,17 +124,27 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object? InvokeMethodStatic(string method, Type methodType, params object[] args)
+        public static object? InvokeMethodStatic(string method, Type methodType, params object?[]? args) =>
+            InvokeMethodStatic(GetMethod(method, methodType), args);
+
+        /// <summary>
+        /// Invokes a static method with arguments
+        /// </summary>
+        /// <param name="method">The method to find and execute</param>
+        /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
+        /// <returns>The value of the returned object from the method</returns>
+        /// <exception cref="KernelException"></exception>
+        public static object? InvokeMethodStatic(MethodBase? method, params object?[]? args)
         {
-            var methodInstance = GetMethod(method, methodType) ??
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
-            if (!methodInstance.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is not static. Use the object overload.") + $" {method}");
+            if (method is null)
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent."));
+            if (!method.IsStatic)
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is not static. Use the object overload.") + $" {method.Name}");
 
             // Now, invoke the method.
-            if (args.Length > 0)
-                return methodInstance.Invoke(null, args);
-            return methodInstance.Invoke(null, null);
+            if (args is not null && args.Length > 0)
+                return method.Invoke(null, args);
+            return method.Invoke(null, null);
         }
     }
 }
