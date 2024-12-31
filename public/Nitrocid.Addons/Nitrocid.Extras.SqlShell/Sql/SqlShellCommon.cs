@@ -29,7 +29,6 @@ namespace Nitrocid.Extras.SqlShell.Sql
     /// </summary>
     public static class SqlShellCommon
     {
-
         internal static string sqliteDatabasePath = "";
         internal static SqliteConnection? sqliteConnection;
 
@@ -50,28 +49,5 @@ namespace Nitrocid.Extras.SqlShell.Sql
         /// </summary>
         public static string DatabaseFileName =>
             Path.GetFileName(DatabasePath);
-
-        /// <summary>
-        /// Is the file an SQL file?
-        /// </summary>
-        /// <param name="Path">Path to file</param>
-        public static bool IsSql(string Path)
-        {
-            try
-            {
-                // Neutralize path
-                FilesystemTools.ThrowOnInvalidPath(Path);
-                Path = FilesystemTools.NeutralizePath(Path);
-
-                // Try to open an SQL connection
-                bool result = SqlEditTools.SqlEdit_CheckSqlFile(Path);
-                return result;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
     }
 }

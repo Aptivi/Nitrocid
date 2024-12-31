@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
                 SqlShellCommon.sqliteConnection = new SqliteConnection($"Data Source={File}");
                 SqlShellCommon.sqliteConnection.Open();
                 SqlShellCommon.sqliteDatabasePath = File;
-                return SqlEdit_CheckSqlFile(File);
+                return FilesystemTools.IsSql(File);
             }
             catch (Exception ex)
             {
@@ -55,20 +55,6 @@ namespace Nitrocid.Extras.SqlShell.Tools
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Checks the SQL file
-        /// </summary>
-        /// <param name="File">File to check</param>
-        /// <returns>True if the signature is found; False if not found.</returns>
-        public static bool SqlEdit_CheckSqlFile(string File)
-        {
-            byte[] sqlFileBytes = new byte[17];
-            using (FileStream sqlStream = new(File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                sqlStream.Read(sqlFileBytes, 0, 16);
-            string result = Encoding.ASCII.GetString(sqlFileBytes);
-            return result.Contains("SQLite format");
         }
 
         /// <summary>

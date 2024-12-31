@@ -1049,12 +1049,16 @@ namespace Nitrocid.Drivers.Filesystem
         {
             try
             {
-                // Use inter-addon communication
-                var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasSqlShell, "Nitrocid.Extras.SqlShell.Sql.SqlShellCommon");
-                var result = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasSqlShell, "IsSql", addonType, Path);
-                if (result is bool sql)
-                    return sql;
-                return false;
+                // Neutralize path
+                FilesystemTools.ThrowOnInvalidPath(Path);
+                Path = FilesystemTools.NeutralizePath(Path);
+
+                // Try to open an SQL connection
+                byte[] sqlFileBytes = new byte[17];
+                using (FileStream sqlStream = new(Path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    sqlStream.Read(sqlFileBytes, 0, 16);
+                string result = System.Text.Encoding.ASCII.GetString(sqlFileBytes);
+                return result.Contains("SQLite format");
             }
             catch
             {
