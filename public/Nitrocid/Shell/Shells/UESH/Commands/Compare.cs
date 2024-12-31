@@ -65,24 +65,28 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     Entry = $"[{line}]",
                     Value = Translate.DoTranslation("Different"),
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
                 var oldValue = new ListEntry()
                 {
                     Entry = "[-]",
                     Value = one,
                     Indentation = 1,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
                 var newValue = new ListEntry()
                 {
                     Entry = "[+]",
                     Value = two,
                     Indentation = 1,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(
-                    lineNumber.Render() +
-                    oldValue.Render() +
-                    newValue.Render()
-                );
+                TextWriterRaw.WritePlain(lineNumber.Render());
+                TextWriterRaw.WritePlain(oldValue.Render());
+                TextWriterRaw.WritePlain(newValue.Render());
             }
             return 0;
         }

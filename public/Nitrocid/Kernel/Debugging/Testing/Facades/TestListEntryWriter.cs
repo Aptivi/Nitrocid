@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -54,8 +55,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Entry = NormalStringListEntries[i],
                     Value = NormalStringListValues[i],
                     Indentation = 1,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WritePlain(listing.Render());
             }
 
             // Indent level 2
@@ -67,8 +70,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Entry = NormalStringListEntries[i],
                     Value = NormalStringListValues[i],
                     Indentation = 2,
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WritePlain(listing.Render());
             }
         }
     }

@@ -24,6 +24,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.Connections;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -53,15 +54,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             Entry = Translate.DoTranslation("Alive"),
                             Value = $"{connection.ConnectionAlive}",
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
-                        TextWriterRaw.WriteRaw(connectionAlive.Render());
+                        TextWriterRaw.WritePlain(connectionAlive.Render());
                     }
                     var connectionInstance = new ListEntry()
                     {
                         Entry = Translate.DoTranslation("Instance"),
                         Value = $"{connection.ConnectionInstance}",
+                        KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                        ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                     };
-                    TextWriterRaw.WriteRaw(connectionInstance.Render());
+                    TextWriterRaw.WritePlain(connectionInstance.Render());
                 }
             }
             return 0;

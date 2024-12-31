@@ -236,8 +236,10 @@ namespace Nitrocid.Files
                                             Entry = name,
                                             Value = Entry.FileSize.SizeString(),
                                             Indentation = level,
+                                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                                         };
-                                        TextWriterRaw.WriteRaw(entry.Render());
+                                        TextWriterRaw.WritePlain(entry.Render());
                                     }
                                     break;
                                 case FileSystemEntryType.Directory:
@@ -247,8 +249,10 @@ namespace Nitrocid.Files
                                             Entry = name,
                                             Value = "[/]",
                                             Indentation = level,
+                                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                                         };
-                                        TextWriterRaw.WriteRaw(entry.Render());
+                                        TextWriterRaw.WritePlain(entry.Render());
                                     }
                                     ListTree(Entry.FilePath, SuppressUnauthorizedMessage, Sort, level + 1);
                                     break;
@@ -263,8 +267,10 @@ namespace Nitrocid.Files
                                     Entry = name,
                                     Value = Translate.DoTranslation("Unauthorized"),
                                     Indentation = level,
+                                    KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                    ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
                                 };
-                                TextWriterRaw.WriteRaw(entry.Render());
+                                TextWriterRaw.WritePlain(entry.Render());
                             }
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
@@ -275,8 +281,10 @@ namespace Nitrocid.Files
                                 Entry = name,
                                 Value = Translate.DoTranslation("Error"),
                                 Indentation = level,
+                                KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
                             };
-                            TextWriterRaw.WriteRaw(entry.Render());
+                            TextWriterRaw.WritePlain(entry.Render());
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -297,8 +305,10 @@ namespace Nitrocid.Files
                     {
                         Entry = name,
                         Value = entry.FileSize.SizeString(),
+                        KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                        ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                     };
-                    TextWriterRaw.WriteRaw(file.Render());
+                    TextWriterRaw.WritePlain(file.Render());
                 }
                 catch (UnauthorizedAccessException ex)
                 {
@@ -309,8 +319,10 @@ namespace Nitrocid.Files
                             Entry = name,
                             Value = Translate.DoTranslation("Unauthorized"),
                             Indentation = level,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
                         };
-                        TextWriterRaw.WriteRaw(file.Render());
+                        TextWriterRaw.WritePlain(file.Render());
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
@@ -321,8 +333,10 @@ namespace Nitrocid.Files
                         Entry = name,
                         Value = Translate.DoTranslation("Error"),
                         Indentation = level,
+                        KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
+                        ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
                     };
-                    TextWriterRaw.WriteRaw(file.Render());
+                    TextWriterRaw.WritePlain(file.Render());
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

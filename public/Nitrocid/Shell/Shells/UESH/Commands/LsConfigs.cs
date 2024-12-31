@@ -24,6 +24,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -49,8 +50,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     Entry = Translate.DoTranslation("Entries count"),
                     Value = $"{config.SettingsEntries.Length}",
+                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(entriesCount.Render());
+                TextWriterRaw.WritePlain(entriesCount.Render());
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
@@ -61,24 +64,28 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             Entry = Translate.DoTranslation("Displaying as"),
                             Value = entry.DisplayAs,
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         var entryDesc = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Description"),
                             Value = entry.Desc,
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         var entryKeys = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Keys count"),
                             Value = $"{entry.Keys.Length}",
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
-                        TextWriterRaw.WriteRaw(
-                            entryDisplay.Render() +
-                            entryDesc.Render() +
-                            entryKeys.Render()
-                        );
+                        TextWriterRaw.WritePlain(entryDisplay.Render());
+                        TextWriterRaw.WritePlain(entryDesc.Render());
+                        TextWriterRaw.WritePlain(entryKeys.Render());
                     }
                 }
             }

@@ -57,31 +57,37 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             Entry = Translate.DoTranslation("Key name"),
                             Value = key.Name,
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         var keyDesc = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Key description"),
                             Value = key.Description,
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         var keyType = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Key type"),
                             Value = $"{key.Type}",
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
                         var keyVar = new ListEntry()
                         {
                             Entry = Translate.DoTranslation("Key variable"),
                             Value = $"{key.Variable} [{value}]",
                             Indentation = 1,
+                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                         };
-                        TextWriterRaw.WriteRaw(
-                            keyName.Render() +
-                            keyDesc.Render() +
-                            keyType.Render() +
-                            keyVar.Render()
-                        );
+                        TextWriterRaw.WritePlain(keyName.Render());
+                        TextWriterRaw.WritePlain(keyDesc.Render());
+                        TextWriterRaw.WritePlain(keyType.Render());
+                        TextWriterRaw.WritePlain(keyVar.Render());
                     }
                 }
             }
@@ -103,7 +109,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                 ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
-            TextWriterRaw.WriteRaw(listEntry.Render());
+            TextWriterRaw.WritePlain(listEntry.Render());
         }
 
     }
