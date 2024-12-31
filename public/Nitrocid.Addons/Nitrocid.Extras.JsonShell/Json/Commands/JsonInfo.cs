@@ -23,6 +23,8 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
+using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -35,11 +37,11 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Base info
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"));
-            TextWriterColor.Write(Translate.DoTranslation("Base type") + ": {0}", JsonShellCommon.FileToken.Type);
-            TextWriterColor.Write(Translate.DoTranslation("Base has values") + ": {0}", JsonShellCommon.FileToken.HasValues);
-            TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", JsonShellCommon.FileToken.Count());
-            TextWriterColor.Write(Translate.DoTranslation("Base path") + ": {0}", JsonShellCommon.FileToken.Path);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Base JSON token information"), KernelColorTools.GetColor(KernelColorType.Separator));
+            WriteEntry(Translate.DoTranslation("Base type"), $"{JsonShellCommon.FileToken.Type}");
+            WriteEntry(Translate.DoTranslation("Base has values"), $"{JsonShellCommon.FileToken.HasValues}");
+            WriteEntry(Translate.DoTranslation("Children token count"), $"{JsonShellCommon.FileToken.Count()}");
+            WriteEntry(Translate.DoTranslation("Base path"), JsonShellCommon.FileToken.Path);
             TextWriterRaw.Write();
 
             // Individual properties
@@ -47,25 +49,26 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             {
                 foreach (var token in JsonShellCommon.FileToken)
                 {
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Individual JSON token information") + " [{0}]", true, token.Path);
-                    TextWriterColor.Write(Translate.DoTranslation("Token type") + ": {0}", token.Type);
-                    TextWriterColor.Write(Translate.DoTranslation("Token has values") + ": {0}", token.HasValues);
-                    TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", token.Count());
-                    TextWriterColor.Write(Translate.DoTranslation("Token path") + ": {0}", token.Path);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Individual JSON token information") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
+                    WriteEntry(Translate.DoTranslation("Token type"), $"{token.Type}");
+                    WriteEntry(Translate.DoTranslation("Token has values"), $"{token.HasValues}");
+                    WriteEntry(Translate.DoTranslation("Children token count"), $"{token.Count()}");
+                    WriteEntry(Translate.DoTranslation("Token path"), token.Path);
                     if (parameters.SwitchesList.Contains("-showvals"))
-                        TextWriterColor.Write(Translate.DoTranslation("Token value") + ": {0}", token);
+                        WriteEntry(Translate.DoTranslation("Token value"), $"{token}");
                     TextWriterRaw.Write();
 
                     // Check to see if the token is a property
                     if (token.Type == JTokenType.Property)
                     {
-                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Property information for") + " [{0}]", true, token.Path);
-                        TextWriterColor.Write(Translate.DoTranslation("Property type") + ": {0}", ((JProperty)token).Value.Type);
-                        TextWriterColor.Write(Translate.DoTranslation("Property count") + ": {0}", ((JProperty)token).Count);
-                        TextWriterColor.Write(Translate.DoTranslation("Property name") + ": {0}", ((JProperty)token).Name);
-                        TextWriterColor.Write(Translate.DoTranslation("Property path") + ": {0}", ((JProperty)token).Path);
+                        var prop = (JProperty)token;
+                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Property information for") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
+                        WriteEntry(Translate.DoTranslation("Property type"), $"{prop.Value.Type}");
+                        WriteEntry(Translate.DoTranslation("Property count"), $"{prop.Count}");
+                        WriteEntry(Translate.DoTranslation("Property name"), prop.Name);
+                        WriteEntry(Translate.DoTranslation("Property path"), prop.Path);
                         if (parameters.SwitchesList.Contains("-showvals"))
-                            TextWriterColor.Write(Translate.DoTranslation("Property value") + ": {0}", ((JProperty)token).Value);
+                            WriteEntry(Translate.DoTranslation("Property value"), $"{prop.Value}");
                         TextWriterRaw.Write();
                     }
                 }
@@ -73,5 +76,16 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             return 0;
         }
 
+        private static void WriteEntry(string entry, string value)
+        {
+            var listEntry = new ListEntry()
+            {
+                Entry = entry,
+                Value = value,
+                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
+                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
+            };
+            TextWriterRaw.WritePlain(listEntry.Render());
+        }
     }
 }
