@@ -73,6 +73,7 @@ namespace Nitrocid.Extras.Timers
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
             HomepageTools.UnregisterBuiltinAction("Timer");
             HomepageTools.UnregisterBuiltinAction("Stopwatch");
+            HomepageTools.UnregisterBuiltinAction("Pomodoro");
         }
 
         void IAddon.FinalizeAddon()
@@ -80,6 +81,7 @@ namespace Nitrocid.Extras.Timers
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "Timer", TimerScreen.OpenTimer);
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "Stopwatch", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pomodoro", PomodoroScreen.OpenPomodoro);
         }
     }
 }
