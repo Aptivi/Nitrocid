@@ -32,6 +32,7 @@ using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -128,37 +129,53 @@ namespace Nitrocid.ConsoleBase.Themes
                 var colorType = colors.Keys.ElementAt(currentTypeNum);
                 var colorInstance = colors.Values.ElementAt(currentTypeNum);
 
-                // Render the border
-                int bindingsY = ConsoleWrapper.WindowHeight - 2;
-                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, bindingsY - 2, true, ColorTools.GetGray());
-
                 // Render the bindings
-                string bindings = $"[ENTER] {Translate.DoTranslation("Done")} - [<-|->] {Translate.DoTranslation("Switch Types")}";
-                var bindingsText = new AlignedText()
+                Keybinding[] bindings =
+                [
+                    new(Translate.DoTranslation("Done"), ConsoleKey.Enter),
+                    new(Translate.DoTranslation("Previous type"), ConsoleKey.LeftArrow),
+                    new(Translate.DoTranslation("Next type"), ConsoleKey.RightArrow),
+                ];
+                var bindingsText = new Keybindings()
                 {
-                    Top = bindingsY,
-                    Text = bindings,
+                    KeybindingList = bindings,
+                    BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
+                    BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
+                    BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
+                    OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
+                    OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
+                    OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                    Left = 0,
+                    Top = ConsoleWrapper.WindowHeight - 1,
+                    Width = ConsoleWrapper.WindowWidth - 1,
                 };
                 TextWriterRaw.WriteRaw(bindingsText.Render());
 
                 // Render the theme name
-                int nameY = 1;
                 string name = $"{theme.Name} - {(theme.Localizable ? Translate.DoTranslation(theme.Description) : theme.Description)}";
                 var themeText = new AlignedText()
                 {
-                    Top = nameY,
+                    Top = 1,
                     Text = name,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
                 };
                 TextWriterRaw.WriteRaw(themeText.Render());
 
                 // Render the type name and some info
-                int typeY = ConsoleWrapper.WindowHeight - 6;
+                int typeY = ConsoleWrapper.WindowHeight - 3;
                 string type = $"{colorType} - {colorInstance.PlainSequence} [{colorInstance.PlainSequenceTrueColor}]";
                 TextWriterWhereColor.WriteWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, typeY);
                 var typeText = new AlignedText()
                 {
                     Top = typeY,
                     Text = type,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
                 };
                 TextWriterRaw.WriteRaw(typeText.Render());
 
