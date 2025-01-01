@@ -75,7 +75,7 @@
   <!-- LocaleGen Translations End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="6.0.2" />
+    <PackageReference Include="Terminaux" Version="6.0.3" />
   </ItemGroup>
   
 </Project>
