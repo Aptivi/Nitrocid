@@ -27,6 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -35,6 +36,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SwivelDisplay : BaseScreensaver, IScreensaver
     {
+        private Color targetColor = ConsoleColors.Lime;
         private int posIdxVertical = 0;
         private int posIdxHorizontal = 0;
 
@@ -48,6 +50,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             posIdxVertical = 0;
             posIdxHorizontal = 0;
             ColorTools.LoadBack();
+
+            // Make an initial color storage
+            int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TrailsMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TrailsMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TrailsMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.TrailsMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TrailsMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.TrailsMaximumBlueColorLevel);
+            targetColor = new(RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
         }
 
         /// <inheritdoc/>
@@ -94,11 +103,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Render the bars
-            int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-            var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             posIdxVertical++;
             if (posIdxVertical >= CurrentPosVertical.Count)
                 posIdxVertical = 0;
@@ -108,10 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int PosVertical = CurrentPosVertical[posIdxVertical] + Math.Abs(CurrentPosVertical.Min()) + 2;
             int PosHorizontal = CurrentPosHorizontal[posIdxHorizontal] + Math.Abs(CurrentPosHorizontal.Min()) + 2;
             if (!ConsoleResizeHandler.WasResized(false))
-            {
-                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SwivelDelay);
-                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, ColorStorage);
-            }
+                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, targetColor);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
