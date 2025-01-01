@@ -61,7 +61,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     PageParser.InitMan(modName, ModManualFile);
             }
 
-            var tuiInstance = new ManualViewerCli() { modName = modName };
+            var tuiInstance = new ManualViewerCli()
+            {
+                modName = modName,
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tuiInstance.Bindings.Add(new InteractiveTuiBinding<Manual>("Info", ConsoleKey.F1, (manual, _, _, _) => tuiInstance.ShowManualInfo(manual)));
             InteractiveTuiTools.OpenInteractiveTui(tuiInstance);
             return 0;

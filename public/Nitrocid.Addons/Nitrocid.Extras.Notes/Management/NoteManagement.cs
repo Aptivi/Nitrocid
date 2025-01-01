@@ -18,6 +18,7 @@
 //
 
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.Notes.Interactive;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -111,7 +112,10 @@ namespace Nitrocid.Extras.Notes.Management
 
         internal static void OpenNotesTui()
         {
-            var tui = new NoteViewerCli();
+            var tui = new NoteViewerCli()
+            {
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Edit"), ConsoleKey.F2, (_, noteIdx, _, _) => tui.Edit(noteIdx)));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.F3, (_, noteIdx, _, _) => tui.Remove(noteIdx)));

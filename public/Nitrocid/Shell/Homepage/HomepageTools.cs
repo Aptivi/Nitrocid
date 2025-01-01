@@ -698,7 +698,8 @@ namespace Nitrocid.Shell.Homepage
             var tui = new FileManagerCli
             {
                 firstPanePath = PathsManagement.HomePath,
-                secondPanePath = PathsManagement.HomePath
+                secondPanePath = PathsManagement.HomePath,
+                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
@@ -719,7 +720,10 @@ namespace Nitrocid.Shell.Homepage
 
         private static void OpenAlarmCli()
         {
-            var tui = new AlarmCli();
+            var tui = new AlarmCli()
+            {
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
@@ -727,7 +731,10 @@ namespace Nitrocid.Shell.Homepage
 
         private static void OpenNotificationsCli()
         {
-            var tui = new NotificationsCli();
+            var tui = new NotificationsCli()
+            {
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
             tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
@@ -735,7 +742,10 @@ namespace Nitrocid.Shell.Homepage
 
         private static void OpenTaskManagerCli()
         {
-            var tui = new TaskManagerCli();
+            var tui = new TaskManagerCli()
+            {
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
             tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
             InteractiveTuiTools.OpenInteractiveTui(tui);

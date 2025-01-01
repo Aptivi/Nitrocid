@@ -25,6 +25,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Files.Instances;
 using Nitrocid.Languages;
 using System;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -42,7 +43,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var tui = new FileManagerCli
             {
                 firstPanePath = parameters.ArgumentsList.Length > 0 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]) : PathsManagement.HomePath,
-                secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath
+                secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath,
+                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));

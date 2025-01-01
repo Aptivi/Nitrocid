@@ -46,7 +46,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool launchTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
             if (launchTui)
             {
-                var tui = new AlarmCli();
+                var tui = new AlarmCli()
+                {
+                    Settings = KernelColorTools.GenerateTuiSettings(),
+                };
                 tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
                 tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
                 InteractiveTuiTools.OpenInteractiveTui(tui);

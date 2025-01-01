@@ -62,7 +62,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool ShowAll = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool useTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-selection");
             if (useTui)
-                InteractiveTuiTools.OpenInteractiveTui(new TimeZoneShowCli());
+            {
+                var tui = new TimeZoneShowCli()
+                {
+                    Settings = KernelColorTools.GenerateTuiSettings(),
+                };
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+            }
             else
             {
                 if (ShowAll)

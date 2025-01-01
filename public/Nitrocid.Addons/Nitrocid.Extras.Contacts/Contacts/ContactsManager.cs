@@ -34,6 +34,7 @@ using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts.Enums;
 using Nitrocid.Files;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -408,7 +409,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
 
         internal static void OpenContactsTui()
         {
-            var tui = new ContactsManagerCli();
+            var tui = new ContactsManagerCli()
+            {
+                Settings = KernelColorTools.GenerateTuiSettings(),
+            };
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete"), ConsoleKey.F1, (_, index, _, _) => tui.RemoveContact(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete All"), ConsoleKey.F2, (_, _, _, _) => tui.RemoveContacts()));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import"), ConsoleKey.F3, (_, _, _, _) => tui.ImportContacts(), true));

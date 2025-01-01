@@ -76,7 +76,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 var tui = new SettingsCli
                 {
                     config = settingsType,
-                    lastFirstPaneIdx = -1
+                    lastFirstPaneIdx = -1,
+                    Settings = KernelColorTools.GenerateTuiSettings(),
                 };
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
