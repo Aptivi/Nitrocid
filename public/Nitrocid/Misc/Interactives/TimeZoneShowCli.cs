@@ -22,6 +22,8 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Kernel.Time.Timezones;
+using System.Linq;
+using Nitrocid.Kernel.Time;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -30,12 +32,13 @@ namespace Nitrocid.Misc.Interactives
     /// </summary>
     public class TimeZoneShowCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-
-        private static readonly string[] zones = TimeZones.GetTimeZoneNames();
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
-            zones;
+            TimeZones.GetTimeZoneTimes().Select((kvp) =>
+                $"[{TimeDateRenderers.RenderDate(kvp.Value, FormatType.Short)} " +
+                $"{TimeDateRenderers.RenderTime(kvp.Value, FormatType.Short)}] " +
+                $"{kvp.Key}"
+            );
 
         /// <inheritdoc/>
         public override int RefreshInterval =>
@@ -44,7 +47,7 @@ namespace Nitrocid.Misc.Interactives
         /// <inheritdoc/>
         public override string GetInfoFromItem(string item)
         {
-            string selectedZone = (string)item;
+            string selectedZone = item[(item.IndexOf(']') + 2)..];
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
             var info = TimeZones.GetZoneInfo(selectedZone);
             return
@@ -57,17 +60,14 @@ namespace Nitrocid.Misc.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItem(string item)
         {
-            string selectedZone = (string)item;
+            string selectedZone = item[(item.IndexOf(']') + 2)..];
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
             return $"{TimeDateRenderers.Render(time)}";
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(string item)
-        {
-            string selectedZone = (string)item;
-            return selectedZone;
-        }
+        public override string GetEntryFromItem(string item) =>
+            item;
 
     }
 }
