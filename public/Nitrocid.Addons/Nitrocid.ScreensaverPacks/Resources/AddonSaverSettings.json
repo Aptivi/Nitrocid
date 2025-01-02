@@ -7324,5 +7324,100 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "PointTrack",
+        "Desc": "Block moving in a wave pattern with green rulers tracking its position.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "PointTrackDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Horizontal Frequency Level",
+                "Type": "SDouble",
+                "Variable": "PointTrackHorizontalFrequencyLevel",
+                "Description": "The level of the horizontal frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!"
+            },
+            {
+                "Name": "Vertical Frequency Level",
+                "Type": "SDouble",
+                "Variable": "PointTrackVerticalFrequencyLevel",
+                "Description": "The level of the vertical frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!"
+            },
+            {
+                "Name": "Color settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the colors",
+                "Variables": [
+                    {
+                        "Name": "Minimum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMinimumRedColorLevel",
+                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMinimumGreenColorLevel",
+                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMinimumBlueColorLevel",
+                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMinimumColorLevel",
+                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMaximumRedColorLevel",
+                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMaximumGreenColorLevel",
+                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMaximumBlueColorLevel",
+                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "PointTrackMaximumColorLevel",
+                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]

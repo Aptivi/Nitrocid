@@ -27,31 +27,30 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Base.Structures;
 using Terminaux.Colors.Data;
+using System.Text;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Display for Trails
+    /// Display for PointTrack
     /// </summary>
-    public class TrailsDisplay : BaseScreensaver, IScreensaver
+    public class PointTrackDisplay : BaseScreensaver, IScreensaver
     {
         private Color targetColor = ConsoleColors.Lime;
-        private List<Coordinate> positions = [];
         private int posIdxVertical = 0;
         private int posIdxHorizontal = 0;
 
         /// <inheritdoc/>
         public override string ScreensaverName =>
-            "Trails";
+            "PointTrack";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             posIdxVertical = 0;
             posIdxHorizontal = 0;
-            positions.Clear();
 
             // Make an initial color storage
             int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TrailsMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TrailsMaximumRedColorLevel);
@@ -64,8 +63,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = false;
+            ColorTools.LoadBack();
 
             // First, prepare how many dots to render according to the console size
             int Height = ConsoleWrapper.WindowHeight - 4;
@@ -74,8 +73,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Then, go ahead and make these bars swivel themselves.
             List<int> CurrentPosVertical = [];
             List<int> CurrentPosHorizontal = [];
-            double FrequencyVertical = Math.PI / ScreensaverPackInit.SaversConfig.TrailsVerticalFrequencyLevel;
-            double FrequencyHorizontal = Math.PI / ScreensaverPackInit.SaversConfig.TrailsHorizontalFrequencyLevel;
+            double FrequencyVertical = Math.PI / ScreensaverPackInit.SaversConfig.PointTrackVerticalFrequencyLevel;
+            double FrequencyHorizontal = Math.PI / ScreensaverPackInit.SaversConfig.PointTrackHorizontalFrequencyLevel;
 
             // Set the current vertical positions
             double TimeSecsVertical = 0.0;
@@ -105,40 +104,68 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     isSetHorizontal = true;
             }
 
-            // Increment position indexes
+            // Render the block and the position rulers
             posIdxVertical++;
             if (posIdxVertical >= CurrentPosVertical.Count)
                 posIdxVertical = 0;
             posIdxHorizontal++;
             if (posIdxHorizontal >= CurrentPosHorizontal.Count)
                 posIdxHorizontal = 0;
-
-            // Get the position, store it, and write the trails
             int PosVertical = CurrentPosVertical[posIdxVertical] + Math.Abs(CurrentPosVertical.Min()) + 2;
             int PosHorizontal = CurrentPosHorizontal[posIdxHorizontal] + Math.Abs(CurrentPosHorizontal.Min()) + 2;
-            (int r, int g, int b) = (targetColor.RGB.R, targetColor.RGB.G, targetColor.RGB.B);
-            double thresholdRed = r / (double)ScreensaverPackInit.SaversConfig.TrailsTrailLength;
-            double thresholdGreen = g / (double)ScreensaverPackInit.SaversConfig.TrailsTrailLength;
-            double thresholdBlue = b / (double)ScreensaverPackInit.SaversConfig.TrailsTrailLength;
-            positions.Add(new(PosHorizontal, PosVertical));
-            if (positions.Count > ScreensaverPackInit.SaversConfig.TrailsTrailLength)
-                positions.RemoveAt(0);
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                for (int i = 0; i < positions.Count; i++)
+                // Render the block
+                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, targetColor);
+
+                // Now, make the position ruler writers
+                var lineBuilder = new StringBuilder();
+                var topRuler = new Line()
                 {
-                    Coordinate item = positions[i];
-                    int finalR = (int)(r - (thresholdRed * (positions.Count - i)));
-                    int finalG = (int)(g - (thresholdGreen * (positions.Count - i)));
-                    int finalB = (int)(b - (thresholdBlue * (positions.Count - i)));
-                    var ColorStorage = new Color(finalR, finalG, finalB);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", item.X, item.Y, Color.Empty, ColorStorage);
-                }
+                    DoubleWidth = false,
+                    StartPos = new(PosHorizontal, 0),
+                    EndPos = new(PosHorizontal, PosVertical - 4),
+                    Color = ConsoleColors.Lime,
+                };
+                var bottomRuler = new Line()
+                {
+                    DoubleWidth = false,
+                    StartPos = new(PosHorizontal, PosVertical + 2),
+                    EndPos = new(PosHorizontal, ConsoleWrapper.WindowHeight - 1),
+                    Color = ConsoleColors.Lime,
+                };
+                var leftRuler = new Line()
+                {
+                    DoubleWidth = false,
+                    StartPos = new(0, PosVertical - 1),
+                    EndPos = new(PosHorizontal - 4, PosVertical - 1),
+                    Color = ConsoleColors.Lime,
+                };
+                var rightRuler = new Line()
+                {
+                    DoubleWidth = false,
+                    StartPos = new(PosHorizontal + 4, PosVertical - 1),
+                    EndPos = new(ConsoleWrapper.WindowWidth - 1, PosVertical - 1),
+                    Color = ConsoleColors.Lime,
+                };
+
+                // Check the ruler states
+                if (topRuler.EndPos.Y >= topRuler.StartPos.Y)
+                    lineBuilder.Append(topRuler.Render());
+                if (bottomRuler.EndPos.Y >= bottomRuler.StartPos.Y)
+                    lineBuilder.Append(bottomRuler.Render());
+                if (leftRuler.EndPos.X >= leftRuler.StartPos.X)
+                    lineBuilder.Append(leftRuler.Render());
+                if (rightRuler.EndPos.X >= rightRuler.StartPos.X)
+                    lineBuilder.Append(rightRuler.Render());
+
+                // Render the bars
+                TextWriterRaw.WriteRaw(lineBuilder.ToString());
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TrailsDelay);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.PointTrackDelay);
         }
 
     }
