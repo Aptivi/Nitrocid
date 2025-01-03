@@ -35,10 +35,11 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 {
     internal class AnalogClock : BaseWidget, IWidget
     {
-        private Color timeColor = Color.Empty;
-        private Color bezelColor = Color.Empty;
-        private Color handsColor = Color.Empty;
-        private Color secondsHandColor = Color.Empty;
+        internal Color timeColor = Color.Empty;
+        internal Color bezelColor = Color.Empty;
+        internal Color handsColor = Color.Empty;
+        internal Color secondsHandColor = Color.Empty;
+        internal bool showSecondsHand = false;
         private bool clear = false;
         private string lastRendered = "";
         private Coordinate lastCenter = new(0, 0);
@@ -55,6 +56,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             bezelColor = ChangeAnalogClockColor();
             handsColor = ChangeAnalogClockColor();
             secondsHandColor = ChangeAnalogClockColor();
+            showSecondsHand = Config.WidgetConfig.AnalogShowSecondsHand;
             lastCenter = new(0, 0);
             lastHours = new(0, 0);
             lastMinutes = new(0, 0);

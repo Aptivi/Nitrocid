@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Users.Login.Widgets.Implementations;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -27,6 +31,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class AnalogClockDisplay : BaseScreensaver, IScreensaver
     {
+        private readonly AnalogClock widget = (AnalogClock)WidgetTools.GetWidget("AnalogClock");
+
         /// <inheritdoc/>
         public override string ScreensaverName =>
             "AnalogClock";
@@ -34,23 +40,39 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            WidgetTools.InitializeWidget("AnalogClock");
+            widget.Initialize();
+            widget.timeColor = ChangeAnalogClockColor();
+            widget.bezelColor = ChangeAnalogClockColor();
+            widget.handsColor = ChangeAnalogClockColor();
+            widget.secondsHandColor = ChangeAnalogClockColor();
+            widget.showSecondsHand = ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand;
             base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            // TODO: Add back configuration
-            WidgetTools.RenderWidget("AnalogClock");
+            string widgetSeq = widget.Render();
+            TextWriterRaw.WriteRaw(widgetSeq);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AnalogClockDelay);
         }
 
-        /// <inheritdoc/>
-        public override void ScreensaverOutro()
+        private Color ChangeAnalogClockColor()
         {
-            WidgetTools.CleanupWidget("AnalogClock");
-            base.ScreensaverOutro();
+            Color ColorInstance;
+            if (ScreensaverPackInit.SaversConfig.AnalogClockTrueColor)
+            {
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumBlueColorLevel);
+                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
+            }
+            else
+            {
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumColorLevel);
+                ColorInstance = new Color(ColorNum);
+            }
+            return ColorInstance;
         }
     }
 }
