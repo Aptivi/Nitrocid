@@ -108,6 +108,21 @@ namespace Nitrocid.Shell.Homepage
                 ScreenTools.SetCurrent(homeScreen);
                 ColorTools.LoadBack();
 
+                // Prepare the widget
+                var widget =
+                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                    WidgetTools.GetWidget(nameof(AnalogClock));
+                if (Config.MainConfig.EnableHomepageWidgets)
+                {
+                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
+                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
+                    int widgetTop = 2;
+                    string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                    TextWriterRaw.WriteRaw(widgetInit);
+                }
+
                 // Now, render the homepage
                 homeScreenBuffer.AddDynamicText(() =>
                 {
@@ -174,13 +189,8 @@ namespace Nitrocid.Shell.Homepage
                     // Render the widget
                     if (Config.MainConfig.EnableHomepageWidgets)
                     {
-                        var widget =
-                            WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
-                            WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
-                            WidgetTools.GetWidget(nameof(AnalogClock));
-                        string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
                         string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                        builder.Append(widgetInit + widgetSeq);
+                        builder.Append(widgetSeq);
                     }
 
                     // Render the first three RSS feeds
