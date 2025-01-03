@@ -29,11 +29,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
         public override TestSection TestSection => TestSection.Drivers;
-        public override int TestOptionalParameters => 2;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string Text = args.Length > 0 ? args[0] : "";
-            string Regex = args.Length > 1 ? args[1] : "";
+            string Text = "";
+            string Regex = "";
             if (string.IsNullOrEmpty(Text))
                 Text = InputTools.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
             if (string.IsNullOrEmpty(Regex))

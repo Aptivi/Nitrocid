@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class PowerLineTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests your console for PowerLine support");
-        public override void Run(params string[] args)
+        public override void Run()
         {
             char TransitionChar = Convert.ToChar(0xE0B0);
             char PadlockChar = Convert.ToChar(0xE0A2);

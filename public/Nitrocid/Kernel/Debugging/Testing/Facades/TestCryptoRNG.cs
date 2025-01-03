@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the cryptographically secure random number generator");
         public override TestSection TestSection => TestSection.Drivers;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             DriverHandler.SetDriver<IRandomDriver>("Cryptographic");
             int randomNum = RandomDriver.Random();

@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the list writer with the char and char array");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };

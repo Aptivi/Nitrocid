@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class CliInfoPaneTestRefreshing : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a single pane interaction and with refreshing the second pane info");
-        public override void Run(params string[] args) =>
+        public override void Run() =>
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneTestRefreshingData());
     }
 }

@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Checks all the localization text line numbers to see if they're all equal");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var EnglishJson = JToken.Parse(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the English localization resource")));

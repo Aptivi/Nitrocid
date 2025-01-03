@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Lists all supported codepages");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             string[] Encodings = Encoding.GetEncodings().Select((ei) => $"[{ei.CodePage}] {ei.Name}: {ei.DisplayName}").ToArray();
             var listing = new Listing()

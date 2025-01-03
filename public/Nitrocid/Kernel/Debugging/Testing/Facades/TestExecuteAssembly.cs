@@ -28,10 +28,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class TestExecuteAssembly : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests assembly entry point execution");
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string path = args.Length > 0 ? args[0] : "";
+            string path = "";
             if (string.IsNullOrEmpty(path))
                 path = InputTools.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
             path = FilesystemTools.NeutralizePath(path);

@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Network;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             bool netFound = NetworkTools.NetworkAvailable;
             TextWriterColor.Write(Translate.DoTranslation("Network availability is") + $": {netFound}");

@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the colored input box in the informational box (titled)");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(nameof(TestInputInfoBoxColoredInputTitled), "Write your text.", ConsoleColors.Yellow, ConsoleColors.DarkBlue);
             TextWriterWhereColor.WriteWhere(answer, 0, 0);

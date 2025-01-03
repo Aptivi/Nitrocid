@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the multiple folders selector");
         public override TestSection TestSection => TestSection.Files;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             string[] selected = FilesystemTools.SelectFolders();
             InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've selected") + $": {string.Join(", ", selected)}");

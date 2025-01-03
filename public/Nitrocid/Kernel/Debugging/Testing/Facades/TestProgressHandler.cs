@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class TestProgressHandler : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the progress handler");
-        public override void Run(params string[] args)
+        public override void Run()
         {
             int progress = 0;
             var handler = new ProgressHandler((num, text) =>

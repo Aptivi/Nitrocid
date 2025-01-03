@@ -26,11 +26,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests translating a string that exists in resources to specific language");
         public override TestSection TestSection => TestSection.Languages;
-        public override int TestOptionalParameters => 2;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string lang = args.Length > 1 ? args[1] : "spa";
-            string str = args.Length > 0 ? Translate.DoTranslation(args[0], lang) : Translate.DoTranslation("Welcome to Kernel!", lang);
+            string lang = "spa";
+            string str = Translate.DoTranslation("Welcome to Kernel!", lang);
             TextWriterColor.Write(str);
         }
     }

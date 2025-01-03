@@ -27,10 +27,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Prints a string to console and parses the placeholders found");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string rendered = args.Length > 0 ? PlaceParse.ProbePlaces(args[0]) : "Date: " + PlaceParse.ProbePlaces("<shortdate>");
+            string rendered = "Date: " + PlaceParse.ProbePlaces("<shortdate>");
             TextWriterColor.Write(rendered, true);
         }
     }

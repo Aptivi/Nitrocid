@@ -27,6 +27,6 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Shows UTC kernel date");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args) => TextWriterColor.Write(TimeDateRenderersUtc.RenderDateUtc());
+        public override void Run() => TextWriterColor.Write(TimeDateRenderersUtc.RenderDateUtc());
     }
 }

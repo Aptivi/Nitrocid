@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the screen feature for the console");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             // Show the screen measurement sticks
             var stickScreen = new Screen();

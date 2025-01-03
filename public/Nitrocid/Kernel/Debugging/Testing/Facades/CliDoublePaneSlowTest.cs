@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class CliDoublePaneSlowTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a double pane interaction");
-        public override void Run(params string[] args) =>
+        public override void Run() =>
             InteractiveTuiTools.OpenInteractiveTui(new CliDoublePaneSlowTestData());
     }
 }

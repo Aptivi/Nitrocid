@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Enables the remote debugger");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             if (!RemoteDebugger.RDebugThread.IsAlive)
             {

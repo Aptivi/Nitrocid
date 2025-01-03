@@ -27,10 +27,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a string to console");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string rendered = args.Length > 0 ? args[0] : "Hello world!";
+            string rendered = "Hello world!";
             TextWriters.Write(rendered, true, KernelColorType.Success);
         }
     }

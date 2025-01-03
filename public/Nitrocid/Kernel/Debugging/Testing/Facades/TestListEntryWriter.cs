@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the list entry writer");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var NormalStringListEntries = new List<string>() { "String 1", "String 2", "String 3" };
             var NormalStringListValues = new List<string>() { "Value 1", "Value 2", "Value 3" };
@@ -43,7 +43,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     Entry = NormalStringListEntries[i],
                     Value = NormalStringListValues[i],
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WritePlain(listing.Render());
             }
 
             // Indent level 1
@@ -58,7 +58,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                     ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WritePlain(listing.Render());
             }
 
             // Indent level 2
@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                     ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
                 };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriterRaw.WritePlain(listing.Render());
             }
         }
     }

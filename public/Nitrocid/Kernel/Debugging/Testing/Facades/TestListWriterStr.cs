@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the list writer with the string and string array");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };

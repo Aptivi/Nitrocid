@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the input multiple selection style");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
             var choices = new List<InputChoiceInfo>()

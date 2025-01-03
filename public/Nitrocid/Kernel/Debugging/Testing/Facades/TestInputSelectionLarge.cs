@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the input selection style (large number of items to test scrolling and paging)");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)

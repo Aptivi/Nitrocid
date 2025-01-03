@@ -29,10 +29,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests switches");
         public override TestSection TestSection => TestSection.Shell;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string command = args.Length > 0 ? args[0] : "help -r";
+            string command = "help -r";
             string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments(command, ShellType.Shell).total[0].SwitchesList;
             var listing = new Listing()
             {

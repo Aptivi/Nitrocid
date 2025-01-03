@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("How many ticks did it really take to sleep for just one millisecond?");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             TextWriterColor.Write("{0} ticks", true, ThreadManager.GetActualTicks(1));
         }

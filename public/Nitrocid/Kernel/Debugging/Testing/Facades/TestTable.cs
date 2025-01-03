@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the table functionality");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var Headers = new string[] { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" };
             var Rows = new string[,]

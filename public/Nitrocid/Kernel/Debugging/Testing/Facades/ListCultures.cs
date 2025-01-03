@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Lists supported cultures");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             string Text = InputTools.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);

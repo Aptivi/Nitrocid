@@ -29,10 +29,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests arguments");
         public override TestSection TestSection => TestSection.Shell;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string command = args.Length > 0 ? args[0] : "help shutdown";
+            string command = "help shutdown";
             string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, ShellType.Shell).total[0].ArgumentsList;
             var listing = new Listing()
             {
