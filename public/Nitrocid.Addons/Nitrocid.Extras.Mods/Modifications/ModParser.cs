@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     bool signed = AssemblySigning.IsStronglySigned(ModPath + modFile);
                     if (!signed)
                     {
-                        if (Config.MainConfig.AllowUntrustedMods)
+                        if (ModsInit.ModsConfig.AllowUntrustedMods)
                             SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
                         else
                             throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));

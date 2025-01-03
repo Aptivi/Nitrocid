@@ -24,6 +24,9 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\ModsSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>

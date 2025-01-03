@@ -228,7 +228,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename);
                 BlacklistedMods.Add(ModFilename);
             }
-            Config.MainConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
+            ModsInit.ModsConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
             Config.CreateConfig();
         }
 
@@ -246,7 +246,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename);
                 BlacklistedMods.Remove(ModFilename);
             }
-            Config.MainConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
+            ModsInit.ModsConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
             Config.CreateConfig();
         }
 
@@ -254,7 +254,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Gets the blacklisted mods list
         /// </summary>
         public static List<string> GetBlacklistedMods() =>
-            [.. Config.MainConfig.BlacklistedModsString.Split(';')];
+            [.. ModsInit.ModsConfig.BlacklistedModsString.Split(';')];
 
         /// <summary>
         /// Installs the mod DLL or single code file to the mod directory
@@ -422,6 +422,43 @@ namespace Nitrocid.Extras.Mods.Modifications
                     return mods[mod];
             }
             return null;
+        }
+
+        /// <summary>
+        /// Gets the localized text from all mods
+        /// </summary>
+        /// <param name="text">Text to translate</param>
+        /// <param name="lang">Language to query</param>
+        /// <returns>A translated string if there is localization information for this text in a specified language</returns>
+        public static string GetLocalizedText(string text, string lang)
+        {
+            foreach (ModInfo mod in ListMods().Values)
+            {
+                var strings = mod.ModStrings;
+
+                // Check for English first, as we need it to translate a string
+                if (!strings.TryGetValue("eng", out string[]? localizationsEng))
+                    continue;
+                if (!localizationsEng.Contains(text))
+                    continue;
+
+                // Now, use the English strings to get an index of this string, then get the localization from the
+                // same index.
+                int textIdx;
+                for (textIdx = 0; textIdx < localizationsEng.Length; textIdx++)
+                {
+                    if (localizationsEng[textIdx] == text)
+                        break;
+                }
+                if (strings.TryGetValue(lang, out string[]? localizations))
+                {
+                    if (textIdx < localizations.Length)
+                        return localizations[textIdx];
+                }
+            }
+
+            // We haven't found anything in all mods.
+            return text;
         }
 
         internal static void Manage(bool start, ModLoadPriority priority = ModLoadPriority.Optional)

@@ -241,23 +241,31 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // Initialize important mods
-                if (Config.MainConfig.StartKernelMods)
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
-                    try
+                    var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
+                    var modEnableKey = ConfigTools.GetSettingsKey(modSettingsInstance, "StartKernelMods");
+                    bool startMods = (bool)(ConfigTools.GetValueFromEntry(modEnableKey, modSettingsInstance) ?? false);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    if (startMods)
                     {
-                        if (KernelEntry.TalkativePreboot)
-                            SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
-                        ModManager.StartMods(ModLoadPriority.Important);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
-                    }
-                    catch (Exception exc)
-                    {
-                        exceptions.Add(exc);
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important mods");
-                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                        DebugWriter.WriteDebugStackTrace(exc);
-                        if (KernelEntry.TalkativePreboot)
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important mods") + $": {exc.Message}");
+                        try
+                        {
+                            // Check for kernel mod addon
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
+                            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Important);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
+                        }
+                        catch (Exception exc)
+                        {
+                            exceptions.Add(exc);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important mods");
+                            DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                            DebugWriter.WriteDebugStackTrace(exc);
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important mods") + $": {exc.Message}");
+                        }
                     }
                 }
 
@@ -429,7 +437,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load finalize addons") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize addons") + $": {exc.Message}");
                 }
 
                 try
@@ -479,6 +487,35 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load extension handlers") + $": {exc.Message}");
+                }
+
+                // Initialize mods
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
+                {
+                    var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
+                    var modEnableKey = ConfigTools.GetSettingsKey(modSettingsInstance, "StartKernelMods");
+                    bool startMods = (bool)(ConfigTools.GetValueFromEntry(modEnableKey, modSettingsInstance) ?? false);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    if (startMods)
+                    {
+                        try
+                        {
+                            // Check for kernel mod addon
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
+                            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Optional);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Loaded mods.");
+                        }
+                        catch (Exception exc)
+                        {
+                            exceptions.Add(exc);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to load mods");
+                            DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                            DebugWriter.WriteDebugStackTrace(exc);
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load mods") + $": {exc.Message}");
+                        }
+                    }
                 }
 
                 // Check for errors
@@ -633,19 +670,23 @@ namespace Nitrocid.Kernel.Starting
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save configuration") + $": {exc.Message}");
                 }
 
-                try
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
-                    // Stop all mods
-                    ModManager.StopMods();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop mods");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop mods") + $": {exc.Message}");
+                    try
+                    {
+                        // Stop all mods
+                        var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                        InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StopMods", modManagerType);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
+                    }
+                    catch (Exception exc)
+                    {
+                        exceptions.Add(exc);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop mods");
+                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                        DebugWriter.WriteDebugStackTrace(exc);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop mods") + $": {exc.Message}");
+                    }
                 }
 
                 try

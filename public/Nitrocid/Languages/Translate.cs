@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Extensions;
 using System.Linq;
 
 namespace Nitrocid.Languages
@@ -55,21 +56,15 @@ namespace Nitrocid.Languages
 
             // If the language is available, translate
             if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
-            {
                 return DoTranslation(text, langInfo);
-            }
             else
             {
-                // We might have this string from a mod
-                foreach (ModInfo mod in ModManager.ListMods().Values)
-                {
-                    if (mod.ModStrings.TryGetValue(lang, out string[]? localizations) && localizations.Contains(text))
-                        return localizations.Single((t) => t == text);
-                }
-
-                // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} isn't in language list", lang);
-                return text;
+                // We might have this language from a mod
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", lang);
+                var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
+                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", result);
+                return result;
             }
         }
 
@@ -100,15 +95,11 @@ namespace Nitrocid.Languages
             }
             else
             {
-                // We might have this string from a mod
-                foreach (ModInfo mod in ModManager.ListMods().Values)
-                {
-                    if (mod.ModStrings.TryGetValue(langname, out string[]? localizations) && localizations.Contains(text))
-                        return localizations.Single((t) => t == text);
-                }
-
-                // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", langname, text);
+                // We might have this language from a mod
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", lang);
+                var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
+                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", result);
                 return text;
             }
         }

@@ -976,33 +976,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new MkFileCommand()),
 
-            new CommandInfo("modman", /* Localizable */ "Manage your mods",
-                [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
-                        {
-                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"]
-                        }),
-                        new CommandArgumentPart(true, "modfilename"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "list/reloadall/stopall/startall", new()
-                        {
-                            ExactWording = ["list", "reloadall", "stopall", "startall"]
-                        }),
-                    }),
-                ], new ModManCommand(), CommandFlags.Strict),
-
-            new CommandInfo("modmanual", /* Localizable */ "Mod manual",
-                [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "modname"),
-                    })
-                ], new ModManualCommand()),
-
             new CommandInfo("move", /* Localizable */ "Moves a file to another directory",
                 [
                     new CommandArgumentInfo(new[]

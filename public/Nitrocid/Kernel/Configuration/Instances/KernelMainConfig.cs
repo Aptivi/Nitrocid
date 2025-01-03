@@ -104,10 +104,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowStageFinishTimes { get; set; }
         /// <summary>
-        /// Automatically start the kernel modifications on boot.
-        /// </summary>
-        public bool StartKernelMods { get; set; }
-        /// <summary>
         /// Shows the current time, time zone, and date before logging in.
         /// </summary>
         public bool ShowCurrentTimeBeforeLogin { get; set; } = true;
@@ -159,10 +155,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Development notice acknowledged
         /// </summary>
         public bool DevNoticeConsented { get; set; }
-        /// <summary>
-        /// Allow untrusted mods
-        /// </summary>
-        public bool AllowUntrustedMods { get; set; }
         /// <summary>
         /// Whether to use the operating system time zone or to use the kernel-wide time zone
         /// </summary>
@@ -1237,10 +1229,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool DrawBorderNotification { get; set; } = true;
         /// <summary>
-        /// Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
-        /// </summary>
-        public string BlacklistedModsString { get; set; } = "";
-        /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
         /// </summary>
         public char NotifyUpperLeftCornerChar
@@ -1320,10 +1308,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Show the shell commands count on help
         /// </summary>
         public bool ShowShellCommandsCount { get; set; } = true;
-        /// <summary>
-        /// Show the mod commands count on help
-        /// </summary>
-        public bool ShowModCommandsCount { get; set; } = true;
         /// <summary>
         /// Show the aliases count on help
         /// </summary>

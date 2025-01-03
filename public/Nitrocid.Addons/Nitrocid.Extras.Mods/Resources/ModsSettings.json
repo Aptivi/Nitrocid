@@ -1,0 +1,38 @@
+[
+    {
+        "Name": "Mods",
+        "Desc": "This section lets you configure how the kernel modification system works.",
+        "Keys": [
+            {
+                "Name": "Show the mod commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowModCommandsCount",
+                "Description": "Show the count of kernel modification commands when listing them in the help command"
+            },
+            {
+                "Name": "Start kernel modifications on boot",
+                "Type": "SBoolean",
+                "Variable": "StartKernelMods",
+                "Description": "Automatically start the kernel modifications on boot."
+            },
+            {
+                "Name": "Allow loading untrusted mods",
+                "Type": "SBoolean",
+                "Variable": "AllowUntrustedMods",
+                "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
+            },
+            {
+                "Name": "Blacklisted mods",
+                "Type": "SList",
+                "Variable": "BlacklistedModsString",
+                "SelectionFunctionName": "GetBlacklistedMods",
+                "SelectionFunctionType": "ModManager",
+                "Delimiter": ";",
+                "IsValuePath": true,
+                "IsPathCurrentPath": false,
+                "ValuePathType": "Mods",
+                "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
+            }
+        ]
+    }
+]

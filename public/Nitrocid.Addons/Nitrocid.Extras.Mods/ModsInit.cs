@@ -17,30 +17,73 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Mods.Commands;
 using Nitrocid.Extras.Mods.Modifications;
+using Nitrocid.Extras.Mods.Settings;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.Mods
 {
     internal class ModsInit : IAddon
     {
+        private readonly List<CommandInfo> addonCommands =
+        [
+            new CommandInfo("modman", /* Localizable */ "Manage your mods",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
+                        {
+                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"]
+                        }),
+                        new CommandArgumentPart(true, "modfilename"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "list/reloadall/stopall/startall", new()
+                        {
+                            ExactWording = ["list", "reloadall", "stopall", "startall"]
+                        }),
+                    }),
+                ], new ModManCommand(), CommandFlags.Strict),
+
+            new CommandInfo("modmanual", /* Localizable */ "Mod manual",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "modname"),
+                    })
+                ], new ModManualCommand()),
+        ];
+
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods);
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
+        internal static ModsConfig ModsConfig =>
+            (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)];
+
         void IAddon.FinalizeAddon()
-        {
-            if (Config.MainConfig.StartKernelMods)
-                ModManager.StartMods();
-        }
+        { }
 
         void IAddon.StartAddon()
         {
-
+            var config = new ModsConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
-        { }
+        {
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ConfigTools.UnregisterBaseSetting(nameof(ModsConfig));
+        }
     }
 }

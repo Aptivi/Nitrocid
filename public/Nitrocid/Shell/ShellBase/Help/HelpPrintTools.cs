@@ -88,7 +88,10 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The mod commands
             if (showMod)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
+                var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
+                var modEnableCountKey = ConfigTools.GetSettingsKey(modSettingsInstance, "ShowModCommandsCount");
+                bool showModCommandsCount = (bool)(ConfigTools.GetValueFromEntry(modEnableCountKey, modSettingsInstance) ?? false);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & showModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
                 if (ModCommandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
                 foreach (var cmd in ModCommandList)
