@@ -21,7 +21,6 @@ using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;

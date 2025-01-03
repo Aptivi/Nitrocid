@@ -22,7 +22,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Kernel.Configuration;

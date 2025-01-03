@@ -20,7 +20,6 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Modifications;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
 using System.Collections.Generic;

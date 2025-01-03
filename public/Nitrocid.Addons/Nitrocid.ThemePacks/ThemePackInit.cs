@@ -21,7 +21,6 @@ using Nitrocid.ConsoleBase.Themes;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
 using Nitrocid.Misc.Reflection.Internal;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;

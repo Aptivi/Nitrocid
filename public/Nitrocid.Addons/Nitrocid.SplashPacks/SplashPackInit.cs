@@ -20,7 +20,6 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
 

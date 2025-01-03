@@ -26,7 +26,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Shell.Homepage;

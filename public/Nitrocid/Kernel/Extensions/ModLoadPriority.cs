@@ -17,18 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
-using Nitrocid.Modifications;
-
-namespace Nitrocid.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Extensions
 {
-    internal class LoadMods : TestFacade
+    /// <summary>
+    /// Kernel modification loading priority type
+    /// </summary>
+    public enum ModLoadPriority
     {
-        public override string TestName => Translate.DoTranslation("Starts all mods");
-        public override TestSection TestSection => TestSection.Modification;
-        public override void Run(params string[] args)
-        {
-            ModManager.StartMods();
-        }
+        /// <summary>
+        /// Important modifications that must be loaded before all the optional ones.
+        /// </summary>
+        Important,
+        /// <summary>
+        /// Optional modifications that may be loaded.
+        /// </summary>
+        Optional
     }
 }

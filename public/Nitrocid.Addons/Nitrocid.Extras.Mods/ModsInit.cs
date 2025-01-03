@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Mods
 {
@@ -30,10 +30,15 @@ namespace Nitrocid.Extras.Mods
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            if (Config.MainConfig.StartKernelMods)
+                ModManager.StartMods();
+        }
 
         void IAddon.StartAddon()
-        { }
+        {
+
+        }
 
         void IAddon.StopAddon()
         { }

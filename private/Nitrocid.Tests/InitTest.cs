@@ -26,7 +26,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Modifications;
 using Terminaux.Base.Checks;
 using System.Reflection;
 

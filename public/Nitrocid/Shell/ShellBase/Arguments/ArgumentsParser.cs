@@ -22,7 +22,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
@@ -78,11 +77,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         {
             string Command;
             CommandInfo[] ShellCommands;
-            CommandInfo[] ModCommands;
 
             // Change the available commands list according to command type
+            var shellInfo = ShellManager.GetShellInfo(CommandType);
             ShellCommands = CommandManager.GetCommands(CommandType);
-            ModCommands = ModManager.ListModCommands(CommandType);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
@@ -95,14 +93,12 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var aliases = AliasManager.GetEntireAliasListFromType(CommandType);
-            var CommandInfo = ModCommands.Any((info) => info.Command == Command) ? ModCommands.Single((info) => info.Command == Command) :
-                              ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
+            var CommandInfo = ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
 
             // Change the command if a command with no slash is entered on slash-enabled shells
-            var shellInfo = ShellManager.GetShellInfo(CommandType);
             if (shellInfo.SlashCommand)
             {
                 if (!CommandText.StartsWith('/'))

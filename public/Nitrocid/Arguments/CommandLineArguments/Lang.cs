@@ -21,7 +21,6 @@ using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Modifications;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {

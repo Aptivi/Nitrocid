@@ -34,11 +34,12 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Security.Signing;
-using Nitrocid.Modifications.Dependencies;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Extras.Mods.Modifications.Dependencies;
 
-namespace Nitrocid.Modifications
+namespace Nitrocid.Extras.Mods.Modifications
 {
     /// <summary>
     /// Mod parsing module

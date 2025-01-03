@@ -28,7 +28,6 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Modifications;
 using System.Linq;
 
 namespace Nitrocid.Extras.NameGen

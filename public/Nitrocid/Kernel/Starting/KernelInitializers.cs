@@ -36,7 +36,6 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Security.Privacy;
-using Nitrocid.Modifications;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Time.Alarm;

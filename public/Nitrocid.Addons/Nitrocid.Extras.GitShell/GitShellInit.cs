@@ -28,7 +28,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel;
-using Nitrocid.Modifications;
 using System.Linq;
 
 namespace Nitrocid.Extras.GitShell

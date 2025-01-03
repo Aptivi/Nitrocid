@@ -17,20 +17,38 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Modifications
+using Newtonsoft.Json;
+
+namespace Nitrocid.Extras.Mods.Modifications.Dependencies
 {
     /// <summary>
-    /// Kernel modification loading priority type
+    /// Mod dependency information
     /// </summary>
-    public enum ModLoadPriority
+    public class ModDependency
     {
+        [JsonProperty("version")]
+        internal string modVersion = "";
+        [JsonProperty("name")]
+        internal string modName = "";
+        [JsonIgnore]
+        internal string modPath = "";
+
         /// <summary>
-        /// Important modifications that must be loaded before all the optional ones.
+        /// Dependent mod version
         /// </summary>
-        Important,
+        [JsonIgnore]
+        public string ModVersion =>
+            modVersion;
+
         /// <summary>
-        /// Optional modifications that may be loaded.
+        /// Dependent mod name
         /// </summary>
-        Optional
+        [JsonIgnore]
+        public string ModName =>
+            modName;
+
+        [JsonConstructor]
+        internal ModDependency()
+        { }
     }
 }

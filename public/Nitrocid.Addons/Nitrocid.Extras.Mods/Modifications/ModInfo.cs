@@ -20,9 +20,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 
-namespace Nitrocid.Modifications
+namespace Nitrocid.Extras.Mods.Modifications
 {
     /// <summary>
     /// Mod information

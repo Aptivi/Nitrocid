@@ -30,7 +30,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Amusements.Amusements.Games;

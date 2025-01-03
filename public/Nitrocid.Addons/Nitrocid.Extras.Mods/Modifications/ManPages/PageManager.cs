@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
-namespace Nitrocid.Modifications.ManPages
+namespace Nitrocid.Extras.Mods.Modifications.ManPages
 {
     /// <summary>
     /// Mod manual page management module

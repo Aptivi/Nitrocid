@@ -25,7 +25,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.Security.Signing;
 using System;
 using System.Collections.Generic;

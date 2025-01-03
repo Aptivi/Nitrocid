@@ -27,7 +27,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace Nitrocid.Modifications.ManPages
+namespace Nitrocid.Extras.Mods.Modifications.ManPages
 {
     static class PageParser
     {

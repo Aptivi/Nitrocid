@@ -17,38 +17,38 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
+using System;
 
-namespace Nitrocid.Modifications.Dependencies
+namespace Nitrocid.Kernel.Extensions
 {
     /// <summary>
-    /// Mod dependency information
+    /// Interface for mods
     /// </summary>
-    public class ModDependency
+    public interface IMod
     {
-        [JsonProperty("version")]
-        internal string modVersion = "";
-        [JsonProperty("name")]
-        internal string modName = "";
-        [JsonIgnore]
-        internal string modPath = "";
-
         /// <summary>
-        /// Dependent mod version
+        /// Mod name
         /// </summary>
-        [JsonIgnore]
-        public string ModVersion =>
-            modVersion;
-
+        string Name { get; }
         /// <summary>
-        /// Dependent mod name
+        /// Mod version
         /// </summary>
-        [JsonIgnore]
-        public string ModName =>
-            modName;
-
-        [JsonConstructor]
-        internal ModDependency()
-        { }
+        string Version { get; }
+        /// <summary>
+        /// Mod load priority
+        /// </summary>
+        ModLoadPriority LoadPriority { get; }
+        /// <summary>
+        /// Minimum supported API version that the mod supports
+        /// </summary>
+        Version MinimumSupportedApiVersion { get; }
+        /// <summary>
+        /// Code executed when starting mod
+        /// </summary>
+        void StartMod();
+        /// <summary>
+        /// Code executed when stopping mod
+        /// </summary>
+        void StopMod();
     }
 }

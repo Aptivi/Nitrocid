@@ -25,7 +25,6 @@ using Nitrocid.Kernel.Updates;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Groups;
 using Nitrocid.Network.Types.RPC;
@@ -119,13 +118,7 @@ namespace Nitrocid.Kernel.Starting
             SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
         }
 
-        internal static void Stage06KernelModifications()
-        {
-            if (Config.MainConfig.StartKernelMods)
-                ModManager.StartMods();
-        }
-
-        internal static void Stage07SysIntegrity()
+        internal static void Stage06SysIntegrity()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
 
@@ -148,7 +141,7 @@ namespace Nitrocid.Kernel.Starting
             ThreadWatchdog.EnsureAllCriticalThreadsStarted();
         }
 
-        internal static void Stage08Bootables()
+        internal static void Stage07Bootables()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Checking for multiple installed environments"), 5);
 

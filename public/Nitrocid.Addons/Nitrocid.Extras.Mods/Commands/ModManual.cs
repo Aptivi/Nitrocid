@@ -21,17 +21,16 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Modifications;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Misc.Interactives;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using System.IO;
-using Nitrocid.Modifications.ManPages;
 using System;
+using Nitrocid.Extras.Mods.Modifications;
+using Nitrocid.Extras.Mods.Modifications.ManPages;
 
-namespace Nitrocid.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Mods.Commands
 {
     /// <summary>
     /// Opens the mod manual

@@ -26,7 +26,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -42,12 +41,13 @@ namespace Nitrocid.Shell.ShellBase.Help
         internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false)
         {
             // Get general commands
+            var shellInfo = ShellManager.GetShellInfo(commandType);
             var commands = CommandManager.GetCommands(commandType);
-            var commandList = ShellManager.GetShellInfo(commandType).Commands;
+            var commandList = shellInfo.Commands;
 
             // Add every command from each mod, addon, and alias
-            var ModCommandList = ModManager.ListModCommands(commandType);
-            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
+            var ModCommandList = shellInfo.ModCommands;
+            var AddonCommandList = shellInfo.addonCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
@@ -88,8 +88,8 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The mod commands
             if (showMod)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Length);
-                if (ModCommandList.Length == 0)
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
+                if (ModCommandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
                 foreach (var cmd in ModCommandList)
                 {
@@ -158,15 +158,15 @@ namespace Nitrocid.Shell.ShellBase.Help
         internal static void ShowHelpUsage(string command, string commandType)
         {
             // Determine command type
-            var CommandList = ShellManager.GetShellInfo(commandType).Commands;
+            var shellInfo = ShellManager.GetShellInfo(commandType);
+            var CommandList = shellInfo.Commands;
 
             // Add every command from each mod, addon, and alias
-            var ModCommandList = ModManager.ListModCommands(commandType);
-            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
+            var ModCommandList = shellInfo.ModCommands;
+            var AddonCommandList = shellInfo.addonCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            var totalCommandList = CommandManager.GetCommands(commandType);
 
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command) &&

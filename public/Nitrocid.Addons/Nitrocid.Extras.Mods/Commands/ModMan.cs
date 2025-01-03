@@ -26,13 +26,13 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Modifications;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Extras.Mods.Modifications;
 
-namespace Nitrocid.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Mods.Commands
 {
     /// <summary>
     /// Manages your mods

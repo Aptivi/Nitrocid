@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Scripting;

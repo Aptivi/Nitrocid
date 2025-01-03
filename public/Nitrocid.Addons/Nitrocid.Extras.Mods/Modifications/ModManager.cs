@@ -35,11 +35,12 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.Modifications.ManPages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Extras.Mods.Modifications.ManPages;
 
-namespace Nitrocid.Modifications
+namespace Nitrocid.Extras.Mods.Modifications
 {
     /// <summary>
     /// Mod management module

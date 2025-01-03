@@ -26,7 +26,6 @@ using System.Linq;
 using UnitsNet;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
 using Nitrocid.Extras.UnitConv.Tools;
 using Nitrocid.Shell.Homepage;
 

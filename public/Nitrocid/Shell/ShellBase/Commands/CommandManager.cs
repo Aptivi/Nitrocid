@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
@@ -93,8 +92,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
-            var addonCommands = ShellManager.GetShellInfo(ShellType).addonCommands;
-            var modCommands = ModManager.ListModCommands(ShellType);
+            var addonCommands = shellInfo.addonCommands;
+            var modCommands = shellInfo.ModCommands;
             List<CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands
@@ -236,8 +235,9 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
             // Now, add the command to the mod list
             DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
-            if (!ModManager.ListModCommands(ShellType).Contains(commandBase))
-                ShellManager.GetShellInfo(ShellType).ModCommands.Add(commandBase);
+            var shellInfo = ShellManager.GetShellInfo(ShellType);
+            if (!shellInfo.ModCommands.Contains(commandBase))
+                shellInfo.ModCommands.Add(commandBase);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
         }
 

@@ -20,7 +20,6 @@
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Sha512Enhanced
 {

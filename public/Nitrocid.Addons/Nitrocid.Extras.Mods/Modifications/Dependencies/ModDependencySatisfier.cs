@@ -29,7 +29,7 @@ using System.IO;
 using System.Linq;
 using Textify.Versioning;
 
-namespace Nitrocid.Modifications.Dependencies
+namespace Nitrocid.Extras.Mods.Modifications.Dependencies
 {
     internal static class ModDependencySatisfier
     {

@@ -39,9 +39,8 @@ namespace Nitrocid.Kernel.Starting
             new KernelStage( /* Localizable */ "Hardware detection", KernelStageActions.Stage03HardwareProbe),
             new KernelStage( /* Localizable */ "Optional components", KernelStageActions.Stage04OptionalComponents, false, false),
             new KernelStage( /* Localizable */ "User initialization", KernelStageActions.Stage05UserInitialization, true, false),
-            new KernelStage( /* Localizable */ "Kernel modifications", KernelStageActions.Stage06KernelModifications, false, false),
-            new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage07SysIntegrity),
-            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage08Bootables, false, false),
+            new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage06SysIntegrity),
+            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage07Bootables, false, false),
         ];
 
         internal static void RunKernelStage(int stageNum)

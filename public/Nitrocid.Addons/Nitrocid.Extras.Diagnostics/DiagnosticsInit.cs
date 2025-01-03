@@ -23,7 +23,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
 using System.Linq;
 
 namespace Nitrocid.Extras.Diagnostics

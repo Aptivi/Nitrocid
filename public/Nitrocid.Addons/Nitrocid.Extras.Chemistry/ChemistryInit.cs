@@ -21,7 +21,6 @@ using Nitrocid.Extras.Chemistry.Commands;
 using Nitrocid.Extras.Chemistry.Screensavers;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;

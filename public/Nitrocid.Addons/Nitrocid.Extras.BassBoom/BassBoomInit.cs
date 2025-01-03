@@ -49,7 +49,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Files.Paths;
-using Nitrocid.Modifications;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
