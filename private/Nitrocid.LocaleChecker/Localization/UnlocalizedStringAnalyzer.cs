@@ -206,7 +206,6 @@ namespace Nitrocid.LocaleChecker.Localization
             // Just launch once
             if (context.Compilation.Assembly.Name != "Nitrocid")
                 return;
-            Debugger.Launch();
 
             // Open every resource except the English translations file and the analyzer string resources
             var resourceNames = thisAssembly.GetManifestResourceNames().Except([
