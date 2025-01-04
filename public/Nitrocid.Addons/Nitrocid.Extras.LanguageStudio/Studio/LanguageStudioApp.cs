@@ -27,7 +27,6 @@ using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.LocaleGen.Core.Serializer;
 using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
@@ -36,6 +35,7 @@ using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using System;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
 {
@@ -171,7 +171,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 if (selectedStringNum == englishLines.Count + 1)
                 {
                     // User chose to make a new string.
-                    string newString = InputTools.ReadLine(Translate.DoTranslation("Enter a new string") + ": ");
+                    string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string") + ": ");
                     englishLines.Add(newString);
                     foreach (var translatedLang in translatedLines.Keys)
                         translatedLines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
@@ -192,8 +192,8 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 }
                 else if (selectedStringNum == englishLines.Count + 3)
                 {
-                    // User chose to save the translations. Invoke LocaleGen for this.
-                    TextWriterColor.Write(Translate.DoTranslation("Saving language..."));
+                    // User chose to save the translations.
+                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
                     foreach (var translatedLine in translatedLines)
                     {
                         string language = translatedLine.Key;
@@ -201,7 +201,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string languagePath = $"{pathToTranslations}/{language}.txt";
                         FilesystemTools.WriteContents(languagePath, [.. localizations]);
                     }
-                    LanguageGenerator.GenerateLocaleFiles(pathToTranslations);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
                 }
                 else if (selectedStringNum == englishLines.Count + 4 || selectedStringNum == -1)
                 {
@@ -242,7 +242,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
                 // Try to get a language and prompt the user for the translation
                 string selectedLang = targetLanguages[selectedLangNum - 1];
-                string translated = InputTools.ReadLine(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
+                string translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
                 translatedLines[selectedLang][index] = translated;
             }
         }
