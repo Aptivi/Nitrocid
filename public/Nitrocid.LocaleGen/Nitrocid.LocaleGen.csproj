@@ -30,7 +30,6 @@
 
   <!-- LocaleGen Dependencies Information -->
   <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
     <ProjectReference Include="..\Nitrocid\Nitrocid.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Nitrocid</Name>
