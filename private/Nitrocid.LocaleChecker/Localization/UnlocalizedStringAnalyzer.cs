@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -226,11 +227,13 @@ namespace Nitrocid.LocaleChecker.Localization
                 if (themeMetadata is not null)
                 {
                     // It's a theme. Get its description and its localizable boolean value
-                    string description = ((string?)themeMetadata["Description"] ?? "").Replace("\\\"", "\"");
+                    string descriptionOrig = (string?)themeMetadata["Description"] ?? "";
+                    string description = descriptionOrig.Replace("\\\"", "\"");
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
                     if (!string.IsNullOrEmpty(description) && localizable && !localizationList.Contains(description))
                     {
-                        var diagnostic = Diagnostic.Create(Rule, null, description);
+                        var location = GenerateLocation(themeMetadata["Description"], descriptionOrig);
+                        var diagnostic = Diagnostic.Create(Rule, location, description);
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
@@ -240,22 +243,28 @@ namespace Nitrocid.LocaleChecker.Localization
                     foreach (var settingsEntryList in document)
                     {
                         // Check the description and the display
-                        string description = ((string?)settingsEntryList["Desc"] ?? "").Replace("\\\"", "\"");
-                        string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
-                        string knownAddonDisplay = ((string?)settingsEntryList["display"] ?? "").Replace("\\\"", "\"");
+                        string descriptionOrig = (string?)settingsEntryList["Desc"] ?? "";
+                        string displayAsOrig = (string?)settingsEntryList["DisplayAs"] ?? "";
+                        string knownAddonDisplayOrig = (string?)settingsEntryList["display"] ?? "";
+                        string description = descriptionOrig.Replace("\\\"", "\"");
+                        string displayAs = displayAsOrig.Replace("\\\"", "\"");
+                        string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrEmpty(description) && !localizationList.Contains(description))
                         {
-                            var diagnostic = Diagnostic.Create(Rule, null, description);
+                            var location = GenerateLocation(settingsEntryList["Desc"], descriptionOrig);
+                            var diagnostic = Diagnostic.Create(Rule, location, description);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrEmpty(displayAs) && !localizationList.Contains(displayAs))
                         {
-                            var diagnostic = Diagnostic.Create(Rule, null, displayAs);
+                            var location = GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig);
+                            var diagnostic = Diagnostic.Create(Rule, location, displayAs);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrEmpty(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
                         {
-                            var diagnostic = Diagnostic.Create(Rule, null, knownAddonDisplay);
+                            var location = GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig);
+                            var diagnostic = Diagnostic.Create(Rule, location, knownAddonDisplay);
                             context.ReportDiagnostic(diagnostic);
                         }
 
@@ -265,22 +274,35 @@ namespace Nitrocid.LocaleChecker.Localization
                             continue;
                         foreach (var key in keys)
                         {
-                            string keyName = ((string?)key["Name"] ?? "").Replace("\\\"", "\"");
-                            string keyDesc = ((string?)key["Description"] ?? "").Replace("\\\"", "\"");
+                            string keyNameOrig = (string?)key["Name"] ?? "";
+                            string keyDescOrig = (string?)key["Description"] ?? "";
+                            string keyName = keyNameOrig.Replace("\\\"", "\"");
+                            string keyDesc = keyDescOrig.Replace("\\\"", "\"");
                             if (!string.IsNullOrEmpty(keyName) && !localizationList.Contains(keyName))
                             {
-                                var diagnostic = Diagnostic.Create(Rule, null, keyName);
+                                var location = GenerateLocation(key["Name"], keyNameOrig);
+                                var diagnostic = Diagnostic.Create(Rule, location, keyName);
                                 context.ReportDiagnostic(diagnostic);
                             }
                             if (!string.IsNullOrEmpty(keyDesc) && !localizationList.Contains(keyDesc))
                             {
-                                var diagnostic = Diagnostic.Create(Rule, null, keyDesc);
+                                var location = GenerateLocation(key["Description"], keyDescOrig);
+                                var diagnostic = Diagnostic.Create(Rule, location, keyDesc);
                                 context.ReportDiagnostic(diagnostic);
                             }
                         }
                     }
                 }
             }
+        }
+
+        private Location? GenerateLocation(JToken? token, string str)
+        {
+            if (token is null)
+                return null;
+            var lineInfo = (IJsonLineInfo)token;
+            var location = lineInfo.HasLineInfo() ? Location.Create("", new(lineInfo.LinePosition - str.Length, str.Length), new(new(lineInfo.LineNumber - 1, lineInfo.LinePosition - str.Length), new(lineInfo.LineNumber - 1, lineInfo.LinePosition))) : null;
+            return location;
         }
     }
 }
