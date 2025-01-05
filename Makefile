@@ -1,7 +1,7 @@
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-27
 OUTPUT = public/Nitrocid/KSBuild/net8.0
 BINARIES = assets/ks-n assets/ks-jl
-MANUALS = assets/*.1
+MANUALS = assets/ks.1 assets/ks-jl.1
 DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png
 
@@ -47,6 +47,8 @@ debian-install-all:
 	install -m 755 -t debian/$(PACKAGE)/usr/lib/ks-$(MODAPI)/ $(BRANDINGS)
 	mv debian/$(PACKAGE)/usr/bin/ks-n debian/$(PACKAGE)/usr/bin/ks-$(MODAPI)
 	mv debian/$(PACKAGE)/usr/bin/ks-jl debian/$(PACKAGE)/usr/bin/ks-jl-$(MODAPI)
+	mv debian/ks.1 debian/ks-$(MODAPI).1
+	mv debian/ks-jl.1 debian/ks-jl-$(MODAPI).1
 	mv debian/$(PACKAGE)/usr/share/applications/ks.desktop debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/bin/ks-*
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
