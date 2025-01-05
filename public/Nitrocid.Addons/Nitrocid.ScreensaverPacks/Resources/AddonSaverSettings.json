@@ -7419,5 +7419,106 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "BigLetter",
+        "Desc": "Shows you a single random character in a colored figlet text.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "BigLetterDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Figlet font",
+                "Type": "SFiglet",
+                "Variable": "BigLetterFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            },
+            {
+                "Name": "Color settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the colors",
+                "Variables": [
+                    {
+                        "Name": "Activate true colors",
+                        "Type": "SBoolean",
+                        "Variable": "BigLetterTrueColor",
+                        "Description": "Activates the true color support."
+                    },
+                    {
+                        "Name": "Rainbow mode",
+                        "Type": "SBoolean",
+                        "Variable": "BigLetterRainbowMode",
+                        "Description": "Enables the rainbow colors mode"
+                    },
+                    {
+                        "Name": "Minimum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMinimumRedColorLevel",
+                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMinimumGreenColorLevel",
+                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMinimumBlueColorLevel",
+                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMinimumColorLevel",
+                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMaximumRedColorLevel",
+                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMaximumGreenColorLevel",
+                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMaximumBlueColorLevel",
+                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "BigLetterMaximumColorLevel",
+                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]

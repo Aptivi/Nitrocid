@@ -38,6 +38,7 @@ namespace Nitrocid.ScreensaverPacks
             { "beatfader", new BeatFaderDisplay() },
             { "beatpulse", new BeatPulseDisplay() },
             { "beatedgepulse", new BeatEdgePulseDisplay() },
+            { "bigletter", new BigLetterDisplay() },
             { "bloom", new BloomDisplay() },
             { "bouncingblock", new BouncingBlockDisplay() },
             { "bouncingtext", new BouncingTextDisplay() },
