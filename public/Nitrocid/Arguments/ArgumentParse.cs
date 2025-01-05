@@ -26,6 +26,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Arguments;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Textify.General;
 
 namespace Nitrocid.Arguments
@@ -171,10 +172,13 @@ namespace Nitrocid.Arguments
                 ArgumentsInput ??= [];
                 var Arguments = earlyStage ? outArgs : AvailableCMDLineArgs;
 
+                // Parse the arguments. Assume that unknown arguments are parameters of arguments
+                string[] finalArguments = FinalizeArguments(ArgumentsInput, Arguments);
+
                 // Parse them now
-                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
+                for (int i = 0; i <= finalArguments.Length - 1; i++)
                 {
-                    string Argument = ArgumentsInput[i];
+                    string Argument = finalArguments[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
                     if (Arguments.TryGetValue(ArgumentName, out ArgumentInfo? argInfoVal))
                     {
@@ -245,11 +249,14 @@ namespace Nitrocid.Arguments
                 ArgumentsInput ??= [];
                 var Arguments = earlyStage ? outArgs : AvailableCMDLineArgs;
 
+                // Parse the arguments. Assume that unknown arguments are parameters of arguments
+                string[] finalArguments = FinalizeArguments(ArgumentsInput, Arguments);
+
                 // Parse them now
                 bool found = false;
-                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
+                for (int i = 0; i <= finalArguments.Length - 1; i++)
                 {
-                    string Argument = ArgumentsInput[i];
+                    string Argument = finalArguments[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
                     found = ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName);
                     if (found)
@@ -265,5 +272,29 @@ namespace Nitrocid.Arguments
             }
         }
 
+        private static string[] FinalizeArguments(string[] argumentsInput, Dictionary<string, ArgumentInfo> arguments)
+        {
+            // Parse the arguments. Assume that unknown arguments are parameters of arguments
+            List<string> finalArguments = [];
+            StringBuilder builder = new();
+            foreach (var argInput in argumentsInput)
+            {
+                if (arguments.TryGetValue(argInput, out ArgumentInfo? argInfoVal))
+                {
+                    // If we came across a valid argument, add the result and clear the builder
+                    if (builder.Length > 0)
+                    {
+                        finalArguments.Add(builder.ToString().Trim());
+                        builder.Clear();
+                    }
+                }
+
+                // Add the argument name
+                builder.Append(argInput + " ");
+            }
+            if (builder.Length > 0)
+                finalArguments.Add(builder.ToString().Trim());
+            return [.. finalArguments];
+        }
     }
 }
