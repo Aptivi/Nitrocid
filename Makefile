@@ -50,7 +50,7 @@ debian-install-all:
 	mv debian/$(PACKAGE)/usr/share/applications/ks.desktop debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/bin/ks-*
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
-	sec -i 's|/usr/bin/ks|/usr/bin/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
+	sed -i 's|/usr/bin/ks|/usr/bin/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
 	find 'debian/$(PACKAGE)/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
 debian-install-lite:
