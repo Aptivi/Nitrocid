@@ -43,7 +43,6 @@ namespace Nitrocid.Kernel.Debugging
     /// </summary>
     public static class DebugWriter
     {
-        // , [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = ""
         internal static BaseLogger? debugLogger;
         internal static object WriteLock = new();
         internal readonly static List<string> debugStackTraces = [];
