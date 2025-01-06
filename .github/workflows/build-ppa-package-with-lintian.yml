@@ -52,3 +52,7 @@ jobs:
         with:
           name: Nitrocid-KS-Debian-Package
           path: "*.deb"
+
+      - name: Try to install
+        run: |
+          sudo apt install ./*.deb
