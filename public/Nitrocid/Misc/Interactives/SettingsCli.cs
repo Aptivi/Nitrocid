@@ -83,7 +83,7 @@ namespace Nitrocid.Misc.Interactives
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get settings list: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get settings list: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -101,7 +101,7 @@ namespace Nitrocid.Misc.Interactives
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get settings key list: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get settings key list: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }

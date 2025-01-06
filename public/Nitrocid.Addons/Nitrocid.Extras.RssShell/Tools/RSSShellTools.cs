@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.RssShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.RSSNetwork, ex);
             }
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.RssShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.RSSNetwork, ex);
             }
@@ -149,7 +149,7 @@ namespace Nitrocid.Extras.RssShell.Tools
                         if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
                         {
                             // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", articles.Length, OldFeedsList.Count);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", vars: [articles.Length, OldFeedsList.Count]);
                             OldFeedsList = new List<RSSArticle>(articles);
                             foreach (RSSArticle NewFeed in NewFeedsList)
                             {

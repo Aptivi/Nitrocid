@@ -42,14 +42,14 @@ namespace Nitrocid.Extras.Calculators.Commands
             try
             {
                 double Res = ((MathExpr)parameters.ArgumentsText).Result;
-                DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
+                DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", vars: [Res]);
                 TextWriterColor.Write(parameters.ArgumentsText + " = " + Res.ToString());
                 variableValue = Res.ToString();
                 return 0;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", parameters.ArgumentsText, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();

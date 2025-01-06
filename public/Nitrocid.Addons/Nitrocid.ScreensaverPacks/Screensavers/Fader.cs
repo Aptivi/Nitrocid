@@ -41,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             base.ScreensaverPreparation();
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FaderBackgroundColor));
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {
                 FaderDelay = ScreensaverPackInit.SaversConfig.FaderDelay,

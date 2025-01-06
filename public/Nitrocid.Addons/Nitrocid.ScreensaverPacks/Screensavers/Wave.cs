@@ -80,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             for (int i = 0; i < Count; i++)
             {

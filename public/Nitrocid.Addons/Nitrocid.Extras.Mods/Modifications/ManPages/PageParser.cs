@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                 return;
 
             // We found the manual, but we need to check its contents.
-            DebugWriter.WriteDebug(DebugLevel.I, "Found manual page {0}. Parsing manpage...", ManualFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Found manual page {0}. Parsing manpage...", vars: [ManualFile]);
             var ManualInstance = new Manual(modName, ManualFile);
             PageManager.AddManualPage(modName, ManualInstance.Title, ManualInstance);
         }
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
             {
                 bool InternalParseDone = false;
                 ManualFile = FilesystemTools.NeutralizePath(ManualFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", ManualFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", vars: [ManualFile]);
 
                 // First, get all lines in the file
                 var ManLines = FilesystemTools.ReadContents(ManualFile);
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                         string TodoConstant = "TODO";
                         if (ManLine.StartsWith("~~-") & ManLine.Contains(TodoConstant))
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "TODO found on this line: {0}", ManLine);
+                            DebugWriter.WriteDebug(DebugLevel.I, "TODO found on this line: {0}", vars: [ManLine]);
                             Todos.Add(ManLine);
                         }
 
@@ -103,7 +103,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                                 if (ManLine != BodyEndConstant)
                                 {
                                     if (!string.IsNullOrWhiteSpace(ManLine))
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to builder", ManLine);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to builder", vars: [ManLine]);
                                     Body.AppendLine(PlaceParse.ProbePlaces(ManLine));
                                 }
                                 else
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                             else if (ManLine.StartsWith(RevisionConstant))
                             {
                                 // Found the revision constant
-                                DebugWriter.WriteDebug(DebugLevel.I, "Revision found on this line: {0}", ManLine);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Revision found on this line: {0}", vars: [ManLine]);
                                 string Rev = ManLine[RevisionConstant.Length..];
                                 if (string.IsNullOrWhiteSpace(Rev))
                                 {
@@ -128,7 +128,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                             else if (ManLine.StartsWith(TitleConstant))
                             {
                                 // Found the title constant
-                                DebugWriter.WriteDebug(DebugLevel.I, "Title found on this line: {0}", ManLine);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Title found on this line: {0}", vars: [ManLine]);
                                 string Title = ManLine[TitleConstant.Length..];
                                 if (string.IsNullOrWhiteSpace(Title))
                                 {
@@ -147,7 +147,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                     // Check to see if the manual starts with (*MAN START*) header
                     if (ManLine == "(*MAN START*)")
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Successfully found (*MAN START*) in manpage {0}.", ManualFile);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Successfully found (*MAN START*) in manpage {0}.", vars: [ManualFile]);
                         InternalParseDone = true;
                     }
                 }
@@ -155,10 +155,10 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                 // Check for body
                 if (InternalParseDone)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Valid manual page! ({0})", ManualFile);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Valid manual page! ({0})", vars: [ManualFile]);
                     if (string.IsNullOrWhiteSpace(Body.ToString()))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Body for \"{0}\" does not contain anything.", ManualFile);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Body for \"{0}\" does not contain anything.", vars: [ManualFile]);
                         Body.AppendLine(Translate.DoTranslation("Consider filling this manual page."));
                     }
                 }
@@ -170,7 +170,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
             catch (Exception ex)
             {
                 Success = false;
-                DebugWriter.WriteDebug(DebugLevel.E, "The manual page {0} is invalid. {1}", ManTitle, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "The manual page {0} is invalid. {1}", vars: [ManTitle, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return Success;

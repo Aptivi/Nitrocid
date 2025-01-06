@@ -67,7 +67,7 @@ namespace Nitrocid.Kernel.Hardware
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to probe hardware: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to probe hardware: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelError(KernelErrorLevel.F, true, 10L, Translate.DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message);
             }

@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (string FileName in parameters.ArgumentsList)
             {
                 string FilePath = FilesystemTools.NeutralizePath(FileName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FilesystemTools.FileExists(FilePath));
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [FilePath, FilesystemTools.FileExists(FilePath)]);
                 SeparatorWriterColor.WriteSeparatorColor(FileName, KernelColorTools.GetColor(KernelColorType.ListTitle));
                 if (FilesystemTools.FileExists(FilePath))
                 {

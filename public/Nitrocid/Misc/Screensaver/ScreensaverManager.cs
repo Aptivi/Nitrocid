@@ -135,7 +135,7 @@ namespace Nitrocid.Misc.Screensaver
             // Check to see if there is a screensaver with this name
             if (!IsScreensaverRegistered(saver))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
 
@@ -175,11 +175,11 @@ namespace Nitrocid.Misc.Screensaver
 
                 // Check to see if the scrensaver exists
                 EventsManager.FireEvent(EventType.PreShowScreensaver);
-                DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
+                DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", vars: [saver]);
                 if (!IsScreensaverRegistered(saver))
                 {
                     TextWriters.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", vars: [saver]);
                     return;
                 }
 
@@ -201,7 +201,7 @@ namespace Nitrocid.Misc.Screensaver
                     inSaver = true;
                     ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} started", vars: [saver]);
                 }
             }
             catch (Exception ex)
@@ -259,7 +259,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to lock screen: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to lock screen: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             LockMode = false;
@@ -274,13 +274,13 @@ namespace Nitrocid.Misc.Screensaver
             // Check to see if there is a screensaver with this name
             if (!IsScreensaverRegistered(saver))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
 
             // Now, set the default screensaver.
             saver = saver.ToLower();
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", vars: [saver]);
             Config.MainConfig.DefaultSaverName = saver;
             Config.CreateConfig();
         }
@@ -387,7 +387,7 @@ namespace Nitrocid.Misc.Screensaver
         {
             if (Exception is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", vars: [Exception.Message]);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel(initialVisible);
                 TextWriters.Write(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
@@ -462,7 +462,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

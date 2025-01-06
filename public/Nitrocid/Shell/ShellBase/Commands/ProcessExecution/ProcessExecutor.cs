@@ -91,7 +91,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 CommandProcess.Exited += (sender, args) => HasProcessExited = true;
 
                 // Start the process
-                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", vars: [File, WorkingDirectory, Args]);
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 CommandProcess.BeginErrorReadLine();
@@ -115,7 +115,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                         break;
                     }
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", CommandProcess.ExitCode);
+                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", vars: [CommandProcess.ExitCode]);
                 return CommandProcess.ExitCode;
             }
             catch (ThreadInterruptedException)
@@ -126,7 +126,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
@@ -187,7 +187,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 CommandProcess.Exited += (sender, args) => HasProcessExited = true;
 
                 // Start the process
-                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", vars: [File, WorkingDirectory, Args]);
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 if (includeStdErr)
@@ -212,7 +212,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                         break;
                     }
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", CommandProcess.ExitCode);
+                DebugWriter.WriteDebug(DebugLevel.I, "Process exited with exit code {0}.", vars: [CommandProcess.ExitCode]);
                 exitCode = CommandProcess.ExitCode;
             }
             catch (ThreadInterruptedException)
@@ -223,7 +223,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
                 exitCode = -1;
@@ -268,7 +268,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 CommandProcess.StartInfo = StripEnvironmentVariables(CommandProcessStart);
 
                 // Start the process
-                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", vars: [File, WorkingDirectory, Args]);
                 CommandProcess.Start();
             }
             catch (ThreadInterruptedException)
@@ -278,7 +278,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }

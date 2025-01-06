@@ -138,9 +138,9 @@ namespace Nitrocid.Languages
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageResource[i];
                     if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
-                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", vars: [i + 1, UntranslatedProperty]);
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", vars: [langStrings.Count]);
                 strings = langStrings;
             }
             else
@@ -175,7 +175,7 @@ namespace Nitrocid.Languages
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Language token must be specified"));
             string[] LanguageResourceEnglish = englishLocalizations.Localizations;
             custom = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Length, LanguageResourceEnglish.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", vars: [LanguageToken.Length, LanguageResourceEnglish.Length]);
             if (LanguageToken.Length == LanguageResourceEnglish.Length)
             {
                 // Populate language strings
@@ -185,15 +185,15 @@ namespace Nitrocid.Languages
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageToken[i];
                     if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
-                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", vars: [i + 1, UntranslatedProperty]);
                 }
 
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", vars: [langStrings.Count]);
                 strings = langStrings;
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", LanguageResourceEnglish.Length, LanguageToken.Length);
+                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", vars: [LanguageResourceEnglish.Length, LanguageToken.Length]);
                 throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
             }
         }

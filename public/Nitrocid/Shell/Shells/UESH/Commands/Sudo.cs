@@ -80,7 +80,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 failed = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", parameters.ArgumentsText, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to execute the command as superuser.") + $" {ex.Message}");
             }
@@ -88,7 +88,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (sudoDone)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", currentUsername);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", vars: [currentUsername]);
                     UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername) ??
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
                     UserManagement.UnlockUser(currentUsername);

@@ -80,7 +80,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", vars: [Command]);
                         DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("There were not enough arguments. See below for usage:"), true, Device);
                         RemoteDebugHelpPrint.ShowHelp(Command, Device);
                     }
@@ -100,7 +100,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             {
                 EventsManager.FireEvent(EventType.RemoteDebugCommandError, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, vars: [ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand]);
             }
         }
 

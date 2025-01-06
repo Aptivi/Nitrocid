@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
             string Name = parameters.ArgumentsList[0];
             device.DeviceInfo.name = Name;
             RemoteDebugTools.SaveAllDevices();
-            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), true, Name);
+            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), true, vars: [Name]);
         }
     }
 }

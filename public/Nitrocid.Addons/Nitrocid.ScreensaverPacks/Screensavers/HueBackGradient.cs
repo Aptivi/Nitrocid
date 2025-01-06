@@ -61,8 +61,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double RampColorRedSteps = RampColorRedThreshold / RampFrameSpaces;
             double RampColorGreenSteps = RampColorGreenThreshold / RampFrameSpaces;
             double RampColorBlueSteps = RampColorBlueThreshold / RampFrameSpaces;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", vars: [RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold]);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", vars: [RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps]);
 
             // Set the current colors
             double RampCurrentColorRed = color.RGB.R;
@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RampCurrentColorRed -= RampColorRedSteps;
                 RampCurrentColorGreen -= RampColorGreenSteps;
                 RampCurrentColorBlue -= RampColorBlueSteps;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", vars: [RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps]);
             }
             TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 

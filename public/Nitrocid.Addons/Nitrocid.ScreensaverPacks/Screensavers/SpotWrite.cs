@@ -53,11 +53,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
+            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", vars: [ScreensaverPackInit.SaversConfig.SpotWriteWrite]);
             if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.SpotWriteWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.SpotWriteWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", vars: [ScreensaverPackInit.SaversConfig.SpotWriteWrite]);
                 TypeWrite = FilesystemTools.ReadContentsText(ScreensaverPackInit.SaversConfig.SpotWriteWrite);
             }
 
@@ -66,7 +66,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                 // sizes.
@@ -77,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.CursorTop + 1);
                     ConsoleWrapper.Write("    ");
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                 }
 
                 // Get struck character and write it
@@ -94,7 +94,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // If we're at the end of the page, clear the screen
                         if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", vars: [ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2]);
                             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay);
                             ConsoleWrapper.Clear();
                             ConsoleWrapper.WriteLine();
@@ -106,7 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                         }
 
                         // Write the final character to the console and wait

@@ -53,7 +53,7 @@ namespace Nitrocid.LanguagePacks
                 var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(langData) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to deserialize language metadata for") + $" {key}");
                 LanguageManager.AddBaseLanguage(metadata, true, languageToken.Localizations);
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", vars: [key]);
             }
         }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.LanguagePacks
             {
                 string key = resource.RemovePrefix("Languages.");
                 bool result = LanguageManager.BaseLanguages.Remove(key);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", vars: [key, result]);
             }
         }
 

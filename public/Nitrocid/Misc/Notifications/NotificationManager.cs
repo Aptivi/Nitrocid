@@ -100,7 +100,7 @@ namespace Nitrocid.Misc.Notifications
                     if (NewNotificationsList.Count > 0 & !ScreensaverManager.InSaver)
                     {
                         // Update the old notifications list
-                        DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", vars: [NotifRecents.Count, OldNotificationsList.Count]);
                         OldNotificationsList = new List<Notification>(NotifRecents);
                         sent = false;
                         EventsManager.FireEvent(EventType.NotificationsReceived, NewNotificationsList);
@@ -123,17 +123,17 @@ namespace Nitrocid.Misc.Notifications
 
                             // Populate title and description
                             string Title, Desc;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", NewNotification.Title);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", NewNotification.Desc);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", vars: [NewNotification.Title]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", vars: [NewNotification.Desc]);
                             Title = useSimplified ? "*" : NewNotification.Title.Truncate(35);
                             Desc = useSimplified ? "" : NewNotification.Desc.Truncate(35);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", Title);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", Desc);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", Title.Length);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc length: {0}", Desc.Length);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", vars: [Title]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", vars: [Desc]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", vars: [Title.Length]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc length: {0}", vars: [Desc.Length]);
 
                             // Set the border color
-                            DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", NewNotification.Priority);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", vars: [NewNotification.Priority]);
                             var NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
                             var NotifyTitleColor = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
                             var NotifyDescColor = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
@@ -236,13 +236,13 @@ namespace Nitrocid.Misc.Notifications
                             if (useSimplified)
                             {
                                 // Simplified way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", notifLeft, notifTop);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", vars: [notifLeft, notifTop]);
                                 printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title, notifLeft, notifTop, NotifyBorderColor, background));
                             }
                             else
                             {
                                 // Normal way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", vars: [notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop]);
                                 printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, NotifyTitleColor, background));
                                 printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, NotifyDescColor, background));
                             }
@@ -285,8 +285,8 @@ namespace Nitrocid.Misc.Notifications
                                         Title + $" ({NewNotification.Progress}%) " :
                                         Title + " (...%) ";
                                     renderedProgressTitle = ProgressTitle.Truncate(36);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", notifLeftAgnostic, notifWipeTop);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", vars: [notifLeftAgnostic, notifWipeTop]);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", vars: [NewNotification.Progress]);
 
                                     // Write the title, the description, and the progress
                                     printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
@@ -357,7 +357,7 @@ namespace Nitrocid.Misc.Notifications
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down notification thread because of {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down notification thread because of {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -368,7 +368,7 @@ namespace Nitrocid.Misc.Notifications
         /// <param name="notif">Instance of notification holder</param>
         public static void NotifySend(Notification notif)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif));
+            DebugWriter.WriteDebug(DebugLevel.I, "List contains this notification? {0}", vars: [NotifRecents.Contains(notif)]);
             if (!NotifRecents.Contains(notif))
             {
                 lock (NotifRecents)
@@ -402,7 +402,7 @@ namespace Nitrocid.Misc.Notifications
                 lock (NotifRecents)
                 {
                     NotifRecents.RemoveAt(ind);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", vars: [ind]);
                     EventsManager.FireEvent(EventType.NotificationDismissed);
                     dismissing = true;
                 }
@@ -410,7 +410,7 @@ namespace Nitrocid.Misc.Notifications
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to dismiss notification: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to dismiss notification: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

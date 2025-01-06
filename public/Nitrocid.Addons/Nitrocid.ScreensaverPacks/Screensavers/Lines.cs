@@ -40,7 +40,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
         /// <inheritdoc/>
@@ -55,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage);
             }
@@ -63,7 +63,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
                 ColorTools.SetConsoleColor(new Color(color));
             }
 
@@ -71,7 +71,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string lineString = !string.IsNullOrWhiteSpace(ScreensaverPackInit.SaversConfig.LinesLineChar) ? ScreensaverPackInit.SaversConfig.LinesLineChar : "-";
             string Line = new(lineString[0], ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", vars: [Top]);
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 ConsoleWrapper.SetCursorPosition(0, Top);

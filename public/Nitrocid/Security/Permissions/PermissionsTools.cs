@@ -77,14 +77,14 @@ namespace Nitrocid.Security.Permissions
                 return;
 
             // Get all the permission types
-            DebugWriter.WriteDebug(DebugLevel.I, "Demanding permissions: {0}", permissionType.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Demanding permissions: {0}", vars: [permissionType.ToString()]);
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
             {
                 // Check to see if one or more permissions exist
                 if (permissionType.HasFlag(type))
                 {
                     bool granted = IsPermissionGranted(type);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Demanded permission {0}, and granted is {1}.", type.ToString(), granted);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Demanded permission {0}, and granted is {1}.", vars: [type.ToString(), granted]);
                     JournalManager.WriteJournal(Translate.DoTranslation("Demanding permission") + $" {type} [{permissionType}]: {granted}");
                     if (!granted)
                         throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
@@ -118,12 +118,12 @@ namespace Nitrocid.Security.Permissions
                     // Exists! Check the user permissions to see if the permission is already granted
                     int userIndex = UserManagement.GetUserIndex(User);
                     var perms = new List<string>(user.Permissions);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", vars: [userIndex, perms.Count, string.Join(", ", perms)]);
                     if (!perms.Contains(type.ToString()))
                     {
                         // Permission is not already granted. Add it
                         perms.Add(type.ToString());
-                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to user {1}", type.ToString(), User);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to user {1}", vars: [type.ToString(), User]);
 
                         // Now, change the permission variable
                         UserManagement.Users[userIndex].Permissions = [.. perms];
@@ -132,7 +132,7 @@ namespace Nitrocid.Security.Permissions
             }
 
             // Save the changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", User);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", vars: [User]);
             UserManagement.SaveUsers();
         }
 
@@ -162,12 +162,12 @@ namespace Nitrocid.Security.Permissions
                     // Exists! Check the user permissions to see if the permission is already revoked
                     int userIndex = UserManagement.GetUserIndex(User);
                     var perms = new List<string>(user.Permissions);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", vars: [userIndex, perms.Count, string.Join(", ", perms)]);
                     if (perms.Contains(type.ToString()))
                     {
                         // Permission is not already revoked. Revoke it
                         perms.Remove(type.ToString());
-                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from user {1}", type.ToString(), User);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from user {1}", vars: [type.ToString(), User]);
 
                         // Now, change the permission variable
                         UserManagement.Users[userIndex].Permissions = [.. perms];
@@ -176,7 +176,7 @@ namespace Nitrocid.Security.Permissions
             }
 
             // Save the changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", User);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", vars: [User]);
             UserManagement.SaveUsers();
         }
 
@@ -205,12 +205,12 @@ namespace Nitrocid.Security.Permissions
                 {
                     // Exists! Check the group permissions to see if the permission is already granted
                     var perms = new List<string>(group.Permissions);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", vars: [Group, perms.Count, string.Join(", ", perms)]);
                     if (!perms.Contains(type.ToString()))
                     {
                         // Permission is not already granted. Add it
                         perms.Add(type.ToString());
-                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to group {1}", type.ToString(), Group);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to group {1}", vars: [type.ToString(), Group]);
 
                         // Now, change the permission variable
                         GroupManagement.ChangePermissionInternal(Group, [.. perms]);
@@ -219,7 +219,7 @@ namespace Nitrocid.Security.Permissions
             }
 
             // Save the changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", Group);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", vars: [Group]);
             GroupManagement.SaveGroups();
         }
 
@@ -248,12 +248,12 @@ namespace Nitrocid.Security.Permissions
                 {
                     // Exists! Check the group permissions to see if the permission is already revoked
                     var perms = new List<string>(group.Permissions);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", vars: [Group, perms.Count, string.Join(", ", perms)]);
                     if (perms.Contains(type.ToString()))
                     {
                         // Permission is not already revoked. Revoke it
                         perms.Remove(type.ToString());
-                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from group {1}", type.ToString(), Group);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from group {1}", vars: [type.ToString(), Group]);
 
                         // Now, change the permission variable
                         GroupManagement.ChangePermissionInternal(Group, [.. perms]);
@@ -262,7 +262,7 @@ namespace Nitrocid.Security.Permissions
             }
 
             // Save the changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", Group);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", vars: [Group]);
             GroupManagement.SaveGroups();
         }
     }

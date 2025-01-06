@@ -48,13 +48,13 @@ namespace Nitrocid.Files.Editors.TextEdit
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
                 TextEditShellCommon.fileStream = new FileStream(File, FileMode.Open);
                 if (TextEditShellCommon.FileStream is null)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Text file is not open yet."));
                 TextEditShellCommon.fileLines ??= [];
                 TextEditShellCommon.FileLinesOrig ??= [];
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.FileStream.Length, TextEditShellCommon.FileStream.Position);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, TextEditShellCommon.FileStream.Length, TextEditShellCommon.FileStream.Position]);
                 var TextFileStreamReader = new StreamReader(TextEditShellCommon.FileStream);
                 while (!TextFileStreamReader.EndOfStream)
                 {
@@ -67,7 +67,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", vars: [File, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -91,7 +91,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -111,7 +111,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 TextEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
                 var FileLinesByte = Encoding.Default.GetBytes(string.Join(CharManager.NewLine, [.. TextEditShellCommon.FileLines]));
-                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", vars: [FileLinesByte.Length]);
                 TextEditShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 TextEditShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
@@ -123,7 +123,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -195,12 +195,12 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditShellCommon.FileLines.RemoveAt(LineIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", TextEditShellCommon.FileLines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -220,10 +220,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.FileStream is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [From, With]);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1]);
                     TextEditShellCommon.FileLines[LineIndex] = Regex.Replace(TextEditShellCommon.FileLines[LineIndex], From, With);
                 }
             }
@@ -243,12 +243,12 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.FileStream is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", vars: [From, With, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1L]);
                     TextEditShellCommon.FileLines[(int)LineIndex] = Regex.Replace(TextEditShellCommon.FileLines[(int)LineIndex], From, With);
                 }
                 else
@@ -269,10 +269,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.FileStream is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [From, With]);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1]);
                     TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Replace(From, With);
                 }
             }
@@ -292,12 +292,12 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (TextEditShellCommon.FileStream is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", vars: [From, With, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1L]);
                     TextEditShellCommon.FileLines[(int)LineIndex] = TextEditShellCommon.FileLines[(int)LineIndex].Replace(From, With);
                 }
                 else
@@ -319,13 +319,13 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Replace(Word, "");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.FileLines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, TextEditShellCommon.FileLines.Count]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -345,14 +345,14 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 int CharIndex = CharNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", CharIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", vars: [CharNumber, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", vars: [CharIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Remove(CharIndex, 1);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.FileLines[LineIndex]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, TextEditShellCommon.FileLines[LineIndex]]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -370,8 +370,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", vars: [Char]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     List<int> charIndexes = [];
@@ -399,9 +399,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", vars: [Char, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     for (int CharIndex = 0; CharIndex <= TextEditShellCommon.FileLines[LineIndex].Length - 1; CharIndex++)
@@ -427,8 +427,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", vars: [Word]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     var Words = TextEditShellCommon.FileLines[LineIndex].Split(' ');
@@ -457,9 +457,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     var Words = TextEditShellCommon.FileLines[LineIndex].Split(' ');
@@ -486,8 +486,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", vars: [Word]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.FileLines[LineIndex], Word);
@@ -513,9 +513,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.FileLines[LineIndex], Word);
@@ -571,12 +571,12 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     lines.RemoveAt(LineIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", lines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", vars: [lines.Count]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -598,10 +598,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (lines is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [From, With]);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1]);
                     lines[LineIndex] = Regex.Replace(lines[LineIndex], From, With);
                 }
             }
@@ -623,12 +623,12 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (lines is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", vars: [From, With, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= lines.Count)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1L]);
                     lines[(int)LineIndex] = Regex.Replace(lines[(int)LineIndex], From, With);
                 }
                 else
@@ -651,10 +651,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (lines is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [From, With]);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1]);
                     lines[LineIndex] = lines[LineIndex].Replace(From, With);
                 }
             }
@@ -676,12 +676,12 @@ namespace Nitrocid.Files.Editors.TextEdit
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
             if (lines is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", vars: [From, With, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 long LineIndex = LineNumber - 1;
                 if (LineNumber <= lines.Count)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", vars: [From, With, LineIndex + 1L]);
                     lines[(int)LineIndex] = lines[(int)LineIndex].Replace(From, With);
                 }
                 else
@@ -705,13 +705,13 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
             {
                 int LineIndex = LineNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     lines[LineIndex] = lines[LineIndex].Replace(Word, "");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, lines.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, lines.Count]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -733,14 +733,14 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 int CharIndex = CharNumber - 1;
-                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", CharIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", vars: [CharNumber, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", vars: [CharIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     lines[LineIndex] = lines[LineIndex].Remove(CharIndex, 1);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, lines[LineIndex]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, lines[LineIndex]]);
                 }
                 else
                     throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
@@ -760,8 +760,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", vars: [Char]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
                     List<int> charIndexes = [];
@@ -790,9 +790,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", vars: [Char, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     for (int CharIndex = 0; CharIndex <= lines[LineIndex].Length - 1; CharIndex++)
@@ -819,8 +819,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", vars: [Word]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
                     var Words = lines[LineIndex].Split(' ');
@@ -850,9 +850,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     var Words = lines[LineIndex].Split(' ');
@@ -880,8 +880,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
             {
                 var Lines = new List<(int, int[])>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", vars: [Word]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(lines[LineIndex], Word);
@@ -908,9 +908,9 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
-                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", vars: [Word, LineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", vars: [LineIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [lines.Count]);
                 if (LineNumber <= lines.Count)
                 {
                     var LineMatches = Regex.Matches(lines[LineIndex], Word);

@@ -120,7 +120,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "");
                 FtpHost = indexOfPort < 0 ? FtpHost : FtpHost.Replace(FtpHost[FtpHost.LastIndexOf(":")..], "");
                 string FtpPortString = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
-                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", FtpHost, FtpPortString);
+                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", vars: [FtpHost, FtpPortString]);
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", vars: [address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
@@ -185,7 +185,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));
             var profiles = clientFTP.AutoDetect(FtpFirstProfileOnly);
             var profsel = new FtpProfile();
-            DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", profiles.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", vars: [profiles.Count]);
             if (profiles.Count > 1)
             {
                 // More than one profile
@@ -215,7 +215,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                                 Translate.DoTranslation("Encryption"),
                                 Translate.DoTranslation("Protocols")
                             ), [.. choices]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", vars: [profanswer]);
                         if (TextTools.IsStringNumeric(profanswer))
                         {
                             try
@@ -247,7 +247,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
 
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), clientFTP.Host, profiles.IndexOf(profsel));
-            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", clientFTP.Host, profiles.IndexOf(profsel));
+            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", vars: [clientFTP.Host, profiles.IndexOf(profsel)]);
             clientFTP.Connect(profsel);
             var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 

@@ -76,7 +76,7 @@ namespace Nitrocid.Misc.Reflection
             // The "obj" description says this: "The object whose field value will be set."
             // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", Variable.Name, VariableValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", vars: [Variable.Name, VariableValue]);
             Variable.SetValue(Variable, VariableValue);
         }
 
@@ -121,12 +121,12 @@ namespace Nitrocid.Misc.Reflection
             if (Variable is null)
             {
                 // Variable not found on any of the modules.
-                DebugWriter.WriteDebug(DebugLevel.E, "Field not found in instance type {0}.", instance?.GetType().Name ?? "<unknown type>");
+                DebugWriter.WriteDebug(DebugLevel.E, "Field not found in instance type {0}.", vars: [instance?.GetType().Name ?? "<unknown type>"]);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
 
             // This is how to set a value in instance variables.
-            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1} in instance type {2}...", Variable.Name, VariableValue, instance?.GetType().Name ?? "<unknown type>");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1} in instance type {2}...", vars: [Variable.Name, VariableValue, instance?.GetType().Name ?? "<unknown type>"]);
             Variable.SetValue(instance, VariableValue);
         }
 
@@ -193,7 +193,7 @@ namespace Nitrocid.Misc.Reflection
             // The "obj" description says this: "The object whose field value will be set."
             // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", Variable.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", vars: [Variable.Name]);
             return Variable.GetValue(Variable);
         }
 
@@ -243,7 +243,7 @@ namespace Nitrocid.Misc.Reflection
             }
 
             // This is how to get a value in instance variables.
-            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", Variable.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", vars: [Variable.Name]);
             return Variable.GetValue(instance);
         }
 

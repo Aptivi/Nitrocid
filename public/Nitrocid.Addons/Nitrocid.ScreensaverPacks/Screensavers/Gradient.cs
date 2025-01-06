@@ -52,7 +52,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int RedColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientMinimumRedColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientMaximumRedColorLevelEnd);
             int GreenColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientMinimumGreenColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientMaximumGreenColorLevelEnd);
             int BlueColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientMinimumBlueColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientMaximumBlueColorLevelEnd);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", vars: [RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo]);
 
             // Set thresholds for color gradient rot
             int RotFrameSpaces = ConsoleWrapper.WindowWidth;
@@ -62,8 +62,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double RotColorRedSteps = RotColorRedThreshold / RotFrameSpaces;
             double RotColorGreenSteps = RotColorGreenThreshold / RotFrameSpaces;
             double RotColorBlueSteps = RotColorBlueThreshold / RotFrameSpaces;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RotColorRedThreshold, RotColorGreenThreshold, RotColorBlueThreshold);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RotFrameSpaces, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", vars: [RotColorRedThreshold, RotColorGreenThreshold, RotColorBlueThreshold]);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", vars: [RotFrameSpaces, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps]);
 
             // Set the current colors
             double RotCurrentColorRed = RedColorNumFrom;
@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RotCurrentColorRed -= RotColorRedSteps;
                 RotCurrentColorGreen -= RotColorGreenSteps;
                 RotCurrentColorBlue -= RotColorBlueSteps;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RotCurrentColorRed, RotCurrentColorGreen, RotCurrentColorBlue, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", vars: [RotCurrentColorRed, RotCurrentColorGreen, RotCurrentColorBlue, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps]);
             }
             TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 

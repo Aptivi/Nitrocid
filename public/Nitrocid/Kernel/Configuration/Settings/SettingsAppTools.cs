@@ -252,7 +252,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", vars: [ex.Message]);
                 string finalSection = Translate.DoTranslation("You're Lost!");
                 InfoBoxModalColor.WriteInfoBoxModalColor(
                     $"  * {finalSection}\n\n" +

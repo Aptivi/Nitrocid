@@ -760,7 +760,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Now, check the list of available functions
             var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", addonInfo.AddonName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", vars: [addonInfo.AddonName]);
 
             // Get an assembly
             return addon.GetType().Assembly;

@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.Admin
                 catch (Exception ex)
                 {
                     TextWriters.Write(Translate.DoTranslation("Error in administrative shell: {0}"), true, KernelColorType.Error, ex.Message);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

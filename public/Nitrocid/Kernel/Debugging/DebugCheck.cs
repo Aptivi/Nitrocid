@@ -48,8 +48,8 @@ namespace Nitrocid.Kernel.Debugging
                 var trace = new DebugStackFrame();
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is false. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is false!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
@@ -89,8 +89,8 @@ namespace Nitrocid.Kernel.Debugging
                 var trace = new DebugStackFrame();
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is true. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is true!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
@@ -130,8 +130,8 @@ namespace Nitrocid.Kernel.Debugging
                 var trace = new DebugStackFrame();
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is null. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is null!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
@@ -171,8 +171,8 @@ namespace Nitrocid.Kernel.Debugging
                 var trace = new DebugStackFrame();
                 var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is not null. {message}");
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is not null!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber]);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
             }
@@ -202,8 +202,8 @@ namespace Nitrocid.Kernel.Debugging
             var trace = new DebugStackFrame();
             var exc = new KernelException(KernelExceptionType.AssertionFailure, $"undetermined failure. {message}");
             DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Undetermined failure!");
-            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber]);
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
             KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
             throw exc;
         }

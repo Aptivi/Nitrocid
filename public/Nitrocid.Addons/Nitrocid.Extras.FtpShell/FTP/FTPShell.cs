@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
 
             // Prepare to print current FTP directory
             FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [FTPShellCommon.FtpCurrentRemoteDir]);
             FTPShellCommon.FtpSite = clientFTP.Host;
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 

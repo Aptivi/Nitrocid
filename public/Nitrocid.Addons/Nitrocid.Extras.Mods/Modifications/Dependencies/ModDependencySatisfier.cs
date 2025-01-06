@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
 
             // Get the mod dependency metadata
             string metadataPath = $"{modDirectory}{Path.GetFileNameWithoutExtension(mod.ModFilePath)}-moddeps.json";
-            DebugWriter.WriteDebug(DebugLevel.I, "Metadata path: {0}", metadataPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Metadata path: {0}", vars: [metadataPath]);
             if (!FilesystemTools.FileExists(metadataPath))
                 return [];
 
@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
             ModDependency[]? deps = JsonConvert.DeserializeObject<ModDependency[]>(metadataContents);
             if (deps is null)
                 return [];
-            DebugWriter.WriteDebug(DebugLevel.I, "Initial dep count: {0}", deps.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial dep count: {0}", vars: [deps.Length]);
             List<ModDependency> finalDeps = [];
             foreach (ModDependency dep in deps)
             {
@@ -60,12 +60,12 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
                 dep.modPath = $"{modDirectory}{dep.ModName}.dll";
 
                 // Parse the name
-                DebugWriter.WriteDebug(DebugLevel.I, "Dependent mod name: {0}", dep.ModName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dependent mod name: {0}", vars: [dep.ModName]);
                 if (string.IsNullOrEmpty(dep.ModName))
                     continue;
 
                 // Parse the version
-                DebugWriter.WriteDebug(DebugLevel.I, "Dependent mod version: {0}", dep.ModVersion);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dependent mod version: {0}", vars: [dep.ModVersion]);
                 if (string.IsNullOrEmpty(dep.ModVersion))
                 {
                     // The mod that depends on this mod accepts all versions.
@@ -79,13 +79,13 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
                         // Do the job!
                         var version = SemVer.Parse(dep.ModVersion) ??
                             throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't determine mod version") + $": {dep.ModVersion}");
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parsed version as {0}", version.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Parsed version as {0}", vars: [version.ToString()]);
                         finalDeps.Add(dep);
                         DebugWriter.WriteDebug(DebugLevel.I, "Added");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Failed to add dependency: {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Failed to add dependency: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
         {
             // Get the dependencies
             var deps = GetDependencies(mod);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} dependencies to satisfy.", deps.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} dependencies to satisfy.", vars: [deps.Length]);
 
             // Load the dependencies
             List<string> failedDeps = [];
@@ -115,24 +115,24 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
                     // Check to see if it's already loaded
                     if (ModManager.Mods.Values.Select((mi) => mi.ModFilePath).Any())
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Mod {0} v{1}: {2} already loaded!", dep.ModName, dep.ModVersion, dep.modPath);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Mod {0} v{1}: {2} already loaded!", vars: [dep.ModName, dep.ModVersion, dep.modPath]);
                         continue;
                     }
 
                     // Parse it
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing mod {0} v{1}: {2}", dep.ModName, dep.ModVersion, dep.modPath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing mod {0} v{1}: {2}", vars: [dep.ModName, dep.ModVersion, dep.modPath]);
                     ModParser.ParseMod(dep.ModName + ".dll");
 
                     // Now, check it
                     if (!ModManager.Mods.Values.Select((mi) => mi.ModFilePath).Any())
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Looks like that mod {0} v{1}: {2} didn't load successfully.", dep.ModName, dep.ModVersion, dep.modPath);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Looks like that mod {0} v{1}: {2} didn't load successfully.", vars: [dep.ModName, dep.ModVersion, dep.modPath]);
                         failedDeps.Add(dep.ModName);
                     }
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed. Mod {0} v{1}: {2} didn't load successfully: {3}", dep.ModName, dep.ModVersion, dep.modPath, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed. Mod {0} v{1}: {2} didn't load successfully: {3}", vars: [dep.ModName, dep.ModVersion, dep.modPath, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     failedDeps.Add(dep.ModName);
                 }

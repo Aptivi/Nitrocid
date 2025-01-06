@@ -79,7 +79,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 if (KeyDefaultValue is string KeyValue)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", vars: [KeyValue]);
                     value = Convert.ToString(KeyValue);
                 }
             }
@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with integers
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", vars: [key.Type.ToString()]);
 
             // Check to see if written answer is empty
             if (value is not string AnswerString)

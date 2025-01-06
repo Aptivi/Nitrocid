@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// </summary>
         public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
+            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
             TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
             PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);

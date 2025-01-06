@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.GitShell.Git
             // Open repo
             if (GitShellCommon.repo is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", RepoPath);
+                DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", vars: [RepoPath]);
                 if (!GitShellCommon.OpenRepository(RepoPath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);

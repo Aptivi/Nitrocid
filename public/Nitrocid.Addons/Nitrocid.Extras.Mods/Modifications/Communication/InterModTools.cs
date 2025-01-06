@@ -527,7 +527,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
 
             // Now, check the list of available functions
             var mod = modInfo.ModScript;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", modInfo.ModName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", vars: [modInfo.ModName]);
 
             // Get an assembly
             return mod.GetType().Assembly;

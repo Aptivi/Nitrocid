@@ -46,19 +46,19 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             if (ArticleIndex > articleCount - 1)
             {
                 TextWriters.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, articleCount - 1);
+                DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, articleCount - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
             else if (!string.IsNullOrWhiteSpace(article.ArticleLink))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Opening web browser to {0}...", article.ArticleLink);
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening web browser to {0}...", vars: [article.ArticleLink]);
                 PlatformHelper.PlatformOpen(article.ArticleLink);
                 return 0;
             }
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Article doesn't have a link!"), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", ArticleIndex, article.ArticleLink);
+                DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", vars: [ArticleIndex, article.ArticleLink]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
         }

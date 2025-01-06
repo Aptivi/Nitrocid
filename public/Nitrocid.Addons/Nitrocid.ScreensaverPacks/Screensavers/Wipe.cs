@@ -61,24 +61,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
             }
 
             // Set max height
             int MaxWindowHeight = ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Max height {0}", vars: [MaxWindowHeight]);
 
             // Print a space {Column} times until the entire screen is wiped.
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wipe direction {0}", ToDirection.ToString());
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wipe direction {0}", vars: [ToDirection.ToString()]);
             switch (ToDirection)
             {
                 case WipeDirections.Right:
@@ -93,10 +93,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     break;
 
                                 // Do the actual writing
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);
                                 ConsoleWrapper.SetCursorPosition(0, Row);
                                 ConsoleWrapper.Write(new string(' ', Column));
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Column);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", vars: [Column]);
                             }
                             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
@@ -115,10 +115,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     break;
 
                                 // Do the actual writing
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", Column - 1, Row);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", vars: [Column - 1, Row]);
                                 ConsoleWrapper.SetCursorPosition(Column - 1, Row);
                                 ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth - Column + 1));
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth - Column + 1);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", vars: [ConsoleWrapper.WindowWidth - Column + 1]);
                             }
                             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
@@ -133,10 +133,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Do the actual writing
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);
                             ConsoleWrapper.SetCursorPosition(0, Row);
                             ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth));
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", vars: [ConsoleWrapper.WindowWidth]);
                             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
 
@@ -150,7 +150,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Do the actual writing
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", vars: [ConsoleWrapper.WindowWidth]);
                             ConsoleWrapper.Write(new string(' ', ConsoleWrapper.WindowWidth));
                             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
                         }
@@ -162,14 +162,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 TimesWiped += 1;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, ScreensaverPackInit.SaversConfig.WipeWipesNeededToChangeDirection);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", vars: [TimesWiped, ScreensaverPackInit.SaversConfig.WipeWipesNeededToChangeDirection]);
 
                 // Check if the number of times wiped is equal to the number of required times to change wiping direction.
                 if (TimesWiped == ScreensaverPackInit.SaversConfig.WipeWipesNeededToChangeDirection)
                 {
                     TimesWiped = 0;
                     ToDirection = (WipeDirections)Convert.ToInt32(Enum.Parse(typeof(WipeDirections), RandomDriver.Random(3).ToString()));
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString());
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", vars: [ToDirection.ToString()]);
                 }
             }
             else

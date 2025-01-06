@@ -47,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Variable preparations
             CoveredPositions.Clear();
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor));
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
         /// <inheritdoc/>
@@ -58,13 +58,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Select a position
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", vars: [Left, Top]);
             ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!CoveredPositions.Any(t => t.Item1 == Left & t.Item2 == Top))
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Covering position...");
                 CoveredPositions.Add(new Tuple<int, int>(Left, Top));
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Position covered. Covered positions: {0}", CoveredPositions.Count);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Position covered. Covered positions: {0}", vars: [CoveredPositions.Count]);
             }
 
             // Select a color and write the space
@@ -73,7 +73,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
@@ -89,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
@@ -105,10 +105,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Simulate a trail effect
             if (CoveredPositions.Count == ScreensaverPackInit.SaversConfig.LighterMaxPositions)
             {
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", ScreensaverPackInit.SaversConfig.LighterMaxPositions);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", vars: [ScreensaverPackInit.SaversConfig.LighterMaxPositions]);
                 int WipeLeft = CoveredPositions[0].Item1;
                 int WipeTop = CoveredPositions[0].Item2;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", vars: [WipeLeft, WipeTop]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);

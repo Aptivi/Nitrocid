@@ -99,7 +99,7 @@ namespace Nitrocid.Users.Groups
             if (userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already joined the group!"));
             userGroups.Add(groupName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", user, groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
@@ -126,7 +126,7 @@ namespace Nitrocid.Users.Groups
             if (!userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already left the group!"));
             userGroups.Remove(groupName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", user, groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
@@ -155,7 +155,7 @@ namespace Nitrocid.Users.Groups
             var userInstance = UserManagement.GetUser(user) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
             string[] groupNames = userInstance.Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, string.Join(", ", groupNames));
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", vars: [user, groupName, string.Join(", ", groupNames)]);
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
         }
 
@@ -174,7 +174,7 @@ namespace Nitrocid.Users.Groups
             var userInstance = UserManagement.GetUser(user) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
             string[] groupNames = userInstance.Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, string.Join(", ", groupNames));
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", vars: [user, string.Join(", ", groupNames)]);
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
         }
 

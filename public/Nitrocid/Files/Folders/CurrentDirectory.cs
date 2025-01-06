@@ -68,7 +68,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set current directory: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set current directory: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }

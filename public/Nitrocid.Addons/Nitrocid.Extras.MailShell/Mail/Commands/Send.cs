@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
             // Prompt for receiver e-mail address
             TextWriters.Write(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
             Receiver = InputTools.ReadLine();
-            DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
+            DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", vars: [Receiver]);
 
             // Check for mail format
             if (Receiver.Contains('@') & Receiver[Receiver.IndexOf('@')..].Contains('.'))
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 // Prompt for subject
                 TextWriters.Write(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
                 Subject = InputTools.ReadLine();
-                DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", vars: [Subject, Subject.Length]);
 
                 // Prompt for body
                 TextWriters.Write(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
@@ -90,9 +90,9 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                     BodyLine = InputTools.ReadLine();
                     if (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", vars: [BodyLine, BodyLine.Length]);
                         Body.TextBody += BodyLine + CharManager.NewLine;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Body length: {0} chars", vars: [Body.TextBody.Length]);
                     }
                 }
 
@@ -105,7 +105,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = FilesystemTools.NeutralizePath(PathLine);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Path line: {0} ({1} chars)", vars: [PathLine, PathLine.Length]);
                         if (FilesystemTools.FileExists(PathLine))
                         {
                             Body.Attachments.Add(PathLine);

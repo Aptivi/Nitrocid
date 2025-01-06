@@ -45,7 +45,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Neutralize path if required with the assumption that the keytype is not list
             double answer = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
+            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [AnswerString]);
             bail = !string.IsNullOrEmpty(AnswerString) && double.TryParse(AnswerString, out answer);
             return answer;
         }
@@ -76,7 +76,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 return;
             if (number >= 0.0d)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, number);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, number]);
 
                 // Now, set the value
                 SettingsAppTools.SetPropertyValue(key.Variable, number, configType);

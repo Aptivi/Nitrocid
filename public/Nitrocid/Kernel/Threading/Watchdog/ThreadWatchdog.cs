@@ -90,13 +90,13 @@ namespace Nitrocid.Kernel.Threading.Watchdog
             catch (ThreadInterruptedException ex)
             {
                 // Watchdog interrupted
-                DebugWriter.WriteDebug(DebugLevel.W, "Kernel thread supervisor (watchdog) is stopping: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Kernel thread supervisor (watchdog) is stopping: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             catch (Exception ex)
             {
                 // Watchdog error, so reboot
-                DebugWriter.WriteDebug(DebugLevel.F, "Kernel thread supervisor (watchdog) failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.F, "Kernel thread supervisor (watchdog) failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor failed") + ": {0}", ex, ex.Message);
             }

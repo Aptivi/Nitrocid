@@ -69,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds;
             int InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds;
 
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current tick: {0}", vars: [CurrentTicks]);
             if (ScreensaverPackInit.SaversConfig.ProgressClockCycleColors)
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
@@ -82,25 +82,25 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelHours,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelHours,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelHours);
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", ColorStorageHours.RGB.R, ColorStorageHours.RGB.G, ColorStorageHours.RGB.B);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", vars: [ColorStorageHours.RGB.R, ColorStorageHours.RGB.G, ColorStorageHours.RGB.B]);
                     ColorStorageMinutes =
                         ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelMinutes,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelMinutes,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelMinutes,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelMinutes);
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", ColorStorageMinutes.RGB.R, ColorStorageMinutes.RGB.G, ColorStorageMinutes.RGB.B);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", vars: [ColorStorageMinutes.RGB.R, ColorStorageMinutes.RGB.G, ColorStorageMinutes.RGB.B]);
                     ColorStorageSeconds =
                         ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelSeconds,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelSeconds,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelSeconds,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelSeconds);
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", ColorStorageSeconds.RGB.R, ColorStorageSeconds.RGB.G, ColorStorageSeconds.RGB.B);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", vars: [ColorStorageSeconds.RGB.R, ColorStorageSeconds.RGB.G, ColorStorageSeconds.RGB.B]);
                     ColorStorage =
                         ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevel,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevel,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevel,
                                                         ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevel);
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", ColorStorage.RGB.R, ColorStorage.RGB.G, ColorStorage.RGB.B);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [ColorStorage.RGB.R, ColorStorage.RGB.G, ColorStorage.RGB.B]);
                     CurrentTicks = 0L;
                 }
             }
@@ -113,17 +113,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorStorage = new Color(ScreensaverPackInit.SaversConfig.ProgressClockProgressColor);
             }
             ProgressFillPositionHours = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 10;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", vars: [ProgressFillPositionHours]);
             ProgressFillPositionMinutes = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 1;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", vars: [ProgressFillPositionMinutes]);
             ProgressFillPositionSeconds = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 8;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", vars: [ProgressFillPositionSeconds]);
             InformationPositionHours = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 12;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", vars: [InformationPositionHours]);
             InformationPositionMinutes = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 3;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", vars: [InformationPositionMinutes]);
             InformationPositionSeconds = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 6;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", vars: [InformationPositionSeconds]);
 
             // Populate the border settings
             var hoursBorder = new BorderSettings()

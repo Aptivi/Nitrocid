@@ -33,7 +33,7 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void Write(char value)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [Message = {5}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight, value);
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight, value]);
             _moved = true;
             base.Write(value);
         }
@@ -42,9 +42,9 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void Write(string text)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
-                                   text.Length, text, VtSequenceTools.FilterVTSequences(text));
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text)]);
             _moved = true;
             base.Write(text);
         }
@@ -53,9 +53,9 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void Write(string text, params object[] args)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}] [Vars = {10}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
-                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length]);
             _moved = true;
             base.Write(text, args);
         }
@@ -64,7 +64,7 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void WriteLine()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight);
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight]);
             _moved = true;
             base.WriteLine();
         }
@@ -73,9 +73,9 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void WriteLine(string text)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
-                                   text.Length, text, VtSequenceTools.FilterVTSequences(text));
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text)]);
             _moved = true;
             base.WriteLine(text);
         }
@@ -84,9 +84,9 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void WriteLine(string text, params object[] args)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [VT = {5}, Seqs = {6}] [Len = {7}] [Message = {8}] [Literal = {9}] [Vars = {10}]",
-                                   CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
+                                   vars: [CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
-                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
+                                   text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length]);
             _moved = true;
             base.WriteLine(text, args);
         }

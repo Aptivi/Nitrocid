@@ -56,7 +56,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user config file and parse it
             string oldMainKernelConfigPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Configuration);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", oldMainKernelConfigPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", vars: [oldMainKernelConfigPath]);
             if (!FilesystemTools.FileExists(oldMainKernelConfigPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old kernel config path.");
@@ -132,7 +132,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user config file and parse it
             string oldMainKernelConfigPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Configuration);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", oldMainKernelConfigPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", vars: [oldMainKernelConfigPath]);
             if (!FilesystemTools.FileExists(oldMainKernelConfigPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old kernel config path.");
@@ -215,7 +215,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old alias file and parse it
             string oldAliasesPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Aliases);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old alias path {0}.", oldAliasesPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old alias path {0}.", vars: [oldAliasesPath]);
             if (!FilesystemTools.FileExists(oldAliasesPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old alias path.");
@@ -262,7 +262,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user file and parse it
             string oldUsersPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Users);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old user path {0}.", oldUsersPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old user path {0}.", vars: [oldUsersPath]);
             if (!FilesystemTools.FileExists(oldUsersPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old user path.");
@@ -323,7 +323,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old FTP speed dial file and parse it
             string oldFtpSpeedDialPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.FTPSpeedDial);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old FTP speed dial path {0}.", oldFtpSpeedDialPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old FTP speed dial path {0}.", vars: [oldFtpSpeedDialPath]);
             if (!FilesystemTools.FileExists(oldFtpSpeedDialPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old FTP speed dial path.");
@@ -373,7 +373,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old SFTP speed dial file and parse it
             string oldSftpSpeedDialPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.SFTPSpeedDial);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old SFTP speed dial path {0}.", oldSftpSpeedDialPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old SFTP speed dial path {0}.", vars: [oldSftpSpeedDialPath]);
             if (!FilesystemTools.FileExists(oldSftpSpeedDialPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old SFTP speed dial path.");
@@ -423,7 +423,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old Remote debug device configuration file and parse it
             string oldDebugDevicesPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.DebugDevNames);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old remote debug device configuration path {0}.", oldDebugDevicesPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old remote debug device configuration path {0}.", vars: [oldDebugDevicesPath]);
             if (!FilesystemTools.FileExists(oldDebugDevicesPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old remote debug device configuration path.");
@@ -475,7 +475,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old MOTD file and parse it
             string oldMotdPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.MOTD);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old MOTD path {0}.", oldMotdPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old MOTD path {0}.", vars: [oldMotdPath]);
             if (!FilesystemTools.FileExists(oldMotdPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find MOTD configuration path.");
@@ -501,7 +501,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old MAL file and parse it
             string oldMalPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.MAL);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old MAL path {0}.", oldMalPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old MAL path {0}.", vars: [oldMalPath]);
             if (!FilesystemTools.FileExists(oldMalPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find MAL configuration path.");

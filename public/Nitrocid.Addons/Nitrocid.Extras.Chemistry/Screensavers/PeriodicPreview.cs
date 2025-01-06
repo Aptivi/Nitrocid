@@ -51,11 +51,11 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
         {
             // Select a random chemical element
             var substance = substances[RandomDriver.RandomIdx(substances.Length)];
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected element: {0} [{1}, {2}]", substance.Name, substance.Symbol, substance.AtomicNumber);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected element: {0} [{1}, {2}]", vars: [substance.Name, substance.Symbol, substance.AtomicNumber]);
 
             // Validate color
             Color color = "#" + (string.IsNullOrWhiteSpace(substance.ColorHex) ? "FFFFFF" : substance.ColorHex);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Element color: {0} [{1}, {2}]", color.Hex, color.PlainSequence);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Element color: {0} [{1}, {2}]", vars: [color.Hex, color.PlainSequence]);
 
             // Make a box frame from available information that represents what would appear in the element preview in
             // chemistry books (Big text is symbol, bottom text is name, upper left corner is atomic number, and upper

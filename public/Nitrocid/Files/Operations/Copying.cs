@@ -55,7 +55,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -85,7 +85,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -117,7 +117,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -147,7 +147,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

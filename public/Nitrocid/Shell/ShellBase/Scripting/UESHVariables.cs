@@ -54,7 +54,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         /// <returns>Sanitized variable name</returns>
         public static string SanitizeVariableName(string var)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Sanitizing variable {0}...", var);
+            DebugWriter.WriteDebug(DebugLevel.I, "Sanitizing variable {0}...", vars: [var]);
             if (!var.StartsWith("$"))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Unsanitized variable found. Prepending $...");
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         {
             var = SanitizeVariableName(var);
             if (ShellVariables.TryAdd(var, ""))
-                DebugWriter.WriteDebug(DebugLevel.I, "Initialized variable {0}", var);
+                DebugWriter.WriteDebug(DebugLevel.I, "Initialized variable {0}", vars: [var]);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                     }
                     NewCommand += $"{finalWord} ";
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, NewCommand);
+                DebugWriter.WriteDebug(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", vars: [var, NewCommand]);
                 return NewCommand.TrimEnd(' ');
             }
             return cmd;
@@ -119,7 +119,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting variable {0}: {1}", vars: [var, ex.Message]);
             }
             return var;
         }
@@ -143,12 +143,12 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 if (!ShellVariables.ContainsKey(var))
                     InitializeVariable(var);
                 ShellVariables[var] = value;
-                DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", var, value);
+                DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", vars: [var, value]);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error setting variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error setting variable {0}: {1}", vars: [var, ex.Message]);
             }
             return false;
         }
@@ -170,13 +170,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                     if (!ShellVariables.ContainsKey(VarName))
                         InitializeVariable(VarName);
                     ShellVariables[VarName] = VarValue;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", VarName, VarValue);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Set variable {0} to {1}", vars: [VarName, VarValue]);
                 }
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error creating variable array {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error creating variable array {0}: {1}", vars: [var, ex.Message]);
             }
             return false;
         }
@@ -194,7 +194,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error removing variable {0}: {1}", var, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error removing variable {0}: {1}", vars: [var, ex.Message]);
             }
             return false;
         }
@@ -227,12 +227,12 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 // Get the key and the value
                 string varStoreKey = varStoreKeys[i];
                 string varStoreValue = varStoreValues[i].ReleaseDoubleQuotes();
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to {1}...", varStoreValue, varStoreKey);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to {1}...", vars: [varStoreValue, varStoreKey]);
 
                 // Initialize each variable and set them
                 InitializeVariable(varStoreKey);
                 bool result = SetVariable(varStoreKey, varStoreValue);
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0} to {1}: {2}", varStoreValue, varStoreKey, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0} to {1}: {2}", vars: [varStoreValue, varStoreKey, result]);
             }
         }
 
@@ -251,7 +251,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 .Select((match) => match.Groups["key"].Value).ToArray();
             var varStoreValues = varStoreMatches
                 .Select((match) => match.Groups["value"].Value).ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "Keys: {0} [{1}], Values: {2} [{3}]", varStoreKeys.Length, string.Join(", ", varStoreKeys), varStoreValues.Length, string.Join(", ", varStoreValues));
+            DebugWriter.WriteDebug(DebugLevel.I, "Keys: {0} [{1}], Values: {2} [{3}]", vars: [varStoreKeys.Length, string.Join(", ", varStoreKeys), varStoreValues.Length, string.Join(", ", varStoreValues)]);
             return (varStoreKeys, varStoreValues);
         }
 

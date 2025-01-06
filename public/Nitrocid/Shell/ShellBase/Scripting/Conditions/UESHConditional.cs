@@ -82,7 +82,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                 bool Satisfied;
 
                 // First, check for the existence of one of the conditional words
-                DebugWriter.WriteDebug(DebugLevel.I, "Checking expression {0} for condition", ConditionToSatisfy);
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking expression {0} for condition", vars: [ConditionToSatisfy]);
                 var EnclosedWords = ConditionToSatisfy.SplitEncloseDoubleQuotes();
                 var ConditionFound = false;
                 string ConditionType = "none";
@@ -91,7 +91,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                 {
                     if (EnclosedWords.Contains(Condition))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Condition found in the expression string. It was {0}", Condition);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Condition found in the expression string. It was {0}", vars: [Condition]);
                         ConditionFound = true;
                         ConditionType = Condition;
                         ConditionBase = AvailableConditions[ConditionType];
@@ -105,12 +105,12 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                 int ConditionPosition = ConditionBase.ConditionPosition;
                 if (EnclosedWords.Length < RequiredArguments)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Length, RequiredArguments);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", vars: [EnclosedWords.Length, RequiredArguments]);
                     throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Length);
                 }
                 if (!AvailableConditions.ContainsKey(EnclosedWords[ConditionPosition - 1]))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", ConditionPosition, EnclosedWords[ConditionPosition - 1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", vars: [ConditionPosition, EnclosedWords[ConditionPosition - 1]]);
                     throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("The condition needs to be placed in the end."));
                 }
 
@@ -184,12 +184,12 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                                 break;
                             }
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
                     return Satisfied;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Syntax error in {0}: {1}", ConditionToSatisfy, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Syntax error in {0}: {1}", vars: [ConditionToSatisfy, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
                 }

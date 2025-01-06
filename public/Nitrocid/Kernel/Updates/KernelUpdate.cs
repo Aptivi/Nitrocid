@@ -118,7 +118,7 @@ namespace Nitrocid.Kernel.Updates
                         break;
                     }
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer?.ToString(), KernelUpdateURL);
+                DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", vars: [KernelUpdateVer?.ToString(), KernelUpdateURL]);
                 if (!string.IsNullOrEmpty(KernelUpdateURL))
                     SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
@@ -133,7 +133,7 @@ namespace Nitrocid.Kernel.Updates
                     }
                 ),
             ];
-            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", vars: [SortedVersions.Count]);
 
             // Get the latest version found
             var CurrentVer = KernelMain.VersionFull;
@@ -142,8 +142,8 @@ namespace Nitrocid.Kernel.Updates
                 kind == UpdateKind.Addons && UpdateVer is not null && CurrentVer is not null ?
                 new Uri(SortedVersions[0].UpdateURL.ToString().Replace(UpdateVer.ToString(), CurrentVer.ToString()).Replace($"-{specifier}", "-addons")) :
                 SortedVersions[0].UpdateURL;
-            DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer?.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Update URL: {0}", UpdateURI.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", vars: [UpdateVer?.ToString()]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Update URL: {0}", vars: [UpdateURI.ToString()]);
 
             // Install the values
             UpdateVersion = UpdateVer;
@@ -155,7 +155,7 @@ namespace Nitrocid.Kernel.Updates
                 Updated = UpdateVersion <= CurrentVer;
             else
                 Updated = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Is this kernel up-to-date? {0}", Updated);
+            DebugWriter.WriteDebug(DebugLevel.I, "Is this kernel up-to-date? {0}", vars: [Updated]);
         }
 
     }

@@ -202,7 +202,7 @@ namespace Nitrocid.Arguments
                                 bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == total.Length - 1;
                                 if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", vars: [Argument, strArgs]);
 
                                     // Prepare the argument parameter instance
                                     var parameters = new ArgumentParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
@@ -213,7 +213,7 @@ namespace Nitrocid.Arguments
                                 }
                                 else if (isLast)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", vars: [Argument]);
                                     TextWriters.Write(Translate.DoTranslation("There was not enough arguments."), true, KernelColorType.Error);
                                 }
                             }
@@ -221,7 +221,7 @@ namespace Nitrocid.Arguments
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "No such argument {0}", Argument);
+                        DebugWriter.WriteDebug(DebugLevel.W, "No such argument {0}", vars: [Argument]);
                         TextWriters.Write(Translate.DoTranslation("Unknown argument") + $" {Argument}", true, KernelColorType.Error);
                     }
                 }

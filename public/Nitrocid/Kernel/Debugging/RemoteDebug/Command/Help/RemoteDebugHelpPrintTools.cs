@@ -35,7 +35,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
                 RemoteDebugCommandExecutor.RemoteDebugCommands
                 .OrderBy((CommandValuePair) => CommandValuePair.Key)
                 .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "Remote Debug Commands: {0} [{1}]", CommandList.Count, string.Join(", ", CommandList.Keys));
+            DebugWriter.WriteDebug(DebugLevel.I, "Remote Debug Commands: {0} [{1}]", vars: [CommandList.Count, string.Join(", ", CommandList.Keys)]);
             return CommandList;
         }
 
@@ -44,13 +44,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             var commandList = GetCommands();
 
             // The built-in commands
-            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, device, commandList.Count);
+            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, device, vars: [commandList.Count]);
 
             // Check the command list count and print not implemented. This is an extremely rare situation.
             if (commandList.Count == 0)
                 DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, device);
             foreach (string cmd in commandList.Keys)
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, cmd, commandList[cmd].GetTranslatedHelpEntry());
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, vars: [cmd, commandList[cmd].GetTranslatedHelpEntry()]);
         }
 
         internal static void ShowCommandListSimple(RemoteDebugDevice device)
@@ -67,7 +67,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             var commandList = GetCommands();
             if (!commandList.ContainsKey(command))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", command);
+                DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", vars: [command]);
                 TextWriters.Write(Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
                 return;
             }

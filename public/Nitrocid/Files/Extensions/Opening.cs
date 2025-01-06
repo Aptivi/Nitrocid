@@ -51,11 +51,11 @@ namespace Nitrocid.Files
             bool hasSqlShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell)) is not null;
 
             // Check to see if the file exists
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", path, fileExists);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", forceJson);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", forceSql);
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", vars: [path, fileExists]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", vars: [forceText]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", vars: [forceJson]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", vars: [forceHex]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", vars: [forceSql]);
             if (!fileExists)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
 

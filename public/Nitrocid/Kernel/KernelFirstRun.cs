@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel
                 InfoBoxNonModalColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."));
                 int selectedLanguageIdx = (int?)firstRunPres.Pages[0].Inputs[0].InputMethod.Input ?? 0;
                 string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", selectedLanguage);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", vars: [selectedLanguage]);
                 LanguageManager.SetLang(selectedLanguage);
 
                 // Now, go to the first-run.
@@ -102,7 +102,7 @@ namespace Nitrocid.Kernel
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error in introductory run: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error in introductory run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
@@ -192,7 +192,7 @@ namespace Nitrocid.Kernel
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "We shouldn't move on. Failed to create username. {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.I, "We shouldn't move on. Failed to create username. {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         userStepFailureReason = Translate.DoTranslation("Failed to create username. Please ensure that your username doesn't contain spaces and special characters.");
                     }
@@ -294,7 +294,7 @@ namespace Nitrocid.Kernel
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error in first run: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error in first run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);

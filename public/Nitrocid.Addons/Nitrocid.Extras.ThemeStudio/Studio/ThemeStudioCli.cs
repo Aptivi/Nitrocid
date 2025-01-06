@@ -96,7 +96,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
                         string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
                         DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
                         ThemeStudioTools.SaveThemeToAnotherDirectory(themeName, DirectoryName);
                         break;
                     }
@@ -106,7 +106,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [themeName]);
                         AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                         ThemeStudioTools.SaveThemeToCurrentDirectory(AltThemeName);
                         break;
                     }
@@ -116,11 +116,11 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
                         string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
                         DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [themeName]);
                         AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                         ThemeStudioTools.SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
                         break;
                     }
@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         // Load Theme From File...
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme file name wihout the .json extension:")) + ".json";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                         ThemeStudioTools.LoadThemeFromFile(AltThemeName);
                         break;
                     }
@@ -154,7 +154,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         // Load Theme From Prebuilt Themes...
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:"));
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                         ThemeStudioTools.LoadThemeFromResource(AltThemeName);
                         break;
                     }

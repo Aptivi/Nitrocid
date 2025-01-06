@@ -47,7 +47,7 @@ namespace Nitrocid.ThemePacks
                     throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Can't get necessary data to initialize this addon."));
                 var themeToken = JToken.Parse(data);
                 bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", themeName, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);
             }
         }
 
@@ -60,7 +60,7 @@ namespace Nitrocid.ThemePacks
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 bool result = ThemeTools.themes.Remove(themeName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", themeName, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", vars: [themeName, result]);
             }
         }
 

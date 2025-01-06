@@ -95,18 +95,18 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (script.LoadPriority == priority)
                         FinalizeMods(script, modFile);
                     else
-                        DebugWriter.WriteDebug(DebugLevel.W, "Skipping dynamic mod {0} because priority [{1}] doesn't match required priority [{2}]", modFile, priority, script.LoadPriority);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Skipping dynamic mod {0} because priority [{1}] doesn't match required priority [{2}]", vars: [modFile, priority, script.LoadPriority]);
                 }
                 catch (ReflectionTypeLoadException ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: "));
                     foreach (Exception? LoaderException in ex.LoaderExceptions)
                     {
                         if (LoaderException is null)
                             continue;
-                        DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", vars: [LoaderException.Message]);
                         DebugWriter.WriteDebugStackTrace(LoaderException);
                         SplashReport.ReportProgressError(LoaderException.Message);
                     }
@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 }
                 catch (TargetInvocationException ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:") + $" {ex.Message}");
                     SplashReport.ReportProgressError(Translate.DoTranslation("Here's a list of errors that may help you investigate this incompatibility:"));
@@ -128,7 +128,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: ") + ex.Message);
                 }
@@ -136,7 +136,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             else
             {
                 // Ignore unsupported files
-                DebugWriter.WriteDebug(DebugLevel.W, "Unsupported file type for mod file {0}.", modFile);
+                DebugWriter.WriteDebug(DebugLevel.W, "Unsupported file type for mod file {0}.", vars: [modFile]);
             }
         }
 
@@ -166,14 +166,14 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         if (KernelMain.ApiVersion != script.MinimumSupportedApiVersion)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString()]);
                             SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
                             return;
                         }
                     }
                     catch
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", modFile);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", vars: [modFile]);
                         SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), modFile);
                     }
 
@@ -182,7 +182,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     Dictionary<string, string[]> localizations = [];
                     if (FilesystemTools.FolderExists(ModLocalizationPath))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", vars: [ModLocalizationPath]);
                         foreach (string ModLocFile in Directory.GetFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
                         {
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
@@ -190,7 +190,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                             string ModLocFileContents = FilesystemTools.ReadContentsText(ModLocFile);
                             var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents) ??
                                 throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't load mod localizations"));
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", modLocs.Length);
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", vars: [modLocs.Length]);
                             foreach (var modLoc in modLocs)
                             {
                                 // Parse the values and install the language
@@ -205,10 +205,10 @@ namespace Nitrocid.Extras.Mods.Modifications
                                 }
 
                                 // Check the localizations...
-                                DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", vars: [ParsedLanguageLocalizations is null]);
                                 if (ParsedLanguageLocalizations is not null)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Length);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", vars: [ParsedLanguageLocalizations.Length]);
 
                                     // Try to install the localizations
                                     if (!localizations.ContainsKey(LanguageName))
@@ -235,22 +235,22 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (string.IsNullOrWhiteSpace(ModName))
                     {
                         // Mod has no name!
-                        DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", modFile);
+                        DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", vars: [modFile]);
                         SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the name. Mod parsing failed. Review the source code."), modFile);
                         return;
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", ModName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", vars: [ModName]);
 
                     // See if the mod has version
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", vars: [modFile, script.Name]);
                         SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the version. Mod parsing failed. Review the source code."), modFile);
                         return;
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", vars: [modFile, script.Name, script.Version]);
                         try
                         {
                             // Parse the semantic version of the mod
@@ -259,7 +259,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                         }
                         catch (Exception ex)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", script.Version, ex.Message);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", vars: [script.Version, ex.Message]);
                             DebugWriter.WriteDebugStackTrace(ex);
                             SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} contains invalid version. Mod parsing failed. Version was") + ": {1}\n{2}", modFile, script.Version, ex.Message);
                             return;
@@ -275,7 +275,7 @@ namespace Nitrocid.Extras.Mods.Modifications
 
                     // Start the mod
                     script.StartMod();
-                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Version: {1}", script.Name, script.Version);
+                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Version: {1}", vars: [script.Name, script.Version]);
 
                     // Now, add the part
                     bool modFound = ModManager.Mods.ContainsKey(ModName);
@@ -288,7 +288,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 catch (Exception ex)
                 {
                     EventsManager.FireEvent(EventType.ModFinalizationFailed, modFile, ex.Message);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
                 }
@@ -300,7 +300,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             else
             {
                 EventsManager.FireEvent(EventType.ModParseError, modFile);
-                DebugWriter.WriteDebug(DebugLevel.E, "Script is not provided to finalize {0}!", modFile);
+                DebugWriter.WriteDebug(DebugLevel.E, "Script is not provided to finalize {0}!", vars: [modFile]);
             }
         }
 

@@ -251,7 +251,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
                     var type = ShellStack[^2].ShellType;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Returning shell type {0} for last shell from the stack...", type);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Returning shell type {0} for last shell from the stack...", vars: [type]);
                     return type;
                 }
             }
@@ -367,7 +367,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     shellInfo.OneLineWrap ?
                     InputTools.ReadLineWrapped(prompt, "", settings) :
                     InputTools.ReadLine(prompt, "", settings);
-                DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", vars: [strcommand]);
                 if (strcommand == ";")
                     strcommand = "";
 
@@ -403,7 +403,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     {
                         // Not a slash command. Do things differently
                         var ShellInstance = ShellStack[^1];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Non-slash cmd exec succeeded. Running with {0}", Command);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Non-slash cmd exec succeeded. Running with {0}", vars: [Command]);
                         var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo ?? BaseShellInfo.fallbackNonSlashCommand, ShellType, ShellInstance);
                         CommandExecutor.StartCommandThread(Params);
                         UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
@@ -423,7 +423,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 string localVarStoreMatchRegex = /* lang=regex */ @"^\((.+)\)\s+";
                 var localVarStoreMatch = RegexpTools.Match(Command, localVarStoreMatchRegex);
                 string varStoreString = localVarStoreMatch.Groups[1].Value;
-                DebugWriter.WriteDebug(DebugLevel.I, "varStoreString is: {0}", varStoreString);
+                DebugWriter.WriteDebug(DebugLevel.I, "varStoreString is: {0}", vars: [varStoreString]);
                 string varStoreStringFull = localVarStoreMatch.Value;
                 var varStoreVars = UESHVariables.GetVariablesFrom(varStoreString);
 
@@ -459,8 +459,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         TargetFile = FilesystemTools.NeutralizePath(commandName);
                     if (pathValid)
                         TargetFileName = Path.GetFileName(TargetFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", commandName);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", TargetFile);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", vars: [commandName]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", vars: [TargetFile]);
 
                     // Reads command written by user
                     try
@@ -502,7 +502,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                         if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                                             !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
                                         {
-                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
+                                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [commandName]);
                                             TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
                                             UESHVariables.SetVariable("UESHErrorCode", "-4");
                                             break;
@@ -513,14 +513,14 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 // Check the command before starting
                                 if (KernelEntry.Maintenance & cmdInfo.Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
+                                    DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", vars: [commandName]);
                                     TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
                                     UESHVariables.SetVariable("UESHErrorCode", "-3");
                                 }
                                 else
                                 {
                                     var ShellInstance = ShellStack[^1];
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", vars: [commandName, Command]);
                                     var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
                                     CommandExecutor.StartCommandThread(Params);
                                     UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
@@ -532,7 +532,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                             // If we're in the UESH shell, parse the script file or executable file
                             if (FilesystemTools.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", commandName);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", vars: [commandName]);
                                 try
                                 {
                                     // Create a new instance of process
@@ -541,7 +541,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                     {
                                         var targetCommand = Command.Replace(TargetFileName, "");
                                         targetCommand = targetCommand.TrimStart('\0', ' ');
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", vars: [TargetFile, targetCommand]);
                                         var Params = new ExecuteProcessThreadParameters(TargetFile, targetCommand);
                                         ProcessStartCommandThread.Start(Params);
                                         ProcessStartCommandThread.Wait();
@@ -551,7 +551,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 }
                                 catch (Exception ex)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", vars: [ex.Message]);
                                     TextWriters.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
@@ -565,7 +565,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 try
                                 {
                                     PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", vars: [commandName]);
                                     UESHParse.Execute(TargetFile, arguments);
                                     UESHVariables.SetVariable("UESHErrorCode", "0");
                                 }
@@ -581,14 +581,14 @@ namespace Nitrocid.Shell.ShellBase.Shells
                             }
                             else
                             {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
+                                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", vars: [commandName]);
                                 TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                                 UESHVariables.SetVariable("UESHErrorCode", "-2");
                             }
                         }
                         else
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", vars: [commandName]);
                             TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                             UESHVariables.SetVariable("UESHErrorCode", "-1");
                         }
@@ -905,11 +905,11 @@ namespace Nitrocid.Shell.ShellBase.Shells
             catch (Exception ex)
             {
                 // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
-                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", vars: [ShellType, ex.Message]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", vars: [ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount]);
                 DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellInternal));
+                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", vars: [nameof(StartShellInternal)]);
                 throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
             }
             finally
@@ -920,7 +920,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
                 // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
                 int newShellCount = ShellStack.Count;
-                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
+                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", vars: [newShellCount, shellCount]);
                 if (newShellCount > shellCount)
                     KillShellInternal();
 
@@ -976,7 +976,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     string outputFile = outputFiles[i];
                     bool isOverwrite = outputFileModes[i] != " >>> ";
                     string OutputFilePath = FilesystemTools.NeutralizePath(outputFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", vars: [isOverwrite, OutputFilePath]);
                     if (isOverwrite)
                         FilesystemTools.ClearFile(OutputFilePath);
                     filePaths.Add(OutputFilePath);
@@ -1004,7 +1004,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             // Checks to see if the user provided optional path
             if (!string.IsNullOrWhiteSpace(OutputPath))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", vars: [OutputPath]);
                 OutputPath = FilesystemTools.NeutralizePath(OutputPath);
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriverLocal).PathToWrite = OutputPath;

@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                 string SftpHost = address.Replace("sftp://", "");
                 SftpHost = indexOfPort < 0 ? SftpHost : SftpHost.Replace(SftpHost[SftpHost.LastIndexOf(":")..], "");
                 string SftpPortString = address.Replace("sftp://", "").Replace(SftpHost + ":", "");
-                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", SftpHost, SftpPortString);
+                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", vars: [SftpHost, SftpPortString]);
                 bool portParsed = int.TryParse(SftpHost == SftpPortString ? "22" : SftpPortString, out int SftpPort);
                 if (!portParsed)
                 {
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", vars: [address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
         public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
         {
             // Authentication
-            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", vars: [Address, Port, Username]);
             var AuthenticationMethods = new List<AuthenticationMethod>();
             int Answer;
             while (true)
@@ -176,7 +176,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
                                 TextWriters.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
@@ -214,7 +214,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
         {
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), client.ConnectionInfo.Host);
-            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", client.ConnectionInfo.Host);
+            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", vars: [client.ConnectionInfo.Host]);
             client.Connect();
             var sftpConnection = NetworkConnectionTools.EstablishConnection("SFTP client", client.ConnectionInfo.Host, NetworkConnectionType.SFTP, client);
 

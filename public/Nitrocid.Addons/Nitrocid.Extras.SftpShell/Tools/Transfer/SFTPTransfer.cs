@@ -47,20 +47,20 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
 
                 // Try to download
                 var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
                 client.DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
 
                 // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", vars: [File]);
                 EventsManager.FireEvent(EventType.SFTPPostDownload, File);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.SFTPDownloadError, File, ex);
             }
             return false;
@@ -80,18 +80,18 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreUpload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [File]);
 
                 // Try to upload
                 var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
                 client.UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", vars: [File]);
                 EventsManager.FireEvent(EventType.SFTPPostUpload, File);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.SFTPUploadError, File, ex);
             }
             return false;
@@ -111,21 +111,21 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", vars: [File]);
 
                 // Try to download 3 times
                 var DownloadedBytes = Array.Empty<byte>();
                 string DownloadedContent = client.ReadAllText(File);
 
                 // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", vars: [File]);
                 EventsManager.FireEvent(EventType.SFTPPostDownload, File, DownloadedContent);
                 return DownloadedContent;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.SFTPPostDownload, File, false);
             }
             return "";

@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string projectedTimes = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-times");
             if (!string.IsNullOrEmpty(projectedTimes) && TextTools.IsStringNumeric(projectedTimes))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", projectedTimes);
+                DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", vars: [projectedTimes]);
                 PingTimes = Convert.ToInt32(projectedTimes);
             }
 

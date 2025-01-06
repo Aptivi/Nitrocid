@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
             // Open file if not open
             if (SqlShellCommon.sqliteConnection is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);

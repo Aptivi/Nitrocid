@@ -74,7 +74,7 @@ namespace Nitrocid.Kernel.Exceptions
                 JournalManager.WriteJournal(Description, JournalStatus.Fatal, Variables);
 
                 // Check error types and its capabilities
-                DebugWriter.WriteDebug(DebugLevel.I, "Error type: {0}", ErrorType);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error type: {0}", vars: [ErrorType]);
                 if (Enum.IsDefined(typeof(KernelErrorLevel), ErrorType))
                 {
                     if (ErrorType == KernelErrorLevel.U)
@@ -83,7 +83,7 @@ namespace Nitrocid.Kernel.Exceptions
                         {
                             // If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                             // generate a second kernel error stating that there is something wrong with the reboot time.
-                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", vars: [ErrorType, RebootTime]);
                             KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), null, ((int)ErrorType).ToString());
                             return;
                         }
@@ -91,7 +91,7 @@ namespace Nitrocid.Kernel.Exceptions
                         {
                             // If the error type is unrecoverable, or double, and the rebooting is false where it should
                             // not be false, then it can deal with this issue by enabling reboot.
-                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", vars: [ErrorType]);
                             SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), ErrorType);
                             Reboot = true;
                         }
@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel.Exceptions
                     if (RebootTime > 3600L)
                     {
                         // If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
-                        DebugWriter.WriteDebug(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime);
+                        DebugWriter.WriteDebug(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", vars: [RebootTime]);
                         SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), ErrorType, RebootTime.ToString());
                         RebootTime = 60L;
                     }
@@ -107,7 +107,7 @@ namespace Nitrocid.Kernel.Exceptions
                 else
                 {
                     // If the error type is other than F/U/S, then it will generate a second error.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", ErrorType);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", vars: [ErrorType]);
                     KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
                     return;
                 }
@@ -125,7 +125,7 @@ namespace Nitrocid.Kernel.Exceptions
                 if (Reboot)
                 {
                     // Offer the user to wait for the set time interval before the kernel reboots.
-                    DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
+                    DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", vars: [RebootTime, ErrorType]);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
                     if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
@@ -136,7 +136,7 @@ namespace Nitrocid.Kernel.Exceptions
                 {
                     // If rebooting is disabled, offer the user to shutdown the kernel
                     DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
-                    DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
+                    DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", vars: [RebootTime, ErrorType]);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
                     if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Exceptions
             catch (Exception ex)
             {
                 // Alright, we have a double panic.
-                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
             }
@@ -203,7 +203,7 @@ namespace Nitrocid.Kernel.Exceptions
 
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
-                DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", Description, Exc?.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", vars: [Description, Exc?.Message]);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
                 if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                     SplashReport.ReportProgressWarning(Exc.StackTrace);
@@ -212,7 +212,7 @@ namespace Nitrocid.Kernel.Exceptions
             catch (Exception ex)
             {
                 // Alright, we have a double panic.
-                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
             }
@@ -331,7 +331,7 @@ namespace Nitrocid.Kernel.Exceptions
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         dumpBuilder.AppendLine(Translate.DoTranslation("Frame analysis failed. Some information might not be complete.") + $" {ex.Message}");
                     }
@@ -359,7 +359,7 @@ namespace Nitrocid.Kernel.Exceptions
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze threads: ", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze threads: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     dumpBuilder.AppendLine(Translate.DoTranslation("Thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
                 }
@@ -375,7 +375,7 @@ namespace Nitrocid.Kernel.Exceptions
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze OS threads: ", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze OS threads: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     dumpBuilder.AppendLine(Translate.DoTranslation("Operating system thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
                 }
@@ -403,7 +403,7 @@ namespace Nitrocid.Kernel.Exceptions
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze thread backtraces: ", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze thread backtraces: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     dumpBuilder.AppendLine(Translate.DoTranslation("Thread backtrace analysis failed. Some information might not be complete.") + $" {ex.Message}");
                     dumpBuilder.AppendLine();
@@ -417,7 +417,7 @@ namespace Nitrocid.Kernel.Exceptions
                 // Save the dump file
                 string filePath = $"{PathsManagement.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
                 FilesystemTools.WriteContentsText(filePath, dumpBuilder.ToString());
-                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", filePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", vars: [filePath]);
             }
             catch (Exception ex)
             {

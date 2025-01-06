@@ -33,7 +33,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int Random()
         {
             int num = base.Random();
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(Random));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", vars: [num, nameof(Random)]);
             return num;
         }
 
@@ -41,7 +41,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int Random(int max)
         {
             int num = base.Random(max);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(Random), max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", vars: [num, nameof(Random), max]);
             return num;
         }
 
@@ -49,7 +49,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int Random(int min, int max)
         {
             int num = random.Next(min, max + 1);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(Random), min, max + 1);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", vars: [num, nameof(Random), min, max + 1]);
             return num;
         }
 
@@ -57,7 +57,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override short RandomShort()
         {
             short num = base.RandomShort();
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomShort));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", vars: [num, nameof(RandomShort)]);
             return num;
         }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override short RandomShort(short max)
         {
             short num = base.RandomShort(max);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomShort), max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", vars: [num, nameof(RandomShort), max]);
             return num;
         }
 
@@ -73,7 +73,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override short RandomShort(short min, short max)
         {
             short num = (short)base.Random(min, max);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(RandomShort), min, max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", vars: [num, nameof(RandomShort), min, max]);
             return num;
         }
 
@@ -81,7 +81,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int RandomIdx()
         {
             int num = base.RandomIdx();
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomIdx));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", vars: [num, nameof(RandomIdx)]);
             return num;
         }
 
@@ -89,7 +89,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int RandomIdx(int max)
         {
             int num = base.RandomIdx(max);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomIdx), max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", vars: [num, nameof(RandomIdx), max]);
             return num;
         }
 
@@ -97,7 +97,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override int RandomIdx(int min, int max)
         {
             int num = random.Next(min, max);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", num, nameof(RandomIdx), min, max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, min = {2}, max = {3}]", vars: [num, nameof(RandomIdx), min, max]);
             return num;
         }
 
@@ -105,7 +105,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override double RandomDouble()
         {
             double num = random.NextDouble();
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", num, nameof(RandomDouble));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}]", vars: [num, nameof(RandomDouble)]);
             return num;
         }
 
@@ -113,7 +113,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override double RandomDouble(double max)
         {
             double num = random.NextDouble() * max;
-            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", num, nameof(RandomDouble), max);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Num = {0}, Type = {1}, max = {2}]", vars: [num, nameof(RandomDouble), max]);
             return num;
         }
 
@@ -121,7 +121,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override bool RandomChance(double prob)
         {
             bool status = random.NextDouble() < prob;
-            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, prob = {2}]", status, nameof(RandomChance), prob);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, prob = {2}]", vars: [status, nameof(RandomChance), prob]);
             return status;
         }
 
@@ -129,7 +129,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override bool RandomChance(int probPercent)
         {
             bool status = base.RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : base.Random(100)) / 100d);
-            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, probPercent = {2}]", status, nameof(RandomChance), probPercent);
+            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}, probPercent = {2}]", vars: [status, nameof(RandomChance), probPercent]);
             return status;
         }
 
@@ -137,7 +137,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override bool RandomRussianRoulette()
         {
             bool status = base.RandomShort() % 6 == 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", status, nameof(RandomRussianRoulette));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", vars: [status, nameof(RandomRussianRoulette)]);
             return status;
         }
 
@@ -145,7 +145,7 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override bool RandomBoolean()
         {
             bool status = random.Next(2) == 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", status, nameof(RandomBoolean));
+            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", vars: [status, nameof(RandomBoolean)]);
             return status;
         }
     }

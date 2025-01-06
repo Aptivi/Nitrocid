@@ -35,7 +35,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 "Kernel initialized, version {0}.\n" +
                 "Kernel mod API version {1}.\n" +
                 "OS: {2}",
-                KernelMain.VersionFullStr, KernelMain.ApiVersion.ToString(), Environment.OSVersion.ToString()
+                vars: [KernelMain.VersionFullStr, KernelMain.ApiVersion.ToString(), Environment.OSVersion.ToString()]
             );
             if (KernelPlatform.IsOnUnixMusl())
                 DebugWriter.WriteDebug(DebugLevel.I, "Running on musl");

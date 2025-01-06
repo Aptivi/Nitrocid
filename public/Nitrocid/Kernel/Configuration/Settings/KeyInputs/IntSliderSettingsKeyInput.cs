@@ -133,7 +133,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // We're dealing with integers with limits
             if (value is not int AnswerInt)
                 return;
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, AnswerInt);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, AnswerInt]);
             SettingsAppTools.SetPropertyValue(key.Variable, AnswerInt, configType);
         }
 

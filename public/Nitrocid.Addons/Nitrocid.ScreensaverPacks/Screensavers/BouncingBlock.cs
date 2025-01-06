@@ -56,7 +56,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor));
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor));
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", vars: [RowBlock, ColumnBlock]);
 
             // Initialize the color
             blockColor ??= GetRandomBlockColor();
@@ -102,7 +102,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 blockColor = GetRandomBlockColor();
             }
 
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", vars: [Direction]);
             if (Direction == "BottomRight")
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Increasing row and column block position");
@@ -140,13 +140,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingBlockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.BouncingBlockMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingBlockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.BouncingBlockMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingBlockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.BouncingBlockMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 return new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingBlockMinimumColorLevel, ScreensaverPackInit.SaversConfig.BouncingBlockMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 return new Color(ColorNum);
             }
         }

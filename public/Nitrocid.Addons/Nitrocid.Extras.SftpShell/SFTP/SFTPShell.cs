@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
 
             // Prepare to print current SFTP directory
             SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [SFTPShellCommon.SFTPCurrentRemoteDir ?? ""]);
             SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
             SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 

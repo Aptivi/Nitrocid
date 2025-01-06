@@ -54,7 +54,7 @@ namespace Nitrocid.Drivers.Encryption
         /// <inheritdoc/>
         public virtual string GetEncryptedFile(Stream stream)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [stream.Length]);
             var hashbyte = Encryptor.Create().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
@@ -72,7 +72,7 @@ namespace Nitrocid.Drivers.Encryption
         /// <inheritdoc/>
         public virtual string GetEncryptedString(string str)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
             var hashbyte = Encryptor.HashData(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }

@@ -89,22 +89,22 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             {
                 if (SourceAlias == Destination)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Assertion succeeded: {0} = {1}", vars: [SourceAlias, Destination]);
                     throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));
                 }
                 else if (!CommandManager.IsCommandFound(SourceAlias, Type))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", Destination);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", vars: [Destination]);
                     throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
                 }
                 else if (DoesAliasExist(Destination, Type))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Alias {0} already found", SourceAlias);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Alias {0} already found", vars: [SourceAlias]);
                     throw new KernelException(KernelExceptionType.AliasAlreadyExists, Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Aliasing {0} to {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Aliasing {0} to {1}", vars: [SourceAlias, Destination]);
                     var aliasInstance = new AliasInfo()
                     {
                         alias = Destination,
@@ -117,7 +117,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
+                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", vars: [Type]);
                 throw new KernelException(KernelExceptionType.AliasNoSuchType, Translate.DoTranslation("Invalid type {0}."), Type);
             }
         }
@@ -143,12 +143,12 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             if (DoesAliasExist(TargetAlias, Type))
             {
                 var AliasInfo = GetAlias(TargetAlias, Type);
-                DebugWriter.WriteDebug(DebugLevel.I, "Target alias {0} is found under type {1}, so removing...", TargetAlias, Type);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target alias {0} is found under type {1}, so removing...", vars: [TargetAlias, Type]);
                 return aliases.Remove(AliasInfo);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", vars: [TargetAlias, Type.ToString()]);
                 throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
             }
         }

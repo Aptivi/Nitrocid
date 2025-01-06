@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             int Message = MessageNum - 1;
             var messages = MailShellCommon.IMAP_Messages ?? [];
             int MaxMessagesIndex = messages.Count() - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
                 TextWriters.Write(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
                 return;
             }
@@ -93,32 +93,32 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 TextWriterRaw.Write();
 
                 // Print all the addresses that sent the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", Msg.From.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", vars: [Msg.From.Count]);
                 foreach (InternetAddress Address in Msg.From)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
                     TextWriters.Write(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", Msg.To.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", vars: [Msg.To.Count]);
                 foreach (InternetAddress Address in Msg.To)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
                     TextWriters.Write(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [Msg.Date.DateTime.ToString()]);
                 TextWriters.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 TextWriterRaw.Write();
-                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
+                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [Msg.Subject.Length, Msg.Subject]);
                 TextWriters.Write($"- {Msg.Subject}", false, KernelColorType.ListEntry);
 
                 // Write a sign after the subject if attachments are found
-                DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
+                DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", vars: [Msg.Attachments.Count()]);
                 if (Msg.Attachments.Any())
                 {
                     TextWriters.Write(" - [*]", true, KernelColorType.ListEntry);
@@ -132,11 +132,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 TextWriterRaw.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
                 var DecryptedMessage = default(Dictionary<string, MimeEntity>);
-                DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", Decrypt);
+                DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", vars: [Decrypt]);
                 if (Decrypt)
                 {
                     DecryptedMessage = DecryptMessage(Msg);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", DecryptedMessage.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
                     var DecryptedEntity = DecryptedMessage["Body"];
                     var DecryptedStream = new MemoryStream();
                     DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
@@ -152,11 +152,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                                 if (!MultiEntity[EntityNumber].IsAttachment)
                                 {
                                     MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
                                     DecryptedStream.Position = 0L;
                                     var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                                     DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
                                     TextWriters.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                                 }
                             }
@@ -165,11 +165,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                     else
                     {
                         DecryptedEntity.WriteTo(DecryptedStream, true);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
                         DecryptedStream.Position = 0L;
                         var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                         DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
                         TextWriters.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                     }
                 }
@@ -197,11 +197,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                                 continue;
                             if (decryptedEntity is null)
                                 continue;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, decryptedString.Contains("Attachment"));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", vars: [DecryptedEntityNumber, decryptedString.Contains("Attachment")]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", vars: [DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart]);
                             if (decryptedString.Contains("Attachment"))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", DecryptedEntityNumber);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", vars: [DecryptedEntityNumber]);
                                 AttachmentEntities.Add(decryptedEntity);
                             }
                             else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
@@ -210,13 +210,13 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                                 DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
                                 if (MultiEntity is not null)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", MultiEntity.Count);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", vars: [MultiEntity.Count]);
                                     for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
                                     {
                                         DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
                                         if (MultiEntity[EntityNumber].IsAttachment)
                                         {
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", EntityNumber);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", vars: [EntityNumber]);
                                             AttachmentEntities.Add(MultiEntity[EntityNumber]);
                                         }
                                     }
@@ -230,7 +230,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                     }
                     foreach (MimeEntity Attachment in AttachmentEntities)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", Attachment.ContentId);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", vars: [Attachment.ContentId]);
                         if (Attachment is MessagePart)
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
@@ -270,7 +270,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             int AttachmentNumber = 1;
             foreach (MimeEntity TextAttachment in Text.Attachments)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Attachment number {0}", AttachmentNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Attachment number {0}", vars: [AttachmentNumber]);
                 DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted attachment type: {(TextAttachment is MultipartEncrypted ? "Multipart" : "Singlepart")}");
                 if (TextAttachment is MultipartEncrypted attachmentEncrypted)
                 {
@@ -320,7 +320,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return false;
@@ -359,7 +359,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return false;
@@ -398,7 +398,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 return false;
@@ -420,14 +420,14 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                         client.Inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
                         MailShellCommon.IMAP_Messages = client.Inbox.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
                     }
                     else
                     {
                         var Folder = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", MailShellCommon.IMAP_CurrentDirectory);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [MailShellCommon.IMAP_CurrentDirectory]);
                         MailShellCommon.IMAP_Messages = Folder.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
                     }
                 }
             }

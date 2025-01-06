@@ -39,11 +39,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting.CustomConditions
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", FirstVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", vars: [FirstVariable]);
             string VarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [FirstVariable, VarValue]);
             Satisfied = VarValue.Length > 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
     }

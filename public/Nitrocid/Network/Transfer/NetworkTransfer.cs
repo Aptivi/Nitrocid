@@ -149,7 +149,7 @@ namespace Nitrocid.Network.Transfer
         {
             if (e is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", vars: [e.Message]);
                 if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
                     DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
@@ -168,7 +168,7 @@ namespace Nitrocid.Network.Transfer
         {
             if (e is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", vars: [e.Message]);
                 if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
                     UploadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
@@ -238,7 +238,7 @@ namespace Nitrocid.Network.Transfer
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to report transfer progress: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to report transfer progress: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

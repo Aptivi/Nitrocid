@@ -49,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             characters.Clear();
             ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor));
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor));
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
         /// <inheritdoc/>
@@ -59,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             var leftTop = (Left, Top);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", vars: [Left, Top]);
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 if (characters.TryGetValue(leftTop, out char charValue))

@@ -191,7 +191,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
             string name = (string?)WeatherInfo.WeatherToken["name"] ?? "";
             double feelsLike = (double?)WeatherInfo.WeatherToken?["main"]?["feels_like"] ?? 0d;
             double pressure = (double?)WeatherInfo.WeatherToken?["main"]?["pressure"] ?? 0d;
-            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", name, CityID);
+            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", vars: [name, CityID]);
             SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("-- Weather info for {0} --"), KernelColorTools.GetColor(KernelColorType.ListTitle), true, name);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)

@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         {
             // Inform user that we're on the studio
             EventsManager.FireEvent(EventType.ThemeStudioStarted);
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", vars: [ThemeName]);
             ThemeStudioTools.SelectedThemeName = ThemeName;
 
             // Maximum options is number of kernel colors plus more options
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             // Main Loop
             while (!StudioExiting)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
+                DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", vars: [MaximumOptions]);
                 ConsoleWrapper.Clear();
 
                 // Make a list of choices
@@ -109,10 +109,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
 
                 // Prompt user
                 int response = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Making a new theme \"{0}\"."), ThemeName), [.. choices], [.. altChoices], true);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", response);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", vars: [response]);
 
                 // Check for response integrity
-                DebugWriter.WriteDebug(DebugLevel.I, "Numeric response {0} is >= 1 and <= {1}.", response, MaximumOptions);
+                DebugWriter.WriteDebug(DebugLevel.I, "Numeric response {0} is >= 1 and <= {1}.", vars: [response, MaximumOptions]);
                 Color SelectedColorInstance;
                 if (response == colors.Count + 1)
                 {
@@ -126,7 +126,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
                     ThemeStudioTools.SaveThemeToAnotherDirectory(ThemeName, DirectoryName);
                 }
                 else if (response == colors.Count + 3)
@@ -136,7 +136,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                     string AltThemeName = InputTools.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.SaveThemeToCurrentDirectory(AltThemeName);
                 }
                 else if (response == colors.Count + 4)
@@ -146,12 +146,12 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                     TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                     string AltThemeName = InputTools.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
                 }
                 else if (response == colors.Count + 5)
@@ -160,7 +160,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                     TextWriters.Write(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, KernelColorType.Input);
                     string AltThemeName = InputTools.ReadLine() + ".json";
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.LoadThemeFromFile(AltThemeName);
                 }
                 else if (response == colors.Count + 6)
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                     TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " ", false, KernelColorType.Input);
                     string AltThemeName = InputTools.ReadLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);
                 }
                 else if (response == colors.Count + 7)

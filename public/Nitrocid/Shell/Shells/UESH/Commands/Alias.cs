@@ -64,7 +64,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(ex.Message, KernelColorType.Error);
                     }
@@ -88,7 +88,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(ex.Message, KernelColorType.Error);
                     }

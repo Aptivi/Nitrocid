@@ -64,18 +64,18 @@ namespace Nitrocid.Extras.RssShell.Tools
                     var RssBookmarks = GetBookmarks();
                     if (!RssBookmarks.Contains(FinalFeedUriString))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to feed bookmark list...", vars: [FinalFeedUriString]);
                         RssBookmarks.Add(FinalFeedUriString);
                     }
                     SaveBookmarks(RssBookmarks);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", vars: [FeedURL, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.RssShell.Tools
                     var RssBookmarks = GetBookmarks();
                     if (RssBookmarks.Contains(FinalFeedUriString))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from feed bookmark list...", vars: [FinalFeedUriString]);
                         RssBookmarks.Remove(FinalFeedUriString);
                         SaveBookmarks(RssBookmarks);
                     }
@@ -124,11 +124,11 @@ namespace Nitrocid.Extras.RssShell.Tools
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", vars: [FeedURL, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
                         throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
                     }
                     else

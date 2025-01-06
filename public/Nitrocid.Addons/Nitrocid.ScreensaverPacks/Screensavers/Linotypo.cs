@@ -69,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             CurrentColumn = 1;
             CurrentColumnRowConsole = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
         public override void ScreensaverLogic()
@@ -78,10 +78,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int CpmSpeedMax = ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax * 5;
             int MaxCharacters = (int)Math.Round((ConsoleWrapper.WindowWidth - 2) / (double)ScreensaverPackInit.SaversConfig.LinotypoTextColumns - 3d);
             int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)ScreensaverPackInit.SaversConfig.LinotypoTextColumns);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin, CpmSpeedMin);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax, CpmSpeedMax);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, ScreensaverPackInit.SaversConfig.LinotypoTextColumns);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Width threshold: {0}", ColumnRowConsoleThreshold);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", vars: [ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin, CpmSpeedMin]);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", vars: [ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax, CpmSpeedMax]);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", vars: [MaxCharacters, ScreensaverPackInit.SaversConfig.LinotypoTextColumns]);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Width threshold: {0}", vars: [ColumnRowConsoleThreshold]);
 
             // Strikes
             var Strikes = new List<string>() { "q`12wsa", "r43edfgt5", "u76yhjki8", @"p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa " };
@@ -105,11 +105,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string LinotypeWrite = ScreensaverPackInit.SaversConfig.LinotypoWrite;
 
             // Linotypo can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", ScreensaverPackInit.SaversConfig.LinotypoWrite);
+            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", vars: [ScreensaverPackInit.SaversConfig.LinotypoWrite]);
             if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.LinotypoWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.LinotypoWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.LinotypoWrite);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", vars: [ScreensaverPackInit.SaversConfig.LinotypoWrite]);
                 LinotypeWrite = FilesystemTools.ReadContentsText(ScreensaverPackInit.SaversConfig.LinotypoWrite);
             }
 
@@ -119,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Sometimes, a paragraph could consist of nothing, but prints its new line, so honor this by checking to see if we need to
                 // clear screen or advance to the next column so that we don't mess up the display by them
@@ -133,11 +133,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 else
                 {
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", vars: [CurrentColumn, CurrentColumnRowConsole]);
                     ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                 }
                 ConsoleWrapper.Write("    ");
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                 bool NewLineDone = true;
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed for each column
@@ -163,12 +163,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
                         else
                         {
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", vars: [CurrentColumn, CurrentColumnRowConsole]);
                             ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                         }
                     }
                     ConsoleWrapper.Write("  ");
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
 
                     // We need to store which column and which key from the linotype keyboard layout is taken.
                     int LinotypeColumnIndex = 0;
@@ -194,23 +194,23 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             }
                             else
                             {
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", vars: [CurrentColumn, CurrentColumnRowConsole]);
                                 ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                             }
                             ConsoleWrapper.Write("  ");
                             if (IncompleteSentenceIndex == 0)
                                 ConsoleWrapper.Write("    ");
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                         }
 
                         // Select a character
                         char StruckChar = IncompleteSentence[StruckCharIndex];
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckChar);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", vars: [StruckChar]);
 
                         // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                         int SelectedCpm = RandomDriver.Random(CpmSpeedMin, CpmSpeedMax);
                         int WriteMs = (int)Math.Round(60d / SelectedCpm * 1000d);
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", vars: [SelectedCpm, WriteMs]);
 
                         // Choose a character depending on the current mode
                         if (EtaoinMode)
@@ -218,7 +218,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Doing this in linotype machines after spotting an error usually triggers a speed boost, because the authors
                             // that used this machine back then considered it as a quick way to fill the faulty line.
                             WriteMs = (int)Math.Round(WriteMs / (1d + RandomDriver.RandomDouble()));
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Etaoin mode on. Delaying {0} ms...", WriteMs);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Etaoin mode on. Delaying {0} ms...", vars: [WriteMs]);
 
                             // Get the character
                             StruckChar = Convert.ToChar(LinotypeLayout[LinotypeColumnIndex, LinotypeKeyIndex]);
@@ -229,7 +229,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             }
 
                             // Advance the indexes of column and key, depending on their values, and get the character
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Etaoin type: {0}", ScreensaverPackInit.SaversConfig.LinotypoEtaoinType);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Etaoin type: {0}", vars: [ScreensaverPackInit.SaversConfig.LinotypoEtaoinType]);
                             switch (ScreensaverPackInit.SaversConfig.LinotypoEtaoinType)
                             {
                                 case FillType.EtaoinComplete:
@@ -263,14 +263,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                         break;
                                     }
                             }
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Key index: {0} | Column index: {1}", LinotypeKeyIndex, LinotypeColumnIndex);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Key index: {0} | Column index: {1}", vars: [LinotypeKeyIndex, LinotypeColumnIndex]);
                         }
                         else
                         {
                             // See if the typo is guaranteed
                             double Probability = (ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility >= 5 ? 5 : ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility) / 100d;
                             bool LinotypoGuaranteed = RandomDriver.RandomChance(Probability);
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Probability: {0} Guarantee: {1}", Probability, LinotypoGuaranteed);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Probability: {0} Guarantee: {1}", vars: [Probability, LinotypoGuaranteed]);
                             if (LinotypoGuaranteed)
                             {
                                 // Sometimes, a typo is generated by missing a character.
@@ -296,10 +296,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                         CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(StruckChar);
                                         StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex1] : Strikes[StrikeCharsIndex1];
                                         StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(StruckChar);
-                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", StrikeCharsIndex1);
-                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Capped strike: {0}", CappedStrike);
-                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Strikes pattern: {0}", StrikesString);
-                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Found? {0}", StruckFound);
+                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", vars: [StrikeCharsIndex1]);
+                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Capped strike: {0}", vars: [CappedStrike]);
+                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Strikes pattern: {0}", vars: [StrikesString]);
+                                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Found? {0}", vars: [StruckFound]);
                                     }
                                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Found!");
 
@@ -313,13 +313,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                         MistypedChar = CapStrikes[StrikeCharsIndex1][RandomStrikeIndex];
                                     }
                                     StruckChar = MistypedChar;
-                                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckChar);
+                                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", vars: [StruckChar]);
                                 }
 
                                 // Randomly select whether or not to turn on the capped Etaoin
                                 double CappingProbability = (ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility >= 10 ? 10 : ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility) / 100d;
                                 CappedEtaoin = RandomDriver.RandomChance(CappingProbability);
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Capped Etaoin: {0}", CappedEtaoin);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Capped Etaoin: {0}", vars: [CappedEtaoin]);
 
                                 // Trigger character counter mode
                                 CountingCharacters = true;
@@ -335,7 +335,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // If we're on the character counter mode, increment this for every character until the "line fill" mode starts
                         if (CountingCharacters)
                         {
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Counter increased. {0}", CharacterCounter);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Counter increased. {0}", vars: [CharacterCounter]);
                             CharacterCounter += 1;
                             if (CharacterCounter > ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold)
                             {
@@ -367,11 +367,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 }
                                 else
                                 {
-                                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", CurrentColumn, CurrentColumnRowConsole);
+                                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Column {0}. Setting left to {1}...", vars: [CurrentColumn, CurrentColumnRowConsole]);
                                     ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, ConsoleWrapper.CursorTop + 1);
                                 }
                                 ConsoleWrapper.Write("  ");
-                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                             }
                         }
                     }
@@ -413,7 +413,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     if (CurrentColumn >= ScreensaverPackInit.SaversConfig.LinotypoTextColumns)
                     {
                         // ...wait until retry
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", vars: [ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay]);
                         ConsoleWrapper.WriteLine();
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
 
@@ -428,14 +428,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         CurrentColumn += 1;
                         CurrentColumnRowConsole += ColumnRowConsoleThreshold;
                         ConsoleWrapper.SetCursorPosition(CurrentColumnRowConsole, 0);
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New column. Moving to {0}...", CurrentColumnRowConsole);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New column. Moving to {0}...", vars: [CurrentColumnRowConsole]);
                     }
                 }
             }
             else if (ScreensaverPackInit.SaversConfig.LinotypoTextColumns == 1 & ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
             {
                 // We're on the bottom, so wait until retry...
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", vars: [ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay]);
                 ConsoleWrapper.WriteLine();
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
 

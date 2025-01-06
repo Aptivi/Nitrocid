@@ -77,17 +77,17 @@ namespace Nitrocid.Shell.Prompts
             // Check to see if we have the preset
             if (Presets.ContainsKey(PresetName) || CustomPresets.ContainsKey(PresetName))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting dryly...", PresetName, ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting dryly...", vars: [PresetName, ShellType.ToString()]);
                 CurrentPresets[ShellType] = PresetName;
             }
             else if (ThrowOnNotFound)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", vars: [PresetName, ShellType.ToString()]);
                 throw new KernelException(KernelExceptionType.NoSuchShellPreset, Translate.DoTranslation("The specified preset {0} is not found."), PresetName);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting dryly to default...", PresetName, ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting dryly to default...", vars: [PresetName, ShellType.ToString()]);
                 CurrentPresets[ShellType] = "Default";
             }
         }

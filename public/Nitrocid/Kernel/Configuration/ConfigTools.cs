@@ -72,7 +72,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to reload config: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to reload config: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -117,7 +117,7 @@ namespace Nitrocid.Kernel.Configuration
                 if (CurrentValue is LanguageInfo lang)
                     CurrentValue = lang.ThreeLetterLanguageName;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", CurrentValue, CurrentValue?.GetType().Name, Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", vars: [CurrentValue, CurrentValue?.GetType().Name, Variable]);
             }
             return CurrentValue;
         }
@@ -146,7 +146,7 @@ namespace Nitrocid.Kernel.Configuration
                         {
                             string desc = Setting.Description;
                             InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, SettingIndex + 1);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [KeyName, SectionIndex + 1, SettingIndex + 1]);
                             Results.Add(ici);
                         }
                     }
@@ -154,13 +154,13 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", vars: [Pattern, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw;
             }
 
             // Return the results
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} results", Results.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results", vars: [Results.Count]);
             return Results;
         }
 
@@ -220,12 +220,12 @@ namespace Nitrocid.Kernel.Configuration
             {
                 SettingsEntry? entry = entries[entryIdx];
                 var keys = entry.Keys;
-                DebugWriter.WriteDebug(DebugLevel.I, "[Entry: {0}/{1}] Checking {2} settings keys on {3}...", entryIdx + 1, entries.Length, keys.Length, entry.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "[Entry: {0}/{1}] Checking {2} settings keys on {3}...", vars: [entryIdx + 1, entries.Length, keys.Length, entry.Name]);
                 Results.AddRange(CheckConfigVariables(keys, config));
             }
 
             // Return the results
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", Results.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
             return Results;
         }
 
@@ -251,49 +251,49 @@ namespace Nitrocid.Kernel.Configuration
                 string KeyEnumerationAssembly = key.EnumerationAssembly;
 
                 // Check for multivar
-                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key name: {2}.", keyIdx + 1, keys.Length, KeyName);
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key name: {2}.", vars: [keyIdx + 1, keys.Length, KeyName]);
                 if (key.Type == SettingsKeyType.SMultivar)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {2} variables...", keyIdx + 1, keys.Length, key.Variables.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {2} variables...", vars: [keyIdx + 1, keys.Length, key.Variables.Length]);
                     Results.AddRange(CheckConfigVariables(key.Variables, config));
                     continue;
                 }
 
                 // Check the variable
-                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking {2} for existence...", keyIdx + 1, keys.Length, KeyVariable);
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking {2} for existence...", vars: [keyIdx + 1, keys.Length, KeyVariable]);
                 bool KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
-                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result for {2}: {3}.", keyIdx + 1, keys.Length, KeyVariable, KeyFound);
-                DebugWriter.WriteDebugConditional(!KeyFound, DebugLevel.E, "[Key: {0}/{1}] {2} is not found!", keyIdx + 1, keys.Length, KeyVariable, KeyFound);
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result for {2}: {3}.", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
+                DebugWriter.WriteDebugConditional(!KeyFound, DebugLevel.E, "[Key: {0}/{1}] {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
                 Results.Add(KeyFound);
 
                 // Check the enumeration
                 if (!string.IsNullOrEmpty(KeyEnumeration))
                 {
                     string fullType;
-                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking enumeration {2} used in {3} for existence...", keyIdx + 1, keys.Length, KeyEnumeration, KeyVariable);
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking enumeration {2} used in {3} for existence...", vars: [keyIdx + 1, keys.Length, KeyEnumeration, KeyVariable]);
                     if (KeyEnumerationInternal)
                     {
                         // Apparently, we need to have a full assembly name for getting types.
                         fullType = $"{KernelMain.rootNameSpace}.{KeyEnumeration}, {Assembly.GetExecutingAssembly().FullName}";
-                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Nitrocid enumeration {2} resolved to {3}.", keyIdx + 1, keys.Length, KeyEnumeration, fullType);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Nitrocid enumeration {2} resolved to {3}.", vars: [keyIdx + 1, keys.Length, KeyEnumeration, fullType]);
                     }
                     else
                     {
                         // Add enumeration name and assembly info
                         fullType = $"{KeyEnumeration}, {KeyEnumerationAssembly}";
-                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] External enumeration {2} on {3} resolved to {4}.", keyIdx + 1, keys.Length, KeyEnumeration, KeyEnumerationAssembly, fullType);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] External enumeration {2} on {3} resolved to {4}.", vars: [keyIdx + 1, keys.Length, KeyEnumeration, KeyEnumerationAssembly, fullType]);
                     }
 
                     // Try to get the type
                     bool Result = Type.GetType(fullType) is not null;
-                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result: {2}.", keyIdx + 1, keys.Length, Result);
-                    DebugWriter.WriteDebugConditional(!Result, DebugLevel.E, "[Key: {0}/{1}] Enum {2} is not found!", keyIdx + 1, keys.Length, KeyVariable, KeyFound);
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result: {2}.", vars: [keyIdx + 1, keys.Length, Result]);
+                    DebugWriter.WriteDebugConditional(!Result, DebugLevel.E, "[Key: {0}/{1}] Enum {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
                     Results.Add(Result);
                 }
             }
 
             // Return the results
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", Results.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
             return Results;
         }
 
@@ -311,7 +311,7 @@ namespace Nitrocid.Kernel.Configuration
             string name = kernelConfig.GetType().Name;
             if (!IsCustomSettingRegistered(name))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", vars: [name]);
                 Config.customConfigurations.Add(name, kernelConfig);
             }
 
@@ -342,7 +342,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingRegistered(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", vars: [setting]);
                 Config.customConfigurations.Remove(setting);
             }
         }
@@ -378,7 +378,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingRegistered(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", vars: [setting]);
                 var config = Config.GetKernelConfig(setting) ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when the kernel config is not specified."));
                 return GetPathToCustomSettingsFile(config);
@@ -401,7 +401,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Now, do the job!
             string path = FilesystemTools.NeutralizePath($"{setting.GetType().Name}.json", PathsManagement.AppDataPath);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", vars: [path]);
             return path;
         }
 
@@ -499,7 +499,7 @@ namespace Nitrocid.Kernel.Configuration
             string name = kernelConfig.GetType().Name;
             if (!IsCustomSettingBuiltin(name))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", vars: [name]);
                 Config.baseConfigurations.Add(name, kernelConfig);
             }
 
@@ -530,7 +530,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingBuiltin(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", vars: [setting]);
                 Config.baseConfigurations.Remove(setting);
             }
         }

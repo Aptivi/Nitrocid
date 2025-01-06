@@ -60,10 +60,10 @@ namespace Nitrocid.Languages
             else
             {
                 // We might have this language from a mod
-                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", lang);
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
                 var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
                 string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
                 return result;
             }
         }
@@ -90,16 +90,16 @@ namespace Nitrocid.Languages
             // Do translation
             if (lang.Strings.TryGetValue(text, out string? translated))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", langname, text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", vars: [langname, text]);
                 return translated;
             }
             else
             {
                 // We might have this language from a mod
-                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", lang);
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
                 var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
                 string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
                 return text;
             }
         }

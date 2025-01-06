@@ -113,20 +113,20 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         {
             var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
             // Delete a file or folder
             if (client.Exists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
                 client.Delete(Target);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
                 throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
             return true;
         }
 
@@ -201,7 +201,7 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             if (SFTPSessionCanon is null)
                 return "";
             string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, [Path])) ?? "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", vars: [CanonicalPath]);
             return CanonicalPath;
         }
 

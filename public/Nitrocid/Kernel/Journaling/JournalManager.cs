@@ -68,11 +68,11 @@ namespace Nitrocid.Kernel.Journaling
                 // If we don't have the target journal file, create it
                 if (!FilesystemTools.FileExists(JournalPath))
                     SaveJournals();
-                DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", JournalPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", vars: [JournalPath]);
 
                 // Make a new journal entry and store everything in it
                 Message = TextTools.FormatString(Message, Vars);
-                DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", Message, Status.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", vars: [Message, Status.ToString()]);
                 var JournalEntry = new JournalEntry()
                 {
                     date = TimeDateRenderers.RenderDate(FormatType.Short),

@@ -93,11 +93,11 @@ namespace Nitrocid.Network.Connections
                     Translate.DoTranslation("Connection is not found."));
 
             // Now, try to close this connection
-            DebugWriter.WriteDebug(DebugLevel.I, "Closing connection {0}...", connectionIndex);
+            DebugWriter.WriteDebug(DebugLevel.I, "Closing connection {0}...", vars: [connectionIndex]);
             if (!networkConnections[connectionIndex].ConnectionIsInstance)
                 networkConnections[connectionIndex].ConnectionThread?.Stop();
             networkConnections.RemoveAt(connectionIndex);
-            DebugWriter.WriteDebug(DebugLevel.I, "Connection {0} closed...", connectionIndex);
+            DebugWriter.WriteDebug(DebugLevel.I, "Connection {0} closed...", vars: [connectionIndex]);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Nitrocid.Network.Connections
                 NetworkConnection connection = new(name, uri, connectionType, connectionThread, null, uri.OriginalString);
                 connection.ConnectionThread?.Start();
                 networkConnections.Add(connection);
-                DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with thread name {3}", name, uri.ToString(), connectionType.ToString(), connectionThread.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with thread name {3}", vars: [name, uri.ToString(), connectionType.ToString(), connectionThread.Name]);
                 return connection;
             }
             catch (Exception e)
@@ -244,9 +244,9 @@ namespace Nitrocid.Network.Connections
                 // Just return the connection. This instance is an object and could be anything that represents a network connection.
                 networkConnections.Add(connection);
                 if (connectionInstance is not null)
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with instance type {3}", name, uri.ToString(), connectionType.ToString(), connectionInstance.GetType().Name);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with instance type {3}", vars: [name, uri.ToString(), connectionType.ToString(), connectionInstance.GetType().Name]);
                 else
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list...", name, uri.ToString(), connectionType.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list...", vars: [name, uri.ToString(), connectionType.ToString()]);
                 return connection;
             }
             catch (Exception e)
@@ -424,7 +424,7 @@ namespace Nitrocid.Network.Connections
                     int selectedConnection = NetworkConnectionSelector.ConnectionSelector(connectionType);
                     var availableConnectionInstances = GetNetworkConnections(connectionType);
                     int availableConnections = availableConnectionInstances.Length;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnection, availableConnections);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", vars: [selectedConnection, availableConnections]);
                     if (selectedConnection == -1)
                         return;
 
@@ -444,13 +444,13 @@ namespace Nitrocid.Network.Connections
                         for (int i = 0; i < speedDials.Length; i++)
                         {
                             string connectionUrl = speedDials[i].Address;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", connectionUrl);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", vars: [connectionUrl]);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
                         int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), [.. connectionsChoiceList], [
                             new InputChoiceInfo($"{speedDials.Length + 1}", Translate.DoTranslation("Create a new connection")),
                         ]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", vars: [selectedSpeedDial, speedDials.Length]);
                         if (selectedSpeedDial == -1)
                             return;
 
@@ -467,14 +467,14 @@ namespace Nitrocid.Network.Connections
                             // Get the address from the speed dial and connect to it
                             var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
                             address = speedDialKvp.Address;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", address);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", vars: [address]);
                             connection = speedEstablisher(address, speedDialKvp);
                         }
                     }
                     else
                     {
                         // User selected connection
-                        DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", selectedConnection);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", vars: [selectedConnection]);
                         connection = availableConnectionInstances[selectedConnection - 1];
                     }
                 }
@@ -494,15 +494,15 @@ namespace Nitrocid.Network.Connections
 
                         // Get connection from user selection
                         int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), [.. connectionsChoiceList]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnectionNumber, availableConnectionInstances.Length);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", vars: [selectedConnectionNumber, availableConnectionInstances.Length]);
                         if (selectedConnectionNumber == -1)
                             return;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection number {0}...", selectedConnectionNumber);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection number {0}...", vars: [selectedConnectionNumber]);
                         connection = availableConnectionInstances[selectedConnectionNumber - 1];
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection created by the invoker for address {0}...", address);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection created by the invoker for address {0}...", vars: [address]);
                         connection = establisher(address);
                     }
                 }
@@ -517,7 +517,7 @@ namespace Nitrocid.Network.Connections
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", shellType, address, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", vars: [shellType, address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
             }

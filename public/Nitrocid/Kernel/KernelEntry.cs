@@ -160,7 +160,7 @@ namespace Nitrocid.Kernel
                     HomepageTools.OpenHomepage();
                     if (Login.LogoutRequested)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", vars: [Login.LogoutRequested]);
                         break;
                     }
 

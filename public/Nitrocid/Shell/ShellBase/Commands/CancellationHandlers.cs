@@ -88,7 +88,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Cannot cancel. {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Cannot cancel. {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             e.Cancel = true;

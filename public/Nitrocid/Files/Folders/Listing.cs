@@ -85,7 +85,7 @@ namespace Nitrocid.Files
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
         {
             FilesystemTools.ThrowOnInvalidPath(folder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
@@ -105,7 +105,7 @@ namespace Nitrocid.Files
                     long TotalSize = 0L;
                     foreach (FileSystemEntry Entry in enumeration)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", vars: [Entry.FilePath]);
                         try
                         {
                             switch (Entry.Type)
@@ -165,7 +165,7 @@ namespace Nitrocid.Files
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", FilesystemTools.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
 
@@ -203,7 +203,7 @@ namespace Nitrocid.Files
         internal static void ListTree(string folder, bool SuppressUnauthorizedMessage, bool Sort, int level = 0)
         {
             FilesystemTools.ThrowOnInvalidPath(folder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
@@ -224,7 +224,7 @@ namespace Nitrocid.Files
                     foreach (FileSystemEntry Entry in enumeration)
                     {
                         string name = Path.GetFileName(Entry.FilePath);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", vars: [Entry.FilePath]);
                         try
                         {
                             switch (Entry.Type)
@@ -343,7 +343,7 @@ namespace Nitrocid.Files
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", FilesystemTools.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
 

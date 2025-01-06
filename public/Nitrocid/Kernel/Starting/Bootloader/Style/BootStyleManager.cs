@@ -53,13 +53,13 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         public static BaseBootStyle GetBootStyle(string name)
         {
             // Use the base boot styles first
-            DebugWriter.WriteDebug(DebugLevel.I, "Getting boot style {0} from base boot styles...", name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Getting boot style {0} from base boot styles...", vars: [name]);
             bootStyles.TryGetValue(name, out BaseBootStyle? bootStyle);
 
             // If not found, use the custom one
             if (bootStyle == null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Getting boot style {0} from custom boot styles...", name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Getting boot style {0} from custom boot styles...", vars: [name]);
                 customBootStyles.TryGetValue(name, out bootStyle);
             }
 
@@ -83,7 +83,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             // Render it.
             var bootStyle = GetCurrentBootStyle();
             var rendered = new StringBuilder();
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering menu with chosen boot entry {0}...", chosenBootEntry);
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendering menu with chosen boot entry {0}...", vars: [chosenBootEntry]);
             rendered.Append(
                 bootStyle.Render() +
                 bootStyle.RenderHighlight(chosenBootEntry)
@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         {
             // Render it.
             var bootStyle = GetCurrentBootStyle();
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering booting message with chosen boot name {0}...", chosenBootName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendering booting message with chosen boot name {0}...", vars: [chosenBootName]);
             return bootStyle.RenderBootingMessage(chosenBootName);
         }
 
@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         {
             // Render it.
             var bootStyle = GetCurrentBootStyle();
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering modal dialog with content: {0}...", content);
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendering modal dialog with content: {0}...", vars: [content]);
             return bootStyle.RenderModalDialog(content);
         }
 
@@ -134,7 +134,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         {
             string bootStyleStr = Config.MainConfig.BootStyle;
             var bootStyle = GetBootStyle(bootStyleStr);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got boot style from {0}...", bootStyleStr);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got boot style from {0}...", vars: [bootStyleStr]);
             return bootStyle;
         }
 

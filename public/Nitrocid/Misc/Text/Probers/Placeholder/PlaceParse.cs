@@ -104,19 +104,19 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
                     string placeNoArg = place.Replace($":{arg}>", ">");
 
                     // Fetch a placeholder
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} placeholder found.", place);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} placeholder found.", vars: [place]);
                     try
                     {
                         // Execute the action
                         var action = GetPlaceholderAction(placeNoArg);
                         string result = action(arg);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", result);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", vars: [result]);
                         text = text.Replace(place, result);
                     }
                     catch (Exception ex)
                     {
                         // Leave the text and the placeholder alone in this case.
-                        DebugWriter.WriteDebug(DebugLevel.E, "Leaving placeholder alone because of failure: {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Leaving placeholder alone because of failure: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
@@ -126,7 +126,7 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse placeholder {0}: {1}", text, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse placeholder {0}: {1}", vars: [text, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 EventsManager.FireEvent(EventType.PlaceholderParseError, text, ex);
                 if (ThrowIfFailure)

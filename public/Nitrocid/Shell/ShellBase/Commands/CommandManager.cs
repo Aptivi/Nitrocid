@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static bool IsCommandFound(string Command, string ShellType)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", vars: [Command, ShellType]);
             return GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
         }
 
@@ -66,7 +66,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// <returns>True if found; False if not found.</returns>
         public static bool IsCommandFound(string Command)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Command]);
             bool found = false;
             foreach (var ShellType in ShellManager.AvailableShells.Keys)
             {
@@ -184,7 +184,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static CommandInfo GetCommand(string Command, string ShellType)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", vars: [Command, ShellType]);
             var commandList = GetCommands(ShellType);
             if (!IsCommandFound(Command, ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
@@ -212,7 +212,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             if (commandBase is null)
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
             string command = commandBase.Command;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", vars: [command, ShellType]);
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
@@ -221,7 +221,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or mod commands.", command);
+                DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or mod commands.", vars: [command]);
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The command specified is already added! It's possible that you may have conflicting mods."));
             }
 
@@ -229,16 +229,16 @@ namespace Nitrocid.Shell.ShellBase.Commands
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
-                DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", command);
+                DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", vars: [command]);
                 commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
             }
 
             // Now, add the command to the mod list
-            DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", vars: [command, ShellType]);
             var shellInfo = ShellManager.GetShellInfo(ShellType);
             if (!shellInfo.ModCommands.Contains(commandBase))
                 shellInfo.ModCommands.Add(commandBase);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", vars: [command, ShellType]);
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             if (commandBase is null)
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
             string command = commandBase.Command;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", vars: [command, ShellType]);
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
@@ -369,7 +369,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or addon commands.", command);
+                DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or addon commands.", vars: [command]);
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The command specified is already added! It's possible that you may have conflicting addons."));
             }
 
@@ -377,15 +377,15 @@ namespace Nitrocid.Shell.ShellBase.Commands
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
-                DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", command);
+                DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", vars: [command]);
                 commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
             }
 
             // Now, add the command to the addon list
-            DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", vars: [command, ShellType]);
             if (!ShellManager.AvailableShells[ShellType].addonCommands.Contains(commandBase))
                 ShellManager.AvailableShells[ShellType].addonCommands.Add(commandBase);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", vars: [command, ShellType]);
         }
 
         /// <summary>

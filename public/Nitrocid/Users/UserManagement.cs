@@ -92,12 +92,12 @@ namespace Nitrocid.Users
                 var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", "", [], UserFlags.None, []);
                 if (!UserExists(uninitUser))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", vars: [uninitUser]);
                     Users.Add(initedUser);
                 }
                 else if (UserExists(uninitUser) & ModifyExisting)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", uninitUser);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", vars: [uninitUser]);
                     int userIndex = GetUserIndex(uninitUser);
                     Users[userIndex] = initedUser;
                 }
@@ -106,7 +106,7 @@ namespace Nitrocid.Users
                 SaveUsers();
 
                 // Ready permissions
-                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
+                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", vars: [uninitUser]);
                 return true;
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace Nitrocid.Users
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
 
             // Adds user
-            DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", newUser);
+            DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", vars: [newUser]);
             if (ValidateUsername(newUser, false) && !UserExists(newUser))
             {
                 try
@@ -197,7 +197,7 @@ namespace Nitrocid.Users
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
                 }
@@ -240,7 +240,7 @@ namespace Nitrocid.Users
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
 
                     // Remove user
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", vars: [user]);
                     var userInfo = GetUser(user) ??
                         throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {user}");
                     Users.Remove(userInfo);

@@ -88,7 +88,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string arguments = string.Join(' ', words.Skip(1));
             string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", vars: [i + 1, words[i]]);
             Command = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
@@ -139,7 +139,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string arguments = string.Join(' ', words.Skip(1));
             string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", vars: [i + 1, words[i]]);
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
@@ -177,13 +177,13 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             var EnclosedArgMatchesOrig = wordsOrig.Skip(1);
             var EnclosedArgs = EnclosedArgMatches.ToArray();
             var EnclosedArgsOrig = EnclosedArgMatches.ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", vars: [EnclosedArgs.Length, string.Join(", ", EnclosedArgs)]);
 
             // Get the string of arguments
             string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             string strArgsOrig = words.Length > 0 ? string.Join(" ", EnclosedArgMatchesOrig) : "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgsOrig: {0}", strArgsOrig);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", vars: [strArgs]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgsOrig: {0}", vars: [strArgsOrig]);
 
             // Split the switches to their key-value counterparts
             var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(EnclosedSwitches, true);
@@ -205,25 +205,25 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 bool exactWordingProvided = true;
 
                 // Check for argument info
-                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", argInfo is not null);
+                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", vars: [argInfo is not null]);
 
                 // Optionalize some of the arguments if there are switches that optionalize them
                 if (argInfo is not null)
                 {
                     foreach (string enclosedSwitch in EnclosedSwitches)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", enclosedSwitch);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", vars: [enclosedSwitch]);
                         var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
                         if (switches.Any())
                             foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
                                 minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", vars: [minimumArgumentsOffset]);
                     }
                 }
                 int finalRequiredArgs = argInfo is not null ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
                 if (finalRequiredArgs < 0)
                     finalRequiredArgs = 0;
-                DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
+                DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", vars: [finalRequiredArgs]);
 
                 // Check to see if the caller has provided required number of arguments
                 if (argInfo is not null)
@@ -232,7 +232,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         !argInfo.ArgumentsRequired;
                 else
                     RequiredArgumentsProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", vars: [RequiredArgumentsProvided]);
 
                 // Check to see if the caller has provided required number of switches
                 if (argInfo is not null)
@@ -242,7 +242,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         !argInfo.Switches.Any((@switch) => @switch.IsRequired);
                 else
                     RequiredSwitchesProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", vars: [RequiredSwitchesProvided]);
 
                 // Check to see if the caller has provided required number of switches that require arguments
                 if (argInfo is not null)
@@ -263,7 +263,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 }
                 else
                     RequiredSwitchArgumentsProvided = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", vars: [RequiredSwitchArgumentsProvided]);
 
                 // Check to see if the caller has provided switches that don't accept values with the values
                 if (argInfo is not null)
@@ -282,7 +282,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                     }
                     noValueSwitchesList = [.. rejected];
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", vars: [RequiredSwitchArgumentsProvided]);
 
                 // Check to see if the caller has provided non-existent switches
                 if (argInfo is not null)
@@ -290,7 +290,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         .Select((kvp) => kvp.Item1)
                         .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
                         .ToArray();
-                DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", vars: [unknownSwitchesList.Length]);
 
                 // Check to see if the caller has provided conflicting switches
                 if (argInfo is not null)
@@ -303,7 +303,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         string @switch = kvp.Item1;
                         if (unknownSwitchesList.Contains(@switch))
                             continue;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", vars: [@switch]);
 
                         // Get the switch and its conflicts list
                         var switchEnumerator = argInfo.Switches
@@ -315,18 +315,18 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                             string[] switchConflicts = initialConflicts
                                 .Select((conflicting) => $"-{conflicting}")
                                 .ToArray();
-                            DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", vars: [switchConflicts.Length, string.Join(", ", switchConflicts)]);
 
                             // Now, get the last switch and check to see if it's provided with the conflicting switch
                             string lastSwitch = processed.Count > 0 ? processed[^1] : "";
                             if (switchConflicts.Contains(lastSwitch))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", vars: [@switch, lastSwitch]);
                                 conflicts.Add($"{@switch} vs. {lastSwitch}");
                             }
                             processed.Add(@switch);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", vars: [conflicts.Count, string.Join(", ", conflicts)]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", vars: [processed.Count, string.Join(", ", processed)]);
                         }
                     }
                     conflictingSwitchesList = [.. conflicts];

@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
             if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for repeated command {0}...", lastCommand);
+                DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for repeated command {0}...", vars: [lastCommand]);
                 var WrappedCommand = new KernelThread($"Repeated Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
             }

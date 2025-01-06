@@ -66,7 +66,7 @@ namespace Nitrocid.Users.Login.Motd
             {
                 // Get the MOTD file path
                 Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", vars: [Config.MainConfig.MotdFilePath]);
 
                 // Set the message
                 MotdMessage = Message;
@@ -88,7 +88,7 @@ namespace Nitrocid.Users.Login.Motd
             {
                 // Get the MAL file path
                 Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", vars: [Config.MainConfig.MotdFilePath]);
 
                 // Read the message
                 InitMotd();

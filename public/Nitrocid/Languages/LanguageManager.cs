@@ -78,7 +78,7 @@ namespace Nitrocid.Languages
                     InstalledLanguages.Add(CustomLanguage, CustomLanguages[CustomLanguage]);
 
                 // Return the list
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} installed languages in total", InstalledLanguages.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} installed languages in total", vars: [InstalledLanguages.Count]);
                 return InstalledLanguages;
             }
         }
@@ -102,25 +102,25 @@ namespace Nitrocid.Languages
                         int Codepage = langInfo.Codepage;
                         Console.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
                         Console.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, Console.OutputEncoding.EncodingName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", vars: [lang, Console.OutputEncoding.EncodingName]);
                     }
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Codepage can't be set. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Codepage can't be set. {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
 
                 // Set current language
                 try
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", vars: [lang]);
                     currentLanguage = langInfo;
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Language can't be set. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Language can't be set. {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -169,7 +169,7 @@ namespace Nitrocid.Languages
                 {
                     if (FilesystemTools.FileExists(LanguagePath))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", vars: [LanguageName, LanguagePath]);
 
                         // Check the metadata to see if it has relevant information for the language
                         var locs = FilesystemTools.ReadContentsText(LanguagePath);
@@ -180,17 +180,17 @@ namespace Nitrocid.Languages
                             string ParsedLanguageName = localization.Name ?? LanguageName;
                             bool ParsedLanguageTransliterable = localization.Transliterable;
                             var ParsedLanguageLocalizations = localization.Localizations;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", vars: [ParsedLanguageName, ParsedLanguageTransliterable]);
 
                             // Check the localizations...
-                            DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", vars: [ParsedLanguageLocalizations is null]);
                             if (ParsedLanguageLocalizations is not null)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Length);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", vars: [ParsedLanguageLocalizations.Length]);
 
                                 // Try to install the language info
                                 var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, ParsedLanguageLocalizations);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", vars: [Languages.ContainsKey(LanguageName)]);
                                 if (!Languages.ContainsKey(LanguageName))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Language exists. Installing...");
@@ -218,7 +218,7 @@ namespace Nitrocid.Languages
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", vars: [LanguageName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguageInstallError, LanguageName, ex);
                     throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
@@ -240,14 +240,14 @@ namespace Nitrocid.Languages
                     {
                         // Install a custom language
                         string LanguageName = Path.GetFileNameWithoutExtension(Language);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Custom language {0} [{1}] is to be installed.", LanguageName, Language);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Custom language {0} [{1}] is to be installed.", vars: [LanguageName, Language]);
                         InstallCustomLanguage(LanguageName, false);
                     }
                     EventsManager.FireEvent(EventType.LanguagesInstalled);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguagesInstallError, ex);
                     throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom languages."), ex);
@@ -278,7 +278,7 @@ namespace Nitrocid.Languages
                 {
                     if (FilesystemTools.FileExists(LanguagePath))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", vars: [LanguageName, LanguagePath]);
 
                         // Now, check the metadata to see if it has relevant information for the language
                         var locs = FilesystemTools.ReadContentsText(LanguagePath);
@@ -302,7 +302,7 @@ namespace Nitrocid.Languages
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", vars: [LanguageName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguageUninstallError, LanguageName, ex);
                     throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
@@ -340,7 +340,7 @@ namespace Nitrocid.Languages
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguagesUninstallError, ex);
                     throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
@@ -371,7 +371,7 @@ namespace Nitrocid.Languages
                 var LanguageValue = Language.Value;
                 if (LanguageName.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", LanguageName, SearchTerm);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", vars: [LanguageName, SearchTerm]);
                     ListedLanguages.Add($"{LanguageName}{(withCountry ? $" [{LanguageValue.Country}]" : "")}", Languages[LanguageName]);
                 }
             }
@@ -399,7 +399,7 @@ namespace Nitrocid.Languages
                 var languageValue = language.Value;
                 if (languageValue.Country.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} for country {1} to list... Search term: {2}", languageName, languageValue.Country, SearchTerm);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} for country {1} to list... Search term: {2}", vars: [languageName, languageValue.Country, SearchTerm]);
                     if (listedCountries.ContainsKey(languageValue.Country))
                         listedCountries[languageValue.Country].Add(Languages[languageName]);
                     else
@@ -412,7 +412,7 @@ namespace Nitrocid.Languages
         internal static string[] ProbeLocalizations(LanguageLocalizations loc)
         {
             DebugCheck.Assert(loc.Localizations.Length != 0, "language has no localizations!!!");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", loc.Localizations.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", vars: [loc.Localizations.Length]);
             return loc.Localizations;
         }
 
@@ -432,7 +432,7 @@ namespace Nitrocid.Languages
                     LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCountry);
                 else
                     LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCountry);
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", shortName, LanguageFullName, LanguageTransliterable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", vars: [shortName, LanguageFullName, LanguageTransliterable]);
                 BaseLanguages.Add(shortName, LanguageInfo);
             }
         }

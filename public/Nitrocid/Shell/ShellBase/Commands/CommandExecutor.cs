@@ -119,28 +119,28 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.ListValue);
                             var listing = new Listing()
                             {
@@ -154,7 +154,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for conflicting switches
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.ListValue);
                             var listing = new Listing()
                             {
@@ -168,7 +168,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for switches that don't accept values
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.ListValue);
                             var listing = new Listing()
                             {
@@ -182,21 +182,21 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for invalid number in numeric arguments
                         if (!unsatisfied.NumberProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.ListValue);
                         }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.ListValue);
                         }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the switches expect a numeric value, but you provided an invalid number."), true, KernelColorType.ListValue);
                         }
                     }
@@ -219,7 +219,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 // Check to see if a requested command is obsolete
                 if (RequestedCommandInfo.Flags.HasFlag(CommandFlags.Obsolete))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
+                    DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", vars: [Command]);
                     TextWriterColor.Write(Translate.DoTranslation("This command is obsolete and will be removed in a future release."));
                 }
 
@@ -268,7 +268,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                     };
 
                     // Now, get the base command and execute it
-                    DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", vars: [Command, StrArgs]);
                     var CommandBase = RequestedCommandInfo.CommandBase;
                     string value = "";
                     CancellationHandlers.cts = new CancellationTokenSource();
@@ -286,28 +286,28 @@ namespace Nitrocid.Shell.ShellBase.Commands
 #pragma warning restore SYSLIB0046
 
                     // Set the error code and set the UESH variable as appropriate
-                    DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", vars: [ShellInstance.LastErrorCode]);
                     if (containsSetSwitch)
                     {
                         // Check to see if the value contains newlines
                         if (value.Contains('\n'))
                         {
                             // Assume that we're setting an array.
-                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", variable);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", vars: [variable]);
                             string[] values = value.Replace((char)13, default).Split('\n');
                             UESHVariables.SetVariables(variable, values);
                         }
                         else if (value.StartsWith('[') && value.EndsWith(']'))
                         {
                             // Assume that we're setting an array
-                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", variable);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", vars: [variable]);
                             value = value[1..(value.Length - 1)];
                             string[] values = value.Split(", ");
                             UESHVariables.SetVariables(variable, values);
                         }
                         else
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", vars: [value, variable]);
                             UESHVariables.SetVariable(variable, value);
                         }
                     }
@@ -326,7 +326,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", vars: [RequestedCommand, ShellType.ToString(), ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
                 ShellInstance.LastErrorCode = ex.GetHashCode();
@@ -348,7 +348,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             // Check to see if the command is found
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Wrappable command {0} not found", Command);
+                DebugWriter.WriteDebug(DebugLevel.E, "Wrappable command {0} not found", vars: [Command]);
                 TextWriters.Write(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
                 return;
             }
@@ -356,7 +356,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             // Check to see if we can start an alternative thread
             if (!StartCommandThread.IsAlive)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Can't directly execute command {0} in wrapped mode.", Command);
+                DebugWriter.WriteDebug(DebugLevel.E, "Can't directly execute command {0} in wrapped mode.", vars: [Command]);
                 TextWriters.Write(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
                 return;
             }
@@ -365,7 +365,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             if (!CommandManager.GetCommand(CommandToBeWrapped, currentType).Flags.HasFlag(CommandFlags.Wrappable))
             {
                 var WrappableCmds = GetWrappableCommands(currentType);
-                DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", Command, string.Join(", ", WrappableCmds));
+                DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", vars: [Command, string.Join(", ", WrappableCmds)]);
                 TextWriters.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
                 var listing = new Listing()
                 {
@@ -384,7 +384,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
                 if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", Command);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", vars: [Command]);
                     var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                     ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                 }
@@ -408,7 +408,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to wrap command {0}: {1}", CommandToBeWrapped, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to wrap command {0}: {1}", vars: [CommandToBeWrapped, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("An error occurred while trying to wrap a command output") + ": {0}", true, KernelColorType.Error, ex.Message);
             }

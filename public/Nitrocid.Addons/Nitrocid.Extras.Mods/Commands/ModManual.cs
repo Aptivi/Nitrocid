@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Mods.Commands
             string ModManualPath = FilesystemTools.NeutralizePath(mod.ModFilePath + ".manual");
             if (FilesystemTools.FolderExists(ModManualPath))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", vars: [ModManualPath]);
                 foreach (string ModManualFile in Directory.GetFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
                     PageParser.InitMan(modName, ModManualFile);
             }

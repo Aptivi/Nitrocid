@@ -138,7 +138,7 @@ namespace Nitrocid.Network
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to change hostname: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to change hostname: {0}", vars: [ex.Message]);
             }
             return false;
         }
@@ -150,12 +150,12 @@ namespace Nitrocid.Network
         public static string GetFilenameFromUrl(string Url)
         {
             string FileName = Url.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", vars: [FileName]);
             if (FileName.Contains('?'))
             {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", vars: [FileName]);
             return FileName;
         }
 

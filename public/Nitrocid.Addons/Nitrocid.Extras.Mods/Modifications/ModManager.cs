@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0} | Safe mode: {1} | Priority: {2}", PathToMod, KernelEntry.SafeMode, priority);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0} | Safe mode: {1} | Priority: {2}", vars: [PathToMod, KernelEntry.SafeMode, priority]);
 
             if (KernelEntry.SafeMode)
             {
@@ -98,12 +98,12 @@ namespace Nitrocid.Extras.Mods.Modifications
 
             if (GetBlacklistedMods().Contains(PathToMod))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", vars: [ModFilename]);
                 SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), ModFilename);
                 return;
             }
 
-            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", vars: [ModFilename]);
             SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", ModFilename);
             ModParser.ParseMod(ModFilename, priority);
         }
@@ -116,8 +116,8 @@ namespace Nitrocid.Extras.Mods.Modifications
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
-            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", vars: [KernelEntry.SafeMode]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", vars: [PathToMod]);
 
             if (KernelEntry.SafeMode)
             {
@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.Mods.Modifications
 
             // Iterate through all the mods
             SplashReport.ReportProgress(Translate.DoTranslation("Stopping mod {0}..."), ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", vars: [ModFilename]);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
                 var TargetMod = Mods.Values.ElementAt(ScriptIndex);
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 var Script = TargetMod.ModScript;
 
                 // Try to stop the mod
-                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", vars: [TargetMod.ModName]);
                 if (TargetMod.ModFileName != ModFilename)
                     continue;
 
@@ -202,10 +202,10 @@ namespace Nitrocid.Extras.Mods.Modifications
             foreach (string ModName in Mods.Keys)
             {
                 var mod = Mods[ModName];
-                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", ModName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", vars: [ModName]);
                 if (mod.ModFileName == ModFilename || mod.ModFilePath == ModFilename)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found mod {0}.", ModName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found mod {0}.", vars: [ModName]);
                     return true;
                 }
             }
@@ -221,11 +221,11 @@ namespace Nitrocid.Extras.Mods.Modifications
         public static void AddModToBlacklist(string ModFilename)
         {
             ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
-            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the mod blacklist...", vars: [ModFilename]);
             var BlacklistedMods = GetBlacklistedMods();
             if (!BlacklistedMods.Contains(ModFilename))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", vars: [ModFilename]);
                 BlacklistedMods.Add(ModFilename);
             }
             ModsInit.ModsConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
@@ -239,11 +239,11 @@ namespace Nitrocid.Extras.Mods.Modifications
         public static void RemoveModFromBlacklist(string ModFilename)
         {
             ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
-            DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from the mod blacklist...", vars: [ModFilename]);
             var BlacklistedMods = GetBlacklistedMods();
             if (BlacklistedMods.Contains(ModFilename))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} on the blacklist. Removing...", vars: [ModFilename]);
                 BlacklistedMods.Remove(ModFilename);
             }
             ModsInit.ModsConfig.BlacklistedModsString = string.Join(";", BlacklistedMods);
@@ -266,7 +266,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
             IMod? Script;
             ModPath = FilesystemTools.NeutralizePath(ModPath, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", vars: [ModPath, TargetModPath]);
 
             // Check for upgrade
             if (FilesystemTools.FileExists(TargetModPath))
@@ -289,12 +289,12 @@ namespace Nitrocid.Extras.Mods.Modifications
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [ModPath, ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(Translate.DoTranslation("Mod can't be loaded because of the following: "), true, KernelColorType.Error);
                         foreach (Exception? LoaderException in ex.LoaderExceptions)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException?.Message ?? "Unknown loader exception");
+                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", vars: [LoaderException?.Message ?? "Unknown loader exception"]);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
                             TextWriters.Write(LoaderException?.Message ?? Translate.DoTranslation("Unknown loader exception"), true, KernelColorType.Error);
                         }
@@ -309,7 +309,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 // Check for the manual pages
                 if (FilesystemTools.FolderExists(ModPath + ".manual"))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", vars: [ModPath]);
                     Directory.CreateDirectory(TargetModPath + ".manual");
                     foreach (string ModManualFile in Directory.GetFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
                     {
@@ -327,7 +327,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Installation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
@@ -341,7 +341,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         {
             string TargetModPath = FilesystemTools.NeutralizePath(ModPath, PathsManagement.GetKernelPath(KernelPathType.Mods), true);
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
-            DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", vars: [TargetModPath]);
             try
             {
                 // First, stop all mods related to it
@@ -353,7 +353,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 // Finally, check for the manual pages and remove them
                 if (FilesystemTools.FolderExists(ModPath + ".manual"))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", vars: [ModPath]);
                     var modManuals = PageManager.ListAllPagesByMod(ModName);
                     foreach (var manual in modManuals)
                         PageManager.RemoveManualPage(manual);
@@ -362,7 +362,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Uninstallation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
@@ -387,7 +387,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             {
                 if (ModName.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added mod name {0} to list from search term {1}", ModName, SearchTerm);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added mod name {0} to list from search term {1}", vars: [ModName, SearchTerm]);
                     ListedMods.Add(ModName, Mods[ModName]);
                 }
             }
@@ -464,7 +464,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         internal static void Manage(bool start, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", vars: [KernelEntry.SafeMode]);
             if (!KernelEntry.SafeMode)
             {
                 // We're not in safe mode. We're good now. Populate the file list.
@@ -490,12 +490,12 @@ namespace Nitrocid.Extras.Mods.Modifications
 
                 // Now, start or stop the mods.
                 int count = modFiles.Count;
-                DebugWriter.WriteDebug(DebugLevel.I, "Mods count: {0}", count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mods count: {0}", vars: [count]);
 
                 // Check to see if we have mods
                 if (count > 0)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being started or stopped. Total mods = {0}", count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being started or stopped. Total mods = {0}", vars: [count]);
                     foreach (string mod in modFiles)
                     {
                         try
@@ -507,7 +507,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                         }
                         catch (Exception ex)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Can't start or stop mod {0}!", mod);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Can't start or stop mod {0}!", vars: [mod]);
                             DebugWriter.WriteDebugStackTrace(ex);
                             SplashReport.ReportProgressError(Translate.DoTranslation("Can't start or stop this mod!"));
                         }

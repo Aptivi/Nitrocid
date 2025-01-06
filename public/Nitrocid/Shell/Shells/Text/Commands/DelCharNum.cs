@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }
         }

@@ -79,12 +79,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 // Generate the expression
                 RandomExpression = FirstNumber.ToString() + Operations.ElementAt(OperationIndex) + SecondNumber.ToString();
-                DebugWriter.WriteDebug(DebugLevel.I, "Expression to be solved: {0}", RandomExpression);
+                DebugWriter.WriteDebug(DebugLevel.I, "Expression to be solved: {0}", vars: [RandomExpression]);
                 TextWriters.Write(RandomExpression, true, KernelColorType.Input);
 
                 // Wait for response
                 UserEvaluated = SolverShowInput ? InputTools.ReadLine() : InputTools.ReadLineNoInput(Convert.ToChar("\0"));
-                DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
+                DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", vars: [UserEvaluated]);
 
                 // Check to see if the user has entered the correct answer
                 double UserEvaluatedNumber;
@@ -93,12 +93,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     if (UserEvaluatedNumber == EvaluatedNumber)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
                         TextWriterColor.Write(Translate.DoTranslation("Solved perfectly!"));
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
                         TextWriterColor.Write(Translate.DoTranslation("Solved incorrectly."));
                     }
                 }
@@ -109,7 +109,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", UserEvaluated);
+                    DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", vars: [UserEvaluated]);
                     TextWriters.Write(Translate.DoTranslation("You can only write the numbers."), true, KernelColorType.Error);
                 }
             }

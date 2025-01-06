@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 {
                     // Get line
                     string Line = FileLines[l];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", vars: [LineNo, Line]);
 
                     // If $variable is found in string, initialize it
                     var SplitWords = Line.Split(' ');
@@ -90,7 +90,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
 
                     // Get line
                     string Line = FileLines[l];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", vars: [LineNo, Line]);
 
                     // First, trim the line from the left after checking the stack
                     string stackIndicator = new('|', commandStackNum);
@@ -215,13 +215,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                     // See if the line is a comment or command
                     if (!Line.StartsWith("#") & !Line.StartsWith(" "))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", Line);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", vars: [Line]);
                         if (!justLint)
                             ShellManager.GetLine(Line);
                     }
                     else
                         // For debugging purposes
-                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", Line);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is a comment.", vars: [Line]);
 
                     // Increment the new line number
                     LineNo++;
@@ -231,14 +231,14 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             catch (KernelException ex)
             {
                 EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", vars: [ScriptPath, ScriptArguments, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors.") + "\n{0}", ex, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
             }
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", vars: [ScriptPath, ScriptArguments, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}") + "\n{1}", ex, ex.Message, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
             }

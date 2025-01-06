@@ -170,7 +170,7 @@ namespace Nitrocid.Kernel.Exceptions
 
             // Display error message
             builder.AppendLine("--- " + Translate.DoTranslation("Additional info") + " ---");
-            DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", vars: [message]);
             if (!string.IsNullOrWhiteSpace(message))
             {
                 builder.AppendLine("- " + Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further"));
@@ -182,7 +182,7 @@ namespace Nitrocid.Kernel.Exceptions
 
             // Display exception
             builder.AppendLine("--- " + Translate.DoTranslation("Exception details") + " ---");
-            DebugWriter.WriteDebug(DebugLevel.I, "Exception is not null: {0}", e is not null);
+            DebugWriter.WriteDebug(DebugLevel.I, "Exception is not null: {0}", vars: [e is not null]);
             if (e is not null)
             {
                 builder.AppendLine("- " + Translate.DoTranslation("If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it."));
@@ -201,7 +201,7 @@ namespace Nitrocid.Kernel.Exceptions
                 builder.AppendLine("- " + Translate.DoTranslation("Additional errors were found when the routine tried to perform this operation"));
             while (e is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Inner exception {0} is not null: {1}", exceptionIndex, e is not null);
+                DebugWriter.WriteDebug(DebugLevel.I, "Inner exception {0} is not null: {1}", vars: [exceptionIndex, e is not null]);
                 builder.AppendLine("  " + $"[{exceptionIndex}] {e?.GetType().Name}: {(e is KernelException kex ? kex.OriginalExceptionMessage : e?.Message)}");
                 e = e?.InnerException;
                 exceptionIndex++;

@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, parameters.ArgumentsList[0], DebugWriter.DebugStackTraces.Length, ex.Message);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, vars: [parameters.ArgumentsList[0], DebugWriter.DebugStackTraces.Length, ex.Message]);
                     }
                 }
                 else

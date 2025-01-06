@@ -51,7 +51,7 @@ namespace Nitrocid.ConsoleBase.Colors
         public static Color GetColor(KernelColorType type)
         {
             string plainColorSeq = KernelColors[type].PlainSequence;
-            DebugWriter.WriteDebug(DebugLevel.I, "Getting color type {0}: {1}", type.ToString(), plainColorSeq);
+            DebugWriter.WriteDebug(DebugLevel.I, "Getting color type {0}: {1}", vars: [type.ToString(), plainColorSeq]);
             return new(plainColorSeq);
         }
 
@@ -62,7 +62,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="color">Color to be set</param>
         public static Color SetColor(KernelColorType type, Color color)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting color type {0} to color sequence {1}...", type.ToString(), color.PlainSequence);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting color type {0} to color sequence {1}...", vars: [type.ToString(), color.PlainSequence]);
             return KernelColors[type] = color;
         }
 
@@ -109,20 +109,20 @@ namespace Nitrocid.ConsoleBase.Colors
                         themeInfo ??= new();
                         type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         color = themeInfo.GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "[DEFAULT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[DEFAULT] Adding color type {0} with color {1}...", vars: [type, color.PlainSequence]);
                         break;
                     case KernelColorPopulationType.Current:
                         // Population type is current colors
                         type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         color = GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "[CURRENT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[CURRENT] Adding color type {0} with color {1}...", vars: [type, color.PlainSequence]);
                         break;
                 }
                 colors.Add(type, color);
             }
 
             // Return it
-            DebugWriter.WriteDebug(DebugLevel.I, "Populated {0} colors.", colors.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Populated {0} colors.", vars: [colors.Count]);
             return colors;
         }
 

@@ -127,7 +127,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // The selected answer is a section
                     InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading section..."));
                     SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", vars: [SelectedSection.Name]);
                     OpenSection(SelectedSection.Name, SelectedSection, settingsType);
                 }
                 else if (Answer == MaxSections + 1)
@@ -240,7 +240,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         );
                         sections.Add(ici);
                     }
-                    DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", vars: [Section, MaxOptions]);
 
                     // Populate the alt sections correctly
                     var altSections = new List<InputChoiceInfo>()
@@ -268,7 +268,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", vars: [finalAnswer, Section]);
                         OpenKey(finalAnswer, SettingsSection, settingsType);
                     }
                     else if (finalAnswer == MaxOptions + 1)

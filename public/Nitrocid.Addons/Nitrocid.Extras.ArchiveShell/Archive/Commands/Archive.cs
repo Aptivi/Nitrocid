@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             parameters.ArgumentsList[0] = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", parameters.ArgumentsList[0], FilesystemTools.FileExists(parameters.ArgumentsList[0]));
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", vars: [parameters.ArgumentsList[0], FilesystemTools.FileExists(parameters.ArgumentsList[0])]);
             if (FilesystemTools.FileExists(parameters.ArgumentsList[0]))
             {
                 ShellManager.StartShell("ArchiveShell", parameters.ArgumentsList[0]);

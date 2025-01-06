@@ -122,7 +122,7 @@ namespace Nitrocid.Kernel.Configuration
             FilesystemTools.ThrowOnInvalidPath(ConfigFolder);
             if (!FilesystemTools.FolderExists(ConfigFolder))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
-            DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", ConfigFolder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", vars: [ConfigFolder]);
 
             // Save all configuration types
             var configs = GetKernelConfigs();
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Configuration
             // Serialize the config object
             FilesystemTools.ThrowOnInvalidPath(ConfigPath);
             string serialized = GetSerializedConfig(type);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", vars: [serialized.Length]);
 
             // Save Config
             FilesystemTools.WriteContentsText(ConfigPath, serialized);
@@ -168,7 +168,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -188,7 +188,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -208,7 +208,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -228,7 +228,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -261,7 +261,7 @@ namespace Nitrocid.Kernel.Configuration
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
 
             // Fix up and read!
-            DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so fixing and reading...", ConfigPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so fixing and reading...", vars: [ConfigPath]);
             if (type is not BaseKernelConfig baseType)
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Not a valid config class."));
             try
@@ -281,7 +281,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (Exception e)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Fatal error trying to parse and validate config file! {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Fatal error trying to parse and validate config file! {0}", vars: [e.Message]);
                 DebugWriter.WriteDebugStackTrace(e);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."), e);
             }
@@ -301,7 +301,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigReadError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                     NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationPriority.Medium, NotificationType.Normal));
@@ -320,7 +320,7 @@ namespace Nitrocid.Kernel.Configuration
                 string finalPath = ConfigTools.GetPathToCustomSettingsFile(baseConfig.Value);
                 if (!FilesystemTools.FileExists(finalPath))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", baseConfig.Key, finalPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", vars: [baseConfig.Key, finalPath]);
                     CreateConfig(baseConfig.Value);
                 }
             }
@@ -335,7 +335,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (KernelException cex)
             {
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
-                DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", cex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
             }
 
@@ -347,7 +347,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
-                DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
 
                 // Set to notify the user about config error
@@ -405,14 +405,14 @@ namespace Nitrocid.Kernel.Configuration
                     if (modifiedType == "-")
                     {
                         // Missing key from current config. Most likely, we've added a new config entry.
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding missing key: {0}", modifiedKey);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding missing key: {0}", vars: [modifiedKey]);
                         var newValue = serializedObj[modifiedKey];
                         currentObj.Add(modifiedKey, newValue);
                     }
                     else if (modifiedType == "+")
                     {
                         // Extra key from current config. Most likely, we've removed a new config entry.
-                        DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", modifiedKey);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", vars: [modifiedKey]);
                         currentObj.Remove(modifiedKey);
                     }
                 }
@@ -428,7 +428,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 // OK. We're seriously screwed. Let's just write the factory default settings.
-                DebugWriter.WriteDebug(DebugLevel.F, "Failed to fix configuration! {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.F, "Failed to fix configuration! {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 RepairConfigLastResort(type);
             }
@@ -449,7 +449,7 @@ namespace Nitrocid.Kernel.Configuration
             catch (Exception ex)
             {
                 // In this case, give up.
-                DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Failed to fix configuration! {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Failed to fix configuration! {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

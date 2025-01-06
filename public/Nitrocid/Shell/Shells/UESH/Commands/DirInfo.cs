@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (string Dir in parameters.ArgumentsList)
             {
                 string DirectoryPath = FilesystemTools.NeutralizePath(Dir);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, FilesystemTools.FolderExists(DirectoryPath));
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", vars: [DirectoryPath, FilesystemTools.FolderExists(DirectoryPath)]);
                 SeparatorWriterColor.WriteSeparatorColor(Dir, KernelColorTools.GetColor(KernelColorType.ListTitle));
                 if (FilesystemTools.FolderExists(DirectoryPath))
                 {

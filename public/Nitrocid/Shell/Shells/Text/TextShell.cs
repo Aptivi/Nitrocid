@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Text
             // Open file if not open
             if (TextEditShellCommon.FileStream is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!TextEditTools.OpenTextFile(FilePath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);

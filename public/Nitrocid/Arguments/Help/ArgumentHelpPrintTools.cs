@@ -38,7 +38,7 @@ namespace Nitrocid.Arguments.Help
                 ArgumentParse.AvailableCMDLineArgs
                 .OrderBy((CommandValuePair) => CommandValuePair.Key)
                 .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "Arguments: {0} [{1}]", ArgumentList.Count, string.Join(", ", ArgumentList.Keys));
+            DebugWriter.WriteDebug(DebugLevel.I, "Arguments: {0} [{1}]", vars: [ArgumentList.Count, string.Join(", ", ArgumentList.Keys)]);
             return ArgumentList;
         }
 
@@ -48,7 +48,7 @@ namespace Nitrocid.Arguments.Help
             foreach (string arg in argumentList.Keys)
             {
                 string entry = argumentList[arg].GetTranslatedHelpEntry();
-                DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", arg, entry);
+                DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", vars: [arg, entry]);
                 TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, arg);
                 TextWriters.Write("{0}", true, KernelColorType.ListValue, entry);
             }
@@ -57,7 +57,7 @@ namespace Nitrocid.Arguments.Help
         internal static void ShowArgumentListSimple()
         {
             var argumentList = GetArguments();
-            DebugWriter.WriteDebug(DebugLevel.I, "Simple help is printing {0} commands...", argumentList.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Simple help is printing {0} commands...", vars: [argumentList.Count]);
             TextWriters.Write(string.Join(", ", argumentList.Keys), false, KernelColorType.ListEntry);
         }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Arguments.Help
             var argumentList = GetArguments();
             if (!argumentList.TryGetValue(argument, out ArgumentInfo? argInfo))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", argument);
+                DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", vars: [argument]);
                 TextWriters.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
                 return;
             }
@@ -85,7 +85,7 @@ namespace Nitrocid.Arguments.Help
                 {
                     Arguments = argumentInfo.Arguments;
                     Switches = argumentInfo.Switches;
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", Arguments.Length, Switches.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", vars: [Arguments.Length, Switches.Length]);
                 }
                 else
                     continue;
@@ -102,7 +102,7 @@ namespace Nitrocid.Arguments.Help
                         bool required = Switch.IsRequired;
                         string switchName = Switch.SwitchName;
                         string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", renderedSwitch);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", vars: [renderedSwitch]);
                         TextWriters.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
 
@@ -113,7 +113,7 @@ namespace Nitrocid.Arguments.Help
                     {
                         bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
                         string renderedArgument = required ? $" <{argumentPart.ArgumentExpression}>" : $" [{argumentPart.ArgumentExpression}]";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", vars: [renderedArgument]);
                         TextWriters.Write(renderedArgument, false, KernelColorType.ListEntry);
                     }
                     TextWriterRaw.Write();
@@ -123,7 +123,7 @@ namespace Nitrocid.Arguments.Help
             }
 
             // Write the description now
-            DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", HelpDefinition);
+            DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", vars: [HelpDefinition]);
             if (string.IsNullOrEmpty(HelpDefinition))
                 HelpDefinition = Translate.DoTranslation("No argument help description");
             TextWriters.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);

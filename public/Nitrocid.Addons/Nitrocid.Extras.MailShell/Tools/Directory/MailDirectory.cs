@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <param name="Directory">Directory name</param>
         public static void CreateMailDirectory(string Directory)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Creating folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Creating folder: {0}", vars: [Directory]);
             try
             {
                 MailFolder MailFolder;
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <param name="Directory">Directory name</param>
         public static void DeleteMailDirectory(string Directory)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting folder: {0}", vars: [Directory]);
             try
             {
                 MailFolder MailFolder;
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <param name="NewName">New mail directory name</param>
         public static void RenameMailDirectory(string Directory, string NewName)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Renaming folder {0} to {1}", Directory, NewName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Renaming folder {0} to {1}", vars: [Directory, NewName]);
             try
             {
                 MailFolder MailFolder;
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <param name="Directory">A mail directory</param>
         public static void MailChangeDirectory(string Directory)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", Directory);
+            DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", vars: [Directory]);
             try
             {
                 lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
@@ -124,7 +124,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", Directory, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message);
             }
@@ -143,7 +143,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
             foreach (FolderNamespace nmspc in client.PersonalNamespaces)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                 foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
             foreach (FolderNamespace nmspc in client.SharedNamespaces)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                 foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
@@ -171,7 +171,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
             foreach (FolderNamespace nmspc in client.OtherNamespaces)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                 foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
@@ -205,11 +205,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in client.PersonalNamespaces)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }
@@ -217,11 +217,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in client.SharedNamespaces)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }
@@ -229,11 +229,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
                 foreach (FolderNamespace nmspc in client.OtherNamespaces)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
                     foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
                     }
                 }

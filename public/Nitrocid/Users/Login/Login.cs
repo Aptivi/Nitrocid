@@ -141,7 +141,7 @@ namespace Nitrocid.Users.Login
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel panicking...");
                 KernelPanic.KernelError(KernelErrorLevel.F, true, 10, Translate.DoTranslation("Login handler has crashed!") + $" {ex.Message}", ex);
@@ -215,7 +215,7 @@ namespace Nitrocid.Users.Login
 
             // Notifies the kernel that the user has signed in
             LoggedIn = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
+            DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", vars: [signedInUser]);
 
             // Sign in to user.
             UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser) ??
@@ -223,7 +223,7 @@ namespace Nitrocid.Users.Login
 
             // Set preferred language
             string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage ?? "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Preferred language {0}. Trying to set dryly...", preferredLanguage);
+            DebugWriter.WriteDebug(DebugLevel.I, "Preferred language {0}. Trying to set dryly...", vars: [preferredLanguage]);
             if (!string.IsNullOrWhiteSpace(preferredLanguage))
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[preferredLanguage];
             else
@@ -231,7 +231,7 @@ namespace Nitrocid.Users.Login
 
             // Set preferred culture
             string preferredCulture = UserManagement.CurrentUser.PreferredCulture ?? "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Preferred culture {0}. Trying to set dryly...", preferredCulture);
+            DebugWriter.WriteDebug(DebugLevel.I, "Preferred culture {0}. Trying to set dryly...", vars: [preferredCulture]);
             if (!string.IsNullOrWhiteSpace(preferredCulture))
                 CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[preferredCulture];
             else

@@ -86,13 +86,13 @@ namespace Nitrocid.Users.Login
                     }
                     catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         return Translate.DoTranslation("Install the RSS Shell Extras addon!");
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         return Translate.DoTranslation("Failed to get the latest news.");
                     }

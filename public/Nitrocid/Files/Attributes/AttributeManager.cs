@@ -53,7 +53,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", vars: [Attributes, Path.GetFileName(FilePath), ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -91,7 +91,7 @@ namespace Nitrocid.Files
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", vars: [Attributes, Path.GetFileName(FilePath), ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

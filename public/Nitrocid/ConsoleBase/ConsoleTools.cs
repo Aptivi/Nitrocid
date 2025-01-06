@@ -120,7 +120,7 @@ namespace Nitrocid.ConsoleBase
 
                 // First, render a box
                 int times = ConsoleWrapper.WindowWidth - 10;
-                DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
+                DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", vars: [times]);
                 var rgbBand = new BoxFrame()
                 {
                     Left = 3,

@@ -38,13 +38,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableEqual(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for equality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for equality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = FirstVarValue == SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -57,13 +57,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableNotEqual(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = FirstVarValue != SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -76,15 +76,15 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableLessThan(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             long FirstVarInt = long.Parse(FirstVarValue);
             long SecondVarInt = long.Parse(SecondVarValue);
             Satisfied = FirstVarInt < SecondVarInt;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -97,15 +97,15 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableGreaterThan(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             long FirstVarInt = long.Parse(FirstVarValue);
             long SecondVarInt = long.Parse(SecondVarValue);
             Satisfied = FirstVarInt > SecondVarInt;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -118,15 +118,15 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableLessThanOrEqual(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             long FirstVarInt = long.Parse(FirstVarValue);
             long SecondVarInt = long.Parse(SecondVarValue);
             Satisfied = FirstVarInt <= SecondVarInt;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -139,15 +139,15 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableGreaterThanOrEqual(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1} for inequality...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             long FirstVarInt = long.Parse(FirstVarValue);
             long SecondVarInt = long.Parse(SecondVarValue);
             Satisfied = FirstVarInt >= SecondVarInt;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -159,11 +159,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableFileExists(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = FilesystemTools.FileExists(VarValue, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -175,11 +175,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableFileDoesNotExist(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for file existence...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = !FilesystemTools.FileExists(VarValue, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -191,11 +191,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableDirectoryExists(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = FilesystemTools.FolderExists(VarValue, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -207,11 +207,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableDirectoryDoesNotExist(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} for directory existence...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = !FilesystemTools.FolderExists(VarValue, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -224,13 +224,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableContains(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = FirstVarValue.Contains(SecondVarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -243,13 +243,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableNotContains(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = !FirstVarValue.Contains(SecondVarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -261,11 +261,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableValidPath(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = FilesystemTools.TryParsePath(VarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -277,11 +277,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableInvalidPath(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = !FilesystemTools.TryParsePath(VarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -293,11 +293,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableValidFileName(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = FilesystemTools.TryParseFileName(VarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -309,11 +309,11 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableInvalidFileName(string Variable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", Variable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0}...", vars: [Variable]);
             string VarValue = UESHVariables.GetVariable(Variable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of {0}: {1}...", vars: [Variable, VarValue]);
             Satisfied = !FilesystemTools.TryParseFileName(VarValue);
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -326,13 +326,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableHashMatch(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = Encryption.GetEncryptedString(FirstVarValue, "SHA256") == SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -345,13 +345,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableHashNoMatch(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = Encryption.GetEncryptedString(FirstVarValue, "SHA256") != SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -364,13 +364,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableFileHashMatch(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = Encryption.GetEncryptedFile(FirstVarValue, "SHA256") == SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 
@@ -383,13 +383,13 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         public static bool UESHVariableFileHashNoMatch(string FirstVariable, string SecondVariable)
         {
             bool Satisfied;
-            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable);
+            DebugWriter.WriteDebug(DebugLevel.I, "Querying {0} and {1}...", vars: [FirstVariable, SecondVariable]);
             string FirstVarValue = UESHVariables.GetVariable(FirstVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", FirstVariable, FirstVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of first var {0}: {1}...", vars: [FirstVariable, FirstVarValue]);
             string SecondVarValue = UESHVariables.GetVariable(SecondVariable);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", SecondVariable, SecondVarValue);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got value of second var {0}: {1}...", vars: [SecondVariable, SecondVarValue]);
             Satisfied = Encryption.GetEncryptedFile(FirstVarValue, "SHA256") != SecondVarValue;
-            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", Satisfied);
+            DebugWriter.WriteDebug(DebugLevel.I, "Satisfied: {0}", vars: [Satisfied]);
             return Satisfied;
         }
 

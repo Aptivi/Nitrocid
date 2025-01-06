@@ -105,11 +105,11 @@ namespace Nitrocid.Network.Types.RPC
             {
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
-                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Cmd);
+                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Cmd]);
                 string Arg = Request[(Request.IndexOf("(") + 1)..];
-                DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", vars: [Arg]);
                 Arg = Arg.Remove(Arg.Length - 1);
-                DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", vars: [Arg]);
 
                 // Check the command
                 if (RPCCommandsField.Any(Cmd.Contains))
@@ -121,7 +121,7 @@ namespace Nitrocid.Network.Types.RPC
                     var ByteMsg = Array.Empty<byte>();
 
                     // Populate the byte message to send the confirmation to
-                    DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", Arg);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", vars: [Arg]);
                     ByteMsg = Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
 
                     // Send the response
@@ -131,7 +131,7 @@ namespace Nitrocid.Network.Types.RPC
                 }
                 else
                     // Rare case reached. Drop it.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", Cmd);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", vars: [Cmd]);
             }
             else
                 throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to send an RPC command while RPC didn't start."));
@@ -162,13 +162,13 @@ namespace Nitrocid.Network.Types.RPC
                     {
                         if (SE.SocketErrorCode != SocketError.TimedOut)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", SE.SocketErrorCode.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", vars: [SE.SocketErrorCode.ToString()]);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                     else
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         EventsManager.FireEvent(EventType.RPCCommandError, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
                     }
@@ -195,26 +195,26 @@ namespace Nitrocid.Network.Types.RPC
 
                 // Get the command and the argument
                 string Cmd = Message.Remove(Message.IndexOf(","));
-                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Cmd);
+                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Cmd]);
                 string Arg = Message[(Message.IndexOf(",") + 2)..].Replace(Environment.NewLine, "");
-                DebugWriter.WriteDebug(DebugLevel.I, "Final Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final Arg: {0}", vars: [Arg]);
 
                 // If the message is not empty, parse it
                 if (!string.IsNullOrEmpty(Message))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "RPC: Received message {0}", Message);
+                    DebugWriter.WriteDebug(DebugLevel.I, "RPC: Received message {0}", vars: [Message]);
                     EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint?.Address.ToString(), endpoint?.Port);
 
                     // Invoke the action based on message
                     if (RPCCommandReplyActions.TryGetValue(Cmd, out Action<string>? replyAction))
                         replyAction.Invoke(Arg);
                     else
-                        DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", Message);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", vars: [Message]);
                 }
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to acknowledge message: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to acknowledge message: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             received = false;
@@ -274,13 +274,13 @@ namespace Nitrocid.Network.Types.RPC
         private static void HandleAcknowledge(string value)
         {
             string IPAddr = value.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", IPAddr);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", vars: [IPAddr]);
         }
 
         private static void HandlePing(string value)
         {
             string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [IPAddr]);
             NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), TextTools.FormatString(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationPriority.Low, NotificationType.Normal));
         }
     }

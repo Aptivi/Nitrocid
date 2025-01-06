@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string AnswerString = Convert.ToString(keypress);
 
             // Neutralize path if required with the assumption that the keytype is not list
-            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", keypress);
+            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [keypress]);
             bail = !string.IsNullOrEmpty(AnswerString);
             return keypress;
         }
@@ -75,7 +75,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with characters
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", vars: [key.Type.ToString()]);
 
             // Check to see if written answer is empty
             if (value is not char AnswerString)

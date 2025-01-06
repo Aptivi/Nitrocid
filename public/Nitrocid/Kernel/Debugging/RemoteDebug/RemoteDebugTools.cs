@@ -57,11 +57,11 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                     RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
                     RemoteDebugger.DebugDevices.RemoveAt(i);
                     EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, address);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", vars: [clientName, clientIp]);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect: {1}.", address, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect: {1}.", vars: [address, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -77,11 +77,11 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                     RemoteChatTools.DebugChatDevices[i].ClientSocket.Disconnect(true);
                     RemoteChatTools.DebugChatDevices.RemoveAt(i);
                     EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, address);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected from chat.", clientName, clientIp);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected from chat.", vars: [clientName, clientIp]);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect from chat: {1}.", address, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect from chat: {1}.", vars: [address, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -95,26 +95,26 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         public static void AddToBlockList(string address, bool throwIfNotFound = false)
         {
             var BlockedDevices = ListDeviceAddresses();
-            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", vars: [BlockedDevices.Length]);
             if (BlockedDevices.Contains(address))
             {
                 var device = GetDeviceFromIp(address);
                 if (!device.Blocked)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Device {0} will be blocked...", address);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Device {0} will be blocked...", vars: [address]);
                     DisconnectDevice(address);
                     device.blocked = true;
                     SaveAllDevices();
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", address);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", vars: [address]);
                     throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists in the block list."));
                 }
             }
             else if (throwIfNotFound)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add a non-existent device {0}.", address);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add a non-existent device {0}.", vars: [address]);
                 throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Device not found to block."));
             }
         }
@@ -134,7 +134,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add device to block list: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to add device to block list: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -147,17 +147,17 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         public static void RemoveFromBlockList(string address)
         {
             var BlockedDevices = ListDeviceAddresses();
-            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", vars: [BlockedDevices.Length]);
             if (BlockedDevices.Contains(address))
             {
                 var device = GetDeviceFromIp(address);
-                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} found.", address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} found.", vars: [address]);
                 device.blocked = false;
                 SaveAllDevices();
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}.", address);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}.", vars: [address]);
                 throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Device doesn't exist in the block list."));
             }
         }
@@ -177,7 +177,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove device from block list: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove device from block list: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -192,7 +192,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             try
             {
                 var addresses = ListDeviceAddresses();
-                DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", addresses.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", vars: [addresses.Length]);
                 foreach (string address in addresses)
                 {
                     var device = GetDeviceFromIp(address);
@@ -203,7 +203,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to populate block list: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to populate block list: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

@@ -49,12 +49,12 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                     throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
                 if (client.FileExists(File))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [File, HashAlgorithm.ToString()]);
                     return client.GetChecksum(File, HashAlgorithm);
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", File);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [File]);
                     throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), File);
                 }
             }
@@ -101,14 +101,14 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                     }
                     foreach (FtpListItem Item in Items)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [Item.FullName, HashAlgorithm.ToString()]);
                         Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm));
                     }
                     return Hashes;
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Directory);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Directory]);
                     throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Directory);
                 }
             }
