@@ -44,7 +44,8 @@ namespace Nitrocid.Kernel.Debugging
         {
             if (!condition)
             {
-                message = TextTools.FormatString(message, vars);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
                 AssertFailInternal(message, "Condition is false!", memberName, memberLine, memberPath);
             }
         }
@@ -60,9 +61,10 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="vars">Variables to format the message with</param>
         public static void AssertNot(bool condition, string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
-            if (!condition)
+            if (condition)
             {
-                message = TextTools.FormatString(message, vars);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
                 AssertFailInternal(message, "Condition is true!", memberName, memberLine, memberPath);
             }
         }
@@ -80,7 +82,8 @@ namespace Nitrocid.Kernel.Debugging
         {
             if (value is null)
             {
-                message = TextTools.FormatString(message, vars);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
                 AssertFailInternal(message, "Value is null!", memberName, memberLine, memberPath);
             }
         }
@@ -98,7 +101,8 @@ namespace Nitrocid.Kernel.Debugging
         {
             if (value is not null)
             {
-                message = TextTools.FormatString(message, vars);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
                 AssertFailInternal(message, "Value is not null!", memberName, memberLine, memberPath);
             }
         }
@@ -113,7 +117,8 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="vars">Variables to format the message with</param>
         public static void AssertFail(string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
-            message = TextTools.FormatString(message, vars);
+            if (vars is not null)
+                message = TextTools.FormatString(message, vars);
             AssertFailInternal(message, "Undetermined failure!", memberName, memberLine, memberPath);
         }
 
