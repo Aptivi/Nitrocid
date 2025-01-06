@@ -1,4 +1,4 @@
-﻿using Nitrocid.Modifications;
+﻿using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -27,4 +27,4 @@ namespace KSMod
     }
 }
 
-// Refer to https://aptivi.github.io/Kernel-Simulator for up-to-date API documentation for mod developers.
+// Refer to https://aptivi.github.io/Nitrocid for up-to-date API documentation for mod developers.
