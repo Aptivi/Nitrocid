@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/Aptivi/Nitrocid.git
 
 Package: nitrocid-27
 Architecture: amd64 arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0.100), tzdata (>= 2021a), libjack0 (>= 1:0.125.0-3), libportaudio2 (>= 19.6.0), libopenal1 (>= 1:1.19.1), libsdl2-2.0-0 (>= 2.0.9), libpulse0 (>= 12.2), libaudio2 (>= 1.9.4)
+Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0), tzdata (>= 2021a), libjack0 (>= 1:0.125.0-3), libportaudio2 (>= 19.6.0), libopenal1 (>= 1:1.19.1), libsdl2-2.0-0 (>= 2.0.9), libpulse0 (>= 12.2), libaudio2 (>= 1.9.4)
 Conflicts: nitrocid-27-lite
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
@@ -19,7 +19,7 @@ Description: Simulates our future-planned kernel, Nitrocid Kernel!
 
 Package: nitrocid-27-lite
 Architecture: amd64 arm64
-Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0.100), tzdata (>= 2021a)
+Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0), tzdata (>= 2021a)
 Conflicts: nitrocid-27
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
