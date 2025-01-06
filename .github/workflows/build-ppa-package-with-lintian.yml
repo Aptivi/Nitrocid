@@ -55,4 +55,4 @@ jobs:
 
       - name: Try to install
         run: |
-          sudo apt install ./*.deb
+          sudo apt install ./nitrocid-27_*.deb
