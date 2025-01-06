@@ -2,9 +2,9 @@ name: Build Project (for Launchpad PPA)
 
 on:
   push:
-    branches: [ "main", "v0.1.1.x-servicing" ]
+    branches: [ "main", "v0.1.1.x-saas" ]
   pull_request:
-    branches: [ "main", "v0.1.1.x-servicing" ]
+    branches: [ "main", "v0.1.1.x-saas" ]
 
 
 jobs:
