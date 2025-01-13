@@ -12,6 +12,7 @@
     <Description>Nitrocid KS Extras - Icons</Description>
     <AssemblyTitle>Nitrocid KS Extras - Icons</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.Images.Icons addon General Information End -->
 

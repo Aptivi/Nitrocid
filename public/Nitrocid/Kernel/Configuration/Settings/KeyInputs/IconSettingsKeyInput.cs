@@ -38,7 +38,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
             var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, defaultValue) ?? false;
             defaultValue = hasIcon ? defaultValue : "heart-suit";
-            string icon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "PromptForIcons", type, defaultValue) ?? false;
+            string icon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "PromptForIcons", type, defaultValue) ?? "heart-suit";
 
             // Bail and return
             bail = true;

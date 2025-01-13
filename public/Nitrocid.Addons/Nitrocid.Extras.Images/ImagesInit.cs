@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Images
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImages);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         void IAddon.FinalizeAddon()
         { }

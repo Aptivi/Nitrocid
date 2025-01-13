@@ -23,8 +23,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using System.Linq;
-using Terminaux.Images.Icons;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
