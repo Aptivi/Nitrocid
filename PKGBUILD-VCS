@@ -1,5 +1,4 @@
-# Maintainer: Aptivi CEO <ceo@aptivi.anonaddy.com>
-# Contributor: Aptivi CEO <ceo@aptivi.anonaddy.com>
+# Maintainer: Aptivi <ceo at aptivi dot anonaddy dot com>
 pkgname=nitrocid-27-git
 pkgver=v0.1.0.r715.ff5375cab
 pkgrel=1
@@ -16,78 +15,31 @@ optdepends=('jack2: Jack support for BassBoom addon'
             'libpulse: PulseAudio support for BassBoom addon')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-install=
+options=('!strip')
 source=("${pkgname}::git+https://github.com/Aptivi/Nitrocid#branch=main")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/${pkgname%}" || exit $?
+	cd "${pkgname}"
 	printf "%s" "$(git describe --long | sed 's/\([^-]*-\)g/r\1/;s/-/./g')"
 }
 
 prepare() {
-	cd "$srcdir/${pkgname%}" || exit $?
-	chmod +x tools/initializeoffline.sh
-	./tools/initializeoffline.sh
+	cd "${pkgname}"
+        HOME=`pwd`/nuget DOTNET_CLI_TELEMETRY_OPTOUT=1 dotnet restore Nitrocid.sln
+	mkdir -p deps
+	cp nuget/.nuget/packages/*/*/*.nupkg deps/
+	rm -rf nuget
+	cp tools/OfflineNuGet.config ./NuGet.config
 }
 
 build() {
-	cd "$srcdir/${pkgname%}" || exit $?
-	HOME="$srcdir/homedir" make
+	cd "${pkgname}"
+	HOME="$srcdir/homedir" DOTNET_CLI_TELEMETRY_OPTOUT=1 make debian-all-offline
 }
 
 package() {
-	cd "$srcdir/${pkgname%}" || exit $?
-	
-	# Some necessary variables
-	MODAPI=25
-	OUTPUT="public/Nitrocid/KSBuild/net8.0"
-	BINARIES="assets/ks-n assets/ks-jl"
-	MANUALS="assets/ks.1 assets/ks-jl.1"
-	DESKTOPS="assets/ks.desktop"
-	BRANDINGS="public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png"
-	ARCH=$(sh -c 'if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi')
-	printf "Preparing package for $ARCH...\n"
-	
-	# Install binaries and manuals
-	mkdir -m 755 -p \
-		"$pkgdir/usr/bin" \
-		"$pkgdir/usr/lib/ks-$MODAPI" \
-		"$pkgdir/usr/share/applications" \
-		"$pkgdir/usr/share/man/man1"
-	install -m 755 -t "$pkgdir/usr/bin/" $BINARIES
-	install -m 755 -t "$pkgdir/usr/share/man/man1/" $MANUALS
-	printf "Binaries and manpages installed.\n"
-	
-	# Create directory structure
-	cp -r $OUTPUT/* "$pkgdir/usr/lib/ks-$MODAPI/"
-	find "$pkgdir/usr/lib/ks-$MODAPI" -mindepth 1 -type d -exec chmod 0755 {} \;
-	find "$pkgdir/usr/lib/ks-$MODAPI" -mindepth 1 -type f -exec chmod 0644 {} \;
-	printf "Directory structure readied.\n"
-	
-	# Install branding logo and desktop file
-	install -m 755 -t "$pkgdir/usr/share/applications/" $DESKTOPS
-	install -m 755 -t "$pkgdir/usr/lib/ks-$MODAPI/" $BRANDINGS
-	printf "Branding logo and desktop file installed.\n"
-	
-	# Add mod API indicator to allow cross-installs
-	printf "Patching files for mod API $MODAPI...\n"
-	mv "$pkgdir/usr/bin/ks-n" "$pkgdir/usr/bin/ks-$MODAPI"
-	mv "$pkgdir/usr/bin/ks-jl" "$pkgdir/usr/bin/ks-jl-$MODAPI"
-	mv "$pkgdir/usr/share/man/man1/ks.1" "$pkgdir/usr/share/man/man1/ks-$MODAPI.1"
-	mv "$pkgdir/usr/share/man/man1/ks-jl.1" "$pkgdir/usr/share/man/man1/ks-jl-$MODAPI.1"
-	mv "$pkgdir/usr/share/applications/ks.desktop" "$pkgdir/usr/share/applications/ks-$MODAPI.desktop"
-	sed -i "s|/usr/lib/ks|/usr/lib/ks-$MODAPI|g" $pkgdir/usr/bin/ks-*
-	sed -i "s|/usr/lib/ks|/usr/lib/ks-$MODAPI|g" "$pkgdir/usr/share/applications/ks-$MODAPI.desktop"
-	sed -i "s|/usr/bin/ks|/usr/bin/ks-$MODAPI|g" "$pkgdir/usr/share/applications/ks-$MODAPI.desktop"
-	printf "Patched for mod API $MODAPI.\n"
-
-	# Compress manpages
-	gzip "$pkgdir/usr/share/man/man1/ks-$MODAPI.1"
-	gzip "$pkgdir/usr/share/man/man1/ks-jl-$MODAPI.1"
-	
-	# Trim unnecessary runtimes
-	printf "Trimming unnecessary runtimes...\n"
-	ARCH=$(sh -c 'if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi') find "$pkgdir/usr/lib/" -type d -name "runtimes" -exec sh -c 'find $0 -mindepth 1 -maxdepth 1 -not -name $ARCH -type d -exec rm -rf \{\} \;' {} \;
-	printf "Trimmed.\n"
+	cd "${pkgname}"
+	make debian-install
+	cp -dr --no-preserve='ownership' debian/${pkgname%-git}/usr "$pkgdir"
 }
