@@ -121,7 +121,7 @@ namespace Nitrocid.Extras.BassBoom
 
             // Additionally, register a custom extension handler that handles music playback
             if (!InitBasolia.BasoliaInitialized)
-                InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
+                InitBasolia.Init();
 
             // Initialize versions
             mpgVer = InitBasolia.MpgLibVersion;
