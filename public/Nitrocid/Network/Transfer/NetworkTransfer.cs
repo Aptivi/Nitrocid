@@ -44,7 +44,6 @@ namespace Nitrocid.Network.Transfer
         internal static bool IsError;
         internal static Exception? ReasonError;
         internal static CancellationTokenSource CancellationToken = new();
-        internal static HttpClient WClient = new();
         internal static string DownloadedString = "";
         internal static Notification? DownloadNotif;
         internal static Notification? UploadNotif;

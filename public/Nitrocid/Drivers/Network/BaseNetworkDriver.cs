@@ -39,6 +39,7 @@ using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Files;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Nitrocid.Drivers.Network
 {
@@ -99,9 +100,12 @@ namespace Nitrocid.Drivers.Network
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
+            // Create the HTTP client
+            var client = CreateHttpClient();
+
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
-            var Response = NetworkTransfer.WClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = client.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Get the file path
@@ -199,9 +203,12 @@ namespace Nitrocid.Drivers.Network
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
+            // Create the HTTP client
+            var client = CreateHttpClient();
+
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
-            var Response = NetworkTransfer.WClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = client.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Try to download the string asynchronously
@@ -311,7 +318,12 @@ namespace Nitrocid.Drivers.Network
             {
                 var progressTask = new Task(() => { UploadProgress(FileStream, ref uploaded); });
                 progressTask.Start();
-                var Response = NetworkTransfer.WClient.PutAsync(URL, Content, NetworkTransfer.CancellationToken.Token).Result;
+
+                // Create the HTTP client
+                var client = CreateHttpClient();
+
+                // Start uploading
+                var Response = client.PutAsync(URL, Content, NetworkTransfer.CancellationToken.Token).Result;
                 Response.EnsureSuccessStatusCode();
                 NetworkTransfer.UploadChecker(null);
             }
@@ -380,7 +392,11 @@ namespace Nitrocid.Drivers.Network
             // Upload now
             try
             {
-                var Response = NetworkTransfer.WClient.PutAsync(URL, StringContent, NetworkTransfer.CancellationToken.Token).Result;
+                // Create the HTTP client
+                var client = CreateHttpClient();
+
+                // Start uploading
+                var Response = client.PutAsync(URL, StringContent, NetworkTransfer.CancellationToken.Token).Result;
                 Response.EnsureSuccessStatusCode();
                 NetworkTransfer.UploadChecker(null);
             }
@@ -488,6 +504,17 @@ namespace Nitrocid.Drivers.Network
             }
 
             return [.. onlineAddresses];
+        }
+
+        internal static HttpClient CreateHttpClient()
+        {
+            var services = new ServiceCollection();
+            services.AddHttpClient();
+            var provider = services.BuildServiceProvider();
+            var factory = provider.GetService<IHttpClientFactory>() ??
+                throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Can't create HTTP client factory."));
+            var client = factory.CreateClient();
+            return client;
         }
 
         private static void UploadProgress(FileStream stream, ref bool uploaded)

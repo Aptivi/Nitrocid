@@ -23,6 +23,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using Nitrocid.Drivers;
+using Nitrocid.Drivers.Network;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -187,8 +188,11 @@ namespace Nitrocid.Network
         {
             try
             {
+                // Create the HTTP client
+                var client = BaseNetworkDriver.CreateHttpClient();
+
                 // Try to ping the connectivity check site
-                var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
+                var status = client.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
                 return status == HttpStatusCode.NoContent;
             }
             catch
