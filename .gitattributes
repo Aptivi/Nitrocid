@@ -1,2 +1,3 @@
 private/KSTests/TestData/TestText.txt text eol=lf
 *.sh text eol=lf
+PKGBUILD* text eol=lf
