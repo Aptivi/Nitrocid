@@ -25,7 +25,6 @@ using Nitrocid.Network.Transfer;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Drivers.Network;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
@@ -50,11 +49,8 @@ namespace Nitrocid.Kernel.Updates
         {
             try
             {
-                // Create the HTTP client
-                var client = BaseNetworkDriver.CreateHttpClient();
-
                 // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
-                client.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
+                NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
                 // Populate the following variables with information
                 string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/Nitrocid/releases", false);
@@ -68,6 +64,10 @@ namespace Nitrocid.Kernel.Updates
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
+            }
+            finally
+            {
+                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
             }
             return null;
         }
