@@ -203,15 +203,11 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void AnalyzeResourceLocalization(CompilationAnalysisContext context)
         {
-            // Just launch once
-            if (context.Compilation.Assembly.Name != "Nitrocid")
-                return;
-
             // Open every resource except the English translations file and the analyzer string resources
             var resourceNames = thisAssembly.GetManifestResourceNames().Except([
                 "Nitrocid.LocaleChecker.eng.json",
                 "Nitrocid.LocaleChecker.Resources.AnalyzerResources.resources",
-            ]);
+            ]).Where((path) => path.Contains($"\\{context.Compilation.Assembly.Name}\\"));
             foreach (var resourceName in resourceNames)
             {
                 // Open the resource and load it to a JSON token instance
