@@ -61,7 +61,25 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is as in English, it&apos;s recommended to localize this string, &quot;{0}&quot;, so that translations would be complete before the end of the development cycle..
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, but is unlocalized.
+        /// </summary>
+        internal static string UnlocalizedCommentStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedCommentStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in a localizable part of the JSON resource, but is unlocalized.
+        /// </summary>
+        internal static string UnlocalizedJsonStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedJsonStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is, it&apos;s recommended to localize this string so that translations would be complete before the end of the development cycle..
         /// </summary>
         internal static string UnlocalizedStringAnalyzerDescription {
             get {
@@ -70,7 +88,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is unlocalized.
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in the DoTranslation() method, but is unlocalized.
         /// </summary>
         internal static string UnlocalizedStringAnalyzerMessageFormat {
             get {
@@ -79,7 +97,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You&apos;ll need to localize this string, &quot;{0}&quot;, at the end of the development cycle.
+        ///   Looks up a localized string similar to You&apos;ll need to localize this string at the end of the development cycle.
         /// </summary>
         internal static string UnlocalizedStringAnalyzerTitle {
             get {

@@ -42,6 +42,8 @@ namespace Nitrocid.LocaleChecker.Localization
 
         // Some constants
         public const string DiagnosticId = "NLOC0001";
+        public const string DiagnosticIdComment = "NLOC0002";
+        public const string DiagnosticIdJson = "NLOC0003";
         private const string Category = "Localization";
 
         // Some strings
@@ -49,19 +51,27 @@ namespace Nitrocid.LocaleChecker.Localization
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormat =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatComment =
+            new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedCommentStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatJson =
+            new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedJsonStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString Description =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
             new(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleComment =
+            new(DiagnosticIdComment, Title, MessageFormatComment, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleJson =
+            new(DiagnosticIdJson, Title, MessageFormatJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
 
         // English localization list
         private static readonly HashSet<string> localizationList = [];
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
-            ImmutableArray.Create(Rule);
+            ImmutableArray.Create(Rule, RuleComment, RuleJson);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -168,7 +178,7 @@ namespace Nitrocid.LocaleChecker.Localization
                             text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
                             if (!localizationList.Contains(text))
                             {
-                                var diagnostic = Diagnostic.Create(Rule, location, text);
+                                var diagnostic = Diagnostic.Create(RuleComment, location, text);
                                 context.ReportDiagnostic(diagnostic);
                             }
                         }
@@ -229,7 +239,7 @@ namespace Nitrocid.LocaleChecker.Localization
                     if (!string.IsNullOrEmpty(description) && localizable && !localizationList.Contains(description))
                     {
                         var location = GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName);
-                        var diagnostic = Diagnostic.Create(Rule, location, description);
+                        var diagnostic = Diagnostic.Create(RuleJson, location, description);
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
@@ -248,19 +258,19 @@ namespace Nitrocid.LocaleChecker.Localization
                         if (!string.IsNullOrEmpty(description) && !localizationList.Contains(description))
                         {
                             var location = GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName);
-                            var diagnostic = Diagnostic.Create(Rule, location, description);
+                            var diagnostic = Diagnostic.Create(RuleJson, location, description);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrEmpty(displayAs) && !localizationList.Contains(displayAs))
                         {
                             var location = GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName);
-                            var diagnostic = Diagnostic.Create(Rule, location, displayAs);
+                            var diagnostic = Diagnostic.Create(RuleJson, location, displayAs);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrEmpty(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
                         {
                             var location = GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName);
-                            var diagnostic = Diagnostic.Create(Rule, location, knownAddonDisplay);
+                            var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay);
                             context.ReportDiagnostic(diagnostic);
                         }
 
@@ -277,13 +287,13 @@ namespace Nitrocid.LocaleChecker.Localization
                             if (!string.IsNullOrEmpty(keyName) && !localizationList.Contains(keyName))
                             {
                                 var location = GenerateLocation(key["Name"], keyNameOrig, resourceName);
-                                var diagnostic = Diagnostic.Create(Rule, location, keyName);
+                                var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
                                 context.ReportDiagnostic(diagnostic);
                             }
                             if (!string.IsNullOrEmpty(keyDesc) && !localizationList.Contains(keyDesc))
                             {
                                 var location = GenerateLocation(key["Description"], keyDescOrig, resourceName);
-                                var diagnostic = Diagnostic.Create(Rule, location, keyDesc);
+                                var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
                                 context.ReportDiagnostic(diagnostic);
                             }
                         }
