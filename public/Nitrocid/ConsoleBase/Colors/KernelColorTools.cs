@@ -261,5 +261,39 @@ namespace Nitrocid.ConsoleBase.Colors
                 }
             };
         }
+
+        /// <summary>
+        /// Resets the console colors without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetColors(bool useKernelColors = false)
+        {
+            ResetBackground(useKernelColors);
+            ResetForeground(useKernelColors);
+        }
+
+        /// <summary>
+        /// Resets the background console color without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetBackground(bool useKernelColors = false)
+        {
+            if (useKernelColors)
+                SetConsoleColor(KernelColorType.Background, Background: true);
+            else
+                ColorTools.ResetBackground();
+        }
+
+        /// <summary>
+        /// Resets the foreground console color without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetForeground(bool useKernelColors = false)
+        {
+            if (useKernelColors)
+                SetConsoleColor(KernelColorType.NeutralText);
+            else
+                ColorTools.ResetForeground();
+        }
     }
 }
