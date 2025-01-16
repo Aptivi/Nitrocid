@@ -67,22 +67,15 @@ namespace Nitrocid.ConsoleBase.Writers
             {
                 try
                 {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorType, Highlight, false);
-                    KernelColorTools.SetConsoleColorDry(KernelColorType.Background, !Highlight, false);
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorType);
+                    var background = KernelColorTools.GetColor(KernelColorType.Background);
 
                     // Write the text to console
                     if (Highlight)
-                    {
-                        TextWriterRaw.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColorDry(colorType);
-                        KernelColorTools.SetConsoleColorDry(KernelColorType.Background, true);
-                        TextWriterRaw.WritePlain("", Line);
-                    }
+                        TextWriterHighlightedColor.WriteColorBack(Text, Line, foreground, background, vars);
                     else
-                    {
-                        TextWriterRaw.WritePlain(Text, Line, vars);
-                    }
+                        TextWriterColor.WriteColorBack(Text, Line, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -128,22 +121,15 @@ namespace Nitrocid.ConsoleBase.Writers
             {
                 try
                 {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorTypeForeground, Highlight, false);
-                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, !Highlight, false);
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
+                    var background = KernelColorTools.GetColor(colorTypeBackground);
 
                     // Write the text to console
                     if (Highlight)
-                    {
-                        TextWriterRaw.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColorDry(colorTypeForeground);
-                        KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
-                        TextWriterRaw.WritePlain("", Line);
-                    }
+                        TextWriterHighlightedColor.WriteColorBack(Text, Line, foreground, background, vars);
                     else
-                    {
-                        TextWriterRaw.WritePlain(Text, Line, vars);
-                    }
+                        TextWriterColor.WriteColorBack(Text, Line, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -192,8 +178,12 @@ namespace Nitrocid.ConsoleBase.Writers
             {
                 try
                 {
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorType), KernelColorTools.GetColor(KernelColorType.Background), vars));
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorType);
+                    var background = KernelColorTools.GetColor(KernelColorType.Background);
+
+                    // Write the text to console
+                    TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -245,8 +235,12 @@ namespace Nitrocid.ConsoleBase.Writers
             {
                 try
                 {
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), vars));
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
+                    var background = KernelColorTools.GetColor(colorTypeBackground);
+
+                    // Write the text to console
+                    TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
