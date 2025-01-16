@@ -106,7 +106,7 @@ namespace Nitrocid.Shell.Homepage
                 var homeScreenBuffer = new ScreenPart();
                 string rssSequence = "";
                 ScreenTools.SetCurrent(homeScreen);
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
 
                 // Prepare the widget
                 var widget =
@@ -552,14 +552,14 @@ namespace Nitrocid.Shell.Homepage
             }
             catch (Exception ex)
             {
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {
                 isOnHomepage = false;
                 ScreenTools.UnsetCurrent(homeScreen);
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
             }
         }
 

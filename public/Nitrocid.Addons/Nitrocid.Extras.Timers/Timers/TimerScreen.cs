@@ -98,7 +98,7 @@ namespace Nitrocid.Extras.Timers.Timers
             Screen timerScreen = new();
             ScreenPart timerScreenPart = new();
             ScreenTools.SetCurrent(timerScreen);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Populate the figlet font (if any)
             int RedValue = RandomDriver.Random(255);

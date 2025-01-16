@@ -45,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             step = 0;
-            ColorTools.LoadBack(ConsoleColors.Black);
+            ColorTools.LoadBackDry(ConsoleColors.Black);
             ConsoleWrapper.CursorVisible = false;
         }
 

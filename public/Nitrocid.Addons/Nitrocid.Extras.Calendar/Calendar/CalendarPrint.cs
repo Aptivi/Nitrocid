@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             }
 
             // Populate the calendar data
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, KernelColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {

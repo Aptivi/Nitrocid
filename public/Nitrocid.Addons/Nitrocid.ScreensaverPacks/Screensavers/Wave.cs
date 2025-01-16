@@ -46,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             posIdx = 0;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
 
         /// <inheritdoc/>

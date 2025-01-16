@@ -170,7 +170,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset the background
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.IndeterminateDelay);
         }

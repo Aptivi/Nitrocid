@@ -151,7 +151,7 @@ namespace Nitrocid.ConsoleBase
 
             // Clear the screen and remove the screen
             ScreenTools.UnsetCurrent(screen);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
 
         internal static string BufferChar(string text, (VtSequenceType type, Match[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)

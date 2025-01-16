@@ -106,7 +106,7 @@ namespace Nitrocid.Kernel
                 );
                 ConsoleWrapper.CursorVisible = false;
                 ThreadManager.SleepUntilInput(15000);
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
             }
 
             // Start the main loop
@@ -116,7 +116,7 @@ namespace Nitrocid.Kernel
 
             // Load splash for reboot or shutdown
             SplashReport._KernelBooted = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             if (!PowerManager.KernelShutdown)
                 SplashManager.OpenSplash(SplashContext.Rebooting);
             else

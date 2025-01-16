@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

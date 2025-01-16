@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
@@ -61,7 +62,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
             finally
             {
                 // Clean up
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
                 ConsoleWrapper.CursorVisible = true;
             }
         }

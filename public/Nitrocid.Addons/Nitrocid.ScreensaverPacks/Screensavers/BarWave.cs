@@ -28,6 +28,7 @@ using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Transformation;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -44,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

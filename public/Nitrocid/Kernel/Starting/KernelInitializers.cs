@@ -221,7 +221,7 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // Load background
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
 
                 // Load splash
@@ -824,7 +824,7 @@ namespace Nitrocid.Kernel.Starting
             catch (Exception ex)
             {
                 // We could fail with the debugger enabled
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
                 SplashManager.BeginSplashOut(context);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);

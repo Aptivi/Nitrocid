@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Some essential variables
             int chance = 30;
@@ -222,7 +222,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset everything
             ScreenTools.UnsetCurrent(screen);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
     }
 

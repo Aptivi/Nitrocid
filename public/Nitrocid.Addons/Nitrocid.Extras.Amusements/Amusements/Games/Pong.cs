@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Variables
             var Direction = Enum.Parse<BallDirection>(RandomDriver.Random(3).ToString());
@@ -356,7 +356,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset console display and screen
             ScreenTools.UnsetCurrent(screen);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             ConsoleResizeHandler.WasResized();
         }
 

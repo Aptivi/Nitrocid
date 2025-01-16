@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Timers.Timers
             Screen watchScreen = new();
             ScreenPart watchScreenPart = new();
             ScreenTools.SetCurrent(watchScreen);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             string status = Translate.DoTranslation("Stopwatch is ready.");
 
             // Set the random lap color

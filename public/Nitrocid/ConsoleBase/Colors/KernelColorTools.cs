@@ -295,5 +295,11 @@ namespace Nitrocid.ConsoleBase.Colors
             else
                 ColorTools.ResetForeground();
         }
+
+        /// <summary>
+        /// Loads the background color by clearing the screen to the kernel background color
+        /// </summary>
+        public static void LoadBackground() =>
+            ColorTools.LoadBack(GetColor(KernelColorType.Background));
     }
 }

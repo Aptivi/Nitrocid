@@ -118,7 +118,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Render the elements
             bool exiting = false;
@@ -227,7 +227,7 @@ namespace Nitrocid.ConsoleBase.Themes
             }
 
             // Clean up
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
     }
 }

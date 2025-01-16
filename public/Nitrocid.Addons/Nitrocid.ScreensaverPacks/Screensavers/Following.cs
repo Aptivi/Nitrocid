@@ -26,6 +26,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -78,7 +79,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (currentStep == 20)
             {
                 currentStep = 0;
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
             }
 
             // Draw the start and the end position marker

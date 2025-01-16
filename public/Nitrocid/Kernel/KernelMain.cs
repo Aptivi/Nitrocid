@@ -126,7 +126,7 @@ namespace Nitrocid.Kernel
                             PowerSignalHandlers.DisposeHandlers();
 
                             // Clear the console
-                            ColorTools.LoadBack();
+                            KernelColorTools.LoadBackground();
                         }
 
                         // Always switch back to the main environment
@@ -162,7 +162,7 @@ namespace Nitrocid.Kernel
                 if (!PowerManager.hardShutdown)
                     ConsoleClearing.ResetAll();
                 else
-                    ConsoleTools.ResetColors();
+                    KernelColorTools.ResetColors();
 
                 // Reset cursor state
                 ConsoleWrapper.CursorVisible = true;

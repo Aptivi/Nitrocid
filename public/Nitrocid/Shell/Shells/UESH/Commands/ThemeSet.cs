@@ -31,6 +31,7 @@ using System.Linq;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Inputs.Styles;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                             if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
                             {
-                                ColorTools.LoadBack();
+                                KernelColorTools.LoadBackground();
                                 return 3;
                             }
                             else
@@ -122,7 +123,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                             if (colorIndex == -2)
                             {
-                                ColorTools.LoadBack();
+                                KernelColorTools.LoadBackground();
                                 return 3;
                             }
                             else if (colorIndex < themeChoices.Count)

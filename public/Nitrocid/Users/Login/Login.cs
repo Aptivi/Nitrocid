@@ -245,7 +245,7 @@ namespace Nitrocid.Users.Login
         internal static void PromptMaintenanceLogin()
         {
             if (Config.MainConfig.EnableSplash)
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBackground();
             TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
             string user = "root";
             if (UserManagement.UserExists(user))
@@ -257,7 +257,7 @@ namespace Nitrocid.Users.Login
                         SignIn(user);
                     else
                     {
-                        ColorTools.LoadBack();
+                        KernelColorTools.LoadBackground();
                         TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
                         if (tries == 2)
                         {

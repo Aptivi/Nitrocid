@@ -41,6 +41,7 @@ using Textify.General;
 using Terminaux.Colors;
 using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -199,7 +200,7 @@ namespace Nitrocid.Misc.Interactives
                 else if (currentEntry.Type == FileSystemEntryType.File)
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
-                    ColorTools.LoadBack();
+                    KernelColorTools.LoadBackground();
                     FilesystemTools.OpenDeterministically(currentEntry.FilePath);
                 }
             }

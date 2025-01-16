@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             try
             {
                 while (!bail)
@@ -119,7 +119,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             ScreenTools.UnsetCurrent(screen);
 
             // Close the file and clean up
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
 
         private static void RenderKeybindings(ref Screen screen)

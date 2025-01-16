@@ -93,7 +93,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             // Neutralize the path
             path = FilesystemTools.NeutralizePath(path);
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Get the height and the maximum number of characters
             int infoHeight = ConsoleWrapper.WindowHeight - 3;

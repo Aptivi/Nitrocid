@@ -26,6 +26,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -148,7 +149,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpecklesDelay);
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
         }
 
         /// <inheritdoc/>

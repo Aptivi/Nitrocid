@@ -36,6 +36,7 @@ using Terminaux.Sequences;
 using System.Text;
 using TextifyDep::Textify.General;
 using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -641,7 +642,7 @@ namespace Nitrocid.Drivers.Console
                         }
                         if (bail)
                         {
-                            ColorTools.LoadBack();
+                            KernelColorTools.LoadBackground();
                             break;
                         }
                         buffered.Append(ConsoleTools.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));

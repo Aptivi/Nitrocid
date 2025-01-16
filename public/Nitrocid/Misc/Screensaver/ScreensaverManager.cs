@@ -400,7 +400,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static void HandleSaverCancel(bool initialVisible)
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();

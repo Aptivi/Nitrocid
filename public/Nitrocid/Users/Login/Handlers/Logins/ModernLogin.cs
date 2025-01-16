@@ -108,7 +108,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             ).ToArray();
 
             // Then, make the choices and prompt for the selection
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select a user account you want to log in with.")) + 1;
             return
@@ -129,7 +129,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 
             // The password is not empty. Prompt for password.
             pass = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(Translate.DoTranslation("Enter the password for user") + $" {user}: ");
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBackground();
 
             // Validate the password
             if (UserManagement.ValidatePassword(user, pass))
