@@ -1,0 +1,17 @@
+﻿<Project Sdk="WixToolset.Sdk/5.0.2">
+  <PropertyGroup>
+    <DebugType Condition="'$(Configuration)' == 'Debug'">full</DebugType>
+    <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+      <HarvestDirectory Include="..\..\public\Nitrocid\KSBuild\net8.0">
+          <ComponentGroupName>FullComponent</ComponentGroupName>
+          <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+          <SuppressRootDirectory>true</SuppressRootDirectory>
+      </HarvestDirectory>
+      <BindPath Include="..\..\public\Nitrocid\KSBuild\net8.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
+  </ItemGroup>
+</Project>

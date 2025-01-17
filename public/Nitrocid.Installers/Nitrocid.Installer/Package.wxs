@@ -1,0 +1,9 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Package Name="Nitrocid" Manufacturer="Aptivi" Version="0.1.2.0" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc8">
+        <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+        <Feature Id="Main">
+            <ComponentGroupRef Id="FullComponent" />
+        </Feature>
+    </Package>
+</Wix>
