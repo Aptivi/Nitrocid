@@ -80,8 +80,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Console.ResetColor))
                         continue;
 
-                    // We need to have a syntax that calls ConsoleExtensions.ResetColors
-                    var classSyntax = SyntaxFactory.IdentifierName("ConsoleExtensions");
+                    // We need to have a syntax that calls KernelColorTools.ResetColors
+                    var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("ResetColors");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax
@@ -97,11 +97,15 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Colors") == false)
                     {
-                        var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
-                            SyntaxFactory.IdentifierName("ConsoleBase"));
+                        var name =
+                            SyntaxFactory.QualifiedName(
+                                SyntaxFactory.QualifiedName(
+                                    SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                                    SyntaxFactory.IdentifierName("ConsoleBase")
+                                ), SyntaxFactory.IdentifierName("Colors")
+                            );
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                         TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
                         TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);

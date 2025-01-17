@@ -68,8 +68,8 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls ConsoleTools.ResetColors
-                var classSyntax = SyntaxFactory.IdentifierName("ConsoleTools");
+                // We need to have a syntax that calls KernelColorTools.ResetColors
+                var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("ResetColors");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
@@ -83,11 +83,15 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Check the imports
                 if (finalNode is not CompilationUnitSyntax compilation)
                     return document.Project.Solution;
-                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Colors") == false)
                 {
-                    var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
-                        SyntaxFactory.IdentifierName("ConsoleBase"));
+                    var name =
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.QualifiedName(
+                                SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                                SyntaxFactory.IdentifierName("ConsoleBase")
+                            ), SyntaxFactory.IdentifierName("Colors")
+                        );
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
