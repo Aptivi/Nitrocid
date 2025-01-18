@@ -2,14 +2,15 @@
   <PropertyGroup>
     <DebugType Condition="'$(Configuration)' == 'Debug'">full</DebugType>
     <DebugType Condition="'$(Configuration)' != 'Debug'">none</DebugType>
+    <SuppressIces>ICE69</SuppressIces>
   </PropertyGroup>
   <ItemGroup>
-      <HarvestDirectory Include="..\..\public\Nitrocid\KSBuild\net8.0">
-          <ComponentGroupName>FullComponent</ComponentGroupName>
-          <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
-          <SuppressRootDirectory>true</SuppressRootDirectory>
-      </HarvestDirectory>
-      <BindPath Include="..\..\public\Nitrocid\KSBuild\net8.0" />
+    <HarvestDirectory Include="../../Nitrocid/KSBuild/net8.0">
+      <ComponentGroupName>FullComponent</ComponentGroupName>
+      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
+      <SuppressRootDirectory>true</SuppressRootDirectory>
+    </HarvestDirectory>
+    <BindPath Include="../../Nitrocid/KSBuild/net8.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
