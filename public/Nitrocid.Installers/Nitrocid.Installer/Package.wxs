@@ -21,6 +21,14 @@
             Version="8.0.0"
             />
 
+        <netfx:DotNetCompatibilityCheck
+            Property="DOTNETRUNTIMECHECK"
+            RollForward="major"
+            RuntimeType="desktop"
+            Platform="arm64"
+            Version="8.0.0"
+            />
+
         <WixVariable Id="WixUILicenseRtf" Value="..\..\..\LICENSE.RTF"/>
     </Package>
 </Wix>

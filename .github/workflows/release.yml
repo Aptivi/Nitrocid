@@ -30,6 +30,10 @@ jobs:
           cd tools ; cmd.exe /c "pack.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen-pack.cmd" ; cd ..
+          dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
+          dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
+          "%ProgramFiles%\7-Zip\7z.exe" a -tzip tools/Nitrocid-Win-Installer-x64.zip "public\Nitrocid.Installers\Nitrocid.Installer\bin\x64\Release\en-US\*"
+          "%ProgramFiles%\7-Zip\7z.exe" a -tzip tools/Nitrocid-Win-Installer-ARM64.zip "public\Nitrocid.Installers\Nitrocid.Installer\bin\ARM64\Release\en-US\*"
       - name: Release Preparation
         id: release-asset
         shell: bash

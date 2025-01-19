@@ -40,4 +40,48 @@ jobs:
       with:
         name: unit-test-log-ms-${{ matrix.runs-on }}
         path: "private/Nitrocid.Tests/KSTest/net8.0/TestResults"
+
+  wix-amd64:
+    strategy:
+      fail-fast: false
+    runs-on: "windows-latest"
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Solution Compilation
+      run: cd tools ; ./build.cmd Debug ; cd ..
+    - name: Installer Solution Compilation
+      run: dotnet build -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
+    - uses: actions/upload-artifact@v4
+      with:
+        name: installer-x64-msi
+        path: "public/Nitrocid.Installers/Nitrocid.Installer/bin/x64/Debug/en-US"
+
+  wix-arm64:
+    strategy:
+      fail-fast: false
+    runs-on: "windows-latest"
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Solution Compilation
+      run: cd tools ; ./build.cmd Debug ; cd ..
+    - name: Installer Solution Compilation
+      run: dotnet build -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
+    - uses: actions/upload-artifact@v4
+      with:
+        name: installer-arm64-msi
+        path: "public/Nitrocid.Installers/Nitrocid.Installer/bin/ARM64/Debug/en-US"
         
