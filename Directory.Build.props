@@ -22,7 +22,7 @@
           in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
           changes!
         -->
-        <NitrocidModAPIVersionMajor>3.0.27</NitrocidModAPIVersionMajor>
+        <NitrocidModAPIVersionMajor>3.1.27</NitrocidModAPIVersionMajor>
         <NitrocidModAPIVersionChangeset>33</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
