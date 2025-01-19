@@ -236,27 +236,13 @@ namespace Nitrocid.Kernel
                                         ]
                                     }
                                 ),
-                                new InputInfo(
-                                    Translate.DoTranslation("Automatic Update Download"), Translate.DoTranslation("Automatic Update Download"),
-                                    new SelectionInputMethod()
-                                    {
-                                        Question = Translate.DoTranslation("Do you want Nitrocid KS to automatically download updates?"),
-                                        Choices =
-                                        [
-                                            new InputChoiceInfo("y", Translate.DoTranslation("Yes, I do!")),
-                                            new InputChoiceInfo("n", Translate.DoTranslation("No, thanks.")),
-                                        ]
-                                    }
-                                )
                             ]
                         )
                     ]
                 );
                 PresentationTools.Present(firstRunPresUpdates, true, true);
                 bool needsAutoCheck = (int?)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input == 0;
-                bool needsAutoDownload = (int?)firstRunPresUpdates.Pages[0].Inputs[1].InputMethod.Input == 0;
                 Config.MainConfig.CheckUpdateStart = needsAutoCheck;
-                Config.MainConfig.AutoDownloadUpdate = needsAutoDownload;
 
                 Slideshow firstRunPresOutro = new(
                     // Presentation name

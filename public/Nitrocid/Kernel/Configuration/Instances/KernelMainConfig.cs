@@ -116,10 +116,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowStackTraceOnKernelError { get; set; }
         /// <summary>
-        /// If there is any update, the kernel will automatically download it.
-        /// </summary>
-        public bool AutoDownloadUpdate { get; set; } = true;
-        /// <summary>
         /// Enables debugging for the kernel event system
         /// </summary>
         public bool EventDebug { get; set; }

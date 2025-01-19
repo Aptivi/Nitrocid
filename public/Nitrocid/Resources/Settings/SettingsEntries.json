@@ -152,12 +152,6 @@
                         "Type": "SBoolean",
                         "Variable": "CheckUpdateStart",
                         "Description": "Each startup, it will check for updates."
-                    },
-                    {
-                        "Name": "Automatically download updates",
-                        "Type": "SBoolean",
-                        "Variable": "AutoDownloadUpdate",
-                        "Description": "If there is any update, the kernel will automatically download it."
                     }
                 ]
             },

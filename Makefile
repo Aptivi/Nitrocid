@@ -1,7 +1,7 @@
 MODAPI = 27
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-$(MODAPI) debian/nitrocid-$(MODAPI)-lite debian/tmp
 OUTPUT = public/Nitrocid/KSBuild/net8.0
-BINARIES = assets/ks-n assets/ks-jl
+BINARIES = assets/ks assets/ks-jl
 MANUALS = assets/ks.1 assets/ks-jl.1
 DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png
@@ -46,7 +46,7 @@ install:
 	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
 	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
 	install -m 755 -t $(FDESTDIR)/lib/ks-$(MODAPI)/ $(BRANDINGS)
-	mv $(FDESTDIR)/bin/ks-n $(FDESTDIR)/bin/ks-$(MODAPI)
+	mv $(FDESTDIR)/bin/ks $(FDESTDIR)/bin/ks-$(MODAPI)
 	mv $(FDESTDIR)/bin/ks-jl $(FDESTDIR)/bin/ks-jl-$(MODAPI)
 	mv $(FDESTDIR)/share/man/man1/ks.1 $(FDESTDIR)/share/man/man1/ks-$(MODAPI).1
 	mv $(FDESTDIR)/share/man/man1/ks-jl.1 $(FDESTDIR)/share/man/man1/ks-jl-$(MODAPI).1
