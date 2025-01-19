@@ -31,6 +31,10 @@ using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
 
+#if SPECIFIERREL
+using Nitrocid.Kernel.Updates;
+#endif
+
 namespace Nitrocid.Kernel.Configuration.Settings
 {
     internal static class SettingsAppTools
