@@ -30,7 +30,7 @@ jobs:
       - name: Initialize offline package
         run: |
           chmod +x tools/initializeoffline.sh
-          make debian-init-offline
+          make init-offline
           make clean
         
       - name: Make original package

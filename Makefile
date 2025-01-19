@@ -1,14 +1,20 @@
-OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-27
+MODAPI = 27
+OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-$(MODAPI) debian/nitrocid-$(MODAPI)-lite debian/tmp
 OUTPUT = public/Nitrocid/KSBuild/net8.0
 BINARIES = assets/ks-n assets/ks-jl
 MANUALS = assets/ks.1 assets/ks-jl.1
 DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png
 
-MODAPI = 27
 ARCH := $(shell if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 
-.PHONY: all debian-install
+ifndef DESTDIR
+FDESTDIR := /usr/local
+else
+FDESTDIR := $(DESTDIR)/usr
+endif
+
+.PHONY: all install lite
 
 # General use
 
@@ -26,37 +32,28 @@ doc:
 clean:
 	rm -rf $(OUTPUTS)
 
-# Below targets are for Debian packaging only
-
-debian-all-offline:
+all-offline:
 	$(MAKE) -C tools invoke-build-offline
 
-debian-init-offline:
-	$(MAKE) -C tools debian-invoke-init-offline
+init-offline:
+	$(MAKE) -C tools invoke-init-offline
 
-debian-install:
-	$(MAKE) debian-install-all PACKAGE=nitrocid-$(MODAPI)
-
-debian-install-all:
-	mkdir -m 755 -p debian/$(PACKAGE)/usr/bin debian/$(PACKAGE)/usr/lib/ks-$(MODAPI) debian/$(PACKAGE)/usr/share/applications
-	install -m 755 -t debian/$(PACKAGE)/usr/bin/ $(BINARIES)
-	install -m 755 -t debian/ $(MANUALS)
-	find $(OUTPUT) -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "debian/$(PACKAGE)/usr/lib/ks-$(MODAPI)/$$(realpath --relative-to $(OUTPUT) "$$0")"' {} \;
-	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "debian/$(PACKAGE)/usr/lib/ks-$(MODAPI)/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
-	install -m 755 -t debian/$(PACKAGE)/usr/share/applications/ $(DESKTOPS)
-	install -m 755 -t debian/$(PACKAGE)/usr/lib/ks-$(MODAPI)/ $(BRANDINGS)
-	mv debian/$(PACKAGE)/usr/bin/ks-n debian/$(PACKAGE)/usr/bin/ks-$(MODAPI)
-	mv debian/$(PACKAGE)/usr/bin/ks-jl debian/$(PACKAGE)/usr/bin/ks-jl-$(MODAPI)
-	mv debian/ks.1 debian/ks-$(MODAPI).1
-	mv debian/ks-jl.1 debian/ks-jl-$(MODAPI).1
-	mv debian/$(PACKAGE)/usr/share/applications/ks.desktop debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
-	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/bin/ks-*
-	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
-	sed -i 's|/usr/bin/ks|/usr/bin/ks-$(MODAPI)|g' debian/$(PACKAGE)/usr/share/applications/ks-$(MODAPI).desktop
-	find 'debian/$(PACKAGE)/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
-
-debian-install-lite:
-	$(MAKE) debian-install-all PACKAGE=nitrocid-$(MODAPI)-lite
-	rm -rf debian/nitrocid-$(MODAPI)-lite/usr/lib/ks-$(MODAPI)/Addons
+install:
+	mkdir -m 755 -p $(FDESTDIR)/bin $(FDESTDIR)/lib/ks-$(MODAPI) $(FDESTDIR)/share/applications $(FDESTDIR)/share/man/man1/
+	install -m 755 -t $(FDESTDIR)/bin/ $(BINARIES)
+	install -m 644 -t $(FDESTDIR)/share/man/man1/ $(MANUALS)
+	find $(OUTPUT) -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(realpath --relative-to $(OUTPUT) "$$0")"' {} \;
+	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
+	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
+	install -m 755 -t $(FDESTDIR)/lib/ks-$(MODAPI)/ $(BRANDINGS)
+	mv $(FDESTDIR)/bin/ks-n $(FDESTDIR)/bin/ks-$(MODAPI)
+	mv $(FDESTDIR)/bin/ks-jl $(FDESTDIR)/bin/ks-jl-$(MODAPI)
+	mv $(FDESTDIR)/share/man/man1/ks.1 $(FDESTDIR)/share/man/man1/ks-$(MODAPI).1
+	mv $(FDESTDIR)/share/man/man1/ks-jl.1 $(FDESTDIR)/share/man/man1/ks-jl-$(MODAPI).1
+	mv $(FDESTDIR)/share/applications/ks.desktop $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
+	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/bin/ks-*
+	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
+	sed -i 's|/usr/bin/ks|/usr/bin/ks-$(MODAPI)|g' $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
+	find '$(FDESTDIR)/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
 # This makefile is just a wrapper for tools scripts.
