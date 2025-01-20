@@ -54,10 +54,10 @@
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="6.1.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Terminaux.Images" Version="6.1.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Textify.Offline" Version="2.8.0" PrivateAssets="contentfiles;analyzers;build;runtime">
+    <PackageReference Include="Textify.Offline" Version="2.9.0" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
-    <PackageReference Include="Textify.Offline.Data" Version="2.8.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline.Data" Version="2.9.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.5.5" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
