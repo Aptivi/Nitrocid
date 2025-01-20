@@ -219,46 +219,6 @@ namespace Nitrocid.ConsoleBase.Colors
         }
 
         /// <summary>
-        /// Generates the interactive TUI settings from the kernel configuration
-        /// </summary>
-        /// <returns>A generated <see cref="InteractiveTuiSettings"/> instance</returns>
-        public static InteractiveTuiSettings GenerateTuiSettings()
-        {
-            // TODO: This is temporary and will be removed in the next iteration of Terminaux.
-            return new()
-            {
-                BackgroundColor = GetColor(KernelColorType.TuiBackground),
-                ForegroundColor = GetColor(KernelColorType.TuiForeground),
-                BoxBackgroundColor = GetColor(KernelColorType.TuiBoxBackground),
-                BoxForegroundColor = GetColor(KernelColorType.TuiBoxForeground),
-                KeyBindingOptionColor = GetColor(KernelColorType.TuiKeyBindingOption),
-                KeyBindingBuiltinColor = GetColor(KernelColorType.TuiKeyBindingBuiltin),
-                KeyBindingBuiltinForegroundColor = GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
-                KeyBindingBuiltinBackgroundColor = GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
-                OptionForegroundColor = GetColor(KernelColorType.TuiOptionForeground),
-                OptionBackgroundColor = GetColor(KernelColorType.TuiOptionBackground),
-                PaneItemForeColor = GetColor(KernelColorType.TuiPaneItemFore),
-                PaneItemBackColor = GetColor(KernelColorType.TuiPaneItemBack),
-                PaneSeparatorColor = GetColor(KernelColorType.TuiPaneSeparator),
-                PaneSelectedItemForeColor = GetColor(KernelColorType.TuiPaneSelectedItemFore),
-                PaneSelectedItemBackColor = GetColor(KernelColorType.TuiPaneSelectedItemBack),
-                PaneSelectedSeparatorColor = GetColor(KernelColorType.TuiPaneSelectedSeparator),
-                PaneBackgroundColor = GetColor(KernelColorType.TuiPaneBackground),
-                BorderSettings = new()
-                {
-                    BorderUpperLeftCornerChar = Config.MainConfig.BorderUpperLeftCornerChar,
-                    BorderUpperRightCornerChar = Config.MainConfig.BorderUpperRightCornerChar,
-                    BorderLowerLeftCornerChar = Config.MainConfig.BorderLowerLeftCornerChar,
-                    BorderLowerRightCornerChar = Config.MainConfig.BorderLowerRightCornerChar,
-                    BorderUpperFrameChar = Config.MainConfig.BorderUpperFrameChar,
-                    BorderLowerFrameChar = Config.MainConfig.BorderLowerFrameChar,
-                    BorderLeftFrameChar = Config.MainConfig.BorderLeftFrameChar,
-                    BorderRightFrameChar = Config.MainConfig.BorderRightFrameChar,
-                }
-            };
-        }
-
-        /// <summary>
         /// Resets the console colors without clearing screen
         /// </summary>
         /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>

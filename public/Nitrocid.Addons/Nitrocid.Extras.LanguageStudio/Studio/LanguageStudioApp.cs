@@ -131,7 +131,6 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     translatedLines = translatedLines,
                     pathToTranslations = pathToTranslations,
                     englishLines = englishLines,
-                    Settings = KernelColorTools.GenerateTuiSettings(),
                 };
                 new InteractiveTuiBinding<string>(Translate.DoTranslation("Translate"), ConsoleKey.Enter, (line, _, _, _) => tui.DoTranslate(line), true);
                 new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Add(), true);

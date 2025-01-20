@@ -43,10 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
-                var tui = new NotificationsCli()
-                {
-                    Settings = KernelColorTools.GenerateTuiSettings(),
-                };
+                var tui = new NotificationsCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
                 tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);

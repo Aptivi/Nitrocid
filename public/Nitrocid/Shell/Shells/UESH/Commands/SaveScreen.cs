@@ -47,10 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
             if (selectionMode)
             {
-                var tui = new ScreensaverCli()
-                {
-                    Settings = KernelColorTools.GenerateTuiSettings(),
-                };
+                var tui = new ScreensaverCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Preview"), ConsoleKey.Enter, (saver, _, _, _) => tui.PressAndBailHelper(saver)));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
             }

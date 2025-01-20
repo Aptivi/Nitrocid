@@ -40,10 +40,7 @@ namespace Nitrocid.Extras.RssShell
         {
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
-                var tui = new RssReaderCli()
-                {
-                    Settings = KernelColorTools.GenerateTuiSettings(),
-                };
+                var tui = new RssReaderCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Info"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Read More"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Refresh"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));

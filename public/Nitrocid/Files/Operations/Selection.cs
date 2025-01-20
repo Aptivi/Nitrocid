@@ -52,7 +52,6 @@ namespace Nitrocid.Files
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path),
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
@@ -91,7 +90,6 @@ namespace Nitrocid.Files
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path),
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
@@ -131,7 +129,6 @@ namespace Nitrocid.Files
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path),
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
@@ -170,7 +167,6 @@ namespace Nitrocid.Files
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path),
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));

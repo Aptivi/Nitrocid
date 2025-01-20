@@ -74,7 +74,6 @@ namespace Nitrocid.Extras.Stocks.Commands
             {
                 stocksToken = stocksIntervalToken,
                 ianaTimeZone = ianaTimeZone,
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             InteractiveTuiTools.OpenInteractiveTui(cli);
             return 0;

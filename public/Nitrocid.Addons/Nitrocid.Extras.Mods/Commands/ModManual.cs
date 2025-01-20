@@ -63,7 +63,6 @@ namespace Nitrocid.Extras.Mods.Commands
             var tuiInstance = new ManualViewerCli()
             {
                 modName = modName,
-                Settings = KernelColorTools.GenerateTuiSettings(),
             };
             tuiInstance.Bindings.Add(new InteractiveTuiBinding<Manual>("Info", ConsoleKey.F1, (manual, _, _, _) => tuiInstance.ShowManualInfo(manual)));
             InteractiveTuiTools.OpenInteractiveTui(tuiInstance);

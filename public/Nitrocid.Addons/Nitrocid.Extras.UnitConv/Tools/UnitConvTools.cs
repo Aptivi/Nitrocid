@@ -29,10 +29,7 @@ namespace Nitrocid.Extras.UnitConv.Tools
     {
         internal static void OpenUnitConvTui()
         {
-            var tui = new UnitConverterCli()
-            {
-                Settings = KernelColorTools.GenerateTuiSettings(),
-            };
+            var tui = new UnitConverterCli();
             tui.Bindings.Add(new InteractiveTuiBinding<object>(Translate.DoTranslation("Convert..."), ConsoleKey.F1, (_, _, _, _) => tui.OpenConvert()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }

@@ -31,10 +31,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var tui = new TaskManagerCli()
-            {
-                Settings = KernelColorTools.GenerateTuiSettings(),
-            };
+            var tui = new TaskManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
             tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
             InteractiveTuiTools.OpenInteractiveTui(tui);

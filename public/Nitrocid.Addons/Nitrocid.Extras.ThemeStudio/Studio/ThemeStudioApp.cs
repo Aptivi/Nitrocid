@@ -66,7 +66,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     originalColors = originalColors,
                     themeName = ThemeName,
-                    Settings = KernelColorTools.GenerateTuiSettings(),
                 };
                 tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Change..."), ConsoleKey.Enter, (line, _, _, _) => tui.Change(line)));
                 tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Save..."), ConsoleKey.F1, (_, _, _, _) => tui.Save()));

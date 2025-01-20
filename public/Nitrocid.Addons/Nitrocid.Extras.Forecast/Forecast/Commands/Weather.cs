@@ -60,10 +60,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
         {
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
-                var tui = new WeatherCli()
-                {
-                    Settings = KernelColorTools.GenerateTuiSettings(),
-                };
+                var tui = new WeatherCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
                 tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add Manually"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.AddManually(), true));
                 tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Remove"), ConsoleKey.F2, (_, idx, _, _) => tui.Remove(idx)));
