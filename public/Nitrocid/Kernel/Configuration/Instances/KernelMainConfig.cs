@@ -251,12 +251,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowBackgroundColor
         {
-            get => KernelColorTools.allowBackground;
-            set
-            {
-                KernelColorTools.allowBackground = value;
-                ColorTools.AllowBackground = KernelColorTools.allowBackground;
-            }
+            get => ColorTools.AllowBackground;
+            set => ColorTools.AllowBackground = value;
         }
         /// <summary>
         /// User Name Shell Color

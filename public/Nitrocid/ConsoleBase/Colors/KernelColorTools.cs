@@ -33,16 +33,12 @@ namespace Nitrocid.ConsoleBase.Colors
     /// </summary>
     public static class KernelColorTools
     {
-
         // Variables for colors used by previous versions of the kernel.
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
 
         // Variables for accent background and foreground colors
         internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
         internal static Color accentBackgroundColor = GetColor(KernelColorType.Background);
-
-        // Variables to allow/disallow background color
-        internal static bool allowBackground = false;
 
         /// <summary>
         /// Gets a color from the color type
