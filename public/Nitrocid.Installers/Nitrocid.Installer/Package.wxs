@@ -1,12 +1,17 @@
 ﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"
      xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
-    <Package Name="Nitrocid" Manufacturer="Aptivi" Version="0.1.2.0" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc8">
+    <Package Name="Nitrocid 0.1.2" Manufacturer="Aptivi" Version="0.1.2.0" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc8" Scope="perMachine">
         <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
 
         <Feature Id="Main">
             <ComponentGroupRef Id="FullComponent" />
+            <ComponentRef Id="ApplicationProgramsFolder" />
+            <ComponentRef Id="DesktopIcon" />
         </Feature>
+
+        <Icon Id="icon.ico" SourceFile="..\..\OfficialAppIcon-NitrocidKS.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
         <ui:WixUI
             Id="WixUI_InstallDir"

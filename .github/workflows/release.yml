@@ -32,8 +32,8 @@ jobs:
           cd tools ; cmd.exe /c "docgen-pack.cmd" ; cd ..
           dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
-          "%ProgramFiles%\7-Zip\7z.exe" a -tzip tools/Nitrocid-Win-Installer-x64.zip "public\Nitrocid.Installers\Nitrocid.Installer\bin\x64\Release\en-US\*"
-          "%ProgramFiles%\7-Zip\7z.exe" a -tzip tools/Nitrocid-Win-Installer-ARM64.zip "public\Nitrocid.Installers\Nitrocid.Installer\bin\ARM64\Release\en-US\*"
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Release/Nitrocid.InstallerBundle.exe tools/nitrocid-win-arm64-installer.exe
       - name: Release Preparation
         id: release-asset
         shell: bash
@@ -43,6 +43,7 @@ jobs:
           cat CHANGES >> "$GITHUB_OUTPUT"
           powershell 'Get-FileHash -Algorithm sha256 tools/*.zip | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           powershell 'Get-FileHash -Algorithm sha256 tools/*-changes.chg | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 tools/*.exe | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
       - name: Binary Attestation (binaries)
         uses: actions/attest-build-provenance@v1
@@ -56,7 +57,7 @@ jobs:
           files: |
             tools/*.zip
             tools/*-changes.chg
-            *.iso
+            tools/*.exe
       - name: Notify build
         uses: tsickert/discord-webhook@v6.0.0
         with:
