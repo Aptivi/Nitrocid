@@ -29,6 +29,7 @@ using System.IO;
 using System;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
+using Nitrocid.Extras.Mods.Modifications.Interactive;
 
 namespace Nitrocid.Extras.Mods.Commands
 {

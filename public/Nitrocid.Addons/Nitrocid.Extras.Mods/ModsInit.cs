@@ -46,9 +46,9 @@ namespace Nitrocid.Extras.Mods
                     }),
                     new CommandArgumentInfo(new[]
                     {
-                        new CommandArgumentPart(true, "list/reloadall/stopall/startall", new()
+                        new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
                         {
-                            ExactWording = ["list", "reloadall", "stopall", "startall"]
+                            ExactWording = ["list", "reloadall", "stopall", "startall", "tui"]
                         }),
                     }),
                 ], new ModManCommand(), CommandFlags.Strict),

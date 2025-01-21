@@ -23,8 +23,9 @@ using Nitrocid.Languages;
 using System.Collections.Generic;
 using System.Text;
 using Textify.General;
+using Nitrocid.Extras.Mods.Modifications.ManPages;
 
-namespace Nitrocid.Extras.Mods.Modifications.ManPages
+namespace Nitrocid.Extras.Mods.Modifications.Interactive
 {
     /// <summary>
     /// Manual viewer class

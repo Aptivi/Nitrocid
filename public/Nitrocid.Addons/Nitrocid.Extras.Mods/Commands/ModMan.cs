@@ -31,6 +31,8 @@ using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Mods.Modifications;
+using Nitrocid.Extras.Mods.Modifications.Interactive;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -171,6 +173,12 @@ namespace Nitrocid.Extras.Mods.Commands
                     case "startall":
                         {
                             ModManager.StartMods();
+                            break;
+                        }
+                    case "tui":
+                        {
+                            var tui = new ModManagerTui();
+                            InteractiveTuiTools.OpenInteractiveTui(tui);
                             break;
                         }
 
