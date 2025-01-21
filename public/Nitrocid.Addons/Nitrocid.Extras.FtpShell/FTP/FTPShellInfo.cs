@@ -154,6 +154,22 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     ])
                 ], new LsrCommand(), CommandFlags.Wrappable),
 
+            new CommandInfo("mkldir", /* Localizable */ "Creates a local directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory"),
+                    ], true)
+                ], new MkldirCommand()),
+
+            new CommandInfo("mkrdir", /* Localizable */ "Creates a remote directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory"),
+                    ], true)
+                ], new MkrdirCommand()),
+
             new CommandInfo("mv", /* Localizable */ "Moves file or directory to another file or directory. You can also use that to rename files.",
                 [
                     new CommandArgumentInfo(new[]
