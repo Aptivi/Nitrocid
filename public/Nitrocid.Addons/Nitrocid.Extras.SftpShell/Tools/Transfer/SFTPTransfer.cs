@@ -19,6 +19,7 @@
 
 using System;
 using Nitrocid.Extras.SftpShell.SFTP;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Exceptions;
@@ -38,7 +39,15 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
         /// </summary>
         /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPGetFile(string File)
+        public static bool SFTPGetFile(string File) => SFTPGetFile(File, File);
+
+        /// <summary>
+        /// Downloads a file from the currently connected SFTP server
+        /// </summary>
+        /// <param name="File">A remote file</param>
+        /// <param name="LocalFile">A name of the local file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPGetFile(string File, string LocalFile)
         {
             try
             {
@@ -50,8 +59,9 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
 
                 // Try to download
-                var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
-                client.DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPShellCommon.SFTPCurrDirect);
+                var DownloadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.OpenOrCreate);
+                client.DownloadFile(File, DownloadFileStream);
 
                 // Show a message that it's downloaded
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", vars: [File]);
@@ -69,9 +79,17 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
         /// <summary>
         /// Uploads a file to the currently connected SFTP server
         /// </summary>
-        /// <param name="File">A local file</param>
+        /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPUploadFile(string File)
+        public static bool SFTPUploadFile(string File) => SFTPUploadFile(File, File);
+
+        /// <summary>
+        /// Uploads a file to the currently connected SFTP server
+        /// </summary>
+        /// <param name="File">A remote file</param>
+        /// <param name="LocalFile">A name of the local file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPUploadFile(string File, string LocalFile)
         {
             try
             {
@@ -83,8 +101,9 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [File]);
 
                 // Try to upload
-                var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
-                client.UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPShellCommon.SFTPCurrDirect);
+                var UploadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.Open);
+                client.UploadFile(UploadFileStream, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", vars: [File]);
                 EventsManager.FireEvent(EventType.SFTPPostUpload, File);
                 return true;

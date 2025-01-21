@@ -84,6 +84,11 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     })
                 ], new GetCommand()),
 
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
+                [
+                    new CommandArgumentInfo()
+                ], new IfmCommand()),
+
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
                     new CommandArgumentInfo(
@@ -115,6 +120,22 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                         })
                     ])
                 ], new LsrCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("mkldir", /* Localizable */ "Creates a local directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory"),
+                    ], true)
+                ], new MkldirCommand()),
+
+            new CommandInfo("mkrdir", /* Localizable */ "Creates a remote directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory"),
+                    ], true)
+                ], new MkrdirCommand()),
 
             new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
                 [

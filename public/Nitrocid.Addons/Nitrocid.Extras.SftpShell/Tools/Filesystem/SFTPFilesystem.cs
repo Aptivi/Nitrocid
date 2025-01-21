@@ -162,10 +162,17 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             }
         }
 
+        /// <summary>
+        /// Changes FTP local directory
+        /// </summary>
+        /// <param name="Directory">Local directory</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static bool SFTPChangeLocalDir(string Directory)
         {
             string targetDir;
-            targetDir = $"{SFTPShellCommon.SFTPCurrDirect}/{Directory}";
+            targetDir = FilesystemTools.NeutralizePath(Directory, SFTPShellCommon.SFTPCurrDirect);
             FilesystemTools.ThrowOnInvalidPath(targetDir);
 
             // Check if folder exists
@@ -205,5 +212,76 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             return CanonicalPath;
         }
 
+        /// <summary>
+        /// Makes a directory in the remote
+        /// </summary>
+        /// <param name="name">New directory name</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPMakeDirectory(string name)
+        {
+            try
+            {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                client.CreateDirectory(name);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error creating SFTP directory {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an SFTP file or directory exists
+        /// </summary>
+        /// <param name="name">Path to file or directory</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPExists(string name) =>
+            SFTPFileExists(name) || SFTPDirectoryExists(name);
+
+        /// <summary>
+        /// Checks to see if an SFTP file exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPFileExists(string name)
+        {
+            try
+            {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                return client.Exists(name) && !client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an SFTP directory exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPDirectoryExists(string name)
+        {
+            try
+            {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                return client.Exists(name) && client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
     }
 }

@@ -40,11 +40,11 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         /// <summary>
         /// SFTP current local directory
         /// </summary>
-        public static string? SFTPCurrDirect { get; set; }
+        public static string SFTPCurrDirect { get; set; } = "";
         /// <summary>
         /// SFTP current remote directory
         /// </summary>
-        public static string? SFTPCurrentRemoteDir { get; set; }
+        public static string SFTPCurrentRemoteDir { get; set; } = "";
         /// <summary>
         /// SFTP show file details in list
         /// </summary>
