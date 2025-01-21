@@ -8,6 +8,7 @@
         <Product>Nitrocid</Product>
         <LangVersion>latest</LangVersion>
         <Deterministic>true</Deterministic>
+        <DeterministicSourcePaths>true</DeterministicSourcePaths>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>CS9057,CS8002,nullable</WarningsAsErrors>
@@ -63,6 +64,9 @@
     <!-- KS SourceLink -->
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+    </ItemGroup>
+    <ItemGroup>
+        <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
     </ItemGroup>
     <PropertyGroup>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
