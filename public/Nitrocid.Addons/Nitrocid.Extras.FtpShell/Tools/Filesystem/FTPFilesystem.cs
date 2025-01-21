@@ -48,7 +48,8 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> FTPListRemote(string Path) => FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
+        public static List<string> FTPListRemote(string Path) =>
+            FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files
@@ -193,7 +194,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             if (!string.IsNullOrEmpty(Directory))
             {
                 string targetDir;
-                targetDir = $"{FTPShellCommon.FtpCurrentDirectory}/{Directory}";
+                targetDir = FilesystemTools.NeutralizePath(Directory, FTPShellCommon.FtpCurrentDirectory);
                 FilesystemTools.ThrowOnInvalidPath(targetDir);
 
                 // Check if folder exists
@@ -328,5 +329,75 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             return false;
         }
 
+        /// <summary>
+        /// Makes a directory in the remote
+        /// </summary>
+        /// <param name="name">New directory name</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool FTPMakeDirectory(string name)
+        {
+            try
+            {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                return instance.CreateDirectory(name);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error creating FTP directory {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an FTP file or directory exists
+        /// </summary>
+        /// <param name="name">Path to file or directory</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPExists(string name) =>
+            FTPFileExists(name) || FTPDirectoryExists(name);
+
+        /// <summary>
+        /// Checks to see if an FTP file exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPFileExists(string name)
+        {
+            try
+            {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                return instance.FileExists(name);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an FTP directory exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPDirectoryExists(string name)
+        {
+            try
+            {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                return instance.DirectoryExists(name);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
     }
 }

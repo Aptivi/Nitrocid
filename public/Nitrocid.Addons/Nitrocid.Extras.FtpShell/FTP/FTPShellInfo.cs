@@ -112,6 +112,11 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     })
                 ], new GetFolderCommand()),
 
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
+                [
+                    new CommandArgumentInfo()
+                ], new IfmCommand()),
+
             new CommandInfo("info", /* Localizable */ "FTP server information",
                 [
                     new CommandArgumentInfo()
