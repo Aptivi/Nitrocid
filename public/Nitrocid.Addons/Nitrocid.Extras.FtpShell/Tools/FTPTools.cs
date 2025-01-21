@@ -214,7 +214,10 @@ namespace Nitrocid.Extras.FtpShell.Tools
                                 Translate.DoTranslation("Encoding"),
                                 Translate.DoTranslation("Encryption"),
                                 Translate.DoTranslation("Protocols")
-                            ), [.. choices]);
+                            ), [.. choices], new()
+                            {
+                                OutputType = ChoiceOutputType.Modern
+                            });
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", vars: [profanswer]);
                         if (TextTools.IsStringNumeric(profanswer))
                         {
