@@ -38,7 +38,6 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
-using Terminaux.Colors;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
 

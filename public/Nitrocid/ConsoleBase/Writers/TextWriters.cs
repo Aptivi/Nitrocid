@@ -20,11 +20,9 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using System;
 using System.Threading;
 using Nitrocid.Drivers.Console;
-using Terminaux.Base;
 using Nitrocid.Drivers;
 
 namespace Nitrocid.ConsoleBase.Writers

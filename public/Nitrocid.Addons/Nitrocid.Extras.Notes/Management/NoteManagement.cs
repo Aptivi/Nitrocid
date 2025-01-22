@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.Notes.Interactive;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;

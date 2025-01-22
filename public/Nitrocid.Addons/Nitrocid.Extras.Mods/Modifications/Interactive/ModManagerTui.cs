@@ -17,13 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using System.Text;
 using Textify.General;
-using Nitrocid.Extras.Mods.Modifications.ManPages;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Mods.Modifications.Interactive

@@ -31,7 +31,6 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
-using Terminaux.Colors;
 using Nitrocid.Security.Permissions;
 using Terminaux.Inputs.Styles.Infobox;
 

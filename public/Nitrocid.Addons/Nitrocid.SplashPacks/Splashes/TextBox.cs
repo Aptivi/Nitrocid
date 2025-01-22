@@ -23,7 +23,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
-using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes

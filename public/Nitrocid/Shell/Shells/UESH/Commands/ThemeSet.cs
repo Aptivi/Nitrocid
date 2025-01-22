@@ -28,7 +28,6 @@ using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Colors;

@@ -22,7 +22,6 @@ using Nitrocid.Misc.Interactives;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

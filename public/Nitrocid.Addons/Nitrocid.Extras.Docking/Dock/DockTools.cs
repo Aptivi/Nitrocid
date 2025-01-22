@@ -26,7 +26,6 @@ using Nitrocid.Misc.Screensaver;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Terminaux.Colors;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Terminaux.Base;

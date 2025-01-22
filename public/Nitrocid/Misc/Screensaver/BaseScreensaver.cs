@@ -20,7 +20,6 @@
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;

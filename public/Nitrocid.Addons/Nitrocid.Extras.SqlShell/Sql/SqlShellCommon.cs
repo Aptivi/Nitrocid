@@ -18,8 +18,6 @@
 //
 
 using Microsoft.Data.Sqlite;
-using Nitrocid.Extras.SqlShell.Tools;
-using Nitrocid.Files;
 using System.IO;
 
 namespace Nitrocid.Extras.SqlShell.Sql

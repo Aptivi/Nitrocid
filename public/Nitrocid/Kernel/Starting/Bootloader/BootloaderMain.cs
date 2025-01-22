@@ -30,7 +30,6 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
