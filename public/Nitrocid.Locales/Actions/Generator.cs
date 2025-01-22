@@ -18,10 +18,8 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Checks;
 using Nitrocid.Locales.Serializer;
 using Terminaux.Colors.Data;
 

@@ -18,21 +18,22 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Misc.Interactives;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
 using System;
+using Nitrocid.Extras.MailShell.Mail.Interactive;
+using MailKit;
+using MimeKit;
 
-namespace Nitrocid.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
-    class TaskManCommand : BaseCommand, ICommand
+    class TuiCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var tui = new TaskManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
+            var tui = new MailManagerCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }

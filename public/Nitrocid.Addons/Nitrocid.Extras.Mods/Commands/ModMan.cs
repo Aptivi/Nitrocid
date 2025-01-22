@@ -33,6 +33,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
+using System;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -178,6 +179,18 @@ namespace Nitrocid.Extras.Mods.Commands
                     case "tui":
                         {
                             var tui = new ModManagerTui();
+                            tui.Bindings.AddRange([
+                                new(Translate.DoTranslation("Start mod (select)"), ConsoleKey.F1, (_, _, _, _) => tui.StartModPrompt(false), true),
+                                new(Translate.DoTranslation("Start mod (input)"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.StartModPrompt(true), true),
+                                new(Translate.DoTranslation("Stop mod"), ConsoleKey.F2, (modName, _, _, _) => tui.StopMod(modName)),
+                                new(Translate.DoTranslation("Reload mod"), ConsoleKey.F3, (modName, _, _, _) => tui.ReloadMod(modName)),
+                                new(Translate.DoTranslation("Install mod (select)"), ConsoleKey.F4, (_, _, _, _) => tui.InstallModPrompt(false), true),
+                                new(Translate.DoTranslation("Install mod (input)"), ConsoleKey.F4, ConsoleModifiers.Shift, (_, _, _, _) => tui.InstallModPrompt(true), true),
+                                new(Translate.DoTranslation("Uninstall mod"), ConsoleKey.F5, (modName, _, _, _) => tui.UninstallMod(modName)),
+                                new(Translate.DoTranslation("Start all"), ConsoleKey.F6, (_, _, _, _) => ModManager.StartMods(), true),
+                                new(Translate.DoTranslation("Stop all"), ConsoleKey.F7, (_, _, _, _) => ModManager.StopMods(), true),
+                                new(Translate.DoTranslation("Reload all"), ConsoleKey.F8, (_, _, _, _) => ModManager.ReloadMods(), true),
+                            ]);
                             InteractiveTuiTools.OpenInteractiveTui(tui);
                             break;
                         }

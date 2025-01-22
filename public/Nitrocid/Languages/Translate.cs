@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
-using System.Linq;
 
 namespace Nitrocid.Languages
 {

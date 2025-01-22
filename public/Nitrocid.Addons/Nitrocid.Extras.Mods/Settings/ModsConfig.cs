@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.Mods.Settings
 {

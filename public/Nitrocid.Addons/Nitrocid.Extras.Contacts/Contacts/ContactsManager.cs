@@ -34,7 +34,6 @@ using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts.Enums;
 using Nitrocid.Files;
-using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {

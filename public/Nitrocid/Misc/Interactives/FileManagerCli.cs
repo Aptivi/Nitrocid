@@ -38,8 +38,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.Extensions;
 using Textify.General;
-using Terminaux.Colors;
-using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.UnitConv.Interactives;
 using Nitrocid.Languages;
 using System;

@@ -118,10 +118,10 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             Authentication.Password = InputTools.ReadLineNoInput();
 
-            string DynamicAddressIMAP = ServerDetect(Username, ServerType.IMAP);
-            string DynamicAddressSMTP = ServerDetect(Username, ServerType.SMTP);
+            string DynamicAddressIMAP = AutoDetectServer ? ServerDetect(Username, ServerType.IMAP) : "";
+            string DynamicAddressSMTP = AutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
 
-            if (!string.IsNullOrEmpty(DynamicAddressIMAP) & !string.IsNullOrEmpty(DynamicAddressSMTP) & AutoDetectServer)
+            if (!string.IsNullOrEmpty(DynamicAddressIMAP) && !string.IsNullOrEmpty(DynamicAddressSMTP))
                 return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0);
             else
                 return PromptServer();

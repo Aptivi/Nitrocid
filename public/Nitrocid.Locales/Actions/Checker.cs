@@ -23,15 +23,11 @@ using Microsoft.CodeAnalysis.MSBuild;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Locales.Actions.Analyzers;
-using Nitrocid.Locales.Serializer;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 using static Nitrocid.Locales.Serializer.VisualStudioInstanceSelector;
 

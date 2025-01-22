@@ -163,6 +163,11 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo()
                 ], new SendEncCommand()),
+
+            new CommandInfo("tui", /* Localizable */ "Interactive mail management",
+                [
+                    new CommandArgumentInfo()
+                ], new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

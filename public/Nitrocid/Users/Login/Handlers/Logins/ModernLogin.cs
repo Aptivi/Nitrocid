@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System.Linq;
 using System.Threading;
-using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using System;

@@ -19,8 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Sql;
 using Nitrocid.Files;

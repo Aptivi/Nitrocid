@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MailKit;
@@ -195,11 +196,57 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <summary>
         /// Lists directories
         /// </summary>
+        /// <returns>A list of mail folder instances</returns>
+        public static MailFolder[] MailListDirectories()
+        {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            List<MailFolder> folders = [];
+            lock (client.SyncRoot)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
+                foreach (FolderNamespace nmspc in client.PersonalNamespaces)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
+                        folders.Add(dir);
+                    }
+                }
+
+                DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
+                foreach (FolderNamespace nmspc in client.SharedNamespaces)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
+                        folders.Add(dir);
+                    }
+                }
+
+                DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
+                foreach (FolderNamespace nmspc in client.OtherNamespaces)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
+                        folders.Add(dir);
+                    }
+                }
+            }
+            return [.. folders];
+        }
+
+        /// <summary>
+        /// Renders a list of directories
+        /// </summary>
         /// <returns>String list</returns>
-        public static string MailListDirectories()
+        public static string MailRenderListDirectories()
         {
             var EntryBuilder = new StringBuilder();
-            var client = ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]);
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
             lock (client.SyncRoot)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");

@@ -23,7 +23,6 @@ using Nitrocid.Misc.Interactives;
 using System;
 using Nitrocid.Languages;
 using Nitrocid.Files.Instances;
-using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Files
 {

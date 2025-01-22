@@ -30,7 +30,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace Nitrocid.LocaleChecker.Localization
 {

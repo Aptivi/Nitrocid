@@ -35,7 +35,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Security.Signing;
 using Nitrocid.Languages.Decoy;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.Dependencies;
 

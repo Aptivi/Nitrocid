@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
+            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, KernelColorType.NeutralText);
             return 0;
         }
     }

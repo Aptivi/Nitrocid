@@ -42,7 +42,6 @@ using Nitrocid.Files.LineEndings;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;

@@ -24,7 +24,6 @@ using System.Threading;
 using System.Text;
 using TextEncoding = System.Text.Encoding;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Textify.General;
 

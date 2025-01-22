@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Extras.Mods.Commands;
-using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
