@@ -17,25 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Extras.MailShell.Tools.Directory;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Languages;
+using System;
+using Nitrocid.Extras.MailShell.Mail.Interactive;
+using MailKit;
+using MimeKit;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
-    /// <summary>
-    /// Lists all mail directories
-    /// </summary>
-    /// <remarks>
-    /// This command lets you list all mail directories in your mail account. It varies from one account to other.
-    /// </remarks>
-    class LsDirsCommand : BaseCommand, ICommand
+    class TuiCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, KernelColorType.NeutralText);
+            var tui = new MailManagerCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }
     }
