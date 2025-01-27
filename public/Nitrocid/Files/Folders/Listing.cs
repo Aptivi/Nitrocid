@@ -84,7 +84,6 @@ namespace Nitrocid.Files
         /// <param name="Recursive">Whether the list is recursive or not</param>
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
         {
-            FilesystemTools.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders
@@ -202,7 +201,6 @@ namespace Nitrocid.Files
         /// <param name="level">Indentation level</param>
         internal static void ListTree(string folder, bool SuppressUnauthorizedMessage, bool Sort, int level = 0)
         {
-            FilesystemTools.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders

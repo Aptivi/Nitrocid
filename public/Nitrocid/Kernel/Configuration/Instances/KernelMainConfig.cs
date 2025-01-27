@@ -969,16 +969,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => FilesystemTools._CurrentDirectory;
             set
             {
-                FilesystemTools.ThrowOnInvalidPath(value);
                 value = FilesystemTools.NeutralizePath(value);
                 if (FilesystemTools.FolderExists(value))
-                {
                     FilesystemTools._CurrentDirectory = value;
-                }
                 else
-                {
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found"), value);
-                }
             }
         }
         /// <summary>

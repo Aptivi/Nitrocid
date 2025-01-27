@@ -195,7 +195,6 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             {
                 string targetDir;
                 targetDir = FilesystemTools.NeutralizePath(Directory, FTPShellCommon.FtpCurrentDirectory);
-                FilesystemTools.ThrowOnInvalidPath(targetDir);
 
                 // Check if folder exists
                 if (FilesystemTools.FolderExists(targetDir))

@@ -67,31 +67,5 @@ namespace Nitrocid.Tests.Files
                 NeutPath.ShouldBe(TargetPath + "/" + TestPath);
             }
         }
-
-        /// <summary>
-        /// Tests throwing on invalid path
-        /// </summary>
-        [TestMethod]
-        [DataRow(null)]
-        [DataRow("")]
-        [DataRow("/usr/lib")]
-        [DataRow("C:/Program Files")]
-        [DataRow("Music")]
-        [Description("Neutralization")]
-        public void TestThrowOnInvalidPathValid(string path) =>
-            Should.NotThrow(() => FilesystemTools.ThrowOnInvalidPath(path));
-
-        /// <summary>
-        /// Tests throwing on invalid path
-        /// </summary>
-        [TestMethod]
-        [DataRow("\\\\.\\globalroot\\device\\condrv\\kernelconnect")]
-        [DataRow("C:\\$i30")]
-        [Description("Neutralization")]
-        public void TestThrowOnInvalidPathInvalid(string path)
-        {
-            if (KernelPlatform.IsOnWindows())
-                Should.Throw(() => FilesystemTools.ThrowOnInvalidPath(path), typeof(KernelException));
-        }
     }
 }

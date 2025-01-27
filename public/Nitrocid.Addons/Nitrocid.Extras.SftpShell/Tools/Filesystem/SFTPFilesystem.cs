@@ -173,7 +173,6 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         {
             string targetDir;
             targetDir = FilesystemTools.NeutralizePath(Directory, SFTPShellCommon.SFTPCurrDirect);
-            FilesystemTools.ThrowOnInvalidPath(targetDir);
 
             // Check if folder exists
             if (FilesystemTools.FolderExists(targetDir))
