@@ -325,7 +325,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             var shellInfo = GetShellInfo(ShellType);
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
-            var settings = new TermReaderSettings()
+            var settings = new TermReaderSettings(InputTools.globalSettings)
             {
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
                 SuggestionsDelimiters = [' '],

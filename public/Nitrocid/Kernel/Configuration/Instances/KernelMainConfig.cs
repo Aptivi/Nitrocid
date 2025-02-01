@@ -54,6 +54,7 @@ using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel.Starting;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -1259,6 +1260,21 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 if (value <= 0)
                     value = 10;
                 screensaverDelay = value;
+            }
+        }
+        #endregion
+
+        #region Audio
+        /// <summary>
+        /// Whether to play keyboard cues for each keypress or not
+        /// </summary>
+        public bool EnableKeyboardCues
+        {
+            get => InputTools.globalSettings.KeyboardCues;
+            set
+            {
+                TermReader.GlobalReaderSettings.KeyboardCues = value;
+                InputTools.globalSettings.KeyboardCues = value;
             }
         }
         #endregion

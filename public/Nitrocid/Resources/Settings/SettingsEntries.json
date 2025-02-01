@@ -1091,6 +1091,19 @@
         ]
     },
     {
+        "Name": "Audio",
+        "Desc": "This section lists all the audio settings.",
+        "DisplayAs": "Audio settings",
+        "Keys": [
+            {
+                "Name": "Enable keyboard cues",
+                "Type": "SBoolean",
+                "Variable": "EnableKeyboardCues",
+                "Description": "Whether to play keyboard cues for each keypress or not"
+            }
+        ]
+    },
+    {
         "Name": "Misc",
         "Desc": "Settings that don't fit in their appropriate sections land here.",
         "DisplayAs": "Miscellaneous settings",
