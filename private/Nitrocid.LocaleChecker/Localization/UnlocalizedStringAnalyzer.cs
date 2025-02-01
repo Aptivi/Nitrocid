@@ -136,7 +136,7 @@ namespace Nitrocid.LocaleChecker.Localization
                     {
                         string text = literalText.ToString();
                         text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                        if (!localizationList.Contains(text))
+                        if (!string.IsNullOrWhiteSpace(text) && !localizationList.Contains(text))
                         {
                             var diagnostic = Diagnostic.Create(Rule, location, text);
                             context.ReportDiagnostic(diagnostic);
@@ -175,7 +175,7 @@ namespace Nitrocid.LocaleChecker.Localization
                             var location = literalText.GetLocation();
                             string text = literalText.ToString();
                             text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                            if (!localizationList.Contains(text))
+                            if (!string.IsNullOrWhiteSpace(text) && !localizationList.Contains(text))
                             {
                                 var diagnostic = Diagnostic.Create(RuleComment, location, text);
                                 context.ReportDiagnostic(diagnostic);
@@ -235,7 +235,7 @@ namespace Nitrocid.LocaleChecker.Localization
                     string descriptionOrig = (string?)themeMetadata["Description"] ?? "";
                     string description = descriptionOrig.Replace("\\\"", "\"");
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
-                    if (!string.IsNullOrEmpty(description) && localizable && !localizationList.Contains(description))
+                    if (!string.IsNullOrWhiteSpace(description) && localizable && !localizationList.Contains(description))
                     {
                         var location = GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName);
                         var diagnostic = Diagnostic.Create(RuleJson, location, description);
@@ -254,19 +254,19 @@ namespace Nitrocid.LocaleChecker.Localization
                         string description = descriptionOrig.Replace("\\\"", "\"");
                         string displayAs = displayAsOrig.Replace("\\\"", "\"");
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
-                        if (!string.IsNullOrEmpty(description) && !localizationList.Contains(description))
+                        if (!string.IsNullOrWhiteSpace(description) && !localizationList.Contains(description))
                         {
                             var location = GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName);
                             var diagnostic = Diagnostic.Create(RuleJson, location, description);
                             context.ReportDiagnostic(diagnostic);
                         }
-                        if (!string.IsNullOrEmpty(displayAs) && !localizationList.Contains(displayAs))
+                        if (!string.IsNullOrWhiteSpace(displayAs) && !localizationList.Contains(displayAs))
                         {
                             var location = GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName);
                             var diagnostic = Diagnostic.Create(RuleJson, location, displayAs);
                             context.ReportDiagnostic(diagnostic);
                         }
-                        if (!string.IsNullOrEmpty(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
+                        if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
                         {
                             var location = GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName);
                             var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay);
@@ -283,13 +283,13 @@ namespace Nitrocid.LocaleChecker.Localization
                             string keyDescOrig = (string?)key["Description"] ?? "";
                             string keyName = keyNameOrig.Replace("\\\"", "\"");
                             string keyDesc = keyDescOrig.Replace("\\\"", "\"");
-                            if (!string.IsNullOrEmpty(keyName) && !localizationList.Contains(keyName))
+                            if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
                             {
                                 var location = GenerateLocation(key["Name"], keyNameOrig, resourceName);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
                                 context.ReportDiagnostic(diagnostic);
                             }
-                            if (!string.IsNullOrEmpty(keyDesc) && !localizationList.Contains(keyDesc))
+                            if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
                             {
                                 var location = GenerateLocation(key["Description"], keyDescOrig, resourceName);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);

@@ -65,7 +65,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
                                 var location = literalText.GetLocation();
                                 string text = literalText.ToString();
                                 text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                                if (!Checker.localizationList.Contains(text))
+                                if (!string.IsNullOrWhiteSpace(text) && !Checker.localizationList.Contains(text))
                                 {
                                     AnalyzerTools.PrintFromLocation(location, document, GetType(), $"Unlocalized string found: {text}");
                                     found = true;
