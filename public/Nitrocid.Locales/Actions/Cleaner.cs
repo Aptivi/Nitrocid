@@ -98,7 +98,7 @@ namespace Nitrocid.Locales.Actions
                     var documents = project.Documents;
                     foreach (var document in documents)
                     {
-                        foreach (var analyzer in LocalizableResourcesAnalyzer.analyzers)
+                        foreach (var analyzer in AnalyzersCommon.analyzers)
                         {
                             try
                             {
