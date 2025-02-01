@@ -261,7 +261,7 @@ namespace Nitrocid.Extras.MailShell.Tools
 
                 // SMTP Connection
                 TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), SmtpAddress);
-                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", vars: [Address, Port]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", vars: [SmtpAddress, SmtpPort]);
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
 
                 // IMAP Authentication
