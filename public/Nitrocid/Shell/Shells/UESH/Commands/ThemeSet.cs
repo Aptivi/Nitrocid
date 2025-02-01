@@ -31,6 +31,7 @@ using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string answer = "";
+            int answer = -1;
             string selectedTheme = "";
             string ThemePath = "";
 
@@ -53,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             int step = 1;
             string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
             int categoryIndex = 0;
-            while (answer != "y" && !bail)
+            while (answer != 0 && !bail)
             {
                 // Selected theme null for now
                 bool proceed = false;
@@ -161,21 +162,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                 // Now, preview the theme
                 ThemePreviewTools.PreviewTheme(Theme);
-                TextWriterRaw.Write();
 
-                // Pause until a key is pressed
-                answer = ChoiceStyle.PromptChoice(
-                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description),
+                // Let the user decide whether to set the theme or not
+                answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
                     [
-                        ("y", Translate.DoTranslation("Yes, set it!")),
-                        ("n", Translate.DoTranslation("No, don't set it."))
+                        new("y", Translate.DoTranslation("Yes")),
+                        new("n", Translate.DoTranslation("No"))
                     ],
-                    new ChoiceStyleSettings()
-                    {
-                        OutputType = ChoiceOutputType.Modern
-                    }
+                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description)
                 );
-                if (answer == "n" && parameters.ArgumentsList.Length > 0)
+                if (answer == 1 && parameters.ArgumentsList.Length > 0)
                     bail = true;
             }
 
