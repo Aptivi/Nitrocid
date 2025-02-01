@@ -181,7 +181,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Preview...
                     DebugWriter.WriteDebug(DebugLevel.I, "Printing text with colors of theme...");
-                    ThemePreviewTools.PreviewThemeSimple(colors);
+                    ThemePreviewTools.PreviewTheme(colors);
                 }
                 else if (response == colors.Count + 9)
                 {
