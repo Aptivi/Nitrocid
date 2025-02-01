@@ -509,7 +509,7 @@ namespace Nitrocid.Network.Connections
 
                 // Check the connection for validity
                 if (connection is null)
-                    throw new KernelException(KernelExceptionType.NetworkConnection);
+                    throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The network connection might not have been established properly due to an error."));
 
                 // Use that information to start the shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Finalizing the shell...");
