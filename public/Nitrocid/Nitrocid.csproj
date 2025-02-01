@@ -117,5 +117,8 @@
   <ItemGroup>
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Audio\" />
+  </ItemGroup>
   <!-- KS Generated End -->
 </Project>
