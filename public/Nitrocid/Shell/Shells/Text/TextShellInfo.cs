@@ -30,9 +30,8 @@ namespace Nitrocid.Shell.Shells.Text
     /// <summary>
     /// Common text shell class
     /// </summary>
-    internal class TextShellInfo : BaseShellInfo, IShellInfo
+    internal class TextShellInfo : BaseShellInfo<TextShell>, IShellInfo
     {
-
         /// <summary>
         /// Text commands
         /// </summary>
@@ -239,8 +238,5 @@ namespace Nitrocid.Shell.Shells.Text
             { "PowerLineBG2", new TextPowerLineBG2Preset() },
             { "PowerLineBG3", new TextPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new TextShell();
-
     }
 }

@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.UESH
     /// <summary>
     /// UESH common shell properties
     /// </summary>
-    internal class UESHShellInfo : BaseShellInfo, IShellInfo
+    internal class UESHShellInfo : BaseShellInfo<UESHShell>, IShellInfo
     {
         /// <summary>
         /// List of commands
@@ -1655,8 +1655,5 @@ namespace Nitrocid.Shell.Shells.UESH
             { "PowerLineBG2", new PowerLineBG2Preset() },
             { "PowerLineBG3", new PowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new UESHShell();
-
     }
 }

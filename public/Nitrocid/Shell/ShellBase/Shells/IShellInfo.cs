@@ -49,14 +49,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// </summary>
         Dictionary<string, PromptPresetBase> CustomShellPresets { get; }
         /// <summary>
-        /// Gets the shell base
-        /// </summary>
-        BaseShell? ShellBase { get; }
-        /// <summary>
-        /// Gets the current preset
-        /// </summary>
-        PromptPresetBase CurrentPreset { get; }
-        /// <summary>
         /// Whether the shell accepts network connection
         /// </summary>
         bool AcceptsNetworkConnection { get; }

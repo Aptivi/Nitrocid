@@ -34,7 +34,7 @@ namespace Nitrocid.Shell.Shells.Debug
     /// <summary>
     /// Common debug shell class
     /// </summary>
-    internal class DebugShellInfo : BaseShellInfo, IShellInfo
+    internal class DebugShellInfo : BaseShellInfo<DebugShell>, IShellInfo
     {
 
         /// <summary>
@@ -239,8 +239,5 @@ namespace Nitrocid.Shell.Shells.Debug
             { "PowerLineBG2", new DebugPowerLineBG2Preset() },
             { "PowerLineBG3", new DebugPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new DebugShell();
-
     }
 }

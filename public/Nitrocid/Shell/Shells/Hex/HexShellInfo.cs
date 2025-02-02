@@ -30,7 +30,7 @@ namespace Nitrocid.Shell.Shells.Hex
     /// <summary>
     /// Common hex shell class
     /// </summary>
-    internal class HexShellInfo : BaseShellInfo, IShellInfo
+    internal class HexShellInfo : BaseShellInfo<HexShell>, IShellInfo
     {
 
         /// <summary>
@@ -160,8 +160,5 @@ namespace Nitrocid.Shell.Shells.Hex
             { "PowerLineBG2", new HexPowerLineBG2Preset() },
             { "PowerLineBG3", new HexPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new HexShell();
-
     }
 }

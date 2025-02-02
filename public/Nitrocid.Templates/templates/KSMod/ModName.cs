@@ -11,7 +11,7 @@ namespace KSMod
 
         public string Version => "1.0.0";
 
-        public Version MinimumSupportedApiVersion => new(3, 1, 27, 39);
+        public Version MinimumSupportedApiVersion => new(3, 1, 27, 40);
 
         public ModLoadPriority LoadPriority => ModLoadPriority.Optional;
 

@@ -20,6 +20,7 @@
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
+using System;
 using System.Collections.Generic;
 
 namespace Nitrocid.Shell.ShellBase.Shells
@@ -49,12 +50,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
-        public virtual BaseShell? ShellBase => null;
-        /// <inheritdoc/>
-        public virtual PromptPresetBase CurrentPreset =>
-            
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-        /// <inheritdoc/>
         public virtual bool AcceptsNetworkConnection => false;
         /// <inheritdoc/>
         public virtual string NetworkConnectionType => "";
@@ -65,9 +60,31 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual CommandInfo NonSlashCommandInfo =>
             fallbackNonSlashCommand;
+        /// <inheritdoc/>
+        public virtual BaseShell? ShellBase =>
+            Activator.CreateInstance<BaseShell>();
+        /// <inheritdoc/>
+        public virtual PromptPresetBase CurrentPreset =>
+            new();
         /// <summary>
         /// Shell type. Taken from <see cref="ShellBase"/> for easier access
         /// </summary>
-        public string ShellType => ShellBase?.ShellType ?? "";
+        public string ShellType =>
+            ShellBase?.ShellType ?? "";
+    }
+
+    /// <summary>
+    /// Shell information for both the KS shells and the custom shells made by mods
+    /// </summary>
+    public abstract class BaseShellInfo<TShell> : BaseShellInfo, IShellInfo
+        where TShell : BaseShell, IShell
+    {
+        /// <inheritdoc/>
+        public override TShell? ShellBase =>
+            Activator.CreateInstance<TShell>();
+
+        /// <inheritdoc/>
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
     }
 }

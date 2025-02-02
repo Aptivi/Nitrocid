@@ -31,9 +31,8 @@ namespace Nitrocid.Shell.Shells.Admin
     /// <summary>
     /// Common admin shell class
     /// </summary>
-    internal class AdminShellInfo : BaseShellInfo, IShellInfo
+    internal class AdminShellInfo : BaseShellInfo<AdminShell>, IShellInfo
     {
-
         /// <summary>
         /// Admin commands
         /// </summary>
@@ -147,8 +146,5 @@ namespace Nitrocid.Shell.Shells.Admin
             { "PowerLineBG2", new AdminPowerLineBG2Preset() },
             { "PowerLineBG3", new AdminPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new AdminShell();
-
     }
 }
