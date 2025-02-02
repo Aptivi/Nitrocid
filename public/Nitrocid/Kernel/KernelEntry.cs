@@ -118,10 +118,6 @@ namespace Nitrocid.Kernel
             MainLoop();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
 
-            // Play the shutdown sound
-            if (Config.MainConfig.EnableShutdownSounds)
-                AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown);
-
             // Load splash for reboot or shutdown
             SplashReport._KernelBooted = false;
             KernelColorTools.LoadBackground();
@@ -131,6 +127,10 @@ namespace Nitrocid.Kernel
                 SplashManager.OpenSplash(SplashContext.ShuttingDown);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
             ShellManager.PurgeShells();
+
+            // Play the shutdown sound
+            if (Config.MainConfig.EnableShutdownSounds)
+                AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown, false);
         }
 
         /// <summary>

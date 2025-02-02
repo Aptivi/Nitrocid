@@ -63,23 +63,26 @@ namespace Nitrocid.Misc.Audio
         /// Plays the audio cue
         /// </summary>
         /// <param name="cueType">Cue type</param>
-        public static void PlayAudioCue(AudioCueType cueType) =>
-            PlayAudioCue(cueType, GetAudioCue());
+        /// <param name="async">Whether the audio plays in a non-blocking or a blocking way</param>
+        public static void PlayAudioCue(AudioCueType cueType, bool async = true) =>
+            PlayAudioCue(cueType, GetAudioCue(), async);
 
         /// <summary>
         /// Plays the audio cue
         /// </summary>
         /// <param name="cueType">Cue type</param>
         /// <param name="cueName">Audio cue theme name</param>
-        public static void PlayAudioCue(AudioCueType cueType, string cueName) =>
-            PlayAudioCue(cueType, GetAudioCue(cueName));
+        /// <param name="async">Whether the audio plays in a non-blocking or a blocking way</param>
+        public static void PlayAudioCue(AudioCueType cueType, string cueName, bool async = true) =>
+            PlayAudioCue(cueType, GetAudioCue(cueName), async);
 
         /// <summary>
         /// Plays the audio cue
         /// </summary>
         /// <param name="cueType">Cue type</param>
         /// <param name="cueContainer">Audio cue container instance</param>
-        public static void PlayAudioCue(AudioCueType cueType, AudioCueContainer cueContainer)
+        /// <param name="async">Whether the audio plays in a non-blocking or a blocking way</param>
+        public static void PlayAudioCue(AudioCueType cueType, AudioCueContainer cueContainer, bool async = true)
         {
             // Get the audio cue stream
             var stream = cueContainer.GetStream(cueType);
@@ -92,7 +95,10 @@ namespace Nitrocid.Misc.Audio
 
             // Then, seek this stream to the beginning and play it using the play-n-forget technique
             stream.Seek(0, SeekOrigin.Begin);
-            PlayForget.PlayStreamAsync(stream);
+            if (async)
+                PlayForget.PlayStreamAsync(stream);
+            else
+                PlayForget.PlayStream(stream);
         }
 
         private static Dictionary<string, AudioCueContainer> PopulateCues()

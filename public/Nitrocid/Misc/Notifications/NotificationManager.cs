@@ -44,6 +44,7 @@ using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Nitrocid.Files;
+using Nitrocid.Misc.Audio;
 
 namespace Nitrocid.Misc.Notifications
 {
@@ -258,6 +259,20 @@ namespace Nitrocid.Misc.Notifications
                                 BeepTimes = NewNotification.CustomBeepTimes;
                             for (int i = 1; i <= BeepTimes; i++)
                                 ConsoleWrapper.Beep();
+
+                            // Play audio cues if enabled
+                            switch (NewNotification.Priority)
+                            {
+                                case NotificationPriority.Low:
+                                    AudioCuesTools.PlayAudioCue(AudioCueType.NotificationLow);
+                                    break;
+                                case NotificationPriority.Medium:
+                                    AudioCuesTools.PlayAudioCue(AudioCueType.NotificationMedium);
+                                    break;
+                                case NotificationPriority.High:
+                                    AudioCuesTools.PlayAudioCue(AudioCueType.NotificationHigh);
+                                    break;
+                            }
 
                             // Show progress
                             if (NewNotification.Type == NotificationType.Progress)
