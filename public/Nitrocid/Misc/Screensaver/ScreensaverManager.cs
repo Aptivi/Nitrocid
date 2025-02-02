@@ -200,6 +200,10 @@ namespace Nitrocid.Misc.Screensaver
                     inSaver = true;
                     ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
+
+                    // Play the ambience sound if needed
+                    if (Config.MainConfig.EnableAmbientSoundFx)
+                        ScreensaverDisplayer.ScreensaverAmbienceThread.Start();
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", vars: [saver]);
                 }
             }

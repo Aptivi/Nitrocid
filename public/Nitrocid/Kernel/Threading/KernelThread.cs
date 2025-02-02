@@ -297,8 +297,8 @@ namespace Nitrocid.Kernel.Threading
         public void Regen()
         {
             // We can't regen the kernel thread unless Stop() is called first.
-            DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", vars: [!IsReady]);
-            if (IsReady)
+            DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", vars: [!IsReady || BaseThread.ThreadState != ThreadState.Running]);
+            if (IsReady && BaseThread.ThreadState == ThreadState.Running)
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
 
             // Remake the thread to avoid illegal state exceptions
