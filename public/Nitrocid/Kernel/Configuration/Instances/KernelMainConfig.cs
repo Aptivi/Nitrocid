@@ -1340,7 +1340,17 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string AudioCueThemeName
         {
             get => audioCueThemeName;
-            set => audioCueThemeName = AudioCuesTools.GetAudioThemeNames().Contains(value) ? value : "the_mirage";
+            set
+            {
+                audioCueThemeName = AudioCuesTools.GetAudioThemeNames().Contains(value) ? value : "the_mirage";
+                var cue = AudioCuesTools.GetAudioCue();
+                TermReader.GlobalReaderSettings.CueWrite = cue.KeyboardCueTypeStream ?? TermReader.GlobalReaderSettings.CueWrite;
+                TermReader.GlobalReaderSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? TermReader.GlobalReaderSettings.CueRubout;
+                TermReader.GlobalReaderSettings.CueEnter = cue.KeyboardCueEnterStream ?? TermReader.GlobalReaderSettings.CueEnter;
+                InputTools.globalSettings.CueWrite = cue.KeyboardCueTypeStream ?? InputTools.globalSettings.CueWrite;
+                InputTools.globalSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? InputTools.globalSettings.CueRubout;
+                InputTools.globalSettings.CueEnter = cue.KeyboardCueEnterStream ?? InputTools.globalSettings.CueEnter;
+            }
         }
         #endregion
 
