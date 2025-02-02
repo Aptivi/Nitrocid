@@ -130,7 +130,10 @@ namespace Nitrocid.Kernel
 
             // Play the shutdown sound
             if (Config.MainConfig.EnableShutdownSounds)
+            {
+                SplashReport.ReportProgress(Translate.DoTranslation("Playing shutdown sound..."));
                 AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown, false);
+            }
         }
 
         /// <summary>
