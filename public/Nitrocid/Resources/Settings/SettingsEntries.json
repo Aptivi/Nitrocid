@@ -1163,7 +1163,7 @@
                 "SelectionFunctionName": "GetAudioThemeNames",
                 "SelectionFunctionType": "AudioCuesTools",
                 "SelectionFallback": [ "the_mirage" ],
-                "Description": "Which screensaver do you want to lock your screen with?"
+                "Description": "Which audio theme do you want to use for audio cues?"
             }
         ]
     },
