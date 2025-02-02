@@ -89,11 +89,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                 };
                 TextWriterRaw.WriteRaw(wordText.Render());
-                ScreensaverManager.Delay(25);
+                ScreensaverManager.Delay(25, true);
             }
 
             // Delay
-            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WordSlotDelay);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WordSlotDelay, true);
         }
 
         /// <summary>
