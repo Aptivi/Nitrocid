@@ -30,9 +30,8 @@ namespace Nitrocid.Extras.MailShell.Mail
     /// <summary>
     /// Common mail shell class
     /// </summary>
-    internal class MailShellInfo : BaseShellInfo, IShellInfo
+    internal class MailShellInfo : BaseShellInfo<MailShell>, IShellInfo
     {
-
         /// <summary>
         /// Mail commands
         /// </summary>
@@ -181,11 +180,8 @@ namespace Nitrocid.Extras.MailShell.Mail
             { "PowerLineBG3", new MailPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new MailShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "Mail";
-
     }
 }

@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
     /// <summary>
     /// Common archive shell class
     /// </summary>
-    internal class ArchiveShellInfo : BaseShellInfo, IShellInfo
+    internal class ArchiveShellInfo : BaseShellInfo<ArchiveShell>, IShellInfo
     {
-
         /// <summary>
         /// Archive commands
         /// </summary>
@@ -100,8 +99,5 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             { "PowerLineBG2", new ArchivePowerLineBG2Preset() },
             { "PowerLineBG3", new ArchivePowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new ArchiveShell();
-
     }
 }

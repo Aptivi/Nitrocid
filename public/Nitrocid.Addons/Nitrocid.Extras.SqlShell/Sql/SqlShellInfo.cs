@@ -30,9 +30,8 @@ namespace Nitrocid.Extras.SqlShell.Sql
     /// <summary>
     /// Common Sql shell class
     /// </summary>
-    internal class SqlShellInfo : BaseShellInfo, IShellInfo
+    internal class SqlShellInfo : BaseShellInfo<SqlShell>, IShellInfo
     {
-
         /// <summary>
         /// Sql commands
         /// </summary>
@@ -64,8 +63,5 @@ namespace Nitrocid.Extras.SqlShell.Sql
             { "PowerLineBG2", new SqlPowerLineBG2Preset() },
             { "PowerLineBG3", new SqlPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new SqlShell();
-
     }
 }

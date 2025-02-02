@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
     /// <summary>
     /// Common SFTP shell class
     /// </summary>
-    internal class SFTPShellInfo : BaseShellInfo, IShellInfo
+    internal class SFTPShellInfo : BaseShellInfo<SFTPShell>, IShellInfo
     {
-
         /// <summary>
         /// SFTP commands
         /// </summary>
@@ -167,11 +166,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
             { "PowerLineBG3", new SftpPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new SFTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "SFTP";
-
     }
 }

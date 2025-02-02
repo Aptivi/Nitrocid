@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
     /// <summary>
     /// Common FTP shell class
     /// </summary>
-    internal class FTPShellInfo : BaseShellInfo, IShellInfo
+    internal class FTPShellInfo : BaseShellInfo<FTPShell>, IShellInfo
     {
-
         /// <summary>
         /// FTP commands
         /// </summary>
@@ -257,11 +256,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
             { "PowerLineBG3", new FtpPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new FTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "FTP";
-
     }
 }

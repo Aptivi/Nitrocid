@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.RssShell.RSS
     /// <summary>
     /// Common RSS shell class
     /// </summary>
-    internal class RSSShellInfo : BaseShellInfo, IShellInfo
+    internal class RSSShellInfo : BaseShellInfo<RSSShell>, IShellInfo
     {
-
         /// <summary>
         /// RSS commands
         /// </summary>
@@ -137,11 +136,8 @@ namespace Nitrocid.Extras.RssShell.RSS
             { "PowerLineBG3", new RSSPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new RSSShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "RSS";
-
     }
 }

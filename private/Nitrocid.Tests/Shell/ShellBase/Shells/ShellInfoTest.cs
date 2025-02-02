@@ -25,17 +25,13 @@ using System.Collections.Generic;
 namespace Nitrocid.Tests.Shell.ShellBase.Shells
 {
 
-    class ShellInfoTest : BaseShellInfo, IShellInfo
+    class ShellInfoTest : BaseShellInfo<ShellTest>, IShellInfo
     {
-
         public override List<CommandInfo> Commands =>
         [
             new CommandInfo("test", "Test command", [
                 new CommandArgumentInfo()
             ], null)
         ];
-
-        public override BaseShell ShellBase => new ShellTest();
-
     }
 }

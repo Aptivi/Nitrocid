@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.JsonShell.Json
     /// <summary>
     /// Common JSON shell class
     /// </summary>
-    internal class JsonShellInfo : BaseShellInfo, IShellInfo
+    internal class JsonShellInfo : BaseShellInfo<JsonShell>, IShellInfo
     {
-
         /// <summary>
         /// JSON commands
         /// </summary>
@@ -173,8 +172,5 @@ namespace Nitrocid.Extras.JsonShell.Json
             { "PowerLineBG2", new JsonPowerLineBG2Preset() },
             { "PowerLineBG3", new JsonPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new JsonShell();
-
     }
 }

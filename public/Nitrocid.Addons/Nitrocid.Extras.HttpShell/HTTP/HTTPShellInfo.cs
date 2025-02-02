@@ -30,9 +30,8 @@ namespace Nitrocid.Extras.HttpShell.HTTP
     /// <summary>
     /// Common HTTP shell class
     /// </summary>
-    internal class HTTPShellInfo : BaseShellInfo, IShellInfo
+    internal class HTTPShellInfo : BaseShellInfo<HTTPShell>, IShellInfo
     {
-
         /// <summary>
         /// HTTP commands
         /// </summary>
@@ -159,11 +158,8 @@ namespace Nitrocid.Extras.HttpShell.HTTP
             { "PowerLineBG3", new HTTPPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new HTTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "HTTP";
-
     }
 }

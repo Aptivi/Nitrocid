@@ -31,9 +31,8 @@ namespace Nitrocid.Extras.GitShell.Git
     /// <summary>
     /// Common Git shell class
     /// </summary>
-    internal class GitShellInfo : BaseShellInfo, IShellInfo
+    internal class GitShellInfo : BaseShellInfo<GitShell>, IShellInfo
     {
-
         /// <summary>
         /// Git commands
         /// </summary>
@@ -231,8 +230,5 @@ namespace Nitrocid.Extras.GitShell.Git
             { "PowerLineBG2", new PowerLineBG2Preset() },
             { "PowerLineBG3", new PowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new GitShell();
-
     }
 }
