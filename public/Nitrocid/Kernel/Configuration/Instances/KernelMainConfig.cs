@@ -55,6 +55,8 @@ using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel.Starting;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
+using Nitrocid.Misc.Audio;
+using System.Linq;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -65,9 +67,16 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         [JsonIgnore]
         private string defaultFigletFontName = "speed";
@@ -1265,6 +1274,9 @@ namespace Nitrocid.Kernel.Configuration.Instances
         #endregion
 
         #region Audio
+        private string audioCueThemeName = "the_mirage";
+        private double audioCueVolume = 1.0;
+
         /// <summary>
         /// Whether to play keyboard cues for each keypress or not
         /// </summary>
@@ -1276,6 +1288,59 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 TermReader.GlobalReaderSettings.KeyboardCues = value;
                 InputTools.globalSettings.KeyboardCues = value;
             }
+        }
+        /// <summary>
+        /// Whether to enable startup sounds or not
+        /// </summary>
+        public bool EnableStartupSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable shutdown sounds or not
+        /// </summary>
+        public bool EnableShutdownSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable navigation sounds or not
+        /// </summary>
+        public bool EnableNavigationSounds { get; set; }
+        /// <summary>
+        /// Whether to enable the notification sound for low-priority alerts or not
+        /// </summary>
+        public bool EnableLowPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable the notification sound for medium-priority alerts or not
+        /// </summary>
+        public bool EnableMediumPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable the notification sound for high-priority alerts or not
+        /// </summary>
+        public bool EnableHighPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to play ambient screensaver sound effects or not
+        /// </summary>
+        public bool EnableAmbientSoundFx { get; set; }
+        /// <summary>
+        /// Whether to intensify the ambient screensaver sound effects or not
+        /// </summary>
+        public bool EnableAmbientSoundFxIntense { get; set; }
+        /// <summary>
+        /// Audio cue volume
+        /// </summary>
+        public double AudioCueVolume
+        {
+            get => audioCueVolume;
+            set
+            {
+                audioCueVolume = value;
+                TermReader.GlobalReaderSettings.CueVolume = value;
+                InputTools.globalSettings.CueVolume = value;
+            }
+        }
+        /// <summary>
+        /// Audio cue theme name
+        /// </summary>
+        public string AudioCueThemeName
+        {
+            get => audioCueThemeName;
+            set => audioCueThemeName = AudioCuesTools.GetAudioThemeNames().Contains(value) ? value : "the_mirage";
         }
         #endregion
 

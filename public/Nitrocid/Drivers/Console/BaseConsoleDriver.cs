@@ -37,6 +37,8 @@ using System.Text;
 using TextifyDep::Textify.General;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Misc.Audio;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -291,6 +293,8 @@ namespace Nitrocid.Drivers.Console
         {
             var keyInfo = SystemConsole.ReadKey(intercept);
             _moved = true;
+            if (Config.MainConfig.EnableNavigationSounds)
+                AudioCuesTools.PlayAudioCue(AudioCueType.KeyboardCueType);
             return keyInfo;
         }
 

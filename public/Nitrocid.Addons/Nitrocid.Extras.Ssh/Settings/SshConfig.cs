@@ -34,9 +34,16 @@ namespace Nitrocid.Extras.Ssh.Settings
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SshSettings.json", ResourcesType.Misc, typeof(SshConfig).Assembly) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("SshSettings.json", ResourcesType.Misc, typeof(SshConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         /// <summary>
         /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed

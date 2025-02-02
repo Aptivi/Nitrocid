@@ -62,8 +62,8 @@ namespace Nitrocid.Languages
                 var InstalledLanguages = new Dictionary<string, LanguageInfo>();
 
                 // For each language, get information for localization and cache them
-                var languageData = ResourcesManager.GetData("Metadata.json", ResourcesType.Languages) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata"));
+                var languageData = ResourcesManager.ConvertToString(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata")));
                 LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(languageData) ??
                     throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata array"));
                 foreach (var Language in LanguageMetadata)

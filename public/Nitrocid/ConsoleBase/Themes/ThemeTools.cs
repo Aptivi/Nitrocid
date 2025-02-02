@@ -42,9 +42,9 @@ namespace Nitrocid.ConsoleBase.Themes
 
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
-            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ?? "[]")) },
-            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ?? "[]")) },
-            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ?? "[]")) },
+            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("Default.json", ResourcesType.Themes)) ?? "[]")) },
+            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes)) ?? "[]")) },
+            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes)) ?? "[]")) },
         };
 
         /// <summary>

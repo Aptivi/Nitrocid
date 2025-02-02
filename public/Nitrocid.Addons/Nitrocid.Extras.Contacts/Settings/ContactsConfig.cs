@@ -34,9 +34,16 @@ namespace Nitrocid.Extras.Contacts.Settings
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ContactsSettings.json", ResourcesType.Misc, typeof(ContactsConfig).Assembly) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("ContactsSettings.json", ResourcesType.Misc, typeof(ContactsConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         /// <summary>
         /// If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons.

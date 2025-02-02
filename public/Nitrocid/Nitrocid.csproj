@@ -88,6 +88,12 @@
   </ItemGroup>
   <!-- KS Manifest End -->
 
+  <!-- KS Audio Themes -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Audio\**\*.mp3" />
+  </ItemGroup>
+  <!-- KS Audio Themes -->
+
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
@@ -116,9 +122,6 @@
   <!-- KS Generated -->
   <ItemGroup>
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Audio\" />
   </ItemGroup>
   <!-- KS Generated End -->
 </Project>

@@ -504,5 +504,9 @@ namespace Nitrocid.Kernel.Exceptions
         /// There is no culture by this name.
         /// </summary>
         NoSuchCulture,
+        /// <summary>
+        /// There was an error when processing your audio cue action.
+        /// </summary>
+        AudioCue,
     }
 }

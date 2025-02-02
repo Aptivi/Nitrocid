@@ -1100,6 +1100,70 @@
                 "Type": "SBoolean",
                 "Variable": "EnableKeyboardCues",
                 "Description": "Whether to play keyboard cues for each keypress or not"
+            },
+            {
+                "Name": "Enable startup sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableStartupSounds",
+                "Description": "Whether to play the startup sound or not"
+            },
+            {
+                "Name": "Enable shutdown sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableShutdownSounds",
+                "Description": "Whether to play the shutdown sound or not"
+            },
+            {
+                "Name": "Enable navigation sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableNavigationSounds",
+                "Description": "Whether to play the navigation sound for each keypress or not"
+            },
+            {
+                "Name": "Enable low-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableLowPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for low-priority alerts or not"
+            },
+            {
+                "Name": "Enable medium-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableMediumPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for medium-priority alerts or not"
+            },
+            {
+                "Name": "Enable high-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableHighPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for high-priority alerts or not"
+            },
+            {
+                "Name": "Enable ambient screensaver sound effects",
+                "Type": "SBoolean",
+                "Variable": "EnableAmbientSoundFx",
+                "Description": "Whether to play ambient screensaver sound effects or not"
+            },
+            {
+                "Name": "Intensify the ambient screensaver sound effects",
+                "Type": "SBoolean",
+                "Variable": "EnableAmbientSoundFxIntense",
+                "Description": "Whether to intensify the ambient screensaver sound effects or not"
+            },
+            {
+                "Name": "Audio cue volume",
+                "Type": "SDouble",
+                "Variable": "AudioCueVolume",
+                "Description": "Specify how loud do you want the audio cues to be"
+            },
+            {
+                "Name": "Audio theme",
+                "Type": "SSelection",
+                "Variable": "AudioCueThemeName",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetAudioThemeNames",
+                "SelectionFunctionType": "AudioCuesTools",
+                "SelectionFallback": [ "the_mirage" ],
+                "Description": "Which screensaver do you want to lock your screen with?"
             }
         ]
     },

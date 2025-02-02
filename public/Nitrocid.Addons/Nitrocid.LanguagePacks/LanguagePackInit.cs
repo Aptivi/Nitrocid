@@ -40,16 +40,16 @@ namespace Nitrocid.LanguagePacks
         {
             // Add them all!
             string[] languageResNames = ResourcesManager.GetResourceNames(typeof(LanguagePackInit).Assembly).Except(["Languages.Metadata.json"]).ToArray();
-            var metadataData = ResourcesManager.GetData("Metadata.json", ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata"));
+            var metadataData = ResourcesManager.ConvertToString(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata")));
             var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(metadataData) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to deserialize language metadata"));
             for (int i = 0; i < languageResNames.Length; i++)
             {
                 var metadata = languageMetadataToken[i];
                 string key = languageResNames[i].RemovePrefix("Languages.");
-                var langData = ResourcesManager.GetData(key, ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata for") + $" {key}");
+                var langData = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata for") + $" {key}"));
                 var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(langData) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to deserialize language metadata for") + $" {key}");
                 LanguageManager.AddBaseLanguage(metadata, true, languageToken.Localizations);

@@ -33,9 +33,16 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("WidgetsSettingsEntries.json", ResourcesType.Settings) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain widget settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("WidgetsSettingsEntries.json", ResourcesType.Settings) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain widget settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         #region Analog
         private bool analogShowSecondsHand = true;

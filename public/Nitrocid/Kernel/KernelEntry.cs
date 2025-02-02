@@ -40,6 +40,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
+using Nitrocid.Misc.Audio;
 
 namespace Nitrocid.Kernel
 {
@@ -82,6 +83,10 @@ namespace Nitrocid.Kernel
             for (int i = 1; i <= KernelStageTools.Stages.Count + 1; i++)
                 KernelStageTools.RunKernelStage(i);
 
+            // Play the startup sound
+            if (Config.MainConfig.EnableStartupSounds)
+                AudioCuesTools.PlayAudioCue(AudioCueType.Startup);
+
             // Show the closing screen
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
@@ -112,6 +117,10 @@ namespace Nitrocid.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
+
+            // Play the shutdown sound
+            if (Config.MainConfig.EnableShutdownSounds)
+                AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown);
 
             // Load splash for reboot or shutdown
             SplashReport._KernelBooted = false;

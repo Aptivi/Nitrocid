@@ -153,8 +153,9 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         public ThemeInfo() :
-            this(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
-                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Failed to populate default theme"))))
+            this(JToken.Parse(ResourcesManager.ConvertToString(
+                ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
+                    throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Failed to populate default theme")))))
         { }
 
         /// <summary>
