@@ -94,11 +94,15 @@ namespace Nitrocid.Misc.Audio
             DebugWriter.WriteDebug(DebugLevel.I, $"Stream of {cueType} on {cueContainer.Name} is {stream.Length} bytes.");
 
             // Then, seek this stream to the beginning and play it using the play-n-forget technique
+            var settings = new PlayForgetSettings()
+            {
+                Volume = Config.MainConfig.AudioCueVolume,
+            };
             stream.Seek(0, SeekOrigin.Begin);
             if (async)
-                PlayForget.PlayStreamAsync(stream);
+                PlayForget.PlayStreamAsync(stream, settings);
             else
-                PlayForget.PlayStream(stream);
+                PlayForget.PlayStream(stream, settings);
         }
 
         private static Dictionary<string, AudioCueContainer> PopulateCues()

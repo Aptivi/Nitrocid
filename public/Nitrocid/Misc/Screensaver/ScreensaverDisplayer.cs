@@ -27,6 +27,11 @@ using Terminaux.Colors;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Misc.Audio;
+using BassBoom.Basolia;
+using BassBoom.Basolia.File;
+using BassBoom.Basolia.Playback;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -37,6 +42,8 @@ namespace Nitrocid.Misc.Screensaver
     {
 
         internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver?)ss));
+        internal readonly static KernelThread ScreensaverAmbienceThread = new("Screensaver ambience thread", false, ScreensaverAmbience);
+
         internal static BaseScreensaver? displayingSaver;
 
         /// <summary>
@@ -57,6 +64,10 @@ namespace Nitrocid.Misc.Screensaver
                 ColorTools.AllowBackground = true;
                 ColorTools.GlobalSettings.UseTerminalPalette = false;
                 Screensaver.ScreensaverPreparation();
+
+                // Play the ambience sound if needed
+                if (Config.MainConfig.EnableAmbientSoundFx)
+                    ScreensaverAmbienceThread.Start();
 
                 // Execute the actual screensaver logic
                 while (!ScreensaverDisplayerThread.IsStopping)
@@ -100,5 +111,49 @@ namespace Nitrocid.Misc.Screensaver
             }
         }
 
+        internal static void ScreensaverAmbience()
+        {
+            try
+            {
+                var basoliaMedia = new BasoliaMedia();
+                DebugWriter.WriteDebug(DebugLevel.I, $"Screensaver ambience starting with theme {Config.MainConfig.AudioCueThemeName}");
+                
+                // Open the ambient SFX stream
+                var ambientFxType = Config.MainConfig.EnableAmbientSoundFxIntense ? AudioCueType.AmbienceIdle : AudioCueType.Ambience;
+                var cue = AudioCuesTools.GetAudioCue();
+                FileTools.OpenFrom(basoliaMedia, cue.GetStream(ambientFxType));
+
+                // Repeatedly play it
+                while (!ScreensaverDisplayerThread.IsStopping)
+                {
+                    try
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Restarting screensaver ambience {ambientFxType} from {Config.MainConfig.AudioCueThemeName}...");
+                        PlaybackTools.PlayAsync(basoliaMedia);
+                        if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing, 15000))
+                            throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't play sound because of timeout."), KernelColorType.Error);
+                        while (PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Screensaver ambience is stopping due to user request...");
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, $"Screensaver ambience is stopping due to failure. {ex.Message}");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        break;
+                    }
+                }
+                if (PlaybackTools.GetState(basoliaMedia) != PlaybackState.Stopped)
+                    PlaybackTools.Stop(basoliaMedia);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Screensaver ambience is stopping due to failure. {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+        }
     }
 }
