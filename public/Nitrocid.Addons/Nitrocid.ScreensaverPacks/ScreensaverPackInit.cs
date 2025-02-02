@@ -128,6 +128,7 @@ namespace Nitrocid.ScreensaverPacks
             { "wipe", new WipeDisplay() },
             { "wordhasher", new WordHasherDisplay() },
             { "wordhasherwrite", new WordHasherWriteDisplay() },
+            { "wordslot", new WordSlotDisplay() },
             { "worldclock", new WorldClockDisplay() },
             { "zebrashift", new ZebraShiftDisplay() },
         };

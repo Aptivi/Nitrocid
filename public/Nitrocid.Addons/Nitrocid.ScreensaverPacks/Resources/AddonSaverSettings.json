@@ -7520,5 +7520,94 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "WordSlot",
+        "Desc": "Shows you a word that is being selected just like a slot machine found in casinos.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "WordSlotDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Color settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the colors",
+                "Variables": [
+                    {
+                        "Name": "Activate true colors",
+                        "Type": "SBoolean",
+                        "Variable": "WordSlotTrueColor",
+                        "Description": "Activates the true color support."
+                    },
+                    {
+                        "Name": "Minimum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMinimumRedColorLevel",
+                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMinimumGreenColorLevel",
+                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMinimumBlueColorLevel",
+                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Minimum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMinimumColorLevel",
+                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum red color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMaximumRedColorLevel",
+                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum green color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMaximumGreenColorLevel",
+                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum blue color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMaximumBlueColorLevel",
+                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "Maximum color level",
+                        "Type": "SIntSlider",
+                        "Variable": "WordSlotMaximumColorLevel",
+                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]
