@@ -161,6 +161,21 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     new CommandArgumentInfo()
                 ], new LoadHistoriesUnifiedCommand()),
 
+            new CommandInfo("pipe", /* Localizable */ "Pipes the command output to another command as parameters",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
+                        }),
+                        new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
+                        }),
+                    })
+                ], new PipeUnifiedCommand()),
+
             new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
                 [
                     new CommandArgumentInfo()
