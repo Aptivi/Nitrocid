@@ -7609,5 +7609,23 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "Neons",
+        "Desc": "Shows you a colored figlet text alternating between two neon colors: cyan and fuchsia.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "NeonsDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Figlet font",
+                "Type": "SFiglet",
+                "Variable": "NeonsFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            }
+        ]
     }
 ]

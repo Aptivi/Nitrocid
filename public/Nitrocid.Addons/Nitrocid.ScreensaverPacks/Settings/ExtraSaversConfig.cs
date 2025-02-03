@@ -15824,5 +15824,41 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Neons
+        private int neonsDelay = 1000;
+        private string neonsFont = "small";
+
+        /// <summary>
+        /// [Neons] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int NeonsDelay
+        {
+            get
+            {
+                return neonsDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                neonsDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Neons] Neons font supported by the neons library used.
+        /// </summary>
+        public string NeonsFont
+        {
+            get
+            {
+                return neonsFont;
+            }
+            set
+            {
+                neonsFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
+            }
+        }
+        #endregion
     }
 }

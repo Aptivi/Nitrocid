@@ -93,6 +93,7 @@ namespace Nitrocid.ScreensaverPacks
             { "memdump", new MemdumpDisplay() },
             { "mesmerize", new MesmerizeDisplay() },
             { "multilines", new MultiLinesDisplay() },
+            { "neons", new NeonsDisplay() },
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
             { "numberscatter", new NumberScatterDisplay() },
