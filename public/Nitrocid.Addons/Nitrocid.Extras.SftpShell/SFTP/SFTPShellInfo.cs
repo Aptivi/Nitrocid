@@ -70,10 +70,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     })
                 ], new DelCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                 [
@@ -83,10 +80,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     })
                 ], new GetCommand()),
 
-            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
-                [
-                    new CommandArgumentInfo()
-                ], new IfmCommand()),
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
 
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
@@ -144,15 +138,9 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     })
                 ], new PutCommand()),
 
-            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdlCommand()),
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),
 
-            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdrCommand()),
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory", new PwdrCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

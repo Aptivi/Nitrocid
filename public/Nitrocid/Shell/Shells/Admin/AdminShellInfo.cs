@@ -49,20 +49,11 @@ namespace Nitrocid.Shell.Shells.Admin
                     })
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
-                [
-                    new CommandArgumentInfo()
-                ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("bootlog", /* Localizable */ "Prints the boot log", new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
-                [
-                    new CommandArgumentInfo()
-                ], new CdbgLogCommand()),
+            new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log", new CdbgLogCommand()),
 
-            new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearFiredEventsCommand()),
+            new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events", new ClearFiredEventsCommand()),
 
             new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
                 [
@@ -75,20 +66,14 @@ namespace Nitrocid.Shell.Shells.Admin
                     })
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
-                [
-                    new CommandArgumentInfo()
-                ], new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsevents", /* Localizable */ "Lists all fired events", new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsusers", /* Localizable */ "Lists the users",
                 [
                     new CommandArgumentInfo(true)
                 ], new LsUsersCommand()),
 
-            new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveNotifsCommand()),
+            new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications", new SaveNotifsCommand()),
 
             new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                 [

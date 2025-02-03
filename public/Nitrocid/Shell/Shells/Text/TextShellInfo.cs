@@ -45,15 +45,9 @@ namespace Nitrocid.Shell.Shells.Text
                     })
                 ], new AddLineCommand()),
 
-            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
-                [
-                    new CommandArgumentInfo()
-                ], new AddLinesCommand()),
+            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file", new AddLinesCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the text file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the text file", new ClearCommand()),
 
             new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
                 [
@@ -112,10 +106,7 @@ namespace Nitrocid.Shell.Shells.Text
                     })
                 ], new EditLineCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
                 [
@@ -217,15 +208,9 @@ namespace Nitrocid.Shell.Shells.Text
                     })
                 ], new ReplaceInlineRegexCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveCommand()),
+            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

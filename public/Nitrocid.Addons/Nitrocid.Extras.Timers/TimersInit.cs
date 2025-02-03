@@ -35,20 +35,11 @@ namespace Nitrocid.Extras.Timers
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
-                [
-                    new CommandArgumentInfo()
-                ], new StopwatchCommand()),
+            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch", new StopwatchCommand()),
 
-            new CommandInfo("timer", /* Localizable */ "A simple timer",
-                [
-                    new CommandArgumentInfo()
-                ], new TimerCommand()),
+            new CommandInfo("timer", /* Localizable */ "A simple timer", new TimerCommand()),
 
-            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer",
-                [
-                    new CommandArgumentInfo()
-                ], new PomodoroCommand()),
+            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer", new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>

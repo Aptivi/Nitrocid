@@ -45,15 +45,9 @@ namespace Nitrocid.Extras.MailShell.Mail
                     })
                 ], new CdCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
-            new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address",
-                [
-                    new CommandArgumentInfo()
-                ], new LsDirsCommand()),
+            new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address", new LsDirsCommand()),
 
             new CommandInfo("list", /* Localizable */ "Downloads messages and lists them",
                 [
@@ -153,20 +147,11 @@ namespace Nitrocid.Extras.MailShell.Mail
                     })
                 ], new RmdirCommand()),
 
-            new CommandInfo("send", /* Localizable */ "Sends a message to an address",
-                [
-                    new CommandArgumentInfo()
-                ], new SendCommand()),
+            new CommandInfo("send", /* Localizable */ "Sends a message to an address", new SendCommand()),
 
-            new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address",
-                [
-                    new CommandArgumentInfo()
-                ], new SendEncCommand()),
+            new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address", new SendEncCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Interactive mail management",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Interactive mail management", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

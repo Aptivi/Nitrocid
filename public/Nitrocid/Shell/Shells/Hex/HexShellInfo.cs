@@ -46,10 +46,7 @@ namespace Nitrocid.Shell.Shells.Hex
                     })
                 ], new AddByteCommand()),
 
-            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
-                [
-                    new CommandArgumentInfo()
-                ], new AddBytesCommand()),
+            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file", new AddBytesCommand()),
 
             new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
                 [
@@ -63,10 +60,7 @@ namespace Nitrocid.Shell.Shells.Hex
                     })
                 ], new AddByteToCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the binary file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the binary file", new ClearCommand()),
 
             new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
                 [
@@ -94,10 +88,7 @@ namespace Nitrocid.Shell.Shells.Hex
                     })
                 ], new DelBytesCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                 [
@@ -139,15 +130,9 @@ namespace Nitrocid.Shell.Shells.Hex
                     })
                 ], new ReplaceCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveCommand()),
+            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -102,10 +102,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     ])
                 ], new ExecUnifiedCommand()),
 
-            new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitUnifiedCommand()),
+            new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell", new ExitUnifiedCommand()),
 
             new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
                 [
@@ -156,10 +153,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
-                [
-                    new CommandArgumentInfo()
-                ], new LoadHistoriesUnifiedCommand()),
+            new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories", new LoadHistoriesUnifiedCommand()),
 
             new CommandInfo("pipe", /* Localizable */ "Pipes the command output to another command as parameters",
                 [
@@ -176,10 +170,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     })
                 ], new PipeUnifiedCommand()),
 
-            new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
-                [
-                    new CommandArgumentInfo()
-                ], new PresetsUnifiedCommand()),
+            new CommandInfo("presets", /* Localizable */ "Opens the shell preset library", new PresetsUnifiedCommand()),
 
             new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
                 [
@@ -193,15 +184,9 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     })
                 ], new RepeatUnifiedCommand()),
 
-            new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveHistoriesUnifiedCommand()),
+            new CommandInfo("savehistories", /* Localizable */ "Saves shell histories", new SaveHistoriesUnifiedCommand()),
 
-            new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
-                [
-                    new CommandArgumentInfo()
-                ], new TipUnifiedCommand()),
+            new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip", new TipUnifiedCommand()),
 
             new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
                 [

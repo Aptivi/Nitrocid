@@ -113,30 +113,15 @@ namespace Nitrocid.Extras.GitShell.Git
                     })
                 ], new FileStatusCommand()),
 
-            new CommandInfo("info", /* Localizable */ "Gets a simple repository information",
-                [
-                    new CommandArgumentInfo()
-                ], new InfoCommand()),
+            new CommandInfo("info", /* Localizable */ "Gets a simple repository information", new InfoCommand()),
 
-            new CommandInfo("lsbranches", /* Localizable */ "Lists all branches",
-                [
-                    new CommandArgumentInfo()
-                ], new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsbranches", /* Localizable */ "Lists all branches", new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lscommits", /* Localizable */ "Lists all commits",
-                [
-                    new CommandArgumentInfo()
-                ], new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lscommits", /* Localizable */ "Lists all commits", new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsremotes", /* Localizable */ "Lists all remotes",
-                [
-                    new CommandArgumentInfo()
-                ], new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsremotes", /* Localizable */ "Lists all remotes", new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lstags", /* Localizable */ "Lists all tags",
-                [
-                    new CommandArgumentInfo()
-                ], new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lstags", /* Localizable */ "Lists all tags", new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("maketag", /* Localizable */ "Makes a tag from the HEAD",
                 [
@@ -147,15 +132,9 @@ namespace Nitrocid.Extras.GitShell.Git
                     })
                 ], new MakeTagCommand()),
 
-            new CommandInfo("pull", /* Localizable */ "Pulls all updates from the server",
-                [
-                    new CommandArgumentInfo()
-                ], new PullCommand()),
+            new CommandInfo("pull", /* Localizable */ "Pulls all updates from the server", new PullCommand()),
 
-            new CommandInfo("push", /* Localizable */ "Pushes all updates to the server",
-                [
-                    new CommandArgumentInfo()
-                ], new PushCommand()),
+            new CommandInfo("push", /* Localizable */ "Pushes all updates to the server", new PushCommand()),
 
             new CommandInfo("reset", /* Localizable */ "Resets the local repository",
                 [
@@ -196,15 +175,9 @@ namespace Nitrocid.Extras.GitShell.Git
                     })
                 ], new StageCommand()),
 
-            new CommandInfo("stageall", /* Localizable */ "Stages all changes",
-                [
-                    new CommandArgumentInfo()
-                ], new StageAllCommand()),
+            new CommandInfo("stageall", /* Localizable */ "Stages all changes", new StageAllCommand()),
 
-            new CommandInfo("status", /* Localizable */ "Repository status",
-                [
-                    new CommandArgumentInfo()
-                ], new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("status", /* Localizable */ "Repository status", new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("unstage", /* Localizable */ "Unstages a change",
                 [
@@ -214,10 +187,7 @@ namespace Nitrocid.Extras.GitShell.Git
                     })
                 ], new UnstageCommand()),
 
-            new CommandInfo("unstageall", /* Localizable */ "Unstages all changes",
-                [
-                    new CommandArgumentInfo()
-                ], new UnstageAllCommand()),
+            new CommandInfo("unstageall", /* Localizable */ "Unstages all changes", new UnstageAllCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

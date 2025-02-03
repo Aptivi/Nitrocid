@@ -40,10 +40,7 @@ namespace Nitrocid.Extras.Amusements
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
-                [
-                    new CommandArgumentInfo()
-                ], new BackRaceCommand()),
+            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?", new BackRaceCommand()),
 
             new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
                 [
@@ -71,45 +68,21 @@ namespace Nitrocid.Extras.Amusements
                     })
                 ], new HangmanCommand()),
 
-            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
-                [
-                    new CommandArgumentInfo()
-                ], new MeteorCommand()),
+            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?", new MeteorCommand()),
 
-            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?",
-                [
-                    new CommandArgumentInfo()
-                ], new MeteorDodgeCommand()),
+            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?", new MeteorDodgeCommand()),
 
-            new CommandInfo("pong", /* Localizable */ "The ping-pong game!",
-                [
-                    new CommandArgumentInfo()
-                ], new PongCommand()),
+            new CommandInfo("pong", /* Localizable */ "The ping-pong game!", new PongCommand()),
 
-            new CommandInfo("quote", /* Localizable */ "Gets a random quote",
-                [
-                    new CommandArgumentInfo()
-                ], new QuoteCommand()),
+            new CommandInfo("quote", /* Localizable */ "Gets a random quote", new QuoteCommand()),
 
-            new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
-                [
-                    new CommandArgumentInfo()
-                ], new RouletteCommand()),
+            new CommandInfo("roulette", /* Localizable */ "Russian Roulette", new RouletteCommand()),
 
-            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
-                [
-                    new CommandArgumentInfo()
-                ], new ShipDuetCommand()),
+            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.", new ShipDuetCommand()),
 
-            new CommandInfo("snaker", /* Localizable */ "The snake game!",
-                [
-                    new CommandArgumentInfo()
-                ], new SnakerCommand()),
+            new CommandInfo("snaker", /* Localizable */ "The snake game!", new SnakerCommand()),
 
-            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
-                [
-                    new CommandArgumentInfo()
-                ], new SolverCommand()),
+            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time", new SolverCommand()),
 
             new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
                 [
@@ -162,10 +135,7 @@ namespace Nitrocid.Extras.Amusements
                     })
                 ], new WordleCommand()),
 
-            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
-                [
-                    new CommandArgumentInfo()
-                ], new AnniversaryCommand()),
+            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release", new AnniversaryCommand()),
         ];
 
         string IAddon.AddonName =>

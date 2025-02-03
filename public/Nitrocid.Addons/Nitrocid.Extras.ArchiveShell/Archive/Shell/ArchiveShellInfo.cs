@@ -38,10 +38,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new CDirCommand()),
+            new CommandInfo("cdir", /* Localizable */ "Gets current local directory", new CDirCommand()),
 
             new CommandInfo("chdir", /* Localizable */ "Changes directory",
                 [

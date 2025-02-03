@@ -61,15 +61,9 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new AddCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the JSON file", new ClearCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes", new ExitNoSaveCommand()),
 
             new CommandInfo("findproperty", /* Localizable */ "Finds a property",
                 [
@@ -156,10 +150,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new SetCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

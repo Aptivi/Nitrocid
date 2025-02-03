@@ -46,10 +46,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     })
                 ], new AddHeaderCommand()),
 
-            new CommandInfo("curragent", /* Localizable */ "Gets current user agent",
-                [
-                    new CommandArgumentInfo()
-                ], new CurrAgentCommand()),
+            new CommandInfo("curragent", /* Localizable */ "Gets current user agent", new CurrAgentCommand()),
 
             new CommandInfo("delete", /* Localizable */ "Deletes content from HTTP server",
                 [
@@ -59,10 +56,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     })
                 ], new DeleteCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("editheader", /* Localizable */ "Edits a key on the header to all the upcoming requests",
                 [
@@ -89,10 +83,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     })
                 ], new GetStringCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("lsheader", /* Localizable */ "Lists the request headers",
-                [
-                    new CommandArgumentInfo()
-                ], new LsHeaderCommand(), CommandFlags.Wrappable),
+            new CommandInfo("lsheader", /* Localizable */ "Lists the request headers", new LsHeaderCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("put", /* Localizable */ "Puts the file to the HTTP server using the specified request",
                 [

@@ -74,10 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new AddUserToGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("admin", /* Localizable */ "Administrative shell",
-                [
-                    new CommandArgumentInfo()
-                ], new AdminCommand(), CommandFlags.Strict),
+            new CommandInfo("admin", /* Localizable */ "Administrative shell", new AdminCommand(), CommandFlags.Strict),
 
             new CommandInfo("alarm", /* Localizable */ "Manage your alarms",
                 [
@@ -176,10 +173,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(true)
                 ], new CDirCommand()),
 
-            new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?",
-                [
-                    new CommandArgumentInfo()
-                ], new ChangesCommand()),
+            new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?", new ChangesCommand()),
 
             new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
                 [
@@ -330,10 +324,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new ChUsrNameCommand(), CommandFlags.Strict),
 
-            new CommandInfo("cls", /* Localizable */ "Clears the screen",
-                [
-                    new CommandArgumentInfo()
-                ], new ClsCommand()),
+            new CommandInfo("cls", /* Localizable */ "Clears the screen", new ClsCommand()),
 
             new CommandInfo("combinestr", /* Localizable */ "Combines the two text files or more into the console.",
                 [
@@ -428,10 +419,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     }, true)
                 ], new DateCommand(), CommandFlags.RedirectionSupported),
 
-            new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell",
-                [
-                    new CommandArgumentInfo()
-                ], new DebugShellCommand(), CommandFlags.Strict),
+            new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell", new DebugShellCommand(), CommandFlags.Strict),
 
             new CommandInfo("decodefile", /* Localizable */ "Decodes the encoded file",
                 [
@@ -523,10 +511,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new DismissNotifCommand()),
 
-            new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications",
-                [
-                    new CommandArgumentInfo()
-                ], new DismissNotifsCommand()),
+            new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications", new DismissNotifsCommand()),
 
             new CommandInfo("driverman", /* Localizable */ "Manage your drivers",
                 [
@@ -695,10 +680,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new FindRegCommand()),
 
-            new CommandInfo("fork", /* Localizable */ "Forks the UESH shell to create another instance",
-                [
-                    new CommandArgumentInfo()
-                ], new ForkCommand()),
+            new CommandInfo("fork", /* Localizable */ "Forks the UESH shell to create another instance", new ForkCommand()),
 
             new CommandInfo("get", /* Localizable */ "Downloads a file to current working directory",
                 [
@@ -725,10 +707,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new GetAddonsCommand()),
 
-            new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions",
-                [
-                    new CommandArgumentInfo()
-                ], new GetAllExtHandlersCommand()),
+            new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions", new GetAllExtHandlersCommand()),
 
             new CommandInfo("getconfigvalue", /* Localizable */ "Gets a configuration variable and its value",
                 [
@@ -756,10 +735,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new GetDefaultExtHandlerCommand()),
 
-            new CommandInfo("getdefaultexthandlers", /* Localizable */ "Gets the default extension handlers from all the extensions",
-                [
-                    new CommandArgumentInfo()
-                ], new GetDefaultExtHandlersCommand()),
+            new CommandInfo("getdefaultexthandlers", /* Localizable */ "Gets the default extension handlers from all the extensions", new GetDefaultExtHandlersCommand()),
 
             new CommandInfo("getexthandlers", /* Localizable */ "Gets the extension handlers from the specified extension",
                 [
@@ -849,10 +825,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new LangManCommand(), CommandFlags.Strict),
 
-            new CommandInfo("license", /* Localizable */ "Shows license information for the kernel",
-                [
-                    new CommandArgumentInfo()
-                ], new LicenseCommand()),
+            new CommandInfo("license", /* Localizable */ "Shows license information for the kernel", new LicenseCommand()),
 
             new CommandInfo("lintscript", /* Localizable */ "Checks a UESH script for syntax errors",
                 [
@@ -890,15 +863,9 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lockscreen", /* Localizable */ "Locks your screen with a password",
-                [
-                    new CommandArgumentInfo()
-                ], new LockScreenCommand()),
+            new CommandInfo("lockscreen", /* Localizable */ "Locks your screen with a password", new LockScreenCommand()),
 
-            new CommandInfo("logout", /* Localizable */ "Logs you out",
-                [
-                    new CommandArgumentInfo()
-                ], new LogoutCommand(), CommandFlags.NoMaintenance),
+            new CommandInfo("logout", /* Localizable */ "Logs you out", new LogoutCommand(), CommandFlags.NoMaintenance),
 
             new CommandInfo("lsconfigs", /* Localizable */ "Lists all available configurations",
                 [
@@ -919,20 +886,11 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new LsConfigValuesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsconnections", /* Localizable */ "Lists all available connections",
-                [
-                    new CommandArgumentInfo()
-                ], new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsconnections", /* Localizable */ "Lists all available connections", new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsdbgdev", /* Localizable */ "Lists debugging devices connected",
-                [
-                    new CommandArgumentInfo()
-                ], new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsdbgdev", /* Localizable */ "Lists debugging devices connected", new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsexthandlers", /* Localizable */ "Lists available extension handlers",
-                [
-                    new CommandArgumentInfo()
-                ], new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsexthandlers", /* Localizable */ "Lists available extension handlers", new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("lsdiskparts", /* Localizable */ "Lists all the disk partitions",
                 [
@@ -950,15 +908,9 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(true)
                 ], new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsnet", /* Localizable */ "Lists online network devices",
-                [
-                    new CommandArgumentInfo()
-                ], new LsNetCommand(), CommandFlags.Strict),
+            new CommandInfo("lsnet", /* Localizable */ "Lists online network devices", new LsNetCommand(), CommandFlags.Strict),
 
-            new CommandInfo("lsvars", /* Localizable */ "Lists available UESH variables",
-                [
-                    new CommandArgumentInfo()
-                ], new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsvars", /* Localizable */ "Lists available UESH variables", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("md", /* Localizable */ "Creates a directory",
                 [
@@ -1085,10 +1037,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new PutCommand()),
 
-            new CommandInfo("rdebug", /* Localizable */ "Enables or disables remote debugging.",
-                [
-                    new CommandArgumentInfo()
-                ], new RdebugCommand(), CommandFlags.Strict),
+            new CommandInfo("rdebug", /* Localizable */ "Enables or disables remote debugging.", new RdebugCommand(), CommandFlags.Strict),
 
             new CommandInfo("reboot", /* Localizable */ "Restarts the kernel",
                 [
@@ -1112,10 +1061,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new RebootCommand()),
 
-            new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.",
-                [
-                    new CommandArgumentInfo()
-                ], new ReloadConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.", new ReloadConfigCommand(), CommandFlags.Strict),
 
             new CommandInfo("rexec", /* Localizable */ "Remotely executes a command to remote PC",
                 [
@@ -1212,10 +1158,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new RShutdownCommand()),
 
-            new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file", new SaveConfigCommand(), CommandFlags.Strict),
 
             new CommandInfo("savescreen", /* Localizable */ "Saves your screen from burn outs",
                 [
@@ -1368,10 +1311,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("showtd", /* Localizable */ "Shows date and time",
-                [
-                    new CommandArgumentInfo()
-                ], new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("showtd", /* Localizable */ "Shows date and time", new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("showtdzone", /* Localizable */ "Shows date and time in zones",
                 [
@@ -1393,10 +1333,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down",
-                [
-                    new CommandArgumentInfo()
-                ], new ShutdownCommand()),
+            new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down", new ShutdownCommand()),
 
             new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
                 [
@@ -1485,10 +1422,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new SysInfoCommand()),
 
-            new CommandInfo("taskman", /* Localizable */ "Task manager",
-                [
-                    new CommandArgumentInfo()
-                ], new TaskManCommand()),
+            new CommandInfo("taskman", /* Localizable */ "Task manager", new TaskManCommand()),
 
             new CommandInfo("themeprev", /* Localizable */ "Previews a theme",
                 [
@@ -1547,10 +1481,7 @@ namespace Nitrocid.Shell.Shells.UESH
                 ], new UnZipCommand()),
 
             #if SPECIFIERREL
-            new CommandInfo("update", /* Localizable */ "System update",
-                [
-                    new CommandArgumentInfo()
-                ], new UpdateCommand(), CommandFlags.Strict),
+            new CommandInfo("update", /* Localizable */ "System update", new UpdateCommand(), CommandFlags.Strict),
             #endif
 
             new CommandInfo("uptime", /* Localizable */ "Shows the kernel uptime",
@@ -1558,10 +1489,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(true)
                 ], new UptimeCommand()),
 
-            new CommandInfo("usermanual", /* Localizable */ "Shows the two useful URLs for manual.",
-                [
-                    new CommandArgumentInfo()
-                ], new UserManualCommand()),
+            new CommandInfo("usermanual", /* Localizable */ "Shows the two useful URLs for manual.", new UserManualCommand()),
 
             new CommandInfo("verify", /* Localizable */ "Verifies sanity of the file",
                 [

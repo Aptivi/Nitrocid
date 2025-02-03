@@ -37,20 +37,11 @@ namespace Nitrocid.Extras.SqlShell.Sql
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cmd", /* Localizable */ "Executes an SQL query",
-                [
-                    new CommandArgumentInfo()
-                ], new CmdCommand()),
+            new CommandInfo("cmd", /* Localizable */ "Executes an SQL query", new CmdCommand()),
 
-            new CommandInfo("dbinfo", /* Localizable */ "Database info",
-                [
-                    new CommandArgumentInfo()
-                ], new DbInfoCommand()),
+            new CommandInfo("dbinfo", /* Localizable */ "Database info", new DbInfoCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

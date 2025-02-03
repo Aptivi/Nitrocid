@@ -42,10 +42,7 @@ namespace Nitrocid.Shell.Shells.Debug
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace",
-                [
-                    new CommandArgumentInfo()
-                ], new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace", new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
                 [
@@ -88,15 +85,9 @@ namespace Nitrocid.Shell.Shells.Debug
                     }, true)
                 ], new GetPropertyValueCommand()),
 
-            new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
-                [
-                    new CommandArgumentInfo()
-                ], new KeyInfoCommand()),
+            new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging", new KeyInfoCommand()),
 
-            new CommandInfo("lsaddons", /* Localizable */ "Lists all available addons",
-                [
-                    new CommandArgumentInfo()
-                ], new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsaddons", /* Localizable */ "Lists all available addons", new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonfields", /* Localizable */ "Lists all available fields from the specified addon",
                 [
@@ -173,10 +164,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     })
                 ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status",
-                [
-                    new CommandArgumentInfo()
-                ], new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
                 [
@@ -200,10 +188,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     })
                 ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsshells", /* Localizable */ "Lists all available shells",
-                [
-                    new CommandArgumentInfo()
-                ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsshells", /* Localizable */ "Lists all available shells", new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
                 [
@@ -223,10 +208,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     ])
                 ], new PreviewSplashCommand()),
 
-            new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)",
-                [
-                    new CommandArgumentInfo()
-                ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)", new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

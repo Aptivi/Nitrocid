@@ -79,10 +79,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     })
                 ], new DelCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("execute", /* Localizable */ "Executes an FTP server command",
                 [
@@ -111,15 +108,9 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     })
                 ], new GetFolderCommand()),
 
-            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
-                [
-                    new CommandArgumentInfo()
-                ], new IfmCommand()),
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
 
-            new CommandInfo("info", /* Localizable */ "FTP server information",
-                [
-                    new CommandArgumentInfo()
-                ], new InfoCommand()),
+            new CommandInfo("info", /* Localizable */ "FTP server information", new InfoCommand()),
 
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
@@ -196,15 +187,9 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     })
                 ], new PutFolderCommand()),
 
-            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdlCommand()),
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),
 
-            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdrCommand()),
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory", new PwdrCommand()),
 
             new CommandInfo("perm", /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
                 [

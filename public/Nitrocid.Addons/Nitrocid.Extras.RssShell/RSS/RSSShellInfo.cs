@@ -49,30 +49,15 @@ namespace Nitrocid.Extras.RssShell.RSS
                     })
                 ], new ArticleInfoCommand()),
 
-            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
-                [
-                    new CommandArgumentInfo()
-                ], new BookmarkCommand()),
+            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed", new BookmarkCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
-            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
-                [
-                    new CommandArgumentInfo()
-                ], new FeedInfoCommand()),
+            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info", new FeedInfoCommand()),
 
-            new CommandInfo("list", /* Localizable */ "Lists all feeds",
-                [
-                    new CommandArgumentInfo()
-                ], new ListCommand(), CommandFlags.Wrappable),
+            new CommandInfo("list", /* Localizable */ "Lists all feeds", new ListCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
-                [
-                    new CommandArgumentInfo()
-                ], new ListBookmarkCommand(), CommandFlags.Wrappable),
+            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds", new ListBookmarkCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
                 [
@@ -119,10 +104,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                     ])
                 ], new SelFeedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
-                [
-                    new CommandArgumentInfo()
-                ], new UnbookmarkCommand()),
+            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark", new UnbookmarkCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

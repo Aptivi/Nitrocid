@@ -31,10 +31,7 @@ namespace Nitrocid.Extras.Diagnostics
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
-                [
-                    new CommandArgumentInfo()
-                ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>

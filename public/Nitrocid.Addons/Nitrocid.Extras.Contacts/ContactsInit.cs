@@ -42,18 +42,9 @@ namespace Nitrocid.Extras.Contacts
         ];
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
-                [
-                    new CommandArgumentInfo()
-                ], new ContactsCommand()),
-            new CommandInfo("listcontacts", /* Localizable */ "Lists your contacts",
-                [
-                    new CommandArgumentInfo()
-                ], new ListContactsCommand()),
-            new CommandInfo("loadcontacts", /* Localizable */ "Loads your contacts",
-                [
-                    new CommandArgumentInfo()
-                ], new LoadContactsCommand()),
+            new CommandInfo("contacts", /* Localizable */ "Manages your contacts", new ContactsCommand()),
+            new CommandInfo("listcontacts", /* Localizable */ "Lists your contacts", new ListContactsCommand()),
+            new CommandInfo("loadcontacts", /* Localizable */ "Loads your contacts", new LoadContactsCommand()),
             new CommandInfo("importcontacts", /* Localizable */ "Imports your contacts",
                 [
                     new CommandArgumentInfo(

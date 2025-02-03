@@ -34,10 +34,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         internal List<CommandInfo> addonCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", /* Localizable */ "Reminder for the slash commands",
-                [
-                    new CommandArgumentInfo()
-                ], new SlashReminderCommand());
+            new("slashreminder", /* Localizable */ "Reminder for the slash commands", new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
