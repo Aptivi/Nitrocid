@@ -26,6 +26,12 @@ all-online:
 dbg:
 	$(MAKE) -C tools invoke-build ENVIRONMENT=Debug
 
+dbg-ci:
+	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
+
+rel-ci:
+	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
+
 doc:
 	$(MAKE) -C tools invoke-doc-build
 

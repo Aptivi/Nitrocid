@@ -24,10 +24,10 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Solution Compilation (Windows)
       if: matrix.runs-on == 'windows-latest'
-      run: cd tools ; ./build.cmd ; cd ..
+      run: cd tools ; ./build.cmd Release -p:ContinuousIntegrationBuild=true ; cd ..
     - name: Solution Compilation (Unix)
       if: matrix.runs-on != 'windows-latest'
-      run: make
+      run: make rel-ci
     - name: Testing
       run: dotnet test --no-build --configuration Release
     - uses: actions/upload-artifact@v4

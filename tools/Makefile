@@ -7,6 +7,10 @@ DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $$(($(DOTNET_AVPHYS_PAGES) * $(DOTNET_
 invoke-build:
 	chmod +x ./build.sh
 	./build.sh $(ENVIRONMENT) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./build.sh $(ENVIRONMENT))
+
+invoke-build-ci:
+	chmod +x ./build.sh
+	./build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true)
     
 invoke-doc-build:
 	chmod +x ./docgen.sh
@@ -14,7 +18,7 @@ invoke-doc-build:
 
 invoke-build-offline:
 	chmod +x ./build.sh
-	HOME=`pwd`"/debian/homedir" ./build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD)
+	HOME=`pwd`"/debian/homedir" ./build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true)
 
 invoke-init-offline:
 	chmod +x ./initializeoffline.sh

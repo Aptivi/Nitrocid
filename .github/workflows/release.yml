@@ -26,7 +26,7 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Release Asset Preparation
         run: |
-          cd tools ; cmd.exe /c "build.cmd" ; cd ..
+          cd tools ; cmd.exe /c "build.cmd Release -p:ContinuousIntegrationBuild=true" ; cd ..
           cd tools ; cmd.exe /c "pack.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen-pack.cmd" ; cd ..

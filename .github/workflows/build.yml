@@ -24,10 +24,10 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Solution Compilation (Windows)
       if: matrix.runs-on == 'windows-latest'
-      run: cd tools ; ./build.cmd Debug ; cd ..
+      run: cd tools ; ./build.cmd Debug -p:ContinuousIntegrationBuild=true ; cd ..
     - name: Solution Compilation (Unix)
       if: matrix.runs-on != 'windows-latest'
-      run: make dbg
+      run: make dbg-ci
     - name: Testing
       run: dotnet test --no-build --configuration Debug
     - uses: actions/upload-artifact@v4
