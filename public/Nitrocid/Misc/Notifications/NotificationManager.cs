@@ -54,14 +54,14 @@ namespace Nitrocid.Misc.Notifications
     public static class NotificationManager
     {
 
-        internal static char notifyUpperLeftCornerChar = '╔';
-        internal static char notifyUpperRightCornerChar = '╗';
-        internal static char notifyLowerLeftCornerChar = '╚';
-        internal static char notifyLowerRightCornerChar = '╝';
-        internal static char notifyUpperFrameChar = '═';
-        internal static char notifyLowerFrameChar = '═';
-        internal static char notifyLeftFrameChar = '║';
-        internal static char notifyRightFrameChar = '║';
+        internal static char notifyUpperLeftCornerChar = '╭';
+        internal static char notifyUpperRightCornerChar = '╮';
+        internal static char notifyLowerLeftCornerChar = '╰';
+        internal static char notifyLowerRightCornerChar = '╯';
+        internal static char notifyUpperFrameChar = '─';
+        internal static char notifyLowerFrameChar = '─';
+        internal static char notifyLeftFrameChar = '│';
+        internal static char notifyRightFrameChar = '│';
         internal static bool dnd;
         internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
         private static bool sent = false;

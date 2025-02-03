@@ -174,49 +174,49 @@ namespace Nitrocid.Misc.Notifications
         /// Upper left corner character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomUpperLeftCornerChar { get; set; } = '╔';
+        public char CustomUpperLeftCornerChar { get; set; } = '╭';
 
         /// <summary>
         /// Upper right corner character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomUpperRightCornerChar { get; set; } = '╗';
+        public char CustomUpperRightCornerChar { get; set; } = '╮';
 
         /// <summary>
         /// Lower left corner character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomLowerLeftCornerChar { get; set; } = '╚';
+        public char CustomLowerLeftCornerChar { get; set; } = '╰';
 
         /// <summary>
         /// Lower right corner character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomLowerRightCornerChar { get; set; } = '╝';
+        public char CustomLowerRightCornerChar { get; set; } = '╯';
 
         /// <summary>
         /// Upper frame character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomUpperFrameChar { get; set; } = '═';
+        public char CustomUpperFrameChar { get; set; } = '─';
 
         /// <summary>
         /// Lower frame character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomLowerFrameChar { get; set; } = '═';
+        public char CustomLowerFrameChar { get; set; } = '─';
 
         /// <summary>
         /// Left frame character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomLeftFrameChar { get; set; } = '║';
+        public char CustomLeftFrameChar { get; set; } = '│';
 
         /// <summary>
         /// Right frame character for custom priority notification
         /// </summary>
         [JsonProperty]
-        public char CustomRightFrameChar { get; set; } = '║';
+        public char CustomRightFrameChar { get; set; } = '│';
 
         /// <summary>
         /// Whether the progress has been compeleted successfully or with failure
