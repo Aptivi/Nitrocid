@@ -63,6 +63,17 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Command">Command</param>
         /// <param name="HelpDefinition">Command help definition</param>
+        /// <param name="CommandBase">Command base for execution</param>
+        /// <param name="Flags">Command flags</param>
+        public CommandInfo(string Command, string HelpDefinition, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None) :
+            this(Command, HelpDefinition, null, CommandBase, Flags)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of command info class
+        /// </summary>
+        /// <param name="Command">Command</param>
+        /// <param name="HelpDefinition">Command help definition</param>
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>

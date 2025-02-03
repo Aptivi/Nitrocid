@@ -195,6 +195,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string[] noValueSwitchesList = [];
             var argInfos = (isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo) ??
                 throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get argument info for command or argument"));
+            if (argInfos.Length == 0)
+                argInfos = [new CommandArgumentInfo()];
             foreach (var argInfo in argInfos)
             {
                 bool RequiredArgumentsProvided = true;

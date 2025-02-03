@@ -54,6 +54,17 @@ namespace Nitrocid.Arguments
         /// </summary>
         /// <param name="Argument">Argument</param>
         /// <param name="HelpDefinition">Argument help definition</param>
+        /// <param name="ArgumentBase">Kernel argument base for execution</param>
+        /// <param name="Obsolete">Is the command obsolete?</param>
+        public ArgumentInfo(string Argument, string HelpDefinition, ArgumentExecutor? ArgumentBase, bool Obsolete = false) :
+            this(Argument, HelpDefinition, null, ArgumentBase, Obsolete)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of argument info class
+        /// </summary>
+        /// <param name="Argument">Argument</param>
+        /// <param name="HelpDefinition">Argument help definition</param>
         /// <param name="ArgArgumentInfo">Argument info</param>
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
