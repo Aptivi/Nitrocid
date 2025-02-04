@@ -69,7 +69,10 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
     </PropertyGroup>
     <Target Name="EnsureCommitShaInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != ''">
-        <CreateProperty Value="$(Version)-$(SourceRevisionId)">
+        <Exec Command="git describe --long --always --abbrev=8" ConsoleToMSBuild="True" IgnoreExitCode="False">
+            <Output PropertyName="DescribedRevId" TaskParameter="ConsoleOutput"/>
+        </Exec>
+        <CreateProperty Value="$(Version)-$(DescribedRevId.Replace($(DescribedRevId.Substring(0, $(DescribedRevId.IndexOf('-')))), '').Substring(1).Replace('-', '+'))">
             <Output TaskParameter="Value" PropertyName="PackageVersion"/>
         </CreateProperty>
     </Target>
