@@ -30,7 +30,7 @@ dbg-ci:
 	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
 
 rel-ci:
-	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
+	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Release
 
 doc:
 	$(MAKE) -C tools invoke-doc-build
