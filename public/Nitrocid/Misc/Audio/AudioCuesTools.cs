@@ -20,6 +20,7 @@
 using BassBoom.Basolia.Independent;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -84,25 +85,37 @@ namespace Nitrocid.Misc.Audio
         /// <param name="async">Whether the audio plays in a non-blocking or a blocking way</param>
         public static void PlayAudioCue(AudioCueType cueType, AudioCueContainer cueContainer, bool async = true)
         {
-            // Get the audio cue stream
-            var stream = cueContainer.GetStream(cueType);
-            if (stream == null)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, $"There is no audio cue for {cueType} on {cueContainer.Name}. Ignoring...");
+            if (!Config.MainConfig.EnableAudio)
                 return;
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, $"Stream of {cueType} on {cueContainer.Name} is {stream.Length} bytes.");
-
-            // Then, seek this stream to the beginning and play it using the play-n-forget technique
-            var settings = new PlayForgetSettings()
+            try
             {
-                Volume = Config.MainConfig.AudioCueVolume,
-            };
-            stream.Seek(0, SeekOrigin.Begin);
-            if (async)
-                PlayForget.PlayStreamAsync(stream, settings);
-            else
-                PlayForget.PlayStream(stream, settings);
+                // Get the audio cue stream
+                var stream = cueContainer.GetStream(cueType);
+                if (stream == null)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, $"There is no audio cue for {cueType} on {cueContainer.Name}. Ignoring...");
+                    return;
+                }
+                DebugWriter.WriteDebug(DebugLevel.I, $"Stream of {cueType} on {cueContainer.Name} is {stream.Length} bytes.");
+
+                // Then, seek this stream to the beginning and play it using the play-n-forget technique
+                var settings = new PlayForgetSettings()
+                {
+                    Volume = Config.MainConfig.AudioCueVolume,
+                };
+                stream.Seek(0, SeekOrigin.Begin);
+                if (async)
+                    PlayForget.PlayStreamAsync(stream, settings);
+                else
+                    PlayForget.PlayStream(stream, settings);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Audio cue playing failed: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.W, "Turning off audio cue support...");
+                Config.MainConfig.EnableAudio = false;
+            }
         }
 
         private static Dictionary<string, AudioCueContainer> PopulateCues()

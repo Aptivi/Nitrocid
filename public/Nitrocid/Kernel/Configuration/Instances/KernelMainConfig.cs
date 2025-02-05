@@ -1281,7 +1281,31 @@ namespace Nitrocid.Kernel.Configuration.Instances
         #region Audio
         private string audioCueThemeName = "the_mirage";
         private double audioCueVolume = 1.0;
+        private bool enableAudio = true;
 
+        /// <summary>
+        /// Enables the whole audio system for system cues
+        /// </summary>
+        public bool EnableAudio
+        {
+            get => enableAudio;
+            set
+            {
+                enableAudio = value;
+                if (!value)
+                {
+                    EnableKeyboardCues = value;
+                    EnableStartupSounds = value;
+                    EnableShutdownSounds = value;
+                    EnableNavigationSounds = value;
+                    EnableLowPriorityNotificationSounds = value;
+                    EnableMediumPriorityNotificationSounds = value;
+                    EnableHighPriorityNotificationSounds = value;
+                    EnableAmbientSoundFx = value;
+                    EnableAmbientSoundFxIntense = value;
+                }
+            }
+        }
         /// <summary>
         /// Whether to play keyboard cues for each keypress or not
         /// </summary>
