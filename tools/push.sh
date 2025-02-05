@@ -29,12 +29,16 @@ checkerror() {
 # This script pushes. Use when you have dotnet installed.
 dotnetpath=`which dotnet`
 checkerror $? "dotnet is not found"
+nugetsource=$1
+if [ -z $nugetsource ]; then
+	nugetsource=nuget.org
+fi
 
 # Push packages
 echo Pushing packages...
-find ../public/Nitrocid/KSBuild/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "nuget.org" \;
+find ../public/Nitrocid/KSBuild/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "$nugetsource" \;
 checkerror $? "Failed to push"
-find ../public/Nitrocid/KSAnalyzer/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "nuget.org" \;
+find ../public/Nitrocid/KSAnalyzer/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "$nugetsource" \;
 checkerror $? "Failed to push"
 
 # Inform success
