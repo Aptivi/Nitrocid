@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.7.56" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="DateTimePartAppend" BeforeTargets="Build" Condition="'$(ContinuousIntegrationBuild)' == 'true'">
+    <PropertyGroup>
+      <DateTimePart>$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</DateTimePart>
+    </PropertyGroup>
+    <WriteLinesToFile Overwrite="true" File="$(MSBuildThisFileDirectory)/obj/.dtp" Lines="$(DateTimePart)" />
+    <Message Importance="high" Text="Nitrocid is building on CI: $(DateTimePart)" />
+  </Target>
+
+</Project>
