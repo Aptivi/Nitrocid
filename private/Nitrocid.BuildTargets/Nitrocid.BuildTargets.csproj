@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.Build.NoTargets/3.7.56" DefaultTargets="Build">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <Target Name="DateTimePartAppend" BeforeTargets="Build" Condition="'$(ContinuousIntegrationBuild)' == 'true'">
