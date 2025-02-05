@@ -34,11 +34,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: installer-x64-msi
-          path: "public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug"
+          path: "tools/nitrocid-win-x64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: installer-arm64-msi
-          path: "public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Debug"
+          path: "tools/nitrocid-win-arm64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: nks-build
