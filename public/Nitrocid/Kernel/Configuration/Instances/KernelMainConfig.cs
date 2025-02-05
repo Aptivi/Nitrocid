@@ -324,7 +324,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string BackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.Background).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Background, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.Background, color);
+                SelectionStyleSettings.GlobalSettings.BackgroundColor = color;
+            }
         }
         /// <summary>
         /// Input Color
