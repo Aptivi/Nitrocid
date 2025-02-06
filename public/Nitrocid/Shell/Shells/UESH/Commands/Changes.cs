@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,7 +35,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string changes = UpdateManager.GetVersionChangelogs();
+            bool online = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-online");
+            string changes = online ? UpdateManager.GetVersionChangelogs() : UpdateManager.FetchCurrentChangelogsFromResources();
             TextWriterColor.Write(changes);
             return 0;
         }

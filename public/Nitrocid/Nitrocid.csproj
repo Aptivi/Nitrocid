@@ -94,6 +94,15 @@
   </ItemGroup>
   <!-- KS Audio Themes -->
 
+  <!-- KS Release Changelogs -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\tools\changes.chg">
+      <LogicalName>Nitrocid.Resources.changes.chg</LogicalName>
+      <Visible>false</Visible>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- KS Release Changelogs -->
+
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
