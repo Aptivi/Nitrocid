@@ -217,7 +217,7 @@ namespace Nitrocid.Misc.Interactives
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     selectedFolder = currentFileSystemEntry.FilePath;
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm FilesystemTools."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor, selectedFolder);
+                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm your selection."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor, selectedFolder);
                 }
             }
             catch (Exception ex)

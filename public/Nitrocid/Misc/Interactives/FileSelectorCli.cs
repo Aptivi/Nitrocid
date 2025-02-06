@@ -191,7 +191,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
                     selectedFile = currentFileSystemEntry.FilePath;
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm FilesystemTools."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor, selectedFile);
+                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm your selection."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor, selectedFile);
                 }
             }
             catch (Exception ex)

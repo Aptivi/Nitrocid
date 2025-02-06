@@ -1643,7 +1643,7 @@ Is a directory
 Is selected
 File size
 File path
-Selected '{0}'. Press ESC to exit and confirm FilesystemTools.
+Selected '{0}'. Press ESC to exit and confirm your selection.
 Can't open folder or select file
 Enter a path or a full path to a local folder.
 Press SPACE for more info
