@@ -753,8 +753,11 @@ namespace Nitrocid.Drivers.Filesystem
             try
             {
                 Path = FS.NeutralizePath(Path);
-                                // Check to see if we're calling from the root path
-                string Pattern = IsFile ? "" : "*";
+                if (IsFile)
+                    return [Path];
+
+                // Check to see if we're calling from the root path
+                string Pattern = "*";
                 string pathRoot = FS.NeutralizePath(IOPath.GetPathRoot(Path));
                 if (pathRoot == Path)
                 {
@@ -810,7 +813,7 @@ namespace Nitrocid.Drivers.Filesystem
             var Entries = Array.Empty<string>();
             try
             {
-                        Parent = FS.NeutralizePath(Parent);
+                Parent = FS.NeutralizePath(Parent);
 
                 // Get the entries
                 if (Directory.Exists(Parent))
