@@ -49,10 +49,10 @@
 [Main Debug]: https://github.com/Aptivi/Nitrocid/actions/workflows/build.yml
 [Main Release]: https://github.com/Aptivi/Nitrocid/actions/workflows/build-rel.yml
 
-[Libraries]: https://aptivi.gitbook.io/kernel-simulator-manual/project-dependencies
-[Building]: https://aptivi.gitbook.io/kernel-simulator-manual/advanced-and-power-users/building-the-kernel
-[Install]: https://aptivi.gitbook.io/kernel-simulator-manual/installation-and-maintenance/installing-the-kernel
-[Manual]: https://aptivi.gitbook.io/kernel-simulator-manual/
+[Libraries]: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/project-dependencies
+[Building]: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/building-the-kernel
+[Install]: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/installation-and-maintenance/installing-the-kernel
+[Manual]: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/
 
 <!----------------------------------[ Badges ]--------------------------------->
 
