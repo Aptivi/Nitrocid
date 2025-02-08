@@ -167,7 +167,10 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
                         }),
-                    })
+                    }, new[]
+                    {
+                        new SwitchInfo("quoted", /* Localizable */ "Whether to pass the output of the source command as one quoted argument or unquoted argument")
+                    }, true)
                 ], new PipeUnifiedCommand()),
 
             new CommandInfo("presets", /* Localizable */ "Opens the shell preset library", new PresetsUnifiedCommand()),

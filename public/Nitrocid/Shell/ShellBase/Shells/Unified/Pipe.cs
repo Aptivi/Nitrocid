@@ -19,7 +19,16 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
+using System;
+using System.Text;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {
@@ -34,7 +43,45 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write("Pipe TBD...", true, KernelColorType.Warning);
+            string sourceCommand = parameters.ArgumentsList[0];
+            StringBuilder targetCommandBuilder = new(parameters.ArgumentsList[1] + " ");
+            bool quoted = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-quoted");
+
+            // First, get the source command output
+            var currentShell = ShellManager.ShellStack[^1];
+            var currentType = currentShell.ShellType;
+            bool buildingTarget = true;
+            DebugWriter.WriteDebug(DebugLevel.I, $"Writing piped output to the buffer for {sourceCommand}...");
+            try
+            {
+                // Execute the source command
+                DebugWriter.WriteDebug(DebugLevel.I, $"Executing {sourceCommand} to the buffer for {currentType}...");
+                string contents = CommandExecutor.BufferCommand(sourceCommand);
+                variableValue = contents;
+                buildingTarget = false;
+
+                // Build the command based on the output and execute the target command
+                DebugWriter.WriteDebug(DebugLevel.I, $"Executing {targetCommandBuilder} for {currentType} with contents {contents}...");
+                targetCommandBuilder.Append(quoted ? $"\"{contents}\"" : contents);
+                ShellManager.GetLine($"{targetCommandBuilder}", "", currentType, true, false);
+            }
+            catch (Exception ex)
+            {
+                if (buildingTarget)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Execution of {sourceCommand} to the buffer failed.");
+                    TextWriters.Write(Translate.DoTranslation("Source command execution failed."), KernelColorType.Error);
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Execution of {targetCommandBuilder} failed.");
+                    TextWriters.Write(Translate.DoTranslation("Target command execution failed. The contents may not have been populated properly. Command executed was") + $"\n    {targetCommandBuilder}", KernelColorType.Error);
+                }
+                TextWriters.Write(Translate.DoTranslation("Pipe is broken."), KernelColorType.Error);
+                DebugWriter.WriteDebug(DebugLevel.E, $"Reason for failure: {ex.Message}.");
+                DebugWriter.WriteDebugStackTrace(ex);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
+            }
             return 0;
         }
 

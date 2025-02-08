@@ -380,27 +380,9 @@ namespace Nitrocid.Shell.ShellBase.Commands
             bool buffered = false;
             try
             {
-                // First, initialize the alternative command thread
-                var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
-                if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", vars: [Command]);
-                    var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                    ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
-                }
-
-                // Then, initialize the buffered writer and execute the commands
-                DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
+                // Buffer the target command output
                 DebugWriter.WriteDebug(DebugLevel.I, "Buffering...");
-                ShellManager.GetLine(Command, "", currentType, false, false);
-                CancellationHandlers.AllowCancel();
-                buffered = true;
-
-                // Extract the buffer and then end the local driver
-                var wrapBuffer = ((Buffered)DriverHandler.CurrentConsoleDriverLocal).consoleBuffer;
-                var wrapOutput = wrapBuffer.ToString();
-                wrapBuffer.Clear();
-                DriverHandler.EndLocalDriver<IConsoleDriver>();
+                var wrapOutput = BufferCommand(Command);
 
                 // Now, print the output
                 DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
@@ -455,6 +437,53 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 .ToArray();
 
             return finalWrappables;
+        }
+
+        internal static string BufferCommand(string command)
+        {
+            var currentShell = ShellManager.ShellStack[^1];
+            var currentType = currentShell.ShellType;
+            var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(command, currentType);
+            string commandName = total[0].Command;
+
+            // Check to see if the requested command is wrappable
+            if (!CommandManager.GetCommand(commandName, currentType).Flags.HasFlag(CommandFlags.Wrappable))
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't buffer a command that is not set as wrappable."));
+
+            string bufferOutput = "";
+            bool buffered = false;
+            try
+            {
+                // First, initialize the alternative command thread
+                var AltThreads = currentShell.AltCommandThreads;
+                if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for buffered command {0}...", vars: [command]);
+                    var BufferedCommand = new KernelThread("Buffered Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
+                    currentShell.AltCommandThreads.Add(BufferedCommand);
+                }
+
+                // Then, initialize the buffered writer and execute the commands
+                DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
+                DebugWriter.WriteDebug(DebugLevel.I, "Buffering...");
+                ShellManager.GetLine(command, "", currentType, false, false);
+                CancellationHandlers.AllowCancel();
+                buffered = true;
+
+                // Extract the buffer and then end the local driver
+                var buffer = ((Buffered)DriverHandler.CurrentConsoleDriverLocal).consoleBuffer;
+                bufferOutput = buffer.ToString();
+                buffer.Clear();
+                DriverHandler.EndLocalDriver<IConsoleDriver>();
+            }
+            catch
+            {
+                // There is some error, so propagate the error to the caller once we revert the driver.
+                if (!buffered)
+                    DriverHandler.EndLocalDriver<IConsoleDriver>();
+                throw;
+            }
+            return bufferOutput;
         }
 
         private static void CommandDelegate(ShellExecuteInfo ShellInstance, BaseCommand CommandBase, CommandParameters parameters, ref string value)
