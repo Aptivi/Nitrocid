@@ -46,43 +46,43 @@ namespace Nitrocid.Shell.Shells.Debug
 
             new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "sessionGuid")
-                    })
+                    ])
                 ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("excinfo", /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new ExcInfoCommand()),
 
             new CommandInfo("getfieldvalue", /* Localizable */ "Gets a field value",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
                         })
-                    }, true)
+                    ], true)
                 ], new GetFieldValueCommand()),
 
             new CommandInfo("getpropertyvalue", /* Localizable */ "Gets a property value",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
                         })
-                    }, true)
+                    ], true)
                 ], new GetPropertyValueCommand()),
 
             new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging", new KeyInfoCommand()),
@@ -91,8 +91,8 @@ namespace Nitrocid.Shell.Shells.Debug
 
             new CommandInfo("lsaddonfields", /* Localizable */ "Lists all available fields from the specified addon",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
@@ -101,13 +101,13 @@ namespace Nitrocid.Shell.Shells.Debug
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
                         }),
-                    })
+                    ])
                 ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonfuncs", /* Localizable */ "Lists all available functions from the specified addon",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
@@ -116,13 +116,13 @@ namespace Nitrocid.Shell.Shells.Debug
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
                         }),
-                    })
+                    ])
                 ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonfuncparams", /* Localizable */ "Lists all available function parameters from a function",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
@@ -135,13 +135,13 @@ namespace Nitrocid.Shell.Shells.Debug
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
                         }),
-                    })
+                    ])
                 ], new LsAddonFuncParamsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
@@ -150,42 +150,42 @@ namespace Nitrocid.Shell.Shells.Debug
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
                         }),
-                    })
+                    ])
                 ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddontypes", /* Localizable */ "Lists all available types from the specified addon",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
                         }),
-                    })
+                    ])
                 ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
-                    })
+                    ])
                 ], new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsproperties", /* Localizable */ "Lists all available public properties",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
-                    })
+                    ])
                 ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsshells", /* Localizable */ "Lists all available shells", new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),

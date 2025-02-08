@@ -35,21 +35,21 @@ namespace Nitrocid.Extras.Ssh
         [
             new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "address:port"),
                         new CommandArgumentPart(true, "username"),
-                    })
+                    ])
                 ], new SshellCommand()),
 
             new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "address:port"),
                         new CommandArgumentPart(true, "username"),
                         new CommandArgumentPart(true, "command"),
-                    })
+                    ])
                 ], new SshcmdCommand()),
         ];
 

@@ -26,7 +26,6 @@ using System;
 using Terminaux.Inputs.Styles.Infobox;
 using System.IO;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Kernel.Debugging.Testing.Facades;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 

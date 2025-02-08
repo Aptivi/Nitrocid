@@ -40,43 +40,43 @@ namespace Nitrocid.Shell.Shells.Hex
         [
             new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "byte")
-                    })
+                    ])
                 ], new AddByteCommand()),
 
             new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file", new AddBytesCommand()),
 
             new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "byte"),
                         new CommandArgumentPart(true, "pos", new()
                         {
                             IsNumeric = true,
                         })
-                    })
+                    ])
                 ], new AddByteToCommand()),
 
             new CommandInfo("clear", /* Localizable */ "Clears the binary file", new ClearCommand()),
 
             new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new DelByteCommand()),
 
             new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -85,15 +85,15 @@ namespace Nitrocid.Shell.Shells.Hex
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new DelBytesCommand()),
 
             new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -102,13 +102,13 @@ namespace Nitrocid.Shell.Shells.Hex
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "byte"),
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
@@ -118,16 +118,16 @@ namespace Nitrocid.Shell.Shells.Hex
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new QueryByteCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "byte"),
                         new CommandArgumentPart(true, "replacebyte")
-                    })
+                    ])
                 ], new ReplaceCommand()),
 
             new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),

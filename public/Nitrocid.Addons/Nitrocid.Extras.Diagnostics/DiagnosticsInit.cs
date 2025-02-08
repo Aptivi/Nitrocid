@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Diagnostics.Commands;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;

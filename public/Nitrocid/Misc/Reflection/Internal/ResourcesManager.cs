@@ -19,8 +19,6 @@
 
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;

@@ -35,17 +35,17 @@ namespace Nitrocid.Extras.MailShell
         [
             new CommandInfo("mail", /* Localizable */ "Opens the IMAP mail client",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "emailAddress"),
-                    })
+                    ])
                 ], new MailCommandExec()),
             new CommandInfo("popmail", /* Localizable */ "Opens the POP3 mail client",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "emailAddress"),
-                    })
+                    ])
                 ], new PopMailCommandExec()),
         ];
 

@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.SqlShell.Sql.Presets;
 using Nitrocid.Extras.SqlShell.Sql.Commands;
 using Nitrocid.Shell.ShellBase.Commands;

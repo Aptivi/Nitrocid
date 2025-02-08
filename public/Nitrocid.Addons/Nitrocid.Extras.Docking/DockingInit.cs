@@ -34,13 +34,13 @@ namespace Nitrocid.Extras.Docking
         [
             new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "dockName", new()
                         {
                             AutoCompleter = (_) => DockTools.GetDockScreenNames()
                         }),
-                    })
+                    ])
                 ], new DockCommand())
         ];
 

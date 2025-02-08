@@ -40,44 +40,44 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         [
             new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file")
-                    })
+                    ])
                 ], new CatCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "directory")
-                    })
+                    ])
                 ], new CdlCommand()),
 
             new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "directory")
-                    })
+                    ])
                 ], new CdrCommand()),
 
             new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file")
-                    })
+                    ])
                 ], new DelCommand()),
 
             new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file")
-                    })
+                    ])
                 ], new GetCommand()),
 
             new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
@@ -132,10 +132,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
 
             new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file")
-                    })
+                    ])
                 ], new PutCommand()),
 
             new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),

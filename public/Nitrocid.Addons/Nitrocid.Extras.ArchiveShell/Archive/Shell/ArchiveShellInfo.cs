@@ -42,18 +42,18 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 
             new CommandInfo("chdir", /* Localizable */ "Changes directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "directory")
-                    })
+                    ])
                 ], new ChDirCommand()),
 
             new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "archivedirectory")
-                    })
+                    ])
                 ], new ChADirCommand()),
 
             new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
@@ -70,19 +70,19 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 
             new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "directory")
-                    })
+                    ])
                 ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "localfile"),
                         new CommandArgumentPart(false, "where")
-                    })
+                    ])
                 ], new PackCommand()),
         ];
 

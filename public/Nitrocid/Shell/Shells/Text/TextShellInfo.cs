@@ -39,10 +39,10 @@ namespace Nitrocid.Shell.Shells.Text
         [
             new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "text")
-                    })
+                    ])
                 ], new AddLineCommand()),
 
             new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file", new AddLinesCommand()),
@@ -51,8 +51,8 @@ namespace Nitrocid.Shell.Shells.Text
 
             new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -61,13 +61,13 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new DelCharNumCommand()),
 
             new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -76,13 +76,13 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new DelLineCommand()),
 
             new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
@@ -92,26 +92,26 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new DelWordCommand()),
 
             new CommandInfo("editline", /* Localizable */ "Edits the specified line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new EditLineCommand()),
 
             new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -120,61 +120,61 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "char"),
                         new CommandArgumentPart(true, "lineNum/all"),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new QueryCharCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "lineNum/all"),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new QueryWordCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "regex"),
                         new CommandArgumentPart(true, "lineNum/all"),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new QueryWordRegexCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "word/phrase")
-                    })
+                    ])
                 ], new ReplaceCommand()),
 
             new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "lineNum/all"),
@@ -182,22 +182,22 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new ReplaceInlineCommand()),
 
             new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "regex"),
                         new CommandArgumentPart(true, "word/phrase")
-                    })
+                    ])
                 ], new ReplaceRegexCommand()),
 
             new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "regex"),
                         new CommandArgumentPart(true, "word/phrase"),
                         new CommandArgumentPart(true, "lineNum/all"),
@@ -205,7 +205,7 @@ namespace Nitrocid.Shell.Shells.Text
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new ReplaceInlineRegexCommand()),
 
             new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),

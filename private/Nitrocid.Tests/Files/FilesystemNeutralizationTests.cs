@@ -19,7 +19,6 @@
 
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Nitrocid.Kernel;

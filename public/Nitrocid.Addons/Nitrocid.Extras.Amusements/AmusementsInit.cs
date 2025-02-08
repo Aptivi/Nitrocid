@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Amusements
 
             new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
                         {
                             ConflictsWith = ["practice"],
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["common"],
                             AcceptsValues = false
                         }),
-                    })
+                    ])
                 ], new HangmanCommand()),
 
             new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?", new MeteorCommand()),
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.Amusements
 
             new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "c"],
@@ -112,12 +112,12 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["m", "h", "v", "e"],
                             ArgumentsRequired = true
                         })
-                    })
+                    ])
                 ], new SpeedPressCommand()),
 
             new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                         {
                             AcceptsValues = false
@@ -132,7 +132,7 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["common"],
                             AcceptsValues = false
                         }),
-                    })
+                    ])
                 ], new WordleCommand()),
 
             new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release", new AnniversaryCommand()),

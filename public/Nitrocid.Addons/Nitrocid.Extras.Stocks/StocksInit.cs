@@ -37,10 +37,10 @@ namespace Nitrocid.Extras.Stocks
         [
             new CommandInfo("stock", /* Localizable */ "Gets an hourly stock information",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "company", argumentDesc: /* Localizable */ "Short company symbol"),
-                    })
+                    ])
                 ], new StockCommand()),
         ];
 

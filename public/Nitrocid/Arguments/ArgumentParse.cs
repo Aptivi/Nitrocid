@@ -122,10 +122,10 @@ namespace Nitrocid.Arguments
             { "lang",
                 new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
                     [
-                        new CommandArgumentInfo(new[]
-                        {
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "lang")
-                        })
+                        ])
                     ], new LangArgument())
             },
 

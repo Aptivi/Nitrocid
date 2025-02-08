@@ -35,29 +35,29 @@ namespace Nitrocid.Extras.Mods
         [
             new CommandInfo("modman", /* Localizable */ "Manage your mods",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
                         {
                             ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"]
                         }),
                         new CommandArgumentPart(true, "modfilename"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
                         {
                             ExactWording = ["list", "reloadall", "stopall", "startall", "tui"]
                         }),
-                    }),
+                    ]),
                 ], new ModManCommand(), CommandFlags.Strict),
 
             new CommandInfo("modmanual", /* Localizable */ "Mod manual",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "modname"),
-                    })
+                    ])
                 ], new ModManualCommand()),
         ];
 

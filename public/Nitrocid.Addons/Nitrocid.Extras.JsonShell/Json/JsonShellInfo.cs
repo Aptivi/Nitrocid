@@ -96,18 +96,18 @@ namespace Nitrocid.Extras.JsonShell.Json
 
             new CommandInfo("print", /* Localizable */ "Prints the JSON file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "propertyName")
-                    })
+                    ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("rm", /* Localizable */ "Removes a target object",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "objectPath")
-                    })
+                    ])
                 ], new RmCommand()),
 
             new CommandInfo("save", /* Localizable */ "Saves the JSON file",

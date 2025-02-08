@@ -40,13 +40,13 @@ namespace Nitrocid.Shell.Shells.Admin
         [
             new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys]
                         })
-                    })
+                    ])
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("bootlog", /* Localizable */ "Prints the boot log", new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -57,13 +57,13 @@ namespace Nitrocid.Shell.Shells.Admin
 
             new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "sessionNum", new()
                         {
                             IsNumeric = true,
                         }),
-                    })
+                    ])
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsevents", /* Localizable */ "Lists all fired events", new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -77,47 +77,47 @@ namespace Nitrocid.Shell.Shells.Admin
 
             new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "user"),
                         new CommandArgumentPart(true, "admin/anonymous/disabled"),
                         new CommandArgumentPart(true, "false/true")
-                    })
+                    ])
                 ], new UserFlagCommand()),
 
             new CommandInfo("userfullname", /* Localizable */ "Changes the user's full name (display name)",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "user"),
                         new CommandArgumentPart(true, "name/clear")
-                    })
+                    ])
                 ], new UserFullNameCommand()),
 
             new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "user")
-                    })
+                    ])
                 ], new UserInfoCommand()),
 
             new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "user"),
                         new CommandArgumentPart(true, "lang/clear")
-                    })
+                    ])
                 ], new UserLangCommand()),
 
             new CommandInfo("userculture", /* Localizable */ "Changes the preferred user culture",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "user"),
                         new CommandArgumentPart(true, "culture/clear")
-                    })
+                    ])
                 ], new UserCultureCommand()),
         ];
 

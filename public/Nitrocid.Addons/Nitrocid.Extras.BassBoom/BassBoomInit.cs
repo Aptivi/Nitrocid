@@ -64,35 +64,35 @@ namespace Nitrocid.Extras.BassBoom
         [
             new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "lyric.lrc"),
-                    })
+                    ])
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "lyric.lrc"),
-                    })
+                    ])
                 ], new PlayLyricCommand()),
 
             new CommandInfo("playsound", /* Localizable */ "Plays a sound",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "musicFile"),
-                    })
+                    ])
                 ], new PlaySoundCommand()),
 
             new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "hostname"),
                         new CommandArgumentPart(true, "port"),
-                    })
+                    ])
                 ], new NetFmInfoCommand()),
         ];
 

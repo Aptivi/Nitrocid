@@ -35,38 +35,38 @@ namespace Nitrocid.Extras.ToDoList
         [
             new CommandInfo("todo", /* Localizable */ "To-do task manager",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "add"),
                         new CommandArgumentPart(true, "taskname"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "remove"),
                         new CommandArgumentPart(true, "taskname"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "done"),
                         new CommandArgumentPart(true, "taskname"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "undone"),
                         new CommandArgumentPart(true, "taskname"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "list"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "save"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "load"),
-                    }),
+                    ]),
                 ], new TodoCommand()),
         ];
 

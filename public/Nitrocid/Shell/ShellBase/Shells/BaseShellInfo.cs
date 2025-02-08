@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Collections.Generic;

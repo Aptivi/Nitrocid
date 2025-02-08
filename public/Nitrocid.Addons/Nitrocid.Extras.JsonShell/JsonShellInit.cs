@@ -36,11 +36,11 @@ namespace Nitrocid.Extras.JsonShell
         [
             new CommandInfo("jsondiff", /* Localizable */ "Shows the difference between two JSON files",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file1"),
                         new CommandArgumentPart(true, "file2"),
-                    })
+                    ])
                 ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",

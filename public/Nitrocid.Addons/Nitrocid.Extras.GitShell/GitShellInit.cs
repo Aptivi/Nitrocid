@@ -39,10 +39,10 @@ namespace Nitrocid.Extras.GitShell
         [
             new CommandInfo("gitsh", /* Localizable */ "Git shell",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "repoPath")
-                    }),
+                    ]),
                 ], new GitCommandExec())
         ];
 

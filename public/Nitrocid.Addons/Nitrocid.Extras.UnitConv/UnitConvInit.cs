@@ -37,13 +37,13 @@ namespace Nitrocid.Extras.UnitConv
         [
             new CommandInfo("listunits", /* Localizable */ "Lists all available units",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
                         }),
-                    })
+                    ])
                 ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("unitconv", /* Localizable */ "Unit converter",

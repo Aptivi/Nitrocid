@@ -157,8 +157,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
             new CommandInfo("pipe", /* Localizable */ "Pipes the command output to another command as parameters",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
@@ -167,24 +167,24 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
                         }),
-                    }, new[]
-                    {
+                    ],
+                    [
                         new SwitchInfo("quoted", /* Localizable */ "Whether to pass the output of the source command as one quoted argument or unquoted argument")
-                    }, true)
+                    ], true)
                 ], new PipeUnifiedCommand()),
 
             new CommandInfo("presets", /* Localizable */ "Opens the shell preset library", new PresetsUnifiedCommand()),
 
             new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         }),
                         new CommandArgumentPart(false, "command"),
-                    })
+                    ])
                 ], new RepeatUnifiedCommand()),
 
             new CommandInfo("savehistories", /* Localizable */ "Saves shell histories", new SaveHistoriesUnifiedCommand()),
@@ -193,13 +193,13 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
             new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
                         })
-                    })
+                    ])
                 ], new WrapUnifiedCommand()),
         ];
 
@@ -393,7 +393,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
             // Check for a type of command
             CancellationHandlers.AllowCancel();
-            var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
+            var SplitCommands = FullCommand.Split([" ; "], StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
             for (int i = 0; i < SplitCommands.Length; i++)
             {

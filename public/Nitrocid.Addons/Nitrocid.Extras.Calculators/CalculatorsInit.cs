@@ -41,8 +41,8 @@ namespace Nitrocid.Extras.Calculators
 
             new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Calculators
                         {
                             IsNumeric = true
                         }),
-                    })
+                    ])
                 ], new ImaginaryCommand()),
         ];
 

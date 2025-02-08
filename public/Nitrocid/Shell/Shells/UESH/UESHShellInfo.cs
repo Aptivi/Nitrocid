@@ -49,99 +49,99 @@ namespace Nitrocid.Shell.Shells.UESH
         [
             new CommandInfo("addgroup", /* Localizable */ "Adds groups",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "groupName")
-                    })
+                    ])
                 ], new AddGroupCommand(), CommandFlags.Strict),
 
             new CommandInfo("adduser", /* Localizable */ "Adds users",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "username"),
                         new CommandArgumentPart(false, "password"),
                         new CommandArgumentPart(false, "confirm"),
-                    })
+                    ])
                 ], new AddUserCommand(), CommandFlags.Strict),
 
             new CommandInfo("addusertogroup", /* Localizable */ "Adds users to a group",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "username"),
                         new CommandArgumentPart(true, "group"),
-                    })
+                    ])
                 ], new AddUserToGroupCommand(), CommandFlags.Strict),
 
             new CommandInfo("admin", /* Localizable */ "Administrative shell", new AdminCommand(), CommandFlags.Strict),
 
             new CommandInfo("alarm", /* Localizable */ "Manage your alarms",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("tui", /* Localizable */ "Manage your alarms in an interactive TUI", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "start/stop", new()
                         {
                             ExactWording = ["start", "stop"]
                         }),
                         new CommandArgumentPart(true, "alarmname"),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "list", new()
                         {
                             ExactWording = ["list"]
                         }),
-                    }),
+                    ]),
                 ], new AlarmCommand(), CommandFlags.Strict),
 
             new CommandInfo("alias", /* Localizable */ "Adds aliases to commands",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "rem/add"),
                         new CommandArgumentPart(true, "shell"),
                         new CommandArgumentPart(true, "alias"),
                         new CommandArgumentPart(false, "cmd"),
-                    })
+                    ])
                 ], new AliasCommand(), CommandFlags.Strict),
 
             new CommandInfo("beep", /* Localizable */ "Beeps from the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "freq", new(){
                             IsNumeric = true,
                         }),
                         new CommandArgumentPart(false, "ms", new(){
                             IsNumeric = true,
                         }),
-                    })
+                    ])
                 ], new BeepCommand()),
 
             new CommandInfo("blockdbgdev", /* Localizable */ "Block a debug device by IP address",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ipaddress"),
-                    })
+                    ])
                 ], new BlockDbgDevCommand(), CommandFlags.Strict),
 
             new CommandInfo("bulkrename", /* Localizable */ "Renames group of files to selected format",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "targetdir"),
                         new CommandArgumentPart(true, "pattern"),
                         new CommandArgumentPart(false, "newname"),
-                    })
+                    ])
                 ], new BulkRenameCommand()),
 
             new CommandInfo("cat", /* Localizable */ "Prints content of file to console",
@@ -175,23 +175,23 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("online", /* Localizable */ "Fetch the changelogs from the internet instead of locally", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                    })
+                    ])
                 ], new ChangesCommand()),
 
             new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file"),
                         new CommandArgumentPart(true, "add/rem"),
                         new CommandArgumentPart(true, "Normal/ReadOnly/Hidden/Archive"),
-                    })
+                    ])
                 ], new ChAttrCommand()),
 
             new CommandInfo("chculture", /* Localizable */ "Changes culture",
@@ -210,18 +210,18 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("chdir", /* Localizable */ "Changes directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "directory/.."),
-                    })
+                    ])
                 ], new ChDirCommand()),
 
             new CommandInfo("chhostname", /* Localizable */ "Changes host name",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "hostname"),
-                    })
+                    ])
                 ], new ChHostNameCommand(), CommandFlags.Strict),
 
             new CommandInfo("chklock", /* Localizable */ "Checks the file or the folder lock",
@@ -258,18 +258,18 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("chmal", /* Localizable */ "Changes MAL, the MOTD After Login",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "message"),
-                    })
+                    ])
                 ], new ChMalCommand(), CommandFlags.Strict),
 
             new CommandInfo("chmotd", /* Localizable */ "Changes MOTD, the Message Of The Day",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "message"),
-                    })
+                    ])
                 ], new ChMotdCommand(), CommandFlags.Strict),
 
             new CommandInfo("choice", /* Localizable */ "Makes user choices",
@@ -312,25 +312,25 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("chpwd", /* Localizable */ "Changes password for current user",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "Username"),
                         new CommandArgumentPart(true, "UserPass"),
                         new CommandArgumentPart(true, "newPass"),
                         new CommandArgumentPart(true, "confirm"),
-                    })
+                    ])
                 ], new ChPwdCommand(), CommandFlags.Strict),
 
             new CommandInfo("chusrname", /* Localizable */ "Changes user name",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. UserManagement.ListAllUsers()]
                         }),
                         new CommandArgumentPart(true, "newUserName"),
-                    })
+                    ])
                 ], new ChUsrNameCommand(), CommandFlags.Strict),
 
             new CommandInfo("cls", /* Localizable */ "Clears the screen", new ClsCommand()),
@@ -347,22 +347,22 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("combine", /* Localizable */ "Combines the two text files or more into the output file.",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "output"),
                         new CommandArgumentPart(true, "input"),
                         new CommandArgumentPart(true, "input2"),
                         new CommandArgumentPart(false, "input3"),
-                    }, false, true)
+                    ], false, true)
                 ], new CombineCommand()),
 
             new CommandInfo("compare", /* Localizable */ "Compares between the two text files.",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "source"),
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new CompareCommand()),
 
             new CommandInfo("convertlineendings", /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
@@ -396,16 +396,16 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("copy", /* Localizable */ "Creates another copy of a file under different directory or name.",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "source"),
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new CopyCommand()),
 
             new CommandInfo("date", /* Localizable */ "Shows date and time",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
                         {
                             ConflictsWith = ["time", "full"],
@@ -425,7 +425,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             AcceptsValues = false
                         })
-                    }, true)
+                    ], true)
                 ], new DateCommand(), CommandFlags.RedirectionSupported),
 
             new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell", new DebugShellCommand(), CommandFlags.Strict),
@@ -484,18 +484,18 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("dirinfo", /* Localizable */ "Provides information about a directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "directory"),
-                    })
+                    ])
                 ], new DirInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("disconndbgdev", /* Localizable */ "Disconnect a debug device",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ip"),
-                    })
+                    ])
                 ], new DisconnDbgDevCommand(), CommandFlags.Strict),
 
             new CommandInfo("diskinfo", /* Localizable */ "Provides information about a disk",
@@ -511,43 +511,43 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("dismissnotif", /* Localizable */ "Dismisses a notification",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "notificationNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         }),
-                    })
+                    ])
                 ], new DismissNotifCommand()),
 
             new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications", new DismissNotifsCommand()),
 
             new CommandInfo("driverman", /* Localizable */ "Manage your drivers",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "change", new()
                         {
                             ExactWording = ["change"]
                         }),
                         new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
                         new CommandArgumentPart(true, "driver", (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1]))),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "list", new()
                         {
                             ExactWording = ["list"]
                         }),
                         new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "types", new()
                         {
                             ExactWording = ["types"]
                         }),
-                    }),
+                    ]),
                 ], new DriverManCommand(), CommandFlags.Strict),
 
             new CommandInfo("echo", /* Localizable */ "Writes text into the console",
@@ -645,10 +645,10 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("fileinfo", /* Localizable */ "Provides information about a file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "file"),
-                    })
+                    ])
                 ], new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("find", /* Localizable */ "Finds a file in the specified directory or in the current directory",
@@ -707,13 +707,13 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("getaddons", /* Localizable */ "Gets all the addons from the official download page and installs them",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("reinstall", /* Localizable */ "Reinstalls the addons", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
-                    })
+                    ])
                 ], new GetAddonsCommand()),
 
             new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions", new GetAllExtHandlersCommand()),
@@ -775,31 +775,31 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("hwinfo", /* Localizable */ "Prints hardware information",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => DriverHandler.CurrentHardwareProberDriverLocal.SupportedHardwareTypes.Union(["all"]).ToArray()
                         })
-                    })
+                    ])
                 ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("if", /* Localizable */ "Executes commands once the UESH expressions are satisfied",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ueshExpression"),
                         new CommandArgumentPart(true, "command"),
-                    })
+                    ])
                 ], new IfCommand()),
 
             new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "firstPanePath"),
                         new CommandArgumentPart(false, "secondPanePath"),
-                    })
+                    ])
                 ], new IfmCommand()),
 
             new CommandInfo("input", /* Localizable */ "Allows user to enter input",
@@ -820,18 +820,18 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("langman", /* Localizable */ "Manage your languages",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "reload/load/unload"),
                         new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. LanguageManager.CustomLanguages.Keys]
                         }),
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "list/reloadall"),
-                    })
+                    ])
                 ], new LangManCommand(), CommandFlags.Strict),
 
             new CommandInfo("license", /* Localizable */ "Shows license information for the kernel", new LicenseCommand()),
@@ -939,11 +939,11 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("move", /* Localizable */ "Moves a file to another directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "source"),
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new MoveCommand()),
 
             new CommandInfo("partinfo", /* Localizable */ "Provides information about a partition from the specified disk",
@@ -971,22 +971,22 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("perm", /* Localizable */ "Manage permissions for users",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "userName"),
                         new CommandArgumentPart(true, "allow/revoke"),
                         new CommandArgumentPart(true, "perm"),
-                    })
+                    ])
                 ], new PermCommand(), CommandFlags.Strict),
 
             new CommandInfo("permgroup", /* Localizable */ "Manage permissions for groups",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "groupName"),
                         new CommandArgumentPart(true, "allow/revoke"),
                         new CommandArgumentPart(true, "perm"),
-                    })
+                    ])
                 ], new PermGroupCommand(), CommandFlags.Strict),
 
             new CommandInfo("ping", /* Localizable */ "Pings an address",
@@ -1007,8 +1007,8 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("platform", /* Localizable */ "Gets the current platform",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("n", /* Localizable */ "Shows the platform name", new SwitchOptions()
                         {
                             ConflictsWith = ["r", "v", "b", "c"],
@@ -1034,16 +1034,16 @@ namespace Nitrocid.Shell.Shells.UESH
                             ConflictsWith = ["n", "v", "b", "c"],
                             AcceptsValues = false
                         })
-                    }, true)
+                    ], true)
                 ], new PlatformCommand()),
 
             new CommandInfo("put", /* Localizable */ "Uploads a file to specified website",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "FileName"),
                         new CommandArgumentPart(true, "URL"),
-                    })
+                    ])
                 ], new PutCommand()),
 
             new CommandInfo("rdebug", /* Localizable */ "Enables or disables remote debugging.", new RdebugCommand(), CommandFlags.Strict),
@@ -1074,56 +1074,56 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("rexec", /* Localizable */ "Remotely executes a command to remote PC",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "address"),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         }),
                         new CommandArgumentPart(false, "command"),
-                    })
+                    ])
                 ], new RexecCommand(), CommandFlags.Strict),
 
             new CommandInfo("rm", /* Localizable */ "Removes a directory or a file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new RmCommand()),
 
             new CommandInfo("rmsec", /* Localizable */ "Removes a file or a directory securely",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new RmSecCommand()),
 
             new CommandInfo("rmuser", /* Localizable */ "Removes a user from the list",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "Username"),
-                    })
+                    ])
                 ], new RmUserCommand(), CommandFlags.Strict),
 
             new CommandInfo("rmgroup", /* Localizable */ "Removes a group from the list",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "GroupName"),
-                    })
+                    ])
                 ], new RmGroupCommand(), CommandFlags.Strict),
 
             new CommandInfo("rmuserfromgroup", /* Localizable */ "Removes a user from the group",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "UserName"),
                         new CommandArgumentPart(true, "GroupName"),
-                    })
+                    ])
                 ], new RmUserFromGroupCommand(), CommandFlags.Strict),
 
             new CommandInfo("rreboot", /* Localizable */ "Restarts a remote kernel instance",
@@ -1157,14 +1157,14 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("rshutdown", /* Localizable */ "The kernel in the remote instance will be shut down",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ip"),
                         new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         }),
-                    })
+                    ])
                 ], new RShutdownCommand()),
 
             new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file", new SaveConfigCommand(), CommandFlags.Strict),
@@ -1185,20 +1185,20 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("search", /* Localizable */ "Searches for specified string in the provided file using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "Regexp"),
                         new CommandArgumentPart(true, "File"),
-                    })
+                    ])
                 ], new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("searchword", /* Localizable */ "Searches for specified string in the provided file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "StringEnclosedInDoubleQuotes"),
                         new CommandArgumentPart(true, "File"),
-                    })
+                    ])
                 ], new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("select", /* Localizable */ "Provides a selection choice",
@@ -1214,15 +1214,15 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("setsaver", /* Localizable */ "Sets up kernel screensavers",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "saver"),
-                    })
+                    ])
                 ], new SetSaverCommand(), CommandFlags.Strict),
 
             new CommandInfo("settings", /* Localizable */ "Changes kernel configuration",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
                         {
                             ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
@@ -1257,7 +1257,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             AcceptsValues = false
                         })
-                    })
+                    ])
                 ], new SettingsCommand(), CommandFlags.Strict),
 
             new CommandInfo("set", /* Localizable */ "Sets a variable to a value in a script",
@@ -1286,8 +1286,8 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("setexthandler", /* Localizable */ "Sets the default extension handler of the specified extension to the specific implementer",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
@@ -1296,7 +1296,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             AutoCompleter = (args) => ExtensionHandlerTools.GetExtensionHandlers(args[0]).Select((h) => h.Implementer).ToArray()
                         }),
-                    })
+                    ])
                 ], new SetExtHandlerCommand()),
 
             new CommandInfo("setrange", /* Localizable */ "Creates a variable array with the provided values",
@@ -1346,17 +1346,17 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ms"),
-                    })
+                    ])
                 ], new SleepCommand()),
             new CommandInfo("sudo", /* Localizable */ "Runs the command as the root user",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "command"),
-                    })
+                    ])
                 ], new SudoCommand()),
 
             new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
@@ -1411,11 +1411,11 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("symlink", /* Localizable */ "Creates a symbolic link to a file or a folder",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "linkname"),
                         new CommandArgumentPart(true, "target"),
-                    })
+                    ])
                 ], new SymlinkCommand()),
 
             new CommandInfo("sysinfo", /* Localizable */ "System information",
@@ -1435,10 +1435,10 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("themeprev", /* Localizable */ "Previews a theme",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "theme"),
-                    })
+                    ])
                 ], new ThemePrevCommand()),
 
             new CommandInfo("themeset", /* Localizable */ "Selects a theme and sets it",
@@ -1454,10 +1454,10 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("unblockdbgdev", /* Localizable */ "Unblock a debug device by IP address",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "ipaddress"),
-                    })
+                    ])
                 ], new UnblockDbgDevCommand(), CommandFlags.Strict),
 
             new CommandInfo("unset", /* Localizable */ "Removes a variable from the UESH variable list",
@@ -1502,8 +1502,8 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("verify", /* Localizable */ "Verifies sanity of the file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames()
@@ -1511,13 +1511,13 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "calculatedhash"),
                         new CommandArgumentPart(true, "hashfile/expectedhash"),
                         new CommandArgumentPart(true, "file"),
-                    })
+                    ])
                 ], new VerifyCommand()),
 
             new CommandInfo("version", /* Localizable */ "Gets the current version",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", new SwitchOptions()
                         {
                             ConflictsWith = ["k"],
@@ -1528,7 +1528,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ConflictsWith = ["m"],
                             AcceptsValues = false
                         })
-                    }, true)
+                    ], true)
                 ], new VersionCommand()),
 
             new CommandInfo("whoami", /* Localizable */ "Gets the current user name",

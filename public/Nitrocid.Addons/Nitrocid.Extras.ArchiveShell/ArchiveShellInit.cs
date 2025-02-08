@@ -36,10 +36,10 @@ namespace Nitrocid.Extras.ArchiveShell
         [
             new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "archivefile"),
-                    })
+                    ])
                 ], new ArchiveCommand())
         ];
 

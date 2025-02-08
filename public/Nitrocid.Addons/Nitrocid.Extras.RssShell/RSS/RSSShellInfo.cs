@@ -40,13 +40,13 @@ namespace Nitrocid.Extras.RssShell.RSS
         [
             new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new ArticleInfoCommand()),
 
             new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed", new BookmarkCommand()),
@@ -61,13 +61,13 @@ namespace Nitrocid.Extras.RssShell.RSS
 
             new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         })
-                    })
+                    ])
                 ], new ReadCommand()),
 
             new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
