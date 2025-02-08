@@ -290,9 +290,10 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="FullCommand">The full command string</param>
         /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <param name="ShellType">Shell type</param>
+        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) =>
-            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType), true, Config.MainConfig.SetTitleOnCommandExecution);
+        public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell, bool restoreDriver = true) =>
+            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType), restoreDriver, Config.MainConfig.SetTitleOnCommandExecution);
 
         /// <summary>
         /// Parses a specified command.
@@ -314,7 +315,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
         /// <param name="setTitle">Whether to set the console title</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        internal static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true)
+        internal static void GetLine(string FullCommand, string OutputPath, string ShellType, bool restoreDriver, bool setTitle)
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
