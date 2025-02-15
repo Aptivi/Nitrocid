@@ -51,7 +51,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             // Get all aliases from file
             FilesystemTools.MakeJsonFile(PathsManagement.GetKernelPath(KernelPathType.Aliases), false, true);
             string AliasJsonContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases));
-            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent);
+            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ?? [];
             aliases = [.. aliasesArray];
         }
 
