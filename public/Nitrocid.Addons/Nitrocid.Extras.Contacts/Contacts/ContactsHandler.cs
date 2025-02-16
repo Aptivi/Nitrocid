@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 var cards = CardTools.GetCards(path);
                 builder.AppendLine($"{cards.Length} {Translate.DoTranslation("contacts found")}");
                 foreach (var card in cards)
-                    builder.AppendLine($"  - {card.GetString(StringsEnum.FullName)[0].Value}");
+                    builder.AppendLine($"  - {card.GetString(CardStringsEnum.FullName)[0].Value}");
                 return builder.ToString();
             }
             catch (Exception ex)

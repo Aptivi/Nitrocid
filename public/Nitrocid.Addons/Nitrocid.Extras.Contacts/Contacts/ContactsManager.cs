@@ -178,7 +178,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vars: [vcard.ToString()]);
                     if (!ContactsManager.cards.Contains(vcard))
                         ContactsManager.cards.Add(vcard);
-                    DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vars: [vcard.GetString(StringsEnum.FullName)[0].Value]);
+                    DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vars: [vcard.GetString(CardStringsEnum.FullName)[0].Value]);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", vars: [cards.Length]);
 
@@ -334,7 +334,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 cachedSearchExpression = expression;
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetString(StringsEnum.FullName)[0].Value ?? "", expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetString(CardStringsEnum.FullName)[0].Value ?? "", expression)).ToArray();
 
                 // Return a card if the index is valid
                 if (satisfiedCards.Length > 0)
@@ -379,7 +379,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetString(StringsEnum.FullName)[0].Value ?? "", expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetString(CardStringsEnum.FullName)[0].Value ?? "", expression)).ToArray();
 
                 // Compare between the cached expression and the given expression
                 if (expression == cachedSearchExpression)

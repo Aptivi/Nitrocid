@@ -42,10 +42,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 {
                     var finalNameRendered = new StringBuilder();
                     bool hasName = contact.GetPartsArray<NameInfo>().Length != 0;
-                    bool hasFullName = contact.GetString(StringsEnum.FullName).Length != 0;
+                    bool hasFullName = contact.GetString(CardStringsEnum.FullName).Length != 0;
 
                     if (hasName || hasFullName)
-                        finalNameRendered.Append(contact.GetString(StringsEnum.FullName)[0].Value);
+                        finalNameRendered.Append(contact.GetString(CardStringsEnum.FullName)[0].Value);
                     else
                         finalNameRendered.Append(Translate.DoTranslation("No contact name"));
                     TextWriters.Write(finalNameRendered.ToString(), KernelColorType.NeutralText);
