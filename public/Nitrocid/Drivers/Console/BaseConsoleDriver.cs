@@ -294,8 +294,12 @@ namespace Nitrocid.Drivers.Console
         {
             var keyInfo = SystemConsole.ReadKey(intercept);
             _moved = true;
+            var cueType =
+                keyInfo.Key == ConsoleKey.Enter ? AudioCueType.KeyboardCueEnter :
+                keyInfo.Key == ConsoleKey.Backspace ? AudioCueType.KeyboardCueBackspace :
+                AudioCueType.KeyboardCueType;
             if (Config.MainConfig.EnableNavigationSounds && !TermReader.IsReaderBusy)
-                AudioCuesTools.PlayAudioCue(AudioCueType.KeyboardCueType);
+                AudioCuesTools.PlayAudioCue(cueType);
             return keyInfo;
         }
 
