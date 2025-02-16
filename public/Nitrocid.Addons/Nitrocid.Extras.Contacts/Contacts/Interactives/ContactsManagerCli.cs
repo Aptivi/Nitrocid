@@ -436,7 +436,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasURL = card.GetString(CardStringsEnum.Url).Length != 0;
 
             if (hasURL)
-                finalInfoRendered.Append(Translate.DoTranslation("Contact URL") + $": {card.GetString(CardStringsEnum.Url)[0]}");
+                finalInfoRendered.Append(Translate.DoTranslation("Contact URL") + $": {card.GetString(CardStringsEnum.Url)[0].Value}");
             else
                 finalInfoRendered.Append(Translate.DoTranslation("No contact URL"));
 
@@ -568,7 +568,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasNotes = card.GetString(CardStringsEnum.Notes).Length > 0;
 
             if (hasNotes)
-                finalInfoRendered.Append(Translate.DoTranslation("Contact notes") + $": {card.GetString(CardStringsEnum.Notes)[0]}");
+                finalInfoRendered.Append(Translate.DoTranslation("Contact notes") + $": {card.GetString(CardStringsEnum.Notes)[0].Value}");
             else
                 finalInfoRendered.Append(Translate.DoTranslation("No contact notes"));
 
