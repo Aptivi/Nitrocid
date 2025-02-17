@@ -34,9 +34,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            var Headers = new string[] { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" };
             var Rows = new string[,]
             {
+                { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" },
                 { "12.04 (Precise Pangolin)", TimeDateRenderers.Render(new DateTime(2012, 4, 26)), TimeDateRenderers.Render(new DateTime(2017, 4, 28)), TimeDateRenderers.Render(new DateTime(2019, 4, 28)) },
                 { "14.04 (Trusty Tahr)", TimeDateRenderers.Render(new DateTime(2014, 4, 17)), TimeDateRenderers.Render(new DateTime(2019, 4, 25)), TimeDateRenderers.Render(new DateTime(2024, 4, 25)) },
                 { "16.04 (Xenial Xerus)", TimeDateRenderers.Render(new DateTime(2016, 4, 21)), TimeDateRenderers.Render(new DateTime(2021, 4, 30)), TimeDateRenderers.Render(new DateTime(2026, 4, 30)) },
