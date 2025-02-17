@@ -31,6 +31,8 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Kernel.Configuration;
+using VisualCard.Common.Diagnostics;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -90,6 +92,10 @@ namespace Nitrocid.Extras.Contacts
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
+
+            // Enable logging if debugging is enabled
+            LoggingTools.AbstractLogger = DebugWriter.debugLogger;
+            LoggingTools.EnableLogging = KernelEntry.DebugMode;
         }
 
         void IAddon.StopAddon()
@@ -102,6 +108,7 @@ namespace Nitrocid.Extras.Contacts
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction("Contacts");
             ConfigTools.UnregisterBaseSetting(nameof(ContactsConfig));
+            LoggingTools.EnableLogging = false;
         }
     }
 }
