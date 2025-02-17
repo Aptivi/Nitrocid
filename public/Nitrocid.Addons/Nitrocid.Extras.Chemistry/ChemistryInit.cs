@@ -39,7 +39,9 @@ namespace Nitrocid.Extras.Chemistry
                     [
                         new CommandArgumentPart(true, "name/symbol/atomicNumber"),
                     ])
-                ], new ElementCommand())
+                ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("elements", /* Localizable */ "Prints information about all chemical substances to the console.", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>
