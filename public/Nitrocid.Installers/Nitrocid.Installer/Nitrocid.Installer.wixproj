@@ -9,6 +9,14 @@
       <ComponentGroupName>FullComponent</ComponentGroupName>
       <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
       <SuppressRootDirectory>true</SuppressRootDirectory>
+        
+      <!--
+        Do not remove below item, because registry harvesting in WiX toolset means that Heat will have to
+        load every single assembly. However, this usually fails because Nitrocid KS is using the modern
+        .NET to build, so if we've turned on registry suppression, this means that we don't have to deal
+        with thousands of useless warnings that only pollute the build log.
+      -->
+      <SuppressRegistry>true</SuppressRegistry>
     </HarvestDirectory>
     <BindPath Include="../../Nitrocid/KSBuild/net8.0" />
   </ItemGroup>
