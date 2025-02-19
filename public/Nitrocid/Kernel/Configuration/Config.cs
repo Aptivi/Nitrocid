@@ -58,27 +58,27 @@ namespace Nitrocid.Kernel.Configuration
         /// Main configuration entry for the kernel
         /// </summary>
         public static KernelMainConfig MainConfig =>
-            baseConfigurations is not null ? (KernelMainConfig)baseConfigurations[nameof(KernelMainConfig)] : new KernelMainConfig();
+            baseConfigurations is not null ? (KernelMainConfig)baseConfigurations[nameof(KernelMainConfig)] : GetFallbackKernelConfig<KernelMainConfig>();
         /// <summary>
         /// Screensaver configuration entry for the kernel
         /// </summary>
         public static KernelSaverConfig SaverConfig =>
-            baseConfigurations is not null ? (KernelSaverConfig)baseConfigurations[nameof(KernelSaverConfig)] : new KernelSaverConfig();
+            baseConfigurations is not null ? (KernelSaverConfig)baseConfigurations[nameof(KernelSaverConfig)] : GetFallbackKernelConfig<KernelSaverConfig>();
         /// <summary>
         /// Splash configuration entry for the kernel
         /// </summary>
         public static KernelSplashConfig SplashConfig =>
-            baseConfigurations is not null ? (KernelSplashConfig)baseConfigurations[nameof(KernelSplashConfig)] : new KernelSplashConfig();
+            baseConfigurations is not null ? (KernelSplashConfig)baseConfigurations[nameof(KernelSplashConfig)] : GetFallbackKernelConfig<KernelSplashConfig>();
         /// <summary>
         /// Driver configuration entry for the kernel
         /// </summary>
         public static KernelDriverConfig DriverConfig =>
-            baseConfigurations is not null ? (KernelDriverConfig)baseConfigurations[nameof(KernelDriverConfig)] : new KernelDriverConfig();
+            baseConfigurations is not null ? (KernelDriverConfig)baseConfigurations[nameof(KernelDriverConfig)] : GetFallbackKernelConfig<KernelDriverConfig>();
         /// <summary>
         /// Widget configuration entry for the kernel
         /// </summary>
         public static KernelWidgetsConfig WidgetConfig =>
-            baseConfigurations is not null ? (KernelWidgetsConfig)baseConfigurations[nameof(KernelWidgetsConfig)] : new KernelWidgetsConfig();
+            baseConfigurations is not null ? (KernelWidgetsConfig)baseConfigurations[nameof(KernelWidgetsConfig)] : GetFallbackKernelConfig<KernelWidgetsConfig>();
 
         /// <summary>
         /// Gets the kernel configuration
@@ -93,6 +93,32 @@ namespace Nitrocid.Kernel.Configuration
                 return customConfigurations[name];
             return null;
         }
+
+        /// <summary>
+        /// Gets the fallback kernel configuration
+        /// </summary>
+        /// <param name="name">Custom config type name to query</param>
+        /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
+        public static BaseKernelConfig? GetFallbackKernelConfig(string name)
+        {
+            Type? configType = null;
+            if (ConfigTools.IsCustomSettingBuiltin(name))
+                configType = baseConfigurations[name].GetType();
+            else if (ConfigTools.IsCustomSettingRegistered(name))
+                configType = customConfigurations[name].GetType();
+            if (configType is null)
+                return null;
+            else
+                return (BaseKernelConfig?)Activator.CreateInstance(configType);
+        }
+
+        /// <summary>
+        /// Gets the fallback kernel configuration
+        /// </summary>
+        /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
+        public static TConfig GetFallbackKernelConfig<TConfig>()
+            where TConfig : BaseKernelConfig =>
+            Activator.CreateInstance<TConfig>();
 
         /// <summary>
         /// Gets the kernel configuration instances

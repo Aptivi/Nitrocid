@@ -130,5 +130,42 @@ namespace Nitrocid.Tests.Kernel.Configuration
             SettingsVariables.ShouldNotBeEmpty();
             SettingsVariables.Where((result) => !result).ShouldBeEmpty();
         }
+
+        /// <summary>
+        /// Tests getting the fallback kernel settings instance
+        /// </summary>
+        [TestMethod]
+        [DataRow(nameof(KernelDriverConfig))]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelSplashConfig))]
+        [DataRow(nameof(KernelWidgetsConfig))]
+        [Description("Management")]
+        public void TestGetFallbackKernelSettingsWithName(string name)
+        {
+            var SettingsVariables = Config.GetFallbackKernelConfig(name);
+            SettingsVariables.ShouldNotBeNull();
+        }
+
+        /// <summary>
+        /// Tests getting the fallback kernel settings instance
+        /// </summary>
+        [TestMethod]
+        [Description("Management")]
+        public void TestGetFallbackKernelSettingsWithGenericArg()
+        {
+            TestGetFallbackKernelSettingsWithGenericArgHelper<KernelDriverConfig>();
+            TestGetFallbackKernelSettingsWithGenericArgHelper<KernelMainConfig>();
+            TestGetFallbackKernelSettingsWithGenericArgHelper<KernelSaverConfig>();
+            TestGetFallbackKernelSettingsWithGenericArgHelper<KernelSplashConfig>();
+            TestGetFallbackKernelSettingsWithGenericArgHelper<KernelWidgetsConfig>();
+        }
+
+        private void TestGetFallbackKernelSettingsWithGenericArgHelper<TConfig>()
+            where TConfig : BaseKernelConfig
+        {
+            var SettingsVariables = Config.GetFallbackKernelConfig<TConfig>();
+            SettingsVariables.ShouldNotBeNull();
+        }
     }
 }
