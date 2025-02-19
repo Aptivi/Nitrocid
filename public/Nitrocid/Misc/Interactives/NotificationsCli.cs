@@ -54,9 +54,9 @@ namespace Nitrocid.Misc.Interactives
 
             // Render them to the second pane
             return
-                Translate.DoTranslation("Notification title") + $": {name}" + CharManager.NewLine + CharManager.NewLine +
+                Translate.DoTranslation("Notification title") + $": {name}" + CharManager.NewLine +
                 $"{builder}" + CharManager.NewLine +
-                $"    {description}";
+                $"{description}";
             ;
         }
 
