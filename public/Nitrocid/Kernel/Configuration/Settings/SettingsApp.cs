@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     config = settingsType,
                     lastFirstPaneIdx = -1,
                 };
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save as"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Load from"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
@@ -86,6 +86,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Migrate"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Check for system updates"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("System information"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset all"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset entry"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }

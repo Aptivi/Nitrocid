@@ -337,5 +337,73 @@ namespace Nitrocid.Misc.Interactives
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
+
+        internal void ResetAll()
+        {
+            try
+            {
+                // Check the pane first
+                if (CurrentPane != 2)
+                    return;
+                if (config is null)
+                    return;
+
+                // Get the key and try to set
+                var configs = config.SettingsEntries ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
+                foreach (var configEntry in configs)
+                {
+                    foreach (var configKey in configEntry.Keys)
+                    {
+                        var fallbackValue = ConfigTools.GetValueFromEntry(configKey, fallbackConfig);
+                        configKey.KeyInput.SetValue(configKey, fallbackValue, config);
+                        lastFirstPaneIdx = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset all settings entries for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+            finally
+            {
+                SettingsAppTools.SaveSettings();
+            }
+        }
+
+        internal void ResetEntry(int entryIdx, int keyIdx)
+        {
+            try
+            {
+                // Check the pane first
+                if (CurrentPane != 2)
+                    return;
+                if (config is null)
+                    return;
+
+                // Get the key and try to set
+                var configs = config.SettingsEntries ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
+                var key = configs[entryIdx].Keys[keyIdx];
+                var fallbackValue = ConfigTools.GetValueFromEntry(key, fallbackConfig);
+                key.KeyInput.SetValue(key, fallbackValue, config);
+                lastFirstPaneIdx = -1;
+                SettingsAppTools.SaveSettings();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset this settings entry for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
     }
 }
