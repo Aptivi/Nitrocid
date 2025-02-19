@@ -55,19 +55,27 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with boolean
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
+            DebugWriter.WriteDebug(DebugLevel.I, "Key is of the Boolean type.");
             var FinalBool = true;
 
             // Set boolean
             switch (value)
             {
-                case 0: // False
+                case 0:
+                case false:
+                    // False is set
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting to False...");
                     FinalBool = false;
                     break;
-                case 1: // True
+                case 1:
+                case true:
+                    // True is set
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting to True...");
                     FinalBool = true;
+                    break;
+                default:
+                    // Unknown...
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to set unknown value ({0}), setting to true anyways...", value?.ToString() ?? "<null>");
                     break;
             }
 
