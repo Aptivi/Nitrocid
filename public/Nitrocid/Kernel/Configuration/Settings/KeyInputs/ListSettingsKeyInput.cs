@@ -137,10 +137,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string FinalDelimiter = GetFinalDelimiter(key);
 
             // Now, set the value
-            if (value is not IEnumerable<object> valueList)
-                return;
-            string JoinedString = string.Join(FinalDelimiter, valueList);
-            SettingsAppTools.SetPropertyValue(key.Variable, JoinedString, configType);
+            string joinedString = value is string stringValue ? stringValue : "";
+            if (value is IEnumerable<object> valueList)
+                joinedString = string.Join(FinalDelimiter, valueList);
+            SettingsAppTools.SetPropertyValue(key.Variable, joinedString, configType);
         }
 
         private string GetFinalDelimiter(SettingsKey key)

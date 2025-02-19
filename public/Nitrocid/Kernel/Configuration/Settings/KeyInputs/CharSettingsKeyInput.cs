@@ -78,11 +78,19 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", vars: [key.Type.ToString()]);
 
             // Check to see if written answer is empty
-            if (value is not char AnswerString)
-                return;
+            char finalValue = value is char charValue ? charValue : '\0';
+            if (value is not char)
+            {
+                // It could be a string, so check that
+                if (value is not string charString)
+                    return;
+                if (charString.Length < 0)
+                    return;
+                finalValue = charString[0];
+            }
 
             // Set the value
-            SettingsAppTools.SetPropertyValue(key.Variable, AnswerString, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, value is char ? finalValue : finalValue.ToString(), configType);
         }
 
     }

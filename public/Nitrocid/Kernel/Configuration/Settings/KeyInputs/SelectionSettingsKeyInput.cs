@@ -116,7 +116,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // We're dealing with selection
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
             if (value is not int AnswerInt)
+            {
+                SettingsAppTools.SetPropertyValue(key.Variable, value, configType);
                 return;
+            }
 
             // Now, check for input
             int MaxKeyOptions = SelectFrom.Count();
