@@ -33,6 +33,8 @@ namespace Nitrocid.ConsoleBase.Colors
     {
         // Variables for colors used by previous versions of the kernel.
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
+        internal static Dictionary<KernelColorType, Color>? kernelDefaultColors = PopulateColorsCurrent();
+        internal static Dictionary<KernelColorType, Color>? kernelEmptyColors = PopulateColorsEmpty();
 
         // Variables for accent background and foreground colors
         internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
@@ -82,6 +84,12 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             Dictionary<KernelColorType, Color> colors = [];
             ThemeInfo? themeInfo = default;
+
+            // Check for cached default and empty colors
+            if (populationType == KernelColorPopulationType.Empty && kernelEmptyColors?.Count > 0)
+                return new(kernelEmptyColors);
+            if (populationType == KernelColorPopulationType.Default && kernelDefaultColors?.Count > 0)
+                return new(kernelDefaultColors);
 
             // Select population type
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
