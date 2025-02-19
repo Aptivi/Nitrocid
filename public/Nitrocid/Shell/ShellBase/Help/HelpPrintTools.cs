@@ -221,13 +221,13 @@ namespace Nitrocid.Shell.ShellBase.Help
                     }
 
                     // Print usage information
-                    TextWriters.Write(Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
-                    TextWriters.Write($" {FinalCommand} {renderedUsage}", KernelColorType.ListValue);
+                    TextWriterRaw.Write();
+                    TextWriters.Write($"{FinalCommand} {renderedUsage}", KernelColorType.ListEntry);
 
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriters.Write(Translate.DoTranslation("This command has the below arguments that change how it works:"), KernelColorType.NeutralText);
+                        TextWriters.Write("* " + Translate.DoTranslation("This command has the below arguments that change how it works:"), KernelColorType.NeutralText);
                         foreach (var argument in Arguments)
                         {
                             string argumentDescUnlocalized = argument.Options.ArgumentDescription;
@@ -235,7 +235,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                                 argumentDescUnlocalized = /* Localizable */ "Unspecified argument description";
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = Translate.DoTranslation(argumentDescUnlocalized);
-                            TextWriters.Write($"  {argumentName}: ", false, KernelColorType.ListEntry);
+                            TextWriters.Write($"    {argumentName}: ", false, KernelColorType.ListEntry);
                             TextWriters.Write(argumentDesc, KernelColorType.ListValue);
                         }
                     }
@@ -243,12 +243,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriters.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), KernelColorType.NeutralText);
+                        TextWriters.Write("* " + Translate.DoTranslation("This command has the below switches that change how it works:"), KernelColorType.NeutralText);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
                             string switchDesc = Switch.GetTranslatedHelpEntry();
-                            TextWriters.Write($"  -{switchName}: ", false, KernelColorType.ListEntry);
+                            TextWriters.Write($"    -{switchName}: ", false, KernelColorType.ListEntry);
                             TextWriters.Write(switchDesc, KernelColorType.ListValue);
                         }
                     }
