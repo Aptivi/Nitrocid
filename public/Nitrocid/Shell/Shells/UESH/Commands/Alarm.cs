@@ -99,12 +99,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        internal static int CheckArgument(CommandParameters parameters)
+        internal static int CheckArgument(CommandParameters parameters, string commandMode)
         {
-            string CommandMode = parameters.ArgumentsList[0].ToLower();
-
             // These command modes require arguments to be passed, so re-check here and there.
-            switch (CommandMode)
+            switch (commandMode.ToLower())
             {
                 case "start":
                     {

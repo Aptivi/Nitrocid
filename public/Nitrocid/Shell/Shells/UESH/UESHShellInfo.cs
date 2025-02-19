@@ -80,14 +80,26 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "start/stop", new()
+                        new CommandArgumentPart(true, "start", new()
                         {
-                            ExactWording = ["start", "stop"]
+                            ExactWording = ["start"]
+                        }),
+                        new CommandArgumentPart(true, "alarmname"),
+                        new CommandArgumentPart(true, "interval"),
+                    ])
+                    {
+                        ArgChecker = (cp) => AlarmCommand.CheckArgument(cp, "start")
+                    },
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "stop", new()
+                        {
+                            ExactWording = ["stop"]
                         }),
                         new CommandArgumentPart(true, "alarmname"),
                     ])
                     {
-                        ArgChecker = AlarmCommand.CheckArgument
+                        ArgChecker = (cp) => AlarmCommand.CheckArgument(cp, "stop")
                     },
                     new CommandArgumentInfo(
                     [
