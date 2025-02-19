@@ -55,57 +55,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string CommandMode = parameters.ArgumentsList[0].ToLower();
             string name = "";
             string interval = "";
-            TimeSpan span = new();
-
-            // These command modes require arguments to be passed, so re-check here and there.
-            // TODO: Make UESH natively support this command setup.
-            switch (CommandMode)
-            {
-                case "start":
-                    {
-                        if (parameters.ArgumentsList.Length > 2)
-                        {
-                            name = parameters.ArgumentsList[1];
-                            interval = parameters.ArgumentsList[2];
-                            if (AlarmTools.IsAlarmRegistered(name))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm already exists."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                            if (!TimeSpan.TryParse(interval, out span))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm interval is invalid."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                        }
-                        else
-                        {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name and interval is not specified."), true, KernelColorType.Error);
-                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                        }
-
-                        break;
-                    }
-                case "stop":
-                    {
-                        if (parameters.ArgumentsList.Length > 1)
-                        {
-                            name = parameters.ArgumentsList[1];
-                            if (!AlarmTools.IsAlarmRegistered(name))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm doesn't exist."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                        }
-                        else
-                        {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name is not specified."), true, KernelColorType.Error);
-                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                        }
-
-                        break;
-                    }
-            }
 
             // Now, the actual logic
             switch (CommandMode)
@@ -114,6 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         name = parameters.ArgumentsList[1];
                         interval = parameters.ArgumentsList[2];
+                        TimeSpan span = TimeSpan.Parse(interval);
                         AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
                         break;
                     }
@@ -167,7 +117,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 TextWriters.Write(Translate.DoTranslation("Alarm already exists."), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
-                            if (!TimeSpan.TryParse(interval, out span))
+                            if (!TimeSpan.TryParse(interval, out _))
                             {
                                 TextWriters.Write(Translate.DoTranslation("Alarm interval is invalid."), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);

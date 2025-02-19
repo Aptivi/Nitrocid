@@ -80,13 +80,6 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Manage your alarms in an interactive TUI", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ]),
-                    new CommandArgumentInfo(
-                    [
                         new CommandArgumentPart(true, "start/stop", new()
                         {
                             ExactWording = ["start", "stop"]
@@ -94,11 +87,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "alarmname"),
                     ])
                     {
-                        ArgChecker = cp =>
-                        {
-                            string CommandMode = cp.ArgumentsList[0].ToLower();
-
-                        }
+                        ArgChecker = AlarmCommand.CheckArgument
                     },
                     new CommandArgumentInfo(
                     [
@@ -106,6 +95,12 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             ExactWording = ["list"]
                         }),
+                    ],
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Manage your alarms in an interactive TUI", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
                     ]),
                 ], new AlarmCommand(), CommandFlags.Strict),
 

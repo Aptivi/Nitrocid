@@ -263,7 +263,13 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 {
                     SwitchSetPassed = containsSetSwitch
                 };
-                argSatisfied = satisfied.ArgumentInfo?.ArgChecker.Invoke(parameters) ?? true;
+                int argCheckerReturnCode = 0;
+                if (argSatisfied)
+                {
+                    argCheckerReturnCode = satisfied.ArgumentInfo?.ArgChecker.Invoke(parameters) ?? 0;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Argument checker returned {0}", vars: [argCheckerReturnCode]);
+                    argSatisfied = argCheckerReturnCode == 0;
+                }
 
                 // Execute the command
                 if (argSatisfied)
@@ -316,7 +322,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
-                    ShellInstance.LastErrorCode = -6;
+                    ShellInstance.LastErrorCode = argCheckerReturnCode != 0 ? argCheckerReturnCode : -6;
                 }
             }
             catch (ThreadInterruptedException)

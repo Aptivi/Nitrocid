@@ -64,7 +64,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <summary>
         /// Argument checker function (executed before actual command execution after basic argument processing)
         /// </summary>
-        public Func<CommandParameters, int> ArgChecker { get; set; } = (_) => true;
+        public Func<CommandParameters, int> ArgChecker { get; set; } = (_) => 0;
         /// <summary>
         /// Rendered usage
         /// </summary>
