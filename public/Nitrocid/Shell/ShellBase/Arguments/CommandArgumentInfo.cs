@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Shell.ShellBase.Arguments
@@ -48,7 +49,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <summary>
         /// Command switches
         /// </summary>
-        public SwitchInfo[] Switches { get; private set; } = [
+        public SwitchInfo[] Switches { get; private set; } =
+        [
             new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
         ];
         /// <summary>
@@ -59,6 +61,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// Whether to accept infinite number of arguments
         /// </summary>
         public bool InfiniteBounds { get; private set; }
+        /// <summary>
+        /// Argument checker function (executed before actual command execution after basic argument processing)
+        /// </summary>
+        public Func<CommandParameters, int> ArgChecker { get; set; } = (_) => true;
         /// <summary>
         /// Rendered usage
         /// </summary>

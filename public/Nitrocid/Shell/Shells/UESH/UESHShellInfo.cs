@@ -92,7 +92,14 @@ namespace Nitrocid.Shell.Shells.UESH
                             ExactWording = ["start", "stop"]
                         }),
                         new CommandArgumentPart(true, "alarmname"),
-                    ]),
+                    ])
+                    {
+                        ArgChecker = cp =>
+                        {
+                            string CommandMode = cp.ArgumentsList[0].ToLower();
+
+                        }
+                    },
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "list", new()

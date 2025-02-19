@@ -258,15 +258,16 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         break;
                 }
 
+                // Prepare the command parameter instance and run the argument handler if any
+                var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command)
+                {
+                    SwitchSetPassed = containsSetSwitch
+                };
+                argSatisfied = satisfied.ArgumentInfo?.ArgChecker.Invoke(parameters) ?? true;
+
                 // Execute the command
                 if (argSatisfied)
                 {
-                    // Prepare the command parameter instance
-                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command)
-                    {
-                        SwitchSetPassed = containsSetSwitch
-                    };
-
                     // Now, get the base command and execute it
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", vars: [Command, StrArgs]);
                     var CommandBase = RequestedCommandInfo.CommandBase;
