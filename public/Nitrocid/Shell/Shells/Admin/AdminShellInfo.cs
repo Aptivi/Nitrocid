@@ -44,7 +44,8 @@ namespace Nitrocid.Shell.Shells.Admin
                     [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys]
+                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
+                            ArgumentDescription = /* Localizable */ "Argument to show help entry"
                         })
                     ])
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -62,6 +63,7 @@ namespace Nitrocid.Shell.Shells.Admin
                         new CommandArgumentPart(false, "sessionNum", new()
                         {
                             IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Session number starting from zero"
                         }),
                     ])
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -79,9 +81,18 @@ namespace Nitrocid.Shell.Shells.Admin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "admin/anonymous/disabled"),
-                        new CommandArgumentPart(true, "false/true")
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "admin/anonymous/disabled", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Permission type to grant or to deny"
+                        }),
+                        new CommandArgumentPart(true, "false/true", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "False to deny, true to grant"
+                        })
                     ])
                 ], new UserFlagCommand()),
 
@@ -89,8 +100,14 @@ namespace Nitrocid.Shell.Shells.Admin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "name/clear")
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "name/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "New display name, or 'clear' to erase the display name"
+                        })
                     ])
                 ], new UserFullNameCommand()),
 
@@ -98,7 +115,10 @@ namespace Nitrocid.Shell.Shells.Admin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "user")
+                        new CommandArgumentPart(false, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        })
                     ])
                 ], new UserInfoCommand()),
 
@@ -106,8 +126,14 @@ namespace Nitrocid.Shell.Shells.Admin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "lang/clear")
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "lang/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Three-letter language ID, or 'clear' to clear preferred language"
+                        })
                     ])
                 ], new UserLangCommand()),
 
@@ -115,8 +141,14 @@ namespace Nitrocid.Shell.Shells.Admin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "culture/clear")
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "culture/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Culture ID, or 'clear' to clear preferred culture"
+                        })
                     ])
                 ], new UserCultureCommand()),
         ];
