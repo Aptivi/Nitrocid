@@ -35,10 +35,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// </summary>
         [ClassInitialize]
         [Description("Management")]
-#pragma warning disable IDE0060
         public static void InitRegisterConfig(TestContext tc)
-#pragma warning restore IDE0060
         {
+            tc.WriteLine("Entering config registration tests...");
             var customSettings = new KernelCustomSettings();
             ConfigTools.RegisterCustomSetting(customSettings);
         }
