@@ -32,6 +32,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Configuration.Migration;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -342,26 +343,37 @@ namespace Nitrocid.Misc.Interactives
         {
             try
             {
-                // Check the pane first
-                if (CurrentPane != 2)
-                    return;
                 if (config is null)
                     return;
 
-                // Get the key and try to set
+                // Get the config entries
                 var configs = config.SettingsEntries ??
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                 var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
-                foreach (var configEntry in configs)
+
+                // Helper function
+                void ResetKeys(SettingsKey[] keys)
                 {
-                    foreach (var configKey in configEntry.Keys)
+                    if (config is null)
+                        return;
+
+                    foreach (var configKey in keys)
                     {
-                        var fallbackValue = ConfigTools.GetValueFromEntry(configKey, fallbackConfig);
-                        configKey.KeyInput.SetValue(configKey, fallbackValue, config);
-                        lastFirstPaneIdx = -1;
+                        if (configKey.Type == SettingsKeyType.SMultivar)
+                            ResetKeys(configKey.Variables);
+                        else
+                        {
+                            var fallbackValue = ConfigTools.GetValueFromEntry(configKey, fallbackConfig);
+                            configKey.KeyInput.SetValue(configKey, fallbackValue, config);
+                            lastFirstPaneIdx = -1;
+                        }
                     }
                 }
+
+                // Now, reset
+                foreach (var configEntry in configs)
+                    ResetKeys(configEntry.Keys);
             }
             catch (Exception ex)
             {
@@ -386,15 +398,52 @@ namespace Nitrocid.Misc.Interactives
                 if (config is null)
                     return;
 
-                // Get the key and try to set
+                // Get the config entries
                 var configs = config.SettingsEntries ??
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                 var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
                 var key = configs[entryIdx].Keys[keyIdx];
-                var fallbackValue = ConfigTools.GetValueFromEntry(key, fallbackConfig);
-                key.KeyInput.SetValue(key, fallbackValue, config);
-                lastFirstPaneIdx = -1;
+                
+                // Helper function
+                void ResetKey(SettingsKey key)
+                {
+                    if (config is null)
+                        return;
+
+                    if (key.Type == SettingsKeyType.SMultivar)
+                    {
+                        // Get the settings keys from this key and prompt for it
+                        var keys = key.Variables;
+                        bool bailLoop = false;
+                        while (!bailLoop)
+                        {
+                            // Prompt for it
+                            var keysChoices = keys.Select((sk, idx) => new InputChoiceInfo($"{idx + 1}", $"{sk.Name} [{(sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, config))}]: {sk.Description}")).ToList();
+                            keysChoices.Add(new($"{keysChoices.Count + 1}", Translate.DoTranslation("Exit")));
+                            int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], Translate.DoTranslation("Choose an entry for") + $" \"{key.Name}\"");
+
+                            // Check to see if exit is requested
+                            if (choiceIdx < 0 || choiceIdx == keysChoices.Count - 1)
+                            {
+                                bailLoop = true;
+                                continue;
+                            }
+
+                            // Now, get the settings key from the master key and set the value as-is
+                            var selectedKey = keys[choiceIdx];
+                            var fallbackValue = ConfigTools.GetValueFromEntry(selectedKey, fallbackConfig);
+                            selectedKey.KeyInput.SetValue(selectedKey, fallbackValue, config);
+                        }
+                    }
+                    else
+                    {
+                        var fallbackValue = ConfigTools.GetValueFromEntry(key, fallbackConfig);
+                        key.KeyInput.SetValue(key, fallbackValue, config);
+                        lastFirstPaneIdx = -1;
+                    }
+                }
+                ResetKey(key);
                 SettingsAppTools.SaveSettings();
             }
             catch (Exception ex)
