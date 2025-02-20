@@ -20,7 +20,6 @@
 using ChemiStar;
 using ChemiStar.Data;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.ConsoleWriters;

@@ -400,8 +400,8 @@ namespace Nitrocid.Languages
                 if (languageValue.Country.Contains(SearchTerm))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} for country {1} to list... Search term: {2}", vars: [languageName, languageValue.Country, SearchTerm]);
-                    if (listedCountries.ContainsKey(languageValue.Country))
-                        listedCountries[languageValue.Country].Add(Languages[languageName]);
+                    if (listedCountries.TryGetValue(languageValue.Country, out List<LanguageInfo>? languageInfoList))
+                        languageInfoList.Add(Languages[languageName]);
                     else
                         listedCountries.Add(languageValue.Country, [Languages[languageName]]);
                 }
