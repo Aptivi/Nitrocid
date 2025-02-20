@@ -35,6 +35,7 @@ using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
 using VisualCard.Parts.Enums;
 using Nitrocid.Files;
+using System.Linq;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -598,6 +599,36 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Now, return the value
             return finalInfoRendered.ToString();
+        }
+
+        internal void EditName(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Ask for the new name
+            string newName = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter new name for this contact") + $": {GetContactNameFinal(card)}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)).Trim();
+            if (string.IsNullOrWhiteSpace(newName))
+                newName = "Unnamed contact";
+
+            // Save the new name to the contact
+            var splitName = newName.Split(' ');
+            bool hasLastName = splitName.Length > 1;
+            bool hasExtras = splitName.Length > 2;
+            var partsName = card.GetPartsArray<NameInfo>();
+            var stringsName = card.GetString(CardStringsEnum.FullName);
+            if (partsName.Length > 0)
+            {
+                partsName[0].ContactFirstName = splitName[0];
+                partsName[0].ContactLastName = hasLastName ? splitName[1] : "";
+                partsName[0].AltNames = hasExtras ? [.. splitName.Skip(2)] : [];
+            }
+            else
+                card.AddPartToArray<NameInfo>($"{(hasLastName ? splitName[1] : "")};{(splitName[0])};{(hasExtras ? splitName[2] : "")};;");
+            if (stringsName.Length > 0)
+                stringsName[0].Value = newName;
+            else
+                card.AddString(CardStringsEnum.FullName, newName);
         }
     }
 }

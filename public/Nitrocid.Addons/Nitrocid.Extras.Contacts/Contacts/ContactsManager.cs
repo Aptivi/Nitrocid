@@ -419,6 +419,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Back"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Raw Info"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From MeCard"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Edit..."), ConsoleKey.F11, (card, _, _, _) => tui.EditName(card), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
