@@ -39,7 +39,10 @@ namespace Nitrocid.Extras.Stocks
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "company", argumentDesc: /* Localizable */ "Short company symbol"),
+                        new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Short company symbol"
+                        }),
                     ])
                 ], new StockCommand()),
         ];

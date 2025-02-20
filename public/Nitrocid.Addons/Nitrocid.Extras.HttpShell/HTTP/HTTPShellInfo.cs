@@ -41,8 +41,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "key"),
-                        new CommandArgumentPart(true, "value")
+                        new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Header key"
+                        }),
+                        new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Header value"
+                        })
                     ])
                 ], new AddHeaderCommand()),
 
@@ -52,7 +58,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        })
                     ])
                 ], new DeleteCommand()),
 
@@ -62,8 +71,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "key"),
-                        new CommandArgumentPart(true, "value")
+                        new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Header key"
+                        }),
+                        new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Header value"
+                        })
                     ])
                 ], new EditHeaderCommand()),
 
@@ -71,7 +86,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        })
                     ])
                 ], new GetCommand(), CommandFlags.Wrappable),
 
@@ -79,7 +97,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        })
                     ])
                 ], new GetStringCommand(), CommandFlags.Wrappable),
 
@@ -89,8 +110,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request"),
-                        new CommandArgumentPart(true, "pathtofile")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        }),
+                        new CommandArgumentPart(true, "pathtofile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "File to upload"
+                        })
                     ])
                 ], new PutCommand(), CommandFlags.Wrappable),
 
@@ -98,8 +125,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request"),
-                        new CommandArgumentPart(true, "string")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        }),
+                        new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "String to upload"
+                        })
                     ])
                 ], new PutStringCommand(), CommandFlags.Wrappable),
 
@@ -107,8 +140,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request"),
-                        new CommandArgumentPart(true, "pathtofile")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        }),
+                        new CommandArgumentPart(true, "pathtofile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "File to upload"
+                        })
                     ])
                 ], new PostCommand(), CommandFlags.Wrappable),
 
@@ -116,8 +155,14 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "request"),
-                        new CommandArgumentPart(true, "string")
+                        new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "HTTP request"
+                        }),
+                        new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "String to upload"
+                        })
                     ])
                 ], new PostStringCommand(), CommandFlags.Wrappable),
 
@@ -125,7 +170,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "key")
+                        new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Header key"
+                        })
                     ])
                 ], new RmHeaderCommand()),
 
@@ -133,7 +181,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "userAgent")
+                        new CommandArgumentPart(true, "userAgent", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "User agent string"
+                        })
                     ])
                 ], new SetAgentCommand()),
         ];

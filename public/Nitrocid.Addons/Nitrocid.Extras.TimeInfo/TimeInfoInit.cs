@@ -36,7 +36,10 @@ namespace Nitrocid.Extras.TimeInfo
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "date")
+                        new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Date and time to print info from"
+                        })
                     ],
                     [
                         new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()

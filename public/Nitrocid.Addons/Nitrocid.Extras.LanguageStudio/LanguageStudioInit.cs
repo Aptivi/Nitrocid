@@ -36,7 +36,10 @@ namespace Nitrocid.Extras.LanguageStudio
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "pathToTranslations"),
+                        new CommandArgumentPart(true, "pathToTranslations", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to translations directory"
+                        }),
                     ],
                     [
                         new SwitchInfo("tui", /* Localizable */ "Makes a new language in an interactive TUI")

@@ -45,9 +45,18 @@ namespace Nitrocid.Extras.Forecast
                     ]),
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "latitude"),
-                        new CommandArgumentPart(true, "longitude"),
-                        new CommandArgumentPart(false, "apikey"),
+                        new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Latitude to use"
+                        }),
+                        new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Longitude to use"
+                        }),
+                        new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Weather.com API key"
+                        }),
                     ],
                     [
                         new SwitchInfo("list", /* Localizable */ "Shows all the available cities and their latitude/longitude pairs", new SwitchOptions()
@@ -62,8 +71,14 @@ namespace Nitrocid.Extras.Forecast
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "CityID/CityName"),
-                        new CommandArgumentPart(false, "apikey"),
+                        new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "City ID or city name known to OpenWeatherMap"
+                        }),
+                        new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "OpenWeatherMap API key"
+                        }),
                     ],
                     [
                         new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()

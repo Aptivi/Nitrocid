@@ -41,7 +41,8 @@ namespace Nitrocid.Extras.UnitConv
                     [
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
+                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
+                            ArgumentDescription = /* Localizable */ "Unit type"
                         }),
                     ])
                 ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
@@ -52,14 +53,22 @@ namespace Nitrocid.Extras.UnitConv
                     [
                         new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
+                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
+                            ArgumentDescription = /* Localizable */ "Unit type"
                         }),
                         new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Quantity in the source unit to convert"
                         }),
-                        new CommandArgumentPart(true, "sourceunit"),
-                        new CommandArgumentPart(true, "targetunit"),
+                        new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Source unit"
+                        }),
+                        new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Target unit"
+                        }),
                     ],
                     [
                         new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()

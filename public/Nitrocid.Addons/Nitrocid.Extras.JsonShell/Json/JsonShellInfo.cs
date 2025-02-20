@@ -42,7 +42,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonValue")
+                        new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "JSON value to add"
+                        })
                     ],
                     [
                         new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
@@ -69,7 +72,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "propertyName")
+                        new CommandArgumentPart(true, "propertyName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "JSON property name"
+                        })
                     ],
                     [
                         new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
@@ -98,7 +104,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "propertyName")
+                        new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "JSON property name"
+                        })
                     ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
@@ -106,7 +115,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "objectPath")
+                        new CommandArgumentPart(true, "objectPath", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Object path"
+                        })
                     ])
                 ], new RmCommand()),
 
@@ -131,7 +143,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonValue")
+                        new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "JSON value"
+                        })
                     ],
                     [
                         new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()

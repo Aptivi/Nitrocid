@@ -66,7 +66,10 @@ namespace Nitrocid.Extras.BassBoom
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "lyric.lrc"),
+                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                        }),
                     ])
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -74,7 +77,10 @@ namespace Nitrocid.Extras.BassBoom
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "lyric.lrc"),
+                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                        }),
                     ])
                 ], new PlayLyricCommand()),
 
@@ -82,7 +88,10 @@ namespace Nitrocid.Extras.BassBoom
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "musicFile"),
+                        new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to an MP3 file"
+                        }),
                     ])
                 ], new PlaySoundCommand()),
 
@@ -90,8 +99,14 @@ namespace Nitrocid.Extras.BassBoom
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "hostname"),
-                        new CommandArgumentPart(true, "port"),
+                        new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Host name that hosts the MPEG radio station"
+                        }),
+                        new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Port to the MPEG radio station"
+                        }),
                     ])
                 ], new NetFmInfoCommand()),
         ];

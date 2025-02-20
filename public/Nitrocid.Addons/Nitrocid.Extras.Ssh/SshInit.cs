@@ -37,8 +37,14 @@ namespace Nitrocid.Extras.Ssh
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "address:port"),
-                        new CommandArgumentPart(true, "username"),
+                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "SSH server to connect to"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Username to authenticate with"
+                        }),
                     ])
                 ], new SshellCommand()),
 
@@ -46,9 +52,18 @@ namespace Nitrocid.Extras.Ssh
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "address:port"),
-                        new CommandArgumentPart(true, "username"),
-                        new CommandArgumentPart(true, "command"),
+                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "SSH server to connect to"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Username to authenticate with"
+                        }),
+                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Command to remotely execute"
+                        }),
                     ])
                 ], new SshcmdCommand()),
         ];

@@ -39,15 +39,20 @@ namespace Nitrocid.Extras.Mods
                     [
                         new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
                         {
-                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"]
+                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
+                            ArgumentDescription = /* Localizable */ "Whether to start, stop, get info out of, reload, install, or uninstall a mod"
                         }),
-                        new CommandArgumentPart(true, "modfilename"),
+                        new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mod name or file name"
+                        }),
                     ]),
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
                         {
-                            ExactWording = ["list", "reloadall", "stopall", "startall", "tui"]
+                            ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
+                            ArgumentDescription = /* Localizable */ "Whether to list, reload, stop, start, or interactively manage all mods"
                         }),
                     ]),
                 ], new ModManCommand(), CommandFlags.Strict),
@@ -56,7 +61,10 @@ namespace Nitrocid.Extras.Mods
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "modname"),
+                        new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mod name"
+                        }),
                     ])
                 ], new ModManualCommand()),
         ];

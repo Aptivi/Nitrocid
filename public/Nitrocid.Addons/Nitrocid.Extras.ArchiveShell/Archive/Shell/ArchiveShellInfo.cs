@@ -44,7 +44,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Local directory"
+                        })
                     ])
                 ], new ChDirCommand()),
 
@@ -52,7 +55,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "archivedirectory")
+                        new CommandArgumentPart(true, "archivedirectory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Directory inside the archive"
+                        })
                     ])
                 ], new ChADirCommand()),
 
@@ -60,8 +66,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "entry"),
-                        new CommandArgumentPart(false, "where")
+                        new CommandArgumentPart(true, "entry", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "File in the archive"
+                        }),
+                        new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Local directory to extract to"
+                        })
                     ],
                     [
                         new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
@@ -72,7 +84,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "directory")
+                        new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Directory inside the archive"
+                        })
                     ])
                 ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
@@ -80,8 +95,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "localfile"),
-                        new CommandArgumentPart(false, "where")
+                        new CommandArgumentPart(true, "localfile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Local file"
+                        }),
+                        new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Archive directory to add to"
+                        })
                     ])
                 ], new PackCommand()),
         ];

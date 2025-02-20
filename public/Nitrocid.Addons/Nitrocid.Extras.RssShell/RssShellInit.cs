@@ -38,7 +38,10 @@ namespace Nitrocid.Extras.RssShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "feedlink"),
+                        new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "RSS feed link"
+                        }),
                     ],
                     [
                         new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),

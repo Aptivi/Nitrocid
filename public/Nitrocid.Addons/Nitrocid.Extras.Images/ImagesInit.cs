@@ -35,7 +35,10 @@ namespace Nitrocid.Extras.Images
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "imageFile"),
+                        new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to image file"
+                        }),
                     ])
                 ], new PreviewCommand()),
         ];

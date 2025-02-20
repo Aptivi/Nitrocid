@@ -40,9 +40,18 @@ namespace Nitrocid.Extras.NameGen
                     [
                         new CommandArgumentInfo(
                         [
-                            new CommandArgumentPart(false, "term"),
-                            new CommandArgumentPart(false, "nameprefix"),
-                            new CommandArgumentPart(false, "namesuffix"),
+                            new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Search term"
+                            }),
+                            new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Name prefix to search"
+                            }),
+                            new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Name suffix to search"
+                            }),
                         ],
                         [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
@@ -71,9 +80,18 @@ namespace Nitrocid.Extras.NameGen
                     [
                         new CommandArgumentInfo(
                         [
-                            new CommandArgumentPart(false, "term"),
-                            new CommandArgumentPart(false, "surnameprefix"),
-                            new CommandArgumentPart(false, "surnamesuffix"),
+                            new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Search term"
+                            }),
+                            new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Surname prefix to search"
+                            }),
+                            new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Surname suffix to search"
+                            }),
                         ], true)
                     ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -83,12 +101,25 @@ namespace Nitrocid.Extras.NameGen
                         [
                             new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
                             {
-                                IsNumeric = true
+                                IsNumeric = true,
+                                ArgumentDescription = /* Localizable */ "How many names to generate?"
                             }),
-                            new CommandArgumentPart(false, "nameprefix"),
-                            new CommandArgumentPart(false, "namesuffix"),
-                            new CommandArgumentPart(false, "surnameprefix"),
-                            new CommandArgumentPart(false, "surnamesuffix"),
+                            new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Name prefix to search"
+                            }),
+                            new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Name suffix to search"
+                            }),
+                            new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Surname prefix to search"
+                            }),
+                            new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Surname suffix to search"
+                            }),
                         ],
                         [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()

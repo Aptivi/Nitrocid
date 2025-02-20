@@ -35,7 +35,10 @@ namespace Nitrocid.Extras.BeepSynth
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "synthFile"),
+                        new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to the synth file"
+                        }),
                     ])
                 ], new BeepSynthCommand())
         ];

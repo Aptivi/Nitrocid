@@ -38,7 +38,8 @@ namespace Nitrocid.Extras.Docking
                     [
                         new CommandArgumentPart(true, "dockName", new()
                         {
-                            AutoCompleter = (_) => DockTools.GetDockScreenNames()
+                            AutoCompleter = (_) => DockTools.GetDockScreenNames(),
+                            ArgumentDescription = /* Localizable */ "Dock name"
                         }),
                     ])
                 ], new DockCommand())

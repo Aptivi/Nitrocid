@@ -38,8 +38,14 @@ namespace Nitrocid.Extras.JsonShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file1"),
-                        new CommandArgumentPart(true, "file2"),
+                        new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "First JSON file"
+                        }),
+                        new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Second JSON file"
+                        }),
                     ])
                 ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -47,8 +53,14 @@ namespace Nitrocid.Extras.JsonShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
+                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                        }),
+                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                        }),
                     ], true)
                 ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -56,8 +68,14 @@ namespace Nitrocid.Extras.JsonShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
+                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                        }),
+                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                        }),
                     ], true)
                 ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         ];

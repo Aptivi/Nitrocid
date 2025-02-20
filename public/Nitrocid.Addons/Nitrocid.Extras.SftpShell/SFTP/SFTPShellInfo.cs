@@ -42,7 +42,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        })
                     ])
                 ], new CatCommand(), CommandFlags.Wrappable),
 
@@ -50,7 +53,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ])
                 ], new CdlCommand()),
 
@@ -58,7 +64,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ])
                 ], new CdrCommand()),
 
@@ -66,7 +75,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file to delete"
+                        })
                     ])
                 ], new DelCommand()),
 
@@ -76,7 +88,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        })
                     ])
                 ], new GetCommand()),
 
@@ -86,7 +101,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
@@ -104,7 +122,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
@@ -118,7 +139,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        }),
                     ], true)
                 ], new MkldirCommand()),
 
@@ -126,7 +150,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
                     ], true)
                 ], new MkrdirCommand()),
 
@@ -134,7 +161,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local file"
+                        })
                     ])
                 ], new PutCommand()),
 

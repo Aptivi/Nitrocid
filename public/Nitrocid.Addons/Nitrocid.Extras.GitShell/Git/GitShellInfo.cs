@@ -42,14 +42,19 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to file"
+                        }),
                         new CommandArgumentPart(false, "startLineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number starting range"
                         }),
                         new CommandArgumentPart(false, "endLineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         }),
                     ])
                 ], new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
@@ -58,7 +63,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "branch")
+                        new CommandArgumentPart(true, "branch", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Branch name"
+                        })
                     ])
                 ], new CheckoutCommand()),
 
@@ -66,7 +74,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "summary")
+                        new CommandArgumentPart(true, "summary", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Commit summary"
+                        })
                     ])
                 ], new CommitCommand()),
 
@@ -74,7 +85,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "commitsha")
+                        new CommandArgumentPart(true, "commitsha", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Commit SHA hash"
+                        })
                     ])
                 ], new DescribeCommand()),
 
@@ -101,7 +115,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "remote")
+                        new CommandArgumentPart(false, "remote", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Remote name"
+                        })
                     ])
                 ], new FetchCommand()),
 
@@ -109,7 +126,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to file"
+                        })
                     ])
                 ], new FileStatusCommand()),
 
@@ -127,8 +147,14 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "tagname"),
-                        new CommandArgumentPart(false, "message"),
+                        new CommandArgumentPart(true, "tagname", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Tag name"
+                        }),
+                        new CommandArgumentPart(false, "message", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Message to annotate the tag with"
+                        }),
                     ])
                 ], new MakeTagCommand()),
 
@@ -162,8 +188,14 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "email"),
-                        new CommandArgumentPart(true, "username"),
+                        new CommandArgumentPart(true, "email", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Your e-mail"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Your username"
+                        }),
                     ])
                 ], new SetIdCommand()),
 
@@ -171,7 +203,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "unstagedFile")
+                        new CommandArgumentPart(true, "unstagedFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to unstaged file"
+                        })
                     ])
                 ], new StageCommand()),
 
@@ -183,7 +218,10 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "stagedFile")
+                        new CommandArgumentPart(true, "stagedFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to staged file"
+                        })
                     ])
                 ], new UnstageCommand()),
 

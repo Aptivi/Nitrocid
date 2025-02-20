@@ -37,7 +37,10 @@ namespace Nitrocid.Extras.FtpShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "server"),
+                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "FTP server to connect to"
+                        }),
                     ])
                 ], new FtpCommandExec())
         ];

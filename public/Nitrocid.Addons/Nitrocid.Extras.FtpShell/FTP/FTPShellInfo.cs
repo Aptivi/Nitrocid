@@ -42,7 +42,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        })
                     ])
                 ], new CatCommand(), CommandFlags.Wrappable),
 
@@ -50,7 +53,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ])
                 ], new CdlCommand()),
 
@@ -58,7 +64,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ])
                 ], new CdrCommand()),
 
@@ -66,8 +75,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "sourcefileordir"),
-                        new CommandArgumentPart(true, "where")
+                        new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Source file or directory"
+                        }),
+                        new CommandArgumentPart(true, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Target file or directory"
+                        })
                     ])
                 ], new CpCommand()),
 
@@ -75,7 +90,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file to delete"
+                        })
                     ])
                 ], new DelCommand()),
 
@@ -85,8 +103,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "command"),
-                        new CommandArgumentPart(false, "where")
+                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Server command to execute"
+                        }),
+                        new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ])
                 ], new ExecuteCommand()),
 
@@ -94,8 +118,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(false, "where")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        }),
+                        new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ])
                 ], new GetCommand()),
 
@@ -103,8 +133,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "folder"),
-                        new CommandArgumentPart(false, "where")
+                        new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
+                        new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ])
                 ], new GetFolderCommand()),
 
@@ -116,7 +152,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
@@ -134,7 +173,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
@@ -148,7 +190,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        }),
                     ], true)
                 ], new MkldirCommand()),
 
@@ -156,7 +201,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
                     ], true)
                 ], new MkrdirCommand()),
 
@@ -164,8 +212,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "sourcefileordir"),
-                        new CommandArgumentPart(true, "targetfileordir")
+                        new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to source file or directory"
+                        }),
+                        new CommandArgumentPart(true, "targetfileordir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to target file or directory"
+                        })
                     ])
                 ], new MvCommand()),
 
@@ -173,8 +227,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(false, "output")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local file"
+                        }),
+                        new CommandArgumentPart(false, "output", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ])
                 ], new PutCommand()),
 
@@ -182,8 +242,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "folder"),
-                        new CommandArgumentPart(false, "outputfolder")
+                        new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        }),
+                        new CommandArgumentPart(false, "outputfolder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ])
                 ], new PutFolderCommand()),
 
@@ -195,10 +261,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
                         new CommandArgumentPart(true, "permnumber", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Permission numbers according to chmod"
                         })
                     ])
                 ], new PermCommand()),
@@ -207,8 +277,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(true, "algorithm")
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        }),
+                        new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                        })
                     ])
                 ], new SumFileCommand()),
 
@@ -216,8 +292,14 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(true, "algorithm")
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
+                        new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                        })
                     ])
                 ], new SumFilesCommand()),
 
@@ -225,7 +307,10 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "a/b")
+                        new CommandArgumentPart(true, "a/b", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Specifies whether the transfer type is ASCII or Binary"
+                        })
                     ])
                 ], new TypeCommand()),
         ];

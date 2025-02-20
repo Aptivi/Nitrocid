@@ -41,7 +41,10 @@ namespace Nitrocid.Extras.GitShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "repoPath")
+                        new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to a directory with Git repository"
+                        })
                     ]),
                 ], new GitCommandExec())
         ];

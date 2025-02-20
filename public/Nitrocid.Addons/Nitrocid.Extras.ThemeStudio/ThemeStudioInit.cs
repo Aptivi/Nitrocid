@@ -36,7 +36,10 @@ namespace Nitrocid.Extras.ThemeStudio
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "themeName"),
+                        new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Theme name to create"
+                        }),
                     ],
                     [
                         new SwitchInfo("tui", /* Localizable */ "Makes a new theme in an interactive TUI")

@@ -37,7 +37,10 @@ namespace Nitrocid.Extras.Chemistry
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "name/symbol/atomicNumber"),
+                        new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Either a name, a symbol, or an atomic number of a substance"
+                        }),
                     ])
                 ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 

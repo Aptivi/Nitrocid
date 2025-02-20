@@ -38,7 +38,10 @@ namespace Nitrocid.Extras.SftpShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "server"),
+                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "SFTP server to connect to"
+                        }),
                     ])
                 ], new SftpCommandExec()),
         ];

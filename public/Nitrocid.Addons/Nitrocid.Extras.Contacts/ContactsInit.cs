@@ -51,7 +51,10 @@ namespace Nitrocid.Extras.Contacts
                 [
                     new CommandArgumentInfo(
                         [
-                            new CommandArgumentPart(true, "mecard/path")
+                            new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
+                            {
+                                ArgumentDescription = /* Localizable */ "Either a path to a vCard contact file or a MeCard represnetation"
+                            })
                         ],
                         [
                             new SwitchInfo("mecard", /* Localizable */ "Treats the required input as MeCard string", new(){
@@ -64,8 +67,10 @@ namespace Nitrocid.Extras.Contacts
                 [
                     new CommandArgumentInfo(
                         [
-                            new CommandArgumentPart(true, "contactNum", new(){
-                                IsNumeric = true
+                            new CommandArgumentPart(true, "contactNum", new()
+                            {
+                                IsNumeric = true,
+                                ArgumentDescription = /* Localizable */ "Contact number"
                             })
                         ]
                     )

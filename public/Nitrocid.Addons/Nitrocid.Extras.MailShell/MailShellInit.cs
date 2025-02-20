@@ -37,14 +37,20 @@ namespace Nitrocid.Extras.MailShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "emailAddress"),
+                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "E-mail address to login to"
+                        }),
                     ])
                 ], new MailCommandExec()),
             new CommandInfo("popmail", /* Localizable */ "Opens the POP3 mail client",
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "emailAddress"),
+                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "E-mail address to login to"
+                        }),
                     ])
                 ], new PopMailCommandExec()),
         ];

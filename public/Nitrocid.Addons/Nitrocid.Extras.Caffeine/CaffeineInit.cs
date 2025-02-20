@@ -36,7 +36,10 @@ namespace Nitrocid.Extras.Caffeine
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "secondsOrName"),
+                        new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Either specify a number of seconds or a drink name"
+                        }),
                     ],
                     [
                         new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()

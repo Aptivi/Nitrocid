@@ -36,8 +36,14 @@ namespace Nitrocid.Extras.Pastebin
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "file/string"),
-                        new CommandArgumentPart(false, "arguments"),
+                        new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to a file or a string to write"
+                        }),
+                        new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Pastebin arguments"
+                        }),
                     ],
                     [
                         new SwitchInfo("provider", /* Localizable */ "Specifies the URL to the Pastebin provider", new()

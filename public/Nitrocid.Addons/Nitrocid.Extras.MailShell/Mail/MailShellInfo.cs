@@ -41,7 +41,10 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "folder")
+                        new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     ])
                 ], new CdCommand()),
 
@@ -55,7 +58,8 @@ namespace Nitrocid.Extras.MailShell.Mail
                     [
                         new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Page number"
                         })
                     ])
                 ], new ListCommand()),
@@ -64,7 +68,10 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "foldername")
+                        new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     ])
                 ], new MkdirCommand()),
 
@@ -74,9 +81,13 @@ namespace Nitrocid.Extras.MailShell.Mail
                     [
                         new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         }),
-                        new CommandArgumentPart(true, "targetFolder")
+                        new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     ])
                 ], new MvCommand()),
 
@@ -84,8 +95,14 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "senderName"),
-                        new CommandArgumentPart(true, "targetFolder")
+                        new CommandArgumentPart(true, "senderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Sender name"
+                        }),
+                        new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     ])
                 ], new MvAllCommand()),
 
@@ -95,7 +112,8 @@ namespace Nitrocid.Extras.MailShell.Mail
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     ])
                 ], new ReadCommand()),
@@ -106,7 +124,8 @@ namespace Nitrocid.Extras.MailShell.Mail
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     ])
                 ], new ReadEncCommand()),
@@ -115,8 +134,14 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "oldFolderName"),
-                        new CommandArgumentPart(true, "newFolderName")
+                        new CommandArgumentPart(true, "oldFolderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Old mail directory name"
+                        }),
+                        new CommandArgumentPart(true, "newFolderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "New mail directory name"
+                        })
                     ])
                 ], new RenCommand()),
 
@@ -126,7 +151,8 @@ namespace Nitrocid.Extras.MailShell.Mail
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     ])
                 ], new RmCommand()),
@@ -135,7 +161,10 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "sendername")
+                        new CommandArgumentPart(true, "sendername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Sender name"
+                        })
                     ])
                 ], new RmAllCommand()),
 
@@ -143,7 +172,10 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "foldername")
+                        new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     ])
                 ], new RmdirCommand()),
 
