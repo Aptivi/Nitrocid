@@ -200,7 +200,7 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(BaseKernelConfig? entries)
         {
             if (entries is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is are specified."));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
             return CheckConfigVariables(entries.SettingsEntries ?? [], entries);
         }
 
@@ -235,7 +235,7 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(SettingsKey[]? keys, BaseKernelConfig? config)
         {
             if (config is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is are specified."));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
             if (keys is null || keys.Length == 0)
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no keys are specified."));
             var Results = new List<bool>();
