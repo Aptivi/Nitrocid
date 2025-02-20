@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Nitrocid.Analyzers.Common;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -237,7 +238,7 @@ namespace Nitrocid.LocaleChecker.Localization
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
                     if (!string.IsNullOrWhiteSpace(description) && localizable && !localizationList.Contains(description))
                     {
-                        var location = GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName);
+                        var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName, false);
                         var diagnostic = Diagnostic.Create(RuleJson, location, description);
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -256,19 +257,19 @@ namespace Nitrocid.LocaleChecker.Localization
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(description) && !localizationList.Contains(description))
                         {
-                            var location = GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, description);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrWhiteSpace(displayAs) && !localizationList.Contains(displayAs))
                         {
-                            var location = GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, displayAs);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
                         {
-                            var location = GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay);
                             context.ReportDiagnostic(diagnostic);
                         }
@@ -285,13 +286,13 @@ namespace Nitrocid.LocaleChecker.Localization
                             string keyDesc = keyDescOrig.Replace("\\\"", "\"");
                             if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
                             {
-                                var location = GenerateLocation(key["Name"], keyNameOrig, resourceName);
+                                var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
                                 context.ReportDiagnostic(diagnostic);
                             }
                             if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
                             {
-                                var location = GenerateLocation(key["Description"], keyDescOrig, resourceName);
+                                var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
                                 context.ReportDiagnostic(diagnostic);
                             }
@@ -301,7 +302,7 @@ namespace Nitrocid.LocaleChecker.Localization
             }
         }
 
-        private Location? GenerateLocation(JToken? token, string str, string path)
+        private Location? AnalyzerTools.GenerateLocation(JToken? token, string str, string path)
         {
             if (token is null)
                 return null;

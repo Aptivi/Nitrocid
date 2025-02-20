@@ -18,6 +18,8 @@
 //
 
 using Microsoft.CodeAnalysis;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -27,22 +29,41 @@ namespace Nitrocid.Analyzers.Common
 {
     internal static class AnalyzerTools
     {
-        internal static void PrintFromLocation(Location location, Document document, Type targetType, string message)
+        internal static void PrintFromLocation(Location? location, Document document, Type targetType, string message) =>
+            PrintFromLocation(location, document.FilePath ?? "", targetType.Name, message);
+
+        internal static void PrintFromLocation(Location? location, string filePath, string targetType, string message)
         {
-            var lineSpan = location.GetLineSpan();
-            TextWriterColor.WriteColor($"{targetType.Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): {message}", true, ConsoleColors.Yellow);
-            if (!string.IsNullOrEmpty(document.FilePath))
+            if (location is null)
+                TextWriterColor.WriteColor($"{targetType}: {(!string.IsNullOrEmpty(filePath) ? filePath : "<<unknown path>>")}: {message}", true, ConsoleColors.Yellow);
+            else
             {
-                var lineHandle = new LineHandle(document.FilePath)
+                var lineSpan = location.GetLineSpan();
+                TextWriterColor.WriteColor($"{targetType}: {(!string.IsNullOrEmpty(filePath) ? filePath : "<<unknown path>>")} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): {message}", true, ConsoleColors.Yellow);
+                if (!string.IsNullOrEmpty(filePath))
                 {
-                    Ranged = true,
-                    Position = lineSpan.StartLinePosition.Line + 1,
-                    SourcePosition = lineSpan.StartLinePosition.Character + 1,
-                    TargetPosition = lineSpan.EndLinePosition.Character,
-                    Color = ConsoleColors.Olive,
-                };
-                TextWriterRaw.WriteRaw(lineHandle.Render());
+                    var lineHandle = new LineHandle(filePath)
+                    {
+                        Ranged = true,
+                        Position = lineSpan.StartLinePosition.Line + 1,
+                        SourcePosition = lineSpan.StartLinePosition.Character + 1,
+                        TargetPosition = lineSpan.EndLinePosition.Character,
+                        Color = ConsoleColors.Olive,
+                    };
+                    TextWriterRaw.WriteRaw(lineHandle.Render());
+                }
             }
+        }
+
+        internal static Location? GenerateLocation(JToken? token, string str, string path, bool enclose = true)
+        {
+            if (token is null)
+                return null;
+            if (enclose)
+                str = $"\"{str}\"";
+            var lineInfo = (IJsonLineInfo)token;
+            var location = lineInfo.HasLineInfo() ? Location.Create(path, new(lineInfo.LinePosition - str.Length, str.Length), new(new(lineInfo.LineNumber - 1, lineInfo.LinePosition - str.Length), new(lineInfo.LineNumber - 1, lineInfo.LinePosition))) : null;
+            return location;
         }
     }
 }

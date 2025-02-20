@@ -57,4 +57,6 @@
     <ProjectReference Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj" />
   </ItemGroup>
 
+  <Import Project="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems" Label="Shared" />
+
 </Project>

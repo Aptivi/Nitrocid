@@ -19,6 +19,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Analyzers.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -53,11 +54,13 @@ namespace Nitrocid.Locales.Actions.Analyzers
                 if (themeMetadata is not null)
                 {
                     // It's a theme. Get its description and its localizable boolean value
-                    string description = ((string?)themeMetadata["Description"] ?? "").Replace("\\\"", "\"");
+                    string descriptionOrig = (string?)themeMetadata["Description"] ?? "";
+                    string description = descriptionOrig.Replace("\\\"", "\"");
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
                     if (!string.IsNullOrWhiteSpace(description) && localizable && !Checker.localizationList.Contains(description))
                     {
-                        TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized theme description found: {description}", true, ConsoleColors.Yellow);
+                        var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName);
+                        AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized theme description found: {description}");
                         unlocalizedStrings.Add(description);
                     }
                 }
@@ -67,22 +70,28 @@ namespace Nitrocid.Locales.Actions.Analyzers
                     foreach (var settingsEntryList in document)
                     {
                         // Check the description and the display
-                        string description = ((string?)settingsEntryList["Desc"] ?? "").Replace("\\\"", "\"");
-                        string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
-                        string knownAddonDisplay = ((string?)settingsEntryList["display"] ?? "").Replace("\\\"", "\"");
+                        string descriptionOrig = (string?)settingsEntryList["Desc"] ?? "";
+                        string displayAsOrig = (string?)settingsEntryList["DisplayAs"] ?? "";
+                        string knownAddonDisplayOrig = (string?)settingsEntryList["display"] ?? "";
+                        string description = descriptionOrig.Replace("\\\"", "\"");
+                        string displayAs = displayAsOrig.Replace("\\\"", "\"");
+                        string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(description) && !Checker.localizationList.Contains(description))
                         {
-                            TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized settings description found: {description}", true, ConsoleColors.Yellow);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName);
+                            AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized settings description found: {description}");
                             unlocalizedStrings.Add(description);
                         }
                         if (!string.IsNullOrWhiteSpace(displayAs) && !Checker.localizationList.Contains(displayAs))
                         {
-                            TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized settings display found: {displayAs}", true, ConsoleColors.Yellow);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName);
+                            AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized settings display found: {displayAs}");
                             unlocalizedStrings.Add(displayAs);
                         }
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && !Checker.localizationList.Contains(knownAddonDisplay))
                         {
-                            TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized known addon display found: {knownAddonDisplay}", true, ConsoleColors.Yellow);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName);
+                            AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized known addon display found: {knownAddonDisplay}");
                             unlocalizedStrings.Add(knownAddonDisplay);
                         }
 
@@ -92,16 +101,20 @@ namespace Nitrocid.Locales.Actions.Analyzers
                             continue;
                         foreach (var key in keys)
                         {
-                            string keyName = ((string?)key["Name"] ?? "").Replace("\\\"", "\"");
-                            string keyDesc = ((string?)key["Description"] ?? "").Replace("\\\"", "\"");
+                            string keyNameOrig = (string?)key["Name"] ?? "";
+                            string keyDescOrig = (string?)key["Description"] ?? "";
+                            string keyName = keyNameOrig.Replace("\\\"", "\"");
+                            string keyDesc = keyDescOrig.Replace("\\\"", "\"");
                             if (!string.IsNullOrWhiteSpace(keyName) && !Checker.localizationList.Contains(keyName))
                             {
-                                TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized key name found: {keyName}", true, ConsoleColors.Yellow);
+                                var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName);
+                                AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key name found: {keyName}");
                                 unlocalizedStrings.Add(keyName);
                             }
                             if (!string.IsNullOrWhiteSpace(keyDesc) && !Checker.localizationList.Contains(keyDesc))
                             {
-                                TextWriterColor.WriteColor($"NLOC0003: {resourceName}: Unlocalized key description found: {keyDesc}", true, ConsoleColors.Yellow);
+                                var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName);
+                                AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key description found: {keyDesc}");
                                 unlocalizedStrings.Add(keyDesc);
                             }
                         }

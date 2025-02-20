@@ -1360,6 +1360,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{38b58904-50c4-4e0d-a8e7-fd8766d7923c}*SharedItemsImports = 5
 		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{47d3de1a-07ab-42a1-be6e-7f5256b82dd3}*SharedItemsImports = 13
+		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{a9dba465-7f73-449f-b5bd-e143767513e4}*SharedItemsImports = 5
 		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{df07f4e1-47b2-452d-a200-f15f558c4977}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
