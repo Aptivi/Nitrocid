@@ -20,15 +20,19 @@
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
+#if !NOTERMINAUX
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+#endif
 
 namespace Nitrocid.Analyzers.Common
 {
     internal static class AnalyzerTools
     {
+#if !NOTERMINAUX
         internal static void PrintFromLocation(Location? location, Document document, Type targetType, string message) =>
             PrintFromLocation(location, document.FilePath ?? "", targetType.Name, message);
 
@@ -54,6 +58,7 @@ namespace Nitrocid.Analyzers.Common
                 }
             }
         }
+#endif
 
         internal static Location? GenerateLocation(JToken? token, string str, string path, bool enclose = true)
         {

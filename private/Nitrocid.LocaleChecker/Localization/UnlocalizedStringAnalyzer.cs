@@ -301,14 +301,5 @@ namespace Nitrocid.LocaleChecker.Localization
                 }
             }
         }
-
-        private Location? AnalyzerTools.GenerateLocation(JToken? token, string str, string path)
-        {
-            if (token is null)
-                return null;
-            var lineInfo = (IJsonLineInfo)token;
-            var location = lineInfo.HasLineInfo() ? Location.Create(path, new(lineInfo.LinePosition - str.Length, str.Length), new(new(lineInfo.LineNumber - 1, lineInfo.LinePosition - str.Length), new(lineInfo.LineNumber - 1, lineInfo.LinePosition))) : null;
-            return location;
-        }
     }
 }
