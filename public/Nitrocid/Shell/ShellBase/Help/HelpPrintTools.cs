@@ -246,8 +246,11 @@ namespace Nitrocid.Shell.ShellBase.Help
                         TextWriters.Write("* " + Translate.DoTranslation("This command has the below switches that change how it works:"), KernelColorType.NeutralText);
                         foreach (var Switch in Switches)
                         {
+                            string switchDescUnlocalized = Switch.HelpDefinition;
+                            if (string.IsNullOrWhiteSpace(Switch.HelpDefinition))
+                                switchDescUnlocalized = /* Localizable */ "Unspecified switch description";
                             string switchName = Switch.SwitchName;
-                            string switchDesc = Switch.GetTranslatedHelpEntry();
+                            string switchDesc = Translate.DoTranslation(switchDescUnlocalized);
                             TextWriters.Write($"    -{switchName}: ", false, KernelColorType.ListEntry);
                             TextWriters.Write(switchDesc, KernelColorType.ListValue);
                         }
