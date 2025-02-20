@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
-
 namespace Nitrocid.Shell.ShellBase.Switches
 {
     /// <summary>
@@ -32,7 +30,7 @@ namespace Nitrocid.Shell.ShellBase.Switches
         /// </summary>
         public string SwitchName { get; private set; }
         /// <summary>
-        /// The untranslated help definition of this switch. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The untranslated help definition of this switch.
         /// </summary>
         public string HelpDefinition { get; private set; }
         /// <summary>
@@ -120,11 +118,5 @@ namespace Nitrocid.Shell.ShellBase.Switches
                 IsNumeric = IsNumeric,
             };
         }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in switches only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() =>
-            Translate.DoTranslation(HelpDefinition);
     }
 }
