@@ -371,7 +371,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open folder or message") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -394,7 +393,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't make folder") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -422,7 +420,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move message") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -454,7 +451,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move all messages by the same sender") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -481,7 +477,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't rename folder") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -508,7 +503,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove folder") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -531,7 +525,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't delete message") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -558,7 +551,6 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't delete all messages by the same sender") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }

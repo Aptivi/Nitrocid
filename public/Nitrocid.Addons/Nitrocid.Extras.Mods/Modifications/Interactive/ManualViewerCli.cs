@@ -109,7 +109,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             finalInfoRendered.AppendLine(finalRenderedManualTitle);
             finalInfoRendered.AppendLine(finalRenderedManualBody);
             finalInfoRendered.AppendLine(finalRenderedManualRevision);
-            finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
             InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);

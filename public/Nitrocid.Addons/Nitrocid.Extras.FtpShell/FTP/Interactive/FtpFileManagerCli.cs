@@ -254,7 +254,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -370,7 +369,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
                             finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                         }
                     }
-                    finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 }
 
                 // Now, render the info box
@@ -380,7 +378,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -436,7 +433,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -492,7 +488,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -534,7 +529,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -604,7 +598,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -678,7 +671,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -735,7 +727,6 @@ namespace Nitrocid.Extras.FtpShell.FTP.Interactive
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + ": {0}".FormatString(ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }

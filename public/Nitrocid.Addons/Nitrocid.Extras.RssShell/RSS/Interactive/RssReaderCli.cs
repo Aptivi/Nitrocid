@@ -119,7 +119,6 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             finalInfoRendered.AppendLine(finalRenderedArticleTitle);
             finalInfoRendered.AppendLine(finalRenderedArticleBody);
             finalInfoRendered.AppendLine(finalRenderedArticleVars);
-            finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
             InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));

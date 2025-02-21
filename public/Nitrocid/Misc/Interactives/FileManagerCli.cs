@@ -206,7 +206,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -300,7 +299,6 @@ namespace Nitrocid.Misc.Interactives
                         finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                     }
                 }
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
                 // Now, render the info box
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
@@ -309,7 +307,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -339,7 +336,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -367,7 +363,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -393,7 +388,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -458,7 +452,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -496,7 +489,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
@@ -534,7 +526,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
-                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
