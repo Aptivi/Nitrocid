@@ -140,7 +140,20 @@ namespace Nitrocid.Shell.Homepage
                     builder.Append(masterBorder.Render());
 
                     // Show username at the top
-                    builder.Append(TextWriterWhereColor.RenderWhere(Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!"), 0, 0, vars: [string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ? UserManagement.CurrentUser.Username : UserManagement.CurrentUser.FullName]));
+                    string displayName =
+                        string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ?
+                        UserManagement.CurrentUser.Username :
+                        UserManagement.CurrentUser.FullName;
+                    var greeting = new AlignedText()
+                    {
+                        Top = 0,
+                        Text = Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!").FormatString(displayName),
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    builder.Append(greeting.Render());
 
                     // Show bindings
                     var keybindings = new Keybindings()
