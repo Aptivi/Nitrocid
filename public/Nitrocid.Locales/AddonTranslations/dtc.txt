@@ -27,7 +27,6 @@ Fout bij proberen gebruikersnaam te verwijderen.
 De gevraagde screensaver {0} is niet gevonden.
 {0} is ingesteld op de standaard screensaver.
 Screensaver {0} niet gevonden in database. Controleer de naam en probeer het opnieuw.
-Er is een ernstige fout opgetreden bij het afdrukken van tekst.
 Mod kan niet worden geladen vanwege het volgende:
 {0} v {1} is gestart
 Geen definitie voor commando {0}.
@@ -242,9 +241,7 @@ Ga terug...
 Schrijf een poort voor foutopsporing op afstand. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger de poort niet openen.
 Schrijf op hoe vaak de opdracht "" get "" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.
 Het antwoord mag niet negatief zijn.
-Variabele {0} is niet gevonden in een van de modules.
 Verandert de kernelconfiguratie
-Verander de cultuur bij het wisselen van taal
 Tekst getoond
 Schrijf elke gewenste tekst. Korter is beter.
 Uploaden van {0} is mislukt
@@ -293,7 +290,6 @@ Vochtigheid: {0}
 U kunt uw eigen API-sleutel krijgen op https://home.openweathermap.org/api_keys.
 Voorkeurseenheid voor temperatuur
 Elke keer dat het opstart, controleert het op updates.
-Wijzig bij het wisselen van taal de maandnamen, de kalender, enz.
 Houd hardware-onderzoekende berichten stil.
 Toon het bericht van de dag voordat het inlogscherm wordt weergegeven.
 Scherm wissen voordat het inlogscherm wordt weergegeven.
@@ -425,8 +421,6 @@ Kan mod {0} niet voltooien: {1}
 Toont alle ontslagen gebeurtenissen
 Huidige directory
 Stelt de huidige directory van de shell in. Schrijf een absoluut pad naar een bestaande map.
-Wikkel lijst uitgangen
-Verpakt de lijstuitvoer als deze te lang lijkt voor de huidige consolegeometrie.
 Ping!
 {0} heeft je gepingd.
 Thema opslaan in huidige map als...
@@ -467,7 +461,6 @@ Vraagt een woord in een opgegeven regel of alle regels
 Tests die een tekenreeks vertalen die in bronnen voorkomt naar een specifieke taal
 Drukt een string af naar console en analyseert de gevonden tijdelijke aanduidingen
 Test de reguliere expressie-faciliteit
-Start alle mods
 Test de VT-reeks voor 255 kleuren
 Test de VT-reeks op ware kleuren
 Stuurt een melding om de ontvanger te testen
@@ -662,9 +655,6 @@ Welk bestand is het MAL-tekstbestand? Schrijf een absoluut pad naar het tekstbes
 Mods op de zwarte lijst
 Schrijf de bestandsnamen van de mods die niet worden uitgevoerd bij het opstarten. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een bestaande mod te verwijderen.
 Mod {0} staat op de zwarte lijst.
-Herlaadt alle mods
-Voegt een mod toe aan de zwarte lijst
-Verwijdert een mod van de zwarte lijst
 App-informatie tonen tijdens opstarten
 Eindtijden etappe weergeven
 Start kernel-modificaties bij het opstarten
@@ -857,7 +847,6 @@ Of er moet worden weergegeven wat er in de invoerprompt staat.
 Wat is het minimum aantal om te kiezen?
 Wat is het maximale aantal om te kiezen?
 Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. U kunt {0} gebruiken voor de kernelversie.
-Welke variant van de huidige taal wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
 Activeert de ondersteuning voor ware kleuren.
 Woord verwijderd in regel {0}.
 String vervangen in regel {0}.
@@ -954,7 +943,6 @@ Ik kan niets inpakken.
 Ga voor meer informatie over de gebruiksvoorwaarden van deze software naar
 Standaard keuze uitvoertype
 Controleert alle KS-instellingen om te zien of de variabelen correct zijn geschreven
-Deze configuratie-items bevatten ongeldige variabelen of opsommingen en moeten worden opgelost:
 Bestand {0} niet gevonden
 Creëert een variabele array met de opgegeven waarden
 Controleert alle regelnummers van de lokalisatietekst om te zien of ze allemaal gelijk zijn
@@ -1027,8 +1015,6 @@ Je bent op de hoogte!
 Standaard JSON-opmaak voor JSON-shell
 Selecteert de standaard JSON-opmaak (verfraaid of verkleind) voor de JSON-shell om op te slaan.
 Update succesvol gedownload!
-Updates automatisch downloaden
-Als er een update is, zal de kernel deze automatisch downloaden.
 Explosiestraal vuurwerk
 Hoeveel blokken (maximaal 10) is de explosieradius voor het vuurwerk wanneer het wordt aangestoken?
 Deze opdracht heeft de onderstaande schakelaars die de manier waarop het werkt veranderen:
@@ -1221,7 +1207,6 @@ Kernel eerste run
 Welkom bij Nitrocid Kernel! Bedankt voor het uitproberen!
 Druk op ENTER om aan de slag te gaan.
 Selecteer je taal. Standaard gebruikt de kernel de Engelse taal, maar je kunt hier elke andere taal selecteren.
-Op basis van uw taalinstellingen op uw systeem is de juiste taal
 Maak uw eerste gebruiker aan
 Wij helpen u bij het aanmaken van uw eigen gebruikersnaam. Selecteer elke gewenste naam. Dit kan uw bijnaam of uw korte naam zijn, zolang uw gebruikersnaam geen spaties en speciale tekens bevat en deze nog niet bestaat. De volgende gebruikersnamen zijn geregistreerd:
 Voer de gebruikersnaam in
@@ -1231,7 +1216,6 @@ Automatische updates
 Nitrocid KS werkt zichzelf momenteel bij om de meest recente versie te krijgen die algemene verbeteringen en bugfixes bevat. Nieuwe hoofdversies bevatten meestal baanbrekende wijzigingen en nieuwe opwindende functies.
 Wilt u dat Nitrocid KS automatisch controleert op updates?
 Naast het automatisch controleren op updates, kan Nitrocid KS het updatebestand ook automatisch downloaden.
-Wilt u dat Nitrocid KS automatisch updates downloadt?
 U kunt altijd controleren op kernelupdates met behulp van de opdracht "update".
 Begin!
 Gefeliciteerd! U heeft nu een gebruikersaccount, {0}!
@@ -1268,8 +1252,6 @@ Kan diverse bestanden niet wissen
 Geen argumenthulpbeschrijving
 Je console moet True Color ondersteunen om dit thema te kunnen gebruiken.
 Sluit het voorbeeld af
-Klaar
-Schakel tussen typen
 Het thema {0} viert een evenement, maar je bent te vroeg of te laat om aanwezig te zijn. Elk jaar is dit thema toegankelijk van {1}/{2} tot en met {3}/{4}.
 Het thema {0} heeft ondersteuning voor echte kleuren nodig, maar je console ondersteunt dit niet.
 De tekst mag niet leeg zijn.
@@ -1333,14 +1315,12 @@ Geef een bestaand pad naar een configuratiebestand op
 Geen geldige configuratieklasse.
 Configuratiebestand is ongeldig.
 Er is een fout opgetreden bij het lezen van de configuratie: {0}.
-De kernelconfiguratie werkt niet correct. De ongeldige sleutels zijn
 Validatie mislukt!
 Lezen mislukt!
 Ik probeer de configuratie te herstellen...
 Kan configuratievariabelen niet controleren als er geen type is opgegeven.
 Kan configuratievariabelen niet controleren als er geen vermeldingen zijn opgegeven.
 Er wordt geprobeerd een aangepaste instelling zonder inhoud te registreren.
-Er wordt geprobeerd een aangepaste instelling met ongeldige inhoud te registreren. De ongeldige sleutels zijn
 Er wordt geprobeerd de registratie van een aangepaste instelling zonder naam ongedaan te maken.
 De aangepaste instelling is niet geregistreerd.
 Er wordt geprobeerd een lege aangepaste instelling op te vragen.
@@ -1348,7 +1328,6 @@ Type instellingen niet gevonden.
 De instellingensleutel komt niet overeen met de opgegeven variabele.
 De JSON-waarde van de instellingenitems is leeg.
 Er wordt geprobeerd een basisinstelling zonder inhoud te registreren.
-Er wordt geprobeerd een basisinstelling met ongeldige inhoud te registreren. De ongeldige sleutels zijn
 Er wordt geprobeerd de registratie van een basisinstelling zonder naam ongedaan te maken.
 Bewering mislukt.
 Evenement {0} niet gevonden.
@@ -1519,9 +1498,6 @@ Kan kernel-add-on niet starten
 Kan de kernel-add-on niet initialiseren
 Kan add-ons niet voltooien. Onderstaande add-ons zijn niet voltooid:
 Kan add-ons niet stoppen. Onderstaande add-ons zijn niet gestopt:
-Kan geen lijst met functies verkrijgen
-Kan geen lijst met eigenschappen verkrijgen
-Kan geen lijst met velden verkrijgen
 Kan geen aangepaste functie uitvoeren met een niet-bestaande add-on
 Kan functie '{0}' niet vinden in add-on '{1}'.
 Kan eigenschap '{0}' niet vinden in add-on '{1}'.
@@ -1598,17 +1574,14 @@ Kernel-updates
 Hardwaredetectie
 Optionele componenten
 Initialisatie van de gebruiker
-Kernel-modificaties
 Verificatie van de systeemintegriteit
 Fase
 Draait in onderhoudsmodus. Fase overslaan...
 Kan de kernelthread niet opnieuw genereren terwijl dezelfde thread al actief is.
 Startactie voor onderliggende threads mag niet null zijn.
 Kernelthread {0} is mislukt.
-U hebt Nitrocid KS geïnstalleerd met behulp van uw pakketbeheerder. Gebruik het alstublieft om uw kernel te upgraden.
 Geen informatie.
 Kan bestand of map niet openen
-Druk op een willekeurige toets om dit venster te sluiten.
 Nieuwe regelstijl:
 Binair bestand:
 MIME-metadata:
@@ -1683,7 +1656,6 @@ Succes
 Mislukking
 De voortgangshandler mag niet null zijn.
 Verwerken...
-Het methodetype is niet gedefinieerd in de basislijst met Nitrocid-typen.
 Deze methode bestaat niet.
 Deze methode is statisch. Gebruik de niet-objectoverbelasting.
 Deze methode is niet statisch. Gebruik de objectoverbelasting.
@@ -1701,8 +1673,6 @@ De afsluitende splash is niet weergegeven
 We hebben {0}% bereikt!
 Bezig met laden...
 Kan aangepaste functie niet uitvoeren met niet-bestaande mod
-Kan aangepaste eigenschap niet uitvoeren met niet-bestaande mod
-Kan aangepast veld niet uitvoeren met niet-bestaande mod
 Afhankelijkheid ontevreden. Mislukte afhankelijkheden worden hieronder vermeld:
 Geprobeerd de handleidingen voor niet-bestaande mod {0} op te vragen.
 Geprobeerd de handleiding {0} te initialiseren voor niet-bestaande mod {1}.
@@ -1814,26 +1784,10 @@ Kernelmodificatietests
 Netwerksysteemtests
 UESH-shelltests
 Gebruikerstests
-Statistieken
 Afsluiten
-Toont de huidige teststatistieken
 Verlaat de testmodus en sluit de kernel af
 Kies een testsectie om uit te voeren
-Alles testen
-Test alle gevels
-Gaat terug naar de sectieselectie
-Kies een testgevel om uit te voeren
-Deze test bevat optionele parameters. Voer de waarde in van de parameter die u aan de testparameters wilt toevoegen.
-Parameters tellen
-Ja!
 Nee
-Opnieuw proberen
-Verliep de test zoals verwacht?
-De test is mislukt. De verwachte waarde is {0}, maar de werkelijke waarde is {1}.
-De test mislukte onverwachts.
-Succesvolle tests:
-Mislukte tests:
-Uit te voeren tests:
 Het stapelframenummer mag het huidige aantal frames niet overschrijden en mag niet negatief zijn.
 Nitrocid KS
 De kernelthreadsupervisor heeft {0} kritieke threads gedetecteerd die nog niet zijn gestart.
@@ -1925,7 +1879,6 @@ Haalt de gebruikersinformatie op
 Wijzigt de voorkeurstaal van de gebruiker
 U moet de debug-modus inschakelen voordat u de debug-shell kunt gebruiken.
 Krijgt de huidige backtrace
-Haalt eenvoudig de foutopsporingslogboekinformatie op met behulp van het sessienummer
 Ontvangt een bericht van het kerneluitzonderingstype. Handig voor het debuggen
 Krijgt een veldwaarde
 Krijgt een vastgoedwaarde
@@ -1957,7 +1910,6 @@ Wat is er nieuw in deze versie van Nitrocid?
 Controleert het bestand of de mapvergrendeling
 Wacht totdat het bestand of de map is ontgrendeld
 Verandert taal
-Gebruikt de systeemtaalinstellingen om te proberen de taal af te leiden
 Wijzigt de gebruikerstaal in plaats van de systeemtaal
 Eén lijnkeuzestijl
 Keuze uit twee lijnen
@@ -2120,12 +2072,8 @@ Druk een string af naar de console
 Druk een tekenreeks af naar debugger
 Druk een tekenreeks af naar debugger met opmaak
 Druk een tekenreeks af naar de console met opmaak
-Druk een figletstring af om te troosten
-Druk een figlet-string af om te console met opmaak
 Druk een string af om te troosten met hoogtepunt
 Druk een scheidingsteken af op de console
-Druk een scheidingsteken af om te console met kleur
-Druk een scheidingsteken af naar de console met opmaak en kleur
 Druk een scheidingsteken af naar de console met opmaak
 Druk een string af om te consoleren met nieuwe regels in de string
 Druk een string af naar console met nultekens
@@ -2189,8 +2137,6 @@ Rechten
 Groepen
 Voorkeurstaal voor gebruiker ingesteld op {0}. Mogelijk wilt u opnieuw inloggen.
 Beheerder Shell
-Ongeldig sessienummer
-Een dergelijk sessienummer bestaat niet
 Een dergelijk uitzonderingstype bestaat niet
 Naam van uitzonderingstype
 Bericht
@@ -2313,8 +2259,6 @@ Verlopen
 Beschikbaar
 Kies een thema
 Wilt u dit thema instellen?
-Ja, stel het in!
-Nee, stel het niet in.
 Om toegang te krijgen tot de gebruikershandleiding voor algemeen gebruik van Nitrocid, gaat u naar de onderstaande link:
 Om toegang te krijgen tot de ontwikkelaarshandleiding voor bijgewerkte manieren om kernelwijzigingen en screensavers aan te brengen, kunt u de onderstaande link bezoeken:
 Je voert al de verhoogde Nitrocid-sessie uit!
@@ -2344,7 +2288,6 @@ Speel het Wordle-spel oorspronkelijk
 Herdenkt het 5-jarig jubileum van de kerneluitgave
 Opent het archiefbestand naar de archiefshell
 Haalt alle songtekstregels uit het songtekstbestand
-Opent een interactieve muziekspeler
 Speelt een tekstbestand af
 Speelt een geluid af
 Voegt een alarm toe om u te waarschuwen wanneer uw kopje thee of koffie klaar is.
@@ -2465,8 +2408,6 @@ Gelukkig 5-jarig jubileum!
 Kan niets extraheren.
 Archief is niet beschrijfbaar omdat type dat wel is
 Zorg ervoor dat u het pad naar een LRC-bestand opgeeft.
-Muziekbestand '{0}' bestaat niet.
-Fatale fout in de BassBoom CLI-add-on.
 Kan geen geluid afspelen omdat het bestand niet is gevonden.
 Muziekbestand succesvol geopend.
 Kan muziekbestand niet openen.
@@ -2479,63 +2420,8 @@ Genre
 Duur
 Druk op 'q' om het afspelen te stoppen.
 Kan geen geluid afspelen.
-Er is een fout opgetreden bij Basolia bij het verwerken van de equalizerbewerking.
-Er is een fout opgetreden met de Basolia-uitvoer bij het verwerken van de equalizerbewerking.
-Er is een onbekende fout opgetreden bij het verwerken van de equalizerbewerking.
-Wijziging
-Selecteer Band
-Mogelijk gemaakt door BassBoom
-Voer een pad naar het muziekbestand in
-Bestand '{0}' bestaat niet.
-Voer een pad in naar de muziekbibliotheekmap
-De map voor de muziekbibliotheek is niet gevonden.
-BassBoom laden om {0} te openen...
 Nu aan het spelen
-Probeert het songtekstbestand te openen
-Kan songtekstbestand niet openen
-Schrijf de doelpositie in dit formaat
-Beschikbare toetsaanslagen
-Speel pauze
-Stop
-Volumeregeling
-Zoek controle
-Zoek naar duurcontrole
-Informatie over het nummer
-Voeg een muziekbestand toe
-Vorig nummer
-Volgende liedje
-Huidig nummer verwijderen
-Verwijder alle nummers
-Onbekend
 Titel
-Album
-Opmerking
-Songteksten
-lijnen
-Geen songteksten
-Laaginformatie
-Laag
-Tarief
-Modus
-Modus Ext
-Kadergrootte
-Nadruk
-Bitsnelheid
-ABR-tarief
-Variabele bitsnelheid
-Teksten en extra's
-Kan muziekbestand '{0}' niet openen omdat het niet is gevonden.
-Naam van een liedje
-Lied artiest
-Liedgenre
-Zoeken
-Volume
-Er is een fout opgetreden bij Basolia bij het verwerken van het muziekbestand.
-Er is een fout opgetreden bij de Basolia-uitvoer bij het verwerken van het muziekbestand.
-Er is een onbekende fout opgetreden bij het verwerken van het muziekbestand.
-Afspeelfout
-Hulp
-Druk op 'A' om een enkel nummer aan de afspeellijst toe te voegen, of op 'S' om de hele muziekbibliotheek in te voegen.
 Amerikaanse koffie
 Rode thee
 Groene thee
@@ -2714,7 +2600,6 @@ Voer een getal in dat u wilt converteren...
 U heeft geen getal ingevoerd dat u wilt converteren.
 Het ingevoerde nummer is ongeldig.
 Kan eenheid niet converteren.
-We vieren de 6.000ste commit sinds 0.0.1!
 Wordt vervolgd...
 Het einde
 Gelukkig nieuwjaar!
@@ -2919,12 +2804,6 @@ Algemene kernelinstellingen
 Taal
 Specificeert de kerneltaal.
 Cultuur
-Schakel kleurenblindheid in
-Als u kleurenblind bent of kleurenblindheid wilt simuleren, kunt u dit inschakelen.
-Type kleurenblindheid
-Het type kleurenblindheid, of het nu protan, deuter of tritan is.
-Ernst van kleurenblindheid
-Hoe ernstig is kleurenblindheid?
 Pieptoon bij afsluiten of opnieuw opstarten
 Maakt piepen mogelijk bij het afsluiten van de kernel.
 Vertraging bij afsluiten of opnieuw opstarten
@@ -2937,18 +2816,12 @@ Ontwikkelingskennisgeving erkend
 Indien ingesteld op true, zal de kernel u niet elke keer dat u de kernel opstart in ontwikkelingsversies de ontwikkelingsmelding tonen.
 Sta het laden van niet-vertrouwde mods toe
 Indien ingesteld op true, zal de kernel geen foutmelding geven bij het laden van mods die niet over de ondertekende publieke sleutel beschikken.
-Debugquotum ingeschakeld
-Als deze optie is ingeschakeld, roteert de debug-schrijver het debug-logbestand als het quotum wordt overschreden.
-Debug het aantal quotaregels
-Hoeveel regels moeten er naar de foutopsporingsbuffer worden afgedrukt voordat de quotumlimiet wordt bereikt? Houd er rekening mee dat dit niet aangeeft hoeveel regels er in de foutopsporingslogbestanden staan.
 Gebruik de systeemtijdzone
 Als deze optie is ingeschakeld, gebruikt de kernel de tijdzone van uw computerinstellingen. Anders wordt de kernelbrede tijdzone gebruikt die kan worden geconfigureerd.
 Kernel-brede tijdzone
 De kernelbrede tijdzone die moet worden gebruikt
 Toon het licentie-informatievak
 Of het modale licentie-informatievak gedurende drie seconden na elke aanmelding moet worden weergegeven. Het wordt aanbevolen om deze aan te houden.
-Verouderde logboekregistratiestijl voor foutopsporingslogboeken
-Of de verouderde logboekregistratiestijl voor foutopsporingslogboeken moet worden ingeschakeld of dat gegroepeerde foutopsporingslogboeken moeten worden ingeschakeld.
 In dit gedeelte kunt u kiezen welk type kleur u wilt wijzigen.
 Kleurinstellingen
 Gebruik accentkleuren
@@ -3036,8 +2909,6 @@ Groep paden gescheiden door de dubbele punt. Het werkt hetzelfde als PATH. Schri
 Stel de consoletitel in bij uitvoering van de opdracht
 Stelt de consoletitel in bij uitvoering van opdrachten.
 Toon het aantal granaten
-In deze sectie worden de voorinstellingen van de shell vermeld.
-Vooraf ingestelde shell-instellingen
 Snelle voorinstelling
 Voorinstelling tekstbewerkingsprompt
 Hex Edit Prompt-voorinstelling
@@ -3100,7 +2971,6 @@ Update-interval voor foutopsporing van CPU-gebruik
 Hoeveel milliseconden moet u wachten voordat u het CPU-gebruik bijwerkt en naar de debugger afdrukt?
 Een slangenspel.
 Toont je leuke bekende citaten.
-In deze sectie kunt u configureren hoe het amusement werkt.
 Selecteer de moeilijkheidsgraad van uw voorkeur, waarbij 0 gemakkelijk is, 1 gemiddeld, 2 moeilijk, 3 zeer moeilijk en 4 aangepast.
 Gebruik PowerLine voor het weergeven van ruimteschepen in ShipDuet
 Of PowerLine moet worden gebruikt om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met ShipDuet wilt gebruiken, moet u een geschikt lettertype met PowerLine-ondersteuning installeren.
@@ -3129,7 +2999,6 @@ RSS-promptvoorinstelling
 In deze sectie kunt u configureren hoe de SFTP-shell werkt.
 In deze sectie kunt u configureren hoe de SQL-shell werkt.
 SQL Shell-promptvoorinstelling
-In dit gedeelte kunt u configureren hoe de timers werken.
 In deze sectie kunt u configureren hoe Tips werken.
 Kerneltips weergeven
 Indien ingeschakeld, toont de shell u de tips bij elke login.
@@ -3277,7 +3146,6 @@ Voer uw gebruikerswachtwoord in. Voor meer veiligheid moet u een sterk wachtwoor
 Automatische updatecontrole
 Ja, ik wil!
 Nee bedankt.
-Automatische updatedownload
 Het starten of stoppen van mods is niet toegestaan in de veilige modus.
 Er is een onbekende kernelfout opgetreden, mogelijk doordat het kerneluitzonderingstype niet is opgegeven of omdat er iets mis is.
 Het kernelnetwerk heeft een fout gemeld voor de hostnaamcomponent.
@@ -3412,7 +3280,6 @@ Selecteer opstartinvoer:
 Gebruikt de algemene woordenlijst.
 Gebruikt de volledige woordenlijst.
 Het pingpongspel!
-Opent in plaats daarvan de radiostationspeler
 Leest een piepsynthbestand
 Converteert het bronkleurmodel in cijfers naar het doelkleurmodel.
 Converteert het bronkleurmodel naar het doelkleurmodel in KS-indeling.
@@ -3441,72 +3308,6 @@ Kort bedrijfssymbool
 Maakt een nieuw thema in een interactieve TUI
 dat je opstartbare programma's kunt maken met behulp van je kernelmods?
 Stationstype
-Apparaat
-Bestuurder
-Kan geen zoekopdrachten uitvoeren op huidige apparaten terwijl er niet wordt gespeeld.
-Apparaat en stuurprogramma
-Beschikbare apparaten en stuurprogramma's
-BassBoom-specificaties
-Decoders
-Systeemspecificaties
-Basolia-versie
-MPG123-versie
-OUT123-versie
-Ondersteunde decoders
-Alle decoders
-Systeem
-Systeem Architectuur
-Proces Architectuur
-Systeembeschrijving
-.NET-beschrijving
-Herhaalcontrolepunt instellen
-Probeer het controlepunt te herhalen
-Opent de equalizer
-Apparaat- en stuurprogramma-informatie
-Apparaat en stuurprogramma instellen
-Reset apparaat en stuurprogramma
-Systeeminformatie
-Info over radiostation
-Uitgebreide informatie over radiostation
-Voeg een radiostation toe
-Vorig radiostation
-Volgende radiostation
-Verwijder het huidige radiostation
-Verwijder alle radiostations
-Selecteer een bestuurder. ESC om te stoppen.
-Selecteer een apparaat. Het huidige stuurprogramma is {0}. ESC om te stoppen.
-Niet spelen. De muziekspeler is inactief.
-Bas
-Boven midden
-Drievoudig
-Onbekend bandtype
-Equalizerband
-Selecteer een songtekst waarnaar u wilt zoeken
-Oorspronkelijke staat
-Nauwkeurige weergave
-Buffervulling
-Decoderingsvertraging
-Coderingsvertraging
-Codering van opvulling
-Frankenstein-stroom
-Nieuwe decoder
-Druk op 'A' om een radiostation aan de afspeellijst toe te voegen.
-Voer een pad naar het radiostation in. De URL naar het station moet een MPEG-radiostation bevatten. AAC-versies worden nog niet ondersteund.
-Stationsinformatie
-URL van radiostation
-Naam van radiostation
-Huidig nummer van radiostation
-Startpagina
-Stroompad
-Luisteraars: {0} met {1} op het hoogtepunt
-Bitsnelheid
-Mediatype
-Info over radioserver
-Stream-informatie
-Radiostation maakt gebruik van HTTPS
-Servertype radiostation
-Radiozenderstreams: {0} met {1} actief
-Luisteraars van radiostations: {0} met {1} op piekmomenten
 Beep synth-bestand bestaat niet.
 Hoofdstuknaam
 Synth-weergave is ongeldig.
@@ -3649,7 +3450,6 @@ Het tekstbestand is nog niet geopend.
 Handler voor extensie is niet gespecificeerd.
 Het is niet gelukt om de standaardhandler te verkrijgen
 Het laden van de standaardhandlers is mislukt.
-Poging om toegang te krijgen tot ongeldig pad. Deze controle werd uitgevoerd om te voorkomen dat oudere Windows 10-systemen die niet zijn bijgewerkt naar de patch van april 2021 of hoger, toegang krijgen tot deze paden waarvan bekend is dat ze corruptie van het NTFS-bestandssysteem of het Blue Screen of Death (BSOD)-probleem veroorzaken. Dit impliceert dat de aanroeper probeert een Denial of Service (DoS) te veroorzaken en dat dit moet worden opgelost, of dat de invoer van de gebruiker schadelijk is.
 Selecteer
 Kopiëren
 Beweging
@@ -3688,11 +3488,6 @@ Het apparaat voor extern debuggen lijkt niet te bestaan.
 Kan geen externe debug-apparaten ophalen
 Kan de Engelse lokalisatiebron niet openen
 Kan de lokalisatiebron niet openen voor
-Het is niet gelukt om het figlet-lettertype te verkrijgen
-Een figlet-string afdrukken naar de console (gecentreerd)
-Een figlet-string afdrukken naar de console met opmaak (gecentreerd)
-Een figlet-string afdrukken naar de console (gecentreerd, positioneel)
-Een figlet-string afdrukken naar de console met opmaak (gecentreerd, positioneel)
 Het is niet gelukt om het toegangspunt te verkrijgen.
 Test de knoppen in het informatievak (getiteld)
 Test het gekleurde invoervak ​​in het informatievak (getiteld)
@@ -3710,7 +3505,6 @@ Kan methode niet krijgen
 Er is een fout opgetreden in een reguliere expressie terwijl de tekst werd verwerkt. Controleer de syntaxis van uw reguliere expressie en probeer het opnieuw. Als de time-out is opgetreden, zorg er dan voor dat u niet te veel recursief uitvoert (wees niet te hebzuchtig).
 De startpagina tools heeft een fout aangetroffen bij het verwerken van uw verzoek. Controleer of u alle benodigde gegevens correct hebt ingevoerd.
 Helaas is de laatste fout onbekend, dus we weten niet precies wat er misging. Het kan echter nuttig zijn als u de kernel debug logs raadpleegt.
-Het is niet gelukt om de add-on-metagegevens op te halen
 Kan geen veldinfo ophalen voor
 Kan geen journaalposten ophalen
 (Gebruik de pijltjestoetsen om uw keuze te markeren en druk vervolgens op ENTER.)
@@ -3814,7 +3608,6 @@ Zoeken Volgende
 Zoeken Terug
 Ruwe info
 Importeren van MeCard
-Er is geen informatie over het pand
 Handmatig toevoegen
 Kan dagdeelarray niet ophalen
 Kan geen dagdeel krijgen
@@ -3826,18 +3619,8 @@ Rondelijst
 Genereer naamtags (umlauts worden momenteel niet ondersteund)
 Overzetten...
 Eenheidsconverter
-Muziekspeler
-Radiospeler
 Internetradio (FM) info voor
 Kan geen informatie over internetradio krijgen.
-Apparaat (gecached
-Driver (gecached
-(wanneer inactief) Voeg een muziekmap toe aan de afspeellijst
-(tijdens het spelen) Selectief zoeken
-(tijdens het spelen) Zoek naar vorige tekst
-(tijdens het spelen) Zoek naar de volgende tekst
-(tijdens het spelen) Zoek naar de huidige tekst
-(tijdens het spelen) Zoek naar welke tekst
 Wijziging...
 Redden...
 Laden...
@@ -3929,4 +3712,3 @@ Haal nostalgie terug met dit thema!
 Uw terminal bestaat uit houten planken
 Geïnspireerd op het Chinese patroon van verschillende vruchten
 Extra's - CRC32C (Castagnoli)
-Het controleren op updates is uitgeschakeld in ontwikkelingsversies.

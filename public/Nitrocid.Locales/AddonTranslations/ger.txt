@@ -27,7 +27,6 @@ Fehler beim Versuch, den Nutzernamen zu entfernen.
 Der angeforderte Bildschirmschoner {0} wurde nicht gefunden.
 {0} ist auf den Standard-Bildschirmschoner eingestellt.
 Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
-Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 Der Mod kann wegen folgendem nicht geladen werden:
 {0} v {1} gestartet
 Keine Definition für den Befehl {0}.
@@ -242,9 +241,7 @@ Geh zurück...
 Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
 Schreiben Sie, wie oft der Befehl "" get "" fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
 Die Antwort darf nicht negativ sein.
-Die Variable {0} wurde in keinem der Module gefunden.
 Ändert die Kernelkonfiguration
-Kultur beim Sprachenwechsel ändern
 Text angezeigt
 Schreiben Sie einen beliebigen Text, den Sie anzeigen möchten. Kürzer ist besser.
 Fehler beim Hochladen von {0}
@@ -293,7 +290,6 @@ Luftfeuchtigkeit: {0}
 Sie können Ihren eigenen API-Schlüssel unter https://home.openweathermap.org/api_keys erhalten.
 Bevorzugte Einheit für die Temperatur
 Bei jedem Start wird nach Updates gesucht.
-Ändern Sie beim Wechseln der Sprache die Monatsnamen, den Kalender usw.
 Halten Sie Hardware-Prüfmeldungen stumm.
 Nachricht des Tages anzeigen, bevor der Anmeldebildschirm angezeigt wird.
 Bildschirm löschen, bevor der Anmeldebildschirm angezeigt wird.
@@ -425,8 +421,6 @@ Fehler beim Fertigstellen von Mod {0}: {1}
 Listet alle ausgelösten Ereignisse auf
 Aktuelles Verzeichnis
 Legt das aktuelle Verzeichnis der Shell fest. Schreiben Sie einen absoluten Pfad zu einem beliebigen vorhandenen Verzeichnis.
-Listenausgaben umbrechen
-Umbricht die Listenausgaben, wenn sie für die aktuelle Konsolengeometrie zu lang erscheinen.
 Klingeln!
 {0} hat Sie angepingt.
 Thema im aktuellen Verzeichnis speichern unter...
@@ -467,7 +461,6 @@ Fragt ein Wort in einer bestimmten Zeile oder allen Zeilen ab
 Testet die Übersetzung einer in Ressourcen vorhandenen Zeichenfolge in eine bestimmte Sprache
 Gibt eine Zeichenfolge zur Konsole aus und analysiert die gefundenen Platzhalter
 Testet die Funktion für reguläre Ausdrücke
-Startet alle Mods
 Testet die VT-Sequenz für 255 Farben
 Testet die VT-Sequenz auf True Color
 Sendet eine Benachrichtigung, um den Empfänger zu testen
@@ -662,9 +655,6 @@ Welche Datei ist die MAL-Textdatei? Schreiben Sie einen absoluten Pfad zur Textd
 Mods auf der schwarzen Liste
 Schreiben Sie die Dateinamen der Mods, die beim Start nicht ausgeführt werden. Wenn Sie fertig sind, schreiben Sie "q". Schreiben Sie ein Minuszeichen neben den Pfad, um einen vorhandenen Mod zu entfernen.
 Mod {0} ist auf der schwarzen Liste.
-Lädt alle Mods neu
-Fügt einen Mod zur Blacklist hinzu
-Entfernt einen Mod von der Blacklist
 App-Informationen während des Bootens anzeigen
 Etappenendzeiten anzeigen
 Kernel-Modifikationen beim Booten starten
@@ -857,7 +847,6 @@ Ob angezeigt werden soll, was in der Eingabeaufforderung geschrieben steht.
 Was ist die Mindestanzahl zur Auswahl?
 Was ist die maximale Anzahl zu wählen?
 Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können {0} für die Kernel-Version verwenden.
-Welche Variante der aktuellen Sprache wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
 Aktiviert die True-Color-Unterstützung.
 Wort in Zeile {0} gelöscht.
 Zeichenfolge in Zeile {0} ersetzt.
@@ -954,7 +943,6 @@ Kann nichts packen.
 Weitere Informationen zu den Nutzungsbedingungen dieser Software finden Sie unter
 Ausgangstyp der Standardauswahl
 Überprüft alle KS-Einstellungen, um zu sehen, ob die Variablen korrekt geschrieben sind
-Diese Konfigurationseinträge haben ungültige Variablen oder Aufzählungen und müssen behoben werden:
 Datei {0} nicht gefunden
 Erstellt ein Variablenarray mit den bereitgestellten Werten
 Überprüft alle Lokalisierungstextzeilennummern, um festzustellen, ob sie alle gleich sind
@@ -1027,8 +1015,6 @@ Sie sind auf dem Laufenden!
 Standardmäßige JSON-Formatierung für die JSON-Shell
 Wählt die standardmäßige JSON-Formatierung (verschönert oder minimiert) für die zu speichernde JSON-Shell aus.
 Update erfolgreich heruntergeladen!
-Updates automatisch herunterladen
-Wenn es ein Update gibt, lädt der Kernel es automatisch herunter.
 Explosionsradius von Feuerwerk
 Wie viele Blöcke (bis zu 10) beträgt der Explosionsradius für das Feuerwerk, wenn es gezündet wird?
 Dieser Befehl hat die folgenden Schalter, die seine Funktionsweise ändern:
@@ -1221,7 +1207,6 @@ Kernel wird zum ersten Mal ausgeführt
 Willkommen bei Nitrocid Kernel! Vielen Dank, dass Sie es ausprobiert haben!
 Um zu beginnen, drücken Sie die EINGABETASTE.
 Wähle deine Sprache. Standardmäßig verwendet der Kernel die englische Sprache, Sie können hier jedoch jede andere Sprache auswählen.
-Basierend auf Ihren Spracheinstellungen auf Ihrem System ist die entsprechende Sprache
 Erstellen Sie Ihren ersten Benutzer
 Wir helfen Ihnen bei der Erstellung Ihres eigenen Benutzernamens. Wählen Sie einen beliebigen Namen aus. Dies kann Ihr Spitzname oder Ihr Kurzname sein, sofern Ihr Benutzername keine Leer- und Sonderzeichen enthält und dieser nicht bereits existiert. Folgende Benutzernamen sind registriert:
 Geben Sie den Benutzernamen ein
@@ -1231,7 +1216,6 @@ Automatische Updates
 Nitrocid KS aktualisiert sich derzeit selbst, um die neueste Version zu erhalten, die allgemeine Verbesserungen und Fehlerbehebungen enthält. Neue Hauptversionen enthalten in der Regel bahnbrechende Änderungen und neue aufregende Funktionen.
 Möchten Sie, dass Nitrocid KS automatisch nach Updates sucht?
 Zusätzlich zur automatischen Suche nach Updates kann Nitrocid KS die Update-Datei auch automatisch herunterladen.
-Möchten Sie, dass Nitrocid KS Updates automatisch herunterlädt?
 Sie können jederzeit mit dem Befehl „update“ nach Kernel-Updates suchen.
 Loslegen!
 Glückwunsch! Sie haben jetzt ein Benutzerkonto, {0}!
@@ -1268,8 +1252,6 @@ Verschiedene Dateien können nicht gelöscht werden
 Keine Argumenthilfebeschreibung
 Um dieses Design verwenden zu können, muss Ihre Konsole True Color unterstützen.
 Verlassen Sie die Vorschau
-Erledigt
-Schaltertypen
 Das Thema {0} feiert ein Ereignis, aber Sie sind entweder zu früh oder zu spät, um daran teilzunehmen. Dieses Thema ist jedes Jahr vom {1}/{2} bis {3}/{4} zugänglich.
 Das Design {0} benötigt True-Color-Unterstützung, Ihre Konsole unterstützt diese jedoch nicht.
 Der Text darf nicht leer sein.
@@ -1333,14 +1315,12 @@ Geben Sie einen vorhandenen Pfad zu einer Konfigurationsdatei an
 Keine gültige Konfigurationsklasse.
 Die Konfigurationsdatei ist ungültig.
 Beim Versuch, die Konfiguration zu lesen, ist ein Fehler aufgetreten: {0}.
-Die Kernel-Konfiguration funktioniert nicht ordnungsgemäß. Die ungültigen Schlüssel sind
 Überprüfung fehlgeschlagen!
 Das Lesen ist fehlgeschlagen!
 Versuche, die Konfiguration zu reparieren...
 Konfigurationsvariablen können nicht überprüft werden, wenn kein Typ angegeben ist.
 Konfigurationsvariablen können nicht überprüft werden, wenn keine Einträge angegeben sind.
 Es wird versucht, eine benutzerdefinierte Einstellung ohne Inhalt zu registrieren.
-Es wird versucht, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Die ungültigen Schlüssel sind
 Es wird versucht, die Registrierung einer benutzerdefinierten Einstellung ohne Namen aufzuheben.
 Die benutzerdefinierte Einstellung ist nicht registriert.
 Es wird versucht, eine leere benutzerdefinierte Einstellung abzufragen.
@@ -1348,7 +1328,6 @@ Einstellungstyp nicht gefunden.
 Es wurde nicht gefunden, dass der Einstellungsschlüssel mit der angegebenen Variablen übereinstimmt.
 Der JSON-Wert der Einstellungseinträge ist leer.
 Es wird versucht, eine Basiseinstellung ohne Inhalt zu registrieren.
-Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Die ungültigen Schlüssel sind
 Es wird versucht, die Registrierung einer Basiseinstellung ohne Namen aufzuheben.
 Behauptungsfehler.
 Ereignis {0} nicht gefunden.
@@ -1519,9 +1498,6 @@ Das Kernel-Add-on konnte nicht gestartet werden
 Kernel-Add-on konnte nicht initialisiert werden
 Add-ons konnten nicht abgeschlossen werden. Die folgenden Add-ons konnten nicht fertiggestellt werden:
 Add-ons konnten nicht gestoppt werden. Die folgenden Add-ons konnten nicht gestoppt werden:
-Liste der Funktionen kann nicht abgerufen werden
-Die Liste der Eigenschaften kann nicht abgerufen werden
-Die Liste der Felder kann nicht abgerufen werden
 Benutzerdefinierte Funktion kann mit nicht vorhandenem Add-on nicht ausgeführt werden
 Funktion „{0}“ kann im Add-on „{1}“ nicht gefunden werden.
 Die Eigenschaft „{0}“ im Add-on „{1}“ kann nicht gefunden werden.
@@ -1598,17 +1574,14 @@ Kernel-Updates
 Hardwareerkennung
 Optionale Komponenten
 Benutzerinitialisierung
-Kernel-Modifikationen
 Überprüfung der Systemintegrität
 Bühne
 Läuft im Wartungsmodus. Stufe überspringen...
 Der Kernel-Thread kann nicht neu generiert werden, während derselbe Thread bereits ausgeführt wird.
 Die Startaktion des untergeordneten Threads darf nicht null sein.
 Kernel-Thread {0} ist fehlgeschlagen.
-Sie haben Nitrocid KS mit Ihrem Paketmanager installiert. Bitte verwenden Sie es stattdessen, um Ihren Kernel zu aktualisieren.
 Keine Informationen.
 Datei oder Ordner können nicht geöffnet werden
-Drücken Sie eine beliebige Taste, um dieses Fenster zu schließen.
 Newline-Stil:
 Binärdatei:
 MIME-Metadaten:
@@ -1683,7 +1656,6 @@ Erfolg
 Versagen
 Der Fortschrittshandler darf nicht null sein.
 Wird bearbeitet...
-Der Methodentyp ist in der Basisliste der Nitrocid-Typen nicht definiert.
 Diese Methode gibt es nicht.
 Diese Methode ist statisch. Verwenden Sie die Nicht-Objekt-Überladung.
 Diese Methode ist nicht statisch. Verwenden Sie die Objektüberladung.
@@ -1701,8 +1673,6 @@ Der abschließende Splash konnte nicht angezeigt werden
 Wir haben {0} % erreicht!
 Wird geladen...
 Benutzerdefinierte Funktion kann mit nicht vorhandenem Mod nicht ausgeführt werden
-Benutzerdefinierte Eigenschaft kann nicht mit nicht vorhandenem Mod ausgeführt werden
-Benutzerdefiniertes Feld kann nicht mit nicht vorhandenem Mod ausgeführt werden
 Abhängigkeit unbefriedigt. Nachfolgend sind fehlgeschlagene Abhängigkeiten aufgeführt:
 Es wurde versucht, die Handbücher nach dem nicht vorhandenen Mod {0} abzufragen.
 Es wurde versucht, das Handbuch {0} für den nicht vorhandenen Mod {1} zu initialisieren.
@@ -1814,26 +1784,10 @@ Kernel-Modifikationstests
 Netzwerksystemtests
 UESH-Granattests
 Benutzertests
-Statistiken
 Abschalten
-Zeigt die aktuelle Teststatistik an
 Beendet den Testmodus und fährt den Kernel herunter
 Wählen Sie einen Testabschnitt zum Ausführen aus
-Alle testen
-Prüft alle Fassaden
-Kehrt zur Abschnittsauswahl zurück
-Wählen Sie eine Testfassade zum Ausführen aus
-Dieser Test enthält optionale Parameter. Geben Sie den Wert des Parameters ein, der zu den Testparametern hinzugefügt werden soll.
-Parameter zählen
-Ja!
 NEIN
-Wiederholen
-Ist der Test wie erwartet verlaufen?
-Der Test ist fehlgeschlagen. Der erwartete Wert ist {0}, der tatsächliche Wert ist jedoch {1}.
-Der Test ist unerwartet fehlgeschlagen.
-Erfolgreiche Tests:
-Fehlgeschlagene Tests:
-Durchzuführende Tests:
 Die Anzahl der Stack-Frames sollte die aktuelle Anzahl an Frames nicht überschreiten oder negativ sein.
 Nitrozid KS
 Der Kernel-Thread-Supervisor hat {0} kritische Threads erkannt, die noch nicht gestartet wurden.
@@ -1925,7 +1879,6 @@ Ruft die Benutzerinformationen ab
 Ändert die bevorzugte Benutzersprache
 Sie müssen den Debug-Modus aktivieren, bevor Sie die Debug-Shell verwenden können.
 Ruft den aktuellen Backtrace ab
-Ruft die Debug-Protokollinformationen einfach mithilfe der Sitzungsnummer ab
 Ruft eine Nachricht vom Kernel-Ausnahmetyp ab. Nützlich zum Debuggen
 Ruft einen Feldwert ab
 Ruft einen Eigenschaftswert ab
@@ -1957,7 +1910,6 @@ Was ist neu in dieser Version von Nitrocid?
 Überprüft die Datei- oder Ordnersperre
 Wartet, bis die Datei oder der Ordner entsperrt ist
 Ändert die Sprache
-Verwendet die Systemspracheneinstellungen, um zu versuchen, die Sprache abzuleiten
 Ändert die Benutzersprache anstelle der Systemsprache
 Einzeiliger Auswahlstil
 Zweizeiliger Auswahlstil
@@ -2120,12 +2072,8 @@ Gibt eine Zeichenfolge an die Konsole aus
 Gibt eine Zeichenfolge an den Debugger aus
 Gibt eine Zeichenfolge mit Formatierung an den Debugger aus
 Gibt eine Zeichenfolge mit Formatierung an die Konsole aus
-Drucken Sie einen Figlet-String an die Konsole
-Drucken Sie eine Figlet-Zeichenfolge mit Formatierung an die Konsole
 Gibt eine Zeichenfolge mit Hervorhebung an die Konsole aus
 Gibt ein Trennzeichen auf der Konsole aus
-Drucken Sie ein Trennzeichen mit Farbe auf die Konsole
-Drucken Sie ein Trennzeichen mit Formatierung und Farbe auf der Konsole
 Drucken Sie ein Trennzeichen mit Formatierung auf die Konsole
 Gibt einen String mit neuen Zeilen im String an die Konsole aus
 Gibt eine Zeichenfolge mit Nullzeichen an die Konsole aus
@@ -2189,8 +2137,6 @@ Berechtigungen
 Gruppen
 Bevorzugte Benutzersprache ist auf {0} festgelegt. Möglicherweise möchten Sie sich erneut anmelden.
 Administrator-Shell
-Ungültige Sitzungsnummer
-Keine solche Sitzungsnummer
 Kein solcher Ausnahmetyp
 Name des Ausnahmetyps
 Nachricht
@@ -2313,8 +2259,6 @@ Abgelaufen
 Verfügbar
 Wähle ein Thema
 Möchten Sie dieses Thema festlegen?
-Ja, stellen Sie es ein!
-Nein, stellen Sie es nicht ein.
 Um auf das Benutzerhandbuch für die allgemeine Verwendung von Nitrocid zuzugreifen, besuchen Sie bitte den folgenden Link:
 Um auf das Entwicklerhandbuch mit aktualisierten Möglichkeiten zur Durchführung von Kernel-Änderungen und Bildschirmschonern zuzugreifen, besuchen Sie bitte den folgenden Link:
 Sie führen bereits die erhöhte Nitrocid-Sitzung durch!
@@ -2344,7 +2288,6 @@ Spielen Sie das Wordle-Spiel ursprünglich
 Gedenkt des 5-jährigen Jubiläums der Kernel-Veröffentlichung
 Öffnet die Archivdatei in der Archiv-Shell
 Ruft alle Textzeilen aus der Textdatei ab
-Öffnet einen interaktiven Musikplayer
 Spielt eine Liedtextdatei ab
 Spielt einen Ton ab
 Fügt einen Alarm hinzu, der Sie benachrichtigt, wenn Ihre Tasse Tee oder Kaffee fertig ist.
@@ -2465,8 +2408,6 @@ Alles Gute zum 5-jährigen Jubiläum!
 Kann nichts extrahieren.
 Das Archiv ist aufgrund des Typs nicht beschreibbar
 Stellen Sie sicher, dass Sie den Pfad zu einer LRC-Datei angeben.
-Die Musikdatei „{0}“ existiert nicht.
-Schwerwiegender Fehler im BassBoom CLI-Addon.
 Der Ton kann nicht abgespielt werden, da die Datei nicht gefunden wurde.
 Musikdatei erfolgreich geöffnet.
 Musikdatei kann nicht geöffnet werden.
@@ -2479,63 +2420,8 @@ Genre
 Dauer
 Drücken Sie „q“, um die Wiedergabe zu beenden.
 Ton kann nicht abgespielt werden.
-Beim Versuch, den Equalizer-Vorgang zu verarbeiten, ist bei Basolia ein Fehler aufgetreten.
-Beim Versuch, den Equalizer-Vorgang zu verarbeiten, ist ein Fehler bei der Basolia-Ausgabe aufgetreten.
-Beim Versuch, den Equalizer-Vorgang zu verarbeiten, ist ein unbekannter Fehler aufgetreten.
-Ändern
-Wählen Sie Band
-Unterstützt von BassBoom
-Geben Sie einen Pfad zur Musikdatei ein
-Datei „{0}“ existiert nicht.
-Geben Sie einen Pfad zum Musikbibliotheksverzeichnis ein
-Das Verzeichnis der Musikbibliothek wurde nicht gefunden.
-BassBoom wird geladen, um {0} zu öffnen...
 Läuft gerade
-Ich versuche, die Liedtextdatei zu öffnen
-Liedtextdatei kann nicht geöffnet werden
-Schreiben Sie die Zielposition in diesem Format
-Verfügbare Tastenanschläge
-Spielpause
-Stoppen
-Lautstärkeregelung
-Suche Kontrolle
-Suchen Sie nach einer Dauerkontrolle
-Songinfo
-Fügen Sie eine Musikdatei hinzu
-Vorheriges Lied
-Nächstes Lied
-Aktuelles Lied entfernen
-Alle Lieder entfernen
-Unbekannt
 Titel
-Album
-Kommentar
-Text
-Linien
-Keine Texte
-Ebeneninformationen
-Schicht
-Rate
-Modus
-Modus Ext
-Rahmengröße
-Schwerpunkt
-Bitrate
-ABR-Rate
-Variable Bitrate
-Texte und Extras
-Die Musikdatei „{0}“ kann nicht geöffnet werden, da sie nicht gefunden wurde.
-Liedtitel
-Liedkünstler
-Liedgenre
-Suchen
-Volumen
-Beim Versuch, die Musikdatei zu verarbeiten, ist bei Basolia ein Fehler aufgetreten.
-Beim Versuch, die Musikdatei zu verarbeiten, ist ein Fehler bei der Basolia-Ausgabe aufgetreten.
-Beim Versuch, die Musikdatei zu verarbeiten, ist ein unbekannter Fehler aufgetreten.
-Wiedergabefehler
-Helfen
-Drücken Sie „A“, um ein einzelnes Lied zur Wiedergabeliste hinzuzufügen, oder „S“, um die gesamte Musikbibliothek einzufügen.
 Amerikanischer Kaffee
 Roter Tee
 Grüner Tee
@@ -2714,7 +2600,6 @@ Geben Sie eine Zahl zum Konvertieren ein...
 Sie haben keine Zahl zum Umrechnen eingegeben.
 Die eingegebene Nummer ist ungültig.
 Einheit kann nicht konvertiert werden.
-Wir feiern den 6.000sten Commit seit 0.0.1!
 Fortgesetzt werden...
 Das Ende
 Frohes Neues Jahr!
@@ -2919,12 +2804,6 @@ Allgemeine Kernel-Einstellungen
 Sprache
 Gibt die Kernelsprache an.
 Kultur
-Aktivieren Sie Farbenblindheit
-Wenn Sie farbenblind sind oder Farbenblindheit simulieren möchten, können Sie es aktivieren.
-Art der Farbenblindheit
-Die Art der Farbenblindheit, ob Protan, Deuter oder Tritan.
-Schweregrad der Farbenblindheit
-Wie schwerwiegend ist die Farbenblindheit?
 Signalton beim Herunterfahren oder Neustarten
 Aktiviert einen Signalton beim Herunterfahren des Kernels.
 Verzögerung beim Herunterfahren oder Neustart
@@ -2937,18 +2816,12 @@ Entwicklungsmitteilung bestätigt
 Wenn dieser Wert auf „true“ gesetzt ist, zeigt Ihnen der Kernel in Entwicklungsversionen nicht jedes Mal den Entwicklungshinweis an, wenn Sie den Kernel starten.
 Erlaube das Laden nicht vertrauenswürdiger Mods
 Wenn es auf „true“ gesetzt ist, gibt der Kernel beim Laden von Mods, die nicht über den signierten öffentlichen Schlüssel verfügen, keinen Fehler aus.
-Debug-Kontingent aktiviert
-Wenn diese Option aktiviert ist, rotiert der Debug-Writer die Debug-Protokolldatei, wenn das Kontingent überschritten wird.
-Anzahl der Debug-Kontingentzeilen
-Wie viele Zeilen müssen in den Debug-Puffer gedruckt werden, bevor das Kontingentlimit erreicht wird? Bitte beachten Sie, dass es nicht angibt, wie viele Zeilen sich in den Debug-Protokolldateien befinden.
 Verwenden Sie die Systemzeitzone
 Wenn diese Option aktiviert ist, verwendet der Kernel die Zeitzone aus Ihren Computereinstellungen. Andernfalls wird die Kernel-weite Zeitzone verwendet, die konfiguriert werden kann.
 Kernelweite Zeitzone
 Die zu verwendende kernelweite Zeitzone
 Zeigen Sie das Lizenzinformationsfeld an
 Legt fest, ob das modale Lizenzinformationsfeld nach jeder Anmeldung drei Sekunden lang angezeigt werden soll. Es wird empfohlen, es eingeschaltet zu lassen.
-Legacy-Protokollierungsstil für Debug-Protokolle
-Ob der Legacy-Protokollierungsstil für Debug-Protokolle oder gruppierte Debug-Protokolle aktiviert werden soll.
 In diesem Abschnitt können Sie auswählen, welche Art von Farbe Sie ändern möchten.
 Farbeinstellungen
 Verwenden Sie Akzentfarben
@@ -3036,8 +2909,6 @@ Durch den Doppelpunkt getrennte Gruppe von Pfaden. Es funktioniert genauso wie P
 Konsolentitel bei Befehlsausführung festlegen
 Legt den Konsolentitel bei der Befehlsausführung fest.
 Zeigt die Anzahl der Granaten an
-In diesem Abschnitt werden die Shell-Voreinstellungen aufgeführt.
-Shell-Voreinstellungen
 Prompt-Voreinstellung
 Voreinstellung für Eingabeaufforderungen zur Textbearbeitung
 Hex-Eingabeaufforderungsvoreinstellung bearbeiten
@@ -3100,7 +2971,6 @@ Debug-Aktualisierungsintervall für die CPU-Auslastung
 Wie viele Millisekunden muss man warten, bevor die CPU-Auslastung aktualisiert und an den Debugger ausgegeben wird?
 Ein Schlangenspiel.
 Zeigt Ihnen schöne berühmte Zitate.
-In diesem Abschnitt können Sie konfigurieren, wie die Vergnügungen funktionieren.
 Wählen Sie Ihren bevorzugten Schwierigkeitsgrad aus: 0 ist einfach, 1 ist mittel, 2 ist schwer, 3 ist sehr schwer und 4 ist benutzerdefiniert.
 Verwenden Sie PowerLine zum Rendern von Raumschiffen in ShipDuet
 Ob PowerLine zum Rendern des Raumschiffs verwendet werden soll oder ob das Standard-Größer-als-Zeichen verwendet werden soll. Wenn Sie PowerLine mit ShipDuet verwenden möchten, müssen Sie eine entsprechende Schriftart mit PowerLine-Unterstützung installieren.
@@ -3129,7 +2999,6 @@ RSS-Eingabeaufforderungsvoreinstellung
 In diesem Abschnitt können Sie die Funktionsweise der SFTP-Shell konfigurieren.
 In diesem Abschnitt können Sie die Funktionsweise der SQL-Shell konfigurieren.
 SQL-Shell-Eingabeaufforderungsvoreinstellung
-In diesem Abschnitt können Sie die Funktionsweise der Timer konfigurieren.
 In diesem Abschnitt können Sie konfigurieren, wie Tipps funktionieren.
 Kernel-Tipps anzeigen
 Wenn aktiviert, zeigt Ihnen die Shell die Tipps bei jedem Login an.
@@ -3277,7 +3146,6 @@ Geben Sie Ihr Benutzerkennwort ein. Zur Erhöhung der Sicherheit sollten Sie ein
 Automatischer Update-Check
 Ja, das tue ich!
 Nein danke.
-Automatischer Update-Download
 Das Starten oder Stoppen von Mods ist im abgesicherten Modus nicht zulässig.
 Es ist ein unbekannter Kernelfehler aufgetreten, möglicherweise weil der Kernel-Ausnahmetyp nicht angegeben wurde oder etwas nicht stimmte.
 Das Kernel-Netzwerk hat einen Fehler für die Hostnamenkomponente gemeldet.
@@ -3412,7 +3280,6 @@ Booteintrag auswählen:
 Verwendet die Liste der gebräuchlichen Wörter.
 Verwendet die vollständige Wortliste.
 Das Ping-Pong-Spiel!
-Öffnet stattdessen den Radiosender-Player
 Liest eine Beep-Synth-Datei
 Konvertiert das Quellfarbmodell in das Zielfarbmodell in Zahlen.
 Konvertiert das Quellfarbmodell in das Zielfarbmodell im KS-Format.
@@ -3441,72 +3308,6 @@ Kurzes Firmensymbol
 Erstellt ein neues Thema in einem interaktiven TUI
 dass Sie mit Ihren Kernel-Mods bootfähige Programme erstellen können?
 Stationstyp
-Gerät
-Treiber
-Während der Wiedergabe kann keine Abfrage aktueller Geräte erfolgen.
-Gerät und Treiber
-Verfügbare Geräte und Treiber
-BassBoom-Spezifikationen
-Decoder
-Systemspezifikationen
-Basolia-Version
-MPG123-Version
-OUT123-Version
-Unterstützte Decoder
-Alle Decoder
-System
-Systemarchitektur
-Prozessarchitektur
-Systembeschreibung
-.NET-Beschreibung
-Wiederholungsprüfpunkt festlegen
-Versuchen Sie, den Kontrollpunkt zu wiederholen
-Öffnet den Equalizer
-Geräte- und Treiberinformationen
-Gerät und Treiber festlegen
-Gerät und Treiber zurücksetzen
-Systeminformationen
-Radiosenderinfo
-Erweiterte Informationen zum Radiosender
-Einen Radiosender hinzufügen
-Vorheriger Radiosender
-Nächster Radiosender
-Aktuellen Radiosender entfernen
-Alle Radiosender entfernen
-Wählen Sie einen Treiber aus. ESC zum Beenden.
-Wählen Sie ein Gerät aus. Der aktuelle Treiber ist {0}. ESC zum Beenden.
-Keine Wiedergabe. Der Musik-Player ist im Leerlauf.
-Bass
-Obere Mitte
-Verdreifachen
-Unbekannter Bandtyp
-Equalizer-Band
-Wählen Sie einen Liedtext aus, nach dem Sie suchen möchten
-Heimatstaat
-Präzises Rendern
-Pufferfüllung
-Dekodierungsverzögerung
-Kodierungsverzögerung
-Codierungs-Padding
-Frankenstein-Stream
-Frischer Decoder
-Drücken Sie „A“, um einen Radiosender zur Wiedergabeliste hinzuzufügen.
-Geben Sie einen Pfad zum Radiosender ein. Die URL zum Sender muss einen MPEG-Radiosender angeben. AAC-Radiosender werden derzeit nicht unterstützt.
-Stationsinfo
-URL des Radiosenders
-Name des Radiosenders
-Aktuelles Lied des Radiosenders
-Startseite
-Stream-Pfad
-Zuhörer: {0} mit {1} in der Spitze
-Bitrate
-Medientyp
-Radioserverinfo
-Stream-Informationen
-Radiosender nutzt HTTPS
-Servertyp des Radiosenders
-Radiosender-Streams: {0} mit {1} aktiv
-Hörerzahl des Radiosenders: {0}, davon {1} in der Spitze
 Die Beep-Synth-Datei existiert nicht.
 Kapitelname
 Die Synth-Darstellung ist ungültig.
@@ -3649,7 +3450,6 @@ Die Textdatei ist noch nicht geöffnet.
 Handler für Erweiterung ist nicht angegeben.
 Der Standard-Handler konnte nicht abgerufen werden.
 Das Laden der Standardhandler ist fehlgeschlagen.
-Versuch, auf einen ungültigen Pfad zuzugreifen. Diese Prüfung wurde durchgeführt, um zu verhindern, dass ältere Windows 10-Systeme, die nicht auf den Patch vom April 2021 oder höher aktualisiert wurden, auf diese Pfade zugreifen, von denen bekannt ist, dass sie entweder die Beschädigung des NTFS-Dateisystems oder das Blue Screen of Death-Problem (BSOD) verursachen. Dies bedeutet, dass der Anrufer versucht, einen Denial of Service (DoS) zu verursachen und behoben werden sollte, oder dass die Benutzereingabe böswillig ist.
 Wählen
 Kopie
 Bewegen
@@ -3688,11 +3488,6 @@ Das Remote-Debug-Gerät scheint nicht zu existieren.
 Kann keine Remote-Debug-Geräte abrufen von
 Die englische Lokalisierungsressource kann nicht geöffnet werden
 Die Lokalisierungsressource kann nicht geöffnet werden für
-Figlet-Schriftart konnte nicht abgerufen werden.
-Drucken Sie eine Figlet-Zeichenfolge auf die Konsole (zentriert)
-Drucken Sie eine Figlet-Zeichenfolge mit Formatierung (zentriert) auf die Konsole.
-Drucken Sie eine Figlet-Zeichenfolge auf der Konsole (zentriert, positionell)
-Drucken Sie eine Figlet-Zeichenfolge mit Formatierung (zentriert, positionell) auf die Konsole.
 Einstiegspunkt konnte nicht abgerufen werden.
 Testet die Schaltflächen im Informationsfeld (mit Titel)
 Testet das farbige Eingabefeld im Informationsfeld (mit der Überschrift)
@@ -3710,7 +3505,6 @@ Methode kann nicht abgerufen werden
 Während der Textverarbeitung ist ein Fehler mit einem regulären Ausdruck aufgetreten. Überprüfen Sie die Syntax Ihres regulären Ausdrucks und versuchen Sie es erneut. Wenn das Timeout aufgetreten ist, stellen Sie sicher, dass Sie nicht zu viele Rekursionen durchführen (seien Sie nicht zu gierig).
 Beim Versuch, Ihre Anfrage zu verarbeiten, ist in den Homepage-Tools ein Fehler aufgetreten. Bitte stellen Sie sicher, dass Sie alle erforderlichen Daten korrekt eingegeben haben.
 Leider ist der letzte Fehler unbekannt, daher wissen wir nicht genau, was schief gelaufen ist. Es könnte jedoch hilfreich sein, wenn Sie die Kernel-Debugprotokolle konsultiert hätten.
-Add-On-Metadaten konnten nicht abgerufen werden.
 Feldinformationen können nicht abgerufen werden für
 Journaleinträge können nicht abgerufen werden
 (Markieren Sie Ihre Auswahl mit den Pfeiltasten und drücken Sie dann die EINGABETASTE.)
@@ -3814,7 +3608,6 @@ Weiter suchen
 Suche zurück
 Rohdaten
 Importieren aus MeCard
-Es liegen keine Objektinformationen vor für
 Manuell hinzufügen
 Array für Tagesabschnitte kann nicht abgerufen werden
 Kann den Tagesteil nicht abrufen
@@ -3826,18 +3619,8 @@ Rundenliste
 Nametags generieren (Umlaute werden derzeit nicht unterstützt)
 Konvertieren...
 Einheitenrechner
-Musik-Player
-Radiospieler
 Internet Radio (FM) Infos für
 Ich kann keine Internetradio-Informationen abrufen.
-Gerät (im Cache gespeichert
-Treiber (im Cache gespeichert
-(im Leerlauf) Ein Musikverzeichnis zur Playlist hinzufügen
-(beim Spielen) Selektiv suchen
-(beim Abspielen) Zum vorherigen Liedtext springen
-(beim Abspielen) Zum nächsten Liedtext springen
-(beim Abspielen) Zum aktuellen Liedtext springen
-(beim Spielen) Suchen Sie nach dem Text
 Ändern...
 Speichern...
 Laden...
@@ -3929,4 +3712,3 @@ Bringen Sie mit diesem Thema Nostalgie zurück!
 Ihr Terminal besteht aus Holzbrettern
 Inspiriert vom chinesischen Muster verschiedener Früchte
 Extras - CRC32C (Castagnoli)
-Die Suche nach Updates ist bei Entwicklungsversionen deaktiviert.

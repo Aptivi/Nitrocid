@@ -27,7 +27,6 @@ Error al intentar eliminar el nombre de usuario.
 El protector de pantalla solicitado {0} no se encuentra.
 {0} está configurado como protector de pantalla predeterminado.
 No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente.
-Hay un error grave al imprimir texto.
 El mod no se puede cargar debido a lo siguiente: 
 {0} v {1} comenzó
 No hay definición para el comando {0}.
@@ -242,9 +241,7 @@ Regresa...
 Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
 Escriba cuántas veces el comando "" get "" debe reintentar descargas fallidas. Debe ser numérico.
 Puede que la respuesta no sea negativa.
-La variable {0} no se encuentra en ninguno de los módulos.
 Cambia la configuración del kernel
-Cambiar de cultura al cambiar de idioma
 Texto mostrado
 Escriba el texto que desee que se muestre. Cuanto más corto, mejor.
 Error al cargar {0}
@@ -293,7 +290,6 @@ Humedad: {0}
 Puede obtener su propia clave API en https://home.openweathermap.org/api_keys.
 Unidad preferida para temperatura
 Cada inicio, buscará actualizaciones.
-Al cambiar de idioma, cambie los nombres de los meses, el calendario, etc.
 Mantenga los mensajes de prueba de hardware en silencio.
 Muestra el mensaje del día antes de mostrar la pantalla de inicio de sesión.
 Limpiar la pantalla antes de mostrar la pantalla de inicio de sesión.
@@ -425,8 +421,6 @@ No se pudo finalizar el mod {0}: {1}
 Muestra todos los eventos disparados
 Directorio actual
 Establece el directorio actual del shell. Escriba una ruta absoluta a cualquier directorio existente.
-Envolver salidas de lista
-Envuelve las salidas de la lista si parece demasiado larga para la geometría de la consola actual.
 ¡Silbido!
 {0} te hizo ping.
 Guardar tema en el directorio actual como ...
@@ -467,7 +461,6 @@ Consulta una palabra en una línea específica o en todas las líneas.
 Prueba la traducción de una cadena que existe en recursos a un idioma específico
 Imprime una cadena en la consola y analiza los marcadores de posición encontrados
 Prueba la facilidad de expresión regular
-Inicia todas las modificaciones
 Prueba la secuencia VT para 255 colores
 Prueba la secuencia VT para ver el color verdadero
 Envía una notificación para probar el receptor
@@ -662,9 +655,6 @@ Muestra la fecha y hora UTC del kernel
 Mods en la lista negra
 Escriba los nombres de archivo de las modificaciones que no se ejecutarán al inicio. Cuando termines, escribe "q". Escriba un signo menos junto a la ruta para eliminar un mod existente.
 Mod {0} está en la lista negra.
-Recarga todos los mods
-Agrega un mod a la lista negra
-Elimina un mod de la lista negra
 Mostrar información de la aplicación durante el arranque
 Mostrar tiempos de finalización de etapa
 Iniciar modificaciones del kernel en el arranque
@@ -857,7 +847,6 @@ Ya sea para mostrar lo que está escrito en el indicador de entrada.
 ¿Cuál es el número mínimo para elegir?
 ¿Cuál es el número máximo a elegir?
 Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar {0} para la versión del kernel.
-¿Qué variante del idioma actual se está utilizando para cambiar los nombres de los meses, el calendario, etc.?
 Activa el soporte de color verdadero.
 Palabra eliminada en la línea {0}.
 Cadena reemplazada en la línea {0}.
@@ -954,7 +943,6 @@ No puedo empacar nada.
 Para obtener más información sobre los términos y condiciones de uso de este software, visite
 Tipo de salida de elección predeterminada
 Comprueba todas las configuraciones de KS para ver si las variables están escritas correctamente
-Estas entradas de configuración tienen variables o enumeraciones no válidas y deben corregirse:
 Archivo {0} no encontrado
 Crea una matriz de variables con los valores proporcionados.
 Comprueba todos los números de línea de texto de localización para ver si todos son iguales
@@ -1027,8 +1015,6 @@ Si está habilitado, muestra el tamaño total de la carpeta en la lista, dependi
 Formato JSON predeterminado para shell JSON
 Selecciona el formato JSON predeterminado (mejorado o minimizado) para que se guarde el shell JSON.
 ¡Se descargó la actualización con éxito!
-Descargar actualizaciones automáticamente
-Si hay alguna actualización, el kernel la descargará automáticamente.
 Radio de explosión de fuegos artificiales
 ¿Cuántos bloques (hasta 10) es el radio de explosión de los fuegos artificiales cuando se encienden?
 Este comando tiene los siguientes interruptores que cambian su funcionamiento:
@@ -1221,7 +1207,6 @@ Primera ejecución del kernel
 ¡Bienvenido a Nitrocid Kernel! ¡Gracias por probarlo!
 Para comenzar, presione ENTRAR.
 Elige tu idioma. De forma predeterminada, el kernel utiliza el idioma inglés, pero aquí puedes seleccionar cualquier otro idioma.
-Según la configuración de idioma de su sistema, el idioma apropiado es
 Crea tu primer usuario
 Te ayudaremos a crear tu propio nombre de usuario. Seleccione el nombre que desee. Este podría ser su apodo o su nombre corto, siempre y cuando su nombre de usuario no contenga espacios ni caracteres especiales y no exista ya. Están registrados los siguientes nombres de usuario:
 Ingrese el nombre de usuario
@@ -1231,7 +1216,6 @@ Actualizaciones automáticas
 Nitrocid KS actualmente se actualiza para obtener la versión más reciente que incluye mejoras generales y correcciones de errores. Las nuevas versiones principales suelen incluir cambios importantes y nuevas funciones interesantes.
 ¿Quieres que Nitrocid KS busque actualizaciones automáticamente?
 Además de buscar actualizaciones automáticamente, Nitrocid KS también puede descargar el archivo de actualización automáticamente.
-¿Quieres que Nitrocid KS descargue actualizaciones automáticamente?
 Siempre puedes buscar actualizaciones del kernel usando el comando "update".
 ¡Empezar!
 ¡Felicidades! ¡Ahora tienes una cuenta de usuario, {0}!
@@ -1268,8 +1252,6 @@ No se pueden borrar archivos varios
 Descripción de ayuda sin argumentos
 Su consola debe admitir colores verdaderos para usar este tema.
 Salir de la vista previa
-Hecho
-Tipos de interruptor
 El tema {0} celebra un evento, pero es demasiado temprano o demasiado tarde para asistir. Cada año, se puede acceder a este tema desde el {1}/{2} hasta el {3}/{4}.
 El tema {0} necesita compatibilidad con colores reales, pero tu consola no lo admite.
 El texto no debe estar vacío.
@@ -1333,14 +1315,12 @@ Especificar una ruta existente a un archivo de configuración
 No es una clase de configuración válida.
 El archivo de configuración no es válido.
 Hay un error al intentar leer la configuración: {0}.
-La configuración del kernel no funcionará correctamente. Las claves no válidas son
 ¡Validación fallida!
 ¡La lectura falló!
 Intentando arreglar la configuración...
 No se pueden verificar las variables de configuración cuando no se especifica ningún tipo.
 No se pueden verificar las variables de configuración cuando no se especifican entradas.
 Intentando registrar una configuración personalizada sin contenido.
-Intentando registrar una configuración personalizada con contenido no válido. Las claves no válidas son
 Intentando cancelar el registro de una configuración personalizada sin nombre.
 La configuración personalizada no está registrada.
 Intentando consultar una configuración personalizada vacía.
@@ -1348,7 +1328,6 @@ Tipo de configuración no encontrado.
 No se encontró la clave de configuración que coincida con la variable especificada.
 El valor JSON de las entradas de configuración está vacío.
 Intentando registrar una configuración base sin contenido.
-Intentando registrar una configuración base con contenido no válido. Las claves no válidas son
 Intentando cancelar el registro de una configuración base sin nombre.
 Fallo de aserción.
 Evento {0} no encontrado.
@@ -1519,9 +1498,6 @@ No se pudo iniciar el complemento del kernel
 No se pudo inicializar el complemento del kernel
 No se pudieron finalizar los complementos. Los siguientes complementos no pudieron finalizar:
 No se pudieron detener los complementos. Los siguientes complementos no se pudieron detener:
-No se puede obtener la lista de funciones
-No se puede obtener la lista de propiedades
-No se puede obtener la lista de campos
 No se puede ejecutar una función personalizada con un complemento inexistente
 No se puede encontrar la función '{0}' en el complemento '{1}'.
 No se puede encontrar la propiedad '{0}' en el complemento '{1}'.
@@ -1598,17 +1574,14 @@ Actualizaciones del núcleo
 Detección de hardware
 Componentes opcionales
 Inicialización de usuario
-Modificaciones del kernel
 Verificación de la integridad del sistema
 Escenario
 Ejecutando en modo de mantenimiento. Saltando etapa...
 No se puede regenerar el hilo del kernel mientras el mismo hilo ya se está ejecutando.
 La acción de inicio del subproceso secundario no puede ser nula.
 Error del subproceso del núcleo {0}.
-Ha instalado Nitrocid KS usando su administrador de paquetes. Úselo para actualizar su kernel.
 Sin información.
 No puedo abrir un archivo o una carpeta
-Presione cualquier tecla para cerrar esta ventana.
 Estilo de nueva línea:
 Archivo binario:
 Metadatos MIME:
@@ -1683,7 +1656,6 @@ Nombre estándar
 Falla
 El controlador de progreso puede no ser nulo.
 Procesando...
-El tipo de método no está definido en la lista de tipos de nitrocida base.
 Este método es inexistente.
 Este método es estático. Utilice la sobrecarga sin objeto.
 Este método no es estático. Utilice la sobrecarga de objetos.
@@ -1701,8 +1673,6 @@ El chapoteo de cierre no se ha mostrado
 ¡Hemos alcanzado el {0}%!
 Cargando...
 No se puede ejecutar una función personalizada con un mod inexistente
-No se puede ejecutar una propiedad personalizada con un mod inexistente
-No se puede ejecutar un campo personalizado con un mod inexistente
 Dependencia insatisfecha. Las dependencias fallidas se enumeran a continuación:
 Intenté consultar los manuales del mod inexistente {0}.
 Intenté inicializar el manual {0} para el mod inexistente {1}.
@@ -1814,26 +1784,10 @@ Pruebas de modificación del kernel
 Pruebas del sistema de red.
 Pruebas de shell UESH
 Pruebas de usuario
-Estadísticas
 Cerrar
-Muestra las estadísticas de prueba actuales.
 Sale del modo de prueba y apaga el kernel.
 Elija una sección de prueba para ejecutar
-Probar todo
-Prueba todas las fachadas.
-Vuelve a la selección de sección.
-Elija una fachada de prueba para ejecutar
-Esta prueba contiene parámetros opcionales. Ingrese el valor del parámetro para agregarlo a los parámetros de prueba.
-Los parámetros cuentan
-¡Sí!
 No
-Rever
-¿La prueba se realizó como se esperaba?
-La prueba falló. El valor esperado es {0}, pero el valor real es {1}.
-La prueba falló inesperadamente.
-Pruebas exitosas:
-Pruebas fallidas:
-Pruebas a ejecutar:
 El número de fotogramas de pila no debe exceder la cantidad actual de fotogramas o no debe ser negativo.
 Nitrocida KS
 El supervisor de subprocesos del kernel detectó {0} subprocesos críticos que aún no se han iniciado.
@@ -1925,7 +1879,6 @@ Obtiene la información del usuario
 Cambia el idioma preferido del usuario.
 Debe habilitar el modo de depuración antes de poder utilizar el shell de depuración.
 Obtiene el rastreo actual
-Obtiene fácilmente la información del registro de depuración utilizando el número de sesión
 Recibe un mensaje del tipo de excepción del kernel. Útil para depurar
 Obtiene un valor de campo
 Obtiene un valor de propiedad
@@ -1957,7 +1910,6 @@ Obtiene el directorio actual
 Comprueba el archivo o el bloqueo de la carpeta.
 Espera hasta que se desbloquee el archivo o la carpeta
 Cambia de idioma
-Utiliza la configuración de idioma del sistema para intentar inferir el idioma de
 Cambia el idioma del usuario en lugar del idioma del sistema.
 Estilo de elección de una línea
 Estilo de elección de dos líneas.
@@ -2120,12 +2072,8 @@ Imprimir una cadena en la consola
 Imprimir una cadena para depurar
 Imprime una cadena para depurar con formato
 Imprime una cadena en la consola con formato
-Imprime una cadena de figlet en la consola
-Imprima una cadena de figlet en la consola con formato
 Imprime una cadena en la consola con resaltado
 Imprimir un separador a la consola.
-Imprime un separador para consola con color.
-Imprime un separador para consola con formato y color.
 Imprime un separador a la consola con formato.
 Imprime una cadena en la consola con nuevas líneas en la cadena
 Imprime una cadena en la consola con caracteres nulos
@@ -2189,8 +2137,6 @@ Permisos
 Grupos
 Idioma de usuario preferido establecido en {0}. Es posible que desee iniciar sesión nuevamente.
 Shell de administrador
-Número de sesión no válido
-No existe tal número de sesión
 No existe tal tipo de excepción
 Nombre del tipo de excepción
 Mensaje
@@ -2313,8 +2259,6 @@ Venció
 Disponible
 Selecciona un tema
 ¿Quieres establecer este tema?
-¡Sí, configúralo!
-No, no lo configures.
 Para acceder al manual de usuario para usos generales de Nitrocid, visite el siguiente enlace:
 Para acceder al manual del desarrollador para conocer formas actualizadas de realizar modificaciones del kernel y protectores de pantalla, visite el siguiente enlace:
 ¡Ya estás ejecutando la sesión elevada de Nitrocid!
@@ -2344,7 +2288,6 @@ Juega el juego Wordle originalmente
 Conmemora el quinto aniversario del lanzamiento del kernel
 Abre el archivo comprimido en el shell de archivo.
 Obtiene todas las líneas de letras del archivo de letras
-Abre un reproductor de música interactivo.
 Reproduce un archivo de letras
 Reproduce un sonido
 Agrega una alarma para avisarte cuando tu taza de té o café esté lista.
@@ -2465,8 +2408,6 @@ Debido a que se lanzaron nuevas características innovadoras, decidimos nombrar 
 No puedo extraer nada.
 El archivo no se puede escribir porque el tipo es
 Asegúrese de especificar la ruta a un archivo LRC.
-El archivo de música '{0}' no existe.
-Error fatal en el complemento CLI de BassBoom.
 No se puede reproducir sonido porque no se encuentra el archivo.
 Archivo de música abierto correctamente.
 No puedo abrir el archivo de música.
@@ -2479,63 +2420,8 @@ Género
 Duración
 Presione 'q' para detener la reproducción.
 No puedo reproducir sonido.
-Hay un error con Basolia al intentar procesar la operación del ecualizador.
-Hay un error con la salida de Basolia al intentar procesar la operación del ecualizador.
-Hay un error desconocido al intentar procesar la operación del ecualizador.
-Cambiar
-Seleccionar banda
-Desarrollado por BassBoom
-Ingrese una ruta al archivo de música
-El archivo "{0}" no existe.
-Ingrese una ruta al directorio de la biblioteca de música
-No se encuentra el directorio de la biblioteca de música.
-Cargando BassBoom para abrir {0}....
 Jugando ahora
-Intentando abrir el archivo de letras
-No puedo abrir el archivo de letras
-Escriba la posición de destino en este formato.
-Pulsaciones de teclas disponibles
-Reproducir pausar
-Detener
-Control del volumen
-buscar control
-Buscar control de duración
-Información de la canción
-Agregar un archivo de música
-Canción anterior
-siguiente cancion
-Eliminar canción actual
-Eliminar todas las canciones
-Desconocido
 Título
-Álbum
-Comentario
-Letra
-líneas
-Sin letras
-Información de capa
-Capa
-Tasa
-Modo
-Modo externo
-Tamaño del marco
-Énfasis
-tasa de bits
-Tasa ABR
-tasa de bits variable
-Textos y extras
-No se puede abrir el archivo de música '{0}' porque no se encuentra.
-Nombre de la cancion
-artista de la canción
-Género de la canción
-Buscar
-Volumen
-Hay un error con Basolia al intentar procesar el archivo de música.
-Hay un error con la salida de Basolia al intentar procesar el archivo de música.
-Hay un error desconocido al intentar procesar el archivo de música.
-Fallo de reproducción
-Ayuda
-Presione 'A' para insertar una sola canción en la lista de reproducción, o 'S' para insertar toda la biblioteca de música.
 Cafe americano
 Té rojo
 Té verde
@@ -2714,7 +2600,6 @@ Introduzca un número para convertir...
 No has ingresado un número para convertir.
 El número ingresado no es válido.
 No se puede convertir la unidad.
-¡Celebrando el compromiso número 6000 desde 0.0.1!
 Continuará...
 El fin
 ¡Feliz año nuevo!
@@ -2919,12 +2804,6 @@ Configuración general del kernel
 Idioma
 Especifica el idioma del núcleo.
 Cultura
-Habilitar el daltonismo
-Si es daltónico o si desea simular el daltonismo, puede habilitarlo.
-Tipo de daltonismo
-El tipo de daltonismo, ya sea protan, deuter o tritan.
-Gravedad del daltonismo
-¿Qué tan grave es el daltonismo?
 Pitido al apagar o reiniciar
 Habilita un pitido al apagar el kernel.
 Retraso en el apagado o reinicio
@@ -2937,18 +2816,12 @@ Aviso de desarrollo reconocido
 Si se establece en verdadero, el kernel no le mostrará el aviso de desarrollo cada vez que inicie el kernel en las versiones de desarrollo.
 Permitir cargar mods que no sean de confianza
 Si se establece en verdadero, el kernel no generará errores al cargar mods que no tengan la clave pública firmada.
-Cuota de depuración habilitada
-Si esta opción está habilitada, el escritor de depuración rota el archivo de registro de depuración si se excede la cuota.
-Recuento de líneas de cuota de depuración
-¿Cuántas líneas imprimir en el búfer de depuración antes de alcanzar el límite de cuota? Tenga en cuenta que no representa cuántas líneas hay en los archivos de registro de depuración.
 Usar zona horaria del sistema
 Si esta opción está habilitada, el kernel usa la zona horaria de la configuración de su computadora. De lo contrario, utiliza la zona horaria de todo el kernel que se puede configurar.
 Zona horaria en todo el kernel
 La zona horaria de todo el kernel a utilizar
 Mostrar el cuadro de información de la licencia
 Si se debe mostrar el cuadro de información de la licencia modal durante tres segundos después de cada inicio de sesión. Se recomienda mantenerlo puesto.
-Estilo de registro heredado para registros de depuración
-Ya sea para habilitar el estilo de registro heredado para los registros de depuración o para habilitar los registros de depuración agrupados.
 Esta sección te permite elegir qué tipo de color quieres cambiar.
 Configuraciones de color
 Usa colores de acento
@@ -3036,8 +2909,6 @@ Grupo de caminos separados por los dos puntos. Funciona igual que RUTA. Escriba 
 Establecer el título de la consola al ejecutar el comando
 Establece el título de la consola al ejecutar el comando.
 Mostrar el recuento de conchas
-Esta sección enumera las configuraciones preestablecidas del shell.
-Configuración preestablecida del shell
 Preestablecido rápido
 Preajuste de mensaje de edición de texto
 Preajuste de solicitud de edición hexadecimal
@@ -3100,7 +2971,6 @@ Intervalo de actualización de depuración de uso de CPU
 ¿Cuántos milisegundos esperar antes de actualizar el uso de la CPU e imprimirlo en el depurador?
 Un juego de serpientes.
 Te muestra bonitas citas famosas.
-Esta sección te permite configurar cómo funcionan las diversiones.
 Seleccione su dificultad preferida, donde 0 es fácil, 1 es media, 2 es difícil, 3 es muy difícil y 4 es personalizada.
 Utilice PowerLine para renderizar naves espaciales en ShipDuet
 Si usar PowerLine para renderizar la nave espacial o usar el carácter estándar mayor que. Si desea utilizar PowerLine con ShipDuet, debe instalar una fuente adecuada compatible con PowerLine.
@@ -3129,7 +2999,6 @@ Preajuste de aviso RSS
 Esta sección le permite configurar cómo funciona el shell SFTP.
 Esta sección le permite configurar cómo funciona el shell SQL.
 Configuración preestablecida del mensaje de Shell SQL
-Esta sección le permite configurar cómo funcionan los temporizadores.
 Esta sección le permite configurar cómo funcionan las sugerencias.
 Mostrar consejos sobre el núcleo
 Si está habilitado, el shell le muestra los consejos en cada inicio de sesión.
@@ -3277,7 +3146,6 @@ Ingrese su contraseña de usuario. Debe elegir una contraseña segura para mayor
 Comprobación de actualización automática
 ¡Sí!
 No, gracias.
-Descarga automática de actualizaciones
 No se permite iniciar o detener mods en modo seguro.
 Hubo un error de kernel desconocido, posiblemente debido a que no se especificó el tipo de excepción del kernel o a que algo andaba mal.
 La red del kernel ha informado de un error para el componente del nombre de host.
@@ -3412,7 +3280,6 @@ Seleccione la entrada de inicio:
 Utiliza la lista de palabras comunes.
 Utiliza la lista completa de palabras.
 ¡El juego de ping-pong!
-En su lugar, abre el reproductor de emisoras de radio.
 Lee un archivo de sintetizador con pitido
 Convierte el modelo de color de origen al modelo de color de destino en números.
 Convierte el modelo de color de origen al modelo de color de destino en formato KS.
@@ -3441,72 +3308,6 @@ Símbolo de empresa corto
 Crea un nuevo tema en una TUI interactiva
 ¿Que puedes crear programas de arranque usando las modificaciones de tu kernel?
 Tipo de estación
-Dispositivo
-Conductor
-No se pueden consultar los dispositivos actuales mientras no se juega.
-Dispositivo y controlador
-Dispositivos y controladores disponibles
-Especificaciones de BassBoom
-Decodificadores
-Especificaciones del Sistema
-versión basolia
-Versión MPG123
-Versión OUT123
-Decodificadores compatibles
-Todos los decodificadores
-Sistema
-Arquitectura del sistema
-Arquitectura de proceso
-Descripción del sistema
-Descripción de .NET
-Establecer punto de control de repetición
-Busca repetir punto de control
-Abre el ecualizador
-Información del dispositivo y del controlador
-Configurar dispositivo y controlador
-Restablecer dispositivo y controlador
-Información del sistema
-información de la estación de radio
-Información ampliada de la emisora de radio.
-Agregar una estación de radio
-Estación de radio anterior
-Próxima emisora de radio
-Eliminar estación de radio actual
-Eliminar todas las estaciones de radio
-Seleccione un conductor. ESC para salir.
-Seleccione un dispositivo. El conductor actual es {0}. ESC para salir.
-No jugar. El reproductor de música está inactivo.
-Bajo
-Medio superior
-Triplicar
-Tipo de banda desconocido
-Banda del ecualizador
-Seleccione una letra para buscar
-Estado nativo
-Representación precisa
-Relleno del búfer
-Retraso de decodificación
-Retraso de codificación
-Relleno de codificación
-corriente de frankenstein
-Nuevo decodificador
-Presione 'A' para insertar una estación de radio en la lista de reproducción.
-Ingrese una ruta a la estación de radio. La URL de la estación debe proporcionar una estación de radio MPEG. Los AAC aún no son compatibles.
-Información de la estación
-URL de la estación de radio
-Nombre de la estación de radio
-Canción actual de la estación de radio.
-pagina de inicio
-Ruta de la corriente
-Oyentes: {0} con {1} en su punto máximo
-tasa de bits
-Tipo de medio
-Información del servidor de radio
-Información de transmisión
-La estación de radio usa HTTPS
-Tipo de servidor de estación de radio
-Transmisiones de estaciones de radio: {0} con {1} activo
-Oyentes de estaciones de radio: {0} con {1} en su punto máximo
 El archivo de sintetizador de pitidos no existe.
 Nombre del capítulo
 La representación del sintetizador no es válida.
@@ -3649,7 +3450,6 @@ El archivo de texto aún no está abierto.
 No se especifica el controlador de la extensión.
 No se pudo obtener el controlador predeterminado
 Error al cargar los controladores predeterminados.
-Intentando acceder a una ruta no válida. Esta comprobación se realizó para evitar que los sistemas Windows 10 más antiguos que no se actualizaron al parche de abril de 2021 o posterior accedan a estas rutas que se sabe que causan la corrupción del sistema de archivos NTFS o el problema de la pantalla azul de la muerte (BSOD). Esto implica que el autor de la llamada está intentando provocar una denegación de servicio (DoS) y debe solucionarse, o que la entrada del usuario es maliciosa.
 Seleccionar
 Copiar
 Mover
@@ -3688,11 +3488,6 @@ El dispositivo de depuración remota no parece existir.
 No se pueden obtener dispositivos de depuración remota desde
 No se puede abrir el recurso de localización en inglés
 No se puede abrir el recurso de localización para
-No se pudo obtener la fuente figlet
-Imprima una cadena de figlet en la consola (centrada)
-Imprima una cadena de figlet en la consola con formato (centrado)
-Imprima una cadena de figlet en la consola (centrada, posicional)
-Imprima una cadena de figlet en la consola con formato (centrado, posicional)
 No se pudo obtener el punto de entrada.
 Prueba los botones en el cuadro informativo (titulado)
 Prueba el cuadro de entrada de color en el cuadro informativo (titulado)
@@ -3710,7 +3505,6 @@ No se puede obtener el método
 Se produjo un error de expresión regular mientras se procesaba el texto. Verifique la sintaxis de la expresión regular e intente nuevamente. Si se agotó el tiempo de espera, asegúrese de no recurrir demasiado (no sea codicioso).
 La página de inicio de herramientas ha detectado un error al intentar procesar su solicitud. Asegúrese de haber ingresado todos los datos necesarios correctamente.
 Lamentablemente, se desconoce cuál fue el último error, por lo que no sabemos exactamente qué salió mal. Sin embargo, podría ser útil consultar los registros de depuración del kernel.
-No se pudieron obtener los metadatos del complemento
 No se puede obtener información del campo para
 No puedo obtener entradas de diario
 (Utilice las teclas de flecha para resaltar su elección, luego presione ENTER).
@@ -3814,7 +3608,6 @@ Buscar Siguiente
 Buscar Atrás
 Información en bruto
 Importar desde MeCard
-No hay información de la propiedad para
 Agregar manualmente
 No se puede obtener la matriz de partes del día
 No puedo obtener la parte del día
@@ -3826,18 +3619,8 @@ Lista de vueltas
 Generar etiquetas de nombre (actualmente no se admiten diéresis)
 Convertir...
 Convertidor de unidades
-Reproductor de música
-Reproductor de radio
 Información de radio por Internet (FM) para
 No puedo obtener información de radio por Internet.
-Dispositivo (en caché)
-Controlador (en caché)
-(cuando está inactivo) Agregar un directorio de música a la lista de reproducción
-(al jugar) Busca selectivamente
-(al reproducir) Buscar la letra anterior
-(mientras se reproduce) Busca la siguiente letra
-(al reproducir) Busca la letra actual
-(al tocar) Busca qué letra
 Cambiar...
 Ahorrar...
 Carga...
@@ -3929,4 +3712,3 @@ Esquema de colores para Windows 11, una versión reciente de Windows
 Su terminal está formada por tablones de madera.
 Inspirado en el patrón chino de diferentes frutas.
 Extras - CRC32C (Castagnoli)
-La búsqueda de actualizaciones está deshabilitada en las versiones de desarrollo.

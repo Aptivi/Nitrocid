@@ -27,7 +27,6 @@ Eroare la încercarea de a elimina numele de utilizator.
 Screensaver-ul {0} solicitat nu a fost găsit.
 {0} este setat ca screensaver implicit.
 Screensaverul {0} nu a fost găsit în baza de date. Verificați numele și încercați din nou.
-Există o eroare gravă la imprimarea textului.
 Modul nu poate fi încărcat din cauza următoarelor:
 {0} v{1} a început
 Nicio definiție pentru comanda {0}.
@@ -242,9 +241,7 @@ Arată fișierele ascunse
 Scrieți un port de depanare la distanță. Trebuie să fie numeric și nu trebuie să fie deja folosit. În caz contrar, depanatorul de la distanță nu va deschide portul.
 Scrieți de câte ori comanda „get” ar trebui să reîncerce descărcări eșuate. Trebuie să fie numeric.
 Răspunsul poate să nu fie negativ.
-Variabila {0} nu se găsește pe niciunul dintre module.
 Modifică configurația kernelului
-Schimbați cultura atunci când schimbați limbile
 Text afișat
 Scrieți orice text doriți să fie afișat. Mai scurt este mai bine.
 Nu s-a putut încărca {0}
@@ -293,7 +290,6 @@ Umiditate: {0}
 Puteți obține propria cheie API la https://home.openweathermap.org/api_keys.
 Unitate preferată pentru temperatură
 La fiecare pornire, va verifica dacă există actualizări.
-Când schimbați limbile, schimbați numele lunii, calendarul etc.
 Păstrați mesajele de testare hardware silențioase.
 Afișați mesajul zilei înainte de afișarea ecranului de conectare.
 Ștergeți ecranul înainte de a afișa ecranul de conectare.
@@ -425,8 +421,6 @@ Nu s-a finalizat modul {0}: {1}
 Listează toate evenimentele declanșate
 Directorul curent
 Setează directorul curent al shell-ului. Scrieți o cale absolută către orice director existent.
-Wrap list outputs
-Încheie ieșirile listei dacă pare prea lungă pentru geometria actuală a consolei.
 Ping!
 {0} v-a sunat.
 Salvați tema în directorul curent ca...
@@ -467,7 +461,6 @@ Interogează un cuvânt dintr-o linie specificată sau pe toate liniile
 Testează traducerea unui șir care există în resurse într-un anumit limbaj
 Imprimă un șir pentru consolă și analizează substituenții găsiți
 Testează facilitatea expresiei regulate
-Pornește toate modurile
 Testează secvența VT pentru 255 de culori
 Testează secvența VT pentru culoarea adevărată
 Trimite o notificare pentru a testa receptorul
@@ -662,9 +655,6 @@ Ce fișier este fișierul text MAL? Scrieți o cale absolută către fișierul t
 Moduri pe lista neagră
 Scrieți numele de fișiere ale modurilor care nu vor rula la pornire. Când ai terminat, scrie „q”. Scrieți un semn minus lângă cale pentru a elimina un mod existent.
 Mod {0} este pe lista neagră.
-Reîncarcă toate modurile
-Adaugă un mod la lista neagră
-Elimină un mod din lista neagră
 Afișați informații despre aplicație în timpul pornirii
 Arată orele de încheiere a etapei
 Porniți modificările kernelului la pornire
@@ -857,7 +847,6 @@ Dacă să arate ce este scris în promptul de intrare.
 Care este numărul minim de ales?
 Care este numărul maxim de ales?
 Dacă este specificat, va afișa un banner de pornire personalizat cu suport pentru substituenți. Puteți utiliza {0} pentru versiunea de kernel.
-Ce variantă a limbii curente este folosită pentru a schimba numele lunii, calendarul etc.?
 Activează suportul adevărat al culorilor.
 Cuvântul a fost șters în rândul {0}.
 Șir înlocuit pe linia {0}.
@@ -954,7 +943,6 @@ Nu pot împacheta nimic.
 Pentru mai multe informații despre termenii și condițiile de utilizare a acestui software, vizitați
 Tip de ieșire de alegere implicită
 Verifică toate setările KS pentru a vedea dacă variabilele sunt scrise corect
-Aceste intrări de configurare au variabile sau enumerari nevalide și trebuie remediate:
 Fișierul {0} nu a fost găsit
 Creează o matrice variabilă cu valorile furnizate
 Verifică toate numerele liniilor de text de localizare pentru a vedea dacă toate sunt egale
@@ -1027,8 +1015,6 @@ Ești la curent!
 Formatare JSON implicită pentru shell JSON
 Selectează formatarea JSON implicită (înfrumusețată sau redusă) pentru salvarea shell-ului JSON.
 Actualizarea a fost descărcată cu succes!
-Descărcați automat actualizări
-Dacă există vreo actualizare, nucleul o va descărca automat.
 Raza de explozie a focului de artificii
 Câte blocuri (până la 10) este raza exploziei pentru focul de artificii atunci când este aprins?
 Această comandă are următoarele comutatoare care schimbă modul în care funcționează:
@@ -1221,7 +1207,6 @@ Kernel-ul prima rulare
 Bun venit la Nitrocid Kernel! Vă mulțumim că l-ați încercat!
 Pentru a începe, apăsați ENTER.
 Selectați limba dvs. În mod implicit, nucleul folosește limba engleză, dar puteți selecta orice altă limbă aici.
-Pe baza setărilor de limbă pe sistem, limba corespunzătoare este
 Creați-vă primul utilizator
 Vă vom ajuta să vă creați propriul nume de utilizator. Selectați orice nume doriți. Acesta poate fi porecla sau numele scurt, atâta timp cât numele de utilizator nu conține spații și caractere speciale și nu există deja. Sunt înregistrate următoarele nume de utilizator:
 Introduceți numele de utilizator
@@ -1231,7 +1216,6 @@ Actualizari automate
 Nitrocid KS se actualizează în prezent pentru a obține cea mai recentă versiune care include îmbunătățiri generale și remedieri de erori. Noile versiuni majore includ de obicei modificări de ultimă oră și noi funcții interesante.
 Doriți ca Nitrocid KS să verifice automat actualizările?
 Pe lângă verificarea automată a actualizărilor, Nitrocid KS poate descărca automat fișierul de actualizare.
-Doriți ca Nitrocid KS să descarce automat actualizări?
 Puteți verifica oricând actualizările kernelului folosind comanda „update”.
 Incepe!
 Felicitări! Acum aveți un cont de utilizator, {0}!
@@ -1268,8 +1252,6 @@ Nu se pot șterge fișierele diverse
 Nici un argument ajută la descriere
 Consola dvs. trebuie să accepte culori reale pentru a utiliza această temă.
 Ieși din previzualizare
-Terminat
-Tipuri de comutare
 Tema {0} celebrează un eveniment, dar sunteți fie prea devreme, fie prea târziu pentru a participa. În fiecare an, această temă este accesibilă de la {1}/{2} la {3}/{4}.
 Tema {0} are nevoie de suport pentru culori reale, dar consola dvs. nu o acceptă.
 Textul nu trebuie să fie gol.
@@ -1333,14 +1315,12 @@ Specificați o cale existentă către un fișier de configurare
 Nu este o clasă de configurare validă.
 Fișierul de configurare este invalid.
 A apărut o eroare la încercarea de a citi configurația: {0}.
-Configurația kernelului nu va funcționa corect. Cheile nevalide sunt
 Validarea a esuat!
 Citirea a eșuat!
 Se încearcă remedierea configurației...
 Nu se pot verifica variabilele de configurare când nu este specificat niciun tip.
 Nu se pot verifica variabilele de configurare când nu sunt specificate intrări.
 Încercarea de a înregistra o setare personalizată fără conținut.
-Se încearcă să înregistreze o setare personalizată cu conținut nevalid. Cheile nevalide sunt
 Încercarea de a anula înregistrarea unei setari personalizate fără nume.
 Setarea personalizată nu este înregistrată.
 Încercarea de a interoga o setare personalizată goală.
@@ -1348,7 +1328,6 @@ Tipul de setări nu a fost găsit.
 Cheia de setări nu a fost găsită pentru a se potrivi cu variabila specificată.
 Valoarea JSON a intrărilor de setări este goală.
 Încercarea de a înregistra o setare de bază fără conținut.
-Încercarea de a înregistra o setare de bază cu conținut nevalid. Cheile nevalide sunt
 Încercarea de a anula înregistrarea unei setari de bază fără nume.
 Eșecul afirmației.
 Evenimentul {0} nu a fost găsit.
@@ -1519,9 +1498,6 @@ Nu s-a pornit suplimentul kernel
 Nu s-a inițializat suplimentul kernel
 Nu s-au finalizat suplimentele. Suplimentele de mai jos nu au reușit să se finalizeze:
 Nu s-au oprit suplimentele. Suplimentele de mai jos nu s-au oprit:
-Nu se poate obține lista de funcții
-Nu se poate obține lista de proprietăți
-Nu se poate obține lista de câmpuri
 Nu se poate executa funcția personalizată cu un supliment inexistent
 Nu se poate găsi funcția „{0}” în suplimentul „{1}”.
 Nu se poate găsi proprietatea „{0}” în suplimentul „{1}”.
@@ -1598,17 +1574,14 @@ Actualizări ale kernelului
 Detectare hardware
 Componente optionale
 Inițializarea utilizatorului
-Modificări ale nucleului
 Verificarea integrității sistemului
 Etapă
 Rulează în modul de întreținere. Sari peste etapa...
 Nu se poate regenera firul de nucleu în timp ce același fir rulează deja.
 Acțiunea de pornire a firului secundar nu poate fi nulă.
 Firul de kernel {0} a eșuat.
-Ați instalat Nitrocid KS folosind managerul de pachete. Vă rugăm să-l utilizați pentru a vă actualiza nucleul.
 Nicio informație.
 Nu se poate deschide fișierul sau folderul
-Apăsați orice tastă pentru a închide această fereastră.
 Stilul Newline:
 Fisier binar:
 Metadate MIME:
@@ -1683,7 +1656,6 @@ Succes
 Eșec
 Este posibil ca handlerul de progres să nu fie nul.
 Prelucrare...
-Tipul metodei nu este definit în lista de bază de tip Nitrocid.
 Această metodă este inexistentă.
 Această metodă este statică. Utilizați supraîncărcarea non-obiect.
 Această metodă nu este statică. Utilizați supraîncărcarea obiectului.
@@ -1701,8 +1673,6 @@ Splashul de închidere nu a fost afișat
 Am atins {0}%!
 Se încarcă...
 Nu se poate executa funcția personalizată cu un mod inexistent
-Nu se poate executa proprietatea personalizată cu un mod inexistent
-Nu se poate executa câmpul personalizat cu un mod inexistent
 Dependența nesatisfăcută. Dependențe nereușite sunt enumerate mai jos:
 Am încercat să interogheze manualele pentru modul inexistent {0}.
 Am încercat să inițializeze manualul {0} pentru modul inexistent {1}.
@@ -1814,26 +1784,10 @@ Teste de modificare a nucleului
 Teste ale sistemului de rețea
 Testele shell UESH
 Teste de utilizator
-Statistici
 Închide
-Afișează statisticile curente ale testului
 Iese din modul de testare și închide nucleul
 Alegeți o secțiune de testare pentru a rula
-Testează toate
-Testează toate fațadele
-Se întoarce la selecția secțiunii
-Alegeți o fațadă de testare pentru a rula
-Acest test conține parametri opționali. Introduceți valoarea parametrului de adăugat la parametrii de testare.
-Parametrii contează
-Da!
 Nu
-Reîncercați
-Testul a decurs așa cum era de așteptat?
-Testul a eșuat. Valoarea așteptată este {0}, dar valoarea reală este {1}.
-Testul a eșuat în mod neașteptat.
-Teste reușite:
-Teste nereușite:
-Teste care urmează să fie efectuate:
 Numărul de cadre stive nu trebuie să depășească numărul actual de cadre sau nu ar trebui să fie negativ.
 Nitrocid KS
 Supraveghetorul firelor de kernel a detectat {0} fire critice care nu au început încă.
@@ -1925,7 +1879,6 @@ Obține informații despre utilizator
 Schimbă limba preferată a utilizatorului
 Trebuie să activați modul de depanare înainte de a putea utiliza shell-ul de depanare.
 Obține backtrace actual
-Preluează cu ușurință informațiile din jurnalul de depanare folosind numărul de sesiune
 Primește mesajul de la tipul de excepție al nucleului. Util pentru depanare
 Obține o valoare de câmp
 Obține valoarea proprietății
@@ -1957,7 +1910,6 @@ Ce este nou în această versiune de Nitrocid?
 Verifică fișierul sau blocarea folderului
 Așteaptă până când fișierul sau folderul este deblocat
 Schimbă limba
-Utilizează setările de limbă a sistemului pentru a încerca să deducă limba din
 Schimbă limba utilizatorului în loc de limba sistemului
 Stil de alegere cu o singură linie
 Stil de alegere în două linii
@@ -2120,12 +2072,8 @@ Imprimați un șir pe consolă
 Imprimați un șir pentru depanare
 Imprimați un șir pentru a depana cu formatare
 Imprimați un șir pe consolă cu formatare
-Imprimați un șir de figlet pe consolă
-Imprimați un șir figlet pe consolă cu formatare
 Imprimați un șir pentru consolă cu evidențiere
 Imprimați un separator pe consolă
-Imprimați un separator pe consolă cu culoare
-Imprimați un separator pe consolă cu formatare și culoare
 Imprimați un separator pe consolă cu formatare
 Imprimați un șir pe consolă cu linii noi în șir
 Imprimați un șir pe consolă cu caractere nule
@@ -2189,8 +2137,6 @@ Permisiuni
 Grupuri
 Limba preferată a utilizatorului a fost setată la {0}. Poate doriți să vă conectați din nou.
 Administrator Shell
-Număr de sesiune nevalid
-Nu există un astfel de număr de sesiune
 Nu există un astfel de tip de excepție
 Nume tip excepție
 Mesaj
@@ -2313,8 +2259,6 @@ Expirat
 Disponibil
 Selectați o temă
 Doriți să setați această temă?
-Da, setează-l!
-Nu, nu seta.
 Pentru a accesa manualul de utilizare pentru utilizări generale ale Nitrocid, vă rugăm să vizitați linkul de mai jos:
 Pentru a accesa manualul dezvoltatorului pentru modalități actualizate de a face modificări ale nucleului și salvatoare de ecran, vă rugăm să vizitați linkul de mai jos:
 Deja rulezi sesiunea Nitrocid crescută!
@@ -2344,7 +2288,6 @@ Joacă inițial jocul Wordle
 Comemora 5 ani de la lansarea kernelului
 Deschide fișierul de arhivă în shell-ul arhivei
 Obține toate liniile versurilor din fișierul versurilor
-Deschide un player muzical interactiv
 Redă un fișier cu versuri
 Redă un sunet
 Adaugă o alarmă pentru a vă avertiza când ceașca de ceai sau cafea este gata.
@@ -2465,8 +2408,6 @@ La mulți ani de 5 ani!
 Nu pot extrage nimic.
 Arhiva nu poate fi scrisă deoarece tipul este
 Asigurați-vă că specificați calea către un fișier LRC.
-Fișierul muzical „{0}” nu există.
-Eroare fatală în suplimentul CLI BassBoom.
 Nu se poate reda sunetul deoarece fișierul nu a fost găsit.
 Fișierul muzical a fost deschis cu succes.
 Nu se poate deschide fișierul muzical.
@@ -2479,63 +2420,8 @@ Gen
 Durată
 Apăsați „q” pentru a opri redarea.
 Nu se poate reda sunetul.
-A apărut o eroare cu Basolia când se încearcă procesarea operației de egalizare.
-A apărut o eroare la ieșirea Basolia când se încearcă procesarea operației de egalizare.
-Există o eroare necunoscută când încercați să procesați operația egalizatorului.
-Schimbare
-Selectați Band
-Produs de BassBoom
-Introduceți o cale către fișierul muzical
-Fișierul „{0}” nu există.
-Introduceți o cale către directorul bibliotecii muzicale
-Directorul bibliotecii muzicale nu a fost găsit.
-Se încarcă BassBoom pentru a deschide {0}...
 Acum joacă
-Încerc să deschid fișierul versuri
-Nu se poate deschide fișierul cu versuri
-Scrieți poziția țintă în acest format
-Apăsări de taste disponibile
-Redare/Pauză
-Stop
-Controlul volumului
-Căutați controlul
-Căutați controlul duratei
-Informații despre melodie
-Adăugați un fișier muzical
-Melodia anterioară
-Următorul cântec
-Eliminați melodia curentă
-Eliminați toate melodiile
-Necunoscut
 Titlu
-Album
-cometariu
-Versuri
-linii
-Fără versuri
-Informații despre strat
-Strat
-Rată
-Modul
-Mod Ext
-Marimea ramei
-Accent
-Rata de biți
-Rata ABR
-Rată de biți variabilă
-Texte și Suplimente
-Nu se poate deschide fișierul muzical „{0}” deoarece nu a fost găsit.
-Numele cantecului
-Artistul cântecului
-Genul cântecului
-Căuta
-Volum
-A apărut o eroare cu Basolia când se încearcă procesarea fișierului muzical.
-A apărut o eroare la ieșirea Basolia când încercați să procesați fișierul muzical.
-Există o eroare necunoscută când încercați să procesați fișierul muzical.
-Eșec la redare
-Ajutor
-Apăsați „A” pentru a insera o singură melodie în lista de redare sau „S” pentru a insera întreaga bibliotecă muzicală.
 Cafea americană
 Ceai rosu
 Ceai verde
@@ -2714,7 +2600,6 @@ Introduceți un număr de convertit...
 Nu ați introdus un număr de convertit.
 Numărul introdus este nevalid.
 Nu se poate converti unitatea.
-Sărbătorim cel de-al 6000-lea angajament de la 0.0.1!
 Va urma...
 Sfârșitul
 An nou fericit!
@@ -2919,12 +2804,6 @@ Setări generale ale nucleului
 Limba
 Specifică limbajul nucleului.
 Cultură
-Activați daltonismul
-Dacă sunteți daltonism sau dacă doriți să simulați daltonismul, atunci îl puteți activa.
-Tip de daltonism
-Tipul de daltonism, fie că este protan, deuter sau tritan.
-Severitatea daltonismului
-Cât de gravă este daltonismul?
 Bip la oprire sau repornire
 Permite semnalul sonor la închiderea nucleului.
 Întârziere la oprire sau repornire
@@ -2937,18 +2816,12 @@ Anunțul de dezvoltare a fost confirmat
 Dacă este setat la true, nucleul nu vă va afișa notificarea de dezvoltare de fiecare dată când porniți nucleul în versiunile de dezvoltare.
 Permite încărcarea modurilor care nu sunt de încredere
 Dacă se setează la true, nucleul nu va da eroare la încărcarea modurilor care nu au cheia publică semnată.
-Cota de depanare a fost activată
-Dacă această opțiune este activată, scriitorul de depanare rotește fișierul jurnal de depanare dacă cota este depășită.
-Depanați numărul de linii de cotă
-Câte linii de imprimat în memoria tampon de depanare înainte de a atinge limita de cotă? Vă rugăm să rețineți că nu reprezintă câte linii sunt în fișierele jurnal de depanare.
 Utilizați fusul orar al sistemului
 Dacă această opțiune este activată, nucleul folosește fusul orar din setările computerului. În caz contrar, folosește fusul orar la nivelul întregului nucleu care poate fi configurat.
 Fus orar la nivelul întregului nucleu
 Fusul orar la nivelul întregului nucleu de utilizat
 Afișați caseta cu informații despre licență
 Dacă se afișează caseta cu informații despre licența modală timp de trei secunde după fiecare conectare. Este recomandat să-l păstrați.
-Stilul de înregistrare moștenit pentru jurnalele de depanare
-Dacă se activează stilul de înregistrare moștenit pentru jurnalele de depanare sau dacă se activează jurnalele de depanare grupate.
 Această secțiune vă permite să alegeți ce tip de culoare doriți să schimbați.
 Setări de culoare
 Folosiți culori de accent
@@ -3036,8 +2909,6 @@ Grup de căi separate prin două puncte. Funcționează la fel ca PATH. Scrieți
 Setați titlul consolei la executarea comenzii
 Setează titlul consolei la executarea comenzii.
 Arată numărul de shell
-Această secțiune listează setările presetate ale shell-ului.
-Setări presetate ale carcasei
 Presetare promptă
 Presetare prompt pentru editare text
 Hex Edit Prompt Presetare
@@ -3100,7 +2971,6 @@ Interval de actualizare a depanării utilizării CPU
 Câte milisecunde să așteptați înainte de a actualiza utilizarea procesorului și de a o imprima în depanator?
 Un joc cu șarpe.
 Vă arată citate faimoase frumoase.
-Această secțiune vă permite să configurați modul în care funcționează distracțiile.
 Selectați dificultatea preferată, unde 0 este ușor, 1 este mediu, 2 este greu, 3 este foarte greu și 4 este personalizat.
 Utilizați PowerLine pentru redarea navei spațiale în ShipDuet
 Dacă să folosiți PowerLine pentru a reda nava spațială sau să folosiți standardul mai mare decât caracterul. Dacă doriți să utilizați PowerLine cu ShipDuet, trebuie să instalați un font adecvat cu suport PowerLine.
@@ -3129,7 +2999,6 @@ RSS Prompt Presetare
 Această secțiune vă permite să configurați modul în care funcționează shell-ul SFTP.
 Această secțiune vă permite să configurați modul în care funcționează shell-ul SQL.
 SQL Shell Prompt Presetare
-Această secțiune vă permite să configurați modul în care funcționează cronometrele.
 Această secțiune vă permite să configurați modul în care funcționează Sfaturile.
 Afișați sfaturi pentru nucleu
 Dacă este activat, shell-ul vă arată sfaturi pentru fiecare conectare.
@@ -3277,7 +3146,6 @@ Introduceți parola de utilizator. Ar trebui să alegeți o parolă puternică p
 Verificare automată a actualizării
 Da, o iau!
 Nu, mulțumesc.
-Descărcare de actualizare automată
 Pornirea sau oprirea modurilor nu este permisă în modul sigur.
 A apărut o eroare de kernel necunoscută, posibil din cauza fie că nu a fost specificat tipul de excepție al nucleului, fie că ceva nu a fost în regulă.
 Rețeaua nucleului a raportat o eroare pentru componenta nume de gazdă.
@@ -3412,7 +3280,6 @@ Selectați intrarea de pornire:
 Folosește lista de cuvinte obișnuită.
 Folosește lista completă de cuvinte.
 Jocul de ping-pong!
-În schimb, deschide playerul postului de radio
 Citește un fișier de sinteză bip
 Convertește modelul de culoare sursă în modelul de culoare țintă în cifre.
 Convertește modelul de culoare sursă în modelul de culoare țintă în format KS.
@@ -3441,72 +3308,6 @@ Simbol scurt al companiei
 Creează o temă nouă într-un TUI interactiv
 că puteți face programe de pornire folosind modurile de kernel?
 Tipul stației
-Dispozitiv
-Conducător auto
-Nu se pot interoga dispozitivele actuale când nu se redă.
-Dispozitiv și driver
-Dispozitive și drivere disponibile
-Specificații BassBoom
-Decodoare
-Specificații de sistem
-Versiunea Basolia
-Versiunea MPG123
-Versiunea OUT123
-Decodoare acceptate
-Toate decodoarele
-Sistem
-Arhitectura sistemului
-Arhitectura proceselor
-Descrierea sistemului
-descriere .NET
-Setați punctul de control repetat
-Încercați să repetați punctul de control
-Deschide egalizatorul
-Informații despre dispozitiv și driver
-Setați dispozitivul și driverul
-Resetați dispozitivul și driverul
-Informatie de sistem
-Informații despre postul de radio
-Informații extinse pentru postul de radio
-Adăugați un post de radio
-Postul de radio anterior
-Următorul post de radio
-Eliminați postul de radio actual
-Eliminați toate posturile de radio
-Selectați un șofer. ESC pentru a renunța.
-Selectați un dispozitiv. Șoferul actual este {0}. ESC pentru a renunța.
-Nu se joacă. Playerul muzical este inactiv.
-Bas
-Mijlocul superior
-Tripla
-Tip necunoscut de bandă
-Banda de egalizare
-Selectați versurile pe care să o căutați
-Statul natal
-Redare precisă
-Umplere tampon
-Întârziere la decodare
-Întârziere la codificare
-Umplutură de codare
-Fluxul Frankenstein
-Decodor proaspăt
-Apăsați „A” pentru a insera un post de radio în lista de redare.
-Introduceți o cale către postul de radio. Adresa URL a postului trebuie să furnizeze un post de radio MPEG. Cele AAC nu sunt încă acceptate.
-Informații despre stație
-Adresa URL a postului de radio
-Numele postului de radio
-Cântecul curent al postului de radio
-pagina principala
-Calea fluxului
-Ascultători: {0} cu {1} la vârf
-Rata de biți
-Tipul media
-Informații server radio
-Informații în flux
-Postul de radio folosește HTTPS
-Tip server de stație radio
-Fluxuri de posturi de radio: {0} cu {1} activ
-Ascultători de posturi de radio: {0} cu {1} la vârf
 Fișierul de sintetizare bip nu există.
 Numele capitolului
 Reprezentarea synth este invalidă.
@@ -3649,7 +3450,6 @@ Fișierul text nu este încă deschis.
 Handler pentru extensie nu este specificat.
 Nu s-a putut obține handler implicit
 Încărcarea handlerelor implicite nu a reușit.
-Se încearcă accesarea unei căi nevalide. Această verificare a fost efectuată pentru a împiedica sistemele mai vechi Windows 10 care nu s-au actualizat la patch-ul din aprilie 2021 sau o versiune ulterioară să acceseze aceste căi despre care se știe că cauzează corupția sistemului de fișiere NTFS sau problema Ecranului albastru al morții (BSOD). Aceasta implică faptul că apelantul încearcă să provoace o refuzare a serviciului (DoS) și ar trebui să fie remediat, sau că intrarea utilizatorului este rău intenționată.
 Selecta
 Copie
 Mişcare
@@ -3688,11 +3488,6 @@ Dispozitivul de depanare la distanță nu pare să existe.
 Nu se pot obține dispozitive de depanare la distanță de la
 Nu se poate deschide resursa de localizare în limba engleză
 Nu se poate deschide resursa de localizare pentru
-Nu s-a putut obține fontul figlet
-Imprimați un șir figlet pe consolă (centrat)
-Imprimați un șir figlet pe consolă cu formatare (centrată)
-Imprimați un șir de figlet pe consolă (centrat, pozițional)
-Imprimați un șir figlet pe consolă cu formatare (centrat, pozițional)
 Nu s-a putut obține punctul de intrare.
 Testează butoanele din caseta informativă (intitulată)
 Testează caseta de introducere colorată din caseta de informații (intitulată)
@@ -3710,7 +3505,6 @@ Nu pot obține metoda
 A apărut o eroare de expresie regulată în timp ce textul este procesat. Verificați sintaxa expresiei regulate și încercați din nou. Dacă a avut loc time-out, asigurați-vă că nu recurgeți prea mult (nu fi lacom).
 Instrumentele paginii de pornire au întâmpinat o eroare când a încercat să proceseze solicitarea dvs. Vă rugăm să vă asigurați că ați introdus corect toate datele necesare.
 Din păcate, ultimul eșec este necunoscut, așa că nu știm exact ce a mers prost. Cu toate acestea, ar putea fi util dacă ați consultat jurnalele de depanare a nucleului.
-Nu s-au putut obține metadatele suplimentului
 Nu pot obține informații despre câmp pentru
 Nu pot obține intrări în jurnal
 (Folosiți tastele săgeți pentru a evidenția alegerea dvs., apoi apăsați ENTER.)
@@ -3814,7 +3608,6 @@ Caută în continuare
 Caută Înapoi
 Informații brute
 Import din MeCard
-Nu există informații despre proprietate pentru
 Adăugați manual
 Nu se poate obține matricea de părți de zi
 Nu pot primi parte de zi
@@ -3826,18 +3619,8 @@ Lista de ture
 Generați etichete de nume (în prezent nu sunt acceptate umlauturile)
 Convertit...
 Convertor de unitate
-Player muzical
-Player radio
 Informații radio pe Internet (FM) pentru
 Nu pot obține informații radio pe internet.
-Dispozitiv (în cache
-Driver (în cache
-(când este inactiv) Adăugați un director muzical la lista de redare
-(când se joacă) Căutare selectiv
-(în timpul redării) Căutați versurile anterioare
-(în timpul redării) Căutați versurile următoare
-(când redați) Căutați versurile curente
-(când se joacă) Căutați ce versuri
 Schimba...
 Salva...
 Încărca...
@@ -3929,4 +3712,3 @@ Aduceți înapoi nostalgia cu această temă!
 Terminalul tău este format din scânduri de lemn
 Inspirat din modelul chinezesc al diferitelor fructe
 Suplimente - CRC32C (Castagnoli)
-Verificarea actualizărilor este dezactivată pe versiunile de dezvoltare.

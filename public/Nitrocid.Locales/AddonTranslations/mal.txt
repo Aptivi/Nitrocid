@@ -27,7 +27,6 @@ Ralat semasa cuba mengalih keluar nama pengguna.
 Penjimat skrin yang diminta {0} tidak ditemui.
 {0} ditetapkan kepada penyelamat skrin lalai.
 Screensaver {0} tidak ditemui dalam pangkalan data. Semak nama dan cuba lagi.
-Terdapat ralat yang serius semasa mencetak teks.
 Mod tidak dapat dimuatkan kerana perkara berikut:
 {0} v{1} bermula
 Tiada definisi untuk arahan {0}.
@@ -242,9 +241,7 @@ Pergi Balik...
 Tulis port penyahpepijat jauh. Ia mestilah berangka, dan tidak boleh digunakan. Jika tidak, penyahpepijat jauh akan gagal membuka port.
 Tulis berapa kali arahan "dapatkan" harus mencuba semula muat turun yang gagal. Ia mestilah angka.
 Jawapannya mungkin tidak negatif.
-Pembolehubah {0} tidak ditemui pada mana-mana modul.
 Mengubah konfigurasi kernel
-Ubah Budaya apabila Bertukar Bahasa
 Teks ditunjukkan
 Tulis sebarang teks yang anda mahu ditunjukkan. Lebih pendek adalah lebih baik.
 Gagal memuat naik {0}
@@ -293,7 +290,6 @@ Kelembapan: {0}
 Anda boleh mendapatkan kunci API anda sendiri di https://home.openweathermap.org/api_keys.
 Unit Pilihan untuk Suhu
 Setiap permulaan, ia akan menyemak kemas kini.
-Apabila menukar bahasa, tukar nama bulan, kalendar, dsb.
 Pastikan mesej menyelidik perkakasan senyap.
 Tunjukkan Mesej Hari ini sebelum memaparkan skrin log masuk.
 Kosongkan skrin sebelum memaparkan skrin log masuk.
@@ -425,8 +421,6 @@ Gagal memuktamadkan mod {0}: {1}
 Menyenaraikan semua acara yang dipecat
 Direktori Semasa
 Menetapkan direktori semasa shell. Tulis laluan mutlak ke mana-mana direktori sedia ada.
-Balut keluaran senarai
-Membungkus keluaran senarai jika kelihatan terlalu panjang untuk geometri konsol semasa.
 Ping!
 {0} telah ping anda.
 Simpan Tema ke Direktori Semasa sebagai...
@@ -467,7 +461,6 @@ Menyoal perkataan dalam baris tertentu atau semua baris
 Ujian menterjemah rentetan yang wujud dalam sumber kepada bahasa tertentu
 Mencetak rentetan untuk konsol dan menghuraikan ruang letak yang ditemui
 Menguji kemudahan ungkapan biasa
-Memulakan semua mod
 Menguji urutan VT untuk 255 warna
 Menguji urutan VT untuk warna sebenar
 Menghantar pemberitahuan untuk menguji penerima
@@ -662,9 +655,6 @@ Fail manakah ialah fail teks MAL? Tulis laluan mutlak ke fail teks.
 Mod disenaraihitamkan
 Tulis nama fail mod yang tidak akan dijalankan pada permulaan. Apabila anda selesai, tulis "q". Tulis tanda tolak di sebelah laluan untuk mengalih keluar mod sedia ada.
 Mod {0} disenaraihitamkan.
-Muat semula semua mod
-Menambah mod pada senarai hitam
-Mengalih keluar mod daripada senarai hitam
 Tunjukkan maklumat apl semasa but
 Tunjukkan masa penamat pentas
 Mulakan pengubahsuaian kernel semasa but
@@ -857,7 +847,6 @@ Sama ada mahu menunjukkan perkara yang ditulis dalam gesaan input.
 Apakah nombor minimum untuk dipilih?
 Apakah nombor maksimum untuk dipilih?
 Jika dinyatakan, ia akan memaparkan sepanduk permulaan tersuai dengan sokongan pemegang tempat. Anda boleh menggunakan {0} untuk versi kernel.
-Varian bahasa semasa yang manakah digunakan untuk menukar nama bulan, kalendar, dsb.?
 Mengaktifkan sokongan warna sebenar.
 Perkataan dipadamkan dalam baris {0}.
 Rentetan diganti dalam baris {0}.
@@ -954,7 +943,6 @@ Tidak boleh mengemas apa-apa.
 Untuk maklumat lanjut tentang terma dan syarat menggunakan perisian ini, lawati
 Jenis output pilihan lalai
 Semak semua tetapan KS untuk melihat sama ada pembolehubah ditulis dengan betul
-Entri konfigurasi ini mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki:
 Fail {0} tidak ditemui
 Mencipta tatasusunan pembolehubah dengan nilai yang disediakan
 Menyemak semua nombor baris teks penyetempatan untuk melihat sama ada semuanya sama
@@ -1027,8 +1015,6 @@ Anda terkini!
 Pemformatan JSON lalai untuk shell JSON
 Memilih pemformatan JSON lalai (dipercantikkan atau diperkecilkan) untuk disimpan oleh shell JSON.
 Berjaya memuat turun kemas kini!
-Muat turun kemas kini secara automatik
-Jika terdapat sebarang kemas kini, kernel akan memuat turunnya secara automatik.
 Jejari letupan bunga api
 Berapakah bilangan blok (sehingga 10) jejari letupan untuk bunga api apabila dinyalakan?
 Perintah ini mempunyai suis di bawah yang mengubah cara ia berfungsi:
@@ -1221,7 +1207,6 @@ Larian pertama kernel
 Selamat datang ke Nitrocid Kernel! Terima kasih kerana mencubanya!
 Untuk bermula, tekan ENTER.
 Pilih bahasa anda. Secara lalai, kernel menggunakan bahasa Inggeris, tetapi anda boleh memilih mana-mana bahasa lain di sini.
-Berdasarkan tetapan bahasa anda pada sistem anda, bahasa yang sesuai ialah
 Buat pengguna pertama anda
 Kami akan membantu anda mencipta nama pengguna anda sendiri. Pilih mana-mana nama yang anda mahu. Ini mungkin nama panggilan anda atau nama pendek anda, selagi nama pengguna anda tidak mengandungi ruang dan aksara khas dan ia belum wujud. Nama pengguna berikut telah didaftarkan:
 Masukkan nama pengguna
@@ -1231,7 +1216,6 @@ Kemas kini automatik
 Nitrocid KS pada masa ini mengemas kini dirinya sendiri untuk mendapatkan versi terkini yang merangkumi penambahbaikan umum dan pembetulan pepijat. Versi utama baharu biasanya termasuk perubahan terkini dan ciri menarik baharu.
 Adakah anda mahu Nitrocid KS menyemak kemas kini secara automatik?
 Selain menyemak kemas kini secara automatik, Nitrocid KS juga boleh memuat turun fail kemas kini secara automatik.
-Adakah anda mahu Nitrocid KS memuat turun kemas kini secara automatik?
 Anda sentiasa boleh menyemak kemas kini kernel menggunakan arahan "kemas kini".
 Mulakan!
 tahniah! Anda kini mempunyai akaun pengguna, {0}!
@@ -1268,8 +1252,6 @@ Tidak boleh memadam pelbagai fail
 Tiada penerangan bantuan hujah
 Konsol anda mesti menyokong warna sebenar untuk menggunakan tema ini.
 Keluar dari pratonton
-Selesai
-Jenis Suis
 Tema {0} meraikan acara, tetapi anda sama ada terlalu awal atau terlambat untuk hadir. Setiap tahun, tema ini boleh diakses dari {1}/{2} hingga {3}/{4}.
 Tema {0} memerlukan sokongan warna sebenar, tetapi konsol anda tidak menyokongnya.
 Teks tidak boleh kosong.
@@ -1333,14 +1315,12 @@ Tentukan laluan sedia ada ke fail konfigurasi
 Bukan kelas konfigurasi yang sah.
 Fail konfigurasi tidak sah.
 Terdapat ralat semasa cuba membaca konfigurasi: {0}.
-Konfigurasi kernel tidak akan berfungsi dengan betul. Kekunci yang tidak sah ialah
 Pengesahan gagal!
 Membaca gagal!
 Cuba betulkan konfigurasi...
 Tidak dapat menyemak pembolehubah konfigurasi apabila tiada jenis dinyatakan.
 Tidak dapat menyemak pembolehubah konfigurasi apabila tiada entri dinyatakan.
 Cuba mendaftar tetapan tersuai tanpa kandungan.
-Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Kekunci yang tidak sah ialah
 Cuba menyahdaftarkan tetapan tersuai tanpa nama.
 Tetapan tersuai tidak didaftarkan.
 Cuba menanyakan tetapan tersuai kosong.
@@ -1348,7 +1328,6 @@ Jenis tetapan tidak ditemui.
 Kunci tetapan tidak ditemui sepadan dengan pembolehubah yang ditentukan.
 Nilai JSON entri tetapan kosong.
 Cuba mendaftar tetapan asas tanpa kandungan.
-Cuba mendaftar tetapan asas dengan kandungan tidak sah. Kekunci yang tidak sah ialah
 Cuba menyahdaftar tetapan asas tanpa nama.
 Kegagalan penegasan.
 Acara {0} tidak ditemui.
@@ -1519,9 +1498,6 @@ Gagal memulakan addon kernel
 Gagal untuk memulakan tambahan kernel
 Gagal memuktamadkan tambahan. Tambahan di bawah telah gagal dimuktamadkan:
 Gagal menghentikan alat tambah. Tambahan di bawah telah gagal dihentikan:
-Tidak boleh mendapatkan senarai fungsi
-Tidak boleh mendapatkan senarai hartanah
-Tidak boleh mendapatkan senarai medan
 Tidak dapat melaksanakan fungsi tersuai dengan tambahan yang tidak wujud
 Tidak dapat mencari fungsi '{0}' dalam addon '{1}'.
 Tidak dapat mencari harta '{0}' dalam addon '{1}'.
@@ -1598,17 +1574,14 @@ Kemas kini kernel
 Pengesanan perkakasan
 Komponen pilihan
 Inisialisasi pengguna
-Pengubahsuaian kernel
 Pengesahan integriti sistem
 pentas
 Berjalan dalam mod penyelenggaraan. Melangkau peringkat...
 Tidak dapat menjana semula benang kernel semasa benang yang sama sedang berjalan.
 Tindakan permulaan urutan kanak-kanak tidak boleh batal.
 Benang kernel {0} gagal.
-Anda telah memasang Nitrocid KS menggunakan pengurus pakej anda. Sila gunakannya untuk menaik taraf kernel anda sebaliknya.
 Tiada maklumat.
 Tidak dapat membuka fail atau folder
-Tekan sebarang kekunci untuk menutup tetingkap ini.
 Gaya baris baharu:
 Fail binari:
 Metadata MIME:
@@ -1683,7 +1656,6 @@ Kejayaan
 Kegagalan
 Pengendali kemajuan mungkin tidak batal.
 Memproses...
-Jenis kaedah tidak ditakrifkan dalam senarai jenis Nitrocid asas.
 Kaedah ini tidak wujud.
 Kaedah ini adalah statik. Gunakan lebihan bukan objek.
 Kaedah ini tidak statik. Gunakan objek yang berlebihan.
@@ -1701,8 +1673,6 @@ Percikan penutup telah gagal dipaparkan
 Kami telah mencapai {0}%!
 Memuatkan...
 Tidak dapat melaksanakan fungsi tersuai dengan mod yang tidak wujud
-Tidak dapat melaksanakan sifat tersuai dengan mod yang tidak wujud
-Tidak dapat melaksanakan medan tersuai dengan mod yang tidak wujud
 Kebergantungan tidak berpuas hati. Kebergantungan yang gagal disenaraikan di bawah:
 Cuba menanyakan manual untuk mod yang tidak wujud {0}.
 Cuba untuk memulakan manual {0} untuk mod yang tidak wujud {1}.
@@ -1814,26 +1784,10 @@ Ujian pengubahsuaian kernel
 Ujian sistem rangkaian
 Ujian cangkerang UESH
 Ujian pengguna
-Statistik
 Tutup
-Menunjukkan statistik ujian semasa
 Keluar daripada mod ujian dan mematikan kernel
 Pilih bahagian ujian untuk dijalankan
-Uji Semua
-Menguji semua fasad
-Kembali ke pemilihan bahagian
-Pilih fasad ujian untuk dijalankan
-Ujian ini mengandungi parameter pilihan. Masukkan nilai parameter untuk ditambahkan pada parameter ujian.
-Kiraan parameter
-Ya!
 Tidak
-Cuba semula
-Adakah ujian berjalan seperti yang diharapkan?
-Ujian itu gagal. Nilai yang dijangkakan ialah {0}, tetapi nilai sebenar ialah {1}.
-Ujian itu gagal tanpa diduga.
-Ujian yang berjaya:
-Ujian gagal:
-Ujian yang akan dijalankan:
 Nombor bingkai tindanan tidak boleh melebihi jumlah bingkai semasa atau tidak boleh negatif.
 Nitrocid KS
 Penyelia utas kernel mengesan {0} utas kritikal yang belum bermula lagi.
@@ -1925,7 +1879,6 @@ Mendapat maklumat pengguna
 Menukar bahasa pengguna pilihan
 Anda mesti mendayakan mod nyahpepijat sebelum anda boleh menggunakan cangkerang nyahpepijat.
 Mendapat jejak belakang semasa
-Mengambil maklumat log nyahpepijat dengan mudah menggunakan nombor sesi
 Mendapat mesej daripada jenis pengecualian kernel. Berguna untuk penyahpepijatan
 Mendapat nilai medan
 Mendapat nilai hartanah
@@ -1957,7 +1910,6 @@ Apakah yang baharu dalam versi Nitrocid ini?
 Menyemak fail atau kunci folder
 Tunggu sehingga fail atau folder dibuka kuncinya
 Mengubah bahasa
-Menggunakan tetapan bahasa sistem untuk cuba membuat kesimpulan bahasa
 Menukar bahasa pengguna dan bukannya bahasa sistem
 Gaya pilihan satu baris
 Gaya pilihan dua baris
@@ -2120,12 +2072,8 @@ Cetak rentetan ke konsol
 Cetak rentetan untuk nyahpepijat
 Cetak rentetan untuk nyahpepijat dengan pemformatan
 Cetak rentetan untuk konsol dengan pemformatan
-Cetak rentetan figlet untuk konsol
-Cetak rentetan figlet untuk konsol dengan pemformatan
 Cetak rentetan untuk konsol dengan sorotan
 Cetak pemisah untuk konsol
-Cetak pemisah untuk konsol dengan warna
-Cetak pemisah untuk konsol dengan pemformatan dan warna
 Cetak pemisah untuk konsol dengan pemformatan
 Cetak rentetan untuk konsol dengan baris baharu dalam rentetan
 Cetak rentetan untuk konsol dengan aksara nol
@@ -2189,8 +2137,6 @@ kebenaran
 Kumpulan
 Bahasa pengguna pilihan ditetapkan kepada {0}. Anda mungkin mahu log masuk semula.
 Pentadbir Shell
-Nombor sesi tidak sah
-Tiada nombor sesi sedemikian
 Tiada jenis pengecualian sedemikian
 Nama jenis pengecualian
 Mesej
@@ -2313,8 +2259,6 @@ Tamat tempoh
 Tersedia
 Pilih tema
 Adakah anda ingin menetapkan tema ini?
-Ya, tetapkan!
-Tidak, jangan tetapkannya.
 Untuk mengakses manual pengguna bagi kegunaan am Nitrocid, sila lawati pautan di bawah:
 Untuk mengakses manual pembangun untuk cara terkini membuat pengubahsuaian kernel dan penyelamat skrin, sila lawati pautan di bawah:
 Anda sudah menjalankan sesi Nitrocid yang dinaikkan!
@@ -2344,7 +2288,6 @@ Main permainan Wordle pada asalnya
 Memperingati ulang tahun 5 tahun keluaran kernel
 Membuka fail arkib ke shell arkib
 Mendapat semua baris lirik daripada fail lirik
-Membuka pemain muzik interaktif
 Memainkan fail lirik
 Memainkan bunyi
 Menambahkan penggera untuk memaklumkan anda apabila secawan teh atau kopi anda sudah sedia.
@@ -2465,8 +2408,6 @@ Selamat ulang tahun 5 tahun!
 Tidak boleh mengeluarkan apa-apa.
 Arkib tidak boleh ditulis kerana jenisnya
 Pastikan untuk menentukan laluan ke fail LRC.
-Fail muzik '{0}' tidak wujud.
-Ralat maut dalam tambahan BassBoom CLI.
 Tidak dapat memainkan bunyi kerana fail tidak ditemui.
 Membuka fail muzik berjaya.
 Tidak dapat membuka fail muzik.
@@ -2479,63 +2420,8 @@ Genre
 Tempoh
 Tekan 'q' untuk berhenti bermain.
 Tidak boleh memainkan bunyi.
-Terdapat ralat dengan Basolia semasa cuba memproses operasi penyamaan.
-Terdapat ralat dengan output Basolia semasa cuba memproses operasi penyamaan.
-Terdapat ralat yang tidak diketahui semasa cuba memproses operasi penyamaan.
-Berubah
-Pilih Band
-Dikuasakan oleh BassBoom
-Masukkan laluan ke fail muzik
-Fail "{0}" tidak wujud.
-Masukkan laluan ke direktori pustaka muzik
-Direktori perpustakaan muzik tidak ditemui.
-Memuatkan BassBoom untuk membuka {0}...
 Sekarang bermain
-Cuba membuka fail lirik
-Tidak dapat membuka fail lirik
-Tulis kedudukan sasaran dalam format ini
-Ketukan kekunci yang tersedia
-Main/Jeda
-Berhenti
-Kawalan kelantangan
-Cari kawalan
-Dapatkan kawalan tempoh
-info lagu
-Tambahkan fail muzik
-Lagu sebelumnya
-Lagu seterusnya
-Alih keluar lagu semasa
-Alih keluar semua lagu
-Tidak diketahui
 Tajuk
-Album
-Komen
-Lirik
-garisan
-Tiada lirik
-Maklumat lapisan
-Lapisan
-Kadar
-Mod
-Mod Ext
-Saiz Bingkai
-Penekanan
-Kadar bit
-Kadar ABR
-Kadar bit boleh ubah
-Teks dan Tambahan
-Tidak dapat membuka fail muzik '{0}' kerana ia tidak ditemui.
-Nama lagu
-Artis lagu
-Genre lagu
-Cari
-Kelantangan
-Terdapat ralat dengan Basolia semasa cuba memproses fail muzik.
-Terdapat ralat dengan output Basolia semasa cuba memproses fail muzik.
-Terdapat ralat yang tidak diketahui semasa cuba memproses fail muzik.
-Kegagalan main balik
-Tolong
-Tekan 'A' untuk memasukkan satu lagu ke senarai main, atau 'S' untuk memasukkan keseluruhan pustaka muzik.
 Kopi Amerika
 Teh Merah
 Teh Hijau
@@ -2714,7 +2600,6 @@ Masukkan nombor untuk ditukar...
 Anda belum memasukkan nombor untuk ditukar.
 Nombor yang dimasukkan tidak sah.
 Tidak boleh menukar unit.
-Meraikan komitmen ke-6,000 sejak 0.0.1!
 Bersambung...
 Akhir
 selamat tahun baru!
@@ -2919,12 +2804,6 @@ Tetapan kernel umum
 Bahasa
 Menentukan bahasa kernel.
 budaya
-Dayakan buta warna
-Jika anda buta warna atau jika anda ingin mensimulasikan buta warna, maka anda boleh mendayakannya.
-Jenis buta warna
-Jenis buta warna, sama ada protan, deuter atau tritan.
-Keterukan buta warna
-Seberapa teruk buta warna?
 Bip semasa penutupan atau but semula
 Membolehkan bunyi bip semasa mematikan kernel.
 Kelewatan pada penutupan atau but semula
@@ -2937,18 +2816,12 @@ Notis pembangunan diakui
 Jika ditetapkan kepada benar, kernel tidak akan menunjukkan kepada anda notis pembangunan setiap kali anda boot ke kernel dalam versi pembangunan.
 Benarkan memuatkan mod yang tidak dipercayai
 Jika ditetapkan kepada benar, kernel tidak akan ralat semasa memuatkan mod yang tidak mempunyai kunci awam yang ditandatangani.
-Kuota nyahpepijat didayakan
-Jika pilihan ini didayakan, penulis nyahpepijat memutarkan fail log nyahpepijat jika kuota melebihi.
-Kiraan baris kuota nyahpepijat
-Berapa banyak baris untuk dicetak ke penimbal nyahpepijat sebelum mencapai had kuota? Sila ambil perhatian bahawa ia tidak mewakili bilangan baris dalam fail log nyahpepijat.
 Gunakan zon waktu sistem
 Jika pilihan ini didayakan, kernel menggunakan zon waktu daripada tetapan komputer anda. Jika tidak, gunakan zon waktu seluruh kernel yang boleh dikonfigurasikan.
 Zon waktu seluruh kernel
 Zon waktu seluruh kernel untuk digunakan
 Tunjukkan kotak maklumat lesen
 Sama ada mahu menunjukkan kotak maklumat lesen modal selama tiga saat selepas setiap log masuk. Adalah disyorkan untuk mengekalkannya.
-Gaya pengelogan warisan untuk log nyahpepijat
-Sama ada untuk mendayakan gaya pengelogan warisan untuk log nyahpepijat atau untuk mendayakan log nyahpepijat berkumpulan.
 Bahagian ini membolehkan anda memilih jenis warna yang ingin anda ubah.
 Tetapan warna
 Gunakan warna aksen
@@ -3036,8 +2909,6 @@ Kumpulan laluan yang dipisahkan oleh kolon. Ia berfungsi sama seperti PATH. Tuli
 Tetapkan tajuk konsol pada pelaksanaan arahan
 Menetapkan tajuk konsol pada pelaksanaan arahan.
 Tunjukkan kiraan cangkang
-Bahagian ini menyenaraikan tetapan pratetap shell.
-Tetapan pratetap Shell
 Pratetap Gesa
 Pratetap Gesaan Edit Teks
 Pratetap Gesaan Edit Hex
@@ -3100,7 +2971,6 @@ Selang kemas kini nyahpepijat penggunaan CPU
 Berapa milisaat untuk menunggu sebelum mengemas kini penggunaan CPU dan mencetaknya ke penyahpepijat?
 Permainan ular.
 Menunjukkan kepada anda petikan terkenal yang bagus.
-Bahagian ini membolehkan anda mengkonfigurasi cara hiburan berfungsi.
 Pilih kesukaran pilihan anda, di mana 0 adalah mudah, 1 adalah sederhana, 2 adalah sukar, 3 adalah sangat sukar, dan 4 adalah adat.
 Gunakan PowerLine untuk memaparkan kapal angkasa dalam ShipDuet
 Sama ada hendak menggunakan PowerLine untuk menjadikan kapal angkasa atau menggunakan standard lebih besar daripada aksara. Jika anda ingin menggunakan PowerLine dengan ShipDuet, anda perlu memasang fon yang sesuai dengan sokongan PowerLine.
@@ -3129,7 +2999,6 @@ Pratetap Gesaan RSS
 Bahagian ini membolehkan anda mengkonfigurasi cara shell SFTP berfungsi.
 Bahagian ini membolehkan anda mengkonfigurasi cara shell SQL berfungsi.
 Pratetap Prompt SQL Shell
-Bahagian ini membolehkan anda mengkonfigurasi cara pemasa berfungsi.
 Bahagian ini membolehkan anda mengkonfigurasi cara Petua berfungsi.
 Tunjukkan petua kernel
 Jika didayakan, shell menunjukkan kepada anda petua pada setiap log masuk.
@@ -3277,7 +3146,6 @@ Masukkan kata laluan pengguna anda. Anda harus memilih kata laluan yang kukuh un
 Semakan Kemas Kini Automatik
 Ya, saya lakukan!
 Tidak, terima kasih.
-Muat Turun Kemas Kini Automatik
 Memulakan atau menghentikan mod tidak dibenarkan pada mod selamat.
 Terdapat ralat kernel yang tidak diketahui, mungkin disebabkan sama ada jenis pengecualian kernel tidak ditentukan atau ada sesuatu yang salah.
 Rangkaian kernel telah melaporkan ralat untuk komponen nama hos.
@@ -3412,7 +3280,6 @@ Pilih entri but:
 Menggunakan senarai perkataan biasa.
 Menggunakan senarai perkataan yang lengkap.
 Permainan ping-pong!
-Buka pemain stesen radio sebaliknya
 Membaca fail synth bip
 Menukar model warna sumber kepada model warna sasaran dalam nombor.
 Menukar model warna sumber kepada model warna sasaran dalam format KS.
@@ -3441,72 +3308,6 @@ Simbol syarikat pendek
 Membuat tema baharu dalam TUI interaktif
 bahawa anda boleh membuat program boleh boot menggunakan mod kernel anda?
 Jenis stesen
-Peranti
-Pemandu
-Tidak dapat menanyakan peranti semasa semasa tidak dimainkan.
-Peranti dan Pemandu
-Peranti dan pemacu yang tersedia
-Spesifikasi BassBoom
-Penyahkod
-Spesifikasi sistem
-versi Basolia
-versi MPG123
-versi OUT123
-Penyahkod yang disokong
-Semua dekoder
-Sistem
-Seni Bina Sistem
-Seni Bina Proses
-Penerangan sistem
-. Penerangan BERSIH
-Tetapkan pusat pemeriksaan berulang
-Berusaha untuk mengulangi pusat pemeriksaan
-Membuka penyamaan
-Maklumat peranti dan pemandu
-Tetapkan peranti dan pemacu
-Tetapkan semula peranti dan pemacu
-Maklumat sistem
-Maklumat stesen radio
-Maklumat lanjutan stesen radio
-Tambah stesen radio
-Stesen radio sebelumnya
-Stesen radio seterusnya
-Keluarkan stesen radio semasa
-Alih keluar semua stesen radio
-Pilih pemandu. ESC untuk berhenti.
-Pilih peranti. Pemandu semasa ialah {0}. ESC untuk berhenti.
-Bukan main. Pemain muzik melahu.
-Bass
-Pertengahan Atas
-Treble
-Jenis band tidak diketahui
-Band Penyama
-Pilih lirik untuk dicari
-Negeri asal
-Penyampaian yang tepat
-Isi penimbal
-Kelewatan penyahkodan
-Kelewatan pengekodan
-Pengekodan padding
-aliran Frankenstein
-Penyahkod segar
-Tekan 'A' untuk memasukkan stesen radio ke senarai main.
-Masukkan laluan ke stesen radio. URL ke stesen mesti menyediakan stesen radio MPEG. AAC belum disokong lagi.
-Maklumat stesen
-URL stesen radio
-Nama stesen radio
-Lagu semasa stesen radio
-Laman utama
-Laluan aliran
-Pendengar: {0} dengan {1} pada puncaknya
-Kadar bit
-Jenis media
-Maklumat pelayan radio
-Maklumat aliran
-Stesen radio menggunakan HTTPS
-Jenis pelayan stesen radio
-Strim stesen radio: {0} dengan {1} aktif
-Pendengar stesen radio: {0} dengan {1} di puncak
 Fail synth bip tidak wujud.
 Nama bab
 Perwakilan sintetik tidak sah.
@@ -3649,7 +3450,6 @@ Fail teks belum dibuka lagi.
 Pengendali untuk sambungan tidak dinyatakan.
 Gagal mendapatkan pengendali lalai
 Gagal memuatkan pengendali lalai.
-Cuba untuk mengakses laluan tidak sah. Semakan ini dilakukan untuk menghalang sistem Windows 10 lama yang tidak mengemas kini kepada tampung April 2021 atau lebih tinggi daripada mengakses laluan ini yang diketahui menyebabkan kerosakan sistem fail NTFS atau isu Blue Screen of Death (BSOD). Ini menunjukkan bahawa pemanggil cuba menyebabkan Penafian Perkhidmatan (DoS) dan harus diperbaiki, atau bahawa input pengguna berniat jahat.
 Pilih
 salin
 Bergerak
@@ -3688,11 +3488,6 @@ Peranti nyahpepijat jauh nampaknya tidak wujud.
 Tidak boleh mendapatkan peranti nyahpepijat jauh daripada
 Tidak dapat membuka sumber penyetempatan bahasa Inggeris
 Tidak dapat membuka sumber penyetempatan untuk
-Gagal mendapatkan fon figlet
-Cetak rentetan figlet ke konsol (berpusat)
-Cetak rentetan figlet untuk konsol dengan pemformatan (berpusat)
-Cetak rentetan figlet ke konsol (berpusat, kedudukan)
-Cetak rentetan figlet untuk konsol dengan pemformatan (berpusat, kedudukan)
 Gagal mendapatkan titik masuk.
 Menguji butang dalam kotak maklumat (bertajuk)
 Menguji kotak input berwarna dalam kotak maklumat (bertajuk)
@@ -3710,7 +3505,6 @@ Tidak dapat kaedah
 Ralat ungkapan biasa berlaku semasa teks sedang diproses. Semak sintaks ungkapan biasa anda dan cuba lagi. Jika tamat masa berlaku, pastikan anda tidak mengulangi terlalu banyak (jangan tamak).
 Alat halaman utama telah mengalami ralat semasa cuba memproses permintaan anda. Sila pastikan anda telah memasukkan semua data yang diperlukan dengan betul.
 Malangnya, kegagalan terakhir tidak diketahui, jadi kami tidak tahu apa yang berlaku. Walau bagaimanapun, ia boleh membantu jika anda telah merujuk log nyahpepijat kernel.
-Gagal mendapatkan metadata tambahan
 Tidak boleh mendapatkan maklumat medan untuk
 Tidak boleh mendapatkan catatan jurnal
 (Gunakan kekunci anak panah untuk menyerlahkan pilihan anda, kemudian tekan ENTER.)
@@ -3814,7 +3608,6 @@ Cari Seterusnya
 Cari Belakang
 Maklumat Mentah
 Import Dari MeCard
-Tiada maklumat hartanah untuk
 Tambah Secara Manual
 Tidak boleh mendapatkan tatasusunan bahagian hari
 Tidak dapat bahagian hari
@@ -3826,18 +3619,8 @@ Senarai pusingan
 Hasilkan tag nama (umlaut pada masa ini tidak disokong)
 Tukarkan...
 Penukar Unit
-Pemain Muzik
-Pemain Radio
 Maklumat Radio Internet (FM) untuk
 Tidak boleh mendapatkan maklumat radio internet.
-Peranti (cache
-Pemandu (cache
-(apabila melahu) Tambahkan direktori muzik pada senarai main
-(semasa bermain) Cari secara terpilih
-(semasa bermain) Cari lirik sebelumnya
-(semasa bermain) Cari lirik seterusnya
-(semasa bermain) Cari lirik semasa
-(ketika bermain) Cari lirik yang mana
 Tukar...
 Jimat...
 Muatkan...
@@ -3929,4 +3712,3 @@ Kembalikan nostalgia dengan tema ini!
 Terminal anda terdiri daripada papan kayu
 Diinspirasikan daripada corak buah-buahan Cina yang berbeza
 Tambahan - CRC32C (Castagnoli)
-Menyemak kemas kini dilumpuhkan pada versi pembangunan.

@@ -27,7 +27,6 @@ Có lỗi khi cố gắng xóa tên người dùng.
 Không tìm thấy trình bảo vệ màn hình được yêu cầu {0}.
 {0} được đặt thành trình bảo vệ màn hình mặc định.
 Không tìm thấy trình bảo vệ màn hình {0} trong cơ sở dữ liệu. Kiểm tra tên và thử lại.
-Có một lỗi nghiêm trọng khi in văn bản.
 Không thể tải bản mod vì những lý do sau:
 {0} v{1} đã bắt đầu
 Không có định nghĩa cho lệnh {0}.
@@ -242,9 +241,7 @@ Quay lại...
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
 Viết số lần lệnh "get" nên thử lại các lần tải xuống không thành công. Số lần này phải là số.
 Câu trả lời có thể không phải là phủ định.
-Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Thay đổi cấu hình hạt nhân
-Thay đổi văn hóa khi chuyển đổi ngôn ngữ
 Văn bản hiển thị
 Viết bất kỳ văn bản nào bạn muốn hiển thị. Càng ngắn càng tốt.
 Không tải lên được {0}
@@ -293,7 +290,6 @@ Thời tiết: {0}
 Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
 Đơn vị ưa thích cho nhiệt độ
 Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
-Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
 Giữ im lặng cho các thông báo thăm dò phần cứng.
 Hiển thị Tin nhắn trong ngày trước khi hiển thị màn hình đăng nhập.
 Xóa màn hình trước khi hiển thị màn hình đăng nhập.
@@ -425,8 +421,6 @@ Không thể hoàn tất bản mod {0}: {1}
 Liệt kê tất cả các sự kiện đã kích hoạt
 Thư mục hiện tại
 Đặt thư mục hiện tại của shell. Viết đường dẫn tuyệt đối đến bất kỳ thư mục hiện có nào.
-Gói danh sách đầu ra
-Bao bọc danh sách đầu ra nếu nó có vẻ quá dài so với hình dạng bảng điều khiển hiện tại.
 Bình!
 {0} đã ping bạn.
 Lưu chủ đề vào thư mục hiện tại dưới dạng...
@@ -467,7 +461,6 @@ Truy vấn một từ trong một dòng được chỉ định hoặc tất cả
 Kiểm tra việc dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể
 In một chuỗi ra console và phân tích các chỗ giữ chỗ được tìm thấy
 Kiểm tra tiện ích biểu thức chính quy
-Bắt đầu tất cả các bản mod
 Kiểm tra chuỗi VT cho 255 màu
 Kiểm tra trình tự VT để biết màu sắc thực sự
 Gửi thông báo để kiểm tra người nhận
@@ -662,9 +655,6 @@ Tệp nào là tệp văn bản MAL? Viết đường dẫn tuyệt đối đế
 Các bản mod bị đưa vào danh sách đen
 Viết tên tệp của các mod sẽ không chạy khi khởi động. Khi bạn hoàn tất, hãy viết "q". Viết dấu trừ bên cạnh đường dẫn để xóa mod hiện có.
 Mod {0} đã bị đưa vào danh sách đen.
-Tải lại tất cả các bản mod
-Thêm một mod vào danh sách đen
-Xóa một mod khỏi danh sách đen
 Hiển thị thông tin ứng dụng trong khi khởi động
 Hiển thị thời gian kết thúc giai đoạn
 Bắt đầu sửa đổi hạt nhân khi khởi động
@@ -857,7 +847,6 @@ Có hiển thị nội dung được viết trong dấu nhắc nhập hay không
 Số lượng tối thiểu cần chọn là bao nhiêu?
 Số lượng tối đa có thể chọn là bao nhiêu?
 Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng {0} cho phiên bản hạt nhân.
-Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
 Kích hoạt hỗ trợ màu sắc thực.
 Từ đã bị xóa ở dòng {0}.
 Chuỗi được thay thế ở dòng {0}.
@@ -954,7 +943,6 @@ Không thể đóng gói được gì cả.
 Để biết thêm thông tin về các điều khoản và điều kiện sử dụng phần mềm này, hãy truy cập
 Lựa chọn mặc định loại đầu ra
 Kiểm tra tất cả các thiết lập KS để xem các biến có được viết đúng không
-Các mục cấu hình này có các biến hoặc liệt kê không hợp lệ và cần được sửa:
 Không tìm thấy tệp {0}
 Tạo một mảng biến với các giá trị được cung cấp
 Kiểm tra tất cả các số dòng văn bản bản địa hóa để xem chúng có bằng nhau không
@@ -1027,8 +1015,6 @@ Bạn đã cập nhật rồi!
 Định dạng JSON mặc định cho shell JSON
 Chọn định dạng JSON mặc định (làm đẹp hoặc thu nhỏ) để lưu shell JSON.
 Đã tải xuống bản cập nhật thành công!
-Tự động tải xuống các bản cập nhật
-Nếu có bất kỳ bản cập nhật nào, kernel sẽ tự động tải xuống.
 Bán kính nổ pháo hoa
 Bán kính nổ của pháo hoa khi đốt cháy là bao nhiêu khối (tối đa 10 khối)?
 Lệnh này có các công tắc bên dưới để thay đổi cách thức hoạt động:
@@ -1221,7 +1207,6 @@ Kernel chạy lần đầu
 Chào mừng đến với Nitrocid Kernel! Cảm ơn bạn đã dùng thử!
 Để bắt đầu, hãy nhấn ENTER.
 Chọn ngôn ngữ của bạn. Theo mặc định, kernel sử dụng ngôn ngữ tiếng Anh, nhưng bạn có thể chọn bất kỳ ngôn ngữ nào khác tại đây.
-Dựa trên cài đặt ngôn ngữ trên hệ thống của bạn, ngôn ngữ phù hợp là
 Tạo người dùng đầu tiên của bạn
 Chúng tôi sẽ giúp bạn tạo tên người dùng của riêng bạn. Chọn bất kỳ tên nào bạn muốn. Đây có thể là biệt danh hoặc tên viết tắt của bạn, miễn là tên người dùng của bạn không chứa khoảng trắng và ký tự đặc biệt và chưa tồn tại. Các tên người dùng sau đây đã được đăng ký:
 Nhập tên người dùng
@@ -1231,7 +1216,6 @@ Cập nhật tự động
 Nitrocid KS hiện đang tự cập nhật để có phiên bản mới nhất bao gồm các cải tiến chung và sửa lỗi. Các phiên bản chính mới thường bao gồm các thay đổi đột phá và các tính năng mới thú vị.
 Bạn có muốn Nitrocid KS tự động kiểm tra bản cập nhật không?
 Ngoài việc tự động kiểm tra bản cập nhật, Nitrocid KS còn có thể tự động tải xuống tệp cập nhật.
-Bạn có muốn Nitrocid KS tự động tải xuống các bản cập nhật không?
 Bạn luôn có thể kiểm tra bản cập nhật kernel bằng lệnh "update".
 Bắt đầu thôi!
 Xin chúc mừng! Bây giờ bạn đã có tài khoản người dùng, {0}!
@@ -1268,8 +1252,6 @@ Không thể xóa các tập tin hỗn tạp
 Không có mô tả trợ giúp tranh luận
 Máy chơi game của bạn phải hỗ trợ màu sắc trung thực để sử dụng chủ đề này.
 Thoát khỏi bản xem trước
-Xong
-Các loại công tắc
 Chủ đề {0} kỷ niệm một sự kiện, nhưng bạn có thể đến quá sớm hoặc quá muộn để tham dự. Mỗi năm, chủ đề này có thể truy cập từ {1}/{2} đến {3}/{4}.
 Chủ đề {0} cần hỗ trợ màu sắc thực nhưng máy chơi game của bạn không hỗ trợ.
 Văn bản không được để trống.
@@ -1333,14 +1315,12 @@ Chỉ định đường dẫn hiện tại đến tệp cấu hình
 Không phải là lớp cấu hình hợp lệ.
 Tệp cấu hình không hợp lệ.
 Có lỗi khi cố gắng đọc cấu hình: {0}.
-Cấu hình hạt nhân sẽ không hoạt động bình thường. Các khóa không hợp lệ là
 Xác thực không thành công!
 Đọc không thành công!
 Đang cố gắng sửa cấu hình...
 Không thể kiểm tra các biến cấu hình khi không chỉ định loại.
 Không thể kiểm tra các biến cấu hình khi không có mục nào được chỉ định.
 Đang cố gắng đăng ký cài đặt tùy chỉnh nhưng không có nội dung.
-Đang cố gắng đăng ký một thiết lập tùy chỉnh với nội dung không hợp lệ. Các khóa không hợp lệ là
 Đang cố gắng hủy đăng ký cài đặt tùy chỉnh không có tên.
 Thiết lập tùy chỉnh chưa được đăng ký.
 Đang cố gắng truy vấn một thiết lập tùy chỉnh trống.
@@ -1348,7 +1328,6 @@ Không tìm thấy loại cài đặt.
 Không tìm thấy khóa cài đặt phù hợp với biến đã chỉ định.
 Giá trị JSON của mục cài đặt trống.
 Đang cố gắng đăng ký cài đặt cơ sở không có nội dung.
-Đang cố gắng đăng ký một thiết lập cơ sở với nội dung không hợp lệ. Các khóa không hợp lệ là
 Đang cố gắng hủy đăng ký cài đặt cơ sở không có tên.
 Khẳng định thất bại.
 Sự kiện {0} không tìm thấy.
@@ -1519,9 +1498,6 @@ Không khởi động được tiện ích bổ sung kernel
 Không thể khởi tạo tiện ích bổ sung kernel
 Không thể hoàn tất các tiện ích bổ sung. Các tiện ích bổ sung dưới đây không thể hoàn tất:
 Không dừng được các tiện ích bổ sung. Các tiện ích bổ sung dưới đây không dừng được:
-Không thể lấy được danh sách các hàm
-Không thể lấy được danh sách các thuộc tính
-Không thể lấy được danh sách các trường
 Không thể thực hiện chức năng tùy chỉnh với tiện ích bổ sung không tồn tại
 Không tìm thấy chức năng '{0}' trong tiện ích bổ sung '{1}'.
 Không tìm thấy thuộc tính '{0}' trong tiện ích bổ sung '{1}'.
@@ -1598,17 +1574,14 @@ Cập nhật hạt nhân
 Phát hiện phần cứng
 Các thành phần tùy chọn
 Khởi tạo người dùng
-Sửa đổi hạt nhân
 Xác minh tính toàn vẹn của hệ thống
 Sân khấu
 Đang chạy ở chế độ bảo trì. Bỏ qua giai đoạn...
 Không thể tạo lại luồng hạt nhân trong khi luồng đó đang chạy.
 Hành động bắt đầu luồng con không thể để giá trị null.
 Luồng hạt nhân {0} đã thất bại.
-Bạn đã cài đặt Nitrocid KS bằng trình quản lý gói của mình. Vui lòng sử dụng nó để nâng cấp kernel của bạn.
 Không có thông tin.
 Không thể mở tệp hoặc thư mục
-Nhấn phím bất kỳ để đóng cửa sổ này.
 Kiểu xuống dòng:
 Tệp nhị phân:
 Siêu dữ liệu MIME:
@@ -1683,7 +1656,6 @@ Thành công
 Sự thất bại
 Trình xử lý tiến trình không được để giá trị null.
 Xử lý...
-Kiểu phương pháp không được xác định trong danh sách kiểu Nitrocid cơ bản.
 Phương pháp này không tồn tại.
 Phương pháp này là tĩnh. Sử dụng phương thức quá tải không phải đối tượng.
 Phương pháp này không tĩnh. Sử dụng phương pháp quá tải đối tượng.
@@ -1701,8 +1673,6 @@ Màn hình đóng không hiển thị
 Chúng tôi đã đạt tới {0}%!
 Đang tải...
 Không thể thực hiện chức năng tùy chỉnh với mod không tồn tại
-Không thể thực thi thuộc tính tùy chỉnh với mod không tồn tại
-Không thể thực thi trường tùy chỉnh với mod không tồn tại
 Phụ thuộc không được thỏa mãn. Các phụ thuộc không thành công được liệt kê dưới đây:
 Đã thử tìm kiếm hướng dẫn sử dụng cho bản mod {0} không tồn tại.
 Đã cố gắng khởi tạo hướng dẫn sử dụng {0} cho bản mod {1} không tồn tại.
@@ -1814,26 +1784,10 @@ Kiểm tra sửa đổi hạt nhân
 Kiểm tra hệ thống mạng
 Kiểm tra vỏ UESH
 Kiểm tra người dùng
-Thống kê
 Tắt máy
-Hiển thị số liệu thống kê kiểm tra hiện tại
 Thoát khỏi chế độ kiểm tra và tắt hạt nhân
 Chọn một phần thử nghiệm để chạy
-Kiểm tra tất cả
-Kiểm tra tất cả các mặt tiền
-Quay lại phần lựa chọn
-Chọn mặt tiền thử nghiệm để chạy
-Bài kiểm tra này chứa các tham số tùy chọn. Nhập giá trị của tham số để thêm vào các tham số kiểm tra.
-Số lượng tham số
-Đúng!
 KHÔNG
-Thử lại
-Bài kiểm tra có chạy như mong đợi không?
-Kiểm tra không thành công. Giá trị mong đợi là {0}, nhưng giá trị thực tế là {1}.
-Cuộc thử nghiệm đã thất bại ngoài mong đợi.
-Các thử nghiệm thành công:
-Các bài kiểm tra không đạt:
-Các thử nghiệm cần chạy:
 Số khung ngăn xếp không được vượt quá số lượng khung hiện tại hoặc không được âm.
 Nitrocid KS
 Giám sát luồng hạt nhân đã phát hiện {0} luồng quan trọng chưa bắt đầu.
@@ -1925,7 +1879,6 @@ Lấy thông tin người dùng
 Thay đổi ngôn ngữ người dùng ưa thích
 Bạn phải bật chế độ gỡ lỗi trước khi có thể sử dụng shell gỡ lỗi.
 Lấy backtrace hiện tại
-Dễ dàng lấy thông tin nhật ký gỡ lỗi bằng cách sử dụng số phiên
 Nhận thông báo từ loại ngoại lệ của hạt nhân. Hữu ích cho việc gỡ lỗi
 Nhận giá trị trường
 Nhận được giá trị thuộc tính
@@ -1957,7 +1910,6 @@ Có gì mới trong phiên bản Nitrocid này?
 Kiểm tra khóa tập tin hoặc thư mục
 Chờ cho đến khi tệp hoặc thư mục được mở khóa
 Thay đổi ngôn ngữ
-Sử dụng cài đặt ngôn ngữ hệ thống để cố gắng suy ra ngôn ngữ từ
 Thay đổi ngôn ngữ người dùng thay vì ngôn ngữ hệ thống
 Kiểu lựa chọn một dòng
 Kiểu lựa chọn hai dòng
@@ -2120,12 +2072,8 @@ In một chuỗi ra console
 In một chuỗi ra trình gỡ lỗi
 In một chuỗi để gỡ lỗi với định dạng
 In một chuỗi ra bảng điều khiển với định dạng
-In một chuỗi figlet vào console
-In một chuỗi figlet vào console với định dạng
 In một chuỗi ra console với highlight
 In một dấu phân cách vào bảng điều khiển
-In một dấu phân cách vào bảng điều khiển bằng màu
-In một dấu phân cách vào bảng điều khiển với định dạng và màu sắc
 In một dấu phân cách vào bảng điều khiển với định dạng
 In một chuỗi ra console với các dòng mới trong chuỗi
 In một chuỗi ra console với các ký tự null
@@ -2189,8 +2137,6 @@ Quyền
 Nhóm
 Ngôn ngữ người dùng ưa thích được đặt thành {0}. Bạn có thể muốn đăng nhập lại.
 Vỏ quản trị viên
-Số phiên không hợp lệ
-Không có số phiên như vậy
 Không có loại ngoại lệ nào như vậy
 Tên loại ngoại lệ
 Tin nhắn
@@ -2313,8 +2259,6 @@ Hết hạn
 Có sẵn
 Chọn một chủ đề
 Bạn có muốn thiết lập chủ đề này không?
-Vâng, cài đặt nó!
-Không, đừng đặt nó.
 Để truy cập hướng dẫn sử dụng chung của Nitrocid, vui lòng truy cập liên kết bên dưới:
 Để truy cập hướng dẫn dành cho nhà phát triển về các cách cập nhật để thực hiện sửa đổi hạt nhân và trình bảo vệ màn hình, vui lòng truy cập liên kết bên dưới:
 Bạn đã thực hiện phiên chạy Nitrocid nâng cao rồi!
@@ -2344,7 +2288,6 @@ Chơi trò chơi Wordle ban đầu
 Kỷ niệm 5 năm ngày phát hành kernel
 Mở tệp lưu trữ vào shell lưu trữ
 Lấy tất cả các dòng lời bài hát từ tệp lời bài hát
-Mở trình phát nhạc tương tác
 Phát một tập tin lời bài hát
 Phát ra âm thanh
 Thêm chức năng báo thức để thông báo cho bạn khi tách trà hoặc cà phê của bạn đã sẵn sàng.
@@ -2465,8 +2408,6 @@ Chúc mừng kỷ niệm 5 năm!
 Không thể trích xuất được gì cả.
 Lưu trữ không thể ghi được vì loại là
 Hãy đảm bảo chỉ định đường dẫn đến tệp LRC.
-Tệp nhạc '{0}' không tồn tại.
-Lỗi nghiêm trọng trong tiện ích bổ sung CLI BassBoom.
 Không thể phát âm thanh vì không tìm thấy tệp.
 Đã mở tệp nhạc thành công.
 Không thể mở tệp nhạc.
@@ -2479,63 +2420,8 @@ Thể loại
 Khoảng thời gian
 Nhấn 'q' để dừng phát.
 Không phát được âm thanh.
-Có lỗi với Basolia khi cố gắng xử lý hoạt động cân bằng.
-Có lỗi với đầu ra Basolia khi cố gắng xử lý hoạt động cân bằng.
-Có lỗi không xác định khi cố gắng xử lý hoạt động cân bằng.
-Thay đổi
-Chọn băng tần
-Được hỗ trợ bởi BassBoom
-Nhập đường dẫn đến tệp nhạc
-Tệp "{0}" không tồn tại.
-Nhập đường dẫn đến thư mục thư viện nhạc
-Không tìm thấy thư mục thư viện nhạc.
-Đang tải BassBoom để mở {0}...
 Đang phát
-Đang cố gắng mở tệp lời bài hát
-Không thể mở tệp lời bài hát
-Viết vị trí mục tiêu theo định dạng này
-Các phím tắt có sẵn
-Phát/Tạm dừng
-Dừng lại
-Kiểm soát âm lượng
-Tìm kiếm sự kiểm soát
-Tìm kiếm kiểm soát thời gian
-Thông tin bài hát
-Thêm một tập tin nhạc
-Bài hát trước
-Bài hát tiếp theo
-Xóa bài hát hiện tại
-Xóa tất cả bài hát
-Không rõ
 Tiêu đề
-Album
-Bình luận
-Lời bài hát
-dòng
-Không có lời bài hát
-Thông tin lớp
-Lớp
-Tỷ lệ
-Cách thức
-Chế độ mở rộng
-Kích thước khung
-Nhấn mạnh
-Tốc độ bit
-Tỷ lệ ABR
-Tốc độ bit thay đổi
-Văn bản và phần bổ sung
-Không thể mở tệp nhạc '{0}' vì không tìm thấy.
-Tên bài hát
-Nghệ sĩ bài hát
-Thể loại bài hát
-Tìm kiếm
-Âm lượng
-Có lỗi với Basolia khi cố gắng xử lý tệp nhạc.
-Có lỗi với đầu ra Basolia khi cố xử lý tệp nhạc.
-Có lỗi không xác định khi cố gắng xử lý tệp nhạc.
-Phát lại lỗi
-Giúp đỡ
-Nhấn 'A' để chèn một bài hát vào danh sách phát hoặc 'S' để chèn toàn bộ thư viện nhạc.
 Cà phê Mỹ
 Trà đỏ
 Trà xanh
@@ -2714,7 +2600,6 @@ Nhập số để chuyển đổi...
 Bạn chưa nhập số để chuyển đổi.
 Số đã nhập không hợp lệ.
 Không thể chuyển đổi đơn vị.
-Kỷ niệm lần cam kết thứ 6.000 kể từ phiên bản 0.0.1!
 Còn tiếp...
 Kết thúc
 CHÚC MỪNG NĂM MỚI!
@@ -2919,12 +2804,6 @@ Thiết lập hạt nhân chung
 Ngôn ngữ
 Chỉ định ngôn ngữ hạt nhân.
 Văn hoá
-Kích hoạt mù màu
-Nếu bạn bị mù màu hoặc muốn mô phỏng tình trạng mù màu, bạn có thể bật tính năng này.
-Loại mù màu
-Loại mù màu, có thể là protan, deuter hoặc tritan.
-Mức độ nghiêm trọng của bệnh mù màu
-Mù màu nghiêm trọng đến mức nào?
 Tiếng bíp khi tắt máy hoặc khởi động lại
 Cho phép phát ra tiếng bíp khi tắt hạt nhân.
 Trì hoãn khi tắt máy hoặc khởi động lại
@@ -2937,18 +2816,12 @@ Thông báo phát triển đã được xác nhận
 Nếu đặt thành true, kernel sẽ không hiển thị thông báo phát triển mỗi khi bạn khởi động kernel trong các phiên bản phát triển.
 Cho phép tải các bản mod không đáng tin cậy
 Nếu đặt thành true, kernel sẽ không báo lỗi khi tải các bản mod không có khóa công khai đã ký.
-Đã bật hạn ngạch gỡ lỗi
-Nếu tùy chọn này được bật, trình ghi gỡ lỗi sẽ xoay vòng tệp nhật ký gỡ lỗi nếu vượt quá hạn ngạch.
-Số lượng dòng hạn ngạch gỡ lỗi
-In bao nhiêu dòng vào bộ đệm gỡ lỗi trước khi đạt đến giới hạn hạn ngạch? Xin lưu ý rằng điều này không biểu thị số lượng dòng trong tệp nhật ký gỡ lỗi.
 Sử dụng múi giờ hệ thống
 Nếu tùy chọn này được bật, kernel sẽ sử dụng múi giờ từ cài đặt máy tính của bạn. Nếu không, sẽ sử dụng múi giờ toàn kernel có thể được cấu hình.
 Múi giờ toàn hạt nhân
 Múi giờ toàn hạt nhân để sử dụng
 Hiển thị hộp thông tin giấy phép
 Có hiển thị hộp thông tin giấy phép modal trong ba giây sau mỗi lần đăng nhập không. Nên giữ nguyên.
-Phong cách ghi nhật ký cũ cho nhật ký gỡ lỗi
-Có nên bật kiểu ghi nhật ký cũ cho nhật ký gỡ lỗi hay bật nhật ký gỡ lỗi được nhóm lại.
 Phần này cho phép bạn chọn loại màu bạn muốn thay đổi.
 Cài đặt màu sắc
 Sử dụng màu nhấn
@@ -3036,8 +2909,6 @@ Nhóm đường dẫn được phân cách bằng dấu hai chấm. Nó hoạt �
 Đặt tiêu đề bảng điều khiển khi thực hiện lệnh
 Đặt tiêu đề bảng điều khiển khi thực hiện lệnh.
 Hiển thị số lượng vỏ
-Phần này liệt kê các thiết lập sẵn của shell.
-Cài đặt trước của Shell
 Cài đặt trước nhắc nhở
 Cài đặt trước lời nhắc chỉnh sửa văn bản
 Cài đặt trước lời nhắc chỉnh sửa Hex
@@ -3100,7 +2971,6 @@ Khoảng thời gian cập nhật gỡ lỗi sử dụng CPU
 Phải đợi bao nhiêu mili giây trước khi cập nhật mức sử dụng CPU và in thông tin này vào trình gỡ lỗi?
 Trò chơi rắn.
 Hiển thị cho bạn những câu trích dẫn nổi tiếng hay.
-Phần này cho phép bạn cấu hình cách thức hoạt động của trò chơi giải trí.
 Chọn mức độ khó mà bạn mong muốn, trong đó 0 là dễ, 1 là trung bình, 2 là khó, 3 là rất khó và 4 là tùy chỉnh.
 Sử dụng PowerLine để dựng hình tàu vũ trụ trong ShipDuet
 Có nên sử dụng PowerLine để hiển thị tàu vũ trụ hay sử dụng ký tự chuẩn lớn hơn. Nếu bạn muốn sử dụng PowerLine với ShipDuet, bạn cần cài đặt phông chữ phù hợp có hỗ trợ PowerLine.
@@ -3129,7 +2999,6 @@ RSS Prompt cài đặt sẵn
 Phần này cho phép bạn cấu hình cách hoạt động của shell SFTP.
 Phần này cho phép bạn cấu hình cách hoạt động của SQL shell.
 Cài đặt trước dấu nhắc lệnh SQL Shell
-Phần này cho phép bạn cấu hình cách thức hoạt động của bộ hẹn giờ.
 Phần này cho phép bạn cấu hình cách thức hoạt động của Mẹo.
 Hiển thị các mẹo về hạt nhân
 Nếu được bật, shell sẽ hiển thị cho bạn các mẹo sau mỗi lần đăng nhập.
@@ -3277,7 +3146,6 @@ Nhập mật khẩu người dùng của bạn. Bạn nên chọn mật khẩu m
 Kiểm tra cập nhật tự động
 Em đồng ý!
 Không, cảm ơn.
-Tải xuống bản cập nhật tự động
 Không được phép bắt đầu hoặc dừng mod ở chế độ an toàn.
 Có lỗi hạt nhân không xác định, có thể là do loại ngoại lệ hạt nhân không được chỉ định hoặc có gì đó không ổn.
 Mạng lưới hạt nhân đã báo cáo lỗi cho thành phần tên máy chủ.
@@ -3412,7 +3280,6 @@ Chọn mục khởi động:
 Sử dụng danh sách từ thông dụng.
 Sử dụng danh sách từ đầy đủ.
 Trò chơi bóng bàn!
-Thay vào đó hãy mở trình phát đài phát thanh
 Đọc một tập tin tổng hợp tiếng bíp
 Chuyển đổi mô hình màu nguồn sang mô hình màu đích bằng số.
 Chuyển đổi mô hình màu nguồn sang mô hình màu đích theo định dạng KS.
@@ -3441,72 +3308,6 @@ Biểu tượng công ty ngắn
 Tạo một chủ đề mới trong TUI tương tác
 rằng bạn có thể tạo ra các chương trình có thể khởi động bằng cách sử dụng bản mod hạt nhân của mình?
 Loại trạm
-Thiết bị
-Tài xế
-Không thể truy vấn các thiết bị hiện tại khi không chơi.
-Thiết bị và Trình điều khiển
-Thiết bị và trình điều khiển có sẵn
-Thông số kỹ thuật của BassBoom
-Bộ giải mã
-Thông số kỹ thuật hệ thống
-Phiên bản Basolia
-Phiên bản MPG123
-Phiên bản OUT123
-Bộ giải mã được hỗ trợ
-Tất cả các bộ giải mã
-Hệ thống
-Kiến trúc hệ thống
-Kiến trúc quy trình
-Mô tả hệ thống
-Mô tả .NET
-Đặt điểm kiểm tra lặp lại
-Tìm kiếm để lặp lại điểm kiểm tra
-Mở bộ cân bằng
-Thông tin thiết bị và trình điều khiển
-Thiết lập thiết bị và trình điều khiển
-Đặt lại thiết bị và trình điều khiển
-Thông tin hệ thống
-Thông tin đài phát thanh
-Thông tin mở rộng về đài phát thanh
-Thêm một đài phát thanh
-Đài phát thanh trước đó
-Đài phát thanh tiếp theo
-Xóa đài phát thanh hiện tại
-Xóa tất cả các đài phát thanh
-Chọn trình điều khiển. Nhấn ESC để thoát.
-Chọn một thiết bị. Trình điều khiển hiện tại là {0}. ESC để thoát.
-Không phát. Trình phát nhạc đang ở chế độ chờ.
-Cá rô
-Trung bình trên
-Âm bổng
-Loại băng tần không xác định
-Bộ cân bằng dải
-Chọn một lời bài hát để tìm kiếm
-Nhà nước bản xứ
-Kết xuất chính xác
-Điền đệm
-Độ trễ giải mã
-Độ trễ mã hóa
-Đệm mã hóa
-Dòng Frankenstein
-Bộ giải mã mới
-Nhấn 'A' để thêm kênh radio vào danh sách phát.
-Nhập đường dẫn đến đài phát thanh. URL đến đài phải cung cấp đài phát thanh MPEG. Đài phát thanh AAC hiện chưa được hỗ trợ.
-Thông tin trạm
-URL đài phát thanh
-Tên đài phát thanh
-Bài hát hiện tại của đài phát thanh
-Trang chủ
-Đường dẫn luồng
-Người nghe: {0} với {1} ở đỉnh
-Tốc độ bit
-Loại phương tiện truyền thông
-Thông tin máy chủ radio
-Thông tin luồng
-Đài phát thanh sử dụng HTTPS
-Loại máy chủ đài phát thanh
-Các luồng đài phát thanh: {0} với {1} đang hoạt động
-Người nghe đài phát thanh: {0} với {1} ở mức cao nhất
 Tệp tổng hợp tiếng bíp không tồn tại.
 Tên chương
 Biểu diễn tổng hợp không hợp lệ.
@@ -3649,7 +3450,6 @@ Tệp văn bản vẫn chưa được mở.
 Trình xử lý cho phần mở rộng chưa được chỉ định.
 Không lấy được trình xử lý mặc định
 Không tải được trình xử lý mặc định.
-Đang cố gắng truy cập đường dẫn không hợp lệ. Kiểm tra này được thực hiện để ngăn các hệ thống Windows 10 cũ hơn không cập nhật lên bản vá tháng 4 năm 2021 hoặc cao hơn truy cập vào các đường dẫn này được biết là gây ra lỗi hệ thống tệp NTFS hoặc sự cố Màn hình xanh chết chóc (BSOD). Điều này ngụ ý rằng người gọi đang cố gắng gây ra Từ chối dịch vụ (DoS) và cần được khắc phục hoặc đầu vào của người dùng là độc hại.
 Lựa chọn
 Sao chép
 Di chuyển
@@ -3688,11 +3488,6 @@ Có vẻ như thiết bị gỡ lỗi từ xa không tồn tại.
 Không thể lấy được thiết bị gỡ lỗi từ xa từ
 Không thể mở tài nguyên bản địa hóa tiếng Anh
 Không thể mở tài nguyên bản địa hóa cho
-Không tải được font figlet
-In một chuỗi figlet vào console (ở giữa)
-In một chuỗi figlet vào console với định dạng (ở giữa)
-In một chuỗi figlet vào console (căn giữa, theo vị trí)
-In một chuỗi figlet vào console với định dạng (căn giữa, theo vị trí)
 Không thể lấy được điểm vào.
 Kiểm tra các nút trong hộp thông tin (có tiêu đề)
 Kiểm tra hộp nhập màu trong hộp thông tin (có tiêu đề)
@@ -3710,7 +3505,6 @@ Không thể có được phương pháp
 Đã xảy ra lỗi biểu thức chính quy trong khi văn bản đang được xử lý. Kiểm tra cú pháp biểu thức chính quy của bạn và thử lại. Nếu thời gian chờ xảy ra, hãy đảm bảo rằng bạn không lặp lại quá nhiều (đừng tham lam).
 Công cụ trang chủ đã gặp lỗi khi cố gắng xử lý yêu cầu của bạn. Vui lòng đảm bảo rằng bạn đã nhập đúng tất cả dữ liệu cần thiết.
 Thật không may, lỗi cuối cùng không được biết đến, vì vậy chúng tôi không biết chính xác lỗi gì đã xảy ra. Tuy nhiên, có thể hữu ích nếu bạn đã tham khảo nhật ký gỡ lỗi hạt nhân.
-Không nhận được siêu dữ liệu bổ sung
 Không thể lấy thông tin trường cho
 Không thể lấy được mục nhật ký
 (Sử dụng các phím mũi tên để tô sáng lựa chọn của bạn, sau đó nhấn ENTER.)
@@ -3814,7 +3608,6 @@ Tìm kiếm tiếp theo
 Tìm kiếm Quay lại
 Thông tin thô
 Nhập từ MeCard
-Không có thông tin về bất động sản
 Thêm thủ công
 Không thể lấy được mảng phần ngày
 Không thể có được phần ngày
@@ -3826,18 +3619,8 @@ Danh sách vòng đua
 Tạo thẻ tên (hiện tại không hỗ trợ dấu chấm phẩy)
 Chuyển thành...
 Bộ chuyển đổi đơn vị
-Trình phát nhạc
-Máy nghe nhạc Radio
 Thông tin về Đài phát thanh Internet (FM)
 Không thể lấy được thông tin về radio internet.
-Thiết bị (đã lưu trong bộ nhớ đệm)
-Trình điều khiển (đã lưu trong bộ nhớ đệm)
-(khi nhàn rỗi) Thêm thư mục nhạc vào danh sách phát
-(khi chơi) Tìm kiếm có chọn lọc
-(khi chơi) Tìm đến lời bài hát trước đó
-(khi chơi) Tìm lời bài hát tiếp theo
-(khi chơi) Tìm lời bài hát hiện tại
-(khi chơi) Tìm lời bài hát nào
 Thay đổi...
 Cứu...
 Trọng tải...
@@ -3929,4 +3712,3 @@ Mang lại nỗi nhớ với chủ đề này!
 Thiết bị đầu cuối của bạn bao gồm các tấm ván gỗ
 Lấy cảm hứng từ các mẫu hoa quả khác nhau của Trung Quốc
 Phần bổ sung - CRC32C (Castagnoli)
-Tính năng kiểm tra bản cập nhật bị vô hiệu hóa trên phiên bản phát triển.

@@ -27,7 +27,6 @@ Kullanıcı adı kaldırılırken hata oluştu.
 İstenen ekran koruyucu {0} bulunamadı.
 {0} varsayılan ekran koruyucu olarak ayarlandı.
 Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edin ve tekrar deneyin.
-Metin yazdırılırken ciddi bir hata oluştu.
 Mod aşağıdaki sebeplerden dolayı yüklenemiyor:
 {0} v{1} başladı
 {0} komutu için tanım yok.
@@ -242,9 +241,7 @@ Geri gitmek...
 Uzaktan hata ayıklayıcı portu yazın. Sayısal olmalı ve daha önce kullanılmamış olmalıdır. Aksi takdirde, uzaktan hata ayıklayıcı portu açmayı başaramaz.
 "get" komutunun başarısız indirmeleri kaç kez tekrar denemesi gerektiğini yazın. Sayısal olmalıdır.
 Cevap olumsuz olmayabilir.
-{0} değişkeni hiçbir modülde bulunamadı.
 Çekirdek yapılandırmasını değiştirir
-Dil Değiştirirken Kültürü Değiştirin
 Gösterilen metin
 Gösterilmesini istediğiniz herhangi bir metni yazın. Ne kadar kısa olursa o kadar iyi.
 {0} yüklenemedi
@@ -293,7 +290,6 @@ Nem: {0}
 https://home.openweathermap.org/api_keys adresinden kendi API anahtarınızı alabilirsiniz.
 Sıcaklık için Tercih Edilen Birim
 Her açılışta güncellemeleri kontrol edecektir.
-Dil değiştirirken ay adlarını, takvimi vb. değiştirin.
 Donanım sorgulama mesajlarını sessiz tutun.
 Giriş ekranını görüntülemeden önce Günün Mesajını göster.
 Giriş ekranını görüntülemeden önce ekranı temizleyin.
@@ -425,8 +421,6 @@ Bir ZIP arşivi oluşturur
 Tüm tetiklenen olayları listeler
 Güncel Dizin
 Kabuğun geçerli dizinini ayarlar. Mevcut herhangi bir dizine mutlak bir yol yazar.
-Sarma listesi çıktıları
-Mevcut konsol geometrisi için çok uzun görünüyorsa liste çıktılarını sarar.
 Çıng!
 {0} size ping attı.
 Temayı Geçerli Dizine Farklı Kaydet...
@@ -467,7 +461,6 @@ Belirtilen bir satırdaki veya tüm satırlardaki bir kelimeyi sorgular
 Kaynaklarda bulunan bir dizeyi belirli bir dile çeviren testler
 Konsola bir dize yazdırır ve bulunan yer tutucuları ayrıştırır
 Düzenli ifade olanağını test eder
-Tüm modları başlatır
 VT dizisini 255 renk için test eder
 VT dizisini gerçek renk açısından test eder
 Alıcıyı test etmek için bir bildirim gönderir
@@ -662,9 +655,6 @@ Hangi dosya MAL metin dosyasıdır? Metin dosyasına mutlak bir yol yazın.
 Kara listeye alınmış modlar
 Başlangıçta çalışmayacak modların dosya adlarını yazın. Bitirdiğinizde "q" yazın. Mevcut bir modu kaldırmak için yolun yanına eksi işareti yazın.
 Mod {0} kara listeye alındı.
-Tüm modları yeniden yükler
-Bir modu kara listeye ekler
-Bir modu kara listeden kaldırır
 Önyükleme sırasında uygulama bilgilerini göster
 Sahne bitiş sürelerini göster
 Önyükleme sırasında çekirdek değişikliklerini başlat
@@ -857,7 +847,6 @@ Giriş isteminde yazılanların gösterilip gösterilmeyeceği.
 Seçilebilecek en az sayı kaçtır?
 En fazla kaç tane seçilebilir?
 Belirtilirse, yer tutucu desteğiyle özelleştirilmiş başlangıç ​​başlığını görüntüler. Çekirdek sürümü için {0} kullanabilirsiniz.
-Ay adlarını, takvimi vb. değiştirmek için şu anki dilin hangi varyantı kullanılıyor?
 Gerçek renk desteğini aktifleştirir.
 {0} satırındaki kelime silindi.
 {0} satırındaki dize değiştirildi.
@@ -954,7 +943,6 @@ Hiçbir şey paketlenemez.
 Bu yazılımın kullanım şartları ve koşulları hakkında daha fazla bilgi için şu adresi ziyaret edin:
 Varsayılan seçim çıktı türü
 Değişkenlerin doğru yazılıp yazılmadığını görmek için tüm KS ayarlarını kontrol eder
-Bu yapılandırma girişleri geçersiz değişkenler veya numaralandırmalar içeriyor ve düzeltilmesi gerekiyor:
 Dosya {0} bulunamadı
 Verilen değerlerle bir değişken dizisi oluşturur
 Tüm yerelleştirme metin satır numaralarının eşit olup olmadığını kontrol eder
@@ -1027,8 +1015,6 @@ Güncelsiniz!
 JSON kabuğu için varsayılan JSON biçimlendirmesi
 JSON kabuğunun kaydedeceği varsayılan JSON biçimlendirmesini (güzelleştirilmiş veya küçültülmüş) seçer.
 Güncelleme başarıyla indirildi!
-Güncellemeleri otomatik olarak indir
-Herhangi bir güncelleme varsa çekirdek bunu otomatik olarak indirecektir.
 Havai fişek patlama yarıçapı
 Havai fişek ateşlendiğinde patlama yarıçapı kaç bloktur (en fazla 10)?
 Bu komutun çalışma şeklini değiştiren aşağıdaki anahtarları vardır:
@@ -1221,7 +1207,6 @@ Lisans bilgilerini görmek için 'license' komutunu çalıştırın.
 Nitrocid Kernel'e hoş geldiniz! Denediğiniz için teşekkür ederiz!
 Başlamak için ENTER'a basın.
 Dilinizi seçin. Çekirdek varsayılan olarak İngilizce dilini kullanır, ancak burada başka herhangi bir dili seçebilirsiniz.
-Sisteminizdeki dil ayarlarınıza bağlı olarak uygun dil
 İlk kullanıcınızı oluşturun
 Kendi kullanıcı adınızı oluşturmanıza yardımcı olacağız. İstediğiniz herhangi bir adı seçin. Bu, kullanıcı adınız boşluklar ve özel karakterler içermediği ve halihazırda mevcut olmadığı sürece takma adınız veya kısa adınız olabilir. Aşağıdaki kullanıcı adları kayıtlıdır:
 Kullanıcı adını girin
@@ -1231,7 +1216,6 @@ Otomatik güncellemeler
 Nitrocid KS şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir.
 Nitrocid KS'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?
 Nitrocid KS güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor.
-Nitrocid KS'nin güncellemeleri otomatik olarak indirmesini ister misiniz?
 Çekirdek güncellemelerini her zaman "update" komutunu kullanarak kontrol edebilirsiniz.
 Başlayın!
 Tebrikler! Artık bir kullanıcı hesabınız var, {0}!
@@ -1268,8 +1252,6 @@ Bu dosyaları silmek istediğinizden emin misiniz?
 Hiçbir argüman yardım açıklaması yok
 Bu temayı kullanabilmeniz için konsolunuzun gerçek rengi desteklemesi gerekir.
 Önizlemeden çık
-Tamamlamak
-Anahtar Türleri
 {0} teması bir etkinliği kutluyor, ancak katılmak için ya çok erken ya da çok geç. Bu tema her yıl {1}/{2} ile {3}/{4} arasında erişilebilir.
 {0} temasının gerçek renk desteğine ihtiyacı var, ancak konsolunuz bunu desteklemiyor.
 Metin boş bırakılmamalıdır.
@@ -1333,14 +1315,12 @@ Bir yapılandırma dosyasına var olan bir yolu belirtin
 Geçerli bir yapılandırma sınıfı değil.
 Yapılandırma dosyası geçersiz.
 Yapılandırmayı okumaya çalışırken bir hata oluştu: {0}.
-Çekirdek yapılandırması düzgün çalışmayacaktır. Geçersiz anahtarlar
 Doğrulama başarısız!
 Okuma başarısız!
 Yapılandırmayı düzeltmeye çalışıyorum...
 Hiçbir tür belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
 Hiçbir giriş belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
 İçeriği olmayan özel bir ayarı kaydetmeye çalışıyorum.
-Geçersiz içerikle özel bir ayar kaydedilmeye çalışılıyor. Geçersiz anahtarlar
 Adı olmayan özel bir ayarı kayıttan çıkarmaya çalışıyorum.
 Özel ayar kaydedilmedi.
 Boş bir özel ayarı sorgulamaya çalışıyorum.
@@ -1348,7 +1328,6 @@ Ayar türü bulunamadı.
 Belirtilen değişkenle eşleşen Ayarlar anahtarı bulunamadı.
 Ayarlar girdilerinin JSON değeri boş.
 İçeriği olmayan bir temel ayarı kaydetmeye çalışıyorum.
-Geçersiz içerikle bir temel ayarı kaydetmeye çalışılıyor. Geçersiz anahtarlar
 Adı olmayan bir temel ayarı kayıttan çıkarmaya çalışıyorum.
 İddia başarısız.
 {0} etkinliği bulunamadı.
@@ -1519,9 +1498,6 @@ Bu eklenti geçerli bir eklenti değil.
 Çekirdek eklentisi başlatılamadı
 Eklentiler sonlandırılamadı. Aşağıdaki eklentiler sonlandırılamadı:
 Eklentiler durdurulamadı. Aşağıdaki eklentiler durdurulamadı:
-Fonksiyonların listesi alınamıyor
-Mülk listesi alınamıyor
-Alanların listesi alınamıyor
 Varolmayan eklentiyle özel işlev yürütülemez
 Eklenti '{1}' içinde '{0}' fonksiyonu bulunamadı.
 '{1}' eklentisinde '{0}' özelliği bulunamadı.
@@ -1598,17 +1574,14 @@ Sistem başlatma
 Donanım algılama
 İsteğe bağlı bileşenler
 Kullanıcı başlatma
-Çekirdek değişiklikleri
 Sistem bütünlüğünün doğrulanması
 Sahne
 Bakım modunda çalışıyor. Aşama atlanıyor...
 Aynı iş parçacığı zaten çalışırken çekirdek iş parçacığını yeniden oluşturamazsınız.
 Alt iş parçacığı başlatma eylemi boş olamaz.
 Çekirdek iş parçacığı {0} başarısız oldu.
-Nitrocid KS'yi paket yöneticinizi kullanarak yüklediniz. Lütfen çekirdeğinizi yükseltmek için kullanın.
 Bilgi yok.
 Dosya veya klasör açılamıyor
-Bu pencereyi kapatmak için herhangi bir tuşa basın.
 Yeni satır stili:
 İkili dosya:
 MIME meta verileri:
@@ -1683,7 +1656,6 @@ Başarı
 Arıza
 İlerleme işleyicisi boş olamaz.
 İşleme...
-Yöntem türü temel Nitrocid tür listesinde tanımlanmamıştır.
 Böyle bir yöntem yoktur.
 Bu yöntem statiktir. Nesne olmayan aşırı yüklemeyi kullanın.
 Bu yöntem statik değildir. Nesne aşırı yüklemesini kullanın.
@@ -1701,8 +1673,6 @@ Kapanış sıçraması görüntülenemedi
 {0}%'a ulaştık!
 Yükleniyor...
 Varolmayan mod ile özel fonksiyon çalıştırılamaz
-Varolmayan mod ile özel özellik çalıştırılamaz
-Varolmayan mod ile özel alan çalıştırılamaz
 Bağımlılık karşılanmadı. Başarısız bağımlılıklar aşağıda listelenmiştir:
 Varolmayan mod {0} için kılavuzlara sorgu göndermeye çalıştım.
 Varolmayan mod {1} için {0} kılavuzunu başlatmaya çalıştım.
@@ -1814,26 +1784,10 @@ Dil ve yerelleştirme testleri
 Ağ sistemi testleri
 UESH mermi testleri
 Kullanıcı testleri
-İstatistikler
 Kapat
-Mevcut test istatistiklerini gösterir
 Test modundan çıkar ve çekirdeği kapatır
 Çalıştırılacak bir test bölümü seçin
-Tümünü test et
-Tüm cepheleri test eder
-Bölüm seçimine geri döner
-Çalıştırılacak bir test cephesi seçin
-Bu test isteğe bağlı parametreler içerir. Test parametrelerine eklenecek parametrenin değerini girin.
-Parametre sayısı
-Evet!
 HAYIR
-Tekrar dene
-Test beklendiği gibi çalıştı mı?
-Test başarısız oldu. Beklenen değer {0}, ancak gerçek değer {1}.
-Test beklenmedik bir şekilde başarısız oldu.
-Başarılı testler:
-Başarısız testler:
-Çalıştırılacak testler:
 Yığın kare sayısı mevcut kare sayısını aşmamalı veya negatif olmamalıdır.
 Nitrosit KS
 Çekirdek iş parçacığı denetleyicisi henüz başlamamış {0} kritik iş parçacığı algıladı.
@@ -1925,7 +1879,6 @@ Kullanıcı bilgilerini alır
 Tercih edilen kullanıcı dilini değiştirir
 Hata ayıklama kabuğunu kullanabilmek için öncelikle hata ayıklama modunu etkinleştirmeniz gerekir.
 Mevcut geri izlemeyi alır
-Oturum numarasını kullanarak hata ayıklama günlüğü bilgilerini kolayca getirir
 Çekirdek istisna türünden mesaj alır. Hata ayıklama için yararlıdır
 Bir alan değeri alır
 Bir mülkün değerini alır
@@ -1957,7 +1910,6 @@ Nitrocid'in bu versiyonunda ne gibi yenilikler var?
 Dosya veya klasör kilidini kontrol eder
 Dosya veya klasör kilidi açılana kadar bekler
 Dili değiştirir
-Dilin çıkarımını yapmak için sistem dil ayarlarını kullanır
 Sistem dili yerine kullanıcı dilini değiştirir
 Tek satırlık seçim stili
 İki satırlık seçim stili
@@ -2120,12 +2072,8 @@ Konsola bir dize yazdır
 Hata ayıklayıcıya bir dize yazdır
 Biçimlendirmeyle hata ayıklayıcıya bir dize yazdırın
 Biçimlendirme ile konsola bir dize yazdır
-Konsola bir figlet dizesi yazdır
-Bir figlet dizesini biçimlendirmeyle konsola yazdırın
 Vurgulama ile konsola bir dize yazdırın
 Konsola bir ayırıcı yazdır
-Konsola renkle bir ayırıcı yazdırın
-Biçimlendirme ve renkle konsola bir ayırıcı yazdırın
 Biçimlendirme ile konsola bir ayırıcı yazdırın
 Yeni satırlar içeren bir dizeyi konsola yazdırın
 Konsola boş karakterler içeren bir dize yazdır
@@ -2189,8 +2137,6 @@ Bayraklar
 Gruplar
 Tercih edilen kullanıcı dili {0} olarak ayarlandı. Tekrar oturum açmak isteyebilirsiniz.
 Yönetici Kabuğu
-Geçersiz oturum numarası
-Böyle bir oturum numarası yok
 Böyle bir istisna türü yok
 İstisna türü adı
 Mesaj
@@ -2313,8 +2259,6 @@ Günü geçmiş
 Mevcut
 Bir tema seçin
 Bu temayı ayarlamak ister misiniz?
-Evet, ayarla!
-Hayır, ayarlamayın.
 Nitrocid'in genel kullanımlarına ilişkin kullanıcı kılavuzuna erişmek için lütfen aşağıdaki bağlantıyı ziyaret edin:
 Çekirdek değişiklikleri ve ekran koruyucular yapmanın güncel yollarını içeren geliştirici kılavuzuna erişmek için lütfen aşağıdaki bağlantıyı ziyaret edin:
 Zaten yükseltilmiş Nitrocid seansını çalıştırıyorsunuz!
@@ -2344,7 +2288,6 @@ Wordle oyununu orijinal olarak oyna
 Çekirdek sürümünün 5. yıl dönümünü anıyor
 Arşiv dosyasını arşiv kabuğuna açar
 Şarkı sözü dosyasından tüm şarkı sözü satırlarını alır
-Etkileşimli bir müzik çalar açar
 Bir şarkı sözü dosyasını oynatır
 Bir ses çalar
 Çayınız veya kahveniz hazır olduğunda sizi uyarmak için bir alarm ekler.
@@ -2465,8 +2408,6 @@ Yeni çığır açan özellikler yayınlandığı için bu çekirdeğe... adın�
 Hiçbir şey çıkarılamıyor.
 Arşiv yazılabilir değil çünkü tür
 LRC dosyasının yolunu belirttiğinizden emin olun.
-'{0}' müzik dosyası mevcut değil.
-BassBoom CLI eklentisinde ölümcül hata.
 Dosya bulunamadığından ses çalınamıyor.
 Müzik dosyası başarıyla açıldı.
 Müzik dosyası açılamıyor.
@@ -2479,63 +2420,8 @@ Tür
 Süre
 Oynatmayı durdurmak için 'q' tuşuna basın.
 Ses çalınamıyor.
-Basolia'da ekolayzır işlemi gerçekleştirilirken bir hata oluştu.
-Ekolayzır işlemini gerçekleştirirken Basolia çıkışında bir hata oluştu.
-Ekolayzır işlemi gerçekleştirilirken bilinmeyen bir hata oluştu.
-Değiştirmek
-Bant Seçin
-BassBoom tarafından desteklenmektedir
-Müzik dosyasına giden bir yol girin
-"{0}" dosyası mevcut değil.
-Müzik kütüphanesi dizinine giden bir yol girin
-Müzik kütüphanesi dizini bulunamadı.
-{0}'ı açmak için BassBoom yükleniyor...
 Şu anda oynatılıyor
-Şarkı sözü dosyasını açmaya çalışıyorum
-Şarkı sözü dosyası açılamıyor
-Hedef pozisyonu bu formatta yazın
-Kullanılabilir tuş vuruşları
-Oynat/Duraklat
-Durmak
-Ses kontrolü
-Kontrolü arayın
-Süre kontrolünü arayın
-Şarkı bilgisi
-Bir müzik dosyası ekle
-Önceki şarkı
-Sonraki şarkı
-Mevcut şarkıyı kaldır
-Tüm şarkıları kaldır
-Bilinmeyen
 Başlık
-Albüm
-Yorum
-Şarkı Sözleri
-çizgiler
-Şarkı sözü yok
-Katman bilgisi
-Katman
-Oran
-Mod
-Mod Uzatımı
-Çerçeve Boyutu
-Vurgu
-Bit hızı
-ABR Oranı
-Değişken bit hızı
-Metinler ve Ekstralar
-'{0}' adlı müzik dosyası bulunamadığından açılamıyor.
-Şarkı adı
-Şarkı sanatçısı
-Şarkı türü
-Aramak
-Hacim
-Basolia'da müzik dosyasını işlerken bir hata oluştu.
-Müzik dosyasını işlemeye çalışırken Basolia çıktısında bir hata oluştu.
-Müzik dosyası işlenirken bilinmeyen bir hata oluştu.
-Oynatma başarısızlığı
-Yardım
-Çalma listesine tek bir şarkı eklemek için 'A' tuşuna, tüm müzik kütüphanesini eklemek için 'S' tuşuna basın.
 Amerikan Kahvesi
 Kırmızı Çay
 Yeşil çay
@@ -2714,7 +2600,6 @@ Dönüştürülecek sayıyı girin...
 Dönüştürülecek bir sayı girmediniz.
 Girilen sayı geçersiz.
 Birim dönüştürülemiyor.
-0.0.1'den bu yana 6.000'inci commit'i kutluyoruz!
 Devam edecek...
 Son
 Mutlu yıllar!
@@ -2919,12 +2804,6 @@ Genel çekirdek ayarları
 Dil
 Çekirdek dilini belirtir.
 Kültür
-Renk körlüğünü etkinleştir
-Eğer renk körüyseniz veya renk körlüğünü simüle etmek istiyorsanız bunu etkinleştirebilirsiniz.
-Renk körlüğü türü
-Renk körlüğünün türü, protan, döter veya tritan olup olmadığı.
-Renk körlüğü şiddeti
-Renk körlüğünüz ne kadar şiddetli?
 Kapatma veya yeniden başlatma sırasında bip sesi
 Çekirdeği kapatırken bip sesini etkinleştirir.
 Kapatma veya yeniden başlatmada gecikme
@@ -2937,18 +2816,12 @@ Geliştirme bildirimi onaylandı
 Doğru olarak ayarlanırsa, çekirdek, geliştirme sürümlerinde çekirdeğe her önyükleme yaptığınızda size geliştirme bildirimini göstermeyecektir.
 Güvenilmeyen modların yüklenmesine izin ver
 True olarak ayarlanırsa, çekirdek imzalanmış ortak anahtara sahip olmayan modları yüklerken hata vermez.
-Hata ayıklama kotası etkinleştirildi
-Bu seçenek etkinleştirilirse, kota aşılırsa hata ayıklama yazarı hata ayıklama günlük dosyasını döndürür.
-Hata ayıklama kotası satır sayısı
-Kota sınırına ulaşmadan önce hata ayıklama tamponuna kaç satır yazdırılacak? Lütfen bunun hata ayıklama günlük dosyalarında kaç satır olduğunu göstermediğini unutmayın.
 Sistem saat dilimini kullan
 Bu seçenek etkinleştirilirse, çekirdek bilgisayar ayarlarınızdaki saat dilimini kullanır. Aksi takdirde, yapılandırılabilen çekirdek genelindeki saat dilimini kullanır.
 Çekirdek genelindeki zaman dilimi
 Kullanılacak çekirdek genelindeki zaman dilimi
 Lisans bilgi kutusunu göster
 Her oturum açma işleminden sonra modal lisans bilgi kutusunun üç saniye boyunca gösterilip gösterilmeyeceği. Açık tutulması önerilir.
-Hata ayıklama günlükleri için eski günlük kaydı stili
-Hata ayıklama günlükleri için eski günlük kaydı stilinin mi yoksa gruplanmış hata ayıklama günlüklerinin mi etkinleştirileceği.
 Bu bölüm, hangi renk türünü değiştirmek istediğinizi seçmenize olanak tanır.
 Renk ayarları
 Vurgu renklerini kullanın
@@ -3036,8 +2909,6 @@ Genel kabuk ayarları
 Komut yürütülürken konsol başlığını ayarlayın
 Komut yürütüldüğünde konsol başlığını ayarlar.
 Kabuk sayısını göster
-Bu bölümde kabuk ön ayar ayarları listelenmektedir.
-Kabuk ön ayarları
 İstem Ön Ayarı
 Metin Düzenleme İstemi Ön Ayarı
 Hex Düzenleme İstemi Ön Ayarı
@@ -3100,7 +2971,6 @@ CPU kullanım hata ayıklama güncelleme aralığı
 CPU kullanımını güncelleyip hata ayıklayıcıya yazdırmadan önce kaç milisaniye beklenmeli?
 Yılan oyunu.
 Size güzel ünlü alıntılar gösterir.
-Bu bölüm eğlencelerin nasıl çalışacağını yapılandırmanıza olanak tanır.
 Tercih ettiğiniz zorluk seviyesini seçin; 0 kolay, 1 orta, 2 zor, 3 çok zor ve 4 özeldir.
 ShipDuet'te uzay gemisini oluşturmak için PowerLine'ı kullanın
 Uzay gemisini işlemek için PowerLine mı yoksa standart büyük karakteri mi kullanılacağı. PowerLine'ı ShipDuet ile kullanmak istiyorsanız, PowerLine desteği olan uygun bir yazı tipi yüklemeniz gerekir.
@@ -3129,7 +2999,6 @@ RSS İstemi Ön Ayarı
 Bu bölüm SFTP kabuğunun nasıl çalışacağını yapılandırmanızı sağlar.
 Bu bölüm SQL kabuğunun nasıl çalışacağını yapılandırmanızı sağlar.
 SQL Shell İstemi Ön Ayarı
-Bu bölüm zamanlayıcıların nasıl çalışacağını yapılandırmanızı sağlar.
 Bu bölüm İpuçları'nın nasıl çalışacağını yapılandırmanızı sağlar.
 Çekirdek ipuçlarını göster
 Etkinleştirildiğinde, kabuk size her oturum açmada ipuçlarını gösterir.
@@ -3277,7 +3146,6 @@ Kullanıcı şifrenizi girin. Artırılmış güvenlik için güçlü bir şifre
 Otomatik Güncelleme Kontrolü
 Evet ediyorum!
 Hayır, teşekkürler.
-Otomatik Güncelleme İndirme
 Güvenli modda modların başlatılması veya durdurulmasına izin verilmez.
 Bilinmeyen bir çekirdek hatası oluştu. Bu durum muhtemelen çekirdek istisna türünün belirtilmemesinden veya bir şeylerin yanlış olmasından kaynaklanıyor olabilir.
 Çekirdek ağı, ana bilgisayar adı bileşeni için bir hata bildirdi.
@@ -3412,7 +3280,6 @@ Devam etmek
 Yaygın kelime listesini kullanır.
 Kelime listesinin tamamını kullanır.
 Masa tenisi oyunu!
-Bunun yerine radyo istasyonu oynatıcısını açar
 Bir bip sentezleyici dosyasını okur
 Kaynak renk modelini hedef renk modeline sayılarla dönüştürür.
 Kaynak renk modelini KS formatında hedef renk modeline dönüştürür.
@@ -3441,72 +3308,6 @@ Kısa şirket sembolü
 Etkileşimli bir TUI'de yeni bir tema oluşturur
 Çekirdek modlarınızı kullanarak önyüklenebilir programlar yapabileceğinizi mi düşünüyorsunuz?
 İstasyon tipi
-Cihaz
-Sürücü
-Oynatılmıyorken geçerli cihazlar sorgulanamıyor.
-Aygıt ve Sürücü
-Mevcut cihazlar ve sürücüler
-BassBoom özellikleri
-Kod çözücüler
-Sistem özellikleri
-Basolia versiyonu
-MPG123 sürümü
-OUT123 sürümü
-Desteklenen kod çözücüler
-Tüm kod çözücüler
-Sistem
-Sistem Mimarisi
-Süreç Mimarisi
-Sistem açıklaması
-.NET açıklaması
-Tekrar kontrol noktasını ayarla
-Kontrol noktasını tekrarlamaya çalışın
-Ekolayzırı açar
-Cihaz ve sürücü bilgisi
-Aygıtı ve sürücüyü ayarlayın
-Cihazı ve sürücüyü sıfırla
-Sistem bilgisi
-Radyo istasyonu bilgisi
-Radyo istasyonu genişletilmiş bilgi
-Bir radyo istasyonu ekle
-Önceki radyo istasyonu
-Sonraki radyo istasyonu
-Mevcut radyo istasyonunu kaldır
-Tüm radyo istasyonlarını kaldır
-Bir sürücü seçin. Çıkmak için ESC tuşuna basın.
-Bir cihaz seçin. Mevcut sürücü {0}. Çıkmak için ESC.
-Çalınmıyor. Müzik çalar boşta.
-Bas
-Üst Orta
-Tiz
-Bilinmeyen bant türü
-Ekolayzır Bant
-Aramak için bir şarkı sözü seçin
-Yerli Devlet
-Doğru işleme
-Tampon doldurma
-Kod çözme gecikmesi
-Kodlama gecikmesi
-Kodlama dolgusu
-Frankenstein akışı
-Taze kod çözücü
-Çalma listesine bir radyo istasyonu eklemek için 'A' tuşuna basın.
-Radyo istasyonuna giden bir yol girin. İstasyona giden URL bir MPEG radyo istasyonu sağlamalıdır. AAC olanlar henüz desteklenmiyor.
-İstasyon bilgisi
-Radyo istasyonu URL'si
-Radyo istasyonu adı
-Radyo istasyonunun güncel şarkısı
-Ana sayfa
-Akış yolu
-Dinleyiciler: {0} ile zirvede {1}
-Bit hızı
-Medya türü
-Radyo sunucusu bilgisi
-Akış bilgisi
-Radyo istasyonu HTTPS kullanıyor
-Radyo istasyonu sunucu türü
-Radyo istasyonu akışları: {0} ile {1} aktif
-Radyo istasyonu dinleyicileri: {0}, zirvede {1}
 Beep synth dosyası mevcut değil.
 Bölüm adı
 Sentezleyici gösterimi geçersiz.
@@ -3649,7 +3450,6 @@ Metin dosyası henüz açılmadı.
 Uzantı için işleyici belirtilmemiş.
 Varsayılan işleyici alınamadı
 Varsayılan işleyicilerin yüklenmesi başarısız oldu.
-Geçersiz yola erişmeye çalışılıyor. Bu kontrol, Nisan 2021 yamasına veya daha üstüne güncellenmemiş eski Windows 10 sistemlerinin NTFS dosya sistemi bozulmasına veya Mavi Ekran Ölümü (BSOD) sorununa neden olduğu bilinen bu yollara erişmesini önlemek için yapıldı. Bu, arayanın bir Hizmet Reddi (DoS) oluşturmaya çalıştığı ve düzeltilmesi gerektiği veya kullanıcı girişinin kötü amaçlı olduğu anlamına gelir.
 Seçme
 Kopyala
 Taşınmak
@@ -3688,11 +3488,6 @@ Uzaktan hata ayıklama aygıtı mevcut görünmüyor.
 Uzaktan hata ayıklama aygıtları alınamıyor
 İngilizce yerelleştirme kaynağı açılamıyor
 Yerelleştirme kaynağı açılamıyor
-figlet yazı tipi alınamadı
-Konsola bir figlet dizesi yazdır (ortalanmış)
-Konsola biçimlendirmeyle (ortalanmış) bir figlet dizesi yazdırın
-Konsola bir figlet dizesi yazdır (ortalanmış, konumsal)
-Konsola biçimlendirmeyle (ortalanmış, konumsal) bir figlet dizesi yazdırın
 Giriş noktasına ulaşılamadı.
 Bilgi kutusundaki (başlıklı) düğmeleri test eder
 Bilgi kutusundaki (başlıklı) renkli giriş kutusunu test eder
@@ -3710,7 +3505,6 @@ Yöntem alınamıyor
 Metin işlenirken bir düzenli ifade hatası oluştu. Düzenli ifade sözdiziminizi kontrol edin ve tekrar deneyin. Zaman aşımı meydana geldiyse, çok fazla tekrarlamadığınızdan emin olun (açgözlü olmayın).
 Ana sayfa araçları isteğinizi işlemeye çalışırken bir hatayla karşılaştı. Lütfen gerekli tüm verileri doğru bir şekilde girdiğinizden emin olun.
 Ne yazık ki, son başarısızlık bilinmiyor, bu yüzden tam olarak neyin yanlış gittiğini bilmiyoruz. Ancak, çekirdek hata ayıklama günlüklerine danıştıysanız faydalı olabilir.
-Eklenti meta verileri alınamadı
 Alan bilgisi alınamıyor
 Günlük girişleri alınamıyor
 (Seçiminizi vurgulamak için ok tuşlarını kullanın, ardından ENTER'a basın.)
@@ -3814,7 +3608,6 @@ Sonraki Arama
 Geri Arama
 Ham Bilgi
 MeCard'dan İthalat
-için herhangi bir mülk bilgisi bulunmamaktadır.
 Manuel olarak ekle
 Gün bölümü dizisi alınamıyor
 Gün bölümünü alamıyorum
@@ -3826,18 +3619,8 @@ Tur listesi
 İsim etiketleri oluşturun (umlautlar şu anda desteklenmiyor)
 Dönüştürmek...
 Birim Dönüştürücü
-Müzik çalar
-Radyo Çalar
 İnternet Radyo (FM) bilgisi
 İnternet radyosu bilgisine ulaşılamıyor.
-Aygıt (önbelleğe alınmış)
-Sürücü (önbelleğe alınmış)
-(boştayken) Çalma listesine bir müzik dizini ekleyin
-(oynarken) Seçici olarak ara
-(Çalınırken) Önceki şarkı sözüne git
-(Çalınırken) Bir sonraki şarkı sözüne geç
-(oynarken) Güncel şarkı sözüne git
-(oynarken) Hangi şarkı sözüne göre ara
 Değiştirmek...
 Kaydetmek...
 Yük...
@@ -3929,4 +3712,3 @@ Bu tema ile nostaljiyi geri getirin!
 Terminaliniz ahşap plakalardan oluşmaktadır
 Farklı meyvelerin Çin desenlerinden esinlenilmiştir
 Ekstralar - CRC32C (Castagnoli)
-Geliştirme sürümlerinde güncelleştirme denetimi devre dışıdır.

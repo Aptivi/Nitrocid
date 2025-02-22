@@ -27,7 +27,6 @@ Earráid agus iarracht á déanamh an t-ainm úsáideora a bhaint.
 Ní bhfuarthas an spárálaíscáileáin iarrtha {0}.
 Tá {0} socraithe mar spárálaíscáileáin réamhshocraithe.
 Níor aimsíodh spárálaíscáileáin {0} sa bhunachar sonraí. Seiceáil an t-ainm agus bain triail eile as.
-Tá earráid thromchúiseach ann agus an téacs á phriontáil.
 Ní féidir mod a luchtú mar gheall ar an méid seo a leanas:
 Thosaigh {0} v{1}
 Níl aon sainmhíniú ar ordú {0}.
@@ -242,9 +241,7 @@ Téigh ar ais...
 Scríobh port dífhabhtóra cianda. Caithfidh sé a bheith uimhriúil, agus ní féidir é a úsáid cheana féin. Seachas sin, ní theipeann ar dhífhabhtóir cianda an calafort a oscailt.
 Scríobh cé mhéad uair ba cheart don ordú "faigh" íoslódálacha teipthe a thriail arís. Caithfidh sé a bheith uimhriúil.
 Seans nach bhfuil an freagra diúltach.
-Ní aimsítear athróg {0} ar aon cheann de na modúil.
 Athraíonn cumraíocht eithne
-Athrú ar Chultúr agus Teangacha á Athrú
 Téacs léirithe
 Scríobh téacs ar bith is mian leat a thaispeáint. Is fearr níos giorra.
 Theip ar {0} a uaslódáil
@@ -293,7 +290,6 @@ Bogthaise: {0}
 Is féidir leat d’eochair API féin a fháil ag https://home.openweathermap.org/api_keys.
 An tAonad is Fearr le haghaidh Teocht
 Gach tosaithe, seiceálfaidh sé le haghaidh nuashonruithe.
-Agus teangacha á n-aistriú agat, athraigh ainmneacha na míosa, an féilire, etc.
 Coinnigh teachtaireachtaí iniúchta crua-earraí ina dtost.
 Taispeáin Teachtaireacht an Lae sula dtaispeánfar an scáileán logála isteach.
 Scáileán soiléir sula dtaispeánfar an scáileán logála isteach.
@@ -425,8 +421,6 @@ Theip ar an mod {0}: {1} a thabhairt chun críche
 Liostaíonn sé gach imeacht a scaoiltear
 Eolaire Reatha
 Socraíonn sé eolaire reatha an bhlaosc. Scríobh cosán iomlán chuig aon eolaire atá ann cheana féin.
-Aschuir liosta fillte
-Wraps na haschuir liosta más cosúil go bhfuil sé ró-fhada do chéimseata reatha consól.
 Ping!
 Chuir {0} pingin ort.
 Sábháil an Téama san Eolaire Reatha mar...
@@ -467,7 +461,6 @@ Ceistíonn sé focal i líne shonraithe nó i ngach líne
 Trialacha ag aistriú teaghrán atá in acmhainní go teanga ar leith
 Priontaí teaghrán le consól agus parsálann sé na sealbhóirí áit a aimsítear
 Déantar tástáil ar an ngnátháis slonn
-Tosaíonn gach mods
 Tástáil an t-ord VT le haghaidh 255 dathanna
 Tástáil an t-ord VT le haghaidh dath fíor
 Seoltar fógra chun an glacadóir a thástáil
@@ -662,9 +655,6 @@ Cén comhad é an téacschomhad MAL? Scríobh cosán iomlán chuig an gcomhad t�
 Mods ar liosta dubh
 Scríobh na comhaid de na mods nach mbeidh ar siúl ar am tosaithe. Nuair a bheidh tú críochnaithe, scríobh "q". Scríobh comhartha lúide in aice leis an gcosán chun mod atá ann cheana a bhaint.
 Tá Mod {0} ar an liosta dubh.
-Íosluchtaigh gach mods
-Cuireann sé mod leis an liosta dubh
-Baintear mod as an liosta dubh
 Taispeáin faisnéis aipe le linn tosaithe
 Taispeáin amanna críochnaithe an stáitse
 Cuir tús le modhnuithe eithne ar tosaithe
@@ -857,7 +847,6 @@ Cibé an dtaispeánfar cad atá scríofa sa leid ionchuir.
 Cad é an t-íoslíon atá le roghnú?
 Cad é an t-uaslíon atá le roghnú?
 Má shonraítear é, taispeánfaidh sé meirge tosaithe saincheaptha le tacaíocht sealbhóir áit. Is féidir leat {0} a úsáid le haghaidh leagan eithne.
-Cén leagan den teanga reatha atá in úsáid chun ainmneacha na míosa, an fhéilire, srl. a athrú?
 Gníomhachtaigh an tacaíocht dath fíor.
 Scriosadh an focal i líne {0}.
 Teaghrán ionadaithe i líne {0}.
@@ -954,7 +943,6 @@ Ní féidir aon rud a phacáil.
 Chun tuilleadh eolais a fháil faoi na téarmaí agus na coinníollacha a bhaineann le húsáid na mbogearraí seo, tabhair cuairt ar
 Cineál aschuir rogha réamhshocraithe
 Seiceálann sé na socruithe KS go léir féachaint an bhfuil na hathróga scríofa i gceart
-Tá athróga nó áirimh neamhbhailí ag na hiontrálacha cumraíochta seo agus is gá iad a shocrú:
 Comhad {0} gan aimsiú
 Cruthaítear eagar athraitheach leis na luachanna a chuirtear ar fáil
 Seiceálann sé na huimhreacha línte téacs logánaithe go léir féachaint an bhfuil siad ar fad cothrom
@@ -1027,8 +1015,6 @@ Tá tú suas chun dáta!
 Formáidiú réamhshocraithe JSON don bhlaosc JSON
 Roghnaíonn sé an fhormáidiú réamhshocraithe JSON (álainn nó mionghearrtha) chun an bhlaosc JSON a shábháil.
 D'éirigh leis an nuashonrú a íoslódáil!
-Íoslódáil nuashonruithe uathoibríoch
-Má tá aon nuashonrú ann, déanfaidh an eithne é a íoslódáil go huathoibríoch.
 Ga pléascadh tine ealaíne
 Cé mhéad bloc (suas le 10) atá sa gha pléasctha don tine ealaíne nuair a lastar í?
 Tá na lasca thíos ag an ordú seo a athraíonn an chaoi a n-oibríonn sé:
@@ -1221,7 +1207,6 @@ Eithne chéad rith
 Fáilte go dtí Eithne Nitrocid! Go raibh maith agat as triail a bhaint as!
 Chun tús a chur leis, brúigh ENTER.
 Roghnaigh do theanga. De réir réamhshocraithe, úsáideann an eithne an Béarla, ach is féidir leat teanga ar bith eile a roghnú anseo.
-Bunaithe ar do shocruithe teanga ar do chóras, is é an teanga chuí
 Cruthaigh do chéad úsáideoir
 Cabhróidh muid leat d’ainm úsáideora féin a chruthú. Roghnaigh ainm ar bith atá uait. D’fhéadfadh gurb é seo do leasainm nó d’ainm gairid, chomh fada agus nach bhfuil spásanna agus carachtair speisialta i d’ainm úsáideora agus nach ann dó cheana. Tá na hainmneacha úsáideoirí seo a leanas cláraithe:
 Cuir isteach an t-ainm úsáideora
@@ -1231,7 +1216,6 @@ Nuashonruithe uathoibríocha
 Nuashonraíonn Nitrocid KS é féin faoi láthair chun an leagan is déanaí a fháil a chuimsíonn feabhsuithe ginearálta agus ceartúcháin fhabht. Cuimsíonn leaganacha móra nua de ghnáth athruithe briste agus gnéithe spreagúla nua.
 Ar mhaith leat go ndéanfaidh Nitrocid KS seiceáil go huathoibríoch le haghaidh nuashonruithe?
 Chomh maith le nuashonruithe a sheiceáil go huathoibríoch, is féidir le Nitrocid KS an comhad nuashonraithe a íoslódáil go huathoibríoch.
-Ar mhaith leat go n-íoslódálann Nitrocid KS nuashonruithe go huathoibríoch?
 Is féidir leat seiceáil i gcónaí le haghaidh nuashonruithe eithne ag baint úsáide as an ordú "nuashonraigh".
 Faigh Tosaigh!
 Comhghairdeachas! Tá cuntas úsáideora agat anois, {0}!
@@ -1268,8 +1252,6 @@ Ní féidir an comhad ilghnéitheach a scriosadh
 Níl aon chur síos cabhrach argóint
 Caithfidh do chonsól tacú le fíor dhath chun an téama seo a úsáid.
 Scoir an réamhamharc
-Déanta
-Cineálacha Athraigh
 Déanann an téama {0} ceiliúradh ar imeacht, ach tá tú ró-luath nó ró-dhéanach le bheith i láthair. Gach bliain, tá an téama seo inrochtana ó {1}/{2} go {3}/{4}.
 Teastaíonn tacaíocht fíor dhathanna don téama {0}, ach ní thacaíonn do chonsól leis.
 Níor cheart go mbeadh an téacs folamh.
@@ -1333,14 +1315,12 @@ Sonraigh conair láithreach chuig comhad cumraíochta
 Ní rang cumraíochta bailí é.
 Tá an comhad cumraíochta neamhbhailí.
 Tharla earráid agus an chumraíocht á léamh: {0}.
-Ní oibreoidh cumraíocht eithne i gceart. Tá na heochracha neamhbhailí
 Theip ar bhailíochtú!
 Theip ar an léitheoireacht!
 Ag iarraidh cumraíocht a shocrú...
 Ní féidir athróga cumraíochta a sheiceáil nuair nach bhfuil cineál sonraithe.
 Ní féidir athróga cumraíochta a sheiceáil nuair nach bhfuil aon iontrálacha sonraithe.
 Ag iarraidh socrú saincheaptha a chlárú gan aon ábhar.
-Ag iarraidh socrú saincheaptha a chlárú le hábhar neamhbhailí. Tá na heochracha neamhbhailí
 Ag iarraidh socrú saincheaptha gan ainm a dhíchlárú.
 Níl an socrú saincheaptha cláraithe.
 Ag iarraidh socrú saincheaptha folamh a cheistiú.
@@ -1348,7 +1328,6 @@ Ní bhfuarthas an cineál socruithe.
 Níor aimsíodh an eochair shocruithe a mheaitseálann an athróg sonraithe.
 Tá luach JSON iontrálacha socruithe folamh.
 Ag iarraidh socrú bonn a chlárú gan aon ábhar.
-Ag iarraidh bunsocrú a chlárú le hábhar neamhbhailí. Tá na heochracha neamhbhailí
 Ag iarraidh bunsocrú gan ainm a dhíchlárú.
 Teip dearbhaithe.
 Níor aimsíodh an t-imeacht {0}.
@@ -1519,9 +1498,6 @@ Theip ar an breiseán eithne a thosú
 Theip ar an addon eithne a thúsú
 Theip ar bhreiseáin a thabhairt chun críche. Theip ar na breiseáin thíos a thabhairt chun críche:
 Theip ar fhorlíontáin a stopadh. Theip ar na breiseáin thíos a stopadh:
-Ní féidir liosta feidhmeanna a fháil
-Ní féidir liosta maoine a fháil
-Ní féidir liosta réimsí a fháil
 Ní féidir feidhm shaincheaptha a rith leis an mbreiseán nach bhfuil ann
 Ní féidir feidhm '{0}' a aimsiú san addon '{1}'.
 Ní féidir an t-airí '{0}' a aimsiú san addon '{1}'.
@@ -1598,17 +1574,14 @@ Nuashonruithe eithne
 Brath crua-earraí
 Comhpháirteanna roghnacha
 Túsú úsáideora
-Modhnuithe eithne
 Fíorú sláine an chórais
 Céim
 Ag rith i mód cothabhála. Céim scipeála...
 Ní féidir an snáithe eithne a athghiniúint agus an snáithe céanna ar siúl cheana féin.
 Ní féidir gníomh tosaithe snáithe an linbh a bheith ar neamhní.
 Theip ar snáithe eithne {0}.
-Tá Nitrocid KS suiteáilte agat le do bhainisteoir pacáiste. Bain úsáid as é chun d'eithne a uasghrádú ina ionad sin.
 Gan eolas.
 Ní féidir comhad nó fillteán a oscailt
-Brúigh eochair ar bith chun an fhuinneog seo a dhúnadh.
 Stíl nualíne:
 Comhad dénártha:
 meiteashonraí MIME:
@@ -1683,7 +1656,6 @@ Rath
 Teip
 Seans nach bhfuil an láimhseálaí dul chun cinn ar neamhní.
 Próiseáil...
-Ní shainmhínítear cineál an mhodha sa bhun-liosta cineál Nitrocid.
 Níl an modh seo ann.
 Tá an modh seo statach. Bain úsáid as an ró-ualach gan ábhar.
 Níl an modh seo statach. Bain úsáid as an ró-ualach réad.
@@ -1701,8 +1673,6 @@ Theip ar an splancscáileán deiridh a thaispeáint
 Tá {0}% sroichte againn!
 Á lódáil...
 Ní féidir feidhm shaincheaptha a rith le mod nach bhfuil ann
-Ní féidir an t-airí saincheaptha a rith le mod nach bhfuil ann
-Ní féidir an réimse saincheaptha a rith le mod nach bhfuil ann
 Spleáchas míshásta. Tá spleáchais theipthe liostaithe thíos:
 Rinneadh iarracht na lámhleabhair a cheistiú le haghaidh mod {0} nach bhfuil ann.
 Rinneadh iarracht an lámhleabhar {0} a thúsú le haghaidh mod {1} nach bhfuil ann.
@@ -1814,26 +1784,10 @@ Tástálacha modhnú eithne
 Tástálacha córais líonra
 Tástálacha bhlaosc UESH
 Tástálacha úsáideora
-Staitisticí
 Múchadh
-Taispeánann sé na staitisticí tástála reatha
 Fágann sé an modh tástála agus stopann sé an t-eithne
 Roghnaigh roinn tástála le rith
-Tástáil Uile
-Tástáil gach aghaidheanna
-Filltear ar an rogha rannáin
-Roghnaigh facade tástála a rith
-Tá paraiméadair roghnacha sa tástáil seo. Cuir isteach luach an pharaiméadar chun cur leis na paraiméadair tástála.
-Paraiméadair chomhaireamh
-Sea!
 Níl
-Bain triail eile as
-Ar rith an tástáil mar a bhíothas ag súil leis?
-Theip ar an tástáil. Is é {0} an luach a bhfuiltear ag súil leis, ach is é {1} an luach iarbhír.
-Theip ar an tástáil gan choinne.
-Tástálacha rathúla:
-Teip tástálacha:
-Tástálacha le reáchtáil:
 Níor chóir go mbeadh uimhir an fhráma cruachta níos mó ná méid reatha na bhfrámaí nó níor cheart go mbeadh sé diúltach.
 KS nítrigine
 Bhraith maoirseoir snáithe eithne {0} snáithe criticiúla nár thosaigh fós.
@@ -1925,7 +1879,6 @@ Faigheann an t-eolas úsáideora
 Athraítear an rogha teanga úsáideora
 Ní mór duit mód dífhabhtaithe a chumasú sular féidir leat an bhlaosc dífhabhtaithe a úsáid.
 Faightear aisrian reatha
-Faigheann sé an fhaisnéis logála dífhabhtaithe go héasca ag baint úsáide as uimhir an tseisiúin
 Faigheann sé teachtaireacht ó chineál eisceachta eithne. Úsáideach le haghaidh dífhabhtaithe
 Faigheann luach réimse
 Faigheann luach maoine
@@ -1957,7 +1910,6 @@ Cad atá nua sa leagan seo de Nitrocid?
 Seiceálann sé an comhad nó an glas fillteán
 Fanann sé go dtí go ndíghlasáiltear an comhad nó an fillteán
 Athraíonn teanga
-Úsáideann sé socruithe teanga an chórais chun iarracht a dhéanamh an teanga a thuiscint
 Athraítear teanga an úsáideora seachas teanga an chórais
 Stíl rogha líne amháin
 Stíl rogha dhá líne
@@ -2120,12 +2072,8 @@ Priontáil teaghrán chuig an consól
 Priontáil teaghrán chuig dífhabhtóir
 Priontáil teaghrán go dífhabhtóir le formáidiú
 Priontáil teaghrán go consól le formáidiú
-Priontáil teaghrán figiúr chuig consól
-Priontáil teaghrán figlet go consól le formáidiú
 Priontáil teaghrán go consól le aibhsiú
 Priontáil deighilteoir chuig consól
-Priontáil deighilteoir go consól le dath
-Priontáil deighilteoir go consól le formáidiú agus dath
 Priontáil deighilteoir go consól le formáidiú
 Priontáil téad go consól le línte nua i teaghrán
 Priontáil teaghrán le consól le carachtair nialasach
@@ -2189,8 +2137,6 @@ Ceadanna
 Grúpaí
 Socraíodh an rogha teanga úsáideora chuig {0}. Seans gur mhaith leat logáil isteach arís.
 Riarthóir Shell
-Uimhir seisiúin neamhbhailí
-Uimh seisiún den sórt sin
 Uimh chineál eisceachta den sórt sin
 Ainm cineál eisceachta
 Teachtaireacht
@@ -2313,8 +2259,6 @@ imithe in éag
 Ar fáil
 Roghnaigh téama
 Ar mhaith leat an téama seo a shocrú?
-Sea, leag é!
-Ní hea, ná socraigh é.
 Chun rochtain a fháil ar an lámhleabhar úsáideora le haghaidh úsáidí ginearálta Nitrocid, tabhair cuairt ar an nasc thíos:
 Chun rochtain a fháil ar lámhleabhar an fhorbróra le haghaidh bealaí nuashonraithe chun mionathruithe eithne agus spárálaíscáileáin a dhéanamh, tabhair cuairt ar an nasc thíos:
 Tá an seisiún ardaithe Nitrocid á rith agat cheana féin!
@@ -2344,7 +2288,6 @@ Seinn an cluiche Wordle ar dtús
 Déanann sé comóradh 5 bliana ar scaoileadh na heithne
 Osclaíonn sé an comhad cartlainne chuig an bhlaosc cartlainne
 Faigheann gach líne lyric ón gcomhad lyric
-Osclaítear seinnteoir ceoil idirghníomhach
 Seinntear comhad lyric
 Seinneann fuaim
 Cuirtear aláram leis chun foláireamh a thabhairt duit nuair a bhíonn do chupán tae nó caife réidh.
@@ -2465,8 +2408,6 @@ Comóradh 5 bliana sona duit!
 Ní féidir aon rud a bhaint as.
 Níl an chartlann inscríofa toisc go bhfuil cineál
 Déan cinnte an cosán chuig comhad LRC a shonrú.
-Níl comhad ceoil '{0}' ann.
-Earráid mharfach san addon BassBoom CLI.
 Ní féidir fuaim a sheinm toisc nach bhfuil an comhad aimsithe.
 D'éirigh leis an gcomhad ceoil a oscailt.
 Ní féidir an comhad ceoil a oscailt.
@@ -2479,63 +2420,8 @@ Seánra
 Fad
 Brúigh 'q' chun stop a imirt.
 Ní féidir fuaim a sheinm.
-Tharla earráid le Basolia agus é ag iarraidh oibriú an chothromóra a phróiseáil.
-Tharla earráid le haschur Basolia agus tú ag iarraidh oibriú an chothromóra a phróiseáil.
-Tharla earráid anaithnid agus iarracht á déanamh an oibríocht cothromóra a phróiseáil.
-Athrú
-Roghnaigh Banna
-Cumhachtaithe ag BassBoom
-Cuir isteach cosán chuig an gcomhad ceoil
-Níl an comhad "{0}" ann.
-Cuir isteach cosán chuig eolaire na leabharlainne ceoil
-Ní bhfuarthas eolaire na leabharlainne ceoil.
-BassBoom á lódáil chun {0} a oscailt...
 Anois ag imirt
-Ag iarraidh comhad liricí a oscailt
-Ní féidir an comhad liricí a oscailt
-Scríobh an suíomh sprice san fhormáid seo
-Eochracha ar fáil
-Súgradh/Sos
-Stop
-Rialú toirte
-Rialú a lorg
-Rialú ré a lorg
-Eolas amhrán
-Cuir comhad ceoil leis
-Amhrán roimhe seo
-Amhrán seo chugainn
-Bain an t-amhrán reatha
-Bain gach amhráin a saor in aisce
-Anaithnid
 Teideal
-Albam
-Trácht
-Liricí
-línte
-Gan liricí
-Eolas sraithe
-Ciseal
-Ráta
-Mód
-Mód Folíne
-Méid Fráma
-Béim
-Ráta giotán
-Ráta ABR
-Ráta giotán athraitheach
-Téacsanna agus Extras
-Ní féidir an comhad ceoil '{0}' a oscailt toisc nach bhfuil sé aimsithe.
-Ainm amhrán
-Ealaíontóir amhrán
-Cineál amhrán
-Iarracht
-Toirt
-Tá earráid ann le Basolia agus é ag iarraidh an comhad ceoil a phróiseáil.
-Tharla earráid le haschur Basolia agus tú ag iarraidh an comhad ceoil a phróiseáil.
-Tá earráid anaithnid agus iarracht á déanamh an comhad ceoil a phróiseáil.
-Teip athsheinm
-Cabhrú
-Brúigh 'A' chun amhrán amháin a chur isteach sa seinmliosta, nó 'S' chun an leabharlann ceoil iomlán a chur isteach.
 Caife Meiriceánach
 Tae Dearg
 Tae Glas
@@ -2714,7 +2600,6 @@ Cuir isteach uimhir le tiontú...
 Níor chuir tú uimhir isteach le tiontú.
 Tá an uimhir iontrála neamhbhailí.
 Ní féidir aonad a thiontú.
-Ag ceiliúradh an 6,000ú gealltanas ó 0.0.1!
 Le leanúint ar aghaidh...
 An Deireadh
 Athbhliain faoi mhaise duit!
@@ -2919,12 +2804,6 @@ Socruithe eithne ginearálta
 Teanga
 Sonraíonn an teanga eithne.
 Cultúr
-Cumasaigh daille datha
-Má tá dath dall ort nó má tá tú ag iarraidh daille datha a insamhladh, is féidir leat é a chumasú.
-Cineál daille dath
-An cineál daille datha, bíodh sé prótan, deuter, nó tritan.
-Dath daille déine
-Cé chomh trom is atá an daille datha?
 Bíp ar múchadh nó atosaigh
 Cumasaíonn sé beeping nuair a stoptar síos an eithne.
 Moill ar múchadh nó atosaigh
@@ -2937,18 +2816,12 @@ Admhaíodh fógra forbartha
 Más fíor é, ní thaispeánfaidh an t-eithne an fógra forbartha duit gach uair a thosaíonn tú ar an eithne i leaganacha forbartha.
 Ceadaigh mods neamhiontaofa a lódáil
 Má tá sé fíor, ní dhéanfar earráid ar an eithne agus modhnuithe á lódáil nach bhfuil an eochair phoiblí sínithe acu.
-Cuóta dífhabhtaithe cumasaithe
-Má tá an rogha seo cumasaithe, rothlaíonn an scríbhneoir dífhabhtaithe an logchomhad dífhabhtaithe má sháraítear an cuóta.
-Comhaireamh líne cuóta dífhabhtaithe
-Cé mhéad líne atá le priontáil chuig an maolán dífhabhtaithe sula sroicheann tú teorainn an chuóta? Tabhair faoi deara le do thoil nach léiríonn sé cé mhéad líne atá sna comhaid loga dífhabhtaithe.
 Úsáid crios ama an chórais
 Má tá an rogha seo cumasaithe, úsáideann an eithne an crios ama ó do shocruithe ríomhaire. Eile, úsáideann an crios ama ar fud an eithne is féidir a chumrú.
 Crios ama ar fud an eithne
 An crios ama ar fud an eithne le húsáid
 Taispeáin an bosca faisnéise ceadúnais
 Cibé an dtaispeánfar an bosca faisnéise um cheadúnas módúil ar feadh trí soicind tar éis gach logáil isteach. Moltar é a choinneáil ar siúl.
-Stíl logála oidhreachta le haghaidh logaí dífhabhtaithe
-Cibé ar cheart an stíl logála oidhreachta a chumasú do logaí dífhabhtaithe nó chun logaí dífhabhtaithe grúpáilte a chumasú.
 Ligeann an chuid seo duit an cineál datha ar mhaith leat a athrú a roghnú.
 Socruithe datha
 Bain úsáid as dathanna accent
@@ -3036,8 +2909,6 @@ Grúpa de chosáin scartha ag an idirstad. Oibríonn sé mar an gcéanna le PATH
 Socraigh teideal consóil ar fhorghníomhú ordaithe
 Socraíonn teideal an chonsóil ar fhorghníomhú ordaithe.
 Taispeáin an comhaireamh sliogán
-Liostaíonn an chuid seo na socruithe réamhshocraithe bhlaosc.
-Socruithe réamhshocraithe Shell
 Pras Réamhshocrú
 Téacs Eagar Pras Réamhshocrú
 Heicsidheachúlach Cuir Pras Réamhshocrú
@@ -3100,7 +2971,6 @@ Eatramh nuashonraithe dífhabhtaithe úsáide LAP
 Cé mhéad milleasoicind atá le fanacht roimh úsáid an LAP a nuashonrú agus é a phriontáil don dífhabhtóir?
 Cluiche nathair.
 Taispeánann sé Sleachta cáiliúla deasa duit.
-Ligeann an chuid seo duit conas a oibríonn na siamsaí a chumrú.
 Roghnaigh an deacracht is fearr leat, áit a bhfuil 0 éasca, 1 meánach, 2 crua, 3 an-chrua, agus 4 cinn saincheaptha.
 Úsáid PowerLine chun spásárthach a sholáthar i ShipDuet
 Cibé an n-úsáidfear PowerLine chun an spásárthach a sholáthar nó an úsáidfear an caighdeán is mó ná an carachtar. Más mian leat PowerLine a úsáid le ShipDuet, ní mór duit cló cuí a shuiteáil le tacaíocht PowerLine.
@@ -3129,7 +2999,6 @@ Réamhshocrú Pras RSS
 Ligeann an chuid seo duit conas a oibríonn an bhlaosc SFTP a chumrú.
 Ligeann an chuid seo duit conas a oibríonn an bhlaosc SQL a chumrú.
 SQL Shell Pras Réamhshocrú
-Ligeann an chuid seo duit conas a oibríonn na hamadóirí a chumrú.
 Ligeann an chuid seo duit conas a oibríonn Leideanna a chumrú.
 Taispeáin leideanna eithne
 Má tá sé cumasaithe, taispeánann an bhlaosc na leideanna duit maidir le gach logáil isteach.
@@ -3277,7 +3146,6 @@ Cuir isteach do phasfhocal úsáideora. Ba cheart duit pasfhocal láidir a roghn
 Seiceáil Nuashonraithe Uathoibríoch
 Sea, is féidir liom!
 Níl, go raibh maith agat.
-Íoslódáil nuashonruithe uathoibríoch
 Ní cheadaítear mods a thosú nó a stopadh ar mhód sábháilte.
 Tharla earráid anaithnid eithne, b'fhéidir toisc nár sonraíodh an cineál eisceachta eithne nó go raibh rud éigin mícheart.
 Thuairiscigh líonrú na heithne earráid don chomhpháirt óstainm.
@@ -3412,7 +3280,6 @@ Roghnaigh iontráil tosaithe:
 Úsáideann sé an liosta focal coitianta.
 Úsáideann sé an liosta focal iomlán.
 An cluiche ping-pong!
-Osclaítear seinnteoir an stáisiúin raidió ina ionad sin
 Léann sé comhad sintéiseach bíp
 Athraíonn an tsamhail dath foinse go dtí an tsamhail dath sprice ina uimhreacha.
 Athraíonn an tsamhail datha foinse go dtí an múnla datha sprice i bhformáid KS.
@@ -3441,72 +3308,6 @@ Comhartha cuideachta gearrthóg
 Déanann sé téama nua i TUI idirghníomhach
 gur féidir leat cláir bootable a dhéanamh ag baint úsáide as do mhodhanna eithne?
 Cineál stáisiúin
-Gléas
-Tiománaí
-Ní féidir gléasanna reatha a cheistiú agus gan é a sheinm.
-Gléas agus Tiománaí
-Gléasanna agus tiománaithe atá ar fáil
-Sonraíochtaí BassBoom
-Díchódóirí
-Sonraíochtaí córais
-leagan Basolia
-Leagan MPG 123
-Leagan OUT123
-Díchódóirí tacaithe
-Gach díchódaithe
-Córas
-Ailtireacht Chórais
-Ailtireacht Próisis
-Cur síos ar an gcóras
-Cur síos .NET
-Socraigh seicphointe athuair
-Déan iarracht seicphointe a athdhéanamh
-Osclaíonn sé an cothromóir
-Eolas gléas agus tiománaí
-Suiteáil gléas agus tiománaí
-Athshocraigh gléas agus tiománaí
-Eolas córais
-Eolas faoin stáisiún raidió
-Stáisiún raidió eolas leathnaithe
-Cuir stáisiún raidió leis
-Stáisiún raidió roimhe seo
-An chéad stáisiún raidió eile
-Bain an stáisiún raidió reatha
-Bain gach stáisiún raidió
-Roghnaigh tiománaí. ESC a scor.
-Roghnaigh gléas. Is é {0} an tiománaí reatha. ESC a scor.
-Gan imirt. Tá seinnteoir ceoil díomhaoin.
-Dord
-Lár Uachtarach
-Tríble
-Cineál banna anaithnid
-Banna Cothromóir
-Roghnaigh lyric a lorg
-Stát Dúchais
-Rindreáil cruinn
-Maolán líonadh
-Moill díchódaithe
-Moill ionchódaithe
-Stuáil ionchódaithe
-Sruth Frankenstein
-Díchódóir úr
-Brúigh 'A' chun stáisiún raidió a chur isteach ar an seinnliosta.
-Cuir isteach cosán chuig an stáisiún raidió. Caithfidh an URL chuig an stáisiún stáisiún raidió MPEG a sholáthar. Ní thacaítear le cinn AAC fós.
-Eolas faoin stáisiún
-URL an stáisiúin raidió
-Ainm stáisiún raidió
-Stáisiún raidió amhrán reatha
-Leathanach baile
-Cosán sruth
-Éisteoirí: {0} le {1} ag buaicphointe
-Ráta giotán
-Cineál meáin
-Faisnéise freastalaí raidió
-Sruth faisnéise
-Úsáideann stáisiún raidió HTTPS
-Cineál freastalaí stáisiún raidió
-Sruthanna stáisiúin raidió: {0} le {1} gníomhach
-Éisteoirí stáisiúin raidió: {0} le {1} ag buaicphointe
 Níl an comhad sintéise bíp ann.
 Ainm na caibidle
 Tá léiriú sintéise neamhbhailí.
@@ -3649,7 +3450,6 @@ Níl an téacschomhad oscailte fós.
 Níl láimhseálaí le haghaidh síneadh sonraithe.
 Theip ar an láimhseálaí réamhshocraithe a fháil
 Theip ar lódáil na láimhseálaithe réamhshocraithe.
-Ag iarraidh rochtain a fháil ar chonair neamhbhailí. Rinneadh an tseiceáil seo chun córais níos sine Windows 10 nár nuashonraigh go paiste Aibreán 2021 nó níos airde a chosc ó rochtain a fháil ar na cosáin seo arbh eol dóibh éilliú córas comhaid NTFS nó saincheist Scáileán Gorm an Bháis (BSOD). Tugann sé seo le tuiscint go bhfuil an glaoiteoir ag iarraidh a chur faoi deara Diúltú Seirbhíse (DoS) agus ba chóir é a shocrú, nó go bhfuil ionchur an úsáideora mailíseach.
 Roghnaigh
 Cóip
 Bog
@@ -3688,11 +3488,6 @@ Ní cosúil go bhfuil gléas dífhabhtaithe cianda ann.
 Ní féidir gléasanna dífhabhtaithe cianda a fháil ó
 Ní féidir an acmhainn logánaithe Béarla a oscailt
 Ní féidir an acmhainn logánaithe a oscailt le haghaidh
-Theip ar chló figlet a fháil
-Priontáil teaghrán figlet chuig consól (lárnach)
-Priontáil teaghrán figlet chuig an consól le formáidiú (lárnach)
-Priontáil teaghrán figlet chuig consól (lárnach, suite)
-Priontáil teaghrán figlet chuig an consól le formáidiú (lárnach, suite)
 Theip ar an bpointe iontrála a fháil.
 Tástálann sé na cnaipí sa bhosca faisnéise (teideal)
 Déanann sé tástáil ar an mbosca ionchuir daite sa bhosca faisnéise (teideal)
@@ -3710,7 +3505,6 @@ Ní féidir an modh a fháil
 Tharla earráid shloinne rialta agus an téacs á phróiseáil. Seiceáil do chomhréir slonn rialta agus bain triail eile as. Má tharla an t-am istigh, cinntigh nach ndéanann tú an iomarca arís (ná bíodh santach).
 Tharla earráid sna huirlisí leathanach baile agus tú ag iarraidh d'iarratas a phróiseáil. Cinntigh le do thoil go bhfuil na sonraí riachtanacha go léir curtha isteach agat i gceart.
 Ar an drochuair, ní fios an teip dheireanach, mar sin níl a fhios againn go díreach cad a chuaigh mícheart. D’fhéadfadh sé a bheith cabhrach, áfach, má tá tú tar éis dul i gcomhairle leis na logaí dífhabhtaithe eithne.
-Theip ar mheiteashonraí addon a fháil
 Ní féidir faisnéis réimse a fháil le haghaidh
 Ní féidir iontrálacha dialainne a fháil
 (Úsáid na heochracha saigheada chun do rogha a aibhsiú, ansin brúigh ENTER.)
@@ -3814,7 +3608,6 @@ Cuardaigh Ar Aghaidh
 Cuardach Ar Ais
 Eolas Amh
 Iompórtáil Ó MeCard
-Níl aon fhaisnéis maoine ann le haghaidh
 Cuir de láimh
 Ní féidir eagar páirteanna lae a fháil
 Ní féidir cuid den lá a fháil
@@ -3826,18 +3619,8 @@ Liosta lap
 Gin clibeanna ainm (ní thacaítear le umlauts faoi láthair)
 Tiontaigh...
 Tiontaire Aonad
-Seinnteoir Ceoil
-Seinnteoir raidió
 Raidió Idirlín (FM) eolas le haghaidh
 Ní féidir faisnéis raidió idirlín a fháil.
-Gléas (taisce
-Tiománaí (i dtaisce
-(agus tú díomhaoin) Cuir eolaire ceoil leis an seinmliosta
-(agus tú ag imirt) Lorg go roghnach
-(agus tú ag imirt) Féach ar an lyric roimhe seo
-(agus tú ag imirt) Féach ar an gcéad lyric eile
-(agus tú ag imirt) Iarracht a dhéanamh ar an liricí reatha
-(agus tú ag imirt) Cén lyric a lorg
 Athrú...
 Sábháil...
 Luchtaigh...
@@ -3929,4 +3712,3 @@ Beir leat nostalgia leis an téama seo!
 Is éard atá i do chríochfort ná pleancanna adhmaid
 Spreagtha ó phhatrún na Síne de thorthaí éagsúla
 Extras - CRC32C (Castagnoli)
-Tá seiceáil le haghaidh nuashonruithe díchumasaithe ar leaganacha forbartha.

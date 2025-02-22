@@ -27,7 +27,6 @@ Feil under forsøk på å fjerne brukernavn.
 Den forespurte skjermspareren {0} ble ikke funnet.
 {0} er satt til standard skjermsparer.
 Skjermsparer {0} ikke funnet i databasen. Sjekk navnet og prøv igjen.
-Det er en alvorlig feil ved utskrift av tekst.
 Mod kan ikke lastes på grunn av følgende:
 {0} v{1} startet
 Ingen definisjon for kommando {0}.
@@ -242,9 +241,7 @@ Gå tilbake...
 Skriv en ekstern debugger-port. Den må være numerisk, og må ikke være i bruk allerede. Ellers vil ekstern debugger ikke åpne porten.
 Skriv hvor mange ganger "get"-kommandoen skal prøve mislykkede nedlastinger på nytt. Det må være numerisk.
 Svaret er kanskje ikke negativt.
-Variabel {0} finnes ikke på noen av modulene.
 Endrer kjernekonfigurasjon
-Endre kultur når du bytter språk
 Tekst vist
 Skriv hvilken som helst tekst du ønsker vist. Kortere er bedre.
 Kunne ikke laste opp {0}
@@ -293,7 +290,6 @@ Fuktighet: {0}
 Du kan få din egen API-nøkkel på https://home.openweathermap.org/api_keys.
 Foretrukket enhet for temperatur
 Hver oppstart vil den se etter oppdateringer.
-Når du bytter språk, endre månedsnavn, kalender osv.
 Hold meldinger om maskinvareundersøkelse stille.
 Vis dagens melding før påloggingsskjermen vises.
 Tøm skjermen før du viser påloggingsskjermen.
@@ -425,8 +421,6 @@ Kunne ikke fullføre mod {0}: {1}
 Viser alle avfyrte hendelser
 Gjeldende katalog
 Angir skallets gjeldende katalog. Skriv en absolutt bane til enhver eksisterende katalog.
-Wrap liste utganger
-Omslutter listeutdataene hvis den virker for lang for gjeldende konsollgeometri.
 Ping!
 {0} pinget deg.
 Lagre tema i gjeldende katalog som...
@@ -467,7 +461,6 @@ Spør etter et ord i en spesifisert linje eller alle linjer
 Tester å oversette en streng som finnes i ressurser til et spesifikt språk
 Skriver ut en streng til konsollen og analyserer plassholderne som er funnet
 Tester det regulære uttrykket
-Starter alle mods
 Tester VT-sekvensen for 255 farger
 Tester VT-sekvensen for ekte farger
 Sender et varsel for å teste mottakeren
@@ -662,9 +655,6 @@ Hvilken fil er MAL-tekstfilen? Skriv en absolutt bane til tekstfilen.
 Svartelistede mods
 Skriv filnavnene til modsene som ikke vil kjøre ved oppstart. Når du er ferdig, skriv "q". Skriv et minustegn ved siden av banen for å fjerne en eksisterende mod.
 Mod {0} er svartelistet.
-Laster alle mods på nytt
-Legger til en mod til svartelisten
-Fjerner en mod fra svartelisten
 Vis appinformasjon under oppstart
 Vis scenens slutttider
 Start kjernemodifikasjoner ved oppstart
@@ -857,7 +847,6 @@ Om det skal vises hva som er skrevet i inndatameldingen.
 Hva er minimumsantallet å velge?
 Hva er det maksimale antallet å velge?
 Hvis spesifisert, vil den vise tilpasset oppstartsbanner med plassholderstøtte. Du kan bruke {0} for kjerneversjon.
-Hvilken variant av det gjeldende språket brukes til å endre månedsnavn, kalender osv.?
 Aktiverer ekte fargestøtte.
 Ord slettet i linje {0}.
 Streng erstattet i linje {0}.
@@ -954,7 +943,6 @@ Kan ikke pakke noe.
 For mer informasjon om vilkårene og betingelsene for bruk av denne programvaren, besøk
 Standard utgangstype for valg
 Sjekker alle KS-innstillingene for å se om variablene er skrevet riktig
-Disse konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses:
 Finner ikke filen {0}
 Oppretter en variabel matrise med de angitte verdiene
 Kontrollerer alle lokaliseringstekstlinjenumrene for å se om alle er like
@@ -1027,8 +1015,6 @@ Du er oppdatert!
 Standard JSON-formatering for JSON-skall
 Velger standard JSON-formatering (forskjønnet eller minifisert) for JSON-skallet som skal lagres.
 Lastet ned oppdateringen!
-Last ned oppdateringer automatisk
-Hvis det er noen oppdatering, vil kjernen automatisk laste den ned.
 Fyrverkeri eksplosjonsradius
 Hvor mange blokker (opptil 10) er eksplosjonsradiusen for fyrverkeriet når det tennes?
 Denne kommandoen har bryterne nedenfor som endrer hvordan den fungerer:
@@ -1221,7 +1207,6 @@ Kjerne første løp
 Velkommen til Nitrocid Kernel! Takk for at du prøver det!
 For å komme i gang, trykk ENTER.
 Velg ditt språk. Som standard bruker kjernen det engelske språket, men du kan velge hvilket som helst annet språk her.
-Basert på språkinnstillingene på systemet ditt, er det riktige språket
 Opprett din første bruker
 Vi hjelper deg med å lage ditt eget brukernavn. Velg et hvilket som helst navn du ønsker. Dette kan være kallenavnet ditt eller det korte navnet ditt, så lenge brukernavnet ditt ikke inneholder mellomrom og spesialtegn og at det ikke allerede eksisterer. Følgende brukernavn er registrert:
 Skriv inn brukernavnet
@@ -1231,7 +1216,6 @@ Automatiske oppdateringer
 Nitrocid KS oppdaterer seg selv for å få den nyeste versjonen som inkluderer generelle forbedringer og feilrettinger. Nye hovedversjoner inkluderer vanligvis nye endringer og nye spennende funksjoner.
 Vil du at Nitrocid KS automatisk skal se etter oppdateringer?
 I tillegg til automatisk å se etter oppdateringer, kan Nitrocid KS også laste ned oppdateringsfilen automatisk.
-Vil du at Nitrocid KS automatisk skal laste ned oppdateringer?
 Du kan alltid se etter kjerneoppdateringer ved å bruke "update"-kommandoen.
 Kom i gang!
 Gratulerer! Du har nå en brukerkonto, {0}!
@@ -1268,8 +1252,6 @@ Kan ikke tørke diverse filer
 Ingen argumenthjelpebeskrivelse
 Konsollen din må støtte ekte farger for å bruke dette temaet.
 Avslutt forhåndsvisningen
-Ferdig
-Brytertyper
 Temaet {0} feirer en begivenhet, men du er enten for tidlig eller for sent til å delta. Hvert år er dette temaet tilgjengelig fra {1}/{2} til {3}/{4}.
 Temaet {0} trenger støtte for ekte farger, men konsollen din støtter det ikke.
 Teksten må ikke være tom.
@@ -1333,14 +1315,12 @@ Angi en eksisterende bane til en konfigurasjonsfil
 Ikke en gyldig konfigurasjonsklasse.
 Konfigurasjonsfilen er ugyldig.
 Det oppstod en feil under forsøk på å lese konfigurasjonen: {0}.
-Kjernekonfigurasjon vil ikke fungere ordentlig. De ugyldige nøklene er
 Validering mislyktes!
 Lesing mislyktes!
 Prøver å fikse konfigurasjonen...
 Kan ikke sjekke konfigurasjonsvariabler når ingen type er spesifisert.
 Kan ikke sjekke konfigurasjonsvariabler når ingen oppføringer er spesifisert.
 Prøver å registrere en egendefinert innstilling uten innhold.
-Prøver å registrere en egendefinert innstilling med ugyldig innhold. De ugyldige nøklene er
 Prøver å avregistrere en egendefinert innstilling uten navn.
 Den egendefinerte innstillingen er ikke registrert.
 Prøver å spørre etter en tom egendefinert innstilling.
@@ -1348,7 +1328,6 @@ Finner ikke innstillingstype.
 Finner ikke innstillingsnøkkel som samsvarer med den angitte variabelen.
 Innstillingsoppføringene JSON-verdien er tom.
 Prøver å registrere en basisinnstilling uten innhold.
-Prøver å registrere en basisinnstilling med ugyldig innhold. De ugyldige nøklene er
 Prøver å avregistrere en basisinnstilling uten navn.
 Påstandsfeil.
 Arrangementet {0} ble ikke funnet.
@@ -1519,9 +1498,6 @@ Kunne ikke starte kjernetillegget
 Kunne ikke initialisere kjernetillegget
 Kunne ikke fullføre tillegg. Følgende tillegg har ikke klart å fullføre:
 Kunne ikke stoppe tillegg. Følgende tillegg har ikke klart å stoppe:
-Kan ikke hente liste over funksjoner
-Kan ikke hente listen over eiendommer
-Kan ikke hente liste over felt
 Kan ikke kjøre egendefinert funksjon med ikke-eksisterende tillegg
 Finner ikke funksjonen '{0}' i tillegget '{1}'.
 Finner ikke egenskapen '{0}' i tillegget '{1}'.
@@ -1598,17 +1574,14 @@ Kjerneoppdateringer
 Maskinvaredeteksjon
 Valgfrie komponenter
 Brukerinitialisering
-Kjernemodifikasjoner
 Verifisering av systemintegritet
 Scene
 Kjører i vedlikeholdsmodus. Hopp over scenen...
 Kan ikke gjenskape kjernetråden mens den samme tråden allerede kjører.
 Starthandlingen for undertråd kan ikke være null.
 Kjernetråd {0} mislyktes.
-Du har installert Nitrocid KS ved hjelp av pakkebehandlingen. Vennligst bruk den til å oppgradere kjernen din i stedet.
 Ingen info.
 Kan ikke åpne filen eller mappen
-Trykk på hvilken som helst tast for å lukke dette vinduet.
 Newline stil:
 Binær fil:
 MIME-metadata:
@@ -1683,7 +1656,6 @@ Suksess
 Feil
 Fremdriftsbehandleren er kanskje ikke null.
 Behandling...
-Metodetypen er ikke definert i basis Nitrocid-typelisten.
 Denne metoden er ikke-eksisterende.
 Denne metoden er statisk. Bruk ikke-objekt overbelastning.
 Denne metoden er ikke statisk. Bruk objektoverbelastningen.
@@ -1701,8 +1673,6 @@ Den avsluttende spruten ble ikke vist
 Vi har nådd {0}%!
 Laster inn...
 Kan ikke kjøre egendefinert funksjon med ikke-eksisterende mod
-Kan ikke kjøre egendefinert egenskap med ikke-eksisterende mod
-Kan ikke kjøre tilpasset felt med ikke-eksisterende mod
 Avhengighet utilfredsstilt. Mislykkede avhengigheter er oppført nedenfor:
 Prøvde å spørre i manualene for ikke-eksisterende mod {0}.
 Prøvde å initialisere manualen {0} for ikke-eksisterende mod {1}.
@@ -1814,26 +1784,10 @@ Kjernemodifikasjonstester
 Nettverkssystemtester
 UESH-skalltester
 Brukertester
-Statistikk
 Avslutning
-Viser gjeldende teststatistikk
 Går ut av testmodus og slår av kjernen
 Velg en testdel å kjøre
-Test alle
-Tester alle fasader
-Går tilbake til seksjonsvalget
-Velg en testfasade å kjøre
-Denne testen inneholder valgfrie parametere. Angi verdien til parameteren som skal legges til testparameterne.
-Parametere teller
-Ja!
 Ingen
-Prøv på nytt
-Gikk testen som forventet?
-Testen mislyktes. Forventet verdi er {0}, men faktisk verdi er {1}.
-Testen mislyktes uventet.
-Vellykkede tester:
-Mislykkede tester:
-Tester som skal kjøres:
 Stabelrammenummeret skal ikke overstige gjeldende antall bilder eller skal ikke være negativt.
 Nitrocid KS
 Kjernetrådsovervåker oppdaget {0} kritiske tråder som ikke har startet ennå.
@@ -1925,7 +1879,6 @@ Henter brukerinformasjonen
 Endrer det foretrukne brukerspråket
 Du må aktivere feilsøkingsmodus før du kan bruke feilsøkingsskallet.
 Får nåværende tilbakesporing
-Henter enkelt feilsøkingslogginformasjonen ved hjelp av øktnummeret
 Får melding fra kjerneunntakstype. Nyttig for feilsøking
 Får en feltverdi
 Får en eiendomsverdi
@@ -1957,7 +1910,6 @@ Hva er nytt i denne versjonen av Nitrocid?
 Kontrollerer filen eller mappelåsen
 Venter til filen eller mappen er låst opp
 Bytter språk
-Bruker systemspråkinnstillingene for å prøve å utlede språket fra
 Endrer brukerspråket i stedet for systemspråket
 En linje valg stil
 To linjers valg stil
@@ -2120,12 +2072,8 @@ Skriv ut en streng til konsollen
 Skriv ut en streng for å feilsøke
 Skriv ut en streng for å feilsøke med formatering
 Skriv ut en streng til konsoll med formatering
-Skriv ut en figletstreng til konsollen
-Skriv ut en figletstreng til konsoll med formatering
 Skriv ut en streng til konsollen med utheving
 Skriv ut en skilletegn til konsollen
-Skriv ut en separator til konsoll med farge
-Skriv ut en separator til konsoll med formatering og farge
 Skriv ut en skilletegn til konsoll med formatering
 Skriv ut en streng til konsoll med nye linjer i streng
 Skriv ut en streng til konsoll med null-tegn
@@ -2189,8 +2137,6 @@ Tillatelser
 Grupper
 Foretrukket brukerspråk er satt til {0}. Det kan være lurt å logge på igjen.
 Administrator Shell
-Ugyldig sesjonsnummer
-Ikke noe slikt sesjonsnummer
 Ingen slik unntakstype
 Unntakstypenavn
 Beskjed
@@ -2313,8 +2259,6 @@ Utløpt
 Tilgjengelig
 Velg et tema
 Vil du angi dette temaet?
-Ja, sett det!
-Nei, ikke still den.
 For å få tilgang til brukermanualen for generell bruk av Nitrocid, vennligst besøk lenken nedenfor:
 For å få tilgang til utviklerhåndboken for oppdaterte måter å gjøre kjernemodifikasjoner og skjermsparere på, vennligst besøk lenken nedenfor:
 Du kjører allerede den forhøyede Nitrocid-økten!
@@ -2344,7 +2288,6 @@ Spill Wordle-spillet opprinnelig
 Til minne om 5-årsjubileet for kjerneutgivelsen
 Åpner arkivfilen til arkivskallet
 Henter alle tekstlinjer fra sangtekstfilen
-Åpner en interaktiv musikkspiller
 Spiller av en tekstfil
 Spiller en lyd
 Legger til en alarm for å varsle deg når koppen te eller kaffe er klar.
@@ -2465,8 +2408,6 @@ Gratulerer med 5-årsdagen!
 Kan ikke hente ut noe.
 Arkiv er ikke skrivbart fordi type er
 Sørg for å spesifisere banen til en LRC-fil.
-Musikkfilen '{0}' eksisterer ikke.
-Fatal feil i BassBoom CLI-tillegget.
 Kan ikke spille av lyd fordi filen ikke ble funnet.
 Åpnet musikkfilen.
 Kan ikke åpne musikkfilen.
@@ -2479,63 +2420,8 @@ Sjanger
 Varighet
 Trykk 'q' for å stoppe avspillingen.
 Kan ikke spille av lyd.
-Det er en feil med Basolia når du prøver å behandle equalizer-operasjonen.
-Det er en feil med Basolia-utgangen når du prøver å behandle equalizer-operasjonen.
-Det er en ukjent feil når du prøver å behandle equalizer-operasjonen.
-Endre
-Velg Band
-Drevet av BassBoom
-Skriv inn en bane til musikkfilen
-Filen "{0}" eksisterer ikke.
-Skriv inn en bane til musikkbiblioteket
-Musikkbibliotekkatalogen ble ikke funnet.
-Laster inn BassBoom for å åpne {0}...
 Spiller nå
-Prøver å åpne tekstfilen
-Kan ikke åpne tekstfilen
-Skriv målposisjonen i dette formatet
-Tilgjengelige tastetrykk
-Spill av/pause
-Stoppe
-Volumkontroll
-Søk kontroll
-Søk varighetskontroll
-Sanginfo
-Legg til en musikkfil
-Forrige sang
-Neste sang
-Fjern gjeldende sang
-Fjern alle sanger
-Ukjent
 Tittel
-Album
-Kommentar
-Tekster
-linjer
-Ingen tekster
-Laginformasjon
-Lag
-Sats
-Modus
-Modus Ext
-Rammestørrelse
-Vektlegging
-Bitrate
-ABR-sats
-Variabel bitrate
-Tekster og ekstramateriale
-Kan ikke åpne musikkfilen '{0}' fordi den ikke ble funnet.
-Sangnavn
-Sangartist
-Sangsjanger
-Søke
-Volum
-Det er en feil med Basolia når du prøver å behandle musikkfilen.
-Det er en feil med Basolia-utdata når du prøver å behandle musikkfilen.
-Det er en ukjent feil når du prøver å behandle musikkfilen.
-Avspillingsfeil
-Hjelp
-Trykk 'A' for å sette inn en enkelt sang i spillelisten, eller 'S' for å sette inn hele musikkbiblioteket.
 Amerikansk kaffe
 Rød te
 Grønn te
@@ -2714,7 +2600,6 @@ Skriv inn et tall som skal konverteres...
 Du har ikke angitt et tall som skal konverteres.
 Det angitte nummeret er ugyldig.
 Kan ikke konvertere enhet.
-Vi feirer den 6000. forpliktelsen siden 0.0.1!
 Fortsetter...
 Slutten
 Godt nytt år!
@@ -2919,12 +2804,6 @@ Generelle kjerneinnstillinger
 Språk
 Spesifiserer kjernespråket.
 Kultur
-Aktiver fargeblindhet
-Hvis du er fargeblind eller hvis du vil simulere fargeblindhet, kan du aktivere det.
-Type fargeblindhet
-Typen fargeblindhet, enten det er protan, deuter eller tritan.
-Alvorlighetsgrad av fargeblindhet
-Hvor alvorlig er fargeblindheten?
 Piper ved avslutning eller omstart
 Aktiverer pipelyd når kjernen slås av.
 Forsinkelse ved avslutning eller omstart
@@ -2937,18 +2816,12 @@ Utviklingsvarsel erkjent
 Hvis satt til true, vil ikke kjernen vise deg utviklingsvarselet hver gang du starter opp til kjernen i utviklingsversjoner.
 Tillat lasting av uklarerte mods
 Hvis satt til true, vil ikke kjernen feile ut ved lasting av mods som ikke har den signerte offentlige nøkkelen.
-Feilsøkingskvote aktivert
-Hvis dette alternativet er aktivert, roterer feilsøkingsskriveren feilsøkingsloggfilen hvis kvoten overskrides.
-Feilsøking av kvotelinjeantall
-Hvor mange linjer skal skrives ut til feilsøkingsbufferen før kvotegrensen når? Vær oppmerksom på at det ikke representerer hvor mange linjer som er i feilsøkingsloggfilene.
 Bruk systemets tidssone
 Hvis dette alternativet er aktivert, bruker kjernen tidssonen fra datamaskininnstillingene. Ellers bruker den kjerneomfattende tidssonen som kan konfigureres.
 Tidssone for hele kjernen
 Tidssonen for hele kjernen som skal brukes
 Vis lisensinformasjonsboksen
 Om boksen for modal lisensinformasjon skal vises i tre sekunder etter hver pålogging. Det anbefales å beholde den på.
-Eldre loggingsstil for feilsøkingslogger
-Om du skal aktivere den eldre loggingsstilen for feilsøkingslogger eller for å aktivere grupperte feilsøkingslogger.
 Denne delen lar deg velge hvilken type farge du vil endre.
 Fargeinnstillinger
 Bruk aksentfarger
@@ -3036,8 +2909,6 @@ Gruppe av stier atskilt med kolon. Det fungerer på samme måte som PATH. Skriv 
 Angi konsolltittel ved kommandoutførelse
 Angir konsolltittel ved kommandoutførelse.
 Vis antall skjell
-Denne delen viser de forhåndsinnstilte shellinnstillingene.
-Shell forhåndsinnstilte innstillinger
 Spør forhåndsinnstilling
 Forhåndsinnstilling for tekstredigering
 Forhåndsinnstilling for hex-redigeringsprompt
@@ -3100,7 +2971,6 @@ CPU-bruk feilsøkingsoppdateringsintervall
 Hvor mange millisekunder skal vente før du oppdaterer CPU-bruken og skriver den ut til feilsøkeren?
 Et slangespill.
 Viser deg fine kjente sitater.
-Denne delen lar deg konfigurere hvordan fornøyelsene fungerer.
 Velg din foretrukne vanskelighetsgrad, der 0 er lett, 1 er middels, 2 er vanskelig, 3 er veldig vanskelig og 4 er tilpasset.
 Bruk PowerLine for å gjengi romskip i ShipDuet
 Om du skal bruke PowerLine til å gjengi romskipet eller for å bruke standarden større enn karakter. Hvis du vil bruke PowerLine med ShipDuet, må du installere en passende font med PowerLine-støtte.
@@ -3129,7 +2999,6 @@ RSS-forespørselsforhåndsinnstilling
 Denne delen lar deg konfigurere hvordan SFTP-skallet fungerer.
 Denne delen lar deg konfigurere hvordan SQL-skallet fungerer.
 Forhåndsinnstilling av SQL Shell-ledetekst
-Denne delen lar deg konfigurere hvordan tidtakerne fungerer.
 Denne delen lar deg konfigurere hvordan Tips fungerer.
 Vis kjernetips
 Hvis aktivert, viser skallet deg tipsene ved hver pålogging.
@@ -3277,7 +3146,6 @@ Skriv inn brukerpassordet ditt. Du bør velge et sterkt passord for økt sikkerh
 Automatisk oppdateringssjekk
 Ja, det gjør jeg!
 Nei takk.
-Last ned automatisk oppdatering
 Start eller stopp av mods er ikke tillatt i sikker modus.
 Det var en ukjent kjernefeil, muligens på grunn av enten at kjerneunntakstypen ikke ble spesifisert eller at noe var galt.
 Kjernenettverket har rapportert en feil for vertsnavnkomponenten.
@@ -3412,7 +3280,6 @@ Velg oppstartsoppføring:
 Bruker den vanlige ordlisten.
 Bruker hele ordlisten.
 Ping-pong-spillet!
-Åpner radiostasjonspilleren i stedet
 Leser en pipesynth-fil
 Konverterer kildefargemodellen til målfargemodellen i tall.
 Konverterer kildefargemodellen til målfargemodellen i KS-format.
@@ -3441,72 +3308,6 @@ Kort firmasymbol
 Lager et nytt tema i en interaktiv TUI
 at du kan lage oppstartbare programmer ved å bruke kjernemodsene dine?
 Stasjonstype
-Enhet
-Sjåfør
-Kan ikke spørre etter gjeldende enheter mens de ikke spiller.
-Enhet og driver
-Tilgjengelige enheter og drivere
-BassBoom spesifikasjoner
-Dekodere
-Systemspesifikasjoner
-Basolia versjon
-MPG123 versjon
-OUT123 versjon
-Støttede dekodere
-Alle dekodere
-System
-Systemarkitektur
-Prosessarkitektur
-Systembeskrivelse
-.NET beskrivelse
-Still inn gjentatt sjekkpunkt
-Prøv å gjenta sjekkpunktet
-Åpner equalizeren
-Enhets- og driverinformasjon
-Still inn enhet og driver
-Tilbakestill enhet og driver
-Systeminformasjon
-Radiostasjon info
-Radiostasjon utvidet info
-Legg til en radiostasjon
-Forrige radiostasjon
-Neste radiostasjon
-Fjern gjeldende radiostasjon
-Fjern alle radiostasjoner
-Velg en driver. ESC for å slutte.
-Velg en enhet. Nåværende driver er {0}. ESC for å slutte.
-Spiller ikke. Musikkspilleren er inaktiv.
-Bass
-Øvre Midt
-Diskant
-Ukjent bandtype
-Equalizer Band
-Velg en sangtekst å søke til
-Innfødt stat
-Nøyaktig gjengivelse
-Bufferfylling
-Dekodingsforsinkelse
-Kodingsforsinkelse
-Kodingspolstring
-Frankenstein-strømmen
-Frisk dekoder
-Trykk 'A' for å sette inn en radiostasjon i spillelisten.
-Skriv inn en sti til radiostasjonen. URL-en til stasjonen må gi en MPEG-radiostasjon. AAC-er støttes ikke ennå.
-Stasjonsinformasjon
-Radiostasjons URL
-Navn på radiostasjon
-Radiostasjon gjeldende sang
-Hjemmeside
-Strømvei
-Lyttere: {0} med {1} på topp
-Bithastighet
-Medietype
-Radio server info
-Strøminformasjon
-Radiostasjonen bruker HTTPS
-Radiostasjonsservertype
-Radiostasjonstrømmer: {0} med {1} aktiv
-Radiostasjonslyttere: {0} med {1} på topp
 Beep synth-fil eksisterer ikke.
 Kapittelnavn
 Synth-representasjon er ugyldig.
@@ -3649,7 +3450,6 @@ Tekstfilen er ikke åpen ennå.
 Behandler for utvidelse er ikke spesifisert.
 Kunne ikke skaffe standardbehandler
 Innlasting av standardbehandlere mislyktes.
-Prøver å få tilgang til ugyldig bane. Denne kontrollen ble gjort for å forhindre at eldre Windows 10-systemer som ikke oppdaterte til april 2021-oppdateringen eller høyere, får tilgang til disse banene som er kjent for å forårsake enten NTFS-filsystemkorrupsjon eller Blue Screen of Death (BSOD)-problemet. Dette innebærer at den som ringer prøver å forårsake tjenestenekt (DoS) og bør fikses, eller at brukerinndata er ondsinnet.
 Velge
 Kopiere
 Flytte
@@ -3688,11 +3488,6 @@ Ekstern feilsøkingsenhet ser ikke ut til å eksistere.
 Kan ikke hente eksterne feilsøkingsenheter fra
 Kan ikke åpne den engelske lokaliseringsressursen
 Kan ikke åpne lokaliseringsressursen for
-Kunne ikke hente figlet-font
-Skriv ut en figletstreng til konsollen (sentrert)
-Skriv ut en figletstreng til konsoll med formatering (sentrert)
-Skriv ut en figletstreng til konsollen (sentrert, posisjonsbestemt)
-Skriv ut en figletstreng til konsollen med formatering (sentrert, posisjonell)
 Kunne ikke få inngangspunkt.
 Tester knappene i informasjonsboksen (med tittel)
 Tester den fargede inndataboksen i informasjonsboksen (med tittel)
@@ -3710,7 +3505,6 @@ Får ikke frem metoden
 Det oppsto en feil med regulære uttrykk mens teksten ble behandlet. Kontroller syntaksen for regulære uttrykk og prøv igjen. Hvis time-outen inntraff, sørg for at du ikke gjentar deg for mye (ikke vær grådig).
 Hjemmesideverktøyene har støtt på en feil under forsøk på å behandle forespørselen din. Sørg for at du har lagt inn alle nødvendige data riktig.
 Dessverre er den siste feilen ukjent, så vi vet ikke helt hva som gikk galt. Det kan imidlertid være nyttig hvis du har konsultert kjernefeilsøkingsloggene.
-Kunne ikke hente addon-metadata
 Kan ikke få feltinformasjon for
 Kan ikke hente journaloppføringer
 (Bruk piltastene for å markere valget ditt, og trykk deretter ENTER.)
@@ -3814,7 +3608,6 @@ Søk Neste
 Søk tilbake
 Rå info
 Importer fra MeCard
-Det er ingen eiendomsinformasjon for
 Legg til manuelt
 Kan ikke få dag del array
 Kan ikke få del av dagen
@@ -3826,18 +3619,8 @@ Rundeliste
 Generer navnemerker (omlyd støttes for øyeblikket ikke)
 Konvertere...
 Enhetsomformer
-Musikkspiller
-Radiospiller
 Internettradio (FM) info for
 Kan ikke få informasjon om internettradio.
-Enhet (bufret
-Driver (bufret
-(når inaktiv) Legg til en musikkkatalog i spillelisten
-(når du spiller) Søk selektivt
-(når du spiller) Søk til forrige sangtekst
-(når du spiller) Søk til neste sangtekst
-(når du spiller) Søk til gjeldende tekst
-(når du spiller) Søk til hvilken tekst
 Endre...
 Spare...
 Laste...
@@ -3929,4 +3712,3 @@ Få tilbake nostalgien med dette temaet!
 Terminalen din består av treplanker
 Inspirert fra det kinesiske mønsteret av forskjellige frukter
 Ekstra - CRC32C (Castagnoli)
-Se etter oppdateringer er deaktivert på utviklingsversjoner.
