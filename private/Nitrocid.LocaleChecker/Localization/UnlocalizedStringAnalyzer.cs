@@ -274,29 +274,43 @@ namespace Nitrocid.LocaleChecker.Localization
                             context.ReportDiagnostic(diagnostic);
                         }
 
+                        // Helper function to check a key, because a key can be a multivar
+                        void CheckKeys(JArray keys)
+                        {
+                            foreach (var key in keys)
+                            {
+                                string keyNameOrig = (string?)key["Name"] ?? "";
+                                string keyType = (string?)key["Type"] ?? "";
+                                string keyDescOrig = (string?)key["Description"] ?? "";
+                                string keyName = keyNameOrig.Replace("\\\"", "\"");
+                                string keyDesc = keyDescOrig.Replace("\\\"", "\"");
+                                if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
+                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
+                                    context.ReportDiagnostic(diagnostic);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
+                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
+                                    context.ReportDiagnostic(diagnostic);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyType) && keyType == "SMultivar")
+                                {
+                                    var multiVarKeys = (JArray?)key["Variables"];
+                                    if (multiVarKeys is null || multiVarKeys.Count == 0)
+                                        continue;
+                                    CheckKeys(multiVarKeys);
+                                }
+                            }
+                        }
+
                         // Now, check the keys
                         JArray? keys = (JArray?)settingsEntryList["Keys"];
                         if (keys is null || keys.Count == 0)
                             continue;
-                        foreach (var key in keys)
-                        {
-                            string keyNameOrig = (string?)key["Name"] ?? "";
-                            string keyDescOrig = (string?)key["Description"] ?? "";
-                            string keyName = keyNameOrig.Replace("\\\"", "\"");
-                            string keyDesc = keyDescOrig.Replace("\\\"", "\"");
-                            if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
-                                var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
-                                context.ReportDiagnostic(diagnostic);
-                            }
-                            if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
-                                var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
-                                context.ReportDiagnostic(diagnostic);
-                            }
-                        }
+                        CheckKeys(keys);
                     }
                 }
             }

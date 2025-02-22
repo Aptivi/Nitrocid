@@ -95,29 +95,43 @@ namespace Nitrocid.Locales.Actions.Analyzers
                             unlocalizedStrings.Add(knownAddonDisplay);
                         }
 
+                        // Helper function to check a key, because a key can be a multivar
+                        void CheckKeys(JArray keys)
+                        {
+                            foreach (var key in keys)
+                            {
+                                string keyNameOrig = (string?)key["Name"] ?? "";
+                                string keyType = (string?)key["Type"] ?? "";
+                                string keyDescOrig = (string?)key["Description"] ?? "";
+                                string keyName = keyNameOrig.Replace("\\\"", "\"");
+                                string keyDesc = keyDescOrig.Replace("\\\"", "\"");
+                                if (!string.IsNullOrWhiteSpace(keyName) && !Checker.localizationList.Contains(keyName))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName);
+                                    AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key name found: {keyName}");
+                                    unlocalizedStrings.Add(keyName);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyDesc) && !Checker.localizationList.Contains(keyDesc))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName);
+                                    AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key description found: {keyDesc}");
+                                    unlocalizedStrings.Add(keyDesc);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyType) && keyType == "SMultivar")
+                                {
+                                    var multiVarKeys = (JArray?)key["Variables"];
+                                    if (multiVarKeys is null || multiVarKeys.Count == 0)
+                                        continue;
+                                    CheckKeys(multiVarKeys);
+                                }
+                            }
+                        }
+
                         // Now, check the keys
                         JArray? keys = (JArray?)settingsEntryList["Keys"];
                         if (keys is null || keys.Count == 0)
                             continue;
-                        foreach (var key in keys)
-                        {
-                            string keyNameOrig = (string?)key["Name"] ?? "";
-                            string keyDescOrig = (string?)key["Description"] ?? "";
-                            string keyName = keyNameOrig.Replace("\\\"", "\"");
-                            string keyDesc = keyDescOrig.Replace("\\\"", "\"");
-                            if (!string.IsNullOrWhiteSpace(keyName) && !Checker.localizationList.Contains(keyName))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName);
-                                AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key name found: {keyName}");
-                                unlocalizedStrings.Add(keyName);
-                            }
-                            if (!string.IsNullOrWhiteSpace(keyDesc) && !Checker.localizationList.Contains(keyDesc))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName);
-                                AnalyzerTools.PrintFromLocation(location, resourceName, "NLOC0003", $"Unlocalized key description found: {keyDesc}");
-                                unlocalizedStrings.Add(keyDesc);
-                            }
-                        }
+                        CheckKeys(keys);
                     }
                 }
             }
@@ -168,19 +182,33 @@ namespace Nitrocid.Locales.Actions.Analyzers
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && Cleaner.localizationList.Contains(knownAddonDisplay))
                             localizedStrings.Add(knownAddonDisplay);
 
+                        // Helper function to check a key, because a key can be a multivar
+                        void CheckKeys(JArray keys)
+                        {
+                            foreach (var key in keys)
+                            {
+                                string keyType = (string?)key["Type"] ?? "";
+                                string keyName = ((string?)key["Name"] ?? "").Replace("\\\"", "\"");
+                                string keyDesc = ((string?)key["Description"] ?? "").Replace("\\\"", "\"");
+                                if (!string.IsNullOrWhiteSpace(keyName) && Cleaner.localizationList.Contains(keyName))
+                                    localizedStrings.Add(keyName);
+                                if (!string.IsNullOrWhiteSpace(keyDesc) && Cleaner.localizationList.Contains(keyDesc))
+                                    localizedStrings.Add(keyDesc);
+                                if (!string.IsNullOrWhiteSpace(keyType) && keyType == "SMultivar")
+                                {
+                                    var multiVarKeys = (JArray?)key["Variables"];
+                                    if (multiVarKeys is null || multiVarKeys.Count == 0)
+                                        continue;
+                                    CheckKeys(multiVarKeys);
+                                }
+                            }
+                        }
+
                         // Now, check the keys
                         JArray? keys = (JArray?)settingsEntryList["Keys"];
                         if (keys is null || keys.Count == 0)
                             continue;
-                        foreach (var key in keys)
-                        {
-                            string keyName = ((string?)key["Name"] ?? "").Replace("\\\"", "\"");
-                            string keyDesc = ((string?)key["Description"] ?? "").Replace("\\\"", "\"");
-                            if (!string.IsNullOrWhiteSpace(keyName) && Cleaner.localizationList.Contains(keyName))
-                                localizedStrings.Add(keyName);
-                            if (!string.IsNullOrWhiteSpace(keyDesc) && Cleaner.localizationList.Contains(keyDesc))
-                                localizedStrings.Add(keyDesc);
-                        }
+                        CheckKeys(keys);
                     }
                 }
             }
