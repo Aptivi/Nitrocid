@@ -54,7 +54,7 @@ Laster ned ekstern fil til lokal katalog ved hjelp av binær eller tekst
 Viser lokal katalog
 Viser ekstern katalog
 Laster opp lokal fil til ekstern katalog ved hjelp av binær eller tekst
-Alias ​​kan ikke være det samme navnet som en kommando.
+Alias kan ikke være det samme navnet som en kommando.
 Fant ikke kommandoen til alias til {0}.
 Aliaset {0} ble ikke fjernet.
 Katalog {0} ble ikke funnet
@@ -108,7 +108,7 @@ Koble fra en feilsøkingsenhet
 Viser tilkoblede feilsøkingsenheter
 Enhet {0} frakoblet.
 Feilsøk lytting på alle adresser ved å bruke port {0}.
-Alias ​​allerede funnet: {0}
+Alias allerede funnet: {0}
 Feilsøkingsloggen fjernet. Alle tilkoblede feilsøkingsenheter kan fortsatt se meldinger.
 Fjerning av feilsøkingslogg mislyktes: {0}
 Endring av katalog mislyktes: {0}
@@ -3712,3 +3712,600 @@ Få tilbake nostalgien med dette temaet!
 Terminalen din består av treplanker
 Inspirert fra det kinesiske mønsteret av forskjellige frukter
 Ekstra - CRC32C (Castagnoli)
+Skriver ut kjerneversjonen
+Skriver ut API-versjonen
+Kan ikke tørke feilsøkingsfiler
+Kjernekonfigurasjon vil ikke fungere ordentlig. Se kjernefeilsøkeren for mer informasjon.
+Kan ikke sjekke konfigurasjonsvariabler når ingen basiskjernekonfigurasjon er spesifisert.
+Kan ikke sjekke konfigurasjonsvariabler når ingen nøkler er spesifisert.
+Prøver å registrere en egendefinert innstilling med ugyldig innhold. Se kjernefeilsøkeren for mer informasjon.
+Prøver å registrere en basisinnstilling med ugyldig innhold. Se kjernefeilsøkeren for mer informasjon
+Kunne ikke hente oppføringer for splash-innstillinger.
+Ikontillegget må installeres før du kan sette denne verdien.
+Velg en oppføring for
+Tilbakestill alle
+Tilbakestill oppføring
+Spesifisert argumenttype er ikke gyldig
+En eller flere av konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses. Se kjernefeilsøkeren for mer informasjon.
+Det er ingen kultur med dette navnet.
+Det oppsto en feil under behandlingen av lydsignalet.
+Kan ikke returnere ikke-eksisterende klassetype fra addon-montering
+Denne klassen er ikke en tilleggsklasse
+Spiller av avslutningslyd...
+Vi vil ikke lenger støtte denne versjonen av Nitrocid KS etter denne datoen
+Sørg for at du oppgraderer til den støttede versjonen snart hvis du vil fortsette å motta støtte.
+Denne versjonen av Nitrocid KS støttes ikke lenger.
+Kunne ikke laste inn egendefinerte språk
+Kunne ikke laste inn viktige kjernetillegg
+Kunne ikke laste inn personvernsamtykke
+Kunne ikke laste inn splash
+Kunne ikke laste inn viktige mods
+Kunne ikke laste inn eksterne feilsøkingsenheter
+Det oppstod feil under forsøk på å initialisere viktige komponenter.
+Kunne ikke laste varslingstråden
+Kunne ikke laste inn kanselleringsbehandler
+Kunne ikke laste inn aliaser
+Kunne ikke laste inn kortnummeroppføringer
+Kunne ikke laste inn miljøvariabler
+Kunne ikke laste inn alarmlytteren
+Kunne ikke fullføre tillegg
+Kunne ikke laste inn MOTD og MAL
+Kunne ikke laste inn shell-kommandohistorikk
+Kunne ikke laste utvidelsesbehandlere
+Laster inn mods...
+Kunne ikke laste inn mods
+Det oppstod feil ved forsøk på å initialisere valgfrie komponenter.
+Kunne ikke tilbakestille generelle variabler
+Kunne ikke lagre shell-kommandohistorikk
+Kunne ikke lagre personvernsamtykker
+Kunne ikke stoppe ekstern debugger
+Kunne ikke tilbakestille språk
+Kunne ikke lagre utvidelsesbehandlere
+Kunne ikke stoppe alarmlytteren
+Kunne ikke lagre konfigurasjonen
+Kunne ikke stoppe mods
+Kunne ikke stoppe tillegg
+Kunne ikke stoppe RPC
+Kunne ikke lukke alle tilkoblinger
+Kunne ikke stoppe tidsavbrudd for skjermsparer
+Kunne ikke tilbakestille oppstartsloggbuffer
+Kunne ikke stoppe markørbehandleren
+Kunne ikke stoppe feilsøkeren
+Kunne ikke stoppe alle kjernetråder
+Det oppsto feil under forsøk på å tilbakestille komponenter.
+Unntak
+Se kjernefeilsøkingsloggene for mer informasjon.
+Det er ingen slik lydsignaltype.
+Kan ikke hente reserveinnstillinger
+Kan ikke tilbakestille alle innstillingsoppføringer for
+Kan ikke tilbakestille denne innstillingsoppføringen for
+Variabel finnes ikke på noen av modulene.
+Kan ikke få lydsignal som kreves for skjermsparere i omgivelsene.
+Det kan hende at nettverkstilkoblingen ikke ble opprettet riktig på grunn av en feil.
+Kan ikke buffere en kommando som ikke er angitt som pakkebar.
+Uspesifisert bryterbeskrivelse
+Veien til en prosess
+Argumenter for å gå over i en prosess
+Kommando for å vise hjelpeoppføring
+Sender kommandoutgangen til en annen kommando som parametere
+Kildekommando for å sende utdata til målkommandoen som siste parameter
+Målkommando som skal utføres ved byggeargument basert på kildekommandoutgangen
+Om utdata fra kildekommandoen skal sendes som ett sitert argument eller et argument uten anførselstegn
+Kommando for å pakke utdataene
+Utførelse av kildekommando mislyktes.
+Utførelse av målkommando mislyktes. Innholdet er kanskje ikke fylt ut på riktig måte. Kommando utført var
+Røret er ødelagt.
+Argument for å vise hjelpeinnlegg
+Sesjonsnummer fra null
+Brukernavn for å spørre
+Tillatelsestype for å gi eller avslå
+Falskt å nekte, sant å gi
+Nytt visningsnavn, eller "slett" for å slette visningsnavnet
+Språk-ID på tre bokstaver, eller "tøm" for å fjerne foretrukket språk
+Endrer den foretrukne brukerkulturen
+Kultur-ID, eller "clear" for å fjerne foretrukket kultur
+Foretrukket brukerkultur satt til {0}. Det kan være lurt å logge på igjen.
+Ugyldig kultur
+Foretrukket kultur
+Ugyldig økt-GUID
+Ingen slik økt-GUID
+Ukjent type
+Ukjent parameter
+Liste over typer for
+Henter enkelt feilsøkingslogginformasjonen ved hjelp av økt-GUIDen
+Session GUID å finne
+Unntaksnummer
+Feltnavn for å spørre
+Eiendomsnavnet som skal søkes
+Tilleggsnavn for å spørre
+Offentlig statisk typenavn fra addon
+Funksjonsnavn fra den offentlige statiske typen for å spørre
+Viser alle tilgjengelige typer fra det angitte tillegget
+Splash navn for å spørre
+Bytenummer fra 0 til 255
+Byteposisjonsnummer
+Byte startposisjonsnummer
+Byte sluttposisjonsnummer
+Bytenummer fra 0 til 255 som skal erstattes
+Bytenummer fra 0 til 255 å erstatte med
+Innhold som skal legges til på slutten av filen
+Tegn nummer
+Linjenummer
+Linjenummer (entall eller begynnelsen av området)
+Sluttområde for linjenummer
+Ord eller uttrykk som skal slettes
+Et tegn å spørre etter
+Linjenummer (enten entall eller begynnelsen av området), eller "alle" for å spørre etter et tegn i alle linjer
+Et ord eller en setning å spørre etter
+Et regulært uttrykk for å spørre
+Et ord eller en setning som skal erstattes
+Et ord eller en setning å erstatte med
+Linjenummer (enten entall eller begynnelsen av området), eller 'alle' for å erstatte i alle linjer
+Et regulært uttrykk for å matche fraser som skal erstattes
+Ugyldig land
+Velg et språk for landet
+Ugyldig språkvalg for
+Ja
+Nytt gruppenavn å legge til
+Nytt brukernavn å legge til
+Nytt passord å bruke
+Bekreft det nye passordet
+Brukernavn som skal legges til i gruppen
+Gruppenavn å legge brukeren til
+Starter alarmen
+Alarmintervall i et tidsrom i timer, minutter og sekunder
+Stopper alarmen
+Alarmnavn for å stoppe
+Viser alarmene
+Legger til et alias
+Skalltype for å hente kommandoer fra
+Alias navn
+Kommando som skal brukes som en snarvei
+Fjerner et alias
+Frekvens i Hz
+Tidsintervall for et enkelt pip
+IP-adresse som skal blokkeres
+Målkatalog
+Søkemønster
+Nytt navn å gi nytt navn til alle funnet filer til
+Bane til fil for å skrive ut innholdet
+Hent endringsloggene fra internett i stedet for lokalt
+Bane til fil
+Enten tillegg eller fjerning
+Attributtnavn
+Endrer kultur
+Kultur-ID å endre til
+Endrer brukerkulturen i stedet for systemkulturen
+Nytt vertsnavn å endre til
+Språk-ID
+Endrer språk ved hjelp av et land (du kan bli bedt om å velge et språk)
+Ny melding å bruke
+Svar å dele med en skråstrek
+Spørsmål å skrive ut på skjermen
+Første svartittel
+Andre svartittel, og så videre...
+Brukernavn for å endre passord
+Gjeldende brukerpassord
+Gammelt brukernavn å endre
+Nytt brukernavn å bruke
+Første input tekstfil
+Andre input tekstfil
+Tredje inndatatekstfil, og så videre...
+Utdatafil
+Kildeinndatatekstfil
+Målinndatatekstfil
+Sti til tekstfil
+Kildefil eller katalog
+Målfil eller katalog
+Bane til kodet fil
+Kodet strengrepresentasjon
+Kodet BASE64-streng
+Sti til katalog
+IP-adresse for å koble fra
+Disknummer
+Varslingsnummer
+Bytt en driver
+Måldrivertype
+Måldriver å bytte til
+Liste over drivere
+Liste drivertyper
+String for å skrive ut
+Fil som skal kodes
+String for å kode
+Regelmessig uttrykk for å finne en fil
+Koble til en ekstern ressurs, for eksempel HTTPS
+Navn på kjernekonfigurasjon
+Variabel for å få info
+Filtype
+Kodingsalgoritme
+Maskinvaretype
+UESH uttrykk for å teste
+Kommando for å utføre ved vellykket evaluering
+Bane til katalog for venstre rute
+Bane til katalog for høyre rute
+Laster inn, laster inn eller laster ut et tilpasset språk
+Egendefinert språknavn
+Viser eller laster inn alle egendefinerte språk
+Sti til UESH-skript
+Sti til katalog til liste
+Katalognavn som skal opprettes
+Filnavn som skal opprettes
+Katalog eller navn å flytte fra
+Katalog eller navn å flytte til
+Partisjonsnummer
+Filnavn for oppslag
+Brukernavn
+Enten tillat eller tilbakekall
+Tillatelsesnavn for å gi eller avslå
+Gruppenavn
+Første IP-adresse eller vertsnavn
+Andre IP-adresse eller vertsnavn, og så videre...
+Bane til fil for opplasting
+URL som peker til opplastingsendepunktet
+Vertsnavn som kjører Nitrocid KS
+Port of Nitrocid KS på det eksterne målet
+Kommando for å utføre eksternt
+Målkatalog eller fil
+Brukernavn å fjerne
+Gruppenavn som skal fjernes
+Brukernavn som skal fjernes fra gruppen
+Gruppenavn å fjerne bruker fra
+Enten skjermsparernavnet eller "tilfeldig"
+Regelmessig uttrykk for å søke
+Målfil
+Ord eller uttrykk for å søke
+Åpner splash-innstillingene for tillegg
+Verdi å angi
+Navn på konfigurasjonsvariabel
+Implementernavn
+Første verdi
+Andre verdi
+Tredje verdi, og så videre...
+Tidssonenavn
+Intervall for å sove
+Kommando for å kjøre
+Krypteringsalgoritme
+Inndatafil for å beregne hash-summen
+Utdatafil for å lagre hash sum info
+Tekst for å få hash sum
+Symbolisk lenkenavn
+Målfil å lage en snarvei fra
+Temanavn
+IP-adresse for å oppheve blokkeringen
+Variabelnavn
+Bane til ZIP-fil
+Målvei for å trekke ut
+Beregnet hash
+Hash-fil eller forventet hash
+Fil for å teste
+ZIP-filnavn som skal opprettes
+Bane for å komprimere
+Ikontillegget må installeres før du kan vise denne emojien.
+Legg merke til innholdet
+Merk nummer
+Bane til en katalog med Git repository
+Startområde for linjenummer
+Filialnavn
+Forplikte sammendrag
+Begå SHA-hash
+Eksternt navn
+Tag navn
+Melding for å kommentere taggen med
+Din e-post
+Brukernavnet ditt
+Bane til uoppgradert fil
+Bane til iscenesatt fil
+Bane til arkivfil
+Lokal katalog
+Katalog inne i arkivet
+Fil i arkivet
+Lokal katalog å trekke ut til
+Lokal fil
+Arkivkatalog å legge til
+Åpner kalenderens interaktive TUI
+Målår
+Målmånedsnummer
+Samspill med hendelsene
+Legger til en hendelse
+Måldato
+Fjerner en hendelse
+Hendelses-ID
+Viser alle hendelser
+Lagrer alle hendelsene
+Interaksjon med påminnelsene
+Måldato og klokkeslett
+Fjerner en påminnelse
+Påminnelses-ID
+Viser alle påminnelser
+Lagrer alle påminnelser
+Enten en bane til en vCard-kontaktfil eller en MeCard-representasjon
+Kontaktnummer
+Redigere...
+Skriv inn nytt navn for denne kontakten
+Breddegrad å bruke
+Lengdegrad å bruke
+Weather.com API-nøkkel
+By-ID eller bynavn kjent for OpenWeatherMap
+OpenWeatherMap API-nøkkel
+Om du vil legge til, fjerne, merke som ferdig eller fjerne merking som ferdig på en oppgave
+Om du vil liste opp, lagre eller laste inn alle oppgaver
+Pomodoro timer
+Pomodoro
+Pomodoro-timeren er klar
+Pomodoro-timer nummer {0} i fire iterasjoner
+Kort pause
+Angi pausetidsavbrudd i millisekunder
+Still inn pauseintervall
+Ord å definere
+Søkeord
+Navneprefiks for å søke
+Navnesuffiks for å søke
+Etternavnsprefiks for å søke
+Etternavnssuffiks for å søke
+Hvor mange navn skal genereres?
+Enhetstype
+Mengde i kildeenheten som skal konverteres
+Kildeenhet
+Målenhet
+Stien til tekstfilen
+Banen til en MP3-fil
+Vertsnavn som er vert for MPEG-radiostasjonen
+Port til MPEG-radiostasjonen
+Matematisk uttrykk
+Reelt tall
+Tenkt nummer
+Vi feirer den 7000. forpliktelsen siden 0.0.1!
+igjen til neste år
+Temanavn å lage
+Sti til oversettelseskatalog
+Ferdig! Vennligst bruk Nitrocid.Locales-applikasjonen med passende argumenter for å fullføre språkene. Du kan bruke denne banen:
+Kilde fargemodell
+Målfargemodell
+Første nummer
+Andre nummer
+Tredje nummer
+Fjerde nummer
+Fargespesifikasjoner
+Dato og klokkeslett for å skrive ut informasjon fra
+Angi enten et antall sekunder eller et drikkenavn
+FTP-server å koble til
+Bane til ekstern fil
+Sti til lokal katalog
+Bane til ekstern katalog
+Bane til ekstern fil for å slette
+Serverkommando for å utføre
+Oppretter en lokal katalog
+Oppretter en ekstern katalog
+Bane til kildefil eller katalog
+Bane til målfil eller katalog
+Sti til lokal fil
+Tillatelsesnummer i henhold til chmod
+Angir om overføringstypen er ASCII eller binær
+Symbolsk lenke til: {0}
+Overskriftsnøkkel
+Overskriftsverdi
+HTTP-forespørsel
+Fil som skal lastes opp
+String for å laste opp
+Brukeragentstreng
+E-postadresse å logge på
+Opprett mappe
+Flytte...
+Flytt alle...
+Gi nytt navn til mappen
+Fjern mappen
+Fjern melding
+Fjern alle...
+Kan ikke åpne mappen eller meldingen
+Skriv det nye katalognavnet.
+Oppretter katalog...
+Kan ikke lage mappe
+Velg en ny katalog å flytte denne meldingen til.
+Flytter melding...
+Kan ikke flytte meldingen
+Velg en ny katalog for å flytte alle meldinger fra samme avsender til.
+Flytter meldinger etter avsender {0}...
+Kan ikke flytte alle meldinger fra samme avsender
+Skriv det nye katalognavnet for å gi nytt navn til {0}.
+Gi nytt navn til katalogen...
+Kan ikke gi nytt navn til mappen
+Fjerner katalog...
+Kan ikke fjerne mappen
+Fjerner meldingen ...
+Kan ikke slette melding
+Fjerner meldinger fra avsender {0}...
+Kan ikke slette alle meldinger fra samme avsender
+Navn på postkatalog
+Sidetall
+Meldings-ID
+Avsendernavn
+Gammelt e-postkatalognavn
+Nytt e-postkatalognavn
+Interaktiv postbehandling
+SFTP-server å koble til
+RSS feed-lenke
+Innmatingsnummer
+Frase for å søke
+Første JSON-fil
+Andre JSON-fil
+Bane til JSON-fil
+Bane til utdata JSON-fil
+JSON-verdi å legge til
+JSON-egenskapsnavn
+Objektbane
+JSON-verdi
+Dokknavn
+Bane til en fil eller en streng å skrive
+Pastebin-argumenter
+Sti til bildefil
+Banen til synthfilen
+SSH-server å koble til
+Brukernavn å autentisere med
+Kommando for ekstern kjøring
+Skriver ut informasjon om et kjemisk stoff til konsollen.
+Enten et navn, et symbol eller et atomnummer for et stoff
+Skriver ut informasjon om alle kjemiske stoffer til konsollen.
+Det finnes ikke noe stoff med atomnummer
+Det er ingen substans med symbol eller navn
+Atomnummer
+Atommasse
+Symbol
+Sammendrag
+Fase
+Plassering i det periodiske systemet
+Plassering i koordinater
+Oppdager
+Oppkalt av
+Elektronkonfigurasjon
+Start mod (velg)
+Start mod (inngang)
+Stopp mod
+Last inn mod
+Installer mod (velg)
+Installer mod (inngang)
+Avinstaller mod
+Start alt
+Stopp alt
+Last inn alle på nytt
+Kan ikke returnere ikke-eksisterende klassetype fra modmontering
+Finner ikke funksjon '{0}' i mod '{1}'.
+Finner ikke egenskapen '{0}' i mod '{1}'.
+Finner ikke feltet '{0}' i mod '{1}'.
+Denne klassen er ikke en mod-klasse
+Språk
+Inngangspunkt
+Skriv inn en bane til moden du vil starte
+Kunne ikke starte mod
+Skriv inn en bane til moden du vil installere
+Kunne ikke installere mod
+Kan ikke starte eller stoppe denne moden!
+Enten du skal starte, stoppe, hente informasjon fra, laste på nytt, installere eller avinstallere en mod
+Modnavn eller filnavn
+Enten du skal liste opp, laste på nytt, stoppe, starte eller administrere alle mods interaktivt
+Mods navn
+Kultur- og språkinnstillinger
+Dette lar deg konfigurere kulturen og språket
+Tids- og datoinnstillinger
+Dette lar deg konfigurere klokkeslett og dato
+Bootloader-innstillinger
+Dette lar deg konfigurere bootloaderen
+Nitrocid-hjemmesiden
+Dette lar deg konfigurere Nitrocid-hjemmesiden
+Innstillinger for kjerneoppdatering
+Dette lar deg konfigurere kjerneoppdateringene
+Innstillinger for kjernefeil
+Dette lar deg konfigurere kjernefeilene
+Innstillinger for kjernekraft
+Dette lar deg konfigurere kjernekraftmekanismen
+Kjernefargeskjemaer
+Dette lar deg angi flere kjernefargeskjemaer
+Moderne påloggingshåndteringsinnstillinger
+Dette lar deg konfigurere den moderne påloggingsbehandleren
+Hjelpesystem
+Dette lar deg konfigurere shell-hjelpesystemet
+Shell forhåndsinnstillinger
+Dette lar deg konfigurere shell-forhåndsinnstillingene
+Innstillinger for ekstern debugger
+Dette lar deg konfigurere den eksterne debuggeren
+Samlet forsinkelse
+Hvis sant, muliggjør enhetlig skriveforsinkelse for alle skjermsparere. Ellers bruker den skjermsparerspesifikke konfigurerte forsinkelsesverdier.
+Denne delen viser alle lydinnstillingene.
+Lydinnstillinger
+Aktiver lydstøtte
+Aktiverer hele lydsystemet for systemsignaler
+Aktiver tastatursignaler
+Om du skal spille keyboard-signaler for hvert tastetrykk eller ikke
+Aktiver oppstartslyder
+Om du skal spille av oppstartslyden eller ikke
+Aktiver avslutningslyder
+Om du skal spille avslutningslyden eller ikke
+Aktiver navigasjonslyder
+Om du vil spille av navigasjonslyden for hvert tastetrykk eller ikke
+Aktiver lavprioriterte varslingslyder
+Om du skal spille av varslingslyden for lavprioriterte varsler eller ikke
+Aktiver varslingslyder med middels prioritet
+Om du skal spille av varslingslyden for varsler med middels prioritet eller ikke
+Aktiver høyprioriterte varslingslyder
+Om du skal spille av varslingslyden for høyprioriterte varsler eller ikke
+Aktiver omgivende skjermsparer lydeffekter
+Enten du skal spille av skjermsparerlydeffekter eller ikke
+Forsterk skjermsparerens lydeffekter
+Om du skal intensivere lydeffektene fra den omgivende skjermspareren eller ikke
+Lydsignalvolum
+Spesifiser hvor høyt du vil at lydsignalene skal være
+Lydtema
+Hvilket lydtema vil du bruke for lydsignaler?
+Innstillinger for tekstredigering
+Dette lar deg konfigurere tekstredigereren
+Hex editor-innstillinger
+Dette lar deg konfigurere hex-editoren
+RSS-overskriftsinnstillinger
+Dette lar deg konfigurere RSS-overskriftene
+Musinnstillinger
+Dette lar deg konfigurere musen
+Feilsøkingsinnstillinger
+Dette lar deg konfigurere feilsøkingsrutinen
+Estetikk
+Dette lar deg konfigurere kjernens estetikk
+Viser et stort velkomstord skrevet i midten av konsollen; ligner på velkomstmattene
+Vis fremgang
+Vis fremgang eller ikke
+Dette lar deg konfigurere fargene
+Denne delen lar deg konfigurere Solver.
+Denne delen lar deg konfigurere SpeedPress.
+Denne delen lar deg konfigurere Meteor og ShipDuet.
+Denne delen lar deg konfigurere hvordan kjernemodifikasjonssystemet fungerer.
+Denne delen lar deg konfigurere hvordan timerapplikasjonen fungerer.
+Denne delen lar deg konfigurere hvordan pomodoro timer-applikasjonen fungerer.
+Aktiver Figlet for pomodoro-timeren
+Hvis aktivert, bruker figlet for pomodoro-timeren. Vær oppmerksom på at den trenger en stor konsollskjerm for å gjengi tiden riktig med Figlet aktivert.
+Figlet-font for pomodoro-timeren
+Innstillinger for timers rampe
+Dette lar deg konfigurere timerampen
+Innstillinger for minutter rampe
+Dette lar deg konfigurere minuttrampen
+Sekunder rampeinnstillinger
+Dette lar deg konfigurere sekundrampen
+Rampeinnstillinger
+Dette lar deg konfigurere rampene
+Viser tekst under en linje i en mørk rød bakgrunn.
+Tilfeldige karakterer som sprer seg tilfeldig over skjermen.
+Enkel dato og klokkeslett midt på skjermen og endrer farge basert på gjeldende klokkeslett.
+Lys dato og klokkeslett
+Om du skal bruke lys eller mørk versjon.
+Viser deg dansende tall.
+Svingende bølge horisontalt og vertikalt for å lage flotte mønstre med stier som forsvinner.
+Løypelengde
+Løypelengden til den bevegelige svingende bølgen.
+Blokk som beveger seg i et bølgemønster med grønne linjaler som sporer posisjonen.
+Viser deg et enkelt tilfeldig tegn i en farget figlet-tekst.
+Viser deg et ord som blir valgt akkurat som en spilleautomat som finnes i kasinoer.
+Viser deg en farget figlet-tekst som veksler mellom to neonfarger: cyan og fuchsia.
+Kulturinnstillinger
+Dette lar deg konfigurere kulturen som brukes av kalenderskjermspareren
+Første rampeinnstillinger
+Dette lar deg konfigurere den første rampen
+Andre rampeinnstillinger
+Dette lar deg konfigurere den andre rampen
+Tredje rampeinnstillinger
+Dette lar deg konfigurere den tredje rampen
+Fargeskjemaer fra Alma Linux, en spinoff av et Linux-operativsystem, Red Hat
+Fargeskjemaer fra et Linux-operativsystem, Arch Linux
+Fargeskjemaer fra EndeavourOS, en spinoff av et Linux-operativsystem, Arch Linux
+Fargeskjemaer fra Fedora, en spinoff av et Linux-operativsystem, Red Hat
+Fargeskjemaer fra et Linux-operativsystem, Gentoo
+Meislede mønsterfarger danner en fargerik mandala
+Fargeskjemaer fra Kubuntu, en spinoff av et populært Linux-operativsystem, Ubuntu
+Fargeskjemaer fra Linux Mint, en uoffisiell spinoff av et populært Linux-operativsystem, Ubuntu
+Fargeskjemaer fra Lubuntu, en spinoff av et populært Linux-operativsystem, Ubuntu
+Fargeskjemaer fra Manjaro, en spinoff av et Linux-operativsystem, Arch Linux
+Fargeskjemaer fra et Linux-operativsystem, openSUSE
+Fargeskjemaer fra et Linux-operativsystem, Red Hat
+Røde nyanser med dynamiske aksentfarger for oppmerksomhetsverdig tekst
+Fargeskjemaer fra Rocky Linux, en spinoff av et Linux-operativsystem, Red Hat
+Fargeskjemaer fra et Linux-operativsystem, Slackware
+Fargeskjemaer fra Xubuntu, en spinoff av et populært Linux-operativsystem, Ubuntu
+Fargeskjemaer fra Zorin OS, en uoffisiell spinoff av et populært Linux-operativsystem, Ubuntu
+Ekstra - kjemi
+Ekstra - Mods
+Ekstra - Ikoner

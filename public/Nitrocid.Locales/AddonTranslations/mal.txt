@@ -54,9 +54,9 @@ Memuat turun fail jauh ke direktori tempatan menggunakan binari atau teks
 Menyenaraikan direktori tempatan
 Menyenaraikan direktori jauh
 Memuat naik fail tempatan ke direktori jauh menggunakan binari atau teks
-Alias ​​tidak boleh sama dengan nama perintah.
+Alias tidak boleh sama dengan nama perintah.
 Perintah tidak ditemui untuk alias kepada {0}.
-Alias ​​{0} tidak didapati dialih keluar.
+Alias {0} tidak didapati dialih keluar.
 Direktori {0} tidak ditemui
 Nama hos kosong.
 Menukar daripada: {0} kepada {1}...
@@ -108,7 +108,7 @@ Putuskan sambungan peranti nyahpepijat
 Menyenaraikan peranti penyahpepijatan yang disambungkan
 Peranti {0} terputus sambungan.
 Nyahpepijat mendengar pada semua alamat menggunakan port {0}.
-Alias ​​sudah ditemui: {0}
+Alias sudah ditemui: {0}
 Log nyahpepijat dialih keluar. Semua peranti penyahpepijatan yang disambungkan mungkin masih melihat mesej.
 Penyingkiran log nyahpepijat gagal: {0}
 Menukar direktori telah gagal: {0}
@@ -253,7 +253,7 @@ Mengubah MOTD, Mesej Hari Ini
 Menukar nama pengguna
 Urus kebenaran untuk pengguna
 Mengalih keluar pengguna daripada senarai
-Alias ​​{0} berjaya dialih keluar.
+Alias {0} berjaya dialih keluar.
 Gagal menyemak kemas kini.
 Tiada lagi pengguna yang tinggal dalam senarai.
 Ralat cuba mengetepikan pemberitahuan.
@@ -450,7 +450,7 @@ Fail kunci {0} tidak wujud.
 Ralat semasa cuba menambah kunci peribadi:
 Perintah am:
 Perintah mod:
-Alias ​​memerintahkan:
+Alias memerintahkan:
 Mod Penyelenggaraan
 Cari Direktori
 Tiada arahan mod.
@@ -1333,9 +1333,9 @@ Kegagalan penegasan.
 Acara {0} tidak ditemui.
 Acara kernel dipecat:
 Sediakan tindakan acara yang sah
-Alias ​​yang ditentukan sudah wujud. Pastikan anda memilih alias yang berbeza.
+Alias yang ditentukan sudah wujud. Pastikan anda memilih alias yang berbeza.
 Sistem alias mengalami operasi tidak sah yang cuba memproses permintaan anda.
-Alias ​​yang ditentukan tidak ditemui.
+Alias yang ditentukan tidak ditemui.
 Perintah yang ditentukan tidak ditemui pada alias kepada.
 Jenis alias yang ditentukan tidak ditemui.
 Ralat berlaku semasa cuba memproses permintaan warna. Kesilapan biasa termasuk menentukan penentu warna yang salah.
@@ -1812,7 +1812,7 @@ Mod Selamat
 Mod Nyahpepijat
 Berita terkini daripada
 Untuk mendapatkan berita terkini, anda mesti memasang tambahan RSS Shell Extras. Anda boleh menggunakan arahan 'getaddons' untuk mendapatkan semua addon!
-Alias ​​{0} tidak ditemui untuk ditanya.
+Alias {0} tidak ditemui untuk ditanya.
 Menetapkan nilai output kepada pembolehubah UESH yang dipilih
 Argumen yang diperlukan tidak disediakan untuk semua penggunaan di bawah:
 Hujah yang diperlukan tidak disediakan.
@@ -3712,3 +3712,600 @@ Kembalikan nostalgia dengan tema ini!
 Terminal anda terdiri daripada papan kayu
 Diinspirasikan daripada corak buah-buahan Cina yang berbeza
 Tambahan - CRC32C (Castagnoli)
+Mencetak versi kernel
+Mencetak versi API
+Tidak boleh memadam fail nyahpepijat
+Konfigurasi kernel tidak akan berfungsi dengan betul. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada konfigurasi kernel asas ditentukan.
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada kunci ditentukan.
+Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Cuba mendaftarkan tetapan asas dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut
+Gagal mendapatkan entri tetapan percikan.
+Addon ikon perlu dipasang sebelum dapat menetapkan nilai ini.
+Pilih entri untuk
+Tetapkan semula semua
+Tetapkan semula entri
+Jenis hujah yang ditentukan tidak sah
+Satu atau lebih entri konfigurasi mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tidak ada budaya dengan nama ini.
+Terdapat ralat semasa memproses tindakan isyarat audio anda.
+Tidak dapat mengembalikan jenis kelas yang tidak wujud daripada pemasangan addon
+Kelas ini bukan kelas tambahan
+Memainkan bunyi penutupan...
+Kami tidak akan menyokong versi Nitrocid KS ini lagi selepas tarikh ini
+Pastikan anda menaik taraf kepada versi yang disokong tidak lama lagi jika anda ingin terus menerima sokongan.
+Versi Nitrocid KS ini tidak lagi disokong.
+Gagal memuatkan bahasa tersuai
+Gagal memuatkan tambahan kernel yang penting
+Gagal memuatkan persetujuan privasi
+Gagal memuatkan percikan
+Gagal memuatkan mod penting
+Gagal memuatkan peranti nyahpepijat jauh
+Terdapat ralat semasa cuba memulakan komponen penting.
+Gagal memuatkan urutan pemberitahuan
+Gagal memuatkan pengendali pembatalan
+Gagal memuatkan alias
+Gagal memuatkan entri dail pantas
+Gagal memuatkan pembolehubah persekitaran
+Gagal memuatkan pendengar penggera
+Gagal memuktamadkan tambahan
+Gagal memuatkan MOTD dan MAL
+Gagal memuatkan sejarah perintah shell
+Gagal memuatkan pengendali sambungan
+Memuatkan mod...
+Gagal memuatkan mod
+Terdapat ralat semasa cuba memulakan komponen pilihan.
+Gagal menetapkan semula pembolehubah umum
+Gagal menyimpan sejarah arahan shell
+Gagal menyimpan persetujuan privasi
+Gagal menghentikan penyahpepijat jauh
+Gagal menetapkan semula bahasa
+Gagal menyimpan pengendali sambungan
+Gagal menghentikan pendengar penggera
+Gagal menyimpan konfigurasi
+Gagal menghentikan mod
+Gagal menghentikan alat tambah
+Gagal menghentikan RPC
+Gagal menutup semua sambungan
+Gagal menghentikan tamat masa screensaver
+Gagal menetapkan semula penimbal log but
+Gagal menghentikan pengendali kursor
+Gagal menghentikan penyahpepijat
+Gagal menghentikan semua utas kernel
+Terdapat ralat semasa cuba menetapkan semula komponen.
+Pengecualian
+Rujuk log nyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tiada jenis isyarat audio sedemikian.
+Tidak boleh mendapatkan tetapan sandaran
+Tidak dapat menetapkan semula semua entri tetapan untuk
+Tidak dapat menetapkan semula entri tetapan ini untuk
+Pembolehubah tidak ditemui pada mana-mana modul.
+Tidak boleh mendapatkan isyarat audio yang diperlukan untuk penyelamat skrin ambien.
+Sambungan rangkaian mungkin tidak diwujudkan dengan betul kerana ralat.
+Tidak dapat menimbal perintah yang tidak ditetapkan sebagai boleh dibalut.
+Perihalan suis tidak ditentukan
+Laluan ke proses
+Hujah untuk diteruskan ke proses
+Perintah untuk menunjukkan kemasukan bantuan
+Paipkan output arahan ke arahan lain sebagai parameter
+Perintah sumber untuk menyalurkan outputnya ke arahan sasaran sebagai parameter terakhir
+Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber
+Sama ada untuk meluluskan output arahan sumber sebagai satu hujah yang dipetik atau hujah yang tidak disebut
+Perintah untuk membalut keluarannya
+Pelaksanaan arahan sumber gagal.
+Pelaksanaan arahan sasaran gagal. Kandungan mungkin tidak diisi dengan betul. Perintah dilaksanakan ialah
+Paip rosak.
+Hujah untuk menunjukkan entri bantuan
+Nombor sesi bermula dari sifar
+Nama pengguna untuk pertanyaan
+Jenis kebenaran untuk memberikan atau menafikan
+Palsu untuk dinafikan, benar untuk diberikan
+Nama paparan baharu, atau 'kosongkan' untuk memadamkan nama paparan
+ID bahasa tiga huruf, atau 'jelas' untuk mengosongkan bahasa pilihan
+Mengubah budaya pengguna pilihan
+ID budaya, atau 'jelas' untuk mengosongkan budaya pilihan
+Budaya pengguna pilihan ditetapkan kepada {0}. Anda mungkin mahu log masuk semula.
+Budaya tidak sah
+Budaya pilihan
+GUID sesi tidak sah
+Tiada GUID sesi sedemikian
+Jenis tidak diketahui
+Parameter tidak diketahui
+Senarai jenis untuk
+Mengambil maklumat log nyahpepijat dengan mudah menggunakan GUID sesi
+GUID Sesi untuk mencari
+Nombor pengecualian
+Nama medan untuk pertanyaan
+Nama harta untuk pertanyaan
+Nama tambah untuk pertanyaan
+Nama jenis statik awam daripada addon
+Nama fungsi daripada jenis statik awam kepada pertanyaan
+Menyenaraikan semua jenis yang tersedia daripada addon yang ditentukan
+Nama percikan untuk pertanyaan
+Nombor bait antara 0 hingga 255
+Nombor kedudukan bait
+Nombor kedudukan permulaan bait
+Nombor kedudukan penamat bait
+Nombor bait antara 0 hingga 255 untuk diganti
+Nombor bait antara 0 hingga 255 untuk digantikan dengan
+Kandungan untuk ditambah pada penghujung fail
+Nombor aksara
+Nombor baris
+Nombor baris (sama ada tunggal atau permulaan julat)
+Julat penamat nombor baris
+Perkataan atau frasa untuk dipadamkan
+Watak untuk ditanya
+Nombor baris (sama ada tunggal atau permulaan julat), atau 'semua' untuk menanyakan aksara dalam semua baris
+Satu perkataan atau frasa untuk ditanya
+Ungkapan biasa untuk pertanyaan
+Satu perkataan atau frasa untuk diganti
+Satu perkataan atau frasa untuk digantikan dengan
+Nombor baris (sama ada tunggal atau permulaan julat), atau 'semua' untuk menggantikan dalam semua baris
+Ungkapan biasa untuk memadankan frasa yang akan diganti
+Negara tidak sah
+Pilih bahasa untuk negara
+Pemilihan bahasa tidak sah untuk
+ya
+Nama kumpulan baharu untuk ditambah
+Nama pengguna baharu untuk ditambah
+Kata laluan baharu untuk digunakan
+Sahkan kata laluan baharu
+Nama pengguna untuk ditambahkan pada kumpulan
+Nama kumpulan untuk menambah pengguna
+Memulakan penggera
+Selang penggera dalam jangka masa dalam jam, minit dan saat
+Menghentikan penggera
+Nama penggera untuk berhenti
+Menyenaraikan penggera
+Menambah alias
+Jenis Shell untuk mengambil arahan daripada
+Nama alias
+Perintah untuk digunakan sebagai jalan pintas
+Mengalih keluar alias
+Kekerapan dalam Hz
+Selang masa untuk satu bip
+Alamat IP untuk disekat
+Direktori sasaran
+Corak carian
+Nama baharu untuk menamakan semula semua fail yang ditemui
+Laluan ke fail untuk mencetak kandungannya
+Ambil log perubahan daripada internet dan bukannya secara tempatan
+Laluan ke fail
+Sama ada penambahan atau penyingkiran
+Nama atribut
+Mengubah budaya
+ID budaya untuk ditukar kepada
+Mengubah budaya pengguna dan bukannya budaya sistem
+Nama hos baharu untuk ditukar
+ID Bahasa
+Menukar bahasa menggunakan negara (anda mungkin akan digesa untuk memilih bahasa)
+Mesej baharu untuk digunakan
+Jawapan untuk berpecah dengan garis miring
+Soalan untuk dicetak ke skrin
+Tajuk jawapan pertama
+Tajuk jawapan kedua, dan seterusnya...
+Nama pengguna untuk menukar kata laluan
+Kata laluan pengguna semasa
+Nama pengguna lama untuk ditukar
+Nama pengguna baharu untuk digunakan
+Fail teks input pertama
+Fail teks input kedua
+Fail teks input ketiga, dan seterusnya...
+Fail keluaran
+Fail teks input sumber
+Fail teks input sasaran
+Laluan ke fail teks
+Fail sumber atau direktori
+Sasaran fail atau direktori
+Laluan ke fail yang dikodkan
+Perwakilan rentetan yang dikodkan
+Rentetan BASE64 yang dikodkan
+Laluan ke direktori
+Alamat IP untuk memutuskan sambungan
+Nombor cakera
+Nombor pemberitahuan
+Tukar pemandu
+Jenis pemandu sasaran
+Sasaran pemandu untuk ditukar kepada
+Senaraikan pemandu
+Senaraikan jenis pemandu
+Rentetan untuk dicetak
+Fail untuk mengekod
+Rentetan untuk mengekod
+Ungkapan biasa untuk mencari fail
+Pautan ke sumber jauh, seperti HTTPS
+Nama konfigurasi kernel
+Pembolehubah untuk mendapatkan maklumat
+Sambungan fail
+Algoritma pengekodan
+Jenis perkakasan
+Ungkapan UESH untuk diuji
+Perintah untuk melaksanakan apabila penilaian berjaya
+Laluan ke direktori untuk anak tetingkap kiri
+Laluan ke direktori untuk anak tetingkap kanan
+Muat semula, memuatkan atau memunggah bahasa tersuai
+Nama bahasa tersuai
+Menyenaraikan atau memuat semula semua bahasa tersuai
+Laluan ke skrip UESH
+Laluan ke direktori untuk disenaraikan
+Nama direktori untuk dibuat
+Nama fail untuk dibuat
+Direktori atau nama untuk dialihkan
+Direktori atau nama untuk dialihkan
+Nombor pembahagian
+Nama fail untuk dicari
+Nama pengguna
+Sama ada benarkan atau batalkan
+Nama kebenaran untuk memberikan atau menafikan
+Nama kumpulan
+Alamat IP pertama atau nama hos
+Alamat IP kedua atau nama hos, dan seterusnya...
+Laluan ke fail untuk dimuat naik
+URL yang menghala ke titik akhir muat naik
+Nama hos yang menjalankan Nitrocid KS
+Pelabuhan Nitrocid KS pada sasaran jauh
+Perintah untuk melaksanakan dari jauh
+Direktori atau fail sasaran
+Nama pengguna untuk dialih keluar
+Nama kumpulan untuk dialih keluar
+Nama pengguna untuk dialih keluar daripada kumpulan
+Nama kumpulan untuk mengalih keluar pengguna
+Sama ada nama penyelamat skrin atau 'rawak'
+Ungkapan biasa untuk dicari
+Fail sasaran
+Perkataan atau frasa untuk dicari
+Membuka tetapan percikan addon
+Nilai untuk ditetapkan
+Nama pembolehubah konfigurasi
+Nama pelaksana
+Nilai pertama
+Nilai kedua
+Nilai ketiga, dan seterusnya...
+Nama zon waktu
+Selang untuk tidur
+Perintah untuk berlari
+Algoritma penyulitan
+Masukkan fail untuk mengira jumlah cincang
+Fail output untuk menyimpan maklumat jumlah cincang
+Teks untuk mendapatkan jumlah cincang
+Nama pautan simbolik
+Sasarkan fail untuk membuat pintasan daripada
+Nama tema
+Alamat IP untuk dinyahsekat
+Nama boleh ubah
+Laluan ke fail ZIP
+Laluan sasaran untuk diekstrak
+Hash dikira
+Fail cincang atau cincang yang dijangkakan
+Failkan untuk diuji
+ZIP nama fail untuk dibuat
+Laluan untuk memampatkan
+Addon ikon perlu dipasang sebelum dapat memaparkan emoji ini.
+Nota kandungan untuk ditambah
+Nombor nota
+Laluan ke direktori dengan repositori Git
+Julat permulaan nombor baris
+Nama cawangan
+Komit ringkasan
+Komit cincang SHA
+Nama jauh
+Tag nama
+Mesej untuk memberi anotasi pada teg
+e-mel anda
+nama pengguna anda
+Laluan ke fail tidak berperingkat
+Laluan ke fail berperingkat
+Laluan ke fail arkib
+Direktori tempatan
+Direktori di dalam arkib
+Fail dalam arkib
+Direktori tempatan untuk diekstrak
+Fail tempatan
+Arkib direktori untuk ditambah
+Membuka TUI interaktif kalendar
+Tahun sasaran
+Nombor bulan sasaran
+Interaksi dengan peristiwa
+Menambah acara
+Tarikh sasaran
+Mengalih keluar acara
+ID acara
+Menyenaraikan semua acara
+Menyimpan semua peristiwa
+Interaksi dengan peringatan
+Tarikh dan masa sasaran
+Mengalih keluar peringatan
+ID Peringatan
+Menyenaraikan semua peringatan
+Menyimpan semua peringatan
+Sama ada laluan ke fail kenalan vCard atau represnetation MeCard
+Nombor hubungan
+Edit...
+Masukkan nama baharu untuk kenalan ini
+Latitud untuk digunakan
+Longitud untuk digunakan
+Kunci API Weather.com
+ID bandar atau nama bandar yang dikenali OpenWeatherMap
+Kunci API OpenWeatherMap
+Sama ada untuk menambah, mengalih keluar, menandai sebagai selesai atau menyahtanda sebagai selesai pada tugasan
+Sama ada untuk menyenaraikan, menyimpan atau memuatkan semua tugasan
+Pemasa Pomodoro
+Pomodoro
+Pemasa Pomodoro sudah sedia
+Nombor pemasa Pomodoro {0} dalam empat lelaran
+Rehat sekejap
+Tentukan tamat masa rehat dalam milisaat
+Tetapkan selang waktu rehat
+Perkataan untuk ditakrifkan
+Istilah carian
+Awalan nama untuk mencari
+Akhiran nama untuk dicari
+Awalan nama keluarga untuk mencari
+Akhiran nama keluarga untuk mencari
+Berapa banyak nama untuk dijana?
+Jenis unit
+Kuantiti dalam unit sumber untuk ditukar
+Unit sumber
+Unit sasaran
+Laluan ke fail lirik
+Laluan ke fail MP3
+Nama hos yang menjadi hos stesen radio MPEG
+Port ke stesen radio MPEG
+Ungkapan matematik
+Nombor sebenar
+Nombor khayalan
+Meraikan komitmen ke-7,000 sejak 0.0.1!
+ditinggalkan sehingga tahun hadapan
+Nama tema untuk dibuat
+Laluan ke direktori terjemahan
+Selesai! Sila gunakan aplikasi Nitrocid.Locales dengan hujah yang sesuai untuk memuktamadkan bahasa. Anda boleh menggunakan laluan ini:
+Model warna sumber
+Model warna sasaran
+Nombor pertama
+Nombor kedua
+Nombor ketiga
+Nombor keempat
+Penentu warna
+Tarikh dan masa untuk mencetak maklumat daripada
+Sama ada nyatakan beberapa saat atau nama minuman
+Pelayan FTP untuk disambungkan
+Laluan ke fail jauh
+Laluan ke direktori tempatan
+Laluan ke direktori jauh
+Laluan ke fail jauh untuk dipadam
+Perintah pelayan untuk dilaksanakan
+Mencipta direktori tempatan
+Mencipta direktori jauh
+Laluan ke fail sumber atau direktori
+Laluan ke fail atau direktori sasaran
+Laluan ke fail tempatan
+Nombor kebenaran mengikut chmod
+Menentukan sama ada jenis pemindahan ialah ASCII atau Binari
+Pautan simbolik ke: {0}
+Kekunci pengepala
+Nilai pengepala
+Permintaan HTTP
+Fail untuk dimuat naik
+Rentetan untuk dimuat naik
+Rentetan ejen pengguna
+Alamat e-mel untuk log masuk
+Buat folder
+Bergerak...
+Gerakkan semua...
+Namakan semula folder
+Alih keluar folder
+Alih keluar mesej
+Alih keluar semua...
+Tidak dapat membuka folder atau mesej
+Tulis nama direktori baharu.
+Mencipta direktori...
+Tidak boleh membuat folder
+Pilih direktori baharu untuk mengalihkan mesej ini.
+Mesej bergerak...
+Tidak dapat mengalihkan mesej
+Pilih direktori baharu untuk mengalihkan semua mesej oleh pengirim yang sama.
+Mengalihkan mesej oleh pengirim {0}...
+Tidak dapat mengalihkan semua mesej oleh pengirim yang sama
+Tulis nama direktori baharu untuk menamakan semula {0} kepada.
+Menamakan semula direktori...
+Tidak boleh menamakan semula folder
+Mengalih keluar direktori...
+Tidak dapat mengalih keluar folder
+Mengalih keluar mesej...
+Tidak dapat memadam mesej
+Mengalih keluar mesej oleh pengirim {0}...
+Tidak boleh memadam semua mesej oleh pengirim yang sama
+Nama direktori mel
+Nombor halaman
+ID mesej
+Nama penghantar
+Nama direktori mel lama
+Nama direktori mel baharu
+Pengurusan mel interaktif
+Pelayan SFTP untuk disambungkan
+Pautan suapan RSS
+Nombor suapan
+Frasa untuk dicari
+Fail JSON pertama
+Fail JSON kedua
+Laluan ke fail JSON
+Laluan untuk mengeluarkan fail JSON
+nilai JSON untuk ditambah
+nama harta JSON
+Laluan objek
+nilai JSON
+Nama dok
+Laluan ke fail atau rentetan untuk ditulis
+Hujah pastebin
+Laluan ke fail imej
+Laluan ke fail synth
+Pelayan SSH untuk disambungkan
+Nama pengguna untuk mengesahkan dengan
+Perintah untuk melaksanakan dari jauh
+Mencetak maklumat tentang bahan kimia ke konsol.
+Sama ada nama, simbol atau nombor atom sesuatu bahan
+Mencetak maklumat tentang semua bahan kimia ke konsol.
+Tiada bahan dengan nombor atom
+Tiada bahan dengan simbol atau nama
+Nombor atom
+Jisim atom
+Simbol
+Ringkasan
+fasa
+Kedudukan dalam jadual berkala
+Kedudukan dalam koordinat
+Penemu
+Dinamakan oleh
+Konfigurasi elektron
+Mulakan mod (pilih)
+Mulakan mod (input)
+Hentikan mod
+Muat semula mod
+Pasang mod (pilih)
+Pasang mod (input)
+Nyahpasang mod
+Mulakan semua
+Hentikan semua
+Muat semula semua
+Tidak dapat mengembalikan jenis kelas yang tidak wujud daripada pemasangan mod
+Tidak dapat mencari fungsi '{0}' dalam mod '{1}'.
+Tidak dapat mencari harta '{0}' dalam mod '{1}'.
+Tidak dapat mencari medan '{0}' dalam mod '{1}'.
+Kelas ini bukan kelas mod
+Bahasa
+Titik masuk
+Masukkan laluan ke mod yang anda mahu mulakan
+Gagal memulakan mod
+Masukkan laluan ke mod yang anda ingin pasang
+Gagal memasang mod
+Tidak boleh memulakan atau menghentikan mod ini!
+Sama ada untuk memulakan, menghentikan, mendapatkan maklumat daripada, memuat semula, memasang atau menyahpasang mod
+Nama mod atau nama fail
+Sama ada untuk menyenaraikan, memuat semula, menghentikan, memulakan atau mengurus semua mod secara interaktif
+Nama mod
+Tetapan budaya dan bahasa
+Ini membolehkan anda mengkonfigurasi budaya dan bahasa
+Tetapan masa dan tarikh
+Ini membolehkan anda mengkonfigurasi masa dan tarikh
+Tetapan pemuat but
+Ini membolehkan anda mengkonfigurasi pemuat but
+Laman Utama Nitrocid
+Ini membolehkan anda mengkonfigurasi The Nitrocid Homepage
+Tetapan kemas kini kernel
+Ini membolehkan anda mengkonfigurasi kemas kini kernel
+Tetapan ralat kernel
+Ini membolehkan anda mengkonfigurasi ralat kernel
+Tetapan kuasa kernel
+Ini membolehkan anda mengkonfigurasi mekanisme kuasa kernel
+Skim warna kernel
+Ini membolehkan anda menetapkan berbilang skema warna kernel
+Tetapan pengendali log masuk moden
+Ini membolehkan anda mengkonfigurasi pengendali log masuk moden
+Sistem bantuan
+Ini membolehkan anda mengkonfigurasi sistem bantuan shell
+Pratetap Shell
+Ini membolehkan anda mengkonfigurasi pratetap shell
+Tetapan penyahpepijat jauh
+Ini membolehkan anda mengkonfigurasi penyahpepijat jauh
+Kelewatan bersatu
+Jika benar, dayakan kelewatan penulisan bersatu untuk semua penyelamat skrin. Jika tidak, ia menggunakan nilai kelewatan yang dikonfigurasikan khusus screensaver.
+Bahagian ini menyenaraikan semua tetapan audio.
+Tetapan audio
+Dayakan sokongan audio
+Mendayakan keseluruhan sistem audio untuk isyarat sistem
+Dayakan isyarat papan kekunci
+Sama ada mahu memainkan isyarat papan kekunci untuk setiap tekan kekunci atau tidak
+Dayakan bunyi permulaan
+Sama ada mahu memainkan bunyi permulaan atau tidak
+Dayakan bunyi penutupan
+Sama ada mahu memainkan bunyi penutupan atau tidak
+Dayakan bunyi navigasi
+Sama ada hendak memainkan bunyi navigasi untuk setiap tekan kekunci atau tidak
+Dayakan bunyi pemberitahuan keutamaan rendah
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan rendah atau tidak
+Dayakan bunyi pemberitahuan keutamaan sederhana
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan sederhana atau tidak
+Dayakan bunyi pemberitahuan keutamaan tinggi
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan tinggi atau tidak
+Dayakan kesan bunyi penyelamat skrin ambien
+Sama ada mahu memainkan kesan bunyi penyelamat skrin ambien atau tidak
+Perhebatkan kesan bunyi penyelamat skrin ambien
+Sama ada untuk memperhebatkan kesan bunyi penyelamat skrin ambien atau tidak
+Kelantangan isyarat audio
+Tentukan betapa kuatnya isyarat audio yang anda mahukan
+Tema audio
+Tema audio yang manakah ingin anda gunakan untuk isyarat audio?
+Tetapan editor teks
+Ini membolehkan anda mengkonfigurasi editor teks
+Tetapan editor hex
+Ini membolehkan anda mengkonfigurasi editor heks
+Tetapan tajuk RSS
+Ini membolehkan anda mengkonfigurasi tajuk RSS
+Tetapan tetikus
+Ini membolehkan anda mengkonfigurasi tetikus
+Tetapan nyahpepijat
+Ini membolehkan anda mengkonfigurasi rutin penyahpepijatan
+Estetika
+Ini membolehkan anda mengkonfigurasi estetika kernel
+Menunjukkan kata alu-aluan besar yang ditulis di tengah konsol; serupa dengan tikar selamat datang
+Tunjukkan kemajuan
+Tunjukkan kemajuan atau tidak
+Ini membolehkan anda mengkonfigurasi warna
+Bahagian ini membolehkan anda mengkonfigurasi Solver.
+Bahagian ini membolehkan anda mengkonfigurasi SpeedPress.
+Bahagian ini membolehkan anda mengkonfigurasi Meteor dan ShipDuet.
+Bahagian ini membolehkan anda mengkonfigurasi cara sistem pengubahsuaian kernel berfungsi.
+Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa berfungsi.
+Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa pomodoro berfungsi.
+Dayakan Figlet untuk pemasa pomodoro
+Jika didayakan, akan menggunakan figlet untuk pemasa pomodoro. Sila ambil perhatian bahawa ia memerlukan skrin konsol yang besar untuk memaparkan masa dengan betul dengan Figlet didayakan.
+Fon figlet untuk pemasa pomodoro
+Tetapan tanjakan jam
+Ini membolehkan anda mengkonfigurasi tanjakan jam
+Tetapan tanjakan minit
+Ini membolehkan anda mengkonfigurasi tanjakan minit
+Tetapan tanjakan saat
+Ini membolehkan anda mengkonfigurasi tanjakan saat
+Tetapan tanjakan
+Ini membolehkan anda mengkonfigurasi tanjakan
+Menunjukkan teks kepada anda di bawah garisan dalam latar belakang merah yang suram.
+Watak rawak yang tersebar secara rawak merentasi skrin.
+Tarikh dan masa ringkas di tengah-tengah skrin dan menukar warna berdasarkan masa semasa.
+Tarikh dan masa yang terang
+Sama ada untuk menggunakan versi terang atau gelap.
+Menunjukkan anda menari nombor.
+Memusing gelombang mendatar dan menegak untuk membuat corak yang hebat dengan denai yang ditinggalkan untuk hilang.
+Panjang Jejak
+Panjang jejak ombak berputar yang bergerak.
+Sekat bergerak dalam corak gelombang dengan pembaris hijau menjejaki kedudukannya.
+Menunjukkan kepada anda satu aksara rawak dalam teks figlet berwarna.
+Menunjukkan kepada anda perkataan yang sedang dipilih sama seperti mesin slot yang terdapat di kasino.
+Menunjukkan kepada anda teks figlet berwarna berselang-seli antara dua warna neon: cyan dan fuchsia.
+Tetapan budaya
+Ini membolehkan anda mengkonfigurasi budaya yang digunakan oleh penyelamat skrin kalendar
+Tetapan tanjakan pertama
+Ini membolehkan anda mengkonfigurasi tanjakan pertama
+Tetapan tanjakan kedua
+Ini membolehkan anda mengkonfigurasi tanjakan kedua
+Tetapan tanjakan ketiga
+Ini membolehkan anda mengkonfigurasi tanjakan ketiga
+Skim warna daripada Alma Linux, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Arch Linux
+Skim warna daripada EndeavourOS, spin-off sistem pengendalian Linux, Arch Linux
+Skim warna daripada Fedora, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Gentoo
+Warna corak pahat membentuk mandala berwarna-warni
+Skim warna daripada Kubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Linux Mint, spin-off tidak rasmi sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Lubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Manjaro, spin-off sistem pengendalian Linux, Arch Linux
+Skim warna daripada sistem pengendalian Linux, openSUSE
+Skim warna daripada sistem pengendalian Linux, Red Hat
+Warna merah dengan warna aksen dinamik untuk teks yang menarik perhatian
+Skim warna daripada Rocky Linux, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Slackware
+Skim warna daripada Xubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Zorin OS, spinoff tidak rasmi sistem pengendalian Linux yang popular, Ubuntu
+Tambahan - Kimia
+Tambahan - Mod
+Tambahan - Ikon

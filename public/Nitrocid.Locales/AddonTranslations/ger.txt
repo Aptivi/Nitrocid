@@ -3712,3 +3712,600 @@ Bringen Sie mit diesem Thema Nostalgie zurück!
 Ihr Terminal besteht aus Holzbrettern
 Inspiriert vom chinesischen Muster verschiedener Früchte
 Extras - CRC32C (Castagnoli)
+Gibt die Kernelversion aus
+Druckt die API-Version
+Debugdateien können nicht gelöscht werden
+Die Kernelkonfiguration funktioniert nicht ordnungsgemäß. Weitere Informationen erhalten Sie im Kernel-Debugger.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Basiskernelkonfiguration angegeben ist.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Schlüssel angegeben sind.
+Es wird versucht, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen erhalten Sie im Kernel-Debugger.
+Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
+Einträge für die Splash-Einstellungen konnten nicht abgerufen werden.
+Das Symbol-Add-on muss installiert werden, bevor dieser Wert festgelegt werden kann.
+Wählen Sie einen Eintrag für
+Alles zurücksetzen
+Eintrag zurücksetzen
+Der angegebene Argumenttyp ist ungültig
+Einer oder mehrere Konfigurationseinträge haben ungültige Variablen oder Aufzählungen und müssen korrigiert werden. Weitere Informationen finden Sie im Kernel-Debugger.
+Es gibt keine Kultur dieses Namens.
+Beim Verarbeiten Ihrer Audio-Cue-Aktion ist ein Fehler aufgetreten.
+Nicht vorhandener Klassentyp kann nicht aus Add-On-Assembly zurückgegeben werden
+Diese Klasse ist keine Add-On-Klasse
+Herunterfahrton wird abgespielt ...
+Wir werden diese Version von Nitrocid KS nach diesem Datum nicht mehr unterstützen.
+Stellen Sie sicher, dass Sie bald auf die unterstützte Version aktualisieren, wenn Sie weiterhin Support erhalten möchten.
+Diese Version von Nitrocid KS wird nicht mehr unterstützt.
+Benutzerdefinierte Sprachen konnten nicht geladen werden
+Wichtige Kernel-Add-Ons konnten nicht geladen werden
+Datenschutzeinwilligungen konnten nicht geladen werden
+Splash konnte nicht geladen werden
+Wichtige Mods konnten nicht geladen werden
+Remote-Debug-Geräte konnten nicht geladen werden
+Beim Versuch, wichtige Komponenten zu initialisieren, sind Fehler aufgetreten.
+Der Benachrichtigungsthread konnte nicht geladen werden.
+Der Abbruch-Handler konnte nicht geladen werden.
+Aliase konnten nicht geladen werden
+Kurzwahleinträge konnten nicht geladen werden
+Umgebungsvariablen konnten nicht geladen werden
+Alarm-Listener konnte nicht geladen werden
+Add-Ons konnten nicht abgeschlossen werden
+MOTD und MAL konnten nicht geladen werden
+Shell-Befehlshistorien konnten nicht geladen werden
+Fehler beim Laden der Erweiterungshandler
+Mods werden geladen …
+Mods konnten nicht geladen werden
+Beim Versuch, optionale Komponenten zu initialisieren, sind Fehler aufgetreten.
+Allgemeine Variablen konnten nicht zurückgesetzt werden
+Shell-Befehlshistorien konnten nicht gespeichert werden
+Datenschutzeinwilligungen konnten nicht gespeichert werden
+Der Remote-Debugger konnte nicht gestoppt werden.
+Das Zurücksetzen der Sprachen ist fehlgeschlagen.
+Fehler beim Speichern der Erweiterungshandler
+Alarm-Listener konnte nicht gestoppt werden
+Konfiguration konnte nicht gespeichert werden
+Mods konnten nicht gestoppt werden
+Add-Ons konnten nicht gestoppt werden
+RPC konnte nicht gestoppt werden
+Es konnten nicht alle Verbindungen geschlossen werden
+Das Timeout des Bildschirmschoners konnte nicht gestoppt werden.
+Boot-Log-Puffer konnte nicht zurückgesetzt werden
+Der Cursor-Handler konnte nicht gestoppt werden
+Der Debugger konnte nicht gestoppt werden
+Es konnten nicht alle Kernel-Threads gestoppt werden
+Beim Versuch, Komponenten zurückzusetzen, sind Fehler aufgetreten.
+Ausnahme
+Weitere Informationen finden Sie in den Kernel-Debugprotokollen.
+Es gibt keinen solchen Audio-Cue-Typ.
+Fallback-Einstellungen können nicht abgerufen werden
+Es können nicht alle Einstellungseinträge zurückgesetzt werden für
+Dieser Einstellungseintrag kann nicht zurückgesetzt werden für
+Die Variable wurde in keinem der Module gefunden.
+Für Umgebungsbildschirmschoner erforderliches Audiosignal kann nicht abgerufen werden.
+Aufgrund eines Fehlers konnte die Netzwerkverbindung möglicherweise nicht ordnungsgemäß hergestellt werden.
+Ein Befehl, der nicht als umschließbar festgelegt ist, kann nicht gepuffert werden.
+Nicht angegebene Schalterbeschreibung
+Pfad zu einem Prozess
+An einen Prozess zu übergebende Argumente
+Befehl zum Anzeigen des Hilfeeintrags
+Leitet die Befehlsausgabe als Parameter an einen anderen Befehl weiter
+Quellbefehl, um seine Ausgabe als letzten Parameter an den Zielbefehl weiterzuleiten
+Zielbefehl, der beim Erstellen des Arguments basierend auf der Ausgabe des Quellbefehls ausgeführt werden soll
+Ob die Ausgabe des Quellbefehls als ein Argument in Anführungszeichen oder ein Argument ohne Anführungszeichen übergeben werden soll
+Befehl zum Umschließen der Ausgabe
+Die Ausführung des Quellbefehls ist fehlgeschlagen.
+Die Ausführung des Zielbefehls ist fehlgeschlagen. Der Inhalt wurde möglicherweise nicht richtig ausgefüllt. Der ausgeführte Befehl war
+Das Rohr ist kaputt.
+Argument zum Anzeigen des Hilfeeintrags
+Sitzungsnummer, beginnend bei Null
+Abzufragender Benutzername
+Berechtigungstyp zum Erteilen oder Verweigern
+Falsch zu leugnen, wahr zu gewähren
+Neuer Anzeigename oder „Löschen“, um den Anzeigenamen zu löschen
+Dreistellige Sprachkennung oder „clear“, um die bevorzugte Sprache zu löschen
+Ändert die bevorzugte Benutzerkultur
+Kultur-ID oder „clear“, um die bevorzugte Kultur zu löschen
+Bevorzugte Benutzerkultur auf {0} eingestellt. Möglicherweise möchten Sie sich erneut anmelden.
+Ungültige Kultur
+Bevorzugte Kultur
+Ungültige Sitzungs-GUID
+Keine solche Sitzungs-GUID
+Unbekannter Typ
+Unbekannter Parameter
+Liste der Typen für
+Ruft die Debug-Protokollinformationen einfach mithilfe der Sitzungs-GUID ab
+Zu suchende Sitzungs-GUID
+Ausnahmenummer
+Abzufragender Feldname
+Abzufragender Eigenschaftsname
+Abzufragender Addon-Name
+Öffentlicher statischer Typname vom Add-on
+Funktionsname vom öffentlichen statischen Typ zur Abfrage
+Listet alle verfügbaren Typen des angegebenen Add-Ons auf
+Abzufragender Splash-Name
+Byte-Nummer im Bereich von 0 bis 255
+Byte-Positionsnummer
+Byte Startpositionsnummer
+Byte-Endpositionsnummer
+Zu ersetzende Bytenummer im Bereich von 0 bis 255
+Bytenummer im Bereich von 0 bis 255, die ersetzt werden soll durch
+Inhalt, der am Ende der Datei hinzugefügt werden soll
+Zeichennummer
+Zeilennummer
+Zeilennummer (entweder Singular oder Bereichsanfang)
+Zeilennummern-Endbereich
+Zu löschendes Wort oder Satzteil
+Ein abzufragendes Zeichen
+Zeilennummer (entweder Singular oder Anfang des Bereichs) oder „all“, um ein Zeichen in allen Zeilen abzufragen
+Ein abzufragendes Wort oder eine abzufragende Phrase
+Ein abzufragender regulärer Ausdruck
+Ein zu ersetzendes Wort oder eine zu ersetzende Phrase
+Ein Wort oder eine Phrase zum Ersetzen durch
+Zeilennummer (entweder Singular oder Beginn des Bereichs) oder „all“ zum Ersetzen in allen Zeilen
+Ein regulärer Ausdruck zum Abgleichen von Phrasen, die ersetzt werden sollen
+Ungültiges Land
+Wählen Sie eine Sprache für das Land
+Ungültige Sprachauswahl für
+Ja
+Neuer hinzuzufügender Gruppenname
+Neuer Benutzername zum Hinzufügen
+Neues zu verwendendes Passwort
+Bestätigen Sie das neue Passwort
+Der Benutzername, der der Gruppe hinzugefügt werden soll
+Name der Gruppe, zu der der Benutzer hinzugefügt werden soll
+Startet den Alarm
+Alarmintervall in einer Zeitspanne in Stunden, Minuten und Sekunden
+Stoppt den Alarm
+Name des zu stoppenden Alarms
+Listet die Alarme auf
+Fügt einen Alias hinzu
+Shell-Typ zum Abrufen von Befehlen
+Aliasname
+Als Tastenkombination zu verwendender Befehl
+Entfernt einen Alias
+Frequenz in Hz
+Zeitintervall für einen einzelnen Piepton
+Zu blockierende IP-Adresse
+Zielverzeichnis
+Suchmuster
+Neuer Name, in den alle gefundenen Dateien umbenannt werden sollen
+Pfad zur Datei, deren Inhalt gedruckt werden soll
+Holen Sie sich die Änderungsprotokolle aus dem Internet statt lokal
+Pfad zur Datei
+Entweder Hinzufügen oder Entfernen
+Attributname
+Ändert die Kultur
+Zu ändernde Kultur-ID
+Ändert die Benutzerkultur statt der Systemkultur
+Neuer Hostname, der geändert werden soll
+Sprachen-ID
+Ändert die Sprache anhand eines Landes (Sie werden möglicherweise aufgefordert, eine Sprache auszuwählen)
+Neue zu verwendende Nachricht
+Antworten zum Teilen mit einem Schrägstrich
+Frage zum Drucken auf dem Bildschirm
+Titel der ersten Antwort
+Titel der zweiten Antwort und so weiter …
+Benutzername zum Ändern des Passworts
+Aktuelles Benutzerkennwort
+Alter Benutzername zum Ändern
+Neuer zu verwendender Benutzername
+Erste Eingabetextdatei
+Zweite Eingabetextdatei
+Dritte Eingabetextdatei und so weiter …
+Ausgabedatei
+Quelleingabetextdatei
+Zieleingabetextdatei
+Pfad zur Textdatei
+Quelldatei oder -verzeichnis
+Zieldatei oder -verzeichnis
+Pfad zur kodierten Datei
+Codierte Zeichenfolgendarstellung
+Codierte BASE64-Zeichenfolge
+Pfad zum Verzeichnis
+IP-Adresse zum Trennen
+Datenträgernummer
+Benachrichtigungsnummer
+Einen Treiber ändern
+Zieltreibertyp
+Zieltreiber zum Wechseln
+Treiber auflisten
+Treibertypen auflisten
+Zu druckende Zeichenfolge
+Zu kodierende Datei
+Zu kodierender String
+Regulärer Ausdruck zum Suchen einer Datei
+Link zu einer Remoteressource, beispielsweise HTTPS
+Name der Kernelkonfiguration
+Variable zum Abrufen von Informationen
+Dateierweiterung
+Kodierungsalgorithmus
+Hardwaretyp
+Zu testender UESH-Ausdruck
+Befehl, der nach erfolgreicher Auswertung ausgeführt werden soll
+Pfad zum Verzeichnis für den linken Bereich
+Pfad zum Verzeichnis für den rechten Bereich
+Lädt, lädt oder entlädt eine benutzerdefinierte Sprache
+Benutzerdefinierter Sprachenname
+Listet alle benutzerdefinierten Sprachen auf oder lädt sie neu.
+Pfad zum UESH-Skript
+Pfad zum Verzeichnis zur Liste
+Zu erstellender Verzeichnisname
+Zu erstellender Dateiname
+Verzeichnis oder Name, aus dem verschoben werden soll
+Verzeichnis oder Name, wohin verschoben werden soll
+Partitionsnummer
+Zu suchender Dateiname
+Benutzername
+Entweder zulassen oder widerrufen
+Name der zu gewährenden oder zu verweigernden Berechtigung
+Gruppenname
+Erste IP-Adresse oder Hostname
+Zweite IP-Adresse oder Hostname und so weiter ...
+Pfad zur hochzuladenden Datei
+URL, die auf den Upload-Endpunkt verweist
+Hostname, auf dem Nitrocid KS ausgeführt wird
+Port von Nitrocid KS auf dem Remote-Ziel
+Befehl zur Remote-Ausführung
+Zielverzeichnis oder -datei
+Zu entfernender Benutzername
+Zu entfernender Gruppenname
+Aus der Gruppe zu entfernender Benutzername
+Gruppenname, aus dem der Benutzer entfernt werden soll
+Entweder der Name des Bildschirmschoners oder 'random'
+Regulärer Ausdruck für die Suche
+Zieldatei
+Zu suchendes Wort oder Phrase
+Öffnet die Add-on-Splash-Einstellungen
+Einzustellender Wert
+Name der Konfigurationsvariablen
+Name des Implementierers
+Erster Wert
+Zweiter Wert
+Dritter Wert und so weiter ...
+Zeitzonenname
+Schlafpause
+Auszuführender Befehl
+Verschlüsselungsalgorithmus
+Eingabedatei zur Berechnung der Hashsumme
+Ausgabedatei zum Speichern der Hashsummeninformationen
+Text zum Abrufen der Hash-Summe
+Symbolischer Linkname
+Zieldatei zum Erstellen einer Verknüpfung
+Themenname
+Zu entsperrende IP-Adresse
+Variablenname
+Pfad zur ZIP-Datei
+Zielpfad zum Extrahieren
+Berechneter Hash
+Hash-Datei oder erwarteter Hash
+Zu testende Datei
+Zu erstellender ZIP-Dateiname
+Zu komprimierender Pfad
+Das Symbol-Add-on muss installiert werden, bevor dieses Emoji angezeigt werden kann.
+Hinweis: Der hinzuzufügende Inhalt
+Notiznummer
+Pfad zu einem Verzeichnis mit Git-Repository
+Zeilennummern-Startbereich
+Filialname
+Commit-Zusammenfassung
+SHA-Hash festschreiben
+Remotename
+Tag-Name
+Nachricht zum Kommentieren des Tags
+Ihre E-Mail
+Ihr Benutzername
+Pfad zur nicht bereitgestellten Datei
+Pfad zur bereitgestellten Datei
+Pfad zur Archivdatei
+Lokales Verzeichnis
+Verzeichnis im Archiv
+Datei im Archiv
+Lokales Verzeichnis zum Extrahieren
+Lokale Datei
+Zum Hinzufügen vorgesehenes Archivverzeichnis
+Öffnet den Kalender interaktive TUI
+Zieljahr
+Zielmonatsnummer
+Interaktion mit den Ereignissen
+Fügt ein Ereignis hinzu
+Zieldatum
+Entfernt ein Ereignis
+Ereignis-ID
+Listet alle Ereignisse auf
+Speichert alle Ereignisse
+Interaktion mit den Erinnerungen
+Zieldatum und -uhrzeit
+Entfernt eine Erinnerung
+Erinnerungs-ID
+Listet alle Erinnerungen auf
+Speichert alle Erinnerungen
+Entweder ein Pfad zu einer vCard-Kontaktdatei oder einer MeCard-Darstellung
+Kontaktnummer
+Bearbeiten...
+Geben Sie einen neuen Namen für diesen Kontakt ein
+Nutzungsspielraum
+Zu verwendender Längengrad
+Weather.com API-Schlüssel
+Städte-ID oder Städtename, der OpenWeatherMap bekannt ist
+OpenWeatherMap API-Schlüssel
+Ob eine Aufgabe hinzugefügt, entfernt, als erledigt markiert oder die Markierung als erledigt aufgehoben werden soll
+Ob alle Aufgaben aufgelistet, gespeichert oder geladen werden sollen
+Pomodoro-Timer
+Pomodoro
+Der Pomodoro-Timer ist bereit
+Pomodoro-Timer Nummer {0} in vier Iterationen
+Kurzurlaub
+Geben Sie das Unterbrechungs-Timeout in Millisekunden an
+Pausenintervall einstellen
+Zu definierendes Wort
+Suchbegriff
+Zu suchendes Namenspräfix
+Zu suchendes Namenssuffix
+Zu suchendes Nachnamenpräfix
+Zu suchender Nachnamensuffix
+Wie viele Namen sollen generiert werden?
+Gerätetyp
+Umzurechnende Menge in der Quelleinheit
+Quelleinheit
+Zieleinheit
+Pfad zur Songtextdatei
+Pfad zu einer MP3-Datei
+Hostname, auf dem der MPEG-Radiosender gehostet wird
+Portierung zum MPEG-Radiosender
+Mathematischer Ausdruck
+Reelle Zahl
+Imaginäre Zahl
+Wir feiern das 7.000. Commit seit 0.0.1!
+bis zum nächsten Jahr
+Zu erstellender Themenname
+Pfad zum Übersetzungsverzeichnis
+Fertig! Bitte verwenden Sie die Anwendung Nitrocid.Locales mit entsprechenden Argumenten, um die Sprachen festzulegen. Sie können diesen Pfad verwenden:
+Quellfarbmodell
+Zielfarbmodell
+Erste Zahl
+Zweite Zahl
+Dritte Zahl
+Vierte Zahl
+Farbspezifizierer
+Datum und Uhrzeit zum Drucken der Informationen
+Geben Sie entweder eine Anzahl von Sekunden oder einen Getränkenamen an
+FTP-Server zum Verbinden mit
+Pfad zur Remote-Datei
+Pfad zum lokalen Verzeichnis
+Pfad zum Remote-Verzeichnis
+Pfad zur zu löschenden Remotedatei
+Auszuführender Serverbefehl
+Erstellt ein lokales Verzeichnis
+Erstellt ein Remote-Verzeichnis
+Pfad zur Quelldatei oder zum Quellverzeichnis
+Pfad zur Zieldatei oder zum Zielverzeichnis
+Pfad zur lokalen Datei
+Berechtigungsnummern gemäß chmod
+Gibt an, ob der Übertragungstyp ASCII oder Binär ist
+Symbolischer Link zu: {0}
+Kopfzeilenschlüssel
+Header-Wert
+HTTP-Anforderung
+Hochzuladende Datei
+Hochzuladende Zeichenfolge
+Benutzer-Agent-Zeichenfolge
+E-Mail-Adresse zum Anmelden
+Ordner erstellen
+Bewegen...
+Alles verschieben...
+Ordner umbenennen
+Ordner entfernen
+Nachricht entfernen
+Alle entfernen...
+Ordner oder Nachricht können nicht geöffnet werden
+Geben Sie den neuen Verzeichnisnamen ein.
+Verzeichnis wird erstellt...
+Ordner kann nicht erstellt werden
+Wählen Sie ein neues Verzeichnis aus, in das diese Nachricht verschoben werden soll.
+Bewegende Nachricht...
+Nachricht kann nicht verschoben werden
+Wählen Sie ein neues Verzeichnis aus, in das alle Nachrichten desselben Absenders verschoben werden sollen.
+Verschieben von Nachrichten nach Absender {0}...
+Es können nicht alle Nachrichten desselben Absenders verschoben werden
+Schreiben Sie den neuen Verzeichnisnamen, in den {0} umbenannt werden soll.
+Verzeichnis umbenennen...
+Ordner kann nicht umbenannt werden
+Verzeichnis wird entfernt...
+Ordner kann nicht entfernt werden
+Nachricht wird gelöscht...
+Nachricht kann nicht gelöscht werden
+Nachrichten werden nach Absender {0} gelöscht...
+Es können nicht alle Nachrichten vom selben Absender gelöscht werden
+Name des Mail-Verzeichnisses
+Seitenzahl
+Nachrichten-ID
+Absendername
+Alter Name des Mail-Verzeichnisses
+Neuer Name des Mail-Verzeichnisses
+Interaktives Mailmanagement
+SFTP-Server für die Verbindung
+Link zum RSS-Feed
+Feednummer
+Zu suchender Ausdruck
+Erste JSON-Datei
+Zweite JSON-Datei
+Pfad zur JSON-Datei
+Pfad zur JSON-Ausgabedatei
+Hinzuzufügender JSON-Wert
+JSON-Eigenschaftsname
+Objektpfad
+JSON-Wert
+Dockname
+Pfad zu einer zu schreibenden Datei oder Zeichenfolge
+Pastebin-Argumente
+Pfad zur Bilddatei
+Pfad zur Synth-Datei
+SSH-Server für die Verbindung
+Benutzername zur Authentifizierung
+Befehl zur Remote-Ausführung
+Druckt Informationen über eine chemische Substanz auf die Konsole.
+Entweder ein Name, ein Symbol oder eine Ordnungszahl einer Substanz
+Druckt Informationen zu allen chemischen Substanzen auf die Konsole.
+Es gibt keine Substanz mit Ordnungszahl
+Es gibt keine Substanz mit Symbol oder Namen
+Ordnungszahl
+Atommasse
+Symbol
+Zusammenfassung
+Phase
+Position im Periodensystem
+Position in Koordinaten
+Entdecker
+Benannt von
+Elektronenkonfiguration
+Mod starten (auswählen)
+Startmod (Eingabe)
+Mod stoppen
+Mod neu laden
+Mod installieren (auswählen)
+Mod installieren (Eingabe)
+Mod deinstallieren
+Alle starten
+Stoppen Sie alle
+Alle neu laden
+Nicht vorhandener Klassentyp kann nicht aus Mod-Assembly zurückgegeben werden
+Funktion „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Die Eigenschaft „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Feld „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Diese Klasse ist keine Mod-Klasse
+Sprachen
+Einstiegspunkt
+Geben Sie einen Pfad zu dem Mod ein, den Sie starten möchten
+Mod konnte nicht gestartet werden
+Geben Sie einen Pfad zu dem Mod ein, den Sie installieren möchten
+Mod konnte nicht installiert werden
+Dieser Mod kann nicht gestartet oder gestoppt werden!
+Ob ein Mod gestartet, gestoppt, Informationen abgerufen, neu geladen, installiert oder deinstalliert werden soll
+Modname oder Dateiname
+Ob alle Mods aufgelistet, neu geladen, gestoppt, gestartet oder interaktiv verwaltet werden sollen
+Mod-Name
+Kultur- und Spracheinstellungen
+Hier können Sie die Kultur und Sprache konfigurieren
+Uhrzeit- und Datumseinstellungen
+Hiermit können Sie Uhrzeit und Datum konfigurieren
+Bootloader-Einstellungen
+Damit können Sie den Bootloader konfigurieren
+Die Nitrocid Homepage
+Hiermit können Sie die Nitrocid Homepage konfigurieren
+Kernel-Update-Einstellungen
+Damit können Sie die Kernel-Updates konfigurieren
+Kernel-Fehlereinstellungen
+Damit können Sie die Kernel-Fehler konfigurieren
+Kernel-Energieeinstellungen
+Damit können Sie den Kernel-Power-Mechanismus konfigurieren
+Kernel-Farbschemata
+Damit können Sie mehrere Kernel-Farbschemata festlegen
+Moderne Anmeldehandlereinstellungen
+Damit können Sie den modernen Logon-Handler konfigurieren
+Hilfesystem
+Hiermit können Sie das Shell-Hilfesystem konfigurieren
+Shell-Voreinstellungen
+Hiermit können Sie die Shell-Voreinstellungen konfigurieren
+Remotedebugger-Einstellungen
+Damit können Sie den Remote-Debugger konfigurieren
+Einheitliche Verzögerung
+Wenn „true“, wird eine einheitliche Schreibverzögerung für alle Bildschirmschoner aktiviert. Andernfalls werden bildschirmschonerspezifische, konfigurierte Verzögerungswerte verwendet.
+In diesem Abschnitt sind alle Audioeinstellungen aufgelistet.
+Audioeinstellungen
+Audio-Unterstützung aktivieren
+Aktiviert das gesamte Audiosystem für Systemhinweise
+Tastaturhinweise aktivieren
+Ob bei jedem Tastendruck Tastaturhinweise abgespielt werden sollen oder nicht
+Startsounds aktivieren
+Ob der Startton abgespielt werden soll oder nicht
+Herunterfahren-Töne aktivieren
+Ob der Abschaltton abgespielt werden soll oder nicht
+Navigationstöne aktivieren
+Ob bei jedem Tastendruck der Navigationston abgespielt werden soll oder nicht
+Aktivieren Sie Benachrichtigungstöne mit niedriger Priorität
+Ob der Benachrichtigungston für Warnungen mit niedriger Priorität abgespielt werden soll oder nicht
+Benachrichtigungstöne mittlerer Priorität aktivieren
+Ob der Benachrichtigungston für Warnungen mittlerer Priorität abgespielt werden soll oder nicht
+Aktivieren Sie Benachrichtigungstöne mit hoher Priorität
+Ob der Benachrichtigungston für Warnungen mit hoher Priorität abgespielt werden soll oder nicht
+Aktivieren Sie Umgebungssoundeffekte für den Bildschirmschoner
+Ob Umgebungsgeräusche für den Bildschirmschoner abgespielt werden sollen oder nicht
+Intensivieren Sie die Umgebungssoundeffekte des Bildschirmschoners
+Ob die Umgebungsgeräusche des Bildschirmschoners verstärkt werden sollen oder nicht
+Lautstärke des Audiosignals
+Geben Sie an, wie laut die Audiohinweise sein sollen
+Audiothema
+Welches Audiothema möchten Sie für Audiohinweise verwenden?
+Texteditor-Einstellungen
+Hiermit können Sie den Texteditor konfigurieren
+Hex-Editor-Einstellungen
+Hiermit können Sie den Hex-Editor konfigurieren
+RSS-Überschrifteneinstellungen
+Hier können Sie die RSS-Überschriften konfigurieren
+Mauseinstellungen
+Hiermit können Sie die Maus konfigurieren
+Debug-Einstellungen
+Damit können Sie die Debugroutine konfigurieren
+Ästhetik
+Damit können Sie die Kernelästhetik konfigurieren
+Zeigt ein großes Willkommenswort in der Mitte der Konsole; ähnlich wie die Willkommensmatten
+Fortschritt anzeigen
+Fortschritt anzeigen oder nicht
+Hiermit können Sie die Farben konfigurieren
+In diesem Abschnitt können Sie Solver konfigurieren.
+In diesem Abschnitt können Sie SpeedPress konfigurieren.
+In diesem Abschnitt können Sie Meteor und ShipDuet konfigurieren.
+In diesem Abschnitt können Sie die Funktionsweise des Kernel-Änderungssystems konfigurieren.
+In diesem Abschnitt können Sie die Funktionsweise der Timer-Anwendung konfigurieren.
+In diesem Abschnitt können Sie die Funktionsweise der Pomodoro-Timer-Anwendung konfigurieren.
+Figlet für den Pomodoro-Timer aktivieren
+Wenn aktiviert, wird Figlet für den Pomodoro-Timer verwendet. Bitte beachten Sie, dass ein großer Konsolenbildschirm erforderlich ist, um die Zeit bei aktiviertem Figlet richtig darzustellen.
+Figlet-Schriftart für den Pomodoro-Timer
+Stundenrampeneinstellungen
+Hiermit können Sie die Stundenrampe konfigurieren
+Minutenrampeneinstellungen
+Hiermit können Sie die Minutenrampe konfigurieren
+Sekunden Rampeneinstellungen
+Hiermit können Sie die Sekundenrampe konfigurieren
+Rampeneinstellungen
+Damit können Sie die Rampen konfigurieren
+Zeigt Ihnen Text unterhalb einer Zeile auf einem düsteren roten Hintergrund.
+Zufällige Zeichen, die sich zufällig über den Bildschirm verteilen.
+Einfaches Datum und Uhrzeit in der Mitte des Bildschirms und ändert die Farbe basierend auf der aktuellen Uhrzeit.
+Helles Datum und Uhrzeit
+Ob die helle oder die dunkle Version verwendet werden soll.
+Zeigt Ihnen Tanznummern.
+Durch horizontal und vertikal schwenkbare Wellen entstehen tolle Muster, von denen Spuren zurückbleiben, die verschwinden.
+Streckenlänge
+Die Spurlänge der sich bewegenden, schwenkenden Welle.
+Block, der sich in einem Wellenmuster bewegt, wobei grüne Lineale seine Position verfolgen.
+Zeigt Ihnen ein einzelnes zufälliges Zeichen in einem farbigen Figlet-Text.
+Zeigt Ihnen ein Wort, das ausgewählt wird, genau wie bei einem Spielautomaten im Casino.
+Zeigt Ihnen einen farbigen Figlet-Text, der zwischen zwei Neonfarben wechselt: Cyan und Fuchsia.
+Kultureinstellungen
+Hier können Sie die Kultur konfigurieren, die vom Kalender-Bildschirmschoner verwendet wird
+Erste Rampeneinstellungen
+Damit können Sie die erste Rampe konfigurieren
+Zweite Rampeneinstellungen
+Damit können Sie die zweite Rampe konfigurieren
+Dritte Rampeneinstellungen
+Damit können Sie die dritte Rampe konfigurieren
+Farbschemata von Alma Linux, einem Spinoff des Linux-Betriebssystems Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Arch Linux
+Farbschemata von EndeavourOS, einem Spinoff des Linux-Betriebssystems Arch Linux
+Farbschemata von Fedora, einem Spinoff des Linux-Betriebssystems, Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Gentoo
+Gemeißelte Musterfarben bilden ein buntes Mandala
+Farbschemata von Kubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Linux Mint, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Lubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Manjaro, einem Spinoff des Linux-Betriebssystems Arch Linux
+Farbschemata aus einem Linux-Betriebssystem, openSUSE
+Farbschemata aus einem Linux-Betriebssystem, Red Hat
+Rottöne mit dynamischen Akzentfarben für aufmerksamkeitsstarken Text
+Farbschemata von Rocky Linux, einem Spinoff des Linux-Betriebssystems Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Slackware
+Farbschemata von Xubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Zorin OS, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Extras - Chemie
+Extras - Mods
+Extras - Symbole

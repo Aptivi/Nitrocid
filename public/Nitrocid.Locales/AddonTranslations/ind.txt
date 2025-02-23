@@ -1297,7 +1297,7 @@ eksatenshan nirdisht nahin hai.
 kaaryaanvayak naam nirdisht nahin hai.
 eksatenshan ke lie haindalar panjeekrt nahin hai.
 aisa lagata hai ki aapake paas json shel aidon instol nahin hai. isake dvaara ofar kee jaane vaalee atirikt suvidhaen praapt karane ke lie, aidon paik instol karen.
-aisa lagata hai ki aapake paas sql ​​shel aidon instol nahin hai. isake dvaara ofar kee jaane vaalee atirikt suvidhaen praapt karane ke lie, aidon paik instol karen.
+aisa lagata hai ki aapake paas sql shel aidon instol nahin hai. isake dvaara ofar kee jaane vaalee atirikt suvidhaen praapt karane ke lie, aidon paik instol karen.
 is eksatenshan ko haindal karane ke lie koee haindalar nahin hai.
 {0} ke lie jaanakaaree praapt karane mein viphal.
 nirdeshika mein soocheebaddh karate samay agyaat truti: {0}
@@ -1725,7 +1725,7 @@ nirdisht kunjee, {0}, maujood nahin hai.
 naitrosid karnel mein aapaka svaagat hai! - sanskaran
 yah prograam gnu janaral pablik laisens 3.0 ya baad ke sanskaran ke antargat laisens praapt hai.
 aap karnel ka vikaas sanskaran chala rahe hain. jabaki aap aane vaalee suvidhaon ka anubhav kar sakate hain jo antim rileez mein maujood ho sakatee hain, aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain.
-aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ​​ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain.
+aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain.
 ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen.
 hamesha ke lie khaarij karane ke lie, ya to apane keebord par baen teer ka upayog karake ise hailait karake yahaan "sveekaar kiya gaya" batan par aintair dabaen, ya karnel setings mein "vikaas notis sveekaar kiya gaya" saksham karen.
 theek hai
@@ -3712,3 +3712,600 @@ is theem ke saath puraanee yaaden vaapas laen!
 aapake tarminal mein lakadee ke takhte hain
 vibhinn phalon ke cheenee paitarn se prerit
 atirikt - chrch32ch (kaastaagnolee)
+karnel sanskaran print karata hai
+api sanskaran print karata hai
+deebag failon ko mitaaya nahin ja sakata
+karnel konfigareshan theek se kaam nahin karega. adhik jaanakaaree ke lie karnel deebagar se paraamarsh karen.
+jab koee bes karnel konfigareshan nirdisht nahin kiya jaata hai, to konfigareshan char kee jaanch nahin kee ja sakatee.
+jab koee kunjee nirdisht nahin kee jaatee hai, to konfigareshan char kee jaanch nahin kee ja sakatee.
+amaany saamagree ke saath kastam seting panjeekrt karane ka prayaas kar raha hai. adhik jaanakaaree ke lie karnel deebagar se paraamarsh karen.
+amaany saamagree ke saath bes seting panjeekrt karane ka prayaas kar raha hai. adhik jaanakaaree ke lie karnel deebagar se paraamarsh karen
+splaish seting pravishtiyaan praapt karane mein viphal.
+is maan ko set karane mein saksham hone se pahale aaikan aidon ko instol kiya jaana chaahie.
+isake lie ek pravishti chunen
+sabhee reeset karen
+pravishti reeset karen
+nirdisht tark prakaar maany nahin hai
+ek ya adhik konfigareshan pravishtiyon mein amaany char ya gananaen hain aur unhen theek karane kee aavashyakata hai. adhik jaanakaaree ke lie karnel deebagar se paraamarsh karen.
+is naam se koee sanskrti nahin hai.
+aapake odiyo kyoo ekshan ko sansaadhit karate samay ek truti huee.
+aidon asembalee se gair-maujood klaas prakaar ko vaapas nahin kiya ja sakata
+yah klaas aidon klaas nahin hai
+shatadaun dhvani bajaana...
+ham is tithi ke baad nitrochid ks ke is sanskaran ka samarthan nahin karenge
+yadi aap samarthan praapt karana jaaree rakhana chaahate hain, to sunishchit karen ki aap jald hee samarthit sanskaran mein apagred karen.
+nitrochid ks ka yah sanskaran ab samarthit nahin hai.
+kastam bhaashaen lod karane mein viphal
+mahatvapoorn karnel aidon lod karane mein viphal
+gopaneeyata sahamati lod karane mein viphal
+splaish lod karane mein viphal
+mahatvapoorn mod lod karane mein viphal
+doorasth dibag divais lod karane mein viphal
+aavashyak ghatakon ko aarambh karane ka prayaas karate samay trutiyaan theen.
+adhisoochana thred lod karane mein viphal
+raddeekaran haindalar lod karane mein viphal
+upanaam lod karane mein viphal
+speed daayal pravishtiyaan lod karane mein viphal
+paryaavaran char lod karane mein viphal
+alaarm shrota lod karane mein viphal
+aidon ko antim roop dene mein viphal
+motd aur mal lod karane mein viphal
+shel kamaand itihaas lod karane mein viphal
+eksatenshan haindalar lod karane mein viphal
+mod lod ho raha hai...
+mod lod karane mein viphal
+vaikalpik ghatakon ko aarambh karane ka prayaas karate samay trutiyaan theen.
+saamaany char reeset karane mein viphal
+shel kamaand itihaas sahejane mein viphal
+gopaneeyata sahamati sahejane mein viphal
+doorasth deebagar ko rokane mein viphal
+bhaashaon ko reeset karane mein viphal
+eksatenshan haindalar sahejane mein viphal
+alaarm shrota ko rokane mein viphal
+konfigareshan sahejane mein viphal
+mods ko rokane mein viphal
+aidon ko rokane mein viphal
+rpch ko rokane mein viphal
+sabhee kanekshan band karane mein viphal
+skreenasevar taimaut ko rokane mein viphal
+boot log baphar ko reeset karane mein viphal
+karsar haindalar ko rokane mein viphal
+deebagar ko rokane mein viphal
+sabhee karnel thred ko rokane mein viphal
+ghatakon ko reeset karane ka prayaas karate samay trutiyaan theen.
+apavaad
+adhik jaanakaaree ke lie karnel deebag log dekhen.
+aisa koee odiyo kyoo prakaar nahin hai.
+pholabaik seting nahin mil sakatee
+ke lie sabhee seting pravishtiyaan reeset nahin kee ja sakatee
+ke lie yah seting pravishti reeset nahin kee ja sakatee
+kisee bhee modyool par char nahin mila.
+embient skreenasevar ke lie aavashyak odiyo kyoo nahin mil sakata.
+kisee truti ke kaaran netavark kanekshan theek se sthaapit nahin ho paaya hoga.
+aisee kamaand ko baphar nahin kiya ja sakata jo raip karane yogy ke roop mein set na ho.
+anirdisht svich vivaran
+prakriya ka path
+prakriya ko paas karane ke lie tark
+sahaayata pravishti dikhaane ke lie kamaand
+pairaameetar ke roop mein kamaand aautaput ko doosare kamaand mein paip karata hai
+antim pairaameetar ke roop mein lakshy kamaand ko isake aautaput ko paip karane ke lie srot kamaand
+srot kamaand aautaput ke aadhaar par bilding tark par nishpaadit karane ke lie lakshy kamaand
+srot kamaand ke aautaput ko ek uddhrt tark ya bina uddhrt tark ke roop mein paas karana hai ya nahin
+isake aautaput ko lapetane ke lie kamaand
+srot kamaand nishpaadan viphal raha.
+lakshy kamaand nishpaadan viphal raha. saamagree theek se popyulet nahin huee ho sakatee hai. nishpaadit kamaand thee
+paip toot gaya hai.
+sahaayata pravishti dikhaane ke lie tark
+shoony se shuroo hone vaala satr sankhya
+prashn karane ke lie upayogakarta naam
+anumati dene ya asveekaar karane ke lie anumati prakaar
+asveekaar karane ke lie galat, dene ke lie sahee
+naya pradarshan naam, ya pradarshan naam mitaane ke lie saaf karen
+teen-akshar kee bhaasha aaeedee, ya pasandeeda bhaasha saaf karane ke lie saaf karen
+pasandeeda upayogakarta sanskrti ko badalata hai
+sanskrti aaeedee, ya pasandeeda sanskrti saaf karane ke lie saaf karen
+pasandeeda upayogakarta sanskrti {0} par set hai. aap phir se log in karana chaah sakate hain.
+amaany sanskrti
+pasandeeda sanskrti
+amaany satr guid
+aisa koee satr guid nahin
+agyaat prakaar
+agyaat pairaameetar
+prakaaron kee soochee
+satr guid ka upayog karake aasaanee se deebag log jaanakaaree praapt karata hai
+satr guid khojane ke lie
+apavaad sankhya
+kveree karane ke lie feeld naam
+kveree karane ke lie sampatti ka naam
+kveree karane ke lie aidon naam
+aidon se saarvajanik sthaitik prakaar ka naam
+kveree karane ke lie saarvajanik sthaitik prakaar se fankshan naam
+nirdisht aidon se sabhee upalabdh prakaaron ko soocheebaddh karata hai
+kveree karane ke lie spalaish naam
+bait sankhya 0 se 255 tak
+bait sthiti sankhya
+bait aarambh sthiti sankhya
+bait samaapti sthiti sankhya
+bait sankhya 0 se 255 tak pratisthaapit kee jaanee hai
+bait sankhya 0 se 255 tak pratisthaapit kee jaanee hai
+fail ke ant mein jodane ke lie saamagree
+varn sankhya
+pankti sankhya
+pankti sankhya (ya to ekavachan ya shrenee kee shuruaat)
+pankti sankhya samaapti shrenee
+hatae jaane ke lie shabd ya vaakyaansh
+kveree karane ke lie ek varn
+pankti sankhya (ya to ekavachan ya shrenee kee shuruaat), ya sabhee panktiyon mein varn kveree karane ke lie sabhee
+shabd ya vaakyaansh kveree
+kveree karane ke lie ek niyamit abhivyakti
+pratisthaapit kiya jaane vaala shabd ya vaakyaansh
+pratisthaapit kiya jaane vaala shabd ya vaakyaansh
+pankti sankhya (ya to ekavachan ya shrenee kee shuruaat), ya sabhee panktiyon mein pratisthaapit karane ke lie sabhee
+pratisthaapit kie jaane vaale vaakyaanshon se milaan karane ke lie ek niyamit abhivyakti
+amaany desh
+desh ke lie ek bhaasha chunen
+ke lie amaany bhaasha chayan
+haan
+jodane ke lie naya samooh naam
+jodane ke lie naya upayogakarta naam
+upayog karane ke lie naya paasavard
+nae paasavard kee pushti karen
+samooh mein joda jaane vaala upayogakarta naam
+upayogakarta ko jodane ke lie samooh naam
+alaarm shuroo karata hai
+ghanton, minaton aur sekand mein samay avadhi mein alaarm antaraal
+alaarm ko rokata hai
+band karane ke lie alaarm naam
+alaarm ko soocheebaddh karata hai
+ek upanaam jodata hai
+kamaand laane ke lie shel prakaar
+upanaam naam
+shortakat ke roop mein upayog kee jaane vaalee kamaand
+upanaam hataata hai
+hartj mein aavrtti
+ek beep ke lie samay antaraal
+blok karane ke lie aaeepee pata
+lakshy nirdeshika
+khoj paitarn
+sabhee milee failon ka naam badalane ke lie naya naam
+fail ka path jise print karana hai saamagree
+sthaaneey roop se chenjalog laane ke bajaay intaranet se
+fail ka path
+jodana ya hataana
+visheshata ka naam
+sanskrti mein parivartan
+sanskrti aaeedee mein parivartan
+sistam sanskrti ke bajaay upayogakarta sanskrti mein parivartan
+naya host naam mein parivartan
+bhaasha aaeedee
+desh ka upayog karake bhaasha mein parivartan (aapako bhaasha chunane ke lie sanket mil sakata hai)
+upayog karane ke lie naya sandesh
+slaish ke saath vibhaajit karane ke lie uttar
+skreen par print karane ke lie prashn
+pahala uttar sheershak
+doosara uttar sheershak, aur isee tarah...
+paasavard badalane ke lie upayogakarta naam
+vartamaan upayogakarta paasavard
+badalane ke lie puraana upayogakarta naam
+upayog karane ke lie naya upayogakarta naam
+pahalee inaput tekst fail
+doosaree inaput tekst fail
+teesaree inaput tekst fail, aur isee tarah...
+aautaput fail
+srot inaput tekst fail
+lakshy inaput tekst fail
+tekst fail ka path
+srot fail ya nirdeshika
+lakshy fail ya nirdeshika
+enkoded fail ka path
+enkoded string pratinidhitv
+enkoded basai64 string
+nirdeshika ka path
+ip pata diskanekt karen
+disk nambar
+soochana sankhya
+draivar badalen
+lakshy draivar prakaar
+badalane ke lie lakshy draivar
+draivaron kee soochee banaen
+draivar prakaaron kee soochee banaen
+print karane ke lie string
+enkod karane ke lie fail
+enkod karane ke lie string
+fail dhoondhane ke lie niyamit abhivyakti
+kisee doorasth sansaadhan se link, jaise https
+karnel konfigareshan naam
+jaanakaaree praapt karane ke lie char
+fail eksatenshan
+enkoding elgoridam
+haardaveyar prakaar
+pareekshan karane ke lie uaish abhivyakti
+saphal moolyaankan par nishpaadit karane ke lie kamaand
+baen phalak ke lie nirdeshika ka path
+daen phalak ke lie nirdeshika ka path
+kastam bhaasha ko punah lod, lod ya analod karata hai
+kastam bhaasha ka naam
+sabhee kastam bhaashaon ko soocheebaddh ya punah lod karata hai
+uaish skript ka path
+soocheebaddh karane ke lie nirdeshika ka path
+banaane ke lie nirdeshika ka naam
+banaane ke lie fail ka naam
+se sthaanaantarit karane ke lie nirdeshika ya naam
+le jaane ke lie nirdeshika ya naam
+vibhaajan sankhya
+dekhane ke lie fail ka naam
+upayogakarta ka naam
+ya to anumati den ya radd karen
+anumati dene ya asveekaar karane ke lie anumati naam
+samooh ka naam
+pahala ip pata ya host naam
+doosara ip pata ya host naam, aur isee tarah...
+apalod karane ke lie fail ka path
+apalod endapoint kee or ishaara karane vaala url
+host naam jo nitrochid ks chalaata hai
+port of rimot taaraget par naitrosid kees
+doorasth roop se nishpaadit karane ke lie kamaand
+lakshy nirdeshika ya fail
+hataane ke lie upayogakarta naam
+hataane ke lie samooh ka naam
+samooh se hataane ke lie upayogakarta naam
+upayogakarta ko hataane ke lie samooh ka naam
+ya to skreenasevar naam ya raindam
+khojane ke lie niyamit abhivyakti
+lakshy fail
+khojane ke lie shabd ya vaakyaansh
+aidon splaish setings kholata hai
+set karane ke lie maan
+konfigareshan char naam
+kaaryaanvayanakarta ka naam
+pahala maan
+doosara maan
+teesara maan, aur isee tarah...
+samay kshetr ka naam
+sone ke lie antaraal
+chalaane ke lie kamaand
+enkripshan elgoridam
+haish yog kee ganana karane ke lie inaput fail
+haish yog jaanakaaree ko sahejane ke lie aautaput fail
+haish yog praapt karane ke lie paath
+prateekaatmak link naam
+shortakat banaane ke lie lakshy fail
+theem ka naam
+anablok karane ke lie aaeepee pata
+char naam
+zip fail ka path
+nikaalane ke lie lakshy path
+ganana kee gaee haish
+haish fail ya apekshit haish
+fail pareekshan
+banaane ke lie zip fail naam
+sampeedit karane ke lie path
+is imojee ko pradarshit karane mein saksham hone se pahale aaikan aidon ko instol kiya jaana chaahie.
+jodane ke lie not saamagree
+not sankhya
+git ripojitaree vaalee nirdeshika ka path
+pankti sankhya aarambhik seema
+shaakha ka naam
+kamit saaraansh
+kamit sh haish
+doorasth naam
+taig ka naam
+taig ko enotet karane ke lie sandesh
+aapaka ee-mel
+aapaka upayogakarta naam
+anastejd fail ka path
+stejd fail ka path
+sangrah fail ka path
+sthaaneey nirdeshika
+sangrah ke andar nirdeshika
+sangrah mein fail
+nikaalane ke lie sthaaneey nirdeshika
+sthaaneey fail
+jodane ke lie sangrah nirdeshika
+kailendar intaraiktiv tui kholata hai
+lakshy varsh
+lakshy maheene kee sankhya
+ghatanaon ke saath sahabhaagita
+ek ghatana jodata hai
+lakshy tithi
+ek ghatana hataata hai
+ghatana aaeedee
+sabhee ghatanaon ko soocheebaddh karata hai
+sabhee ghatanaon ko sahejata hai
+rimaindar ke saath sahabhaagita
+lakshy dinaank aur samay
+rimaindar hataata hai
+rimaindar aaeedee
+sabhee rimaindar soocheebaddh karata hai
+sabhee rimaindar sahejata hai
+ya to vchard sampark fail ya maichard pratinidhitv ka path
+sampark sankhya
+sampaadit karen...
+is sampark ke lie naya naam darj karen
+upayog karane ke lie akshaansh
+upayog karane ke lie deshaantar
+waiathair.chom api kunjee
+opainwaiathairmap ko gyaat shahar id ya shahar ka naam
+opainwaiathairmap api kunjee
+kisee kaary par jodana, hataana, poorn ke roop mein chihnit karana ya poorn ke roop mein achihnit karana hai ya nahin
+sabhee kaaryon ko soocheebaddh karana, sahejana ya lod karana hai ya nahin
+pomodoro taimar
+pomodoro
+pomodoro taimar taiyaar hai
+chaar punaraavrttiyon mein pomodoro taimar sankhya {0}
+chhota brek
+mileesekand mein brek taimaut nirdisht karen
+brek antaraal set karen
+paribhaashit karane ke lie shabd
+khoj shabd
+khojane ke lie naam upasarg
+khojane ke lie naam pratyay
+upanaam upasarg khoj
+khojane ke lie upanaam pratyay
+kitane naam utpann karane hain?
+ikaee prakaar
+roopaantarit karane ke lie srot ikaee mein maatra
+srot ikaee
+lakshy ikaee
+geet fail ka path
+mp3 fail ka path
+host naam jo mpaig rediyo steshan ko host karata hai
+mpaig rediyo steshan ka port
+ganiteey abhivyakti
+vaastavik sankhya
+kaalpanik sankhya
+0.0.1 ke baad se 7,000veen pratibaddhata ka jashn manaana!
+agale saal tak bacha hai
+banaane ke lie theem ka naam
+anuvaad nirdeshika ka path
+ho gaya! krpaya bhaashaon ko antim roop dene ke lie uchit tarkon ke saath nitrochid.lochalais eplikeshan ka upayog karen. aap is path ka upayog kar sakate hain:
+srot rang modal
+lakshy rang modal
+pahala nambar
+doosara nambar
+teesara nambar
+chautha nambar
+rang vinirdeshak
+soochana print karane kee tithi aur samay
+ya to sekand kee sankhya ya pey naam nirdisht karen
+kanekt karane ke lie ftp sarvar
+doorasth fail ka path
+sthaaneey nirdeshika ka path
+doorasth nirdeshika ka path
+hataane ke lie doorasth fail ka path
+nishpaadit karane ke lie sarvar kamaand
+sthaaneey nirdeshika banaata hai
+doorasth nirdeshika banaata hai
+srot fail ya nirdeshika ka path
+lakshy fail ya nirdeshika ka path
+sthaaneey fail ka path
+chhmod ke anusaar anumati sankhyaen
+nirdisht karata hai ki sthaanaantaran prakaar aschii ya bainaree hai
+prateekaatmak link: {0}
+hedar kunjee
+hedar maan
+http anurodh
+apalod karane ke lie fail
+apalod karane ke lie string
+upayogakarta ejent string
+login karane ke lie eemel pata
+foldar banaen
+le jaen...
+sabhee le jaen...
+foldar ka naam badalen
+foldar hataen
+sandesh hataen
+hataen sabhee...
+foldar ya sandesh nahin khola ja sakata
+naee nirdeshika ka naam likhen.
+nirdeshika banaana...
+foldar nahin banaaya ja sakata
+is sandesh ko le jaane ke lie ek naee nirdeshika chunen.
+sandesh le jaana...
+sandesh nahin le ja sakata
+ek hee preshak dvaara sabhee sandeshon ko le jaane ke lie ek naee nirdeshika chunen.
+preshak {0} dvaara sandeshon ko le jaana...
+ek hee preshak dvaara sabhee sandeshon ko le nahin ja sakata
+naam badalane ke lie naee nirdeshika ka naam likhen {0}.
+nirdeshika ka naam badalana...
+foldar ka naam nahin badala ja sakata
+nirdeshika hataana...
+foldar nahin hata sakata
+sandesh hataana...
+sandesh nahin hata sakate
+preshak {0} dvaara sandesh hata rahe hain...
+ek hee preshak dvaara sabhee sandesh nahin hata sakate
+mel nirdeshika naam
+prshth sankhya
+sandesh aaeedee
+preshak ka naam
+puraanee mel nirdeshika naam
+naee mel nirdeshika naam
+intaraiktiv mel prabandhan
+kanekt karane ke lie sftp sarvar
+rss feed link
+feed sankhya
+khojane ke lie vaakyaansh
+pahalee json fail
+doosaree json fail
+json fail ka path
+aautaput json fail ka path
+jodane ke lie json maan
+json propartee ka naam
+objekt path
+json maan
+dok naam
+likhane ke lie fail ya string ka path
+pestabin tark
+chhavi fail ka path
+sinth fail ka path
+kanekt karane ke lie ssh sarvar
+pramaanit karane ke lie upayogakarta naam
+doorasth roop se nishpaadit karane ke lie kamaand
+kansol par kisee raasaayanik padaarth ke baare mein jaanakaaree print karata hai.
+kisee padaarth ka naam, prateek ya paramaanu sankhya
+kansol par sabhee raasaayanik padaarthon ke baare mein jaanakaaree print karata hai.
+paramaanu kramaank vaala koee padaarth nahin hai
+prateek ya naam vaala koee padaarth nahin hai
+paramaanu kramaank
+paramaanu dravyamaan
+prateek
+saaraansh
+charan
+aavart saaranee mein sthiti
+nirdeshaank mein sthiti
+khojakarta
+dvaara naamit
+ilektron vinyaas
+mod shuroo karen (chayan karen)
+mod shuroo karen (inaput)
+mod roken
+mod punah lod karen
+mod instol karen (chayan karen)
+mod instol karen (inaput)
+mod aninstol karen
+sab shuroo karen
+sab roken
+sab punah lod karen
+mod asembalee se gair-maujood varg prakaar vaapas nahin kiya ja sakata
+mod {1} mein fankshan {0} nahin mil sakata.
+mod {1} mein propartee {0} nahin mil sakata.
+mod {1} mein feeld {0} nahin mil sakata.
+yah klaas mod klaas nahin hai
+bhaashaen
+pravesh bindu
+us mod ka path darj karen jise aap shuroo karana chaahate hain
+mod shuroo karane mein viphal
+us mod ka path darj karen jise aap instol karana chaahate hain
+mod instol karane mein viphal
+is mod ko shuroo ya band nahin kiya ja sakata!
+mod ko shuroo karana, rokana, jaanakaaree praapt karana, punah lod karana, instol karana ya aninstol karana
+mod ka naam ya fail ka naam
+sabhee mod ko soocheebaddh karana, punah lod karana, rokana, shuroo karana ya intarektiv roop se prabandhit karana
+mod ka naam
+sanskrti aur bhaasha seting
+yah aapako sanskrti aur bhaasha ko konfigar karane kee anumati deta hai
+samay aur dinaank seting
+yah aapako samay aur dinaank ko konfigar karane kee anumati deta hai
+bootalodar seting
+yah aapako bootalodar ko konfigar karane kee anumati deta hai
+naitrosid homapej
+yah aapako naitrosid homapej ko konfigar karane kee anumati deta hai
+karnel apadet seting
+yah aapako karnel apadet ko konfigar karane kee anumati deta hai
+karnel truti seting
+yah aapako karnel trutiyon ko konfigar karane kee anumati deta hai
+karnel paavar seting
+yah aapako karnel paavar maikenijm ko konfigar karane kee anumati deta hai
+karnel rang yojanaen
+yah aapako kaee karnel rang yojanaen set karane kee anumati deta hai
+aadhunik logon haindalar seting
+yah aapako aadhunik logon haindalar ko konfigar karane kee anumati deta hai
+sahaayata pranaalee
+yah aapako shel sahaayata pranaalee ko konfigar karane kee anumati deta hai
+shel preeset
+yah aapako shel preeset ko konfigar karane kee anumati deta hai
+rimot dibagar setings
+yah aapako rimot deebagar ko konfigar karane kee anumati deta hai
+ekeekrt deree
+yadi saty hai, to sabhee skreenasevar ke lie ekeekrt lekhan deree saksham karata hai. anyatha, yah skreenasevar-vishisht konfigar kie gae vilamb maanon ka upayog karata hai.
+yah anubhaag sabhee odiyo setings ko soocheebaddh karata hai.
+odiyo setings
+odiyo samarthan saksham karen
+sistam sanketon ke lie sampoorn odiyo sistam ko saksham karata hai
+keebord sanketon ko saksham karata hai
+pratyek kunjee dabaane par keebord sanketon ko bajaana hai ya nahin
+staartap dhvani ko saksham karata hai
+staartap dhvani ko bajaana hai ya nahin
+shatadaun dhvani ko saksham karata hai
+shatadaun dhvani ko bajaana hai ya nahin
+nevigeshan dhvani ko saksham karata hai
+pratyek kunjee dabaane par nevigeshan dhvani ko bajaana hai ya nahin
+kam praathamikata vaalee adhisoochana dhvaniyon ko saksham karata hai
+kam praathamikata vaale alart ke lie adhisoochana dhvani ko bajaana hai ya nahin
+madhyam praathamikata vaalee adhisoochana dhvaniyon ko saksham karata hai
+madhyam praathamikata vaale alart ke lie adhisoochana dhvani ko bajaana hai ya nahin
+uchch praathamikata vaalee adhisoochana dhvaniyon ko saksham karata hai
+uchch praathamikata vaale alart ke lie adhisoochana dhvani ko bajaana hai ya nahin
+pariveshee skreenasevar dhvani prabhaav ko saksham karata hai
+pariveshee skreenasevar dhvani prabhaav ko bajaana hai ya nahin
+pariveshee skreenasevar dhvani prabhaav ko teevr karata hai
+pariveshee skreenasevar dhvani prabhaav ko teevr karata hai ya nahin
+odiyo sanket volyoom
+nirdisht karen ki aap odiyo sanketon ko kitanee tez aavaaz mein bajaana chaahate hain
+odiyo theem
+odiyo sanketon ke lie aap kis odiyo theem ka upayog karana chaahate hain?
+tekst editar setings
+yah aapako tekst editar ko konfigar karane kee anumati deta hai
+heks editar setings
+yah aapako heks editar ko konfigar karane kee anumati deta hai
+rss hedalain setings
+yah aapako rss hedalain ko konfigar karane kee anumati deta hai
+maus setings
+yah aapako maus ko konfigar karane kee anumati deta hai
+deebag setings
+yah aapako deebaging rooteen ko konfigar karane kee anumati deta hai
+saundaryashaastr
+yah aapako karnel saundaryashaastr ko konfigar karane kee anumati deta hai
+kansol ke beech mein likha hua ek bada svaagat shabd dikhaata hai; svaagat mait ke samaan
+pragati dikhaen
+pragati dikhaen ya nahin
+yah aapako rangon ko konfigar karane kee anumati deta hai
+yah anubhaag aapako solvar ko konfigar karane deta hai.
+yah anubhaag aapako speedapres ko konfigar karane deta hai.
+yah anubhaag aapako metiyor aur shipadyooet ko konfigar karane deta hai.
+yah anubhaag aapako konfigar karane deta hai ki karnel sanshodhan pranaalee kaise kaam karatee hai.
+yah anubhaag aapako konfigar karane deta hai ki taimar eplikeshan kaise kaam karata hai.
+yah anubhaag aapako konfigar karane deta hai ki pomodoro taimar eplikeshan kaise kaam karata hai.
+pomodoro taimar ke lie phigalet saksham karen
+yadi saksham hai, to pomodoro taimar ke lie phigalet ka upayog kiya jaega. krpaya dhyaan den ki phigalet saksham hone par samay ko theek se prastut karane ke lie ise ek badee kansol skreen kee aavashyakata hotee hai.
+pomodoro taimar ke lie phigalet font
+ghanton kee raimp seting
+yah aapako ghanton kee raimp ko konfigar karane kee anumati deta hai
+minaton kee raimp seting
+yah aapako minaton kee raimp ko konfigar karane kee anumati deta hai
+sekandon kee raimp seting
+yah aapako sekandon kee raimp ko konfigar karane kee anumati deta hai
+raimp seting
+yah aapako raimp ko konfigar karane kee anumati deta hai
+yah aapako ek lain ke neeche ek gloming red baikagraund mein tekst dikhaata hai.
+skreen par betarateeb dhang se phaile hue yaadrchchhik akshar.
+skreen ke beech mein saral tithi aur samay aur vartamaan samay ke aadhaar par rang badalata hai.
+ujjval tithi aur samay
+kya ujjval ya gahare sanskaran ka upayog karana hai.
+aapako naachate hue nambar dikhaata hai.
+peechhe chhode gae nishaanon ke saath shaanadaar paitarn banaane ke lie kshaitij aur lambavat roop se ghoomatee huee lahar.
+nishaan kee lambaee
+chalatee huee ghoomatee huee lahar kee nishaan kee lambaee.
+hare rang ke roolar ke saath tarang paitarn mein ghoomata hua blok apanee sthiti ko traik karata hai.
+aapako rangeen phigalet tekst mein ek ekal yaadrchchhik varn dikhaata hai.
+aapako ek shabd dikhaata hai jise kaiseeno mein pae jaane vaale slot masheen kee tarah chuna ja raha hai.
+aapako do niyon rangon ke beech baaree-baaree se ek rangeen phigalet tekst dikhaata hai: siyaan aur phyooshiya.
+sanskrti setings
+yah aapako kailendar skreenasevar dvaara upayog kee jaane vaalee sanskrti ko konfigar karane kee anumati deta hai
+pahalee raimp setings
+yah aapako pahalee raimp ko konfigar karane kee anumati deta hai
+doosaree raimp setings
+yah aapako doosaree raimp ko konfigar karane kee anumati deta hai
+teesaree raimp setings
+yah aapako teesaree raimp ko konfigar karane kee anumati deta hai
+alma linaks se rang yojanaen, linaks opareting sistam ka ek spinof, red hait
+linaks opareting sistam, aark linaks se rang yojanaen
+endevaroes se rang yojanaen, linaks opareting sistam ka ek spinof, aark linaks
+phedora se rang yojanaen, linaks opareting sistam ka ek spinof, red hait
+linaks opareting sistam, jentoo se rang yojanaen
+rangeen mandala banaane vaale chheneedaar paitarn rang
+kubantoo se rang yojanaen, lokapriy linaks opareting sistam ka ek spinof, ubantoo
+linaks mint se rang yojanaen, lokapriy linaks opareting sistam ka ek anaupachaarik spinof, ubantoo
+lubantoo se rang yojanaen, lokapriy linaks opareting sistam ka ek spinof, ubantoo
+manjaaro se rang yojanaen, linaks opareting sistam ka ek spinof, aark linaks
+linaks opareting sistam se rang yojanaen, opainsusai
+linaks opareting sistam se rang yojanaen, raid hat
+dhyaan dene yogy tekst ke lie gatisheel uchchaaran rangon ke saath laal sheds
+rokee linaks se rang yojanaen, linaks opareting sistam ka ek spinof, raid hat
+linaks opareting sistam se rang yojanaen, slachkwarai
+xubuntu se rang yojanaen, ek lokapriy linaks opareting sistam ka ek spinof, ubuntu
+zorin oes se rang yojanaen, ek lokapriy linaks opareting sistam ka ek anaupachaarik spinof, ubuntu
+atirikt - rasaayan vigyaan
+atirikt - mod
+atirikt - chihn

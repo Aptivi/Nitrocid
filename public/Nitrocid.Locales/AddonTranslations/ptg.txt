@@ -3464,7 +3464,7 @@ Verificar...
 Pré-visualização
 Visualização selecionada
 Aberto
-Não é possível verificar as variáveis ​​de configuração quando a configuração do kernel não é especificada.
+Não é possível verificar as variáveis de configuração quando a configuração do kernel não é especificada.
 Não é possível obter esquema de definições base.
 Não consigo obter entradas de definições.
 Falha à obtenção de entradas de definições do driver.
@@ -3553,7 +3553,7 @@ Copyright (C) 2018-2025 Aptivi - Todos os direitos reservados
 Não é possível obter informações de argumento para comando ou argumento
 Os parâmetros do tópico não são especificados.
 Não é possível obter parâmetros do thread para execução de processos.
-Não é possível obter um campo interno para variáveis ​​de ambiente
+Não é possível obter um campo interno para variáveis de ambiente
 Não é possível obter o executor de shell para
 Mostra comandos gerais (padrão)
 Altera o nome completo do utilizador (nome de visualização)
@@ -3712,3 +3712,600 @@ Traga a nostalgia com este tema!
 O seu terminal consiste em tábuas de madeira
 Inspirado no padrão chinês de diferentes frutos
 Extras - CRC32C (Castagnoli)
+Imprime a versão do kernel
+Imprime a versão da API
+Não é possível limpar os ficheiros de depuração
+A configuração do kernel não funcionará corretamente. Consulte o depurador do kernel para obter mais informações.
+Não é possível verificar variáveis de configuração quando não é especificada nenhuma configuração de kernel base.
+Não é possível verificar variáveis de configuração quando não é especificada nenhuma chave.
+A tentar registar uma configuração personalizada com conteúdo inválido. Consulte o depurador do kernel para obter mais informações.
+A tentar registar uma configuração base com conteúdo inválido. Consulte o depurador do kernel para obter mais informações
+Falha ao obter entradas de definições de splash.
+O complemento de ícones precisa de ser instalado antes de poder definir este valor.
+Escolha uma entrada para
+Redefinir tudo
+Reiniciar entrada
+O tipo de argumento especificado não é válido
+Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam de ser corrigidas. Consulte o depurador do kernel para obter mais informações.
+Não existe cultura com esse nome.
+Ocorreu um erro ao processar a sua ação de sinal de áudio.
+Não é possível devolver um tipo de classe inexistente do assembly do complemento
+Esta classe não é uma classe complementar
+A reproduzir som de desligamento...
+Não iremos suportar mais esta versão do Nitrocid KS após esta data
+Certifique-se de atualizar para a versão compatível em breve se quiser continuar a receber suporte.
+Esta versão do Nitrocid KS já não é suportada.
+Falha ao carregar idiomas personalizados
+Falha ao carregar add-ons importantes do kernel
+Falha ao carregar consentimentos de privacidade
+Falha ao carregar o splash
+Falha ao carregar mods importantes
+Falha ao carregar dispositivos de depuração remotos
+Ocorreram erros ao tentar inicializar componentes essenciais.
+Falha ao carregar o tópico de notificação
+Falha ao carregar o manipulador de cancelamento
+Falha ao carregar aliases
+Falha ao carregar entradas de marcação rápida
+Falha ao carregar variáveis de ambiente
+Falha ao carregar o ouvinte de alarme
+Falha ao finalizar os suplementos
+Falha ao carregar MOTD e MAL
+Falha ao carregar os históricos de comandos do shell
+Falha ao carregar os manipuladores de extensão
+Carregando mods...
+Falha ao carregar mods
+Ocorreram erros ao tentar inicializar componentes opcionais.
+Falha ao repor variáveis gerais
+Falha ao guardar históricos de comandos shell
+Falha ao guardar consentimentos de privacidade
+Falha ao parar o depurador remoto
+Falha ao repor idiomas
+Falha ao guardar os manipuladores de extensão
+Falha ao parar o ouvinte de alarme
+Falha ao guardar a configuração
+Falha ao parar os mods
+Falha ao parar os suplementos
+Falha ao parar RPC
+Falha ao fechar todas as ligações
+Falha ao interromper o tempo limite do protetor de ecrã
+Falha ao repor o buffer do registo de arranque
+Falha ao parar o manipulador do cursor
+Falha ao parar o depurador
+Falha ao interromper todos os threads do kernel
+Ocorreram erros ao tentar repor componentes.
+Exceção
+Consulte os registos de depuração do kernel para obter mais informações.
+Não existe esse tipo de sinal áudio.
+Não é possível obter as definições de fallback
+Não é possível repor todas as entradas de configuração para
+Não é possível repor esta entrada de configuração para
+A variável não foi encontrada em nenhum dos módulos.
+Não é possível obter o sinal de áudio necessário para os protetores de ecrã de ambiente.
+A ligação de rede pode não ter sido estabelecida corretamente devido a um erro.
+Não é possível armazenar em buffer um comando que não esteja definido como encapsulável.
+Descrição do switch não especificado
+Caminho para um processo
+Argumentos a passar para um processo
+Comando para mostrar a entrada de ajuda
+Envia a saída do comando para outro comando como parâmetros
+Comando de origem para canalizar a sua saída para o comando de destino como último parâmetro
+Comando de destino a executar ao construir o argumento com base na saída do comando de origem
+Se deve passar a saída do comando de origem como um argumento entre aspas ou sem aspas
+Comando para encapsular a sua saída
+Falha na execução do comando de origem.
+Falha na execução do comando de destino. O conteúdo pode não ter sido preenchido corretamente. O comando executado foi
+O cano está partido.
+Argumento para mostrar a entrada de ajuda
+Número da sessão a começar do zero
+Nome de utilizador para consulta
+Tipo de permissão para conceder ou negar
+Falso para negar, verdadeiro para conceder
+Novo nome de visualização ou 'limpar' para apagar o nome de visualização
+ID de idioma de três letras ou "limpar" para limpar o idioma preferido
+Altera a cultura do utilizador preferencial
+ID da cultura ou 'limpar' para limpar a cultura preferida
+Cultura de utilizador preferencial definida como {0}. Talvez queira efetuar login novamente.
+Cultura inválida
+Cultura preferida
+GUID de sessão inválido
+Não existe GUID de sessão
+Tipo desconhecido
+Parâmetro desconhecido
+Lista de tipos para
+Obtém facilmente as informações do registo de depuração utilizando o GUID da sessão
+GUID de sessão para encontrar
+Número de exceção
+Nome do campo a consultar
+Nome da propriedade a consultar
+Nome do complemento para consulta
+Nome do tipo estático público do complemento
+Nome da função do tipo estático público para consulta
+Lista todos os tipos disponíveis do suplemento especificado
+Nome do splash para consulta
+Número de bytes que varia de 0 a 255
+Número da posição do byte
+Número da posição inicial do byte
+Número da posição final do byte
+Número de bytes que varia de 0 a 255 a substituir
+Número de bytes que varia de 0 a 255 para substituir por
+Conteúdo a adicionar no final do ficheiro
+Número do personagem
+Número da linha
+Número da linha (singular ou início do intervalo)
+Intervalo final do número da linha
+Palavra ou frase a excluir
+Um personagem a consultar
+Número da linha (singular ou início do intervalo) ou ‘all’ para consultar um caractere em todas as linhas
+Uma palavra ou frase para consultar
+Uma expressão regular para consultar
+Uma palavra ou frase a substituir
+Uma palavra ou frase para substituir
+Número da linha (singular ou início do intervalo) ou 'all' a substituir em todas as linhas
+Uma expressão regular para corresponder a frases que devem ser substituídas
+País inválido
+Escolha um idioma para o país
+Seleção de idioma inválida para
+Sim
+Novo nome de grupo para adicionar
+Novo nome de utilizador para adicionar
+Nova palavra-passe para usar
+Confirme a nova palavra-passe
+Nome de utilizador a adicionar ao grupo
+Nome do grupo para adicionar o utilizador
+Inicia o alarme
+Intervalo de alarme num intervalo de tempo em horas, minutos e segundos
+Para o alarme
+Nome do alarme para parar
+Lista os alarmes
+Adiciona um alias
+Tipo de shell para pesquisar comandos
+Nome alternativo
+Comando a utilizar como atalho
+Remove um alias
+Frequência em Hz
+Intervalo de tempo para um único sinal sonoro
+Endereço IP para bloquear
+Diretório de destino
+Padrão de pesquisa
+Novo nome para renomear todos os ficheiros encontrados
+Caminho para o ficheiro para imprimir o seu conteúdo
+Obtenha os changelogs da internet em vez de localmente
+Caminho para o ficheiro
+Adição ou remoção
+Nome do atributo
+Muda a cultura
+ID de cultura para mudar para
+Altera a cultura do utilizador em vez da cultura do sistema
+Novo nome de host a alterar
+ID do idioma
+Altera o idioma utilizando um país (pode ser-lhe pedido que escolha um idioma)
+Nova mensagem para utilizar
+Respostas para dividir com uma barra
+Questão para imprimir no ecrã
+Título da primeira resposta
+Título da segunda resposta, e assim sucessivamente...
+Nome de utilizador para alterar a palavra-passe
+Palavra-passe do utilizador atual
+Nome de utilizador antigo para alterar
+Novo nome de utilizador para usar
+Primeiro ficheiro de texto de entrada
+Segundo ficheiro de texto de entrada
+Terceiro ficheiro de texto de entrada, e assim sucessivamente...
+Ficheiro de saída
+Ficheiro de texto de entrada de origem
+Ficheiro de texto de entrada de destino
+Caminho para o ficheiro de texto
+Ficheiro ou diretório de origem
+Ficheiro ou diretório de destino
+Caminho para o ficheiro codificado
+Representação de string codificada
+Cadeia de caracteres BASE64 codificada
+Caminho para o diretório
+Endereço IP para desligar
+Número do disco
+Número de notificação
+Alterar um driver
+Tipo de driver de destino
+Driver alvo para mudar para
+Listar drivers
+Listar tipos de driver
+String para imprimir
+Ficheiro para codificar
+String para codificar
+Expressão regular para encontrar um ficheiro
+Ligação a um recurso remoto, como o HTTPS
+Nome da configuração do kernel
+Variável para obter informação
+Extensão de ficheiro
+Algoritmo de codificação
+Tipo de hardware
+Expressão UESH para testar
+Comando para executar após avaliação bem-sucedida
+Caminho para o diretório do painel esquerdo
+Caminho para o diretório do painel direito
+Recarrega, carrega ou descarrega um idioma personalizado
+Nome do idioma personalizado
+Lista ou recarrega todos os idiomas personalizados
+Caminho para o script UESH
+Caminho para o diretório para listar
+Nome do diretório a criar
+Nome do ficheiro a criar
+Diretório ou nome para mover
+Diretório ou nome para mover
+Número da partição
+Nome do ficheiro para pesquisa
+Nome de utilizador
+Permitir ou revogar
+Nome da permissão para conceder ou negar
+Nome do grupo
+Primeiro endereço IP ou nome do host
+Segundo endereço IP ou nome de host, e assim por diante...
+Caminho para o ficheiro para upload
+URL que aponta para o ponto final de upload
+Nome do host que executa o Nitrocid KS
+Porto de Nitrocid KS no alvo remoto
+Comando para executar remotamente
+Diretório ou ficheiro de destino
+Nome de utilizador a ser removido
+Nome do grupo a remover
+Nome de utilizador a remover do grupo
+Nome do grupo para remover o utilizador
+O nome do protetor de ecrã ou 'aleatório'
+Expressão regular para pesquisar
+Arquivo de destino
+Palavra ou frase para pesquisar
+Abre as definições iniciais do complemento
+Valor a definir
+Nome da variável de configuração
+Nome do implementador
+Primeiro valor
+Segundo valor
+Terceiro valor, e assim sucessivamente...
+Nome do fuso horário
+Intervalo para dormir
+Comando para executar
+Algoritmo de encriptação
+Ficheiro de entrada para calcular a soma do hash
+Ficheiro de saída para guardar informações de soma de hash
+Texto para obter soma de hash
+Nome do link simbólico
+Ficheiro de destino para criar um atalho
+Nome do tema
+Endereço IP para desbloquear
+Nome da variável
+Caminho para o ficheiro ZIP
+Caminho de destino para extrair
+Hash calculado
+Ficheiro hash ou hash esperado
+Ficheiro para testar
+Nome do ficheiro ZIP a criar
+Caminho para compactar
+O complemento de ícones precisa de ser instalado antes de poder exibir este emoji.
+Conteúdo da nota a adicionar
+Número da nota
+Caminho para um diretório com repositório Git
+Gama inicial do número da linha
+Nome da filial
+Resumo do commit
+Confirmar hash SHA
+Nome remoto
+Nome da etiqueta
+Mensagem para anotar a etiqueta com
+O seu e-mail
+O seu nome de usuário
+Caminho para o ficheiro não preparado
+Caminho para o ficheiro preparado
+Caminho para o ficheiro compactado
+Diretório local
+Diretório dentro do ficheiro
+Arquivar no arquivo
+Diretório local para extrair
+Arquivo local
+Diretório de ficheiros para adicionar
+Abre o calendário interativo TUI
+Ano alvo
+Número do mês alvo
+Interação com os acontecimentos
+Adiciona um evento
+Data alvo
+Remove um evento
+ID do evento
+Lista todos os eventos
+Guarda todos os eventos
+Interação com os lembretes
+Data e hora alvo
+Remove um lembrete
+ID do lembrete
+Lista todos os lembretes
+Guarda todos os lembretes
+Um caminho para um ficheiro de contacto vCard ou uma representação MeCard
+Número de contacto
+Editar...
+Introduza um novo nome para este contacto
+Latitude para usar
+Longitude a utilizar
+Chave API da Weather.com
+ID da cidade ou nome da cidade conhecido pelo OpenWeatherMap
+Chave API OpenWeatherMap
+Se pretender adicionar, remover, marcar como concluído ou desmarcar como concluído numa tarefa
+Se deve listar, guardar ou carregar todas as tarefas
+Temporizador Pomodoro
+Pomodoro
+O temporizador Pomodoro está pronto
+Número do temporizador Pomodoro {0} em quatro iterações
+Pequena pausa
+Especifique o tempo limite de interrupção em milissegundos
+Definir intervalo de pausa
+Palavra para definir
+Termo de pesquisa
+Prefixo do nome a pesquisar
+Sufixo de nome para pesquisa
+Prefixo de apelido para pesquisar
+Sufixo de apelido para pesquisar
+Quantos nomes gerar?
+Tipo de unidade
+Quantidade na unidade de origem para converter
+Unidade de origem
+Unidade alvo
+Caminho para o ficheiro de letras
+Caminho para um ficheiro MP3
+Nome do host que aloja a estação de rádio MPEG
+Porta para a estação de rádio MPEG
+Expressão matemática
+Número real
+Número imaginário
+A celebrar o 7.000º commit desde 0.0.1!
+deixado para o próximo ano
+Nome do tema a criar
+Caminho para o diretório de traduções
+Concluído! Utilize a aplicação Nitrocid.Locales com argumentos apropriados para finalizar os idiomas. Pode usar este caminho:
+Modelo de cor de origem
+Modelo de cor alvo
+Primeiro número
+Segundo número
+Terceiro número
+Quarto número
+Especificador de cor
+Data e hora para imprimir informação de
+Especifique um número de segundos ou um nome de bebida
+Servidor FTP para ligar
+Caminho para ficheiro remoto
+Caminho para o diretório local
+Caminho para o diretório remoto
+Caminho para o ficheiro remoto a eliminar
+Comando do servidor para executar
+Cria um diretório local
+Cria um diretório remoto
+Caminho para o ficheiro ou diretório de origem
+Caminho para o ficheiro ou diretório de destino
+Caminho para o ficheiro local
+Números de permissão de acordo com chmod
+Especifica se o tipo de transferência é ASCII ou Binário
+Link simbólico para: {0}
+Chave de cabeçalho
+Valor do cabeçalho
+Pedido HTTP
+Ficheiro para upload
+String para carregar
+Cadeia de caracteres do agente do utilizador
+Endereço de e-mail para efetuar login
+Criar pasta
+Mover...
+Mover tudo...
+Renomear pasta
+Remover pasta
+Remover mensagem
+Remover tudo...
+Não é possível abrir pasta ou mensagem
+Escreva o novo nome do diretório.
+Criação de diretório...
+Não é possível criar pasta
+Selecione um novo diretório para mover esta mensagem.
+Mensagem comovente...
+Não é possível mover a mensagem
+Selecione um novo diretório para mover todas as mensagens do mesmo remetente.
+Mover mensagens pelo remetente {0}...
+Não é possível mover todas as mensagens do mesmo remetente
+Escreva o novo nome do diretório para renomear {0}.
+Renomear diretório...
+Não é possível renomear a pasta
+Remover diretório...
+Não é possível remover a pasta
+Removendo mensagem...
+Não é possível eliminar a mensagem
+Remover mensagens do remetente {0}...
+Não é possível eliminar todas as mensagens do mesmo remetente
+Nome do diretório de e-mail
+Número da página
+ID da mensagem
+Nome do remetente
+Nome antigo do diretório de e-mail
+Novo nome do diretório de e-mail
+Gestão de correio interativo
+Servidor SFTP para ligar
+Link do feed RSS
+Número do feed
+Frase para pesquisar
+Primeiro ficheiro JSON
+Segundo ficheiro JSON
+Caminho para o ficheiro JSON
+Caminho para o ficheiro JSON de saída
+Valor JSON a adicionar
+Nome da propriedade JSON
+Caminho do objeto
+Valor JSON
+Nome da doca
+Caminho para um ficheiro ou uma string para escrever
+Argumentos Pastebin
+Caminho para o ficheiro de imagem
+Caminho para o ficheiro de sintetizador
+Servidor SSH para ligar
+Nome de utilizador para autenticação
+Comando para executar remotamente
+Imprime informações sobre uma substância química na consola.
+Um nome, um símbolo ou um número atómico de uma substância
+Imprime informações sobre todas as substâncias químicas na consola.
+Não existe nenhuma substância com número atómico
+Não há substância com símbolo ou nome
+Número atómico
+Massa atómica
+Símbolo
+Resumo
+Fase
+Posição na tabela periódica
+Posição em coordenadas
+Descobridor
+Nomeado por
+Configuração eletrónica
+Iniciar mod (seleccionar)
+Iniciar mod (entrada)
+Parar mod
+Recarregar mod
+Instalar mod (selecionar)
+Instalar mod (entrada)
+Desinstalar mod
+Começar tudo
+Pare tudo
+Recarregar tudo
+Não é possível devolver um tipo de classe inexistente do assembly do mod
+Não é possível encontrar a função '{0}' no mod '{1}'.
+Não é possível encontrar a propriedade '{0}' no mod '{1}'.
+Não é possível encontrar o campo '{0}' no mod '{1}'.
+Esta classe não é uma classe mod
+Idiomas
+Ponto de entrada
+Introduza um caminho para o mod que pretende iniciar
+Falha ao iniciar o mod
+Introduza um caminho para o mod que pretende instalar
+Falha ao instalar o mod
+Não é possível iniciar ou parar este mod!
+Seja para iniciar, parar, obter informações, recarregar, instalar ou desinstalar um mod
+Nome do mod ou nome do ficheiro
+Se pretende listar, recarregar, parar, iniciar ou gerir interativamente todos os mods
+Nome do mod
+Contextos culturais e linguísticos
+Isto permite que configure a cultura e o idioma
+Definições de hora e data
+Isto permite que configure a hora e a data
+Configurações do bootloader
+Isto permite que configure o bootloader
+A página inicial do Nitrocid
+Isto permite configurar a página inicial do Nitrocid
+Configurações de atualização do kernel
+Isto permite que configure as atualizações do kernel
+Configurações de erro do kernel
+Isto permite configurar os erros do kernel
+Configurações de energia do kernel
+Isto permite configurar o mecanismo de energia do kernel
+Esquemas de cores do kernel
+Isto permite definir vários esquemas de cores do kernel
+Configurações do manipulador de logon moderno
+Isto permite que configure o manipulador de logon moderno
+Sistema de ajuda
+Isto permite configurar o sistema de ajuda do shell
+Predefinições de shell
+Isto permite que configure as predefinições do shell
+Configurações do depurador remoto
+Isto permite que configure o depurador remoto
+Atraso unificado
+Se for verdadeiro, ativa o atraso de gravação unificado para todos os protetores de ecrã. Caso contrário, utiliza valores de atraso configurados específicos do protetor de ecrã.
+Esta secção lista todas as definições de áudio.
+Configurações de áudio
+Ativar suporte de áudio
+Permite todo o sistema de áudio para sinais do sistema
+Ativar dicas de teclado
+Se deve ou não reproduzir as dicas do teclado para cada pressão de tecla
+Ativar sons de inicialização
+Se deve ou não reproduzir o som de arranque
+Ativar sons de desligamento
+Se deve ou não reproduzir o som de desligamento
+Ativar sons de navegação
+Se deve ou não reproduzir o som de navegação para cada pressão de tecla
+Ativar sons de notificação de baixa prioridade
+Se deve ou não reproduzir o som de notificação para alertas de baixa prioridade
+Ativar sons de notificação de prioridade média
+Se deve ou não reproduzir o som de notificação para alertas de prioridade média
+Ativar sons de notificação de alta prioridade
+Se deve ou não reproduzir o som de notificação para alertas de alta prioridade
+Ativar efeitos sonoros de proteção de ecrã ambiente
+Se deve ou não reproduzir efeitos sonoros de proteção de ecrã ambiente
+Intensifique os efeitos sonoros do protetor de ecrã ambiente
+Se deve ou não intensificar os efeitos sonoros do protetor de ecrã ambiente
+Volume do sinal áudio
+Especifique o quão alto pretende que os sinais de áudio sejam
+Tema de áudio
+Que tema de áudio pretende usar para dicas de áudio?
+Definições do editor de texto
+Isto permite configurar o editor de texto
+Configurações do editor hexadecimal
+Isto permite que configure o editor hexadecimal
+Definições de título RSS
+Isto permite que configure os títulos RSS
+Configurações do rato
+Isto permite que configure o rato
+Configurações de depuração
+Isto permite configurar a rotina de depuração
+Estética
+Isto permite configurar a estética do kernel
+Mostra uma grande palavra de boas-vindas escrita no meio da consola; semelhante aos tapetes de boas-vindas
+Mostrar progresso
+Mostrar progresso ou não
+Isto permite que configure as cores
+Esta secção permite configurar o Solver.
+Esta secção permite configurar o SpeedPress.
+Esta secção permite configurar o Meteor e o ShipDuet.
+Esta secção permite configurar o funcionamento do sistema de modificação do kernel.
+Esta secção permite configurar como funciona a aplicação de temporizador.
+Esta secção permite configurar como funciona a aplicação temporizador Pomodoro.
+Activar Figlet para o temporizador pomodoro
+Se estiver ativado, utilizará o figlet para o temporizador pomodoro. Note que é necessário um ecrã de consola grande para renderizar a hora corretamente com o Figlet ativado.
+Fonte Figlet para o cronómetro pomodoro
+Configurações de rampa de horas
+Isto permite que configure a rampa de horas
+Configurações de rampa de minutos
+Isto permite que configure a rampa de minutos
+Definições de rampa de segundos
+Isto permite que configure a rampa de segundos
+Configurações de rampa
+Isto permite que configure as rampas
+Mostra o texto abaixo de uma linha sobre um fundo vermelho escuro.
+Personagens aleatórias que se espalham aleatoriamente pelo ecrã.
+Data e hora simples no meio do ecrã e muda a cor com base na hora atual.
+Data e hora brilhantes
+Se deve usar a versão clara ou escura.
+Mostra números dançantes.
+As ondas giratórias horizontal e verticalmente criam grandes padrões com rastos deixados para trás até desaparecerem.
+Comprimento da trilha
+O comprimento do rasto da onda giratória em movimento.
+Bloco que se move num padrão de onda com réguas verdes a acompanhar a sua posição.
+Mostra um único caractere aleatório num texto colorido.
+Mostra uma palavra que está a ser selecionada, assim como uma slot machine encontrada em casinos.
+Mostra um texto colorido alternando entre duas cores néon: ciano e fúcsia.
+Configurações de cultura
+Isto permite configurar a cultura utilizada pelo protetor de ecrã do calendário
+Primeiras configurações de rampa
+Isto permite configurar a primeira rampa
+Configurações da segunda rampa
+Isto permite configurar a segunda rampa
+Configurações da terceira rampa
+Isto permite configurar a terceira rampa
+Esquemas de cores do Alma Linux, um spinoff de um sistema operativo Linux, Red Hat
+Esquemas de cores de um sistema operativo Linux, Arch Linux
+Esquemas de cores do EndeavourOS, um spinoff de um sistema operativo Linux, o Arch Linux
+Esquemas de cores do Fedora, um spinoff de um sistema operativo Linux, o Red Hat
+Esquemas de cores de um sistema operativo Linux, Gentoo
+Cores de padrões cinzelados formando uma mandala colorida
+Esquemas de cores do Kubuntu, um spinoff de um popular sistema operativo Linux, o Ubuntu
+Esquemas de cores do Linux Mint, um spinoff não oficial de um popular sistema operativo Linux, o Ubuntu
+Esquemas de cores do Lubuntu, um spinoff de um popular sistema operativo Linux, o Ubuntu
+Esquemas de cores do Manjaro, um spinoff de um sistema operativo Linux, o Arch Linux
+Esquemas de cores de um sistema operativo Linux, openSUSE
+Esquemas de cores de um sistema operativo Linux, Red Hat
+Tons de vermelho com cores de destaque dinâmicas para texto que chama a atenção
+Esquemas de cores do Rocky Linux, um spinoff de um sistema operativo Linux, Red Hat
+Esquemas de cores de um sistema operativo Linux, Slackware
+Esquemas de cores do Xubuntu, um spinoff de um popular sistema operativo Linux, o Ubuntu
+Esquemas de cores do Zorin OS, um spinoff não oficial de um popular sistema operativo Linux, o Ubuntu
+Extras - Química
+Extras - Mods
+Extras - Ícones
