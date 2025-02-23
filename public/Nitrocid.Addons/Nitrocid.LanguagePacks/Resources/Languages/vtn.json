@@ -4397,7 +4397,6 @@
     "Ký tự góc dưới bên phải cho thanh thứ ba",
     "Ký tự khung trên cho thanh thứ ba",
     "Ký tự khung dưới cho thanh thứ ba",
-    "Ký tự khung dưới cho thanh thứ ba",
     "Ký tự khung trái cho thanh thứ ba",
     "Ký tự khung phải cho thanh thứ ba bar",
     "Văn bản thông tin cho thứ ba",
@@ -4412,6 +4411,7 @@
     "Mức màu xanh lá cây tối đa cho thứ ba",
     "Mức màu xanh lam tối đa cho thứ ba",
     "Mức màu tối đa cho thứ ba",
-    "Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình."
+    "Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình.",
+    "Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba"
   ]
 }

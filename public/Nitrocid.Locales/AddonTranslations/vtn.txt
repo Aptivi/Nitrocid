@@ -4393,7 +4393,6 @@ Ký tự góc dưới bên trái cho thanh thứ ba
 Ký tự góc dưới bên phải cho thanh thứ ba
 Ký tự khung trên cho thanh thứ ba
 Ký tự khung dưới cho thanh thứ ba
-Ký tự khung dưới cho thanh thứ ba
 Ký tự khung trái cho thanh thứ ba
 Ký tự khung phải cho thanh thứ ba bar
 Văn bản thông tin cho thứ ba
