@@ -4309,3 +4309,106 @@ Combinazioni di colori di Zorin OS, uno spin-off non ufficiale di un popolare si
 Extra - Chimica
 Extra - Mod
 Extra - Icone
+Quale cultura viene utilizzata per modificare i nomi dei mesi, il calendario, ecc.?
+Abilita i widget 'The Nitrocid Homepage'
+Abilita i widget 'The Nitrocid Homepage' sul lato destro dello schermo.
+Abilita il feed RSS 'The Nitrocid Homepage'
+Abilita il widget feed RSS 'The Nitrocid Homepage' sul lato destro dello schermo.
+Widget 'The Nitrocid Homepage'
+Seleziona un widget che verrà visualizzato in 'The Nitrocid Homepage'.
+Impostazioni bordo notifica
+Consente di configurare il bordo notifica
+Impostazioni bordo generale
+Consente di configurare il bordo generale
+Impostazioni aspetto
+Consente di configurare l'aspetto della rampa delle ore
+Consente di configurare il colore della rampa delle ore
+Consente di configurare l'aspetto della rampa dei minuti
+Consente di configurare il colore della rampa dei minuti
+Consente di configurare l'aspetto della rampa dei secondi
+Consente di configurare il colore della rampa dei secondi
+Impostazioni colore posizione iniziale
+Consente di configurare i colori della posizione iniziale
+Impostazioni colore posizione finale
+Consente di configurare i colori della posizione finale
+Impostazioni barra rampa
+Consente di configurare la barra rampa
+Consente di configurare l'aspetto della rampa
+Consente di configurare i colori della rampa
+Impostazioni inizio gradiente
+Consente di configurare i colori inizio gradiente
+Impostazioni fine gradiente
+Consente di configurare i colori fine gradiente
+Livello massimo colore sfondo
+Livello massimo colore sfondo. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello massimo colore linea
+Livello massimo colore linea. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello massimo di colore del testo
+Livello massimo di colore del testo. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Utilizza la cultura di sistema
+Se lo screensaver utilizza la cultura impostata dalle impostazioni del kernel principale o da queste impostazioni dello screensaver.
+Questo consente di configurare l'aspetto della prima rampa
+Testo informativo per il primo
+Scrivi come viene visualizzato il testo informativo per l'ora corrente. {0} per l'ora corrente su 24 per primo. Carattere angolo superiore sinistro per la prima barra
+Carattere angolo superiore sinistro per la prima battuta
+Carattere angolo superiore destro per la prima battuta
+Carattere angolo inferiore sinistro per la prima battuta
+Carattere angolo inferiore destro per la prima battuta
+Carattere cornice superiore per la prima battuta
+Carattere cornice inferiore per la prima battuta
+Carattere cornice sinistra per la prima battuta
+Carattere cornice destra per la prima battuta
+Questo consente di configurare il colore della prima rampa
+Colore della prima barra
+Livello minimo di colore rosso per la prima
+Livello minimo di colore verde per la prima
+Livello minimo di colore blu per la prima
+Livello minimo di colore per la prima
+Livello massimo di colore rosso per la prima
+Livello massimo di colore verde per la prima
+Livello massimo di colore blu per la prima
+Livello massimo di colore per la prima
+Questo consente di configurare l'aspetto della seconda rampa
+Testo informativo per la seconda
+Scrivi come viene visualizzato il testo informativo per il minuto corrente. {0} per il minuto corrente su 60 secondi. Carattere angolo superiore sinistro per la seconda barra
+Carattere angolo superiore sinistro per la seconda barra
+Carattere angolo superiore destro per la seconda barra
+Carattere angolo inferiore sinistro per la seconda barra
+Carattere angolo inferiore destro per la seconda barra
+Carattere cornice superiore per la seconda barra
+Carattere cornice inferiore per la seconda barra
+Carattere cornice sinistra per la seconda barra
+Carattere cornice destra per la seconda barra
+Questo consente di configurare il colore della seconda rampa
+Colore della seconda barra
+Livello minimo di colore rosso per la seconda
+Livello minimo di colore verde per la seconda
+Livello minimo di colore blu per la seconda
+Livello minimo di colore per la seconda
+Livello massimo di colore rosso per la seconda
+Livello massimo di colore verde per la seconda
+Livello massimo di colore blu per la seconda
+Livello massimo di colore per la seconda
+Questo consente di configurare l'aspetto della terza rampa
+Carattere angolo superiore sinistro per la terza barra
+Carattere angolo superiore destro per la terza barra
+Carattere angolo inferiore sinistro per la terza barra
+Carattere angolo inferiore destro per la terza barra
+Carattere cornice superiore per la terza barra
+Carattere cornice inferiore per la terza barra
+Carattere cornice sinistra per la terza barra
+Carattere cornice destra per la terza bar
+Testo informativo per il terzo
+Scrivi come viene visualizzato il testo informativo per il secondo corrente. {0} per il secondo corrente su 60 terzi.
+Ciò consente di configurare il colore della terza rampa
+Colore della terza barra
+Livello minimo di colore rosso per il terzo
+Livello minimo di colore verde per il terzo
+Livello minimo di colore blu per il terzo
+Livello minimo di colore per il terzo
+Livello massimo di colore rosso per il terzo
+Livello massimo di colore verde per il terzo
+Livello massimo di colore blu per il terzo
+Livello massimo di colore per il terzo
+Progresses selezionerà colori casuali se è abilitato. In caso contrario, utilizza i colori dalla configurazione.
+Se il ciclo di colori è abilitato, quanti tick prima di cambiare colore in Progresses? 1 tick = 0,5 terzi

@@ -4309,3 +4309,106 @@ Schémas de couleurs de Zorin OS, un spin-off non officiel d'un système d'explo
 Suppléments - Chimie
 Suppléments - Mods
 Suppléments - Icônes
+Quelle culture est utilisée pour modifier les noms des mois, le calendrier, etc. ?
+Activer les widgets « La page d'accueil de Nitrocid »
+Active les widgets « La page d'accueil de Nitrocid » sur le côté droit de l'écran.
+Activer le flux RSS « La page d'accueil de Nitrocid »
+Active le widget de flux RSS « La page d'accueil de Nitrocid » sur le côté droit de l'écran.
+Widget « La page d'accueil de Nitrocid »
+Sélectionne un widget qui sera affiché dans « La page d'accueil de Nitrocid ».
+Paramètres de bordure de notification
+Cela vous permet de configurer la bordure de notification
+Paramètres de bordure généraux
+Cela vous permet de configurer la bordure générale
+Paramètres d'apparence
+Cela vous permet de configurer l'apparence de la rampe des heures
+Cela vous permet de configurer la couleur de la rampe des heures
+Cela vous permet de configurer l'apparence de la rampe des minutes
+Cela vous permet de configurer la couleur de la rampe des minutes
+Cela vous permet de configurer l'apparence de la rampe des secondes
+Cela vous permet de configurer la couleur de la rampe des secondes
+Paramètres de couleur de position de départ
+Cela vous permet de configurer les couleurs de position de départ
+Paramètres de couleur de position de fin
+Cela vous permet de configurer les couleurs de position de fin
+Paramètres de barre de rampe
+Cela vous permet de configurer la barre de rampe
+Cela vous permet de configurer l'apparence de la rampe
+Cela vous permet de configurer les couleurs de la rampe
+Paramètres de début de dégradé
+Cela vous permet de configurer les couleurs de dégradé de début
+Paramètres de fin de dégradé
+Cela vous permet de configurer les couleurs de dégradé de fin
+Niveau de couleur d'arrière-plan maximal
+Niveau de couleur d'arrière-plan maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur de ligne maximal
+Niveau de couleur de ligne maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur de texte maximal
+Niveau de couleur de texte maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Utiliser la culture du système
+Si l'économiseur d'écran utilise la culture définie par les paramètres principaux du noyau ou par ces paramètres d'économiseur d'écran.
+Cela vous permet de configurer l'apparence de la première rampe
+Texte d'information pour le premier
+Écrivez comment votre texte d'information pour l'heure en cours s'affiche. {0} pour l'heure en cours sur 24 en premier.
+Caractère du coin supérieur gauche pour la première barre
+Caractère du coin supérieur droit pour la première barre
+Caractère du coin inférieur gauche pour la première barre
+Caractère du coin inférieur droit pour la première barre
+Caractère du cadre supérieur pour la première barre
+Caractère du cadre inférieur pour la première barre
+Caractère du cadre gauche pour la première barre
+Caractère du cadre droit pour la première barre
+Cela vous permet de configurer la couleur de la première rampe
+Couleur de la première barre
+Niveau de couleur rouge minimum pour la première
+Niveau de couleur vert minimum pour la première
+Niveau de couleur bleu minimum pour la première
+Niveau de couleur minimum pour la première
+Niveau de couleur rouge maximum pour la première
+Niveau de couleur vert maximum pour la première
+Niveau de couleur bleu maximum pour la première
+Niveau de couleur maximum pour la première
+Cela vous permet de configurer l'apparence de la deuxième rampe
+Texte d'information pour la deuxième
+Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute en cours sur 60 secondes.
+Caractère du coin supérieur gauche pour la deuxième barre
+Caractère du coin supérieur droit pour la deuxième barre
+Caractère du coin inférieur gauche pour la deuxième barre
+Caractère du coin inférieur droit pour la deuxième barre
+Caractère du cadre supérieur pour la deuxième barre
+Caractère du cadre inférieur pour la deuxième barre
+Caractère du cadre gauche pour la deuxième barre
+Caractère du cadre droit pour la deuxième barre
+Cela vous permet de configurer la couleur de la deuxième rampe
+Couleur de la deuxième barre
+Niveau de couleur rouge minimum pour la deuxième
+Niveau de couleur vert minimum pour la deuxième
+Niveau de couleur bleu minimum pour la deuxième
+Niveau de couleur minimum pour la deuxième
+Niveau de couleur rouge maximum pour la deuxième
+Niveau de couleur vert maximum pour la deuxième
+Niveau de couleur bleu maximum pour la deuxième
+Niveau de couleur maximum pour la deuxième
+Cela vous permet de configurer l'apparence de la troisième rampe
+Caractère du coin supérieur gauche pour la troisième barre
+Caractère du coin supérieur droit pour la troisième barre
+Caractère du coin inférieur gauche pour la troisième barre
+Caractère du coin inférieur droit pour la troisième barre
+Caractère du cadre supérieur pour la troisième barre
+Caractère du cadre inférieur pour la troisième barre
+Caractère du cadre gauche pour la troisième barre
+Caractère du cadre droit pour la troisième barre
+Texte d'information pour la troisième
+Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 troisièmes.
+Cela vous permet de configurer la couleur de la troisième rampe
+Couleur de la troisième barre
+Niveau de couleur rouge minimum pour la troisième
+Niveau de couleur vert minimum pour la troisième
+Niveau de couleur bleu minimum pour la troisième
+Niveau de couleur minimum pour la troisième
+Niveau de couleur rouge maximum pour la troisième
+Niveau de couleur vert maximum pour la troisième
+Niveau de couleur bleu maximum pour la troisième
+Niveau de couleur maximum pour la troisième
+Progresses sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de la configuration.
+Si le cycle de couleurs est activé, combien de graduations avant de changer de couleur dans Progresses ? 1 graduation = 0,5 tiers

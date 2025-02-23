@@ -4309,3 +4309,106 @@ Kleurenschema's van Zorin OS, een onofficiële spin-off van een populair Linux-b
 Extra's - Chemie
 Extra's - Mods
 Extra's - Iconen
+Welke cultuur wordt gebruikt om de maandnamen, kalender, etc. te wijzigen?
+Schakel 'The Nitrocid Homepage'-widgets in
+Schakel 'The Nitrocid Homepage'-widgets in aan de rechterkant van het scherm.
+Schakel 'The Nitrocid Homepage' RSS-feed in
+Schakel 'The Nitrocid Homepage' RSS-feedwidget in aan de rechterkant van het scherm.
+'The Nitrocid Homepage'-widget
+Selecteert een widget die wordt weergegeven in 'The Nitrocid Homepage'.
+Instellingen voor meldingsrand
+Hiermee kunt u de meldingsrand configureren
+Algemene randinstellingen
+Hiermee kunt u de algemene rand configureren
+Weergave-instellingen
+Hiermee kunt u de weergave van de urenhelling configureren
+Hiermee kunt u de kleur van de urenhelling configureren
+Hiermee kunt u de weergave van de minutenhelling configureren
+Hiermee kunt u de kleur van de minutenhelling configureren
+Hiermee kunt u de weergave van de secondenhelling configureren
+Hiermee kunt u de kleur van de secondenhelling configureren
+Instellingen voor startpositiekleur
+Hiermee kunt u de kleuren van de startpositie configureren
+Instellingen voor eindpositiekleur
+Hiermee kunt u de kleuren van de eindpositie configureren
+Instellingen voor hellingbalk
+Hiermee kunt u de hellingbalk configureren
+Hiermee kunt u de weergave van de helling configureren
+Hiermee kunt u de hellingkleuren configureren
+Instellingen voor begingradiënt
+Hiermee kunt u de kleuren van de begingradiënt configureren
+Instellingen voor eindegradiënt
+Hiermee kunt u de kleuren van de eindgradiënt configureren
+Maximale achtergrondkleur
+Maximale achtergrondkleur. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximale lijnkleur
+Maximale lijnkleur. De minimale geaccepteerde waarde is 0 en de maximale geaccepteerde waarde is 255.
+Maximale tekstkleurniveau
+Maximale tekstkleurniveau. De minimale geaccepteerde waarde is 0 en de maximale geaccepteerde waarde is 255.
+Gebruik de systeemcultuur
+Of de screensaver de cultuur gebruikt die is ingesteld door de hoofdkernelinstellingen of door deze screensaverinstellingen.
+Hiermee kunt u de weergave van de eerste ramp configureren
+Informatietekst voor eerste
+Schrijf hoe uw informatietekst voor het huidige uur wordt weergegeven. {0} voor het huidige uur van de 24 eerste.
+Teken in de linkerbovenhoek voor de eerste balk
+Teken in de rechterbovenhoek voor de eerste balk
+Teken in de linkeronderhoek voor de eerste balk
+Teken in de rechteronderhoek voor de eerste balk
+Teken in het bovenste frame voor de eerste balk
+Teken in het onderste frame voor de eerste balk
+Teken in het linkerframe voor de eerste balk
+Teken in het rechterframe voor de eerste balk
+Hiermee kunt u de kleur van de eerste helling configureren
+Kleur van de eerste balk
+Minimaal rood kleurniveau voor de eerste
+Minimaal groen kleurniveau voor de eerste
+Minimaal blauw kleurniveau voor de eerste
+Minimaal kleurniveau voor de eerste
+Maximum rood kleurniveau voor de eerste
+Maximum groen kleurniveau voor de eerste
+Maximum blauw kleurniveau voor de eerste
+Maximum kleurniveau voor de eerste
+Hiermee kunt u het uiterlijk van de tweede helling configureren
+Informatietekst voor de tweede
+Schrijf hoe uw informatietekst voor de huidige minuut wordt weergegeven. {0} voor de huidige minuut van 60 seconden. Teken in de linkerbovenhoek voor de tweede balk
+Bovenste linkerhoekkarakter voor de tweede balk
+Bovenste rechterhoekkarakter voor de tweede balk
+Onderste linkerhoekkarakter voor de tweede balk
+Onderste rechterhoekkarakter voor de tweede balk
+Bovenste framekarakter voor de tweede balk
+Onderste framekarakter voor de tweede balk
+Linker framekarakter voor de tweede balk
+Rechter framekarakter voor de tweede balk
+Hiermee kunt u de kleur van de tweede helling configureren
+Kleur van de tweede balk
+Minimaal rood kleurniveau voor de tweede
+Minimaal groen kleurniveau voor de tweede
+Minimaal blauw kleurniveau voor de tweede
+Minimaal kleurniveau voor de tweede
+Maximum rood kleurniveau voor de tweede
+Maximum groen kleurniveau voor de tweede
+Maximum blauw kleurniveau voor de tweede
+Maximum kleurniveau voor de tweede
+Hiermee kunt u het uiterlijk van de derde helling configureren
+Teken in de linkerbovenhoek voor de derde balk
+Teken in de rechterbovenhoek voor de derde balk
+Teken in de linkeronderhoek voor de derde balk
+Teken in de rechteronderhoek voor de derde balk
+Teken in het bovenste frame voor de derde balk
+Teken in het onderste frame voor de derde balk
+Teken in het linkerframe voor de derde balk
+Teken in het rechterframe voor de derde balk
+Informatietekst voor derde
+Schrijf hoe uw informatietekst voor de huidige seconde wordt weergegeven. {0} voor huidige seconde van 60 derde.
+Hiermee kunt u de derde hellingkleur configureren
+Kleur van derde balk
+Minimaal rood kleurniveau voor derde
+Minimaal groen kleurniveau voor derde
+Minimaal blauw kleurniveau voor derde
+Minimaal kleurniveau voor derde
+Maximum rood kleurniveau voor derde
+Maximum groen kleurniveau voor derde
+Maximum blauw kleurniveau voor derde
+Maximum kleurniveau voor derde
+Progresses selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
+Als kleurcyclus is ingeschakeld, hoeveel ticks voordat kleuren worden gewijzigd in Progresses? 1 tick = 0,5 derde

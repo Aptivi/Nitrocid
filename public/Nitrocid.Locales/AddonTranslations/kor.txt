@@ -4309,3 +4309,106 @@ ingi issneun Linux un-yeong cheje, Ubuntueseo pasaengdoen bigongsigjeog-in Zorin
 chuga gineung - hwahag
 chuga gineung - modeu
 chuga gineung - aikon
+eotteon munhwagwon-eul sayonghayeo wol ileum, dallyeog deung-eul byeongyeonghago issseubnikka?
+'The Nitrocid Homepage' wijes hwalseonghwa
+hwamyeon oleunjjog-e 'The Nitrocid Homepage' wijes-eul hwalseonghwahabnida.
+'The Nitrocid Homepage' RSS pideu hwalseonghwa
+hwamyeon oleunjjog-e 'The Nitrocid Homepage' RSS pideu wijes-eul hwalseonghwahabnida.
+'The Nitrocid Homepage' wijes
+'The Nitrocid Homepage'e pyosidoel wijes-eul seontaeghabnida.
+allim teduli seoljeong
+allim tedulileul guseonghal su issseubnida.
+ilban teduli seoljeong
+ilban tedulileul guseonghal su issseubnida.
+moyang seoljeong
+sigan laempeu moyang-eul guseonghal su issseubnida.
+sigan laempeu saegsang-eul guseonghal su issseubnida.
+bun laempeu moyang-eul guseonghal su issseubnida.
+bun laempeu saegsang-eul guseonghal su issseubnida.
+cho laempeu moyang-eul guseonghal su issseubnida.
+cho laempeu saegsang-eul guseonghal su issseubnida.
+sijag wichi saegsang seoljeong
+sijag wichi saegsang-eul guseonghal su issseubnida.
+kkeut wichi saegsang seoljeong
+kkeut wichi saegsang-eul guseonghal su issseubnida.
+laempeu magdae seoljeong
+laempeu magdaeleul guseonghal su issseubnida.
+laempeu moyang-eul guseonghal su issseubnida.
+laempeu saegsang-eul guseonghal su issseubnida.
+geuladieonteu sijag seoljeong
+sijag geuladieonteu saegsang-eul guseonghal su issseubnida.
+geuladieonteu kkeut seoljeong
+kkeut geuladieonteu saegsang-eul guseonghal su issseubnida.
+choedae baegyeongsaeg sujun
+choedae baegyeongsaeg sujun. heoyongdoeneun choesogabs-eun 0igo heoyongdoeneun choedaegabs-eun 255ibnida.
+choedae seon saegsang sujun
+choedae seon saegsang sujun. choeso heoyong-gabs-eun 0igo choedae heoyong-gabs-eun 255ibnida.
+choedae tegseuteu saegsang lebel
+choedae tegseuteu saegsang lebel-ibnida. choeso heoyong-gabs-eun 0igo choedae heoyong-gabs-eun 255ibnida.
+siseutem munhwa sayong
+seukeulinseibeoga ju keoneol seoljeong ttoneun i seukeulinseibeo seoljeong-eseo seoljeonghan munhwaleul sayonghaneunji yeobu-ibnida.
+ileohge hamyeon cheos beonjjae laempeu moyang-eul guseonghal su issseubnida.
+cheos beonjjae jeongbo tegseuteu
+hyeonjae sigan-e daehan jeongbo tegseuteuga eotteohge pyosidoeneunji jagseonghabnida. 24gae jung hyeonjae sigan-e daehan {0}eul meonjeo iblyeoghabnida.
+cheos beonjjae magdaeui oenjjog wi moseoli munja
+cheos beonjjae magdaeui oleunjjog wi moseoli munja
+cheos beonjjae magdaeui oenjjog alae moseoli munja
+cheos beonjjae magdaeui oleunjjog alae moseoli munja
+cheos beonjjae magdaeui wijjog peuleim munja
+cheos beonjjae magdaeui alaejjog peuleim munja
+cheos beonjjae magdaeui oenjjog peuleim munja
+cheos beonjjae magdaeui oleunjjog peuleim munja
+ileohge hamyeon cheos beonjjae laempeu saegsang-eul guseonghal su issseubnida.
+cheos beonjjae magdaeui saegsang
+cheos beonjjaeui choeso ppalgansaeg saegsang lebel
+cheos beonjjaeui choeso nogsaeg saegsang lebel
+cheos beonjjaeui choeso palansaeg saegsang lebel
+cheos beonjjaeui choeso saegsang lebel
+cheos beonjjaeui choedae ppalgansaeg saegsang lebel
+cheos beonjjaeui choedae nogsaeg saegsang lebel
+cheos beonjjaeui choedae palansaeg saegsang lebel
+cheos beonjjaeui choedae saegsang lebel
+ileohge hamyeon du beonjjae laempeu moyang-eul guseonghal su issseubnida.
+du beonjjaee daehan jeongbo tegseuteu
+hyeonjae bun-e daehan jeongbo tegseuteuga pyosidoeneun bangsig-eul jagseonghabnida. 60cho jung hyeonjae bun-e daehan {0}.
+du beonjjae magdaeui oenjjog wi moseoli munja
+du beonjjae magdaeui oleunjjog wi moseoli munja
+du beonjjae magdaeui oenjjog alae moseoli munja
+du beonjjae magdaeui oleunjjog alae moseoli munja
+du beonjjae magdaeui wijjog peuleim munja
+du beonjjae magdaeui alaejjog peuleim munja
+du beonjjae magdaeui oenjjog peuleim munja
+du beonjjae magdaeui oleunjjog peuleim munja
+ileohge hamyeon du beonjjae laempeu saegsang-eul guseonghal su issseubnida.
+du beonjjae magdaeui saegsang
+du beonjjaeui choeso ppalgansaeg saegsang lebel
+du beonjjaeui choeso nogsaeg saegsang lebel
+du beonjjaeui choeso palansaeg saegsang lebel
+du beonjjaeui choeso saegsang lebel
+du beonjjaeui choedae ppalgansaeg saegsang lebel
+du beonjjaeui choedae nogsaeg saegsang lebel
+du beonjjaeui choedae palansaeg saegsang lebel
+du beonjjaeui choedae saegsang lebel
+ileohge hamyeon se beonjjae laempeu moyang-eul guseonghal su issseubnida.
+se beonjjae magdaeui oenjjog wi moseoli munja
+se beonjjae magdaeui oleunjjog wi moseoli munja
+se beonjjae magdaeui oenjjog alae moseoli munja
+se beonjjae magdaeui oleunjjog alae moseoli munja
+se beonjjae magdaeui wijjog peuleim munja
+se beonjjae magdaeui alaejjog peuleim munja
+se beonjjae magdaeui oenjjog peuleim munja
+se beonjjae magdaeui oleunjjog peuleim munja se beonjjae magdae
+se beonjjaee daehan jeongbo tegseuteu
+hyeonjae du beonjjaee daehan jeongbo tegseuteuga eotteohge pyosidoeneunji jagseonghabnida. 60gaeui se beonjjae jung hyeonjae du beonjjaee daehan {0}.
+ileohge hamyeon se beonjjae laempeu saegsang-eul guseonghal su issseubnida.
+se beonjjae magdaeui saegsang
+se beonjjaeui choeso ppalgansaeg saegsang lebel
+se beonjjaeui choeso nogsaeg saegsang lebel
+se beonjjaeui choeso palansaeg saegsang lebel
+se beonjjaeui choeso saegsang lebel
+se beonjjaeui choedae ppalgansaeg saegsang lebel
+se beonjjaeui choedae nogsaeg saegsang lebel
+se beonjjaeui choedae palansaeg saegsang lebel
+se beonjjaeui choedae saegsang lebel
+Progressesga hwalseonghwadoen gyeong-u mujag-wi saegsang-eul seontaeghabnida. geuleohji anh-eumyeon config-ui saegsang-eul sayonghabnida.
+saegsang sunhwan-i hwalseonghwadoen gyeong-u Progresses-eseo saegsang-eul byeongyeonghagi jeon-e myeoch tig-i pil-yohabnikka? 1tig = 0.5se beonjjae

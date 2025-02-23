@@ -4309,3 +4309,106 @@ Zorin OS de pèisè fāng'àn, liúxíng Linux cāozuò xìtǒng de fēi guānf�
 fùjiā gōngnéng - huàxué
 fùjiā gōngnéng - mó zǔ
 fùjiā gōngnéng - túbiāo
+Shǐyòng nǎ zhǒng wénhuà lái gēnggǎi yuèfèn míngchēng, rìlì děng?
+Qǐyòng “Nitrocid zhǔyè” xiǎo bùjiàn
+zài píngmù yòu cè qǐyòng “Nitrocid zhǔyè” xiǎo bùjiàn.
+Qǐyòng “Nitrocid zhǔyè”RSS yuán
+zài píngmù yòu cè qǐyòng “Nitrocid zhǔyè”RSS yuán xiǎo bùjiàn.
+“Nitrocid zhǔyè” xiǎo bùjiàn
+xuǎnzé jiàng zài “Nitrocid zhǔyè” zhōng xiǎnshì de xiǎo bùjiàn.
+Tōngzhī biānkuàng shèzhì
+zhè yǔnxǔ nín pèizhì tōngzhī biānkuàng
+chángguī biānkuàng shèzhì
+zhè yǔnxǔ nín pèizhì chángguī biānkuàng
+wàiguān shèzhì
+zhè yǔnxǔ nín pèizhì xiǎoshí pō dào wàiguān
+zhè yǔnxǔ nín pèizhì xiǎoshí pō dào yánsè
+zhè yǔnxǔ nín pèizhì fēnzhōng pō dào wàiguān
+zhè yǔnxǔ nín pèizhì fēnzhōng pō dào yánsè
+zhè yǔnxǔ nín pèizhì miǎo pō dào wàiguān
+zhè yǔnxǔ nín pèizhì miǎo pō dào yánsè
+qǐ shǐ wèizhì yánsè shèzhì
+zhè yǔnxǔ nín pèizhì qǐ shǐ wèizhì yánsè
+zhōngzhǐ wèizhì yánsè shèzhì
+zhè yǔnxǔ nín pèizhì zhōngzhǐ wèizhì yánsè
+pō dào tiáo shèzhì
+zhè yǔnxǔ nín pèizhì pō dào tiáo
+zhè yǔnxǔ nín pèizhì pō dào wàiguān
+zhè yǔnxǔ nín pèizhì pō dào yánsè
+jiànbiàn qǐ shǐ shèzhì
+zhè yǔnxǔ nín pèizhì qǐ shǐ jiànbiàn yánsè
+jiànbiàn jiéshù shèzhì
+zhè yǔnxǔ nín pèizhì jiéshù jiànbiàn yánsè
+zuìdà bèijǐng yánsè jíbié
+zuìdà bèijǐng yánsè jíbié. Zuìxiǎo jiēshòu zhí wèi 0, zuìdà jiēshòu zhí wèi 255.
+Zuìdà xiàntiáo yánsè jíbié
+zuìdà xiàntiáo yánsè jíbié. Zuìxiǎo kě jiēshòu zhí wèi 0, zuìdà kě jiēshòu zhí wèi 255.
+Zuìdà wénběn yánsè jíbié
+zuìdà wénběn yánsè jíbié. Zuìxiǎo kě jiēshòu zhí wèi 0, zuìdà kě jiēshòu zhí wèi 255.
+Shǐyòng xìtǒng wénhuà
+píngmù bǎohù chéngxù shìfǒu shǐyòng yóu zhǔ nèihé shèzhì huò cǐ píngmù bǎohù chéngxù shèzhì shèzhì de wénhuà.
+Zhè yǔnxǔ nín pèizhì dì yī gè pō dào wàiguān
+dì yī gè xìnxī wénběn
+xiě xià dāngqián xiǎoshí de xìnxī wénběn de xiǎnshì fāngshì. Dāngqián xiǎoshí (gòng 24 xiǎoshí) de {0} dì yī gè.
+Dì yī xiǎojié de zuǒshàng jiǎo zìfú
+dì yī xiǎojié de yòushàng jiǎo zìfú
+dì yī xiǎojié de zuǒxiàjiǎo zìfú
+dì yī xiǎojié de yòu xiàjiǎo zìfú
+dì yī xiǎojié de shàng kuàng zìfú
+dì yī xiǎojié de xià kuàng zìfú
+dì yī xiǎojié de zuǒ kuàng zìfú
+dì yī xiǎojié de yòu kuàng zìfú
+zhè yǔnxǔ nín pèizhì dì yī gè jiànbiàn yánsè
+dì yī xiǎojié de yánsè
+dì yī xiǎojié de zuìxiǎo hóngsè jíbié
+dì yī xiǎojié de zuìxiǎo lǜsè jíbié
+dì yī xiǎojié de zuìxiǎo lán sè jíbié
+dì yī xiǎojié de zuìxiǎo yánsè jíbié
+dì yī xiǎojié de zuìdà hóngsè jíbié
+dì yī xiǎojié de zuìdà lǜsè jíbié
+dì yī xiǎojié de zuìdà lán sè jíbié
+dì yī xiǎojié de zuìdà yánsè jíbié
+zhè yǔnxǔ nín pèizhì dì èr gè jiànbiàn wàiguān
+dì èr xiǎojié de xìnxī wénběn
+xiě xià dāngqián fēnzhōng de xìnxī wénběn de xiǎnshì fāngshì. Dāngqián fēnzhōng wèi {0}(gòng 60 miǎo).
+Dì èr tiáo de zuǒshàng jiǎo zìfú
+dì èr tiáo de yòushàng jiǎo zìfú
+dì èr tiáo de zuǒxiàjiǎo zìfú
+dì èr tiáo de yòu xià jiǎo zìfú
+dì èr tiáo de shàng bian kuàng zìfú
+dì èr tiáo de xià bian kuàng zìfú
+dì èr tiáo de zuǒ biānkuàng zìfú
+dì èr tiáo de yòu biānkuàng zìfú
+zhè yǔnxǔ nín pèizhì dì èr gè jiànbiàn yánsè
+dì èr tiáo de yánsè
+dì èr tiáo de zuìxiǎo hóngsè jíbié
+dì èr tiáo de zuìxiǎo lǜsè jíbié
+dì èr tiáo de zuìxiǎo lán sè jíbié
+dì èr tiáo de zuìxiǎo yánsè jíbié
+dì èr tiáo de zuìdà hóngsè jíbié
+dì èr tiáo de zuìdà lǜsè jíbié
+dì èr tiáo de zuìdà lán sè jíbié
+dì èr tiáo de zuìdà yánsè jíbié
+zhè yǔnxǔ nín pèizhì dì sān gè jiànbiàn wàiguān
+dì sān tiáo de zuǒshàng jiǎo zìfú
+dì sān tiáo de yòushàng jiǎo zìfú
+dì sān tiáo de zuǒxià jiǎo zìfú
+dì sān tiáo de yòu xià jiǎo zìfú
+dì sān tiáo de shàng bian kuàng zìfú
+dì sān tiáo de xià bian kuàng zìfú
+dì sān tiáo de zuǒ biānkuàng zìfú
+dì sān tiáo de yòu biānkuàng zìfú lán
+dì sān lán de xìnxī wénběn
+xiě xià dāngqián dì èr lán de xìnxī wénběn rúhé xiǎnshì. Dāngqián dì èr lán wèi {0}, gòng 60 gè dì sān lán.
+Zhè yǔn xǔ nín pèizhì dì sān lán jiànbiàn yánsè
+dì sān lán de yánsè
+dì sān lán de zuìxiǎo hóngsè jíbié
+dì sān lán de zuìxiǎo lǜsè jíbié
+dì sān lán de zuìxiǎo lán sè jíbié
+dì sān lán de zuìxiǎo yánsè jíbié
+dì sān lán de zuìdà hóngsè jíbié
+dì sān lán de zuìdà lǜsè jíbié
+dì sān lán de zuìdà lán sè jíbié
+dì sān lán de zuìdà yánsè jíbié
+rúguǒ qǐyòng, jìndù jiāng xuǎnzé suíjī yánsè. Fǒuzé, shǐyòng pèizhì zhōng de yánsè.
+Rúguǒ qǐyòngle yánsè xúnhuán, jìndù zhòng gēnggǎi yánsè qián xūyào duōshǎo gè kèdù?1 Kèdù = 0.5 Miǎo

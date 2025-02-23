@@ -4309,3 +4309,107 @@ Các bảng màu từ Zorin OS, một phiên bản phụ không chính thức c�
 Phần bổ sung - Hóa học
 Phần bổ sung - Mod
 Phần bổ sung - Biểu tượng
+Nền văn hóa nào đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
+Bật tiện ích 'Trang chủ Nitrocid'
+Bật tiện ích 'Trang chủ Nitrocid' ở bên phải màn hình.
+Bật nguồn cấp RSS 'Trang chủ Nitrocid'
+Bật tiện ích nguồn cấp RSS 'Trang chủ Nitrocid' ở bên phải màn hình.
+Tiện ích 'Trang chủ Nitrocid'
+Chọn tiện ích sẽ được hiển thị trong 'Trang chủ Nitrocid'.
+Cài đặt đường viền thông báo
+Điều này cho phép bạn định cấu hình đường viền thông báo
+Cài đặt đường viền chung
+Điều này cho phép bạn định cấu hình đường viền chung
+Cài đặt giao diện
+Điều này cho phép bạn định cấu hình giao diện dốc giờ
+Điều này cho phép bạn định cấu hình màu dốc giờ
+Điều này cho phép bạn định cấu hình giao diện dốc phút
+Điều này cho phép bạn định cấu hình màu dốc phút
+Điều này cho phép bạn định cấu hình giao diện dốc giây
+Điều này cho phép bạn định cấu hình màu dốc giây
+Cài đặt màu vị trí bắt đầu
+Điều này cho phép bạn định cấu hình màu vị trí bắt đầu
+Cài đặt màu vị trí kết thúc
+Điều này cho phép bạn định cấu hình màu vị trí kết thúc
+Cài đặt thanh dốc
+Điều này cho phép bạn định cấu hình thanh dốc
+Điều này cho phép bạn định cấu hình giao diện dốc
+Điều này cho phép bạn định cấu hình màu dốc
+Cài đặt bắt đầu dốc
+Điều này cho phép bạn định cấu hình màu dốc bắt đầu
+Cài đặt kết thúc dốc
+Điều này cho phép bạn định cấu hình màu dốc kết thúc
+Mức màu nền tối đa
+Mức màu nền tối đa. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255.
+Mức màu đường tối đa
+Mức màu đường tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu văn bản tối đa
+Mức màu văn bản tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Sử dụng văn hóa hệ thống
+Trình bảo vệ màn hình có sử dụng văn hóa do cài đặt hạt nhân chính hay cài đặt trình bảo vệ màn hình này đặt không.
+Điều này cho phép bạn định cấu hình giao diện ram đầu tiên
+Văn bản thông tin cho lần đầu tiên
+Viết cách hiển thị văn bản thông tin của bạn cho giờ hiện tại. {0} cho giờ hiện tại trong số 24 giờ đầu tiên.
+Ký tự góc trên bên trái cho thanh đầu tiên
+Ký tự góc trên bên phải cho thanh đầu tiên
+Ký tự góc dưới bên trái cho thanh đầu tiên
+Ký tự góc dưới bên phải cho thanh đầu tiên
+Ký tự khung trên cho thanh đầu tiên
+Ký tự khung dưới cho thanh đầu tiên
+Ký tự khung trái cho thanh đầu tiên
+Ký tự khung phải cho thanh đầu tiên
+Điều này cho phép bạn cấu hình màu dốc đầu tiên
+Màu của Thanh đầu tiên
+Mức màu đỏ tối thiểu cho thanh đầu tiên
+Mức màu xanh lá cây tối thiểu cho thanh đầu tiên
+Mức màu xanh lam tối thiểu cho thanh đầu tiên
+Mức màu tối thiểu cho thanh đầu tiên
+Mức màu đỏ tối đa cho thanh đầu tiên
+Mức màu xanh lá cây tối đa cho thanh đầu tiên
+Mức màu xanh lam tối đa cho thanh đầu tiên
+Mức màu tối đa cho thanh đầu tiên
+Điều này cho phép bạn cấu hình giao diện dốc thứ hai
+Văn bản thông tin cho giây
+Viết cách văn bản thông tin của bạn cho phút hiện tại hiển thị. {0} cho phút hiện tại trong 60 giây.
+Ký tự góc trên bên trái cho thanh thứ hai
+Ký tự góc trên bên phải cho thanh thứ hai
+Ký tự góc dưới bên trái cho thanh thứ hai
+Ký tự góc dưới bên phải cho thanh thứ hai
+Ký tự khung trên cho thanh thứ hai
+Ký tự khung dưới cho thanh thứ hai
+Ký tự khung trái cho thanh thứ hai
+Ký tự khung phải cho thanh thứ hai
+Điều này cho phép bạn định cấu hình màu dốc thứ hai
+Màu của Thanh thứ hai
+Mức màu đỏ tối thiểu cho thanh thứ hai
+Mức màu xanh lá cây tối thiểu cho thanh thứ hai
+Mức màu xanh lam tối thiểu cho thanh thứ hai
+Mức màu tối thiểu cho thanh thứ hai
+Mức màu đỏ tối đa cho thanh thứ hai
+Mức màu xanh lá cây tối đa cho thanh thứ hai
+Mức màu xanh lam tối đa cho thanh thứ hai
+Mức màu tối đa cho thanh thứ hai
+Điều này cho phép bạn định cấu hình giao diện dốc thứ ba
+Ký tự góc trên bên trái cho thanh thứ ba
+Ký tự góc trên bên phải cho thanh thứ ba
+Ký tự góc dưới bên trái cho thanh thứ ba
+Ký tự góc dưới bên phải cho thanh thứ ba
+Ký tự khung trên cho thanh thứ ba
+Ký tự khung dưới cho thanh thứ ba
+Ký tự khung dưới cho thanh thứ ba
+Ký tự khung trái cho thanh thứ ba
+Ký tự khung phải cho thanh thứ ba bar
+Văn bản thông tin cho thứ ba
+Viết cách văn bản thông tin của bạn cho thứ hai hiện tại hiển thị. {0} cho thứ hai hiện tại trong số 60 thứ ba.
+Điều này cho phép bạn định cấu hình màu dốc thứ ba
+Màu của thanh thứ ba
+Mức màu đỏ tối thiểu cho thứ ba
+Mức màu xanh lá cây tối thiểu cho thứ ba
+Mức màu xanh lam tối thiểu cho thứ ba
+Mức màu tối thiểu cho thứ ba
+Mức màu đỏ tối đa cho thứ ba
+Mức màu xanh lá cây tối đa cho thứ ba
+Mức màu xanh lam tối đa cho thứ ba
+Mức màu tối đa cho thứ ba
+Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình.
+Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba

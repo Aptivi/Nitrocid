@@ -4309,3 +4309,106 @@ Colour schemes from Zorin OS, an unofficial spinoff of a popular Linux operating
 Extras - Chemistry
 Extras - Mods
 Extras - Icons
+Which culture is being used to change the month names, calendar, etc.?
+Enable 'The Nitrocid Homepage' widgets
+Enables 'The Nitrocid Homepage' widgets at the right side of the screen.
+Enable 'The Nitrocid Homepage' RSS feed
+Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen.
+'The Nitrocid Homepage' widget
+Selects a widget that will be displayed in 'The Nitrocid Homepage'.
+Notification border settings
+This allows you to configure the notification border
+General border settings
+This allows you to configure the general border
+Appearance settings
+This allows you to configure the hours ramp appearance
+This allows you to configure the hours ramp colour
+This allows you to configure the minutes ramp appearance
+This allows you to configure the minutes ramp colour
+This allows you to configure the seconds ramp appearance
+This allows you to configure the seconds ramp colour
+Start position colour settings
+This allows you to configure the start position colours
+End position colour settings
+This allows you to configure the end position colours
+Ramp bar settings
+This allows you to configure the ramp bar
+This allows you to configure the ramp appearance
+This allows you to configure the ramp colours
+Gradient start settings
+This allows you to configure the start gradient colours
+Gradient end settings
+This allows you to configure the end gradient colours
+Maximum background colour level
+Maximum background colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum line colour level
+Maximum line colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum text colour level
+Maximum text colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Use the system culture
+Whether the screensaver uses the culture set by the main kernel settings or by this screensaver settings.
+This allows you to configure the first ramp appearance
+Information text for first
+Write how your information text for the current hour shows. {0} for current hour out of 24 first.
+Upper left corner character for the first bar
+Upper right corner character for the first bar
+Lower left corner character for the first bar
+Lower right corner character for the first bar
+Upper frame character for the first bar
+Lower frame character for the first bar
+Left frame character for the first bar
+Right frame character for the first bar
+This allows you to configure the first ramp colour
+Colour of First Bar
+Minimum red colour level for first
+Minimum green colour level for first
+Minimum blue colour level for first
+Minimum colour level for first
+Maximum red colour level for first
+Maximum green colour level for first
+Maximum blue colour level for first
+Maximum colour level for first
+This allows you to configure the second ramp appearance
+Information text for second
+Write how your information text for the current minute shows. {0} for current minute out of 60 second.
+Upper left corner character for the second bar
+Upper right corner character for the second bar
+Lower left corner character for the second bar
+Lower right corner character for the second bar
+Upper frame character for the second bar
+Lower frame character for the second bar
+Left frame character for the second bar
+Right frame character for the second bar
+This allows you to configure the second ramp colour
+Colour of Second Bar
+Minimum red colour level for second
+Minimum green colour level for second
+Minimum blue colour level for second
+Minimum colour level for second
+Maximum red colour level for second
+Maximum green colour level for second
+Maximum blue colour level for second
+Maximum colour level for second
+This allows you to configure the third ramp appearance
+Upper left corner character for the third bar
+Upper right corner character for the third bar
+Lower left corner character for the third bar
+Lower right corner character for the third bar
+Upper frame character for the third bar
+Lower frame character for the third bar
+Left frame character for the third bar
+Right frame character for the third bar
+Information text for third
+Write how your information text for the current second shows. {0} for current second out of 60 third.
+This allows you to configure the third ramp colour
+Colour of Third Bar
+Minimum red colour level for third
+Minimum green colour level for third
+Minimum blue colour level for third
+Minimum colour level for third
+Maximum red colour level for third
+Maximum green colour level for third
+Maximum blue colour level for third
+Maximum colour level for third
+Progresses will select random colours if it's enabled. Otherwise, use colours from config.
+If colour cycling is enabled, how many ticks before changing colours in Progresses? 1 tick = 0.5 third

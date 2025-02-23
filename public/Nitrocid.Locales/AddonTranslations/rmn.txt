@@ -4309,3 +4309,106 @@ Scheme de culori de la Zorin OS, un spin-off neoficial al unui sistem de operare
 Suplimente - Chimie
 Suplimente - Moduri
 Suplimente - Pictograme
+Ce cultură este folosită pentru a schimba numele lunii, calendarul etc.?
+Activați widget-urile „Pagina de pornire Nitrocid”.
+Activează widget-urile „Pagina de pornire Nitrocid” în partea dreaptă a ecranului.
+Activați fluxul RSS „Pagina de pornire Nitrocid”.
+Activează widgetul de feed RSS „Pagina de pornire Nitrocid” în partea dreaptă a ecranului.
+Widget „Pagina de pornire Nitrocid”.
+Selectează un widget care va fi afișat în „Pagina de pornire Nitrocid”.
+Setări de margine de notificare
+Acest lucru vă permite să configurați chenarul de notificare
+Setări generale de frontieră
+Acest lucru vă permite să configurați chenarul general
+Setări de aspect
+Acest lucru vă permite să configurați aspectul rampei orare
+Acest lucru vă permite să configurați culoarea rampei orelor
+Acest lucru vă permite să configurați aspectul rampei minutelor
+Acest lucru vă permite să configurați culoarea rampei minutelor
+Acest lucru vă permite să configurați aspectul rampei de secunde
+Acest lucru vă permite să configurați culoarea rampei de secunde
+Setările de culoare pentru poziție de pornire
+Acest lucru vă permite să configurați culorile poziției de pornire
+Setări de culoare pentru poziţia finală
+Acest lucru vă permite să configurați culorile poziției finale
+Setări bară rampă
+Acest lucru vă permite să configurați bara de rampă
+Acest lucru vă permite să configurați aspectul rampei
+Acest lucru vă permite să configurați culorile rampei
+Setări de pornire în gradient
+Acest lucru vă permite să configurați culorile gradientului de început
+Setări de final de gradient
+Acest lucru vă permite să configurați culorile gradientului final
+Nivel maxim de culoare de fundal
+Nivel maxim de culoare de fundal. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare a liniilor
+Nivel maxim de culoare a liniilor. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare a textului
+Nivel maxim de culoare a textului. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Utilizați cultura sistemului
+Indiferent dacă screensaver-ul folosește cultura setată de setările principale ale nucleului sau de setările acestui screensaver.
+Acest lucru vă permite să configurați prima apariție a rampei
+Text informativ pentru primul
+Scrieți cum arată textul dvs. informativ pentru ora curentă. {0} pentru ora curentă din 24 mai întâi.
+Caracter din colțul din stânga sus pentru prima bară
+Caracter din colțul din dreapta sus pentru prima bară
+Caracter din colțul din stânga jos pentru prima bară
+Caracter din colțul din dreapta jos pentru prima bară
+Caracter de cadru superior pentru prima bară
+Caracter de cadru inferior pentru prima bară
+Caracter de cadru din stânga pentru prima bară
+Caracter cadru din dreapta pentru prima bară
+Acest lucru vă permite să configurați prima culoare a rampei
+Culoarea primului bar
+Nivel minim de culoare roșie pentru primul
+Nivel minim de culoare verde pentru primul
+Nivel minim de culoare albastră pentru primul
+Nivel minim de culoare pentru primul
+Nivel maxim de culoare roșie pentru primul
+Nivel maxim de culoare verde pentru primul
+Nivel maxim de culoare albastră pentru primul
+Nivel maxim de culoare pentru primul
+Acest lucru vă permite să configurați a doua apariție a rampei
+Text informativ pentru secundă
+Scrieți cum se arată textul dvs. informativ pentru minutul curent. {0} pentru minutul curent din 60 de secunde.
+Caracter din colțul din stânga sus pentru a doua bară
+Caracter din colțul din dreapta sus pentru a doua bară
+Caracter din colțul din stânga jos pentru a doua bară
+Caracter din colțul din dreapta jos pentru a doua bară
+Caracter de cadru superior pentru a doua bară
+Caracter de cadru inferior pentru a doua bară
+Caracter de cadru din stânga pentru a doua bară
+Caracter cadru din dreapta pentru a doua bară
+Acest lucru vă permite să configurați a doua culoare a rampei
+Culoarea celui de-al doilea bar
+Nivel minim de culoare roșie pentru secundă
+Nivel minim de culoare verde pentru secundă
+Nivel minim de culoare albastră pentru secundă
+Nivel minim de culoare pentru secundă
+Nivel maxim de culoare roșie pentru secundă
+Nivel maxim de culoare verde pentru secundă
+Nivel maxim de culoare albastră pentru secundă
+Nivel maxim de culoare pentru secundă
+Acest lucru vă permite să configurați a treia apariție a rampei
+Caracter din colțul din stânga sus pentru a treia bară
+Caracter din colțul din dreapta sus pentru a treia bară
+Caracter din colțul din stânga jos pentru a treia bară
+Caracter din colțul din dreapta jos pentru a treia bară
+Caracter de cadru superior pentru a treia bară
+Caracter de cadru inferior pentru a treia bară
+Caracter de cadru din stânga pentru a treia bară
+Caracter cadru din dreapta pentru a treia bară
+Text informativ pentru al treilea
+Scrieți cum arată textul dvs. informativ pentru secunda curentă. {0} pentru secunda curentă din 60 de treimi.
+Acest lucru vă permite să configurați a treia culoare a rampei
+Culoarea a treia bară
+Nivel minim de culoare roșie pentru a treia
+Nivel minim de culoare verde pentru a treia
+Nivel minim de culoare albastră pentru a treia
+Nivel minim de culoare pentru a treia
+Nivel maxim de culoare roșie pentru a treia
+Nivel maxim de culoare verde pentru a treia
+Nivel maxim de culoare albastră pentru a treia
+Nivel maxim de culoare pentru a treia
+Progress va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.
+Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în Progress? 1 bif = 0,5 treime

@@ -4309,3 +4309,106 @@ Fargeskjemaer fra Zorin OS, en uoffisiell spinoff av et populært Linux-operativ
 Ekstra - kjemi
 Ekstra - Mods
 Ekstra - Ikoner
+Hvilken kultur brukes for å endre månedsnavn, kalender osv.?
+Aktiver 'The Nitrocid Homepage'-widgets
+Aktiverer 'The Nitrocid Homepage'-widgeter på høyre side av skjermen.
+Aktiver 'The Nitrocid Homepage' RSS-feed
+Aktiverer 'The Nitrocid Homepage' RSS-feed-widget på høyre side av skjermen.
+'The Nitrocid Homepage'-widget
+Velger en widget som skal vises på 'The Nitrocid Homepage'.
+Innstillinger for varslingsgrense
+Dette lar deg konfigurere varslingsgrensen
+Generelle kantinnstillinger
+Dette lar deg konfigurere den generelle grensen
+Utseendeinnstillinger
+Dette lar deg konfigurere timerampens utseende
+Dette lar deg konfigurere time-rampefargen
+Dette lar deg konfigurere minuttrampens utseende
+Dette lar deg konfigurere minuttrampefargen
+Dette lar deg konfigurere sekunders rampeutseende
+Dette lar deg konfigurere sekunders rampefarge
+Fargeinnstillinger for startposisjon
+Dette lar deg konfigurere startposisjonsfargene
+Fargeinnstillinger for sluttposisjon
+Dette lar deg konfigurere endeposisjonsfargene
+Innstillinger for rampestang
+Dette lar deg konfigurere rampestangen
+Dette lar deg konfigurere rampens utseende
+Dette lar deg konfigurere rampefargene
+Startinnstillinger for gradient
+Dette lar deg konfigurere startgradientfargene
+Sluttinnstillinger for gradient
+Dette lar deg konfigurere sluttgradientfargene
+Maksimalt bakgrunnsfargenivå
+Maksimalt bakgrunnsfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt linjefargenivå
+Maksimalt linjefargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt tekstfargenivå
+Maksimalt tekstfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Bruk systemkulturen
+Om skjermspareren bruker kulturen som er satt av hovedkjerneinnstillingene eller av denne skjermsparerinnstillingene.
+Dette lar deg konfigurere den første rampen
+Informasjonstekst for først
+Skriv hvordan informasjonsteksten din for gjeldende time viser. {0} for gjeldende time av 24 først.
+Øvre venstre hjørnetegnet for den første stolpen
+Øvre høyre hjørnetegnet for den første stolpen
+Tegn i nedre venstre hjørne for den første stolpen
+Tegn i nedre høyre hjørne for den første stolpen
+Øvre rammekarakter for den første takten
+Nedre rammekarakter for den første stolpen
+Venstre rammetegn for den første stolpen
+Høyre rammetegn for den første takten
+Dette lar deg konfigurere den første rampefargen
+Farge på First Bar
+Minimum rød fargenivå for først
+Minimum grønn fargenivå for først
+Minimum blåfargenivå for først
+Minimum fargenivå for først
+Maksimalt rødt fargenivå for først
+Maksimalt grønt fargenivå for først
+Maksimal blåfargenivå for først
+Maksimalt fargenivå for først
+Dette lar deg konfigurere den andre rampens utseende
+Informasjonstekst for andre
+Skriv hvordan informasjonsteksten for gjeldende minutt viser. {0} for gjeldende minutt av 60 sekunder.
+Øvre venstre hjørnetegnet for den andre stolpen
+Øvre høyre hjørnetegnet for den andre stolpen
+Nedre venstre hjørnetegnet for den andre linjen
+Tegn i nedre høyre hjørne for den andre linjen
+Øvre rammekarakter for den andre takten
+Nedre rammekarakter for den andre stolpen
+Venstre rammetegn for den andre stolpen
+Høyre rammetegn for den andre stolpen
+Dette lar deg konfigurere den andre rampefargen
+Farge på Second Bar
+Minimum rød fargenivå for andre
+Minimum grønt fargenivå for andre
+Minimum blåfargenivå for andre
+Minimum fargenivå for andre
+Maksimalt rødt fargenivå for sekundet
+Maksimalt grønt fargenivå for sekundet
+Maksimalt blått fargenivå for sekundet
+Maksimalt fargenivå for sekundet
+Dette lar deg konfigurere den tredje rampens utseende
+Øvre venstre hjørnetegnet for den tredje stolpen
+Øvre høyre hjørnetegnet for den tredje stolpen
+Nedre venstre hjørnetegnet for den tredje stolpen
+Tegn i nedre høyre hjørne for den tredje stolpen
+Øvre rammekarakter for tredje takt
+Nedre rammekarakter for tredje takt
+Venstre rammetegn for tredje takt
+Høyre rammetegn for tredje takt
+Informasjonstekst for tredje
+Skriv hvordan informasjonsteksten for det gjeldende sekundet viser. {0} for gjeldende andre av 60 tredje.
+Dette lar deg konfigurere den tredje rampefargen
+Farge på Third Bar
+Minimum rød fargenivå for tredje
+Minimum grønn fargenivå for tredje
+Minimum blåfargenivå for tredje
+Minimum fargenivå for tredje
+Maksimalt rødt fargenivå for tredje
+Maksimalt grønt fargenivå for tredje
+Maksimalt blåfargenivå for tredje
+Maksimalt fargenivå for tredje
+Fremdrift vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i Progresses? 1 hake = 0,5 tredjedel
