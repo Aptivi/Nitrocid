@@ -52,42 +52,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);
-                        var keyName = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Key name"),
-                            Value = key.Name,
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        var keyDesc = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Key description"),
-                            Value = key.Description,
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        var keyType = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Key type"),
-                            Value = $"{key.Type}",
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        var keyVar = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Key variable"),
-                            Value = $"{key.Variable} [{value}]",
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WritePlain(keyName.Render());
-                        TextWriterRaw.WritePlain(keyDesc.Render());
-                        TextWriterRaw.WritePlain(keyType.Render());
-                        TextWriterRaw.WritePlain(keyVar.Render());
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Key name"), key.Name, indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Key description"), key.Description, indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}", indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]", indent: 1);
                     }
                 }
             }
@@ -102,14 +70,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
-            var listEntry = new ListEntry()
-            {
-                Entry = Translate.DoTranslation("Available configuration types"),
-                Value = string.Join(", ", names),
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WritePlain(listEntry.Render());
+            TextWriters.WriteListEntry(Translate.DoTranslation("Available configuration types"), string.Join(", ", names));
         }
 
     }

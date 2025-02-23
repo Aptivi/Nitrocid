@@ -70,14 +70,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
-            var listEntry = new ListEntry()
-            {
-                Entry = Translate.DoTranslation("Available configuration types"),
-                Value = string.Join(", ", names),
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WriteRaw(listEntry.Render());
+            TextWriters.WriteListEntry(Translate.DoTranslation("Available configuration types"), string.Join(", ", names));
         }
 
     }

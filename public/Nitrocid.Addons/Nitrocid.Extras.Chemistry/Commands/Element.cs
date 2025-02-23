@@ -56,30 +56,18 @@ namespace Nitrocid.Extras.Chemistry.Commands
             }
 
             // Print information
-            WriteListEntry(Translate.DoTranslation("Name"), substance.Name);
-            WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}");
-            WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}");
-            WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol);
-            WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary);
-            WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}");
-            WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}");
-            WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
-            WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer);
-            WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy);
-            WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Name"), substance.Name);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}");
+            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}");
+            TextWriters.WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}");
+            TextWriters.WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}");
+            TextWriters.WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
+            TextWriters.WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy);
+            TextWriters.WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration);
             return 0;
-        }
-
-        private void WriteListEntry(string entry, string value)
-        {
-            var listEntry = new ListEntry()
-            {
-                Entry = entry,
-                Value = value,
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WritePlain(listEntry.Render());
         }
     }
 }

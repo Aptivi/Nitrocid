@@ -222,36 +222,16 @@ namespace Nitrocid.Files
                     foreach (FileSystemEntry Entry in enumeration)
                     {
                         string name = Path.GetFileName(Entry.FilePath);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", vars: [Entry.FilePath]);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
                         try
                         {
                             switch (Entry.Type)
                             {
                                 case FileSystemEntryType.File:
-                                    {
-                                        var entry = new ListEntry()
-                                        {
-                                            Entry = name,
-                                            Value = Entry.FileSize.SizeString(),
-                                            Indentation = level,
-                                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                                        };
-                                        TextWriterRaw.WritePlain(entry.Render());
-                                    }
+                                    TextWriters.WriteListEntry(name, Entry.FileSize.SizeString(), indent: level);
                                     break;
                                 case FileSystemEntryType.Directory:
-                                    {
-                                        var entry = new ListEntry()
-                                        {
-                                            Entry = name,
-                                            Value = "[/]",
-                                            Indentation = level,
-                                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                                        };
-                                        TextWriterRaw.WritePlain(entry.Render());
-                                    }
+                                    TextWriters.WriteListEntry(name, "[/]", indent: level);
                                     ListTree(Entry.FilePath, SuppressUnauthorizedMessage, Sort, level + 1);
                                     break;
                             }
@@ -259,30 +239,13 @@ namespace Nitrocid.Files
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                            {
-                                var entry = new ListEntry()
-                                {
-                                    Entry = name,
-                                    Value = Translate.DoTranslation("Unauthorized"),
-                                    Indentation = level,
-                                    KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
-                                    ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
-                                };
-                                TextWriterRaw.WritePlain(entry.Render());
-                            }
+                                TextWriters.WriteListEntry(name, Translate.DoTranslation("Unauthorized"), indent: level);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
-                            var entry = new ListEntry()
-                            {
-                                Entry = name,
-                                Value = Translate.DoTranslation("Error"),
-                                Indentation = level,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
-                            };
-                            TextWriterRaw.WritePlain(entry.Render());
+                            if (!SuppressUnauthorizedMessage)
+                                TextWriters.WriteListEntry(name, Translate.DoTranslation("Error"), indent: level);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -299,42 +262,18 @@ namespace Nitrocid.Files
                 string name = Path.GetFileName(entry.FilePath);
                 try
                 {
-                    var file = new ListEntry()
-                    {
-                        Entry = name,
-                        Value = entry.FileSize.SizeString(),
-                        KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                        ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                    };
-                    TextWriterRaw.WritePlain(file.Render());
+                    TextWriters.WriteListEntry(name, entry.FileSize.SizeString());
                 }
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                    {
-                        var file = new ListEntry()
-                        {
-                            Entry = name,
-                            Value = Translate.DoTranslation("Unauthorized"),
-                            Indentation = level,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
-                        };
-                        TextWriterRaw.WritePlain(file.Render());
-                    }
+                        TextWriters.WriteListEntry(name, Translate.DoTranslation("Unauthorized"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
-                    var file = new ListEntry()
-                    {
-                        Entry = name,
-                        Value = Translate.DoTranslation("Error"),
-                        Indentation = level,
-                        KeyColor = KernelColorTools.GetColor(KernelColorType.Error),
-                        ValueColor = KernelColorTools.GetColor(KernelColorType.Error),
-                    };
-                    TextWriterRaw.WritePlain(file.Render());
+                    if (!SuppressUnauthorizedMessage)
+                        TextWriters.WriteListEntry(name, Translate.DoTranslation("Error"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }

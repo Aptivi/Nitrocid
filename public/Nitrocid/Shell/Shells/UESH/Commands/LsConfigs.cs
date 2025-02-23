@@ -25,6 +25,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -46,46 +47,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (config is null || config.SettingsEntries is null)
                     continue;
                 SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                var entriesCount = new ListEntry()
-                {
-                    Entry = Translate.DoTranslation("Entries count"),
-                    Value = $"{config.SettingsEntries.Length}",
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WritePlain(entriesCount.Render());
+                TextWriters.WriteListEntry(Translate.DoTranslation("Entries count"), $"{config.SettingsEntries.Length}");
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
                         SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        var entryDisplay = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Displaying as"),
-                            Value = entry.DisplayAs,
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        var entryDesc = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Description"),
-                            Value = entry.Desc,
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        var entryKeys = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Keys count"),
-                            Value = $"{entry.Keys.Length}",
-                            Indentation = 1,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WritePlain(entryDisplay.Render());
-                        TextWriterRaw.WritePlain(entryDesc.Render());
-                        TextWriterRaw.WritePlain(entryKeys.Render());
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Displaying as"), entry.DisplayAs, indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Description"), entry.Desc, indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Keys count"), $"{entry.Keys.Length}", indent: 1);
                     }
                 }
             }

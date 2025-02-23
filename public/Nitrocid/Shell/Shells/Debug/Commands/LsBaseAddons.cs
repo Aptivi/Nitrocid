@@ -28,6 +28,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -55,14 +56,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 string[] addons = AddonTools.GetAddons();
                 Color finalKeyColor = addons.Contains(name) ? ConsoleColors.DarkGreen : ConsoleColors.DarkRed;
                 Color finalValueColor = addons.Contains(name) ? ConsoleColors.Green : ConsoleColors.Red;
-                var listing = new ListEntry()
-                {
-                    Entry = enumValue.ToString(),
-                    Value = localizedName,
-                    KeyColor = finalKeyColor,
-                    ValueColor = finalValueColor,
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
+                ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, finalKeyColor, finalValueColor);
             }
             return 0;
         }

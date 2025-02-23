@@ -61,32 +61,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("The two files are different."));
             foreach (var (line, one, two) in compared)
             {
-                var lineNumber = new ListEntry()
-                {
-                    Entry = $"[{line}]",
-                    Value = Translate.DoTranslation("Different"),
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                var oldValue = new ListEntry()
-                {
-                    Entry = "[-]",
-                    Value = one,
-                    Indentation = 1,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                var newValue = new ListEntry()
-                {
-                    Entry = "[+]",
-                    Value = two,
-                    Indentation = 1,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WritePlain(lineNumber.Render());
-                TextWriterRaw.WritePlain(oldValue.Render());
-                TextWriterRaw.WritePlain(newValue.Render());
+                TextWriters.WriteListEntry($"[{line}]", Translate.DoTranslation("Different"), KernelColorType.ListEntry, KernelColorType.ListValue);
+                TextWriters.WriteListEntry("[-]", one, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
+                TextWriters.WriteListEntry("[+]", two, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
             }
             return 0;
         }

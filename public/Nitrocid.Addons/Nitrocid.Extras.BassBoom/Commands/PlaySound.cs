@@ -98,21 +98,10 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     string duration = totalSpan.ToString();
 
                     // Write the entries
-                    static void WriteEntry(string entry, string value)
-                    {
-                        var listEntry = new ListEntry()
-                        {
-                            Entry = entry,
-                            Value = value,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WritePlain(listEntry.Render());
-                    }
-                    WriteEntry(Translate.DoTranslation("Name"), musicName);
-                    WriteEntry(Translate.DoTranslation("Artist"), musicArtist);
-                    WriteEntry(Translate.DoTranslation("Genre"), musicGenre);
-                    WriteEntry(Translate.DoTranslation("Duration"), duration);
+                    TextWriters.WriteListEntry(Translate.DoTranslation("Name"), musicName);
+                    TextWriters.WriteListEntry(Translate.DoTranslation("Artist"), musicArtist);
+                    TextWriters.WriteListEntry(Translate.DoTranslation("Genre"), musicGenre);
+                    TextWriters.WriteListEntry(Translate.DoTranslation("Duration"), duration);
 
                     // Wait until the song stops or the user bails
                     TextWriters.Write(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);

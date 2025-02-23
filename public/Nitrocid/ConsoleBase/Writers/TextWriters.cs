@@ -40,7 +40,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="indent">Indentation level</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor, KernelColorType ListValueColor, int indent = 0) =>
+        public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue, int indent = 0) =>
             ListEntryWriterColor.WriteListEntry(entry, value, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), indent);
 
         /// <summary>

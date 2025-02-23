@@ -49,24 +49,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
                     TextWriterColor.Write($"  {connection.ConnectionUri}");
                     if (!connection.ConnectionIsInstance)
-                    {
-                        var connectionAlive = new ListEntry()
-                        {
-                            Entry = Translate.DoTranslation("Alive"),
-                            Value = $"{connection.ConnectionAlive}",
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WritePlain(connectionAlive.Render());
-                    }
-                    var connectionInstance = new ListEntry()
-                    {
-                        Entry = Translate.DoTranslation("Instance"),
-                        Value = $"{connection.ConnectionInstance}",
-                        KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                        ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                    };
-                    TextWriterRaw.WritePlain(connectionInstance.Render());
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Alive"), $"{connection.ConnectionAlive}", indent: 1);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Instance"), $"{connection.ConnectionInstance}", indent: 1);
                 }
             }
             return 0;
