@@ -76,8 +76,5 @@
             <Output TaskParameter="Value" PropertyName="PackageVersion"/>
         </CreateProperty>
     </Target>
-    <ItemGroup Condition="'$(MSBuildProjectFile)' != 'Nitrocid.BuildTargets.csproj'">
-        <ProjectReference Include="$(RootPath)/private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" PrivateAssets="All" />
-    </ItemGroup>
     <!-- KS SourceLink End -->
 </Project>
