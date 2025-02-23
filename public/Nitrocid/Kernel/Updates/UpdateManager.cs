@@ -143,7 +143,6 @@ namespace Nitrocid.Kernel.Updates
             string checkFailed = Translate.DoTranslation("Failed to check for updates.");
             string checking = Translate.DoTranslation("Checking for system updates...");
             string newVersion = Translate.DoTranslation("Found new version: ");
-            string downloaded = Translate.DoTranslation("Downloaded the update successfully!");
             string downloadManually = Translate.DoTranslation("You can download it at: ");
             string upToDate = Translate.DoTranslation("You're up to date!");
 

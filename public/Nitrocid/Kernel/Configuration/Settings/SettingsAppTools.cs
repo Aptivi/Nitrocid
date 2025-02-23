@@ -144,21 +144,30 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         internal static void CheckForSystemUpdates()
         {
+            // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
+            // translated in the compiler pre-processor directives, so we need to move all translations here to
+            // avoid this happening again and for the locale tools to actually see them.
+            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled because you're running a development version.");
+            string checkFailed = Translate.DoTranslation("Failed to check for updates.");
+            string checking = Translate.DoTranslation("Checking for system updates...");
+            string newVersion = Translate.DoTranslation("Found new version: ");
+            string upToDate = Translate.DoTranslation("You're up to date!");
+
 #if SPECIFIERREL
             // Check for updates now
-            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Checking for system updates..."));
+            InfoBoxNonModalColor.WriteInfoBox(checking);
             var AvailableUpdate = UpdateManager.FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Found new version: ") + $"{AvailableUpdate.UpdateVersion}");
+                    InfoBoxModalColor.WriteInfoBoxModal(newVersion + $"{AvailableUpdate.UpdateVersion}");
                 else
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You're up to date!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(upToDate);
             }
             else if (AvailableUpdate is null)
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to check for updates."));
+                InfoBoxModalColor.WriteInfoBoxModal(checkFailed);
 #else
-            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Checking for updates is disabled on development versions."));
+            InfoBoxModalColor.WriteInfoBoxModal(devVersionWarning);
 #endif
         }
 
