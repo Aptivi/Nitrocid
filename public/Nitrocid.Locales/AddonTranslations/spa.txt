@@ -1014,7 +1014,6 @@ Si está habilitado, muestra el tamaño total de la carpeta en la lista, dependi
 ¡Estás al día!
 Formato JSON predeterminado para shell JSON
 Selecciona el formato JSON predeterminado (mejorado o minimizado) para que se guarde el shell JSON.
-¡Se descargó la actualización con éxito!
 Radio de explosión de fuegos artificiales
 ¿Cuántos bloques (hasta 10) es el radio de explosión de los fuegos artificiales cuando se encienden?
 Este comando tiene los siguientes interruptores que cambian su funcionamiento:

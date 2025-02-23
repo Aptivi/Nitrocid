@@ -1018,7 +1018,6 @@
     "You're up to date!",
     "Default JSON formatting for JSON shell",
     "Selects the default JSON formatting (beautified or minified) for the JSON shell to save.",
-    "Downloaded the update successfully!",
     "Firework explosion radius",
     "How many blocks (up to 10) is the explosion radius for the firework when ignited?",
     "This command has the below switches that change how it works:",

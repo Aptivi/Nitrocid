@@ -1014,7 +1014,6 @@ Etkinleştirildiğinde, yapılandırmaya göre klasör boyutlarının nasıl hes
 Güncelsiniz!
 JSON kabuğu için varsayılan JSON biçimlendirmesi
 JSON kabuğunun kaydedeceği varsayılan JSON biçimlendirmesini (güzelleştirilmiş veya küçültülmüş) seçer.
-Güncelleme başarıyla indirildi!
 Havai fişek patlama yarıçapı
 Havai fişek ateşlendiğinde patlama yarıçapı kaç bloktur (en fazla 10)?
 Bu komutun çalışma şeklini değiştiren aşağıdaki anahtarları vardır:

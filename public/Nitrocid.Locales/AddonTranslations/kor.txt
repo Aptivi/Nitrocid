@@ -1014,7 +1014,6 @@ hwalseonghwahamyeon guseong-e ttala poldeo keugileul gyesanhaneun bangbeob-e tta
 choesin jeongboibnida!
 JSON syel-ui gibon JSON hyeongsig
 jeojanghal JSON syel-ui gibon JSON hyeongsig(mihwa ttoneun chugso)eul seontaeghabnida.
-eobdeiteuleul seong-gongjeog-eulo daunlodeuhaessseubnida!
 bulkkoch pogbal bangyeong
 bulkkoch-i but-eoss-eul ttae pogbal bangyeong-eun myeoch beullog(choedae 10)ibnikka?
 i myeonglyeong-eneun jagdong bangsig-eul byeongyeonghaneun alae seuwichiga issseubnida.

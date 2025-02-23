@@ -1014,7 +1014,6 @@ Se ativado, mostra o tamanho total da pasta na lista, dependendo de como calcula
 Você está atualizado!
 Formatação JSON padrão para shell JSON
 Seleciona a formatação JSON padrão (embelezada ou minimizada) para o shell JSON salvar.
-Atualização baixada com sucesso!
 Raio de explosão de fogos de artifício
 Quantos blocos (até 10) é o raio de explosão dos fogos de artifício quando acesos?
 Este comando tem as seguintes opções que alteram seu funcionamento:

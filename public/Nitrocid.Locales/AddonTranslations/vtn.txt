@@ -1014,7 +1014,6 @@ Nếu được bật, sẽ hiển thị tổng kích thước thư mục trong d
 Bạn đã cập nhật rồi!
 Định dạng JSON mặc định cho shell JSON
 Chọn định dạng JSON mặc định (làm đẹp hoặc thu nhỏ) để lưu shell JSON.
-Đã tải xuống bản cập nhật thành công!
 Bán kính nổ pháo hoa
 Bán kính nổ của pháo hoa khi đốt cháy là bao nhiêu khối (tối đa 10 khối)?
 Lệnh này có các công tắc bên dưới để thay đổi cách thức hoạt động:
