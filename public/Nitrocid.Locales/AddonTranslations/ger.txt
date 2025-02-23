@@ -3510,7 +3510,6 @@ Journaleinträge können nicht abgerufen werden
 GNU GRUB Version 0.97 (638 KB weniger / 1046784 KB mehr Speicher)
 Der Remote-Debug konnte aus unbekannten Gründen nicht gestartet werden.
 Thread kann nicht regeneriert werden
-Änderungsprotokolle können nicht abgerufen werden.
 Sprachressource konnte nicht geladen werden für
 Lokalisierter Text kann nicht abgerufen werden
 Es können keine englischen Lokalisierungen abgerufen werden.
@@ -3868,7 +3867,6 @@ Zielverzeichnis
 Suchmuster
 Neuer Name, in den alle gefundenen Dateien umbenannt werden sollen
 Pfad zur Datei, deren Inhalt gedruckt werden soll
-Holen Sie sich die Änderungsprotokolle aus dem Internet statt lokal
 Pfad zur Datei
 Entweder Hinzufügen oder Entfernen
 Attributname

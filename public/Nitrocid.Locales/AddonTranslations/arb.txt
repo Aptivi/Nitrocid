@@ -3510,7 +3510,6 @@ la yumkin alhusul ealaa 'iidkhalat almajala
 GNU GRUB al'iisdar 0.97 (638 kilu bayit 'aqall / 1046784 kilu bayt 'aelaa)
 fashil bad' altashih ean bued li'asbab ghayr maerufatin.
 la yumkin 'iieadat 'iinsha' alkhayt
-la yumkin jalb sijilaat altaghyiri.
 fashil tahmil mawrid allughat li
 la yumkin alhusul ealaa nasin mutarjim
 la yumkin alhusul ealaa tarjamat biallughat al'iinjilizia
@@ -3868,7 +3867,6 @@ aldalil almustahdaf
 namat albahth
 aism jadid li'iieadat tasmiat jamie almilafaat alati tama aleuthur ealayha
 masar almilafi tibaeat muhtawayatih
-jalb sijilaat altaghyir min al'iintirnit bdlaan min mhlyan
 masar almilafi
 'iimaa al'iidafat 'aw al'iizala
 aism alsima

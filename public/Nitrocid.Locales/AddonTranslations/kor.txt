@@ -3510,7 +3510,6 @@ jeoneol hangmog-eul gajyeool su eobs-seubnida.
 GNU GRUB beojeon 0.97(638K hawi/1046784K sang-wi memoli)
 al su eobsneun iyulo wongyeog dibeogeuleul sijaghaji moshaessseubnida.
 seuledeuleul dasi saengseonghal su eobs-seubnida.
-byeongyeong logeuleul gajyeool su eobs-seubnida.
 eon-eo lisoseuleul lodeuhaji moshaessseubnida.
 lokeolhwadoen tegseuteuleul gajyeool su eobs-seubnida.
 yeong-eo hyeonjihwaleul gajyeool su eobs-seubnida.
@@ -3868,7 +3867,6 @@ daesang dilegtoli
 geomsaeg paeteon
 balgyeondoen modeun pail-ui ileum-eul bakkul sae ileum
 naeyong-eul inswaehal pail gyeonglo
-lokeol-i anin inteones-eseo byeongyeong logeu gajyeoogi
 gyeonglo pail
 chuga ttoneun jegeo
 sogseong ileum

@@ -35,8 +35,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool online = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-online");
-            string changes = online ? UpdateManager.GetVersionChangelogs() : UpdateManager.FetchCurrentChangelogsFromResources();
+            string changes = UpdateManager.FetchCurrentChangelogsFromResources();
             TextWriterColor.Write(changes);
             return 0;
         }

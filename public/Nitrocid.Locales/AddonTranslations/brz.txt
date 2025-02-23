@@ -3510,7 +3510,6 @@ Não é possível obter entradas de diário
 GNU GRUB versão 0.97 (638K inferior / 1046784K superior memória)
 A depuração remota falhou ao iniciar por razões desconhecidas.
 O tópico não pode ser regenerado
-Não é possível obter os registros de alterações.
 Falha ao carregar o recurso de idioma para
 Não é possível obter texto localizado
 Não é possível obter localizações em inglês
@@ -3868,7 +3867,6 @@ Diretório de destino
 Padrão de pesquisa
 Novo nome para renomear todos os arquivos encontrados
 Caminho para o arquivo para imprimir seu conteúdo
-Obtenha os changelogs da internet em vez de localmente
 Caminho para o arquivo
 Adição ou remoção
 Nome do atributo

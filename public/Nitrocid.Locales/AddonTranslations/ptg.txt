@@ -3510,7 +3510,6 @@ Não é possível obter entradas de diário
 GNU GRUB versão 0,97 (638K inferior / 1046784K memória superior)
 A depuração remota não começou por razões desconhecidas.
 O tópico não pode ser regenerado
-Não é possível procurar locações.
 Falha ao carregar o recurso da linguagem para
 Não é possível obter texto localizado
 Não é possível obter localizações em inglês
@@ -3868,7 +3867,6 @@ Diretório de destino
 Padrão de pesquisa
 Novo nome para renomear todos os ficheiros encontrados
 Caminho para o ficheiro para imprimir o seu conteúdo
-Obtenha os changelogs da internet em vez de localmente
 Caminho para o ficheiro
 Adição ou remoção
 Nome do atributo

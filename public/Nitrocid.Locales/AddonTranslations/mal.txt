@@ -3510,7 +3510,6 @@ Tidak boleh mendapatkan catatan jurnal
 GNU GRUB versi 0.97 (638K lebih rendah / 1046784K memori atas)
 Nyahpepijat jauh gagal dimulakan atas sebab yang tidak diketahui.
 Benang tidak boleh dijana semula
-Tidak dapat mengambil log perubahan.
 Gagal memuatkan sumber bahasa untuk
 Tidak boleh mendapatkan teks yang disetempatkan
 Tidak boleh mendapatkan penyetempatan bahasa Inggeris
@@ -3868,7 +3867,6 @@ Direktori sasaran
 Corak carian
 Nama baharu untuk menamakan semula semua fail yang ditemui
 Laluan ke fail untuk mencetak kandungannya
-Ambil log perubahan daripada internet dan bukannya secara tempatan
 Laluan ke fail
 Sama ada penambahan atau penyingkiran
 Nama atribut

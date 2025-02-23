@@ -3510,7 +3510,6 @@ Non è possibile ottenere le registrazioni del diario
 GNU GRUB versione 0.97 (638K memoria inferiore / 1046784K memoria superiore)
 Il debug remoto non è riuscito ad avviarsi per motivi sconosciuti.
 Il thread non può essere rigenerato
-Impossibile recuperare i changelog.
 Impossibile caricare la risorsa linguistica per
 Impossibile ottenere il testo localizzato
 Non riesco a ottenere le localizzazioni in inglese
@@ -3868,7 +3867,6 @@ Directory di destinazione
 Modello di ricerca
 Nuovo nome per rinominare tutti i file trovati
 Percorso del file per stamparne il contenuto
-Recupera i changelog da Internet invece che localmente
 Percorso al file
 Sia aggiunta che rimozione
 Nome attributo

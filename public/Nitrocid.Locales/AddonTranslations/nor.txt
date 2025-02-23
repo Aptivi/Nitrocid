@@ -3510,7 +3510,6 @@ Kan ikke hente journaloppføringer
 GNU GRUB versjon 0.97 (638K nedre / 1046784K øvre minne)
 Ekstern feilsøking kunne ikke starte av ukjente årsaker.
 Tråden kan ikke regenereres
-Kan ikke hente endringslogger.
 Kunne ikke laste inn språkressurs for
 Kan ikke hente lokalisert tekst
 Kan ikke få engelske lokaliseringer
@@ -3868,7 +3867,6 @@ Målkatalog
 Søkemønster
 Nytt navn å gi nytt navn til alle funnet filer til
 Bane til fil for å skrive ut innholdet
-Hent endringsloggene fra internett i stedet for lokalt
 Bane til fil
 Enten tillegg eller fjerning
 Attributtnavn

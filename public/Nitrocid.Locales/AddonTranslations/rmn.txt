@@ -3510,7 +3510,6 @@ Nu pot obține intrări în jurnal
 GNU GRUB versiunea 0.97 (638K inferioară / 1046784K memorie superioară)
 Depanarea de la distanță nu a pornit din motive necunoscute.
 Firul nu poate fi regenerat
-Nu se pot prelua jurnalele de modificări.
 Nu s-a încărcat resursa de limbă pentru
 Nu se poate obține textul localizat
 Nu pot obține localizări în engleză
@@ -3868,7 +3867,6 @@ Directorul țintă
 Model de căutare
 Nume nou pentru a redenumi toate fișierele găsite
 Calea către fișier pentru a-și imprima conținutul
-Preluați jurnalele de modificări de pe internet în loc de local
 Calea către fișier
 Fie adăugare, fie eliminare
 Nume atribut

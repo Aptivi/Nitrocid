@@ -114,24 +114,6 @@ namespace Nitrocid.Kernel.Updates
         }
 
         /// <summary>
-        /// Fetches the GitHub repo for changelogs
-        /// </summary>
-        /// <returns>A kernel update instance</returns>
-        public static KernelUpdate? FetchChangelogs()
-        {
-            try
-            {
-                return FetchKernelUpdates(UpdateKind.Changelogs);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return null;
-        }
-
-        /// <summary>
         /// Prompt for checking for kernel updates
         /// </summary>
         public static void CheckKernelUpdates()
@@ -167,18 +149,6 @@ namespace Nitrocid.Kernel.Updates
 #else
             SplashReport.ReportProgressWarning(devVersionWarning);
 #endif
-        }
-
-        /// <summary>
-        /// Gets the changelogs for the current kernel version
-        /// </summary>
-        /// <returns>A string representing the changelogs for this kernel version</returns>
-        public static string GetVersionChangelogs()
-        {
-            var changelogsUpdate = FetchChangelogs() ??
-                throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Can't fetch changelogs."));
-            string changes = NetworkTransfer.DownloadString(changelogsUpdate.UpdateURL.ToString());
-            return changes;
         }
 
         internal static string FetchCurrentChangelogsFromResources()

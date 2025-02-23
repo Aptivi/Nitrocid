@@ -3510,7 +3510,6 @@ wúfǎ huòqǔ rìjì tiáomù
 GNU GRUB bǎnběn 0.97(638K xiàxiàn/1046784K shàngxiàn nèicún)
 yóuyú wèizhī yuányīn, yuǎnchéng tiáoshì wúfǎ qǐdòng.
 Wúfǎ chóngxīn shēngchéng xiànchéng
-wúfǎ huòqǔ gēnggǎi rìzhì.
 Wúfǎ jiāzài yǔyán zīyuán
 wúfǎ huòqǔ běndì huà wénběn
 wúfǎ huòqǔ yīngyǔ běndì huà
@@ -3868,7 +3867,6 @@ mùbiāo mùlù
 sōusuǒ móshì
 jiāng suǒyǒu zhǎodào de wénjiàn zhòng mìngmíng wèi de xīn míngchēng
 yào dǎyìn qí nèiróng de wénjiàn lùjìng
-cóng hùliánwǎng ér bùshì běndì huòqǔ gēnggǎi rìzhì
 wénjiàn lùjìng
 tiānjiā huò shānchú
 shǔxìng míngchēng

@@ -36,9 +36,5 @@ namespace Nitrocid.Kernel.Updates
         /// The addons
         /// </summary>
         Addons,
-        /// <summary>
-        /// The changelogs
-        /// </summary>
-        Changelogs,
     }
 }
