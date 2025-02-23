@@ -56,13 +56,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
                 TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
-                var listing = new Listing()
-                {
-                    Objects = threadTrace,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriters.WriteList(threadTrace);
             }
             return 0;
         }

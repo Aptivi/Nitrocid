@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -33,17 +34,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
             TextWriterColor.Write(Translate.DoTranslation("Normal string list:"));
-            var listing = new Listing()
-            {
-                Objects = NormalStringList,
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriters.WriteList(NormalStringList);
             TextWriterColor.Write(Translate.DoTranslation("Array string list:"));
-            var listing2 = new Listing()
-            {
-                Objects = ArrayStringList,
-            };
-            TextWriterRaw.WriteRaw(listing2.Render());
+            TextWriters.WriteList(ArrayStringList);
         }
     }
 }

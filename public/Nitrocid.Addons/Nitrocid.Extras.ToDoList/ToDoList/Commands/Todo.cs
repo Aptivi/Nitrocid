@@ -148,13 +148,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                         var tasks = ToDoManager.GetTaskNames()
                             .Select((name) => ToDoManager.GetTask(name).TaskDone ? $"[*] {name}" : $"[ ] {name}")
                             .ToArray();
-                        var listing = new Listing()
-                        {
-                            Objects = tasks,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WriteRaw(listing.Render());
+                        TextWriters.WriteList(tasks);
                         return 0;
                     }
                 case "save":

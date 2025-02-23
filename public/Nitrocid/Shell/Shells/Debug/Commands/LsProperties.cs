@@ -51,13 +51,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     {
                         // Write the property names and their values
                         SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of properties for") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        var listing = new Listing()
-                        {
-                            Objects = properties,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WriteRaw(listing.Render());
+                        TextWriters.WriteList(properties);
                     }
                 }
                 catch (Exception ex)

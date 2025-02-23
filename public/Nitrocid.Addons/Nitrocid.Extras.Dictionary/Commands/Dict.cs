@@ -77,26 +77,14 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         if (DefinitionBase.Synonyms is not null && DefinitionBase.Synonyms.Length != 0)
                         {
                             TextWriters.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
-                            var listing = new Listing()
-                            {
-                                Objects = DefinitionBase.Synonyms,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                            };
-                            TextWriterRaw.WriteRaw(listing.Render());
+                            TextWriters.WriteList(DefinitionBase.Synonyms);
                         }
 
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms is not null && DefinitionBase.Antonyms.Length != 0)
                         {
                             TextWriters.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
-                            var listing = new Listing()
-                            {
-                                Objects = DefinitionBase.Antonyms,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                            };
-                            TextWriterRaw.WriteRaw(listing.Render());
+                            TextWriters.WriteList(DefinitionBase.Antonyms);
                         }
                     }
 
@@ -104,38 +92,20 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     if (MeaningBase.Synonyms is not null && MeaningBase.Synonyms.Length != 0)
                     {
                         TextWriters.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
-                        var listing = new Listing()
-                        {
-                            Objects = MeaningBase.Synonyms,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WriteRaw(listing.Render());
+                        TextWriters.WriteList(MeaningBase.Synonyms);
                     }
 
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms is not null && MeaningBase.Antonyms.Length != 0)
                     {
                         TextWriters.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
-                        var listing = new Listing()
-                        {
-                            Objects = MeaningBase.Antonyms,
-                            KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                            ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                        };
-                        TextWriterRaw.WriteRaw(listing.Render());
+                        TextWriters.WriteList(MeaningBase.Antonyms);
                     }
                 }
 
                 // Sources...
                 SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                var sources = new Listing()
-                {
-                    Objects = Word.SourceUrls ?? [],
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WriteRaw(sources.Render());
+                TextWriters.WriteList(Word.SourceUrls ?? []);
             }
             return 0;
         }

@@ -61,13 +61,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             if (ListMode)
             {
                 var Cities = WeatherForecastOwm.ListAllCities();
-                var listing = new Listing()
-                {
-                    Objects = Cities,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriters.WriteList(Cities);
             }
             else
             {

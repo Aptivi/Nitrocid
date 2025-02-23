@@ -68,13 +68,7 @@ namespace Nitrocid.Users.Login.Handlers
             {
                 var UsersList = UserManagement.ListAllUsers();
                 TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
-                var listing = new Listing()
-                {
-                    Objects = UsersList,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriters.WriteList(UsersList);
             }
             return true;
         }

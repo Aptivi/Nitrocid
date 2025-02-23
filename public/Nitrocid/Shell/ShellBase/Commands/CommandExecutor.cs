@@ -142,13 +142,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.ListValue);
-                            var listing = new Listing()
-                            {
-                                Objects = unsatisfied.UnknownSwitchesList,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                            };
-                            TextWriterRaw.WriteRaw(listing.Render());
+                            TextWriters.WriteList(unsatisfied.UnknownSwitchesList);
                         }
 
                         // Check for conflicting switches
@@ -156,13 +150,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.ListValue);
-                            var listing = new Listing()
-                            {
-                                Objects = unsatisfied.ConflictingSwitchesList,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                            };
-                            TextWriterRaw.WriteRaw(listing.Render());
+                            TextWriters.WriteList(unsatisfied.ConflictingSwitchesList);
                         }
 
                         // Check for switches that don't accept values
@@ -170,13 +158,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", vars: [command]);
                             TextWriters.Write("  - " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.ListValue);
-                            var listing = new Listing()
-                            {
-                                Objects = unsatisfied.NoValueSwitchesList,
-                                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                            };
-                            TextWriterRaw.WriteRaw(listing.Render());
+                            TextWriters.WriteList(unsatisfied.NoValueSwitchesList);
                         }
 
                         // Check for invalid number in numeric arguments
@@ -374,13 +356,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 var WrappableCmds = GetWrappableCommands(currentType);
                 DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", vars: [Command, string.Join(", ", WrappableCmds)]);
                 TextWriters.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
-                var listing = new Listing()
-                {
-                    Objects = WrappableCmds,
-                    KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                    ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
+                TextWriters.WriteList(WrappableCmds);
                 return;
             }
 

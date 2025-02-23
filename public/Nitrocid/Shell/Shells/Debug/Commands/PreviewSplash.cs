@@ -67,13 +67,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         {
             var splashes = SplashManager.GetNamesOfSplashes();
             TextWriterColor.Write(Translate.DoTranslation("Available splashes:"));
-            var listing = new Listing()
-            {
-                Objects = splashes,
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriters.WriteList(splashes);
         }
 
     }

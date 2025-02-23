@@ -24,6 +24,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -42,13 +43,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
             // List all the available shells
             var shellNames = ShellManager.AvailableShells.Keys;
-            var listing = new Listing()
-            {
-                Objects = shellNames,
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriters.WriteList(shellNames);
             return 0;
         }
 

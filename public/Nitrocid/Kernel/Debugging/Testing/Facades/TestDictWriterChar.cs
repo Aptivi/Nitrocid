@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -33,17 +34,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
             TextWriterColor.Write(Translate.DoTranslation("Normal char dictionary:"));
-            var listing = new Listing()
-            {
-                Objects = NormalCharDict,
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriters.WriteList(NormalCharDict);
             TextWriterColor.Write(Translate.DoTranslation("Array char dictionary:"));
-            var listing2 = new Listing()
-            {
-                Objects = ArrayCharDict,
-            };
-            TextWriterRaw.WriteRaw(listing2.Render());
+            TextWriters.WriteList(ArrayCharDict);
         }
     }
 }

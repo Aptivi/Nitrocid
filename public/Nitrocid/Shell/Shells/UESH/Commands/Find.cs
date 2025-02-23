@@ -25,7 +25,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 using Textify.General;
-using Lists = Terminaux.Writer.CyclicWriters.Listing;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -66,13 +66,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
             }
             else
-            {
-                var listing = new Lists()
-                {
-                    Objects = FileEntries,
-                };
-                TextWriterRaw.WriteRaw(listing.Render());
-            }
+                TextWriters.WriteList(FileEntries);
             variableValue = string.Join('\n', FileEntries);
             return 0;
         }

@@ -24,6 +24,8 @@ using System;
 using System.Threading;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers;
+using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -42,6 +44,41 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ListValueColor">A value color.</param>
         public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue, int indent = 0) =>
             ListEntryWriterColor.WriteListEntry(entry, value, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), indent);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue)
+            where TKey : notnull
+        {
+            var listing = new Listing()
+            {
+                Objects = List,
+                KeyColor = KernelColorTools.GetColor(ListKeyColor),
+                ValueColor = KernelColorTools.GetColor(ListValueColor),
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue)
+        {
+            var listing = new Listing()
+            {
+                Objects = List,
+                KeyColor = KernelColorTools.GetColor(ListKeyColor),
+                ValueColor = KernelColorTools.GetColor(ListValueColor),
+            };
+            TextWriterRaw.WriteRaw(listing.Render());
+        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.

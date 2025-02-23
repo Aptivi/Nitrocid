@@ -30,6 +30,7 @@ using System;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -66,13 +67,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             var screensavers = ScreensaverManager.GetScreensaverNames();
             TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"));
-            var listing = new Listing()
-            {
-                Objects = screensavers,
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
-            };
-            TextWriterRaw.WriteRaw(listing.Render());
+            TextWriters.WriteList(screensavers);
         }
 
         private void PressAndBailHelper()

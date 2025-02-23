@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Extensions;
 using Terminaux.Writer.CyclicWriters;
 using System.Reflection;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
