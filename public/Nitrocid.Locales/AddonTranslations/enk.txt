@@ -2945,7 +2945,7 @@ Show the count of kernel addon commands when listing them in the help command
 Enable scroll bar in selection
 Enables the scroll bar in selection screens
 Do Not Disturb
-If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus.
+If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus.
 Upper left corner character for general border
 Upper right corner character for general border
 Lower left corner character for general border

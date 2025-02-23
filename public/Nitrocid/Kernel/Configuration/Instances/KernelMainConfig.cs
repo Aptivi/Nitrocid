@@ -1533,7 +1533,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool EnableScrollBarInSelection { get; set; } = true;
         /// <summary>
-        /// If Do Not Disturb is enabled, all notifications received will be supressed from the display. This means that you won't be able to see any notification to help you focus.
+        /// If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus.
         /// </summary>
         public bool DoNotDisturb
         {
