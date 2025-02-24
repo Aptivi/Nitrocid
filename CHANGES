@@ -1,10 +1,33 @@
-TBD...
+We are back with yet another major release built on top of 0.1.0!
+
+![Nitrocid KS 0.1.2 - Ink-redible Hotness](https://raw.githubusercontent.com/Aptivi-Docs/nitrocid-ks-manual/main/.gitbook/assets/image%20(91).png)
+
+We are so excited to announce the release of Nitrocid KS 0.1.2 as February wraps up!
+
+This makes the kernel more attractive than before, and the features that come with it will wow you!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` TBD...
+- `[+]` Added new themes
+- `[+]` Added new screensavers
+- `[+]` Added new languages
+- `[+]` Added new commands
+- `[+]` Added new interactive TUIs
+- `[+]` Added SMultivar
+- `[+]` Added editable widgets in The Nitrocid Homepage
+- `[+]` Added Pomodoro Timer
+- `[+]` Added audio cues
+- `[+]` Added Arch Linux packaging and Windows Installer packaging
+- `[*]` Made the kernel more attractive
+- `[*]` Refactored some API functions
+- `[*]` Separated cultures from languages
+- `[*]` Improvements in shutdown sequence
+- `[*]` Themes now parse more quickly
+- `[*]` Consolidated locale tools to Nitrocid.Locales
+- `[-]` Removed modern debug look
+- `[-]` Removed filesystem mitigation for NTFS corruption and BSOD issues
 
 Review the commit history if you want to get a deep insight about the changes.
 
