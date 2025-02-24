@@ -5,9 +5,9 @@ using System.Reflection;
 
 namespace KSMod
 {
-    public class ModName : IMod
+    public class ModClass : IMod
     {
-        public string Name => "My Mod";
+        public string Name => "KSMod";
 
         public string Version => "1.0.0";
 

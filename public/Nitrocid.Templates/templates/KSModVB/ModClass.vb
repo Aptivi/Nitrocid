@@ -1,11 +1,11 @@
 ﻿Imports Nitrocid.Modifications
 
-Namespace KSMod
-    Public Class ModName
+Namespace KSModVB
+    Public Class ModClass
         Implements IMod
         Public ReadOnly Property Name As String Implements IMod.Name
             Get
-                Return "My Mod"
+                Return "KSModVB"
             End Get
         End Property
 

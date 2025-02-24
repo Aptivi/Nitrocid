@@ -1,6 +1,6 @@
 ﻿Imports Nitrocid.Shell.ShellBase.Commands
 
-Namespace KSMod
+Namespace KSModVB
     Friend Class TuiCommand
         Inherits BaseCommand
         Implements ICommand
