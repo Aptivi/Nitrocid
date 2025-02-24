@@ -63,7 +63,8 @@ namespace Nitrocid.Shell.ShellBase.Help
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                        TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                         TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
@@ -79,7 +80,8 @@ namespace Nitrocid.Shell.ShellBase.Help
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                        TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                         TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
@@ -98,7 +100,8 @@ namespace Nitrocid.Shell.ShellBase.Help
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                        TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                         TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
@@ -114,7 +117,8 @@ namespace Nitrocid.Shell.ShellBase.Help
                 {
                     if ((!cmd.Value.Flags.HasFlag(CommandFlags.Strict) | cmd.Value.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Value.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0} -> {1}: ", false, KernelColorType.ListEntry, cmd.Key.Alias, cmd.Value.Command);
+                        string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                        TextWriters.Write("  - {0} -> {1}{2}: ", false, KernelColorType.ListEntry, cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                         TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.Value.GetTranslatedHelpEntry());
                     }
                 }
@@ -130,7 +134,8 @@ namespace Nitrocid.Shell.ShellBase.Help
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
+                        TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                         TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }

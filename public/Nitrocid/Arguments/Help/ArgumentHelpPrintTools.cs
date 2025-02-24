@@ -48,8 +48,9 @@ namespace Nitrocid.Arguments.Help
             foreach (string arg in argumentList.Keys)
             {
                 string entry = argumentList[arg].GetTranslatedHelpEntry();
+                string[] usages = [.. argumentList[arg].ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                 DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", vars: [arg, entry]);
-                TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, arg);
+                TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, arg, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
                 TextWriters.Write("{0}", true, KernelColorType.ListValue, entry);
             }
         }
