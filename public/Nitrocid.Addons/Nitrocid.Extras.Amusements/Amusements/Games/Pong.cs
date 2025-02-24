@@ -66,15 +66,15 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 StringBuilder field = new(ColorTools.RenderSetConsoleColor(fieldColor, true));
 
-                int FieldTopLeftEdge = 2;
-                int FieldBottomLeftEdge = 2;
+                int FieldTopLeftEdge = 3;
+                int FieldBottomLeftEdge = 3;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FieldTopLeftEdge, FieldBottomLeftEdge]);
 
                 int FieldTopRightEdge = ConsoleWrapper.WindowWidth - 3;
                 int FieldBottomRightEdge = ConsoleWrapper.WindowWidth - 3;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FieldTopRightEdge, FieldBottomRightEdge]);
 
-                int FieldTopEdge = 2;
+                int FieldTopEdge = 3;
                 int FieldBottomEdge = ConsoleWrapper.WindowHeight - 2;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FieldTopEdge, FieldBottomEdge]);
 
@@ -127,7 +127,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     Text =
                         Translate.DoTranslation("Score") + $": {p1Score,3}" +
-                        "           " +
+                        "     |     " +
                         Translate.DoTranslation("Score") + $": {p2Score,3}",
                     Top = 1,
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var ballColor = new Color(ConsoleColors.White);
 
             // The ball usually starts in the middle.
-            int FloorTopEdge = 2;
+            int FloorTopEdge = 3;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
             int FloorLeftEdge = 3;
             int FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
@@ -162,6 +162,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             DebugWriter.WriteDebug(DebugLevel.I, "Initial ball position ({0}, {1})", vars: [BallCurrentX, BallCurrentY]);
 
             bool Dead = false;
+            bool bailing = false;
             int BallPreviousX = BallCurrentX;
             int BallPreviousY = BallCurrentY;
             var BallWipeX = 0;
@@ -226,7 +227,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Main loop
             double factor = 1.0;
-            while (!Dead)
+            while (!Dead && !bailing)
             {
                 // Delay
                 SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)(100 * factor));
@@ -257,6 +258,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (rightPadY - padLength - 1 <= FloorTopEdge)
                                 break;
                             rightPadY -= 1;
+                            break;
+                        case ConsoleKey.Escape:
+                            bailing = true;
                             break;
                     }
                 }
@@ -352,7 +356,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenTools.Render();
 
             // Show the stage for few seconds before wiping
-            Thread.Sleep(5000);
+            if (Dead)
+                Thread.Sleep(5000);
 
             // Reset console display and screen
             ScreenTools.UnsetCurrent(screen);
