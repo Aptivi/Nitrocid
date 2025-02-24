@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Languages;
@@ -83,5 +84,13 @@ namespace Nitrocid.Misc.Interactives
 
         internal void DismissAll() =>
             NotificationManager.NotifDismissAll();
+
+        internal static void OpenNotificationsCli()
+        {
+            var tui = new NotificationsCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
     }
 }

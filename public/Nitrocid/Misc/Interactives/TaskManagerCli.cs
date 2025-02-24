@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
 using Textify.General;
+using System;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -181,6 +182,14 @@ namespace Nitrocid.Misc.Interactives
         {
             osThreadMode = !osThreadMode;
             InteractiveTuiTools.SelectionMovement(this, 1);
+        }
+
+        internal static void OpenTaskManagerCli()
+        {
+            var tui = new TaskManagerCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
 }

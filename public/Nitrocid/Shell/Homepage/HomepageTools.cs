@@ -52,6 +52,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -69,10 +70,10 @@ namespace Nitrocid.Shell.Homepage
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
-            { /* Localizable */ "File Manager", OpenFileManagerCli },
-            { /* Localizable */ "Alarm Manager", OpenAlarmCli },
-            { /* Localizable */ "Notifications", OpenNotificationsCli },
-            { /* Localizable */ "Task Manager", OpenTaskManagerCli },
+            { /* Localizable */ "File Manager", FilesystemTools.OpenFileManagerTui },
+            { /* Localizable */ "Alarm Manager", AlarmCli.OpenAlarmCli },
+            { /* Localizable */ "Notifications", NotificationsCli.OpenNotificationsCli },
+            { /* Localizable */ "Task Manager", TaskManagerCli.OpenTaskManagerCli },
         };
         private static readonly Keybinding[] bindings =
         [
@@ -694,54 +695,6 @@ namespace Nitrocid.Shell.Homepage
             if (IsHomepageActionBuiltin(actionName))
                 throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Built-in action can't be removed."));
             choiceActionsAddons.Remove(actionName);
-        }
-
-        private static void OpenFileManagerCli()
-        {
-            var tui = new FileManagerCli
-            {
-                firstPanePath = PathsManagement.HomePath,
-                secondPanePath = PathsManagement.HomePath,
-            };
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo()));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir()));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        private static void OpenAlarmCli()
-        {
-            var tui = new AlarmCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        private static void OpenNotificationsCli()
-        {
-            var tui = new NotificationsCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        private static void OpenTaskManagerCli()
-        {
-            var tui = new TaskManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
         }
 
         private static void OpenAboutBox()
