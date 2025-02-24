@@ -35,7 +35,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             while (!bailLoop)
             {
                 // Prompt for it
-                var keysChoices = keys.Select((sk, idx) => new InputChoiceInfo($"{idx + 1}", $"{sk.Name} [{(sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, configType))}]", sk.Description)).ToList();
+                var keysChoices = keys.Select((sk, idx) =>
+                {
+                    object? currentValue = sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, configType);
+                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{sk.Name}..." : $"{sk.Name} [{currentValue}]";
+                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, sk.Description);
+                }).ToList();
                 keysChoices.Add(new($"{keysChoices.Count + 1}", Translate.DoTranslation("Exit")));
                 int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], Translate.DoTranslation("Choose an entry for") + $" \"{key.Name}\"");
 
