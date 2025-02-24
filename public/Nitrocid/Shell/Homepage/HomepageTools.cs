@@ -581,53 +581,33 @@ namespace Nitrocid.Shell.Homepage
             // Variables
             var choices = new List<(InputChoiceInfo, Action)>();
 
-            // First, deal with the builtin choices that are added by the core kernel
-            foreach (var choiceAction in choiceActionsBuiltin)
+            // Helper function
+            void AddChoices(Dictionary<string, Action> choiceActions)
             {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
+                foreach (var choiceAction in choiceActions)
+                {
+                    // Sanity checks
+                    string key = choiceAction.Key;
+                    var action = choiceAction.Value;
+                    if (action is null)
+                        continue;
+                    if (string.IsNullOrEmpty(key))
+                        continue;
 
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
+                    // Add this action
+                    var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                    choices.Add((inputChoiceInfo, action));
+                }
             }
+
+            // First, deal with the builtin choices that are added by the core kernel
+            AddChoices(choiceActionsBuiltin);
 
             // Then, deal with the choices that are added by the addons
-            foreach (var choiceAction in choiceActionsAddons)
-            {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
-
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
-            }
+            AddChoices(choiceActionsAddons);
 
             // Now, deal with the custom choices that are added by the mods
-            foreach (var choiceAction in choiceActionsCustom)
-            {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
-
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
-            }
+            AddChoices(choiceActionsCustom);
 
             // Finally, return the result for the homepage to recognize them
             return [.. choices];
