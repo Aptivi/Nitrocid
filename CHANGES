@@ -11,23 +11,28 @@ This makes the kernel more attractive than before, and the features that come wi
 This release contains a variety of changes, including, but not limited to:
 
 - `[+]` Added new themes
-- `[+]` Added new screensavers
-- `[+]` Added new languages
+- `[+]` Added new screensavers `*`
+- `[+]` Added new languages `+`
 - `[+]` Added new commands
 - `[+]` Added new interactive TUIs
 - `[+]` Added SMultivar
 - `[+]` Added editable widgets in The Nitrocid Homepage
-- `[+]` Added Pomodoro Timer
+- `[+]` Added Pomodoro Timer `*`
 - `[+]` Added audio cues
-- `[+]` Added Arch Linux packaging and Windows Installer packaging
-- `[*]` Made the kernel more attractive
+- `[+]` Added Arch Linux packaging and Windows Installer packaging `*`
+- `[*]` Made the kernel more attractive `*`
 - `[*]` Refactored some API functions
 - `[*]` Separated cultures from languages
-- `[*]` Improvements in shutdown sequence
-- `[*]` Themes now parse more quickly
-- `[*]` Consolidated locale tools to Nitrocid.Locales
+- `[*]` Improvements in shutdown sequence `*`
+- `[*]` Themes now parse more quickly `*`
+- `[*]` Consolidated locale tools to Nitrocid.Locales `+`
 - `[-]` Removed modern debug look
-- `[-]` Removed filesystem mitigation for NTFS corruption and BSOD issues
+- `[-]` Removed filesystem mitigation for NTFS corruption and BSOD issues `*`
+
+Legend:
+
+- Changes highlighted with a `*` at the end indicate that they're backported for 0.1.0 and 0.1.1.
+- Changes highlighted with a `+` at the end indicate that they're backported for 0.1.1.
 
 Review the commit history if you want to get a deep insight about the changes.
 
