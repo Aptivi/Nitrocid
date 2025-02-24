@@ -324,6 +324,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         else
                             Direction = BallDirection.RightUp;
                     }
+
+                    // Decrease the factor if needed
+                    factor -= 0.01;
+                    if (factor < 0.25)
+                        factor = 0.25;
+
+                    // Increase score
                     p1Score++;
                 }
                 if (BallCurrentX == rightPadX - 1 && BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY - padLength)
@@ -342,6 +349,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         else
                             Direction = BallDirection.LeftUp;
                     }
+
+                    // Decrease the factor if needed
+                    factor -= 0.01;
+                    if (factor < 0.25)
+                        factor = 0.25;
+
+                    // Increase score
                     p2Score++;
                 }
 
