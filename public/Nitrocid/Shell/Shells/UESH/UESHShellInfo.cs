@@ -1862,12 +1862,30 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo([],
                     [
-                        new SwitchInfo("s", /* Localizable */ "Shows the system information"),
-                        new SwitchInfo("h", /* Localizable */ "Shows the hardware information"),
-                        new SwitchInfo("u", /* Localizable */ "Shows the user information"),
-                        new SwitchInfo("m", /* Localizable */ "Shows the message of the day"),
-                        new SwitchInfo("l", /* Localizable */ "Shows the message of the day after login"),
-                        new SwitchInfo("a", /* Localizable */ "Shows all information"),
+                        new SwitchInfo("s", /* Localizable */ "Shows the system information", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("h", /* Localizable */ "Shows the hardware information", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("u", /* Localizable */ "Shows the user information", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("m", /* Localizable */ "Shows the message of the day", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("l", /* Localizable */ "Shows the message of the day after login", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("a", /* Localizable */ "Shows all information", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
                     ])
                 ], new SysInfoCommand()),
 
@@ -1894,7 +1912,10 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ],
                     [
-                        new SwitchInfo("y", /* Localizable */ "Immediately set the theme on selection")
+                        new SwitchInfo("y", /* Localizable */ "Immediately set the theme on selection", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
                     ])
                 ], new ThemeSetCommand()),
 
