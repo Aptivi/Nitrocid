@@ -311,19 +311,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (BallCurrentX == leftPadX + 1 && BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY - padLength)
                 {
                     if (Direction == BallDirection.LeftDown)
-                    {
-                        if (BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY)
-                            Direction = BallDirection.RightDown;
-                        else
-                            Direction = BallDirection.RightUp;
-                    }
+                        Direction = BallDirection.RightDown;
                     else
-                    {
-                        if (BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY)
-                            Direction = BallDirection.RightDown;
-                        else
-                            Direction = BallDirection.RightUp;
-                    }
+                        Direction = BallDirection.RightUp;
 
                     // Decrease the factor if needed
                     factor -= 0.01;
@@ -336,19 +326,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (BallCurrentX == rightPadX - 1 && BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY - padLength)
                 {
                     if (Direction == BallDirection.RightDown)
-                    {
-                        if (BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY)
-                            Direction = BallDirection.LeftDown;
-                        else
-                            Direction = BallDirection.LeftUp;
-                    }
+                        Direction = BallDirection.LeftDown;
                     else
-                    {
-                        if (BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY)
-                            Direction = BallDirection.LeftDown;
-                        else
-                            Direction = BallDirection.LeftUp;
-                    }
+                        Direction = BallDirection.LeftUp;
 
                     // Decrease the factor if needed
                     factor -= 0.01;
