@@ -56,8 +56,9 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 string TargetUnit = parameters.ArgumentsList[3];
                 var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
-                var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-                TextWriters.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
+                var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
+                var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
+                TextWriters.Write("- {0} => ", false, KernelColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
                 TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, KernelColorType.ListValue);
             }
             return 0;

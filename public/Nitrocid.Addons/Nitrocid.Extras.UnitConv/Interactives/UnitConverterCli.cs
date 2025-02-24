@@ -85,9 +85,11 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     string TargetUnit = wholeUnit[(wholeUnit.LastIndexOf(' ') + 1)..];
                     var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                     var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
-                    var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack("{0} => {1}: {2}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
-                        SourceUnit, TargetUnit, ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
+                    var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
+                    var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
+                    InfoBoxModalColor.WriteInfoBoxModalColorBack("{0} => {1}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                        InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat),
+                        ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
                 }
             }
             catch (Exception ex)
