@@ -73,7 +73,8 @@ namespace Nitrocid.Misc.Interactives
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
                         object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
-                        return ($"{key.Name} [{currentValue}]", idx);
+                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{key.Name}..." : $"{key.Name} [{currentValue}]";
+                        return (finalKeyName, idx);
                     }).ToArray();
                     entryNames.Clear();
                     entryNames.AddRange(configNames);
@@ -123,7 +124,7 @@ namespace Nitrocid.Misc.Interactives
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
             string entryDesc = Translate.DoTranslation(configs[entryIdx].Desc);
-            string status = $"E: {entryName} - {entryDesc}";
+            string status = $"{entryName} - {entryDesc}";
             return status;
         }
 
@@ -160,8 +161,9 @@ namespace Nitrocid.Misc.Interactives
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
             string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
-            string status = $"K: {keyName} - {keyDesc}";
+            string status = $"{entryName} > {keyName} - {keyDesc}";
             return status;
         }
 
@@ -178,10 +180,11 @@ namespace Nitrocid.Misc.Interactives
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
             string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
             string status =
                 $"""
-                {keyName}
+                {entryName} > {keyName}
                 ====================================================
                     
                 {keyDesc}
