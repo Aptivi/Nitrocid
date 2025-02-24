@@ -19,7 +19,6 @@
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-1</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>../../Nitrocid/KSAnalyzer</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->
