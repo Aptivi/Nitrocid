@@ -2,7 +2,7 @@
     <!-- KS General Information -->
     <PropertyGroup>
         <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
-        <Version>0.1.2.0</Version>
+        <Version>0.1.3.0</Version>
         <Copyright>Copyright (c) Aptivi 2018-2025</Copyright>
         <Company>Aptivi</Company>
         <Product>Nitrocid</Product>
@@ -22,8 +22,8 @@
           in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
           changes!
         -->
-        <NitrocidModAPIVersionMajor>3.1.27</NitrocidModAPIVersionMajor>
-        <NitrocidModAPIVersionChangeset>48</NitrocidModAPIVersionChangeset>
+        <NitrocidModAPIVersionMajor>3.1.28</NitrocidModAPIVersionMajor>
+        <NitrocidModAPIVersionChangeset>0</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
         <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
