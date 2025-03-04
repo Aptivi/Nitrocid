@@ -17,6 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
 # Check for dependencies
 msbuildpath=`which docfx`
@@ -27,7 +30,7 @@ fi
 
 # Build KS
 echo Building KS documentation...
-docfx ../DocGen/docfx.json
+docfx $ROOTDIR/DocGen/docfx.json
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1

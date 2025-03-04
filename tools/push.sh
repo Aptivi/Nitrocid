@@ -17,6 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
 # Convenience functions
 checkerror() {
     if [ $1 != 0 ]
@@ -36,9 +39,7 @@ fi
 
 # Push packages
 echo Pushing packages...
-find ../public/Nitrocid/KSBuild/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "$nugetsource" \;
-checkerror $? "Failed to push"
-find ../public/Nitrocid/KSAnalyzer/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "$nugetsource" \;
+find $ROOTDIR/public/Nitrocid/KS*/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "$nugetsource" \;
 checkerror $? "Failed to push"
 
 # Inform success

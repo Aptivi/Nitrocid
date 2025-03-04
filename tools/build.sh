@@ -17,6 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
 # Convenience functions
 checkerror() {
     if [ $1 != 0 ]
@@ -38,12 +41,12 @@ checkerror $? "dotnet is not found"
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" restore "../Nitrocid.sln" -p:Configuration=$ksreleaseconf ${@:2}
+"$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" -p:Configuration=$ksreleaseconf ${@:2}
 checkerror $? "Failed to download packages"
 
 # Build KS
 echo Building KS...
-"$dotnetpath" build "../Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1 ${@:2}
+"$dotnetpath" build "$ROOTDIR/Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1 ${@:2}
 checkerror $? "Failed to build Nitrocid"
 
 # Inform success

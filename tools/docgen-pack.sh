@@ -17,6 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
+
 # Convenience functions
 checkerror() {
     if [ $1 != 0 ]
@@ -27,7 +30,7 @@ checkerror() {
 }
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=$(grep "<Version>" ../Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
+ksversion=$(grep "<Version>" $ROOTDIR/Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
 checkerror $? "Failed to get version. Check to make sure that the version is specified correctly in D.B.props"
 
 # Check for dependencies
@@ -36,17 +39,17 @@ checkerror $? "zip is not found"
 
 # Pack documentation
 echo Packing documentation...
-cd "../docs/" && "$zippath" -r /tmp/$ksversion-doc.zip . && cd -
+cd "$ROOTDIR/docs/" && "$zippath" -r /tmp/$ksversion-doc.zip . && cd -
 checkerror $? "Failed to pack"
 
 # Inform success
-rm -rf "../DocGen/api"
+rm -rf "$ROOTDIR/DocGen/api"
 checkerror $? "Failed to remove api folder"
-rm -rf "../DocGen/obj"
+rm -rf "$ROOTDIR/DocGen/obj"
 checkerror $? "Failed to remove obj folder"
-rm -rf "../docs"
+rm -rf "$ROOTDIR/docs"
 checkerror $? "Failed to remove docs folder"
-mv /tmp/$ksversion-doc.zip .
+mv /tmp/$ksversion-doc.zip $ROOTDIR/tools/
 checkerror $? "Failed to move archive from temporary folder"
 echo Pack successful.
 exit 0
