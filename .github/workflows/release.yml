@@ -26,10 +26,10 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Release Asset Preparation
         run: |
-          cmd.exe /c "tools/build.cmd Release -p:ContinuousIntegrationBuild=true"
-          cmd.exe /c "tools/pack.cmd"
-          cmd.exe /c "tools/docgen.cmd"
-          cmd.exe /c "tools/docgen-pack.cmd"
+          cmd.exe /c "tools\build.cmd Release -p:ContinuousIntegrationBuild=true"
+          cmd.exe /c "tools\pack.cmd"
+          cmd.exe /c "tools\docgen.cmd"
+          cmd.exe /c "tools\docgen-pack.cmd"
           dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
@@ -58,11 +58,10 @@ jobs:
             tools/*.zip
             tools/*-changes.chg
             tools/*.exe
+      - name: Package Publication
+        run: cmd.exe /C "tools\push.cmd ${{ secrets.NUGET_APIKEY }}"
       - name: Notify build
         uses: tsickert/discord-webhook@v6.0.0
-        continue-on-error: true
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
           content: "<:nitrocidks:1268905174563557452> ${{ steps.release-asset.outputs.SUBJECT }} <:nitrocidks:1268905174563557452>\n\n${{ steps.release-asset.outputs.BODY }}"
-      - name: Package Publication
-        run: cmd.exe /C "tools/push.cmd ${{ secrets.NUGET_APIKEY }}"
