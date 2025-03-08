@@ -1,22 +1,5 @@
 #!/bin/bash
 
-#    Nitrocid KS  Copyright (C) 2018-2025  Aptivi
-#
-#    This file is part of Nitrocid KS
-#
-#    Nitrocid KS is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    Nitrocid KS is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 # Repository root
 ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
 
@@ -29,25 +12,29 @@ checkerror() {
     fi
 }
 
-# This script builds KS. Use when you have dotnet installed.
-ksreleaseconf=$1
-if [ -z $ksreleaseconf ]; then
-	ksreleaseconf=Release
+# This script builds.
+releaseconf=$1
+if [ -z $releaseconf ]; then
+	releaseconf=Release
 fi
 
 # Check for dependencies
 dotnetpath=`which dotnet`
 checkerror $? "dotnet is not found"
 
+# Turn off telemetry and logo
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_NOLOGO=1
+
 # Download packages
 echo Downloading packages...
-"$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" -p:Configuration=$ksreleaseconf ${@:2}
+"$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" -p:Configuration=$releaseconf ${@:2}
 checkerror $? "Failed to download packages"
 
-# Build KS
-echo Building KS...
-"$dotnetpath" build "$ROOTDIR/Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1 ${@:2}
-checkerror $? "Failed to build Nitrocid"
+# Build
+echo Building...
+"$dotnetpath" build "$ROOTDIR/Nitrocid.sln" -p:Configuration=$releaseconf ${@:2}
+checkerror $? "Failed to build"
 
 # Inform success
 echo Build successful.

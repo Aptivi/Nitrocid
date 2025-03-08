@@ -26,7 +26,7 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Generating Documentation
         run: |
-          make
+          make rel-ci
           make doc
       - name: Saving changes to gh-pages
         uses: peaceiris/actions-gh-pages@v3

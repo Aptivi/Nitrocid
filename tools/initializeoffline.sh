@@ -1,21 +1,7 @@
 #!/bin/bash
 
-#    Nitrocid KS  Copyright (C) 2018-2025  Aptivi
-#
-#    This file is part of Nitrocid KS
-#
-#    Nitrocid KS is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    Nitrocid KS is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# Repository root
+ROOTDIR=$( cd -- "$( dirname -- "$0" )/.." &> /dev/null && pwd )
 
 # Convenience functions
 checkerror() {
@@ -28,26 +14,26 @@ checkerror() {
 
 # Restore packages
 echo "- Restoring packages..."
-echo "  - HOME=`pwd`/nuget dotnet restore Nitrocid.sln"
-HOME=`pwd`/nuget dotnet restore Nitrocid.sln
+echo "  - HOME=$ROOTDIR/nuget dotnet restore $ROOTDIR/Nitrocid.sln"
+HOME=$ROOTDIR/nuget dotnet restore $ROOTDIR/Nitrocid.sln
 checkerror $? "  - Failed to restore NuGet packages"
 
 # Copy dependencies to deps
 echo "- Copying dependencies to deps..."
-echo "  - mkdir deps"
-mkdir deps
+echo "  - mkdir $ROOTDIR/deps"
+mkdir $ROOTDIR/deps
 checkerror $? "  - Failed to mkdir deps"
-echo "  - cp nuget/.nuget/packages/*/*/*.nupkg ./deps/"
-cp nuget/.nuget/packages/*/*/*.nupkg ./deps/
+echo "  - cp $ROOTDIR/nuget/.nuget/packages/*/*/*.nupkg $ROOTDIR/deps/"
+cp $ROOTDIR/nuget/.nuget/packages/*/*/*.nupkg $ROOTDIR/deps/
 checkerror $? "  - Failed to copy deps"
-echo "  - rm -rf nuget"
-rm -rf nuget
+echo "  - rm -rf $ROOTDIR/nuget"
+rm -rf $ROOTDIR/nuget
 checkerror $? "  - Failed to remove nuget folder"
 
 # Copy NuGet.config for offline use
 echo "- Copying NuGet.config..."
-echo "  - cp tools/OfflineNuGet.config ./NuGet.config"
-cp tools/OfflineNuGet.config ./NuGet.config
+echo "  - cp $ROOTDIR/tools/OfflineNuGet.config $ROOTDIR/NuGet.config"
+cp $ROOTDIR/tools/OfflineNuGet.config $ROOTDIR/NuGet.config
 checkerror $? "  - Failed to copy offline NuGet config"
 
 echo "- You should be able to build offline!"

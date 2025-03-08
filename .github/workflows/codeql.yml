@@ -2,9 +2,9 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches: [ "main" ]
   schedule:
     - cron: '06 12 * * *'
 
@@ -34,9 +34,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
     - name: Build
-      run: |
-        chmod +x ./tools/build.sh
-        cd tools && ./build.sh && cd -
+      run: make rel-ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:

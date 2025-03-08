@@ -2,14 +2,16 @@ name: Prepare release (canary)
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches:
+      - main
     
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
@@ -26,7 +28,7 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Release Asset Preparation
         run: |
-          cd tools ; cmd.exe /c "build.cmd Debug -p:ContinuousIntegrationBuild=true" ; cd ..
+          cmd.exe /c "tools/build.cmd Debug -p:ContinuousIntegrationBuild=true"
           dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
@@ -50,5 +52,4 @@ jobs:
       - name: Package Publication
         run: |
           dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
-          chmod +x tools/*.sh
-          cd tools ; cmd.exe /C "push.cmd ${{ secrets.GITHUB_TOKEN }} github" ; cd ..
+          cmd.exe /C "tools/push.cmd ${{ secrets.GITHUB_TOKEN }} github"

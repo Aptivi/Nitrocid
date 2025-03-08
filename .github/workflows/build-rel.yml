@@ -2,9 +2,11 @@ name: Build Project (Release)
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-saas", "v0.1.2.x-saas" ]
+    branches:
+      - main
     
 jobs:
   build:
@@ -15,29 +17,29 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.ref }}
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    - name: Solution Compilation (Windows)
-      if: matrix.runs-on == 'windows-latest'
-      run: cd tools ; ./build.cmd Release -p:ContinuousIntegrationBuild=true ; cd ..
-    - name: Solution Compilation (Unix)
-      if: matrix.runs-on != 'windows-latest'
-      run: make rel-ci
-    - name: Testing
-      run: dotnet test --no-build --configuration Release
-    - uses: actions/upload-artifact@v4
-      if: success() || failure()
-      with:
-        name: unit-test-log-${{ matrix.runs-on }}
-        path: "private/Nitrocid.Tests/KSTest/net8.0/UnitTestDebug.log"
-    - uses: actions/upload-artifact@v4
-      if: success() || failure()
-      with:
-        name: unit-test-log-ms-${{ matrix.runs-on }}
-        path: "private/Nitrocid.Tests/KSTest/net8.0/TestResults"
-        
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+          ref: ${{ github.ref }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Solution Compilation (Windows)
+        if: matrix.runs-on == 'windows-latest'
+        run: ./tools/build.cmd Release -p:ContinuousIntegrationBuild=true
+      - name: Solution Compilation (Unix)
+        if: matrix.runs-on != 'windows-latest'
+        run: make rel-ci
+      - name: Testing
+        run: dotnet test --no-build --configuration Release
+      - uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: unit-test-log-${{ matrix.runs-on }}
+          path: "private/Nitrocid.Tests/KSTest/net8.0/UnitTestDebug.log"
+      - uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: unit-test-log-ms-${{ matrix.runs-on }}
+          path: "private/Nitrocid.Tests/KSTest/net8.0/TestResults"
