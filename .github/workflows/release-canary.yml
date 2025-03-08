@@ -28,7 +28,7 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Release Asset Preparation
         run: |
-          cmd.exe /c "tools/build.cmd Debug -p:ContinuousIntegrationBuild=true"
+          cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
           dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
