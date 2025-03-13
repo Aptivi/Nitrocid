@@ -82,17 +82,17 @@ packall() {
     checkerror $? "Failed to pack"
 
     # Inform success
-    mv /tmp/$ksversion-bin.zip $ROOTDIR/tools
+    mv /tmp/$ksversion-bin.zip $ROOTDIR/vnd
     checkerror $? "Failed to move archive from temporary folder"
-    mv /tmp/$ksversion-bin-lite.zip $ROOTDIR/tools
+    mv /tmp/$ksversion-bin-lite.zip $ROOTDIR/vnd
     checkerror $? "Failed to move archive from temporary folder"
-    mv /tmp/$ksversion-addons.zip $ROOTDIR/tools
+    mv /tmp/$ksversion-addons.zip $ROOTDIR/vnd
     checkerror $? "Failed to move archive from temporary folder"
-    mv /tmp/$ksversion-analyzers.zip $ROOTDIR/tools
+    mv /tmp/$ksversion-analyzers.zip $ROOTDIR/vnd
     checkerror $? "Failed to move archive from temporary folder"
-    mv /tmp/$ksversion-mod-analyzer.zip $ROOTDIR/tools
+    mv /tmp/$ksversion-mod-analyzer.zip $ROOTDIR/vnd
     checkerror $? "Failed to move archive from temporary folder"
-    cp $ROOTDIR/tools/changes.chg $ROOTDIR/tools/$ksversion-changes.chg
+    cp $ROOTDIR/vnd/changes.chg $ROOTDIR/vnd/$ksversion-changes.chg
     checkerror $? "Failed to copy changelogs"
 }
 

@@ -96,7 +96,7 @@
 
   <!-- KS Release Changelogs -->
   <ItemGroup>
-    <EmbeddedResource Include="..\..\tools\changes.chg">
+    <EmbeddedResource Include="..\..\vnd\changes.chg">
       <LogicalName>Nitrocid.Resources.changes.chg</LogicalName>
       <Visible>false</Visible>
     </EmbeddedResource>

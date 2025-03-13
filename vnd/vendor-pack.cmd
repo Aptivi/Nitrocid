@@ -19,11 +19,11 @@ echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
 
 :complete
-move %temp%\%version%-bin.zip %ROOTDIR%\tools\
-move %temp%\%version%-bin-lite.zip %ROOTDIR%\tools\
-move %temp%\%version%-addons.zip %ROOTDIR%\tools\
-move %temp%\%version%-analyzers.zip %ROOTDIR%\tools\
-move %temp%\%version%-mod-analyzer.zip %ROOTDIR%\tools\
-copy %ROOTDIR%\tools\changes.chg %ROOTDIR%\tools\%version%-changes.chg
+move %temp%\%version%-bin.zip %ROOTDIR%\vnd\
+move %temp%\%version%-bin-lite.zip %ROOTDIR%\vnd\
+move %temp%\%version%-addons.zip %ROOTDIR%\vnd\
+move %temp%\%version%-analyzers.zip %ROOTDIR%\vnd\
+move %temp%\%version%-mod-analyzer.zip %ROOTDIR%\vnd\
+copy %ROOTDIR%\vnd\changes.chg %ROOTDIR%\vnd\%version%-changes.chg
 
 :finished
