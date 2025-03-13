@@ -18,7 +18,5 @@ rmdir /S /Q "%ROOTDIR%\DocGen\api\"
 rmdir /S /Q "%ROOTDIR%\DocGen\obj\"
 rmdir /S /Q "%ROOTDIR%\docs\"
 move %temp%\%version%-doc.zip %ROOTDIR%\tools\
-echo Build and pack successful.
-goto :finished
 
 :finished

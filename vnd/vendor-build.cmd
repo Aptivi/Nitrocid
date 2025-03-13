@@ -14,20 +14,5 @@ set DOTNET_NOLOGO=1
 
 set ROOTDIR=%~dp0\..
 
-:download
-echo Downloading packages...
-"%ProgramFiles%\dotnet\dotnet.exe" restore "%ROOTDIR%\Nitrocid.sln" -p:Configuration=%releaseconfig% %buildoptions%
-if %errorlevel% == 0 goto :build
-echo There was an error trying to download packages (%errorlevel%).
-goto :finished
-
-:build
-echo Building...
+echo Building with configuration %releaseconfig%...
 "%ProgramFiles%\dotnet\dotnet.exe" build "%ROOTDIR%\Nitrocid.sln" -p:Configuration=%releaseconfig% %buildoptions%
-if %errorlevel% == 0 goto :success
-echo There was an error trying to build (%errorlevel%).
-goto :finished
-
-:success
-echo Build successful.
-:finished

@@ -1,4 +1,5 @@
 @echo off
+
 set apikey=%1
 set source=%2
 if "%source%" == "" set source=nuget.org
@@ -14,4 +15,5 @@ goto :finished
 
 :success
 echo Push successful.
+
 :finished

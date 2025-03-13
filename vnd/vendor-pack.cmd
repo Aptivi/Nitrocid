@@ -1,9 +1,11 @@
 @echo off
 
-set ROOTDIR=%~dp0..
+set ROOTDIR=%~dp0\..
 
 for /f "tokens=*" %%g in ('findstr "<Version>" %ROOTDIR%\Directory.Build.props') do (set MIDVER=%%g)
 for /f "tokens=1 delims=<" %%a in ("%MIDVER:~9%") do (set version=%%a)
+set releaseconfig=%1
+if "%releaseconfig%" == "" set releaseconfig=Release
 
 :packbin
 echo Packing binary...
@@ -24,5 +26,4 @@ move %temp%\%version%-analyzers.zip %ROOTDIR%\tools\
 move %temp%\%version%-mod-analyzer.zip %ROOTDIR%\tools\
 copy %ROOTDIR%\tools\changes.chg %ROOTDIR%\tools\%version%-changes.chg
 
-echo Pack successful.
 :finished
