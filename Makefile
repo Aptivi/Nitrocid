@@ -1,3 +1,8 @@
+# Below is a workaround for .NET SDK 7.0 trying to allocate large amounts of memory for GC work:
+# https://github.com/dotnet/runtime/issues/85556#issuecomment-1529177092
+DOTNET_HEAP_LIMIT_INT = $(shell sysctl -n hw.memsize 2>/dev/null || grep MemAvailable /proc/meminfo | awk '{print $$2 * 1024}')
+DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
+
 MODAPI = 27
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-$(MODAPI) debian/nitrocid-$(MODAPI)-lite debian/tmp
 OUTPUT = public/Nitrocid/KSBuild/net8.0
@@ -20,29 +25,27 @@ endif
 
 all: all-online
 
-all-online:
-	$(MAKE) -C tools invoke-build
+all-online: invoke-build
 
 dbg:
-	$(MAKE) -C tools invoke-build ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug
 
 dbg-ci:
-	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Debug
+	$(MAKE) invoke-build-ci ENVIRONMENT=Debug
 
 rel-ci:
-	$(MAKE) -C tools invoke-build-ci ENVIRONMENT=Release
+	$(MAKE) invoke-build-ci ENVIRONMENT=Release
 
-doc:
-	$(MAKE) -C tools invoke-doc-build
+doc: invoke-doc-build
 
 clean:
 	rm -rf $(OUTPUTS)
 
 all-offline:
-	$(MAKE) -C tools invoke-build-offline
+	$(MAKE) invoke-build-offline
 
 init-offline:
-	$(MAKE) -C tools invoke-init-offline
+	$(MAKE) invoke-init-offline
 
 install:
 	mkdir -m 755 -p $(FDESTDIR)/bin $(FDESTDIR)/lib/ks-$(MODAPI) $(FDESTDIR)/share/applications $(FDESTDIR)/share/man/man1/
@@ -62,4 +65,24 @@ install:
 	sed -i 's|/usr/bin/ks|/usr/bin/ks-$(MODAPI)|g' $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
 	find '$(FDESTDIR)/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
-# This makefile is just a wrapper for tools scripts.
+# Below targets specify functions for full build
+
+invoke-build:
+	chmod +x ./tools/build.sh
+	./tools/build.sh $(ENVIRONMENT) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT))
+
+invoke-build-ci:
+	chmod +x ./tools/build.sh
+	./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true)
+    
+invoke-doc-build:
+	chmod +x ./tools/docgen.sh
+	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
+
+invoke-build-offline:
+	chmod +x ./tools/build.sh
+	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true)
+
+invoke-init-offline:
+	chmod +x ./vnd/initializeoffline.sh
+	./vnd/initializeoffline.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./vnd/initializeoffline.sh)
