@@ -32,8 +32,8 @@ jobs:
           cmd.exe /c "tools\docgen-pack.cmd"
           dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Release/Nitrocid.InstallerBundle.exe tools/nitrocid-win-arm64-installer.exe
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-x64-installer.exe
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Release/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-arm64-installer.exe
       - name: Release Preparation
         id: release-asset
         shell: bash
@@ -41,9 +41,9 @@ jobs:
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
           echo 'BODY<<EOF' >> "$GITHUB_OUTPUT"
           cat CHANGES >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 tools/*.zip | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 tools/*-changes.chg | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 tools/*.exe | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 vnd/*.zip | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 vnd/*-changes.chg | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 vnd/*.exe | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
       - name: Binary Attestation (binaries)
         uses: actions/attest-build-provenance@v1
@@ -55,9 +55,9 @@ jobs:
           body: ${{ steps.release-asset.outputs.BODY }}
           name: ${{ steps.release-asset.outputs.SUBJECT }}
           files: |
-            tools/*.zip
-            tools/*-changes.chg
-            tools/*.exe
+            vnd/*.zip
+            vnd/*-changes.chg
+            vnd/*.exe
       - name: Package Publication
         run: cmd.exe /C "tools\push.cmd ${{ secrets.NUGET_APIKEY }}"
       - name: Notify build

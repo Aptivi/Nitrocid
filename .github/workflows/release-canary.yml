@@ -31,16 +31,16 @@ jobs:
           cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
           dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
           dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe tools/nitrocid-win-x64-installer.exe
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Debug/Nitrocid.InstallerBundle.exe tools/nitrocid-win-arm64-installer.exe
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-x64-installer.exe
+          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Debug/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-arm64-installer.exe
       - uses: actions/upload-artifact@v4
         with:
           name: installer-x64-msi
-          path: "tools/nitrocid-win-x64-installer.exe"
+          path: "vnd/nitrocid-win-x64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: installer-arm64-msi
-          path: "tools/nitrocid-win-arm64-installer.exe"
+          path: "vnd/nitrocid-win-arm64-installer.exe"
       - uses: actions/upload-artifact@v4
         with:
           name: nks-build

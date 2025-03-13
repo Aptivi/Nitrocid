@@ -30,7 +30,7 @@ jobs:
         
       - name: Initialize offline package
         run: |
-          chmod +x tools/initializeoffline.sh
+          chmod +x vnd/initializeoffline.sh
           make init-offline
           make clean
         
