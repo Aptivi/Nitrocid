@@ -1,6 +1,10 @@
 #!/bin/bash
 
 build() {
+    # Check for dependencies
+    dotnetpath=`which dotnet`
+    checkerror $? "dotnet is not found"
+    
     # Determine the release configuration
     releaseconf=$1
     if [ -z $releaseconf ]; then
