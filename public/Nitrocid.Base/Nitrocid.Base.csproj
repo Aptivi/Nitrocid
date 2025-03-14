@@ -1,9 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <!-- KS NuGet Information -->
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <PackageId>Nitrocid.Base</PackageId>
+    <Authors>Aptivi</Authors>
+    <Title>Nitrocid KS - Base Library</Title>
+    <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains the base part of Nitrocid API (that is, non-core parts) that you can use for your mods.</PackageDescription>
+    <PackageTags>kernel;simulator;csharp</PackageTags>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/Aptivi/Nitrocid</PackageProjectUrl>
+    <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-1</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageOutputPath>../Nitrocid/KSBuild/</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+  <!-- KS NuGet Information End -->
 
+  <!-- KS General Information -->
+  <PropertyGroup>
+    <DebugSymbols>true</DebugSymbols>
+    <AssemblyName>Nitrocid.Base</AssemblyName>
+    <AssemblyTitle>Nitrocid KS - Base Library</AssemblyTitle>
+    <Description>Simulates our future-planned kernel, Nitrocid Kernel - Base Library</Description>
+    <OutputPath>../Nitrocid/KSBuild/</OutputPath>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+  <!-- KS General Information End -->
+
+  <!-- KS Package Files -->
+  <ItemGroup>
+    <None Include="..\Nitrocid\OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <!-- KS Package Files End -->
 </Project>
