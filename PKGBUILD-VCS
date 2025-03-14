@@ -1,5 +1,5 @@
 # Maintainer: Aptivi <ceo at aptivi dot anonaddy dot com>
-pkgname=nitrocid-27-git
+pkgname=nitrocid-28-git
 pkgver=v0.1.0.r741.e2aecf6d2
 pkgrel=1
 pkgdesc="Simulates our future-planned kernel"

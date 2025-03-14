@@ -3,7 +3,7 @@
 DOTNET_HEAP_LIMIT_INT = $(shell sysctl -n hw.memsize 2>/dev/null || grep MemAvailable /proc/meminfo | awk '{print $$2 * 1024}')
 DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
 
-MODAPI = 27
+MODAPI = 28
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-$(MODAPI) debian/nitrocid-$(MODAPI)-lite debian/tmp
 OUTPUT = public/Nitrocid/KSBuild/net8.0
 BINARIES = assets/ks assets/ks-jl

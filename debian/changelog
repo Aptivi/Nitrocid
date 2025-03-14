@@ -1,22 +1,5 @@
-nitrocid-27 (3.1.27.48-0.1.2.0-1) noble; urgency=medium
+nitrocid-28 (3.1.28.0-0.1.3.0-1) noble; urgency=medium
 
-  * Added new themes
-  * Added new screensavers (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Added new languages (+ 0.1.1 SP3)
-  * Added new commands
-  * Added new interactive TUIs
-  * Added SMultivar
-  * Added editable widgets in The Nitrocid Homepage
-  * Added Pomodoro Timer (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Added audio cues
-  * Added Arch + Windows Installer packaging (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Made the kernel more attractive (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Refactored some API functions
-  * Separated cultures from languages
-  * Improvements in shutdown sequence (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Themes now parse more quickly (+ 0.1.0 SP3, 0.1.1 SP3)
-  * Consolidated locale tools to Nitrocid.Locales (+ 0.1.1 SP3)
-  * Removed modern debug look
-  * Removed NTFS/BSOD mitigation (+ 0.1.0 SP3, 0.1.1 SP3)
+  * Placeholder changelogs
     
- -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 24 Feb 2025 19:28:10 +0300
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 14 Mar 2025 15:05:35 +0300

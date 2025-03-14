@@ -56,7 +56,8 @@ namespace Nitrocid.Kernel
         internal readonly static DateTime supportWindow = new(2025, 11, 27);
         internal readonly static bool supportWindowPrimed =
 #if SPECIFIERREL
-            true;
+            // This needs to stay false for now until we announce the next mod API version that 0.2.0 uses.
+            false;
 #else
             false;
 #endif

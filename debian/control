@@ -1,4 +1,4 @@
-Source: nitrocid-27
+Source: nitrocid-28
 Section: misc
 Priority: optional
 Maintainer: Aptivi CEO <ceo@aptivi.anonaddy.com>
@@ -8,19 +8,19 @@ Homepage: https://aptivi.gitbook.io/nitrocid-manual
 Vcs-Browser: https://github.com/Aptivi/Nitrocid
 Vcs-Git: https://github.com/Aptivi/Nitrocid.git
 
-Package: nitrocid-27
+Package: nitrocid-28
 Architecture: amd64 arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0), tzdata (>= 2021a), libjack0 (>= 1:0.125.0-3), libportaudio2 (>= 19.6.0), libopenal1 (>= 1:1.19.1), libsdl2-2.0-0 (>= 2.0.9), libpulse0 (>= 12.2), libaudio2 (>= 1.9.4)
-Conflicts: nitrocid-27-lite
+Conflicts: nitrocid-28-lite
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
  Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
  It simulates the kernel, the shell, and all the common applications.
 
-Package: nitrocid-27-lite
+Package: nitrocid-28-lite
 Architecture: amd64 arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-8.0 (>= 8.0), tzdata (>= 2021a)
-Conflicts: nitrocid-27
+Conflicts: nitrocid-28
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
  Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
