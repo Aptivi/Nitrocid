@@ -58,7 +58,7 @@
     </PackageReference>
     <PackageReference Include="Textify.Offline.Data" Version="2.9.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.5.5.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.2" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.3" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
