@@ -8,13 +8,15 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Contacts</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Extras - Contacts</Description>
     <AssemblyTitle>Nitrocid KS Extras - Contacts</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.Contacts addon General Information End -->
+
+  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Contacts addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

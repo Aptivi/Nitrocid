@@ -8,12 +8,14 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.HttpShell</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Extras - HTTP Shell</Description>
     <AssemblyTitle>Nitrocid KS Extras - HTTP Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.HttpShell addon General Information End -->
+
+  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.HttpShell addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
