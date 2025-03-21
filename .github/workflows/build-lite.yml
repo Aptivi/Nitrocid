@@ -1,0 +1,35 @@
+name: Build Project (Debug, Lite)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    
+jobs:
+  build:
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+      fail-fast: false
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+          ref: ${{ github.ref }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Solution Compilation (Windows)
+        if: matrix.runs-on == 'windows-latest'
+        run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
+      - name: Solution Compilation (Unix)
+        if: matrix.runs-on != 'windows-latest'
+        run: |
+          chmod +x ./tools/build.sh
+          ./tools/build.sh Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
