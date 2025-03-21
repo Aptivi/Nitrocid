@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Amusements addon General Information -->
   <PropertyGroup>
@@ -16,6 +17,7 @@
   </PropertyGroup>
   <!-- Extras.Amusements addon General Information End -->
 
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Amusements addon Platform Information -->

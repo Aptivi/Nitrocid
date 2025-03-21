@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Md5 addon General Information -->
   <PropertyGroup>
@@ -15,6 +16,7 @@
   </PropertyGroup>
   <!-- Extras.Md5 addon General Information End -->
 
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Md5 addon Platform Information -->
