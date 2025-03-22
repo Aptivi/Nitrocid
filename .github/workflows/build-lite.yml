@@ -30,4 +30,4 @@ jobs:
         run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
       - name: Solution Compilation (Unix)
         if: matrix.runs-on != 'windows-latest'
-        run: ./tools/build.sh Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
+        run: make dbg-ci BUILDARGS="-p:NKSLITE=true"
