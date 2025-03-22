@@ -1,5 +1,5 @@
 # Maintainer: Aptivi <ceo at aptivi dot anonaddy dot com>
-pkgname=nitrocid-26-git
+pkgname=nitrocid-26-lite-git
 pkgver=v0.1.0.r328.c259b8a5b
 pkgrel=1
 pkgdesc="Simulates our future-planned kernel"
@@ -13,8 +13,8 @@ optdepends=('jack2: Jack support for BassBoom addon'
 			'openal: OpenAL support for BassBoom addon'
 			'sdl2: SDL support for BassBoom addon'
 			'libpulse: PulseAudio support for BassBoom addon')
-provides=("${pkgname%-git}" "${pkgname%-git}-lite" "${pkgname}-lite")
-conflicts=("${pkgname%-git}" "${pkgname%-git}-lite" "${pkgname}-lite")
+provides=("${pkgname%-git}" "${pkgname%-lite-git}" "${pkgname%-lite-git}-git")
+conflicts=("${pkgname%-git}" "${pkgname%-lite-git}" "${pkgname%-lite-git}-git")
 options=('!strip')
 source=("${pkgname}::git+https://github.com/Aptivi/Nitrocid#branch=v0.1.1.x-saas")
 sha256sums=('SKIP')
@@ -33,7 +33,7 @@ prepare() {
 
 build() {
 	cd "${pkgname}"
-	make all-offline
+	make all-offline BUILDARGS="-p:NKSLITE=true"
 }
 
 package() {
