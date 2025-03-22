@@ -29,7 +29,6 @@ jobs:
         
       - name: Initialize offline package
         run: |
-          chmod +x vnd/initializeoffline.sh
           make init-offline
           make clean
         
