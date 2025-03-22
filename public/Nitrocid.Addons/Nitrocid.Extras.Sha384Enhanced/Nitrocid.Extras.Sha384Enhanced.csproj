@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Sha384Enhanced addon General Information -->
   <PropertyGroup>
@@ -8,12 +9,15 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Sha384Enhanced</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Extras - SHA384 Enhanced</Description>
     <AssemblyTitle>Nitrocid KS Extras - SHA384 Enhanced</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Sha384Enhanced addon General Information End -->
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Sha384Enhanced addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

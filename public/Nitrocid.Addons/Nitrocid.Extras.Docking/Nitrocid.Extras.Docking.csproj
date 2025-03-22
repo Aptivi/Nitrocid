@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Docking addon General Information -->
   <PropertyGroup>
@@ -8,12 +9,15 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Docking</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Extras - Docking</Description>
     <AssemblyTitle>Nitrocid KS Extras - Docking</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Docking addon General Information End -->
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Docking addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

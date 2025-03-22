@@ -1,4 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Calculators addon General Information -->
   <PropertyGroup>
@@ -8,13 +9,16 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Calculators</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Extras - Calculators</Description>
     <AssemblyTitle>Nitrocid KS Extras - Calculators</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.Calculators addon General Information End -->
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
   <!-- Extras.Calculators addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

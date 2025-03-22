@@ -39,6 +39,9 @@
 
       Supported constants (NitrocidFlags):
           - VSDEBUG: Enables immediate window debug in the "Output" pane
+      
+      Supported configurations (build arguments can be passed with -p:CONFIG=VALUE):
+          - NKSLITE: If "true", don't build addons
 
       Possible specifiers (NitrocidReleaseSpecifier):
           - REL: Final release
@@ -65,6 +68,8 @@
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     </ItemGroup>
     <PropertyGroup>
+        <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
     </PropertyGroup>

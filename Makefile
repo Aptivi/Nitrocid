@@ -21,20 +21,20 @@ endif
 
 .PHONY: all install lite
 
-# General use
+all:
+	$(MAKE) all-online BUILDARGS="$(BUILDARGS)"
 
-all: all-online
-
-all-online: invoke-build
+all-online:
+	$(MAKE) invoke-build ENVIRONMENT=Release BUILDARGS="$(BUILDARGS)"
 
 dbg:
-	$(MAKE) invoke-build ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug BUILDARGS="$(BUILDARGS)"
 
 dbg-ci:
-	$(MAKE) invoke-build-ci ENVIRONMENT=Debug
+	$(MAKE) invoke-build ENVIRONMENT=Debug BUILDARGS="-p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 rel-ci:
-	$(MAKE) invoke-build-ci ENVIRONMENT=Release
+	$(MAKE) invoke-build ENVIRONMENT=Release BUILDARGS="-p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 doc: invoke-doc-build
 
@@ -42,7 +42,7 @@ clean:
 	rm -rf $(OUTPUTS)
 
 all-offline:
-	$(MAKE) invoke-build-offline
+	$(MAKE) invoke-build-offline BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 init-offline:
 	$(MAKE) invoke-init-offline
@@ -68,16 +68,13 @@ install:
 # Below targets specify functions for full build
 
 invoke-build:
-	./tools/build.sh $(ENVIRONMENT) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT))
-
-invoke-build-ci:
-	./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true)
+	./tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS))
     
 invoke-doc-build:
 	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
 
 invoke-build-offline:
-	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true)
+	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS))
 
 invoke-init-offline:
 	./vnd/initializeoffline.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./vnd/initializeoffline.sh)
