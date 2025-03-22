@@ -21,9 +21,6 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>../../Nitrocid/KSAnalyzer</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <!-- Repository set up -->
-    <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
     <PackageTags>Nitrocid.Analyzers, analyzers</PackageTags>
     <DevelopmentDependency>true</DevelopmentDependency>
     <NoPackageAnalysis>true</NoPackageAnalysis>
