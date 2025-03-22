@@ -17,9 +17,6 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageOutputPath>../Nitrocid/KSBuild</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <!-- Repository set up -->
-    <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <!-- LocaleGen NuGet Information End -->
     

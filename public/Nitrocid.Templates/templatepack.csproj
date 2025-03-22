@@ -16,9 +16,6 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>../Nitrocid/KSBuild</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <!-- Repository set up -->
-    <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
