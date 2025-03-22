@@ -39,6 +39,9 @@
 
       Supported constants (NitrocidFlags):
           - VSDEBUG: Enables immediate window debug in the "Output" pane
+      
+      Supported configurations (build arguments can be passed with -p:CONFIG=VALUE):
+          - NKSLITE: If "true", don't build addons
 
       Possible specifiers (NitrocidReleaseSpecifier):
           - REL: Final release
