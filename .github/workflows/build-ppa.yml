@@ -26,7 +26,6 @@ jobs:
       - name: Initialize offline package
         run: |
           sudo ip netns add no-net
-          chmod +x vnd/initializeoffline.sh
           make init-offline
           make clean
         

@@ -30,6 +30,4 @@ jobs:
         run: ./tools/build.cmd Release -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
       - name: Solution Compilation (Unix)
         if: matrix.runs-on != 'windows-latest'
-        run: |
-          chmod +x ./tools/build.sh
-          ./tools/build.sh Release -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
+        run: ./tools/build.sh Release -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
