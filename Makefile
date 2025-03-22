@@ -68,21 +68,16 @@ install:
 # Below targets specify functions for full build
 
 invoke-build:
-	chmod +x ./tools/build.sh
 	./tools/build.sh $(ENVIRONMENT) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT))
 
 invoke-build-ci:
-	chmod +x ./tools/build.sh
 	./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh $(ENVIRONMENT) -p:ContinuousIntegrationBuild=true)
     
 invoke-doc-build:
-	chmod +x ./tools/docgen.sh
 	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
 
 invoke-build-offline:
-	chmod +x ./tools/build.sh
 	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release -p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true)
 
 invoke-init-offline:
-	chmod +x ./vnd/initializeoffline.sh
 	./vnd/initializeoffline.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./vnd/initializeoffline.sh)
