@@ -1,3 +1,9 @@
+nitrocid-26 (3.0.26.60-0.1.1.33-1) noble; urgency=medium
+
+  * General improvements
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 24 Mar 2025 10:42:01 +0300
+
 nitrocid-26 (3.0.26.60-0.1.1.32-1) noble; urgency=medium
 
   * Check the 0.1.2 changelogs at GitHub for more info
