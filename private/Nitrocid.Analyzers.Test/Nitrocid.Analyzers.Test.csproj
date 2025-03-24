@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.8.2">
+﻿<Project Sdk="MSTest.Sdk/3.8.3">
 
   <PropertyGroup>
     <OutputPath>..\KSTest\</OutputPath>
@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing.MSTest" Version="1.1.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing.MSTest" Version="1.1.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing.MSTest" Version="1.1.2" />
-    <PackageReference Include="NuGet.Frameworks" Version="6.13.1" />
+    <PackageReference Include="NuGet.Frameworks" Version="6.13.2" />
   </ItemGroup>
 
   <ItemGroup>

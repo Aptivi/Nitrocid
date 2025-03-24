@@ -35,7 +35,7 @@
   <!-- Extras.InternetRadioInfo addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="BassBoom.Basolia" Version="0.2.5" />
+    <PackageReference Include="BassBoom.Basolia" Version="0.2.8" />
   </ItemGroup>
 
   <ItemGroup>
