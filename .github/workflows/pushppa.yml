@@ -19,6 +19,32 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+      
+      - name: Import SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
+          sudo chmod 600 ~/.ssh/private.key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          cat > ~/.ssh/config << EOF
+          Host ppa.launchpad.net
+            IdentityFile ~/.ssh/private.key
+            User eofla
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.APT_SSH_PRIV }}
+          SSH_KNOWN_HOSTS: ${{ secrets.APT_KNOWN_HOST_FOR_UBUNTU_PPA }}
+      
+      - name: Configure Launchpad PPA
+        run: |
+          cat > ~/.dput.cf << EOF
+          [apt-ppa]
+          fqdn = ppa.launchpad.net
+          method = sftp
+          incoming = ~eofla/ubuntu/nitrocid/
+          login = eofla
+          allow_unsigned_uploads = 0
+          EOF
 
       - name: Install required packages
         run: |
@@ -44,4 +70,4 @@ jobs:
         run: debuild -S -sa
         
       - name: Push to Launchpad
-        run: dput ppa:eofla/nitrocid ../nitrocid-25_*_source.changes
+        run: dput apt-ppa ../nitrocid-25_*_source.changes
