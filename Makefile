@@ -4,12 +4,22 @@ DOTNET_HEAP_LIMIT_INT = $(shell sysctl -n hw.memsize 2>/dev/null || grep MemAvai
 DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
 
 MODAPI = 27
-OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/nitrocid-$(MODAPI) debian/nitrocid-$(MODAPI)-lite debian/tmp
-OUTPUT = public/Nitrocid/KSBuild/net8.0
-BINARIES = assets/ks assets/ks-jl
-MANUALS = assets/ks.1 assets/ks-jl.1
-DESKTOPS = assets/ks.desktop
-BRANDINGS = public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png
+ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
+OUTPUTS  := \
+	-name "bin" -or \
+	-name "obj" -or \
+	-name "KSBuild" -or \
+	-name "KSAnalyzer" -or \
+	-name "KSTest" -or \
+	-name "nitrocid-$(MODAPI)" -or \
+	-name "nitrocid-$(MODAPI)-lite" -or \
+	-name "tmp"
+
+OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net8.0"
+BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-jl"
+MANUALS = "$(ROOT_DIR)/assets/ks.1" "$(ROOT_DIR)/assets/ks-jl.1"
+DESKTOPS = "$(ROOT_DIR)/assets/ks.desktop"
+BRANDINGS = "$(ROOT_DIR)/public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png"
 
 ARCH := $(shell if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 
@@ -39,7 +49,7 @@ rel-ci:
 doc: invoke-doc-build
 
 clean:
-	rm -rf $(OUTPUTS)
+	find "$(ROOT_DIR)" -type d \( $(OUTPUTS) \) -print -exec rm -rf "{}" +
 
 all-offline:
 	$(MAKE) invoke-build-offline BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
@@ -51,8 +61,8 @@ install:
 	mkdir -m 755 -p $(FDESTDIR)/bin $(FDESTDIR)/lib/ks-$(MODAPI) $(FDESTDIR)/share/applications $(FDESTDIR)/share/man/man1/
 	install -m 755 -t $(FDESTDIR)/bin/ $(BINARIES)
 	install -m 644 -t $(FDESTDIR)/share/man/man1/ $(MANUALS)
-	find $(OUTPUT) -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(realpath --relative-to $(OUTPUT) "$$0")"' {} \;
-	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
+	find "$(OUTPUT)" -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(realpath --relative-to "$(OUTPUT)" "$$0")"' {} \;
+	find "$(OUTPUT)" -mindepth 1 -type f -exec sh -c 'install -m 644 -t "$(FDESTDIR)/lib/ks-$(MODAPI)/$$(dirname $$(realpath --relative-to "$(OUTPUT)" "$$0"))" "$$0"' {} \;
 	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
 	install -m 755 -t $(FDESTDIR)/lib/ks-$(MODAPI)/ $(BRANDINGS)
 	mv $(FDESTDIR)/bin/ks $(FDESTDIR)/bin/ks-$(MODAPI)
