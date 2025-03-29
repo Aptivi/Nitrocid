@@ -48,7 +48,7 @@ jobs:
       - name: Binary Attestation (binaries)
         uses: actions/attest-build-provenance@v1
         with:
-          subject-path: 'tools/*.zip'
+          subject-path: 'vnd/*.zip'
       - name: Release Making
         uses: softprops/action-gh-release@v2
         with:
