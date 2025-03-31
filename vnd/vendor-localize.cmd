@@ -13,6 +13,7 @@ goto :finished
 echo Copying dependencies...
 md "%ROOTDIR%\deps"
 forfiles /s /m *.nupkg /p "%ROOTDIRFIND%\nuget\" /C "cmd /c copy @path ""%ROOTDIR%\deps"""
+forfiles /s /m *.nupkg /p "%USERPROFILE%\.nuget\packages\" /C "cmd /c copy @path ""%ROOTDIR%\deps"""
 if %errorlevel% == 0 goto :initconfig
 echo There was an error trying to copy dependencies (%errorlevel%).
 goto :finished
