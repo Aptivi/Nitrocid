@@ -11,12 +11,13 @@ localize() {
 
     # Restore the packages
     echo "Restoring NuGet packages..."
-    dotnet restore "$ROOTDIR/Nitrocid.sln" --packages "$ROOTDIR/nuget"
+    "$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" --packages "$ROOTDIR/nuget"
     checkerror $? "Failed to restore NuGet packages"
 
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
     checkerror $? "Failed to initialize the dependencies folder"
+    ls "$ROOTDIR/nuget"
     cp "$ROOTDIR/nuget/*/*/*.nupkg" "$ROOTDIR/deps/"
     checkerror $? "Failed to vendor dependencies"
     rm -rf "$ROOTDIR/nuget"
