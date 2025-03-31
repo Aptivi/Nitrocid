@@ -1,3 +1,10 @@
+nitrocid-27 (3.1.27.48-0.1.2.4-1) noble; urgency=medium
+
+  * Fixed configuration system crash upon encountering no icons addon in
+    Nitrocid Lite
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 31 Mar 2025 15:37:07 +0300
+
 nitrocid-27 (3.1.27.48-0.1.2.3-1) noble; urgency=medium
 
   * General improvements

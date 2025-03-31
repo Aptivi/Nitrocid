@@ -1,10 +1,10 @@
-Since the release of 0.1.2, we've made a new version that incorporates general improvements.
+This is an emergency release of 0.1.2 that fixes a critical issue for Nitrocid Lite regarding configuration.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[*]` Fixed configuration system crash upon encountering no icons addon in Nitrocid Lite
 
 Review the commit history if you want to get a deep insight about the changes.
 
