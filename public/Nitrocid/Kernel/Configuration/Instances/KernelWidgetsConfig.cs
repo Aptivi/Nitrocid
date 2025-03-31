@@ -464,7 +464,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set
             {
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+                {
                     emojiWidgetCurrentEmoticon = value;
+                    return;
+                }
                 var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
                 var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, value) ?? false;
                 emojiWidgetCurrentEmoticon = hasIcon ? value : emojiWidgetCurrentEmoticon;
