@@ -17,8 +17,7 @@ localize() {
     # Copy dependencies to the "deps" folder underneath the root directory
     mkdir -p "$ROOTDIR/deps"
     checkerror $? "Failed to initialize the dependencies folder"
-    ls "$ROOTDIR/nuget"
-    cp "$ROOTDIR/nuget/*/*/*.nupkg" "$ROOTDIR/deps/"
+    cp "$ROOTDIR/nuget"/*/*/*.nupkg "$ROOTDIR/deps/"
     checkerror $? "Failed to vendor dependencies"
     rm -rf "$ROOTDIR/nuget"
     checkerror $? "Failed to wipe cache"
