@@ -19,9 +19,8 @@ jobs:
       - name: Install required packages
         run: |
           sudo rm /etc/apt/sources.list.d/microsoft-prod.list
-          sudo apt autoremove dotnet*
-          sudo apt update
-          sudo NEEDRESTART_SUSPEND=1 apt install curl locales-all libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput build-essential
+          sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
+          sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
         
       - name: Initialize offline package
         run: |
