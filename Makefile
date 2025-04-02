@@ -89,4 +89,4 @@ invoke-build-offline:
 	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS))
 
 invoke-init-offline:
-	./vnd/initializeoffline.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./vnd/initializeoffline.sh)
+	./tools/localize.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/localize.sh)
