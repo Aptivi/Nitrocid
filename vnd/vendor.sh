@@ -1,5 +1,41 @@
 #!/bin/bash
 
+localize() {
+    # Check for dependencies
+    dotnetpath=`which dotnet`
+    checkerror $? "dotnet is not found"
+
+    # Turn off telemetry and logo
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
+    export DOTNET_NOLOGO=1
+
+    # Restore the packages
+    echo "Restoring NuGet packages..."
+    "$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" --packages "$ROOTDIR/nuget"
+    checkerror $? "Failed to restore NuGet packages"
+
+    # Copy dependencies to the "deps" folder underneath the root directory
+    mkdir -p "$ROOTDIR/deps"
+    checkerror $? "Failed to initialize the dependencies folder"
+    cp "$HOME/.nuget/packages"/*/*/*.nupkg "$ROOTDIR/deps/"
+    cp "$ROOTDIR/nuget"/*/*/*.nupkg "$ROOTDIR/deps/"
+    checkerror $? "Failed to vendor dependencies"
+    rm -rf "$ROOTDIR/nuget"
+    checkerror $? "Failed to wipe cache"
+
+    # Initialize the NuGet configuration
+    cat > "$ROOTDIR/NuGet.config" << EOF
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="nuget.org" value="$ROOTDIR/deps" />
+  </packageSources>
+</configuration>
+EOF
+    checkerror $? "Failed to generate offline NuGet config"
+}
+
 build() {
     # Check for dependencies
     dotnetpath=`which dotnet`
