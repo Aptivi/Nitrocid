@@ -90,7 +90,7 @@ namespace Nitrocid.Misc.Interactives
             try
             {
                 bool infoIsDirectory = item.Type == FileSystemEntryType.Directory;
-                string status = $"[{(infoIsDirectory ? "/" : "*")}] {item.BaseEntry.Name}";
+                string status = $"[{(infoIsDirectory ? "/" : "*")}] {item.BaseEntry.FullName}";
                 if (!string.IsNullOrEmpty(selectedFile))
                     status = $"{Translate.DoTranslation("Selected")} {selectedFile} - {status}";
                 return status;
