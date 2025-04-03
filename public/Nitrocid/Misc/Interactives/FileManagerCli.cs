@@ -130,7 +130,7 @@ namespace Nitrocid.Misc.Interactives
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.FullName}";
             }
             catch (Exception ex)
             {
