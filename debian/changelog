@@ -1,3 +1,9 @@
+nitrocid-27 (3.1.27.48-0.1.2.5-1) noble; urgency=medium
+
+  * Fixed crucial file manager TUIs getting stuck in empty folders
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 03 Apr 2025 21:23:45 +0300
+
 nitrocid-27 (3.1.27.48-0.1.2.4-1) noble; urgency=medium
 
   * Fixed configuration system crash upon encountering no icons addon in
