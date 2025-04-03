@@ -1,3 +1,9 @@
+nitrocid-26 (3.0.26.60-0.1.1.35-1) noble; urgency=medium
+
+  * Fixed crucial file manager TUIs getting stuck in empty folders
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 03 Apr 2025 21:38:34 +0300
+
 nitrocid-26 (3.0.26.60-0.1.1.34-1) noble; urgency=medium
 
   * General improvements

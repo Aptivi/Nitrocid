@@ -1,10 +1,12 @@
-Since the release of 0.1.1 Service Pack 3, we've made a new version that incorporates general improvements.
+**Warning: On April 23rd, 2025, we'll be moving all 0.1.1 features to 0.1.0 to service them in a long term release manner. In the same day, we'll end support for this series. You are advised to upgrade to the latest supported series to continue receiving support from us.**
+
+This is an emergency release of 0.1.1 that fixes a critical issue for the file manager TUIs.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[*]` Fixed crucial file manager TUIs getting stuck in empty folders
 
 Review the commit history if you want to get a deep insight about the changes.
 

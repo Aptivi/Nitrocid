@@ -68,3 +68,4 @@ PKGBUILD* text eol=lf
 
 # These are specific to Nitrocid
 private/KSTests/TestData/TestText.txt text eol=lf
+debian/preinst text eol=lf
