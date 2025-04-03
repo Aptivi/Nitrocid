@@ -92,7 +92,7 @@ namespace Nitrocid.Misc.Interactives
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                string status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                string status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.FullName}";
                 if (selectedFolders.Count > 0)
                     status = $"{Translate.DoTranslation("Selected")}: {selectedFolders.Count} - {Translate.DoTranslation("Press SPACE for more info")} - {status}";
                 return status;
