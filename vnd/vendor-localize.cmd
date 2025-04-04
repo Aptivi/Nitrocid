@@ -23,7 +23,7 @@ echo "<?xml version=""1.0"" encoding=""utf-8""?>" > %ROOTDIR%\NuGet.config
 echo "<configuration>" >> %ROOTDIR%\NuGet.config
 echo "  <packageSources>" >> %ROOTDIR%\NuGet.config
 echo "    <clear />" >> %ROOTDIR%\NuGet.config
-echo "    <add key=""nuget.org"" value=""%ROOTDIR%/deps"" />" >> %ROOTDIR%\NuGet.config
+echo "    <add key=""nuget.org"" value=""./deps"" />" >> %ROOTDIR%\NuGet.config
 echo "  </packageSources>" >> %ROOTDIR%\NuGet.config
 echo "</configuration>" >> %ROOTDIR%\NuGet.config
 rd /s /q "%ROOTDIR%\nuget"
