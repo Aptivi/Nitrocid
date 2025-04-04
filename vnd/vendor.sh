@@ -29,7 +29,7 @@ localize() {
 <configuration>
   <packageSources>
     <clear />
-    <add key="nuget.org" value="$ROOTDIR/deps" />
+    <add key="nuget.org" value="./deps" />
   </packageSources>
 </configuration>
 EOF
