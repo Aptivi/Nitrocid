@@ -1,6 +1,7 @@
 name: Push to PPA
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v0.1.*'
