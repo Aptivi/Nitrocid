@@ -1,3 +1,9 @@
+nitrocid-27 (3.1.27.48-0.1.2.5.1-1) noble; urgency=medium
+
+  * Fixed build failure due to wrong NuGet.config generation
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 04 Apr 2025 20:08:12 +0300
+
 nitrocid-27 (3.1.27.48-0.1.2.5-1) noble; urgency=medium
 
   * Fixed crucial file manager TUIs getting stuck in empty folders
