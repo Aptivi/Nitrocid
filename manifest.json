@@ -6523,31 +6523,11 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "favicon.ico",
-      "output": {
-        "resource": {
-          "relative_path": "favicon.ico"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "logo.svg",
-      "output": {
-        "resource": {
-          "relative_path": "logo.svg"
         }
       },
       "version": ""

@@ -19,6 +19,8 @@
     
     <meta property="docfx:rel" content="../">
     
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -120,7 +122,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual bool DriverInternal { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -151,7 +153,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string DriverName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -182,7 +184,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual DriverTypes DriverType { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -215,7 +217,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual ConsoleKeyInfo DetectKeypress()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -246,7 +248,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual ConsoleKeyInfo DetectKeypressUnsafe()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -277,7 +279,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -301,7 +303,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -332,7 +334,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -356,7 +358,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -387,7 +389,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLine()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -418,7 +420,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLine(string InputText)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -436,7 +438,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -467,7 +469,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLine(string InputText, string DefaultValue)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -491,7 +493,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -522,7 +524,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -552,7 +554,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -583,7 +585,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInput()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -614,7 +616,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInput(char MaskChar)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -632,7 +634,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -663,7 +665,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInput(char MaskChar, TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -687,7 +689,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -718,7 +720,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInput(TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -735,7 +737,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -766,7 +768,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInputUnsafe()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -797,7 +799,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInputUnsafe(char MaskChar)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -815,7 +817,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -846,7 +848,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -870,7 +872,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -901,7 +903,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineNoInputUnsafe(TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -919,7 +921,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -950,7 +952,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -980,7 +982,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1011,7 +1013,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings? settings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1047,7 +1049,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1078,7 +1080,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineWrapped()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1109,7 +1111,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineWrapped(string InputText)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1127,7 +1129,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1158,7 +1160,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineWrapped(string InputText, string DefaultValue)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1182,7 +1184,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1213,7 +1215,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     <pre><code class="lang-csharp hljs">public virtual string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1243,7 +1245,7 @@ public abstract class BaseInputDriver : IInputDriver, IDriver</code></pre>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>

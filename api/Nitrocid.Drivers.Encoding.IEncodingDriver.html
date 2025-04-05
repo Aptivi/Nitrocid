@@ -19,6 +19,8 @@
     
     <meta property="docfx:rel" content="../">
     
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -121,7 +123,7 @@
     <pre><code class="lang-csharp hljs">object? Instance { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -152,7 +154,7 @@
     <pre><code class="lang-csharp hljs">byte[] Iv { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -183,7 +185,7 @@
     <pre><code class="lang-csharp hljs">byte[] Key { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -217,7 +219,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">byte[] ComposeBytesFromString(string encoded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -235,7 +237,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -267,7 +269,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">void DecodeFile(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -301,7 +303,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">void DecodeFile(string path, byte[] key, byte[] iv)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -347,7 +349,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">string DecomposeBytesFromString(byte[] encoded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -365,7 +367,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -397,7 +399,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">void EncodeFile(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -431,7 +433,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">void EncodeFile(string path, byte[] key, byte[] iv)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -477,7 +479,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">string GetDecodedString(byte[] encoded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -495,7 +497,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -527,7 +529,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">string GetDecodedString(byte[] encoded, byte[] key, byte[] iv)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -557,7 +559,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -589,7 +591,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">byte[] GetEncodedString(string text)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -607,7 +609,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -639,7 +641,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">byte[] GetEncodedString(string text, byte[] key, byte[] iv)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -669,7 +671,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -717,7 +719,7 @@ This string must represent the group of byte number. This is usually generated f
     <pre><code class="lang-csharp hljs">bool TryRepresentAsText(byte[] encoded, out string? strEncoded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -741,7 +743,7 @@ This string must represent the group of byte number. This is usually generated f
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>

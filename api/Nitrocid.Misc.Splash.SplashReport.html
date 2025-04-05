@@ -19,6 +19,8 @@
     
     <meta property="docfx:rel" content="../">
     
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -114,7 +116,7 @@
     <pre><code class="lang-csharp hljs">public static bool InSplash { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -145,7 +147,7 @@
     <pre><code class="lang-csharp hljs">public static bool KernelBooted { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -176,7 +178,7 @@
     <pre><code class="lang-csharp hljs">public static SplashReportInfo[] LogBuffer { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -207,7 +209,7 @@
     <pre><code class="lang-csharp hljs">public static int Progress { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -238,7 +240,7 @@
     <pre><code class="lang-csharp hljs">public static string ProgressText { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -271,7 +273,7 @@
     <pre><code class="lang-csharp hljs">public static void ReportProgress(string Text, int Progress, bool force = false, Exception? exception = null, SplashReportSeverity severity = SplashReportSeverity.Info, ISplash? splash = null, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -345,7 +347,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgress(string Text, int Progress, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -395,7 +397,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgress(string Text, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -439,7 +441,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressError(string Text, bool force = false, ISplash? splash = null, Exception? exception = null, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -501,7 +503,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressError(string Text, Exception? exception, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -551,7 +553,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressError(string Text, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -595,7 +597,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressWarning(string Text, bool force = false, ISplash? splash = null, Exception? exception = null, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -657,7 +659,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressWarning(string Text, Exception? exception, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -707,7 +709,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ReportProgressWarning(string Text, params object[] Vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -767,7 +769,7 @@ it will report the progress to the splash system. You can force it to report the
     <pre><code class="lang-csharp hljs">public static void ResetProgressReportArea(ISplash? splash = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>

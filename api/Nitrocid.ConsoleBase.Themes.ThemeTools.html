@@ -19,6 +19,8 @@
     
     <meta property="docfx:rel" content="../">
     
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -114,7 +116,7 @@
     <pre><code class="lang-csharp hljs">public static void ApplyTheme(ThemeInfo themeInfo, bool dry = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -154,7 +156,7 @@
     <pre><code class="lang-csharp hljs">public static void ApplyThemeFromFile(string ThemeFile, bool dry = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -194,7 +196,7 @@
     <pre><code class="lang-csharp hljs">public static void ApplyThemeFromResources(string theme, bool dry = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -234,7 +236,7 @@
     <pre><code class="lang-csharp hljs">public static Dictionary&lt;KernelColorType, Color&gt; GetColorsFromTheme(ThemeInfo themeInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -252,7 +254,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -283,7 +285,7 @@
     <pre><code class="lang-csharp hljs">public static Dictionary&lt;KernelColorType, Color&gt; GetColorsFromTheme(string theme)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -301,7 +303,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -332,7 +334,7 @@
     <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, ThemeInfo&gt; GetInstalledThemes()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -364,7 +366,7 @@
     <pre><code class="lang-csharp hljs">public static Dictionary&lt;string, ThemeInfo&gt; GetInstalledThemesByCategory(ThemeCategory category)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -382,7 +384,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -414,7 +416,7 @@
     <pre><code class="lang-csharp hljs">public static ThemeInfo GetThemeInfo(string theme, bool throwNotFound = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -438,7 +440,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -469,7 +471,7 @@
     <pre><code class="lang-csharp hljs">public static bool IsThemeFound(string theme)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -487,7 +489,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -518,7 +520,7 @@
     <pre><code class="lang-csharp hljs">public static bool MinimumTypeRequired(ThemeInfo theme, ColorType type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -542,7 +544,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -574,7 +576,7 @@
     <pre><code class="lang-csharp hljs">public static bool MinimumTypeRequired(Dictionary&lt;KernelColorType, Color&gt; colors, ColorType type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -598,7 +600,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -630,7 +632,7 @@
     <pre><code class="lang-csharp hljs">public static bool MinimumTypeRequired(string theme, ColorType type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -654,7 +656,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -686,7 +688,7 @@
     <pre><code class="lang-csharp hljs">public static void SetColorsTheme(ThemeInfo ThemeInfo, bool dry = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -710,7 +712,7 @@
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -741,7 +743,7 @@
     <pre><code class="lang-csharp hljs">public static bool TrySetColorsTheme(ThemeInfo ThemeInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -759,7 +761,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -775,7 +777,7 @@
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>

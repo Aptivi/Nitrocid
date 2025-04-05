@@ -1,22 +1,39 @@
-/**
- * Licensed to the .NET Foundation under one or more agreements.
- * The .NET Foundation licenses this file to you under the MIT license.
- */
+/* Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License.txt in the project root for license information. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background-color: #010022;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D67DFF;
+  border-radius: 10px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+      background-color: #C390D9;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+      background-color: white;
+  }
+
 html,
 body {
-  font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Helvetica, sans-serif;
   height: 100%;
+  background-color: #010022;
 }
 button,
 a {
-  color: #337ab7;
+  color: #752EFD;
   cursor: pointer;
 }
 button:hover,
 button:focus,
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #D67DFF;
   text-decoration: none;
 }
 a.disable,
@@ -26,9 +43,15 @@ a.disable:hover {
   color: #000000;
 }
 
-h1, h2, h3, h4, h5, h6, .text-break {
-    word-wrap: break-word;
-    word-break: break-word;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Mono', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.text-break {
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 h1 mark,
@@ -133,6 +156,9 @@ table p {
 table a {
   display: inline-block;
 }
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #020143;
+}
 
 /* Make hidden attribute compatible with old browser.*/
 [hidden] {
@@ -158,8 +184,19 @@ h6,
   margin-top: 10px;
   margin-bottom: 5px;
 }
+.apt-head {
+  margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+  backdrop-filter: blur(8px);
+}
 .navbar {
   margin-bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: transparent;
 }
 #wrapper {
   min-height: 100%;
@@ -447,10 +484,6 @@ article section {
   margin-left: 0;
 }
 
-.sidenav, .fixed_header, .toc  {
-  background-color: #f1f1f1;
-}
-
 .sidetoc {
   position: fixed;
   width: 260px;
@@ -458,9 +491,6 @@ article section {
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #f1f1f1;
-  border-left: 1px solid #e7e7e7;
-  border-right: 1px solid #e7e7e7;
   z-index: 1;
 }
 
@@ -469,7 +499,6 @@ article section {
 }
 
 body .toc{
-  background-color: #f1f1f1;
   overflow-x: hidden;
 }
 
@@ -521,11 +550,11 @@ body .toc{
   text-decoration: inherit;
 }
 .toc .nav > li.active > a {
-  color: #337ab7;
+  color: #752EFD;
 }
 .toc .nav > li.active > a:hover,
 .toc .nav > li.active > a:focus {
-  color: #23527c;
+  color: #D67DFF;
 }
 
 .toc .nav > li> .expand-stub {
@@ -577,15 +606,33 @@ body .toc{
   position: fixed;
   top: 90px;
   width: 260px;
-  background-color: #f1f1f1;
+  background-color: #010022;
   padding: 15px;
-  border-left: 1px solid #e7e7e7;
-  border-right: 1px solid #e7e7e7;
   z-index: 1;
+}
+.form-control {
+  border-radius: 5px;
+  border: solid;
+  border-color: #D67DFF;
+  border-width: 2px;
+  border-radius: 1em !important;
+  background: #020143;
+}
+pre {
+  border-radius: 5px !important;
+  border: solid !important;
+  border-color: #D67DFF !important;
+  border-width: 2px !important;
+  border-radius: 1em !important;
+  background: #020143;
 }
 .toc-filter {
   border-radius: 5px;
-  background: #fff;
+  border: solid;
+  border-color: #D67DFF;
+  border-width: 2px;
+  border-radius: 1em !important;
+  background: #020143;
   color: #666666;
   padding: 5px;
   position: relative;
@@ -594,6 +641,7 @@ body .toc{
 .toc-filter > input {
   border: 0;
   color: #666666;
+  background: #020143;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
@@ -632,7 +680,6 @@ body .toc{
   max-width: 100%;
 }
 .sideaffix {
-  margin-top: 50px;
   font-size: 12px;
   max-height: 100%;
   overflow: hidden;
@@ -656,7 +703,8 @@ body .toc{
   font-size: 14px;
 }
 .sideaffix > div.contribution > ul > li > a.contribution-link:hover {
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: transparent;
 }
 .sideaffix ul.nav > li > a:focus {
   background: none;
@@ -682,7 +730,7 @@ body .toc{
 }
 .affix ul > li.active > a,
 .affix ul > li.active > a:before {
-  color: #337ab7;
+  color: #752EFD;
 }
 .affix ul > li > a {
   padding: 5px 12px;
@@ -699,7 +747,7 @@ body .toc{
 }
 .affix > ul > li.active > a,
 .affix > ul > li.active > a:before {
-  color: #337ab7;
+  color: #752EFD;
   font-weight: bold;
 }
 .affix ul ul > li > a {
@@ -746,9 +794,9 @@ body .toc{
   color: #767676;
 }
 .tryspan:hover {
-  background-color: #3b8bd0;
+  background-color: #020143;
   color: white;
-  border-color: #3b8bd0;
+  border-color: #D67DFF;
 }
 .codewrapper:hover .tryspan {
   display: block;
@@ -764,8 +812,7 @@ footer {
   z-index: 1000;
 }
 .footer {
-  border-top: 1px solid #e7e7e7;
-  background-color: #f8f8f8;
+  background-color: #020143;
   padding: 15px 0;
 }
 @media (min-width: 768px) {
@@ -883,7 +930,7 @@ code {
 }
 
 a code {
-  color: #337ab7;
+  color: #752EFD;
   background-color: #f1f2f3;
 }
 

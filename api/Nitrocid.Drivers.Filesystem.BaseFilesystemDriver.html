@@ -19,6 +19,8 @@
     
     <meta property="docfx:rel" content="../">
     
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -120,7 +122,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool DriverInternal { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -151,7 +153,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string DriverName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -182,7 +184,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual DriverTypes DriverType { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -215,7 +217,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void AddAttributeToFile(string FilePath, FileAttributes Attributes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -255,7 +257,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void AddToPathLookup(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -288,7 +290,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void AddToPathLookup(string Path, string RootPath)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -326,7 +328,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void ClearFile(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -359,7 +361,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual byte[] CombineBinaryFiles(string Input, string[] TargetInputs)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -383,7 +385,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -414,7 +416,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string[] CombineTextFiles(string Input, string[] TargetInputs)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -438,7 +440,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -469,7 +471,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public (int line, string one, string two)[] Compare(string pathOne, string pathTwo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -493,7 +495,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -525,7 +527,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void ConvertLineEndings(string TextFile)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -559,7 +561,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -599,7 +601,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void CopyDirectory(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -639,7 +641,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void CopyDirectory(string Source, string Destination, bool ShowProgress)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -685,7 +687,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void CopyFile(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -725,7 +727,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void CopyFileOrDir(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -749,7 +751,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -780,7 +782,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual List&lt;FileSystemEntry&gt; CreateList(string folder, bool Sorted = false, bool Recursive = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -810,7 +812,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -842,7 +844,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -900,7 +902,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -946,7 +948,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1004,7 +1006,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1050,7 +1052,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool Exists(string Path, bool Neutralize = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1074,7 +1076,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1106,7 +1108,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool FileExists(string File, bool Neutralize = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1130,7 +1132,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1162,7 +1164,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool FileExistsInPath(string FilePath, ref string? Result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1186,7 +1188,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1218,7 +1220,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool FolderExists(string Folder, bool Neutralize = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1242,7 +1244,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1274,7 +1276,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1292,7 +1294,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1324,7 +1326,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo, bool FullParseMode)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1348,7 +1350,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1380,7 +1382,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string[] GetFilesystemEntries(string Path, bool IsFile = false, bool Recursive = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1410,7 +1412,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1442,7 +1444,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string[] GetFilesystemEntries(string? Parent, string Pattern, bool Recursive = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1472,7 +1474,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1504,7 +1506,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public string[] GetFilesystemEntriesRegex(string Parent, string Pattern, bool Recursive = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1534,7 +1536,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1565,7 +1567,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual char[] GetInvalidFileChars()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1596,7 +1598,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual char[] GetInvalidPathChars()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1627,7 +1629,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual FilesystemNewlineStyle GetLineEndingFromFile(string TextFile)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1645,7 +1647,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1676,7 +1678,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string GetNumberedFileName(string? path, string fileName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1700,7 +1702,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1732,7 +1734,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual List&lt;string&gt; GetPathList()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1763,7 +1765,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public string GetRandomFileName()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1795,7 +1797,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public string GetRandomFolderName()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1827,7 +1829,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool IsBinaryFile(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1845,7 +1847,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1876,7 +1878,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool IsJson(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1894,7 +1896,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1925,7 +1927,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool IsSql(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1943,7 +1945,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1974,7 +1976,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -1998,7 +2000,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2029,7 +2031,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MakeFile(string NewFile, bool ThrowIfFileExists = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2053,7 +2055,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2084,7 +2086,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2114,7 +2116,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2145,7 +2147,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MakeSymlink(string linkName, string target)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2169,7 +2171,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2200,7 +2202,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MoveDirectory(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2240,7 +2242,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MoveDirectory(string Source, string Destination, bool ShowProgress)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2286,7 +2288,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MoveFile(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2326,7 +2328,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void MoveFileOrDir(string Source, string Destination)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2350,7 +2352,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2381,7 +2383,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintContents(string filename)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2415,7 +2417,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2461,7 +2463,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2494,7 +2496,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2532,7 +2534,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintFileInfo(FileSystemEntry FileInfo)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2565,7 +2567,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2603,7 +2605,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual byte[] ReadAllBytes(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2621,7 +2623,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2652,7 +2654,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual byte[] ReadAllBytesNoBlock(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2670,7 +2672,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2701,7 +2703,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string[] ReadAllLinesNoBlock(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2719,7 +2721,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2751,7 +2753,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string ReadAllTextNoBlock(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2769,7 +2771,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2801,7 +2803,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string[] ReadContents(string filename)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2819,7 +2821,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2851,7 +2853,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string ReadContentsText(string filename)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2869,7 +2871,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2901,7 +2903,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string ReadToEndAndSeek(ref StreamReader stream)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2919,7 +2921,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2951,7 +2953,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveAttributeFromFile(string FilePath, FileAttributes Attributes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -2991,7 +2993,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveDirectory(string Target)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3025,7 +3027,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3071,7 +3073,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveFile(string Target, bool secureRemove = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3111,7 +3113,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveFileOrDir(string Target, bool secureRemove = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3151,7 +3153,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveFromPathLookup(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3184,7 +3186,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void RemoveFromPathLookup(string Path, string RootPath)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3222,7 +3224,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string RenderContents(string filename)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3240,7 +3242,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3271,7 +3273,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3301,7 +3303,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3332,7 +3334,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3374,7 +3376,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3405,7 +3407,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3435,7 +3437,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3466,7 +3468,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3502,7 +3504,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3533,7 +3535,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool Rooted(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3551,7 +3553,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3583,7 +3585,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual List&lt;string&gt; SearchFileForString(string FilePath, string StringLookup)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3607,7 +3609,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3623,7 +3625,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3654,7 +3656,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual List&lt;string&gt; SearchFileForStringRegexp(string FilePath, Regex StringLookup)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3678,7 +3680,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3694,7 +3696,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3725,7 +3727,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public List&lt;(string, MatchCollection)&gt; SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3749,7 +3751,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3765,7 +3767,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3796,7 +3798,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual string SortSelector(FileSystemEntry FileSystemEntry, int MaxLength)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3820,7 +3822,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3851,7 +3853,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool TryParseFileName(string Name)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3869,7 +3871,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3901,7 +3903,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual bool TryParsePath(string Path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3919,7 +3921,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3951,7 +3953,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WrapTextFile(string path)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -3985,7 +3987,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WrapTextFile(string path, int columns)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4025,7 +4027,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteAllBytes(string path, byte[] contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4065,7 +4067,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteAllBytesNoBlock(string path, byte[] contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4105,7 +4107,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteAllLinesNoBlock(string path, string[] contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4145,7 +4147,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteAllTextNoBlock(string path, string contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4185,7 +4187,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteContents(string filename, string[] contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
@@ -4225,7 +4227,7 @@ public abstract class BaseFilesystemDriver : IFilesystemDriver, IDriver</code></
     <pre><code class="lang-csharp hljs">public virtual void WriteContentsText(string filename, string contents)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th>Type</th>
