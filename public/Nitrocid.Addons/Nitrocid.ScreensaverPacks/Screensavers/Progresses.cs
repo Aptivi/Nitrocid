@@ -144,8 +144,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 thirdPosition = 0;
             }
             firstPosition += (int)firstPositionThreshold;
+            if (firstPosition > 100)
+                firstPosition = 100;
             secondPosition += (int)secondPositionThreshold;
+            if (secondPosition > 100)
+                secondPosition = 100;
             thirdPosition += (int)thirdPositionThreshold;
+            if (thirdPosition > 100)
+                thirdPosition = 100;
 
             // Populate the border settings
             var firstBorder = new BorderSettings()
