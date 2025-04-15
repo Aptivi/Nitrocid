@@ -1,6 +1,6 @@
 ﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
-  <Bundle Name="Nitrocid" Manufacturer="Aptivi" Version="0.1.2.5" UpgradeCode="7011d1b2-1bb0-49db-8a25-035d5b47ce99" IconSourceFile="..\..\..\..\..\..\Nitrocid\OfficialAppIcon-NitrocidKS.ico">
+  <Bundle Name="Nitrocid" Manufacturer="Aptivi" Version="0.1.2.6" UpgradeCode="7011d1b2-1bb0-49db-8a25-035d5b47ce99" IconSourceFile="..\..\..\..\..\..\Nitrocid\OfficialAppIcon-NitrocidKS.ico">
     <BootstrapperApplication>
       <bal:WixInternalUIBootstrapperApplication />
     </BootstrapperApplication>

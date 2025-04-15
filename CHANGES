@@ -1,10 +1,10 @@
-This is an emergency release of 0.1.2 that fixes a critical issue for the file manager TUIs.
+Since the release of 0.1.2, we've made a new version that incorporates general improvements.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed crucial file manager TUIs getting stuck in empty folders
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
