@@ -1,8 +1,3 @@
-# Below is a workaround for .NET SDK 7.0 trying to allocate large amounts of memory for GC work:
-# https://github.com/dotnet/runtime/issues/85556#issuecomment-1529177092
-DOTNET_HEAP_LIMIT_INT = $(shell sysctl -n hw.memsize 2>/dev/null || grep MemAvailable /proc/meminfo | awk '{print $$2 * 1024}')
-DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $(DOTNET_HEAP_LIMIT_INT))
-
 MODAPI = 26
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 OUTPUTS  := \
@@ -81,13 +76,13 @@ install:
 # Below targets specify functions for full build
 
 invoke-build:
-	./tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS))
+	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
     
 invoke-doc-build:
-	./tools/docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/docgen.sh)
+	bash tools/docgen.sh
 
 invoke-build-offline:
-	HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./tools/build.sh Release $(BUILDARGS))
+	HOME=`pwd`"/debian/homedir" bash tools/build.sh Release $(BUILDARGS)
 
 invoke-init-offline:
-	./tools/localize.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/localize.sh)
+	bash tools/localize.sh
