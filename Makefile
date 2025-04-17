@@ -13,7 +13,8 @@ OUTPUTS  := \
 	-name "KSTest" -or \
 	-name "nitrocid-$(MODAPI)" -or \
 	-name "nitrocid-$(MODAPI)-lite" -or \
-	-name "tmp"
+	-name "tmp" -or \
+	-name "docs"
 
 OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net8.0"
 BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-jl"
