@@ -39,7 +39,7 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Aptivestigate.Serilog" Version="1.2.0.1" />
-    <PackageReference Include="Magico" Version="1.3.3" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.3.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.4" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" PrivateAssets="all" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
@@ -49,7 +49,7 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="6.1.8.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux" Version="6.1.8.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Textify.Offline" Version="2.9.0" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
