@@ -26,6 +26,7 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Generating Documentation
         run: |
+          dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
           make rel-ci
           make doc
       - name: Saving changes to gh-pages
