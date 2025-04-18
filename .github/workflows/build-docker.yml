@@ -26,6 +26,8 @@ jobs:
       uses: docker/metadata-action@master
       with:
         images: eofla/nitrocid
+    - name: Add GitHub Package Registry to get access to beta builds
+      run: dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
     - name: Build Docker image
       uses: docker/build-push-action@master
       with:
