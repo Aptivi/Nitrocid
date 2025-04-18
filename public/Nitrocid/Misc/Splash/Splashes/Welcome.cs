@@ -43,8 +43,6 @@ namespace Nitrocid.Misc.Splash.Splashes
     class SplashWelcome : BaseSplash, ISplash
     {
         private bool cleared = false;
-        private int dotStep = 0;
-        private int currMs = 0;
         private ProgressBarNoText progress = new(0, 100)
         {
             LeftMargin = 3,
@@ -59,6 +57,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             progress.Position = 0;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -117,61 +116,9 @@ namespace Nitrocid.Misc.Splash.Splashes
             return builder.ToString();
         }
 
-        public override string Display(SplashContext context)
-        {
-            var builder = new StringBuilder();
-            try
-            {
-                // Check to see if we need progress or dots
-                if (!Config.SplashConfig.WelcomeShowProgress)
-                {
-                    Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
-                    Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
-                    Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
-                    Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                    Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
-                    Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
-                    Color fifthDotColor = dotStep >= 5 ? secondColor : firstColor;
-
-                    // Append a millisecond to the counter
-                    bool noAppend = true;
-                    currMs++;
-                    if (currMs >= 10)
-                    {
-                        noAppend = false;
-                        currMs = 0;
-                    }
-
-                    // Write the three dots
-                    string dots =
-                        $"{firstDotColor.VTSequenceForeground}* " +
-                        $"{secondDotColor.VTSequenceForeground}* " +
-                        $"{thirdDotColor.VTSequenceForeground}* " +
-                        $"{fourthDotColor.VTSequenceForeground}* " +
-                        $"{fifthDotColor.VTSequenceForeground}*";
-                    int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
-                    int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                    builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
-                    if (!noAppend)
-                    {
-                        dotStep++;
-                        if (dotStep > 5)
-                            dotStep = 0;
-                    }
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
-            return builder.ToString();
-        }
-
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
-            currMs = 0;
-            dotStep = 0;
             cleared = false;
             builder.Append(
                 base.Opening(context)
@@ -264,15 +211,12 @@ namespace Nitrocid.Misc.Splash.Splashes
                 report.Render()
             );
 
-            if (Config.SplashConfig.WelcomeShowProgress)
-            {
-                int posX = 2;
-                int posY = ConsoleWrapper.WindowHeight - 2;
-                progress.Position = Progress;
-                builder.Append(
-                    ContainerTools.RenderRenderable(progress, new(posX, posY))
-                );
-            }
+            int posX = 2;
+            int posY = ConsoleWrapper.WindowHeight - 2;
+            progress.Position = Progress;
+            builder.Append(
+                ContainerTools.RenderRenderable(progress, new(posX, posY))
+            );
             return builder.ToString();
         }
 
