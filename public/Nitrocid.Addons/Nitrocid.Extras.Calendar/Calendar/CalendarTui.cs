@@ -40,7 +40,9 @@ using Nitrocid.Kernel.Time.Renderers;
 using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -131,8 +133,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 var keybindings = new Keybindings()
                 {
                     KeybindingList = bindings,
-                    Left = 0,
-                    Top = ConsoleWrapper.WindowHeight - 1,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -141,7 +141,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                 };
-                return keybindings.Render();
+                return RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1));
             });
             screen.AddBufferedPart("Interactive calendar - Keybindings", part);
         }
@@ -181,8 +181,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 {
                     Left = 0,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorConsoleWidthInterior,
-                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Width = SeparatorConsoleWidthInterior,
+                    Height = SeparatorMaximumHeightInterior,
                     Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
@@ -238,8 +238,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     Text = CalendarTitle,
                     Left = boxLeft,
                     Top = boxTop,
-                    InteriorWidth = boxWidth,
-                    InteriorHeight = boxHeight,
+                    Width = boxWidth,
+                    Height = boxHeight,
                     Color = boxForeground,
                     BackgroundColor = background,
                 };
@@ -336,8 +336,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     Text = Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}",
                     Left = eventBoxLeft,
                     Top = eventBoxTop,
-                    InteriorWidth = eventBoxWidth,
-                    InteriorHeight = eventBoxHeight,
+                    Width = eventBoxWidth,
+                    Height = eventBoxHeight,
                     Color = boxForeground,
                     BackgroundColor = background,
                 };

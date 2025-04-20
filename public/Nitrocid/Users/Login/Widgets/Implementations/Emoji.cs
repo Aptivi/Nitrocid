@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using System.Text;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations

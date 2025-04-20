@@ -23,9 +23,8 @@ using Nitrocid.Kernel.Debugging;
 using System;
 using System.Threading;
 using Nitrocid.Drivers.Console;
-using Nitrocid.Drivers;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ConsoleBase.Writers
 {

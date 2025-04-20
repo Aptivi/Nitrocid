@@ -27,7 +27,6 @@ using Nitrocid.Files;
 using Nitrocid.Drivers;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase.Colors;

@@ -20,8 +20,8 @@
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -64,8 +64,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Left = i * (boxWidthExterior + 1),
                         Top = j * boxHeightExterior,
-                        InteriorWidth = boxWidth,
-                        InteriorHeight = boxHeight,
+                        Width = boxWidth,
+                        Height = boxHeight,
                         Color = color,
                     };
                     TextWriterRaw.WriteRaw(border.Render());

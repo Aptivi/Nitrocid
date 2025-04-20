@@ -20,15 +20,12 @@
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Colors;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {

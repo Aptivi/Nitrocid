@@ -26,12 +26,10 @@ using Nitrocid.Drivers;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Files.Instances;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Files
 {

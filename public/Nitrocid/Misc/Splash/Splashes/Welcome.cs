@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Sequences;
 using Textify.Data.Figlet;
 using System;
 using System.Text;
@@ -29,14 +27,13 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
@@ -45,8 +42,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         private bool cleared = false;
         private ProgressBarNoText progress = new(0, 100)
         {
-            LeftMargin = 3,
-            RightMargin = 3,
+            Width = ConsoleWrapper.WindowWidth - 6,
         };
 
         // Standalone splash information
@@ -215,7 +211,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             int posY = ConsoleWrapper.WindowHeight - 2;
             progress.Position = Progress;
             builder.Append(
-                ContainerTools.RenderRenderable(progress, new(posX, posY))
+                RendererTools.RenderRenderable(progress, new(posX, posY))
             );
             return builder.ToString();
         }

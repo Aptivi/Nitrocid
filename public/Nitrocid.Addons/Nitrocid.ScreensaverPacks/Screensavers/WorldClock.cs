@@ -25,8 +25,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

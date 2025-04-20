@@ -25,9 +25,9 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -95,15 +95,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
 
                     // Draw the box
-                    IStaticRenderable stackBox;
+                    GraphicalCyclicWriter stackBox;
                     if (ScreensaverPackInit.SaversConfig.StackBoxFill)
                     {
                         stackBox = new Box()
                         {
                             Left = BoxStartX,
                             Top = BoxStartY,
-                            InteriorWidth = BoxEndX - BoxStartX,
-                            InteriorHeight = BoxEndY - BoxStartY,
+                            Width = BoxEndX - BoxStartX,
+                            Height = BoxEndY - BoxStartY,
                             Color = color,
                         };
                     }
@@ -113,8 +113,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             Left = BoxStartX,
                             Top = BoxStartY,
-                            InteriorWidth = BoxEndX - BoxStartX,
-                            InteriorHeight = BoxEndY - BoxStartY,
+                            Width = BoxEndX - BoxStartX,
+                            Height = BoxEndY - BoxStartY,
                             FrameColor = color,
                         };
                     }

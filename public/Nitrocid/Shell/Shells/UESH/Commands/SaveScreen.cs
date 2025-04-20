@@ -28,8 +28,6 @@ using System.Threading;
 using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

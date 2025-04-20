@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Misc.Reflection.Internal;
 
 #if SPECIFIERREL

@@ -38,8 +38,8 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Users.Login
 {

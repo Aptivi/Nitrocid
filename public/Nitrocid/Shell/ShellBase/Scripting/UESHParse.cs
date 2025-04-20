@@ -28,8 +28,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Events;
 using Textify.General;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.Files;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Shell.ShellBase.Scripting
 {

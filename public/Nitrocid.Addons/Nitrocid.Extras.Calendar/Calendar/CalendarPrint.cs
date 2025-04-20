@@ -29,8 +29,8 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -168,8 +168,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 Rows = CalendarData,
                 Left = 2,
                 Top = 3,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 4,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 4,
+                Width = ConsoleWrapper.WindowWidth - 4,
+                Height = ConsoleWrapper.WindowHeight - 4,
                 Header = true,
                 Settings = CalendarCellOptions,
             };

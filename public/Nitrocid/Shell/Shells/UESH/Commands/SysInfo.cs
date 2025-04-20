@@ -30,7 +30,6 @@ using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Windows;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
