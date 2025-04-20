@@ -16,7 +16,7 @@
     
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 
-**Warning: the 0.1.1.x series development has stopped and will be out of support in April 23rd. Instead, use 0.1.0.x where its features will be there, or use the latest supported version.**
+**Warning: the 0.1.1.x series is out of support in April 23rd. Instead, use 0.1.0.x where its features are there, or use the latest supported version.**
 
 <br>
 <br>
