@@ -55,6 +55,25 @@ namespace Nitrocid.Extras.RssShell.Tools
             }
         }
 
+        internal static (string feedTitle, string articleTitle)[] GetArticles(string url)
+        {
+            try
+            {
+                var Feed = new RSSFeed(url, RSSFeedType.Infer);
+                Feed.Refresh();
+                var articles = new List<(string feedTitle, string articleTitle)>();
+                foreach (var article in Feed.FeedArticles)
+                    articles.Add((Feed.FeedTitle, article.ArticleTitle));
+                return [.. articles];
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.RSSNetwork, ex);
+            }
+        }
+
         /// <summary>
         /// Refreshes the feeds
         /// </summary>

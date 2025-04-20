@@ -24,6 +24,8 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
+using System.Threading;
+using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
@@ -72,7 +74,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (ScreensaverManager.inSaver)
             {
-                Input.ReadKey();
+                SpinWait.SpinUntil(() => Input.InputAvailable);
+                while (Input.InputAvailable)
+                {
+                    var descriptor = Input.ReadPointerOrKey();
+                    if (descriptor.Item1 is not null)
+                    {
+                        switch (descriptor.Item1.Button)
+                        {
+                            case PointerButton.Left:
+                            case PointerButton.Right:
+                            case PointerButton.Middle:
+                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
+                                    Input.ReadPointer();
+                                break;
+                        }
+                    }
+                }
                 ScreensaverDisplayer.BailFromScreensaver();
             }
         }

@@ -52,27 +52,6 @@ namespace Nitrocid.Network.Transfer
         internal static bool SuppressUploadMessage;
 
         /// <summary>
-        /// Download percentage print style
-        /// </summary>
-        public static string DownloadPercentagePrint =>
-            Config.MainConfig.DownloadPercentagePrint;
-        /// <summary>
-        /// Upload percentage print style
-        /// </summary>
-        public static string UploadPercentagePrint =>
-            Config.MainConfig.UploadPercentagePrint;
-        /// <summary>
-        /// Whether to provoke the notification upon download starts
-        /// </summary>
-        public static bool DownloadNotificationProvoke =>
-            Config.MainConfig.DownloadNotificationProvoke;
-        /// <summary>
-        /// Whether to provoke the notification upon upload starts
-        /// </summary>
-        public static bool UploadNotificationProvoke =>
-            Config.MainConfig.UploadNotificationProvoke;
-
-        /// <summary>
         /// Downloads a file to the current working directory.
         /// </summary>
         /// <param name="URL">A URL to a file</param>
@@ -231,7 +210,7 @@ namespace Nitrocid.Network.Transfer
             try
             {
                 // Distinguish download from upload
-                bool NotificationProvoke = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotificationProvoke : UploadNotificationProvoke;
+                bool NotificationProvoke = TransferInfo.TransferType == NetworkTransferType.Download ? Config.MainConfig.DownloadNotificationProvoke : Config.MainConfig.UploadNotificationProvoke;
                 var NotificationInstance = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotif : UploadNotif;
                 string indicator = TransferInfo.TransferType == NetworkTransferType.Download ? Translate.DoTranslation("{0} of {1} downloaded.") : Translate.DoTranslation("{0} of {1} uploaded.");
 

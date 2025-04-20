@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of addons"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of addons"), true);
 
             // List all the available addons
             var addonNames = AddonTools.ListAddons().Select((addon) => addon.AddonName);

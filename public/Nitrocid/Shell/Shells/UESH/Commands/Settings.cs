@@ -36,18 +36,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct Nitrocid KS Configuration Tool application, and is native to the kernel.
-    /// <br></br>
     /// It starts with the list of sections to start from. Once the user selects one, they'll be greeted with various options that are configurable. When they choose one, they'll be able to change the setting there.
-    /// <br></br>
     /// If you just want to try out a setting without saving to the configuration file, you can change a setting and exit it immediately. It only survives the current session until you decide to save the changes to the configuration file.
-    /// <br></br>
     /// Some settings allow you to specify a string, a number, or by the usage of another API, like the ColorWheel() tool.
-    /// <br></br>
     /// In the string or long string values, if you used the /clear value, it will blank out the value. In some settings, if you just pressed ENTER, it'll use the same value that the kernel uses at the moment.
-    /// <br></br>
     /// We've made sure that this application is user-friendly.
     /// <br></br>
+    /// <br></br>
     /// For the screensaver and splashes, refer to the command usage below.
+    /// <br></br>
     /// <br></br>
     /// <list type="table">
     /// <listheader>
@@ -55,12 +52,28 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// <description>Description</description>
     /// </listheader>
     /// <item>
+    /// <term>-sel</term>
+    /// <description>Opens the legacy selection-style-based settings instead of the interactive TUI</description>
+    /// </item>
+    /// <item>
     /// <term>-saver</term>
     /// <description>Opens the screensaver settings</description>
     /// </item>
     /// <item>
+    /// <term>-addonsaver</term>
+    /// <description>Opens the extra screensaver settings</description>
+    /// </item>
+    /// <item>
     /// <term>-splash</term>
     /// <description>Opens the splash settings</description>
+    /// </item>
+    /// <item>
+    /// <term>-driver</term>
+    /// <description>Opens the driver settings</description>
+    /// </item>
+    /// <item>
+    /// <term>-type=&lt;typeClassName&gt;</term>
+    /// <description>Opens the custom settings</description>
     /// </item>
     /// </list>
     /// <br></br>
@@ -71,15 +84,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var typeFinal =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ?
-                SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") :
-                nameof(KernelMainConfig);
-            if (parameters.SwitchesList.Length > 0)
+            bool useSelection = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sel");
+            bool useType = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type");
+            var typeFinal = useType ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : nameof(KernelMainConfig);
+            if (parameters.SwitchesList.Length > 0 && !useType)
             {
-                if (parameters.SwitchesList[0] == "-saver")
+                bool isSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-saver");
+                bool isAddonSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsaver");
+                bool isSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splash");
+                bool isDriver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-driver");
+                if (isSaver)
                     typeFinal = nameof(KernelSaverConfig);
-                else if (parameters.SwitchesList[0] == "-addonsaver")
+                else if (isAddonSaver)
                 {
                     if (ConfigTools.IsCustomSettingBuiltin("ExtraSaversConfig"))
                         typeFinal = "ExtraSaversConfig";
@@ -89,7 +105,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
-                else if (parameters.SwitchesList[0] == "-splash")
+                else if (isSplash)
                 {
                     if (ConfigTools.IsCustomSettingBuiltin("ExtraSplashesConfig"))
                         typeFinal = "ExtraSplashesConfig";
@@ -99,10 +115,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
-                else if (parameters.SwitchesList[0] == "-driver")
+                else if (isDriver)
                     typeFinal = nameof(KernelDriverConfig);
             }
-            SettingsApp.OpenMainPage(typeFinal);
+            SettingsApp.OpenMainPage(typeFinal, useSelection);
             return 0;
         }
 

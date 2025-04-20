@@ -28,8 +28,8 @@ using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
-using Nitrocid.Network;
 using Nitrocid.Users.Windows;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -74,8 +74,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Running from GRILO:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelPlatform.IsRunningFromGrilo().ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Running on usual environment:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Safe Mode:") + " ", false, KernelColorType.ListEntry);
@@ -103,7 +101,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(Translate.DoTranslation("Current user name:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(UserManagement.CurrentUser.Username, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Current host name:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(NetworkTools.HostName, true, KernelColorType.ListValue);
+                TextWriters.Write(Config.MainConfig.HostName, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Available usernames:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();

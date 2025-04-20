@@ -19,7 +19,6 @@
 
 using System;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;
@@ -30,6 +29,7 @@ using Nitrocid.Misc.Reflection.Internal;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
 using System.IO;
 #endif
 
@@ -40,12 +40,6 @@ namespace Nitrocid.Kernel.Updates
     /// </summary>
     public static class UpdateManager
     {
-
-        /// <summary>
-        /// Whether or not to check for updates on startup
-        /// </summary>
-        public static bool CheckUpdateStart =>
-            Config.MainConfig.CheckUpdateStart;
 
         /// <summary>
         /// Fetches the GitHub repo to see if there are any updates

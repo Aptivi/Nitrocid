@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+extern alias TextifyDep;
+
 using System;
 using System.Linq;
 using Newtonsoft.Json;
@@ -30,11 +32,10 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Instances;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Textify.Tools;
+using TextifyDep::Textify.Tools;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -47,9 +48,10 @@ namespace Nitrocid.Kernel.Configuration
         internal static Dictionary<string, BaseKernelConfig> customConfigurations = [];
         internal static Dictionary<string, BaseKernelConfig> baseConfigurations = new()
         {
-            { nameof(KernelMainConfig),   new KernelMainConfig() },
-            { nameof(KernelSaverConfig),  new KernelSaverConfig() },
-            { nameof(KernelDriverConfig), new KernelDriverConfig() },
+            { nameof(KernelMainConfig),    new KernelMainConfig() },
+            { nameof(KernelSaverConfig),   new KernelSaverConfig() },
+            { nameof(KernelDriverConfig),  new KernelDriverConfig() },
+            { nameof(KernelWidgetsConfig), new KernelWidgetsConfig() },
         };
 
         /// <summary>
@@ -67,6 +69,11 @@ namespace Nitrocid.Kernel.Configuration
         /// </summary>
         public static KernelDriverConfig DriverConfig =>
             baseConfigurations is not null ? (KernelDriverConfig)baseConfigurations[nameof(KernelDriverConfig)] : new KernelDriverConfig();
+        /// <summary>
+        /// Widget configuration entry for the kernel
+        /// </summary>
+        public static KernelWidgetsConfig WidgetConfig =>
+            baseConfigurations is not null ? (KernelWidgetsConfig)baseConfigurations[nameof(KernelWidgetsConfig)] : new KernelWidgetsConfig();
 
         /// <summary>
         /// Gets the kernel configuration
@@ -300,20 +307,14 @@ namespace Nitrocid.Kernel.Configuration
         public static void InitializeConfig()
         {
             // Make a config file if not found
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
+            foreach (var baseConfig in baseConfigurations)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "No config file found. Creating...");
-                CreateConfig(MainConfig);
-            }
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.SaverConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
-                CreateConfig(SaverConfig);
-            }
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.DriverConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No driver config file found. Creating...");
-                CreateConfig(DriverConfig);
+                string finalPath = ConfigTools.GetPathToCustomSettingsFile(baseConfig.Value);
+                if (!Checking.FileExists(finalPath))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", baseConfig.Key, finalPath);
+                    CreateConfig(baseConfig.Value);
+                }
             }
 
             // Validate config

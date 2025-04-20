@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
+using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -38,14 +39,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            // Check the algorithm
             string algorithm = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
-            var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
-            driver.Initialize();
-            if (!driver.IsSymmetric)
+            bool isAsymmetric = DriverHandler.IsRegistered<IEncodingAsymmetricDriver>(algorithm);
+            if (isAsymmetric)
             {
                 TextWriters.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encoding);
             }
+
+            // Get the driver and initialize it
+            var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
+            driver.Initialize();
 
             // Now, get the key and the IV
             byte[] key = driver.Key;

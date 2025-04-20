@@ -21,14 +21,13 @@ using System;
 using System.Data;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.UnitConv.Interactives;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using UnitsNet;
+using Nitrocid.Extras.UnitConv.Tools;
 
 namespace Nitrocid.Extras.UnitConv.Commands
 {
@@ -47,11 +46,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         {
             bool tuiMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
             if (tuiMode)
-            {
-                var tui = new UnitConverterCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<object>(Translate.DoTranslation("Convert..."), ConsoleKey.F1, (_, _, _, _) => tui.OpenConvert()));
-                InteractiveTuiTools.OpenInteractiveTui(tui);
-            }
+                UnitConvTools.OpenUnitConvTui();
             else
             {
                 var parser = UnitsNetSetup.Default.UnitParser;

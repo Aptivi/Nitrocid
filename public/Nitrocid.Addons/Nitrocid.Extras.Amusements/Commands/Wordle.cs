@@ -19,7 +19,7 @@
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Nitrocid.Shell.ShellBase.Commands;
-using System.Linq;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
@@ -28,7 +28,11 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            Wordle.InitializeWordle(parameters.SwitchesList.Length > 0 && parameters.SwitchesList.Contains("-orig"));
+            bool useOrig = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-orig");
+            var wordDifficulty =
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-uncommon") ? WordleWordDifficulty.Uncommon :
+                WordleWordDifficulty.Common;
+            Wordle.InitializeWordle(useOrig, wordDifficulty);
             return 0;
         }
     }

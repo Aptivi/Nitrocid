@@ -22,7 +22,6 @@ using System.IO;
 using System.Linq;
 using IOPath = System.IO.Path;
 using System.Threading;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
@@ -31,6 +30,9 @@ using Nitrocid.Files.Instances;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Interactives;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Files
 {
@@ -41,36 +43,6 @@ namespace Nitrocid.Files
     {
 
         private const int maxLockTimeoutMs = 300000;
-
-        /// <summary>
-        /// Shows the filesystem progress
-        /// </summary>
-        public static bool ShowFilesystemProgress =>
-            Config.MainConfig.ShowFilesystemProgress;
-
-        /// <summary>
-        /// Whether or not to parse whole directory for size
-        /// </summary>
-        public static bool FullParseMode =>
-            Config.MainConfig.FullParseMode;
-
-        /// <summary>
-        /// Whether or not to show hidden files
-        /// </summary>
-        public static bool HiddenFiles =>
-            Config.MainConfig.HiddenFiles;
-
-        /// <summary>
-        /// Print the line numbers while listing file contents
-        /// </summary>
-        public static bool PrintLineNumbers =>
-            Config.MainConfig.PrintLineNumbers;
-
-        /// <summary>
-        /// Whether to suppress the unauthorized messages while listing directory contents
-        /// </summary>
-        public static bool SuppressUnauthorizedMessages =>
-            Config.MainConfig.SuppressUnauthorizedMessages;
 
         /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.
@@ -245,5 +217,31 @@ namespace Nitrocid.Files
             SpinWait.SpinUntil(() => !IsLocked(Path));
         }
 
+        internal static void OpenFileManagerTui() =>
+            OpenFileManagerTui(PathsManagement.HomePath, PathsManagement.HomePath);
+
+        internal static void OpenFileManagerTui(string firstPanePath, string secondPanePath)
+        {
+            var tui = new FileManagerCli
+            {
+                firstPanePath = Checking.FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
+                secondPanePath = Checking.FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
+            };
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
     }
 }

@@ -37,8 +37,8 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
 using Textify.General;
-using Nitrocid.Network;
 using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Misc.Text.Probers.Placeholder
 {
@@ -51,7 +51,7 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         private readonly static List<PlaceInfo> placeholders =
         [
             new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
-            new PlaceInfo("host", (_) => NetworkTools.HostName),
+            new PlaceInfo("host", (_) => Config.MainConfig.HostName),
             new PlaceInfo("currentdirectory", (_) => CurrentDirectory.CurrentDir),
             new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""),
             new PlaceInfo("shortdate", (_) => TimeDateRenderers.RenderDate(FormatType.Short)),

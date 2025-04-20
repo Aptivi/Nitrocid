@@ -17,14 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-
-#if SPECIFIERREL
 using Nitrocid.Kernel.Updates;
-#endif
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,11 +37,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-#if SPECIFIERREL
             UpdateManager.CheckKernelUpdates();
-#else
-            TextWriters.Write(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."), true, KernelColorType.Error);
-#endif
             return 0;
         }
 

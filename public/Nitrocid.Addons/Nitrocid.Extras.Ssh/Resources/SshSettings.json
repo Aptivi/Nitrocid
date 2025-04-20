@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "SSH",
+        "Desc": "This section lets you configure how the SSH works.",
+        "Keys": [
+            {
+                "Name": "Username prompt style for SSH",
+                "Type": "SString",
+                "Variable": "SSHUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Add new connections to SSH speed dial",
+                "Type": "SBoolean",
+                "Variable": "SSHNewConnectionsToSpeedDial",
+                "Description": "If enabled, adds a new connection to the SSH speed dial."
+            }
+        ]
+    }
+]

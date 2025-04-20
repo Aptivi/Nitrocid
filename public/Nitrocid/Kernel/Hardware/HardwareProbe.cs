@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Misc.Splash;
@@ -39,18 +38,6 @@ namespace Nitrocid.Kernel.Hardware
         internal static IEnumerable? pcMemory;
         internal static IEnumerable? hardDrive;
         internal static IEnumerable? graphics;
-
-        /// <summary>
-        /// Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
-        /// </summary>
-        public static bool QuietHardwareProbe =>
-            Config.MainConfig.QuietHardwareProbe;
-
-        /// <summary>
-        /// Makes the hardware prober a bit talkative
-        /// </summary>
-        public static bool VerboseHardwareProbe =>
-            Config.MainConfig.VerboseHardwareProbe;
 
         /// <summary>
         /// Starts probing hardware

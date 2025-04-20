@@ -34,13 +34,8 @@ namespace Nitrocid.Languages
         /// <summary>
         /// Current culture
         /// </summary>
-        public static string CurrentCultStr =>
-            Config.MainConfig.CurrentCultStr;
-        /// <summary>
-        /// Current culture
-        /// </summary>
         public static CultureInfo CurrentCult =>
-            new(CurrentCultStr);
+            new(Config.MainConfig.CurrentCultStr);
 
         /// <summary>
         /// Updates current culture based on current language. If there are no cultures in the current language, assume current culture.

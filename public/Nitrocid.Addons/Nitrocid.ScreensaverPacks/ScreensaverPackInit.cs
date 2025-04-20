@@ -35,6 +35,7 @@ namespace Nitrocid.ScreensaverPacks
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
             { "aberration", new AberrationDisplay() },
+            { "analogclock", new AnalogClockDisplay() },
             { "aurora", new AuroraDisplay() },
             { "barrot", new BarRotDisplay() },
             { "barwave", new BarWaveDisplay() },

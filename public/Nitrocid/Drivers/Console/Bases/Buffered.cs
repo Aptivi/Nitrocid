@@ -91,6 +91,24 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void SetCursorPosition(int left, int top) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
+        public override void SetWindowDimensions(int width, int height) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetBufferDimensions(int width, int height) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetWindowWidth(int width) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetWindowHeight(int height) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetBufferWidth(int width) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetBufferHeight(int height) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
         public override void SetOut(TextWriter newOut) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
@@ -156,7 +174,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -176,7 +194,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -210,7 +228,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -245,7 +263,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -280,7 +298,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -301,7 +319,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }

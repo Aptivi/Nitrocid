@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Journaling;
@@ -53,17 +54,17 @@ namespace Nitrocid.Kernel.Events
             var Events = new Dictionary<string, object?[]?>();
 
             // Enumerate all the fired events
-            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
             foreach (string FiredEvent in FiredEvents.Keys)
             {
                 if (FiredEvent.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
                     var EventArguments = FiredEvents[FiredEvent];
                     Events.Add(FiredEvent, EventArguments);
                 }
             }
-            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
             return Events;
         }
 
@@ -85,7 +86,7 @@ namespace Nitrocid.Kernel.Events
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
 
             // Add fired event to the list
-            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, $"Raising event {Event}...");
+            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
             JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
@@ -96,13 +97,13 @@ namespace Nitrocid.Kernel.Events
             {
                 try
                 {
-                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
                     handler.Invoke(Params);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTraceConditional(DebugWriter.EventDebug, ex);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTraceConditional(Config.MainConfig.EventDebug, ex);
                 }
             }
         }

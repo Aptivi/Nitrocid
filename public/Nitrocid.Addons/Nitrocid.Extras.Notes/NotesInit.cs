@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -38,10 +39,13 @@ namespace Nitrocid.Extras.Notes
         [
             new CommandInfo("addnote", /* Localizable */ "Adds a note",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "noteContents...")
-                    }),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Note contents to add"
+                        })
+                    ]),
                 ], new AddNote()),
 
             new CommandInfo("removenote", /* Localizable */ "Removes a note",
@@ -50,7 +54,8 @@ namespace Nitrocid.Extras.Notes
                     {
                         new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Note number"
                         })
                     }),
                 ], new RemoveNote()),
@@ -95,10 +100,19 @@ namespace Nitrocid.Extras.Notes
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            HomepageTools.UnregisterBuiltinAction("Notes");
+        }
 
-        void IAddon.FinalizeAddon() =>
+        void IAddon.FinalizeAddon()
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Notes", NoteManagement.OpenNotesTui);
+
+            // Load notes
             NoteManagement.LoadNotes();
+        }
     }
 }

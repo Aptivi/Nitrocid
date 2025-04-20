@@ -30,7 +30,6 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {
@@ -68,7 +67,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             List<PowerLineSegment> segments =
             [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), UserManagement.CurrentUser.Username),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), NetworkTools.HostName, PadlockChar),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), Config.MainConfig.HostName, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}"),
             ];
 

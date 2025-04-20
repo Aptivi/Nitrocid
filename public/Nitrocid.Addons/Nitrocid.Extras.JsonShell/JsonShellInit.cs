@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Commands;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
+using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
@@ -40,19 +43,31 @@ namespace Nitrocid.Extras.JsonShell
         [
             new CommandInfo("jsondiff", /* Localizable */ "Shows the difference between two JSON files",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "file1"),
-                        new CommandArgumentPart(true, "file2"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "First JSON file"
+                        }),
+                        new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Second JSON file"
+                        }),
+                    ])
                 ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
+                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                        }),
+                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                        }),
                     ], true)
                 ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -60,8 +75,14 @@ namespace Nitrocid.Extras.JsonShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
+                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                        }),
+                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                        }),
                     ], true)
                 ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         ];
@@ -74,7 +95,23 @@ namespace Nitrocid.Extras.JsonShell
         internal static JsonConfig JsonConfig =>
             (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(JsonTools.OpenJsonFile), new Func<string, bool>(JsonTools.OpenJsonFile) },
+            { nameof(JsonTools.CloseJsonFile), new Func<bool>(JsonTools.CloseJsonFile) },
+            { nameof(JsonTools.SaveFile), new Func<bool, bool>(JsonTools.SaveFile) },
+            { nameof(JsonTools.SaveFile) + "2", new Func<bool, Formatting, bool>(JsonTools.SaveFile) },
+            { nameof(JsonTools.WasJsonEdited), new Func<bool>(JsonTools.WasJsonEdited) },
+            { nameof(JsonTools.DetermineRootType), new Func<JTokenType>(JsonTools.DetermineRootType) },
+            { nameof(JsonTools.DetermineType), new Func<string, JTokenType>(JsonTools.DetermineType) },
+            { nameof(JsonTools.GetToken), new Func<string, JToken>(JsonTools.GetToken) },
+            { nameof(JsonTools.GetTokenSafe), new Func<string, JToken?>(JsonTools.GetTokenSafe) },
+            { nameof(JsonTools.GetTokenSafe) + "2", new Func<string, string, JToken?>(JsonTools.GetTokenSafe) },
+            { nameof(JsonTools.Add), new Action<string, string, string, string>(JsonTools.Add) },
+            { nameof(JsonTools.Set), new Action<string, string, string, string>(JsonTools.Set) },
+            { nameof(JsonTools.Remove), new Action<string>(JsonTools.Remove) },
+            { nameof(JsonTools.SerializeToString), new Func<string, string>(JsonTools.SerializeToString) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 

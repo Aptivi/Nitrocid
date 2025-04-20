@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Power;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,21 +33,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (parameters.ArgumentsList.Length != 0)
-            {
-                if (parameters.ArgumentsList.Length == 1)
-                {
-                    PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0]);
-                }
-                else
-                {
-                    PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
-                }
-            }
-            else
-            {
-                PowerManager.PowerManage(PowerMode.Shutdown);
-            }
+            PowerManager.PowerManage(PowerMode.Shutdown);
             return 0;
         }
 

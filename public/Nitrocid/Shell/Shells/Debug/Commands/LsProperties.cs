@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (properties.Count > 0)
                     {
                         // Write the property names and their values
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of properties for") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of properties for") + $" {type.Name}", true);
                         TextWriters.WriteList(properties);
                     }
                 }
@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (properties.Count > 0)
                     {
                         // Write the property names and their values
-                        TextWriterColor.Write(Translate.DoTranslation("List of properties for") + $" {type.Name}", true);
+                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of properties for") + $" {type.Name}", true);
                         foreach (var property in properties)
                             TextWriterColor.Write($"  - {property.Key} [{property.Value}]");
                     }

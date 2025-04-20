@@ -30,9 +30,9 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Timers.Timers
@@ -100,9 +100,9 @@ namespace Nitrocid.Extras.Timers.Timers
                     Left = 0,
                     Top = KeysTextTopPosition,
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
-                    BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
-                    BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                    BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
+                    BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
+                    BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
                     OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),

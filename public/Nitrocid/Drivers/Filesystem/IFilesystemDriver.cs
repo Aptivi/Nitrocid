@@ -18,12 +18,12 @@
 //
 
 
-using FS = Nitrocid.Files.FilesystemTools;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -504,7 +504,7 @@ namespace Nitrocid.Drivers.Filesystem
         List<(string, MatchCollection)> SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup);
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="FS.FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Config.MainConfig"/>.FullParseMode
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>

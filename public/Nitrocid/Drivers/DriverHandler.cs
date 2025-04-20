@@ -46,6 +46,8 @@ using Nitrocid.Drivers.HardwareProber.Bases;
 using Nitrocid.Drivers.Sorting.Bases;
 using Nitrocid.Drivers.Input.Bases;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Drivers.EncodingAsymmetric.Bases;
+using Nitrocid.Drivers.EncodingAsymmetric;
 
 namespace Nitrocid.Drivers
 {
@@ -61,7 +63,6 @@ namespace Nitrocid.Drivers
                 DriverTypes.Console, new()
                 {
                     new Terminal(),
-                    new TerminalMonoCompat(),
                     new File(),
                     new FileSequence(),
                     new Null(),
@@ -129,8 +130,6 @@ namespace Nitrocid.Drivers
                 DriverTypes.Encoding, new()
                 {
                     new AesEncoding(),
-                    new RsaEncoding(),
-                    new Base64Encoding(),
                 }
             },
             {
@@ -153,7 +152,14 @@ namespace Nitrocid.Drivers
                 {
                     new DefaultInput(),
                 }
-            }
+            },
+            {
+                DriverTypes.EncodingAsymmetric, new()
+                {
+                    new Base64Encoding(),
+                    new RsaEncoding(),
+                }
+            },
         };
 
         internal static Dictionary<DriverTypes, List<IDriver>> customDrivers = new()
@@ -169,6 +175,7 @@ namespace Nitrocid.Drivers
             { DriverTypes.HardwareProber,       new() },
             { DriverTypes.Sorting,              new() },
             { DriverTypes.Input,                new() },
+            { DriverTypes.EncodingAsymmetric,   new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
@@ -184,21 +191,23 @@ namespace Nitrocid.Drivers
             { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber][0] },
             { DriverTypes.Sorting,              drivers[DriverTypes.Sorting][0] },
             { DriverTypes.Input,                drivers[DriverTypes.Input][0] },
+            { DriverTypes.EncodingAsymmetric,   drivers[DriverTypes.EncodingAsymmetric][0] },
         };
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
         {
-            { typeof(IConsoleDriver),           DriverTypes.Console },
-            { typeof(IRandomDriver),            DriverTypes.RNG },
-            { typeof(INetworkDriver),           DriverTypes.Network },
-            { typeof(IFilesystemDriver),        DriverTypes.Filesystem },
-            { typeof(IEncryptionDriver),        DriverTypes.Encryption },
-            { typeof(IRegexpDriver),            DriverTypes.Regexp },
-            { typeof(IDebugLoggerDriver),       DriverTypes.DebugLogger },
-            { typeof(IEncodingDriver),          DriverTypes.Encoding },
-            { typeof(IHardwareProberDriver),    DriverTypes.HardwareProber },
-            { typeof(ISortingDriver),           DriverTypes.Sorting },
-            { typeof(IInputDriver),             DriverTypes.Input },
+            { typeof(IConsoleDriver),               DriverTypes.Console },
+            { typeof(IRandomDriver),                DriverTypes.RNG },
+            { typeof(INetworkDriver),               DriverTypes.Network },
+            { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
+            { typeof(IEncryptionDriver),            DriverTypes.Encryption },
+            { typeof(IRegexpDriver),                DriverTypes.Regexp },
+            { typeof(IDebugLoggerDriver),           DriverTypes.DebugLogger },
+            { typeof(IEncodingDriver),              DriverTypes.Encoding },
+            { typeof(IHardwareProberDriver),        DriverTypes.HardwareProber },
+            { typeof(ISortingDriver),               DriverTypes.Sorting },
+            { typeof(IInputDriver),                 DriverTypes.Input },
+            { typeof(IEncodingAsymmetricDriver),    DriverTypes.EncodingAsymmetric },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -270,6 +279,12 @@ namespace Nitrocid.Drivers
             begunLocal ? (IInputDriver)currentDriversLocal[DriverTypes.Input] : CurrentInputDriver;
 
         /// <summary>
+        /// Gets the current asymmetric encoding driver (use this when possible)
+        /// </summary>
+        public static IEncodingAsymmetricDriver CurrentEncodingAsymmetricDriverLocal =>
+            begunLocal ? (IEncodingAsymmetricDriver)currentDriversLocal[DriverTypes.EncodingAsymmetric] : CurrentEncodingAsymmetricDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -334,6 +349,12 @@ namespace Nitrocid.Drivers
         /// </summary>
         public static IInputDriver CurrentInputDriver =>
             (IInputDriver)currentDrivers[DriverTypes.Input];
+
+        /// <summary>
+        /// Gets the system-wide current asymmetric encoding driver
+        /// </summary>
+        public static IEncodingAsymmetricDriver CurrentEncodingAsymmetricDriver =>
+            (IEncodingAsymmetricDriver)currentDrivers[DriverTypes.EncodingAsymmetric];
 
         /// <summary>
         /// Gets the driver

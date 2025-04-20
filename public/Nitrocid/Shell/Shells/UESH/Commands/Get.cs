@@ -29,6 +29,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
-            while (RetryCount <= NetworkTools.DownloadRetries)
+            while (RetryCount <= Config.MainConfig.DownloadRetries)
             {
                 try
                 {

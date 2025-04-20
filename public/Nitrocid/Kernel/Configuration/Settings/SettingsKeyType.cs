@@ -76,5 +76,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// The value is a Figlet font name that allows Settings to use the Figlet font selector.
         /// </summary>
         SFiglet,
+        /// <summary>
+        /// The value is an icon font name that allows Settings to use the icon selector.
+        /// </summary>
+        SIcon,
     }
 }

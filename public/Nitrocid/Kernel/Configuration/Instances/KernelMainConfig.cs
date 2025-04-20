@@ -38,6 +38,7 @@ using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
@@ -47,7 +48,10 @@ using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Misc.Reflection.Internal;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.Users.Login;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Shell.Homepage;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -178,6 +182,26 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Shows an informational box for the program license for fifteen seconds after each login
         /// </summary>
         public bool ShowLicenseInfoBox { get; set; } = true;
+        /// <summary>
+        /// Bootloader style
+        /// </summary>
+        public string BootStyle { get; set; } = "Default";
+        /// <summary>
+        /// Timeout to boot to the default selection
+        /// </summary>
+        public int BootSelectTimeoutSeconds { get; set; } = 10;
+        /// <summary>
+        /// The default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+        /// </summary>
+        public int BootSelect { get; set; } = 0;
+        /// <summary>
+        /// Enables "The Nitrocid Homepage"
+        /// </summary>
+        public bool EnableHomepage
+        {
+            get => HomepageTools.isHomepageEnabled;
+            set => HomepageTools.isHomepageEnabled = value;
+        }
         #endregion
 
         #region Colors
@@ -717,6 +741,30 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
             set => KernelColorTools.SetColor(KernelColorType.DisabledOption, new Color(value));
         }
+        /// <summary>
+        /// Interactive TUI builtin key binding background color
+        /// </summary>
+        public string TuiKeyBindingBuiltinBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinBackground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI builtin key binding foreground color
+        /// </summary>
+        public string TuiKeyBindingBuiltinForegroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinForeground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI builtin key binding color
+        /// </summary>
+        public string TuiKeyBindingBuiltinColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltin, new Color(value));
+        }
         #endregion
 
         #region Hardware
@@ -786,6 +834,30 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => LoginHandlerTools.CurrentHandlerName;
             set => LoginHandlerTools.CurrentHandlerName = value;
+        }
+        /// <summary>
+        /// Enables the widgets in the modern logon handler and all the handlers that use the widget API.
+        /// </summary>
+        public bool EnableWidgets
+        {
+            get => ModernLogonScreen.enableWidgets;
+            set => ModernLogonScreen.enableWidgets = value;
+        }
+        /// <summary>
+        /// First widget for the modern logon handler. You can configure this widget in its respective settings entry.
+        /// </summary>
+        public string FirstWidget
+        {
+            get => ModernLogonScreen.firstWidgetName;
+            set => ModernLogonScreen.firstWidgetName = value;
+        }
+        /// <summary>
+        /// Second widget for the modern logon handler. You can configure this widget in its respective settings entry.
+        /// </summary>
+        public string SecondWidget
+        {
+            get => ModernLogonScreen.secondWidgetName;
+            set => ModernLogonScreen.secondWidgetName = value;
         }
         #endregion
 
@@ -914,6 +986,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.
         /// </summary>
         public bool ShowTotalSizeInList { get; set; }
+        /// <summary>
+        /// If enabled, sorts the list alphanumerically. Otherwise, sorts them alphabetically.
+        /// </summary>
+        public bool SortLogically { get; set; } = true;
         #endregion
 
         #region Network
@@ -1097,10 +1173,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
 
         #region Misc
         /// <summary>
-        /// The time and date will be shown in the upper right corner of the screen
-        /// </summary>
-        public bool CornerTimeDate { get; set; }
-        /// <summary>
         /// Enables eyecandy on startup
         /// </summary>
         public bool StartScroll { get; set; } = true;
@@ -1132,6 +1204,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => HexEditShellCommon.autoSaveInterval;
             set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
         }
+        /// <summary>
+        /// Wraps the list outputs if it seems too long for the current console geometry
+        /// </summary>
+        public bool WrapListOutputs { get; set; }
         /// <summary>
         /// Covers the notification with the border
         /// </summary>
@@ -1377,6 +1453,34 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => CpuUsageDebug.usageIntervalUpdatePeriod;
             set => CpuUsageDebug.usageIntervalUpdatePeriod = value >= 1000 ? value : 1000;
+        }
+        /// <summary>
+        /// Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer
+        /// </summary>
+        public bool InitializeCursorHandler
+        {
+            get => ConsolePointerHandler.enableHandler;
+            set
+            {
+                if (value)
+                {
+                    ConsolePointerHandler.enableHandler = true;
+                    ConsolePointerHandler.StartHandler();
+                }
+                else
+                {
+                    ConsolePointerHandler.StopHandler();
+                    ConsolePointerHandler.enableHandler = false;
+                }
+            }
+        }
+        /// <summary>
+        /// Whether to also enable the movement events or not, improving the user experience of some interactive applications
+        /// </summary>
+        public bool HandleCursorMovement
+        {
+            get => Input.EnableMovementEvents;
+            set => Input.EnableMovementEvents = value;
         }
         #endregion
     }

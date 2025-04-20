@@ -30,119 +30,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.Extras.NameGen.Screensavers
 {
     /// <summary>
-    /// Settings for PersonLookup
-    /// </summary>
-    public static class PersonLookupSettings
-    {
-
-        /// <summary>
-        /// [PersonLookup] How many milliseconds to wait before getting the new name?
-        /// </summary>
-        public static int PersonLookupDelay
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 75;
-                NameGenInit.SaversConfig.PersonLookupDelay = value;
-            }
-        }
-        /// <summary>
-        /// [PersonLookup] How many milliseconds to show the looked up name?
-        /// </summary>
-        public static int PersonLookupLookedUpDelay
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupLookedUpDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10000;
-                NameGenInit.SaversConfig.PersonLookupLookedUpDelay = value;
-            }
-        }
-        /// <summary>
-        /// [PersonLookup] Minimum names count
-        /// </summary>
-        public static int PersonLookupMinimumNames
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupMinimumNames;
-            }
-            set
-            {
-                if (value <= 10)
-                    value = 10;
-                if (value > 1000)
-                    value = 1000;
-                NameGenInit.SaversConfig.PersonLookupMinimumNames = value;
-            }
-        }
-        /// <summary>
-        /// [PersonLookup] Maximum names count
-        /// </summary>
-        public static int PersonLookupMaximumNames
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupMaximumNames;
-            }
-            set
-            {
-                if (value <= NameGenInit.SaversConfig.PersonLookupMinimumNames)
-                    value = NameGenInit.SaversConfig.PersonLookupMinimumNames;
-                if (value > 1000)
-                    value = 1000;
-                NameGenInit.SaversConfig.PersonLookupMaximumNames = value;
-            }
-        }
-        /// <summary>
-        /// [PersonLookup] Minimum age years
-        /// </summary>
-        public static int PersonLookupMinimumAgeYears
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupMinimumAgeYears;
-            }
-            set
-            {
-                if (value <= 18)
-                    value = 18;
-                if (value > 100)
-                    value = 100;
-                NameGenInit.SaversConfig.PersonLookupMinimumAgeYears = value;
-            }
-        }
-        /// <summary>
-        /// [PersonLookup] Maximum age years
-        /// </summary>
-        public static int PersonLookupMaximumAgeYears
-        {
-            get
-            {
-                return NameGenInit.SaversConfig.PersonLookupMaximumAgeYears;
-            }
-            set
-            {
-                if (value <= NameGenInit.SaversConfig.PersonLookupMinimumAgeYears)
-                    value = NameGenInit.SaversConfig.PersonLookupMinimumAgeYears;
-                if (value > 100)
-                    value = 100;
-                NameGenInit.SaversConfig.PersonLookupMaximumAgeYears = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for PersonLookup
     /// </summary>
     public class PersonLookupDisplay : BaseScreensaver, IScreensaver
@@ -168,14 +55,14 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Generate names
-            int NumberOfPeople = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
+            int NumberOfPeople = RandomDriver.Random(NameGenInit.SaversConfig.PersonLookupMinimumNames, NameGenInit.SaversConfig.PersonLookupMaximumNames);
             var NamesToLookup = NameGenerator.GenerateNames(NumberOfPeople);
 
             // Loop through names
             foreach (string GeneratedName in NamesToLookup)
             {
                 // Get random age (initial) and its month and day components
-                int Age = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumAgeYears, PersonLookupSettings.PersonLookupMaximumAgeYears);
+                int Age = RandomDriver.Random(NameGenInit.SaversConfig.PersonLookupMinimumAgeYears, NameGenInit.SaversConfig.PersonLookupMaximumAgeYears);
                 int AgeMonth = RandomDriver.Random(-12, 12);
                 int AgeDay = RandomDriver.Random(-31, 31);
 
@@ -217,11 +104,11 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                 );
 
                 // Lookup delay
-                ThreadManager.SleepNoBlock(PersonLookupSettings.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Wait until we run the lookup again
-            ThreadManager.SleepNoBlock(PersonLookupSettings.PersonLookupLookedUpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupLookedUpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

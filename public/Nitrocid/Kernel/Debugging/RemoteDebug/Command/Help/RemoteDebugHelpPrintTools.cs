@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +44,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             var commandList = GetCommands();
 
             // The built-in commands
-            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (HelpPrintTools.ShowCommandsCount & HelpPrintTools.ShowShellCommandsCount ? " [{0}]" : ""), true, device, commandList.Count);
+            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, device, commandList.Count);
 
             // Check the command list count and print not implemented. This is an extremely rare situation.
             if (commandList.Count == 0)

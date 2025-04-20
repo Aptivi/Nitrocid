@@ -23,7 +23,6 @@ using System.Linq;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -41,18 +40,6 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
     {
 
         private static List<RemoteDebugDeviceInfo> remoteDebugDevices = [];
-
-        /// <summary>
-        /// When there is a remote debug connection error, notify the user
-        /// </summary>
-        public static bool NotifyOnRemoteDebugConnectionError =>
-            Config.MainConfig.NotifyOnRemoteDebugConnectionError;
-
-        /// <summary>
-        /// Records remote debug chat to debug log
-        /// </summary>
-        public static bool RecordChatToDebugLog =>
-            Config.MainConfig.RecordChatToDebugLog;
 
         /// <summary>
         /// Disconnects a specified debug device

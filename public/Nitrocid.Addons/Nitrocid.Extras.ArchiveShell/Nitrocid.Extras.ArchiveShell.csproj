@@ -40,9 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   

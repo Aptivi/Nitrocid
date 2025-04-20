@@ -2,8 +2,7 @@
     "Metadata": {
         "Name": "Ubuntu",
         "Description": "Color schemes from a popular Linux operating system, Ubuntu",
-        "Localizable": true,
-        "Category": "Mesmerizing"
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "#77216F",
@@ -61,5 +60,8 @@
     "TuiOptionForegroundColor": "15",
     "TuiBoxBackgroundColor": "0",
     "TuiBoxForegroundColor": "15",
-    "DisabledOptionColor": "8"
+    "DisabledOptionColor": "8",
+    "TuiKeyBindingBuiltinBackgroundColor": "0",
+    "TuiKeyBindingBuiltinColor": "15",
+    "TuiKeyBindingBuiltinForegroundColor": "15"
 }

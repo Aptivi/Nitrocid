@@ -33,7 +33,6 @@ using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Files.Operations;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
@@ -245,7 +244,7 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // Initialize important mods
-                if (ModManager.StartKernelMods)
+                if (Config.MainConfig.StartKernelMods)
                 {
                     try
                     {
@@ -287,7 +286,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.AssertionFailure, Translate.DoTranslation("There were errors when trying to initialize essential components."));
+                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to initialize essential components."));
             }
             catch (Exception ex)
             {
@@ -309,12 +308,11 @@ namespace Nitrocid.Kernel.Starting
             WelcomeMessage.WriteMessage();
 
             // Some information
-            if (WelcomeMessage.ShowAppInfoOnBoot & !SplashManager.EnableSplash)
+            if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Kernel environment information"), KernelColorTools.GetColor(KernelColorType.Stage));
-                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
-                TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
-                TextWriterColor.Write("  KSAPI: " + $"v{KernelMain.ApiVersion}");
+                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
+                TextWriterColor.Write("KSAPI: " + $"v{KernelMain.ApiVersion}");
             }
         }
 
@@ -386,22 +384,6 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load speed dial entries") + $": {exc.Message}");
-                }
-
-                try
-                {
-                    // Initialize top right date
-                    TimeDateTopRight.InitTopRightDate();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load top right date");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load top right date") + $": {exc.Message}");
                 }
 
                 try
@@ -504,7 +486,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.AssertionFailure, Translate.DoTranslation("There were errors when trying to initialize optional components."));
+                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to initialize optional components."));
             }
             catch (Exception ex)
             {
@@ -594,8 +576,8 @@ namespace Nitrocid.Kernel.Starting
                 {
                     // Reset languages
                     SplashManager.BeginSplashOut(context);
-                    LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
-                    LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+                    LanguageManager.SetLangDry(Config.MainConfig.CurrentLanguage);
+                    LanguageManager.currentUserLanguage = LanguageManager.Languages[Config.MainConfig.CurrentLanguage];
                     SplashManager.EndSplashOut(context);
                 }
                 catch (Exception exc)
@@ -721,21 +703,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Stop the time/date change thread
-                    TimeDateTopRight.TimeTopRightChange.Stop();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop time and date corner");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop time and date corner") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Stop screensaver timeout
                     ScreensaverManager.StopTimeout();
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver timeout stopped");
@@ -762,6 +729,21 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to reset boot log buffer") + $": {exc.Message}");
+                }
+
+                try
+                {
+                    // Stop cursor handler
+                    ConsolePointerHandler.StopHandler();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stopped the cursor handler.");
+                }
+                catch (Exception exc)
+                {
+                    exceptions.Add(exc);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop the cursor handler");
+                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                    DebugWriter.WriteDebugStackTrace(exc);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop the cursor handler") + $": {exc.Message}");
                 }
 
                 // Disable Debugger
@@ -798,7 +780,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.AssertionFailure, Translate.DoTranslation("There were errors when trying to reset components."));
+                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to reset components."));
             }
             catch (Exception ex)
             {

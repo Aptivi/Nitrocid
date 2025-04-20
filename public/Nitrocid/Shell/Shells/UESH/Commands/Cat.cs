@@ -21,8 +21,8 @@ using System;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files;
 using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands;
 
@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             try
             {
-                bool PrintLines = FilesystemTools.PrintLineNumbers;
+                bool PrintLines = Config.MainConfig.PrintLineNumbers;
                 bool ForcePlain = false;
                 if (parameters.SwitchesList.Contains("-lines"))
                     PrintLines = true;

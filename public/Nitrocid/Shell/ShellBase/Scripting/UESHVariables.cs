@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -40,10 +40,9 @@ namespace Nitrocid.Shell.ShellBase.Scripting
 
         internal static Dictionary<string, string> ShellVariables = new()
         {
-            { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) },
             { "$FrameworkSpecificRid", KernelPlatform.GetCurrentRid() },
             { "$FrameworkRid", KernelPlatform.GetCurrentGenericRid() },
-            { "$CurrentCulture", CultureManager.CurrentCultStr },
+            { "$CurrentCulture", Config.MainConfig.CurrentCultStr },
             { "$CurrentSysCulture", CultureInfo.CurrentCulture.Name },
             { "$CurrentUiSysCulture", CultureInfo.CurrentUICulture.Name },
         };

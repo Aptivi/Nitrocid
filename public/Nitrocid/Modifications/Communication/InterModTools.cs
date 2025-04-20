@@ -145,24 +145,8 @@ namespace Nitrocid.Modifications.Communication
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
-            // Get the mod
-            var modInfo = ModManager.GetMod(modName) ??
-                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom function with non-existent mod"));
-
-            // Now, check the list of available functions
-            var mod = modInfo.ModScript;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", modInfo.ModName);
-
-            // Get a list of functions
-            var functions = mod.PubliclyAvailableFunctions;
-            if (functions is null || functions.Count == 0)
-                return null;
-
-            // Assuming that we have functions, get a single function containing that name
-            if (!functions.TryGetValue(functionName, out Delegate? function))
-                return null;
-
             // Assuming that we have that function, get a single function delegate
+            var function = GetFunctionDelegate(modName, functionName);
             if (function is null)
                 return null;
 
@@ -180,24 +164,8 @@ namespace Nitrocid.Modifications.Communication
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
-            // Get the mod
-            var modInfo = ModManager.GetMod(modName) ??
-                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom property with non-existent mod"));
-
-            // Now, check the list of available properties
-            var mod = modInfo.ModScript;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
-
-            // Get a list of properties
-            var properties = mod.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return null;
-
-            // Assuming that we have properties, get a single property containing that name
-            if (!properties.TryGetValue(propertyName, out PropertyInfo? property))
-                return null;
-
             // Assuming that we have that property, get a single property delegate
+            var property = GetPropertyInfo(modName, propertyName);
             if (property is null)
                 return null;
 
@@ -221,24 +189,8 @@ namespace Nitrocid.Modifications.Communication
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
-            // Get the mod
-            var modInfo = ModManager.GetMod(modName) ??
-                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom property with non-existent mod"));
-
-            // Now, check the list of available properties
-            var mod = modInfo.ModScript;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
-
-            // Get a list of properties
-            var properties = mod.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return;
-
-            // Assuming that we have properties, get a single property containing that name
-            if (!properties.TryGetValue(propertyName, out PropertyInfo? property))
-                return;
-
             // Assuming that we have that property, get a single property delegate
+            var property = GetPropertyInfo(modName, propertyName);
             if (property is null)
                 return;
 
@@ -261,24 +213,8 @@ namespace Nitrocid.Modifications.Communication
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
-            // Get the mod
-            var modInfo = ModManager.GetMod(modName) ??
-                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom field with non-existent mod"));
-
-            // Now, check the list of available fields
-            var mod = modInfo.ModScript;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0}...", modInfo.ModName);
-
-            // Get a list of fields
-            var fields = mod.PubliclyAvailableFields;
-            if (fields is null || fields.Count == 0)
-                return null;
-
-            // Assuming that we have fields, get a single field containing that name
-            if (!fields.TryGetValue(fieldName, out FieldInfo? field))
-                return null;
-
             // Assuming that we have that field, get a single field delegate
+            var field = GetFieldInfo(modName, fieldName);
             var get = field?.GetValue(null);
             if (get is null)
                 return null;
@@ -296,6 +232,91 @@ namespace Nitrocid.Modifications.Communication
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
+            // The field instance is valid. Try to set a value.
+            var field = GetFieldInfo(modName, fieldName);
+            field?.SetValue(null, value);
+        }
+
+        /// <summary>
+        /// Gets the function parameters from a function
+        /// </summary>
+        /// <param name="modName">The mod name to query</param>
+        /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
+        public static ParameterInfo[]? GetFunctionParameters(string modName, string functionName)
+        {
+            var function = GetFunctionDelegate(modName, functionName);
+            if (function is null)
+                return null;
+
+            // Get the function parameters
+            return function.Method.GetParameters();
+        }
+
+        /// <summary>
+        /// Gets the property setter parameters from a property
+        /// </summary>
+        /// <param name="modName">The mod name to query</param>
+        /// <param name="propertyName">Property name defined in the <see cref="IMod.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
+        public static ParameterInfo[]? GetSetPropertyParameters(string modName, string propertyName)
+        {
+            var property = GetPropertyInfo(modName, propertyName);
+            if (property is null)
+                return null;
+
+            // Get the property parameters
+            var get = property.GetSetMethod();
+            if (get is null)
+                return null;
+            return get.GetParameters();
+        }
+
+        private static Delegate? GetFunctionDelegate(string modName, string functionName)
+        {
+            // Get the mod
+            var modInfo = ModManager.GetMod(modName) ??
+                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom function with non-existent mod"));
+
+            // Now, check the list of available functions
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", modInfo.ModName);
+
+            // Get a list of functions
+            var functions = mod.PubliclyAvailableFunctions;
+            if (functions is null || functions.Count == 0)
+                return null;
+
+            // Assuming that we have functions, get a single function containing that name
+            if (!functions.TryGetValue(functionName, out Delegate? function))
+                return null;
+
+            return function;
+        }
+
+        private static PropertyInfo? GetPropertyInfo(string modName, string propertyName)
+        {
+            // Get the mod
+            var modInfo = ModManager.GetMod(modName) ??
+                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom property with non-existent mod"));
+
+            // Now, check the list of available properties
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
+
+            // Get a list of properties
+            var properties = mod.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return null;
+
+            // Assuming that we have properties, get a single property containing that name
+            if (!properties.TryGetValue(propertyName, out PropertyInfo? property))
+                return null;
+            return property;
+        }
+
+        private static FieldInfo? GetFieldInfo(string modName, string fieldName)
+        {
             // Get the mod
             var modInfo = ModManager.GetMod(modName) ??
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom field with non-existent mod"));
@@ -307,22 +328,18 @@ namespace Nitrocid.Modifications.Communication
             // Get a list of fields
             var fields = mod.PubliclyAvailableFields;
             if (fields is null || fields.Count == 0)
-                return;
+                return null;
 
             // Assuming that we have fields, get a single field containing that name
             if (!fields.TryGetValue(fieldName, out FieldInfo? field))
-                return;
-
-            // Assuming that we have that field, get a single field delegate
+                return null;
             if (field is null)
-                return;
+                return null;
 
             // Check to see if this field is static
             if (!field.IsStatic)
-                return;
-
-            // The field instance is valid. Try to get a value from it.
-            field.SetValue(null, value);
+                return null;
+            return field;
         }
 
     }

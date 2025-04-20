@@ -43,40 +43,19 @@ namespace Nitrocid.Users.Login.Handlers
 
         internal static bool ShowMOTDOnceFlag = true;
 
-        /// <summary>
-        /// Clear Screen On Log-in
-        /// </summary>
-        public static bool ClearOnLogin =>
-            Config.MainConfig.ClearOnLogin;
-        /// <summary>
-        /// Show MOTD on log-in
-        /// </summary>
-        public static bool ShowMOTD =>
-            Config.MainConfig.ShowMOTD;
-        /// <summary>
-        /// Show MAL on log-in
-        /// </summary>
-        public static bool ShowMAL =>
-            Config.MainConfig.ShowMAL;
-        /// <summary>
-        /// Whether or not to show available usernames on login
-        /// </summary>
-        public static bool ShowAvailableUsers =>
-            Config.MainConfig.ShowAvailableUsers;
-
         /// <inheritdoc/>
         public virtual bool LoginScreen()
         {
             // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-            if (ClearOnLogin)
+            if (Config.MainConfig.ClearOnLogin)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
                 ConsoleWrapper.Clear();
             }
 
             // Show MOTD once
-            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD);
-            if (ShowMOTDOnceFlag && ShowMOTD)
+            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, Config.MainConfig.ShowMOTD);
+            if (ShowMOTDOnceFlag && Config.MainConfig.ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
                 TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
@@ -85,7 +64,7 @@ namespace Nitrocid.Users.Login.Handlers
             }
 
             // Generate user list
-            if (ShowAvailableUsers)
+            if (Config.MainConfig.ShowAvailableUsers)
             {
                 var UsersList = UserManagement.ListAllUsers();
                 TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
@@ -109,8 +88,8 @@ namespace Nitrocid.Users.Login.Handlers
                 {
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
-                    if (!string.IsNullOrWhiteSpace(Login.PasswordPrompt))
-                        TextWriters.Write(PlaceParse.ProbePlaces(Login.PasswordPrompt), false, KernelColorType.Input);
+                    if (!string.IsNullOrWhiteSpace(Config.MainConfig.PasswordPrompt))
+                        TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.PasswordPrompt), false, KernelColorType.Input);
                     else
                         TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
 
@@ -146,8 +125,8 @@ namespace Nitrocid.Users.Login.Handlers
         public virtual string UserSelector()
         {
             // Prompt user to login
-            if (!string.IsNullOrWhiteSpace(Login.UsernamePrompt))
-                TextWriters.Write(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
+            if (!string.IsNullOrWhiteSpace(Config.MainConfig.UsernamePrompt))
+                TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.UsernamePrompt), false, KernelColorType.Input);
             else
                 TextWriters.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
             return InputTools.ReadLine();

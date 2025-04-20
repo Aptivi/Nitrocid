@@ -37,6 +37,8 @@ using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.ConsoleWriters;
 using Aptivestigate.CrashHandler;
 
 namespace Nitrocid.Kernel
@@ -52,6 +54,8 @@ namespace Nitrocid.Kernel
             Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly SemVer? kernelVersionFull =
             SemVer.ParseWithRev($"{kernelVersion}");
+
+        // Refer to NitrocidModAPIVersion in the project file.
         private static readonly Version kernelApiVersion =
             new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "0.0.0.0");
 
@@ -63,7 +67,6 @@ namespace Nitrocid.Kernel
         /// <summary>
         /// Kernel API version
         /// </summary>
-        // Refer to NitrocidModAPIVersion in the project file.
         public static Version ApiVersion =>
             kernelApiVersion;
         /// <summary>
@@ -99,13 +102,27 @@ namespace Nitrocid.Kernel
                     PowerManager.hardShutdown = true;
                     PowerManager.KernelShutdown = true;
                 }
+                else if (ArgumentParse.IsArgumentPassed(Args, "version"))
+                {
+                    TextWriterRaw.WritePlain(VersionFullStr);
+                    PowerManager.hardShutdown = true;
+                    PowerManager.KernelShutdown = true;
+                }
+                else if (ArgumentParse.IsArgumentPassed(Args, "apiversion"))
+                {
+                    TextWriterRaw.WritePlain($"{ApiVersion}");
+                    PowerManager.hardShutdown = true;
+                    PowerManager.KernelShutdown = true;
+                }
 
                 // This is a kernel entry point
+                EnvironmentTools.kernelArguments = Args;
+                EnvironmentTools.ResetEnvironment();
                 while (!PowerManager.KernelShutdown)
                 {
                     try
                     {
-                        EnvironmentTools.ExecuteEnvironment(Args);
+                        EnvironmentTools.ExecuteEnvironment();
                     }
                     catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                     {
@@ -134,16 +151,22 @@ namespace Nitrocid.Kernel
                         }
 
                         // Always switch back to the main environment
-                        if (EnvironmentTools.resetEnvironment)
+                        if (EnvironmentTools.anotherEnvPending)
                         {
-                            EnvironmentTools.resetEnvironment = false;
-                            EnvironmentTools.ResetEnvironment();
+                            if (EnvironmentTools.resetEnvironment)
+                            {
+                                EnvironmentTools.anotherEnvPending = false;
+                                EnvironmentTools.resetEnvironment = false;
+                                EnvironmentTools.ResetEnvironment();
+                            }
+                            else
+                                EnvironmentTools.resetEnvironment = true;
                         }
                     }
                 }
 
                 // If "No APM" is enabled, simply print the text
-                if (PowerManager.SimulateNoAPM)
+                if (Config.MainConfig.SimulateNoAPM)
                     InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
             }
             catch (Exception ex)

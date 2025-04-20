@@ -3,7 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>89bb6864-5da5-4bad-97c2-5436c82af842</SharedGUID>
+    <SharedGUID>596e9b4d-a169-47f1-be01-08f2e24bc94e</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Nitrocid.Analyzers.Common</Import_RootNamespace>

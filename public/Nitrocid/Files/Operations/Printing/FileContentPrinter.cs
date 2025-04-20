@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Drivers;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Operations.Printing
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Files.Operations.Printing
         /// </summary>
         /// <param name="filename">Full path to file</param>
         public static void PrintContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, FilesystemTools.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, Config.MainConfig.PrintLineNumbers);
 
         /// <summary>
         /// Prints the contents of a file to the console
@@ -68,7 +69,7 @@ namespace Nitrocid.Files.Operations.Printing
         /// </summary>
         /// <param name="filename">Full path to file with wildcards supported</param>
         public static string RenderContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, FilesystemTools.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, Config.MainConfig.PrintLineNumbers);
 
         /// <summary>
         /// Renders the contents of a file

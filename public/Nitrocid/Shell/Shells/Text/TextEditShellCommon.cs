@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Nitrocid.Files.Editors.TextEdit;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Shell.Shells.Text
@@ -47,16 +46,6 @@ namespace Nitrocid.Shell.Shells.Text
         /// </summary>
         public static FileStream? FileStream =>
             fileStream;
-        /// <summary>
-        /// Auto save flag
-        /// </summary>
-        public static bool AutoSaveFlag =>
-            Config.MainConfig.TextEditAutoSaveFlag;
-        /// <summary>
-        /// Auto save interval in seconds
-        /// </summary>
-        public static int AutoSaveInterval =>
-            Config.MainConfig.TextEditAutoSaveInterval;
 
     }
 }

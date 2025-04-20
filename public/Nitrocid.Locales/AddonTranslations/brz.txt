@@ -1,0 +1,4189 @@
+Modelo de cor inválido {0}
+Digite a senha do administrador para manutenção.
+Erro de kernel durante a inicialização: {0}
+DOUBLE PANIC: O tempo de reinicialização excede o tempo máximo permitido de reinicialização de erro {0}. Você encontrou um bug do kernel.
+[{0}] pânico: Reinicialização habilitada devido ao nível de erro ser {0}.
+[{0}] pânico: Tempo para reinicializar: {1} segundos, excede 1 hora. Está definido para 1 minuto.
+PÂNICO DUPLO: Tipo de erro {0} inválido.
+[{0}] pânico: {1} -- Pressione qualquer tecla para desligar.
+[{0}] pânico: {1} -- Reiniciando em {2} segundos...
+PÂNICO DUPLO: Bug do kernel: {0}
+Desligando...
+Reiniciando...
+Erro {0}: {1}
+Nome de usuário:
+Não são permitidos espaços.
+Caracteres especiais não são permitidos.
+Senha de {0}:
+Senha errada.
+Erro ao tentar analisar espaços reservados. {0}
+Erro ao tentar adicionar nome de usuário.
+usrmgr: Criando nome de usuário {0}...
+Usuário {0} não encontrado.
+O usuário {0} não pode ser removido.
+O usuário {0} já está logado. Saia e faça login como outro administrador.
+Usuário {0} removido.
+Erro ao tentar remover nome de usuário.
+O protetor de tela solicitado {0} não foi encontrado.
+{0} está definido como protetor de tela padrão.
+Screensaver {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
+O mod não pode ser carregado pelos seguintes motivos:
+{0} v{1} começou
+Nenhuma definição para o comando {0}.
+Comando definido por
+Nome de usuário para {0}:
+Senha para {0}:
+Conectado a {0}
+Erro ao tentar conectar a {0}: {1}
+O diretório local {0} não existe.
+Digite um diretório local. ".." para voltar.
+Diretório {0} não encontrado.
+Insira um diretório remoto. ".." para voltar
+Diretório local: {0}
+Diretório remoto: {0}
+Baixando arquivo {0}...
+Arquivo baixado {0}.
+Carregando arquivo {0}...
+Arquivo carregado {0}
+Obtém o diretório local atual
+Obtém o diretório remoto atual
+Altera o diretório local para download ou upload
+Altera o diretório remoto para download ou upload
+Exclui arquivo remoto do servidor
+Baixa arquivo remoto para diretório local usando binário ou texto
+Lista o diretório local
+Lista diretório remoto
+Carrega arquivo local para diretório remoto usando binário ou texto
+Alias não pode ser o mesmo nome de um comando.
+Comando não encontrado para alias para {0}.
+O alias {0} não foi removido.
+Diretório {0} não encontrado
+Nome do host em branco.
+Alterando de: {0} para {1}...
+Mensagem em branco do dia.
+MAL em branco após o login.
+Senha de usuário incorreta.
+As senhas não correspondem.
+O nome de usuário foi alterado para {0}!
+O novo nome que você digitou já foi encontrado.
+{0} não foi encontrado.
+Configuração recarregada. Talvez seja necessário reinicializar o kernel para que algumas alterações entrem em vigor.
+Uma ou mais cores são inválidas.
+Protetor de tela {0} não encontrado.
+Erro ao tentar executar comando
+Altera o diretório
+Altera a senha do usuário atual
+Limpa a tela
+Use um shell FTP para interagir com servidores
+Página de ajuda
+Listar o conteúdo do arquivo/pasta na pasta atual
+Bloqueia sua tela com uma senha
+Desconecta você
+Cria um diretório
+Recarrega o arquivo de configuração que foi editado.
+Protege sua tela de queimaduras
+Configura protetores de tela do kernel
+Mostra data e hora
+Mostra data e hora em zonas
+O kernel será desligado
+Uso:
+Ocorreu um erro no shell.
+Você não tem permissão para usar {0}
+Mensagem do shell: O comando solicitado {0} não tem permissão para ser executado no modo de manutenção.
+Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
+Erro ao tentar executar o comando.
+- Hora de {0}: {1}
+Executando em {0}
+Você não está autorizado a obter informações sobre {0}.
+Este comando está obsoleto e será removido em uma versão futura.
+Você não está autorizado a alterar a senha de {0} porque o alvo era um administrador.
+Exclui tudo no log de depuração
+Linguagem inválida
+Bem-vindo ao Kernel!
+O download foi concluído.
+O download falhou na tentativa {0}: {1}
+Use "ftp" se for baixar arquivos do servidor FTP.
+Baixa um arquivo para o diretório de trabalho atual
+Desconecte um dispositivo de depuração
+Lista os dispositivos de depuração conectados
+Dispositivo {0} desconectado.
+Depure a escuta em todos os endereços usando a porta {0}.
+Alias já encontrado: {0}
+Log de depuração removido. Todos os dispositivos de depuração conectados ainda podem visualizar mensagens.
+Falha na remoção do log de depuração: {0}
+A alteração do diretório falhou: {0}
+Especifique o endereço
+O fuso horário está especificado incorretamente.
+Tentando conectar-se a {0} com o perfil {1}...
+Mods de análise não permitidos no modo de segurança.
+O caminho não é um arquivo nem um diretório.
+Cria outra cópia de um arquivo em um diretório ou nome diferente.
+Partida {0} ({1}): {2}
+Partida {0}: {1}
+Tempo gasto: {0} milissegundos
+Nome: {0}
+Calcula somas de arquivos.
+Algoritmo de criptografia inválido.
+Habilita ou desabilita a depuração remota.
+Veja se você consegue resolver equações matemáticas a tempo
+Resolvido perfeitamente!
+Resolvido incorretamente.
+O RPC já está em execução.
+RPC escutando em todos os endereços usando a porta {0}.
+Iniciando RPC...
+Conecta-se a um servidor SSH.
+Digite a senha para {0}:
+SSH desconectado.
+Depuração não habilitada.
+Mostra todas as notificações recebidas
+Descarta uma notificação
+Notificação rejeitada com sucesso.
+Executa remotamente um comando para um PC remoto
+Tipo inválido {0}.
+Tamanho: {0}
+O diretório {0} já existe.
+Erro ao tentar conectar a {0}: Tempo limite de conexão ou conexão perdida
+Calculadora para calcular expressões.
+Erro no cálculo.
+Atualização do sistema
+Verificando atualizações do sistema...
+Nova versão encontrada:
+Você pode baixá-lo em:
+Nenhuma notificação recente
+Pesquisa por uma string especificada no arquivo fornecido
+Calcula somas de arquivos no diretório especificado.
+Digite o nome de usuário ou endereço de e-mail:
+Digite a senha:
+Erro ao conectar a {0}: {1}
+Conectando a {0}...
+Autenticando...
+Baixa mensagens e as lista
+Abre uma mensagem
+Página não é um valor numérico.
+O número da mensagem não pode ser negativo ou zero.
+O número da mensagem não é um valor numérico.
+- De {0}
+- Para {0}
+- Enviado em {0} em {1}
+A mensagem especificada não foi encontrada.
+Falha ao iniciar a depuração remota: {0}
+Preparando perfis... Pode levar vários minutos...
+Erro ao tentar executar o script: {0}
+Escreve texto no console
+Faz escolhas do usuário
+onde <respostas> são respostas de uma letra da pergunta separadas por barras
+Erro ao tentar conectar ao servidor SSH: {0}
+Permite que o usuário insira dados
+Altera o diretório de e-mail atual
+Não é possível abrir a pasta de correio {0}: {1}
+Lista diretórios em seu endereço de e-mail
+Durante a validação do certificado, há erros de certificado. Pode ser a primeira vez que você se conectou ao servidor ou o certificado pode ter expirado. Aqui está um erro:
+Tem certeza de que deseja se conectar?
+Resposta inválida. Por favor, tente novamente.
+Digite o endereço do servidor IMAP e a porta (<endereço> ou <endereço>:[porta]):
+Digite o endereço do servidor SMTP e a porta (<endereço> ou <endereço>:[porta]):
+Envia uma mensagem para um endereço
+Insira o endereço de e-mail do destinatário:
+Insira o assunto:
+Insira sua mensagem abaixo. Escreva "EOF" para confirmar.
+Enviando mensagem...
+Mensagem enviada.
+Endereço de e-mail inválido. Certifique-se de ter escrito o endereço corretamente e que ele corresponde ao formato do exemplo mostrado:
+Remove uma mensagem
+Remove todas as mensagens do destinatário
+Mensagem {0} de {1} excluída de {2}. Restam {3} mensagens para analisar.
+Mensagem {0} de {1} excluída da caixa de entrada. Restam {2} mensagens para analisar.
+Cria um novo arquivo
+O arquivo já existe.
+Erro ao tentar criar um arquivo: {0}
+Falha ao abrir o arquivo. Saindo do shell...
+Imprime o conteúdo do arquivo com números de linha no console
+Adiciona uma nova linha com texto no final do arquivo
+Remove o número de linha especificado
+Substitui uma palavra ou frase por outra
+Exclui uma palavra ou frase do número da linha
+Exclui um caractere do número do caractere na linha especificada
+Linha removida.
+O número da linha especificado {0} não é um número válido.
+Correndo em modo seguro. Pulando fase...
+>> Seu endereço é {0}.
+>> Seu nome é {0}.
+Índice {0} inválido. Há {1} rastreamentos de pilha. O índice é baseado em zero, então tente subtrair por 1.
+Nenhum rastro de pilha
+Mostra o último rastreamento de pilha em caso de exceção
+Mostra o nome de usuário atual na sessão
+Desbloquear um dispositivo de depuração por endereço IP
+Bloquear um dispositivo de depuração por endereço IP
+{0} agora pode participar da depuração remota novamente.
+{0} ainda não está bloqueado.
+Erro ao carregar as configurações
+Há um erro ao carregar as configurações. Talvez seja necessário verificar o arquivo de configurações.
+Saída
+A opção especificada {0} é inválida.
+A resposta deve ser numérica.
+Verifique se há atualizações na inicialização
+Sonda silenciosa
+Mostrar MOTD no login
+Limpar tela ao fazer login
+Comando de ajuda simplificado
+Porta de depuração
+Tempos de repetição de download
+Registrar nome de usuário FTP
+Registrar endereço IP do FTP
+Retornar apenas o primeiro perfil FTP
+Modo de análise de tamanho
+Marquee na inicialização
+Longo tempo e data
+Mostrar arquivos ocultos
+Volte...
+Escreva uma porta de depurador remoto. Ela deve ser numérica e não deve estar em uso. Caso contrário, o depurador remoto não conseguirá abrir a porta.
+Escreva quantas vezes o comando "get" deve tentar novamente downloads com falha. Deve ser numérico.
+A resposta pode não ser negativa.
+Altera a configuração do kernel
+Texto mostrado
+Escreva qualquer texto que você queira mostrar. Quanto mais curto, melhor.
+Falha ao carregar {0}
+Adiciona usuários
+Adiciona aliases aos comandos
+Altera o nome do host
+Alterações MAL, o MOTD após o login
+Alterações MOTD, a Mensagem do Dia
+Altera o nome do usuário
+Gerenciar permissões para usuários
+Remove um usuário da lista
+Alias {0} removido com sucesso.
+Falha ao verificar atualizações.
+Não há mais usuários restantes na lista.
+Erro ao tentar descartar a notificação.
+usrmgr: Falha ao criar nome de usuário {0}: {1}
+Falha ao renomear usuário. {0}
+Usuário não encontrado
+Falha ao alterar a senha do nome de usuário: {0}
+Não foi possível encontrar o arquivo que corresponde à string "{0}": {1}
+Falha no download do arquivo {0}.
+Falha ao listar arquivos remotos: {0}
+Excluindo {0}...
+{0} não foi encontrado no servidor.
+Todos os e-mails enviados por {0} foram removidos com sucesso.
+Falha ao remover todos os e-mails enviados por {0}.
+Erro ao enviar mensagem.
+Movendo {0} para {1}...
+Movido com sucesso
+Move arquivo ou diretório para outro arquivo ou diretório. Você também pode usar isso para renomear arquivos.
+Falha ao mover {0} para {1}.
+Copiando {0} para {1}...
+Copiado com sucesso
+Copia arquivo ou diretório para outro arquivo ou diretório.
+Falha ao copiar {0} para {1}.
+Move uma mensagem
+Move todas as mensagens do destinatário
+Todos os e-mails enviados por {0} foram movidos com sucesso.
+Falha ao mover todos os e-mails enviados por {0}.
+Mensagem {0} de {1} movida de {2}. Restam {3} mensagens para analisar.
+Mostra informações meteorológicas para a cidade especificada. Usa OpenWeatherMap.
+-- Informações meteorológicas para {0} --
+Clima: {0}
+Pressão: {0}
+Umidade: {0}
+Você pode obter sua própria chave de API em https://home.openweathermap.org/api_keys.
+Unidade preferida para temperatura
+A cada inicialização, ele verificará se há atualizações.
+Mantenha as mensagens de sondagem de hardware em silêncio.
+Exibir a mensagem do dia antes de exibir a tela de login.
+Limpar a tela antes de exibir a tela de login.
+Mostra os usuários disponíveis, se habilitado.
+Comando de ajuda simplificado para todos os shells
+Se deve ou não registrar o nome de usuário do FTP.
+Se deve ou não registrar o endereço IP do FTP.
+Selecione o primeiro perfil somente ao conectar.
+Se habilitado, o kernel analisará a pasta inteira para seu tamanho total. Caso contrário, analisará apenas a superfície.
+Habilita o eyecandy na inicialização
+A hora e a data serão mais longas, mostrando nomes completos dos meses, etc.
+Mostra arquivos ocultos.
+Mod {0} parado
+{0} v{1} parou
+Você deve ativar o modo de depuração antes de poder limpar o log de depuração.
+{0} novas mensagens chegaram na caixa de entrada.
+Abra "mail" para vê-los.
+Remove um diretório ou um arquivo
+Não é possível remover {0} porque ele não existe.
+Fornece informações sobre um arquivo
+Fornece informações sobre um diretório
+Não é possível obter informações sobre um diretório inexistente.
+Não é possível obter informações sobre arquivo inexistente.
+Nome completo: {0}
+Hora da criação: {0}
+Último horário de acesso: {0}
+Última hora de escrita: {0}
+Atributos: {0}
+Diretório pai: {0}
+Onde encontrar: {0}
+Tamanho do arquivo: {0}
+Altera atributo de um arquivo
+Arquivo não encontrado.
+onde <atributos> é um dos seguintes:
+O arquivo é um arquivo normal
+O arquivo é somente leitura
+O arquivo é um arquivo oculto
+O arquivo é um arquivo. Usado para backups.
+O atributo "{0}" é inválido.
+O atributo foi adicionado com sucesso.
+O atributo foi removido com sucesso.
+Falha ao adicionar atributo.
+Falha ao remover atributo.
+Substitui uma palavra ou frase por outra em uma linha
+Ativar cores verdadeiras
+Falha ao desbloquear {0}.
+{0} já está bloqueado.
+{0} não pode participar da depuração remota agora.
+Falha ao bloquear {0}.
+Cores do ciclo
+O Disco alternará as cores quando habilitado. Caso contrário, selecione cores aleatórias.
+Insira os caminhos dos arquivos para anexos. Pressione ENTER em um caminho em branco para confirmar.
+Abre uma mensagem criptografada
+Escreva a senha para a ID da chave {0}
+Envia uma mensagem criptografada para um endereço
+Baixando de {0}...
+Mostrar barra de progresso durante o download ou upload do comando "get" ou "put"
+Se for verdade, faz com que "get" ou "put" mostrem a barra de progresso durante o download ou upload.
+Carrega um arquivo para um site especificado
+Efetua ping em um endereço
+Enviando {0} para {1}...
+O upload foi concluído.
+Use "ftp" se for enviar arquivos para o servidor FTP.
+O upload falhou na tentativa {0}: {1}
+Escreva quantas vezes o comando "put" deve tentar novamente uploads com falha. Deve ser numérico.
+O endereço não pode estar vazio.
+Falha ao executar ping {0}: {1}
+Ping bem-sucedido em {0} ms.
+O número de linha especificado não pode ser maior que o número da última linha do arquivo.
+Parece: {0}
+Temperatura: {0}
+Velocidade do vento: {0}
+Direção do vento: {0}
+Pressione qualquer tecla para voltar.
+Não foi possível criar a pasta de correio {0}: {1}
+Cria um diretório no diretório de trabalho atual
+Remove um diretório do diretório de trabalho atual
+Pasta de e-mail {0} não encontrada.
+Não é possível excluir a pasta de e-mail {0}: {1}
+{0}, Criado em {1} {2}, Modificado em {3} {4}
+Verifica a sanidade do arquivo
+Os hashes estão malformados.
+Os hashes não correspondem.
+Os hashes correspondem.
+Renomeia uma pasta
+Abre um shell de teste
+Falha ao iniciar "{0}": {1}
+Mostrar pré-visualização da mensagem de correio
+Ao listar mensagens de e-mail, mostre a visualização do corpo.
+Cor de fundo
+Limpa o arquivo de texto
+Sai do editor de texto
+Consulta um caractere em uma linha especificada ou em todas as linhas
+A verificação de atualizações está desativada porque você está executando uma versão de desenvolvimento.
+Liga ou desliga o recurso de salvamento automático do editor de texto.
+Se o salvamento automático estiver habilitado, o arquivo de texto será salvo a cada "n" segundos.
+Habilitar salvamento automático do editor de texto
+Intervalo de salvamento automático do editor de texto
+Salva o arquivo
+Gravar bate-papo para depurar log
+Registra o bate-papo de depuração remoto no log de depuração.
+Atraso em Milissegundos
+Quantos milissegundos esperar antes de fazer a próxima gravação?
+Permite que você use um servidor FTP SSH
+Nenhuma ajuda para o comando "{0}".
+Cor da Barra de Segundos
+Cor da Barra de Minutos
+Barra de cores das horas
+Cor da Informação
+Marcas para mudar de cor
+Se o ciclo de cores estiver habilitado, quantos tiques antes de mudar as cores no ProgressClock? 1 tique = 0,5 segundos
+ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Cria um novo tema
+Criando um novo tema "{0}".
+Salvar tema no diretório atual
+Salvar tema em outro diretório...
+Imprime informações de hardware
+Nome do processador:
+Tamanho da partição:
+O dispositivo já existe.
+Não existe tal dispositivo.
+Imprime o conteúdo do arquivo no console
+A entrada já existe.
+Envolve a saída do console
+O comando não é wrappable. Estes comandos são wrappable:
+Extrai um arquivo ZIP
+Cria um arquivo ZIP
+Falha ao finalizar o mod {0}: {1}
+Lista todos os eventos disparados
+Diretório atual
+Define o diretório atual do shell. Escreve um caminho absoluto para qualquer diretório existente.
+Ping!
+{0} enviou um ping para você.
+Salvar tema no diretório atual como...
+Salvar tema em outro diretório como...
+Especifique o nome do tema:
+Carregar tema de temas pré-criados...
+Especifique o nome do arquivo do tema sem a extensão .json:
+Lista todos os arquivos dentro do arquivo
+Extrai um arquivo para um diretório especificado ou para um diretório atual
+Altera o diretório do arquivo
+O diretório {0} não existe
+O diretório de arquivo {0} não existe
+Contagem máxima de posições
+Quantas posições são acesas antes de escurecer?
+Conecta-se a um servidor SSH para executar um comando.
+Define uma variável para um valor em um script
+Ocorreu um erro no shell FTP:
+Ocorreu um erro no shell SFTP:
+Mostrar banner SSH
+Mostra o banner do servidor SSH na conexão.
+Como você deseja autenticar?
+Arquivo de chave privada
+Senha
+Digite a senha para a chave {0}:
+Neutralizou um caminho inexistente.
+O arquivo de chave {0} não existe.
+Erro ao tentar adicionar chave privada:
+Comandos gerais:
+Comandos do mod:
+Comandos de alias:
+Modo de manutenção
+Diretórios de pesquisa
+Nenhum comando mod.
+Nenhum comando de alias.
+O comando wrappable não foi encontrado.
+Consulta uma palavra em uma linha específica ou em todas as linhas
+{0} de {1} baixados.
+Testes traduzindo uma string que existe em recursos para um idioma específico
+Imprime uma string no console e analisa os espaços reservados encontrados
+Testa o recurso de expressão regular
+Testa a sequência VT para 255 cores
+Testa a sequência VT para cores verdadeiras
+Envia uma notificação para testar o receptor
+Lista todas as páginas de código suportadas
+Testes sondando o hardware
+Testa o escritor da lista com a string e a matriz de strings
+Testa o escritor da lista com o inteiro e a matriz de inteiros
+Testa o escritor da lista com o char e o array char
+Lista de strings normal:
+Lista de strings de matriz:
+Lista de inteiros normais:
+Lista de inteiros de matriz:
+Lista de caracteres normal:
+Lista de caracteres da matriz:
+Habilitar RPC
+Porta RPC
+Se o RPC deve ou não ser habilitado.
+Escreva uma porta RPC. Ela deve ser numérica e não deve estar em uso. Caso contrário, o RPC falhará ao abrir a porta.
+Não inicia o RPC porque está desabilitado.
+Lista as culturas suportadas
+Pesquisa a string especificada no arquivo fornecido usando expressões regulares
+Veja se você consegue pressionar uma tecla a tempo
+O usuário não forneceu nenhuma informação em tempo hábil.
+Personagem não pressionado a tempo.
+Você pressionou o caractere certo!
+Você pressionou o caractere errado.
+Pressione ESC para sair.
+Obtém as informações de data e hora
+Milissegundos:
+Segundos:
+Minutos:
+Horas:
+Dias:
+Meses:
+Ano:
+Dia do ano:
+Dia da semana:
+Binário:
+Hora local:
+Tempo Universal:
+Horário Unix:
+Falha ao analisar informações de data para
+Certifique-se de que o formato esteja correto.
+Data:
+Tempo:
+Define permissões de arquivo. Isso é suportado somente em servidores FTP que executam Unix.
+Define o tipo para esta sessão
+Falha ao definir permissões de {0} para {1}.
+Permissões definidas com sucesso para o arquivo
+Tipo de dados definido como ASCII!
+Tipo de dados definido como Binário!
+Tipo de dados inválido.
+Esteja ciente de que a maioria dos arquivos não será baixada ou carregada corretamente usando este modo, por isso recomendamos fortemente usar o modo Binário na maioria das situações.
+Tentando enviar um comando RPC enquanto o RPC não foi iniciado.
+Atraso de Fade Out em Milissegundos
+Passos de fade máximo
+Quantos milissegundos esperar antes que o texto desapareça gradualmente?
+Quantos passos de fade devo fazer?
+Abre um shell RSS para ler os feeds
+Lista todos os feeds
+Lê um feed em um navegador da web
+Obtém as informações do artigo
+O número do artigo não pode ser maior que o número de artigos disponíveis.
+Título:
+Link:
+Obtém as informações do feed
+Descrição:
+Tipo de alimentação:
+Número de artigos:
+O artigo não tem um link!
+Falha ao criar uma lista de entradas do sistema de arquivos para o diretório
+Modo de classificação do sistema de arquivos
+Direção de classificação do sistema de arquivos
+Controla como os arquivos serão classificados.
+Controla a direção da classificação do sistema de arquivos, seja ela crescente ou decrescente.
+Atraso de gravação novamente em milissegundos
+Quantos milissegundos esperar antes de escrever um texto novamente?
+Escreva qualquer texto que você queira que seja exibido. Quanto mais longo, melhor.
+Velocidade mínima de escrita em WPM
+Velocidade máxima de escrita em WPM
+Probabilidade de erro de digitação em porcentagem
+Toalhetes para mudar de direção
+Quantas limpezas fazer antes de mudar de direção aleatoriamente?
+Etapa concluída em
+Inicialização interna concluída em
+Mod inicial
+Versão mod:
+Mod {0} não encontrado.
+O editor de texto ainda não abriu um fluxo de arquivo.
+String substituída.
+Um ou ambos os números não são numéricos.
+Palavra apagada.
+Personagem excluído.
+Bem-vindo às Configurações!
+Erro ao executar comando SSH
+Erro no shell SSH
+Testa o escritor do dicionário com a string e a matriz de strings
+Testa o escritor do dicionário com o array char e char
+Testa o escritor do dicionário com o inteiro e a matriz de inteiros
+Dicionário de strings normal:
+Dicionário de strings de matriz:
+Dicionário de números inteiros normal:
+Dicionário de inteiros de matriz:
+Dicionário de caracteres normal:
+Dicionário de caracteres de matriz:
+Mostrar progresso nas operações do sistema de arquivos
+Mostra qual arquivo está sendo processado durante as operações do sistema de arquivos
+O tipo de hardware {0} não foi sondado ou não é válido.
+Sempre centrado
+Escreva qualquer texto que você queira exibir.
+Se o texto exibido no letreiro está sempre centralizado.
+O protetor de tela apresentou um erro ao exibir: {0}. Pressione qualquer tecla para sair.
+Visualizar...
+Veja como seu tema ficará:
+Comandos encapsuláveis:
+Usar API do console
+Se deve usar a API do Console para limpar texto ou usar a sequência VT de limpeza de linha mais rápida. Se False, o Marquee usará a sequência VT apropriada. Caso contrário, usará a API do Console, provavelmente mais lenta.
+Abrindo URL... Certifique-se de seguir os passos mostrados na tela.
+Nome do mod:
+Nome do arquivo mod:
+Caminho do arquivo mod:
+A pasta está vazia.
+Sonda detalhada
+Torne as mensagens de sondagem de hardware um pouco mais comunicativas.
+Embeleza o arquivo JSON
+Use Batidas Por Minuto
+Se deve usar a unidade Batimentos por Minuto para escrever a próxima cor.
+Atraso em Batidas por Minuto
+Quantas batidas por minuto esperar antes de fazer a próxima gravação?
+O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Banner de inicialização personalizado
+Baixa pasta remota para diretório local usando binário ou texto
+Carrega pasta local para diretório remoto usando binário ou texto
+Baixando pasta {0}...
+Pasta baixada {0}.
+Falha no download da pasta {0}.
+Carregando pasta {0}...
+Pasta carregada {0}
+Minimiza o arquivo JSON
+Novo atraso de tela em milissegundos
+Contagem de colunas
+Limite de preenchimento de linha
+Probabilidade de preenchimento de linha em porcentagem
+Tipo de preenchimento de linha
+Quantos milissegundos esperar antes de escrever o texto na nova tela novamente?
+As colunas de texto a serem impressas.
+Quantos caracteres escrever antes de acionar o "preenchimento de linha"?
+Possibilidade de que o padrão de preenchimento de linha seja impresso em letras maiúsculas em porcentagem
+A resposta pode não ser zero.
+A resposta não pode exceder as entradas mostradas.
+Gerencie seus mods
+O gerenciamento de mods é desabilitado no modo de segurança.
+Comando inválido {0}. Verifique o uso abaixo:
+Mod não encontrado ou o arquivo tem caracteres inválidos.
+Probabilidade de falha em porcentagem
+Habilitar depuração do protetor de tela
+Habilita a depuração para protetores de tela. Observe que isso pode preencher rapidamente o log de depuração e deixar o protetor de tela um pouco mais lento, dependendo do protetor de tela usado. Só funciona se a depuração do kernel estiver habilitada para fins de diagnóstico.
+A página do manual {0} é inválida.
+Considere preencher esta página do manual.
+Argumentos de kernel disponíveis:
+Erro irrecuperável no argumento:
+Criptografa uma string usando SHA512
+Criptografa uma string usando SHA384
+Criptografa uma string usando SHA256
+Criptografa uma string usando SHA1
+Criptografa uma string usando MD5
+Não é permitido interromper mods no modo de segurança.
+O mod já foi iniciado!
+O mod ainda não começou!
+Erro ao tentar iniciar o protetor de tela:
+Tipo de caminho do kernel inválido.
+Falha na inicialização anterior
+O editor JSON ainda não abriu um fluxo de arquivo.
+Sai do shell JSON sem salvar as alterações
+Salva o arquivo JSON
+Imprime o arquivo JSON
+Próximo intervalo de rampa
+Quantos milissegundos esperar antes de preencher a próxima rampa?
+Desenhar borda de notificação
+Cobre a notificação com a borda.
+Entre em contato com o fornecedor do mod para atualizá-lo para a versão compatível.
+Envia uma notificação de progresso para testar o receptor
+Mostra a hora local do kernel
+Mostra a data do kernel local
+Mostra a data e hora do kernel local
+Mostra a hora UTC do kernel
+Mostra a data do kernel UTC
+Mostra a data e hora do kernel UTC
+Qual arquivo é o arquivo de texto MOTD? Escreva um caminho absoluto para o arquivo de texto.
+Qual arquivo é o arquivo de texto MAL? Escreva um caminho absoluto para o arquivo de texto.
+Mods na lista negra
+Escreva os nomes de arquivo dos mods que não serão executados na inicialização. Quando terminar, escreva "q". Escreva um sinal de menos ao lado do caminho para remover um mod existente.
+O mod {0} está na lista negra.
+Mostrar informações do aplicativo durante a inicialização
+Mostrar horários de término do estágio
+Iniciar modificações do kernel na inicialização
+Mostrar hora atual antes do login
+Notificar qualquer falha durante a inicialização
+Mostra informações breves sobre o aplicativo na inicialização.
+Mostra quanto tempo o kernel levou para concluir um estágio.
+Iniciar automaticamente as modificações do kernel na inicialização.
+Mostra a hora atual, o fuso horário e a data antes do login.
+Se houver uma pequena falha durante a inicialização do kernel, notifica o usuário sobre isso.
+Estilo de prompt de nome de usuário
+Estilo de solicitação de senha
+Escreva como você quer que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os placeholders são analisados.
+Escreva como você quer que seu prompt de senha seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Exibe a Mensagem do Dia após exibir a tela de login.
+Mostrar detalhes do arquivo na lista
+Mostra os detalhes breves do arquivo enquanto lista os arquivos
+Mostrar detalhes do arquivo na lista FTP
+Estilo de prompt de nome de usuário para FTP
+Estilo de prompt de senha para FTP
+Use o primeiro perfil FTP
+Adicionar novas conexões à discagem rápida FTP
+Tente validar certificados FTP seguros
+Mostrar FTP MOTD na conexão
+Sempre aceite certificados FTP inválidos
+Mostra os detalhes do arquivo FTP enquanto lista diretórios remotos.
+Usa o primeiro perfil FTP para se conectar ao FTP.
+Se habilitado, adiciona uma nova conexão à discagem rápida do FTP.
+Tenta validar os certificados FTP. Não é recomendado desligá-lo.
+Exibe a mensagem FTP do dia no login.
+Sempre aceite certificados FTP inválidos. Não é recomendado ativá-lo, pois pode representar riscos de segurança.
+Estilo de prompt de nome de usuário para e-mail
+Estilo de prompt de senha para e-mail
+Estilo de prompt IMAP para e-mail
+Estilo de prompt SMTP para e-mail
+Detectar automaticamente o servidor de e-mail
+Habilitar depuração de e-mail
+Notificar sobre novas mensagens de e-mail
+Estilo de prompt de senha GPG para e-mail
+Enviar intervalo de ping IMAP
+Enviar intervalo de ping SMTP
+Formato de texto de e-mail
+Escreva como você quer que seu prompt do servidor IMAP seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Escreva como você quer que o prompt do seu servidor SMTP seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Detecte automaticamente o servidor de e-mail com base no endereço fornecido.
+Habilita a depuração do servidor de e-mail.
+Notifica você sobre novas mensagens de e-mail.
+Escreva como você quer que seu prompt de senha GPG seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Quantos milissegundos para enviar o ping IMAP?
+Quantos milissegundos para enviar o ping SMTP?
+Controla como o texto do e-mail será exibido.
+Iniciar depuração remota automaticamente na inicialização
+Formato de mensagem de depuração remota
+Se você quiser que a depuração remota comece na inicialização, habilite isso.
+Especifica o formato da mensagem de depuração remota. {0} para nome, {1} para mensagem.
+Estilo de prompt de URL de feed RSS
+Atualização automática do feed RSS
+Intervalo de atualização automática do feed RSS
+Escreva como você quer que o prompt do seu servidor de feed RSS seja. Deixe em branco para usar o estilo padrão. Os placeholders são analisados.
+Quantos milissegundos demoram para atualizar o feed RSS?
+Mostrar detalhes do arquivo na lista SFTP
+Estilo de prompt de nome de usuário para SFTP
+Adicionar novas conexões à discagem rápida SFTP
+Mostra os detalhes do arquivo SFTP enquanto lista diretórios remotos.
+Se habilitado, adiciona uma nova conexão à discagem rápida SFTP.
+Tempo limite de ping
+Baixar texto percentual
+Carregar texto percentual
+Quantos milissegundos esperar antes de declarar o tempo limite?
+Escreva como você quer que seu texto de porcentagem de upload seja. Deixe em branco para usar o estilo padrão. Os placeholders são analisados. {0} para tamanho de upload, {1} para tamanho de destino, {2} para porcentagem.
+Escreva como você quer que seu texto de porcentagem de download seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho baixado, {1} para tamanho alvo, {2} para porcentagem.
+Solicitar senha após bloqueio
+Após bloquear a tela, peça a senha
+Nível mínimo de cor vermelha
+Nível mínimo de cor verde
+Nível mínimo de cor azul
+Nível mínimo de cor
+Nível máximo de cor vermelha
+Nível máximo de cor verde
+Nível máximo de cor azul
+Nível máximo de cor
+Nível mínimo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Nível máximo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Cor de primeiro plano
+Caractere de linha
+Um caractere para formar uma linha. Certifique-se de inserir apenas um caractere.
+Caractere do canto superior esquerdo para barra de horas
+Caractere do canto superior esquerdo para barra de minutos
+Caractere do canto superior esquerdo para barra de segundos
+Caractere do canto superior direito para barra de horas
+Caractere do canto superior direito para barra de minutos
+Caractere do canto superior direito para barra de segundos
+Caractere do canto inferior esquerdo para barra de horas
+Caractere do canto inferior esquerdo para barra de minutos
+Caractere do canto inferior esquerdo para barra de segundos
+Caractere do canto inferior direito para barra de horas
+Caractere do canto inferior direito para barra de minutos
+Caractere do canto inferior direito para barra de segundos
+Caractere do quadro superior para barra de horas
+Caractere do quadro superior para barra de minutos
+Caractere do quadro superior para barra de segundos
+Caractere do quadro inferior para barra de horas
+Caractere do quadro inferior para barra de minutos
+Caractere do quadro inferior para barra de segundos
+Caractere do quadro esquerdo para barra de horas
+Caractere do quadro esquerdo para barra de minutos
+Caractere do quadro esquerdo para barra de segundos
+Caractere do quadro direito para barra de horas
+Caractere do quadro direito para barra de minutos
+Caractere do quadro direito para barra de segundos
+Texto informativo para horas
+Texto informativo para atas
+Texto informativo para segundos
+Nível mínimo de cor vermelha por horas
+Nível mínimo de cor verde por horas
+Nível mínimo de cor azul por horas
+Nível mínimo de cor por horas
+Nível máximo de cor vermelha por horas
+Nível máximo de cor verde por horas
+Nível máximo de cor azul por horas
+Nível máximo de cor por horas
+Nível mínimo de cor vermelha por minutos
+Nível mínimo de cor verde por minutos
+Nível mínimo de cor azul por minutos
+Nível mínimo de cor para minutos
+Nível máximo de cor vermelha por minutos
+Nível máximo de cor verde por minutos
+Nível máximo de cor azul por minutos
+Nível máximo de cor por minutos
+Nível mínimo de cor vermelha por segundos
+Nível mínimo de cor verde para segundos
+Nível mínimo de cor azul por segundos
+Nível mínimo de cor para segundos
+Nível máximo de cor vermelha por segundos
+Nível máximo de cor verde por segundos
+Nível máximo de cor azul por segundos
+Nível máximo de cor por segundos
+Um caractere que se assemelha ao canto superior esquerdo. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao canto inferior esquerdo. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro superior. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro inferior. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro esquerdo. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro certo. Certifique-se de inserir apenas um caractere.
+Escreva como seu texto informativo é exibido para a hora atual. {0} para a hora atual de 24 horas.
+Escreva como seu texto informativo para o minuto atual é exibido. {0} para o minuto atual de 60 minutos.
+Escreva como seu texto informativo é exibido para o segundo atual. {0} para o segundo atual de 60 segundos.
+Cor do texto
+Caractere do canto superior esquerdo para barra de rampa
+Caractere do canto superior direito para barra de rampa
+Caractere do canto inferior esquerdo para barra de rampa
+Caractere do canto inferior direito para barra de rampa
+Caractere do quadro superior para barra de rampa
+Caractere do quadro inferior para barra de rampa
+Caractere do quadro esquerdo para barra de rampa
+Caractere do quadro direito para barra de rampa
+Nível mínimo de cor vermelha para cor inicial
+Nível mínimo de cor verde para a cor inicial
+Nível mínimo de cor azul para a cor inicial
+Nível mínimo de cor para cor inicial
+Nível máximo de cor vermelha para a cor inicial
+Nível máximo de cor verde para a cor inicial
+Nível máximo de cor azul para a cor inicial
+Nível máximo de cor para cor inicial
+Nível mínimo de cor vermelha para cor final
+Nível mínimo de cor verde para cor final
+Nível mínimo de cor azul para cor final
+Nível mínimo de cor para cor final
+Nível máximo de cor vermelha para cor final
+Nível máximo de cor verde para cor final
+Nível máximo de cor azul para cor final
+Nível máximo de cor para cor final
+Número mínimo do solucionador
+Número máximo do solucionador
+Solver mostra entrada
+Caractere do canto superior esquerdo para borda de notificação
+Caractere do canto superior direito para borda de notificação
+Caractere do canto inferior esquerdo para borda de notificação
+Caractere do canto inferior direito para borda de notificação
+Caractere de quadro superior para borda de notificação
+Caractere de quadro inferior para borda de notificação
+Caractere de quadro esquerdo para borda de notificação
+Caractere de quadro direito para borda de notificação
+Se deve mostrar o que está escrito no prompt de entrada.
+Qual é o número mínimo para escolher?
+Qual é o número máximo para escolher?
+Se especificado, ele exibirá um banner de inicialização personalizado com suporte a placeholder. Você pode usar {0} para a versão do kernel.
+Ativa o suporte a cores verdadeiras.
+Palavra excluída na linha {0}.
+String substituída na linha {0}.
+Número da linha {0} removido.
+Suprimir mensagens não autorizadas
+Oculta a mensagem irritante se a função de listagem tentar abrir uma pasta não autorizada
+Informações do servidor FTP
+Endereço do servidor:
+Porta do servidor:
+Tipo de servidor:
+Tipo de sistema de servidor:
+Modo de criptografia do servidor:
+Tipo de conexão de dados do servidor:
+Sistema de servidor:
+Tipo de dados de download do servidor:
+Tipo de dados de upload do servidor:
+Insira um arquivo remoto a ser hash.
+Insira um diretório remoto.
+Hashing recursivo para FTP
+Se deve recursivamente fazer hash de um diretório. Observe que nem todos os servidores FTP suportam isso.
+Velocidade do clock do processador:
+Número total de processadores:
+Tamanho do disco:
+Memória total:
+Placa gráfica:
+Se você tem certeza de que abriu a seção correta, confira esta mensagem:
+Executa um comando do servidor FTP
+Criptografa uma string usando CRC32
+de correio transferido...
+Testa a funcionalidade da tabela
+Edita a linha especificada
+Adiciona as novas linhas no final do arquivo
+Insira o texto que você quer anexar ao final do arquivo. Quando terminar, escreva "EOF" em sua própria linha.
+Nome do host
+Nome de usuário
+Tipo de dados
+Codificação
+Criptografia
+Protocolos
+Mostrar progresso da transferência de e-mail
+Progresso da transferência de correio
+Progresso da transferência de correio (único)
+Se ativado, o shell de e-mail mostrará quantos bytes foram transmitidos ao baixar o e-mail.
+Escreva como você quer que o estilo de progresso da sua transferência de e-mail seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho transferido e {1} para tamanho total.
+Escreva como você quer que o estilo de progresso da sua transferência de e-mail seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho transferido.
+O arquivo mod não foi especificado.
+Tentando instalar um mod já instalado. Atualizando mod...
+A instalação falhou para
+O arquivo mod fornecido é incompatível.
+A desinstalação falhou para
+Imprimir números de linha no conteúdo do arquivo de impressão
+Descarta todas as notificações
+Baixando...
+Enviando...
+Mostrar notificação de progresso do download
+Mostrar notificação para progresso de upload
+Exibe a notificação mostrando o progresso do download.
+Mostra a notificação mostrando o progresso do upload.
+Verifica se a string traduzível existe nos recursos do KS
+String encontrada nos recursos de localização.
+String não encontrada nos recursos de localização.
+Inicia o kernel silenciosamente
+Inicia o kernel em modo de segurança, desabilitando todos os mods
+Semelhante ao modo de segurança, mas também desabilita o multiusuário e alguma personalização
+Não houve argumentos suficientes.
+Cor do canto superior esquerdo para barra de rampa
+Cor do canto superior direito para barra de rampa
+Cor do canto inferior esquerdo para barra de rampa
+Cor do canto inferior direito para barra de rampa
+Cor da estrutura superior para barra de rampa
+Cor da estrutura inferior para barra de rampa
+Cor do quadro esquerdo para barra de rampa
+Cor da estrutura correta para barra de rampa
+Use cores de borda para barra de rampa
+Use as cores de borda para a barra de rampa. Se desabilitado, gerará uma barra cinza.
+Inicia o shell HTTP
+Obtém a resposta do servidor HTTP usando a solicitação especificada
+Exclui conteúdo do servidor HTTP
+Ocorreu um erro no shell HTTP:
+Obtém a string do servidor HTTP usando a solicitação especificada
+Obtendo {0}...
+As cores não exigem reinicialização, mas a maioria das configurações exige reinicialização.
+Nenhuma ajuda para o argumento "{0}".
+Dificuldade padrão para SpeedPress
+Tempo limite de pressionamento de tecla para SpeedPress
+Quantos milissegundos esperar para pressionar a tecla antes do tempo limite? (Na dificuldade personalizada)
+Substitui uma palavra ou frase por outra usando expressões regulares
+Substitui uma palavra ou frase por outra em uma linha usando expressões regulares
+Consulta uma palavra em uma linha especificada ou em todas as linhas usando expressões regulares
+Escreva o que você deseja pesquisar.
+Nada foi encontrado. Certifique-se de que você escreveu a configuração corretamente.
+Empacota um arquivo local no arquivo
+Não é possível levar nada.
+Para obter mais informações sobre os termos e condições de uso deste software, visite
+Tipo de saída de escolha padrão
+Verifica todas as configurações do KS para ver se as variáveis foram escritas corretamente
+Arquivo {0} não encontrado
+Cria uma matriz de variáveis com os valores fornecidos
+Verifica todos os números de linha do texto de localização para ver se são todos iguais
+Incompatibilidade de linha em
+Incluir usuários anônimos
+Incluir usuários com deficiência
+Inclui os usuários anônimos na lista
+Inclui os usuários com deficiência na lista
+Classificar a lista
+Classifica a lista do sistema de arquivos profissionalmente.
+Oferece uma opção de seleção
+Comandos de shell não implementados!!!
+Mostrar o último título RSS no login
+URL do título RSS
+A cada login, será exibido o último título RSS do URL do título selecionado.
+URL do título RSS a ser usado ao mostrar o título mais recente. Geralmente, esse é seu feed favorito.
+Não foi possível obter as últimas notícias.
+Mostrar rastreamento de pilha em caso de erro de kernel
+Se houver algum erro no kernel, escolha se deseja ou não imprimir o rastreamento de pilha no console.
+Onde você deseja salvar as configurações atuais do kernel?
+Não é possível salvar as configurações do kernel sobre o arquivo existente.
+De onde você deseja carregar as configurações atuais do kernel?
+Verifica se as strings traduzíveis existem nos recursos do KS
+Combina dois ou mais arquivos de texto no arquivo de saída.
+Falha ao combinar arquivos.
+Tempo limite de busca do feed RSS
+Quantos milissegundos esperar antes do tempo limite de busca do feed RSS?
+Encha as caixas
+Desenhamos a caixa como um todo ou desenhamos apenas a borda?
+Atraso de estágio em milissegundos
+Quantos milissegundos esperar antes de desenhar o próximo estágio?
+Próximo intervalo de rampa de podridão
+Quantos milissegundos esperar antes de apodrecer uma das extremidades da próxima rampa?
+Falha ao adicionar um evento.
+Falha ao remover um evento.
+Não foram fornecidos argumentos suficientes para adicionar um evento.
+Não foram fornecidos argumentos suficientes para remover um evento.
+Não há argumentos suficientes fornecidos para manipulação de eventos.
+Não há argumentos suficientes para manipulação de lembretes.
+Lembrete sem título
+Evento sem título
+Agora é dia de evento!
+Não perca!
+Ação inválida.
+Um cronômetro simples
+Iniciar ou parar
+Colo
+Reiniciar
+Um temporizador simples
+Definir intervalo
+O tempo limite indicado não é numérico.
+Especifique o tempo limite em milissegundos
+Salve todos os eventos e/ou lembretes de forma destrutiva
+Se ativado, exclui todos os eventos e/ou lembretes antes de salvá-los usando o comando de calendário.
+Verifique as tentativas de repetição para transmissão FTP
+Tempo limite de conexão FTP
+Tempo limite de conexão de dados FTP
+Versões de IP FTP
+Quantas vezes verificar o upload e o download e tentar novamente se a verificação falhar antes que o download falhe como um todo?
+Quantos milissegundos esperar antes do tempo limite da conexão FTP?
+Quantos milissegundos esperar antes do tempo limite da conexão de dados FTP?
+Escolha a versão do Protocolo de Internet que o servidor FTP suporta e que o cliente FTP usa.
+Tentando iniciar o RPC enquanto ele já foi iniciado.
+Encontra um arquivo no diretório especificado ou no diretório atual
+Converte as terminações de linha para o formato da plataforma atual ou para o formato personalizado especificado
+Tamanho total na pasta:
+Mostrar tamanho total na lista
+Se ativado, mostra o tamanho total da pasta na lista, dependendo de como calcular os tamanhos das pastas de acordo com a configuração.
+Você está atualizado!
+Formatação JSON padrão para shell JSON
+Seleciona a formatação JSON padrão (embelezada ou minimizada) para o shell JSON salvar.
+Raio de explosão de fogos de artifício
+Quantos blocos (até 10) é o raio de explosão dos fogos de artifício quando acesos?
+Este comando tem as seguintes opções que alteram seu funcionamento:
+Mostra os detalhes do arquivo na lista
+Suprime as mensagens irritantes de "permissão negada"
+Mostra todos os fusos horários
+Inicia o jogo na dificuldade fácil
+Inicia o jogo em dificuldade média
+Inicia o jogo na dificuldade difícil
+Inicia o jogo em dificuldade muito difícil
+Inicia o jogo em dificuldade personalizada. Observe que o tempo limite personalizado em milissegundos deve ser escrito como argumento.
+Cria um diretório que contém o conteúdo do arquivo ZIP
+Mostra todas as cidades disponíveis
+Compressão rápida
+Sem compressão
+Não crie diretório base no arquivo
+Indica que o caminho de destino é absoluto
+Limpa todos os eventos disparados
+Habilitar depuração de eventos
+Habilita a depuração para o sistema de eventos do kernel
+Fonte Figlet
+Escreva uma fonte figlet que seja suportada pela biblioteca Figgle. Consulte a documentação da biblioteca para obter mais informações
+Falha ao instalar o idioma personalizado {0}.
+As informações de metadados necessárias para instalar o idioma personalizado não fornecem as localizações necessárias.
+Falha ao desinstalar o idioma personalizado {0}.
+O comprimento do idioma inglês não corresponde ao comprimento do token de idioma fornecido.
+O idioma já existe e não pode ser substituído.
+Falha ao desinstalar idioma personalizado. Provavelmente não existe.
+Falha ao instalar idiomas personalizados.
+Falha ao desinstalar idiomas personalizados.
+Falha ao desinstalar idiomas personalizados. Veja a exceção interna para mais informações.
+Informações sobre a licença
+Gerencie seus idiomas
+Idioma não encontrado ou o arquivo contém caracteres inválidos.
+O idioma não foi especificado.
+O gerenciamento de idiomas é desabilitado no modo de segurança.
+Nome abreviado do idioma:
+Nome completo do idioma:
+Linguagem transliterável:
+Idioma personalizado:
+Tela inicial elegante
+Habilita a tela inicial estilosa na inicialização. Observe que isso desabilitará o prompt de argumento e o shell de teste pré-inicialização.
+Nome do splash
+Nome do splash dentre os splashes disponíveis implementados no kernel.
+Usuários inicializados
+Bem-vindo!
+Iniciando o depurador remoto...
+Erro de conexão do depurador remoto
+Notificar sobre erro de conexão de depuração remota
+Se habilitado, usará o sistema de notificação para notificar o host sobre erro de conexão de depuração remota. Caso contrário, usará a escrita de console padrão.
+Fonte Figlet para cronômetro
+Habilitar Figlet para timer
+Se habilitado, usará figlet para timer. Observe que ele precisa de uma tela de console grande para renderizar o tempo corretamente com Figlet habilitado.
+Redefine o kernel para as configurações de fábrica
+Mostrar os comandos contam com ajuda
+Mostrar os comandos do shell contam com ajuda
+Mostrar os comandos do mod contam com ajuda
+Mostrar a contagem de aliases na ajuda
+Executa comandos quando as expressões UESH são satisfeitas
+A condição não foi encontrada na expressão.
+A condição {0} requer {1} argumentos. Obteve {2}.
+Erro ao analisar expressão devido a erro de sintaxe.
+Falha ao satisfazer a condição. Mais informações aqui:
+Caractere de máscara de senha
+Um caractere que mascara a senha. Deixe em branco para mais segurança.
+Sai do shell se estiver sendo executado em subshell
+Não é possível matar a casca-mãe!
+Não é possível sair do subshell.
+Arquivo não especificado. Saindo do shell...
+Cor da barra de progresso
+Abre as configurações do protetor de tela
+Abre as configurações de splash
+Lista as variáveis UESH disponíveis
+Localização do texto de progresso
+Selecione o local de texto de progresso de sua preferência.
+Você só pode escrever os números.
+Pressione "q" para sair.
+Habilita o modo de depuração
+Habilitar modo preto e branco
+Deixa a discoteca em preto e branco. Vai realmente machucar seus olhos se for muito rápido, então não é recomendado se você estiver tendo uma convulsão de imagens rápidas.
+Carregar cores atuais
+Valor atual:
+Adiciona um novo byte no final do arquivo
+Adiciona os novos bytes no final do arquivo
+Limpa o arquivo binário
+Exclui um byte usando o número do byte
+Exclui o intervalo de bytes
+Sai do editor hexadecimal
+Imprime o conteúdo do arquivo com números de bytes no console
+Consulta um byte em um intervalo especificado de bytes ou todos os bytes
+Substitui um byte por outro
+Byte substituído.
+O editor hexadecimal ainda não abriu um fluxo de arquivo.
+Insira um byte em sua própria linha que você deseja anexar ao final do arquivo. Quando terminar, escreva "EOF" em sua própria linha.
+Não é um byte válido.
+O número de bytes especificado não pode ser maior que o tamanho do arquivo.
+Byte excluído.
+O número de bytes não é numérico.
+O número de bytes iniciais especificado não pode ser maior que o tamanho do arquivo.
+O número de bytes finais especificado não pode ser maior que o tamanho do arquivo.
+Bytes excluídos.
+Observe que a edição de arquivos binários usando este shell é experimental e pode levar à corrupção ou perda de dados se não for usada corretamente.
+NÃO INICIE O SHELL A MENOS QUE VOCÊ SAIBA O QUE ESTÁ FAZENDO!
+Obtém informações importantes para uma tecla pressionada. Útil para depuração
+Digite uma tecla ou uma combinação de teclas para exibir suas informações.
+Tecla pressionada
+Caractere de tecla pressionada
+Modificadores pressionados
+Atalho de teclado
+Habilitar salvamento automático do editor hexadecimal
+Intervalo de salvamento automático do editor hexadecimal
+Liga ou desliga o recurso de salvamento automático do editor hexadecimal.
+Densidade de ruído
+Quantos milissegundos esperar antes de escrever na nova tela?
+Quanto maior a porcentagem, mais ruidoso é o sinal
+O script está malformado. Verifique o script e resolva quaisquer erros: {0}
+O jogo da cobrinha!
+Usa caminho relativo em vez de absoluto
+O modfile é inválido.
+Marca o feed
+Gerador de nomes e sobrenomes
+Remove o marcador de feed
+O feed não existe nos favoritos.
+Lista todos os feeds marcados
+Contagem mínima de nomes
+Contagem máxima de nomes
+Quantidade mínima de nomes a serem gerados
+Quantidade máxima de nomes a serem gerados
+A idade mínima conta anos
+A idade máxima em anos conta
+Quantidade mínima de anos de idade para gerar
+Quantidade máxima de anos de idade para gerar
+Página do manual sem título
+Histórico de entrada habilitado
+Se o histórico de entrada está habilitado ou não. Se habilitado, você pode acessar comandos digitados recentemente usando as teclas de seta para cima ou para baixo.
+Nível de cor vermelha:
+Nível de cor verde:
+Nível de cor azul:
+Agora é seguro desligar seu computador.
+Simular modo sem APM
+Se deve simular uma situação em que não há APM disponível. Se habilitado, informa ao usuário que agora é seguro desligar o computador após o desligamento.
+Densidade de falhas
+Quanto maior a porcentagem, mais densa é a falha!
+O dicionário de inglês
+Informações de palavras para
+A API é licenciada sob
+Palavra:
+Significados das palavras para
+Parte do discurso:
+Definição:
+Exemplo em frase:
+Fontes utilizadas para definir
+Sinônimos:
+Antônimos:
+Testa seu console para suporte PowerLine
+Certifique-se de usar uma fonte de console que suporte glifos PowerLine, ou a saída pode não renderizar corretamente. Recomendamos
+Abre a biblioteca de predefinições do shell
+A predefinição especificada {0} não foi encontrada.
+Você é uma nave espacial e os meteoros estão vindo para destruí-la. Você pode salvá-la?
+O dispositivo já existe na lista de bloqueios.
+O dispositivo não existe na lista de bloqueios.
+Testes de execução do ponto de entrada do assembly
+Selecione a predefinição para {0}:
+Conversor de unidades
+Tipos de unidades disponíveis e suas unidades:
+Game Over
+Erro inesperado
+Use PowerLine para renderizar nave espacial
+Velocidade do jogo Meteor
+Se deve usar PowerLine para renderizar a nave espacial ou usar o caractere maior que padrão. Se quiser usar PowerLine com Meteor, você precisa instalar uma fonte apropriada com suporte a PowerLine.
+Especifica a velocidade do jogo em milissegundos.
+Habilita o modo de depuração do terminal
+Impede que o kernel use o buffer alternativo
+Define o idioma do ambiente de pré-inicialização inicial
+Anexa o depurador do Visual Studio a esta instância do Nitrocid
+Ativa mensagens detalhadas para ambiente de pré-inicialização
+Oculta o splash de pré-inicialização antes que a configuração seja carregada
+Argumento desconhecido
+Você deve estar executando o ConEmu ou um prompt de comando do Windows 10 com o processamento VT habilitado.
+Seu terminal é {0} em {1}.
+Essas rampas parecem certas para você? Elas devem fazer uma transição suave.
+Nenhum driver de fallback encontrado.
+Não é possível registrar um driver não pertencente ou um driver nulo.
+Falha ao inferir o tipo de driver a partir do tipo desconhecido
+Arquivo {0} não encontrado.
+Arquivo ou pasta {0} não encontrado.
+O arquivo ou pasta {0} ainda está bloqueado mesmo após aguardar {1} segundos.
+Execute 'license' para ver as informações da licença.
+Primeira execução do kernel
+Bem-vindo ao Nitrocid Kernel! Obrigado por experimentar!
+Para começar, pressione ENTER.
+Selecione seu idioma. Por padrão, o kernel usa o idioma inglês, mas você pode selecionar qualquer outro idioma aqui.
+Crie seu primeiro usuário
+Nós o ajudaremos a criar seu próprio nome de usuário. Selecione qualquer nome que desejar. Pode ser seu apelido ou seu nome curto, desde que seu nome de usuário não contenha espaços e caracteres especiais e que ele ainda não exista. Os seguintes nomes de usuário estão registrados:
+Digite o nome de usuário
+Digite a senha
+Falha ao criar nome de usuário. Certifique-se de que seu nome de usuário não contenha espaços e caracteres especiais.
+Atualizações automáticas
+O Nitrocid KS atualmente se atualiza para obter a versão mais recente que inclui melhorias gerais e correções de bugs. Novas versões principais geralmente incluem mudanças de última hora e novos recursos interessantes.
+Você quer que o Nitrocid KS verifique atualizações automaticamente?
+Além de verificar atualizações automaticamente, o Nitrocid KS também pode baixar o arquivo de atualização automaticamente.
+Você sempre pode verificar se há atualizações do kernel usando o comando "update".
+Comece já!
+Parabéns! Agora você tem uma conta de usuário, {0}!
+Pressione a tecla ENTER para começar a usar o kernel e faça login na sua nova conta. Boa sorte!
+Pedimos desculpas pelo inconveniente, mas a experiência pronta para uso travou. Se tiver certeza de que isso é um defeito na experiência, informe-nos sobre a falha com os logs de depuração.
+Pressione qualquer tecla para iniciar o shell de qualquer maneira, mas observe que talvez seja necessário criar seu novo usuário manualmente.
+Erro de ambiente do kernel:
+O Nitrocid KS detectou um problema e foi desligado.
+As informações de metadados necessárias para instalar o idioma personalizado não existem.
+As informações de metadados necessárias para desinstalar o idioma personalizado não existem.
+O script do mod não pode ser nulo.
+Nenhum mod detectado.
+Parando o mod {0}...
+O mod não é fortemente assinado. Pode conter código não confiável.
+O mod não pode ser carregado porque há uma incompatibilidade entre esta versão do kernel e este mod:
+Aqui está uma lista de erros que podem ajudar você a investigar essa incompatibilidade:
+O mod {0} requer exatamente uma versão de API {1}, mas você tem a versão {2}. Atualizar o Nitrocid KS e/ou o mod geralmente ajuda. A análise do mod falhou.
+O mod {0} pode não funcionar corretamente com esta versão da API. O mod pode falhar ao iniciar. Entre em contato com o fornecedor do mod para obter uma cópia mais recente.
+O mod {0} não tem o nome. A análise do mod falhou. Revise o código-fonte.
+O mod {0} não tem a versão. A análise do mod falhou. Revise o código-fonte.
+O mod {0} contém uma versão inválida. A análise do mod falhou. A versão era
+Tentando modificar uma conta existente enquanto ela está bloqueada
+Tentando adicionar senha não criptografada à lista de usuários.
+Não é possível adicionar nome de usuário. Certifique-se de que o nome de usuário não exista.
+Não é possível remover o nome de usuário. Certifique-se de que o nome de usuário existe.
+O kernel está esperando o depurador...
+O depurador falhou ao anexar. Iniciando mesmo assim...
+Certifique-se de ter um depurador apropriado configurado em seu sistema antes de poder anexar o Nitrocid a ele.
+Não é possível limpar o arquivo
+Não é possível limpar o arquivo de despejo
+Os seguintes arquivos não são apagados:
+Tem certeza de que deseja limpar esses arquivos?
+Não é possível limpar arquivo diverso
+Nenhum argumento ajuda descrição
+Seu console deve suportar cores reais para usar este tema.
+Sair da pré-visualização
+O tema {0} celebra um evento, mas você chegou muito cedo ou muito tarde para comparecer. A cada ano, este tema fica acessível de {1}/{2} a {3}/{4}.
+O tema {0} precisa de suporte a cores verdadeiras, mas seu console não oferece suporte a ele.
+O texto não deve estar vazio.
+O texto codificado não deve estar vazio.
+O caminho não deve estar vazio.
+O arquivo não existe.
+Para combinar arquivos de texto, use a função apropriada.
+Para combinar arquivos binários, use a função apropriada.
+A fonte não foi encontrada ou não é um arquivo.
+O número de bytes deve começar com 1.
+O número de bytes especificado é inválido.
+Sintaxe de expressão regular inválida.
+O arquivo ou diretório de destino não foi encontrado.
+Não é possível substituir um arquivo ou diretório existente por um link simbólico.
+O arquivo que você forneceu, {0}, não é um arquivo de texto válido. Se este arquivo for um arquivo JSON, esta função pode torná-lo ilegível. Para a segurança do seu arquivo, esta operação é interrompida para evitar corrupção de arquivo.
+O arquivo de origem que você forneceu, {0}, não é um arquivo de texto válido.
+O arquivo de destino fornecido, {0}, não é um arquivo de texto válido.
+O disco não existe
+A partição não existe
+A biblioteca de sondagem de hardware falhou ao sondar discos rígidos. Se você estiver executando o Windows, a causa mais provável é que você não tem permissões suficientes para acessar as informações do disco rígido. Reinicie o Nitrocid com privilégios administrativos elevados para poder analisar os discos rígidos.
+Você precisará reiniciar o kernel como elevado para poder mostrar informações de hardware.
+Falha ao analisar as informações da CPU. Certifique-se de que seja uma lista de informações válida.
+Falha ao analisar as informações de RAM. Certifique-se de que seja uma lista de informações válida.
+Falha ao analisar as informações da GPU. Certifique-se de que seja uma lista de informações válida.
+Falha ao analisar as informações do HDD. Certifique-se de que seja uma lista de informações válida.
+Fornecedor do processador:
+Velocidade do relógio:
+Total de núcleos:
+Tamanhos de cache:
+Memória total utilizável:
+Memória reservada:
+Número do disco:
+Partições:
+Número da partição:
+Nome da placa gráfica:
+SpecProbe falhou ao analisar parte do hardware. Abaixo estão os erros relatados pelo SpecProbe:
+Nenhuma informação extra.
+Soma de hash do arquivo
+Nenhum manipulador de extensão padrão encontrado para esta extensão.
+As extensões devem começar com o ponto. Dica:
+Não existe tal implementador.
+A extensão não foi especificada.
+O nome do implementador não foi especificado.
+O manipulador da extensão não está registrado.
+Parece que você não tem o JSON shell addon instalado. Para obter recursos extras que ele oferece, instale o pacote de addons.
+Parece que você não tem o addon SQL shell instalado. Para obter os recursos extras que ele oferece, instale o pacote de addons.
+Nenhum manipulador para manipular esta extensão.
+Falha ao obter informações para {0}.
+Erro desconhecido ao listar no diretório: {0}
+Não autorizado
+Erro
+Não é possível obter a entrada base de um arquivo ou diretório inexistente.
+Somente arquivos de texto são suportados.
+O acesso ao caminho foi negado devido à falta de consentimento.
+Tipo de caminho do kernel vazio.
+O tipo de caminho do kernel já está registrado.
+Caminho vazio.
+O tipo de caminho do kernel não está registrado.
+Especifique uma pasta existente para armazenar os três arquivos de configuração.
+Especifique um caminho existente para um arquivo de configuração
+Não é uma classe de configuração válida.
+O arquivo de configuração é inválido.
+Ocorreu um erro ao tentar ler a configuração: {0}.
+A validação falhou!
+A leitura falhou!
+Tentando consertar a configuração...
+Não é possível verificar variáveis de configuração quando nenhum tipo é especificado.
+Não é possível verificar variáveis de configuração quando nenhuma entrada é especificada.
+Tentando registrar uma configuração personalizada sem conteúdo.
+Tentando cancelar o registro de uma configuração personalizada sem nome.
+A configuração personalizada não está registrada.
+Tentando consultar uma configuração personalizada vazia.
+Tipo de configuração não encontrado.
+Chave de configuração não encontrada para corresponder à variável especificada.
+O valor JSON das entradas de configurações está vazio.
+Tentando registrar uma configuração base sem conteúdo.
+Tentando cancelar o registro de uma configuração base sem nome.
+Falha de asserção.
+Evento {0} não encontrado.
+Evento do kernel disparado:
+Forneça uma ação de evento válida
+O alias especificado já existe. Certifique-se de selecionar um alias diferente.
+O sistema de alias encontrou uma operação inválida ao tentar processar sua solicitação.
+O alias especificado não foi encontrado.
+O comando especificado não foi encontrado para criar um alias.
+O tipo de alias especificado não foi encontrado.
+Ocorreu um erro ao tentar processar a solicitação de cor. Erros comuns incluem especificar o especificador de cor errado.
+Ocorreu um erro de configuração do kernel.
+Ocorreu um erro geral no sistema de arquivos. Verifique para ter certeza de que o caminho especificado está correto e que o arquivo ou diretório realmente existe.
+Ocorreu um erro geral no sistema de arquivos FTP. Verifique para ter certeza de que o caminho especificado está correto e que o arquivo ou diretório realmente existe.
+Ocorreu um erro geral de rede FTP. Verifique se sua conexão de internet está funcionando.
+Ocorreu um erro geral no shell FTP.
+Ocorreu um erro de gerenciamento de grupo.
+Ocorreu um erro geral de shell HTTP.
+Console insano foi detectado. O Nitrocid KS não pode continuar rodando, porque seu console é incompatível com nossos requisitos.
+Algoritmo hash inválido. Se estiver usando um driver hash sum personalizado, verifique se o driver está carregado.
+Soma hash inválida. Verifique se você copiou e colou a soma hash corretamente. Se estiver usando um driver de soma hash personalizado, verifique se o driver está carregado e funciona conforme o esperado.
+Caminho do kernel inválido.
+Página de manual inválida. Verifique se o mod que contém as páginas de manual válidas está carregado.
+Mod inválido. Se seu mod for um assembly .NET válido, verifique se ele realmente implementa a interface necessária para iniciar o mod.
+Caminho do sistema de arquivos inválido. Verifique se está escrito corretamente.
+Espaço reservado inválido. Consulte a documentação do kernel para obter mais informações.
+O idioma personalizado falhou ao instalar. Verifique para ter certeza de que o arquivo de idioma está corretamente formado. Normalmente, o gerador de localidade faz um bom trabalho ao criar as informações de localização para seu idioma personalizado.
+O idioma personalizado falhou ao carregar. Verifique para ter certeza de que o arquivo de idioma está corretamente formado. Normalmente, o gerador de localidade faz um bom trabalho ao criar as informações de localização para seu idioma personalizado.
+Falha na desinstalação do idioma personalizado.
+O sistema de e-mail encontrou um erro.
+O mod falhou ao instalar. Verifique se é um arquivo mod válido. Se o seu mod for um assembly .NET válido, verifique se ele realmente implementa a interface necessária para iniciar o mod.
+O mod não contém nenhuma instância de mod. Consulte o fornecedor do mod para obter uma nova cópia.
+A desinstalação do mod falhou.
+Ocorreu um erro ao tentar ler ou definir a mensagem do dia.
+Não há nenhum evento com este nome.
+Não existe nenhuma linguagem com esse nome.
+Não há nenhum diretório de e-mail com este nome.
+Não há nenhum mod com esse nome.
+Não há nenhuma propriedade de reflexão com esse nome.
+Não há nenhuma variável de reflexão com este nome.
+Não há nenhum protetor de tela com esse nome.
+Não há nenhuma predefinição de shell com este nome.
+Não há nenhum tema com este nome.
+Não há usuários em todo o kernel. Chegamos a uma situação extremamente rara. O kernel não pode continuar.
+Ocorreu um erro ao tentar gerenciar permissões
+O dispositivo de depuração remota já existe.
+O dispositivo de depuração remoto não foi encontrado. Verifique se você escreveu um endereço IP do dispositivo corretamente.
+A operação do dispositivo de depuração remota falhou.
+Ocorreu um erro de rede RSS. Verifique se sua conexão de internet está funcionando.
+Ocorreu um erro no shell RSS.
+Ocorreu um erro de gerenciamento do protetor de tela durante a operação.
+Ocorreu um erro geral no sistema de arquivos SFTP. Verifique para ter certeza de que o caminho especificado está correto e que o arquivo ou diretório realmente existe.
+Ocorreu um erro geral de rede SFTP. Verifique se sua conexão de internet está funcionando.
+Ocorreu um erro geral no shell SFTP.
+Falha na análise de condição. Verifique sua sintaxe para atender ao design esperado do operador.
+Ocorreu um erro ao tentar analisar o arquivo de script UESH. Verifique se há erros no arquivo de script e corrija-os.
+Ocorreu um erro de criação de usuário.
+Ocorreu um erro de gerenciamento de usuário.
+Ocorreu um erro geral de rede. Se você estiver tentando se conectar a uma extremidade remota, certifique-se de que esteja conectado à Internet ou à sua rede local.
+Um console não suportado foi detectado.
+Uma falha de asserção foi detectada no kernel! Provavelmente é um bug no módulo do kernel que deve ser corrigido por nós.
+Sua rede precisa estar online antes de poder executar operações relacionadas à rede. Conecte seu adaptador de rede e tente novamente.
+O usuário não existe. Verifique se você escreveu o usuário corretamente.
+O driver não existe. Verifique se você escreveu o nome do driver corretamente e se o driver está registrado corretamente.
+O thread ainda não está pronto. O código do usuário pode ter esquecido de regenerar o thread do kernel após pará-lo manualmente.
+Uma operação de thread é inválida no estado atual. Consulte a mensagem adicional que o gerenciador de thread do kernel lhe deu para obter informações adicionais.
+Uma operação de shell inválida está sendo tentada.
+Esta função ou recurso ainda não foi implementado.
+Foi tentada uma operação no sistema de procedimento remoto que é inválida.
+Uma operação de criptografia inválida está sendo executada.
+Uma operação de depuração inválida está sendo executada.
+Uma operação de arquivamento inválida está sendo executada.
+Uma operação inválida do editor hexadecimal está sendo executada.
+Uma operação inválida do editor JSON está sendo executada.
+Uma operação inválida do editor de texto está sendo executada.
+Quando o kernel tentou carregar o mod especificado, ele solicitou o carregamento do "Kernel Simulator". Como o aplicativo principal foi renomeado para Nitrocid KS, este mod não pode ser executado com segurança. Aconselhamos que você atualize o mod.
+Ocorreu um erro no gerenciador de contatos ao tentar executar a operação solicitada. Certifique-se de que o arquivo de contato exista na pasta correta e que seja um arquivo de contato vCard 2.1, 3.0 ou 4.0 válido.
+Um sistema de condição UESH falhou ao executar a operação solicitada. Veja a mensagem de erro abaixo para mais detalhes.
+Uma operação inválida do editor SQL está sendo executada.
+O grupo não existe. Verifique se você escreveu o nome do grupo corretamente.
+Ocorreu um erro na implementação do TUI interativo.
+Ocorreu um erro no gerenciador de configurações personalizadas para usuários.
+Ocorreu um erro no gerenciador de conexão de rede.
+Ocorreu um erro geral de rede HTTP. Verifique se sua conexão de internet está funcionando.
+Ocorreu um erro geral no gerenciador de comandos. Verifique se você escreveu o comando ou o tipo de shell corretamente.
+A ferramenta geradora de localidade retornou um erro ao tentar gerar arquivos JSON para idiomas.
+Ocorreu um erro no módulo de hora e data. Verifique se você especificou a hora e a data corretamente e se o fuso horário existe.
+Ocorreu um erro no parser do manual do mod. Certifique-se de que seu arquivo manual seja válido e que o mod tenha sido iniciado.
+Ocorreu um erro no gerenciador de calendário.
+Ocorreu um erro no gerenciamento de notificações.
+Ocorreu um erro no gerenciamento de idiomas.
+Ocorreu um erro no gerenciamento do mod.
+Ocorreu um erro no sistema de reflexão.
+Ocorreu um erro ao tentar executar uma operação de gerenciamento de temas.
+Ocorreu um erro ao tentar executar uma operação para o gerenciamento de eventos do kernel.
+Ocorreu um erro ao tentar executar uma operação para o gerenciamento de complementos do kernel.
+Ocorreu um erro ao tentar executar uma operação para o gerenciamento de notas.
+Falha no gerenciamento de componentes de hardware.
+O manipulador de login falhou. Certifique-se de que ele esteja registrado corretamente e que faça seu trabalho conforme o esperado.
+A codificação falhou. Verifique se o driver de codificação funciona corretamente e corrija quaisquer problemas encontrados, depois tente novamente.
+Operação de consentimento de privacidade inválida. Certifique-se de que o consentimento esteja correto e tente novamente.
+O gerenciador de splash falhou ao executar a operação solicitada. Verifique o nome do splash e tente novamente.
+As ferramentas de texto não conseguiram processar sua solicitação.
+Ação de placeholder inválida. Consulte a documentação do kernel para obter mais informações.
+O manipulador do driver falhou ao executar esta ação porque você pode ter fornecido os parâmetros errados. Se tiver certeza de que eles estão especificados corretamente, certifique-se de ter fornecido o nome e o tipo corretos do driver.
+O manipulador de progresso falhou ao executar a operação solicitada.
+A operação do console falhou ao executar a tarefa necessária.
+A operação de registro no diário do kernel falhou ao executar a tarefa necessária.
+A operação de encaixe do sistema falhou ao executar a tarefa necessária.
+A operação de segurança não conseguiu executar a tarefa necessária.
+Ocorreu um erro ao tentar executar uma operação para o gerenciamento do driver do kernel.
+Há um erro no kernel, em um dos addons do kernel, em um dos seus mods ou em um dos componentes do kernel. Se a rotina tentou processar sua entrada, certifique-se de que você escreveu todos os parâmetros corretamente.
+Informações de exceção
+Tipo de erro
+Mensagem de erro
+Informações adicionais
+O módulo que causou a falha forneceu essas informações adicionais que podem ajudá-lo ainda mais
+O módulo que causou a falha não forneceu informações adicionais.
+Detalhes da exceção
+Se as informações adicionais acima não ajudarem você a identificar o problema, estas podem ajudar.
+O módulo não forneceu as informações de exceção, então geralmente é um indicador de que algo está errado.
+Detalhes da exceção interna
+Erros adicionais foram encontrados quando a rotina tentou executar esta operação
+Se você tiver certeza de que esse erro é inesperado, tente reiniciar o kernel com a depuração habilitada e investigue os logs depois de tentar a ação novamente.
+Infelizmente, um tipo de mensagem inválido foi fornecido, então é possível que algo esteja errado. Tente ligar o depurador e reproduzir o problema.
+{0} -- Reiniciando em {1} segundos...
+Ocorreu um erro de kernel continuável:
+Este erro pode causar instabilidades no kernel ou nos aplicativos. Você pode continuar usando o kernel por sua conta e risco.
+Análise aprofundada do erro
+Tipo de exceção
+Código de erro
+Fonte de erro
+Método de origem de erro desconhecido
+Descrição do erro
+Rastreamento de pilha
+Informações de erro do kernel
+O erro do kernel ocorreu em
+Contém uma exceção?
+Descrição do erro do kernel
+Análise do erro interno, número
+O último erro interno é a causa raiz, que é o número
+Análise de quadros
+Não há quadros para analisar.
+Análise de quadro falhou. Algumas informações podem não estar completas.
+Infelizmente, não há informações úteis sobre o erro para ajudar você a analisar o problema.
+Todos os threads do kernel
+O tópico está vivo
+O tópico é um tópico de fundo
+O thread é crítico para o sistema
+O tópico está pronto
+O tópico está parando
+Total de tópicos
+A análise de thread falhou. Algumas informações podem não estar completas.
+Todos os threads do sistema operacional
+Falha na análise de thread do sistema operacional. Algumas informações podem não estar completas.
+Todos os backtraces de thread
+Os backtraces do thread estão vazios. Ou essas informações não estão disponíveis, ocorreu um erro ao buscá-las ou o complemento Diagnostics Extras não está instalado. Investigue os logs de depuração.
+Rastreamento de pilha para thread
+A análise de backtrace do thread falhou. Algumas informações podem não estar completas.
+Informações da versão
+O gerador de despejo falhou ao despejar um erro de kernel causado por
+Pedimos desculpas pelo inconveniente, mas parece que o kernel estava com problemas para inicializar. A mensagem de erro abaixo pode ajudar:
+Para uma investigação mais aprofundada, habilite o modo de depuração no kernel e tente reproduzir o problema. Além disso, tente investigar o último arquivo de despejo criado.
+Este complemento não é válido.
+Iniciando o complemento do kernel
+Addon do kernel iniciado
+Falha ao iniciar o complemento do kernel
+Falha ao inicializar o complemento do kernel
+Falha ao finalizar os complementos. Os complementos abaixo falharam ao finalizar:
+Falha ao parar os complementos. Os complementos abaixo falharam ao parar:
+Não é possível executar a função personalizada com um complemento inexistente
+Não é possível encontrar a função '{0}' no complemento '{1}'.
+Não é possível encontrar a propriedade '{0}' no complemento '{1}'.
+Não é possível encontrar o campo '{0}' no complemento '{1}'.
+Pacote de idiomas extras
+Pacote de protetores de tela extras
+Pacote de respingos extras
+Pacote de temas extras
+Extras - Diversões
+Extras - Arquivo Shell
+Extras - BassBoom
+Extras - Cafeína
+Extras - Calculadoras
+Extras - Calendário
+Extras - Conversor de cores
+Extras - Contatos
+Extras - CRC32
+Extras - Diagnóstico
+Extras - Dicionário
+Extras - Atracação
+Extras - Previsão
+Extras - Shell FTP
+Extras - Git Shell
+Extras - Shell HTTP
+Extras - JSON Shell
+Extras - Estúdio de Idiomas
+Extras - Shell de Correio
+Extras - MD5
+Extras - Notas
+Extras - RSS Shell
+Extras - Shell SFTP
+Extras - SHA1
+Extras - SHA384
+Extras - SQL Shell
+Extras - Estúdio Temático
+Extras - Informações de tempo
+Extras - Temporizadores
+Extras - Dicas do Kernel
+Extras - Lista de tarefas
+Extras - Conversor de Unidades
+Nenhum tipo de complemento '{0}'
+Um ou mais núcleos da CPU falharam na sondagem. Mostrando informações de qualquer forma...
+Um ou mais chips de RAM falharam na sondagem. Mostrando informações de qualquer forma...
+Uma ou mais placas gráficas falharam na sondagem. Mostrando informações de qualquer forma...
+Um ou mais discos rígidos falharam na sondagem. Mostrando informações de qualquer forma...
+O hardware não será analisado devido a privilégios insuficientes. Use "winelevate" para reiniciar o Nitrocid em modo elevado.
+Ocorreu um erro ao sondar o hardware: {0}
+O arquivo de diário '{0}' não existe.
+Gerenciamento remoto de energia invocado:
+Não é possível inicializar sequências VT para seu terminal Windows. Certifique-se de que você esteja executando o Windows 10 ou posterior.
+Falha ao iniciar componentes críticos
+Iniciando Nitrocid...
+Carregando idiomas personalizados...
+Carregando complementos importantes do kernel...
+Carregando configuração...
+Carregando mods importantes...
+O kernel falhou ao inicializar alguns dos componentes essenciais. O kernel não funcionará corretamente neste ponto.
+Informações sobre o erro:
+Informações do ambiente do kernel
+O kernel falhou ao inicializar alguns dos componentes opcionais. Se estiver tentando ler um arquivo de configuração, certifique-se de que ele esteja formatado corretamente.
+Redefinição de variáveis gerais
+Históricos de comandos shell salvos.
+Configuração salva.
+Funções extras do kernel e seus componentes registrados foram interrompidos.
+O kernel falhou ao redefinir todas as configurações para seus estados iniciais. Alguns dos componentes podem não ter sido descarregados corretamente. Se você estiver tendo problemas após a reinicialização, essa pode ser a causa. Desligue o kernel após a reinicialização.
+Adeus!
+Aguarde enquanto o kernel inicializa seu hardware...
+Verificando a integridade do sistema
+Erro de configuração será notificado
+Erro de configuração
+Há um problema com um dos arquivos de configuração. Por favor, verifique seu conteúdo.
+Inicialização do sistema
+Atualizações do kernel
+Detecção de hardware
+Componentes opcionais
+Inicialização do usuário
+Verificação da integridade do sistema
+Estágio
+Executando em modo de manutenção. Ignorando estágio...
+Não é possível regenerar o thread do kernel enquanto o mesmo thread já estiver em execução.
+A ação de início do thread filho não pode ser nula.
+O thread do kernel {0} falhou.
+Nenhuma informação.
+Não é possível abrir arquivo ou pasta
+Estilo de nova linha:
+Arquivo binário:
+Metadados MIME:
+Nome completo
+Versão
+Nome da cultura
+Tipo de conteúdo
+O arquivo não é um assembly .NET válido.\n
+Não é possível obter informações do sistema de arquivos
+Não é possível copiar arquivo ou diretório
+Não é possível mover arquivo ou diretório
+Não é possível remover o arquivo ou diretório
+A pasta não existe. Certifique-se de que você escreveu o caminho correto.
+Insira um caminho ou um caminho completo para uma pasta de destino para copiar o arquivo selecionado.
+Certifique-se de ter escrito o caminho correto.
+O arquivo não existe. Certifique-se de que você escreveu o caminho correto.
+Insira um caminho ou um caminho completo para uma pasta de destino para mover o arquivo selecionado.
+Digite um novo nome de arquivo.
+Certifique-se de ter escrito o nome de arquivo correto.
+O arquivo já existe. O nome não deve ser ocupado por outro arquivo.
+Digite um novo nome de diretório.
+A pasta já existe. O nome não deve ser ocupado por outra pasta.
+A entrada selecionada não é um arquivo.
+Insira um driver de hash:
+Driver de hash não encontrado.
+Insira o hash esperado
+Dois hashes correspondem!
+Dois hashes não correspondem.
+Selecionado
+Nome do arquivo
+É um diretório
+Está selecionado
+Tamanho do arquivo
+Caminho do arquivo
+Não é possível abrir a pasta ou selecionar o arquivo
+Insira um caminho ou um caminho completo para uma pasta local.
+Pressione ESPAÇO para mais informações
+Selecionado '{0}'. Pressione ESC para sair e confirmar as seleções.
+Não selecionado '{0}'. Pressione ESC para sair e confirmar as seleções.
+Nenhum arquivo selecionado.
+Não é possível abrir a pasta
+Não é possível selecionar a pasta
+Nenhuma pasta selecionada.
+Infelizmente, esta página do manual não tem nenhum conteúdo. No entanto, esta documentação pode ter sido encontrada na página do fornecedor do mod. Se você ainda não conseguir encontrar esta documentação, peça mais informações aos desenvolvedores do mod.
+Apresentado a você por
+Comprimento do conteúdo
+Nenhum conteúdo.
+Nenhuma revisão.
+Nome do protetor de tela
+O protetor de tela contém imagens piscantes
+ID da tarefa
+Tempo de processador privilegiado
+Tempo de processador do usuário
+Tempo total do processador
+Estado da tarefa
+Nível de prioridade
+Endereço de memória da tarefa
+Nome da tarefa
+Vivo
+Fundo
+Crítico
+Preparar
+A tarefa do kernel já foi encerrada.
+A tarefa do kernel é crítica e não pode ser eliminada.
+Os threads do sistema operacional não podem ser eliminados.
+Data
+Tempo
+Nome de exibição
+Nome padrão
+Sucesso
+Falha
+O manipulador de progresso não pode ser nulo.
+Processamento...
+Este método é inexistente.
+Este método é estático. Use a sobrecarga de não objeto.
+Este método não é estático. Use a sobrecarga de objeto.
+Aviso de convulsão por fotossensibilidade
+Este protetor de tela pode conter imagens piscantes e animações rápidas que podem causar convulsões para pessoas fotossensíveis. É recomendado procurar um especialista médico para obter mais informações sobre tais convulsões antes de continuar. Se você quiser se livrar deste aviso, você pode desligá-lo nas configurações do protetor de tela.
+Protetor de tela personalizado já existe.
+Protetor de tela personalizado não encontrado.
+Não é possível registrar splash vazio
+Não é possível registrar splash sem nome
+Não é possível registrar splash sem ponto de entrada
+Não é possível registrar novamente o splash. Você precisa cancelar o registro desse splash primeiro.
+Não é possível cancelar o registro do splash sem nome
+Não é possível cancelar o registro de um splash inexistente
+O splash de fechamento não foi exibido
+Atingimos {0}%!
+Carregando...
+Não é possível executar função personalizada com mod inexistente
+Dependência não satisfeita. As dependências com falha estão listadas abaixo:
+Tentei consultar os manuais para o mod inexistente {0}.
+Tentou inicializar o manual {0} para mod inexistente {1}.
+Tentou inicializar o arquivo manual {0} para mod inexistente {1}.
+Tentou inicializar o arquivo manual {0} que não existe para o mod {1}.
+Esta propriedade é válida somente para conexões com threads. Para conexões de instância, chame a propriedade apropriada na própria instância em vez de chamar esta propriedade.
+Selecione uma conexão. Se não tiver conexões, você terá que criar uma nova conexão. Além disso, você pode usar o recurso de discagem rápida para se conectar rapidamente aos servidores.
+Criar uma nova conexão
+Usar discagem rápida
+Tipo de conexão não encontrado
+Conexão não encontrada.
+Link inválido para conexão.
+Falha ao estabelecer conexão com {0}.
+A conexão ainda não foi estabelecida.
+O índice de conexão está fora do intervalo.
+O tipo de conexão já existe
+O shell {0} não aceita conexões de rede.
+Digite o endereço do servidor:
+Selecione uma conexão na lista de discagem rápida.
+Selecione uma conexão.
+Erro de shell de rede desconhecido:
+Não é possível adicionar uma discagem rápida com um tipo inexistente.
+{0} de {1} carregado.
+Exigindo permissão
+Permissão não concedida
+Não é possível consentir uma permissão vazia.
+Parece que um mod com o namespace raiz {0} tenta acessar seus dados com a permissão de {1}. Você quer permitir que esse mod acesse seus dados?
+Você não especificou uma montagem.
+Você não especificou um caminho de montagem.
+Você não especificou um nome de assembly.
+Não é possível adicionar um grupo com o mesmo nome.
+Não é possível remover um grupo inexistente.
+Não é possível adicionar um usuário a um grupo inexistente.
+O usuário já entrou no grupo!
+Não é possível remover um usuário de um grupo inexistente.
+O usuário já saiu do grupo!
+Não é possível consultar um usuário de um grupo inexistente.
+O manipulador de login não foi encontrado!
+Nome de usuário incorreto ou nome de usuário não encontrado.
+O gerenciador de login travou!
+Senha de administrador incorreta. Você tem {0} tentativas.
+Sem chances. Reiniciando...
+Algum mod malicioso removeu a conta root, ou uma situação rara aconteceu e ela desapareceu.
+De
+Sem alimentação.
+Instale o complemento RSS Shell Extras!
+Pressione qualquer tecla para iniciar ou ESC para mais opções...
+A chave especificada, {0}, já existe.
+A chave especificada, {0}, não existe.
+Bem-vindo ao Nitrocid Kernel! - Versão
+Este programa está licenciado sob a GNU General Public License 3.0 ou posterior.
+Você está executando a versão de desenvolvimento do kernel. Embora você possa experimentar os próximos recursos que podem existir na versão final, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.
+Você está executando a versão release candidate do kernel. Embora você possa experimentar os toques finais, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.
+Não recomendamos executar esta versão do kernel, pois ela não é suportada. Se você baixou este kernel de fontes desconhecidas, esta mensagem pode aparecer. Por favor, baixe da nossa página oficial de downloads.
+Para descartar definitivamente, pressione ENTER no botão "Reconhecido" aqui, destacando-o com a seta para a esquerda no teclado, ou habilite "Aviso de desenvolvimento reconhecido" nas configurações do kernel.
+OK
+Reconhecido
+Aviso de desenvolvimento
+Observe que executar o Nitrocid KS em um ambiente incomum significa que alguns recursos são limitados. Você não poderá carregar mods e configurações.
+Aviso de ambiente incomum
+que você pode obter dicas extras do complemento do kernel fornecido com a compilação completa do Nitrocid?
+Dica profissional: você sabia
+Atalhos de teclado
+Remover
+Não é possível executar esta operação em uma matriz nula.
+Não é possível executar esta operação em uma lista de linhas nulas.
+O tipo de configuração não foi encontrado.
+Encontre uma opção
+Permite que você pesquise facilmente uma entrada de configuração usando seu título ou seu valor.
+Salvar configurações
+Salva as alterações de configuração do kernel no arquivo de configuração encontrado na pasta de dados do aplicativo.
+Salvar configurações como
+Salva as alterações de configuração do kernel no arquivo de configuração encontrado na pasta especificada.
+Carregar configurações de
+Carrega a configuração do kernel do arquivo de configuração especificado.
+Recarregar configurações
+Recarrega a configuração do kernel para quaisquer alterações externas
+Verifique se há atualizações do sistema
+Informações do sistema
+Você está na landing page das configurações {0}. Selecione uma seção ou uma opção para começar. Dependendo de quais configurações você alterou, pode ser necessário reiniciar o kernel.
+Carregando seção...
+Uma ou mais das seguintes configurações encontradas nesta seção não são suportadas em sua plataforma:
+Seção inválida. Por favor, volte.
+Chave inválida. Por favor, volte.
+Procurando por configurações...
+Essas configurações foram encontradas. Selecione uma.
+Não foi possível encontrar a configuração solicitada.
+Salvando configurações...
+Salvando configurações em
+Carregando configurações...
+Recarregando configurações...
+Versão do kernel
+Versão da API do kernel
+ID do host
+ID genérico do host
+Você está perdido!
+Se você tiver certeza de que abriu a seção correta, ative o depurador do kernel, reproduza e tente investigar os logs.
+Se você não entender a mensagem acima, ative o depurador do kernel, reproduza e tente investigar os logs.
+>> Depuração Remota: versão
+>> Bem-vindo! Esta é sua primeira vez entrando no remote debug. Use "/register <nome>" para registrar.
+Dispositivo não encontrado para bloquear.
+Testes de console base
+Testes de motorista
+Testes de sistema de arquivos
+Testes de componentes do kernel principal
+Testes de idioma e localização
+Testes diversos
+Testes de modificação do kernel
+Testes de sistema de rede
+Testes de shell UESH
+Testes de usuário
+Desligar
+Sai do modo de teste e desliga o kernel
+Escolha uma seção de teste para executar
+Não
+O número de quadros da pilha não deve exceder a quantidade atual de quadros ou não deve ser negativo.
+Nitrocida KS
+O supervisor de threads do kernel detectou {0} threads críticos que ainda não foram iniciados.
+O supervisor de thread do kernel detectou {0} threads inativos.
+Falha no supervisor de thread do kernel
+Alarme disparado!
+O nome do alarme está vazio.
+O alarme não foi encontrado.
+O número de alarme de base zero é inválido.
+Hoje é
+Falha ao mostrar os horários atuais:
+Fuso horário {0} não encontrado
+Fuso horário não encontrado.
+O pacote de informações de fuso horário ainda não está instalado no seu sistema Linux. Instale 'tzdata' usando o gerenciador de pacotes da sua distribuição.
+Por favor, aguarde
+Carregando
+Por favor, aguarde enquanto o kernel está inicializando
+Por favor, aguarde enquanto o kernel está sendo desligado
+Por favor, aguarde enquanto o kernel reinicia
+Começando
+Modo de segurança
+Modo de depuração
+Últimas notícias de
+Para poder obter as últimas notícias, você deve instalar o addon RSS Shell Extras. Você pode usar o comando 'getaddons' para obter todos os addons!
+O alias {0} não foi encontrado para consulta.
+Define o valor da saída para a variável UESH selecionada
+Os argumentos obrigatórios não são fornecidos para todos os usos abaixo:
+Os argumentos necessários não são fornecidos.
+Os interruptores necessários não são fornecidos.
+Uma das opções requer um valor que não é fornecido.
+Os interruptores listados abaixo são desconhecidos.
+Os interruptores listados abaixo entram em conflito entre si.
+As opções abaixo não aceitam valores.
+Um ou mais argumentos esperam um valor numérico, mas você forneceu um número inválido.
+Um ou mais argumentos esperam uma formulação exata, mas você forneceu uma palavra inválida.
+Um ou mais switches esperam um valor numérico, mas você forneceu um número inválido.
+O comando foi abortado.
+Você não deve executar este comando diretamente em um modo encapsulado.
+Ocorreu um erro ao tentar encapsular uma saída de comando
+Comando abortado pelo seguinte motivo:
+Padrão de comando inválido fornecido.
+Comando não encontrado.
+O tipo de shell {0} não existe.
+Você deve fornecer a base de comando.
+Você deve fornecer o comando.
+O comando especificado já foi adicionado! É possível que você tenha mods conflitantes.
+Comando não definido
+Alguns dos comandos personalizados não podem ser carregados.
+O comando personalizado especificado não foi encontrado.
+Alguns dos comandos personalizados não podem ser descarregados.
+O comando especificado já foi adicionado! É possível que você tenha addons conflitantes.
+Alguns comandos complementares não podem ser carregados.
+O comando addon especificado não foi encontrado.
+Alguns comandos do complemento não podem ser descarregados.
+Este shell usa os comandos slash para executar os comandos. Por favor, anexe o símbolo de barra '/' ao início do comando para começar. Por exemplo:
+Comandos disponíveis:
+Comandos do complemento do kernel:
+Nenhum comando adicional do kernel.
+Comandos unificados:
+Comandos unificados não implementados!!!
+Comando:
+Você não pode declarar o novo bloco antes de colocar expressões que suportem a criação, como condições ou loops. O número da pilha é {0}.
+Ao iniciar um novo bloco, certifique-se de que você recuou a pilha corretamente. O número da pilha é {0}.
+O script está malformado. Verifique o script e resolva quaisquer erros.
+Lembrete para os comandos de barra
+Executa um processo externo
+Executa o processo sem interromper o thread do shell. Uma janela separada será criada.
+Encontra os comandos disponíveis no tipo de shell atual
+Mostra comandos mod
+Mostra comandos com alias
+Mostra comandos unificados
+Mostra os comandos do complemento do kernel
+Mostra todos os comandos
+Usa ajuda simplificada
+Carrega históricos de shell
+Repete a última ação ou o comando especificado
+Salva históricos de shell
+Mostra uma dica aleatória do kernel
+Os shells não podem ser iniciados a menos que o shell mãe tenha sido iniciado.
+Falha ao tentar inicializar o shell
+Erro no shell administrativo: {0}
+Sistema de ajuda de argumentos do kernel
+Imprime o log de inicialização
+Obtém o log atual do diário do kernel
+Lista os usuários
+Salva as notificações recentes
+Manipula com os principais sinalizadores do usuário
+Obtém as informações do usuário
+Altera o idioma preferido do usuário
+Você deve habilitar o modo de depuração antes de poder usar o shell de depuração.
+Obtém o backtrace atual
+Obtém mensagem do tipo de exceção do kernel. Útil para depuração
+Obtém um valor de campo
+Obtém um valor de propriedade
+Lista todos os complementos disponíveis
+Lista todos os campos disponíveis do complemento especificado
+Lista todas as funções disponíveis do complemento especificado
+Lista todas as propriedades disponíveis do complemento especificado
+Lista todos os complementos básicos e seus status
+Lista todos os campos públicos disponíveis
+Suprime as mensagens de erro
+Lista todas as propriedades públicas disponíveis
+Lista todos os shells disponíveis
+Visualiza o splash
+Especifica se o recurso de mensagens importantes deve ser testado no splash
+Especifica o contexto da tela inicial
+Adiciona um novo byte à posição especificada
+Abre o editor hexadecimal interativo TUI
+Abre o editor interativo
+Adiciona grupos
+Adiciona usuários a um grupo
+Shell administrativo
+Bips do console
+Renomeia grupo de arquivos para o formato selecionado
+Imprime os números das linhas junto com o conteúdo
+Imprime apenas o conteúdo
+Forçar o tratamento de arquivos binários como texto simples
+Obtém o diretório atual
+O que há de novo nesta versão do Nitrocid?
+Verifica o bloqueio do arquivo ou da pasta
+Aguarda até que o arquivo ou a pasta seja desbloqueado
+Altera o idioma
+Altera o idioma do usuário em vez do idioma do sistema
+Estilo de escolha de uma linha
+Estilo de escolha de duas linhas
+Estilo de escolha moderno
+A saída pode ser apenas um caractere
+A saída pode ser mais do que um caractere
+Combina os dois ou mais arquivos de texto no console.
+Compara os dois arquivos de texto.
+Converte as terminações de linha para o formato do Windows
+Converte as terminações de linha para o formato Unix
+Converte as terminações de linha para o formato Mac OS 9
+Força a conversão do final da linha
+Mostra apenas a data
+Mostra apenas o tempo
+Usa UTC em vez de local
+Inicia o shell de depuração
+Decodifica o arquivo codificado
+Especifica a chave
+Especifica o vetor de inicialização
+Decodifica o texto codificado
+Decodifica o texto da representação BASE64
+Fornece informações sobre um disco
+Gerencie seus drivers
+Imprime o texto como ele está, sem análise de espaço reservado
+Edita um arquivo
+Força o modo de texto
+Força o modo hexadecimal
+Força o modo JSON
+Força o modo SQL
+Codifica o arquivo
+Codifica o texto
+Codifica o texto para uma representação BASE64
+Pesquisa um arquivo recursivamente
+Executa um comando em um arquivo
+Encontra um arquivo no diretório especificado ou no diretório atual usando expressões regulares
+Bifurca o shell UESH para criar outra instância
+Especifica o caminho de saída
+Obtém todos os complementos da página oficial de download e os instala
+Reinstala os complementos
+Obtém todos os manipuladores de extensão de todas as extensões
+Obtém uma variável de configuração e seu valor
+Obtém o manipulador de extensão padrão da extensão especificada
+Obtém os manipuladores de extensão padrão de todas as extensões
+Obtém os manipuladores de extensão da extensão especificada
+Obtém a chave e o vetor de inicialização para codificação simétrica
+Obtém o nome do host atual
+Gerenciador de arquivos do host do sistema interativo
+Permite que o usuário insira a entrada como senha
+Mostra informações de licença para o kernel
+Verifica se há erros de sintaxe em um script UESH
+Lista uma pasta recursivamente
+Lista uma pasta usando o formato de árvore
+Lista todas as configurações disponíveis
+Detalhes profundos sobre todas as configurações, incluindo suas entradas
+Lista todas as variáveis de configuração e seus valores
+Lista todas as conexões disponíveis
+Lista os manipuladores de extensão disponíveis
+Lista todas as partições do disco
+Lista todos os discos
+Lista dispositivos de rede online
+Fornece informações sobre uma partição do disco especificado
+Encontra um determinado nome de arquivo em diretórios de pesquisa de caminho
+Gerenciar permissões para grupos
+Especifica o número de vezes para executar ping
+Obtém a plataforma atual
+Mostra o nome da plataforma
+Mostra a versão da plataforma
+Mostra os bits da plataforma
+Mostra a versão da plataforma .NET
+Mostra o identificador de tempo de execução da plataforma .NET
+Reinicia o kernel
+Reinicia o kernel no modo de segurança.
+Reinicia o kernel no modo de manutenção.
+Reinicia o kernel no modo de depuração.
+Remove um arquivo ou diretório com segurança
+Remove um grupo da lista
+Remove um usuário do grupo
+Salva a configuração atual do kernel em seu arquivo
+Oferece a opção de selecionar o protetor de tela para experimentar
+Abre as configurações do protetor de tela do complemento
+Abre as configurações do driver
+Abre as configurações personalizadas
+Define uma variável de configuração para um valor especificado
+Define o manipulador de extensão padrão da extensão especificada para o implementador específico
+Abre uma TUI interativa na qual você poderá ver o relógio mundial em tempo real
+Dorme por milissegundos especificados
+Executa o comando como usuário root
+Calcula somas de texto.
+Cria um link simbólico para um arquivo ou pasta
+Mostra as informações do sistema
+Mostra as informações do hardware
+Mostra as informações do usuário
+Mostra a mensagem do dia
+Mostra a mensagem do dia após o login
+Mostra todas as informações
+Gerenciador de tarefas
+Visualiza um tema
+Seleciona um tema e o define
+Defina imediatamente o tema na seleção
+Remove uma variável da lista de variáveis UESH
+Apenas limpa o valor da variável sem removê-lo
+Mostra o tempo de atividade do kernel
+Mostra os dois URLs úteis para o manual.
+Obtém a versão atual
+Mostra a versão da API do mod do kernel
+Mostra a versão do kernel
+Obtém o nome de usuário atual
+Envolve o arquivo de texto
+Especifica as colunas por linha
+Você pode fazer login nestas contas:
+Aproveite seu dia
+Erro ao tentar definir MAL: {0}
+Erro ao tentar obter MAL: {0}
+A mensagem do dia seguinte ao login não pode ser nula.
+Bem-vindo ao Nitrocid Kernel!
+Erro ao tentar definir MOTD: {0}
+Erro ao tentar obter MOTD: {0}
+A mensagem do dia não pode ser nula.
+Pressione qualquer letra no seu teclado para definir esse caractere.
+Escreva um número de ponto flutuante no prompt abaixo. Certifique-se de que este número esteja neste formato
+Escreva um número natural no prompt abaixo.
+Mantenha-o
+Remova-o
+Adicionar novo item
+O que você quer fazer com este item?
+Insira um valor para o novo item
+Ação inválida selecionada.
+Escreva qualquer texto para usar. Lembre-se, siga a descrição da opção que você escolheu.
+Registra seu nome no seu dispositivo de depuração remoto
+Desconecta do depurador remoto
+Silencia ou ativa o som dos logs do kernel
+Não houve argumentos suficientes. Veja abaixo o uso:
+>> Chat Remoto: versão
+>> Bem-vindo! Esta é a primeira vez que você entra no chat remoto. No depurador remoto, use "/register <nome>" para registrar. Você não pode falar até registrar-se.
+Quantos milissegundos realmente foram necessários para dormir por apenas um milissegundo?
+Quantos tiques realmente foram necessários para dormir por apenas um milissegundo?
+Testes alterando o idioma para o seu idioma preferido
+Escolha seu idioma
+Escreva uma string traduzível para verificar:
+Escreva um caminho de arquivo de lista de strings traduzível para verificar:
+Testa o sistema TUI interativo com interação de painel duplo
+Testa o sistema TUI interativo com uma única interação de painel
+Testa o sistema TUI interativo com uma única interação de painel e com a atualização das informações do segundo painel
+Escreva um número de cor variando de 1 a 255:
+Habilita o depurador
+Valor anterior
+Valor atual
+Descarta todas as notificações enviadas
+Habilita o sistema de notificação
+Testa a funcionalidade de atualização do kernel
+O kernel está atualizado?
+Verifica a conexão com a Internet
+A disponibilidade da Internet é
+Testa o thread do kernel filho
+Testa o thread do kernel
+Escreva um termo de pesquisa:
+Verifica a conexão de rede
+A disponibilidade da rede é
+Imprima uma string no console
+Imprima uma string para o depurador
+Imprima uma string para o depurador com formatação
+Imprima uma string no console com formatação
+Imprima uma string no console com destaque
+Imprimir um separador para o console
+Imprima um separador no console com formatação
+Imprima uma string no console com novas linhas na string
+Imprima uma string no console com caracteres nulos
+Habilita o depurador remoto
+Notificação de teste
+A descrição está aqui
+Notificação de progresso do teste
+Envia uma notificação de progresso com falha para testar o receptor
+Notificação de falha no teste
+Teste de notificação indeterminada
+Envia uma notificação como asterisco para testar o receptor
+Teste de notificação simples
+Argumentos de testes
+Testa o gerador de números aleatórios criptograficamente seguro
+Números retornados:
+Testa um evento
+Escreva um nome de evento:
+Escreva um caminho para o arquivo assembly:
+Testa o seletor de arquivos
+Você selecionou
+Testa o seletor de vários arquivos
+Testa o seletor de pastas
+Testa o seletor de múltiplas pastas
+Testa os botões na caixa de informações
+Testa a caixa de entrada colorida na caixa informativa
+Testa a caixa de entrada na caixa informativa
+Testa o estilo de seleção múltipla de entrada na caixa informativa
+Testa o estilo de seleção de entrada na caixa informativa
+Testa o estilo de seleção múltipla de entrada
+Testa o estilo de seleção de entrada
+Testa o escritor de entrada da lista
+Travessão 1:
+Recuo 2:
+Testa o manipulador de progresso
+Inicializando...
+Escreva uma string para verificar:
+Escreva uma expressão regular:
+Testa o gerador de números aleatórios
+Testa o recurso de tela do console
+Falha na renderização da tela:
+Testes de interruptores
+O espaço reservado não pode ser nulo
+A ação do espaço reservado não pode ser nula
+O espaço reservado não está registrado
+O espaço reservado deve satisfazer este formato
+A condição precisa ser colocada no final.
+Não é possível registrar uma condição que já existe.
+Não é possível registrar uma condição vazia.
+Não é possível cancelar o registro de uma condição que não existe.
+Nenhum comando encontrado.
+Número inválido de vezes.
+Não consigo me repetir.
+O número da sessão é inválido.
+O tipo de sinalizador principal especificado é inválido
+Nome completo definido como {0}. Talvez você queira fazer login novamente.
+O nome completo está em branco.
+Informações básicas do usuário
+Idioma preferido
+Bandeiras
+Permissões
+Grupos
+Idioma de usuário preferencial definido como {0}. Talvez você queira fazer login novamente.
+Shell do administrador
+Nenhum tipo de exceção
+Nome do tipo de exceção
+Mensagem
+Informações de campo para
+Valor
+Falha ao obter informações de campo para
+Informações sobre a propriedade para
+Não foi possível obter informações sobre a propriedade
+Código de caractere de tecla pressionada
+Lista de campos para
+Lista de funções para
+Lista de propriedades para
+Lista de complementos
+Lista de complementos básicos
+Lista de conchas
+O contexto splash não é válido
+Splashes disponíveis:
+Este comando não é suportado no Windows.
+Depuração de Shell
+O número de bytes especificado {0} não é um número válido.
+Criando grupo {0}...
+Adicionando usuário {0} ao grupo {1}...
+Agora você pode executar '{0}' como '{1}'!
+O arquivo ou pasta já está em uso.
+Aguardando até que o arquivo ou a pasta seja desbloqueado...
+O arquivo ou pasta não está em uso.
+Pode ser necessário sair e entrar novamente para que as alterações tenham efeito.
+Alterando MAL...
+Alterando MOTD...
+As senhas não correspondem.
+Não é possível combinar uma mistura de arquivos de texto e binários.
+O arquivo de origem não existe.
+O arquivo de destino não existe.
+Os dois arquivos são idênticos.
+Os dois arquivos são diferentes.
+Diferente
+Não é possível converter terminações de linha em um arquivo binário, pois isso resulta em corrupção do arquivo.
+O driver não foi encontrado.
+Motoristas para
+Nome do motorista
+Nome do tipo de driver
+Tipo de driver
+O gerenciamento do driver é desabilitado no modo de segurança.
+Não é possível editar o arquivo {0} porque ele não foi encontrado.
+Chave usada
+Vetor de inicialização usado
+Informações de montagem .NET
+O arquivo não é um assembly .NET válido.
+Informações extras
+Alguns ou todos os seus addons foram instalados. Se você deseja reinstalá-los, use o switch -reinstall.
+Obtendo o pacote de complementos...
+Falha ao obter o pacote do complemento
+Baixando o pacote de complementos...
+Falha ao baixar o pacote de complementos
+Instalando o pacote de complementos...
+Falha ao instalar o pacote complementar
+Extensão
+Manipulador de extensão
+Nome da chave
+Descrição da chave
+Tipo de chave
+Variável chave
+Chave não encontrada.
+Configuração não encontrada.
+Tipos de configuração disponíveis
+Não existe tal extensão.
+Manipulador de extensão padrão
+Somente algoritmos de codificação simétrica que usam tanto a chave quanto o vetor de inicialização são suportados.
+O script lint foi executado com sucesso.
+Falha no script lint. Provavelmente há um erro de sintaxe. Verifique se há erros no script e tente executar o linter novamente.
+O script linter falhou inesperadamente ao tentar analisar seu script.
+Informações para
+As entradas contam
+Nome da entrada
+Exibindo como
+Descrição
+Contagem de chaves
+Use o comando {0} para obter as chaves individuais
+Variáveis de configuração para
+Conexões para tipo
+Exemplo
+Informações do manipulador de extensão para
+Implementador do manipulador
+Metadados do manipulador
+Contém função de manipulador
+Contém função de manipulador de informações
+Host desconhecido
+Arquivo encontrado no caminho:
+Arquivo não encontrado nos diretórios de pesquisa de caminho.
+Nenhuma permissão
+Não existe esse modo de permissão
+Grupo {0} removido.
+Removido {0} do grupo {1}.
+Protetores de tela disponíveis:
+A busca por {0} por {1} falhou.
+Você deve passar a opção -set com a variável para a qual deseja definir esse valor.
+onde estará o poupador
+Para obter protetores de tela adicionais, instale o complemento do pacote de protetores de tela.
+Para obter splashes adicionais, instale o complemento splash pack.
+Você pode usar o seletor de tipo para abrir as seguintes configurações
+Configurações básicas
+Configurações personalizadas
+Você já é um superusuário!
+Falha ao executar o comando como superusuário.
+Não é possível criar um link simbólico.
+Configurações do kernel
+Versão do kernel:
+Modo de depuração:
+Executando em ambiente usual:
+Modo de segurança:
+Configurações de hardware
+Use "hwinfo" para obter informações mais detalhadas sobre hardware.
+Configurações do usuário
+Nome de usuário atual:
+Nome do host atual:
+Nomes de usuários disponíveis:
+Selecione uma categoria
+Voltar
+Expirado
+Disponível
+Selecione um tema
+Gostaria de definir este tema?
+Para acessar o manual do usuário para usos gerais do Nitrocid, visite o link abaixo:
+Para acessar o manual do desenvolvedor com formas atualizadas de fazer modificações no kernel e protetores de tela, visite o link abaixo:
+Você já está executando a sessão de Nitrocid elevado!
+Elevando sua sessão de Nitrocid...
+Este comando não está disponível para sua plataforma.
+Número inválido de colunas.
+Desligar
+Reiniciar
+Conecte-se
+Selecione uma conta de usuário com a qual você deseja fazer login.
+Digite a senha do usuário
+Senha incorreta para o usuário.
+Registrado com sucesso! Olá, {0}!
+Nenhuma descrição do comando de depuração remota
+O tipo de dados {0} especificado é inválido.
+A plataforma {0} especificada é inválida.
+Você aposta no cavalo errado?
+Inicia o jogo da forca
+Uma letra errada e você está ferrado!
+Teste suas habilidades no jogo da forca jogando uma letra aleatória.
+Você é uma nave espacial e os meteoros estão vindo para destruí-lo. Você consegue desviar deles?
+Obtém uma cotação aleatória
+Roleta Russa
+Duas naves espaciais estão em uma luta entre si. Um tiro e a nave espacial explodirá. Este é um jogo local para dois jogadores.
+O simulador de jogo Wordle
+Jogue o jogo Wordle originalmente
+Comemora o aniversário de 5 anos do lançamento do kernel
+Abre o arquivo compactado no shell de compactação
+Obtém todas as linhas da letra do arquivo de letras
+Reproduz um arquivo de letra
+Toca um som
+Adiciona um alarme para alertá-lo quando sua xícara de chá ou café estiver pronta.
+Cancela um alarme que avisa quando sua xícara de chá ou café está pronta.
+Mostrar informações sobre a fórmula do número imaginário especificada por um número real e imaginário especificado
+Gerenciador de calendário, eventos e lembretes
+Tipo de calendário para trabalhar
+Use o visualizador de calendário baseado em tabela
+Gerencia seus contatos
+Obtém backtrace para todos os threads
+Mostra uma visão geral em tela cheia sobre uma visualização de dock selecionada para poder usá-la como um painel de informações
+Concha Git
+Obtém informações sobre sua estação de rádio online
+Mostra a diferença entre dois arquivos JSON
+Cria uma nova linguagem
+Abre o cliente de e-mail IMAP
+Abre o cliente de e-mail POP3
+O correio POP3 está retornando da versão 0.0.20.0, mas atualmente não planejamos lançá-lo nesta versão. Aguarde a próxima versão.
+Localizador de primeiro nome
+Gerar nomes usando a lista de nomes masculinos
+Gerar nomes usando a lista de nomes femininos
+Gerar nomes usando a lista de nomes unificada
+Localizador de sobrenomes
+Adiciona uma nota
+Remove uma nota
+Remove todas as notas
+Lista todas as notas
+Salva todas as notas
+Recarrega todas as notas
+Visualizador de notas TUI
+Insira a URL do feed RSS
+Erro ao tentar analisar o endereço. Certifique-se de que você escreveu o endereço corretamente.
+Abre um leitor de feed RSS interativo TUI
+Obtém as informações de data e hora atuais
+que você pode executar comandos de processo de duas maneiras: digitando o nome do arquivo executável diretamente e usando o comando 'exec'?
+que você pode bloquear sua tela usando o comando 'lockscreen'?
+que você pode construir suas próprias modificações de kernel usando C# e Visual Basic?
+que você pode usar vários comandos usando o ponto e vírgula entre os comandos?
+que você pode escapar aspas duplas dentro dos argumentos entre aspas ao executar comandos?
+que você pode alterar as configurações do kernel usando o comando 'settings'?
+que você pode salvar sua tela usando o comando 'savescreen'?
+que você pode nos relatar bugs acessando a página do projeto Nitrocid no GitHub?
+que você pode criar um atalho para o comando desejado usando o comando 'alias'?
+que você pode criar sua própria tela inicial usando C# e Visual Basic?
+que você pode instalar complementos extras para tornar seu kernel mais útil e divertido?
+que você pode criar seus próprios temas incríveis usando o comando 'mktheme'?
+que você pode alterar as cores do kernel usando o comando 'settings' ou usando um dos temas pré-criados?
+que você pode redefinir seu kernel para os padrões de fábrica usando o argumento 'reset'?
+que você pode acessar nossa extensa documentação em nossa página do GitBook?
+que versões de longo prazo têm suporte principal por cinco anos e atualizações de segurança por três anos?
+que 0.0.1 foi a primeira versão do Nitrocid KS lançada em 22 de fevereiro de 2018?
+que a série 0.0.24.x era a única série de versões que continha a versão API v2.1?
+que lançamentos de curto prazo são suportados por apenas nove meses?
+que a série 0.1.x é incompatível com a série 0.0.24.x ou mais antiga?
+que você pode executar o Nitrocid KS no Linux, macOS e Android?
+que você pode consultar a documentação da API para ajudar a fazer seus mods?
+que você pode obter vários jogos incríveis, como Hangman e ShipDuet, instalando os complementos extras?
+que, em Meteor, se você colidir com uma tempestade de meteoros vermelhos, sua nave espacial cai?
+que você pode converter seu kernel em centros de informações usando o recurso de encaixe?
+que você pode criar grupos de usuários para organizar contas de usuários?
+que se você for membro de um grupo que concede certas permissões, você tem permissão para executar tais operações?
+que você pode alterar o fuso horário do kernel sem afetar o sistema host?
+que você pode usar o editor de texto e hexadecimal interativo para economizar tempo?
+que o editor de texto mais antigo conhecido por funcionar com o primeiro sistema Unix é o ed, o primeiro editor de texto lançado em 1973 e fornecido com o sistema Unix encontrado em um PDP-7 na AT&T Bell Labs?
+que você também pode forçar o comando de edição para iniciar o editor em um tipo específico?
+que o editor de texto interativo tenta simular os recursos mais básicos dos editores de texto Unix mais populares, vi e vim?
+que, a menos que você saiba o que está fazendo com o arquivo binário, editar esse arquivo dessa maneira levará à corrupção ou perda de dados no arquivo de destino?
+que em sistemas Linux, o shell é iniciado com a ajuda do manipulador de log-in e do programa de inicialização do sistema, geralmente encontrado em /sbin/init?
+que você pode executar operações comuns de arquivo, como copiar, mover, excluir, editar e assim por diante?
+que a TUI interativa de um gerenciador de arquivos simula a funcionalidade do Midnight Commander?
+que se o kernel travar, ele geralmente cria um arquivo de despejo?
+que você pode diagnosticar o kernel depurando-o usando a funcionalidade de depuração integrada?
+que você pode baixar e enviar arquivos diretamente do shell UESH?
+que o kernel pode ser traduzido mesmo em estágios de pré-inicialização iniciando-o com o argumento 'lang'?
+que você pode criar seus próprios protetores de tela registrando-os no seu mod?
+que o primeiro protetor de tela que apagava a tela após três minutos de inatividade nos PCs IBM originais, o scrnsave, foi criado em 1983 por John Socha?
+que alguns dos protetores de tela rápidos podem causar convulsões de fotossensibilidade?
+que os diários do kernel são usados como logs de inicialização e desligamento?
+que seus mods agora podem se tornar traduzíveis?
+que seus mods podem se comunicar com complementos do kernel e outros mods, criando algum tipo de comunicação e alcançando interoperabilidade?
+que você pode se conectar ao depurador remoto e, opcionalmente, ao servidor de bate-papo?
+que você pode usar o shell de depuração, que só está disponível para versões de desenvolvimento?
+que seus mods agora podem ter sua própria configuração registrando suas classes associadas?
+que seus mods podem registrar seus próprios shells?
+que seus mods podem adicionar comandos aos shells existentes para aumentar a quantidade de comandos que podem ser usados?
+que suas classes de comando podem representar com precisão argumentos e opções passados?
+que você pode consultar switches passados usando as classes de gerenciamento de switches encontradas na API do kernel?
+que o UESH inclui a funcionalidade de script para facilitar a criação e execução de scripts?
+que o shell inclui funcionalidade para inibir o cancelamento de aplicativos ativos?
+que o Nitrocid está profundamente integrado ao Terminaux para permitir uma renderização mais rápida e melhor?
+que agora você pode redimensionar os aplicativos interativos sem se preocupar que a saída seja corrompida?
+que existem comandos que pedem entrada do usuário, que são úteis para scripts?
+que você pode apresentar sua pergunta de entrada do usuário de várias maneiras, como escolha, tabela, simples, seleção e assim por diante?
+que você pode colocar os marcadores de posição no seu texto que os suportam?
+que você pode usar diferentes drivers de kernel para alterar o funcionamento de uma operação específica?
+que você pode criar seus próprios protetores de tela e splashes em C# ou Visual Basic?
+que você pode consultar o sistema host e o emulador de terminal usando a classe de plataforma do kernel?
+que você pode pedir um consentimento de privacidade antes de fazer algo sensível no seu mod?
+que você pode desativar notificações usando o recurso Não Perturbe?
+que você pode salvar o histórico de notificações usando uma função encontrada no gerenciador de notificações?
+que você pode mudar como os números aleatórios são gerados alterando o driver?
+que APIs diversas fornecem funções úteis para seus mods?
+Gerenciador de tarefas pendentes
+Lista todas as unidades disponíveis
+Use a versão TUI do conversor de unidades
+Comemorando o 5º aniversário do kernel
+Primeiro lançamento
+Este kernel foi lançado pela primeira vez em 22 de fevereiro de 2018 para criar um simulador minimalista que realmente simula como o núcleo do kernel funciona.
+Ele costumava hospedar apenas um shell e alguns comandos, e só funcionava com o Windows devido ao uso da ferramenta Instrumentação de Gerenciamento do Windows.
+Também não tinha documentação própria.
+Refinamento do Kernel
+Versões do kernel foram lançadas, como a segunda versão principal para adicionar cores e recursos básicos, e a quarta versão principal para adicionar configuração.
+A documentação começou na sexta versão principal, e várias coisas interessantes foram adicionadas lentamente ao kernel.
+Versão atual
+Esta versão agora refina o kernel a ponto de ele não se comportar mais como as versões antigas.
+Como novos recursos inovadores foram lançados, decidimos nomear este kernel...
+Feliz aniversário de 5 anos!
+Não é possível extrair nada.
+O arquivo não é gravável porque o tipo é
+Certifique-se de especificar o caminho para um arquivo LRC.
+Não é possível reproduzir o som porque o arquivo não foi encontrado.
+Arquivo de música aberto com sucesso.
+Não é possível abrir o arquivo de música.
+Não é possível reproduzir som devido ao tempo limite.
+Artista desconhecido
+Gênero Desconhecido
+Nome
+Artista
+Gênero
+Duração
+Pressione 'q' para parar a reprodução.
+Não é possível reproduzir som.
+Tocando agora
+Título
+Café americano
+Chá vermelho
+Chá verde
+Nenhum alerta de cafeína para abortar.
+Os segundos em que sua xícara estará pronta são inválidos.
+Se você estiver tentando fornecer um nome para a bebida, confira a lista abaixo:
+Sua xícara está pronta!
+O número real não é válido.
+O número imaginário não é válido.
+Fórmula:
+Raio:
+Real para raio em radianos:
+Imaginário para raio em radianos:
+Ângulo em radianos:
+Exponencial:
+Triangular:
+Eventos...
+Lembretes...
+O calendário interativo falhou:
+Eventos e lembretes para
+Forma longa
+Tipo de calendário
+Nenhum lembrete encontrado para o mês selecionado
+Nenhum evento encontrado para o mês selecionado
+Nível ciano:
+Nível magenta:
+Nível amarelo:
+Matiz:
+Saturação:
+Valor:
+Nível de cor amarela:
+Luma:
+Em fase:
+Quadratura:
+U-Croma:
+V-Croma:
+Não é possível abrir o arquivo '{0}' porque ele não foi encontrado.
+Contatos importados com sucesso.
+Não é possível abrir o arquivo '{0}' porque o arquivo do cartão é inválido.
+O arquivo de contato não existe.
+contatos encontrados
+O arquivo de contato é inválido.
+A sintaxe do MeCard não pode estar vazia.
+O arquivo de contatos fornecido não contém informações sobre nenhum contato ou não é válido.
+Falha ao analisar contatos. Veja os detalhes do erro para mais informações.
+O índice de contato está fora do intervalo. O índice máximo é {0} enquanto o índice fornecido é {1}.
+Não há contatos para obter.
+Não há contatos para pesquisar.
+A expressão regular é inválida.
+Acreditamos que você esteja executando o Windows 8 ou inferior. Esta operação não é suportada.
+Informações de rastreamento de pilha de thread para {0}
+Não é um tópico Nitrocid KS
+Não há nenhuma tela de encaixe com esse nome.
+Não há nenhum dock de tela com esse nome.
+Não há dock de tela.
+O dock de tela travou
+Lê o conteúdo de um arquivo remoto para o console
+Sai do shell sem desconectar
+Certifique-se de especificar a porta corretamente.
+Mais de um perfil encontrado. Selecione um:
+Repositório não especificado. Saindo do shell...
+Falha ao abrir o repositório. Saindo do shell...
+Obtém a lista de alterações em um arquivo linha por linha
+Verifica uma filial
+Faz um commit
+Descreve um commit
+Mostra uma diferença entre o commit atual e os arquivos locais
+Mostra uma diferença entre o commit atual e os arquivos locais pelo seu conteúdo em um formato de patch hunk
+Mostra uma diferença entre o commit atual e os arquivos locais pela sua existência
+Mostra uma diferença entre o commit atual e os arquivos locais pela sua existência e pelo seu conteúdo
+Obtém todas as atualizações de um remoto
+Obtém o status do arquivo
+Obtém informações simples do repositório
+Lista todos os ramos
+Lista todos os commits
+Lista todos os controles remotos
+Lista todas as tags
+Cria uma tag a partir da CABEÇA
+Puxa todas as atualizações do servidor
+Envia todas as atualizações para o servidor
+Reinicia o repositório local
+Faz uma reinicialização suave
+Faz uma redefinição mista
+Faz um hard reset
+Define sua identidade
+Encena uma mudança
+Estágios todas as mudanças
+Status do repositório
+Desencena uma mudança
+Desfaz todas as alterações
+Adiciona um cabeçalho com a chave e o valor para todas as próximas solicitações
+Obtém o agente do usuário atual
+Edita uma chave no cabeçalho para todas as solicitações futuras
+Lista os cabeçalhos de solicitação
+Coloca o arquivo no servidor HTTP usando a solicitação especificada
+Coloca a string no servidor HTTP usando a solicitação especificada
+Envia o arquivo para o servidor HTTP usando a solicitação especificada
+Envia a string para o servidor HTTP usando a solicitação especificada
+Remove uma chave no cabeçalho de todas as solicitações futuras
+Define um agente de usuário
+Adicionando cabeçalho que já existe.
+Removendo cabeçalho que não existe.
+Editando cabeçalho que não existe.
+O número da porta do seu rádio online é inválido.
+URL completa
+Ouvintes atuais
+Ouvintes de pico
+Fluxos
+Fluxos ativos
+Informações de fluxo para ID
+Caminho
+Atualmente jogando
+Tempo de atividade
+Adiciona uma nova matriz, objeto ou propriedade
+Especifica o caminho pai
+Especifica o tipo
+Especifica o nome da propriedade a ser criada. Isso é usado se o caminho pai for um objeto.
+Limpa o arquivo JSON
+Encontra um imóvel
+Especifica a propriedade pai
+Mostra informações sobre o arquivo JSON
+Não mostrar propriedades individuais
+Mostrar todos os valores
+Remove um objeto alvo
+JSON embelezado
+JSON minificado
+Define um valor para uma matriz, objeto ou propriedade existente
+Abre o arquivo JSON no editor interativo
+O token dentro do arquivo JSON não foi encontrado.
+O token pai não foi encontrado. Certifique-se de que você escreveu o caminho '{0}' corretamente.
+O tipo especificado '{0}' é inválido.
+Não é possível anexar um novo item com o nome da propriedade com o tipo de token pai '{0}'.
+Não é possível anexar um novo item com o nome de propriedade '{0}' com o tipo de token pai '{1}'.
+Nome da propriedade '{0}' dentro do pai '{1}', tipo '{2}', não existe
+O arquivo base de strings em inglês não existe. Você quer criar um vazio? Ou você quer usar as strings em inglês do Nitrocid?
+Nenhum idioma válido foi especificado.
+Bem-vindo ao Estúdio de Idiomas!
+Nova sequência
+Remover sequência
+Salvar traduções
+Selecione uma string para traduzir:
+Insira uma nova sequência de caracteres
+Selecione uma sequência para remover:
+Salvando a linguagem...
+Selecione o idioma
+Selecione um idioma para traduzir esta sequência:
+Escreva sua tradução de
+O ID da nota deve ser um número de nota
+Esta nota está vazia
+Não é possível remover nota inexistente
+Pesquisa no feed por uma frase no título e/ou descrição
+Pesquisar por título
+Pesquisar por descrição
+Pesquisar por título e descrição
+Pesquisa com diferenciação entre maiúsculas e minúsculas
+Falha ao analisar URL do feed:
+Sem descrição
+Mostra os detalhes dos arquivos e pastas
+Suprime as mensagens "não autorizadas"
+Insira o local da chave privada para {0}. Escreva "q" para terminar de adicionar chaves:
+Tentando conectar a {0}...
+Executa uma consulta SQL
+Informações do banco de dados
+Abre o arquivo SQL no editor hexadecimal interativo TUI
+Carregar tema do arquivo...
+Especifique o diretório para salvar o tema:
+Informações para
+O cronômetro está pronto.
+Cronômetro funcionando!
+Nova volta!
+Comece a contagem regressiva
+Nenhum tipo de unidade:
+Tipos de unidades disponíveis:
+unidades para converter
+Insira um número para converter...
+Você não inseriu um número para converter.
+O número inserido é inválido.
+Não é possível converter a unidade.
+Continua...
+O fim
+Feliz Ano Novo!
+Aguarde enquanto o kernel inicializa...
+Aguarde enquanto o kernel é desligado...
+Erro desconhecido!
+Cavalo
+[ENTER] Iniciar a corrida | [ESC] Sair | [UP/DOWN] Mover seleção
+Seu cavalo venceu a corrida!
+Seu cavalo perdeu a corrida!
+Você está ferrado!
+Você venceu!
+Qual é a sua aposta?
+Você adivinhou certo!
+Você entendeu errado.
+Mas você não tem sorte. Perdedor.
+Você tem sorte! Vencedor!
+É um empate.
+O jogador {0} vence!
+Personagem atual:
+Você adivinhou a palavra certa! Você venceu!
+Este tipo de arquivo não é suportado.
+Certifique-se de especificar o caminho para um diretório contendo seus arquivos de letras no formato LRC. Você também pode especificar um caminho personalizado para sua pasta de biblioteca de música contendo os arquivos de letras.
+Este arquivo de letra não existe.
+A cultura não é encontrada.
+Falha ao mostrar o calendário.
+Falha ao adicionar um lembrete.
+Não foram fornecidos argumentos suficientes para adicionar um lembrete.
+Falha ao remover um lembrete.
+Não foram fornecidos argumentos suficientes para remover um lembrete.
+Não há evento.
+Não há lembrete.
+Não há contato. Se você quiser importar contatos, use as opções de importação usando as teclas definidas na parte inferior da tela.
+Alguns contatos não podem ser importados.
+Insira o caminho para um arquivo VCF contendo seu contato. O arquivo contacts2.db do Android também é suportado.
+O arquivo não existe. Certifique-se de que você escreveu o caminho correto para um arquivo VCF ou para um arquivo contacts2.db.
+Insira uma representação MeCard válida do seu contato.
+A sintaxe do MeCard é inválida.
+A sintaxe do MeCard não pode estar vazia
+Insira uma expressão regular para pesquisar os contatos.
+Não há contatos que contenham a expressão solicitada.
+Nome do contato
+Nenhum nome de contato
+Endereço de contato
+E-mail de contato
+Nenhum e-mail de contato
+Contato organização
+Nenhuma organização de contato
+Telefone de contato
+Nenhum telefone de contato
+URL de contato
+Nenhuma URL de contato
+Contato geo
+Nenhum contato geográfico
+Contato IMPP
+Sem contato IMPP
+Apelido de contato
+Nenhum apelido de contato
+Função de contato
+Nenhuma função de contato
+Título do contato
+Nenhum título de contato
+Notas de contato
+Nenhuma nota de contato
+Insira sua chave de API:
+Você pode consultar o link abaixo para obter a lista de cidades com seus IDs ou passar "-list" para este comando.
+Tem certeza de que deseja excluir {0}?
+Usuário
+Site
+Nenhuma informação de link simbólico
+Modificado em
+Status de culpa para arquivo
+Número do pedaço
+Número de linhas
+Número da linha inicial
+Número da linha final
+Commit inicial
+Confirmar SHA
+Mensagem de confirmação
+Autor do commit
+Comprometer o committer
+Número de pais
+Compromisso final
+Salve seu trabalho primeiro criando um commit antes de verificar uma branch.
+A ramificação não existe.
+Você precisa se identificar antes de usar este comando. Use
+para se identificar.
+Repositório atualizado com novo commit
+Descrição para commit
+Mudanças gerais em
+Mudanças de conteúdo em
+O controle remoto não existe.
+Nenhum controle remoto encontrado para obter atualizações.
+Status do arquivo
+Repositório vazio
+Cabeça separada
+Nenhuma referência
+Clone raso
+Caminho para .git
+Caminho para o diretório de trabalho
+Commits para branch
+Criou uma nova tag! Aqui estão os detalhes da sua tag:
+Sua cópia local do repositório está atualizada!
+Avançou rapidamente para
+Repositório atualizado para
+Sua mesclagem resultou em conflitos. Por favor, resolva qualquer um dos conflitos.
+Você se identificou com sucesso como
+Nenhuma modificação é feita no palco.
+Arquivo preparado {0} com sucesso!
+Falha ao preparar o arquivo {0}.
+Status da filial {0}...
+Nenhuma modificação é feita.
+Arquivos não rastreados
+Nenhum arquivo não rastreado.
+Arquivos adicionados
+Nenhum arquivo adicionado.
+Arquivos modificados
+Nenhum arquivo modificado.
+Arquivos removidos
+Nenhum arquivo removido.
+Arquivos encenados
+Nenhum arquivo preparado.
+Arquivos preparados renomeados
+Nenhum arquivo preparado renomeado.
+Arquivos renomeados
+Nenhum arquivo renomeado.
+Arquivos ausentes
+Nenhum arquivo faltando.
+Nenhuma modificação é feita no unstage.
+Arquivo não preparado {0} com sucesso!
+Falha ao desfazer o preparo do arquivo {0}.
+Postando arquivo {0}...
+Postando string para {0}...
+Enviando string para {0}...
+O shell JSON falhou ao adicionar um item.
+A propriedade é encontrada em
+Propriedade não encontrada
+Informações do token JSON base
+Tipo de base
+A base tem valores
+Contagem de fichas de crianças
+Caminho base
+Informações individuais do token JSON
+Tipo de token
+O token tem valores
+Caminho do token
+Valor do token
+Informações sobre a propriedade para
+Tipo de propriedade
+Contagem de propriedades
+Nome da propriedade
+Caminho da propriedade
+Valor da propriedade
+O shell JSON falhou ao remover um item.
+O shell JSON falhou ao definir um item.
+Mensagem {0} de {1} movida. Restam {2} mensagens para analisar.
+Anexos:
+Esta conexão contém uma instância de feed RSS inválida.
+Título do artigo desconhecido
+Infelizmente, este artigo não tem nenhum conteúdo. Você ainda pode acompanhar o artigo em
+Este artigo não possui um link.
+Não é possível abrir o navegador host para o link do artigo.
+Modificado:
+Insira o valor do parâmetro para {0}:
+Comando SQL bem-sucedido. Aqui estão as respostas:
+Falha no comando SQL.
+Caminho do banco de dados:
+Versão do servidor:
+Estado da conexão:
+Cadeia de conexão:
+Nome do banco de dados:
+Falha ao adicionar ou remover uma tarefa.
+Por favor, forneça um nome para sua tarefa.
+Falha ao marcar uma tarefa.
+Esta seção lista as configurações do driver.
+Configurações do driver do kernel
+Driver de console atual
+Qual driver de console você gostaria de usar?
+Driver atual do gerador de números aleatórios
+Qual driver gerador de números aleatórios você gostaria de usar?
+Driver de rede atual
+Qual driver de rede você gostaria de usar?
+Driver do sistema de arquivos atual
+Qual driver de sistema de arquivos você gostaria de usar?
+Driver de criptografia atual
+Qual driver de criptografia você gostaria de usar?
+Driver de expressão regular atual
+Qual driver de expressão regular você gostaria de usar?
+Driver do registrador de depuração atual
+Qual driver do registrador de depuração você gostaria de usar?
+Driver de codificação atual
+Qual driver de codificação você gostaria de usar?
+Driver de teste de hardware atual
+Qual driver de teste de hardware você gostaria de usar?
+Driver de classificação atual
+Qual driver de classificação você gostaria de usar?
+Linha decrescente de números matriciais.
+Chance de queda
+Chance de lançar uma nova matriz de queda
+Esta seção lista todas as configurações gerais do kernel, principalmente para manutenção do kernel.
+Configurações gerais do kernel
+Linguagem
+Especifica o idioma do kernel.
+Cultura
+Bipe ao desligar ou reiniciar
+Habilita o bipe ao desligar o kernel.
+Atraso no desligamento ou reinicialização
+Habilita o atraso ao desligar o kernel.
+O console suporta cores verdadeiras
+Se você tiver certeza de que o console suporta true color, ou se quiser alterar seu terminal para um terminal que suporte true color, altere este valor.
+Definir página de código
+Defina a página de código do idioma ao alternar idiomas.
+Aviso de desenvolvimento reconhecido
+Se definido como verdadeiro, o kernel não mostrará o aviso de desenvolvimento toda vez que você inicializar o kernel em versões de desenvolvimento.
+Permitir carregamento de mods não confiáveis
+Se definido como verdadeiro, o kernel não apresentará erro ao carregar mods que não tenham a chave pública assinada.
+Usar fuso horário do sistema
+Se essa opção estiver habilitada, o kernel usa o fuso horário das configurações do seu computador. Caso contrário, usa o fuso horário de todo o kernel que pode ser configurado.
+Fuso horário do kernel
+O fuso horário do kernel a ser usado
+Mostrar a caixa de informações da licença
+Se deve mostrar a caixa de informações da licença modal por três segundos após cada login. É recomendado mantê-la ligada.
+Esta seção permite que você escolha que tipo de cor deseja alterar.
+Configurações de cor
+Use cores de destaque
+Se definido como verdadeiro, o gerenciador de temas preenche cores de destaque para tipos de cores específicos suportados pelo tema.
+Cor de destaque do primeiro plano
+Para temas que suportam acentos, esta é a cor de primeiro plano acentuada.
+Cor de destaque do fundo
+Para temas que suportam acentos, esta é a cor de fundo acentuada.
+Usar paleta de cores do console
+Quando definido como verdadeiro, a paleta de cores definida pelo terminal é usada.
+Permitir cor de fundo
+Quando isso é definido como true, a cor de fundo atual é honrada. Caso contrário, ele usa as cores padrão do seu terminal.
+Cor do shell do nome de usuário
+Nome do host Cor do shell
+Cor de erro do kernel continuável
+Cor de erro do kernel não contínua
+Cor do texto
+Cor da licença
+Cor de fundo
+Cor de entrada
+Cor da entrada da lista
+Cor do valor da lista
+Cor do estágio do kernel
+Cor do texto de erro
+Cor do texto de aviso
+Opção Cor
+Cor do banner
+Cor do título da notificação
+Descrição da notificação Cor
+Cor do progresso da notificação
+Cor de falha de notificação
+Cor da pergunta
+Cor do Sucesso
+Cor do dólar do usuário
+Cor da ponta
+Cor do texto separador
+Separador de Cor
+Cor do título da lista
+Cor de aviso de desenvolvimento
+Tempo de Palco Cor
+Progresso da cor
+Opção de cor de volta
+Cor de borda de baixa prioridade
+Cor de borda de prioridade média
+Cor de borda de alta prioridade
+Separador de cores da tabela
+Cor do cabeçalho da tabela
+Cor do valor da tabela
+Cor da opção selecionada
+Opção de cor alternativa
+Cor do dia de fim de semana
+Cor do dia do evento
+Cor do título da tabela
+Cor do dia de hoje
+Cor de fundo interativa TUI
+Cor de primeiro plano interativa TUI
+Cor de fundo do painel TUI interativo
+Separador de cores do painel TUI interativo
+Cor do separador de painel selecionado TUI interativo
+Cor de primeiro plano do item do painel selecionado do TUI interativo
+Cor de fundo do item do painel selecionado do TUI interativo
+Cor de primeiro plano do item do painel TUI interativo
+Cor de fundo do item do painel TUI interativo
+Cor de fundo da opção TUI interativa
+Opção interativa TUI cor de primeiro plano
+Cor do nome da opção de vinculação interativa TUI
+Cor de fundo da caixa TUI interativa
+Cor de primeiro plano da caixa TUI interativa
+Opção de cor desabilitada
+Esta seção altera o comportamento da sonda de hardware.
+Esta seção representa as configurações de login. Saia da sua conta para que as alterações entrem em vigor.
+Configurações de login
+O nome do host do kernel para se comunicar com o resto dos computadores
+Mostrar nomes de usuários disponíveis
+Caminho MOTD
+Caminho MAL
+Mostrar MAL no login
+MOTD e Headline na parte inferior do relógio de logon moderno
+Se deve mostrar o MOTD e o título na parte inferior ou superior do relógio
+Manipulador de login
+Manipulador de login a ser usado para prompts de entrada.
+Esta seção lista as configurações do shell.
+Configurações gerais do shell
+Grupo de caminhos separados por dois pontos. Funciona da mesma forma que PATH. Escreva um caminho completo para uma pasta ou um nome de pasta.
+Definir título do console na execução do comando
+Define o título do console na execução do comando.
+Mostrar a contagem de shell
+Predefinição de prompt
+Predefinição de prompt de edição de texto
+Predefinição de prompt de edição hexadecimal
+Predefinição do prompt do shell de administração
+Predefinição do prompt do shell de depuração
+Esta seção lista as configurações do sistema de arquivos.
+Configurações do sistema de arquivos
+Faz com que o comando "cat" imprima os números de linha do arquivo.
+Esta seção lista as configurações de rede, como o shell FTP, as configurações de comando relacionadas à rede e as configurações de depuração remota.
+Configurações gerais de rede
+Porta de bate-papo de depuração
+Escreva uma porta de chat do depurador remoto. Ela deve ser numérica e não deve estar em uso. Caso contrário, o chat do depurador remoto não conseguirá abrir a porta.
+Tempos de repetição de upload
+Esta seção lista as configurações gerais do protetor de tela. Para configurações individuais do protetor de tela, saia das Configurações e abra as Configurações do protetor de tela.
+Configurações básicas do protetor de tela
+Protetor de tela
+Com qual protetor de tela você deseja bloquear sua tela?
+Habilitar bloqueio de proteção de tela quando ocioso
+Se ativado, o protetor de tela será iniciado automaticamente após ficar ocioso pelo período especificado.
+Intervalo mínimo de inatividade do protetor de tela
+Reconhecer o aviso de convulsão fotossensível
+Se você não for fotossensível às animações rápidas que alguns dos protetores de tela mostram, você pode desabilitar esse aviso habilitando esta opção. Observe que não somos responsáveis pelos efeitos colaterais que podem ter vindo de tais animações. Procure um especialista médico profissional para obter mais informações.
+As configurações que não se encaixam nas seções apropriadas são colocadas aqui.
+Configurações diversas
+Um caractere que se assemelha ao canto superior direito. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao canto inferior direito. Certifique-se de inserir apenas um caractere.
+Mostra a contagem de comandos na lista de comandos, controlada pelas opções count show para diferentes tipos de comandos.
+Mostrar a contagem de comandos shell ao listá-los no comando de ajuda
+Mostrar a contagem de comandos de modificação do kernel ao listá-los no comando de ajuda
+Mostrar a contagem de comandos com alias ao listá-los no comando de ajuda
+Mostrar os comandos unificados contam com ajuda
+Mostrar a contagem de comandos shell unificados ao listá-los no comando de ajuda
+Mostrar os comandos do complemento contam com ajuda
+Mostrar a contagem de comandos de complemento do kernel ao listá-los no comando de ajuda
+Habilitar barra de rolagem na seleção
+Habilita a barra de rolagem nas telas de seleção
+Não incomodar
+Se o Não Perturbe estiver habilitado, todas as notificações recebidas serão suprimidas da tela. Isso significa que você não poderá ver nenhuma notificação para ajudar você a se concentrar.
+Caractere do canto superior esquerdo para borda geral
+Caractere do canto superior direito para borda geral
+Caractere do canto inferior esquerdo para borda geral
+Caractere do canto inferior direito para borda geral
+Caractere de quadro superior para borda geral
+Caractere de quadro inferior para borda geral
+Caractere de quadro esquerdo para borda geral
+Caractere de quadro direito para borda geral
+Censurar informações privadas em logs de depuração
+Censurar informações privadas que podem ser impressas nos logs de depuração.
+Exibir novas notificações como asteriscos
+Mostra todas as novas notificações como asteriscos. Esta opção é ignorada em notificações com barra de progresso.
+Mostrar tamanho do arquivo no gerenciador de arquivos
+Se o tamanho do arquivo deve ser exibido no status.
+Use o estilo clássico de cabeçalhos no aplicativo Configurações
+Isso lhe dá a opção de alternar entre a aparência moderna ou clássica do cabeçalho do aplicativo de configurações.
+Fonte figlet padrão
+A fonte figlet padrão para uso em diversas áreas do kernel, incluindo sua tela de login moderna.
+Depuração de uso da CPU habilitada
+Se habilitado, imprime o uso da CPU entre os dois intervalos, conforme especificado no intervalo de atualização de depuração do uso da CPU.
+Intervalo de atualização de depuração de uso da CPU
+Quantos milissegundos esperar antes de atualizar o uso da CPU e imprimi-lo no depurador?
+Um jogo de cobra.
+Mostra citações famosas e legais.
+Selecione sua dificuldade preferida, onde 0 é fácil, 1 é médio, 2 é difícil, 3 é muito difícil e 4 é personalizado.
+Use PowerLine para renderizar nave espacial no ShipDuet
+Se deve usar PowerLine para renderizar a nave espacial ou usar o caractere maior que padrão. Se você quiser usar PowerLine com ShipDuet, precisa instalar uma fonte apropriada com suporte a PowerLine.
+Velocidade do jogo no ShipDuet
+Esta seção permite que você configure como o shell de arquivamento funciona.
+As configurações para este protetor de tela estão disponíveis aqui.
+Esta seção permite que você configure como o complemento BassBoom funciona.
+Caminho da Letra
+Define o caminho para uma pasta contendo um grupo de arquivos .lrc. Escreve um caminho absoluto para qualquer diretório existente.
+Esta seção permite que você configure como o Calendário funciona.
+Esta seção permite que você configure como o Forecast funciona.
+Esta seção permite que você configure como o shell FTP funciona.
+Esta seção permite que você configure como o shell do Git funciona.
+Esta seção permite que você configure como o shell HTTP funciona.
+Esta seção permite que você configure como o shell JSON funciona.
+Predefinição de prompt de shell JSON
+Habilitar salvamento automático do editor JSON
+Ativa ou desativa o recurso de salvamento automático do editor JSON.
+Intervalo de salvamento automático do editor JSON
+Esta seção permite que você configure como o shell de e-mail funciona.
+Número máximo de e-mails em uma página
+Quantas mensagens de e-mail exibir em uma página?
+Simula uma pesquisa de banco de dados para uma pessoa aleatória.
+Esta seção permite que você configure como o shell RSS funciona.
+Predefinição de prompt RSS
+Esta seção permite que você configure como o shell SFTP funciona.
+Esta seção permite que você configure como o shell SQL funciona.
+Predefinição de prompt do shell SQL
+Esta seção permite que você configure como o Tips funciona.
+Mostrar dicas do kernel
+Se habilitado, o shell mostra dicas em cada login.
+O número binário caindo na sua tela.
+Misturando cores e imprimindo-as no console.
+Esta é a luz de discoteca, um dos primeiros protetores de tela.
+As cores brilham na tela.
+Uma linha que percorre o console verticalmente.
+Dissolve as cores aleatórias.
+Mostra um bloco colorido que salta pelo console.
+Mostra três barras de progresso que representam o tempo.
+Blocos de iluminação.
+Limpa a tela com uma cor.
+Matriz simples.
+Números de matriz que se espalham aleatoriamente pela tela.
+Mostra um texto que salta pelo console.
+Texto aparecendo e desaparecendo gradualmente.
+Desvanecimento e esmaecimento do fundo.
+Texto aparecendo e desaparecendo gradualmente em batidas.
+Cor da batida
+Simula uma pessoa escrevendo um texto com erros de digitação.
+Mostra um texto rolando da direita para a esquerda.
+Simula uma pessoa escrevendo um texto para um jornal no teclado linotipo antigamente.
+Tipo de padrão de preenchimento de linha. 0 imprime o padrão conhecido de caracteres etaoin, 1 imprime o padrão completo de caracteres etaoin e 2 imprime o conjunto aleatório de caracteres para preencher rapidamente a linha.
+Simula uma pessoa escrevendo um texto perfeitamente.
+Mostrar posição da seta
+Mostra a posição da coluna de letras da máquina de escrever, mostrando uma seta na parte inferior da tela
+Cores piscando na sua tela.
+Simula um holofote que percorre seu texto.
+Preenche a rampa com cores gradientes.
+Empilha as caixas na tela.
+Simula uma barra que fica podre com outra cor de fundo, criando um gradiente.
+Mostra fogos de artifício que são lançados e explodem.
+Mostra um texto colorido.
+Modo arco-íris
+Habilita o modo de cores do arco-íris
+Mostrar um texto colorido piscando.
+Simula ruído estático de TV.
+Data e hora simples no meio da tela.
+Simula uma falha na sua tela.
+Mostra uma linha descendente que desce e desaparece gradualmente.
+Mostra uma barra de progresso indeterminada.
+Mostra um fundo pulsante.
+Mostra um fundo pulsante em batidas.
+O BeatPulse selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Mostra uma borda pulsante.
+Mostra uma borda pulsante nas batidas.
+O BeatEdgePulse selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Mostra uma tela cheia de cores que lentamente se transformam em outra cor, criando gradientes.
+Próximo intervalo de gradiente de podridão
+Quantos milissegundos esperar antes de estragar a próxima tela?
+Mostra um gradiente na tela.
+Mostra uma jornada estelar em 2D.
+Altera o fundo de acordo com as cores definidas, o que simula uma sirene.
+Estilo sereia
+O estilo sereia.
+Cortes giratórios.
+Preenche o console com uma cor parecida com uma cobra.
+Mostra um equalizador que exibe graves, médios e agudos.
+Atraso na próxima tela em milissegundos
+Simula erros de sistema de diferentes sistemas operacionais.
+Gera cores a partir de mudanças aleatórias.
+Mostra um texto que desaparece gradualmente e pisca em batidas.
+O ExcaliBeats selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Modo explícito
+Alterar explicitamente o texto para Excalibur
+Modo de transe
+Modo Trance - Multiplica o BPM por 2 para simular o estilo de música trance
+Mostra um grupo de ondas em barras.
+Nível de frequência
+O nível da frequência. Este é o denominador do valor Pi em matemática.
+Mostra uma onda que se gera e avança.
+Proporciona uma sensação hipnotizante.
+Simula a aurora boreal.
+Mostra um relâmpago impressionante.
+Probabilidade de ataque
+Chance, em porcentagem, de acertar
+Mostra uma cor de fundo que muda lentamente.
+Cores escuras
+Se deve usar cores escuras ou claras.
+Passos de cor
+Quantas etapas de cores são necessárias para fazer a transição entre duas cores?
+Mostra uma palavra e sua soma hash.
+Mostra um quadrado desbotado nos quatro cantos.
+Quantos milissegundos esperar antes de o quadrado desaparecer?
+Espalha o número pela tela inteira.
+Fornece um padrão de caixa.
+Linha de cores caindo.
+Chance de soltar uma nova cor de queda
+Mostra um texto simples.
+Mostra um texto simples em uma caixa de texto.
+Mostra uma palavra que é escrita lentamente e seu hash sum.
+Simula uma sirene que usa seu tema como um conjunto de cores.
+Estilo de sirene do tema do kernel
+Mostra um grupo de estrelas na vista frontal da nave.
+Mostra um grupo de manchas na vista frontal do navio.
+Mostra uma letra espalhada por toda a tela.
+Mostra várias linhas.
+Mostra raios laser.
+Mostra um texto que vagueia pelo console.
+Girando a onda horizontalmente e verticalmente para criar padrões incríveis.
+Nível de frequência horizontal
+O nível da frequência horizontal. Este é o denominador do valor Pi em matemática. Use isso para criar lindos giros ondulados!
+Nível de frequência vertical
+O nível da frequência vertical. Este é o denominador do valor Pi em matemática. Use isso para criar lindos giros ondulados!
+Simula a abertura e o fechamento de portas.
+Mostra um gradiente que muda dinamicamente.
+Um cometa está no céu correndo rapidamente.
+O diamante que brilha.
+Alterando a cor de fundo de acordo com o aumento do matiz. Arco-íris!
+Saturação de matiz de cor
+Quão intensa é a cor?
+Quão clara é a cor?
+Mudando a cor de fundo de acordo com o aumento do matiz. Mais arco-íris!
+Partículas coloridas!
+Densidade de partículas
+Quão densas são as partículas?
+Atualizações necessárias antes de alterar o fuso horário
+Quantas atualizações devem ser feitas antes que o fuso horário seja alterado?
+Preenche a tela inteira bloco por bloco e depois desaparece gradualmente.
+Mostra linhas de dança.
+Gera labirintos bonitos usando o algoritmo de Kruskal.
+Novo atraso do labirinto em milissegundos
+Velocidade de geração
+Velocidade de geração de labirinto em milissegundos
+Destacar posições não cobertas
+Se habilitado, destaca as posições não cobertas com a cor de fundo cinza. Caso contrário, elas são renderizadas como caixas.
+Usar Transformada Schwartziana
+Se habilitado, este protetor de tela usa a transformação de Schwartzian para embaralhar as bordas do labirinto. Caso contrário, ele usa o método simples de transformação.
+Dois grupos de pontos girando nas duas metades do console.
+Comemora o marco de compromisso a cada 1000º compromisso.
+Mostra você pulverizando estrelas.
+Duas linhas trocando de cores na tela.
+Tela inicial simples.
+Uma tela inicial que mostra seu progresso.
+Uma tela inicial que mostra o progresso usando o texto do PowerLine.
+Driver de entrada atual
+Qual driver de entrada você gostaria de usar?
+Migrar configuração antiga
+Migra parte da sua configuração antiga de versões mais antigas do kernel
+A migração de configuração pode não ter sido concluída com sucesso. Se você tiver certeza de que seus arquivos de configuração são válidos, investigue os logs de depuração para obter mais informações.
+Selecione seu idioma.
+Insira seu novo nome de usuário. Você deve inserir um novo nome de usuário que ainda não exista.
+Insira sua senha de usuário. Você deve escolher uma senha forte para maior segurança.
+Verificação de atualização automática
+Sim eu faço!
+Não, obrigado.
+Não é permitido iniciar ou parar mods no modo de segurança.
+Ocorreu um erro de kernel desconhecido, possivelmente porque o tipo de exceção do kernel não foi especificado ou algo estava errado.
+A rede do kernel relatou um erro para o componente hostname.
+Feed RSS inválido. Certifique-se de que você referenciou o feed corretamente e tente novamente.
+Link de feed RSS inválido. Certifique-se de que você inseriu o link corretamente e tente novamente.
+Tipo de feed RSS inválido. Certifique-se de que você inseriu o tipo de feed corretamente e tente novamente.
+Permissão negada ao tentar executar uma operação. Você precisará efetuar login como um usuário que tenha as permissões necessárias para poder executar esta operação.
+Ocorreu um erro ao tentar executar uma operação para o gerenciamento do ambiente.
+Ocorreu um erro ao tentar processar uma operação do bootloader.
+Ocorreu um erro ao tentar processar uma operação do sistema de alarme.
+Ocorreu um erro ao tentar processar uma operação do sistema de widget. Se você tem certeza de que este widget está registrado corretamente, certifique-se de ter escrito o nome da classe do widget corretamente.
+Não foram encontrados erros adicionais durante a operação.
+Verificando vários ambientes instalados
+Múltiplos ambientes
+O número do índice do thread filho é inválido.
+Nome do alarme
+Descrição do alarme
+Data de vencimento do alarme
+Escreva o nome do alarme
+O nome do alarme não foi especificado.
+Escreva o intervalo de alarme neste formato
+O intervalo de alarme não foi especificado ou é inválido.
+Tipo de arquivo
+Importância da notificação
+Porcentagem de progresso
+Progresso concluído
+O progresso é indeterminado
+Estado de progresso
+Título da notificação
+O repórter não forneceu nenhuma informação!
+Executar
+Sair
+Concha
+Trocar
+Gerenciador de arquivos
+Gerenciador de alarmes
+Notificações
+Gerenciador de Tarefas
+Sobre Nitrocid
+Olá, {0}! Bem-vindo ao Nitrocid!
+Habilitar manchetes no login para mostrar feeds RSS
+Configurações
+O Nitrocid KS simula nosso futuro kernel, o Nitrocid Kernel.
+API de Modificação
+A página inicial do Nitrocid travou e precisa retornar ao shell.
+Número de tela desconhecido.
+Falha ao renderizar a tela de logon.
+Investigue os logs de depuração para obter mais informações sobre o erro.
+Para dispensar para sempre, pressione ENTER no seu teclado ou habilite "Aviso de desenvolvimento reconhecido" nas configurações do kernel. Qualquer outra tecla avança sem reconhecimento.
+Você está executando o Nitrocid KS em um ambiente incomum. Verifique se você iniciou o kernel diretamente. Se você tem certeza de que iniciou o kernel de uma forma usual, pode ser porque você está executando uma versão não suportada do Nitrocid KS.
+Extras - Gerador de Nomes
+Extras - Pastebin
+Extras - Imagens
+Extras - SHA256 aprimorado
+Extras - SHA384 aprimorado
+Extras - SHA512 aprimorado
+Extras - Ações
+Extras - Sintetizador Beep
+Extras - SSH
+O GRILO sofreu um erro interno
+Pressione qualquer tecla para sair.
+Controles padrão
+Controles definidos pelo estilo de inicialização personalizado
+Nenhum controle definido pelo estilo de inicialização personalizado
+Seleciona a entrada de inicialização anterior
+Seleciona a próxima entrada de inicialização
+Seleciona a primeira entrada de inicialização
+Seleciona a última entrada de inicialização
+Abre esta página de ajuda
+Inicializa a entrada selecionada
+O ambiente não é especificado
+A data e a hora do alarme podem não estar no passado.
+Consulte a entrada de ajuda para este comando para obter mais informações
+Este comando tem os argumentos abaixo que alteram seu funcionamento:
+Descrição de argumento não especificado
+Lista todos os parâmetros de função disponíveis de uma função
+Gerencie seus alarmes
+Reinicia uma instância remota do kernel
+O kernel na instância remota será desligado
+Usa o estilo de configurações legado
+Mostra todas as notificações recebidas em uma TUI interativa
+O widget não é fornecido.
+O widget já existe.
+O nome do widget não foi fornecido.
+O widget não existe.
+O widget não pode ser removido.
+O widget não é um widget integrado.
+O nome do aplicativo de inicialização não foi especificado
+O ambiente do aplicativo de inicialização não foi especificado
+O aplicativo de inicialização já existe
+O aplicativo de inicialização não existe
+Selecione a entrada de inicialização
+SHIFT + H para ajuda. Versão
+Inicializando {0}...
+Lista de parâmetros de função para
+O alarme já existe.
+O intervalo do alarme é inválido.
+O nome e o intervalo do alarme não foram especificados.
+O alarme não existe.
+Nome do alarme:
+Descrição do alarme:
+Data de vencimento do alarme:
+A frequência é inválida. Certifique-se de que você escreveu corretamente a frequência em hertz.
+A duração é inválida. Certifique-se de que você escreveu corretamente a duração em milissegundos.
+Codificado como string
+Você entrou no menu de ação de energia. Insira uma escolha usando as teclas de seta para a esquerda e para a direita e pressione ENTER, ou pressione ESC para voltar à tela principal.
+Gerenciador de inicialização do Windows
+ENTER=Escolher
+Escolha um sistema operacional para iniciar ou pressione TAB para selecionar uma ferramenta:
+Para especificar uma opção avançada para esta escolha, pressione F8.
+Segundos até que a opção destacada seja iniciada automaticamente:
+GNU GRUB versão 2.06
+Use as teclas ↑ e ↓ para selecionar qual entrada será destacada.
+Pressione enter para inicializar o sistema operacional selecionado, `e' para editar os comandos
+antes de inicializar ou `c' para uma linha de comando.
+A entrada destacada será executada automaticamente em {0}s.
+Pressione enter para inicializar o sistema operacional selecionado, `e' para editá-lo
+comandos antes da inicialização ou `c' para uma linha de comando.
+Inicializando '{0}'
+O tipo de sistema de arquivos é
+tipo de partição
+Pressione qualquer tecla para cancelar o tempo limite
+Use as setas do teclado para fazer a seleção
+Insira escolha e opções, pressione CR para inicializar
+Selecione o sistema operacional para iniciar
+Use as setas para cima e para baixo para mover o destaque para sua escolha.
+Pressione ENTER para escolher.
+Para solução de problemas e opções avançadas de inicialização do Windows, pressione F8.
+Continuar
+Selecione a entrada de inicialização:
+Usa a lista de palavras comuns.
+Usa a lista completa de palavras.
+O jogo de pingue-pongue!
+Lê um arquivo de sintetizador de bipe
+Converte o modelo de cor de origem no modelo de cor de destino em números.
+Converte o modelo de cor de origem no modelo de cor de destino no formato KS.
+Converte o modelo de cor de origem em hexadecimal.
+Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino.
+Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino no formato KS.
+Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino em hexadecimal.
+Lista seus contatos
+Carrega seus contatos
+Importa seus contatos
+Trata a entrada necessária como uma string MeCard
+Obtém informações de contato
+Mostra informações meteorológicas para a cidade especificada. Usa o The Weather Channel da IBM.
+Informações meteorológicas em um TUI interativo
+Mostra todas as cidades disponíveis e seus pares de latitude/longitude
+Visualiza uma imagem
+Cria um novo idioma em um TUI interativo
+Cola o conteúdo de um arquivo ou de uma string em um provedor de hospedagem de texto
+Especifica a URL para o provedor Pastebin
+Especifica o tipo de provedor Pastebin
+Especifica a página de postagem do provedor Pastebin
+Especifica o formato de postagem do provedor Pastebin
+Especifica o nome do campo de postagem do provedor Pastebin
+Obtém informações de estoque por hora
+Símbolo curto da empresa
+Cria um novo tema em um TUI interativo
+que você pode criar programas inicializáveis usando seus mods de kernel?
+Tipo de estação
+O arquivo de sintetizador Beep não existe.
+Nome do capítulo
+A representação do sintetizador é inválida.
+A frequência é inválida.
+A duração é inválida.
+Não é possível obter informações de sintetizador da representação fornecida.
+A especificação do modelo é inválida.
+Nível da tecla preta:
+O primeiro nível de cor deve ser numérico.
+O segundo nível de cor deve ser numérico.
+O terceiro nível de cor deve ser numérico.
+O quarto nível de chave deve ser numérico.
+-- Informações meteorológicas --
+Latitude e Longitude
+Cobertura de nuvens
+Hora do dia
+Temperatura mínima
+Temperatura máxima
+Chance de precipitação
+Tipo de precipitação
+Índice de calor
+Sensação térmica do vento
+Índice ultravioleta
+Descrição ultravioleta
+O caminho para a imagem não foi fornecido.
+O arquivo de imagem não existe.
+Especifique um nome de arquivo ou texto para upload.
+O tipo de provedor Pastebin não é suportado.
+Colado com sucesso no provedor!
+Não é possível colar no provedor.
+Pesquisa na biblioteca de feeds por um feed
+Insira sua chave de API AlphaVantage
+Forneça sua chave de API.
+A chave da API de demonstração não pode ser usada.
+Sua chave de API deve ter 16 caracteres.
+Ocorreu um erro ao buscar os dados de ações. Informações adicionais podem ser encontradas aqui
+Preço de abertura das ações
+Alto preço das ações
+Preço baixo das ações
+Preço de fechamento das ações
+Volume de estoque
+Chave API é necessária. Configure nas configurações.
+Não há dados de estoque disponíveis.
+Copiar cor para...
+Selecione o tipo de cor de origem para copiar a cor.
+Selecione os tipos de cor de destino para copiar o tipo de cor de origem, {0}.
+Tipo de cor
+Cor
+Nome da cor
+Cor hexadecimal
+Brilho da cor
+Escolha como você deseja salvar este tema
+Escolha como você deseja carregar um tema
+Pontuação
+Aniversário de lançamento do Nitrocid KS
+Ramadã
+Nenhum contato.
+O número de contato é inválido.
+O número de contato está fora de alcance.
+Primeiro nome
+Sobrenome
+Contato Geo
+Nota de contato
+Alguns contatos não podem ser listados.
+Insira a latitude e longitude da cidade.
+Você pode obter sua própria chave de API consultando o site da IBM para obter orientação.
+Carregando informações meteorológicas de localização geográfica
+Condições climáticas
+Temperatura
+Velocidade do vento
+Direção do vento
+Taxa de humidade
+Latitude
+Longitude
+Digite o nome de uma cidade para pesquisar.
+Não há cidades com esse nome. Se você estiver tentando procurar por uma cidade específica, tente procurar por um local mais amplo que seja mais próximo da cidade que você está procurando.
+Selecione uma cidade da lista abaixo. Os dois números representam localizações geográficas.
+Insira a latitude da cidade.
+Insira a longitude da cidade.
+Latitude inválida.
+Longitude é inválida.
+Você pode obter sua própria chave de API consultando o site da IBM para orientação. Insira a chave de API do The Weather Channel.
+A chave da API do Weather Channel não é fornecida. Se precisar de ajuda, consulte o site da IBM.
+Driver de codificação assimétrica atual
+Qual driver de codificação assimétrica você gostaria de usar?
+Estilo bootloader
+Selecione um estilo de bootloader que corresponda à sua preferência.
+Tempo limite de seleção padrão do bootloader
+Seleção padrão do bootloader
+Habilitar 'The Nitrocid Homepage'
+Habilita a 'Página inicial do Nitrocid', que permite que você veja o que está acontecendo rapidamente.
+Cor de fundo da vinculação de tecla integrada do TUI interativo
+Cor de primeiro plano da tecla de vinculação interna interativa TUI
+Cor do nome da tecla de ligação interna do TUI interativo
+Habilitar widgets
+Habilita os widgets no manipulador de logon moderno e todos os manipuladores que usam a API de widgets.
+Primeiro widget
+Primeiro widget para o manipulador de logon moderno. Você pode configurar esse widget em sua respectiva entrada de configurações.
+Segundo widget
+Segundo widget para o manipulador de logon moderno. Você pode configurar esse widget em sua respectiva entrada de configurações.
+Suporte para mouse
+Se deve ou não inicializar o suporte ao mouse para o kernel, essencialmente permitindo que todos os mods manipulem o ponteiro do mouse.
+Suporte ao movimento do mouse
+Se também deve habilitar os eventos de movimento ou não, melhorando a experiência do usuário de alguns aplicativos interativos.
+Relógio analógico com data e hora simples na parte inferior da tela.
+Mostrar ponteiro de segundos
+Se deve ou não mostrar o ponteiro dos segundos.
+Data de exibição
+Se deve mostrar a data ou não.
+Mostra um emoji no meio da tela.
+Habilitar Ciclismo de Emoticons
+Se deve alternar entre emoticons
+Emoticon
+Emoticon para mostrar
+Esta seção permite que você configure como o SSH funciona.
+Estilo de prompt de nome de usuário para SSH
+Adicionar novas conexões à discagem rápida SSH
+Se habilitado, adiciona uma nova conexão à discagem rápida SSH.
+Esta seção permite que você configure os estoques.
+Chave API
+Chave para a API AlphaVantage Stocks
+Código da empresa
+Empresa de ações
+Simula uma hipotética tela preta com defeito, às vezes com linhas RGB aparecendo.
+Probabilidade de falha
+Chance, em porcentagem, de ocorrer falha na tela
+Classificar logicamente
+Classifica a lista alfanumericamente se habilitado ou alfabeticamente se desabilitado.
+Falha ao preencher o tema padrão
+Não há metadados de tema definidos.
+Não é possível desserializar metadados.
+Esta codificação deve ser inicializada.
+As informações do diretório não foram especificadas.
+As informações do arquivo não foram especificadas.
+Falha geral de transferência de rede
+O arquivo hexadecimal ainda não está aberto.
+O arquivo de texto ainda não está aberto.
+O manipulador da extensão não foi especificado.
+Falha ao obter o manipulador padrão
+Falha ao carregar manipuladores padrão.
+Selecione
+Cópia
+Mover
+Excluir
+Acima
+Informações
+Vá para
+Renomear
+Nova pasta
+Hash...
+Verificar...
+Pré-visualização
+Pré-visualização selecionada
+Abrir
+Não é possível verificar variáveis de configuração quando a configuração do kernel não é especificada.
+Não é possível obter o esquema de configurações básicas.
+Não é possível obter entradas de configurações.
+Falha ao obter entradas de configurações do driver.
+Falha ao obter as entradas das configurações principais.
+Falha ao obter entradas de configurações do protetor de tela.
+Falha ao obter entradas de configurações do widget.
+Falha ao obter informações de alias
+Não há nada para selecionar.
+Não é possível obter o tipo de
+Definir
+Salvar
+Salvar como
+Carregar de
+Recarregar
+Migrar
+As entradas de configuração não foram encontradas.
+Verifica se há atualizações do sistema (requer uma conexão ativa com a Internet).
+Mostra informações básicas do sistema (mais informações disponíveis no comando 'sysinfo').
+Não é possível obter a seção
+O dispositivo de depuração remota parece não existir.
+Não é possível obter dispositivos de depuração remotos de
+Não é possível abrir o recurso de localização em inglês
+Não é possível abrir o recurso de localização para
+Falha ao obter ponto de entrada.
+Testa os botões na caixa informativa (intitulada)
+Testa a caixa de entrada colorida na caixa informativa (intitulada)
+Testa a caixa de entrada na caixa informativa (intitulada)
+Testa o estilo de seleção múltipla de entrada na caixa informativa (intitulada)
+Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)
+Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)
+Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado
+Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado
+Testa o estilo de seleção de entrada na caixa informativa (intitulada
+Testa o estilo de seleção de entrada (grande número de itens para testar rolagem e paginação)
+Testa o estilo de seleção múltipla de entrada (grande número de itens para testar rolagem e paginação)
+Não é possível obter o quadro
+Não é possível obter o método
+Um erro de expressão regular aconteceu enquanto o texto estava sendo processado. Verifique a sintaxe da sua expressão regular e tente novamente. Se o tempo limite tiver ocorrido, certifique-se de não recursar muito (não seja ganancioso).
+As ferramentas da página inicial encontraram um erro ao tentar processar sua solicitação. Certifique-se de que você inseriu todos os dados necessários corretamente.
+Infelizmente, a última falha é desconhecida, então não sabemos exatamente o que deu errado. No entanto, pode ser útil se você tiver consultado os logs de depuração do kernel.
+Não é possível obter informações de campo para
+Não é possível obter entradas de diário
+(Use as setas do teclado para destacar sua escolha e pressione ENTER.)
+GNU GRUB versão 0.97 (638K inferior / 1046784K superior memória)
+A depuração remota falhou ao iniciar por razões desconhecidas.
+O tópico não pode ser regenerado
+Falha ao carregar o recurso de idioma para
+Não é possível obter texto localizado
+Não é possível obter localizações em inglês
+Não é possível obter texto em inglês
+O token de idioma deve ser especificado
+Não é possível obter metadados de idioma
+Não é possível obter a matriz de metadados do idioma
+Metadados MIME (estendidos)
+O manipulador está registrado, mas de alguma forma não conseguiu obter um manipulador de extensão para
+Não é possível obter entradas de configuração
+Não é possível definir a entrada de configurações
+Não é possível salvar as configurações
+Não é possível carregar as configurações
+Não é possível recarregar as configurações
+Não é possível migrar as configurações
+Não é possível verificar atualizações
+Não é possível obter informações do sistema
+A instância do protetor de tela não foi especificada
+Os parâmetros do thread Splash não foram especificados
+Não é possível determinar a versão do mod
+Exceção de carregador desconhecido
+Não é possível carregar as localizações do mod
+Não é possível obter o método dos dois últimos quadros.
+Sobre
+O nome da ação não foi especificado.
+Ação não especificada.
+A ação já existe.
+Ação não existe.
+A ação integrada não pode ser removida.
+Copiar para
+Mover para
+Rachadura
+Verificar
+Adicionar
+Liberar
+Descartar tudo
+Matar
+Copyright (C) 2018-2025 Aptivi - Todos os direitos reservados
+Não é possível obter informações de argumento para comando ou argumento
+Os parâmetros do thread não foram especificados.
+Não é possível obter parâmetros de thread para execução do processo.
+Não é possível obter campo interno para variáveis de ambiente
+Não é possível obter o executor do shell para
+Mostra comandos gerais (padrão)
+Altera o nome completo do usuário (nome de exibição)
+Mostra o buffer principal que estava na tela antes de iniciar o Nitrocid KS (somente sistemas Unix)
+Não é possível obter o pacote de complementos.
+Não é possível obter informações do usuário do sistema
+Não é possível obter informações do usuário para
+Reinicia o Nitrocid com permissões elevadas (somente Windows)
+Não é possível desserializar a matriz de informações do grupo
+Não é possível desserializar as informações do grupo
+Não é possível definir uma conta root.
+Você não tem permissão para solicitar uma reinicialização ou desligamento.
+Não é possível desserializar a matriz de informações do usuário
+Não é possível desserializar a instância de informações do usuário
+Falha ao obter o usuário
+Falha ao obter o usuário atual
+Não é possível obter os dados necessários para inicializar este complemento.
+Falha ao carregar metadados de idioma
+Falha ao desserializar metadados de idioma
+Falha ao carregar metadados de idioma para
+Falha ao desserializar metadados de idioma para
+Editar
+Remover tudo
+Carregar
+Notas
+Falha ao obter entradas de configurações.
+que o Nitrocid (Kernel Simulator 0.0.2) chamou o shell integrado de shell 'UESH'?
+que os protetores de tela foram anunciados como uma solução contra queimaduras em telas de tubo de raios catódicos (CRT) ou de plasma?
+Corrida de cavalos
+Carrasco
+Desvio de meteoro
+Atirador de meteoros
+Pong
+Dueto de Navios
+Serpentário
+Palavra
+Wordle (original)
+Citação desconhecida.
+Autor desconhecido.
+Não é possível obter entradas de arquivo
+O arquivo ainda não foi carregado.
+Não é possível determinar o diretório de arquivamento atual.
+Calendário
+Nenhum lembrete encontrado para o dia selecionado
+Nenhum evento encontrado para o dia selecionado
+Contatos
+Apagar tudo
+Importar
+Importar de
+Procurar
+Pesquisar Próximo
+Pesquisar Voltar
+Informações brutas
+Importar do MeCard
+Adicionar manualmente
+Não é possível obter a matriz de partes do dia
+Não consigo obter a parte do dia
+Não é possível obter uma lista de tarefas
+Temporizador
+Cronômetro
+Nenhuma volta ainda...
+Lista de voltas
+Gerar crachás (trema não é suportado atualmente)
+Converter...
+Conversor de unidades
+Informações sobre rádio na Internet (FM) para
+Não é possível obter informações de rádio pela Internet.
+Mudar...
+Salvar...
+Carregar...
+Cópia...
+Traduzir
+Luminância (luminosidade):
+A última concha não é esta concha da qual se deve destacar.
+O cliente não está preenchido.
+Ainda não há um cliente FTP.
+O cliente ainda não está conectado.
+Não é possível obter a configuração do servidor IMAP
+Não é possível obter a configuração do servidor SMTP
+O cliente ainda não está conectado
+Ler mais
+Atualizar
+Não há artigo.
+Não há alimentação.
+Não é possível obter conexão
+O fluxo de arquivos ainda não está aberto.
+O arquivo JSON ainda não está aberto.
+Não é possível obter informações sobre ações.
+O SSH está conectado, mas sem cliente.
+Mostra a contagem de shell no shell UESH normal (dependendo da predefinição)
+Intervalo mínimo de inatividade para iniciar o protetor de tela. A unidade está no formato de intervalo de tempo (HH:MM:SS).
+O tema padrão para o kernel
+Sotaques em todos os lugares!
+Líquido incolor, fumegante e altamente corrosivo
+Esta seção permite que você configure como o complemento de contatos funciona.
+Mostrar fotos de perfil
+Se habilitado, mostra imagens de contato. Desabilitado por padrão para evitar uso indevido e por motivos de desempenho.
+Selecione sua unidade preferida para temperatura (isso se aplica somente ao comando "weather"). 1 é Kelvin, 2 é Métrico e 3 é Imperial.
+Luminância de matiz de cor (luminosidade)
+Harmonia roxa
+Esta é a cor do mascote do Android em primeiro plano
+Nossa harmonia de marca
+Versão escura de um tema VIM popular, Ayu
+Versão light de um tema VIM popular, Ayu
+Versão Mirage de um tema VIM popular, Ayu
+Este é o primeiro dia do novo ano letivo
+Terminal mais leve possível
+Esta é a rosa negra
+Esquema de cores para Breeze, um tema do KDE Plasma 5
+Esquema de cores popular para IDEs, como IntelliJ
+É hora de voltar para o lado negro.
+Esquemas de cores para Debian
+O tema padrão vívido para o kernel
+Acentos de fundo no seu kernel!
+Mais sotaques em todos os lugares!
+Use se você é fã de EDM
+Tons de fogo
+Seu palácio dourado épico em fundo azul escuro
+Uva e kiwi misturados
+Esquema de cores para uvas
+Cores vivas e rebocadas de verde, azul e roxo
+Greenify seu ambiente, greenify seu kernel. Faça a Terra mais verde!
+Adicionamos verde e vermelho como cores.
+Verde e rosa misturados
+Um dos esquemas de cores terminais conhecidos
+Texto verde em cinza
+Cores tradicionais indianas diretamente no seu console.
+Deixe seu terminal cheio de ácido cítrico
+Tábuas de madeira clara
+Cores padrão do terminal Linux
+Terminal cinza
+Algum texto do Material Design no seu terminal
+Tons de laranja e marrom
+Tema Melange inspirado no tema VIM de mesmo nome
+Deixe seu terminal cheio de hortelã
+Paleta de cores de Mirai Kuriyama de Beyond the Boundary.
+Um tema inspirado em um tema VIM de mesmo nome
+Você gosta de azul neon e rosa?
+Este tema deve ser neutro para você.
+Este é o seu céu noturno no começo da noite!
+Outubro está chegando, então prepare-se!
+O mar de laranja
+Terminal fosfórico que transforma tudo em laranja
+Dá a você uma brisa vermelha.
+Um console vermelho sangrento
+As árvores de sakura lhe darão um pouco da brisa chinesa
+Todas as cores azul-petróleo
+Um tema para os amantes da tecnologia
+Fã de música trance? Este é o tema para você!
+Esquemas de cores de um sistema operacional Linux popular, Ubuntu
+Dá a você uma vibe perfeita de Vice City
+Este é o seu amanhecer em Vice City.
+Esquema de cores para o Visual Studio, um dos IDEs mais poderosos
+Esquema de cores para o Windows 11, uma versão recente do Windows
+Traga de volta a nostalgia com este tema!
+Seu terminal é composto por tábuas de madeira
+Inspirado no padrão chinês de diferentes frutas
+Extras - CRC32C (Castagnoli)
+Não é possível limpar os arquivos de depuração
+Não ofereceremos mais suporte a esta versão do Nitrocid KS após esta data
+Certifique-se de atualizar para a versão compatível em breve se quiser continuar recebendo suporte.
+Esta versão do Nitrocid KS não é mais suportada.
+Falha ao carregar idiomas personalizados
+Falha ao carregar complementos importantes do kernel
+Falha ao carregar consentimentos de privacidade
+Falha ao carregar splash
+Falha ao carregar mods importantes
+Falha ao carregar dispositivos de depuração remotos
+Ocorreram erros ao tentar inicializar componentes essenciais.
+Falha ao carregar o tópico de notificação
+Falha ao carregar o manipulador de cancelamento
+Falha ao carregar aliases
+Falha ao carregar entradas de discagem rápida
+Falha ao carregar variáveis de ambiente
+Falha ao carregar o ouvinte de alarme
+Falha ao carregar MOTD e MAL
+Falha ao carregar históricos de comandos do shell
+Falha ao carregar os manipuladores de extensão
+Ocorreram erros ao tentar inicializar componentes opcionais.
+Falha ao redefinir variáveis gerais
+Falha ao salvar históricos de comandos do shell
+Falha ao salvar consentimentos de privacidade
+Falha ao parar o depurador remoto
+Falha ao redefinir idiomas
+Falha ao salvar os manipuladores de extensão
+Falha ao parar o ouvinte de alarme
+Falha ao salvar a configuração
+Falha ao parar mods
+Falha ao parar os complementos
+Falha ao parar RPC
+Falha ao fechar todas as conexões
+Falha ao interromper o tempo limite do protetor de tela
+Falha ao redefinir o buffer do log de inicialização
+Falha ao parar o manipulador do cursor
+Falha ao parar o depurador
+Falha ao parar todos os threads do kernel
+Ocorreram erros ao tentar redefinir componentes.
+Exceção
+Consulte os logs de depuração do kernel para mais informações.
+Descrição do switch não especificado
+Caminho para um processo
+Argumentos para passar para um processo
+Comando para mostrar a entrada de ajuda
+Comando de destino a ser executado ao construir o argumento com base na saída do comando de origem
+Comando para encapsular sua saída
+Argumento para mostrar entrada de ajuda
+Número da sessão começando do zero
+Nome de usuário para consulta
+Tipo de permissão para conceder ou negar
+Falso para negar, verdadeiro para conceder
+Novo nome de exibição ou 'limpar' para apagar o nome de exibição
+ID de idioma de três letras ou "limpar" para limpar o idioma preferido
+GUID de sessão inválido
+Não existe GUID de sessão
+GUID de sessão para encontrar
+Número de exceção
+Nome do campo a consultar
+Nome da propriedade a ser consultada
+Nome do complemento para consulta
+Nome da função do tipo estático público para consulta
+Nome do splash para consulta
+Número de bytes variando de 0 a 255
+Número da posição do byte
+Número da posição inicial do byte
+Número da posição final do byte
+Número de bytes variando de 0 a 255 a ser substituído
+Número de bytes variando de 0 a 255 para substituir por
+Conteúdo a ser adicionado no final do arquivo
+Número do personagem
+Número da linha
+Número da linha (singular ou início do intervalo)
+Intervalo final do número da linha
+Palavra ou frase a ser excluída
+Um personagem para consultar
+Número da linha (singular ou início do intervalo) ou 'all' para consultar um caractere em todas as linhas
+Uma palavra ou frase para consultar
+Uma expressão regular para consultar
+Uma palavra ou frase a ser substituída
+Uma palavra ou frase para substituir
+Número da linha (singular ou início do intervalo) ou 'all' para substituir em todas as linhas
+Uma expressão regular para corresponder a frases que devem ser substituídas
+Novo nome de grupo para adicionar
+Novo nome de usuário para adicionar
+Nova senha para usar
+Confirme a nova senha
+Nome de usuário a ser adicionado ao grupo
+Nome do grupo para adicionar o usuário
+Inicia o alarme
+Intervalo de alarme em um intervalo de tempo em horas, minutos e segundos
+Para o alarme
+Nome do alarme para parar
+Lista os alarmes
+Adiciona um alias
+Tipo de shell para buscar comandos
+Nome alternativo
+Comando para ser usado como atalho
+Remove um alias
+Frequência em Hz
+Intervalo de tempo para um único bipe
+Endereço IP para bloquear
+Diretório de destino
+Padrão de pesquisa
+Novo nome para renomear todos os arquivos encontrados
+Caminho para o arquivo para imprimir seu conteúdo
+Caminho para o arquivo
+Adição ou remoção
+Nome do atributo
+Novo nome de host para alterar
+ID do idioma
+Nova mensagem para usar
+Respostas para dividir com uma barra
+Pergunta para imprimir na tela
+Título da primeira resposta
+Título da segunda resposta, e assim por diante...
+Nome de usuário para alterar a senha
+Senha do usuário atual
+Nome de usuário antigo para alterar
+Novo nome de usuário para usar
+Primeiro arquivo de texto de entrada
+Segundo arquivo de texto de entrada
+Terceiro arquivo de texto de entrada, e assim por diante...
+Arquivo de saída
+Arquivo de texto de entrada de origem
+Arquivo de texto de entrada de destino
+Caminho para o arquivo de texto
+Arquivo ou diretório de origem
+Arquivo ou diretório de destino
+Caminho para o arquivo codificado
+Representação de string codificada
+Cadeia de caracteres BASE64 codificada
+Caminho para o diretório
+Endereço IP para desconectar
+Número do disco
+Número de notificação
+Alterar um driver
+Tipo de driver de destino
+Driver alvo para mudar para
+Listar drivers
+Listar tipos de driver
+String para imprimir
+Arquivo para codificar
+String para codificar
+Expressão regular para encontrar um arquivo
+Link para um recurso remoto, como HTTPS
+Nome da configuração do kernel
+Variável para obter informações
+Extensão de arquivo
+Algoritmo de codificação
+Tipo de hardware
+Expressão UESH para testar
+Comando para executar após avaliação bem-sucedida
+Caminho para o diretório do painel esquerdo
+Caminho para o diretório do painel direito
+Recarrega, carrega ou descarrega um idioma personalizado
+Nome do idioma personalizado
+Lista ou recarrega todos os idiomas personalizados
+Caminho para o script UESH
+Caminho para o diretório para listar
+Nome do diretório a ser criado
+Nome do arquivo a ser criado
+Diretório ou nome para mover
+Diretório ou nome para mover
+Número da partição
+Nome do arquivo para pesquisa
+Nome de usuário
+Permitir ou revogar
+Nome da permissão para conceder ou negar
+Nome do grupo
+Primeiro endereço IP ou nome do host
+Segundo endereço IP ou nome de host, e assim por diante...
+Caminho para o arquivo para upload
+URL apontando para o ponto final de upload
+Nome do host que executa o Nitrocid KS
+Porto de Nitrocid KS no alvo remoto
+Comando para executar remotamente
+Diretório ou arquivo de destino
+Nome de usuário a ser removido
+Nome do grupo a ser removido
+Nome de usuário para remover do grupo
+Nome do grupo para remover o usuário
+O nome do protetor de tela ou 'aleatório'
+Expressão regular para pesquisar
+Arquivo de destino
+Palavra ou frase para pesquisar
+Valor a definir
+Nome da variável de configuração
+Nome do implementador
+Primeiro valor
+Segundo valor
+Terceiro valor, e assim por diante...
+Nome do fuso horário
+Intervalo para dormir
+Comando para executar
+Algoritmo de criptografia
+Arquivo de entrada para calcular a soma do hash
+Arquivo de saída para salvar informações de soma de hash
+Texto para obter soma de hash
+Nome do link simbólico
+Arquivo de destino para criar um atalho
+Nome do tema
+Endereço IP para desbloquear
+Nome da variável
+Caminho para o arquivo ZIP
+Caminho de destino para extrair
+Hash calculado
+Arquivo hash ou hash esperado
+Arquivo para testar
+Nome do arquivo ZIP a ser criado
+Caminho para compactar
+Conteúdo da nota a ser adicionado
+Número da nota
+Caminho para um diretório com repositório Git
+Faixa inicial do número da linha
+Nome da filial
+Resumo do commit
+Confirmar hash SHA
+Nome remoto
+Nome da etiqueta
+Mensagem para anotar a tag com
+Seu e-mail
+Seu nome de usuário
+Caminho para o arquivo não preparado
+Caminho para o arquivo preparado
+Caminho para o arquivo compactado
+Diretório local
+Diretório dentro do arquivo
+Arquivar no arquivo
+Diretório local para extrair
+Arquivo local
+Diretório de arquivo para adicionar
+Abre o calendário interativo TUI
+Ano alvo
+Número do mês alvo
+Interação com os eventos
+Adiciona um evento
+Data alvo
+Remove um evento
+ID do evento
+Lista todos os eventos
+Salva todos os eventos
+Interação com os lembretes
+Data e hora alvo
+Remove um lembrete
+ID do lembrete
+Lista todos os lembretes
+Salva todos os lembretes
+Um caminho para um arquivo de contato vCard ou uma representação MeCard
+Número de contato
+Latitude para usar
+Longitude a usar
+Chave API do Weather.com
+ID da cidade ou nome da cidade conhecido pelo OpenWeatherMap
+Chave da API OpenWeatherMap
+Se deseja adicionar, remover, marcar como concluído ou desmarcar como concluído em uma tarefa
+Se deve listar, salvar ou carregar todas as tarefas
+Temporizador Pomodoro
+O temporizador Pomodoro está pronto
+Número do temporizador Pomodoro {0} em quatro iterações
+Pequena pausa
+Especifique o tempo limite de interrupção em milissegundos
+Definir intervalo de pausa
+Palavra para definir
+Termo de pesquisa
+Prefixo do nome para pesquisar
+Sufixo de nome para pesquisa
+Prefixo de sobrenome para pesquisar
+Sufixo de sobrenome para pesquisar
+Quantos nomes gerar?
+Tipo de unidade
+Quantidade na unidade de origem para converter
+Unidade de origem
+Unidade alvo
+Caminho para o arquivo de letras
+Caminho para um arquivo MP3
+Nome do host que hospeda a estação de rádio MPEG
+Porta para a estação de rádio MPEG
+Expressão matemática
+Número real
+Número imaginário
+Comemorando o 7.000º commit desde 0.0.1!
+deixado para o próximo ano
+Nome do tema a ser criado
+Caminho para o diretório de traduções
+Pronto! Por favor, use o aplicativo Nitrocid.Locales com argumentos apropriados para finalizar os idiomas. Você pode usar este caminho:
+Modelo de cor de origem
+Modelo de cor alvo
+Primeiro número
+Segundo número
+Terceiro número
+Quarto número
+Especificador de cor
+Data e hora para imprimir informações de
+Especifique um número de segundos ou um nome de bebida
+Servidor FTP para conectar
+Caminho para arquivo remoto
+Caminho para o diretório local
+Caminho para o diretório remoto
+Caminho para o arquivo remoto a ser excluído
+Comando do servidor para executar
+Cria um diretório local
+Cria um diretório remoto
+Caminho para o arquivo ou diretório de origem
+Caminho para o arquivo ou diretório de destino
+Caminho para o arquivo local
+Números de permissão de acordo com chmod
+Especifica se o tipo de transferência é ASCII ou Binário
+Chave de cabeçalho
+Valor do cabeçalho
+Solicitação HTTP
+Arquivo para upload
+String para carregar
+Cadeia de caracteres do agente do usuário
+Endereço de e-mail para efetuar login
+Nome do diretório de e-mail
+Número da página
+ID da mensagem
+Nome do remetente
+Nome antigo do diretório de e-mail
+Novo nome do diretório de e-mail
+Servidor SFTP para conectar
+Link do feed RSS
+Número do feed
+Frase para pesquisar
+Primeiro arquivo JSON
+Segundo arquivo JSON
+Caminho para o arquivo JSON
+Caminho para o arquivo JSON de saída
+Valor JSON a ser adicionado
+Nome da propriedade JSON
+Caminho do objeto
+Valor JSON
+Nome da doca
+Caminho para um arquivo ou uma string para escrever
+Argumentos do Pastebin
+Caminho para o arquivo de imagem
+Caminho para o arquivo de sintetizador
+Servidor SSH para conectar
+Nome de usuário para autenticação
+Comando para executar remotamente
+Atraso unificado
+Se verdadeiro, habilita atraso de escrita unificado para todos os protetores de tela. Caso contrário, ele usa valores de atraso configurados específicos do protetor de tela.
+Esta seção permite que você configure como o aplicativo de timer funciona.
+Esta seção permite que você configure como o aplicativo temporizador Pomodoro funciona.
+Habilitar Figlet para o timer pomodoro
+Se habilitado, usará o figlet para o timer pomodoro. Observe que ele precisa de uma tela de console grande para renderizar o tempo corretamente com o Figlet habilitado.
+Fonte Figlet para o cronômetro pomodoro
+Mostra o texto abaixo de uma linha em um fundo vermelho escuro.
+Personagens aleatórios que se espalham aleatoriamente pela tela.
+Data e hora simples no meio da tela e muda a cor com base na hora atual.
+Data e hora brilhantes
+Se deve usar a versão clara ou escura.
+Mostra números dançantes.
+Ondas giratórias horizontal e verticalmente criam grandes padrões com rastros deixados para trás até desaparecerem.
+Comprimento da trilha
+O comprimento da trilha da onda giratória em movimento.
+Bloco se movendo em um padrão de onda com réguas verdes rastreando sua posição.
+Mostra um único caractere aleatório em um texto colorido.
+Mostra uma palavra que está sendo selecionada, assim como uma máquina caça-níqueis encontrada em cassinos.
+Mostra um texto colorido alternando entre duas cores neon: ciano e fúcsia.
+Qual cultura está sendo usada para alterar os nomes dos meses, calendário, etc.?
+Nível máximo de cor de fundo
+Nível máximo de cor de fundo. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor da linha
+Nível máximo de cor da linha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor do texto
+Nível máximo de cor do texto. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Use a cultura do sistema
+Se o protetor de tela usa a cultura definida pelas configurações principais do kernel ou por essas configurações do protetor de tela.
+Texto informativo para o primeiro
+Escreva como seu texto informativo para a hora atual é exibido. {0} para a hora atual de 24 primeiro.
+Caractere do canto superior esquerdo para a primeira barra
+Caractere do canto superior direito para a primeira barra
+Caractere do canto inferior esquerdo para a primeira barra
+Caractere do canto inferior direito para a primeira barra
+Caractere do quadro superior para a primeira barra
+Caractere do quadro inferior para a primeira barra
+Caractere do quadro esquerdo para a primeira barra
+Caractere do quadro direito para a primeira barra
+Cor da primeira barra
+Nível mínimo de cor vermelha para a primeira
+Nível mínimo de cor verde para a primeira
+Nível mínimo de cor azul para a primeira
+Nível mínimo de cor para a primeira
+Nível máximo de cor vermelha para a primeira
+Nível máximo de cor verde para a primeira
+Nível máximo de cor azul para a primeira
+Nível máximo de cor para a primeira
+Texto informativo para a segunda
+Escreva como seu texto informativo para o minuto atual é exibido. {0} para o minuto atual de 60 segundos.
+Caractere do canto superior esquerdo para a segunda barra
+Caractere do canto superior direito para a segunda barra
+Caractere do canto inferior esquerdo para a segunda barra
+Caractere do canto inferior direito para a segunda barra
+Caractere do quadro superior para a segunda barra
+Caractere do quadro inferior para a segunda barra
+Caractere do quadro esquerdo para a segunda barra
+Caractere do quadro direito para a segunda barra
+Cor da segunda barra
+Nível mínimo de cor vermelha para a segunda
+Nível mínimo de cor verde para a segunda
+Nível mínimo de cor azul para a segunda
+Nível mínimo de cor para a segunda
+Nível máximo de cor vermelha para a segunda
+Nível máximo de cor verde para a segunda
+Nível máximo de cor azul para a segunda
+Nível máximo de cor para a segunda
+Caractere do canto superior esquerdo para a terceira barra
+Caractere do canto superior direito para a terceira barra
+Caractere do canto inferior esquerdo para a terceira barra
+Caractere do canto inferior direito para a terceira barra
+Caractere do quadro superior para a terceira barra
+Caractere do quadro inferior para a terceira barra
+Caractere do quadro esquerdo para a terceira barra
+Caractere do quadro direito para a terceira barra
+Texto informativo para o terceiro
+Escreva como seu texto informativo para o segundo atual é exibido. {0} para o segundo atual de 60 terceiros.
+Cor da terceira barra
+Nível mínimo de cor vermelha para o terceiro
+Nível mínimo de cor verde para o terceiro
+Nível mínimo de cor azul para o terceiro
+Nível mínimo de cor para o terceiro
+Nível máximo de cor vermelha para o terceiro
+Nível máximo de cor verde para o terceiro
+Nível máximo de cor azul para o terceiro
+Nível máximo de cor para o terceiro
+O Progresses selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
+Se o ciclo de cores estiver habilitado, quantos tiques antes de alterar as cores no Progresses? 1 tique = 0,5 terço
+Pronto! Por favor, use o aplicativo Nitrocid.Locales com argumentos apropriados para finalizar os idiomas. Você pode usar este caminho:
+A configuração do kernel não funcionará corretamente. As chaves inválidas são
+Tentando registrar uma configuração personalizada com conteúdo inválido. As chaves inválidas são
+Tentando registrar uma configuração base com conteúdo inválido. As chaves inválidas são
+Adiciona um mod à lista negra
+Remove um mod da lista negra
+Estas entradas de configuração têm variáveis ​​ou enumerações inválidas e precisam ser corrigidas:
+Inicia todos os mods
+Imprime um separador no console com cor
+Imprime um separador no console com formatação e cor
+Recarrega todos os mods
+Estatísticas
+Mostra as estatísticas de teste atuais
+Testar tudo
+Testa todas as fachadas
+Volta para a seleção de seção
+Escolha uma fachada de teste para executar
+Este teste contém parâmetros opcionais. Insira o valor do parâmetro para adicionar aos parâmetros de teste.
+Contagem de parâmetros
+Sim!
+Tentar novamente
+O teste foi executado conforme o esperado?
+O teste falhou. O valor esperado é {0}, mas o valor real é {1}.
+O teste falhou inesperadamente.
+Testes bem-sucedidos:
+Testes com falha:
+Testes a serem executados:
+Não é possível obter a lista de funções
+Não é possível obter a lista de propriedades
+Não é possível obter a lista de campos
+Com base nas configurações de idioma do seu sistema, o idioma apropriado é
+Falha ao carregar complementos de finalização
+Modificações do kernel
+Selecionado '{0}'. Pressione ESC para sair e confirmar a seleção.
+A variável {0} não foi encontrada em nenhum dos módulos.
+O tipo de método não está definido na lista de tipos base do Nitrocid.
+Não é possível executar a propriedade personalizada com mod inexistente
+Não é possível executar o campo personalizado com mod inexistente
+Busca facilmente as informações do log de depuração usando o número da sessão
+Sim, defina!
+Não, não defina.
+Usa as configurações de idioma do sistema para tentar inferir o idioma de
+Não há informações de propriedade para
+Pomodoro Timer
+Seleção de perfil inválida.
+Alterar cultura ao alternar idiomas
+Ao alternar idiomas, altere os nomes dos meses, calendário, etc.
+Qual variante do idioma atual está sendo usada para alterar os nomes dos meses, calendário, etc.?
+Tempo limite em segundos para inicializar a seleção padrão.
+Seleção de entrada de inicialização padrão. Este número é baseado em zero, então o primeiro elemento é índice 0, e assim por diante.
+Esta seção lista as configurações predefinidas do shell.
+Configurações predefinidas do shell
+Saídas da lista de encapsulamento
+Encapsula as saídas da lista se parecerem muito longas para a geometria atual do console.
+Esta seção permite que você configure como as diversões funcionam.

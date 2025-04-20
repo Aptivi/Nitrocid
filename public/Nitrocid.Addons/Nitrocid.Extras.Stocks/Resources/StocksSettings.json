@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "Stocks",
+        "Desc": "This section lets you configure the stocks.",
+        "Keys": [
+            {
+                "Name": "API key",
+                "Type": "SString",
+                "Variable": "StocksApiKey",
+                "Description": "Key for the AlphaVantage Stocks API"
+            },
+            {
+                "Name": "Company code",
+                "Type": "SString",
+                "Variable": "StocksCompany",
+                "Description": "Stocks company"
+            }
+        ]
+    }
+]

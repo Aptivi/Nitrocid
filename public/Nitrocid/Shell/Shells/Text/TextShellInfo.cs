@@ -40,10 +40,13 @@ namespace Nitrocid.Shell.Shells.Text
         [
             new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "text")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Content to add at the end of the file"
+                        })
+                    ])
                 ], new AddLineCommand()),
 
             new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
@@ -62,11 +65,13 @@ namespace Nitrocid.Shell.Shells.Text
                     {
                         new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Character number"
                         }),
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number"
                         })
                     })
                 ], new DelCharNumCommand()),
@@ -77,29 +82,36 @@ namespace Nitrocid.Shell.Shells.Text
                     {
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
                     })
                 ], new DelLineCommand()),
 
             new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "word/phrase"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Word or phrase to be deleted"
+                        }),
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new DelWordCommand()),
 
             new CommandInfo("editline", /* Localizable */ "Edits the specified line",
@@ -108,7 +120,8 @@ namespace Nitrocid.Shell.Shells.Text
                     {
                         new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number"
                         })
                     })
                 ], new EditLineCommand()),
@@ -124,98 +137,153 @@ namespace Nitrocid.Shell.Shells.Text
                     {
                         new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
                     })
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "char"),
-                        new CommandArgumentPart(true, "lineNum/all"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "char", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A character to query"
+                        }),
+                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                        }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new QueryCharCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "word/phrase"),
-                        new CommandArgumentPart(true, "lineNum/all"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to query"
+                        }),
+                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                        }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new QueryWordCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "regex"),
-                        new CommandArgumentPart(true, "lineNum/all"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A regular expression to query"
+                        }),
+                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                        }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new QueryWordRegexCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "word/phrase"),
-                        new CommandArgumentPart(true, "word/phrase")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to be replaced"
+                        }),
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                        })
+                    ])
                 ], new ReplaceCommand()),
 
             new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "word/phrase"),
-                        new CommandArgumentPart(true, "word/phrase"),
-                        new CommandArgumentPart(true, "lineNum/all"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to be replaced"
+                        }),
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                        }),
+                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to replace in all lines"
+                        }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new ReplaceInlineCommand()),
 
             new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "regex"),
-                        new CommandArgumentPart(true, "word/phrase")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A regular expression to match phrases that are to be replaced"
+                        }),
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                        })
+                    ])
                 ], new ReplaceRegexCommand()),
 
             new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "regex"),
-                        new CommandArgumentPart(true, "word/phrase"),
-                        new CommandArgumentPart(true, "lineNum/all"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A regular expression to match phrases that are to be replaced"
+                        }),
+                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                        }),
+                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to replace in all lines"
+                        }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new ReplaceInlineRegexCommand()),
 
             new CommandInfo("save", /* Localizable */ "Saves the file",

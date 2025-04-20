@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
+using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -44,20 +45,35 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");
-            var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
-            driver.Initialize();
-            byte[] key = driver.IsSymmetric ? driver.Key : [];
-            byte[] iv = driver.IsSymmetric ? driver.Iv : [];
-            if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
+            bool isAsymmetric = DriverHandler.IsRegistered<IEncodingAsymmetricDriver>(algorithm);
+            if (isAsymmetric)
+            {
+                // Initialize the driver
+                var driver = DriverHandler.GetDriver<IEncodingAsymmetricDriver>(algorithm);
+                driver.Initialize();
+
+                // Now, encode the file
                 driver.EncodeFile(path);
+            }
             else
             {
-                key = driver.ComposeBytesFromString(keyValue);
-                iv = driver.ComposeBytesFromString(ivValue);
-                driver.EncodeFile(path, key, iv);
-            }
-            if (driver.IsSymmetric)
-            {
+                // Initialize the driver
+                var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
+                driver.Initialize();
+                byte[] key = driver.Key;
+                byte[] iv = driver.Iv;
+
+                // Encode the target file using the key and the IV
+                if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
+                    driver.EncodeFile(path);
+                else
+                {
+                    key = driver.ComposeBytesFromString(keyValue);
+                    iv = driver.ComposeBytesFromString(ivValue);
+                    driver.EncodeFile(path, key, iv);
+                }
+
+                // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
                 TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);

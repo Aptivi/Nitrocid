@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -30,7 +29,7 @@ namespace Nitrocid.Kernel.Time.Alarm
     /// </summary>
     public static class AlarmTools
     {
-        internal static Dictionary<(string id, string name), DateTime> alarms = [];
+        internal static Dictionary<string, AlarmEntry> alarms = [];
 
         /// <summary>
         /// Checks to see if the alarm is registered
@@ -44,7 +43,7 @@ namespace Nitrocid.Kernel.Time.Alarm
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm name is empty."));
 
             // Now, check the ID
-            return alarms.Any((tuple) => tuple.Key.id == alarmId);
+            return alarms.Any((kvp) => kvp.Key == alarmId);
         }
 
         /// <summary>
@@ -52,7 +51,7 @@ namespace Nitrocid.Kernel.Time.Alarm
         /// </summary>
         /// <param name="alarmId">String identifier of an alarm</param>
         /// <returns>A key value pair instance of the whole alarm.</returns>
-        public static KeyValuePair<(string, string), DateTime> GetAlarmFromId(string alarmId)
+        public static KeyValuePair<string, AlarmEntry> GetAlarmFromId(string alarmId)
         {
             // Check the alarm name
             if (string.IsNullOrEmpty(alarmId))
@@ -61,7 +60,7 @@ namespace Nitrocid.Kernel.Time.Alarm
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm is not found."));
 
             // Now, check the ID
-            return alarms.First((tuple) => tuple.Key.id == alarmId);
+            return alarms.First((kvp) => kvp.Key == alarmId);
         }
 
         /// <summary>
@@ -69,8 +68,9 @@ namespace Nitrocid.Kernel.Time.Alarm
         /// </summary>
         /// <param name="alarmId">String identifier of the alarm</param>
         /// <param name="alarmName">Name of the alarm</param>
+        /// <param name="alarmDesc">Description of the alarm</param>
         /// <param name="alarmValue">Alarm value</param>
-        public static void StartAlarm(string alarmId, string alarmName, int alarmValue)
+        public static void StartAlarm(string alarmId, string alarmName, int alarmValue, string alarmDesc = "")
         {
             // Check the alarm value
             if (alarmValue < 0)
@@ -80,7 +80,10 @@ namespace Nitrocid.Kernel.Time.Alarm
 
             // Now, start the alarm
             var alarmDate = TimeDateTools.KernelDateTime.AddSeconds(alarmValue);
-            alarms.Add((alarmId, alarmName), alarmDate);
+            if (alarmDate < TimeDateTools.KernelDateTime)
+                throw new KernelException(KernelExceptionType.Alarm, Translate.DoTranslation("Alarm date and time may not be in the past."));
+            var entryInstance = new AlarmEntry(alarmName, alarmDesc, alarmDate);
+            alarms.Add(alarmId, entryInstance);
         }
 
         /// <summary>
@@ -97,7 +100,7 @@ namespace Nitrocid.Kernel.Time.Alarm
 
             // Now, get an alarm and stop it
             var alarm = alarms.ElementAt(alarmIdx);
-            StopAlarm(alarm.Key.id);
+            StopAlarm(alarm.Key);
         }
 
         /// <summary>
@@ -113,9 +116,8 @@ namespace Nitrocid.Kernel.Time.Alarm
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm is not found."));
 
             // Now, get an alarm and stop it
-            var alarmPair = GetAlarmFromId(alarmId);
-            alarms.Remove(alarmPair.Key);
-            AlarmListener.hasRemovedAlarm = true;
+            if (alarms.Remove(alarmId))
+                AlarmListener.hasRemovedAlarm = true;
         }
     }
 }

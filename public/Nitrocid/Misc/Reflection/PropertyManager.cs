@@ -372,6 +372,23 @@ namespace Nitrocid.Misc.Reflection
         }
 
         /// <summary>
+        /// Gets the properties from the type without evaluation
+        /// </summary>
+        /// <param name="VariableType">Variable type</param>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
+        {
+            // Get property for specified variable
+            var Properties = VariableType.GetProperties();
+            var PropertyDict = new Dictionary<string, Type>();
+
+            // Get the properties and get their values
+            foreach (PropertyInfo VarProperty in Properties)
+                PropertyDict.Add(VarProperty.Name, VarProperty.PropertyType);
+            return PropertyDict;
+        }
+
+        /// <summary>
         /// Gets the properties from the type dynamically
         /// </summary>
         /// <param name="VariableType">Variable type</param>
@@ -389,23 +406,6 @@ namespace Nitrocid.Misc.Reflection
                 var PropertyValue = VarProperty.GetValue(instance);
                 PropertyDict.Add(VarProperty.Name, PropertyValue);
             }
-            return PropertyDict;
-        }
-
-        /// <summary>
-        /// Gets the properties from the type without evaluation
-        /// </summary>
-        /// <param name="VariableType">Variable type</param>
-        /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
-        {
-            // Get property for specified variable
-            var Properties = VariableType.GetProperties();
-            var PropertyDict = new Dictionary<string, Type>();
-
-            // Get the properties and get their values
-            foreach (PropertyInfo VarProperty in Properties)
-                PropertyDict.Add(VarProperty.Name, VarProperty.PropertyType);
             return PropertyDict;
         }
 

@@ -21,6 +21,7 @@ using System;
 using System.Linq;
 using Nitrocid.Files;
 using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
@@ -54,8 +55,8 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
+            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
             {
                 Listing.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);

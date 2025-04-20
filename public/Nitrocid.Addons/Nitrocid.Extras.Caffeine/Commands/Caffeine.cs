@@ -56,12 +56,13 @@ namespace Nitrocid.Extras.Caffeine.Commands
                     TextWriters.Write(Translate.DoTranslation("No caffeine alerts to abort."), KernelColorType.Error);
                     return 32;
                 }
-                var (id, name) = AlarmTools.alarms.Keys.Last((alarm) => alarm.id.Contains("Caffeine"));
+                var id = AlarmTools.alarms.Keys.Last((alarm) => alarm.Contains("Caffeine"));
                 AlarmTools.StopAlarm(id);
             }
             else
             {
                 string secsOrName = parameters.ArgumentsList[0];
+                bool nameSpecified = caffeines.ContainsKey(secsOrName);
                 if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
                 {
                     TextWriters.Write(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
@@ -69,7 +70,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
                     TextWriters.WriteList(caffeines);
                     return 26;
                 }
-                AlarmTools.StartAlarm("Caffeine", Translate.DoTranslation("Your cup is now ready!"), alarmSeconds);
+                AlarmTools.StartAlarm("Caffeine", Translate.DoTranslation("Your cup is now ready!"), alarmSeconds, nameSpecified ? Translate.DoTranslation(secsOrName) : "");
             }
             return 0;
         }

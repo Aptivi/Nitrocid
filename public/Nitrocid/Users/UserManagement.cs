@@ -51,16 +51,6 @@ namespace Nitrocid.Users
         private static readonly List<UserInfo> LockedUsers = [];
 
         /// <summary>
-        /// Include anonymous users in list
-        /// </summary>
-        public static bool IncludeAnonymous =>
-            Config.MainConfig.IncludeAnonymous;
-        /// <summary>
-        /// Include disabled users in list
-        /// </summary>
-        public static bool IncludeDisabled =>
-            Config.MainConfig.IncludeDisabled;
-        /// <summary>
         /// Current username
         /// </summary>
         public static UserInfo CurrentUser =>
@@ -434,7 +424,8 @@ namespace Nitrocid.Users
         /// <summary>
         /// Lists all users and includes anonymous and disabled users if enabled.
         /// </summary>
-        public static List<string> ListAllUsers() => ListAllUsers(IncludeAnonymous, IncludeDisabled);
+        public static List<string> ListAllUsers() =>
+            ListAllUsers(Config.MainConfig.IncludeAnonymous, Config.MainConfig.IncludeDisabled);
 
         /// <summary>
         /// Lists all users and includes anonymous and disabled users if enabled.
@@ -458,7 +449,7 @@ namespace Nitrocid.Users
         /// <param name="UserNumber">The user number. This is NOT an index!</param>
         /// <returns>The username which is selected</returns>
         public static string SelectUser(int UserNumber) =>
-            SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled);
+            SelectUser(UserNumber, Config.MainConfig.IncludeAnonymous, Config.MainConfig.IncludeDisabled);
 
         /// <summary>
         /// Selects a user from the <see cref="ListAllUsers(bool, bool)"/> list

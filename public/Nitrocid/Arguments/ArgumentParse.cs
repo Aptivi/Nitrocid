@@ -38,6 +38,13 @@ namespace Nitrocid.Arguments
     public static class ArgumentParse
     {
 
+        private readonly static string[] outArgs =
+        [
+            "help",
+            "version",
+            "apiversion"
+        ];
+
         /// <summary>
         /// Available command line arguments
         /// </summary>
@@ -206,7 +213,7 @@ namespace Nitrocid.Arguments
         /// <param name="ArgumentsInput">List of passed arguments</param>
         /// <param name="argumentName">Argument name to check</param>
         /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
-        public static bool IsArgumentPassed(string[] ArgumentsInput, string argumentName)
+        public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName)
         {
             // Check for the arguments written by the user
             try
@@ -220,7 +227,7 @@ namespace Nitrocid.Arguments
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
-                    found = ArgumentName == "help" || ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName);
+                    found = ArgumentName == argumentName && (outArgs.Contains(ArgumentName) || Arguments.ContainsKey(ArgumentName));
                     if (found)
                         break;
                 }
@@ -237,7 +244,7 @@ namespace Nitrocid.Arguments
         private static string[]? GetFilteredArguments(string[]? ArgumentsInput)
         {
             if (ArgumentHelpPrint.acknowledged && ArgumentsInput is not null)
-                ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
+                ArgumentsInput = ArgumentsInput.Where((arg) => !outArgs.Contains(arg)).ToArray();
             return ArgumentsInput;
         }
 

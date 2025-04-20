@@ -30,6 +30,8 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
+using Nitrocid.Extras.Timers.Timers;
 
 namespace Nitrocid.Extras.Timers
 {
@@ -78,9 +80,17 @@ namespace Nitrocid.Extras.Timers
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
+            HomepageTools.UnregisterBuiltinAction("Timer");
+            HomepageTools.UnregisterBuiltinAction("Stopwatch");
+            HomepageTools.UnregisterBuiltinAction("Pomodoro Timer");
         }
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Timer", TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Stopwatch", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pomodoro Timer", PomodoroScreen.OpenPomodoro);
+        }
     }
 }

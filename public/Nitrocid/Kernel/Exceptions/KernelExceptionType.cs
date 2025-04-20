@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Exceptions
     public enum KernelExceptionType
     {
         /// <summary>
-        /// Unknown kernel error.
+        /// There was an unknown kernel error, possibly due to either the kernel exception type not being specified or something was wrong.
         /// </summary>
         Unknown,
         /// <summary>
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         GroupManagement,
         /// <summary>
-        /// Hostname error.
+        /// The kernel networking has reported an error for the hostname component.
         /// </summary>
         Hostname,
         /// <summary>
@@ -93,15 +93,15 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         InsaneConsoleDetected,
         /// <summary>
-        /// Invalid RSS feed.
+        /// Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.
         /// </summary>
         InvalidFeed,
         /// <summary>
-        /// Invalid RSS feed link.
+        /// Invalid RSS feed link. Ensure that you've entered the link correctly and try again.
         /// </summary>
         InvalidFeedLink,
         /// <summary>
-        /// Invalid RSS feed type.
+        /// Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.
         /// </summary>
         InvalidFeedType,
         /// <summary>
@@ -277,7 +277,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         NetworkOffline,
         /// <summary>
-        /// Permission denied trying to perform an operation.
+        /// Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.
         /// </summary>
         PermissionDenied,
         /// <summary>
@@ -480,5 +480,25 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error when trying to perform an operation for the kernel driver management.
         /// </summary>
         DriverManagement,
+        /// <summary>
+        /// There was an error when trying to perform an operation for the environment management.
+        /// </summary>
+        Environment,
+        /// <summary>
+        /// There was an error when trying to process a bootloader operation.
+        /// </summary>
+        Bootloader,
+        /// <summary>
+        /// There was an error when trying to process an alarm system operation.
+        /// </summary>
+        Alarm,
+        /// <summary>
+        /// There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.
+        /// </summary>
+        Widget,
+        /// <summary>
+        /// The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.
+        /// </summary>
+        Homepage,
     }
 }

@@ -40,7 +40,6 @@ namespace Nitrocid.ConsoleBase.Themes
     public static class ThemeTools
     {
 
-        internal static bool cacheInvalidated = true;
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
             { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ?? "[]")) },
@@ -116,7 +115,7 @@ namespace Nitrocid.ConsoleBase.Themes
         public static void ApplyTheme(ThemeInfo themeInfo, bool dry = false)
         {
             // Check if the console supports true color
-            if (ConsoleTools.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
+            if (Config.MainConfig.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
             {
                 // Check to see if the event is finished
                 if (themeInfo.IsExpired)
@@ -203,7 +202,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
-            if (IsTrueColorRequired(ThemeInfo) && !ConsoleTools.ConsoleSupportsTrueColor)
+            if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Set the colors
@@ -253,68 +252,38 @@ namespace Nitrocid.ConsoleBase.Themes
         /// <summary>
         /// Is the 255 color support required?
         /// </summary>
-        /// <param name="theme">Theme name</param>
-        /// <returns>If required, then true.</returns>
-        public static bool Is255ColorsRequired(string theme) =>
-            Is255ColorsRequired(GetThemeInfo(theme));
+        /// <param name="theme">Theme instance</param>
+        /// <param name="type">Minimum required color type</param>
+        /// <returns>If required, then true. Always false when <see cref="ColorType.FourBitColor"/> is passed.</returns>
+        public static bool MinimumTypeRequired(string theme, ColorType type) =>
+            MinimumTypeRequired(GetThemeInfo(theme), type);
 
         /// <summary>
         /// Is the 255 color support required?
         /// </summary>
         /// <param name="theme">Theme instance</param>
-        /// <returns>If required, then true.</returns>
-        public static bool Is255ColorsRequired(ThemeInfo theme) =>
-            Is255ColorsRequired(GetColorsFromTheme(theme));
+        /// <param name="type">Minimum required color type</param>
+        /// <returns>If required, then true. Always false when <see cref="ColorType.FourBitColor"/> is passed.</returns>
+        public static bool MinimumTypeRequired(ThemeInfo theme, ColorType type) =>
+            MinimumTypeRequired(GetColorsFromTheme(theme), type);
 
         /// <summary>
         /// Is the 255 color support required?
         /// </summary>
         /// <param name="colors">Dictionary of colors</param>
-        /// <returns>If required, then true.</returns>
-        public static bool Is255ColorsRequired(Dictionary<KernelColorType, Color> colors)
+        /// <param name="type">Minimum required color type</param>
+        /// <returns>If required, then true. Always false when <see cref="ColorType.FourBitColor"/> is passed.</returns>
+        public static bool MinimumTypeRequired(Dictionary<KernelColorType, Color> colors, ColorType type)
         {
-            // Check for true color requirement
-            if (IsTrueColorRequired(colors))
-                return true;
+            if (type == ColorType.FourBitColor)
+                return false;
 
             // Now, check for 255-color requirement
             for (int key = 0; key < colors.Count; key++)
-                if (colors.Values.ElementAt(key).Type == ColorType.EightBitColor)
+                if (colors.Values.ElementAt(key).Type <= type)
                     return true;
 
             // Else, 255 color support is not required
-            return false;
-        }
-
-        /// <summary>
-        /// Is the 255 color support required?
-        /// </summary>
-        /// <param name="theme">Theme name</param>
-        /// <returns>If required, then true.</returns>
-        public static bool IsTrueColorRequired(string theme) =>
-            IsTrueColorRequired(GetThemeInfo(theme));
-
-        /// <summary>
-        /// Is the 255 color support required?
-        /// </summary>
-        /// <param name="theme">Theme instance</param>
-        /// <returns>If required, then true.</returns>
-        public static bool IsTrueColorRequired(ThemeInfo theme) =>
-            IsTrueColorRequired(GetColorsFromTheme(theme));
-
-        /// <summary>
-        /// Is the true color support required?
-        /// </summary>
-        /// <param name="colors">Dictionary of colors</param>
-        /// <returns>If required, then true.</returns>
-        public static bool IsTrueColorRequired(Dictionary<KernelColorType, Color> colors)
-        {
-            // Check for true color requirement according to color type
-            for (int key = 0; key < colors.Count; key++)
-                if (colors.Values.ElementAt(key).Type == ColorType.TrueColor)
-                    return true;
-
-            // Else, no requirement
             return false;
         }
 

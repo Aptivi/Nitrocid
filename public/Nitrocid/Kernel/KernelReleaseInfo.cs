@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel
                                     + "Developer Preview"
 #else
                                     + "UNSUPPORTED"
-#endif // MILESTONESPECIFIERALPHA
+#endif // SPECIFIERALPHA
 #endif // !SPECIFIERREL
         ;
 
@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel
         ;
 
         // Release support window info
-        internal readonly static DateTime supportWindow = new(2034, 3, 11);
+        internal readonly static DateTime supportWindow = new(2025, 4, 23);
         internal readonly static bool supportWindowPrimed =
 #if SPECIFIERREL
             true;

@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of shells"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of shells"), true);
 
             // List all the available shells
             var shellNames = ShellManager.AvailableShells.Keys;

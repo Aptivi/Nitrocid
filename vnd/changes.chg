@@ -5,6 +5,141 @@ Released March 11th, 2024; codename Magic Bloom - 0.1.0 rev 44
 
 =============================================================================
 
+0.1.0.45 - Service Pack 4 (April 24th, 2025)
+============================================
+
+This service pack is a big release for the 0.1.0.x that incorporates all
+features introduced in the now-EOL 0.1.1.x series, including The Nitrocid
+Homepage. This is part of making the project better as we backport all
+features from EOL versions to the latest supported LTS release to make sure
+that all bugs that are present in those features are fixed.
+
+The Nitrocid Homepage
+---------------------
+
+Introducing you to The Nitrocid Homepage, where you can interact with the
+simulated system using either your keyboard or your mouse thanks to the latest
+Terminaux features that made this implementation possible. This homepage
+provides you with the following features:
+
+  - Taking a look at the current system time
+  - Showing the three latest RSS feeds
+  - Opening various interactive applications
+  - Accessing the kernel settings without a shell
+
+This homepage UI can be resized using either your terminal emulator's resize
+feature or Terminaux's methods of setting the window geometry. Of course, you
+can turn this feature off using the kernel settings from the shell. You can
+also log out from the homepage or go back to the shell. You can go back to the
+homepage anytime you either log out and log back in, or write "exit" in the
+main shell.
+
+More interactive than ever
+--------------------------
+
+Nitrocid KS has become more interactive than ever by adding more interactive
+TUIs that allow you to more easily manage tasks without the hassle of
+memorizing shell commands to perform the same tasks, such as weather forecast
+and the language studio. In addition, we've implemented the settings TUI so
+that you can configure the kernel without having to go back one page to select
+a section; you can now select a section in the first pane, while you can select
+a configuration entry in the second pane, all in one interactive TUI!
+
+In addition to that, we've now added full mouse support to countless
+interactive applications so that you can now experience the easier-than-ever
+kernel. This kernel version is the first one that provides complete mouse
+support.
+
+Viewing images
+--------------
+
+You can now take a look at images right in your terminal without having to
+open an external application on your host computer by using the "preview"
+command, pointing it to any file path that points to an image file, with the
+following non-exhaustive list of supported formats:
+
+  - .JPG and .JPEG
+  - .GIF
+  - .PNG
+  - .SVG
+
+Thankfully, Terminaux is here to do the job as it uses ImageMagick to process
+your images, making the preview tool the most powerful image viewing tool ever
+implemented, because of ImageMagick's support for both common and uncommon
+image formats that you can consult here:
+
+  - https://imagemagick.org/script/formats.php
+
+Beep Synth
+----------
+
+This is not a typo; Beep Synth from 2018 is back! This time, we've implemented
+it a bit differently, but we've made sure to keep the exact same goal of
+playing a MIDI-like beep instrument from your PC speakers. We've changed the
+format of the beep synth files (read: single instrument music cue sheet) to
+the more powerful JSON file instead of a simple text file so that we can
+implement the necessary checks.
+
+Your typical beep synth file now looks like this (an example):
+
+    {
+        "name": "Song",
+        "chapters": [
+            {
+                "name": "Chapter 1",
+                "synths": [
+                    "723 640",
+                    "323 750",
+                    "424 87"
+                ]
+            },
+            {
+                "name": "Chapter 2",
+                "synths": [
+                    "400 800",
+                    "600 800",
+                    "800 800"
+                ]
+            },
+        ]
+    }
+
+Beep synths used to look like this:
+
+    KS-BSynth
+
+    - Chapter 1
+    323, 64
+    323, 750
+    424, 87
+
+    - Chapter 2
+    400, 500
+    800, 1000
+    400, 500
+    800, 1000
+
+Of course, the command name stays the same, so it's "beepsynth" after all. Now,
+go ahead and make us listen to your "beep" synths!
+
+More hashing algorithms
+-----------------------
+
+We've added more hashing algorithms to the Nitrocid kernel as part of the
+Nitrocid Extras addon packs:
+
+  - CRC32C (Castagnoli)
+  - Enhanced SHA256 (SHA3-256)
+  - Enhanced SHA384 (SHA3-384)
+  - Enhanced SHA512 (SHA3-512)
+
+Please note that you'll have to run Windows 11 24H2 or newer to be able to use
+the Enhanced SHA algorithms. Any mod that uses one of the Enhanced SHA
+algorithms and is being run on Windows 11 23H2 or older will fail to perform
+hashing operations.
+
+=============================================================================
+
 0.1.0.39 - Service Pack 3 (February 25th, 2025)
 ===============================================
 

@@ -52,7 +52,7 @@ namespace Nitrocid.Kernel.Time.Alarm
                 DebugWriter.WriteDebug(DebugLevel.I, $"Alarm listener started");
 
                 // Loop through all the alarms
-                List<(string, string)> notifiedAlarms = [];
+                List<string> notifiedAlarms = [];
                 while (!PowerManager.RebootRequested)
                 {
                     ThreadManager.SleepNoBlock(1);
@@ -69,17 +69,17 @@ namespace Nitrocid.Kernel.Time.Alarm
 
                         // Get an alarm key and value pair
                         var alarm = AlarmTools.alarms.ElementAt(i);
-                        var alarmId = alarm.Key.id;
+                        var alarmId = alarm.Key;
 
                         // Get the current date and time for comparison
                         var date = TimeDateTools.KernelDateTime;
-                        if (date >= alarm.Value && !notifiedAlarms.Any((tuple) => tuple.Item1 == alarmId))
+                        if (date >= alarm.Value.Length && !notifiedAlarms.Any((id) => id == alarmId))
                         {
                             // The alarm has been fired! Send a notification
                             notifiedAlarms.Add(alarm.Key);
                             var alarmNotif = new Notification(
-                                Translate.DoTranslation("Alarm fired!"),
-                                alarm.Key.name,
+                                !string.IsNullOrWhiteSpace(alarm.Value.Description) ? alarm.Value.Name : Translate.DoTranslation("Alarm fired!"),
+                                !string.IsNullOrWhiteSpace(alarm.Value.Description) ? alarm.Value.Description : alarm.Value.Name,
                                 NotificationPriority.High, NotificationType.Normal
                             );
                             NotificationManager.NotifySend(alarmNotif);
@@ -87,8 +87,8 @@ namespace Nitrocid.Kernel.Time.Alarm
                     }
 
                     // Clear all notified alarms
-                    foreach (var notifiedAlarm in notifiedAlarms)
-                        AlarmTools.StopAlarm(notifiedAlarm.Item1);
+                    foreach (string notifiedAlarm in notifiedAlarms)
+                        AlarmTools.StopAlarm(notifiedAlarm);
                     notifiedAlarms.Clear();
                 }
             }

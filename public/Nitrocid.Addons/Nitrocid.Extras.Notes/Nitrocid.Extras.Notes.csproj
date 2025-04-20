@@ -37,7 +37,4 @@
     <PackageReference Include="FluentFTP" Version="52.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
 </Project>

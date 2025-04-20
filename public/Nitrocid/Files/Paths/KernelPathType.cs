@@ -116,5 +116,9 @@ namespace Nitrocid.Files.Paths
         /// Recent notifications file
         /// </summary>
         NotificationRecents,
+        /// <summary>
+        /// Widget configuration file.
+        /// </summary>
+        WidgetConfiguration,
     }
 }

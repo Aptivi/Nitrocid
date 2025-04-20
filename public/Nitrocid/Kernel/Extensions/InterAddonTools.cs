@@ -150,25 +150,8 @@ namespace Nitrocid.Kernel.Extensions
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available functions
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of functions
-            var functions = addon.PubliclyAvailableFunctions;
-            if (functions is null || functions.Count == 0)
-                return null;
-
-            // Assuming that we have functions, get a single function containing that name
-            if (!functions.TryGetValue(functionName, out Delegate? @delegate))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonInfo.AddonName);
-
-            // Assuming that we have that function, get a single function delegate
-            var function = @delegate;
+            // Get a function
+            var function = GetFunctionDelegate(addonName, functionName);
             if (function is null)
                 return null;
 
@@ -194,25 +177,8 @@ namespace Nitrocid.Kernel.Extensions
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available properties
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of properties
-            var properties = addon.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return null;
-
-            // Assuming that we have properties, get a single property containing that name
-            if (!properties.TryGetValue(propertyName, out PropertyInfo? propertyInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
-
-            // Assuming that we have that property, get a single property delegate
-            var property = propertyInfo;
+            // Get the property
+            var property = GetPropertyInfo(addonName, propertyName);
             if (property is null)
                 return null;
 
@@ -245,25 +211,8 @@ namespace Nitrocid.Kernel.Extensions
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available properties
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of properties
-            var properties = addon.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return;
-
-            // Assuming that we have properties, get a single property containing that name
-            if (!properties.TryGetValue(propertyName, out PropertyInfo? propertyInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
-
-            // Assuming that we have that property, get a single property delegate
-            var property = propertyInfo;
+            // Get the property
+            var property = GetPropertyInfo(addonName, propertyName);
             if (property is null)
                 return;
 
@@ -294,31 +243,11 @@ namespace Nitrocid.Kernel.Extensions
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
+            // Get the field
+            var field = GetFieldInfo(addonName, fieldName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
 
-            // Now, check the list of available fields
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of fields
-            var fields = addon.PubliclyAvailableFields;
-            if (fields is null || fields.Count == 0)
-                return null;
-
-            // Assuming that we have fields, get a single field containing that name
-            if (!fields.TryGetValue(fieldName, out FieldInfo? fieldInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonInfo.AddonName);
-
-            // Assuming that we have that field, get a single field delegate
-            var field = fieldInfo;
-            if (field is null)
-                return null;
-
-            // Check to see if this field is static
-            if (!field.IsStatic)
-                return null;
+            // The field instance is valid. Try to get a value from it.
             var get = field.GetValue(null);
             return get;
         }
@@ -343,6 +272,99 @@ namespace Nitrocid.Kernel.Extensions
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Get the field
+            var field = GetFieldInfo(addonName, fieldName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
+
+            // The field instance is valid. Try to set a value.
+            field.SetValue(null, value);
+        }
+
+        /// <summary>
+        /// Gets the function parameters from a function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
+        public static ParameterInfo[]? GetFunctionParameters(string addonName, string functionName)
+        {
+            var function = GetFunctionDelegate(addonName, functionName);
+            if (function is null)
+                return null;
+
+            // Get the function parameters
+            return function.Method.GetParameters();
+        }
+
+        /// <summary>
+        /// Gets the property setter parameters from a property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
+        public static ParameterInfo[]? GetSetPropertyParameters(string addonName, string propertyName)
+        {
+            var property = GetPropertyInfo(addonName, propertyName);
+            if (property is null)
+                return null;
+
+            // Get the property parameters
+            var get = property.GetSetMethod();
+            if (get is null)
+                return null;
+            return get.GetParameters();
+        }
+
+        private static Delegate? GetFunctionDelegate(string addonName, string functionName)
+        {
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
+
+            // Now, check the list of available functions
+            var addon = addonInfo.Addon;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", addonInfo.AddonName);
+
+            // Get a list of functions
+            var functions = addon.PubliclyAvailableFunctions;
+            if (functions is null || functions.Count == 0)
+                return null;
+
+            // Assuming that we have functions, get a single function containing that name
+            if (!functions.TryGetValue(functionName, out Delegate? @delegate))
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonInfo.AddonName);
+
+            // Assuming that we have that function, get a single function delegate
+            var function = @delegate;
+            return function;
+        }
+
+        private static PropertyInfo? GetPropertyInfo(string addonName, string propertyName)
+        {
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
+
+            // Now, check the list of available properties
+            var addon = addonInfo.Addon;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
+
+            // Get a list of properties
+            var properties = addon.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return null;
+
+            // Assuming that we have properties, get a single property containing that name
+            if (!properties.TryGetValue(propertyName, out PropertyInfo? propertyInfo))
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
+
+            // Assuming that we have that property, get a single property delegate
+            var property = propertyInfo;
+            return property;
+        }
+
+        private static FieldInfo? GetFieldInfo(string addonName, string fieldName)
+        {
             // Get the addon
             var addonInfo = AddonTools.GetAddon(addonName) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
@@ -354,7 +376,7 @@ namespace Nitrocid.Kernel.Extensions
             // Get a list of fields
             var fields = addon.PubliclyAvailableFields;
             if (fields is null || fields.Count == 0)
-                return;
+                return null;
 
             // Assuming that we have fields, get a single field containing that name
             if (!fields.TryGetValue(fieldName, out FieldInfo? fieldInfo))
@@ -363,14 +385,12 @@ namespace Nitrocid.Kernel.Extensions
             // Assuming that we have that field, get a single field delegate
             var field = fieldInfo;
             if (field is null)
-                return;
+                return null;
 
             // Check to see if this field is static
             if (!field.IsStatic)
-                return;
-
-            // The field instance is valid. Try to get a value from it.
-            field.SetValue(null, value);
+                return null;
+            return field;
         }
 
     }

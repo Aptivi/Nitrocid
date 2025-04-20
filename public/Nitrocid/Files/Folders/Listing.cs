@@ -41,33 +41,6 @@ namespace Nitrocid.Files.Folders
     /// </summary>
     public static class Listing
     {
-
-        /// <summary>
-        /// Whether to sort the list or not
-        /// </summary>
-        public static bool SortList =>
-            Config.MainConfig.SortList;
-        /// <summary>
-        /// Sort mode
-        /// </summary>
-        public static FilesystemSortOptions SortMode =>
-            (FilesystemSortOptions)Config.MainConfig.SortMode;
-        /// <summary>
-        /// Sort direction
-        /// </summary>
-        public static FilesystemSortDirection SortDirection =>
-            (FilesystemSortDirection)Config.MainConfig.SortDirection;
-        /// <summary>
-        /// Show file details when listing
-        /// </summary>
-        public static bool ShowFileDetailsList =>
-            Config.MainConfig.ShowFileDetailsList;
-        /// <summary>
-        /// Show total size when listing
-        /// </summary>
-        public static bool ShowTotalSizeInList =>
-            Config.MainConfig.ShowTotalSizeInList;
-
         /// <summary>
         /// Creates a list of files and directories
         /// </summary>
@@ -83,7 +56,7 @@ namespace Nitrocid.Files.Folders
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         public static void List(string folder) =>
-            List(folder, ShowFileDetailsList, FilesystemTools.SuppressUnauthorizedMessages, SortList);
+            List(folder, Config.MainConfig.ShowFileDetailsList, Config.MainConfig.SuppressUnauthorizedMessages, Config.MainConfig.SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -91,7 +64,7 @@ namespace Nitrocid.Files.Folders
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
         public static void List(string folder, bool Sort) =>
-            List(folder, ShowFileDetailsList, FilesystemTools.SuppressUnauthorizedMessages, Sort);
+            List(folder, Config.MainConfig.ShowFileDetailsList, Config.MainConfig.SuppressUnauthorizedMessages, Sort);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -100,7 +73,7 @@ namespace Nitrocid.Files.Folders
         /// <param name="ShowFileDetails">Whether to show the file details</param>
         /// <param name="SuppressUnauthorizedMessage">Whether to silence the access denied messages</param>
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage) =>
-            List(folder, ShowFileDetails, SuppressUnauthorizedMessage, SortList);
+            List(folder, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -161,7 +134,7 @@ namespace Nitrocid.Files.Folders
                     }
 
                     // Show total size in list optionally
-                    if (ShowTotalSizeInList)
+                    if (Config.MainConfig.ShowTotalSizeInList)
                         TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", TotalSize.SizeString());
                 }
                 catch (Exception ex)
@@ -201,7 +174,7 @@ namespace Nitrocid.Files.Folders
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         public static void ListTree(string folder) =>
-            ListTree(folder, FilesystemTools.SuppressUnauthorizedMessages, SortList, 0);
+            ListTree(folder, Config.MainConfig.SuppressUnauthorizedMessages, Config.MainConfig.SortList, 0);
 
         /// <summary>
         /// List all files and folders in a specified folder (tree form)
@@ -209,7 +182,7 @@ namespace Nitrocid.Files.Folders
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
         public static void ListTree(string folder, bool Sort) =>
-            ListTree(folder, FilesystemTools.SuppressUnauthorizedMessages, Sort, 0);
+            ListTree(folder, Config.MainConfig.SuppressUnauthorizedMessages, Sort, 0);
 
         /// <summary>
         /// List all files and folders in a specified folder (tree form)

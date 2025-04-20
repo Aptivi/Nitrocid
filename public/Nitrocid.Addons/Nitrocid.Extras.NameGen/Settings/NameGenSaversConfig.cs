@@ -38,29 +38,118 @@ namespace Nitrocid.Extras.NameGen.Settings
             ConfigTools.GetSettingsEntries(ResourcesManager.GetData("NameGenSaverSettings.json", ResourcesType.Misc, typeof(NameGenSaversConfig).Assembly) ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
+        #region PersonLookup
+        private int personLookupDelay = 75;
+        private int personLookupLookedUpDelay = 10000;
+        private int personLookupMinimumNames = 10;
+        private int personLookupMaximumNames = 100;
+        private int personLookupMinimumAgeYears = 18;
+        private int personLookupMaximumAgeYears = 100;
+
         /// <summary>
         /// [PersonLookup] How many milliseconds to wait before getting the new name?
         /// </summary>
-        public int PersonLookupDelay { get; set; } = 75;
+        public int PersonLookupDelay
+        {
+            get
+            {
+                return personLookupDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 75;
+                personLookupDelay = value;
+            }
+        }
         /// <summary>
         /// [PersonLookup] How many milliseconds to show the looked up name?
         /// </summary>
-        public int PersonLookupLookedUpDelay { get; set; } = 10000;
+        public int PersonLookupLookedUpDelay
+        {
+            get
+            {
+                return personLookupLookedUpDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10000;
+                personLookupLookedUpDelay = value;
+            }
+        }
         /// <summary>
         /// [PersonLookup] Minimum names count
         /// </summary>
-        public int PersonLookupMinimumNames { get; set; } = 10;
+        public int PersonLookupMinimumNames
+        {
+            get
+            {
+                return personLookupMinimumNames;
+            }
+            set
+            {
+                if (value <= 10)
+                    value = 10;
+                if (value > 1000)
+                    value = 1000;
+                personLookupMinimumNames = value;
+            }
+        }
         /// <summary>
         /// [PersonLookup] Maximum names count
         /// </summary>
-        public int PersonLookupMaximumNames { get; set; } = 100;
+        public int PersonLookupMaximumNames
+        {
+            get
+            {
+                return personLookupMaximumNames;
+            }
+            set
+            {
+                if (value <= personLookupMinimumNames)
+                    value = personLookupMinimumNames;
+                if (value > 1000)
+                    value = 1000;
+                personLookupMaximumNames = value;
+            }
+        }
         /// <summary>
         /// [PersonLookup] Minimum age years
         /// </summary>
-        public int PersonLookupMinimumAgeYears { get; set; } = 18;
+        public int PersonLookupMinimumAgeYears
+        {
+            get
+            {
+                return personLookupMinimumAgeYears;
+            }
+            set
+            {
+                if (value <= 18)
+                    value = 18;
+                if (value > 100)
+                    value = 100;
+                personLookupMinimumAgeYears = value;
+            }
+        }
         /// <summary>
         /// [PersonLookup] Maximum age years
         /// </summary>
-        public int PersonLookupMaximumAgeYears { get; set; } = 100;
+        public int PersonLookupMaximumAgeYears
+        {
+            get
+            {
+                return personLookupMaximumAgeYears;
+            }
+            set
+            {
+                if (value <= personLookupMinimumAgeYears)
+                    value = personLookupMinimumAgeYears;
+                if (value > 100)
+                    value = 100;
+                personLookupMaximumAgeYears = value;
+            }
+        }
+        #endregion
     }
 }

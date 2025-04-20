@@ -30,7 +30,7 @@ namespace Nitrocid.Files.Operations.Querying
     {
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="FilesystemTools.FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Config.MainConfig"/>.FullParseMode
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FS = Nitrocid.Files.FilesystemTools;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Drivers.Filesystem.Bases
 {
@@ -174,7 +174,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
         public override string RenderContents(string filename)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) entry");
-            string result = RenderContents(filename, FS.PrintLineNumbers);
+            string result = RenderContents(filename, Config.MainConfig.PrintLineNumbers);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) exit with result length [{result.Length}]");
             return result;
         }

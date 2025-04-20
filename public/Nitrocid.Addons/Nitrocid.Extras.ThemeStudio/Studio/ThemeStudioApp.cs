@@ -33,6 +33,9 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Interactive;
+using System;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
@@ -43,7 +46,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         /// Starts the theme studio
         /// </summary>
         /// <param name="ThemeName">Theme name</param>
-        public static void StartThemeStudio(string ThemeName)
+        /// <param name="useTui">Whether to use TUI or not</param>
+        public static void StartThemeStudio(string ThemeName, bool useTui = false)
         {
             // Inform user that we're on the studio
             EventsManager.FireEvent(EventType.ThemeStudioStarted);
@@ -55,6 +59,23 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             var StudioExiting = false;
             var originalColors = new Dictionary<KernelColorType, Color>(ThemeStudioTools.SelectedColors);
 
+            // Check for TUI
+            if (useTui)
+            {
+                var tui = new ThemeStudioCli()
+                {
+                    originalColors = originalColors,
+                    themeName = ThemeName,
+                };
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Change..."), ConsoleKey.Enter, (line, _, _, _) => tui.Change(line)));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Save..."), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Load..."), ConsoleKey.F2, (_, _, _, _) => tui.Load()));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Copy..."), ConsoleKey.F3, (line, _, _, _) => tui.Copy(line)));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+                return;
+            }
+
+            // Main Loop
             while (!StudioExiting)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
@@ -80,7 +101,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     new InputChoiceInfo($"{colors.Count + 6}", Translate.DoTranslation("Load Theme From Prebuilt Themes...")),
                     new InputChoiceInfo($"{colors.Count + 7}", Translate.DoTranslation("Load Current Colors")),
                     new InputChoiceInfo($"{colors.Count + 8}", Translate.DoTranslation("Preview...")),
-                    new InputChoiceInfo($"{colors.Count + 9}", Translate.DoTranslation("Exit")),
+                    new InputChoiceInfo($"{colors.Count + 9}", Translate.DoTranslation("Copy Color To...")),
+                    new InputChoiceInfo($"{colors.Count + 10}", Translate.DoTranslation("Exit")),
                 ];
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + CharManager.NewLine, ThemeName);
 
@@ -148,7 +170,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     string AltThemeName = InputTools.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);
-                    break;
                 }
                 else if (response == colors.Count + 7)
                 {
@@ -164,6 +185,31 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 }
                 else if (response == colors.Count + 9)
                 {
+                    // Copy Color To...
+                    DebugWriter.WriteDebug(DebugLevel.I, "Copying color to...");
+
+                    // Specify the source...
+                    int sourceColorIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select the source color type to copy the color from."));
+                    if (sourceColorIdx < 0)
+                        continue;
+                    var sourceType = (KernelColorType)sourceColorIdx;
+                    var sourceColorType = choices[sourceColorIdx];
+                    var sourceColor = colors[sourceType];
+
+                    // Specify the target...
+                    int[] targetColors = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple([.. choices], Translate.DoTranslation("Select the target color types to copy the source color type, {0}, to.").FormatString(sourceColorType.ChoiceTitle));
+                    if (targetColors.Length == 0)
+                        continue;
+
+                    // Copying...
+                    foreach (int idx in targetColors)
+                    {
+                        var type = (KernelColorType)idx;
+                        colors[type] = sourceColor;
+                    }
+                }
+                else if (response == colors.Count + 10)
+                {
                     // Exit
                     DebugWriter.WriteDebug(DebugLevel.I, "Exiting studio...");
                     StudioExiting = true;
@@ -172,8 +218,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     ColorTools.LoadBackDry(0);
                     SelectedColorInstance = colors[colors.Keys.ElementAt(response - 1)];
-                    string ColorWheelReturn = ColorSelector.OpenColorSelector(SelectedColorInstance).PlainSequence;
-                    colors[colors.Keys.ElementAt(response - 1)] = new Color(ColorWheelReturn);
+                    var finalColor = ColorSelector.OpenColorSelector(SelectedColorInstance);
+                    colors[colors.Keys.ElementAt(response - 1)] = finalColor;
                 }
             }
 

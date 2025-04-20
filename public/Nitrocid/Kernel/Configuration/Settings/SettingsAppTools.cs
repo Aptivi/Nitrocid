@@ -144,7 +144,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         internal static void CheckForSystemUpdates()
         {
-            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled on development versions.");
+            // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
+            // translated in the compiler pre-processor directives, so we need to move all translations here to
+            // avoid this happening again and for the locale tools to actually see them.
+            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled because you're running a development version.");
             string checkFailed = Translate.DoTranslation("Failed to check for updates.");
             string checking = Translate.DoTranslation("Checking for system updates...");
             string newVersion = Translate.DoTranslation("Found new version: ");

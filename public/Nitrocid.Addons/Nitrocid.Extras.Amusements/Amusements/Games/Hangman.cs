@@ -40,14 +40,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// <summary>
         /// Initializes the game
         /// </summary>
-        public static void InitializeHangman(HangmanDifficulty difficulty)
+        public static void InitializeHangman(HangmanDifficulty difficulty, HangmanWordDifficulty wordDifficulty = HangmanWordDifficulty.Common)
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBackground();
 
             // Get a random word and populate some variables
-            string RandomWord = WordManager.GetRandomWord();
+            string RandomWord = WordManager.GetRandomWord(wordDifficulty == HangmanWordDifficulty.Uncommon ? WordDataType.Words : WordDataType.CommonWords);
             bool hung = false;
             int currentAttempt = 0;
             List<char> gotChars = [];
@@ -241,5 +241,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         None = 0,
         Hardcore,
         Practice
+    }
+
+    enum HangmanWordDifficulty
+    {
+        Common,
+        Uncommon,
     }
 }

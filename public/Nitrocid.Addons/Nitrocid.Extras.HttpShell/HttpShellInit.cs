@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.HttpShell.HTTP;
 using Nitrocid.Extras.HttpShell.Settings;
+using Nitrocid.Extras.HttpShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
@@ -29,7 +30,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Nitrocid.Extras.HttpShell
 {
@@ -51,7 +54,22 @@ namespace Nitrocid.Extras.HttpShell
         internal static HttpConfig HttpConfig =>
             (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(HttpTools.HttpDelete), new Func<string, Task>(HttpTools.HttpDelete) },
+            { nameof(HttpTools.HttpGetString), new Func<string, Task<string>>(HttpTools.HttpGetString) },
+            { nameof(HttpTools.HttpGet), new Func<string, Task<HttpResponseMessage>>(HttpTools.HttpGet) },
+            { nameof(HttpTools.HttpPutString), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPutString) },
+            { nameof(HttpTools.HttpPutFile), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPutFile) },
+            { nameof(HttpTools.HttpPostString), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPostString) },
+            { nameof(HttpTools.HttpPostFile), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPostFile) },
+            { nameof(HttpTools.HttpAddHeader), new Action<string, string>(HttpTools.HttpAddHeader) },
+            { nameof(HttpTools.HttpRemoveHeader), new Action<string>(HttpTools.HttpRemoveHeader) },
+            { nameof(HttpTools.HttpListHeaders), new Func<(string, string)[]>(HttpTools.HttpListHeaders) },
+            { nameof(HttpTools.HttpGetCurrentUserAgent), new Func<string>(HttpTools.HttpGetCurrentUserAgent) },
+            { nameof(HttpTools.HttpSetUserAgent), new Action<string>(HttpTools.HttpSetUserAgent) },
+            { nameof(HttpTools.NeutralizeUri), new Func<string, string>(HttpTools.NeutralizeUri) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 

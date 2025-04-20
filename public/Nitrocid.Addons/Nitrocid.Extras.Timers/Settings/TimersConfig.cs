@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Timers.Settings
         /// </summary>
         public bool EnableFigletTimer { get; set; } = true;
         /// <summary>
-        /// Write a figlet font that is supported by the Figletize library. Consult the library documentation for more information
+        /// Write a figlet font that is supported by the Figlet library. Consult the library documentation for more information
         /// </summary>
         public string TimerFigletFont { get; set; } = "small";
         /// <summary>

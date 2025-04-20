@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Network
         public void TestChangeHostname()
         {
             NetworkTools.TryChangeHostname("NewHost").ShouldBeTrue();
-            NetworkTools.HostName.ShouldBe("NewHost");
+            Config.MainConfig.HostName.ShouldBe("NewHost");
             Config.MainConfig.HostName.ShouldBe("NewHost");
         }
 

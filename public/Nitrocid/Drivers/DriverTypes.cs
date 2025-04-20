@@ -53,7 +53,7 @@ namespace Nitrocid.Drivers
         /// </summary>
         DebugLogger,
         /// <summary>
-        /// Encoding drivers
+        /// Symmetric encoding drivers
         /// </summary>
         Encoding,
         /// <summary>
@@ -68,5 +68,9 @@ namespace Nitrocid.Drivers
         /// Console input drivers
         /// </summary>
         Input,
+        /// <summary>
+        /// Asymmetric encoding drivers
+        /// </summary>
+        EncodingAsymmetric,
     }
 }

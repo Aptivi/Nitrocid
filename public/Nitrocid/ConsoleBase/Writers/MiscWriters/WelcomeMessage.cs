@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Textify.Data.Figlet;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
@@ -24,14 +25,12 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
-using Textify.Data.Figlet;
-using Terminaux.Inputs.Styles;
 using System;
+using Terminaux.Inputs.Styles;
 using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.ConsoleBase.Writers.MiscWriters
@@ -46,33 +45,9 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         internal static string[] tips = [];
 
         /// <summary>
-        /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
-        /// </summary>
-        public static string CustomBanner =>
-            Config.MainConfig.CustomBanner;
-
-        /// <summary>
         /// Show tips on log-in
         /// </summary>
         public static bool ShowTip { get; internal set; }
-
-        /// <summary>
-        /// Whether to show the app information on boot
-        /// </summary>
-        public static bool ShowAppInfoOnBoot =>
-            Config.MainConfig.ShowAppInfoOnBoot;
-
-        /// <summary>
-        /// Enable marquee on startup
-        /// </summary>
-        public static bool StartScroll =>
-            Config.MainConfig.StartScroll;
-
-        /// <summary>
-        /// Development notice acknowledged
-        /// </summary>
-        public static bool DevNoticeConsented =>
-            Config.MainConfig.DevNoticeConsented;
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
@@ -95,7 +70,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteMessage()
         {
-            if (!SplashManager.EnableSplash)
+            if (!Config.MainConfig.EnableSplash)
             {
                 ConsoleWrapper.CursorVisible = false;
 
@@ -103,7 +78,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                 string MessageWrite = GetCustomBanner();
 
                 // Finally, write the message
-                if (StartScroll)
+                if (Config.MainConfig.StartScroll)
                     TextDynamicWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
                 else
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
@@ -120,7 +95,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         public static void WriteLicense()
         {
             SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("License information"), KernelColorTools.GetColor(KernelColorType.Stage));
-            TextWriters.Write("\n" + GetLicenseString(), true, KernelColorType.License);
+            TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 
         /// <summary>
@@ -168,7 +143,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             ;
 
             // Show development disclaimer
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", devNoticeOk),
@@ -197,11 +172,11 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 
         internal static void ShowUnusualEnvironmentWarning()
         {
-            string message = Translate.DoTranslation("You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel either directly or through GRILO. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.");
+            string message = Translate.DoTranslation("You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.");
             string message2 = Translate.DoTranslation("Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.");
 
             // Show unusual environment notice
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),

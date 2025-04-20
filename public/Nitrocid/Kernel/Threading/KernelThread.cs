@@ -86,6 +86,11 @@ namespace Nitrocid.Kernel.Threading
         public int ThreadId => BaseThread.ManagedThreadId;
 
         /// <summary>
+        /// Gets child threads count
+        /// </summary>
+        public int ChildThreadCount => ChildThreads.Count;
+
+        /// <summary>
         /// Makes a new kernel thread
         /// </summary>
         /// <param name="ThreadName">The thread name</param>
@@ -343,6 +348,20 @@ namespace Nitrocid.Kernel.Threading
             DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.ThreadId);
             if (IsAlive && !IsStopping)
                 target.Start();
+        }
+
+        /// <summary>
+        /// Gets an individual child thread
+        /// </summary>
+        /// <param name="threadIdx">Thread index</param>
+        /// <returns>A <see cref="KernelThread"/> instance of a child thread</returns>
+        /// <exception cref="KernelException"></exception>
+        public KernelThread GetChild(int threadIdx)
+        {
+            if (threadIdx < 0 || threadIdx >= ChildThreads.Count)
+                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread index number is invalid."));
+
+            return ChildThreads[threadIdx];
         }
 
         private void StartInternalNormal(ThreadStart action)

@@ -34,6 +34,10 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Extras.Calendar.Calendar;
+using Nitrocid.Kernel.Time.Calendars;
+using EventInfo = Nitrocid.Extras.Calendar.Calendar.Events.EventInfo;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -45,7 +49,10 @@ namespace Nitrocid.Extras.Calendar
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "culture")
+                        new CommandArgumentPart(true, "culture", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Culture name"
+                        })
                     ],
                     [
                         new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
@@ -76,15 +83,18 @@ namespace Nitrocid.Extras.Calendar
                     [
                         new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["tui"]
+                            ExactWording = ["tui"],
+                            ArgumentDescription = /* Localizable */ "Opens the calendar interactive TUI"
                         }),
                         new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Target year"
                         }),
                         new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Target month number"
                         })
                     ],
                     [
@@ -98,100 +108,129 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["event"]
+                            ExactWording = ["event"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the events"
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["add"]
+                            ExactWording = ["add"],
+                            ArgumentDescription = /* Localizable */ "Adds an event"
                         }),
-                        new CommandArgumentPart(true, "date"),
-                        new CommandArgumentPart(true, "title")
+                        new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Target date"
+                        }),
+                        new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Display name"
+                        })
                     }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["event"]
+                            ExactWording = ["event"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the events"
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["remove"]
+                            ExactWording = ["remove"],
+                            ArgumentDescription = /* Localizable */ "Removes an event"
                         }),
                         new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Event ID"
                         })
-                    }),
+                    ]),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["event"]
+                            ExactWording = ["event"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the events"
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["list"]
+                            ExactWording = ["list"],
+                            ArgumentDescription = /* Localizable */ "Lists all events"
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["event"]
+                            ExactWording = ["event"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the events"
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["saveall"]
+                            ExactWording = ["saveall"],
+                            ArgumentDescription = /* Localizable */ "Saves all the events"
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["reminder"]
+                            ExactWording = ["reminder"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the reminders"
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["add"]
                         }),
-                        new CommandArgumentPart(true, "dateandtime"),
-                        new CommandArgumentPart(true, "title")
+                        new CommandArgumentPart(true, "dateandtime", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Target date and time"
+                        }),
+                        new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Display name"
+                        })
                     }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["reminder"]
+                            ExactWording = ["reminder"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the reminders"
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["remove"]
+                            ExactWording = ["remove"],
+                            ArgumentDescription = /* Localizable */ "Removes a reminder"
                         }),
                         new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Reminder ID"
                         })
-                    }),
+                    ]),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["reminder"]
+                            ExactWording = ["reminder"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the reminders"
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["list"]
+                            ExactWording = ["list"],
+                            ArgumentDescription = /* Localizable */ "Lists all reminders"
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["reminder"]
+                            ExactWording = ["reminder"],
+                            ArgumentDescription = /* Localizable */ "Interaction with the reminders"
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["saveall"]
+                            ExactWording = ["saveall"],
+                            ArgumentDescription = /* Localizable */ "Saves all reminders"
                         })
                     }),
                 ], new CalendarCommand()),
@@ -205,7 +244,30 @@ namespace Nitrocid.Extras.Calendar
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(CalendarPrint.PrintCalendar), new Action(CalendarPrint.PrintCalendar) },
+            { nameof(CalendarPrint.PrintCalendar) + "2", new Action<CalendarTypes>(CalendarPrint.PrintCalendar) },
+            { nameof(CalendarPrint.PrintCalendar) + "3", new Action<int, int, CalendarTypes>(CalendarPrint.PrintCalendar) },
+            { nameof(EventManager.AddEvent), new Action<DateTime, string>(EventManager.AddEvent) },
+            { nameof(EventManager.RemoveEvent), new Action<DateTime, int>(EventManager.RemoveEvent) },
+            { nameof(EventManager.ListEvents), new Action(EventManager.ListEvents) },
+            { nameof(EventManager.LoadEvents), new Action(EventManager.LoadEvents) },
+            { nameof(EventManager.LoadEvent), new Func<string, EventInfo?>(EventManager.LoadEvent) },
+            { nameof(EventManager.SaveEvents), new Action(EventManager.SaveEvents) },
+            { nameof(EventManager.SaveEvents) + "2", new Action<string, bool>(EventManager.SaveEvents) },
+            { nameof(EventManager.SaveEvent), new Action<EventInfo>(EventManager.SaveEvent) },
+            { nameof(EventManager.SaveEvent) + "2", new Action<EventInfo, string>(EventManager.SaveEvent) },
+            { nameof(ReminderManager.AddReminder), new Action<DateTime, string>(ReminderManager.AddReminder) },
+            { nameof(ReminderManager.RemoveReminder), new Action<DateTime, int>(ReminderManager.RemoveReminder) },
+            { nameof(ReminderManager.ListReminders), new Action(ReminderManager.ListReminders) },
+            { nameof(ReminderManager.LoadReminders), new Action(ReminderManager.LoadReminders) },
+            { nameof(ReminderManager.LoadReminder), new Func<string, ReminderInfo?>(ReminderManager.LoadReminder) },
+            { nameof(ReminderManager.SaveReminders), new Action(ReminderManager.SaveReminders) },
+            { nameof(ReminderManager.SaveReminders) + "2", new Action<string, bool>(ReminderManager.SaveReminders) },
+            { nameof(ReminderManager.SaveReminder), new Action<ReminderInfo>(ReminderManager.SaveReminder) },
+            { nameof(ReminderManager.SaveReminder) + "2", new Action<ReminderInfo, string>(ReminderManager.SaveReminder) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
@@ -221,6 +283,9 @@ namespace Nitrocid.Extras.Calendar
             EventManager.LoadEvents();
             ReminderManager.LoadReminders();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
+
+            // Add the calendar option to the homepage
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Calendar", CalendarTui.OpenInteractive);
         }
 
         void IAddon.StartAddon()
@@ -236,6 +301,7 @@ namespace Nitrocid.Extras.Calendar
             EventManager.CalendarEvents.Clear();
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
+            HomepageTools.UnregisterBuiltinAction("Calendar");
         }
     }
 }

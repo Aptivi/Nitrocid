@@ -31,6 +31,8 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Extras.ArchiveShell.Archive;
+using SharpCompress.Archives;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
@@ -40,10 +42,13 @@ namespace Nitrocid.Extras.ArchiveShell
         [
             new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "archivefile"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to archive file"
+                        }),
+                    ])
                 ], new ArchiveCommand())
         ];
 
@@ -55,7 +60,14 @@ namespace Nitrocid.Extras.ArchiveShell
         internal static ArchiveConfig ArchiveConfig =>
             (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(ArchiveTools.ListArchiveEntries), new Func<string, List<IArchiveEntry>>(ArchiveTools.ListArchiveEntries) },
+            { nameof(ArchiveTools.ExtractFileEntry), new Func<string, string, bool, bool>(ArchiveTools.ExtractFileEntry) },
+            { nameof(ArchiveTools.PackFile), new Func<string, string, bool>(ArchiveTools.PackFile) },
+            { nameof(ArchiveTools.ChangeWorkingArchiveDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveDirectory) },
+            { nameof(ArchiveTools.ChangeWorkingArchiveLocalDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveLocalDirectory) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 

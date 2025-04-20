@@ -252,5 +252,17 @@ namespace Nitrocid.ConsoleBase.Colors
         /// Disabled option
         /// </summary>
         DisabledOption,
+        /// <summary>
+        /// Interactive TUI builtin key binding background color
+        /// </summary>
+        TuiKeyBindingBuiltinBackground,
+        /// <summary>
+        /// Interactive TUI builtin key binding color
+        /// </summary>
+        TuiKeyBindingBuiltin,
+        /// <summary>
+        /// Interactive TUI builtin key binding foreground color
+        /// </summary>
+        TuiKeyBindingBuiltinForeground,
     }
 }

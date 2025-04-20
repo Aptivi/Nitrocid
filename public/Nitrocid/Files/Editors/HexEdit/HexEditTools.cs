@@ -25,6 +25,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -128,11 +129,11 @@ namespace Nitrocid.Files.Editors.HexEdit
         /// </summary>
         public static void HandleAutoSaveBinaryFile()
         {
-            if (HexEditShellCommon.AutoSaveFlag)
+            if (Config.MainConfig.HexEditAutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(HexEditShellCommon.AutoSaveInterval * 1000);
+                    Thread.Sleep(Config.MainConfig.HexEditAutoSaveInterval * 1000);
                     if (HexEditShellCommon.FileStream is not null)
                         SaveBinaryFile();
                 }

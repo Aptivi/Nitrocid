@@ -20,7 +20,6 @@
 using System;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
-using Nitrocid.Kernel.Updates;
 using Nitrocid.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
@@ -130,7 +129,7 @@ namespace Nitrocid.Tests.Misc.Reflection
             var Property = PropertyManager.GetPropertyGeneral(nameof(KernelMainConfig.CheckUpdateStart));
             Property.ShouldNotBeNull();
             Property.Name.ShouldBe(nameof(KernelMainConfig.CheckUpdateStart));
-            Property.DeclaringType.ShouldBe(typeof(UpdateManager));
+            Property.DeclaringType.ShouldBe(typeof(KernelMainConfig));
         }
 
         /// <summary>
@@ -140,7 +139,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetProperties()
         {
-            var Properties = PropertyManager.GetProperties(typeof(UpdateManager));
+            var Properties = PropertyManager.GetProperties(typeof(Config));
             Properties.ShouldNotBeNull();
             Properties.ShouldNotBeEmpty();
         }

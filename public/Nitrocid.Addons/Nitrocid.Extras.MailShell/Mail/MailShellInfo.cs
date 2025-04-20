@@ -40,10 +40,13 @@ namespace Nitrocid.Extras.MailShell.Mail
         [
             new CommandInfo("cd", /* Localizable */ "Changes current mail directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "folder")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
+                    ])
                 ], new CdCommand()),
 
             new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
@@ -62,17 +65,21 @@ namespace Nitrocid.Extras.MailShell.Mail
                     {
                         new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Page number"
                         })
                     })
                 ], new ListCommand()),
 
             new CommandInfo("mkdir", /* Localizable */ "Makes a directory in the current working directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "foldername")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
+                    ])
                 ], new MkdirCommand()),
 
             new CommandInfo("mv", /* Localizable */ "Moves a message",
@@ -81,19 +88,29 @@ namespace Nitrocid.Extras.MailShell.Mail
                     {
                         new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         }),
-                        new CommandArgumentPart(true, "targetFolder")
+                        new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
                     })
                 ], new MvCommand()),
 
             new CommandInfo("mvall", /* Localizable */ "Moves all messages from recipient",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "senderName"),
-                        new CommandArgumentPart(true, "targetFolder")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "senderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Sender name"
+                        }),
+                        new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
+                    ])
                 ], new MvAllCommand()),
 
             new CommandInfo("read", /* Localizable */ "Opens a message",
@@ -102,7 +119,8 @@ namespace Nitrocid.Extras.MailShell.Mail
                     {
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     })
                 ], new ReadCommand()),
@@ -113,18 +131,25 @@ namespace Nitrocid.Extras.MailShell.Mail
                     {
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     })
                 ], new ReadEncCommand()),
 
             new CommandInfo("ren", /* Localizable */ "Renames a folder",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "oldFolderName"),
-                        new CommandArgumentPart(true, "newFolderName")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "oldFolderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Old mail directory name"
+                        }),
+                        new CommandArgumentPart(true, "newFolderName", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "New mail directory name"
+                        })
+                    ])
                 ], new RenCommand()),
 
             new CommandInfo("rm", /* Localizable */ "Removes a message",
@@ -133,25 +158,32 @@ namespace Nitrocid.Extras.MailShell.Mail
                     {
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Message ID"
                         })
                     })
                 ], new RmCommand()),
 
             new CommandInfo("rmall", /* Localizable */ "Removes all messages from recipient",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "sendername")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "sendername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Sender name"
+                        })
+                    ])
                 ], new RmAllCommand()),
 
             new CommandInfo("rmdir", /* Localizable */ "Removes a directory from the current working directory",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "foldername")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mail directory name"
+                        })
+                    ])
                 ], new RmdirCommand()),
 
             new CommandInfo("send", /* Localizable */ "Sends a message to an address",

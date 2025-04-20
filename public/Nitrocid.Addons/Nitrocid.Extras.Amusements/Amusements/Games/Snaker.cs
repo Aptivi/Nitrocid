@@ -21,16 +21,17 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
-using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
+using Nitrocid.Languages;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Colors;
 
@@ -86,7 +87,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
                     floor.Append(
-                        CsiSequences.GenerateCsiCursorPosition(x + 1, 2) +
+                        CsiSequences.GenerateCsiCursorPosition(x + 1, FloorTopEdge + 1) +
                         " "
                     );
                 }
@@ -107,7 +108,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
-                        " "
+                        "  "
                     );
                 }
 
@@ -117,9 +118,18 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
-                        " "
+                        "  "
                     );
                 }
+
+                // Now, print the score
+                floor.Append(
+                    CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                    ColorTools.RenderRevertBackground() +
+                    ColorTools.RenderSetConsoleColor(FloorColor) +
+                    Translate.DoTranslation("Score") +
+                    $": {SnakeLength - 1}"
+                );
 
                 // Render the result
                 return floor.ToString();
@@ -130,10 +140,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var snakeForeColor = ColorTools.GetGray(SnakeColor, ColorContrastType.Ntsc);
 
             // A typical snake usually starts in the middle.
-            int FloorTopEdge = 1;
+            int FloorTopEdge = 2;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
             int FloorLeftEdge = 3;
-            int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
+            int FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
             DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
             DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
             DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
@@ -158,7 +168,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 StringBuilder buffer = new();
                 FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
-                FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
+                FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
 
                 // Remove excess mass and set the snake color
                 buffer.Append(
@@ -211,13 +221,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenTools.SetCurrent(screen);
 
             // Main loop
+            double factor = 1.0;
             while (!Dead)
             {
                 // Delay
                 if (Simulation)
-                    ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ThreadManager.SleepNoBlock((int)(AmusementsInit.SaversConfig.SnakerDelay * factor), ScreensaverDisplayer.ScreensaverDisplayerThread);
                 else
-                    Thread.Sleep(SnakerSettings.SnakerDelay);
+                    Thread.Sleep((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 ScreenTools.Render();
 
                 // Move the snake according to the mode
@@ -227,8 +238,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();
                     if ((int)Math.Round(PossibilityToChange) == 1)
                     {
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                         if (DidHorizontal)
                             Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
                         else if (DidVertical)
@@ -316,7 +327,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             break;
                     }
                 }
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
 
                 // Check death using mass position check
                 Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
@@ -352,6 +363,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
                 {
                     SnakeLength += 1;
+                    if (factor > 0.25)
+                        factor -= 0.01;
                     DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
 
                     // Relocate the apple
@@ -368,9 +381,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Show the stage for few seconds before wiping
             if (Simulation)
-                ThreadManager.SleepNoBlock(SnakerSettings.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             else
-                Thread.Sleep(SnakerSettings.SnakerStageDelay);
+                Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 
             // Reset mass and console display and screen
             ScreenTools.UnsetCurrent(screen);
@@ -385,18 +398,18 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static Color ChangeSnakeColor()
         {
             var RandomDriver = new Random();
-            if (SnakerSettings.SnakerTrueColor)
+            if (AmusementsInit.SaversConfig.SnakerTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumRedColorLevel, SnakerSettings.SnakerMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumGreenColorLevel, SnakerSettings.SnakerMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumBlueColorLevel, SnakerSettings.SnakerMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                int RedColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel, AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel, AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel, AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
-                int ColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                int ColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumColorLevel, AmusementsInit.SaversConfig.SnakerMaximumColorLevel);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
             }
         }

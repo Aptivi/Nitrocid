@@ -22,13 +22,17 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.SftpShell.SFTP;
-using Nitrocid.Extras.SftpShell.SSH;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Renci.SshNet;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
+using System.Collections.Generic;
+using Textify.General;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.SftpShell.Tools
 {
@@ -90,8 +94,119 @@ namespace Nitrocid.Extras.SftpShell.Tools
             }
         }
 
+        /// <summary>
+        /// Prompts the user for the connection info
+        /// </summary>
+        /// <param name="Address">An IP address or hostname</param>
+        /// <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
+        /// <param name="Username">A username to authenticate with</param>
+        public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
+        {
+            // Authentication
+            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username);
+            var AuthenticationMethods = new List<AuthenticationMethod>();
+            int Answer;
+            while (true)
+            {
+                // Ask for authentication method
+                TextWriters.Write(Translate.DoTranslation("How do you want to authenticate?") + CharManager.NewLine, true, KernelColorType.Question);
+                TextWriters.Write("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
+                TextWriters.Write("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
+                TextWriters.Write(">> ", false, KernelColorType.Input);
+                if (int.TryParse(InputTools.ReadLine(), out Answer))
+                {
+                    // Check for answer
+                    bool exitWhile = false;
+                    switch (Answer)
+                    {
+                        case 1:
+                        case 2:
+                            exitWhile = true;
+                            break;
+                        default:
+                            DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
+                            TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                            TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                            Input.ReadKey();
+                            break;
+                    }
+
+                    if (exitWhile)
+                        break;
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
+                    TextWriters.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    Input.ReadKey();
+                }
+            }
+
+            switch (Answer)
+            {
+                case 1:
+                    // Private key file
+                    var AuthFiles = new List<PrivateKeyFile>();
+
+                    // Prompt user
+                    while (true)
+                    {
+                        string PrivateKeyFile, PrivateKeyPassphrase;
+                        PrivateKeyFile PrivateKeyAuth;
+
+                        // Ask for location
+                        TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
+                        PrivateKeyFile = InputTools.ReadLine();
+                        PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
+                        if (Checking.FileExists(PrivateKeyFile))
+                        {
+                            // Ask for passphrase
+                            TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
+                            PrivateKeyPassphrase = InputTools.ReadLineNoInput();
+
+                            // Add authentication method
+                            try
+                            {
+                                if (string.IsNullOrEmpty(PrivateKeyPassphrase))
+                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
+                                else
+                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
+                                AuthFiles.Add(PrivateKeyAuth);
+                            }
+                            catch (Exception ex)
+                            {
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
+                            }
+                        }
+                        else if (PrivateKeyFile.EndsWith("/q"))
+                            break;
+                        else
+                            TextWriters.Write(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
+                    }
+
+                    // Add authentication method
+                    AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
+                    break;
+                case 2:
+                    // Password
+                    string Pass;
+
+                    // Ask for password
+                    TextWriters.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
+                    Pass = InputTools.ReadLineNoInput();
+
+                    // Add authentication method
+                    AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
+                    break;
+            }
+            return new(Address, Port, Username, [.. AuthenticationMethods]);
+        }
+
         internal static SftpClient GetConnectionInfo(string SftpHost, int SftpPort, string SftpUser) =>
-            new(SSHTools.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SftpUser));
+            new(PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SftpUser));
 
         /// <summary>
         /// Tries to connect to the SFTP server.

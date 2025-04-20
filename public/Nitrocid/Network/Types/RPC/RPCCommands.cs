@@ -35,6 +35,7 @@ using Nitrocid.Kernel.Events;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Textify.General;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Network.Types.RPC
 {
@@ -89,7 +90,7 @@ namespace Nitrocid.Network.Types.RPC
         /// <param name="Request">A request</param>
         /// <param name="IP">An IP address which the RPC is hosted</param>
         public static void SendCommand(string Request, string IP) =>
-            SendCommand(Request, IP, RemoteProcedure.RPCPort);
+            SendCommand(Request, IP, Config.MainConfig.RPCPort);
 
         /// <summary>
         /// Send an RPC command to another instance of KS using the specified address
@@ -100,7 +101,7 @@ namespace Nitrocid.Network.Types.RPC
         /// <exception cref="InvalidOperationException"></exception>
         public static void SendCommand(string Request, string IP, int Port)
         {
-            if (RemoteProcedure.RPCEnabled)
+            if (Config.MainConfig.RPCEnabled)
             {
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
@@ -141,7 +142,7 @@ namespace Nitrocid.Network.Types.RPC
         /// </summary>
         public static void ReceiveCommand()
         {
-            var RemoteEndpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
+            var RemoteEndpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
             while (!RemoteProcedure.rpcStopping)
             {
                 try
@@ -188,7 +189,7 @@ namespace Nitrocid.Network.Types.RPC
                     return;
                 if (RemoteProcedure.RPCListen.Available == 0)
                     return;
-                var endpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
+                var endpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
                 byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);
                 string Message = Encoding.Default.GetString(MessageBuffer);
 

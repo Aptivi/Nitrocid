@@ -29,6 +29,10 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using VisualCard.Parts.Implementations;
+using Terminaux.Images;
+using Terminaux.Colors;
+using System.IO;
+using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
 using VisualCard.Parts.Enums;
 
@@ -56,6 +60,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
 
             // Generate the rendered text
+            string finalRenderedContactPicture =
+                ContactsInit.ContactsConfig.ShowImages ?
+                GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, KernelColorTools.GetColor(KernelColorType.TuiBackground)) :
+                "";
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
             string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
             string finalRenderedContactMail = GetContactMailFinal(selectedContact);
@@ -65,6 +73,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Render them to the second pane
             return
+                (!string.IsNullOrEmpty(finalRenderedContactPicture) ? finalRenderedContactPicture + CharManager.NewLine : "") +
                 finalRenderedContactName + CharManager.NewLine +
                 finalRenderedContactAddress + CharManager.NewLine +
                 finalRenderedContactMail + CharManager.NewLine +
@@ -185,6 +194,18 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine(finalRenderedContactTitles);
             string finalRenderedContactNotes = GetContactNotesFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
+
+            // If there is a profile picture and preview is enabled, print it
+            string picture =
+                ContactsInit.ContactsConfig.ShowImages ?
+                GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)) :
+                "";
+            if (!string.IsNullOrEmpty(picture))
+            {
+                finalInfoRendered.AppendLine("\n");
+                finalInfoRendered.AppendLine(picture);
+                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), true));
+            }
 
             // Now, render the info box
             InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
@@ -546,6 +567,30 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(Translate.DoTranslation("Contact notes") + $": {card.GetString(CardStringsEnum.Notes)[0].Value}");
             else
                 finalInfoRendered.Append(Translate.DoTranslation("No contact notes"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        internal string GetContactPictureFinal(int index, int width, int height, Color? background = null)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactPictureFinal(card, width, height, background);
+        }
+
+        internal string GetContactPictureFinal(Card card, int width, int height, Color? background = null)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasPicture = card.GetPartsArray<PhotoInfo>().Length > 0;
+
+            if (hasPicture)
+            {
+                Stream imageStream = card.GetPartsArray<PhotoInfo>()[0].GetStream();
+                string finalPicture = ImageProcessor.RenderImage(imageStream, width, height, background);
+                finalInfoRendered.Append(finalPicture);
+            }
 
             // Now, return the value
             return finalInfoRendered.ToString();

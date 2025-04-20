@@ -40,10 +40,13 @@ namespace Nitrocid.Shell.Shells.Hex
         [
             new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "byte")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "byte", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                        })
+                    ])
                 ], new AddByteCommand()),
 
             new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
@@ -53,14 +56,18 @@ namespace Nitrocid.Shell.Shells.Hex
 
             new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "byte"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "byte", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                        }),
                         new CommandArgumentPart(true, "pos", new()
                         {
                             IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte position number"
                         })
-                    })
+                    ])
                 ], new AddByteToCommand()),
 
             new CommandInfo("clear", /* Localizable */ "Clears the binary file",
@@ -74,7 +81,8 @@ namespace Nitrocid.Shell.Shells.Hex
                     {
                         new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte position number"
                         })
                     })
                 ], new DelByteCommand()),
@@ -85,11 +93,13 @@ namespace Nitrocid.Shell.Shells.Hex
                     {
                         new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte starting position number"
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte ending position number"
                         })
                     })
                 ], new DelBytesCommand()),
@@ -105,38 +115,51 @@ namespace Nitrocid.Shell.Shells.Hex
                     {
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte starting position number"
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte ending position number"
                         })
                     })
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "byte"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "byte", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                        }),
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte starting position number"
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Byte ending position number"
                         })
-                    })
+                    ])
                 ], new QueryByteCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "byte"),
-                        new CommandArgumentPart(true, "replacebyte")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "byte", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255 to be replaced"
+                        }),
+                        new CommandArgumentPart(true, "replacebyte", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255 to replace with"
+                        })
+                    ])
                 ], new ReplaceCommand()),
 
             new CommandInfo("save", /* Localizable */ "Saves the file",

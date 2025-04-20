@@ -41,27 +41,33 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Source color model"
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Target color model"
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "First number"
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Second number"
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Third number"
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Fourth number"
                         }),
                     ], true)
                 ], new ColorToCommand()),
@@ -72,27 +78,33 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Source color model"
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Target color model"
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "First number"
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Second number"
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Third number"
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Fourth number"
                         }),
                     ], true)
                 ], new ColorToKSCommand()),
@@ -103,23 +115,29 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Source color model"
                         }),
+
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "First number"
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Second number"
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Third number"
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Fourth number"
                         }),
                     ], true)
                 ], new ColorToHexCommand()),
@@ -130,9 +148,13 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Target color model"
                         }),
-                        new CommandArgumentPart(true, "specifier"),
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Color specifier"
+                        }),
                     ], true)
                 ], new ColorSpecToCommand()),
             
@@ -142,9 +164,13 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
-                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"]
+                            ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
+                            ArgumentDescription = /* Localizable */ "Target color model"
                         }),
-                        new CommandArgumentPart(true, "specifier"),
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Color specifier"
+                        }),
                     ], true)
                 ], new ColorSpecToKSCommand()),
             
@@ -152,7 +178,10 @@ namespace Nitrocid.Extras.ColorConvert
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "specifier"),
+                        new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Color specifier"
+                        }),
                     ], true)
                 ], new ColorSpecToHexCommand()),
         ];

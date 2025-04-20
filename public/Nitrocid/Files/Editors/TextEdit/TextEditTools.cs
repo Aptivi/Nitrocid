@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -133,11 +134,11 @@ namespace Nitrocid.Files.Editors.TextEdit
         /// </summary>
         public static void HandleAutoSaveTextFile()
         {
-            if (TextEditShellCommon.AutoSaveFlag)
+            if (Config.MainConfig.TextEditAutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(TextEditShellCommon.AutoSaveInterval * 1000);
+                    Thread.Sleep(Config.MainConfig.TextEditAutoSaveInterval * 1000);
                     if (TextEditShellCommon.FileStream is not null)
                         SaveTextFile(false);
                 }

@@ -21,6 +21,8 @@ using System.IO;
 using Nitrocid.Drivers.Encryption;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using SpecProbe.Software.Platform;
+using System;
 
 namespace Nitrocid.Tests.Drivers
 {
@@ -38,9 +40,19 @@ namespace Nitrocid.Tests.Drivers
         [DataRow("SHA256", "525514740C93C5442DBCB8FB92FB1B17B6F8B94B3C98E6F07CA8AEB093C2E79F")]
         [DataRow("SHA384", "B26ADFF6A6BDD59612F4B560E7D2A0240D7A611AF46BD4D2891181F46341E4886A8D74724877955AFC908F6B17A5B613")]
         [DataRow("SHA512", "0015CAF195A7248127F7E50C8D839935681A2234344387B5E9DF761E6D4F152CC4458ADCD45A19F59413EA6BC5E7C907A01A0B47B548CE0DAD04787CE416157D")]
+        [DataRow("SHA256Enhanced", "8136836181082CB424CDDF914D4906484AC9D5A957CBC557CC2461568F0FFF6F")]
+        [DataRow("SHA384Enhanced", "3C8C2D1BEB552DC3D0C07976F9E00FD1108FD3472CFE9013CD9A593144AD2CEAA165F704E972A8679B9C52BBC612077E")]
+        [DataRow("SHA512Enhanced", "1C8C419D1081F06B359B5F1D5F333CC9F46E8E807F4F11D5C4F593CE844BEA83686D9A6053EA4C484D052E11F57C64E4D580BA9DC9B50327A626E545E2E39731")]
         [Description("Action")]
         public void TestGetEncryptedString(string Algorithm, string expected)
         {
+            if (Algorithm.EndsWith("Enhanced"))
+            {
+                if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(10, 0, 25324))
+                    Assert.Inconclusive("Your version of Windows doesn't support SHA-3 yet.");
+                if (PlatformHelper.IsOnMacOS())
+                    Assert.Inconclusive("macOS doesn't support SHA-3 yet.");
+            }
             string TextHash = "Test hashing.";
             string actual = Encryption.GetEncryptedString(TextHash, Algorithm);
             actual.ShouldBe(expected);

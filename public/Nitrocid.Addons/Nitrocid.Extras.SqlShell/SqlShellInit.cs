@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Settings;
 using Nitrocid.Extras.SqlShell.Sql;
+using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
@@ -42,7 +44,10 @@ namespace Nitrocid.Extras.SqlShell
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
-            { nameof(SqlShellCommon.IsSql), new Func<string, bool>(SqlShellCommon.IsSql) }
+            { nameof(SqlShellCommon.IsSql), new Func<string, bool>(SqlShellCommon.IsSql) },
+            { nameof(SqlEditTools.SqlEdit_OpenSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_OpenSqlFile) },
+            { nameof(SqlEditTools.SqlEdit_CheckSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_CheckSqlFile) },
+            { nameof(SqlEditTools.SqlEdit_SqlCommand), new Func<string, string[], SqliteParameter[], bool>((query, replies, parameters) => SqlEditTools.SqlEdit_SqlCommand(query, ref replies, parameters)) },
         });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

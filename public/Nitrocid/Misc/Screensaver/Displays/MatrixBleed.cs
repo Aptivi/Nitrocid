@@ -32,63 +32,6 @@ using Terminaux.Base;
 namespace Nitrocid.Misc.Screensaver.Displays
 {
     /// <summary>
-    /// Settings for MatrixBleed
-    /// </summary>
-    public static class MatrixBleedSettings
-    {
-
-        /// <summary>
-        /// [MatrixBleed] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int MatrixBleedDelay
-        {
-            get
-            {
-                return Config.SaverConfig.MatrixBleedDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                Config.SaverConfig.MatrixBleedDelay = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] How many fade steps to do?
-        /// </summary>
-        public static int MatrixBleedMaxSteps
-        {
-            get
-            {
-                return Config.SaverConfig.MatrixBleedMaxSteps;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 25;
-                Config.SaverConfig.MatrixBleedMaxSteps = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] Chance to drop a new falling color
-        /// </summary>
-        public static int MatrixBleedDropChance
-        {
-            get
-            {
-                return Config.SaverConfig.MatrixBleedDropChance;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 40;
-                Config.SaverConfig.MatrixBleedDropChance = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for MatrixBleed
     /// </summary>
     public class MatrixBleedDisplay : BaseScreensaver, IScreensaver
@@ -114,7 +57,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             int FallEnd = ConsoleWrapper.WindowHeight - 1;
 
             // Invoke the "chance"-based random number generator to decide whether a line is about to fall.
-            bool newFall = RandomDriver.RandomChance(MatrixBleedSettings.MatrixBleedDropChance);
+            bool newFall = RandomDriver.RandomChance(Config.SaverConfig.MatrixBleedDropChance);
             if (newFall)
                 bleedStates.Add(new MatrixBleedState());
 
@@ -136,7 +79,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
                     case MatrixBleedFallState.Fading:
                         bleedState.Fade();
                         bleedState.fadeStep++;
-                        if (bleedState.fadeStep > MatrixBleedSettings.MatrixBleedMaxSteps)
+                        if (bleedState.fadeStep > Config.SaverConfig.MatrixBleedMaxSteps)
                             bleedState.fallState = MatrixBleedFallState.Done;
                         break;
                 }
@@ -160,7 +103,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(MatrixBleedSettings.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(Config.SaverConfig.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <inheritdoc/>
@@ -206,16 +149,16 @@ namespace Nitrocid.Misc.Screensaver.Displays
                 return;
 
             // Set thresholds
-            double ThresholdRed = foreground.RGB.R / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
-            double ThresholdGreen = foreground.RGB.G / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
-            double ThresholdBlue = foreground.RGB.B / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            double ThresholdRed = foreground.RGB.R / (double)Config.SaverConfig.MatrixBleedMaxSteps;
+            double ThresholdGreen = foreground.RGB.G / (double)Config.SaverConfig.MatrixBleedMaxSteps;
+            double ThresholdBlue = foreground.RGB.B / (double)Config.SaverConfig.MatrixBleedMaxSteps;
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Set color fade steps
             int CurrentColorRedOut = (int)Math.Round(foreground.RGB.R - ThresholdRed * fadeStep);
             int CurrentColorGreenOut = (int)Math.Round(foreground.RGB.G - ThresholdGreen * fadeStep);
             int CurrentColorBlueOut = (int)Math.Round(foreground.RGB.B - ThresholdBlue * fadeStep);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
             // Get the positions and write the block with new color
             var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);

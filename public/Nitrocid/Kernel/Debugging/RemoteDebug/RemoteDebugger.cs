@@ -54,19 +54,9 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
-        /// Remote debugger port
-        /// </summary>
-        public static int DebugPort =>
-            Config.MainConfig.DebugPort;
-        /// <summary>
         /// Whether the remote debug is stopping
         /// </summary>
-        public static bool RDebugStopping { get; set; }
-        /// <summary>
-        /// Whether to automatically start the remote debugger
-        /// </summary>
-        public static bool RDebugAutoStart =>
-            Config.MainConfig.RDebugAutoStart;
+        public static bool RDebugStopping { get; internal set; }
 
         /// <summary>
         /// Whether to start or stop the remote debugger
@@ -109,7 +99,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             // Listen to a current IP address
             try
             {
-                DebugTCP = new TcpListener(IPAddress.Any, DebugPort);
+                DebugTCP = new TcpListener(IPAddress.Any, Config.MainConfig.DebugPort);
                 DebugTCP.Start();
             }
             catch (SocketException sex)
@@ -200,7 +190,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                 }
                 catch (Exception ex)
                 {
-                    if (RemoteDebugTools.NotifyOnRemoteDebugConnectionError)
+                    if (Config.MainConfig.NotifyOnRemoteDebugConnectionError)
                     {
                         var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, NotificationPriority.Medium, NotificationType.Normal);
                         NotificationManager.NotifySend(RemoteDebugError);

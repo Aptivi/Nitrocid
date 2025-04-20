@@ -50,18 +50,6 @@ namespace Nitrocid.Kernel.Exceptions
         internal static bool KernelErrored;
         internal static bool NotifyKernelError;
 
-        /// <summary>
-        /// Whether to notify the user about minor boot faults
-        /// </summary>
-        public static bool NotifyFaultsBoot =>
-            Config.MainConfig.NotifyFaultsBoot;
-
-        /// <summary>
-        /// Whether to print the stack trace on kernel error
-        /// </summary>
-        public static bool ShowStackTraceOnKernelError =>
-            Config.MainConfig.ShowStackTraceOnKernelError;
-
 
         /// <summary>
         /// Indicates that there's something wrong with the kernel.
@@ -425,7 +413,6 @@ namespace Nitrocid.Kernel.Exceptions
                 WriteHeader(dumpBuilder, Translate.DoTranslation("Version information"));
                 dumpBuilder.AppendLine(KernelReleaseInfo.ConsoleTitle);
                 dumpBuilder.AppendLine(Environment.OSVersion.ToString());
-                dumpBuilder.AppendLine(Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
 
                 // Save the dump file
                 string filePath = $"{PathsManagement.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";

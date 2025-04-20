@@ -34,8 +34,8 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
@@ -48,8 +48,6 @@ namespace Nitrocid.SplashPacks.Splashes
 
         // Standalone splash information
         public override string SplashName => "FigProgress";
-
-        public override bool SplashDisplaysProgress => true;
 
         // Actual logic
         public override string Opening(SplashContext context)
@@ -194,7 +192,6 @@ namespace Nitrocid.SplashPacks.Splashes
                     consoleX = (width / 2) - (text.Length / 2);
                     consoleY = height / 2;
                     builder.Append(
-                        col.VTSequenceForeground +
                         TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                     );
                 }

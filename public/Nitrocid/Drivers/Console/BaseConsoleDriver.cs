@@ -32,13 +32,14 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Runtime.Serialization;
+using System.Diagnostics.CodeAnalysis;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;
-using Terminaux.Sequences;
-using TextifyDep::Textify.General;
 using Terminaux.Base.Extensions;
 using System.Text;
+using TextifyDep::Textify.General;
+using Terminaux.Sequences;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -312,6 +313,107 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        public virtual void SetWindowDimensions(int width, int height)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                {
+                    SystemConsole.WindowWidth = width;
+                    SystemConsole.WindowHeight = height;
+                }
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
+            _moved = true;
+        }
+
+        /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        public virtual void SetBufferDimensions(int width, int height)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                {
+                    SystemConsole.BufferWidth = width;
+                    SystemConsole.BufferHeight = height;
+                }
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
+            _moved = true;
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetWindowWidth(int width)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                    SystemConsole.WindowWidth = width;
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{SystemConsole.WindowHeight};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetWindowHeight(int height)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                    SystemConsole.WindowHeight = height;
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{SystemConsole.WindowWidth}t");
+                    Thread.Sleep(35);
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        public virtual void SetBufferWidth(int width)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                    SystemConsole.BufferWidth = width;
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{SystemConsole.WindowHeight};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        public virtual void SetBufferHeight(int height)
+        {
+            if (!IsDumb)
+            {
+                if (KernelPlatform.IsOnWindows())
+                    SystemConsole.BufferHeight = height;
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{SystemConsole.WindowWidth}t");
+                    Thread.Sleep(35);
+                }
+            }
+        }
+
+        /// <inheritdoc/>
         public virtual void SetOut(TextWriter newOut)
         {
             // We need to reset dumb state because the new output may not support usual console features other then reading/writing.
@@ -411,7 +513,7 @@ namespace Nitrocid.Drivers.Console
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }

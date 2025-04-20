@@ -37,18 +37,60 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain screensaver settings entries.")));
 
         #region MatrixBleed
+        private int matrixBleedDelay = 10;
+        private int matrixBleedMaxSteps = 25;
+        private int matrixBleedDropChance = 40;
+
         /// <summary>
         /// [MatrixBleed] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int MatrixBleedDelay { get; set; } = 10;
+        public int MatrixBleedDelay
+        {
+            get
+            {
+                return matrixBleedDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                matrixBleedDelay = value;
+            }
+        }
+
         /// <summary>
         /// [MatrixBleed] How many fade steps to do?
         /// </summary>
-        public int MatrixBleedMaxSteps { get; set; } = 25;
+        public int MatrixBleedMaxSteps
+        {
+            get
+            {
+                return matrixBleedMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                matrixBleedMaxSteps = value;
+            }
+        }
+
         /// <summary>
         /// [MatrixBleed] Chance to drop a new falling matrix
         /// </summary>
-        public int MatrixBleedDropChance { get; set; } = 40;
+        public int MatrixBleedDropChance
+        {
+            get
+            {
+                return matrixBleedDropChance;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 40;
+                matrixBleedDropChance = value;
+            }
+        }
         #endregion
     }
 }

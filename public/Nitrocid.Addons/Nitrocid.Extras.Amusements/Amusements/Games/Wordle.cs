@@ -34,9 +34,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     internal class Wordle
     {
 
-        public static void InitializeWordle(bool orig = false)
+        public static void InitializeWordle(bool orig = false, WordleWordDifficulty wordDifficulty = WordleWordDifficulty.Common)
         {
-            string RandomWord = WordManager.GetRandomWordConditional(8, "", "", orig ? 5 : 0);
+            string RandomWord = WordManager.GetRandomWordConditional(8, "", "", orig ? 5 : 0, wordDifficulty == WordleWordDifficulty.Uncommon ? WordDataType.Words : WordDataType.CommonWords);
             bool done = false;
             int currentGuessTry = 1;
             int currentGuessChar = 1;
@@ -147,5 +147,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
         }
 
+    }
+
+    enum WordleWordDifficulty
+    {
+        Common,
+        Uncommon,
     }
 }

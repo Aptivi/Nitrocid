@@ -39,7 +39,10 @@ namespace Nitrocid.Extras.Calculators
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "expression"),
+                        new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Mathematical expression"
+                        }),
                     ], true)
                 ], new CalcCommand()),
 
@@ -49,11 +52,13 @@ namespace Nitrocid.Extras.Calculators
                     {
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Real number"
                         }),
                         new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Imaginary number"
                         }),
                     })
                 ], new ImaginaryCommand()),

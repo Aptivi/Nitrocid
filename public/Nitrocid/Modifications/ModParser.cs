@@ -38,6 +38,7 @@ using Nitrocid.Security.Signing;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Modifications.Dependencies;
 using Nitrocid.Languages.Decoy;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Modifications
 {
@@ -80,7 +81,7 @@ namespace Nitrocid.Modifications
                     bool signed = AssemblySigning.IsStronglySigned(ModPath + modFile);
                     if (!signed)
                     {
-                        if (ModManager.AllowUntrustedMods)
+                        if (Config.MainConfig.AllowUntrustedMods)
                             SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
                         else
                             throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));

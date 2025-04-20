@@ -50,6 +50,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinConfig(string name)
         {
@@ -75,6 +76,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesShallow(string name)
         {
@@ -93,6 +95,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeep(string name)
         {
@@ -121,6 +124,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeepEval(string name)
         {

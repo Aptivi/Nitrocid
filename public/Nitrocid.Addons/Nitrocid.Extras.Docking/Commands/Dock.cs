@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.Extras.Docking.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Extras.Docking.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check the dock screen for existence
-            if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out IDock? dock))
+            if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
                 TextWriters.Write(Translate.DoTranslation("There is no dock screen by this name."), KernelColorType.Error);
                 return 34;

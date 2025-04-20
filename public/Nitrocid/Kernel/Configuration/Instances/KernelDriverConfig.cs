@@ -32,6 +32,7 @@ using Nitrocid.Drivers.Regexp;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
@@ -136,6 +137,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<IInputDriver>(DriverHandler.CurrentInputDriver);
             set => InputDriverTools.SetInputDriver(value);
+        }
+        /// <summary>
+        /// Current asymmetric encoding driver
+        /// </summary>
+        public string CurrentEncodingAsymmetricDriver
+        {
+            get => DriverHandler.GetDriverName<IEncodingAsymmetricDriver>(DriverHandler.CurrentEncodingAsymmetricDriver);
+            set => EncodingAsymmetricDriverTools.SetEncodingAsymmetricDriver(value);
         }
         #endregion
     }

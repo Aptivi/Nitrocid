@@ -43,7 +43,10 @@ namespace Nitrocid.Extras.RssShell
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "feedlink"),
+                        new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "RSS feed link"
+                        }),
                     ],
                     [
                         new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
@@ -62,7 +65,15 @@ namespace Nitrocid.Extras.RssShell
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions =>
             new(new Dictionary<string, Delegate>()
             {
-                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle }
+                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle },
+                { nameof(RSSShellTools.GetArticles), RSSShellTools.GetArticles },
+                { nameof(RSSShellTools.SearchArticles), RSSShellTools.SearchArticles },
+                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark), new Action(RSSBookmarkManager.AddRSSFeedToBookmark) },
+                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark) + "2", new Action<string>(RSSBookmarkManager.AddRSSFeedToBookmark) },
+                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark), new Action(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
+                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark) + "2", new Action<string>(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
+                { nameof(RSSBookmarkManager.GetBookmarks), new Func<List<string>>(RSSBookmarkManager.GetBookmarks) },
+                { nameof(RSSBookmarkManager.GetBookmark), new Func<int, string>(RSSBookmarkManager.GetBookmark) },
             });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

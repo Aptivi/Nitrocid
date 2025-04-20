@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time.Timezones;
 using System;
@@ -41,24 +40,6 @@ namespace Nitrocid.Kernel.Time
         /// </summary>
         public static DateTime KernelDateTimeUtc =>
             DateTime.UtcNow;
-
-        /// <summary>
-        /// Whether to show the current time before login
-        /// </summary>
-        public static bool ShowCurrentTimeBeforeLogin =>
-            Config.MainConfig.ShowCurrentTimeBeforeLogin;
-
-        /// <summary>
-        /// Show Time/Date on corner
-        /// </summary>
-        public static bool CornerTimeDate =>
-            Config.MainConfig.CornerTimeDate;
-
-        /// <summary>
-        /// Whether or not to render time and dates short or long
-        /// </summary>
-        public static bool LongTimeDate =>
-            Config.MainConfig.LongTimeDate;
 
         /// <summary>
         /// Gets the remaining time from now

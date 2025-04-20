@@ -48,6 +48,7 @@ namespace Nitrocid.Kernel.Debugging
         internal static string lastRoutinePath = "";
         internal static BaseLogger? debugLogger;
         internal static object WriteLock = new();
+        internal static int debugLines = 0;
         internal readonly static List<string> debugStackTraces = [];
 
         /// <summary>
@@ -57,23 +58,11 @@ namespace Nitrocid.Kernel.Debugging
             [.. debugStackTraces];
 
         /// <summary>
-        /// Censor private information that may be printed to the debug logs.
-        /// </summary>
-        public static bool DebugCensorPrivateInfo =>
-            Config.MainConfig.DebugCensorPrivateInfo;
-
-        /// <summary>
-        /// Enables event debugging
-        /// </summary>
-        public static bool EventDebug =>
-            Config.MainConfig.EventDebug;
-
-        /// <summary>
-        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
+        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="Config.MainConfig"/>.DebugCensorPrivateInfo is on.
         /// </summary>
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="DebugCensorPrivateInfo"/> is on</param>
+        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="Config.MainConfig"/>.DebugCensorPrivateInfo is on</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object?[]? vars)
         {
@@ -89,7 +78,7 @@ namespace Nitrocid.Kernel.Debugging
                     continue;
 
                 // Censor all the secure vars found
-                if (DebugCensorPrivateInfo)
+                if (Config.MainConfig.DebugCensorPrivateInfo)
                     vars[SecureVarIndex] = "[removed for privacy]";
             }
 

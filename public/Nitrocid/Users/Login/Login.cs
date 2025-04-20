@@ -33,7 +33,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Security.Permissions;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Misc.Splash;
 
 namespace Nitrocid.Users.Login
 {
@@ -45,17 +44,6 @@ namespace Nitrocid.Users.Login
 
         internal static bool LogoutRequested;
         internal static bool LoggedIn;
-
-        /// <summary>
-        /// Username prompt
-        /// </summary>
-        public static string UsernamePrompt =>
-            Config.MainConfig.UsernamePrompt;
-        /// <summary>
-        /// Password prompt
-        /// </summary>
-        public static string PasswordPrompt =>
-            Config.MainConfig.PasswordPrompt;
 
         /// <summary>
         /// Prompts user for login information
@@ -83,6 +71,7 @@ namespace Nitrocid.Users.Login
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
                 string user = "";
+                ModernLogonScreen.screenNum = 1;
                 while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
                 {
                     // First, set root account
@@ -246,7 +235,7 @@ namespace Nitrocid.Users.Login
 
         internal static void PromptMaintenanceLogin()
         {
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
                 KernelColorTools.LoadBackground();
             TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
             string user = "root";

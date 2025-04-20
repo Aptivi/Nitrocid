@@ -34,9 +34,9 @@ using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Styles.Choice;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {

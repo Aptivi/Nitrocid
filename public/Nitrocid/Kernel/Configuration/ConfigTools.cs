@@ -37,8 +37,8 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Misc.Reflection.Internal;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -235,11 +235,11 @@ namespace Nitrocid.Kernel.Configuration
                         if (KeyEnumerationInternal)
                         {
                             // Apparently, we need to have a full assembly name for getting types.
-                            Result = Type.GetType("Nitrocid." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
+                            Result = Type.GetType($"{KernelMain.rootNameSpace}.{KeyEnumeration}, {Assembly.GetExecutingAssembly().FullName}") is not null;
                         }
                         else
                         {
-                            Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) is not null;
+                            Result = Type.GetType($"{KeyEnumeration}, {KeyEnumerationAssembly}") is not null;
                         }
                         Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
                     }

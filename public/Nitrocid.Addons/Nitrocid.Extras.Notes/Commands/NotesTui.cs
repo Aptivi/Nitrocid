@@ -17,11 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Extras.Notes.Interactive;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
-using Nitrocid.Languages;
+using Nitrocid.Extras.Notes.Management;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
@@ -30,14 +27,7 @@ namespace Nitrocid.Extras.Notes.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var tui = new NoteViewerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Edit"), ConsoleKey.F2, (_, noteIdx, _, _) => tui.Edit(noteIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.F3, (_, noteIdx, _, _) => tui.Remove(noteIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove All"), ConsoleKey.F4, (_, _, _, _) => tui.RemoveAll()));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Load"), ConsoleKey.F5, (_, _, _, _) => tui.Load()));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Save"), ConsoleKey.F6, (_, _, _, _) => tui.Save()));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
+            NoteManagement.OpenNotesTui();
             return 0;
         }
 

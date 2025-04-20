@@ -42,7 +42,4 @@
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
 </Project>

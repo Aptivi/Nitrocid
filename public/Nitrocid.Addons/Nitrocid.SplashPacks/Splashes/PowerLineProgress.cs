@@ -28,8 +28,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.SplashPacks.Splashes

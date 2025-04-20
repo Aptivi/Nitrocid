@@ -41,9 +41,8 @@ namespace Nitrocid.ConsoleBase.Colors
         internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
         internal static Color accentBackgroundColor = GetColor(KernelColorType.Background);
 
-        // Variables to allow/disallow background/foreground color
-        internal static bool allowForeground = true;
-        internal static bool allowBackground = true;
+        // Variables to allow/disallow background color
+        internal static bool allowBackground = false;
 
         /// <summary>
         /// Gets a color from the color type

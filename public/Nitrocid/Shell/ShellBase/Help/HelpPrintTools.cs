@@ -39,48 +39,6 @@ namespace Nitrocid.Shell.ShellBase.Help
 {
     internal static class HelpPrintTools
     {
-        /// <summary>
-        /// Simplified Help Command
-        /// </summary>
-        public static bool SimHelp =>
-            Config.MainConfig.SimHelp;
-
-        /// <summary>
-        /// Shows how many commands available in help for shells
-        /// </summary>
-        public static bool ShowCommandsCount =>
-            Config.MainConfig.ShowCommandsCount;
-
-        /// <summary>
-        /// Shows how many shell commands available in help for shells
-        /// </summary>
-        public static bool ShowShellCommandsCount =>
-            Config.MainConfig.ShowShellCommandsCount;
-
-        /// <summary>
-        /// Shows how many mod commands available in help for shells
-        /// </summary>
-        public static bool ShowModCommandsCount =>
-            Config.MainConfig.ShowModCommandsCount;
-
-        /// <summary>
-        /// Shows how many aliases available in help for shells
-        /// </summary>
-        public static bool ShowShellAliasesCount =>
-            Config.MainConfig.ShowShellAliasesCount;
-
-        /// <summary>
-        /// Shows how many unified commands available in help for shells
-        /// </summary>
-        public static bool ShowUnifiedCommandsCount =>
-            Config.MainConfig.ShowUnifiedCommandsCount;
-
-        /// <summary>
-        /// Shows how many addon commands available in help for shells
-        /// </summary>
-        public static bool ShowAddonCommandsCount =>
-            Config.MainConfig.ShowAddonCommandsCount;
-
         internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false)
         {
             // Get general commands
@@ -93,12 +51,12 @@ namespace Nitrocid.Shell.ShellBase.Help
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            TextWriters.Write(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Length);
+            TextWriters.Write(Translate.DoTranslation("Available commands:") + (Config.MainConfig.ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Length);
 
             // The built-in commands
             if (showGeneral)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("General commands:") + (ShowCommandsCount & ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (var cmd in commandList)
@@ -114,7 +72,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The addon commands
             if (showAddon)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (ShowCommandsCount & ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
                 if (AddonCommandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
                 foreach (var cmd in AddonCommandList)
@@ -130,7 +88,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The mod commands
             if (showMod)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (ShowCommandsCount & ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Length);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Length);
                 if (ModCommandList.Length == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
                 foreach (var cmd in ModCommandList)
@@ -146,7 +104,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The alias commands
             if (showAlias)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (ShowCommandsCount & ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
                 foreach (var cmd in AliasedCommandList)
@@ -162,7 +120,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The unified commands
             if (showUnified)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (ShowCommandsCount & ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
                     TextWriters.Write("  - " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (var cmd in unifiedCommandList)
@@ -262,6 +220,22 @@ namespace Nitrocid.Shell.ShellBase.Help
                     // Print usage information
                     TextWriterRaw.Write();
                     TextWriters.Write($"{FinalCommand} {renderedUsage}", KernelColorType.ListEntry);
+
+                    // If we have arguments, print their descriptions
+                    if (Arguments.Length != 0)
+                    {
+                        TextWriters.Write("* " + Translate.DoTranslation("This command has the below arguments that change how it works:"), KernelColorType.NeutralText);
+                        foreach (var argument in Arguments)
+                        {
+                            string argumentDescUnlocalized = argument.Options.ArgumentDescription;
+                            if (string.IsNullOrWhiteSpace(argument.Options.ArgumentDescription))
+                                argumentDescUnlocalized = /* Localizable */ "Unspecified argument description";
+                            string argumentName = argument.ArgumentExpression;
+                            string argumentDesc = Translate.DoTranslation(argumentDescUnlocalized);
+                            TextWriters.Write($"    {argumentName}: ", false, KernelColorType.ListEntry);
+                            TextWriters.Write(argumentDesc, KernelColorType.ListValue);
+                        }
+                    }
 
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)

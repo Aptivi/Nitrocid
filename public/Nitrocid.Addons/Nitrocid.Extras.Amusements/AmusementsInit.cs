@@ -35,6 +35,8 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
+using Nitrocid.Extras.Amusements.Amusements.Games;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -60,6 +62,16 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["hardcore"],
                             AcceptsValues = false
                         }),
+                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["uncommon"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["common"],
+                            AcceptsValues = false
+                        }),
                     })
                 ], new HangmanCommand()),
 
@@ -72,6 +84,11 @@ namespace Nitrocid.Extras.Amusements
                 [
                     new CommandArgumentInfo()
                 ], new MeteorDodgeCommand()),
+
+            new CommandInfo("pong", /* Localizable */ "The ping-pong game!",
+                [
+                    new CommandArgumentInfo()
+                ], new PongCommand()),
 
             new CommandInfo("quote", /* Localizable */ "Gets a random quote",
                 [
@@ -135,7 +152,17 @@ namespace Nitrocid.Extras.Amusements
                         new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                         {
                             AcceptsValues = false
-                        })
+                        }),
+                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["uncommon"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["common"],
+                            AcceptsValues = false
+                        }),
                     })
                 ], new WordleCommand()),
 
@@ -168,7 +195,18 @@ namespace Nitrocid.Extras.Amusements
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add the amusements to the homepage
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Horse Racing", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Hangman", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Dodge", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Shooter", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pong", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Ship Duet", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Snaker", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle (original)", () => Wordle.InitializeWordle(true));
+        }
 
         void IAddon.StartAddon()
         {
@@ -206,6 +244,17 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
+
+            // Remove all options
+            HomepageTools.UnregisterBuiltinAction("Horse Racing");
+            HomepageTools.UnregisterBuiltinAction("Hangman");
+            HomepageTools.UnregisterBuiltinAction("Meteor Dodge");
+            HomepageTools.UnregisterBuiltinAction("Meteor Shooter");
+            HomepageTools.UnregisterBuiltinAction("Pong");
+            HomepageTools.UnregisterBuiltinAction("Ship Duet");
+            HomepageTools.UnregisterBuiltinAction("Snaker");
+            HomepageTools.UnregisterBuiltinAction("Wordle");
+            HomepageTools.UnregisterBuiltinAction("Wordle (original)");
         }
     }
 }

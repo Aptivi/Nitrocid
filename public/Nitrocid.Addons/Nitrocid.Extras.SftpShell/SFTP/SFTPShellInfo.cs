@@ -41,34 +41,46 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         [
             new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "file")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        })
+                    ])
                 ], new CatCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "directory")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
+                    ])
                 ], new CdlCommand()),
 
             new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "directory")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
+                    ])
                 ], new CdrCommand()),
 
             new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "file")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file to delete"
+                        })
+                    ])
                 ], new DelCommand()),
 
             new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
@@ -78,17 +90,23 @@ namespace Nitrocid.Extras.SftpShell.SFTP
 
             new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "file")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                        })
+                    ])
                 ], new GetCommand()),
 
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
@@ -106,7 +124,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "dir")
+                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        })
                     ],
                     [
                         new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
@@ -120,7 +141,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                        }),
                     ], true)
                 ], new MkldirCommand()),
 
@@ -128,16 +152,22 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "directory"),
+                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                        }),
                     ], true)
                 ], new MkrdirCommand()),
 
             new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "file")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to local file"
+                        })
+                    ])
                 ], new PutCommand()),
 
             new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",

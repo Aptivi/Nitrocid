@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Nitrocid.Drivers;
-using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Paths
 {
@@ -36,12 +35,6 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string PathLookupDelimiter =>
             Convert.ToString(Path.PathSeparator);
-
-        /// <summary>
-        /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
-        /// </summary>
-        public static string PathsToLookup =>
-            Config.MainConfig.PathsToLookup;
 
         /// <summary>
         /// Gets the lookup path list

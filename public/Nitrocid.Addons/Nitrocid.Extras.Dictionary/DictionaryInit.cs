@@ -37,10 +37,13 @@ namespace Nitrocid.Extras.Dictionary
         [
             new CommandInfo("dict", /* Localizable */ "The English Dictionary",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "word"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Word to define"
+                        }),
+                    ])
                 ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
         ];
 

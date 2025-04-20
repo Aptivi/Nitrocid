@@ -29,7 +29,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;
@@ -53,60 +52,17 @@ namespace Nitrocid.Modifications
         internal static Dictionary<string, ModInfo> Mods = [];
 
         /// <summary>
-        /// Blacklisted mods split by semicolons
-        /// </summary>
-        public static string BlacklistedModsString =>
-            Config.MainConfig.BlacklistedModsString;
-
-        /// <summary>
-        /// Whether to start the kernel mods on boot
-        /// </summary>
-        public static bool StartKernelMods =>
-            Config.MainConfig.StartKernelMods;
-
-        /// <summary>
-        /// Allow untrusted mods
-        /// </summary>
-        public static bool AllowUntrustedMods =>
-            Config.MainConfig.AllowUntrustedMods;
-
-        /// <summary>
         /// Loads all mods in KSMods
         /// </summary>
         /// <param name="priority">Specifies the mod load priority</param>
-        public static void StartMods(ModLoadPriority priority = ModLoadPriority.Optional)
-        {
-            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0} | Priority: {1}", KernelEntry.SafeMode, priority);
-            if (!KernelEntry.SafeMode)
-            {
-                // We're not in safe mode. We're good now.
-                if (!Checking.FolderExists(ModPath))
-                    Directory.CreateDirectory(ModPath);
-                int count = Directory.GetFiles(ModPath).Length;
-                DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
+        public static void StartMods(ModLoadPriority priority = ModLoadPriority.Optional) =>
+            Manage(true, priority);
 
-                // Check to see if we have mods
-                if (count != 0)
-                {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods = {0}", count);
-                    foreach (string modFilePath in Directory.GetFiles(ModPath))
-                    {
-                        string modFile = Path.GetFileName(modFilePath);
-                        StartMod(modFile, priority);
-                    }
-                }
-                else
-                {
-                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."));
-                }
-            }
-            else
-            {
-                SplashReport.ReportProgressError(Translate.DoTranslation("Parsing mods not allowed on safe mode."));
-            }
-        }
+        /// <summary>
+        /// Stops all mods in KSMods
+        /// </summary>
+        public static void StopMods() =>
+            Manage(false);
 
         /// <summary>
         /// Starts a specified mod
@@ -119,109 +75,38 @@ namespace Nitrocid.Modifications
             string PathToMod = Path.Combine(ModPath, ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0} | Safe mode: {1} | Priority: {2}", PathToMod, KernelEntry.SafeMode, priority);
 
-            if (!KernelEntry.SafeMode)
-            {
-                if (Checking.FileExists(PathToMod))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mod file exists! Starting...");
-                    if (!HasModStarted(PathToMod))
-                    {
-                        if (!GetBlacklistedMods().Contains(PathToMod))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", ModFilename);
-                            ModParser.ParseMod(ModFilename, priority);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), ModFilename);
-                        }
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Mod already started!");
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod has already been started!"));
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), ModFilename);
-                }
-            }
-            else
+            if (KernelEntry.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be loaded in safe mode!");
                 SplashReport.ReportProgressError(Translate.DoTranslation("Parsing mods not allowed on safe mode."));
+                return;
             }
-        }
 
-        /// <summary>
-        /// Stops all mods in KSMods
-        /// </summary>
-        public static void StopMods()
-        {
-            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
-            if (!KernelEntry.SafeMode)
+            if (!Checking.FileExists(PathToMod))
             {
-                // We're not in safe mode. We're good now.
-                if (!Checking.FolderExists(ModPath))
-                    Directory.CreateDirectory(ModPath);
-                int count = Directory.GetFiles(ModPath).Length;
-                DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
-
-                // Check to see if we have mods
-                if (count != 0)
-                {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Stopping mods..."));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
-
-                    // Enumerate and delete the script as soon as the stopping is complete
-                    for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
-                    {
-                        var TargetMod = Mods.Values.ElementAt(ScriptIndex);
-                        var Script = TargetMod.ModScript;
-
-                        // Try to stop the mod
-                        DebugWriter.WriteDebug(DebugLevel.I, "Stopping... Mod name: {0}", TargetMod.ModName);
-
-                        // Stop the associated part
-                        Script.StopMod();
-                        if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(Script.Version))
-                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), TargetMod.ModName, Script.Version);
-
-                        // Remove the mod from the list
-                        TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
-                        Mods.Remove(Mods.Keys.ElementAt(ScriptIndex));
-
-                        // Remove the mod dependency from the lookup
-                        string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(TargetMod.ModFilePath) + "-" + FileVersionInfo.GetVersionInfo(TargetMod.ModFilePath).FileVersion + "/";
-                        AssemblyLookup.baseAssemblyLookupPaths.Remove(ModDepPath);
-                    }
-
-                    // Clear all mod commands list, since we've stopped all mods.
-                    foreach (string ShellTypeName in ShellManager.AvailableShells.Keys)
-                    {
-                        ShellManager.GetShellInfo(ShellTypeName).ModCommands.Clear();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeName);
-                    }
-
-                    // Clear the custom screensavers
-                    ScreensaverManager.CustomSavers.Clear();
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
-                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."));
-                }
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
+                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), ModFilename);
+                return;
             }
-            else
+
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file exists! Starting...");
+            if (HasModStarted(PathToMod))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                SplashReport.ReportProgressError(Translate.DoTranslation("Stopping mods not allowed on safe mode."));
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod already started!");
+                SplashReport.ReportProgressError(Translate.DoTranslation("Mod has already been started!"));
+                return;
             }
+
+            if (GetBlacklistedMods().Contains(PathToMod))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
+                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), ModFilename);
+                return;
+            }
+
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
+            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", ModFilename);
+            ModParser.ParseMod(ModFilename, priority);
         }
 
         /// <summary>
@@ -369,7 +254,8 @@ namespace Nitrocid.Modifications
         /// <summary>
         /// Gets the blacklisted mods list
         /// </summary>
-        public static List<string> GetBlacklistedMods() => [.. BlacklistedModsString.Split(';')];
+        public static List<string> GetBlacklistedMods() =>
+            [.. Config.MainConfig.BlacklistedModsString.Split(';')];
 
         /// <summary>
         /// Installs the mod DLL or single code file to the mod directory
@@ -537,6 +423,62 @@ namespace Nitrocid.Modifications
                     return mods[mod];
             }
             return null;
+        }
+
+        internal static void Manage(bool start, ModLoadPriority priority = ModLoadPriority.Optional)
+        {
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
+            if (!KernelEntry.SafeMode)
+            {
+                // We're not in safe mode. We're good now. Populate the file list.
+                List<string> modFiles = [];
+                if (!start)
+                {
+                    foreach (var mod in Mods.Values)
+                    {
+                        string modFile = mod.ModFileName;
+                        modFiles.Add(modFile);
+                    }
+                }
+                else
+                {
+                    if (!Checking.FolderExists(ModPath))
+                        Directory.CreateDirectory(ModPath);
+                    foreach (string modFilePath in Directory.GetFiles(ModPath))
+                    {
+                        string modFile = Path.GetFileName(modFilePath);
+                        modFiles.Add(modFile);
+                    }
+                }
+
+                // Now, start or stop the mods.
+                int count = modFiles.Count;
+                DebugWriter.WriteDebug(DebugLevel.I, "Mods count: {0}", count);
+
+                // Check to see if we have mods
+                if (count > 0)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mods are being started or stopped. Total mods = {0}", count);
+                    foreach (string mod in modFiles)
+                    {
+                        if (start)
+                            StartMod(mod, priority);
+                        else
+                            StopMod(mod);
+                    }
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
+                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."));
+                }
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped or started in safe mode!");
+                SplashReport.ReportProgressError(Translate.DoTranslation("Starting or stopping mods not allowed on safe mode."));
+            }
         }
 
     }

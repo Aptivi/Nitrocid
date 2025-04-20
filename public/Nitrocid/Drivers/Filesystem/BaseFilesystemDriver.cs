@@ -51,6 +51,7 @@ using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
 using Terminaux.Colors;
+using Textify.General.Comparers;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -205,7 +206,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void CopyDirectory(string Source, string Destination) =>
-            CopyDirectory(Source, Destination, FS.ShowFilesystemProgress);
+            CopyDirectory(Source, Destination, Config.MainConfig.ShowFilesystemProgress);
 
         /// <inheritdoc/>
         public virtual void CopyDirectory(string Source, string Destination, bool ShowProgress)
@@ -370,16 +371,16 @@ namespace Nitrocid.Drivers.Filesystem
                     .Max((fse) => fse.FileSize.GetDigits());
 
                 // Select whether or not to sort descending.
-                switch (Listing.SortDirection)
+                switch (Config.MainConfig.SortDirection)
                 {
-                    case FilesystemSortDirection.Ascending:
+                    case (int)FilesystemSortDirection.Ascending:
                         {
-                            FilesystemEntries = [.. FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
+                            FilesystemEntries = [.. FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), Config.MainConfig.SortLogically ? new LogicalComparer() : StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
-                    case FilesystemSortDirection.Descending:
+                    case (int)FilesystemSortDirection.Descending:
                         {
-                            FilesystemEntries = [.. FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
+                            FilesystemEntries = [.. FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), Config.MainConfig.SortLogically ? new LogicalComparer() : StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
                 }
@@ -738,7 +739,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 FileInfo DFile = Files[i];
                 ProgressManager.ReportProgress((i + 1) / Files.Count, nameof(GetAllSizesInFolder), $". {DFile.FullName}");
-                if (DFile.Attributes == FileAttributes.Hidden & FS.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
+                if (DFile.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     ProgressManager.ReportProgress((i + 1) / Files.Count, nameof(GetAllSizesInFolder) + "Found", $"+ {DFile.FullName} [{DFile.Length.SizeString()}]");
                     DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
@@ -755,7 +756,7 @@ namespace Nitrocid.Drivers.Filesystem
             try
             {
                 Path = FS.NeutralizePath(Path);
-
+                
                 // Check to see if we're calling from the root path
                 string Pattern = IsFile ? "" : "*";
                 string pathRoot = FS.NeutralizePath(IOPath.GetPathRoot(Path));
@@ -821,7 +822,7 @@ namespace Nitrocid.Drivers.Filesystem
                     EnumerationOptions options = new()
                     {
                         RecurseSubdirectories = Recursive,
-                        AttributesToSkip = FS.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
+                        AttributesToSkip = Config.MainConfig.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
                     };
                     Entries = Directory.GetFileSystemEntries(Parent, Pattern, options);
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
@@ -960,7 +961,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual List<string> GetPathList() =>
-            [.. PathLookupTools.PathsToLookup.Split(Convert.ToChar(PathLookupTools.PathLookupDelimiter))];
+            [.. Config.MainConfig.PathsToLookup.Split(Convert.ToChar(PathLookupTools.PathLookupDelimiter))];
 
         /// <inheritdoc/>
         public string GetRandomFileName() =>
@@ -1133,7 +1134,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void MoveDirectory(string Source, string Destination) =>
-            MoveDirectory(Source, Destination, FS.ShowFilesystemProgress);
+            MoveDirectory(Source, Destination, Config.MainConfig.ShowFilesystemProgress);
 
         /// <inheritdoc/>
         public virtual void MoveDirectory(string Source, string Destination, bool ShowProgress)
@@ -1257,7 +1258,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual string RenderContents(string filename) =>
-            RenderContents(filename, FS.PrintLineNumbers);
+            RenderContents(filename, Config.MainConfig.PrintLineNumbers);
 
         /// <inheritdoc/>
         public virtual string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
@@ -1317,7 +1318,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void PrintContents(string filename) =>
-            PrintContents(filename, FS.PrintLineNumbers);
+            PrintContents(filename, Config.MainConfig.PrintLineNumbers);
 
         /// <inheritdoc/>
         public virtual void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
@@ -1332,7 +1333,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo) =>
-            PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
+            PrintDirectoryInfo(DirectoryInfo, Config.MainConfig.ShowFileDetailsList);
 
         /// <inheritdoc/>
         public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails)
@@ -1345,7 +1346,7 @@ namespace Nitrocid.Drivers.Filesystem
                 long TotalSize = SizeGetter.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
-                if (finalDirInfo.Attributes == FileAttributes.Hidden & FS.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     TextWriters.Write("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
                     if (ShowDirectoryDetails)
@@ -1365,7 +1366,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void PrintFileInfo(FileSystemEntry FileInfo) =>
-            PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
+            PrintFileInfo(FileInfo, Config.MainConfig.ShowFileDetailsList);
 
         /// <inheritdoc/>
         public virtual void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails)
@@ -1536,7 +1537,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void RemoveDirectory(string Target) =>
-            RemoveDirectory(Target, FS.ShowFilesystemProgress);
+            RemoveDirectory(Target, Config.MainConfig.ShowFilesystemProgress);
 
         /// <inheritdoc/>
         public virtual void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
@@ -1730,17 +1731,17 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual string SortSelector(FileSystemEntry FileSystemEntry, int MaxLength) =>
-            Listing.SortMode switch
+            Config.MainConfig.SortMode switch
             {
-                FilesystemSortOptions.FullName => FileSystemEntry.FilePath,
-                FilesystemSortOptions.Length => (FileSystemEntry.BaseEntry is FileInfo fileInfo ? fileInfo.Length : 0L).ToString().PadLeft(MaxLength, '0'),
-                FilesystemSortOptions.CreationTime => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
-                FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
-                FilesystemSortOptions.LastWriteTime => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),
-                FilesystemSortOptions.Extension => FileSystemEntry.BaseEntry.Extension,
-                FilesystemSortOptions.CreationTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.CreationTimeUtc),
-                FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTimeUtc),
-                FilesystemSortOptions.LastWriteTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTimeUtc),
+                (int)FilesystemSortOptions.FullName => FileSystemEntry.FilePath,
+                (int)FilesystemSortOptions.Length => (FileSystemEntry.BaseEntry is FileInfo fileInfo ? fileInfo.Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                (int)FilesystemSortOptions.CreationTime => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
+                (int)FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
+                (int)FilesystemSortOptions.LastWriteTime => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),
+                (int)FilesystemSortOptions.Extension => FileSystemEntry.BaseEntry.Extension,
+                (int)FilesystemSortOptions.CreationTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.CreationTimeUtc),
+                (int)FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTimeUtc),
+                (int)FilesystemSortOptions.LastWriteTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTimeUtc),
                 _ => FileSystemEntry.FilePath,
             };
 

@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Contacts",
+        "Desc": "This section lets you configure how the contacts addon works.",
+        "Keys": [
+            {
+                "Name": "Show profile pictures",
+                "Type": "SBoolean",
+                "Variable": "ShowImages",
+                "Description": "If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons."
+            }
+        ]
+    }
+]

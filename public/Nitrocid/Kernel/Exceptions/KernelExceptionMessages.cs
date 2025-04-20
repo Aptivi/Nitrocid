@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Exceptions
         internal static Dictionary<KernelExceptionType, string> Messages =>
             new()
             {
-                { KernelExceptionType.Unknown,                          Translate.DoTranslation("Unknown kernel error.") },
+                { KernelExceptionType.Unknown,                          Translate.DoTranslation("There was an unknown kernel error, possibly due to either the kernel exception type not being specified or something was wrong.") },
                 { KernelExceptionType.AliasAlreadyExists,               Translate.DoTranslation("The specified alias already exists. Make sure that you select a different alias.") },
                 { KernelExceptionType.AliasInvalidOperation,            Translate.DoTranslation("The alias system encountered an invalid operation trying to process your request.") },
                 { KernelExceptionType.AliasNoSuchAlias,                 Translate.DoTranslation("The specified alias isn't found.") },
@@ -45,12 +45,12 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.FTPNetwork,                       Translate.DoTranslation("A general FTP network error occurred. Check to make sure that your internet connection is working.") },
                 { KernelExceptionType.FTPShell,                         Translate.DoTranslation("A general FTP shell error occurred.") },
                 { KernelExceptionType.GroupManagement,                  Translate.DoTranslation("A group management error occurred.") },
-                { KernelExceptionType.Hostname,                         Translate.DoTranslation("Hostname error.") },
+                { KernelExceptionType.Hostname,                         Translate.DoTranslation("The kernel networking has reported an error for the hostname component.") },
                 { KernelExceptionType.HTTPShell,                        Translate.DoTranslation("A general HTTP shell error occurred.") },
                 { KernelExceptionType.InsaneConsoleDetected,            Translate.DoTranslation("Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.") },
-                { KernelExceptionType.InvalidFeed,                      Translate.DoTranslation("Invalid RSS feed.") },
-                { KernelExceptionType.InvalidFeedLink,                  Translate.DoTranslation("Invalid RSS feed link.") },
-                { KernelExceptionType.InvalidFeedType,                  Translate.DoTranslation("Invalid RSS feed type.") },
+                { KernelExceptionType.InvalidFeed,                      Translate.DoTranslation("Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.") },
+                { KernelExceptionType.InvalidFeedLink,                  Translate.DoTranslation("Invalid RSS feed link. Ensure that you've entered the link correctly and try again.") },
+                { KernelExceptionType.InvalidFeedType,                  Translate.DoTranslation("Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.") },
                 { KernelExceptionType.InvalidHashAlgorithm,             Translate.DoTranslation("Invalid hash algorithm. If you're using a custom hash sum driver, check to make sure that the driver is loaded.") },
                 { KernelExceptionType.InvalidHash,                      Translate.DoTranslation("Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.") },
                 { KernelExceptionType.InvalidKernelPath,                Translate.DoTranslation("Invalid kernel path.") },
@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.UnsupportedConsole,               Translate.DoTranslation("An unsupported console has been detected.") },
                 { KernelExceptionType.AssertionFailure,                 Translate.DoTranslation("An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.") },
                 { KernelExceptionType.NetworkOffline,                   Translate.DoTranslation("Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.") },
-                { KernelExceptionType.PermissionDenied,                 Translate.DoTranslation("Permission denied trying to perform an operation.") },
+                { KernelExceptionType.PermissionDenied,                 Translate.DoTranslation("Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.") },
                 { KernelExceptionType.NoSuchUser,                       Translate.DoTranslation("User doesn't exist. Check to make sure that you've written the user correctly.") },
                 { KernelExceptionType.NoSuchDriver,                     Translate.DoTranslation("Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.") },
                 { KernelExceptionType.ThreadNotReadyYet,                Translate.DoTranslation("The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.") },
@@ -145,6 +145,11 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.Docking,                          Translate.DoTranslation("The system docking operation failed to perform the required task.") },
                 { KernelExceptionType.Security,                         Translate.DoTranslation("The security operation failed to perform the required task.") },
                 { KernelExceptionType.DriverManagement,                 Translate.DoTranslation("There was an error when trying to perform an operation for the kernel driver management.") },
+                { KernelExceptionType.Environment,                      Translate.DoTranslation("There was an error when trying to perform an operation for the environment management.") },
+                { KernelExceptionType.Bootloader,                       Translate.DoTranslation("There was an error when trying to process a bootloader operation.") },
+                { KernelExceptionType.Alarm,                            Translate.DoTranslation("There was an error when trying to process an alarm system operation.") },
+                { KernelExceptionType.Widget,                           Translate.DoTranslation("There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.") },
+                { KernelExceptionType.Homepage,                         Translate.DoTranslation("The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception? e, params object[] vars)
@@ -200,6 +205,8 @@ namespace Nitrocid.Kernel.Exceptions
                 e = e?.InnerException;
                 exceptionIndex++;
             }
+            if (e is null)
+                builder.AppendLine("- " + Translate.DoTranslation("Additional errors were not found during the operation."));
 
             builder.AppendLine();
             builder.Append(Translate.DoTranslation("If you're sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action."));

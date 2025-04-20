@@ -38,7 +38,4 @@
     <PackageReference Include="StringMath" Version="4.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
 </Project>

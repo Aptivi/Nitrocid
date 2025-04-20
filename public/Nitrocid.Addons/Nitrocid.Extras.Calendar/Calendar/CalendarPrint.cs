@@ -28,9 +28,9 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

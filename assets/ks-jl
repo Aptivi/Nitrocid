@@ -17,10 +17,10 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-if [ -e "/usr/lib/ks/Nitrocid.LocaleGen.dll" ]; then
-	dotnet "/usr/lib/ks/Nitrocid.LocaleGen.dll" $@
-elif [ -e "./Nitrocid.LocaleGen.dll" ]; then
-	dotnet "./Nitrocid.LocaleGen.dll" $@
+if [ -e "/usr/lib/ks/Nitrocid.Locales.dll" ]; then
+	dotnet "/usr/lib/ks/Nitrocid.Locales.dll" $@
+elif [ -e "./Nitrocid.Locales.dll" ]; then
+	dotnet "./Nitrocid.Locales.dll" $@
 else
 	echo "Unable to find the entry point."
 fi

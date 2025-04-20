@@ -41,12 +41,6 @@ namespace Nitrocid.Users.Login.Motd
         private static readonly List<Func<string>> malDynamics = [];
 
         /// <summary>
-        /// MAL file path
-        /// </summary>
-        public static string MalFilePath =>
-            Config.MainConfig.MalFilePath;
-
-        /// <summary>
         /// Current MAL message
         /// </summary>
         public static string MalMessage
@@ -73,12 +67,12 @@ namespace Nitrocid.Users.Login.Motd
             try
             {
                 // Get the MOTD file path
-                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(MalFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
+                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MalFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MalFilePath);
 
                 // Set the message
                 MalMessage = Message;
-                Writing.WriteContentsText(MalFilePath, Message);
+                Writing.WriteContentsText(Config.MainConfig.MalFilePath, Message);
             }
             catch (Exception ex)
             {
@@ -95,12 +89,12 @@ namespace Nitrocid.Users.Login.Motd
             try
             {
                 // Get the MAL file path
-                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(MalFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
+                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MalFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MalFilePath);
 
                 // Read the message
                 InitMal();
-                MalMessage = Reading.ReadContentsText(MalFilePath);
+                MalMessage = Reading.ReadContentsText(Config.MainConfig.MalFilePath);
             }
             catch (Exception ex)
             {

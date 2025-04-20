@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Help;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             else
             {
                 // List the available commands
-                if (!HelpPrintTools.SimHelp)
+                if (!Config.MainConfig.SimHelp)
                     RemoteDebugHelpPrintTools.ShowCommandList(device);
                 else
                     RemoteDebugHelpPrintTools.ShowCommandListSimple(device);

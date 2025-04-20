@@ -17,63 +17,58 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Starting.Environment.Instances;
-using System.Collections.Generic;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Starting.Environment
 {
-    internal static class EnvironmentTools
+    /// <summary>
+    /// Environment tools
+    /// </summary>
+    public static class EnvironmentTools
     {
         internal static bool resetEnvironment = false;
-        internal static string[] arguments = [];
-        internal readonly static Dictionary<string, BaseEnvironment> environments = [];
-        private readonly static BaseEnvironment mainEnvironment = new NitrocidKS();
-        private static BaseEnvironment environment = mainEnvironment;
+        internal static bool anotherEnvPending = false;
+        internal static string[] kernelArguments = [];
+        internal readonly static BaseEnvironment mainEnvironment = new NitrocidKS();
+        internal static BaseEnvironment environment = mainEnvironment;
 
-        internal static void AddEnvironment(string environmentName, BaseEnvironment baseEnvironment)
+        /// <summary>
+        /// Sets the environment
+        /// </summary>
+        /// <param name="baseEnvironment">Base environment instance</param>
+        public static void SetEnvironment(BaseEnvironment? baseEnvironment)
         {
-            if (!HasEnvironment(environmentName))
-                environments.Add(environmentName, baseEnvironment);
-        }
-
-        internal static void RemoveEnvironment(string environmentName)
-        {
-            if (HasEnvironment(environmentName))
-                environments.Remove(environmentName);
-        }
-
-        internal static bool HasEnvironment(string environmentName) =>
-            environments.ContainsKey(environmentName);
-
-        internal static BaseEnvironment GetEnvironment(string environmentName)
-        {
-            if (HasEnvironment(environmentName))
-                return environments[environmentName];
-            return mainEnvironment;
-        }
-
-        internal static void SetEnvironment(string environmentName) =>
-            SetEnvironment(GetEnvironment(environmentName) ?? mainEnvironment);
-
-        internal static void SetEnvironment(BaseEnvironment baseEnvironment)
-        {
-            // Verify the value
-            DebugCheck.AssertNull(baseEnvironment, "attempted to set environment to null");
-
-            // Now, set the environment
+            if (baseEnvironment is null)
+                throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("Environment is not specified"));
+            if (baseEnvironment != mainEnvironment)
+                anotherEnvPending = true;
             environment = baseEnvironment;
         }
 
-        internal static void ResetEnvironment() =>
-            SetEnvironment(mainEnvironment);
-
-        internal static void ExecuteEnvironment(string[] args)
+        /// <summary>
+        /// Sets the environment
+        /// </summary>
+        /// <param name="baseEnvironment">Base environment instance</param>
+        /// <param name="args">Arguments for the environment</param>
+        public static void SetEnvironmentArgs(BaseEnvironment baseEnvironment, params string[] args)
         {
-            if (environment != mainEnvironment)
-                resetEnvironment = true;
-            arguments = args;
-            environment.EnvironmentEntry(args);
+            if (baseEnvironment is null)
+                throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("Environment is not specified"));
+            baseEnvironment.Arguments = args;
         }
+
+        /// <summary>
+        /// Resets the environment
+        /// </summary>
+        public static void ResetEnvironment()
+        {
+            SetEnvironment(mainEnvironment);
+            SetEnvironmentArgs(mainEnvironment, kernelArguments);
+        }
+
+        internal static void ExecuteEnvironment() =>
+            environment.EnvironmentEntry();
     }
 }

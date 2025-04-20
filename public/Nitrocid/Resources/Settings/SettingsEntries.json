@@ -165,6 +165,32 @@
                 "Type": "SBoolean",
                 "Variable": "ShowLicenseInfoBox",
                 "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
+            },
+            {
+                "Name": "Bootloader style",
+                "Type": "SString",
+                "Variable": "BootStyle",
+                "Description": "Select a bootloader style to match your preference."
+            },
+            {
+                "Name": "Bootloader default selection timeout",
+                "Type": "SIntSlider",
+                "Variable": "BootSelectTimeoutSeconds",
+                "Description": "Timeout in seconds to boot to the default selection.",
+                "MinimumValue": 0,
+                "MaximumValue": 600
+            },
+            {
+                "Name": "Bootloader default selection",
+                "Type": "SInt",
+                "Variable": "BootSelect",
+                "Description": "Default boot entry selection. This number is zero-based, so the first element is index 0, and so on."
+            },
+            {
+                "Name": "Enable 'The Nitrocid Homepage'",
+                "Type": "SBoolean",
+                "Variable": "EnableHomepage",
+                "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
             }
         ]
     },
@@ -487,6 +513,21 @@
                 "Name": "Disabled option color",
                 "Type": "SColor",
                 "Variable": "DisabledOptionColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding background color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding foreground color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinForegroundColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding name color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinColor"
             }
         ]
     },
@@ -599,6 +640,32 @@
                 "SelectionFunctionType": "LoginHandlerTools",
                 "SelectionFallback": [ "classic", "modern" ],
                 "Description": "Login handler to use for sign-in prompts."
+            },
+            {
+                "Name": "Enable widgets",
+                "Type": "SBoolean",
+                "Variable": "EnableWidgets",
+                "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
+            },
+            {
+                "Name": "First widget",
+                "Type": "SSelection",
+                "Variable": "FirstWidget",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetWidgetNames",
+                "SelectionFunctionType": "WidgetTools",
+                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
+            },
+            {
+                "Name": "Second widget",
+                "Type": "SSelection",
+                "Variable": "SecondWidget",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetWidgetNames",
+                "SelectionFunctionType": "WidgetTools",
+                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
             }
         ]
     },
@@ -769,6 +836,12 @@
                 "Type": "SBoolean",
                 "Variable": "ShowTotalSizeInList",
                 "Description": "If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration."
+            },
+            {
+                "Name": "Sort logically",
+                "Type": "SBoolean",
+                "Variable": "SortLogically",
+                "Description": "Sorts the list alphanumerically if enabled or alphabetically if disabled."
             }
         ]
     },
@@ -946,12 +1019,6 @@
         "DisplayAs": "Miscellaneous settings",
         "Keys": [
             {
-                "Name": "Show Time/Date on Upper Right Corner",
-                "Type": "SBoolean",
-                "Variable": "CornerTimeDate",
-                "Description": "The time and date will be shown in the upper right corner of the screen"
-            },
-            {
                 "Name": "Marquee on startup",
                 "Type": "SBoolean",
                 "Variable": "StartScroll",
@@ -986,6 +1053,12 @@
                 "Type": "SInt",
                 "Variable": "HexEditAutoSaveInterval",
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+            },
+            {
+                "Name": "Wrap list outputs",
+                "Type": "SBoolean",
+                "Variable": "WrapListOutputs",
+                "Description": "Wraps the list outputs if it seems too long for the current console geometry."
             },
             {
                 "Name": "Draw notification border",
@@ -1216,6 +1289,18 @@
                 "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
                 "MinimumValue": 1000,
                 "MaximumValue": 1000000
+            },
+            {
+                "Name": "Mouse support",
+                "Type": "SBoolean",
+                "Variable": "InitializeCursorHandler",
+                "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
+            },
+            {
+                "Name": "Mouse movement support",
+                "Type": "SBoolean",
+                "Variable": "HandleCursorMovement",
+                "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
             }
         ]
     }

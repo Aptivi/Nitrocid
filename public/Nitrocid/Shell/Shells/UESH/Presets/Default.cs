@@ -23,7 +23,6 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Network;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users;
@@ -62,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
                 // Current hostname
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
+                PresetStringBuilder.AppendFormat("{0}", Config.MainConfig.HostName);
 
                 // Current directory and shell stack
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);

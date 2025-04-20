@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Network;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,7 +34,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string currentHost = NetworkTools.HostName;
+            string currentHost = Config.MainConfig.HostName;
             TextWriterColor.Write(currentHost);
             variableValue = currentHost;
             return 0;

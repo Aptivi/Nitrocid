@@ -27,7 +27,6 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
@@ -44,6 +43,8 @@ using Nitrocid.Misc.Screensaver.Displays;
 using Terminaux.Base;
 using Nitrocid.Kernel;
 using System.Linq;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -71,19 +72,6 @@ namespace Nitrocid.Misc.Screensaver
         internal static bool noLock;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
-
-        // Public Variables
-        /// <summary>
-        /// Screensaver debugging
-        /// </summary>
-        public static bool ScreensaverDebug =>
-            Config.MainConfig.ScreensaverDebug;
-
-        /// <summary>
-        /// Password lock enabled
-        /// </summary>
-        public static bool PasswordLock =>
-            Config.MainConfig.PasswordLock;
 
         /// <summary>
         /// Whether the kernel is on the screensaver mode
@@ -232,19 +220,36 @@ namespace Nitrocid.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+                SpinWait.SpinUntil(() => Input.InputAvailable);
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
                 ScreensaverDisplayer.BailFromScreensaver();
 
                 // When getting out of the lock screen by pressing ENTER when lockscreen is invoked, we need to make sure
-                // that we don't write the shell prompt twice.
-                if (ConsoleWrapper.KeyAvailable)
-                    InputTools.DetectKeypressUnsafe();
+                // that we don't write the shell prompt twice. Furthermore, when we use the mouse to generate click events,
+                // we need to make sure that we ignore the Clicked event and listen to the Released event to ensure that
+                // there are no more mouse events left, or the screensaver would exit instantly, causing info to be displayed
+                // longer than the set duration.
+                while (Input.InputAvailable)
+                {
+                    var descriptor = Input.ReadPointerOrKey();
+                    if (descriptor.Item1 is not null)
+                    {
+                        switch (descriptor.Item1.Button)
+                        {
+                            case PointerButton.Left:
+                            case PointerButton.Right:
+                            case PointerButton.Middle:
+                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
+                                    Input.ReadPointer();
+                                break;
+                        }
+                    }
+                }
 
                 // Now, show the password prompt
-                if (PasswordLock)
+                if (Config.MainConfig.PasswordLock)
                     Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
 
                 // Render the current screen

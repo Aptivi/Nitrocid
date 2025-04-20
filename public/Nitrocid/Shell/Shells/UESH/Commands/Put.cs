@@ -28,6 +28,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -47,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string URL = parameters.ArgumentsList[1];
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
-            while (RetryCount <= NetworkTools.UploadRetries)
+            while (RetryCount <= Config.MainConfig.UploadRetries)
             {
                 try
                 {

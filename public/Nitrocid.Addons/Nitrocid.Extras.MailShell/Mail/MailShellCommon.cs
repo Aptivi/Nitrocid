@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using MailKit;
 using MimeKit.Text;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.MailShell.Mail
@@ -67,11 +66,6 @@ namespace Nitrocid.Extras.MailShell.Mail
         /// </summary>
         public static TextFormat TextFormat =>
             (TextFormat)MailShellInit.MailConfig.MailTextFormat;
-        /// <summary>
-        /// Show progress on mail transfer
-        /// </summary>
-        public static bool ShowProgress =>
-            Config.MainConfig.ShowProgress;
         /// <summary>
         /// Mail progress style
         /// </summary>

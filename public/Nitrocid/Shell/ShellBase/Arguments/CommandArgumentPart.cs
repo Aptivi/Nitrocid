@@ -36,17 +36,9 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         public string ArgumentExpression { get; private set; }
         /// <summary>
-        /// Auto completion function delegate
+        /// Argument options
         /// </summary>
-        public Func<string[], string[]>? AutoCompleter { get; private set; }
-        /// <summary>
-        /// Command argument expression
-        /// </summary>
-        public bool IsNumeric { get; private set; }
-        /// <summary>
-        /// User is required to provide one of the exact wordings
-        /// </summary>
-        public string[] ExactWording { get; private set; }
+        public CommandArgumentPartOptions Options { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument part class
@@ -56,18 +48,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="options">Command argument part options</param>
         public CommandArgumentPart(bool argumentRequired, string argumentExpression, CommandArgumentPartOptions options)
         {
-            // Get a part instance
-            options ??= new CommandArgumentPartOptions();
-            var part = new CommandArgumentPart(argumentRequired, argumentExpression, options.AutoCompleter, options.IsNumeric, options.ExactWording);
-
             // Install some values
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
-
-            // Install values from the instance
-            AutoCompleter = part.AutoCompleter;
-            IsNumeric = part.IsNumeric;
-            ExactWording = part.ExactWording;
+            Options = options ?? new CommandArgumentPartOptions();
         }
 
         /// <summary>
@@ -78,11 +62,11 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="autoCompleter">Auto completion function</param>
         /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
         /// <param name="exactWording">User is required to provide this exact wording</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]>? autoCompleter = null, bool isNumeric = false, string[]? exactWording = null)
+        /// <param name="argumentDesc">Argument description (unlocalized)</param>
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]>? autoCompleter = null, bool isNumeric = false, string[]? exactWording = null, string argumentDesc = "")
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
-            IsNumeric = isNumeric;
 
             // Check to see if the expression points to a known auto completion function
             if (!string.IsNullOrEmpty(argumentExpression))
@@ -109,8 +93,15 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                     done = true;
                 }
             }
-            AutoCompleter = autoCompleter;
-            ExactWording = exactWording ?? [];
+
+            // Populate options
+            Options = new CommandArgumentPartOptions()
+            {
+                ArgumentDescription = argumentDesc,
+                AutoCompleter = autoCompleter,
+                ExactWording = exactWording ?? [],
+                IsNumeric = isNumeric,
+            };
         }
 
     }

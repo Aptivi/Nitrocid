@@ -17,10 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
@@ -36,10 +33,11 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ShellManager.IsOnMotherShell())
+            if (ShellManager.IsOnMotherShell() && Config.MainConfig.EnableHomepage)
             {
-                TextWriters.Write(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
+                // User requested to go back to The Nitrocid Homepage
+                ShellManager.KillShellInternal();
+                return 0;
             }
             ShellManager.KillShell();
             return 0;

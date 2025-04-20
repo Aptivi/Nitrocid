@@ -19,7 +19,6 @@
 
 using System.IO;
 using Nitrocid.Files.Editors.HexEdit;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Shell.Shells.Hex
@@ -27,25 +26,12 @@ namespace Nitrocid.Shell.Shells.Hex
     /// <summary>
     /// Common hex editor shell module
     /// </summary>
-    public static class HexEditShellCommon
+    internal static class HexEditShellCommon
     {
-
         internal static int autoSaveInterval = 60;
         internal static byte[]? FileBytesOrig;
         internal static FileStream? FileStream;
         internal static byte[]? FileBytes;
         internal static KernelThread AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HandleAutoSaveBinaryFile);
-
-        /// <summary>
-        /// Auto save flag
-        /// </summary>
-        public static bool AutoSaveFlag =>
-            Config.MainConfig.HexEditAutoSaveFlag;
-        /// <summary>
-        /// Auto save interval in seconds
-        /// </summary>
-        public static int AutoSaveInterval =>
-            Config.MainConfig.HexEditAutoSaveInterval;
-
     }
 }

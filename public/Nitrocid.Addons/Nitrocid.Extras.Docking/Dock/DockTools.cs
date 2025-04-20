@@ -19,7 +19,6 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Extras.Docking.Dock.Docks;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -27,6 +26,12 @@ using Nitrocid.Misc.Screensaver;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Users.Login.Widgets.Implementations;
+using Terminaux.Base;
+using System.Threading;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Docking.Dock
 {
@@ -35,9 +40,11 @@ namespace Nitrocid.Extras.Docking.Dock
     /// </summary>
     public static class DockTools
     {
-        private static readonly Dictionary<string, IDock> docks = new()
+        private static readonly Dictionary<string, BaseWidget> docks = new()
         {
-            { nameof(DigitalClock), new DigitalClock() }
+            { nameof(DigitalClock), new DigitalClock() },
+            { nameof(AnalogClock), new AnalogClock() },
+            { nameof(Emoji), new Emoji() },
         };
 
         /// <summary>
@@ -48,7 +55,7 @@ namespace Nitrocid.Extras.Docking.Dock
         public static void DockScreen(string dockName)
         {
             // Check to see if there is a dock by this name
-            if (!DoesDockScreenExist(dockName, out IDock? dock))
+            if (!DoesDockScreenExist(dockName, out BaseWidget? dock))
                 throw new KernelException(KernelExceptionType.Docking, Translate.DoTranslation("There is no screen dock by this name."));
 
             // Now, dock the screen
@@ -61,7 +68,7 @@ namespace Nitrocid.Extras.Docking.Dock
         /// </summary>
         /// <param name="dockInstance">Screen dock instance</param>
         /// <exception cref="KernelException"></exception>
-        public static void DockScreen(IDock? dockInstance)
+        public static void DockScreen(BaseWidget? dockInstance)
         {
             // Check to see if there is a dock
             if (dockInstance is null)
@@ -70,18 +77,27 @@ namespace Nitrocid.Extras.Docking.Dock
             // Now, dock the screen
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, $"Docking screen with name: [{dockInstance.DockName}]");
+                DebugWriter.WriteDebug(DebugLevel.I, $"Docking screen with name: [{dockInstance.GetType().Name}]");
 
                 // We need to prevent locking to avoid interference, because, most of the time, when you're docking your
                 // screen, you're essentially idling because you've successfully converted your device to the information
                 // center that displays continuously, and we don't want screensavers to interfere with the operation.
                 ScreensaverManager.PreventLock();
-                dockInstance.ScreenDock();
+                KernelColorTools.LoadBackground();
+                TextWriterRaw.WriteRaw(dockInstance.Initialize());
+                while (!ConsoleWrapper.KeyAvailable)
+                {
+                    ConsoleWrapper.CursorVisible = false;
+                    TextWriterRaw.WriteRaw(dockInstance.Render());
+                    SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, 1000);
+                }
+                TextWriterRaw.WriteRaw(dockInstance.Cleanup());
+                Input.ReadKey();
             }
             catch (Exception ex)
             {
                 KernelColorTools.LoadBackground();
-                DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.DockName}]: {ex.Message}");
+                DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.GetType().Name}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
@@ -98,12 +114,12 @@ namespace Nitrocid.Extras.Docking.Dock
         /// <param name="dockName">Screen dock class name</param>
         /// <param name="dockInstance">Screen dock instance output</param>
         /// <returns>True if found; false otherwise.</returns>
-        public static bool DoesDockScreenExist(string dockName, out IDock? dockInstance)
+        public static bool DoesDockScreenExist(string dockName, out BaseWidget? dockInstance)
         {
-            bool result = docks.TryGetValue(dockName, out IDock? dock);
+            bool result = docks.TryGetValue(dockName, out BaseWidget? dock);
             DebugWriter.WriteDebug(DebugLevel.I, $"Result: {dockName}, {result}");
             if (result)
-                DebugWriter.WriteDebug(DebugLevel.I, $"Got dock: {dock?.DockName ?? "null"}");
+                DebugWriter.WriteDebug(DebugLevel.I, $"Got dock: {dock?.GetType().Name ?? "null"}");
             dockInstance = dock;
             return result;
         }
@@ -122,10 +138,10 @@ namespace Nitrocid.Extras.Docking.Dock
         /// <summary>
         /// Gets the dock screens
         /// </summary>
-        /// <returns>A read-only dictionary containing dock screen names and their <see cref="IDock"/> instances</returns>
-        public static ReadOnlyDictionary<string, IDock> GetDockScreens()
+        /// <returns>A read-only dictionary containing dock screen names and their <see cref="BaseWidget"/> instances</returns>
+        public static ReadOnlyDictionary<string, BaseWidget> GetDockScreens()
         {
-            var dockScreens = new ReadOnlyDictionary<string, IDock>(docks);
+            var dockScreens = new ReadOnlyDictionary<string, BaseWidget>(docks);
             DebugWriter.WriteDebug(DebugLevel.I, $"Got {dockScreens.Count} docks");
             return dockScreens;
         }

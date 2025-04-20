@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Drivers;
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Instances;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Operations.Printing
 {
@@ -33,7 +33,7 @@ namespace Nitrocid.Files.Operations.Printing
         /// Prints the directory information to the console
         /// </summary>
         public static void PrintDirectoryInfo(FileSystemEntry DirectoryInfo) =>
-            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, Config.MainConfig.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the directory information to the console

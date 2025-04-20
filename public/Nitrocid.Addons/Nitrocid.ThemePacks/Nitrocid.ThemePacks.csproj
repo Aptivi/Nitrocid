@@ -38,8 +38,5 @@
     <EmbeddedResource Include="Resources\Themes\*" />
   </ItemGroup>
   <!-- ThemePacks addon metadata End -->
-
-  <ItemGroup>
-  </ItemGroup>
   
 </Project>

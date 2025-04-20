@@ -67,27 +67,51 @@ namespace Nitrocid.Extras.BassBoom
         [
             new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "lyric.lrc"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                        }),
+                    ])
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "lyric.lrc"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                        }),
+                    ])
                 ], new PlayLyricCommand()),
 
             new CommandInfo("playsound", /* Localizable */ "Plays a sound",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "musicFile"),
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to an MP3 file"
+                        }),
+                    ])
                 ], new PlaySoundCommand()),
+
+            new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Host name that hosts the MPEG radio station"
+                        }),
+                        new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Port to the MPEG radio station"
+                        }),
+                    ])
+                ], new NetFmInfoCommand()),
         ];
 
         string IAddon.AddonName =>

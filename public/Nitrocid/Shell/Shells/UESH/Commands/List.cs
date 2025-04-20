@@ -19,6 +19,7 @@
 
 using Nitrocid.Files;
 using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 
@@ -55,16 +56,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
+            bool ShowFileDetails = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             bool Recursive = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-recursive");
             bool tree = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tree");
             if (parameters.ArgumentsList.Length == 0)
             {
                 if (tree)
-                    Listing.ListTree(CurrentDirectory.CurrentDir, SuppressUnauthorizedMessage, Listing.SortList);
+                    Listing.ListTree(CurrentDirectory.CurrentDir, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
                 else
-                    Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
+                    Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
             }
             else
             {
@@ -72,9 +73,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     string direct = FilesystemTools.NeutralizePath(Directory);
                     if (tree)
-                        Listing.ListTree(direct, SuppressUnauthorizedMessage, Listing.SortList);
+                        Listing.ListTree(direct, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
                     else
-                        Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
+                        Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
                 }
             }
             return 0;

@@ -113,6 +113,16 @@
                 "SelectionFunctionType": "InputDriverTools",
                 "SelectionFallback": [ "Default" ],
                 "Description": "Which input driver would you like to use?"
+            },
+            {
+                "Name": "Current asymmetric encoding driver",
+                "Type": "SSelection",
+                "Variable": "CurrentEncodingAsymmetricDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetEncodingAsymmetricDriverNames",
+                "SelectionFunctionType": "EncodingAsymmetricDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which asymmetric encoding driver would you like to use?"
             }
         ]
     }

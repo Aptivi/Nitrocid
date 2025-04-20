@@ -31,9 +31,9 @@ using Textify.General;
 using Terminaux.Base.Buffered;
 using Terminaux.Sequences.Builder;
 using Nitrocid.Languages;
-using Terminaux.Sequences;
-using System.Text.RegularExpressions;
 using Terminaux.Base.Extensions;
+using System.Text.RegularExpressions;
+using Terminaux.Sequences;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 
@@ -44,26 +44,7 @@ namespace Nitrocid.ConsoleBase
     /// </summary>
     public static class ConsoleTools
     {
-
         internal static bool UseAltBuffer = true;
-
-        /// <summary>
-        /// Does your console support true color?
-        /// </summary>
-        public static bool ConsoleSupportsTrueColor =>
-            Config.MainConfig.ConsoleSupportsTrueColor;
-
-        /// <summary>
-        /// Whether the input history is enabled
-        /// </summary>
-        public static bool InputHistoryEnabled =>
-            Config.MainConfig.InputHistoryEnabled;
-
-        /// <summary>
-        /// Enables the scroll bar in selection screens
-        /// </summary>
-        public static bool EnableScrollBarInSelection =>
-            Config.MainConfig.EnableScrollBarInSelection;
 
         /// <summary>
         /// Resets the console colors without clearing screen

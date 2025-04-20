@@ -45,7 +45,8 @@ namespace Nitrocid.Shell.Shells.Admin
                     {
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys]
+                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
+                            ArgumentDescription = /* Localizable */ "Argument to show help entry"
                         })
                     })
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -72,6 +73,7 @@ namespace Nitrocid.Shell.Shells.Admin
                         new CommandArgumentPart(false, "sessionNum", new()
                         {
                             IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Session number starting from zero"
                         }),
                     })
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -93,38 +95,62 @@ namespace Nitrocid.Shell.Shells.Admin
 
             new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "admin/anonymous/disabled"),
-                        new CommandArgumentPart(true, "false/true")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "admin/anonymous/disabled", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Permission type to grant or to deny"
+                        }),
+                        new CommandArgumentPart(true, "false/true", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "False to deny, true to grant"
+                        })
+                    ])
                 ], new UserFlagCommand()),
 
             new CommandInfo("userfullname", /* Localizable */ "Changes the user's full name (display name)",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "name/clear")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "name/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "New display name, or 'clear' to erase the display name"
+                        })
+                    ])
                 ], new UserFullNameCommand()),
 
             new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(false, "user")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        })
+                    ])
                 ], new UserInfoCommand()),
 
             new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "user"),
-                        new CommandArgumentPart(true, "lang/clear")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "lang/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Three-letter language ID, or 'clear' to clear preferred language"
+                        })
+                    ])
                 ], new UserLangCommand()),
         ];
 

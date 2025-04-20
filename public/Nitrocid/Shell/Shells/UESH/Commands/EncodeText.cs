@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
+using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
@@ -43,23 +44,44 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string orig = parameters.ArgumentsText;
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");
-            var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
-            driver.Initialize();
-            byte[] encoded;
-            byte[] key = driver.IsSymmetric ? driver.Key : [];
-            byte[] iv = driver.IsSymmetric ? driver.Iv : [];
-            if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
-                encoded = driver.GetEncodedString(orig);
+            bool isAsymmetric = DriverHandler.IsRegistered<IEncodingAsymmetricDriver>(algorithm);
+            if (isAsymmetric)
+            {
+                // Initialize the driver
+                var driver = DriverHandler.GetDriver<IEncodingAsymmetricDriver>(algorithm);
+                driver.Initialize();
+
+                // Now, encode the text
+                var encoded = driver.GetEncodedString(orig);
+                string decomposed = driver.DecomposeBytesFromString(encoded);
+                TextWriters.Write(decomposed, true, KernelColorType.Success);
+                if (driver.TryRepresentAsText(encoded, out string? strEncoded))
+                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
+            }
             else
             {
-                key = driver.ComposeBytesFromString(keyValue);
-                iv = driver.ComposeBytesFromString(ivValue);
-                encoded = driver.GetEncodedString(orig, key, iv);
-            }
-            string decomposed = driver.DecomposeBytesFromString(encoded);
-            TextWriters.Write(decomposed, true, KernelColorType.Success);
-            if (driver.IsSymmetric)
-            {
+                // Initialize the driver
+                var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
+                driver.Initialize();
+                byte[] key = driver.Key;
+                byte[] iv = driver.Iv;
+                byte[] encoded;
+
+                // Encode the target file using the key and the IV
+                if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
+                    encoded = driver.GetEncodedString(orig);
+                else
+                {
+                    key = driver.ComposeBytesFromString(keyValue);
+                    iv = driver.ComposeBytesFromString(ivValue);
+                    encoded = driver.GetEncodedString(orig, key, iv);
+                }
+                string decomposed = driver.DecomposeBytesFromString(encoded);
+                TextWriters.Write(decomposed, true, KernelColorType.Success);
+                if (driver.TryRepresentAsText(encoded, out string? strEncoded))
+                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
+
+                // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
                 TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);

@@ -22,8 +22,8 @@ using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

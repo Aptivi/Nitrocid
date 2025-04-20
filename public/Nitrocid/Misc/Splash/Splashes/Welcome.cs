@@ -31,7 +31,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
@@ -214,9 +213,9 @@ namespace Nitrocid.Misc.Splash.Splashes
                 bottomTextRenderer.Render()
             );
             delayRequired =
-                context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown ||
+                context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
                 context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
-            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && PowerManager.BeepOnShutdown)
+            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && Config.MainConfig.BeepOnShutdown)
                 ConsoleWrapper.Beep();
             return builder.ToString();
         }

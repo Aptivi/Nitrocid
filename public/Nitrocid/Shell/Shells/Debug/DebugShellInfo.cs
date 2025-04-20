@@ -48,10 +48,13 @@ namespace Nitrocid.Shell.Shells.Debug
 
             new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "sessionGuid")
-                    })
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "sessionGuid", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Session GUID to find"
+                        })
+                    ])
                 ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("excinfo", /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
@@ -60,7 +63,8 @@ namespace Nitrocid.Shell.Shells.Debug
                     {
                         new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Exception number"
                         })
                     })
                 ], new ExcInfoCommand()),
@@ -72,6 +76,7 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
+                            ArgumentDescription = /* Localizable */ "Field name to query"
                         })
                     }, true)
                 ], new GetFieldValueCommand()),
@@ -83,6 +88,7 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
+                            ArgumentDescription = /* Localizable */ "Property name to query"
                         })
                     }, true)
                 ], new GetPropertyValueCommand()),
@@ -104,6 +110,7 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
+                            ArgumentDescription = /* Localizable */ "Addon name to query"
                         })
                     })
                 ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -115,9 +122,27 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
+                            ArgumentDescription = /* Localizable */ "Addon name to query"
                         })
                     })
                 ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("lsaddonfuncparams", /* Localizable */ "Lists all available function parameters from a function",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
+                            ArgumentDescription = /* Localizable */ "Addon name to query"
+                        }),
+                        new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0]),
+                            ArgumentDescription = /* Localizable */ "Function name from the public static type to query"
+                        }),
+                    })
+                ], new LsAddonFuncParamsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
                 [
@@ -126,6 +151,7 @@ namespace Nitrocid.Shell.Shells.Debug
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
+                            ArgumentDescription = /* Localizable */ "Addon name to query"
                         })
                     })
                 ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
@@ -166,7 +192,10 @@ namespace Nitrocid.Shell.Shells.Debug
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "splashName"),
+                        new CommandArgumentPart(true, "splashName", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Splash name to query"
+                        }),
                     ],
                     [
                         new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()

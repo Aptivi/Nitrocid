@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of functions for") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of functions for") + $" {parameters.ArgumentsList[0]}", true);
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0]);
@@ -53,7 +53,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0]);
-            foreach (var function in list)
+            foreach (string function in list)
                 TextWriterColor.Write($"  - {function}");
             return 0;
         }

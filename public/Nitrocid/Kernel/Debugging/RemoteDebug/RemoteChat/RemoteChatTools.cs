@@ -52,19 +52,9 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
         private static readonly AutoResetEvent RDebugChatBailer = new(false);
 
         /// <summary>
-        /// Remote debugger chat port
-        /// </summary>
-        public static int DebugChatPort =>
-            Config.MainConfig.DebugChatPort;
-        /// <summary>
         /// Whether the remote debug chat is stopping
         /// </summary>
-        public static bool RDebugChatStopping { get; set; }
-        /// <summary>
-        /// Remote debug message format
-        /// </summary>
-        public static string RDebugMessageFormat =>
-            Config.MainConfig.RDebugMessageFormat;
+        public static bool RDebugChatStopping { get; internal set; }
 
         /// <summary>
         /// Thread to accept connections after the listener starts
@@ -74,7 +64,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
             // Listen to a current IP address
             try
             {
-                DebugChatTCP = new TcpListener(IPAddress.Any, DebugChatPort);
+                DebugChatTCP = new TcpListener(IPAddress.Any, Config.MainConfig.DebugChatPort);
                 DebugChatTCP.Start();
             }
             catch (SocketException sex)
@@ -165,7 +155,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
                 }
                 catch (Exception ex)
                 {
-                    if (RemoteDebugTools.NotifyOnRemoteDebugConnectionError)
+                    if (Config.MainConfig.NotifyOnRemoteDebugConnectionError)
                     {
                         var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, NotificationPriority.Medium, NotificationType.Normal);
                         NotificationManager.NotifySend(RemoteDebugError);
@@ -237,13 +227,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
                         if (!string.IsNullOrEmpty(SocketName))
                         {
                             // Check the message format
-                            if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
+                            if (string.IsNullOrWhiteSpace(Config.MainConfig.RDebugMessageFormat))
                                 Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
 
                             // Decide if we're recording the chat to the debug log
-                            if (RemoteDebugTools.RecordChatToDebugLog)
-                                DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                            DebugWriter.WriteDebugChatsOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
+                            if (Config.MainConfig.RecordChatToDebugLog)
+                                DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(Config.MainConfig.RDebugMessageFormat), SocketName, Message);
+                            DebugWriter.WriteDebugChatsOnly(DebugLevel.I, PlaceParse.ProbePlaces(Config.MainConfig.RDebugMessageFormat), true, SocketName, Message);
 
                             // Add the message to the chat history
                             deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");

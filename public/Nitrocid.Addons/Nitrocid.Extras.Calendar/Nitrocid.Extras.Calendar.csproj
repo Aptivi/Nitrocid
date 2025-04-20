@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <!-- Extras.Calendar addon General Information -->
@@ -35,8 +35,5 @@
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   <!-- Extras.Calendar addon Platform Information End -->
-
-  <ItemGroup>
-  </ItemGroup>
 
 </Project>

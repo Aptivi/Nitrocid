@@ -42,30 +42,6 @@ namespace Nitrocid.Network
         internal static bool TransferFinished;
 
         /// <summary>
-        /// Current kernel host name
-        /// </summary>
-        public static string HostName =>
-            Config.MainConfig.HostName;
-
-        /// <summary>
-        /// Download retries before giving up
-        /// </summary>
-        public static int DownloadRetries =>
-            Config.MainConfig.DownloadRetries;
-
-        /// <summary>
-        /// Upload retries before giving up
-        /// </summary>
-        public static int UploadRetries =>
-            Config.MainConfig.UploadRetries;
-
-        /// <summary>
-        /// Ping timeout in milliseconds
-        /// </summary>
-        public static int PingTimeout =>
-            Config.MainConfig.PingTimeout;
-
-        /// <summary>
         /// Checks to see if the network is available. On Android systems, if there is no Internet connection, the network is considered
         /// unavailable.
         /// </summary>
@@ -81,12 +57,6 @@ namespace Nitrocid.Network
             IsInternetAvailable();
 
         /// <summary>
-        /// Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
-        /// </summary>
-        public static bool ShowProgress =>
-            Config.MainConfig.ShowProgress;
-
-        /// <summary>
         /// Pings an address
         /// </summary>
         /// <param name="Address">Target address</param>
@@ -95,7 +65,7 @@ namespace Nitrocid.Network
         public static PingReply PingAddress(string Address, PingOptions? options = null)
         {
             // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
-            int Timeout = PingTimeout;
+            int Timeout = Config.MainConfig.PingTimeout;
             return PingAddress(Address, Timeout, options);
         }
 

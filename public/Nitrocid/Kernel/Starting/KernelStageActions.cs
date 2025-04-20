@@ -30,13 +30,17 @@ using Nitrocid.Users;
 using Nitrocid.Users.Groups;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
+using Nitrocid.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Kernel.Starting.Bootloader;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Kernel.Power;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
-using Terminaux.Inputs.Styles;
+using Nitrocid.Files.Operations;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles;
 #endif
 
 namespace Nitrocid.Kernel.Starting
@@ -46,7 +50,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void Stage01SystemInitialization()
         {
             // If running on development version and not consented, interrupt boot and show developer disclaimer.
-            if (!WelcomeMessage.DevNoticeConsented)
+            if (!Config.MainConfig.DevNoticeConsented)
             {
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 WelcomeMessage.ShowDevelopmentDisclaimer();
@@ -62,7 +66,7 @@ namespace Nitrocid.Kernel.Starting
             }
 
             // Now, initialize remote debugger if the kernel is running in debug mode
-            if (RemoteDebugger.RDebugAutoStart & KernelEntry.DebugMode)
+            if (Config.MainConfig.RDebugAutoStart & KernelEntry.DebugMode)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
                 RemoteDebugger.StartRDebugThread();
@@ -81,7 +85,7 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void Stage02KernelUpdates()
         {
-            if (UpdateManager.CheckUpdateStart)
+            if (Config.MainConfig.CheckUpdateStart)
                 UpdateManager.CheckKernelUpdates();
 #if SPECIFIERREL
             string upgradedPath = PathsManagement.TempPath + "/.upgraded";
@@ -100,10 +104,10 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void Stage03HardwareProbe()
         {
-            if (!HardwareProbe.QuietHardwareProbe)
+            if (!Config.MainConfig.QuietHardwareProbe)
                 SplashReport.ReportProgress(Translate.DoTranslation("Please wait while the kernel initializes your hardware..."), 15);
             HardwareProbe.StartProbing();
-            if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
+            if (!Config.MainConfig.EnableSplash & !KernelEntry.QuietKernel)
                 HardwareList.ListHardware();
         }
 
@@ -119,7 +123,7 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void Stage06KernelModifications()
         {
-            if (ModManager.StartKernelMods)
+            if (Config.MainConfig.StartKernelMods)
                 ModManager.StartMods();
         }
 
@@ -144,6 +148,26 @@ namespace Nitrocid.Kernel.Starting
 
             // Check for critical threads
             ThreadWatchdog.EnsureAllCriticalThreadsStarted();
+        }
+
+        internal static void Stage08Bootables()
+        {
+            SplashReport.ReportProgress(Translate.DoTranslation("Checking for multiple installed environments"), 5);
+
+            // Check for multiple environments
+            if (BootManager.GetBootApps().Count > 1)
+            {
+                // End the splash temporarily while we load the bootloader
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
+                BootloaderMain.StartBootloader();
+
+                // Request reboot if we need to reboot to another environment
+                if (EnvironmentTools.environment != EnvironmentTools.mainEnvironment)
+                    PowerManager.PowerManage(PowerMode.Reboot);
+
+                // Open the splash
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
+            }
         }
     }
 }

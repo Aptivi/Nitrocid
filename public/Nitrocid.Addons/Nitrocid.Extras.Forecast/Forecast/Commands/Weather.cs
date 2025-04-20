@@ -17,15 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Linq;
-using Nettify.Weather;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using System.Linq;
 using Nitrocid.ConsoleBase.Inputs;
+using Nettify.Weather;
+using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Extras.Forecast.Forecast.Interactive;
+using System;
 using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
@@ -34,9 +37,9 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// Shows weather information for a specified city
     /// </summary>
     /// <remarks>
-    /// We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Nitrocid KS only accesses free features; all you have to do is make an account and generate your own API key.
+    /// We credit IBM for their decent API service for weather information for the cities around the world from The Weather Channel.
     /// <br></br>
-    /// This command lets you get current weather information for a specified city by city ID as recommended by OpenWeatherMap. If you want a list, use the switch indicated below.
+    /// This command lets you get current weather information for a specified city by city ID from The Weather Channel servers. If you want a list, use the switch indicated below.
     /// <br></br>
     /// <list type="table">
     /// <listheader>
@@ -45,7 +48,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// </listheader>
     /// <item>
     /// <term>-list</term>
-    /// <description>Lists the available cities</description>
+    /// <description>Searches for the written city name and returns the list of longitudes and latitudes</description>
     /// </item>
     /// </list>
     /// <br></br>
@@ -55,37 +58,48 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            {
+                var tui = new WeatherCli();
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add Manually"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.AddManually(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Remove"), ConsoleKey.F2, (_, idx, _, _) => tui.Remove(idx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Remove All"), ConsoleKey.F3, (_, _, _, _) => tui.RemoveAll()));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+                return 0;
+            }
+            if (parameters.ArgumentsList.Length <= 1)
+            {
+                TextWriters.Write(Translate.DoTranslation("Enter the city latitude and longitude."), KernelColorType.Error);
+                return 38;
+            }
+            string APIKey = Forecast.ApiKey;
+            if (parameters.ArgumentsList.Length > 2)
+            {
+                APIKey = parameters.ArgumentsList[2];
+            }
+            else if (string.IsNullOrEmpty(APIKey))
+            {
+                TextWriterColor.Write(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance."));
+                TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
+                APIKey = InputTools.ReadLineNoInput();
+                Forecast.ApiKey = APIKey;
+            }
             var ListMode = false;
             if (parameters.SwitchesList.Contains("-list"))
                 ListMode = true;
             if (ListMode)
             {
-                var Cities = WeatherForecastOwm.ListAllCities();
+                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), APIKey);
                 TextWriters.WriteList(Cities);
             }
             else
             {
-                string APIKey = Forecast.ApiKey;
-                if (parameters.ArgumentsList.Length > 1)
-                {
-                    APIKey = parameters.ArgumentsList[1];
-                }
-                else if (string.IsNullOrEmpty(APIKey))
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."));
-                    TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
-                    APIKey = InputTools.ReadLineNoInput();
-                    Forecast.ApiKey = APIKey;
-                }
-                Forecast.PrintWeatherInfo(parameters.ArgumentsList[0], APIKey);
+                double latitude = double.Parse(parameters.ArgumentsList[0]);
+                double longitude = double.Parse(parameters.ArgumentsList[1]);
+                Forecast.PrintWeatherInfo(latitude, longitude, APIKey);
             }
             return 0;
-        }
-
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("You can either consult the below link for the list of cities with their IDs, or, pass \"-list\" to this command."));
-            TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 
     }

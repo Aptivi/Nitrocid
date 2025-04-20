@@ -307,6 +307,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     SettingsKeyType.SDouble => new DoubleSettingsKeyInput(),
                     SettingsKeyType.SPreset => new PresetSettingsKeyInput(),
                     SettingsKeyType.SFiglet => new FigletSettingsKeyInput(),
+                    SettingsKeyType.SIcon => new IconSettingsKeyInput(),
                     SettingsKeyType.SUnknown => new UnknownSettingsKeyInput(),
                     _ => new UnknownSettingsKeyInput(),
                 };

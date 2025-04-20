@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.Extras.Docking
 {
@@ -42,7 +43,8 @@ namespace Nitrocid.Extras.Docking
                     {
                         new CommandArgumentPart(true, "dockName", new()
                         {
-                            AutoCompleter = (_) => DockTools.GetDockScreenNames()
+                            AutoCompleter = (_) => DockTools.GetDockScreenNames(),
+                            ArgumentDescription = /* Localizable */ "Dock name"
                         }),
                     })
                 ], new DockCommand())
@@ -53,7 +55,19 @@ namespace Nitrocid.Extras.Docking
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(DockTools.DockScreen), new Action<string>(DockTools.DockScreen) },
+            { nameof(DockTools.DockScreen) + "2", new Action<BaseWidget>(DockTools.DockScreen) },
+            { nameof(DockTools.DoesDockScreenExist), new Func<string, (bool, BaseWidget?)>((target) =>
+                {
+                    bool result = DockTools.DoesDockScreenExist(target, out BaseWidget? instance);
+                    return (result, instance);
+                })
+            },
+            { nameof(DockTools.GetDockScreenNames), new Func<string[]>(DockTools.GetDockScreenNames) },
+            { nameof(DockTools.GetDockScreens), new Func<ReadOnlyDictionary<string, BaseWidget>>(DockTools.GetDockScreens) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 

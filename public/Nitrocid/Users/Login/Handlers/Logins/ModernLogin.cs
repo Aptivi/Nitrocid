@@ -28,6 +28,7 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using System;
 using Nitrocid.Kernel.Power;
+using Nitrocid.Users.Login.Widgets;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
 
@@ -43,7 +44,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             DebugWriter.WriteDebug(DebugLevel.I, "Loading modern logon... This shouldn't take long.");
 
             // Start the date and time update thread to show time and date in the modern way
-            ModernLogonScreen.DateTimeUpdateThread.Start();
+            ModernLogonScreen.updateThread.Start();
 
             // Wait for the keypress
             DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
@@ -51,8 +52,8 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
             var key = Input.ReadKey().Key;
 
-            // Stop the thread
-            ModernLogonScreen.DateTimeUpdateThread.Stop();
+            // Stop the thread if screen number indicates that we're on the main screen
+            ModernLogonScreen.updateThread.Stop();
             ModernLogonScreen.renderedFully = false;
 
             // Check to see if user requested power actions
@@ -63,12 +64,31 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                     new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
                     new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
                     new InputChoiceInfo("login", Translate.DoTranslation("Login")),
-                ], Translate.DoTranslation("What do you want to do?"));
+                ], Translate.DoTranslation("You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen."));
                 if (answer == 0)
                     PowerManager.PowerManage(PowerMode.Shutdown);
                 else if (answer == 1)
                     PowerManager.PowerManage(PowerMode.Reboot);
                 proceed = answer == 2;
+            }
+            else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
+            {
+                proceed = false;
+                if (!ModernLogonScreen.enableWidgets)
+                    return proceed;
+                CleanWidgetsUp();
+                if (key == ConsoleKey.LeftArrow)
+                {
+                    ModernLogonScreen.screenNum--;
+                    if (ModernLogonScreen.screenNum <= 0)
+                        ModernLogonScreen.screenNum = 1;
+                }
+                else
+                {
+                    ModernLogonScreen.screenNum++;
+                    if (ModernLogonScreen.screenNum >= 4)
+                        ModernLogonScreen.screenNum = 3;
+                }
             }
             return proceed;
         }
@@ -118,6 +138,14 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 // Wrong password.
                 InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
             return false;
+        }
+
+        private void CleanWidgetsUp()
+        {
+            if (ModernLogonScreen.screenNum == 2)
+                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.FirstWidget));
+            else if (ModernLogonScreen.screenNum == 3)
+                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.SecondWidget));
         }
     }
 }

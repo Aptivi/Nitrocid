@@ -27,6 +27,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
     public class CommandArgumentPartOptions
     {
         /// <summary>
+        /// Argument description
+        /// </summary>
+        public string ArgumentDescription { get; set; } = "";
+        /// <summary>
         /// Auto completion function delegate
         /// </summary>
         public Func<string[], string[]>? AutoCompleter { get; set; }

@@ -1,0 +1,4189 @@
+Invalid colour template {0}
+Enter the admin password for maintenance.
+Kernel Error while booting: {0}
+DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.
+[{0}] panic: Reboot enabled due to error level being {0}.
+[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.
+DOUBLE PANIC: Error Type {0} invalid.
+[{0}] panic: {1} -- Press any key to shutdown.
+[{0}] panic: {1} -- Rebooting in {2} seconds...
+DOUBLE PANIC: Kernel bug: {0}
+Shutting down...
+Rebooting...
+Error {0}: {1}
+Username: 
+Spaces are not allowed.
+Special characters are not allowed.
+{0}'s password: 
+Wrong password.
+Error trying to parse placeholders. {0}
+Error trying to add username.
+usrmgr: Creating username {0}...
+User {0} not found.
+User {0} isn't allowed to be removed.
+User {0} is already logged in. Log-out and log-in as another admin.
+User {0} removed.
+Error trying to remove username.
+The requested screensaver {0} is not found.
+{0} is set to default screensaver.
+Screensaver {0} not found in database. Check the name and try again.
+Mod can't be loaded because of the following: 
+{0} v{1} started
+No definition for command {0}.
+Command defined by 
+Username for {0}: 
+Password for {0}: 
+Connected to {0}
+Error when trying to connect to {0}: {1}
+Local directory {0} doesn't exist.
+Enter a local directory. ".." to go back.
+Directory {0} not found.
+Enter a remote directory. ".." to go back
+Local directory: {0}
+Remote directory: {0}
+Downloading file {0}...
+Downloaded file {0}.
+Uploading file {0}...
+Uploaded file {0}
+Gets current local directory
+Gets current remote directory
+Changes local directory to download to or upload from
+Changes remote directory to download from or upload to
+Deletes remote file from server
+Downloads remote file to local directory using binary or text
+Lists local directory
+Lists remote directory
+Uploads local file to remote directory using binary or text
+Alias can't be the same name as a command.
+Command not found to alias to {0}.
+Alias {0} is not found to be removed.
+Directory {0} not found
+Blank host name.
+Changing from: {0} to {1}...
+Blank message of the day.
+Blank MAL After Login.
+Wrong user password.
+Passwords don't match.
+Username has been changed to {0}!
+The new name you entered is already found.
+{0} is not found.
+Configuration reloaded. You might need to reboot the kernel for some changes to take effect.
+One or more of the colours is invalid.
+Screensaver {0} not found.
+Error trying to execute command
+Changes directory
+Changes password for current user
+Clears the screen
+Use an FTP shell to interact with servers
+Help page
+List file/folder contents in current folder
+Locks your screen with a password
+Logs you out
+Creates a directory
+Reloads configuration file that is edited.
+Saves your screen from burn outs
+Sets up kernel screensavers
+Shows date and time
+Shows date and time in zones
+The kernel will be shut down
+Usage:
+There was an error in the shell.
+You don't have permission to use {0}
+Shell message: The requested command {0} is not allowed to run in maintenance mode.
+Shell message: The requested command {0} is not found. See 'help' for available commands.
+Error trying to execute command.
+- Time of {0}: {1}
+Running on {0}
+You are not authorised to get info for {0}.
+This command is obsolete and will be removed in a future release.
+You are not authorised to change password of {0} because the target was an admin.
+Deletes everything in debug log
+Invalid language
+Welcome to Kernel!
+Download has completed.
+Download failed in try {0}: {1}
+Please use "ftp" if you are going to download files from the FTP server.
+Downloads a file to current working directory
+Disconnect a debug device
+Lists debugging devices connected
+Device {0} disconnected.
+Debug listening on all addresses using port {0}.
+Alias already found: {0}
+Debug log removed. All connected debugging devices may still view messages.
+Debug log removal failed: {0}
+Changing directory has failed: {0}
+Specify the address
+Timezone is specified incorrectly.
+Trying to connect to {0} with profile {1}...
+Parsing mods not allowed on safe mode.
+The path is neither a file nor a directory.
+Creates another copy of a file under different directory or name.
+Match {0} ({1}): {2}
+Match {0}: {1}
+Time spent: {0} milliseconds
+Name: {0}
+Calculates file sums.
+Invalid encryption algorithm.
+Enables or disables remote debugging.
+See if you can solve mathematical equations on time
+Solved perfectly!
+Solved incorrectly.
+RPC is already running.
+RPC listening on all addresses using port {0}.
+Starting RPC...
+Connects to an SSH server.
+Enter the password for {0}: 
+SSH Disconnected.
+Debugging not enabled.
+Shows all received notifications
+Dismisses a notification
+Notification dismissed successfully.
+Remotely executes a command to remote PC
+Invalid type {0}.
+Size: {0}
+Directory {0} already exists.
+Error when trying to connect to {0}: Connection timeout or lost connection
+Calculator to calculate expressions.
+Error in calculation.
+System update
+Checking for system updates...
+Found new version: 
+You can download it at: 
+No recent notifications
+Searches for specified string in the provided file
+Calculates sums of files in specified directory.
+Enter username or mail address: 
+Enter password: 
+Error while connecting to {0}: {1}
+Connecting to {0}...
+Authenticating...
+Downloads messages and lists them
+Opens a message
+Page is not a numeric value.
+Message number may not be negative or zero.
+Message number is not a numeric value.
+- From {0}
+- To {0}
+- Sent at {0} in {1}
+Message specified is not found.
+Remote debug failed to start: {0}
+Preparing profiles... It could take several minutes...
+Error trying to execute script: {0}
+Writes text into the console
+Makes user choices
+where <answers> are one-lettered answers of the question separated in slashes
+Error trying to connect to SSH server: {0}
+Allows user to enter input
+Changes current mail directory
+Unable to open mail folder {0}: {1}
+Lists directories in your mail address
+During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:
+Are you sure that you want to connect?
+Invalid answer. Please try again.
+Enter IMAP server address and port (<address> or <address>:[port]): 
+Enter SMTP server address and port (<address> or <address>:[port]): 
+Sends a message to an address
+Enter recipient mail address:
+Enter the subject:
+Enter your message below. Write "EOF" to confirm.
+Sending message...
+Message sent.
+Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:
+Removes a message
+Removes all messages from recipient
+Message {0} from {1} deleted from {2}. {3} messages remaining to parse.
+Message {0} from {1} deleted from inbox. {2} messages remaining to parse.
+Makes a new file
+File already exists.
+Error trying to create a file: {0}
+Failed to open file. Exiting shell...
+Prints the contents of the file with line numbers to the console
+Adds a new line with text at the end of the file
+Removes the specified line number
+Replaces a word or phrase with another one
+Deletes a word or phrase from line number
+Deletes a character from character number in specified line
+Removed line.
+Specified line number {0} is not a valid number.
+Running in safe mode. Skipping stage...
+>> Your address is {0}.
+>> Your name is {0}.
+Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.
+No stack trace
+Shows last stack trace on exception
+Shows current username in the session
+Unblock a debug device by IP address
+Block a debug device by IP address
+{0} can now join remote debug again.
+{0} is not blocked yet.
+Error loading settings
+There is an error while loading settings. You may need to check the settings file.
+Exit
+Specified option {0} is invalid.
+The answer must be numeric.
+Check for Updates on Startup
+Quiet Probe
+Show MOTD on Log-in
+Clear Screen on Log-in
+Simplified Help Command
+Debug Port
+Download Retry Times
+Log FTP username
+Log FTP IP address
+Return only first FTP profile
+Size parse mode
+Marquee on startup
+Long Time and Date
+Show Hidden Files
+Go Back...
+Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
+Write how many times the "get" command should retry failed downloads. It must be numeric.
+The answer may not be negative.
+Changes kernel configuration
+Text shown
+Write any text you want shown. Shorter is better.
+Failed to upload {0}
+Adds users
+Adds aliases to commands
+Changes host name
+Changes MAL, the MOTD After Login
+Changes MOTD, the Message Of The Day
+Changes user name
+Manage permissions for users
+Removes a user from the list
+Removed alias {0} successfully.
+Failed to check for updates.
+There are no more users remaining in the list.
+Error trying to dismiss notification.
+usrmgr: Failed to create username {0}: {1}
+Failed to rename user. {0}
+User not found
+Failed to change password of username: {0}
+Unable to find file to match string "{0}": {1}
+Download failed for file {0}.
+Failed to list remote files: {0}
+Deleting {0}...
+{0} is not found in the server.
+All mail made by {0} are removed successfully.
+Failed to remove all mail made by {0}.
+Error sending message.
+Moving {0} to {1}...
+Moved successfully
+Moves file or directory to another file or directory. You can also use that to rename files.
+Failed to move {0} to {1}.
+Copying {0} to {1}...
+Copied successfully
+Copies file or directory to another file or directory.
+Failed to copy {0} to {1}.
+Moves a message
+Moves all messages from recipient
+All mail made by {0} are moved successfully.
+Failed to move all mail made by {0}.
+Message {0} from {1} moved from {2}. {3} messages remaining to parse.
+Shows weather info for specified city. Uses OpenWeatherMap.
+-- Weather info for {0} --
+Weather: {0}
+Pressure: {0}
+Humidity: {0}
+You can get your own API key at https://home.openweathermap.org/api_keys.
+Preferred Unit for Temperature
+Each startup, it will check for updates.
+Keep hardware probing messages silent.
+Show Message of the Day before displaying login screen.
+Clear screen before displaying login screen.
+Shows available users if enabled.
+Simplified help command for all the shells
+Whether or not to log FTP username.
+Whether or not to log FTP IP address.
+Pick the first profile only when connecting.
+If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface.
+Enables eyecandy on startup
+The time and date will be longer, showing full month names, etc.
+Shows hidden files.
+Mod {0} stopped
+{0} v{1} stopped
+You must turn on debug mode before you can clear debug log.
+{0} new messages arrived in inbox.
+Open "mail" to see them.
+Removes a directory or a file
+Can't remove {0} because it doesn't exist.
+Provides information about a file
+Provides information about a directory
+Can't get information about nonexistent directory.
+Can't get information about nonexistent file.
+Full name: {0}
+Creation time: {0}
+Last access time: {0}
+Last write time: {0}
+Attributes: {0}
+Parent directory: {0}
+Where to find: {0}
+File size: {0}
+Changes attribute of a file
+File not found.
+where <attributes> is one of the following:
+The file is a normal file
+The file is a read-only file
+The file is a hidden file
+The file is an archive. Used for backups.
+Attribute "{0}" is invalid.
+Attribute has been added successfully.
+Attribute has been removed successfully.
+Failed to add attribute.
+Failed to remove attribute.
+Replaces a word or phrase with another one in a line
+Activate true colours
+Failed to unblock {0}.
+{0} is already blocked.
+{0} can't join remote debug now.
+Failed to block {0}.
+Cycle colours
+Disco will cycle colours when enabled. Otherwise, select random colours.
+Enter file paths to attachments. Press ENTER on a blank path to confirm.
+Opens an encrypted message
+Write password for key ID {0}
+Sends an encrypted message to an address
+Downloading from {0}...
+Show progress bar while downloading or uploading from "get" or "put" command
+If true, it makes "get" or "put" show the progress bar while downloading or uploading.
+Uploads a file to specified website
+Pings an address
+Uploading {0} to {1}...
+Upload has completed.
+Please use "ftp" if you are going to upload files to the FTP server.
+Upload failed in try {0}: {1}
+Write how many times the "put" command should retry failed uploads. It must be numeric.
+Address may not be empty.
+Failed to ping {0}: {1}
+Ping succeeded in {0} ms.
+The specified line number may not be larger than the last file line number.
+Feels like: {0}
+Temperature: {0}
+Wind speed: {0}
+Wind direction: {0}
+Press any key to go back.
+Unable to create mail folder {0}: {1}
+Makes a directory in the current working directory
+Removes a directory from the current working directory
+Mail folder {0} not found.
+Unable to delete mail folder {0}: {1}
+{0}, Created in {1} {2}, Modified in {3} {4}
+Verifies sanity of the file
+Hashes are malformed.
+Hashes don't match.
+Hashes match.
+Renames a folder
+Opens a test shell
+Failed to start "{0}": {1}
+Show mail message preview
+When listing mail messages, show body preview.
+Background colour
+Clears the text file
+Exits the text editor
+Queries a character in a specified line or all lines
+Checking for updates is disabled because you're running a development version.
+Turns on or off the text editor autosave feature.
+If autosave is enabled, the text file will be saved for each "n" seconds.
+Enable text editor autosave
+Text editor autosave interval
+Saves the file
+Record chat to debug log
+Records remote debug chat to debug log.
+Delay in Milliseconds
+How many milliseconds to wait before making the next write?
+Lets you use an SSH FTP server
+No help for command "{0}".
+Colour of Seconds Bar
+Colour of Minutes Bar
+Colour of Hours Bar
+Colour of Information
+Ticks to change colour
+If colour cycling is enabled, how many ticks before changing colours in ProgressClock? 1 tick = 0.5 seconds
+ProgressClock will select random colours if it's enabled. Otherwise, use colours from config.
+Makes a new theme
+Making a new theme "{0}".
+Save Theme to Current Directory
+Save Theme to Another Directory...
+Prints hardware information
+Processor name:
+Partition size:
+Device already exists.
+No such device.
+Prints content of file to console
+Entry already exists.
+Wraps the console output
+The command is not wrappable. These commands are wrappable:
+Extracts a ZIP archive
+Creates a ZIP archive
+Failed to finalise mod {0}: {1}
+Lists all fired events
+Current Directory
+Sets the shell's current directory. Write an absolute path to any existing directory.
+Ping!
+{0} pinged you.
+Save Theme to Current Directory as...
+Save Theme to Another Directory as...
+Specify theme name:
+Load Theme From Prebuilt Themes...
+Specify theme file name wihout the .json extension:
+Lists all files inside the archive
+Extracts a file to a specified directory or a current directory
+Changes archive directory
+Directory {0} doesn't exist
+Archive directory {0} doesn't exist
+Max Positions Count
+How many positions are lit before dimming?
+Connects to an SSH server to execute a command.
+Sets a variable to a value in a script
+There was an error in the FTP shell:
+There was an error in the SFTP shell:
+Show SSH banner
+Shows the SSH server banner on connection.
+How do you want to authenticate?
+Private key file
+Password
+Enter the passphrase for key {0}: 
+Neutralised a non-existent path.
+Key file {0} doesn't exist.
+Error trying to add private key:
+General commands:
+Mod commands:
+Alias commands:
+Maintenance Mode
+Lookup Directories
+No mod commands.
+No alias commands.
+The wrappable command is not found.
+Queries a word in a specified line or all lines
+{0} of {1} downloaded.
+Tests translating a string that exists in resources to specific language
+Prints a string to console and parses the placeholders found
+Tests the regular expression facility
+Tests the VT sequence for 255 colours
+Tests the VT sequence for true colour
+Sends a notification to test the receiver
+Lists all supported codepages
+Tests probing the hardware
+Tests the list writer with the string and string array
+Tests the list writer with the integer and integer array
+Tests the list writer with the char and char array
+Normal string list:
+Array string list:
+Normal integer list:
+Array integer list:
+Normal char list:
+Array char list:
+Enable RPC
+RPC Port
+Whether or not to enable RPC.
+Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port.
+Not starting RPC because it's disabled.
+Lists supported cultures
+Searches for specified string in the provided file using regular expressions
+See if you can press a key on time
+User didn't provide any input in a timely fashion.
+Character not pressed on time.
+You've pressed the right character!
+You've pressed the wrong character.
+Press ESC to exit.
+Gets the date and time information
+Milliseconds:
+Seconds:
+Minutes:
+Hours:
+Days:
+Months:
+Year:
+Day of Year:
+Day of Week:
+Binary:
+Local Time:
+Universal Time:
+Unix Time:
+Failed to parse date information for
+Ensure that the format is correct.
+Date:
+Time:
+Sets file permissions. This is supported only on FTP servers that run Unix.
+Sets the type for this session
+Failed to set permissions of {0} to {1}.
+Permissions set successfully for file
+Data type set to ASCII!
+Data type set to Binary!
+Invalid data type.
+Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations.
+Trying to send an RPC command while RPC didn't start.
+Fade Out Delay in Milliseconds
+Max Fade Steps
+How many milliseconds to wait before fading out text?
+How many fade steps to do?
+Opens an RSS shell to read the feeds
+Lists all feeds
+Reads a feed in a web browser
+Gets the article info
+Article number couldn't be bigger than the available articles.
+Title:
+Link:
+Gets the feed info
+Description:
+Feed type:
+Number of articles:
+Article doesn't have a link!
+Failed to make a list of filesystem entries for directory
+Filesystem sort mode
+Filesystem sort direction
+Controls how the files will be sorted.
+Controls the direction of filesystem sorting whether it's ascending or descending.
+Write Again Delay in Milliseconds
+How many milliseconds to wait before writing text again?
+Write any text you want shown. Longer is better.
+Minimum writing speed in WPM
+Maximum writing speed in WPM
+Probability of typo in percent
+Wipes to change direction
+How many wipes to do before changing direction randomly?
+Stage finished in
+Internal initialisation finished in
+Starting mod
+Mod version:
+Mod {0} not found.
+The text editor hasn't opened a file stream yet.
+String replaced.
+One or both of the numbers are not numeric.
+Word deleted.
+Character deleted.
+Welcome to Settings!
+Error executing SSH command
+Error on SSH shell
+Tests the dictionary writer with the string and string array
+Tests the dictionary writer with the char and char array
+Tests the dictionary writer with the integer and integer array
+Normal string dictionary:
+Array string dictionary:
+Normal integer dictionary:
+Array integer dictionary:
+Normal char dictionary:
+Array char dictionary:
+Show progress on filesystem operations
+Shows what file is being processed during the filesystem operations
+Either the hardware type {0} is not probed, or is not valid.
+Always centred
+Write any text you want shown.
+Whether the text shown on the marquee is always centred.
+Screensaver experienced an error while displaying: {0}. Press any key to exit.
+Preview...
+Here's how your theme will look like:
+Wrappable commands:
+Use Console API
+Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.
+Opening URL... Make sure to follow the steps shown on the screen.
+Mod name:
+Mod file name:
+Mod file path:
+Folder is empty.
+Verbose Probe
+Make hardware probing messages a bit talkative.
+Beautifies the JSON file
+Use Beats Per Minute
+Whether to use the Beats Per Minute unit to write the next colour.
+Delay in Beats Per Minute
+How many beats per minute to wait before making the next write?
+BeatFader will select random colours if it's enabled. Otherwise, use colours from config.
+Custom Startup Banner
+Downloads remote folder to local directory using binary or text
+Uploads local folder to remote directory using binary or text
+Downloading folder {0}...
+Downloaded folder {0}.
+Download failed for folder {0}.
+Uploading folder {0}...
+Uploaded folder {0}
+Minifies the JSON file
+New Screen Delay in Milliseconds
+Column Count
+Line Fill Threshold
+Line Fill Capping Probability in percent
+Line Fill Type
+How many milliseconds to wait before writing the text in the new screen again?
+The text columns to be printed.
+How many characters to write before triggering the "line fill"?
+Possibility that the line fill pattern will be printed in all caps in percent
+The answer may not be zero.
+The answer may not exceed the entries shown.
+Manage your mods
+Mod management is disabled in safe mode.
+Invalid command {0}. Check the usage below:
+Mod not found or file has invalid characters.
+Probability of miss in percent
+Enable screensaver debugging
+Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.
+The manual page {0} is invalid.
+Consider filling this manual page.
+Available kernel arguments:
+Unrecoverable error in argument:
+Encrypts a string using SHA512
+Encrypts a string using SHA384
+Encrypts a string using SHA256
+Encrypts a string using SHA1
+Encrypts a string using MD5
+Stopping mods not allowed on safe mode.
+Mod has already been started!
+Mod hasn't started yet!
+Error when trying to start screensaver:
+Invalid kernel path type.
+Previous boot failed
+The JSON editor hasn't opened a file stream yet.
+Exits the JSON shell without saving the changes
+Saves the JSON file
+Prints the JSON file
+Next ramp interval
+How many milliseconds to wait before filling in the next ramp?
+Draw notification border
+Covers the notification with the border.
+Contact the vendor of the mod to upgrade the mod to the compatible version.
+Sends a progress notification to test the receiver
+Shows local kernel time
+Shows local kernel date
+Shows local kernel date and time
+Shows UTC kernel time
+Shows UTC kernel date
+Shows UTC kernel date and time
+Which file is the MOTD text file? Write an absolute path to the text file.
+Which file is the MAL text file? Write an absolute path to the text file.
+Blacklisted mods
+Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
+Mod {0} is blacklisted.
+Show app information during boot
+Show stage finish times
+Start kernel modifications on boot
+Show current time before login
+Notify for any fault during boot
+Shows brief information about the application on boot.
+Shows how much time did the kernel take to finish a stage.
+Automatically start the kernel modifications on boot.
+Shows the current time, time zone, and date before logging in.
+If there is a minor fault during kernel boot, notifies the user about it.
+Username prompt style
+Password prompt style
+Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed.
+Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed.
+Shows Message of the Day after displaying login screen.
+Show file details in list
+Shows the brief file details while listing files
+Show file details in FTP list
+Username prompt style for FTP
+Password prompt style for FTP
+Use first FTP profile
+Add new connections to FTP speed dial
+Try to validate secure FTP certificates
+Show FTP MOTD on connection
+Always accept invalid FTP certificates
+Shows the FTP file details while listing remote directories.
+Uses the first FTP profile to connect to FTP.
+If enabled, adds a new connection to the FTP speed dial.
+Tries to validate the FTP certificates. Turning it off is not recommended.
+Shows the FTP message of the day on login.
+Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks.
+Username prompt style for mail
+Password prompt style for mail
+IMAP prompt style for mail
+SMTP prompt style for mail
+Automatically detect mail server
+Enable mail debug
+Notify for new mail messages
+GPG password prompt style for mail
+Send IMAP ping interval
+Send SMTP ping interval
+Mail text format
+Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed.
+Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed.
+Automatically detect the mail server based on the given address.
+Enables mail server debug.
+Notifies you for any new mail messages.
+Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed.
+How many milliseconds to send the IMAP ping?
+How many milliseconds to send the SMTP ping?
+Controls how the mail text will be shown.
+Automatically start remote debug on startup
+Remote debug message format
+If you want remote debug to start on boot, enable this.
+Specifies the remote debug message format. {0} for name, {1} for message.
+RSS feed URL prompt style
+Auto refresh RSS feed
+Auto refresh RSS feed interval
+Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed.
+How many milliseconds to refresh the RSS feed?
+Show file details in SFTP list
+Username prompt style for SFTP
+Add new connections to SFTP speed dial
+Shows the SFTP file details while listing remote directories.
+If enabled, adds a new connection to the SFTP speed dial.
+Ping timeout
+Download percentage text
+Upload percentage text
+How many milliseconds to wait before declaring timeout?
+Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage.
+Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage.
+Ask for password after locking
+After locking the screen, ask for password
+Minimum red colour level
+Minimum green colour level
+Minimum blue colour level
+Minimum colour level
+Maximum red colour level
+Maximum green colour level
+Maximum blue colour level
+Maximum colour level
+Minimum red colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum green colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum blue colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum colour level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colours or 16 for 16 colours.
+Maximum red colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum green colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum blue colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum colour level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colours or 16 for 16 colours.
+Foreground colour
+Line character
+A character to form a line. Be sure to only input one character.
+Upper left corner character for hours bar
+Upper left corner character for minutes bar
+Upper left corner character for seconds bar
+Upper right corner character for hours bar
+Upper right corner character for minutes bar
+Upper right corner character for seconds bar
+Lower left corner character for hours bar
+Lower left corner character for minutes bar
+Lower left corner character for seconds bar
+Lower right corner character for hours bar
+Lower right corner character for minutes bar
+Lower right corner character for seconds bar
+Upper frame character for hours bar
+Upper frame character for minutes bar
+Upper frame character for seconds bar
+Lower frame character for hours bar
+Lower frame character for minutes bar
+Lower frame character for seconds bar
+Left frame character for hours bar
+Left frame character for minutes bar
+Left frame character for seconds bar
+Right frame character for hours bar
+Right frame character for minutes bar
+Right frame character for seconds bar
+Information text for hours
+Information text for minutes
+Information text for seconds
+Minimum red colour level for hours
+Minimum green colour level for hours
+Minimum blue colour level for hours
+Minimum colour level for hours
+Maximum red colour level for hours
+Maximum green colour level for hours
+Maximum blue colour level for hours
+Maximum colour level for hours
+Minimum red colour level for minutes
+Minimum green colour level for minutes
+Minimum blue colour level for minutes
+Minimum colour level for minutes
+Maximum red colour level for minutes
+Maximum green colour level for minutes
+Maximum blue colour level for minutes
+Maximum colour level for minutes
+Minimum red colour level for seconds
+Minimum green colour level for seconds
+Minimum blue colour level for seconds
+Minimum colour level for seconds
+Maximum red colour level for seconds
+Maximum green colour level for seconds
+Maximum blue colour level for seconds
+Maximum colour level for seconds
+A character that resembles the upper left corner. Be sure to only input one character.
+A character that resembles the lower left corner. Be sure to only input one character.
+A character that resembles the upper frame. Be sure to only input one character.
+A character that resembles the lower frame. Be sure to only input one character.
+A character that resembles the left frame. Be sure to only input one character.
+A character that resembles the right frame. Be sure to only input one character.
+Write how your information text for the current hour shows. {0} for current hour out of 24 hours.
+Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.
+Write how your information text for the current second shows. {0} for current second out of 60 seconds.
+Text colour
+Upper left corner character for ramp bar
+Upper right corner character for ramp bar
+Lower left corner character for ramp bar
+Lower right corner character for ramp bar
+Upper frame character for ramp bar
+Lower frame character for ramp bar
+Left frame character for ramp bar
+Right frame character for ramp bar
+Minimum red colour level for start colour
+Minimum green colour level for start colour
+Minimum blue colour level for start colour
+Minimum colour level for start colour
+Maximum red colour level for start colour
+Maximum green colour level for start colour
+Maximum blue colour level for start colour
+Maximum colour level for start colour
+Minimum red colour level for end colour
+Minimum green colour level for end colour
+Minimum blue colour level for end colour
+Minimum colour level for end colour
+Maximum red colour level for end colour
+Maximum green colour level for end colour
+Maximum blue colour level for end colour
+Maximum colour level for end colour
+Solver minimum number
+Solver maximum number
+Solver show input
+Upper left corner character for notification border
+Upper right corner character for notification border
+Lower left corner character for notification border
+Lower right corner character for notification border
+Upper frame character for notification border
+Lower frame character for notification border
+Left frame character for notification border
+Right frame character for notification border
+Whether to show what's written in the input prompt.
+What is the minimum number to choose?
+What is the maximum number to choose?
+If specified, it will display customised startup banner with placeholder support. You can use {0} for kernel version.
+Activates the true colour support.
+Word deleted in line {0}.
+String replaced in line {0}.
+Removed line number {0}.
+Suppress unauthorised messages
+Hides the annoying message if the listing function tries to open an unauthorised folder
+FTP server information
+Server address:
+Server port:
+Server type:
+Server system type:
+Server encryption mode:
+Server data connection type:
+Server system:
+Server download data type:
+Server upload data type:
+Enter a remote file to be hashed.
+Enter a remote directory.
+Recursive hashing for FTP
+Whether to recursively hash a directory. Please note that not all the FTP servers support that.
+Processor clock speed:
+Total number of processors:
+Disk size:
+Total memory:
+Graphics card:
+If you're sure that you've opened the right section, check this message out:
+Executes an FTP server command
+Encrypts a string using CRC32
+of mail transferred...
+Tests the table functionality
+Edits the specified line
+Adds the new lines at the end of the file
+Enter the text that you want to append to the end of the file. When you're done, write "EOF" on its own line.
+Host Name
+Username
+Data Type
+Encoding
+Encryption
+Protocols
+Show mail transfer progress
+Mail transfer progress
+Mail transfer progress (single)
+If enabled, the mail shell will show how many bytes transmitted when downloading mail.
+Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size.
+Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size.
+Mod file is not specified.
+Trying to install an already-installed mod. Updating mod...
+Installation failed for
+The mod file provided is incompatible.
+Uninstallation failed for
+Print line numbers on printing file contents
+Dismisses all notifications
+Downloading...
+Uploading...
+Show notification for download progress
+Show notification for upload progress
+Shows the notification showing the download progress.
+Shows the notification showing the upload progress.
+Checks to see if the translatable string exists in the KS resources
+String found in the localisation resources.
+String not found in the localisation resources.
+Starts the kernel quietly
+Starts the kernel in safe mode, disabling all mods
+Like safe mode, but also disables multi-user and some customisation
+There was not enough arguments.
+Upper left corner colour for ramp bar
+Upper right corner colour for ramp bar
+Lower left corner colour for ramp bar
+Lower right corner colour for ramp bar
+Upper frame colour for ramp bar
+Lower frame colour for ramp bar
+Left frame colour for ramp bar
+Right frame colour for ramp bar
+Use border colours for ramp bar
+Use the border colours for the ramp bar. If disabled, will generate a grey bar.
+Starts the HTTP shell
+Gets the response from the HTTP server using the specified request
+Deletes content from HTTP server
+There was an error in the HTTP shell:
+Gets the string from the HTTP server using the specified request
+Getting {0}...
+Colours don't require a restart, but most of the settings require a restart.
+No help for argument "{0}".
+Default difficulty for SpeedPress
+Keypress timeout for SpeedPress
+How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)
+Replaces a word or phrase with another one using regular expressions
+Replaces a word or phrase with another one in a line using regular expressions
+Queries a word in a specified line or all lines using regular expressions
+Write what do you want to search for.
+Nothing is found. Make sure that you've written the setting correctly.
+Packs a local file to the archive
+Can't pack nothing.
+For more information about the terms and conditions of using this software, visit
+Default choice output type
+Checks all the KS settings to see if the variables are written correctly
+File {0} not found
+Creates a variable array with the provided values
+Checks all the localisation text line numbers to see if they're all equal
+Line mismatch in
+Include anonymous users
+Include disabled users
+Includes the anonymous users in the list
+Includes the disabled users in the list
+Sort the list
+Sorts the filesystem list professionally.
+Provides a selection choice
+Shell commands not implemented!!!
+Show latest RSS headline on login
+RSS headline URL
+Each login, it will show the latest RSS headline from the selected headline URL.
+RSS headline URL to be used when showing the latest headline. This is usually your favourite feed.
+Failed to get the latest news.
+Show stack trace on kernel error
+If there is any kernel error, choose whether or not to print the stack trace to the console.
+Where do you want to save the current kernel settings?
+Can't save kernel settings on top of existing file.
+Where do you want to load the current kernel settings from?
+Checks to see if the translatable strings exist in the KS resources
+Combines the two text files or more into the output file.
+Failed to combine files.
+RSS feed fetch timeout
+How many milliseconds to wait before RSS feed fetch timeout?
+Fill the boxes
+Do we draw the box as a whole or do we draw only the border?
+Stage delay in milliseconds
+How many milliseconds to wait before drawing the next stage?
+Next ramp rot interval
+How many milliseconds to wait before rotting the next ramp's one end?
+Failed to add an event.
+Failed to remove an event.
+Not enough arguments provided to add an event.
+Not enough arguments provided to remove an event.
+Not enough arguments provided for event manipulation.
+Not enough arguments provided for reminder manipulation.
+Untitled reminder
+Untitled event
+Now it's an event day!
+Don't miss this!
+Invalid action.
+A simple stopwatch
+Start or stop
+Lap
+Reset
+A simple timer
+Set interval
+Indicated timeout is not numeric.
+Specify the timeout in milliseconds
+Save all events and/or reminders destructively
+If enabled, deletes all events and/or reminders before saving all of them using the calendar command.
+Verify retry attempts for FTP transmission
+FTP connection timeout
+FTP data connection timeout
+FTP IP versions
+How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?
+How many milliseconds to wait before the FTP connection timeout?
+How many milliseconds to wait before the FTP data connection timeout?
+Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses.
+Trying to start RPC while it's already started.
+Finds a file in the specified directory or in the current directory
+Converts the line endings to format for the current platform or to specified custom format
+Total size in folder:
+Show total size in list
+If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.
+You're up to date!
+Default JSON formatting for JSON shell
+Selects the default JSON formatting (beautified or minified) for the JSON shell to save.
+Firework explosion radius
+How many blocks (up to 10) is the explosion radius for the firework when ignited?
+This command has the below switches that change how it works:
+Shows the file details in the list
+Suppresses the annoying "permission denied" messages
+Shows all the time zones
+Starts the game in easy difficulty
+Starts the game in medium difficulty
+Starts the game in hard difficulty
+Starts the game in very hard difficulty
+Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.
+Creates a directory that contains the contents of the ZIP file
+Shows all the available cities
+Fast compression
+No compression
+Don't create base directory in archive
+Indicates that the target path is absolute
+Clears all fired events
+Enable event debugging
+Enables debugging for the kernel event system
+Figlet font
+Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
+Failed to install custom language {0}.
+The metadata information needed to install the custom language doesn't provide the necessary localisations needed.
+Failed to uninstall custom language {0}.
+Length of the English language doesn't match the length of the language token provided.
+The language already exists and can't be overwritten.
+Failed to uninstall custom language. It most likely doesn't exist.
+Failed to install custom languages.
+Failed to uninstall custom languages.
+Failed to uninstall custom languages. See the inner exception for more info.
+Licence information
+Manage your languages
+Language not found or file has invalid characters.
+Language is not specified.
+Language management is disabled in safe mode.
+Language short name:
+Language full name:
+Language transliterable:
+Custom language:
+Stylish splash screen
+Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot.
+Splash name
+Splash name from the available splashes implemented in the kernel.
+Users initialised
+Welcome!
+Starting the remote debugger...
+Remote debugger connection error
+Notify on remote debug connection error
+If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing.
+Figlet font for timer
+Enable Figlet for timer
+If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
+Resets the kernel to the factory settings
+Show the commands count on help
+Show the shell commands count on help
+Show the mod commands count on help
+Show the aliases count on help
+Executes commands once the UESH expressions are satisfied
+The condition was not found in the expression.
+Condition {0} requires {1} arguments. Got {2}.
+Error parsing expression due to syntax error.
+Failed to satisfy condition. More info here:
+Password mask character
+A character that masks the password. Leave blank for more security.
+Exits the shell if running on subshell
+Can not kill the mother shell!
+Cannot log out from the subshell.
+File not specified. Exiting shell...
+Progress bar colour
+Opens the screensaver settings
+Opens the splash settings
+Lists available UESH variables
+Progress text location
+Select your preferred progress text location.
+You can only write the numbers.
+Press "q" to exit.
+Enables debug mode
+Enable Black and White Mode
+Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images.
+Load Current Colours
+Current value:
+Adds a new byte at the end of the file
+Adds the new bytes at the end of the file
+Clears the binary file
+Deletes a byte using the byte number
+Deletes the range of bytes
+Exits the hex editor
+Prints the contents of the file with byte numbers to the console
+Queries a byte in a specified range of bytes or all bytes
+Replaces a byte with another one
+Byte replaced.
+The hex editor hasn't opened a file stream yet.
+Enter a byte on its own line that you want to append to the end of the file. When you're done, write "EOF" on its own line.
+Not a valid byte.
+The specified byte number may not be larger than the file size.
+Byte deleted.
+The byte number is not numeric.
+The specified start byte number may not be larger than the file size.
+The specified end byte number may not be larger than the file size.
+Deleted bytes.
+Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.
+DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!
+Gets key information for a pressed key. Useful for debugging
+Enter a key or a combination of keys to display its information.
+Pressed key
+Pressed key character
+Pressed modifiers
+Keyboard shortcut
+Enable hex editor autosave
+Hex editor autosave interval
+Turns on or off the hex editor autosave feature.
+Noise density
+How many milliseconds to wait before writing in the new screen?
+The greater the percentage, the noisier the signal
+The script is malformed. Check the script and resolve any errors: {0}
+The snake game!
+Uses relative path instead of absolute
+The modfile is invalid.
+Bookmarks the feed
+Name and surname generator
+Removes the feed bookmark
+The feed doesn't exist in bookmarks.
+Lists all bookmarked feeds
+Minimum names count
+Maximum names count
+Minimum amount of names to generate
+Maximum amount of names to generate
+Minimum age years count
+Maximum age years count
+Minimum amount of age years to generate
+Maximum amount of age years to generate
+Untitled manual page
+Input history enabled
+Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
+Red colour level:
+Green colour level:
+Blue colour level:
+It's now safe to turn off your computer.
+Simulate No APM Mode
+Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
+Glitch density
+The greater the percentage, the more dense the glitch!
+The English Dictionary
+Word information for
+API is licenced under
+Word:
+Word meanings for
+Part of Speech:
+Definition:
+Example in Sentence:
+Sources used to define
+Synonyms:
+Antonyms:
+Tests your console for PowerLine support
+Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend
+Opens the shell preset library
+The specified preset {0} is not found.
+You are a spaceship and the meteors are coming to destroy you. Can you save it?
+Device already exists in the block list.
+Device doesn't exist in the block list.
+Tests assembly entry point execution
+Select preset for {0}:
+Unit converter
+Available unit types and their units:
+Game over
+Unexpected error
+Use PowerLine for rendering spaceship
+Meteor game speed
+Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.
+Specifies the game speed in milliseconds.
+Enables terminal debug mode
+Prevents the kernel from using the alternative buffer
+Sets the initial pre-boot environment language
+Attaches the Visual Studio debugger to this instance of Nitrocid
+Turns on verbose messages for pre-boot environment
+Hides the pre-boot splash before configuration is loaded
+Unknown argument
+You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.
+Your terminal is {0} on {1}.
+Do these ramps look right to you? They should transition smoothly.
+No fallback driver found.
+Can't register a non-driver or a null driver.
+Failed to infer driver type from unknown type
+File {0} not found.
+File or folder {0} not found.
+File or folder {0} is still locked even after waiting for {1} seconds.
+Run 'license' to see the licence information.
+Kernel first-run
+Welcome to Nitrocid Kernel! Thank you for trying it out!
+To get started, press ENTER.
+Select your language. By default, the kernel uses the English language, but you can select any other language here.
+Create your first user
+We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:
+Enter the username
+Enter the password
+Failed to create username. Please ensure that your username doesn't contain spaces and special characters.
+Automatic updates
+Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.
+Do you want Nitrocid KS to automatically check for updates?
+In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.
+You can always check for kernel updates using the "update" command.
+Get Started!
+Congratulations! You now have a user account, {0}!
+Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!
+We apologise for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.
+Press any key to start the shell anyways, but please note that you may have to create your new user manually.
+Kernel environment error:
+Nitrocid KS has detected a problem and it has been shut down.
+The metadata information needed to install the custom language doesn't exist.
+The metadata information needed to uninstall the custom language doesn't exist.
+The mod script may not be null.
+No mods detected.
+Stopping mod {0}...
+The mod is not strongly signed. It may contain untrusted code.
+Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:
+Here's a list of errors that may help you investigate this incompatibility:
+Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed.
+Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy.
+Mod {0} does not have the name. Mod parsing failed. Review the source code.
+Mod {0} does not have the version. Mod parsing failed. Review the source code.
+Mod {0} contains invalid version. Mod parsing failed. Version was
+Trying to modify existing account while it's locked
+Trying to add unencrypted password to users list.
+Can't add username. Make sure that the username doesn't exist.
+Can't remove username. Make sure that the username exists.
+Kernel is waiting for the debugger...
+Debugger failed to attach. Starting anyways...
+Make sure that you have an appropriate debugger set up in your system before being able to attach Nitrocid to it.
+Can't wipe file
+Can't wipe dump file
+The following files are not wiped:
+Are you sure to wipe these files?
+Can't wipe miscellaneous file
+No argument help description
+Your console must support true colour to use this theme.
+Exit the preview
+The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}.
+The theme {0} needs true colour support, but your console doesn't support it.
+The text must not be empty.
+The encoded text must not be empty.
+The path must not be empty.
+File doesn't exist.
+To combine text files, use the appropriate function.
+To combine binary files, use the appropriate function.
+The source is either not found or isn't a file.
+Byte number must start with 1.
+The specified byte number is invalid.
+Invalid regular expression syntax.
+The target file or directory isn't found.
+Can't overwrite an existing file or directory with a symbolic link.
+The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption.
+The source file you provided, {0}, is not a valid text file.
+The target file you provided, {0}, is not a valid text file.
+Disk doesn't exist
+Partition doesn't exist
+The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives.
+You'll need to restart the kernel as elevated in order to be able to show hardware information.
+Failed to parse the CPU info. Ensure that it's a valid info list.
+Failed to parse the RAM info. Ensure that it's a valid info list.
+Failed to parse the GPU info. Ensure that it's a valid info list.
+Failed to parse the HDD info. Ensure that it's a valid info list.
+Processor vendor:
+Clock speed:
+Total cores:
+Cache sizes:
+Total usable memory:
+Reserved memory:
+Disk number:
+Partitions:
+Partition number:
+Graphics card name:
+SpecProbe failed to parse some of the hardware. Below are the errors reported by SpecProbe:
+No extra information.
+File hash sum
+No default extension handler found for this extension.
+Extensions must start with the dot. Hint:
+No such implementer.
+The extension isn't specified.
+The implementer name isn't specified.
+Handler for extension is not registered.
+It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack.
+It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack.
+No handler to handle this extension.
+Failed to get info for {0}.
+Unknown error while listing in directory: {0}
+Unauthorised
+Error
+Can't get base entry out of non-existent file or directory.
+Only text files are supported.
+Access to the path is denied due to no consent.
+Empty kernel path type.
+Kernel path type is already registered.
+Empty path.
+Kernel path type is not registered.
+Specify an existent folder to store the three configuration files on.
+Specify an existent path to a configuration file
+Not a valid config class.
+Configuration file is invalid.
+There is an error trying to read configuration: {0}.
+Validation failed!
+Reading failed!
+Trying to fix configuration...
+Can't check configuration variables when no type specified.
+Can't check configuration variables when no entries are specified.
+Trying to register a custom setting with no content.
+Trying to unregister a custom setting with no name.
+The custom setting is not registered.
+Trying to query an empty custom setting.
+Settings type not found.
+Settings key not found to match the specified variable.
+The settings entries JSON value is empty.
+Trying to register a base setting with no content.
+Trying to unregister a base setting with no name.
+Assertion failure.
+Event {0} not found.
+Kernel event fired:
+Provide a valid event action
+The specified alias already exists. Make sure that you select a different alias.
+The alias system encountered an invalid operation trying to process your request.
+The specified alias isn't found.
+The specified command isn't found to alias to.
+The specified alias type isn't found.
+An error occurred while trying to process the colour request. Common mistakes include specifying the wrong colour specifier.
+A kernel configuration error occurred.
+A general filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general FTP filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general FTP network error occurred. Check to make sure that your internet connection is working.
+A general FTP shell error occurred.
+A group management error occurred.
+A general HTTP shell error occurred.
+Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.
+Invalid hash algorithm. If you're using a custom hash sum driver, check to make sure that the driver is loaded.
+Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.
+Invalid kernel path.
+Invalid manual page. Check to make sure that the mod containing the valid manual pages is loaded.
+Invalid mod. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+Invalid filesystem path. Check to make sure that it's written correctly.
+Invalid placeholder. Consult the kernel documentation for more information.
+The custom language failed to install. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localisation information for your custom language.
+The custom language failed to load. Check to make sure that the language file is correctly formed. Usually, the locale generator does a good job in making the localisation information for your custom language.
+The custom language failed to uninstall.
+The mail system encountered an error.
+The mod failed to install. Check to make sure that it's a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.
+The mod contains no mod instance. Consult with the mod vendor for a new copy.
+The mod uninstallation has failed.
+An error occurred trying to read or set the message of the day.
+There is no event by this name.
+There is no language by this name.
+There is no mail directory by this name.
+There is no mod by this name.
+There is no reflection property by this name.
+There is no reflection variable by this name.
+There is no screensaver by this name.
+There is no shell preset by this name.
+There is no theme by this name.
+There are zero users in the entire kernel. We've reached an extremely rare situation. The kernel can't continue.
+An error occurred trying to manage permissions
+The remote debug device already exists.
+The remote debug device is not found. Check to make sure that you've written an IP address of the device right.
+The remote debug device operation failed.
+The RSS network error occurred. Check to make sure that your internet connection is working.
+The RSS shell error occurred.
+The screensaver management error occurred during the operation.
+A general SFTP filesystem error occurred. Check to make sure that the path specified is correct, and that the file or directory actually exists.
+A general SFTP network error occurred. Check to make sure that your internet connection is working.
+A general SFTP shell error occurred.
+Condition parsing failed. Please check your syntax to meet the operator's expected design.
+An error occurred while trying to parse the UESH script file. Check your script file for errors and correct them.
+A user creation error occurred.
+A user management error occurred.
+A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
+An unsupported console has been detected.
+An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.
+Your network needs to be online before being able to perform operations related to networking. Connect your network adaptor and try again.
+User doesn't exist. Check to make sure that you've written the user correctly.
+Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.
+The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
+A thread operation is invalid in the current state. Refer to the additional message the kernel thread manager gave you for additional information.
+An invalid shell operation is being attempted.
+This function or feature is not implemented yet.
+An operation was attempted on the remote procedure system that is invalid.
+An invalid encryption operation is being performed.
+An invalid debugging operation is being performed.
+An invalid archive operation is being performed.
+An invalid hex editor operation is being performed.
+An invalid JSON editor operation is being performed.
+An invalid text editor operation is being performed.
+When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.
+A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it's a valid vCard 2.1, 3.0, or 4.0 contact file.
+A UESH condition system failed while performing the requested operation. See the error message below for more details.
+An invalid SQL editor operation is being performed.
+Group doesn't exist. Check to make sure that you've written the group name correctly.
+An error occurred in the Interactive TUI implementation.
+An error occurred in the custom settings manager for users.
+An error occurred in the network connection manager.
+A general HTTP network error occurred. Check to make sure that your internet connection is working.
+A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.
+Locale generator tool returned an error while trying to generate JSON files for languages.
+An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.
+An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.
+An error occurred in the calendar manager.
+There was an error in the notification management.
+There was an error in the language management.
+There was an error in the mod management.
+There was an error in the reflection system.
+There was an error when trying to perform an operation for theme management.
+There was an error when trying to perform an operation for the kernel event management.
+There was an error when trying to perform an operation for the kernel addon management.
+There was an error when trying to perform an operation for the note management.
+Hardware component management failed.
+Login handler failed. Please ensure that it's registered properly and that it does its job as expected.
+Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.
+Invalid privacy consent operation. Please make sure that the consent is correct and try again.
+Splash manager has failed to perform your requested operation. Please check the splash name and try again.
+Text tools failed to process your request.
+Invalid placeholder action. Consult the kernel documentation for more information.
+The driver handler failed to perform this action because you might have supplied the parameters wrong. If you're sure that they're specified correctly, make sure that you've provided the right driver name and type.
+The progress handler has failed to perform the requested operation.
+The console operation failed to perform the required task.
+The kernel journaling operation failed to perform the required task.
+The system docking operation failed to perform the required task.
+The security operation failed to perform the required task.
+There was an error when trying to perform an operation for the kernel driver management.
+There is an error in the kernel, one of the kernel addons, one of your mods, or one of the kernel components. If the routine tried to process your input, ensure that you've written all the parameters correctly.
+Exception info
+Error type
+Error message
+Additional info
+The module that caused the fault provided this additional information that may help you further
+The module that caused the fault didn't provide additional information.
+Exception details
+If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it.
+The module didn't provide the exception information, so it's usually an indicator that something is wrong.
+Inner exception details
+Additional errors were found when the routine tried to perform this operation
+If you're sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action.
+Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.
+{0} -- Rebooting in {1} seconds...
+Continuable kernel error occurred:
+This error may cause instabilities to the kernel or to the applications. You can continue using the kernel at your own risk.
+In-depth analysis of the error
+Exception type
+Error code
+Error source
+Unknown error source method
+Error description
+Stack trace
+Kernel error information
+The kernel error happened at
+Contains an exception?
+Kernel error description
+Analysis of inner error, number
+The last inner error is the root cause, which is number
+Frame analysis
+There are no frames to analyse.
+Frame analysis failed. Some information might not be complete.
+Unfortunately, there is no helpful error information provided to help you analyse the issue.
+All kernel threads
+Thread is alive
+Thread is a background thread
+Thread is system-critical
+Thread is ready
+Thread is stopping
+Total threads
+Thread analysis failed. Some information might not be complete.
+All operating system threads
+Operating system thread analysis failed. Some information might not be complete.
+All thread backtraces
+Thread backtraces is empty. Either this information is not available, an error occurred while fetching it, or the Diagnostics Extras addon is not installed. Investigate the debug logs.
+Stack trace for thread
+Thread backtrace analysis failed. Some information might not be complete.
+Version information
+Dump generator failed to dump a kernel error caused by
+We apologise for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:
+For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created.
+This addon is not a valid addon.
+Starting kernel addon
+Started kernel addon
+Failed to start kernel addon
+Failed to initialise kernel addon
+Failed to finalise addons. Below addons have failed to finalise:
+Failed to stop addons. Below addons have failed to stop:
+Can't execute custom function with non-existent addon
+Can't find function '{0}' in addon '{1}'.
+Can't find property '{0}' in addon '{1}'.
+Can't find field '{0}' in addon '{1}'.
+Extra Languages Pack
+Extra Screensavers Pack
+Extra Splashes Pack
+Extra Themes Pack
+Extras - Amusements
+Extras - Archive Shell
+Extras - BassBoom
+Extras - Caffeine
+Extras - Calculators
+Extras - Calendar
+Extras - Colour Converter
+Extras - Contacts
+Extras - CRC32
+Extras - Diagnostics
+Extras - Dictionary
+Extras - Docking
+Extras - Forecast
+Extras - FTP Shell
+Extras - Git Shell
+Extras - HTTP Shell
+Extras - JSON Shell
+Extras - Language Studio
+Extras - Mail Shell
+Extras - MD5
+Extras - Notes
+Extras - RSS Shell
+Extras - SFTP Shell
+Extras - SHA1
+Extras - SHA384
+Extras - SQL Shell
+Extras - Theme Studio
+Extras - Time Info
+Extras - Timers
+Extras - Kernel Tips
+Extras - To-do List
+Extras - Unit Converter
+No such addon type '{0}'
+One or more of the CPU cores failed to probe. Showing information anyway...
+One or more of the RAM chips failed to probe. Showing information anyway...
+One or more of the graphics cards failed to probe. Showing information anyway...
+One or more of the hard drives failed to probe. Showing information anyway...
+Hardware won't be parsed because of insufficient privileges. Use "winelevate" to restart Nitrocid in elevated mode.
+There was an error when probing hardware: {0}
+Journal file '{0}' doesn't exist.
+Remote power management invoked:
+Can not initialise VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.
+Failed to start critical components
+Starting Nitrocid...
+Loading custom languages...
+Loading important kernel addons...
+Loading configuration...
+Loading important mods...
+The kernel failed to initialise some of the essential components. The kernel will not work properly at this point.
+Error information:
+Kernel environment information
+The kernel failed to initialise some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.
+General variables reset
+Saved shell command histories.
+Config saved.
+Extra kernel functions and their registered components stopped.
+The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.
+Goodbye!
+Please wait while the kernel initialises your hardware...
+Verifying system integrity
+Configuration error will be notified
+Configuration error
+There is a problem with one of the configuration files. Please check its contents.
+System initialisation
+Kernel updates
+Hardware detection
+Optional components
+User initialisation
+System integrity verification
+Stage
+Running in maintenance mode. Skipping stage...
+Can't regenerate the kernel thread while the same thread is already running.
+Child thread start action can't be null.
+Kernel thread {0} failed.
+No info.
+Can't open file or folder
+Newline style:
+Binary file:
+MIME metadata:
+Full name
+Version
+Culture name
+Content type
+File is not a valid .NET assembly.\n
+Can't get file system info
+Can't copy file or directory
+Can't move file or directory
+Can't remove file or directory
+Folder doesn't exist. Make sure that you've written the correct path.
+Enter a path or a full path to a destination folder to copy the selected file to.
+Make sure that you've written the correct path.
+File doesn't exist. Make sure that you've written the correct path.
+Enter a path or a full path to a destination folder to move the selected file to.
+Enter a new file name.
+Make sure that you've written the correct file name.
+File already exists. The name shouldn't be occupied by another file.
+Enter a new directory name.
+Folder already exists. The name shouldn't be occupied by another folder.
+Selected entry is not a file.
+Enter a hash driver:
+Hash driver not found.
+Enter your expected hash
+Two hashes match!
+Two hashes don't match.
+Selected
+File name
+Is a directory
+Is selected
+File size
+File path
+Can't open folder or select file
+Enter a path or a full path to a local folder.
+Press SPACE for more info
+Selected '{0}'. Press ESC to exit and confirm selections.
+Unselected '{0}'. Press ESC to exit and confirm selections.
+No selected files.
+Can't open folder
+Can't select folder
+No selected folders.
+Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.
+Presented to you by
+Content length
+No contents.
+No revision.
+Screensaver name
+Screensaver contains flashing images
+Task ID
+Privileged processor time
+User processor time
+Total processor time
+Task state
+Priority level
+Task memory address
+Task name
+Alive
+Background
+Critical
+Ready
+Kernel task is already killed.
+Kernel task is critical and can't be killed.
+OS threads can't be killed.
+Date
+Time
+Display name
+Standard name
+Success
+Failure
+The progress handler may not be null.
+Processing...
+This method is nonexistent.
+This method is static. Use the non-object overload.
+This method is not static. Use the object overload.
+Photosensitive seizure warning
+This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings.
+Custom screensaver already exists.
+Custom screensaver not found.
+Can't register empty splash
+Can't register splash with no name
+Can't register splash with no entry point
+Can't re-register splash. You need to unregister that splash first.
+Can't unregister splash with no name
+Can't unregister non-existent splash
+The closing splash has failed to display
+We've reached {0}%!
+Loading...
+Can't execute custom function with non-existent mod
+Dependency unsatisfied. Failed dependencies are listed below:
+Tried to query the manuals for nonexistent mod {0}.
+Tried to initialise the manual {0} for nonexistent mod {1}.
+Tried to initialise the manual file {0} for nonexistent mod {1}.
+Tried to initialise the manual file {0} which doesn't exist for mod {1}.
+This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.
+Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers.
+Create a new connection
+Use speed dial
+Connection type is not found
+Connection is not found.
+Invalid link for connection.
+Failed to establish connection with {0}.
+Connection is not established yet.
+The connection index is out of range.
+Connection type already exists
+The shell {0} doesn't accept network connections.
+Enter the server address:
+Select a connection from the speed dial list.
+Select a connection.
+Unknown networked shell error:
+Can't add a speed dial with non-existent type.
+{0} of {1} uploaded.
+Demanding permission
+Permission not granted
+Can't consent an empty permission.
+It looks like that a mod with the root namespace of {0} tries to access your data with the permission of {1}. Do you want to allow this mod to access your data?
+You didn't specify an assembly.
+You didn't specify an assembly path.
+You didn't specify an assembly name.
+Can't add a group with the same name.
+Can't remove a nonexistent group.
+Can't add a user to a nonexistent group.
+User has already joined the group!
+Can't remove a user from a nonexistent group.
+User has already left the group!
+Can't query a user from a nonexistent group.
+The login handler is not found!
+Wrong username or username not found.
+Login handler has crashed!
+Incorrect admin password. You have {0} tries.
+Out of chances. Rebooting...
+Some malicious mod removed the root account, or rare situation happened and it was gone.
+From
+No feed.
+Install the RSS Shell Extras addon!
+Press any key to start, or ESC for more options...
+The key specified, {0}, already exists.
+The key specified, {0}, doesn't exist.
+Welcome to Nitrocid Kernel! - Version
+This programme is licenced under GNU General Public Licence 3.0 or later.
+You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.
+You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.
+We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.
+To dismiss forever, either press ENTER on the "Acknowledged" button here by highlighting it using the left arrow on your keyboard, or enable "Development notice acknowledged" in the kernel settings.
+OK
+Acknowledged
+Development notice
+Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.
+Unusual environment notice
+that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?
+Pro tip: Did you know
+Keybindings
+Remove
+Can't perform this operation on a null array.
+Can't perform this operation on a null lines list.
+Settings type is not found.
+Find an option
+Allows you to easily search for a settings entry using either its title or its value.
+Save settings
+Saves your kernel configuration changes to the config file found in the application data folder.
+Save settings as
+Saves your kernel configuration changes to the config file found in the specified folder.
+Load settings from
+Loads the kernel configuration from the specified config file.
+Reload settings
+Reloads the kernel configuration for any external changes
+Check for system updates
+System information
+You're on the landing page of the {0} settings. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel.
+Loading section...
+One or more of the following settings found in this section are unsupported in your platform:
+Invalid section. Please go back.
+Invalid key. Please go back.
+Searching for settings...
+These settings are found. Please select one.
+Failed to find your requested setting.
+Saving settings...
+Saving settings to
+Loading settings...
+Reloading settings...
+Kernel version
+Kernel API version
+Host ID
+Host Generic ID
+You're Lost!
+If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.
+If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.
+>> Remote Debug: version
+>> Welcome! This is your first time entering remote debug. Use "/register <name>" to register.
+Device not found to block.
+Base console tests
+Driver tests
+Filesystem tests
+Main kernel component tests
+Language and localisation tests
+Miscellaneous tests
+Kernel modification tests
+Network system tests
+UESH shell tests
+User tests
+Shutdown
+Exits the testing mode and shuts down the kernel
+Choose a test section to run
+No
+Stack frame number shouldn't exceed current amount of frames or shouldn't be negative.
+Nitrocid KS
+Kernel thread supervisor detected {0} critical threads that haven't started yet.
+Kernel thread supervisor detected {0} dead threads.
+Kernel thread supervisor failed
+Alarm fired!
+The alarm name is empty.
+The alarm is not found.
+The zero-based alarm number is invalid.
+Today is
+Failed to show current times:
+Time zone {0} not found
+Time zone not found.
+The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager.
+Please wait
+Loading
+Please wait while the kernel is initialising
+Please wait while the kernel is shutting down
+Please wait while the kernel is restarting
+Starting
+Safe Mode
+Debug Mode
+Latest news from
+To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!
+Alias {0} is not found to be queried.
+Sets the value of the output to the selected UESH variable
+Required arguments are not provided for all usages below:
+Required arguments are not provided.
+Required switches are not provided.
+One of the switches requires a value that is not provided.
+Switches that are listed below are unknown.
+Switches that are listed below conflict with each other.
+The below switches don't accept values.
+One or more of the arguments expect a numeric value, but you provided an invalid number.
+One or more of the arguments expect an exact wording, but you provided an invalid word.
+One or more of the switches expect a numeric value, but you provided an invalid number.
+Command has been aborted.
+You must not directly execute this command in a wrapped mode.
+An error occurred while trying to wrap a command output
+Command aborted for the following reason:
+Invalid command pattern provided.
+Command not found.
+Shell type {0} doesn't exist.
+You must provide the command base.
+You must provide the command.
+The command specified is already added! It's possible that you may have conflicting mods.
+Command not defined
+Some of the custom commands can't be loaded.
+The custom command specified is not found.
+Some of the custom commands can't be unloaded.
+The command specified is already added! It's possible that you may have conflicting addons.
+Some of the addon commands can't be loaded.
+The addon command specified is not found.
+Some of the addon commands can't be unloaded.
+This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:
+Available commands:
+Kernel addon commands:
+No kernel addon commands.
+Unified commands:
+Unified commands not implemented!!!
+Command:
+You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.
+When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.
+The script is malformed. Check the script and resolve any errors.
+Reminder for the slash commands
+Executes an external process
+Executes the process without interrupting the shell thread. A separate window will be created.
+Finds the available commands in the current shell type
+Shows mod commands
+Shows aliased commands
+Shows unified commands
+Shows kernel addon commands
+Shows all commands
+Uses simplified help
+Loads shell histories
+Repeats the last action or the specified command
+Saves shell histories
+Shows a random kernel tip
+Shells can't start unless the mother shell has started.
+Failed trying to initialise shell
+Error in administrative shell: {0}
+Kernel arguments help system
+Prints the boot log
+Gets current kernel journal log
+Lists the users
+Saves the recent notifications
+Manipulates with the user main flags
+Gets the user information
+Changes the preferred user language
+You must enable debug mode before you can use the debug shell.
+Gets current backtrace
+Gets message from kernel exception type. Useful for debugging
+Gets a field value
+Gets a property value
+Lists all available addons
+Lists all available fields from the specified addon
+Lists all available functions from the specified addon
+Lists all available properties from the specified addon
+Lists all the base addons and their status
+Lists all available public fields
+Suppresses the error messages
+Lists all available public properties
+Lists all available shells
+Previews the splash
+Specifies whether to test out the important messages feature on splash
+Specifies the splash screen context
+Adds a new byte to the specified position
+Opens the interactive hex editor TUI
+Opens the interactive editor
+Adds groups
+Adds users to a group
+Administrative shell
+Beeps from the console
+Renames group of files to selected format
+Prints the line numbers alongside the contents
+Prints only the contents
+Force treating binary files as plain text
+Gets the current directory
+What's new in this version of Nitrocid?
+Checks the file or the folder lock
+Waits until the file or the folder is unlocked
+Changes language
+Changes the user language instead of the system language
+One line choice style
+Two lines choice style
+Modern choice style
+The output can be only one character
+The output can be more than a character
+Combines the two text files or more into the console.
+Compares between the two text files.
+Converts the line endings to the Windows format
+Converts the line endings to the Unix format
+Converts the line endings to the Mac OS 9 format
+Forces the line ending conversion
+Shows just the date
+Shows just the time
+Uses UTC instead of local
+Starts the debug shell
+Decodes the encoded file
+Specifies the key
+Specifies the initialisation vector
+Decodes the encoded text
+Decodes the text from the BASE64 representation
+Provides information about a disk
+Manage your drivers
+Prints the text as it is with no placeholder parsing
+Edits a file
+Forces text mode
+Forces hex mode
+Forces JSON mode
+Forces SQL mode
+Encodes the file
+Encodes the text
+Encodes the text to a BASE64 representation
+Searches for a file recursively
+Executes a command on a file
+Finds a file in the specified directory or in the current directory using regular expressions
+Forks the UESH shell to create another instance
+Specifies the output path
+Gets all the addons from the official download page and installs them
+Reinstalls the addons
+Gets all the extension handlers from all the extensions
+Gets a configuration variable and its value
+Gets the default extension handler from the specified extension
+Gets the default extension handlers from all the extensions
+Gets the extension handlers from the specified extension
+Gets the key and the initialisation vector for symmetrical encoding
+Gets the current host name
+Interactive system host file manager
+Allows user to enter input as password
+Shows licence information for the kernel
+Checks a UESH script for syntax errors
+Lists a folder recursively
+Lists a folder using the tree form
+Lists all available configurations
+Deep details about all configurations, including their entries
+Lists all configuration variables and their values
+Lists all available connections
+Lists available extension handlers
+Lists all the disk partitions
+Lists all the disks
+Lists online network devices
+Provides information about a partition from the specified disk
+Finds a given file name from path lookup directories
+Manage permissions for groups
+Specifies number of times to ping
+Gets the current platform
+Shows the platform name
+Shows the platform version
+Shows the platform bits
+Shows the .NET platform version
+Shows the .NET platform runtime identifier
+Restarts the kernel
+Restarts the kernel to safe mode.
+Restarts the kernel to maintenance mode.
+Restarts the kernel to debug mode.
+Removes a file or a directory securely
+Removes a group from the list
+Removes a user from the group
+Saves the current kernel configuration to its file
+Gives you an option to select the screensaver to try out
+Opens the addon screensaver settings
+Opens the driver settings
+Opens the custom settings
+Sets a configuration variable to a specified value
+Sets the default extension handler of the specified extension to the specific implementer
+Opens an interactive TUI in which you'll be able to see the world clock in real time
+Sleeps for specified milliseconds
+Runs the command as the root user
+Calculates text sums.
+Creates a symbolic link to a file or a folder
+Shows the system information
+Shows the hardware information
+Shows the user information
+Shows the message of the day
+Shows the message of the day after login
+Shows all information
+Task manager
+Previews a theme
+Selects a theme and sets it
+Immediately set the theme on selection
+Removes a variable from the UESH variable list
+Just wipes the variable value without removing it
+Shows the kernel uptime
+Shows the two useful URLs for manual.
+Gets the current version
+Shows the kernel mod API version
+Shows the kernel version
+Gets the current user name
+Wraps the text file
+Specifies the columns per line
+You can log in to these accounts:
+Enjoy your day
+Error when trying to set MAL: {0}
+Error when trying to get MAL: {0}
+The message of the day after login may not be null.
+Welcome to Nitrocid Kernel!
+Error when trying to set MOTD: {0}
+Error when trying to get MOTD: {0}
+The message of the day may not be null.
+Press any letter on your keyboard to set it to that character.
+Write a floating-point number in the below prompt. Make sure that this number is of this format
+Write a natural number in the below prompt.
+Keep it
+Remove it
+Add new item
+What do you want to do with this item?
+Enter a value for the new item
+Invalid action selected.
+Write any text to use. Remember, follow the description of the option that you've chosen.
+Registers your name to your remote debug device
+Disconnects from the remote debugger
+Mutes or unmutes the kernel logs
+There were not enough arguments. See below for usage:
+>> Remote Chat: version
+>> Welcome! This is your first time entering remote chat. In the remote debugger, use "/register <name>" to register. You can't talk until you register.
+How many milliseconds did it really take to sleep for just one millisecond?
+How many ticks did it really take to sleep for just one millisecond?
+Tests changing the language to your preferred language
+Choose your language
+Write a translatable string to check:
+Write a translatable string list file path to check:
+Tests the interactive TUI system with a double pane interaction
+Tests the interactive TUI system with a single pane interaction
+Tests the interactive TUI system with a single pane interaction and with refreshing the second pane info
+Write a colour number ranging from 1 to 255:
+Enables the debugger
+Previous value
+Current value
+Dismisses all sent notifications
+Enables the notification system
+Tests the kernel update functionality
+Is the kernel up to date?
+Checks for the connection to the Internet
+Internet availability is
+Tests the child kernel thread
+Tests the kernel thread
+Write a search term:
+Checks for the network connection
+Network availability is
+Print a string to console
+Print a string to debugger
+Print a string to debugger with formatting
+Print a string to console with formatting
+Print a string to console with highlight
+Print a separator to console
+Print a separator to console with formatting
+Print a string to console with new lines in string
+Print a string to console with null characters
+Enables the remote debugger
+Test notification
+Description is here
+Test progress notification
+Sends a failing progress notification to test the receiver
+Test failing notification
+Test indeterminate notification
+Sends a notification as asterisk to test the receiver
+Test simple notification
+Tests arguments
+Tests the cryptographically secure random number generator
+Returned numbers:
+Tests an event
+Write an event name:
+Write a path to assembly file:
+Tests the file selector
+You've selected
+Tests the multiple files selector
+Tests the folder selector
+Tests the multiple folders selector
+Tests the buttons in the informational box
+Tests the coloured input box in the informational box
+Tests the input box in the informational box
+Tests the input multiple selection style in the informational box
+Tests the input selection style in the informational box
+Tests the input multiple selection style
+Tests the input selection style
+Tests the list entry writer
+Indent 1:
+Indent 2:
+Tests the progress handler
+Initialising...
+Write a string to check:
+Write a regular expression:
+Tests the random number generator
+Tests the screen feature for the console
+Screen failed to render:
+Tests switches
+Placeholder may not be null
+Placeholder action may not be null
+Placeholder is not registered
+Placeholder must satisfy this format
+The condition needs to be placed in the end.
+Can't register a condition that already exists.
+Can't register an empty condition.
+Can't unregister a condition that doesn't exist.
+No commands found.
+Invalid number of times.
+Can't repeat self.
+Session number is invalid.
+The specified main flag type is invalid
+Full name set to {0}. You may want to log in again.
+The full name is empty.
+Basic user info
+Preferred language
+Flags
+Permissions
+Groups
+Preferred user language set to {0}. You may want to log in again.
+Administrator Shell
+No such exception type
+Exception type name
+Message
+Field info for
+Value
+Failed to get field info for
+Property info for
+Failed to get property info for
+Pressed key character code
+List of fields for
+List of functions for
+List of properties for
+List of addons
+List of base addons
+List of shells
+The splash context is not valid
+Available splashes:
+This command is not supported on Windows.
+Debug Shell
+Specified Byte number {0} is not a valid number.
+Creating group {0}...
+Adding user {0} to group {1}...
+You can now run '{0}' as '{1}'!
+File or folder is already in use.
+Waiting until the file or the folder is unlocked...
+File or folder is not in use.
+You may need to log out and log back in for changes to take effect.
+Changing MAL...
+Changing MOTD...
+Passwords doesn't match.
+Can't combine a mix of text and binary files.
+Source file doesn't exist.
+Target file doesn't exist.
+The two files are identical.
+The two files are different.
+Different
+Can't convert line endings on a binary file since it results in file corruption.
+The driver is not found.
+Drivers for
+Driver name
+Driver type name
+Driver type
+Driver management is disabled in safe mode.
+Can't edit file {0} because it's not found.
+Key used
+Initialisation vector used
+.NET assembly info
+File is not a valid .NET assembly.
+Extra info
+Some or all your addons have been installed. If you wish to re-install them, use the -reinstall switch.
+Fetching the addons package...
+Failed to fetch the addon package
+Downloading the addons package...
+Failed to download the addon package
+Installing the addons package...
+Failed to install the addon package
+Extension
+Extension handler
+Key name
+Key description
+Key type
+Key variable
+Key not found.
+Config not found.
+Available configuration types
+No such extension.
+Default extension handler
+Only symmetric encoding algorithms which use both the key and the initialisation vector are supported.
+Script lint succeeded.
+Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter.
+Script linter failed unexpectedly trying to parse your script.
+Info for
+Entries count
+Entry name
+Displaying as
+Description
+Keys count
+Use the {0} command to get the individual keys
+Configuration variables for
+Connections for type
+Instance
+Extension handler information for
+Handler implementer
+Handler metadata
+Contains handler function
+Contains info handler function
+Unknown host
+File found in path:
+File not found in path lookup directories.
+No such permission
+No such permission mode
+Group {0} removed.
+Removed {0} from group {1}.
+Available screensavers:
+Searching {0} for {1} failed.
+You must pass the -set switch with the variable that you want to set this value to.
+where saver will be
+To get additional screensavers, install the screensaver pack addon.
+To get additional splashes, install the splash pack addon.
+You can use the type switch to open the following settings
+Base settings
+Custom settings
+You are already a superuser!
+Failed to execute the command as superuser.
+Can't make a symbolic link.
+Kernel settings
+Kernel Version:
+Debug Mode:
+Running on usual environment:
+Safe Mode:
+Hardware settings
+Use "hwinfo" for extended information about hardware.
+User settings
+Current user name:
+Current host name:
+Available usernames:
+Select a category
+Back
+Expired
+Available
+Select a theme
+Would you like to set this theme?
+To access the user manual for general uses of Nitrocid, please visit the below link:
+To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:
+You're already running the elevated Nitrocid session!
+Elevating your Nitrocid session...
+This command is unavailable for your platform.
+Invalid number of columns.
+Shut down
+Restart
+Login
+Select a user account you want to log in with.
+Enter the password for user
+Wrong password for user.
+Successfully registered! Hi, {0}!
+No remote debug command description
+Data type {0} specified is invalid.
+Platform {0} specified is invalid.
+Do you back the wrong horse?
+Starts the Hangman game
+One wrong letter and you're hung!
+Test your Hangman skills by throwing a random letter.
+You are a spaceship and the meteors are coming to destroy you. Can you dodge them?
+Gets a random quote
+Russian Roulette
+Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.
+The Wordle game simulator
+Play the Wordle game originally
+Commemorates the 5-year anniversary of the kernel release
+Opens the archive file to the archive shell
+Gets all lyric lines from the lyric file
+Plays a lyric file
+Plays a sound
+Adds an alarm to alert you when your cup of tea or coffee is ready.
+Aborts an alarm that alerts you when your cup of tea or coffee is ready.
+Show information about the imaginary number formula specified by a specified real and imaginary number
+Calendar, event, and reminder manager
+Calendar type to work on
+Use the table-based calendar viewer
+Manages your contacts
+Gets backtrace for all threads
+Shows you a full-screen overview about a selected dock view to be able to use it as an info panel
+Git shell
+Gets information about your online radio station
+Shows the difference between two JSON files
+Makes a new language
+Opens the IMAP mail client
+Opens the POP3 mail client
+POP3 mail is returning from 0.0.20.0, but we don't currently plan to release it in this version. Wait for the next version.
+First name finder
+Generate names using the male names list
+Generate names using the female names list
+Generate names using the unified names list
+Surname finder
+Adds a note
+Removes a note
+Removes all notes
+Lists all notes
+Saves all notes
+Reloads all notes
+Notes viewer TUI
+Enter the RSS feed URL
+Error trying to parse the address. Make sure that you've written the address correctly.
+Opens an interactive RSS feed reader TUI
+Gets the current date and time information
+that you can execute process commands in two ways: entering the executable file name directly, and using the 'exec' command?
+that you can lock your screen using the 'lockscreen' command?
+that you can build your own kernel modifications using C# and Visual Basic?
+that you can use multiple commands using the semicolon between commands?
+that you can escape double quotes inside the quoted arguments when executing commands?
+that you can change the kernel settings using the 'settings' command?
+that you can save your screen using the 'savescreen' command?
+that you can report bugs to us by going to Nitrocid's GitHub project page?
+that you can make a shortcut to your desired command using the 'alias' command?
+that you can build your own splash screen using C# and Visual Basic?
+that you can install extra addons to make your kernel more useful and amusing?
+that you can make your own awesome themes using the 'mktheme' command?
+that you can change your kernel colours by either using the 'settings' command or by using one of the pre-built themes?
+that you can reset your kernel to the factory defaults using the 'reset' argument?
+that you can access our extensive documentation at our GitBook page?
+that long term releases are supported for five years for main support, and three years for security updates?
+that 0.0.1 was the very first version of Nitrocid KS that was released on February 22, 2018?
+that the 0.0.24.x series was the only version series that held the API v2.1 version?
+that short term releases are supported for just nine months?
+that 0.1.x series is backwards-incompatible with 0.0.24.x series or older?
+that you can run Nitrocid KS on Linux, macOS, and Android?
+that you can refer to the API documentation to help you make your mods?
+that you can get several of the awesome games, like Hangman and ShipDuet, by installing the extra addons?
+that, in Meteor, if you crash with a red meteor storm, your spaceship crashes?
+that you can convert your kernel to information centres using the docking feature?
+that you can make user groups to organise user accounts?
+that if you're a member of a group that grants certain permissions, you're allowed to perform such operations?
+that you can change your kernel time zone without affecting your host system?
+that you can use the interactive text and hex editor to save time?
+that the oldest text editor known to be working with the first Unix system is ed, the earliest text editor released on 1973 shipped with the Unix system found on a PDP-7 at AT&T Bell Labs?
+that you can also force edit command to launch the editor in a specific type?
+that the interactive text editor attempts to simulate the most basic features of the most popular Unix text editors, vi and vim?
+that unless you know what you're doing with the binary file, editing such file in this way will lead to data corruption or data loss in the targeted file?
+that on Linux systems, the shell is initiated with the help of both the log-in handler and the system initialisation programme, usually found in /sbin/init?
+that you can perform common file operations, such as copying, moving, deleting, editing, and so on?
+that the interactive TUI of a file manager simulates the functionality of Midnight Commander?
+that if the kernel crashes, it usually creates a dump file?
+that you can diagnose the kernel by debugging it using the built-in debug functionality?
+that you can download and upload files directly from the UESH shell?
+that the kernel can be translated even at pre-boot stages by starting it up with the 'lang' argument?
+that you can build your own screensavers by registering them in your mod?
+that the first screensaver that blanked the screen after three minutes of inactivity on the original IBM PCs, scrnsave, was created on 1983 by John Socha?
+that some of the fast-paced screensavers may cause photosensitive seizures?
+that kernel journals are used as boot and shutdown logs?
+that your mods can now become translatable?
+that your mods can communicate with kernel addons and other mods, creating some kind of communication and achieving interoperability?
+that you can connect to the remote debugger and, optionally, to the chat server?
+that you can use the debug shell, which is only available for development versions?
+that your mods can now have their own configuration by registering their associated classes?
+that your mods can register their own shells?
+that your mods can add commands to the existing shells to increase the amount of commands that can be used?
+that your command classes can accurately represent passed arguments and switches?
+that you can query passed switches using the switch management classes found in the kernel API?
+that UESH includes the scripting functionality to facilitate making and running scripts?
+that the shell includes functionality to inhibit cancellation for active applications?
+that Nitrocid is deeply integrated with Terminaux to allow faster and better rendering?
+that you can now resize the interactive applications without worrying that the output gets corrupted?
+that there are commands that ask for user input, which are useful for scripts?
+that you can present your user input question in several ways, such as choice, table, simple, selection, and so on?
+that you can place the placeholders to your text that supports them?
+that you can use different kernel drivers to change how a specific operation works?
+that you can make your own screensavers and splashes in C# or Visual Basic?
+that you can query the host system and the terminal emulator using the kernel platform class?
+that you can ask for a privacy consent prior to doing something sensitive in your mod?
+that you can turn off notifications using the Do Not Disturb feature?
+that you can save notification history using a function found in the notification manager?
+that you can change how random numbers are generated by changing the driver?
+that miscellaneous APIs provide useful functions for your mods?
+To-do task manager
+Lists all available units
+Use the TUI version of the unit converter
+Commemorating the 5-year anniversary of the kernel
+First ever release
+This kernel was first released on February 22, 2018 to make a minimalistic simulator that actually simulates how the core of the kernel works.
+It used to only host one shell, and a few commands, and it only worked with Windows due to its usage of the Windows Management Instrumentation tool.
+It also didn't have its own documentation.
+Kernel Refinement
+Versions of the kernel were released, such as the second major release to add colouring and basic features, and the fourth major release to add configuration.
+Documentation started on the sixth major release, and various nice things have been slowly added to the kernel.
+Current version
+This version now refines the kernel to the point that it no longer behaves like the old versions.
+Because the new groundbreaking features got released, we decided to name this kernel...
+Happy 5-year anniversary!
+Can't extract nothing.
+Archive is not writable because type is
+Make sure to specify the path to an LRC file.
+Can't play sound because the file is not found.
+Opened music file successfully.
+Can't open music file.
+Can't play sound because of timeout.
+Unknown Artist
+Unknown Genre
+Name
+Artist
+Genre
+Duration
+Press 'q' to stop playing.
+Can't play sound.
+Now playing
+Title
+American Coffee
+Red Tea
+Green Tea
+No caffeine alerts to abort.
+The seconds in which your cup will be ready is invalid.
+If you're trying to supply a name of the drink, check out the list below:
+Your cup is now ready!
+The real number is not valid.
+The imaginary number is not valid.
+Formula:
+Radius:
+Real to Radius in Radians:
+Imaginary to Radius in Radians:
+Angle in Radians:
+Exponential:
+Triangular:
+Events...
+Reminders...
+The interactive calendar failed:
+Events and reminders for
+Long form
+Calendar type
+No reminders found for the selected month
+No events found for the selected month
+Cyan level:
+Magenta level:
+Yellow level:
+Hue:
+Saturation:
+Value:
+Yellow colour level:
+Luma:
+In-phase:
+Quadrature:
+U-Chroma:
+V-Chroma:
+Can't open file '{0}' because it's not found.
+Imported contacts successfully.
+Can't open file '{0}' because the card file is invalid.
+Contact file doesn't exist.
+contacts found
+Contact file is invalid.
+The MeCard syntax can't be empty.
+Either the provided contacts file doesn't have information about any contact or isn't valid.
+Failed to parse contacts. See the error details for more information.
+Contact index is out of range. Maximum index is {0} while provided index is {1}.
+There are no contacts to get.
+There are no contacts to search for.
+Regular expression is invalid.
+We believe that you're running Windows 8 or lower. This operation is not supported.
+Thread stack trace information for {0}
+Not a Nitrocid KS thread
+There is no dock screen by this name.
+There is no screen dock by this name.
+There is no screen dock.
+Screen dock has crashed
+Reads the content of a remote file to the console
+Exits the shell without disconnecting
+Make sure that you specify the port correctly.
+More than one profile found. Select one:
+Repository not specified. Exiting shell...
+Failed to open repository. Exiting shell...
+Fetches the list of changes in a file line by line
+Checks out a branch
+Makes a commit
+Describes a commit
+Shows a difference between the current commit and the local files
+Shows a difference between the current commit and the local files by their content in a patch hunk form
+Shows a difference between the current commit and the local files by their existence
+Shows a difference between the current commit and the local files by their existence and by their content
+Fetches all updates from a remote
+Fetches the file status
+Gets a simple repository information
+Lists all branches
+Lists all commits
+Lists all remotes
+Lists all tags
+Makes a tag from the HEAD
+Pulls all updates from the server
+Pushes all updates to the server
+Resets the local repository
+Does a soft reset
+Does a mixed reset
+Does a hard reset
+Sets your identity up
+Stages a change
+Stages all changes
+Repository status
+Unstages a change
+Unstages all changes
+Adds a header with the key and the value to all the upcoming requests
+Gets current user agent
+Edits a key on the header to all the upcoming requests
+Lists the request headers
+Puts the file to the HTTP server using the specified request
+Puts the string to the HTTP server using the specified request
+Posts the file to the HTTP server using the specified request
+Posts the string to the HTTP server using the specified request
+Removes a key on the header to all the upcoming requests
+Sets a user agent
+Adding header that already exists.
+Removing header that doesn't exist.
+Editing header that doesn't exist.
+The port number for your online radio is invalid.
+Full URL
+Current listeners
+Peak listeners
+Streams
+Active streams
+Stream info for ID
+Path
+Currently playing
+Uptime
+Adds a new array, object, or property
+Specifies the parent path
+Specifies the type
+Specifies the property name to be created with. This is used if the parent path is an object.
+Clears the JSON file
+Finds a property
+Specifies the parent property
+Shows information about the JSON file
+Don't show individual properties
+Show all values
+Removes a target object
+Beautified JSON
+Minified JSON
+Sets a value to an existing array, object, or property
+Opens the JSON file in the interactive editor
+The token inside the JSON file isn't found.
+The parent token is not found. Make sure that you've written the path '{0}' correctly.
+The specified type '{0}' is invalid.
+Can't append a new item with the property name with the parent token type of '{0}'.
+Can't append a new item with the property name '{0}' with the parent token type of '{1}'.
+Property name '{0}' within parent '{1}', type '{2}', doesn't exist
+The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?
+No valid language is specified.
+Welcome to the Language Studio!
+New string
+Remove string
+Save translations
+Select a string to translate:
+Enter a new string
+Select a string to remove:
+Saving language...
+Select language
+Select a language to translate this string to:
+Write your translation of
+The note ID must be a note number
+This note is empty
+Can't remove non-existent note
+Searches the feed for a phrase in title and/or description
+Search for title
+Search for description
+Search for title and description
+Case sensitive search
+Failed to parse feed URL:
+No description
+Shows the details of the files and folders
+Suppresses the "unauthorised" messages
+Enter the location of the private key for {0}. Write "q" to finish adding keys:
+Trying to connect to {0}...
+Executes an SQL query
+Database info
+Opens the SQL file in the interactive hex editor TUI
+Load Theme From File...
+Specify directory to save theme to:
+Information for
+Stopwatch is ready.
+Stopwatch running!
+New lap!
+Start counting down
+No such unit type:
+Available unit types:
+units to convert
+Enter a number to convert...
+You haven't entered a number to convert.
+The entered number is invalid.
+Can't convert unit.
+To be continued...
+The End
+Happy new year!
+Please wait while the kernel is initialising...
+Please wait while the kernel is shutting down...
+Unknown error!
+Horse
+[ENTER] Start the race | [ESC] Exit | [UP/DOWN] Move selection
+Your horse won the race!
+Your horse lost the race!
+You're hung!
+You win!
+What's your bet?
+You guessed it right!
+You got it wrong.
+But, you're unlucky. Loser.
+You're lucky! Winner!
+It's a draw.
+Player {0} wins!
+Current character:
+You guessed the right word! You win!
+This archive type is not supported.
+Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.
+This lyrics file doesn't exist.
+Culture isn't found.
+Failed to show the calendar.
+Failed to add a reminder.
+Not enough arguments provided to add a reminder.
+Failed to remove a reminder.
+Not enough arguments provided to remove a reminder.
+There is no event.
+There is no reminder.
+There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.
+Some of the contacts can't be imported.
+Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported.
+File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file.
+Enter a valid MeCard representation of your contact.
+Contact MeCard syntax is invalid.
+Contact MeCard syntax may not be empty
+Enter regular expression to search the contacts.
+There are no contacts that contains your requested expression.
+Contact name
+No contact name
+Contact address
+Contact mail
+No contact mail
+Contact organisation
+No contact organisation
+Contact telephone
+No contact telephone
+Contact URL
+No contact URL
+Contact geo
+No contact geo
+Contact IMPP
+No contact IMPP
+Contact nickname
+No contact nickname
+Contact role
+No contact role
+Contact title
+No contact title
+Contact notes
+No contact notes
+Enter your API key:
+You can either consult the below link for the list of cities with their IDs, or, pass "-list" to this command.
+Are you sure you want to delete {0}?
+User
+Site
+No symlink info
+Modified on
+Blame status for file
+Hunk number
+Number of lines
+Initial line number
+Final line number
+Initial commit
+Commit SHA
+Commit message
+Commit author
+Commit committer
+Number of parents
+Final commit
+Save your work first by creating a commit before checking out a branch.
+Branch doesn't exist.
+You need to identify yourself before using this command. Use
+to identify yourself.
+Updated repository with new commit
+Description for commit
+General changes in
+Content changes in
+Remote doesn't exist.
+No remotes found to pull updates from.
+Status for file
+Bare repository
+Head detached
+No reference
+Shallow clone
+Path to .git
+Path to working directory
+Commits for branch
+Created a new tag! Here's your tag details:
+Your local copy of the repo is up to date!
+Fast forwarded to
+Updated repository to
+Your merge resulted in conflicts. Please resolve any of the conflicts.
+You've successfully identified yourself as
+No modifications are done to stage.
+Staged file {0} successfully!
+Failed to stage file {0}.
+Status for branch {0}...
+No modifications are done.
+Untracked files
+No untracked files.
+Added files
+No added files.
+Modified files
+No modified files.
+Removed files
+No removed files.
+Staged files
+No staged files.
+Renamed staged files
+No renamed staged files.
+Renamed files
+No renamed files.
+Missing files
+No missing files.
+No modifications are done to unstage.
+Unstaged file {0} successfully!
+Failed to unstage file {0}.
+Posting file {0}...
+Posting string to {0}...
+Uploading string to {0}...
+The JSON shell failed to add an item.
+Property is found in
+Property is not found
+Base JSON token information
+Base type
+Base has values
+Children token count
+Base path
+Individual JSON token information
+Token type
+Token has values
+Token path
+Token value
+Property information for
+Property type
+Property count
+Property name
+Property path
+Property value
+The JSON shell failed to remove an item.
+The JSON shell failed to set an item.
+Message {0} from {1} moved. {2} messages remaining to parse.
+Attachments:
+This connection contains an invalid RSS feed instance.
+Unknown article title
+Unfortunately, this article doesn't have any contents. You can still follow the article at
+This article doesn't have a link.
+Can't open the host browser to the article link.
+Modified:
+Enter parameter value for {0}:
+SQL command succeeded. Here are the replies:
+SQL command failed.
+Database path:
+Server version:
+Connection state:
+Connection string:
+Database name:
+Failed to add or remove a task.
+Please provide a name for your task.
+Failed to mark a task.
+This section lists the driver settings.
+Kernel driver settings
+Current console driver
+Which console driver would you like to use?
+Current random number generator driver
+Which random number generator driver would you like to use?
+Current network driver
+Which network driver would you like to use?
+Current filesystem driver
+Which filesystem driver would you like to use?
+Current encryption driver
+Which encryption driver would you like to use?
+Current regular expression driver
+Which regular expression driver would you like to use?
+Current debug logger driver
+Which debug logger driver would you like to use?
+Current encoding driver
+Which encoding driver would you like to use?
+Current hardware prober driver
+Which hardware prober driver would you like to use?
+Current sorting driver
+Which sorting driver would you like to use?
+Falling line of matrix numbers.
+Drop chance
+Chance to drop a new falling matrix
+This section lists all general kernel settings, mainly for maintaining the kernel.
+General kernel settings
+Language
+Specifies the kernel language.
+Culture
+Beep on shutdown or reboot
+Enables beeping upon shutting down the kernel.
+Delay on shutdown or reboot
+Enables delaying upon shutting down the kernel.
+Console supports true colour
+If you are sure that the console supports true colour, or if you want to change your terminal to a terminal that supports true colour, change this value.
+Set codepage
+Set the language codepage upon switching languages.
+Development notice acknowledged
+If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions.
+Allow loading untrusted mods
+If set to true, the kernel won't error out upon loading mods that don't have the signed public key.
+Use system time zone
+If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured.
+Kernel-wide time zone
+The kernel-wide time zone to use
+Show the licence information box
+Whether to show the modal licence information box for three seconds after each login. It's recommended to keep it on.
+This section lets you choose what type of colour do you want to change.
+Colour settings
+Use accent colours
+If set to true, the theme manager populates accent colours for specific colour types that the theme supports.
+Foreground accent colour
+For themes that support accents, this is the accented foregound colour.
+Background accent colour
+For themes that support accents, this is the accented backgound colour.
+Use console colour palette
+When this is set to true, the colour palette defined by the terminal is used.
+Allow background colour
+When this is set to true, the current background colour is honoured. Else, it uses your terminal's default colours.
+User Name Shell Colour
+Host Name Shell Colour
+Continuable Kernel Error Colour
+Uncontinuable Kernel Error Colour
+Text Colour
+Licence Colour
+Background Colour
+Input Colour
+List Entry Colour
+List Value Colour
+Kernel Stage Colour
+Error Text Colour
+Warning Text Colour
+Option Colour
+Banner Colour
+Notification Title Colour
+Notification Description Colour
+Notification Progress Colour
+Notification Failure Colour
+Question Colour
+Success Colour
+User Dollar Colour
+Tip Colour
+Separator Text Colour
+Separator Colour
+List Title Colour
+Development Warning Colour
+Stage Time Colour
+Progress Colour
+Back Option Colour
+Low Priority Border Colour
+Medium Priority Border Colour
+High Priority Border Colour
+Table Separator Colour
+Table Header Colour
+Table Value Colour
+Selected Option Colour
+Alternative Option Colour
+Weekend Day Colour
+Event Day Colour
+Table Title Colour
+Today Day Colour
+Interactive TUI background colour
+Interactive TUI foreground colour
+Interactive TUI pane background colour
+Interactive TUI pane separator colour
+Interactive TUI selected pane separator colour
+Interactive TUI selected pane item foreground colour
+Interactive TUI selected pane item background colour
+Interactive TUI pane item foreground colour
+Interactive TUI pane item background colour
+Interactive TUI option background colour
+Interactive TUI option foreground colour
+Interactive TUI option binding name colour
+Interactive TUI box background colour
+Interactive TUI box foreground colour
+Disabled option colour
+This section changes hardware probe behaviour.
+This section represents the login settings. Log out of your account for the changes to take effect.
+Login settings
+The kernel host name to communicate with the rest of the computers
+Show available usernames
+MOTD Path
+MAL Path
+Show MAL on Log-in
+MOTD and Headline at the bottom of the modern logon clock
+Whether to show the MOTD and the headline at the bottom or at the top of the clock
+Login handler
+Login handler to use for sign-in prompts.
+This section lists the shell settings.
+General shell settings
+Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name.
+Set console title on command execution
+Sets console title on command execution.
+Show the shell count
+Prompt Preset
+Text Edit Prompt Preset
+Hex Edit Prompt Preset
+Admin Shell Prompt Preset
+Debug Shell Prompt Preset
+This section lists the filesystem settings.
+Filesystem settings
+Makes the "cat" command print the file's line numbers.
+This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.
+General networking settings
+Debug Chat Port
+Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port.
+Upload Retry Times
+This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.
+Basic screensaver settings
+Screensaver
+Which screensaver do you want to lock your screen with?
+Enable screensaver locking when idle
+If enabled, the screensaver automatically launches after idling for the specified period.
+Screensaver minimum idling interval
+Acknowledge the photosensitive seizure warning
+If you aren't photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren't responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information.
+Settings that don't fit in their appropriate sections land here.
+Miscellaneous settings
+A character that resembles the upper right corner. Be sure to only input one character.
+A character that resembles the lower right corner. Be sure to only input one character.
+Shows the commands count in the command list, controlled by the count show switches for different kinds of commands.
+Show the count of shell commands when listing them in the help command
+Show the count of kernel modification commands when listing them in the help command
+Show the count of aliased commands when listing them in the help command
+Show the unified commands count on help
+Show the count of unified shell commands when listing them in the help command
+Show the addon commands count on help
+Show the count of kernel addon commands when listing them in the help command
+Enable scroll bar in selection
+Enables the scroll bar in selection screens
+Do Not Disturb
+If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus.
+Upper left corner character for general border
+Upper right corner character for general border
+Lower left corner character for general border
+Lower right corner character for general border
+Upper frame character for general border
+Lower frame character for general border
+Left frame character for general border
+Right frame character for general border
+Censor private info on debug logs
+Censor private information that may be printed to the debug logs.
+Display new notifications as asterisks
+Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
+Show file size in the file manager
+Whether to show the file size in the status.
+Use classic style of headers in the Settings app
+This provides you an option to switch to either the modern or the classic header look of the settings application.
+Default figlet font
+The default figlet font for use with several areas of the kernel, including your modern login screen.
+CPU usage debug enabled
+If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval.
+CPU usage debug update interval
+How many milliseconds to wait before updating the CPU usage and printing it to the debugger?
+A snake game.
+Shows you nice famous quotes.
+Select your preferred difficulty, where 0 is easy, 1 is medium, 2 is hard, 3 is very hard, and 4 is custom.
+Use PowerLine for rendering spaceship in ShipDuet
+Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support.
+Game speed in ShipDuet
+This section lets you configure how the archive shell work.
+Settings for this screensaver are available here.
+This section lets you configure how the BassBoom addon works.
+Lyrics Path
+Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.
+This section lets you configure how Calendar works.
+This section lets you configure how Forecast works.
+This section lets you configure how the FTP shell works.
+This section lets you configure how the Git shell work.
+This section lets you configure how the HTTP shell works.
+This section lets you configure how the JSON shell works.
+JSON Shell Prompt Preset
+Enable JSON editor autosave
+Turns on or off the JSON editor autosave feature.
+JSON editor autosave interval
+This section lets you configure how the mail shell works.
+Maximum number of e-mails in one page
+How many e-mail messages to display in one page?
+Simulates a database lookup for a random person.
+This section lets you configure how the RSS shell works.
+RSS Prompt Preset
+This section lets you configure how the SFTP shell works.
+This section lets you configure how the SQL shell works.
+SQL Shell Prompt Preset
+This section lets you configure how Tips works.
+Show kernel tips
+If enabled, the shell shows you the tips on every login.
+The falling binary number in your screen.
+Mixing colours and printing them to the console.
+This is the disco light, one of the very first screensavers.
+Colour glitters across the screen.
+A line that wanders around the console vertically.
+Dissolves the random colours.
+Shows you a colourful block that bounces across the console.
+Shows you three progress bars that represent the time.
+Lighting blocks.
+Wipes the screen with a colour.
+Simple matrix.
+Matrix numbers that spread randomly across the screen.
+Shows you a text that bounces around the console.
+Fading text in and out.
+Fading background in and out.
+Fading text in and out in beats.
+Beat colour
+Simulates a person writing text with typos.
+Shows you a scrolling text from the right to the left.
+Simulates a person writing text for a newspaper in the linotype keyboard in the old times.
+Line fill pattern type. 0 prints the known pattern of etaoin characters, 1 prints the complete pattern of etaoin characters, and 2 prints the random set of characters to rapidly fill in the line.
+Simulates a person writing text perfectly.
+Show arrow position
+Shows the typewriter letter column position by showing an arrow on the bottom of the screen
+Flashing colours in your screen.
+Simulates a spotlight that seeks across your text.
+Fills the ramp with gradient colours.
+Stacks the boxes across the screen.
+Simulates a bar that gets rotten with another background colour, making a gradient.
+Shows you fireworks that get launched and blow up.
+Shows you a coloured figlet text.
+Rainbow mode
+Enables the rainbow colours mode
+Show you a coloured flashing text.
+Simulates a TV static noise.
+Simple date and time in the middle of the screen.
+Simulates a glitch on your screen.
+Shows you a falling line that goes down and fades out.
+Shows you an indeterminate progress bar.
+Shows you a pulsing background.
+Shows you a pulsing background in beats.
+BeatPulse will select random colours if it's enabled. Otherwise, use colours from config.
+Shows you a pulsing edge.
+Shows you a pulsing edge in beats.
+BeatEdgePulse will select random colours if it's enabled. Otherwise, use colours from config.
+Shows you a screen filled with colour that slowly rots itself to another colour, creating gradients.
+Next gradient rot interval
+How many milliseconds to wait before rotting the next screen?
+Shows you a gradient in your screen.
+Shows you a star journey in 2D.
+Changes the background according to the set colours, which simulates a siren.
+Siren style
+The siren style.
+Spinning slashes.
+Fills the console with a colour like a snake.
+Shows you an equaliser that shows you bass, mid, and treble.
+Next Screen Delay in Milliseconds
+Simulates system errors from different operating systems.
+Generates colours from the random shifting.
+Shows you a text that fades out and flashes in beats.
+ExcaliBeats will select random colours if it's enabled. Otherwise, use colours from config.
+Explicit mode
+Explicitly change the text to Excalibur
+Trance mode
+Trance mode - Multiplies the BPM by 2 to simulate the trance music style
+Shows you a group of waves in bars.
+Frequency Level
+The level of the frequency. This is the denominator of the Pi value in mathematics.
+Shows you a wave that generates itself and advances.
+Gives you a mesmerising feel.
+Simulates the aurora borealis.
+Shows you a striking lightning.
+Strike Probability
+Chance, in percent, to strike
+Shows you a slowly changing background colour.
+Dark colours
+Whether to use the dark colours or light colours.
+Colour steps
+How many colour steps for transitioning between two colours?
+Shows you a word and its hash sum.
+Shows you a fading square in four corners.
+How many milliseconds to wait before fading the square out?
+Scatters the number across the whole screen.
+Gives you a box pattern.
+Falling line of colours.
+Chance to drop a new falling colour
+Shows you a simple text.
+Shows you a simple text in a text box.
+Shows you a word that writes slowly and its hash sum.
+Simulates a siren that uses your theme as a set of colours.
+Siren style from kernel theme
+Shows you a group of stars in the ship's front view.
+Shows you a group of speckles in the ship's front view.
+Shows you a scattering letter across the whole screen.
+Shows you multiple lines.
+Shows you laser beams.
+Shows you a text that wanders across the console.
+Swivelling wave horizontally and vertically to make great patterns.
+Horizontal Frequency Level
+The level of the horizontal frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!
+Vertical Frequency Level
+The level of the vertical frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!
+Simulates door opening and closing.
+Shows you a dynamically-changing gradient.
+A comet is on the sky running quickly.
+The diamond that shines.
+Changing background colour according to increasing hue. Rainbow!
+Colour hue saturation
+How intense is the colour?
+How light is the colour?
+Changing background colour according to increasing hue. More Rainbow!
+Colourful particles!
+Particle density
+How dense are the particles?
+Refreshes required before changing time zone
+How many refreshes before the time zone is changed?
+Fills the whole screen block by block and then fades it out.
+Shows you dancing lines.
+Generates nice mazes using the Kruskal's algorithm.
+New Maze Delay in Milliseconds
+Generation Speed
+Maze generation speed in milliseconds
+Highlight uncovered positions
+If enabled, highlights the non-covered positions with the grey background colour. Otherwise, they render as boxes.
+Use Schwartzian Transform
+If enabled, this screensaver uses Schwartzian's transform to shuffle the maze edges. Otherwise, it uses the plain method of transformation.
+Two groups of dots spinning across the two halves of the console.
+Celebrates the commit milestone each 1000th commit.
+Shows you spraying stars.
+Two lines swapping their colours across the screen.
+Simple splash screen.
+A splash screen that shows you progress.
+A splash screen that shows you progress using the PowerLine text.
+Current input driver
+Which input driver would you like to use?
+Migrate old configuration
+Migrates some of your old configuration from older versions of the kernel
+Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.
+Select your language.
+Enter your new username. You should enter a new username that doesn't already exist.
+Enter your user password. You should choose a strong password for increased security.
+Automatic Update Check
+Yes, I do!
+No, thanks.
+Starting or stopping mods not allowed on safe mode.
+There was an unknown kernel error, possibly due to either the kernel exception type not being specified or something was wrong.
+The kernel networking has reported an error for the hostname component.
+Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.
+Invalid RSS feed link. Ensure that you've entered the link correctly and try again.
+Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.
+Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.
+There was an error when trying to perform an operation for the environment management.
+There was an error when trying to process a bootloader operation.
+There was an error when trying to process an alarm system operation.
+There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.
+Additional errors were not found during the operation.
+Checking for multiple installed environments
+Multiple environments
+Child thread index number is invalid.
+Alarm name
+Alarm description
+Alarm due date
+Write the alarm name
+Alarm name is not specified.
+Write the alarm interval in this format
+Alarm interval is either not specified or is invalid.
+File type
+Notification importance
+Progress percentage
+Progress completed
+Progress is indeterminate
+Progress state
+Notification title
+Reporter didn't provide any info!
+Execute
+Logout
+Shell
+Switch
+File Manager
+Alarm Manager
+Notifications
+Task Manager
+About Nitrocid
+Hi, {0}! Welcome to Nitrocid!
+Enable headlines on login to show RSS feeds
+Settings
+Nitrocid KS simulates our future kernel, the Nitrocid Kernel.
+Mod API
+The Nitrocid Homepage has crashed and needs to revert back to the shell.
+Unknown screen number.
+Failed to render the logon screen.
+Investigate the debug logs for more information about the error.
+To dismiss forever, either press ENTER on your keyboard, or enable "Development notice acknowledged" in the kernel settings. Any other key goes ahead without acknowledgement.
+You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.
+Extras - Name Generator
+Extras - Pastebin
+Extras - Images
+Extras - Enhanced SHA256
+Extras - Enhanced SHA384
+Extras - Enhanced SHA512
+Extras - Stocks
+Extras - Beep Synth
+Extras - SSH
+GRILO has experienced an internal error
+Press any key to exit.
+Standard controls
+Controls defined by custom boot style
+No controls defined by custom boot style
+Selects the previous boot entry
+Selects the next boot entry
+Selects the first boot entry
+Selects the last boot entry
+Opens this help page
+Boots the selected entry
+Environment is not specified
+Alarm date and time may not be in the past.
+Consult the help entry for this command for more info
+This command has the below arguments that change how it works:
+Unspecified argument description
+Lists all available function parameters from a function
+Manage your alarms
+Restarts a remote kernel instance
+The kernel in the remote instance will be shut down
+Uses the legacy settings style
+Shows all received notifications in an interactive TUI
+Widget is not provided.
+Widget already exists.
+Widget name is not provided.
+Widget doesn't exist.
+Widget can't be removed.
+Widget is not a built-in widget.
+Boot app name is not specified
+Boot app environment is not specified
+Boot app already exists
+Boot app doesn't exist
+Select boot entry
+SHIFT + H for help. Version
+Booting {0}...
+List of function parameters for
+Alarm already exists.
+Alarm interval is invalid.
+Alarm name and interval is not specified.
+Alarm doesn't exist.
+Alarm name:
+Alarm description:
+Alarm due date:
+The frequency is invalid. Make sure that you've correctly written the frequency in hertz.
+The duration is invalid. Make sure that you've correctly written the duration in milliseconds.
+Encoded as string
+You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen.
+Windows Boot Manager
+ENTER=Choose
+Choose an operating system to start, or press TAB to select a tool:
+To specify an advanced option for this choice, press F8.
+Seconds until the highlighted choice will be started automatically:
+GNU GRUB version 2.06
+Use the ↑ and ↓ keys to select which entry is highlighted.
+Press enter to boot the selected OS, `e' to edit the commands
+before booting or `c' for a command line.
+The highlighted entry will be executed automatically in {0}s.
+Press enter to boot the selected OS, `e' to edit the
+commands before booting or `c' for a command line.
+Booting '{0}'
+Filesystem type is
+partition type
+Hit any key to cancel timeout
+Use arrow keys to make selection
+Enter choice & options, hit CR to boot
+Please select the operating system to start
+Use the up and down arrow keys to move the highlight to your choice.
+Press ENTER to choose.
+For troubleshooting and advanced startup options for Windows, press F8.
+Continue
+Select boot entry:
+Uses the common word list.
+Uses the complete word list.
+The ping-pong game!
+Reads a beep synth file
+Converts the source colour model to the target colour model in numbers.
+Converts the source colour model to the target colour model in KS format.
+Converts the source colour model to hex.
+Converts the source colour model using the colour specifier to the target colour model.
+Converts the source colour model using the colour specifier to the target colour model in KS format.
+Converts the source colour model using the colour specifier to the target colour model in hex.
+Lists your contacts
+Loads your contacts
+Imports your contacts
+Treats the required input as MeCard string
+Gets contact information
+Shows weather info for specified city. Uses The Weather Channel from IBM.
+Weather info in an interactive TUI
+Shows all the available cities and their latitude/longitude pairs
+Previews an image
+Makes a new language in an interactive TUI
+Pastes the content of either a file or a string to a text hosting provider
+Specifies the URL to the Pastebin provider
+Specifies the Pastebin provider type
+Specifies the Pastebin provider post page
+Specifies the Pastebin provider post format
+Specifies the Pastebin provider post field name
+Gets an hourly stock information
+Short company symbol
+Makes a new theme in an interactive TUI
+that you can make bootable programmes using your kernel mods?
+Station type
+Beep synth file doesn't exist.
+Chapter name
+Synth representation is invalid.
+Frequency is invalid.
+Duration is invalid.
+Can't get synth info from the provided representation.
+Model specification is invalid.
+Black key level:
+The first colour level must be numeric.
+The second colour level must be numeric.
+The third colour level must be numeric.
+The fourth key level must be numeric.
+-- Weather info --
+Latitude and Longitude
+Cloud cover
+Time of day
+Minimum temperature
+Maximum temperature
+Precipitation chance
+Precipitation type
+Heat index
+Wind chill
+Ultraviolet index
+Ultraviolet description
+Path to the image is not provided.
+Image file doesn't exist.
+Specify either a file name or text to upload.
+Pastebin provider type is not supported.
+Successfully pasted to the provider!
+Unable to paste to the provider.
+Searches the feed library for a feed
+Enter your AlphaVantage API key
+Please provide your API key.
+Demonstration API key can't be used.
+Your API key should be 16 characters long.
+An error occurred while fetching the stocks data. Additional information can be found here
+Opening stock price
+High stock price
+Low stock price
+Closing stock price
+Stock volume
+API Key is required. Configure from the settings.
+No stock data available.
+Copy Colour To...
+Select the source colour type to copy the colour from.
+Select the target colour types to copy the source colour type, {0}, to.
+Colour type
+Colour
+Colour name
+Colour hex
+Colour brightness
+Choose how do you want to save this theme
+Choose how do you want to load a theme
+Score
+Nitrocid KS Release Anniversary
+Ramadan
+No contacts.
+Contact number is invalid.
+Contact number is out of range.
+First name
+Last name
+Contact Geo
+Contact note
+Some of the contacts can't be listed.
+Enter the city latitude and longitude.
+You can get your own API key by consulting the IBM website for guidance.
+Loading weather info from geographical location
+Weather condition
+Temperature
+Wind speed
+Wind direction
+Humidity rate
+Latitude
+Longitude
+Enter a city name to search.
+There are no cities by this name. If you are trying to search for a specific city, try searching for a broader location that is closest to the city that you're looking for.
+Select a city from the list below. The two numbers represent geographical locations.
+Enter city latitude.
+Enter city longitude.
+Latitude is invalid.
+Longitude is invalid.
+You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key.
+The Weather Channel API key is not provided. If you need help, consult the IBM website.
+Current asymmetric encoding driver
+Which asymmetric encoding driver would you like to use?
+Bootloader style
+Select a bootloader style to match your preference.
+Bootloader default selection timeout
+Bootloader default selection
+Enable 'The Nitrocid Homepage'
+Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance.
+Interactive TUI builtin key binding background colour
+Interactive TUI builtin key binding foreground colour
+Interactive TUI builtin key binding name colour
+Enable widgets
+Enables the widgets in the modern logon handler and all the handlers that use the widget API.
+First widget
+First widget for the modern logon handler. You can configure this widget in its respective settings entry.
+Second widget
+Second widget for the modern logon handler. You can configure this widget in its respective settings entry.
+Mouse support
+Whether to initialise the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer.
+Mouse movement support
+Whether to also enable the movement events or not, improving the user experience of some interactive applications.
+Analog clock with a simple date and time in the bottom of the screen.
+Show seconds hand
+Whether to show the seconds hand or not.
+Display date
+Whether to show the date or not.
+Shows an emoji in the middle of the screen.
+Enable Emoticon Cycling
+Whether to cycle between emoticons
+Emoticon
+Emoticon to show
+This section lets you configure how the SSH works.
+Username prompt style for SSH
+Add new connections to SSH speed dial
+If enabled, adds a new connection to the SSH speed dial.
+This section lets you configure the stocks.
+API key
+Key for the AlphaVantage Stocks API
+Company code
+Stocks company
+Simulates a hypothetical malfunctioning black screen with RGB lines sometimes appearing.
+Glitch Probability
+Chance, in percent, for the screen glitch to occur
+Sort logically
+Sorts the list alphanumerically if enabled or alphabetically if disabled.
+Failed to populate default theme
+There is no theme metadata defined.
+Can't deserialize metadata.
+This encoding should be initialised.
+Directory info is not specified.
+File info is not specified.
+General network transfer failure
+Hex file is not open yet.
+Text file is not open yet.
+Handler for extension is not specified.
+Failed to obtain default handler
+Loading default handlers failed.
+Select
+Copy
+Move
+Delete
+Up
+Info
+Go To
+Rename
+New Folder
+Hash...
+Verify...
+Preview
+Preview Selected
+Open
+Can't check configuration variables when the kernel config is not specified.
+Can't get base settings schema.
+Can't get settings entries.
+Failed to obtain driver settings entries.
+Failed to obtain main settings entries.
+Failed to obtain screensaver settings entries.
+Failed to obtain widget settings entries.
+Failed to get alias information
+There is nothing to select from.
+Can't get type from
+Set
+Save
+Save as
+Load from
+Reload
+Migrate
+Settings entries are not found.
+Checks for system updates (requires an active Internet connection).
+Shows you basic system information (more info available in the 'sysinfo' command).
+Can't get section
+Remote debug device doesn't seem to exist.
+Can't get remote debug devices from
+Can't open the English localisation resource
+Can't open the localisation resource for
+Failed to get entry point.
+Tests the buttons in the informational box (titled)
+Tests the coloured input box in the informational box (titled)
+Tests the input box in the informational box (titled)
+Tests the input multiple selection style in the informational box (titled)
+Tests the input selection style in the informational box (large number of items to test scrolling and paging)
+Tests the input multiple selection style in the informational box (large number of items to test scrolling and paging)
+Tests the input multiple selection style in the informational box (large number of items to test scrolling and paging) (titled
+Tests the input selection style in the informational box (large number of items to test scrolling and paging) (titled
+Tests the input selection style in the informational box (titled
+Tests the input selection style (large number of items to test scrolling and paging)
+Tests the input multiple selection style (large number of items to test scrolling and paging)
+Can't get frame
+Can't get method
+A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don't recurse too much (don't be greedy).
+The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.
+Unfortunately, the last failure is unknown, so we don't exactly know what went wrong. However, it could be helpful if you've consulted the kernel debug logs.
+Can't get field info for
+Can't get journal entries
+(Use the arrow keys to highlight your choice, then press ENTER.)
+GNU GRUB version 0.97 (638K lower / 1046784K upper memory)
+Remote debug failed to start for unknown reasons.
+Thread can't be regenerated
+Failed to load language resource for
+Can't get localised text
+Can't get English localisations
+Can't get English text
+Language token must be specified
+Can't get language metadata
+Can't get language metadata array
+MIME metadata (extended)
+Handler is registered but somehow failed to get an extension handler for
+Can't get settings entries
+Can't set settings entry
+Can't save settings
+Can't load settings
+Can't reload settings
+Can't migrate settings
+Can't check for updates
+Can't get system information
+Screensaver instance is not specified
+Splash thread parameters are not specified
+Can't determine mod version
+Unknown loader exception
+Can't load mod localisations
+Can't get method from the last two frames.
+About
+Action name is not specified.
+Action is not specified.
+Action already exists.
+Action doesn't exist.
+Built-in action can't be removed.
+Copy To
+Move to
+Hash
+Verify
+Add
+Dismiss
+Dismiss All
+Kill
+Copyright (C) 2018-2025 Aptivi - All rights reserved
+Can't get argument info for command or argument
+Thread parameters are not specified.
+Can't get thread parameters for process execution.
+Can't get internal field for environment variables
+Can't get shell executor for
+Shows general commands (default)
+Changes the user's full name (display name)
+Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)
+Can't obtain addons package.
+Can't get user info for the system user
+Can't get user info for
+Restarts Nitrocid with the elevated permissions (Windows only)
+Can't deserialize group info array
+Can't deserialize group info
+Can't set root account.
+You don't have permission to request a reboot or a shutdown.
+Can't deserialize the user info array
+Can't deserialize the user info instance
+Failed to get user
+Failed to get current user
+Can't get necessary data to initialise this addon.
+Failed to load language metadata
+Failed to deserialize language metadata
+Failed to load language metadata for
+Failed to deserialize language metadata for
+Edit
+Remove All
+Load
+Notes
+Failed to obtain settings entries.
+that Nitrocid (Kernel Simulator 0.0.2) called the built-in shell the 'UESH' shell?
+that the screensavers were touted to be a solution against screen burn-ins in cathode ray-tube (CRT) or plasma displays?
+Horse Racing
+Hangman
+Meteor Dodge
+Meteor Shooter
+Pong
+Ship Duet
+Snaker
+Wordle
+Wordle (original)
+Unknown quote.
+Unknown author.
+Can't get archive entries
+Archive is not loaded yet.
+Can't determine current archive directory.
+Calendar
+No reminders found for the selected day
+No events found for the selected day
+Contacts
+Delete All
+Import
+Import From
+Search
+Search Next
+Search Back
+Raw Info
+Import From MeCard
+Add Manually
+Can't get day part array
+Can't get day part
+Can't get a list of tasks
+Timer
+Stopwatch
+No laps yet...
+Lap list
+Generate nametags (umlauts are currently not supported)
+Convert...
+Unit Converter
+Internet Radio (FM) info for
+Can't get internet radio information.
+Change...
+Save...
+Load...
+Copy...
+Translate
+Luminance (Lightness):
+The last shell is not this shell to detach from.
+The client is not populated.
+There is no FTP client yet.
+Client is not connected yet.
+Can't get IMAP server configuration
+Can't get SMTP server configuration
+Client is not connected yet
+Read More
+Refresh
+There is no article.
+There is no feed.
+Can't get connection
+The file stream is not open yet.
+JSON file is not open yet.
+Can't get stock information.
+SSH is connected but with no client.
+Shows the shell count in the normal UESH shell (depending on the preset)
+Minimum idling interval to launch screensaver. The unit is in time span format (HH:MM:SS).
+The default theme for the kernel
+Accents everywhere!
+Colourless, fuming, and highly corrosive liquid
+This section lets you configure how the contacts addon works.
+Show profile pictures
+If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons.
+Select your preferred unit for temperature (this only applies to the "weather" command). 1 is Kelvin, 2 is Metric, and 3 is Imperial.
+Colour hue luminance (lightness)
+Purple harmony
+This is the Android mascot colour in the foreground
+Our branding harmony
+Dark version of a popular VIM theme, Ayu
+Light version of a popular VIM theme, Ayu
+Mirage version of a popular VIM theme, Ayu
+This is the first day of the new school year
+Lightest terminal possible
+This is the black rose
+Colour scheme for Breeze, a KDE Plasma 5 theme
+Popular colour scheme for IDEs, like IntelliJ
+It's time to go back to the dark side.
+Colour schemes for Debian
+The vivid default theme for the kernel
+Background accents in your kernel!
+More accents everywhere!
+Use if you are a fan of EDM
+Fire shades
+Your epic golden palace on dark blue background
+Grape and Kiwi mixed together
+Colour scheme for grapes
+Vivid and plastered green, blue, and purple colours
+Greenify your environment, greenify your kernel. Make Earth greener!
+We've added green and red as colours.
+Green and pink mixed together
+One of the known terminal colour schemes
+Green text on grey
+Traditional Indian colours right in your console.
+Make your terminal full of lemon acid
+Light wood planks
+Standard Linux terminal colours
+Grey terminal
+Some Material Design text on your terminal
+Shades of orange and brown
+Melange theme inspired by the VIM theme of the same name
+Make your terminal full of mint
+Colour palette from Mirai Kuriyama from Beyond the Boundary.
+A theme inspired by a VIM theme of the same name
+Do you like neon blue and pink?
+This theme should be neutral to you.
+This is your night sky at the beginning of the night!
+October is coming soon, so get ready!
+The sea of orange
+Phosphoric terminal that turns everything to orange
+Gives you a breeze of red.
+A bloody red console
+Sakura trees will give you some Chinese breeze
+All teal colours
+A theme for technology lovers
+Trance music fan? This is the theme for you!
+Colour schemes from a popular Linux operating system, Ubuntu
+Gives you a perfect Vice City vibe
+This is your Vice City dawn.
+Colour scheme for Visual Studio, one of the most powerful IDEs
+Colour scheme for Windows 11, a recent version of Windows
+Bring back nostalgia with this theme!
+Your terminal consists of wood planks
+Inspired from the Chinese pattern of different fruits
+Extras - CRC32C (Castagnoli)
+Can't wipe debug files
+We'll no longer support this version of Nitrocid KS after this date
+Make sure that you upgrade to the supported version soon if you want to continue receiving support.
+This version of Nitrocid KS is no longer supported.
+Failed to load custom languages
+Failed to load important kernel addons
+Failed to load privacy consents
+Failed to load splash
+Failed to load important mods
+Failed to load remote debug devices
+There were errors when trying to initialise essential components.
+Failed to load notification thread
+Failed to load cancellation handler
+Failed to load aliases
+Failed to load speed dial entries
+Failed to load environment variables
+Failed to load alarm listener
+Failed to load MOTD and MAL
+Failed to load shell command histories
+Failed to load extension handlers
+There were errors when trying to initialise optional components.
+Failed to reset general variables
+Failed to save shell command histories
+Failed to save privacy consents
+Failed to stop remote debugger
+Failed to reset languages
+Failed to save extension handlers
+Failed to stop alarm listener
+Failed to save configuration
+Failed to stop mods
+Failed to stop addons
+Failed to stop RPC
+Failed to close all connections
+Failed to stop screensaver timeout
+Failed to reset boot log buffer
+Failed to stop the cursor handler
+Failed to stop the debugger
+Failed to stop all kernel threads
+There were errors when trying to reset components.
+Exception
+Consult the kernel debug logs for more info.
+Unspecified switch description
+Path to a process
+Arguments to pass to a process
+Command to show help entry
+Target command to execute upon building argument based on the source command output
+Command to wrap its output
+Argument to show help entry
+Session number starting from zero
+User name to query
+Permission type to grant or to deny
+False to deny, true to grant
+New display name, or 'clear' to erase the display name
+Three-letter language ID, or 'clear' to clear preferred language
+Invalid session GUID
+No such session GUID
+Session GUID to find
+Exception number
+Field name to query
+Property name to query
+Addon name to query
+Function name from the public static type to query
+Splash name to query
+Byte number ranging from 0 to 255
+Byte position number
+Byte starting position number
+Byte ending position number
+Byte number ranging from 0 to 255 to be replaced
+Byte number ranging from 0 to 255 to replace with
+Content to add at the end of the file
+Character number
+Line number
+Line number (either singular or start of the range)
+Line number ending range
+Word or phrase to be deleted
+A character to query
+Line number (either singular or start of the range), or 'all' to query a character in all lines
+A word or phrase to query
+A regular expression to query
+A word or phrase to be replaced
+A word or phrase to replace with
+Line number (either singular or start of the range), or 'all' to replace in all lines
+A regular expression to match phrases that are to be replaced
+New group name to add
+New user name to add
+New password to use
+Confirm the new password
+User name to be added to the group
+Group name to add the user to
+Starts the alarm
+Alarm interval in a time span in hours, minutes, and seconds
+Stops the alarm
+Alarm name to stop
+Lists the alarms
+Adds an alias
+Shell type to fetch commands from
+Alias name
+Command to be used as a shortcut
+Removes an alias
+Frequency in Hz
+Time interval for a single beep
+IP address to block
+Target directory
+Search pattern
+New name to rename all found files to
+Path to file to print its contents
+Path to file
+Either addition or removal
+Attribute name
+New host name to change to
+Language ID
+New message to use
+Answers to split with a slash
+Question to print to the screen
+First answer title
+Second answer title, and so on...
+User name to change password
+Current user password
+Old username to change
+New username to use
+First input text file
+Second input text file
+Third input text file, and so on...
+Output file
+Source input text file
+Target input text file
+Path to text file
+Source file or directory
+Target file or directory
+Path to encoded file
+Encoded string representation
+Encoded BASE64 string
+Path to directory
+IP address to disconnect
+Disk number
+Notification number
+Change a driver
+Target driver type
+Target driver to change to
+List drivers
+List driver types
+String to print
+File to encode
+String to encode
+Regular expression to find a file
+Link to a remote resource, such as HTTPS
+Kernel configuration name
+Variable to get info
+File extension
+Encoding algorithm
+Hardware type
+UESH expression to test
+Command to execute upon successful evaluation
+Path to directory for the left pane
+Path to directory for the right pane
+Reloads, loads, or unloads a custom language
+Custom language name
+Lists or reloads all custom languages
+Path to UESH script
+Path to directory to list
+Directory name to create
+File name to create
+Directory or name to move from
+Directory or name to move to
+Partition number
+File name to lookup
+User name
+Either allow or revoke
+Permission name to grant or deny
+Group name
+First IP address or host name
+Second IP address or host name, and so on...
+Path to file to upload
+URL pointing to the upload endpoint
+Host name that runs Nitrocid KS
+Port of Nitrocid KS on the remote target
+Command to execute remotely
+Target directory or file
+User name to remove
+Group name to remove
+User name to remove from group
+Group name to remove user from
+Either the screensaver name or 'random'
+Regular expression to search
+Target file
+Word or phrase to search
+Value to set
+Configuration variable name
+Implementer name
+First value
+Second value
+Third value, and so on...
+Time zone name
+Interval to sleep
+Command to run
+Encryption algorithm
+Input file to calculate the hash sum
+Output file to save hash sum info
+Text to get hash sum
+Symbolic link name
+Target file to create a shortcut from
+Theme name
+IP address to unblock
+Variable name
+Path to ZIP file
+Target path to extract
+Calculated hash
+Hash file or expected hash
+File to test
+ZIP file name to create
+Path to compress
+Note contents to add
+Note number
+Path to a directory with Git repository
+Line number starting range
+Branch name
+Commit summary
+Commit SHA hash
+Remote name
+Tag name
+Message to annotate the tag with
+Your e-mail
+Your username
+Path to unstaged file
+Path to staged file
+Path to archive file
+Local directory
+Directory inside the archive
+File in the archive
+Local directory to extract to
+Local file
+Archive directory to add to
+Opens the calendar interactive TUI
+Target year
+Target month number
+Interaction with the events
+Adds an event
+Target date
+Removes an event
+Event ID
+Lists all events
+Saves all the events
+Interaction with the reminders
+Target date and time
+Removes a reminder
+Reminder ID
+Lists all reminders
+Saves all reminders
+Either a path to a vCard contact file or a MeCard represnetation
+Contact number
+Latitude to use
+Longitude to use
+Weather.com API key
+City ID or city name known to OpenWeatherMap
+OpenWeatherMap API key
+Whether to add, remove, mark as done, or unmark as done on a task
+Whether to list, save, or load all tasks
+Pomodoro timer
+Pomodoro timer is ready
+Pomodoro timer number {0} in four iterations
+Short break
+Specify the break timeout in milliseconds
+Set break interval
+Word to define
+Search term
+Name prefix to search
+Name suffix to search
+Surname prefix to search
+Surname suffix to search
+How many names to generate?
+Unit type
+Quantity in the source unit to convert
+Source unit
+Target unit
+Path to the lyric file
+Path to an MP3 file
+Host name that hosts the MPEG radio station
+Port to the MPEG radio station
+Mathematical expression
+Real number
+Imaginary number
+Celebrating the 7,000th commit since 0.0.1!
+left until the next year
+Theme name to create
+Path to translations directory
+Done! Please use the Nitrocid.Locales application with appropriate arguments to finalise the languages. You can use this path:
+Source colour model
+Target colour model
+First number
+Second number
+Third number
+Fourth number
+Colour specifier
+Date and time to print info from
+Either specify a number of seconds or a drink name
+FTP server to connect to
+Path to remote file
+Path to local directory
+Path to remote directory
+Path to remote file to delete
+Server command to execute
+Creates a local directory
+Creates a remote directory
+Path to source file or directory
+Path to target file or directory
+Path to local file
+Permission numbers according to chmod
+Specifies whether the transfer type is ASCII or Binary
+Header key
+Header value
+HTTP request
+File to upload
+String to upload
+User agent string
+E-mail address to login to
+Mail directory name
+Page number
+Message ID
+Sender name
+Old mail directory name
+New mail directory name
+SFTP server to connect to
+RSS feed link
+Feed number
+Phrase to search
+First JSON file
+Second JSON file
+Path to JSON file
+Path to output JSON file
+JSON value to add
+JSON property name
+Object path
+JSON value
+Dock name
+Path to a file or a string to write
+Pastebin arguments
+Path to image file
+Path to the synth file
+SSH server to connect to
+Username to authenticate with
+Command to remotely execute
+Unified delay
+If true, enables unified writing delay for all screensavers. Otherwise, it uses screensaver-specific configured delay values.
+This section lets you configure how the timer application works.
+This section lets you configure how the pomodoro timer application works.
+Enable Figlet for the pomodoro timer
+If enabled, will use figlet for the pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
+Figlet font for the pomodoro timer
+Shows you text below a line in a glooming red background.
+Random characters that spread randomly across the screen.
+Simple date and time in the middle of the screen and changes the colour based on the current time.
+Bright date and time
+Whether to use bright or dark version.
+Shows you dancing numbers.
+Swivelling wave horizontally and vertically to make great patterns with trails left behind to disappear.
+Trail Length
+The trail length of the moving swivelling wave.
+Block moving in a wave pattern with green rulers tracking its position.
+Shows you a single random character in a coloured figlet text.
+Shows you a word that is being selected just like a slot machine found in casinos.
+Shows you a coloured figlet text alternating between two neon colours: cyan and fuchsia.
+Which culture is being used to change the month names, calendar, etc.?
+Maximum background colour level
+Maximum background colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum line colour level
+Maximum line colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum text colour level
+Maximum text colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Use the system culture
+Whether the screensaver uses the culture set by the main kernel settings or by this screensaver settings.
+Information text for first
+Write how your information text for the current hour shows. {0} for current hour out of 24 first.
+Upper left corner character for the first bar
+Upper right corner character for the first bar
+Lower left corner character for the first bar
+Lower right corner character for the first bar
+Upper frame character for the first bar
+Lower frame character for the first bar
+Left frame character for the first bar
+Right frame character for the first bar
+Colour of First Bar
+Minimum red colour level for first
+Minimum green colour level for first
+Minimum blue colour level for first
+Minimum colour level for first
+Maximum red colour level for first
+Maximum green colour level for first
+Maximum blue colour level for first
+Maximum colour level for first
+Information text for second
+Write how your information text for the current minute shows. {0} for current minute out of 60 second.
+Upper left corner character for the second bar
+Upper right corner character for the second bar
+Lower left corner character for the second bar
+Lower right corner character for the second bar
+Upper frame character for the second bar
+Lower frame character for the second bar
+Left frame character for the second bar
+Right frame character for the second bar
+Colour of Second Bar
+Minimum red colour level for second
+Minimum green colour level for second
+Minimum blue colour level for second
+Minimum colour level for second
+Maximum red colour level for second
+Maximum green colour level for second
+Maximum blue colour level for second
+Maximum colour level for second
+Upper left corner character for the third bar
+Upper right corner character for the third bar
+Lower left corner character for the third bar
+Lower right corner character for the third bar
+Upper frame character for the third bar
+Lower frame character for the third bar
+Left frame character for the third bar
+Right frame character for the third bar
+Information text for third
+Write how your information text for the current second shows. {0} for current second out of 60 third.
+Colour of Third Bar
+Minimum red colour level for third
+Minimum green colour level for third
+Minimum blue colour level for third
+Minimum colour level for third
+Maximum red colour level for third
+Maximum green colour level for third
+Maximum blue colour level for third
+Maximum colour level for third
+Progresses will select random colours if it's enabled. Otherwise, use colours from config.
+If colour cycling is enabled, how many ticks before changing colours in Progresses? 1 tick = 0.5 third
+Done! Please use the Nitrocid.Locales application with appropriate arguments to finalise the languages. You can use this path:
+Kernel configuration will not work properly. The invalid keys are
+Trying to register a custom setting with invalid content. The invalid keys are
+Trying to register a base setting with invalid content. The invalid keys are
+Adds a mod to the blacklist
+Removes a mod from the blacklist
+These configuration entries have invalid variables or enumerations and need to be fixed:
+Starts all mods
+Print a separator to console with colour
+Print a separator to console with formatting and colour
+Reloads all mods
+Stats
+Shows the current test statistics
+Test All
+Tests all facades
+Goes back to the section selection
+Choose a test facade to run
+This test contains optional parameters. Enter the value of the parameter to add to the test parameters.
+Parameters count
+Yes!
+Retry
+Did the test run as expected?
+The test failed. Expected value is {0}, but actual value is {1}.
+The test failed unexpectedly.
+Successful tests:
+Failed tests:
+Tests to be run:
+Can't obtain list of functions
+Can't obtain list of properties
+Can't obtain list of fields
+Based on your language settings on your system, the appropriate language is
+Failed to load finalise addons
+Kernel modifications
+Selected '{0}'. Press ESC to exit and confirm selection.
+Variable {0} is not found on any of the modules.
+The method type is not defined in the base Nitrocid type list.
+Can't execute custom property with non-existent mod
+Can't execute custom field with non-existent mod
+Easily fetches the debug log information using the session number
+Yes, set it!
+No, don't set it.
+Uses the system language settings to try to infer the language from
+There is no property info for
+Pomodoro Timer
+Invalid profile selection.
+Change Culture when Switching Languages
+When switching languages, change the month names, calendar, etc.
+Which variant of the current language is being used to change the month names, calendar, etc.?
+Timeout in seconds to boot to the default selection.
+Default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+This section lists the shell preset settings.
+Shell preset settings
+Wrap list outputs
+Wraps the list outputs if it seems too long for the current console geometry.
+This section lets you configure how the amusements work.

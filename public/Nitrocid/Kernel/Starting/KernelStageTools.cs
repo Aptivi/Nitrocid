@@ -41,13 +41,8 @@ namespace Nitrocid.Kernel.Starting
             new KernelStage( /* Localizable */ "User initialization", KernelStageActions.Stage05UserInitialization, true, false),
             new KernelStage( /* Localizable */ "Kernel modifications", KernelStageActions.Stage06KernelModifications, false, false),
             new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage07SysIntegrity),
+            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage08Bootables, false, false),
         ];
-
-        /// <summary>
-        /// Show how much time a stage took on boot
-        /// </summary>
-        public static bool ShowStageFinishTimes =>
-            Config.MainConfig.ShowStageFinishTimes;
 
         internal static void RunKernelStage(int stageNum)
         {
@@ -59,7 +54,7 @@ namespace Nitrocid.Kernel.Starting
                 var stage = Stages[stageIdx];
 
                 // Report the stage to the splash manager
-                ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
+                ReportNewStage(stageNum, $"{Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
                 if (KernelEntry.SafeMode && stage.StageRunsInSafeMode || !KernelEntry.SafeMode)
                 {
                     if (KernelEntry.Maintenance && stage.StageRunsInMaintenance || !KernelEntry.Maintenance)
@@ -85,13 +80,13 @@ namespace Nitrocid.Kernel.Starting
             // Show the stage finish times
             if (StageNumber <= 1)
             {
-                if (ShowStageFinishTimes)
+                if (Config.MainConfig.ShowStageFinishTimes)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}");
                     StageTimer.Restart();
                 }
             }
-            else if (ShowStageFinishTimes)
+            else if (Config.MainConfig.ShowStageFinishTimes)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
                 if (StageNumber > Stages.Count)
@@ -106,7 +101,7 @@ namespace Nitrocid.Kernel.Starting
             // Actually report the stage
             if (StageNumber >= 1 & StageNumber <= Stages.Count)
             {
-                if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
+                if (!Config.MainConfig.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterRaw.Write();
                     SeparatorWriterColor.WriteSeparatorColor(StageText, KernelColorTools.GetColor(KernelColorType.Stage));

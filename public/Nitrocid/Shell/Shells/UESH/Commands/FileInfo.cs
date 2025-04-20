@@ -32,6 +32,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
+using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -67,6 +68,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
                     TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FileInfo.Extension));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata (extended)") + ": {0}", MagicHandler.GetMagicMimeInfo(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("File type") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
                     if (!Parsing.IsBinaryFile(FileInfo.FullName))
                     {
                         var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);

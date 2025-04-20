@@ -60,6 +60,7 @@ namespace Nitrocid.Files.Paths
             { $"{KernelPathType.Consents}",            (() => ConsentsPath, true) },
             { $"{KernelPathType.ExtensionHandlers}",   (() => ExtensionHandlersPath, true) },
             { $"{KernelPathType.NotificationRecents}", (() => NotificationRecentsPath, true) },
+            { $"{KernelPathType.WidgetConfiguration}", (() => WidgetConfigurationPath, true) },
         };
 
         /// <summary>
@@ -120,20 +121,6 @@ namespace Nitrocid.Files.Paths
                     return "/tmp";
                 else
                     return (Environment.GetEnvironmentVariable("TEMP") ?? "").Replace(@"\", "/");
-            }
-        }
-
-        /// <summary>
-        /// Retro Nitrocid KS download path
-        /// </summary>
-        public static string RetroKSDownloadPath
-        {
-            get
-            {
-                if (KernelPlatform.IsOnUnix())
-                    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
-                else
-                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
             }
         }
 
@@ -280,6 +267,12 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string NotificationRecentsPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/NotificationRecents.json");
+
+        /// <summary>
+        /// Configuration path
+        /// </summary>
+        public static string WidgetConfigurationPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/KernelWidgetsConfig.json");
 
         /// <summary>
         /// Gets the kernel path name from the list of known path types

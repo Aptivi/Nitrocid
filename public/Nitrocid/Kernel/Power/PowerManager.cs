@@ -28,7 +28,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Security.Permissions;
@@ -55,25 +54,6 @@ namespace Nitrocid.Kernel.Power
         internal static bool rebootingToMaintenanceMode;
         internal static Stopwatch Uptime = new();
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode?)arg ?? PowerMode.Shutdown));
-
-        /// <summary>
-        /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
-        /// </summary>
-        public static bool BeepOnShutdown =>
-            Config.MainConfig.BeepOnShutdown;
-
-        /// <summary>
-        /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
-        /// </summary>
-        public static bool DelayOnShutdown =>
-            Config.MainConfig.DelayOnShutdown;
-
-        /// <summary>
-        /// Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
-        /// turn off your computer" text.
-        /// </summary>
-        public static bool SimulateNoAPM =>
-            Config.MainConfig.SimulateNoAPM;
 
         internal static bool RebootingToSafeMode
         {
@@ -113,7 +93,7 @@ namespace Nitrocid.Kernel.Power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
         public static void PowerManage(PowerMode PowerMode) =>
-            PowerManage(PowerMode, "0.0.0.0", RemoteProcedure.RPCPort);
+            PowerManage(PowerMode, "0.0.0.0", Config.MainConfig.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -121,7 +101,7 @@ namespace Nitrocid.Kernel.Power
         /// <param name="PowerMode">Selects the power mode</param>
         /// <param name="IP">IP address to remotely manage power</param>
         public static void PowerManage(PowerMode PowerMode, string IP) =>
-            PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
+            PowerManage(PowerMode, IP, Config.MainConfig.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -143,12 +123,12 @@ namespace Nitrocid.Kernel.Power
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is shutting down!");
 
                         // Simulate 0.0.1's behavior on shutting down
-                        if (!SplashManager.EnableSplash)
+                        if (!Config.MainConfig.EnableSplash)
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
-                            if (BeepOnShutdown)
+                            if (Config.MainConfig.BeepOnShutdown)
                                 ConsoleWrapper.Beep();
-                            if (DelayOnShutdown)
+                            if (Config.MainConfig.DelayOnShutdown)
                                 Thread.Sleep(3000);
                         }
 
@@ -169,7 +149,7 @@ namespace Nitrocid.Kernel.Power
                     {
                         EventsManager.FireEvent(EventType.PreReboot);
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
-                        if (!SplashManager.EnableSplash)
+                        if (!Config.MainConfig.EnableSplash)
                             TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
 
                         // Set appropriate flags
@@ -235,7 +215,7 @@ namespace Nitrocid.Kernel.Power
                 {
                     UseShellExecute = true,
                     Verb = "runas",
-                    Arguments = string.Join(" ", EnvironmentTools.arguments)
+                    Arguments = string.Join(" ", EnvironmentTools.kernelArguments)
                 },
             };
             selfProcess.StartInfo = ProcessExecutor.StripEnvironmentVariables(selfProcess.StartInfo);

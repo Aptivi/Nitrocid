@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Time;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
@@ -40,6 +39,7 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
+using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
 
 namespace Nitrocid.Kernel
@@ -87,7 +87,7 @@ namespace Nitrocid.Kernel
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
-            if (!SplashManager.EnableSplash)
+            if (!Config.MainConfig.EnableSplash)
                 TextWriterRaw.Write();
 
             // If this is the first time, run the first run presentation
@@ -98,7 +98,7 @@ namespace Nitrocid.Kernel
             }
 
             // Show the license infobox
-            if (Config.MainConfig.ShowLicenseInfoBox && SplashManager.EnableSplash)
+            if (Config.MainConfig.ShowLicenseInfoBox && Config.MainConfig.EnableSplash)
             {
                 InfoBoxNonModalColor.WriteInfoBoxColor(
                     Translate.DoTranslation("License information"),
@@ -113,6 +113,16 @@ namespace Nitrocid.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
+
+            // Load splash for reboot or shutdown
+            SplashReport._KernelBooted = false;
+            KernelColorTools.LoadBackground();
+            if (!PowerManager.KernelShutdown)
+                SplashManager.OpenSplash(SplashContext.Rebooting);
+            else
+                SplashManager.OpenSplash(SplashContext.ShuttingDown);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
+            ShellManager.PurgeShells();
         }
 
         /// <summary>
@@ -143,47 +153,51 @@ namespace Nitrocid.Kernel
                 if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
                     continue;
 
-                // Show MAL
-                BaseLoginHandler.ShowMOTDOnceFlag = true;
-                if (BaseLoginHandler.ShowMAL)
-                {
-                    TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
-                    MalParse.ProcessDynamicMal();
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
-
-                // Show current time
-                if (TimeDateTools.ShowCurrentTimeBeforeLogin)
-                    TimeDateMiscRenderers.ShowCurrentTimes();
-                TextWriterRaw.Write();
-
-                // Show headline
-                RSSTools.ShowHeadlineLogin();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
-
-                // Show the tip
-                if (WelcomeMessage.ShowTip)
-                    WelcomeMessage.ShowRandomTip();
-
-                // Show a tip telling users to see license information
-                TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
-
-                // Show another tip for release window
-                KernelReleaseInfo.NotifyReleaseSupportWindow();
-
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
-                ShellManager.StartShellInternal(ShellType.Shell);
-            }
+                while (!Login.LogoutRequested)
+                {
+                    HomepageTools.OpenHomepage();
+                    if (Login.LogoutRequested)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                        break;
+                    }
 
-            // Load splash
-            SplashReport._KernelBooted = false;
-            if (!PowerManager.KernelShutdown)
-                SplashManager.OpenSplash(SplashContext.Rebooting);
-            else
-                SplashManager.OpenSplash(SplashContext.ShuttingDown);
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
-            ShellManager.PurgeShells();
+                    // Show MAL
+                    BaseLoginHandler.ShowMOTDOnceFlag = true;
+                    if (Config.MainConfig.ShowMAL)
+                    {
+                        TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
+                        MalParse.ProcessDynamicMal();
+                    }
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
+
+                    // Show current time
+                    if (Config.MainConfig.ShowCurrentTimeBeforeLogin)
+                        TimeDateMiscRenderers.ShowCurrentTimes();
+                    TextWriterRaw.Write();
+
+                    // Show headline
+                    RSSTools.ShowHeadlineLogin();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
+
+                    // Show the tip
+                    if (WelcomeMessage.ShowTip)
+                        WelcomeMessage.ShowRandomTip();
+
+                    // Show a tip telling users to see license information
+                    TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
+
+                    // Show another tip for release window
+                    KernelReleaseInfo.NotifyReleaseSupportWindow();
+
+                    // Start the shell
+                    ShellManager.StartShellInternal(ShellType.Shell);
+                }
+                Login.LoggedIn = false;
+                Login.LogoutRequested = false;
+            }
         }
     }
 }

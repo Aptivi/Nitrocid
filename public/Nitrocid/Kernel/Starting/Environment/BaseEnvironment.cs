@@ -22,7 +22,10 @@ using System;
 
 namespace Nitrocid.Kernel.Starting.Environment
 {
-    internal abstract class BaseEnvironment : IEnvironment
+    /// <summary>
+    /// Base environment
+    /// </summary>
+    public abstract class BaseEnvironment : IEnvironment
     {
         /// <summary>
         /// Arguments to provide this environment
@@ -32,8 +35,9 @@ namespace Nitrocid.Kernel.Starting.Environment
         /// <inheritdoc/>
         public virtual string Name =>
             Translate.DoTranslation("Nitrocid KS");
+
         /// <inheritdoc/>
-        public virtual Action<string[]> EnvironmentEntry =>
-            KernelEntry.EntryPoint;
+        public virtual Action EnvironmentEntry =>
+            new(() => KernelEntry.EntryPoint(Arguments));
     }
 }

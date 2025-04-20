@@ -33,8 +33,8 @@ using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

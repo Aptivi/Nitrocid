@@ -1,0 +1,4189 @@
+Ugyldig fargemal {0}
+Skriv inn administratorpassordet for vedlikehold.
+Kjernefeil under oppstart: {0}
+DOBBEL PANIKK: Omstartstid overskrider maksimalt tillatt {0} feilomstartstid. Du fant en kjernefeil.
+[{0}] panikk: Omstart aktivert på grunn av feilnivået {0}.
+[{0}] panikk: Tid til å starte på nytt: {1} sekunder, overskrider 1 time. Den er satt til 1 minutt.
+DOBBEL PANIKK: Feiltype {0} er ugyldig.
+[{0}] panikk: {1} -- Trykk en tast for å slå av.
+[{0}] panikk: {1} -- Starter på nytt om {2} sekunder...
+DOBBEL PANIKK: Kjernefeil: {0}
+Slår av...
+Starter på nytt...
+Feil {0}: {1}
+Brukernavn:
+Plasser er ikke tillatt.
+Spesialtegn er ikke tillatt.
+{0} sitt passord:
+Feil passord.
+Feil under forsøk på å analysere plassholdere. {0}
+Feil under forsøk på å legge til brukernavn.
+usrmgr: Oppretter brukernavn {0}...
+Finner ikke brukeren {0}.
+Bruker {0} kan ikke fjernes.
+Brukeren {0} er allerede pålogget. Logg ut og logg på som en annen administrator.
+Bruker {0} fjernet.
+Feil under forsøk på å fjerne brukernavn.
+Den forespurte skjermspareren {0} ble ikke funnet.
+{0} er satt til standard skjermsparer.
+Skjermsparer {0} ikke funnet i databasen. Sjekk navnet og prøv igjen.
+Mod kan ikke lastes på grunn av følgende:
+{0} v{1} startet
+Ingen definisjon for kommando {0}.
+Kommando definert av
+Brukernavn for {0}:
+Passord for {0}:
+Koblet til {0}
+Feil ved forsøk på å koble til {0}: {1}
+Lokal katalog {0} eksisterer ikke.
+Skriv inn en lokal katalog. ".." for å gå tilbake.
+Katalog {0} ble ikke funnet.
+Skriv inn en ekstern katalog. ".." for å gå tilbake
+Lokal katalog: {0}
+Ekstern katalog: {0}
+Laster ned fil {0}...
+Lastet ned fil {0}.
+Laster opp fil {0}...
+Lastet opp fil {0}
+Henter gjeldende lokal katalog
+Henter gjeldende ekstern katalog
+Endrer lokal katalog å laste ned til eller laste opp fra
+Endrer ekstern katalog å laste ned fra eller laste opp til
+Sletter ekstern fil fra serveren
+Laster ned ekstern fil til lokal katalog ved hjelp av binær eller tekst
+Viser lokal katalog
+Viser ekstern katalog
+Laster opp lokal fil til ekstern katalog ved hjelp av binær eller tekst
+Alias kan ikke være det samme navnet som en kommando.
+Fant ikke kommandoen til alias til {0}.
+Aliaset {0} ble ikke fjernet.
+Katalog {0} ble ikke funnet
+Tomt vertsnavn.
+Endrer fra: {0} til {1}...
+Tom melding for dagen.
+Blank MAL etter pålogging.
+Feil brukerpassord.
+Passord stemmer ikke.
+Brukernavnet er endret til {0}!
+Det nye navnet du skrev inn er allerede funnet.
+{0} ble ikke funnet.
+Konfigurasjonen er lastet inn på nytt. Du må kanskje starte kjernen på nytt for at noen endringer skal tre i kraft.
+En eller flere av fargene er ugyldige.
+Finner ikke skjermsparer {0}.
+Feil under forsøk på å utføre kommandoen
+Endrer katalog
+Endrer passord for gjeldende bruker
+Tømmer skjermen
+Bruk et FTP-skall til å samhandle med servere
+Hjelpeside
+List fil-/mappeinnhold i gjeldende mappe
+Låser skjermen med et passord
+Logger deg ut
+Oppretter en katalog
+Laster inn konfigurasjonsfilen som er redigert på nytt.
+Redder skjermen fra utbrenthet
+Setter opp kjerneskjermsparere
+Viser dato og klokkeslett
+Viser dato og klokkeslett i soner
+Kjernen vil bli stengt
+Bruk:
+Det var en feil i skallet.
+Du har ikke tillatelse til å bruke {0}
+Shell-melding: Den forespurte kommandoen {0} er ikke tillatt å kjøre i vedlikeholdsmodus.
+Shell-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for tilgjengelige kommandoer.
+Feil ved forsøk på å utføre kommandoen.
+- Tid for {0}: {1}
+Kjører på {0}
+Du er ikke autorisert til å få informasjon for {0}.
+Denne kommandoen er foreldet og vil bli fjernet i en fremtidig utgivelse.
+Du er ikke autorisert til å endre passordet til {0} fordi målet var en administrator.
+Sletter alt i feilsøkingsloggen
+Ugyldig språk
+Velkommen til Kernel!
+Nedlastingen er fullført.
+Nedlasting mislyktes i forsøk {0}: {1}
+Vennligst bruk "ftp" hvis du skal laste ned filer fra FTP-serveren.
+Laster ned en fil til gjeldende arbeidskatalog
+Koble fra en feilsøkingsenhet
+Viser tilkoblede feilsøkingsenheter
+Enhet {0} frakoblet.
+Feilsøk lytting på alle adresser ved å bruke port {0}.
+Alias allerede funnet: {0}
+Feilsøkingsloggen fjernet. Alle tilkoblede feilsøkingsenheter kan fortsatt se meldinger.
+Fjerning av feilsøkingslogg mislyktes: {0}
+Endring av katalog mislyktes: {0}
+Angi adressen
+Tidssonen er angitt feil.
+Prøver å koble til {0} med profilen {1}...
+Parsing mods er ikke tillatt i sikker modus.
+Banen er verken en fil eller en katalog.
+Oppretter en annen kopi av en fil under en annen katalog eller et annet navn.
+Samsvar {0} ({1}): {2}
+Samsvar {0}: {1}
+Tid brukt: {0} millisekunder
+Navn: {0}
+Beregner filsummer.
+Ugyldig krypteringsalgoritme.
+Aktiverer eller deaktiverer ekstern feilsøking.
+Se om du kan løse matematiske ligninger i tide
+Løst perfekt!
+Løst feil.
+RPC kjører allerede.
+RPC-lytting på alle adresser ved hjelp av port {0}.
+Starter RPC...
+Kobler til en SSH-server.
+Skriv inn passordet for {0}:
+SSH frakoblet.
+Feilsøking er ikke aktivert.
+Viser alle mottatte varsler
+Avviser et varsel
+Varselet ble avvist.
+Utfører en kommando eksternt til ekstern PC
+Ugyldig type {0}.
+Størrelse: {0}
+Katalog {0} eksisterer allerede.
+Feil ved forsøk på å koble til {0}: Tidsavbrudd for tilkobling eller mistet tilkobling
+Kalkulator for å beregne uttrykk.
+Feil i beregningen.
+Systemoppdatering
+Ser etter systemoppdateringer...
+Fant ny versjon:
+Du kan laste den ned på:
+Ingen nylige varsler
+Søker etter spesifisert streng i den angitte filen
+Beregner summer av filer i spesifisert katalog.
+Skriv inn brukernavn eller e-postadresse:
+Skriv inn passord:
+Feil under tilkobling til {0}: {1}
+Kobler til {0}...
+Autentiserer...
+Laster ned meldinger og viser dem
+Åpner en melding
+Siden er ikke en numerisk verdi.
+Meldingsnummeret kan ikke være negativt eller null.
+Meldingsnummer er ikke en numerisk verdi.
+- Fra {0}
+- Til {0}
+- Sendt kl. {0} i {1}
+Oppgitt melding ble ikke funnet.
+Ekstern feilsøking kunne ikke starte: {0}
+Forbereder profiler... Det kan ta flere minutter...
+Feil ved forsøk på å kjøre skript: {0}
+Skriver tekst inn i konsollen
+Tar brukervalg
+der <answers> er enbokstavssvar på spørsmålet atskilt i skråstreker
+Feil under forsøk på å koble til SSH-server: {0}
+Lar brukeren legge inn input
+Endrer gjeldende e-postkatalog
+Kan ikke åpne e-postmappen {0}: {1}
+Viser kataloger i e-postadressen din
+Under sertifikatvalidering er det sertifikatfeil. Det kan være første gang du kobler til serveren, eller sertifikatet kan ha vært utløpt. Her er en feil:
+Er du sikker på at du vil koble til?
+Ugyldig svar. Vennligst prøv igjen.
+Skriv inn IMAP-serveradresse og port (<adresse> eller <adresse>:[port]):
+Skriv inn SMTP-serveradresse og port (<adresse> eller <adresse>:[port]):
+Sender en melding til en adresse
+Skriv inn mottakerens e-postadresse:
+Skriv inn emnet:
+Skriv inn meldingen din nedenfor. Skriv "EOF" for å bekrefte.
+Sender melding...
+Melding sendt.
+Ugyldig e-postadresse. Sørg for at du har skrevet adressen riktig og at den samsvarer med formatet til eksemplet som vises:
+Fjerner en melding
+Fjerner alle meldinger fra mottakeren
+Melding {0} fra {1} slettet fra {2}. {3} meldinger gjenstår å analysere.
+Melding {0} fra {1} slettet fra innboksen. {2} meldinger gjenstår å analysere.
+Lager en ny fil
+Filen eksisterer allerede.
+Feil ved forsøk på å opprette en fil: {0}
+Kunne ikke åpne filen. Går ut av skallet...
+Skriver ut innholdet i filen med linjenumre til konsollen
+Legger til en ny linje med tekst på slutten av filen
+Fjerner det angitte linjenummeret
+Erstatter et ord eller en setning med et annet
+Sletter et ord eller en frase fra linjenummeret
+Sletter et tegn fra tegnnummer i spesifisert linje
+Fjernet linje.
+Spesifisert linjenummer {0} er ikke et gyldig nummer.
+Kjører i sikker modus. Hopp over scenen...
+>> Adressen din er {0}.
+>> Ditt navn er {0}.
+Indeks {0} er ugyldig. Det er {1} stabelspor. Indeksen er nullbasert, så prøv å trekke fra med 1.
+Ingen stabelspor
+Viser siste stabelspor ved unntak
+Viser gjeldende brukernavn i økten
+Fjern blokkering av en feilsøkingsenhet ved hjelp av IP-adresse
+Blokker en feilsøkingsenhet etter IP-adresse
+{0} kan nå bli med i ekstern feilsøking igjen.
+{0} er ikke blokkert ennå.
+Feil ved innlasting av innstillinger
+Det oppsto en feil under innlasting av innstillinger. Du må kanskje sjekke innstillingsfilen.
+Gå
+Spesifisert alternativ {0} er ugyldig.
+Svaret må være numerisk.
+Se etter oppdateringer ved oppstart
+Stille sonde
+Vis MOTD ved pålogging
+Fjern skjerm ved pålogging
+Forenklet hjelpekommando
+Feilsøkingsport
+Last ned Prøvetider
+Logg FTP-brukernavn
+Logg FTP IP-adresse
+Returner kun første FTP-profil
+Størrelsesanalysemodus
+Marquee ved oppstart
+Lang tid og dato
+Vis skjulte filer
+Gå tilbake...
+Skriv en ekstern debugger-port. Den må være numerisk, og må ikke være i bruk allerede. Ellers vil ekstern debugger ikke åpne porten.
+Skriv hvor mange ganger "get"-kommandoen skal prøve mislykkede nedlastinger på nytt. Det må være numerisk.
+Svaret er kanskje ikke negativt.
+Endrer kjernekonfigurasjon
+Tekst vist
+Skriv hvilken som helst tekst du ønsker vist. Kortere er bedre.
+Kunne ikke laste opp {0}
+Legger til brukere
+Legger til aliaser til kommandoer
+Endrer vertsnavn
+Endrer MAL, MOTD etter pålogging
+Endrer MOTD, The Message Of The Day
+Endrer brukernavn
+Administrer tillatelser for brukere
+Fjerner en bruker fra listen
+Fjernet aliaset {0}.
+Kunne ikke se etter oppdateringer.
+Det er ikke flere brukere igjen på listen.
+Feil under forsøk på å avvise varsel.
+usrmgr: Kunne ikke opprette brukernavn {0}: {1}
+Kunne ikke endre navn på bruker. {0}
+Bruker ikke funnet
+Kunne ikke endre passordet til brukernavnet: {0}
+Kan ikke finne fil som samsvarer med strengen "{0}": {1}
+Nedlasting mislyktes for filen {0}.
+Kunne ikke vise eksterne filer: {0}
+Sletter {0}...
+Finner ikke {0} på serveren.
+All e-post fra {0} er fjernet.
+Kunne ikke fjerne all e-post fra {0}.
+Feil ved sending av melding.
+Flytter {0} til {1}...
+Flyttet vellykket
+Flytter fil eller katalog til en annen fil eller katalog. Du kan også bruke det til å gi nytt navn til filer.
+Kunne ikke flytte {0} til {1}.
+Kopierer {0} til {1}...
+Kopiert vellykket
+Kopierer fil eller katalog til en annen fil eller katalog.
+Kunne ikke kopiere {0} til {1}.
+Flytter en melding
+Flytter alle meldinger fra mottaker
+All e-post fra {0} er flyttet.
+Kunne ikke flytte all e-post fra {0}.
+Melding {0} fra {1} er flyttet fra {2}. {3} meldinger gjenstår å analysere.
+Viser værinformasjon for spesifisert by. Bruker OpenWeatherMap.
+-- Værinformasjon for {0} --
+Vær: {0}
+Trykk: {0}
+Fuktighet: {0}
+Du kan få din egen API-nøkkel på https://home.openweathermap.org/api_keys.
+Foretrukket enhet for temperatur
+Hver oppstart vil den se etter oppdateringer.
+Hold meldinger om maskinvareundersøkelse stille.
+Vis dagens melding før påloggingsskjermen vises.
+Tøm skjermen før du viser påloggingsskjermen.
+Viser tilgjengelige brukere hvis aktivert.
+Forenklet hjelpekommando for alle skjellene
+Hvorvidt FTP-brukernavn skal logges eller ikke.
+Hvorvidt FTP IP-adresse skal logges eller ikke.
+Velg den første profilen bare når du kobler til.
+Hvis aktivert, vil kjernen analysere hele mappen for dens totale størrelse. Ellers vil bare analysere overflaten.
+Aktiverer eyecandy ved oppstart
+Klokkeslettet og datoen blir lengre, og viser hele månedsnavn osv.
+Viser skjulte filer.
+Modus {0} stoppet
+{0} v{1} stoppet
+Du må slå på feilsøkingsmodus før du kan tømme feilsøkingsloggen.
+{0} nye meldinger kom i innboksen.
+Åpne "mail" for å se dem.
+Fjerner en katalog eller en fil
+Kan ikke fjerne {0} fordi den ikke eksisterer.
+Gir informasjon om en fil
+Gir informasjon om en katalog
+Kan ikke få informasjon om ikke-eksisterende katalog.
+Kan ikke få informasjon om ikke-eksisterende fil.
+Fullt navn: {0}
+Opprettingstid: {0}
+Siste tilgangstid: {0}
+Siste skrivetid: {0}
+Attributter: {0}
+Overordnet katalog: {0}
+Hvor finner du: {0}
+Filstørrelse: {0}
+Endrer attributtet til en fil
+Filen ble ikke funnet.
+der <attributes> er ett av følgende:
+Filen er en vanlig fil
+Filen er en skrivebeskyttet fil
+Filen er en skjult fil
+Filen er et arkiv. Brukes til sikkerhetskopiering.
+Attributtet "{0}" er ugyldig.
+Attributtet er lagt til.
+Attributtet er fjernet.
+Kunne ikke legge til attributtet.
+Kunne ikke fjerne attributtet.
+Erstatter et ord eller en setning med et annet på en linje
+Aktiver ekte farger
+Kunne ikke oppheve blokkeringen av {0}.
+{0} er allerede blokkert.
+{0} kan ikke bli med i ekstern feilsøking nå.
+Kunne ikke blokkere {0}.
+Syklusfarger
+Disco vil sykle farger når det er aktivert. Ellers velger du tilfeldige farger.
+Skriv inn filstier til vedlegg. Trykk ENTER på en tom bane for å bekrefte.
+Åpner en kryptert melding
+Skriv passord for nøkkel-ID {0}
+Sender en kryptert melding til en adresse
+Laster ned fra {0}...
+Vis fremdriftslinjen mens du laster ned eller laster opp fra "get" eller "put"-kommandoen
+Hvis det er sant, får det "get" eller "put" til å vise fremdriftslinjen mens du laster ned eller laster opp.
+Laster opp en fil til et spesifisert nettsted
+Pinger en adresse
+Laster opp {0} til {1}...
+Opplastingen er fullført.
+Vennligst bruk "ftp" hvis du skal laste opp filer til FTP-serveren.
+Opplasting mislyktes i forsøk {0}: {1}
+Skriv hvor mange ganger "put"-kommandoen skal prøve mislykkede opplastinger på nytt. Det må være numerisk.
+Adressen kan ikke være tom.
+Kunne ikke pinge {0}: {1}
+Pingen lyktes på {0} ms.
+Det angitte linjenummeret kan ikke være større enn det siste fillinjenummeret.
+Føles som: {0}
+Temperatur: {0}
+Vindstyrke: {0}
+Vindretning: {0}
+Trykk på hvilken som helst tast for å gå tilbake.
+Kan ikke opprette e-postmappe {0}: {1}
+Lager en katalog i gjeldende arbeidskatalog
+Fjerner en katalog fra gjeldende arbeidskatalog
+Finner ikke postmappen {0}.
+Kan ikke slette e-postmappen {0}: {1}
+{0}, opprettet i {1} {2}, endret i {3} {4}
+Verifiserer fornuften til filen
+Hashes er misformet.
+Hashes stemmer ikke.
+Hashes match.
+Gi nytt navn til en mappe
+Åpner et testskall
+Kunne ikke starte "{0}": {1}
+Vis forhåndsvisning av e-postmeldinger
+Når du legger opp e-postmeldinger, vis brødtekst forhåndsvisning.
+Bakgrunnsfarge
+Tømmer tekstfilen
+Avslutter tekstredigering
+Spør etter et tegn i en spesifisert linje eller alle linjer
+Se etter oppdateringer er deaktivert fordi du kjører en utviklingsversjon.
+Slår på eller av funksjonen for automatisk lagring av tekstredigering.
+Hvis autolagring er aktivert, lagres tekstfilen for hvert "n" sekund.
+Aktiver automatisk lagring av tekstredigering
+Autolagringsintervall for tekstredigering
+Lagrer filen
+Ta opp chat for å feilsøke loggen
+Registrerer ekstern debug chat til feilsøkingslogg.
+Forsinkelse i millisekunder
+Hvor mange millisekunder skal du vente før du skriver neste gang?
+Lar deg bruke en SSH FTP-server
+Ingen hjelp for kommandoen "{0}".
+Color of Seconds Bar
+Farge på minuttlinjen
+Color of Hours Bar
+Farge på informasjon
+Haker av for å endre farge
+Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i ProgressClock? 1 hake = 0,5 sekunder
+ProgressClock vil velge tilfeldige farger hvis den er aktivert. Ellers bruker du farger fra config.
+Lager et nytt tema
+Lage et nytt tema "{0}".
+Lagre tema i gjeldende katalog
+Lagre tema i en annen katalog...
+Skriver ut maskinvareinformasjon
+Navn på prosessor:
+Partisjonsstørrelse:
+Enheten finnes allerede.
+Ingen slik enhet.
+Skriver ut innholdet i filen til konsollen
+Oppføringen finnes allerede.
+Omslutter konsollutgangen
+Kommandoen kan ikke pakkes inn. Disse kommandoene kan pakkes inn:
+Trekker ut et ZIP-arkiv
+Oppretter et ZIP-arkiv
+Kunne ikke fullføre mod {0}: {1}
+Viser alle avfyrte hendelser
+Gjeldende katalog
+Angir skallets gjeldende katalog. Skriv en absolutt bane til enhver eksisterende katalog.
+Ping!
+{0} pinget deg.
+Lagre tema i gjeldende katalog som...
+Lagre tema i en annen katalog som...
+Angi temanavn:
+Last inn tema fra forhåndsbygde temaer...
+Angi navnet på temafilen uten filtypen .json:
+Viser alle filer i arkivet
+Trekker ut en fil til en spesifisert katalog eller en gjeldende katalog
+Endrer arkivkatalog
+Katalog {0} eksisterer ikke
+Arkivkatalogen {0} eksisterer ikke
+Maks antall posisjoner
+Hvor mange posisjoner lyser før dimming?
+Kobler til en SSH-server for å utføre en kommando.
+Setter en variabel til en verdi i et skript
+Det var en feil i FTP-skallet:
+Det var en feil i SFTP-skallet:
+Vis SSH-banner
+Viser SSH-serverbanneret ved tilkobling.
+Hvordan vil du autentisere?
+Privat nøkkelfil
+Passord
+Skriv inn passordfrasen for nøkkelen {0}:
+Nøytraliserte en ikke-eksisterende vei.
+Nøkkelfilen {0} eksisterer ikke.
+Feil ved forsøk på å legge til privat nøkkel:
+Generelle kommandoer:
+Mod kommandoer:
+Alias-kommandoer:
+Vedlikeholdsmodus
+Slå opp kataloger
+Ingen mod-kommandoer.
+Ingen aliaskommandoer.
+Den pakkebare kommandoen ble ikke funnet.
+Spør etter et ord i en spesifisert linje eller alle linjer
+{0} av {1} lastet ned.
+Tester å oversette en streng som finnes i ressurser til et spesifikt språk
+Skriver ut en streng til konsollen og analyserer plassholderne som er funnet
+Tester det regulære uttrykket
+Tester VT-sekvensen for 255 farger
+Tester VT-sekvensen for ekte farger
+Sender et varsel for å teste mottakeren
+Viser alle støttede kodesider
+Tester undersøking av maskinvaren
+Tester listeskriveren med strengen og strengmatrisen
+Tester listeskriveren med heltalls- og heltallsmatrisen
+Tester listeskriveren med char og char array
+Normal strengliste:
+Array-strengliste:
+Normal heltallsliste:
+Array heltallsliste:
+Normal røyeliste:
+Array-tegnliste:
+Aktiver RPC
+RPC-port
+Hvorvidt RPC skal aktiveres eller ikke.
+Skriv en RPC-port. Den må være numerisk, og må ikke være i bruk allerede. Ellers vil ikke RPC åpne porten.
+Starter ikke RPC fordi den er deaktivert.
+Lister støttede kulturer
+Søker etter spesifisert streng i den angitte filen ved hjelp av regulære uttrykk
+Se om du kan trykke på en tast i tide
+Brukeren ga ikke innspill i tide.
+Karakteren er ikke trykket i tide.
+Du har trykket på riktig karakter!
+Du har trykket på feil tegn.
+Trykk ESC for å avslutte.
+Får informasjon om dato og klokkeslett
+Millisekunder:
+sekunder:
+Minutter:
+Åpningstider:
+Dager:
+Måneder:
+År:
+Dag i året:
+Ukedag:
+Binær:
+Lokal tid:
+Universell tid:
+Unix-tid:
+Kunne ikke analysere datoinformasjon for
+Sørg for at formatet er riktig.
+Dato:
+Tid:
+Angir filtillatelser. Dette støttes kun på FTP-servere som kjører Unix.
+Angir typen for denne økten
+Kunne ikke angi tillatelser for {0} til {1}.
+Tillatelser satt for filen
+Datatype satt til ASCII!
+Datatype satt til Binær!
+Ugyldig datatype.
+Vær oppmerksom på at de fleste filer ikke vil lastes ned eller lastes opp riktig ved å bruke denne modusen, så vi anbefaler på det sterkeste å bruke binærmodus i de fleste situasjoner.
+Prøver å sende en RPC-kommando mens RPC ikke startet.
+Uttoningsforsinkelse i millisekunder
+Max Fade Steps
+Hvor mange millisekunder skal man vente før teksten tones ut?
+Hvor mange fade-trinn skal gjøres?
+Åpner et RSS-skall for å lese feedene
+Viser alle innmatinger
+Leser en feed i en nettleser
+Får artikkelinformasjonen
+Artikkelnummeret kunne ikke være større enn de tilgjengelige artiklene.
+Tittel:
+Link:
+Henter feedinformasjonen
+Beskrivelse:
+Fôrtype:
+Antall artikler:
+Artikkelen har ingen link!
+Kunne ikke lage en liste over filsystemoppføringer for katalogen
+Sorteringsmodus for filsystem
+Filsystem sorteringsretning
+Styrer hvordan filene skal sorteres.
+Styrer retningen for filsystemsortering enten den er stigende eller synkende.
+Skriv igjen forsinkelse i millisekunder
+Hvor mange millisekunder skal du vente før du skriver tekst igjen?
+Skriv hvilken som helst tekst du ønsker vist. Lengre er bedre.
+Minimum skrivehastighet i WPM
+Maksimal skrivehastighet i WPM
+Sannsynlighet for skrivefeil i prosent
+Wipes for å endre retning
+Hvor mange kluter skal du gjøre før du endrer retning tilfeldig?
+Etappen avsluttet i
+Intern initialisering fullført i
+Starter mod
+Mod versjon:
+Modus {0} ikke funnet.
+Tekstredigeringsprogrammet har ikke åpnet en filstrøm ennå.
+Snøre byttet ut.
+Ett eller begge tallene er ikke numeriske.
+Ord slettet.
+Tegn slettet.
+Velkommen til Innstillinger!
+Feil ved utførelse av SSH-kommando
+Feil på SSH-skall
+Tester ordbokforfatteren med strengen og strengmatrisen
+Tester ordbokforfatteren med char og char array
+Tester ordbokforfatteren med heltalls- og heltallsmatrisen
+Normal strengordbok:
+Array string ordbok:
+Normal heltallsordbok:
+Array heltallsordbok:
+Normal char ordbok:
+Array char ordbok:
+Vis fremdrift på filsystemoperasjoner
+Viser hvilken fil som behandles under filsystemoperasjonene
+Enten er maskinvaretypen {0} ikke undersøkt, eller så er den ikke gyldig.
+Alltid sentrert
+Skriv hvilken som helst tekst du ønsker vist.
+Om teksten som vises på rammen alltid er sentrert.
+Skjermsparer opplevde en feil under visning av: {0}. Trykk på hvilken som helst tast for å avslutte.
+Forhåndsvisning...
+Slik vil temaet ditt se ut:
+Kommandoer som kan pakkes inn:
+Bruk Console API
+Om du skal bruke Console API for å tømme tekst eller for å bruke den raskere linjeslettings-VT-sekvensen. Hvis False, vil Marquee bruke den riktige VT-sekvensen. Ellers vil den bruke den sannsynligvis tregere konsoll-API.
+Åpner URL... Sørg for å følge trinnene som vises på skjermen.
+Mods navn:
+Mod filnavn:
+Mod filbane:
+Mappen er tom.
+Utførlig sonde
+Gjør meldinger om maskinvareundersøkelser litt snakkesalige.
+Forskjønner JSON-filen
+Bruk slag per minutt
+Om du skal bruke Beats Per Minute-enheten for å skrive neste farge.
+Forsinkelse i slag per minutt
+Hvor mange slag per minutt skal du vente før du skriver neste gang?
+BeatFader vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Egendefinert oppstartsbanner
+Laster ned ekstern mappe til lokal katalog ved hjelp av binær eller tekst
+Laster opp lokal mappe til ekstern katalog ved hjelp av binær eller tekst
+Laster ned mappen {0}...
+Lastet ned mappen {0}.
+Nedlasting mislyktes for mappen {0}.
+Laster opp mappen {0}...
+Lastet opp mappe {0}
+Minimerer JSON-filen
+Ny skjermforsinkelse i millisekunder
+Kolonnetelling
+Linjefyllingsgrense
+Sannsynlighet for linjefylling i prosent
+Linjefyllingstype
+Hvor mange millisekunder å vente før du skriver teksten på den nye skjermen igjen?
+Tekstkolonnene som skal skrives ut.
+Hvor mange tegn skal skrives før "linjefyllingen" utløses?
+Mulighet for at linjefyllmønsteret skrives ut med store bokstaver i prosent
+Svaret er kanskje ikke null.
+Svaret kan ikke overstige oppføringene som vises.
+Administrer modsene dine
+Modadministrasjon er deaktivert i sikker modus.
+Ugyldig kommando {0}. Sjekk bruken nedenfor:
+Modus ikke funnet eller filen har ugyldige tegn.
+Sannsynlighet for glipp i prosent
+Aktiver feilsøking av skjermsparer
+Aktiverer feilsøking for skjermsparere. Vær oppmerksom på at den raskt kan fylle feilsøkingsloggen og redusere skjermspareren litt, avhengig av hvilken skjermsparer som brukes. Fungerer bare hvis kjernefeilsøking er aktivert for diagnostiske formål.
+Den manuelle siden {0} er ugyldig.
+Vurder å fylle ut denne manualsiden.
+Tilgjengelige kjerneargumenter:
+Ugjenopprettelig feil i argumentet:
+Krypterer en streng ved hjelp av SHA512
+Krypterer en streng ved hjelp av SHA384
+Krypterer en streng ved hjelp av SHA256
+Krypterer en streng ved hjelp av SHA1
+Krypterer en streng ved hjelp av MD5
+Stoppe mods er ikke tillatt i sikker modus.
+Mod er allerede startet!
+Mod har ikke startet ennå!
+Feil ved forsøk på å starte skjermsparer:
+Ugyldig kjernebanetype.
+Forrige oppstart mislyktes
+JSON-editoren har ikke åpnet en filstrøm ennå.
+Går ut av JSON-skallet uten å lagre endringene
+Lagrer JSON-filen
+Skriver ut JSON-filen
+Neste rampeintervall
+Hvor mange millisekunder skal du vente før du fyller ut neste rampe?
+Tegn varslingsgrense
+Dekker varslingen med grensen.
+Kontakt leverandøren av moden for å oppgradere moden til den kompatible versjonen.
+Sender et fremdriftsvarsel for å teste mottakeren
+Viser lokal kjernetid
+Viser lokal kjernedato
+Viser lokal kjerne dato og klokkeslett
+Viser UTC-kjernetid
+Viser UTC-kjernedato
+Viser UTC-kjernens dato og klokkeslett
+Hvilken fil er MOTD-tekstfilen? Skriv en absolutt bane til tekstfilen.
+Hvilken fil er MAL-tekstfilen? Skriv en absolutt bane til tekstfilen.
+Svartelistede mods
+Skriv filnavnene til modsene som ikke vil kjøre ved oppstart. Når du er ferdig, skriv "q". Skriv et minustegn ved siden av banen for å fjerne en eksisterende mod.
+Mod {0} er svartelistet.
+Vis appinformasjon under oppstart
+Vis scenens slutttider
+Start kjernemodifikasjoner ved oppstart
+Vis gjeldende tid før pålogging
+Gi beskjed om eventuelle feil under oppstart
+Viser kort informasjon om programmet ved oppstart.
+Viser hvor lang tid det tok for kjernen å fullføre et stadium.
+Start kjernemodifikasjonene automatisk ved oppstart.
+Viser gjeldende tid, tidssone og dato før du logger på.
+Hvis det er en mindre feil under oppstart av kjernen, varsler brukeren om det.
+Brukernavn-ledetekststil
+Passordledetekststil
+Skriv hvordan du vil at påloggingsforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Skriv hvordan du vil at passordforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Viser dagens melding etter visning av påloggingsskjermen.
+Vis fildetaljer i listen
+Viser korte fildetaljer mens du viser filer
+Vis fildetaljer i FTP-listen
+Brukernavn-ledetekststil for FTP
+Passordledetekststil for FTP
+Bruk første FTP-profil
+Legg til nye tilkoblinger til FTP-kortnummer
+Prøv å validere sikre FTP-sertifikater
+Vis FTP MOTD ved tilkobling
+Godta alltid ugyldige FTP-sertifikater
+Viser FTP-fildetaljer mens du viser eksterne kataloger.
+Bruker den første FTP-profilen for å koble til FTP.
+Hvis aktivert, legger du til en ny tilkobling til FTP-kortnummeret.
+Prøver å validere FTP-sertifikatene. Det anbefales ikke å slå den av.
+Viser dagens FTP-melding ved pålogging.
+Godta alltid ugyldige FTP-sertifikater. Det anbefales ikke å slå den på, da det kan utgjøre sikkerhetsrisiko.
+Brukernavn-ledetekststil for e-post
+Passordledetekststil for e-post
+IMAP-ledetekststil for e-post
+SMTP-ledetekststil for e-post
+Oppdag e-postserver automatisk
+Aktiver e-postfeilsøking
+Varsle for nye e-postmeldinger
+GPG-passordforespørselstil for e-post
+Send IMAP-pingintervall
+Send SMTP-pingintervall
+Mail tekstformat
+Skriv hvordan du vil at IMAP-servermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Skriv hvordan du vil at SMTP-servermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Oppdag e-postserveren automatisk basert på den oppgitte adressen.
+Aktiverer feilsøking av e-postserver.
+Varsler deg om nye e-postmeldinger.
+Skriv hvordan du vil at GPG-passordforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Hvor mange millisekunder skal du sende IMAP-pinget?
+Hvor mange millisekunder skal du sende SMTP-pinget?
+Styrer hvordan e-postteksten skal vises.
+Start ekstern feilsøking automatisk ved oppstart
+Meldingsformat for ekstern feilsøking
+Hvis du vil at ekstern feilsøking skal starte ved oppstart, aktiver dette.
+Angir formatet for ekstern feilsøkingsmelding. {0} for navn, {1} for melding.
+RSS-feed URL-forespørselstil
+Oppdater RSS-feed automatisk
+Automatisk oppdatering av RSS-feedintervall
+Skriv hvordan du vil at RSS-feedservermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Hvor mange millisekunder skal du oppdatere RSS-feeden?
+Vis fildetaljer i SFTP-listen
+Brukernavn-ledetekststil for SFTP
+Legg til nye tilkoblinger til SFTP-hurtigvalg
+Viser SFTP-fildetaljer mens du viser eksterne kataloger.
+Hvis aktivert, legger du til en ny tilkobling til SFTP-kortnummeret.
+Tidsavbrudd for ping
+Last ned tekst i prosent
+Last opp tekst i prosent
+Hvor mange millisekunder skal man vente før man erklærer tidsavbrudd?
+Skriv hvordan du vil at opplastingsprosentteksten skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for opplastet størrelse, {1} for målstørrelse, {2} for prosentandel.
+Skriv hvordan du vil at nedlastingsprosentteksten skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for nedlastet størrelse, {1} for målstørrelse, {2} for prosentandel.
+Be om passord etter låsing
+Etter å ha låst skjermen, be om passord
+Minimum rød fargenivå
+Minimum grønn fargenivå
+Minimum blåfargenivå
+Minimum fargenivå
+Maksimalt rødt fargenivå
+Maksimalt grønt fargenivå
+Maksimalt blått fargenivå
+Maksimalt fargenivå
+Minimum rød fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Minimum grønn fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Minimum blåfargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Minimum fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger.
+Maksimalt rødt fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Maksimalt grønt fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Maksimalt blått fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255.
+Maksimalt fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger.
+Forgrunnsfarge
+Linjekarakter
+Et tegn for å danne en linje. Pass på å bare skrive inn ett tegn.
+Øvre venstre hjørnetegnet for timelinjen
+Øvre venstre hjørnetegnet for minuttlinjen
+Øvre venstre hjørnetegnet for sekunder bar
+Øvre høyre hjørnetegnet for timelinjen
+Øvre høyre hjørnetegnet for minuttlinjen
+Øvre høyre hjørne tegn for sekunder bar
+Nedre venstre hjørnetegnet for timer bar
+Tegn i nedre venstre hjørne for minuttlinjen
+Tegn i nedre venstre hjørne for sekundlinjen
+Tegn i nedre høyre hjørne for timelinjen
+Tegn i nedre høyre hjørne for minuttlinjen
+Tegn i nedre høyre hjørne for sekundlinjen
+Øvre rammekarakter for timers bar
+Øvre rammekarakter for minuttlinje
+Øvre rammekarakter for sekunder bar
+Nedre rammekarakter for timers bar
+Nedre rammekarakter for minuttlinje
+Nedre rammekarakter for sekunder bar
+Venstre rammekarakter for timelinje
+Venstre rammetegn for minuttlinjen
+Venstre rammetegnet for sekundlinjen
+Høyre rammekarakter for timelinje
+Høyre rammetegn for minuttlinjen
+Høyre rammetegn for sekunderslinje
+Informasjonstekst for timer
+Informasjonstekst i minutter
+Informasjonstekst i sekunder
+Minimum rød fargenivå i timer
+Minimum grønt fargenivå i timer
+Minimum blå fargenivå i timer
+Minimum fargenivå i timer
+Maksimalt rødt fargenivå i timer
+Maksimalt grønt fargenivå i timer
+Maksimalt blått fargenivå i timer
+Maksimalt fargenivå i timer
+Minimum rød fargenivå i minutter
+Minimum grønt fargenivå i minutter
+Minimum blåfargenivå i minutter
+Minimum fargenivå i minutter
+Maksimalt rødt fargenivå i minutter
+Maksimalt grønt fargenivå i minutter
+Maksimalt blått fargenivå i minutter
+Maksimalt fargenivå i minutter
+Minimum rød fargenivå i sekunder
+Minimum grønt fargenivå i sekunder
+Minimum blåfargenivå i sekunder
+Minimum fargenivå i sekunder
+Maksimalt rødt fargenivå i sekunder
+Maksimalt grønt fargenivå i sekunder
+Maksimalt blått fargenivå i sekunder
+Maksimalt fargenivå i sekunder
+Et tegn som ligner det øvre venstre hjørnet. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner det nedre venstre hjørnet. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den øvre rammen. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den nedre rammen. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den venstre rammen. Pass på å bare skrive inn ett tegn.
+En karakter som ligner den høyre rammen. Pass på å bare skrive inn ett tegn.
+Skriv hvordan informasjonsteksten for gjeldende time viser. {0} for gjeldende time av 24 timer.
+Skriv hvordan informasjonsteksten for gjeldende minutt viser. {0} for gjeldende minutt av 60 minutter.
+Skriv hvordan informasjonsteksten for gjeldende sekund viser. {0} for gjeldende sekund av 60 sekunder.
+Tekstfarge
+Øvre venstre hjørnetegnet for rampestang
+Øvre høyre hjørnetegnet for rampestang
+Nedre venstre hjørnetegnet for rampestang
+Nedre høyre hjørnetegnet for rampestang
+Øvre rammekarakter for rampestang
+Nedre rammekarakter for rampestang
+Venstre rammekarakter for rampestang
+Høyre rammekarakter for rampestang
+Minimum rød fargenivå for startfarge
+Minimum grønt fargenivå for startfarge
+Minimum blåfargenivå for startfarge
+Minimum fargenivå for startfarge
+Maksimalt rødt fargenivå for startfarge
+Maksimalt grønt fargenivå for startfarge
+Maksimalt blått fargenivå for startfarge
+Maksimalt fargenivå for startfarge
+Minimum rød fargenivå for sluttfarge
+Minimum grønt fargenivå for sluttfarge
+Minimum blåfargenivå for sluttfarge
+Minimum fargenivå for sluttfarge
+Maksimalt rødt fargenivå for sluttfarge
+Maksimalt grønt fargenivå for sluttfarge
+Maksimalt blått fargenivå for sluttfarge
+Maksimalt fargenivå for sluttfarge
+Løser minimum antall
+Løser maksimalt antall
+Løser viser input
+Øvre venstre hjørnetegnet for varslingskant
+Øvre høyre hjørnetegnet for varslingskant
+Tegn i nedre venstre hjørne for varslingskant
+Tegn i nedre høyre hjørne for varslingskant
+Øvre rammetegn for varslingskant
+Nedre rammetegn for varslingskant
+Venstre rammetegn for varslingskant
+Høyre rammetegn for varslingskant
+Om det skal vises hva som er skrevet i inndatameldingen.
+Hva er minimumsantallet å velge?
+Hva er det maksimale antallet å velge?
+Hvis spesifisert, vil den vise tilpasset oppstartsbanner med plassholderstøtte. Du kan bruke {0} for kjerneversjon.
+Aktiverer ekte fargestøtte.
+Ord slettet i linje {0}.
+Streng erstattet i linje {0}.
+Fjernet linjenummer {0}.
+Undertrykk uautoriserte meldinger
+Skjuler den irriterende meldingen hvis oppføringsfunksjonen prøver å åpne en uautorisert mappe
+FTP-serverinformasjon
+Serveradresse:
+Serverport:
+Servertype:
+Serversystemtype:
+Serverkrypteringsmodus:
+Serverdatatilkoblingstype:
+Serversystem:
+Datatype for servernedlasting:
+Datatype for tjeneropplasting:
+Skriv inn en ekstern fil som skal hashes.
+Skriv inn en ekstern katalog.
+Rekursiv hashing for FTP
+Om en katalog skal hash rekursivt. Vær oppmerksom på at ikke alle FTP-servere støtter dette.
+Prosessor klokkehastighet:
+Totalt antall prosessorer:
+Diskstørrelse:
+Totalt minne:
+Grafikkort:
+Hvis du er sikker på at du har åpnet den riktige delen, sjekk denne meldingen:
+Utfører en FTP-serverkommando
+Krypterer en streng ved hjelp av CRC32
+av post overført...
+Tester tabellfunksjonaliteten
+Redigerer den angitte linjen
+Legger til de nye linjene på slutten av filen
+Skriv inn teksten du vil legge til på slutten av filen. Når du er ferdig, skriv "EOF" på sin egen linje.
+Vertsnavn
+Brukernavn
+Datatype
+Koding
+Kryptering
+Protokoller
+Vis fremdriften for e-postoverføring
+E-postoverføringsfremdrift
+E-postoverføringsfremgang (enkelt)
+Hvis aktivert, vil e-postskallet vise hvor mange byte som ble overført ved nedlasting av e-post.
+Skriv hvordan du vil at fremdriftsstilen for e-postoverføring skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for overført størrelse og {1} for total størrelse.
+Skriv hvordan du vil at fremdriftsstilen for e-postoverføring skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for overført størrelse.
+Mod-fil er ikke spesifisert.
+Prøver å installere en allerede installert mod. Oppdaterer mod...
+Installasjonen mislyktes for
+Modfilen som følger med er inkompatibel.
+Avinstallering mislyktes for
+Skriv ut linjenumre på utskriftsfilinnhold
+Avviser alle varsler
+Laster ned...
+Laster opp ...
+Vis varsel for nedlastingsfremgang
+Vis varsel for opplastingsfremgang
+Viser varselet som viser nedlastingsfremdriften.
+Viser varselet som viser opplastingsfremdriften.
+Sjekker om den oversettbare strengen finnes i KS-ressursene
+Streng funnet i lokaliseringsressursene.
+Finner ikke streng i lokaliseringsressursene.
+Starter kjernen stille
+Starter kjernen i sikker modus, og deaktiverer alle mods
+Som sikker modus, men deaktiverer også flerbruker og litt tilpasning
+Det var ikke nok argumenter.
+Øvre venstre hjørne farge for rampestang
+Øvre høyre hjørne farge for rampestang
+Nedre venstre hjørne farge for rampestang
+Nedre høyre hjørne farge for rampestang
+Farge på øvre ramme for rampestang
+Farge på nedre ramme for rampestang
+Venstre rammefarge for rampestang
+Høyre rammefarge for rampestang
+Bruk kantfarger for rampestang
+Bruk kantfargene for rampelinjen. Hvis den er deaktivert, genereres en grå linje.
+Starter HTTP-skallet
+Henter svaret fra HTTP-serveren ved å bruke den angitte forespørselen
+Sletter innhold fra HTTP-server
+Det var en feil i HTTP-skallet:
+Henter strengen fra HTTP-serveren ved å bruke den angitte forespørselen
+Henter {0}...
+Farger krever ikke omstart, men de fleste innstillingene krever omstart.
+Ingen hjelp for argumentet "{0}".
+Standard vanskelighetsgrad for SpeedPress
+Tastetrykk tidsavbrudd for SpeedPress
+Hvor mange millisekunder skal man vente på tastetrykk før tidsavbruddet? (I tilpasset vanskelighetsgrad)
+Erstatter et ord eller en setning med et annet ved hjelp av regulære uttrykk
+Erstatter et ord eller en frase med et annet på en linje ved hjelp av regulære uttrykk
+Spør etter et ord i en spesifisert linje eller alle linjer ved hjelp av regulære uttrykk
+Skriv hva du vil søke etter.
+Ingenting er funnet. Kontroller at du har skrevet innstillingen riktig.
+Pakker en lokal fil til arkivet
+Kan ikke pakke noe.
+For mer informasjon om vilkårene og betingelsene for bruk av denne programvaren, besøk
+Standard utgangstype for valg
+Sjekker alle KS-innstillingene for å se om variablene er skrevet riktig
+Finner ikke filen {0}
+Oppretter en variabel matrise med de angitte verdiene
+Kontrollerer alle lokaliseringstekstlinjenumrene for å se om alle er like
+Linje uoverensstemmelse i
+Inkluder anonyme brukere
+Inkluder funksjonshemmede brukere
+Inkluderer de anonyme brukerne i listen
+Inkluderer funksjonshemmede brukere i listen
+Sorter listen
+Sorterer filsystemlisten profesjonelt.
+Gir et utvalg valg
+Shell-kommandoer er ikke implementert!!!
+Vis siste RSS-overskrift ved pålogging
+RSS-overskrifts-URL
+Hver pålogging vil vise den siste RSS-overskriften fra den valgte overskrifts-URLen.
+RSS-overskrifts-URL som skal brukes når den siste overskriften vises. Dette er vanligvis din favorittfeed.
+Kunne ikke få siste nytt.
+Vis stabelsporing på kjernefeil
+Hvis det er en kjernefeil, velg om du vil skrive ut stabelsporet til konsollen eller ikke.
+Hvor vil du lagre de gjeldende kjerneinnstillingene?
+Kan ikke lagre kjerneinnstillinger på toppen av eksisterende fil.
+Hvor vil du laste de gjeldende kjerneinnstillingene fra?
+Sjekker om de oversettbare strengene finnes i KS-ressursene
+Kombinerer de to tekstfilene eller flere til utdatafilen.
+Kunne ikke kombinere filer.
+Tidsavbrudd for henting av RSS-feed
+Hvor mange millisekunder skal vente før RSS-feed henter tidsavbrudd?
+Fyll boksene
+Tegner vi boksen som en helhet eller tegner vi bare kanten?
+Etappeforsinkelse i millisekunder
+Hvor mange millisekunder skal du vente før du tegner neste trinn?
+Neste rampe råteintervall
+Hvor mange millisekunder skal man vente før den ene enden av neste rampe råtner?
+Kunne ikke legge til et arrangement.
+Kunne ikke fjerne en aktivitet.
+Ikke nok argumenter for å legge til en hendelse.
+Ikke nok argumenter til å fjerne en hendelse.
+Ikke nok argumenter for hendelsesmanipulasjon.
+Ikke nok argumenter for påminnelsesmanipulasjon.
+Unavngitt påminnelse
+Hendelse uten navn
+Nå er det en begivenhetsdag!
+Ikke gå glipp av dette!
+Ugyldig handling.
+En enkel stoppeklokke
+Start eller stopp
+Fang
+Tilbakestill
+En enkel timer
+Still inn intervall
+Indikert tidsavbrudd er ikke numerisk.
+Angi tidsavbruddet i millisekunder
+Lagre alle hendelser og/eller påminnelser destruktivt
+Hvis aktivert, sletter du alle hendelser og/eller påminnelser før du lagrer dem alle ved hjelp av kalenderkommandoen.
+Bekreft forsøk på nytt for FTP-overføring
+Tidsavbrudd for FTP-tilkobling
+Tidsavbrudd for FTP-datatilkobling
+FTP IP-versjoner
+Hvor mange ganger skal du bekrefte opplastingen og laste ned og prøve på nytt hvis verifiseringen mislykkes før nedlastingen mislykkes som helhet?
+Hvor mange millisekunder å vente før FTP-tilkoblingen tidsavbrudd?
+Hvor mange millisekunder å vente før FTP-datatilkoblingen tidsavbrudd?
+Velg versjonen av Internett-protokollen som FTP-serveren støtter og som FTP-klienten bruker.
+Prøver å starte RPC mens den allerede er startet.
+Finner en fil i den angitte katalogen eller i den gjeldende katalogen
+Konverterer linjeavslutningene til format for gjeldende plattform eller til spesifisert tilpasset format
+Total størrelse i mappen:
+Vis total størrelse i listen
+Hvis aktivert, viser den totale mappestørrelsen i listen, avhengig av hvordan du beregner mappestørrelsene i henhold til konfigurasjonen.
+Du er oppdatert!
+Standard JSON-formatering for JSON-skall
+Velger standard JSON-formatering (forskjønnet eller minifisert) for JSON-skallet som skal lagres.
+Fyrverkeri eksplosjonsradius
+Hvor mange blokker (opptil 10) er eksplosjonsradiusen for fyrverkeriet når det tennes?
+Denne kommandoen har bryterne nedenfor som endrer hvordan den fungerer:
+Viser fildetaljene i listen
+Undertrykker de irriterende "tillatelse nektet"-meldinger
+Viser alle tidssonene
+Starter spillet i lett vanskelighetsgrad
+Starter spillet i middels vanskelighetsgrad
+Starter spillet i vanskelig vanskelighetsgrad
+Starter spillet i svært vanskelig vanskelighetsgrad
+Starter spillet i tilpasset vanskelighetsgrad. Vær oppmerksom på at den egendefinerte tidsavbruddet i millisekunder skal skrives som argument.
+Oppretter en katalog som inneholder innholdet i ZIP-filen
+Viser alle tilgjengelige byer
+Rask kompresjon
+Ingen kompresjon
+Ikke lag grunnkatalog i arkivet
+Indikerer at målbanen er absolutt
+Fjerner alle utløste hendelser
+Aktiver hendelsesfeilsøking
+Aktiverer feilsøking for kjernehendelsessystemet
+Figlet font
+Skriv en figlet-font som støttes av Figgle-biblioteket. Se bibliotekets dokumentasjon for mer informasjon
+Kunne ikke installere tilpasset språk {0}.
+Metadatainformasjonen som trengs for å installere det tilpassede språket, gir ikke de nødvendige lokaliseringene som trengs.
+Kunne ikke avinstallere tilpasset språk {0}.
+Lengden på det engelske språket samsvarer ikke med lengden på språktokenet som er oppgitt.
+Språket finnes allerede og kan ikke overskrives.
+Kunne ikke avinstallere tilpasset språk. Det finnes mest sannsynlig ikke.
+Kunne ikke installere egendefinerte språk.
+Kunne ikke avinstallere egendefinerte språk.
+Kunne ikke avinstallere egendefinerte språk. Se det indre unntaket for mer info.
+Lisensinformasjon
+Administrer språkene dine
+Finner ikke språk eller filen har ugyldige tegn.
+Språk er ikke spesifisert.
+Språkbehandling er deaktivert i sikker modus.
+Kort navn på språk:
+Språk fullt navn:
+Språk som kan translitteres:
+Egendefinert språk:
+Stilig splash-skjerm
+Aktiverer den stilige splash-skjermen ved oppstart. Vær oppmerksom på at det vil deaktivere argumentmelding og testshell før oppstart.
+Splash navn
+Splash-navn fra de tilgjengelige splashene implementert i kjernen.
+Brukere initialisert
+Velkomst!
+Starter den eksterne debuggeren...
+Tilkoblingsfeil for ekstern debugger
+Varsle om ekstern feilsøkingstilkoblingsfeil
+Hvis aktivert, bruker varslingssystemet til å varsle verten om en ekstern feilsøkingstilkoblingsfeil. Ellers vil du bruke standard konsollskriving.
+Figlet font for timer
+Aktiver Figlet for timer
+Hvis aktivert, bruker figlet for timer. Vær oppmerksom på at den trenger en stor konsollskjerm for å gjengi tiden riktig med Figlet aktivert.
+Tilbakestiller kjernen til fabrikkinnstillingene
+Vis kommandoene stole på hjelp
+Vis skallkommandoene stole på hjelp
+Vis mod-kommandoene stole på hjelp
+Vis at aliasene stoler på hjelp
+Utfører kommandoer når UESH-uttrykkene er oppfylt
+Tilstanden ble ikke funnet i uttrykket.
+Betingelse {0} krever {1} argumenter. Fikk {2}.
+Feil ved analyse av uttrykk på grunn av syntaksfeil.
+Klarte ikke å tilfredsstille tilstanden. Mer info her:
+Passordmasketegn
+Et tegn som maskerer passordet. La stå tomt for mer sikkerhet.
+Går ut av skallet hvis det kjøres på subshell
+Kan ikke drepe morskallet!
+Kan ikke logge ut fra subshell.
+Filen er ikke spesifisert. Går ut av skallet...
+Farge på fremdriftslinjen
+Åpner skjermsparerinnstillingene
+Åpner splash-innstillingene
+Viser tilgjengelige UESH-variabler
+Sted for fremdriftstekst
+Velg ønsket sted for fremdriftstekst.
+Du kan bare skrive tallene.
+Trykk "q" for å avslutte.
+Aktiverer feilsøkingsmodus
+Aktiver svart-hvitt-modus
+Gjør diskoteket svart-hvitt. Vil virkelig skade øynene dine hvis det var for raskt, så det anbefales ikke hvis du opplever et anfall av raske bilder.
+Last inn gjeldende farger
+Gjeldende verdi:
+Legger til en ny byte på slutten av filen
+Legger til de nye bytene på slutten av filen
+Tømmer den binære filen
+Sletter en byte ved å bruke bytenummeret
+Sletter rekkevidden av byte
+Avslutter hex-editoren
+Skriver ut innholdet i filen med bytenummer til konsollen
+Spørrer en byte i et spesifisert område med byte eller alle byte
+Erstatter en byte med en annen
+Byte erstattet.
+Hex-editoren har ikke åpnet en filstrøm ennå.
+Skriv inn en byte på sin egen linje som du vil legge til på slutten av filen. Når du er ferdig, skriv "EOF" på sin egen linje.
+Ikke en gyldig byte.
+Det angitte bytenummeret kan ikke være større enn filstørrelsen.
+Byte slettet.
+Bytenummeret er ikke numerisk.
+Det angitte startbytenummeret kan ikke være større enn filstørrelsen.
+Det angitte sluttbytenummeret kan ikke være større enn filstørrelsen.
+Slettede bytes.
+Vær oppmerksom på at redigering av binære filer med dette skallet er eksperimentell og kan føre til datakorrupsjon eller tap av data hvis den ikke brukes riktig.
+IKKE LANSER SKALLET MED MINDRE DU VET HVA DU GJØR!
+Får nøkkelinformasjon for en trykket tast. Nyttig for feilsøking
+Skriv inn en nøkkel eller en kombinasjon av taster for å vise informasjonen.
+Trykket tasten
+Trykket tastetegn
+Pressede modifikatorer
+Tastatursnarvei
+Aktiver hex-editor automatisk lagring
+Hex editor autolagringsintervall
+Slår på eller av funksjonen for automatisk lagring av hex-editor.
+Støytetthet
+Hvor mange millisekunder skal du vente før du skriver i den nye skjermen?
+Jo større prosent, jo mer støyende er signalet
+Skriptet er feil utformet. Sjekk skriptet og løs eventuelle feil: {0}
+Slangespillet!
+Bruker relativ bane i stedet for absolutt
+Modfilen er ugyldig.
+Bokmerker feeden
+Navne- og etternavnsgenerator
+Fjerner feedbokmerket
+Innmatingen finnes ikke i bokmerker.
+Viser alle bokmerkede feeder
+Minimumsnavn teller
+Maksimalt antall navn teller
+Minimum antall navn å generere
+Maksimalt antall navn å generere
+Minimumsalder år teller
+Maksimal alder år teller
+Minimum antall år å generere
+Maksimalt antall aldersår å generere
+Unavngitt manualside
+Inndatahistorikk aktivert
+Om inndataloggen er aktivert eller ikke. Hvis aktivert, kan du få tilgang til nylig innskrevne kommandoer ved å bruke pil opp eller pil ned.
+Rød fargenivå:
+Grønn fargenivå:
+Blå fargenivå:
+Det er nå trygt å slå av datamaskinen.
+Simuler ingen APM-modus
+Hvorvidt man skal simulere en situasjon der det ikke er tilgjengelig APM. Hvis den er aktivert, informerer den brukeren om at det nå er trygt å slå av datamaskinen når den slås av.
+Feiltetthet
+Jo større prosentandel, jo tettere er feilen!
+Den engelske ordboken
+Word informasjon for
+API er lisensiert under
+Ord:
+Ordets betydning for
+Del av talen:
+Definisjon:
+Eksempel i setning:
+Kilder som brukes til å definere
+Synonymer:
+Antonymer:
+Tester konsollen for PowerLine-støtte
+Sørg for å bruke en konsollfont som støtter PowerLine-glyfer, ellers kan det hende at utdataene ikke gjengis riktig. Vi anbefaler
+Åpner shell forhåndsinnstilte bibliotek
+Den angitte forhåndsinnstillingen {0} ble ikke funnet.
+Du er et romskip og meteorene kommer for å ødelegge deg. Kan du lagre det?
+Enheten finnes allerede i blokkeringslisten.
+Enheten finnes ikke i blokkeringslisten.
+Tester utførelse av monteringsinngangspunkt
+Velg forhåndsinnstilling for {0}:
+Enhetsomformer
+Tilgjengelige enhetstyper og deres enheter:
+Spillet er over
+Uventet feil
+Bruk PowerLine for å gjengi romskip
+Meteor spillhastighet
+Om du skal bruke PowerLine til å gjengi romskipet eller for å bruke standarden større enn karakter. Hvis du vil bruke PowerLine med Meteor, må du installere en passende font med PowerLine-støtte.
+Spesifiserer spillhastigheten i millisekunder.
+Aktiverer terminalfeilsøkingsmodus
+Hindrer kjernen fra å bruke den alternative bufferen
+Angir det opprinnelige pre-boot miljøspråket
+Fester Visual Studio-feilsøkeren til denne forekomsten av Nitrocid
+Slår på detaljerte meldinger for pre-boot miljø
+Skjuler splash før oppstart før konfigurasjonen lastes
+Ukjent argument
+Du må kjøre enten ConEmu eller en Windows 10-ledetekst med VT-behandling aktivert.
+Terminalen din er {0} på {1}.
+Ser disse rampene riktig ut for deg? De bør gå jevnt over.
+Ingen reservedriver funnet.
+Kan ikke registrere en ikke-sjåfør eller en null-driver.
+Kunne ikke utlede drivertype fra ukjent type
+Finner ikke filen {0}.
+Finner ikke fil eller mappe {0}.
+Filen eller mappen {0} er fortsatt låst selv etter å ha ventet i {1} sekunder.
+Kjør 'lisens' for å se lisensinformasjonen.
+Kjerne første løp
+Velkommen til Nitrocid Kernel! Takk for at du prøver det!
+For å komme i gang, trykk ENTER.
+Velg ditt språk. Som standard bruker kjernen det engelske språket, men du kan velge hvilket som helst annet språk her.
+Opprett din første bruker
+Vi hjelper deg med å lage ditt eget brukernavn. Velg et hvilket som helst navn du ønsker. Dette kan være kallenavnet ditt eller det korte navnet ditt, så lenge brukernavnet ditt ikke inneholder mellomrom og spesialtegn og at det ikke allerede eksisterer. Følgende brukernavn er registrert:
+Skriv inn brukernavnet
+Skriv inn passordet
+Kunne ikke opprette brukernavn. Sørg for at brukernavnet ditt ikke inneholder mellomrom og spesialtegn.
+Automatiske oppdateringer
+Nitrocid KS oppdaterer seg selv for å få den nyeste versjonen som inkluderer generelle forbedringer og feilrettinger. Nye hovedversjoner inkluderer vanligvis nye endringer og nye spennende funksjoner.
+Vil du at Nitrocid KS automatisk skal se etter oppdateringer?
+I tillegg til automatisk å se etter oppdateringer, kan Nitrocid KS også laste ned oppdateringsfilen automatisk.
+Du kan alltid se etter kjerneoppdateringer ved å bruke "update"-kommandoen.
+Kom i gang!
+Gratulerer! Du har nå en brukerkonto, {0}!
+Trykk ENTER-tasten for å komme i gang med å bruke kjernen og logg inn på din nye konto. Lykke til!
+Vi beklager uleiligheten, men ut-av-boksen har krasjet. Hvis du er sikker på at dette er en feil i opplevelsen, vennligst rapporter krasjen til oss med feilsøkingslogger.
+Trykk på hvilken som helst tast for å starte skallet uansett, men vær oppmerksom på at du kanskje må opprette din nye bruker manuelt.
+Kjernemiljøfeil:
+Nitrocid KS har oppdaget et problem, og det har blitt stengt.
+Metadatainformasjonen som trengs for å installere det tilpassede språket, eksisterer ikke.
+Metadatainformasjonen som trengs for å avinstallere det tilpassede språket, eksisterer ikke.
+Mod-skriptet er kanskje ikke null.
+Ingen mods oppdaget.
+Stopper mod {0}...
+Moden er ikke sterkt signert. Den kan inneholde uklarert kode.
+Mod kan ikke lastes fordi det er en inkompatibilitet mellom denne versjonen av kjernen og denne moden:
+Her er en liste over feil som kan hjelpe deg med å undersøke denne inkompatibiliteten:
+Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid KS og/eller moden hjelper vanligvis. Mod-parsing mislyktes.
+Mod {0} fungerer kanskje ikke ordentlig med denne API-versjonen. Mod kan ikke starte opp. Kontakt mod-leverandøren for å få en siste kopi.
+Mod {0} har ikke navnet. Mod-parsing mislyktes. Se gjennom kildekoden.
+Mod {0} har ikke versjonen. Mod-parsing mislyktes. Se gjennom kildekoden.
+Mod {0} inneholder ugyldig versjon. Mod-parsing mislyktes. Versjon var
+Prøver å endre eksisterende konto mens den er låst
+Prøver å legge til ukryptert passord i brukerlisten.
+Kan ikke legge til brukernavn. Pass på at brukernavnet ikke eksisterer.
+Kan ikke fjerne brukernavnet. Kontroller at brukernavnet eksisterer.
+Kjernen venter på feilsøkeren...
+Feilsøkeren kunne ikke koble til. Starter uansett...
+Sørg for at du har en passende debugger satt opp i systemet før du kan koble Nitrocid til det.
+Kan ikke tørke filen
+Kan ikke tørke dumpfilen
+Følgende filer slettes ikke:
+Er du sikker på at du vil slette disse filene?
+Kan ikke tørke diverse filer
+Ingen argumenthjelpebeskrivelse
+Konsollen din må støtte ekte farger for å bruke dette temaet.
+Avslutt forhåndsvisningen
+Temaet {0} feirer en begivenhet, men du er enten for tidlig eller for sent til å delta. Hvert år er dette temaet tilgjengelig fra {1}/{2} til {3}/{4}.
+Temaet {0} trenger støtte for ekte farger, men konsollen din støtter det ikke.
+Teksten må ikke være tom.
+Den kodede teksten må ikke være tom.
+Banen må ikke være tom.
+Filen eksisterer ikke.
+For å kombinere tekstfiler, bruk den aktuelle funksjonen.
+For å kombinere binære filer, bruk den aktuelle funksjonen.
+Kilden er enten ikke funnet eller er ikke en fil.
+Bytenummer må begynne med 1.
+Det angitte bytenummeret er ugyldig.
+Ugyldig syntaks for regulære uttrykk.
+Målfilen eller katalogen ble ikke funnet.
+Kan ikke overskrive en eksisterende fil eller katalog med en symbolsk lenke.
+Filen du oppga, {0}, er ikke en gyldig tekstfil. Hvis denne filen er en JSON-fil, kan denne funksjonen føre til at den blir uleselig. For filens sikkerhet stanses denne operasjonen for å forhindre filkorrupsjon.
+Kildefilen du oppga, {0}, er ikke en gyldig tekstfil.
+Målfilen du oppga, {0}, er ikke en gyldig tekstfil.
+Disk finnes ikke
+Partisjonen eksisterer ikke
+Maskinvareprobing-biblioteket har ikke klart å sondere harddisker. Hvis du kjører Windows, er den mest sannsynlige årsaken at du ikke har tilstrekkelige tillatelser til å få tilgang til harddiskinformasjonen. Start Nitrocid på nytt med forhøyede administrative rettigheter for å kunne analysere harddisker.
+Du må starte kjernen på nytt som forhøyet for å kunne vise maskinvareinformasjon.
+Kunne ikke analysere CPU-informasjonen. Sørg for at det er en gyldig informasjonsliste.
+Kunne ikke analysere RAM-informasjonen. Sørg for at det er en gyldig informasjonsliste.
+Kunne ikke analysere GPU-informasjonen. Sørg for at det er en gyldig informasjonsliste.
+Kunne ikke analysere HDD-informasjonen. Sørg for at det er en gyldig informasjonsliste.
+Prosessorleverandør:
+Klokkehastighet:
+Totale kjerner:
+Bufferstørrelser:
+Totalt brukbart minne:
+Reservert minne:
+Disknummer:
+Skillevegger:
+Partisjonsnummer:
+Navn på grafikkort:
+SpecProbe klarte ikke å analysere noe av maskinvaren. Nedenfor er feilene rapportert av SpecProbe:
+Ingen ekstra informasjon.
+Filhash sum
+Fant ingen standard utvidelsesbehandler for denne utvidelsen.
+Utvidelser må starte med prikken. Hint:
+Ingen slik implementer.
+Utvidelsen er ikke spesifisert.
+Implementeringsnavnet er ikke spesifisert.
+Behandler for forlengelse er ikke registrert.
+Det ser ut til at du ikke har JSON-shell-tillegget installert. For å få ekstra funksjoner som den tilbyr, installer tilleggspakken.
+Det ser ut til at du ikke har SQL shell-tillegget installert. For å få ekstra funksjoner som den tilbyr, installer tilleggspakken.
+Ingen handler til å håndtere denne utvidelsen.
+Kunne ikke hente informasjon for {0}.
+Ukjent feil under oppføring i katalog: {0}
+Uautorisert
+Feil
+Kan ikke hente basisoppføringen fra ikke-eksisterende fil eller katalog.
+Bare tekstfiler støttes.
+Adkomst til stien nektes på grunn av manglende samtykke.
+Tom kjernebanetype.
+Kjernebanetype er allerede registrert.
+Tom sti.
+Kjernebanetype er ikke registrert.
+Spesifiser en eksisterende mappe for å lagre de tre konfigurasjonsfilene på.
+Angi en eksisterende bane til en konfigurasjonsfil
+Ikke en gyldig konfigurasjonsklasse.
+Konfigurasjonsfilen er ugyldig.
+Det oppstod en feil under forsøk på å lese konfigurasjonen: {0}.
+Validering mislyktes!
+Lesing mislyktes!
+Prøver å fikse konfigurasjonen...
+Kan ikke sjekke konfigurasjonsvariabler når ingen type er spesifisert.
+Kan ikke sjekke konfigurasjonsvariabler når ingen oppføringer er spesifisert.
+Prøver å registrere en egendefinert innstilling uten innhold.
+Prøver å avregistrere en egendefinert innstilling uten navn.
+Den egendefinerte innstillingen er ikke registrert.
+Prøver å spørre etter en tom egendefinert innstilling.
+Finner ikke innstillingstype.
+Finner ikke innstillingsnøkkel som samsvarer med den angitte variabelen.
+Innstillingsoppføringene JSON-verdien er tom.
+Prøver å registrere en basisinnstilling uten innhold.
+Prøver å avregistrere en basisinnstilling uten navn.
+Påstandsfeil.
+Arrangementet {0} ble ikke funnet.
+Kjernehendelse avfyrt:
+Oppgi en gyldig hendelseshandling
+Det angitte aliaset eksisterer allerede. Pass på at du velger et annet alias.
+Aliassystemet oppdaget en ugyldig operasjon som forsøkte å behandle forespørselen din.
+Det angitte aliaset ble ikke funnet.
+Den spesifiserte kommandoen er ikke funnet som alias til.
+Den angitte aliastypen ble ikke funnet.
+Det oppstod en feil under forsøk på å behandle fargeforespørselen. Vanlige feil inkluderer å spesifisere feil fargespesifikasjoner.
+Det oppstod en kjernekonfigurasjonsfeil.
+Det oppstod en generell filsystemfeil. Kontroller at den angitte banen er riktig, og at filen eller katalogen faktisk eksisterer.
+Det oppstod en generell FTP-filsystemfeil. Kontroller at den angitte banen er riktig, og at filen eller katalogen faktisk eksisterer.
+Det oppstod en generell FTP-nettverksfeil. Kontroller at Internett-tilkoblingen din fungerer.
+Det oppstod en generell FTP-shell-feil.
+Det oppstod en gruppeadministrasjonsfeil.
+Det oppstod en generell HTTP-skallfeil.
+Vanvittig konsoll har blitt oppdaget. Nitrocid KS kan ikke fortsette å kjøre, fordi konsollen din er inkompatibel med kravene våre.
+Ugyldig hash-algoritme. Hvis du bruker en egendefinert hash-sum-driver, må du kontrollere at driveren er lastet inn.
+Ugyldig hasj-sum. Kontroller at du har kopiert og limt inn hash-summen riktig. Hvis du bruker en egendefinert hash-sum-driver, må du kontrollere at driveren er lastet inn og at den fungerer som forventet.
+Ugyldig kjernebane.
+Ugyldig manualside. Kontroller at moden som inneholder de gyldige manualsidene er lastet inn.
+Ugyldig mod. Hvis moden din er en gyldig .NET-sammenstilling, må du kontrollere at den faktisk implementerer grensesnittet som er nødvendig for å starte moden.
+Ugyldig filsystembane. Kontroller at det er skrevet riktig.
+Ugyldig plassholder. Se kjernedokumentasjonen for mer informasjon.
+Det egendefinerte språket kunne ikke installeres. Kontroller at språkfilen er riktig utformet. Vanligvis gjør lokaliseringsgeneratoren en god jobb med å lage lokaliseringsinformasjonen for ditt tilpassede språk.
+Det egendefinerte språket kunne ikke lastes inn. Kontroller at språkfilen er riktig utformet. Vanligvis gjør lokaliseringsgeneratoren en god jobb med å lage lokaliseringsinformasjonen for ditt tilpassede språk.
+Det egendefinerte språket kunne ikke avinstalleres.
+E-postsystemet oppdaget en feil.
+Moden kunne ikke installeres. Kontroller at det er en gyldig mod-fil. Hvis moden din er en gyldig .NET-sammenstilling, må du kontrollere at den faktisk implementerer grensesnittet som er nødvendig for å starte moden.
+Moden inneholder ingen mod-forekomst. Rådfør deg med mod-leverandøren for en ny kopi.
+Modavinstalleringen mislyktes.
+Det oppstod en feil under forsøk på å lese eller angi dagens melding.
+Det er ingen hendelse med dette navnet.
+Det er ikke noe språk med dette navnet.
+Det er ingen e-postkatalog med dette navnet.
+Det er ingen mod med dette navnet.
+Det er ingen refleksjonsegenskap med dette navnet.
+Det er ingen refleksjonsvariabel med dette navnet.
+Det er ingen skjermsparer med dette navnet.
+Det er ingen forhåndsinnstilt shell med dette navnet.
+Det er ikke noe tema med dette navnet.
+Det er null brukere i hele kjernen. Vi har nådd en ekstremt sjelden situasjon. Kjernen kan ikke fortsette.
+Det oppstod en feil under forsøk på å administrere tillatelser
+Den eksterne feilsøkingsenheten eksisterer allerede.
+Den eksterne feilsøkingsenheten ble ikke funnet. Kontroller at du har skrevet IP-adressen til enheten riktig.
+Den eksterne feilsøkingsenheten mislyktes.
+RSS-nettverksfeilen oppsto. Kontroller at Internett-tilkoblingen din fungerer.
+RSS-skallfeilen oppsto.
+Skjermspareradministrasjonsfeilen oppsto under operasjonen.
+Det oppstod en generell SFTP-filsystemfeil. Kontroller at den angitte banen er riktig, og at filen eller katalogen faktisk eksisterer.
+Det oppstod en generell SFTP-nettverksfeil. Kontroller at Internett-tilkoblingen din fungerer.
+Det oppstod en generell SFTP-shell-feil.
+Parsing av tilstand mislyktes. Vennligst sjekk syntaksen for å møte operatørens forventede design.
+Det oppstod en feil under forsøk på å analysere UESH-skriptfilen. Sjekk skriptfilen for feil og rett dem.
+Det oppstod en brukeropprettingsfeil.
+Det oppstod en brukeradministrasjonsfeil.
+Det oppstod en generell nettverksfeil. Hvis du prøver å koble til en ekstern ende, sørg for at du er koblet til Internett eller til ditt lokale nettverk.
+En konsoll som ikke støttes er oppdaget.
+En påstandsfeil er oppdaget i kjernen! Dette er mest sannsynlig en feil i kjernemodulen som bør fikses på vår side.
+Nettverket ditt må være online før du kan utføre operasjoner relatert til nettverk. Koble til nettverksadapteren og prøv igjen.
+Brukeren eksisterer ikke. Kontroller at du har skrevet brukeren riktig.
+Driveren eksisterer ikke. Kontroller at du har skrevet drivernavnet riktig, og at driveren er registrert riktig.
+Tråden er ikke klar ennå. Brukerkoden kan ha glemt å regenerere kjernetråden etter å ha stoppet den manuelt.
+En trådoperasjon er ugyldig i gjeldende tilstand. Se tilleggsmeldingen kjernetrådbehandleren ga deg for ytterligere informasjon.
+En ugyldig skalloperasjon blir forsøkt.
+Denne funksjonen eller funksjonen er ikke implementert ennå.
+En operasjon ble forsøkt på det eksterne prosedyresystemet som er ugyldig.
+En ugyldig krypteringsoperasjon utføres.
+En ugyldig feilsøkingsoperasjon utføres.
+En ugyldig arkiveringsoperasjon utføres.
+En ugyldig hex-redigeringsoperasjon utføres.
+En ugyldig JSON-redigeringsoperasjon utføres.
+En ugyldig tekstredigeringsoperasjon utføres.
+Da kjernen prøvde å laste den angitte moden, ba den om å laste "Kernel Simulator". Siden hovedapplikasjonen er omdøpt til Nitrocid KS, kan denne moden ikke kjøres trygt. Vi anbefaler deg å oppgradere moden.
+Det oppstod en kontaktbehandlingsfeil under forsøk på å utføre den forespurte operasjonen. Kontroller at kontaktfilen finnes i riktig mappe og at det er en gyldig vCard 2.1, 3.0 eller 4.0 kontaktfil.
+Et UESH-tilstandssystem mislyktes mens den forespurte operasjonen ble utført. Se feilmeldingen nedenfor for mer informasjon.
+En ugyldig SQL-redigeringsoperasjon utføres.
+Gruppen eksisterer ikke. Kontroller at du har skrevet gruppenavnet riktig.
+Det oppstod en feil i den interaktive TUI-implementeringen.
+Det oppstod en feil i administratoren for tilpassede innstillinger for brukere.
+Det oppstod en feil i nettverkstilkoblingsbehandlingen.
+Det oppstod en generell HTTP-nettverksfeil. Kontroller at Internett-tilkoblingen din fungerer.
+Det oppstod en generell kommandolederfeil. Kontroller at du har skrevet kommandoen eller skalltypen riktig.
+Verktøy for lokalitetsgenerator returnerte en feil under forsøk på å generere JSON-filer for språk.
+Det oppsto en feil i klokkeslett- og datomodulen. Kontroller at du har angitt klokkeslett og dato riktig, og at tidssonen eksisterer.
+Det oppstod en feil i den manuelle mod-parseren. Sørg for at den manuelle filen din er gyldig og at moden er startet.
+Det oppsto en feil i kalenderbehandlingen.
+Det oppsto en feil i varslingsadministrasjonen.
+Det var en feil i språkadministrasjonen.
+Det var en feil i modadministrasjonen.
+Det var en feil i refleksjonssystemet.
+Det oppsto en feil under forsøk på å utføre en operasjon for temaadministrasjon.
+Det oppsto en feil under forsøk på å utføre en operasjon for kjernehendelsesbehandlingen.
+Det oppsto en feil under forsøk på å utføre en operasjon for administrasjonen av kjernetillegget.
+Det oppsto en feil under forsøk på å utføre en operasjon for notatbehandlingen.
+Administrering av maskinvarekomponenter mislyktes.
+Påloggingsbehandler mislyktes. Sørg for at den er registrert riktig og at den gjør jobben sin som forventet.
+Koding mislyktes. Kontroller at kodingsdriveren fungerer som den skal, og reparer eventuelle problemer hvis de blir funnet, og prøv igjen.
+Ugyldig personvernsamtykkeoperasjon. Kontroller at samtykket er riktig og prøv igjen.
+Splash-behandleren kunne ikke utføre den forespurte operasjonen. Kontroller splash-navnet og prøv igjen.
+Tekstverktøy kunne ikke behandle forespørselen din.
+Ugyldig plassholderhandling. Se kjernedokumentasjonen for mer informasjon.
+Driverbehandleren klarte ikke å utføre denne handlingen fordi du kan ha oppgitt feil parametere. Hvis du er sikker på at de er spesifisert riktig, sørg for at du har oppgitt riktig drivernavn og -type.
+Fremdriftsbehandleren klarte ikke å utføre den forespurte operasjonen.
+Konsolloperasjonen klarte ikke å utføre den nødvendige oppgaven.
+Kjernen journalføringsoperasjonen klarte ikke å utføre den nødvendige oppgaven.
+Systemdokkingsoperasjonen klarte ikke å utføre den nødvendige oppgaven.
+Sikkerhetsoperasjonen klarte ikke å utføre den nødvendige oppgaven.
+Det oppstod en feil under forsøk på å utføre en operasjon for kjernedriveradministrasjonen.
+Det er en feil i kjernen, en av kjernetilleggene, en av dine mods eller en av kjernekomponentene. Hvis rutinen prøvde å behandle innspillene dine, sørg for at du har skrevet alle parameterne riktig.
+Unntaksinformasjon
+Feiltype
+Feilmelding
+Ytterligere informasjon
+Modulen som forårsaket feilen ga denne tilleggsinformasjonen som kan hjelpe deg videre
+Modulen som forårsaket feilen ga ikke tilleggsinformasjon.
+Unntaksdetaljer
+Hvis tilleggsinformasjonen ovenfor ikke hjelper deg med å finne problemet, kan dette hjelpe deg med å finne det.
+Modulen ga ikke unntaksinformasjonen, så det er vanligvis en indikator på at noe er galt.
+Indre unntaksdetaljer
+Ytterligere feil ble funnet da rutinen prøvde å utføre denne operasjonen
+Hvis du er sikker på at denne feilen er uventet, prøv å starte kjernen på nytt med feilsøking aktivert og undersøk loggene etter å ha prøvd handlingen på nytt.
+Dessverre ble det gitt en ugyldig meldingstype, så det er mulig at noe er ødelagt. Prøv å slå på feilsøkeren og gjenskape problemet.
+{0} -- Starter på nytt om {1} sekunder...
+Kontinuerlig kjernefeil oppstod:
+Denne feilen kan forårsake ustabilitet i kjernen eller applikasjonene. Du kan fortsette å bruke kjernen på egen risiko.
+Dybdeanalyse av feilen
+Unntakstype
+Feilkode
+Feilkilde
+Ukjent feilkildemetode
+Feilbeskrivelse
+Stabelspor
+Informasjon om kjernefeil
+Kjernefeilen skjedde kl
+Inneholder et unntak?
+Beskrivelse av kjernefeil
+Analyse av indre feil, antall
+Den siste indre feilen er grunnårsaken, som er tall
+Rammeanalyse
+Det er ingen rammer å analysere.
+Rammeanalyse mislyktes. Noe informasjon er kanskje ikke fullstendig.
+Dessverre er det ingen nyttig feilinformasjon som kan hjelpe deg med å analysere problemet.
+Alle kjernetråder
+Tråden lever
+Tråd er en bakgrunnstråd
+Tråden er systemkritisk
+Tråden er klar
+Tråden stopper
+Totale tråder
+Trådanalyse mislyktes. Noe informasjon er kanskje ikke fullstendig.
+Alle operativsystemtråder
+Trådanalyse av operativsystem mislyktes. Noe informasjon er kanskje ikke fullstendig.
+Alle tråder går tilbake
+Tilbakesporing av tråden er tom. Enten er denne informasjonen ikke tilgjengelig, det oppstod en feil under henting av den, eller tillegget Diagnostics Extras er ikke installert. Undersøk feilsøkingsloggene.
+Stablespor for tråd
+Trådbaksporingsanalyse mislyktes. Noe informasjon er kanskje ikke fullstendig.
+Versjonsinformasjon
+Dumpgenerator klarte ikke å dumpe en kjernefeil forårsaket av
+Vi beklager ulempen, men det ser ut til at kjernen hadde problemer med å starte opp. Feilmeldingen nedenfor kan hjelpe:
+For videre undersøkelse, aktiver feilsøkingsmodus på kjernen og prøv å reprodusere problemet. Prøv også å undersøke den siste dumpfilen som ble opprettet.
+Dette tillegget er ikke et gyldig tillegg.
+Starter kjernetillegg
+Startet kjernetillegg
+Kunne ikke starte kjernetillegget
+Kunne ikke initialisere kjernetillegget
+Kunne ikke fullføre tillegg. Følgende tillegg har ikke klart å fullføre:
+Kunne ikke stoppe tillegg. Følgende tillegg har ikke klart å stoppe:
+Kan ikke kjøre egendefinert funksjon med ikke-eksisterende tillegg
+Finner ikke funksjonen '{0}' i tillegget '{1}'.
+Finner ikke egenskapen '{0}' i tillegget '{1}'.
+Finner ikke feltet '{0}' i tillegget '{1}'.
+Ekstra språkpakke
+Ekstra skjermsparerpakke
+Ekstra sprutpakke
+Ekstra temapakke
+Ekstrautstyr - Forlystelser
+Ekstra - Arkiv Shell
+Ekstrautstyr - BassBoom
+Ekstra - koffein
+Ekstra - Kalkulatorer
+Ekstra - Kalender
+Ekstra - Fargekonverter
+Ekstra - kontakter
+Ekstra - CRC32
+Ekstrautstyr - Diagnostikk
+Ekstra - Ordbok
+Ekstrautstyr - Docking
+Ekstra - Værmelding
+Ekstra - FTP Shell
+Ekstra - Git Shell
+Ekstra - HTTP Shell
+Ekstra - JSON Shell
+Ekstra - Language Studio
+Ekstra - Mail Shell
+Ekstra - MD5
+Tillegg - Merknader
+Ekstra - RSS Shell
+Ekstra - SFTP Shell
+Ekstra - SHA1
+Ekstra - SHA384
+Ekstra - SQL Shell
+Ekstra - Theme Studio
+Ekstra - Tidsinfo
+Tillegg - Tidtakere
+Ekstrautstyr - kjernetips
+Ekstrautstyr - Gjøremålsliste
+Ekstrautstyr - Enhetsomformer
+Ingen slik tilleggstype '{0}'
+En eller flere av CPU-kjernene klarte ikke å sondere. Viser informasjon uansett...
+En eller flere av RAM-brikkene klarte ikke å undersøke. Viser informasjon uansett...
+Ett eller flere av grafikkortene klarte ikke å undersøke. Viser informasjon uansett...
+En eller flere av harddiskene kunne ikke undersøke. Viser informasjon uansett...
+Maskinvare vil ikke bli analysert på grunn av utilstrekkelige privilegier. Bruk "winelevate" for å starte Nitrocid på nytt i forhøyet modus.
+Det oppsto en feil ved undersøkelse av maskinvare: {0}
+Journalfilen '{0}' eksisterer ikke.
+Ekstern strømstyring påkalt:
+Kan ikke initialisere VT-sekvenser for Windows-terminalen. Sørg for at du kjører Windows 10 eller nyere.
+Kunne ikke starte kritiske komponenter
+Starter Nitrocid...
+Laster inn egendefinerte språk ...
+Laster inn viktige kjernetillegg...
+Laster inn konfigurasjon ...
+Laster inn viktige mods ...
+Kjernen klarte ikke å initialisere noen av de essensielle komponentene. Kjernen vil ikke fungere ordentlig på dette tidspunktet.
+Feilinformasjon:
+Informasjon om kjernemiljø
+Kjernen klarte ikke å initialisere noen av de valgfrie komponentene. Hvis den prøver å lese en konfigurasjonsfil, sørg for at den er riktig formatert.
+Generelle variabler tilbakestilles
+Lagrede shell-kommandohistorier.
+Konfigurasjonen er lagret.
+Ekstra kjernefunksjoner og deres registrerte komponenter stoppet.
+Kjernen klarte ikke å tilbakestille all konfigurasjon til de opprinnelige tilstandene. Noen av komponentene er kanskje ikke utlastet på riktig måte. Hvis du opplever problemer etter omstart, kan dette være årsaken. Vennligst slå av kjernen når den er startet på nytt.
+Adjø!
+Vennligst vent mens kjernen initialiserer maskinvaren din...
+Verifisering av systemets integritet
+Konfigurasjonsfeil vil bli varslet
+Konfigurasjonsfeil
+Det er et problem med en av konfigurasjonsfilene. Vennligst sjekk innholdet.
+Systeminitialisering
+Kjerneoppdateringer
+Maskinvaredeteksjon
+Valgfrie komponenter
+Brukerinitialisering
+Verifisering av systemintegritet
+Scene
+Kjører i vedlikeholdsmodus. Hopp over scenen...
+Kan ikke gjenskape kjernetråden mens den samme tråden allerede kjører.
+Starthandlingen for undertråd kan ikke være null.
+Kjernetråd {0} mislyktes.
+Ingen info.
+Kan ikke åpne filen eller mappen
+Newline stil:
+Binær fil:
+MIME-metadata:
+Fullt navn
+Versjon
+Kulturnavn
+Innholdstype
+Filen er ikke en gyldig .NET-sammenstilling.\n
+Kan ikke hente filsysteminformasjon
+Kan ikke kopiere fil eller katalog
+Kan ikke flytte fil eller katalog
+Kan ikke fjerne fil eller katalog
+Mappen finnes ikke. Pass på at du har skrevet riktig bane.
+Angi en bane eller en fullstendig bane til en målmappe for å kopiere den valgte filen til.
+Pass på at du har skrevet riktig bane.
+Filen eksisterer ikke. Pass på at du har skrevet riktig bane.
+Angi en bane eller en fullstendig bane til en målmappe for å flytte den valgte filen til.
+Skriv inn et nytt filnavn.
+Pass på at du har skrevet riktig filnavn.
+Filen eksisterer allerede. Navnet skal ikke være okkupert av en annen fil.
+Skriv inn et nytt katalognavn.
+Mappen finnes allerede. Navnet skal ikke være okkupert av en annen mappe.
+Den valgte oppføringen er ikke en fil.
+Skriv inn en hash-driver:
+Hash driver ikke funnet.
+Skriv inn din forventede hash
+To hashes matcher!
+To hashes stemmer ikke.
+Valgt
+Filnavn
+Er en katalog
+Er valgt
+Filstørrelse
+Filbane
+Kan ikke åpne mappen eller velge fil
+Skriv inn en bane eller en fullstendig bane til en lokal mappe.
+Trykk SPACE for mer info
+Valgte '{0}'. Trykk ESC for å avslutte og bekrefte valg.
+Ikke valgt «{0}». Trykk ESC for å avslutte og bekrefte valg.
+Ingen valgte filer.
+Kan ikke åpne mappen
+Kan ikke velge mappe
+Ingen valgte mapper.
+Denne manualsiden har dessverre ikke noe innhold. Imidlertid kan denne dokumentasjonen ha blitt funnet under mod-leverandørens nettside. Hvis du fortsatt ikke finner denne dokumentasjonen, spør utviklerne av moden for mer informasjon.
+Presentert for deg av
+Innholdslengde
+Ingen innhold.
+Ingen revisjon.
+Navn på skjermsparer
+Skjermsparer inneholder blinkende bilder
+Oppgave-ID
+Privilegert prosessortid
+Bruker prosessor tid
+Total prosessortid
+Oppgavetilstand
+Prioritetsnivå
+Oppgaveminneadresse
+Oppgavenavn
+I live
+Bakgrunn
+Kritisk
+Ferdig
+Kjerneoppgaven er allerede drept.
+Kjerneoppgave er kritisk og kan ikke drepes.
+OS-tråder kan ikke drepes.
+Dato
+Tid
+Visningsnavn
+Standard navn
+Suksess
+Feil
+Fremdriftsbehandleren er kanskje ikke null.
+Behandling...
+Denne metoden er ikke-eksisterende.
+Denne metoden er statisk. Bruk ikke-objekt overbelastning.
+Denne metoden er ikke statisk. Bruk objektoverbelastningen.
+Lysfølsomt anfallsvarsel
+Denne skjermspareren kan inneholde blinkende bilder og fartsfylte animasjoner som kan forårsake anfall for lysfølsomme. Det anbefales å oppsøke en lege for mer informasjon om slike anfall før du fortsetter. Hvis du vil bli kvitt denne advarselen, kan du slå denne av fra skjermsparerinnstillingene.
+Egendefinert skjermsparer finnes allerede.
+Egendefinert skjermsparer ble ikke funnet.
+Kan ikke registrere tom splash
+Kan ikke registrere splash uten navn
+Kan ikke registrere splash uten inngangspunkt
+Kan ikke registrere splash på nytt. Du må avregistrere spruten først.
+Kan ikke avregistrere splash uten navn
+Kan ikke avregistrere ikke-eksisterende sprut
+Den avsluttende spruten ble ikke vist
+Vi har nådd {0}%!
+Laster inn...
+Kan ikke kjøre egendefinert funksjon med ikke-eksisterende mod
+Avhengighet utilfredsstilt. Mislykkede avhengigheter er oppført nedenfor:
+Prøvde å spørre i manualene for ikke-eksisterende mod {0}.
+Prøvde å initialisere manualen {0} for ikke-eksisterende mod {1}.
+Prøvde å initialisere den manuelle filen {0} for ikke-eksisterende mod {1}.
+Prøvde å initialisere den manuelle filen {0} som ikke eksisterer for mod {1}.
+Denne egenskapen er kun gyldig for tilkoblinger med tråder. For eksempel tilkoblinger, kall den aktuelle egenskapen på selve forekomsten i stedet for å kalle denne egenskapen.
+Velg en tilkobling. Hvis du ikke har noen tilkoblinger, må du opprette en ny tilkobling. I tillegg kan du bruke hurtigoppringingsfunksjonen for raskt å koble til servere.
+Opprett en ny tilkobling
+Bruk hurtigvalg
+Tilkoblingstype ble ikke funnet
+Fant ikke forbindelsen.
+Ugyldig kobling for tilkobling.
+Kunne ikke opprette forbindelse med {0}.
+Tilkoblingen er ikke etablert ennå.
+Tilkoblingsindeksen er utenfor rekkevidde.
+Tilkoblingstypen eksisterer allerede
+Skallet {0} godtar ikke nettverkstilkoblinger.
+Skriv inn serveradressen:
+Velg en tilkobling fra hurtigvalglisten.
+Velg en tilkobling.
+Ukjent nettverksskallfeil:
+Kan ikke legge til et kortnummer med ikke-eksisterende type.
+{0} av {1} lastet opp.
+Krever tillatelse
+Tillatelse ikke gitt
+Kan ikke samtykke til en tom tillatelse.
+Det ser ut til at en mod med rotnavnet {0} prøver å få tilgang til dataene dine med tillatelse fra {1}. Vil du la denne moden få tilgang til dataene dine?
+Du spesifiserte ikke en samling.
+Du spesifiserte ikke en monteringsbane.
+Du spesifiserte ikke et samlingsnavn.
+Kan ikke legge til en gruppe med samme navn.
+Kan ikke fjerne en ikke-eksisterende gruppe.
+Kan ikke legge til en bruker i en ikke-eksisterende gruppe.
+Brukeren har allerede blitt med i gruppen!
+Kan ikke fjerne en bruker fra en ikke-eksisterende gruppe.
+Brukeren har allerede forlatt gruppen!
+Kan ikke spørre en bruker fra en ikke-eksisterende gruppe.
+Påloggingsbehandleren ble ikke funnet!
+Feil brukernavn eller brukernavn ble ikke funnet.
+Påloggingsbehandler har krasjet!
+Feil administratorpassord. Du har {0} forsøk.
+Ute av sjanser. Starter på nytt...
+Noen ondsinnede modifikasjoner fjernet root-kontoen, eller en sjelden situasjon skjedde og den ble borte.
+Fra
+Ingen feed.
+Installer RSS Shell Extras-tillegget!
+Trykk på hvilken som helst tast for å starte, eller ESC for flere alternativer...
+Nøkkelen som er spesifisert, {0}, finnes allerede.
+Nøkkelen som er spesifisert, {0}, eksisterer ikke.
+Velkommen til Nitrocid Kernel! - Versjon
+Dette programmet er lisensiert under GNU General Public License 3.0 eller nyere.
+Du kjører utviklingsversjonen av kjernen. Selv om du kan oppleve kommende funksjoner som kan eksistere i den endelige utgivelsen, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig.
+Du kjører utgivelseskandidatversjonen av kjernen. Mens du kan oppleve siste finpuss, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig.
+Vi anbefaler ikke å kjøre denne versjonen av kjernen, fordi den ikke støttes. Hvis du har lastet ned denne kjernen fra ukjente kilder, kan denne meldingen vises. Last ned fra vår offisielle nedlastingsside.
+For å avvise for alltid, trykk enten ENTER på "Acknowledged"-knappen her ved å markere den ved å bruke venstre pil på tastaturet, eller aktiver "Utviklingsmelding bekreftet" i kjerneinnstillingene.
+OK
+Erkjent
+Utviklingsvarsel
+Vær oppmerksom på at å kjøre Nitrocid KS i et uvanlig miljø betyr at noen funksjoner er begrenset. Du vil ikke kunne laste inn mods og konfigurasjoner.
+Merknad om uvanlig miljø
+at du kan få ekstra tips fra kjernetillegget levert med den fulle versjonen av Nitrocid?
+Proff-tips: Visste du det
+Nøkkelbindinger
+Fjerne
+Kan ikke utføre denne operasjonen på en null-matrise.
+Kan ikke utføre denne operasjonen på en null-linjeliste.
+Finner ikke innstillingstype.
+Finn et alternativ
+Lar deg enkelt søke etter en innstillingsoppføring ved å bruke enten tittelen eller verdien.
+Lagre innstillinger
+Lagrer kjernekonfigurasjonsendringene til konfigurasjonsfilen som finnes i programdatamappen.
+Lagre innstillinger som
+Lagrer kjernekonfigurasjonsendringene til konfigurasjonsfilen som finnes i den angitte mappen.
+Last inn innstillinger fra
+Laster inn kjernekonfigurasjonen fra den angitte konfigurasjonsfilen.
+Last inn innstillinger på nytt
+Laster inn kjernekonfigurasjonen for eventuelle eksterne endringer
+Se etter systemoppdateringer
+Systeminformasjon
+Du er på landingssiden for {0}-innstillingene. Velg en seksjon eller et alternativ for å komme i gang. Avhengig av hvilke innstillinger du har endret, må du kanskje starte kjernen på nytt.
+Laster inn delen...
+En eller flere av de følgende innstillingene i denne delen støttes ikke på plattformen din:
+Ugyldig del. Vennligst gå tilbake.
+Ugyldig nøkkel. Vennligst gå tilbake.
+Søker etter innstillinger...
+Disse innstillingene er funnet. Vennligst velg en.
+Kunne ikke finne den forespurte innstillingen.
+Lagrer innstillinger...
+Lagrer innstillinger til
+Laster inn innstillinger...
+Laster inn innstillinger på nytt...
+Kjerneversjon
+Kjerne API-versjon
+Verts-ID
+Generisk verts-ID
+Du er fortapt!
+Hvis du er sikker på at du har åpnet den riktige delen, slå på kjernefeilsøkeren, reproduser og prøv å undersøke loggene.
+Hvis du ikke forstår meldingen ovenfor, slå på kjernefeilsøkeren, reproduser og prøv å undersøke loggene.
+>> Ekstern feilsøking: versjon
+>> Velkommen! Dette er første gang du går inn i ekstern feilsøking. Bruk "/register <navn>" for å registrere.
+Finner ikke enheten for å blokkere.
+Base konsoll tester
+Førerprøver
+Filsystemtester
+Hovedkjernekomponenttester
+Språk- og lokaliseringstester
+Diverse tester
+Kjernemodifikasjonstester
+Nettverkssystemtester
+UESH-skalltester
+Brukertester
+Avslutning
+Går ut av testmodus og slår av kjernen
+Velg en testdel å kjøre
+Ingen
+Stabelrammenummeret skal ikke overstige gjeldende antall bilder eller skal ikke være negativt.
+Nitrocid KS
+Kjernetrådsovervåker oppdaget {0} kritiske tråder som ikke har startet ennå.
+Kjernetrådsovervåker oppdaget {0} døde tråder.
+Kjernetrådsveileder mislyktes
+Alarmen utløst!
+Alarmnavnet er tomt.
+Alarmen ble ikke funnet.
+Det nullbaserte alarmnummeret er ugyldig.
+I dag er
+Kunne ikke vise gjeldende tider:
+Finner ikke tidssonen {0}
+Finner ikke tidssonen.
+Tidssoneinformasjonspakken er ennå ikke installert på Linux-systemet ditt. Installer 'tzdata' ved hjelp av distribusjonens pakkebehandling.
+Vennligst vent
+Laster
+Vennligst vent mens kjernen initialiseres
+Vennligst vent mens kjernen slår seg av
+Vennligst vent mens kjernen starter på nytt
+Starter
+Sikker modus
+Feilsøkingsmodus
+Siste nytt fra
+For å kunne få de siste nyhetene, må du installere RSS Shell Extras-tillegget. Du kan bruke 'getaddons'-kommandoen for å få alle tilleggene!
+Aliaset {0} ble ikke forespurt.
+Setter verdien på utgangen til den valgte UESH-variabelen
+Nødvendige argumenter er ikke gitt for alle bruksområder nedenfor:
+Nødvendige argumenter er ikke gitt.
+Nødvendige brytere følger ikke med.
+En av bryterne krever en verdi som ikke er oppgitt.
+Brytere som er oppført nedenfor er ukjente.
+Brytere som er oppført nedenfor er i konflikt med hverandre.
+Bryterne nedenfor godtar ikke verdier.
+Ett eller flere av argumentene forventer en numerisk verdi, men du oppga et ugyldig tall.
+Ett eller flere av argumentene forventer en nøyaktig ordlyd, men du oppga et ugyldig ord.
+En eller flere av bryterne forventer en numerisk verdi, men du oppga et ugyldig tall.
+Kommandoen er avbrutt.
+Du må ikke utføre denne kommandoen direkte i pakket modus.
+Det oppstod en feil under forsøk på å bryte en kommandoutgang
+Kommandoen ble avbrutt av følgende grunn:
+Ugyldig kommandomønster er oppgitt.
+Kommandoen ble ikke funnet.
+Skalltype {0} finnes ikke.
+Du må oppgi kommandobasen.
+Du må gi kommandoen.
+Den angitte kommandoen er allerede lagt til! Det er mulig du har motstridende mods.
+Kommando ikke definert
+Noen av de egendefinerte kommandoene kan ikke lastes.
+Den spesifiserte egendefinerte kommandoen ble ikke funnet.
+Noen av de egendefinerte kommandoene kan ikke lastes ut.
+Den angitte kommandoen er allerede lagt til! Det er mulig du har motstridende tillegg.
+Noen av tilleggskommandoene kan ikke lastes.
+Den angitte tilleggskommandoen ble ikke funnet.
+Noen av tilleggskommandoene kan ikke lastes ut.
+Dette skallet bruker skråstrek-kommandoene til å utføre kommandoene. Vennligst legg til skråstreksymbolet '/' i begynnelsen av kommandoen for å komme i gang. For eksempel:
+Tilgjengelige kommandoer:
+Kernel addon kommandoer:
+Ingen kjernetilleggskommandoer.
+Samlede kommandoer:
+Samlede kommandoer er ikke implementert!!!
+Kommando:
+Du kan ikke deklarere den nye blokken før du plasserer uttrykk som støtter opprettelsen, som betingelser eller løkker. Stabelnummeret er {0}.
+Når du starter en ny blokk, sørg for at du har rykket inn stabelen riktig. Stabelnummeret er {0}.
+Skriptet er feil utformet. Sjekk skriptet og løs eventuelle feil.
+Påminnelse for skråstrek-kommandoene
+Utfører en ekstern prosess
+Utfører prosessen uten å avbryte skalltråden. Et eget vindu vil bli opprettet.
+Finner tilgjengelige kommandoer i gjeldende skalltype
+Viser mod-kommandoer
+Viser alias kommandoer
+Viser enhetlige kommandoer
+Viser kommandoer for kjernetillegg
+Viser alle kommandoer
+Bruker forenklet hjelp
+Laster inn skallhistorier
+Gjentar den siste handlingen eller den angitte kommandoen
+Lagrer skallhistorier
+Viser et tilfeldig kjernespiss
+Skjell kan ikke starte med mindre morskallet har startet.
+Kunne ikke forsøke å initialisere skallet
+Feil i administrativt skall: {0}
+Kjerneargumenter hjelpesystem
+Skriver ut oppstartsloggen
+Henter gjeldende kjernejournallogg
+Lister opp brukerne
+Lagrer de siste varslene
+Manipulerer med brukerens hovedflagg
+Henter brukerinformasjonen
+Endrer det foretrukne brukerspråket
+Du må aktivere feilsøkingsmodus før du kan bruke feilsøkingsskallet.
+Får nåværende tilbakesporing
+Får melding fra kjerneunntakstype. Nyttig for feilsøking
+Får en feltverdi
+Får en eiendomsverdi
+Viser alle tilgjengelige tillegg
+Viser alle tilgjengelige felt fra det angitte tillegget
+Viser alle tilgjengelige funksjoner fra det angitte tillegget
+Viser alle tilgjengelige egenskaper fra det angitte tillegget
+Viser alle basistilleggene og deres status
+Viser alle tilgjengelige offentlige felt
+Undertrykker feilmeldingene
+Viser alle tilgjengelige offentlige eiendommer
+Viser alle tilgjengelige skjell
+Forhåndsviser spruten
+Angir om funksjonen for viktige meldinger skal testes på splash
+Spesifiserer velkomstskjermkonteksten
+Legger til en ny byte til den angitte posisjonen
+Åpner den interaktive hex-editoren TUI
+Åpner den interaktive editoren
+Legger til grupper
+Legger brukere til en gruppe
+Administrativt skall
+Piper fra konsollen
+Gi nytt navn til gruppe med filer til valgt format
+Skriver ut linjenumrene ved siden av innholdet
+Skriver kun ut innholdet
+Tving behandling av binære filer som ren tekst
+Henter gjeldende katalog
+Hva er nytt i denne versjonen av Nitrocid?
+Kontrollerer filen eller mappelåsen
+Venter til filen eller mappen er låst opp
+Bytter språk
+Endrer brukerspråket i stedet for systemspråket
+En linje valg stil
+To linjers valg stil
+Moderne valg stil
+Utgangen kan bare være ett tegn
+Utdataene kan være mer enn et tegn
+Kombinerer de to tekstfilene eller flere inn i konsollen.
+Sammenligner mellom de to tekstfilene.
+Konverterer linjeavslutningene til Windows-formatet
+Konverterer linjeavslutningene til Unix-formatet
+Konverterer linjeavslutningene til Mac OS 9-formatet
+Tvinger linjesluttkonverteringen
+Viser bare datoen
+Viser bare tiden
+Bruker UTC i stedet for lokalt
+Starter feilsøkingsskallet
+Dekoder den kodede filen
+Angir nøkkelen
+Spesifiserer initialiseringsvektoren
+Dekoder den kodede teksten
+Dekoder teksten fra BASE64-representasjonen
+Gir informasjon om en disk
+Administrer driverne dine
+Skriver ut teksten som den er uten plassholderparsing
+Redigerer en fil
+Tvinger frem tekstmodus
+Tvinger hex-modus
+Tvinger JSON-modus
+Tvinger frem SQL-modus
+Koder filen
+Koder teksten
+Koder teksten til en BASE64-representasjon
+Søker etter en fil rekursivt
+Utfører en kommando på en fil
+Finner en fil i den angitte katalogen eller i gjeldende katalog ved hjelp av regulære uttrykk
+Gaffeler UESH-skallet for å lage en annen forekomst
+Angir utdatabanen
+Henter alle tilleggene fra den offisielle nedlastingssiden og installerer dem
+Installerer tilleggene på nytt
+Henter alle utvidelsesbehandlere fra alle utvidelser
+Henter en konfigurasjonsvariabel og dens verdi
+Henter standard utvidelsesbehandler fra den angitte utvidelsen
+Henter standard utvidelsesbehandlere fra alle utvidelsene
+Henter utvidelsesbehandlerne fra den angitte utvidelsen
+Henter nøkkelen og initialiseringsvektoren for symmetrisk koding
+Henter gjeldende vertsnavn
+Interaktiv systemvertsfilbehandling
+Lar brukeren angi inndata som passord
+Viser lisensinformasjon for kjernen
+Sjekker et UESH-skript for syntaksfeil
+Viser en mappe rekursivt
+Viser en mappe ved hjelp av treskjemaet
+Viser alle tilgjengelige konfigurasjoner
+Dype detaljer om alle konfigurasjoner, inkludert deres oppføringer
+Viser alle konfigurasjonsvariabler og deres verdier
+Viser alle tilgjengelige tilkoblinger
+Viser tilgjengelige utvidelsesbehandlere
+Viser alle diskpartisjonene
+Viser alle diskene
+Viser online nettverksenheter
+Gir informasjon om en partisjon fra den angitte disken
+Finner et gitt filnavn fra baneoppslagskataloger
+Administrer tillatelser for grupper
+Angir antall ganger å pinge
+Henter gjeldende plattform
+Viser plattformnavnet
+Viser plattformversjonen
+Viser plattformbitene
+Viser .NET-plattformversjonen
+Viser .NET-plattformens kjøretidsidentifikator
+Starter kjernen på nytt
+Starter kjernen på nytt til sikker modus.
+Starter kjernen på nytt til vedlikeholdsmodus.
+Starter kjernen på nytt til feilsøkingsmodus.
+Fjerner en fil eller en katalog sikkert
+Fjerner en gruppe fra listen
+Fjerner en bruker fra gruppen
+Lagrer gjeldende kjernekonfigurasjon i filen
+Gir deg muligheten til å velge skjermspareren du vil prøve
+Åpner innstillingene for tilleggsskjermsparer
+Åpner driverinnstillingene
+Åpner de egendefinerte innstillingene
+Setter en konfigurasjonsvariabel til en spesifisert verdi
+Angir standard utvidelsesbehandler for den angitte utvidelsen til den spesifikke implementeren
+Åpner en interaktiv TUI der du vil kunne se verdensklokken i sanntid
+Sover i spesifiserte millisekunder
+Kjører kommandoen som root-bruker
+Beregner tekstsummer.
+Oppretter en symbolsk lenke til en fil eller en mappe
+Viser systeminformasjonen
+Viser maskinvareinformasjon
+Viser brukerinformasjonen
+Viser dagens budskap
+Viser meldingen for dagen etter pålogging
+Viser all informasjon
+Oppgaveleder
+Forhåndsviser et tema
+Velger et tema og setter det
+Sett straks temaet på valg
+Fjerner en variabel fra UESH-variabellisten
+Bare tørker variabelverdien uten å fjerne den
+Viser kjernens oppetid
+Viser de to nyttige URL-ene for manuell.
+Henter gjeldende versjon
+Viser kjernemodens API-versjon
+Viser kjerneversjonen
+Henter gjeldende brukernavn
+Pakker tekstfilen
+Angir kolonnene per linje
+Du kan logge inn på disse kontoene:
+Nyt dagen
+Feil ved forsøk på å angi MAL: {0}
+Feil ved forsøk på å få MAL: {0}
+Meldingen fra dagen etter pålogging er kanskje ikke null.
+Velkommen til Nitrocid Kernel!
+Feil ved forsøk på å angi MOTD: {0}
+Feil ved forsøk på å få MOTD: {0}
+Dagens budskap er kanskje ikke null.
+Trykk på hvilken som helst bokstav på tastaturet for å angi det tegnet.
+Skriv et flyttallnummer i ledeteksten nedenfor. Pass på at dette nummeret har dette formatet
+Skriv et naturlig tall i ledeteksten nedenfor.
+Behold den
+Fjern den
+Legg til nytt element
+Hva vil du gjøre med denne gjenstanden?
+Angi en verdi for det nye elementet
+Ugyldig handling er valgt.
+Skriv hvilken som helst tekst du vil bruke. Husk å følge beskrivelsen av alternativet du har valgt.
+Registrerer navnet ditt til den eksterne feilsøkingsenheten
+Kobler fra den eksterne debuggeren
+Demper eller slår på kjerneloggene
+Det var ikke nok argumenter. Se nedenfor for bruk:
+>> Ekstern chat: versjon
+>> Velkommen! Dette er første gang du går inn i ekstern chat. I den eksterne debuggeren, bruk "/register <navn>" for å registrere. Du kan ikke snakke før du har registrert deg.
+Hvor mange millisekunder tok det egentlig å sove i bare ett millisekund?
+Hvor mange flått tok det egentlig å sove i bare ett millisekund?
+Tester å endre språket til ditt foretrukne språk
+Velg ditt språk
+Skriv en oversettbar streng for å sjekke:
+Skriv en oversettbar strenglistefilbane for å sjekke:
+Tester det interaktive TUI-systemet med en interaksjon med dobbel rute
+Tester det interaktive TUI-systemet med en enkelt ruteinteraksjon
+Tester det interaktive TUI-systemet med en enkelt ruteinteraksjon og med å oppdatere informasjonen om den andre ruten
+Skriv et fargetall fra 1 til 255:
+Aktiverer feilsøkeren
+Tidligere verdi
+Gjeldende verdi
+Avviser alle sendte varsler
+Aktiverer varslingssystemet
+Tester kjerneoppdateringsfunksjonaliteten
+Er kjernen oppdatert?
+Sjekker tilkoblingen til Internett
+Internett tilgjengelighet er
+Tester underkjernetråden
+Tester kjernetråden
+Skriv et søkeord:
+Sjekker nettverkstilkoblingen
+Nettverkstilgjengelighet er
+Skriv ut en streng til konsollen
+Skriv ut en streng for å feilsøke
+Skriv ut en streng for å feilsøke med formatering
+Skriv ut en streng til konsoll med formatering
+Skriv ut en streng til konsollen med utheving
+Skriv ut en skilletegn til konsollen
+Skriv ut en skilletegn til konsoll med formatering
+Skriv ut en streng til konsoll med nye linjer i streng
+Skriv ut en streng til konsoll med null-tegn
+Aktiverer den eksterne debuggeren
+Testvarsling
+Beskrivelse er her
+Varsling om testfremdrift
+Sender et mislykket fremdriftsvarsel for å teste mottakeren
+Test mislykket varsling
+Test ubestemt varsling
+Sender et varsel som stjerne for å teste mottakeren
+Test enkel varsling
+Tester argumenter
+Tester den kryptografisk sikre tilfeldige tallgeneratoren
+Returnerte tall:
+Tester en hendelse
+Skriv et hendelsesnavn:
+Skriv en bane til monteringsfilen:
+Tester filvelgeren
+Du har valgt
+Tester velgeren for flere filer
+Tester mappevelgeren
+Tester velgeren for flere mapper
+Tester knappene i informasjonsboksen
+Tester den fargede inndataboksen i informasjonsboksen
+Tester inndataboksen i informasjonsboksen
+Tester inndatamultippelvalgstilen i informasjonsboksen
+Tester inndatavalgstilen i informasjonsboksen
+Tester stilen for flervalg for input
+Tester stilen for valg av inngang
+Tester listeoppføringsforfatteren
+Innrykk 1:
+Innrykk 2:
+Tester fremdriftsbehandleren
+Initialiserer...
+Skriv en streng for å sjekke:
+Skriv et regulært uttrykk:
+Tester tilfeldig tallgenerator
+Tester skjermfunksjonen for konsollen
+Skjermen kunne ikke gjengis:
+Tester brytere
+Plassholderen er kanskje ikke null
+Plassholderhandlingen er kanskje ikke null
+Plassholder er ikke registrert
+Plassholder må tilfredsstille dette formatet
+Tilstanden må plasseres til slutt.
+Kan ikke registrere en tilstand som allerede eksisterer.
+Kan ikke registrere en tom tilstand.
+Kan ikke avregistrere en tilstand som ikke eksisterer.
+Ingen kommandoer funnet.
+Ugyldig antall ganger.
+Kan ikke gjenta seg selv.
+Sesjonsnummeret er ugyldig.
+Den angitte hovedflaggtypen er ugyldig
+Fullt navn satt til {0}. Det kan være lurt å logge på igjen.
+Det fulle navnet er tomt.
+Grunnleggende brukerinformasjon
+Foretrukket språk
+Flagg
+Tillatelser
+Grupper
+Foretrukket brukerspråk er satt til {0}. Det kan være lurt å logge på igjen.
+Administrator Shell
+Ingen slik unntakstype
+Unntakstypenavn
+Beskjed
+Feltinfo for
+Verdi
+Kunne ikke hente feltinformasjon for
+Eiendomsinformasjon for
+Kunne ikke hente eiendomsinformasjon for
+Trykket nøkkeltegnkode
+Liste over felt for
+Liste over funksjoner for
+Liste over eiendommer for
+Liste over tillegg
+Liste over basistillegg
+Liste over skjell
+Splash-konteksten er ikke gyldig
+Tilgjengelige sprut:
+Denne kommandoen støttes ikke på Windows.
+Debug Shell
+Spesifisert bytenummer {0} er ikke et gyldig nummer.
+Oppretter gruppe {0}...
+Legger til brukeren {0} i gruppen {1}...
+Du kan nå kjøre '{0}' som '{1}'!
+Filen eller mappen er allerede i bruk.
+Venter til filen eller mappen er låst opp...
+Fil eller mappe er ikke i bruk.
+Det kan hende du må logge av og på igjen for at endringer skal tre i kraft.
+Endrer MAL...
+Endrer MOTD...
+Passord stemmer ikke.
+Kan ikke kombinere en blanding av tekst og binære filer.
+Kildefilen eksisterer ikke.
+Målfilen eksisterer ikke.
+De to filene er identiske.
+De to filene er forskjellige.
+Forskjellig
+Kan ikke konvertere linjeavslutninger på en binær fil siden det resulterer i filkorrupsjon.
+Sjåføren ble ikke funnet.
+Drivere for
+Førernavn
+Drivertypenavn
+Drivertype
+Driveradministrasjon er deaktivert i sikker modus.
+Kan ikke redigere filen {0} fordi den ikke ble funnet.
+Nøkkel brukt
+Initialiseringsvektor brukt
+.NET-monteringsinformasjon
+Filen er ikke en gyldig .NET-sammenstilling.
+Ekstra info
+Noen eller alle tilleggene dine er installert. Hvis du ønsker å installere dem på nytt, bruk bryteren -reinstall.
+Henter tilleggspakken ...
+Kunne ikke hente tilleggspakken
+Laster ned tilleggspakken...
+Kunne ikke laste ned tilleggspakken
+Installerer tilleggspakken ...
+Kunne ikke installere tilleggspakken
+Forlengelse
+Forlengelsesbehandler
+Nøkkelnavn
+Nøkkelbeskrivelse
+Nøkkeltype
+Nøkkelvariabel
+Finner ikke nøkkel.
+Konfigurasjon ikke funnet.
+Tilgjengelige konfigurasjonstyper
+Ingen slik utvidelse.
+Standard utvidelsesbehandler
+Bare symmetriske kodingsalgoritmer som bruker både nøkkelen og initialiseringsvektoren støttes.
+Script lint lyktes.
+Feil i skriptet. Mest sannsynlig er det en syntaksfeil. Sjekk skriptet for feil og prøv å kjøre linteren på nytt.
+Script linter mislyktes uventet ved å prøve å analysere skriptet ditt.
+Info for
+Påmeldinger teller
+Oppføringsnavn
+Viser som
+Beskrivelse
+Nøkler teller
+Bruk {0}-kommandoen for å få de individuelle nøklene
+Konfigurasjonsvariabler for
+Tilkoblinger for type
+Forekomst
+Utvidelsesbehandlerinformasjon for
+Handler implementer
+Behandler metadata
+Inneholder handlerfunksjon
+Inneholder infobehandlerfunksjon
+Ukjent vert
+Fil funnet i banen:
+Filen ble ikke funnet i baneoppslagskataloger.
+Ingen slik tillatelse
+Ingen slik tillatelsesmodus
+Gruppen {0} er fjernet.
+Fjernet {0} fra gruppen {1}.
+Tilgjengelige skjermsparere:
+Søket i {0} etter {1} mislyktes.
+Du må sende -set-bryteren med variabelen du vil sette denne verdien til.
+hvor spareren vil være
+For å få flere skjermsparere, installer skjermsparerpakken-tillegget.
+For å få flere sprut, installer splash pack-tillegget.
+Du kan bruke typebryteren til å åpne følgende innstillinger
+Grunninnstillinger
+Egendefinerte innstillinger
+Du er allerede en superbruker!
+Kunne ikke utføre kommandoen som superbruker.
+Kan ikke lage en symbolsk kobling.
+Kjerneinnstillinger
+Kjerneversjon:
+Feilsøkingsmodus:
+Kjører på vanlige miljøer:
+Sikker modus:
+Maskinvareinnstillinger
+Bruk "hwinfo" for utvidet informasjon om maskinvare.
+Brukerinnstillinger
+Nåværende brukernavn:
+Nåværende vertsnavn:
+Tilgjengelige brukernavn:
+Velg en kategori
+Tilbake
+Utløpt
+Tilgjengelig
+Velg et tema
+Vil du angi dette temaet?
+For å få tilgang til brukermanualen for generell bruk av Nitrocid, vennligst besøk lenken nedenfor:
+For å få tilgang til utviklerhåndboken for oppdaterte måter å gjøre kjernemodifikasjoner og skjermsparere på, vennligst besøk lenken nedenfor:
+Du kjører allerede den forhøyede Nitrocid-økten!
+Øk Nitrocid-økten din...
+Denne kommandoen er utilgjengelig for plattformen din.
+Ugyldig antall kolonner.
+Slå av
+Start på nytt
+Logg inn
+Velg en brukerkonto du vil logge på med.
+Skriv inn passordet for brukeren
+Feil passord for bruker.
+Vellykket registrert! Hei, {0}!
+Ingen ekstern debug-kommandobeskrivelse
+Datatypen {0} spesifisert er ugyldig.
+Oppgitt plattform {0} er ugyldig.
+Rykker du feil hest?
+Starter Hangman-spillet
+En feil bokstav og du er hengt!
+Test hangman-ferdighetene dine ved å kaste en tilfeldig bokstav.
+Du er et romskip og meteorene kommer for å ødelegge deg. Kan du unngå dem?
+Får et tilfeldig tilbud
+Russisk rulett
+To romskip er i kamp med hverandre. Ett skudd og romskipet vil blåse. Dette er et lokalt tospillerspill.
+Wordle-spillsimulatoren
+Spill Wordle-spillet opprinnelig
+Til minne om 5-årsjubileet for kjerneutgivelsen
+Åpner arkivfilen til arkivskallet
+Henter alle tekstlinjer fra sangtekstfilen
+Spiller av en tekstfil
+Spiller en lyd
+Legger til en alarm for å varsle deg når koppen te eller kaffe er klar.
+Avbryter en alarm som varsler deg når koppen te eller kaffe er klar.
+Vis informasjon om den imaginære tallformelen spesifisert av et spesifisert reelt og imaginært tall
+Kalender-, hendelses- og påminnelsesbehandling
+Kalendertype å jobbe med
+Bruk den tabellbaserte kalendervisningen
+Administrerer kontaktene dine
+Får tilbakespor for alle tråder
+Viser deg en fullskjermsoversikt over en valgt dock-visning for å kunne bruke den som et infopanel
+Git skall
+Får informasjon om nettradiostasjonen din
+Viser forskjellen mellom to JSON-filer
+Lager et nytt språk
+Åpner IMAP-e-postklienten
+Åpner POP3-e-postklienten
+POP3-post kommer tilbake fra 0.0.20.0, men vi planlegger foreløpig ikke å gi den ut i denne versjonen. Vent på neste versjon.
+Fornavnsøker
+Generer navn ved å bruke listen over mannlige navn
+Generer navn ved å bruke kvinnenavnlisten
+Generer navn ved å bruke den enhetlige navnelisten
+Etternavn finner
+Legger til et notat
+Fjerner et notat
+Fjerner alle notater
+Viser alle notater
+Lagrer alle notater
+Laster alle notater på nytt
+Notes viewer TUI
+Skriv inn RSS-feedens URL
+Feil ved forsøk på å analysere adressen. Sørg for at du har skrevet adressen riktig.
+Åpner en interaktiv RSS-feedleser TUI
+Får gjeldende dato og klokkeslett
+at du kan utføre prosesskommandoer på to måter: skrive inn det kjørbare filnavnet direkte, og bruke 'exec'-kommandoen?
+at du kan låse skjermen ved å bruke 'låseskjerm'-kommandoen?
+at du kan bygge dine egne kjernemodifikasjoner ved hjelp av C# og Visual Basic?
+at du kan bruke flere kommandoer ved å bruke semikolon mellom kommandoene?
+at du kan unnslippe doble anførselstegn inne i de siterte argumentene når du utfører kommandoer?
+at du kan endre kjerneinnstillingene ved å bruke 'innstillinger'-kommandoen?
+at du kan lagre skjermen ved å bruke 'savescreen'-kommandoen?
+at du kan rapportere feil til oss ved å gå til Nitrocids GitHub-prosjektside?
+at du kan lage en snarvei til ønsket kommando ved å bruke 'alias'-kommandoen?
+at du kan bygge din egen splash-skjerm ved hjelp av C# og Visual Basic?
+at du kan installere ekstra tillegg for å gjøre kjernen mer nyttig og morsom?
+at du kan lage dine egne fantastiske temaer ved å bruke 'mktheme'-kommandoen?
+at du kan endre kjernefargene dine enten ved å bruke 'innstillinger'-kommandoen eller ved å bruke et av de forhåndsbygde temaene?
+at du kan tilbakestille kjernen til fabrikkinnstillingene ved å bruke 'reset'-argumentet?
+at du kan få tilgang til vår omfattende dokumentasjon på vår GitBook-side?
+at langtidsutgivelser støttes i fem år for hovedstøtte, og tre år for sikkerhetsoppdateringer?
+at 0.0.1 var den aller første versjonen av Nitrocid KS som ble utgitt 22. februar 2018?
+at 0.0.24.x-serien var den eneste versjonsserien som inneholdt API v2.1-versjonen?
+at korttidsutgivelser støttes i bare ni måneder?
+at 0.1.x-serien er bakover-inkompatibel med 0.0.24.x-serien eller eldre?
+at du kan kjøre Nitrocid KS på Linux, macOS og Android?
+at du kan referere til API-dokumentasjonen for å hjelpe deg med å lage dine mods?
+at du kan få flere av de fantastiske spillene, som Hangman og ShipDuet, ved å installere de ekstra tilleggene?
+at hvis du krasjer med en rød meteorstorm, krasjer romskipet ditt i Meteor?
+at du kan konvertere kjernen til informasjonssentre ved å bruke dokkingfunksjonen?
+at du kan lage brukergrupper for å organisere brukerkontoer?
+at hvis du er medlem av en gruppe som gir visse tillatelser, har du lov til å utføre slike operasjoner?
+at du kan endre kjernens tidssone uten å påvirke vertssystemet ditt?
+at du kan bruke den interaktive tekst- og hex-editoren for å spare tid?
+at den eldste teksteditoren som er kjent for å jobbe med det første Unix-systemet er ed, den tidligste teksteditoren som ble utgitt i 1973 og ble levert med Unix-systemet funnet på en PDP-7 hos AT&T Bell Labs?
+at du også kan tvinge redigeringskommandoen til å starte redigeringsprogrammet i en bestemt type?
+at den interaktive teksteditoren forsøker å simulere de mest grunnleggende funksjonene til de mest populære Unix-tekstredigererne, vi og vim?
+at med mindre du vet hva du gjør med den binære filen, vil redigering av en slik fil på denne måten føre til datakorrupsjon eller tap av data i målfilen?
+at på Linux-systemer initieres skallet ved hjelp av både påloggingsbehandleren og systeminitialiseringsprogrammet, vanligvis funnet i /sbin/init?
+at du kan utføre vanlige filoperasjoner, som kopiering, flytting, sletting, redigering og så videre?
+at den interaktive TUI-en til en filbehandler simulerer funksjonaliteten til Midnight Commander?
+at hvis kjernen krasjer, lager den vanligvis en dumpfil?
+at du kan diagnostisere kjernen ved å feilsøke den ved å bruke den innebygde feilsøkingsfunksjonen?
+at du kan laste ned og laste opp filer direkte fra UESH-skallet?
+at kjernen kan oversettes selv på stadier før oppstart ved å starte den opp med 'lang'-argumentet?
+at du kan bygge dine egne skjermsparere ved å registrere dem i din mod?
+at den første skjermspareren som gjorde skjermen blank etter tre minutters inaktivitet på de originale IBM-PC-ene, scrnsave, ble opprettet i 1983 av John Socha?
+at noen av de raske skjermsparerne kan forårsake lysfølsomme anfall?
+at kjernejournaler brukes som oppstarts- og avslutningslogger?
+at modsene dine nå kan bli oversettbare?
+at modsene dine kan kommunisere med kjernetillegg og andre mods, skape en slags kommunikasjon og oppnå interoperabilitet?
+at du kan koble til den eksterne debuggeren og, valgfritt, til chat-serveren?
+at du kan bruke feilsøkingsskallet, som kun er tilgjengelig for utviklingsversjoner?
+at dine mods nå kan ha sin egen konfigurasjon ved å registrere de tilknyttede klasser?
+at dine mods kan registrere sine egne skall?
+at modsene dine kan legge til kommandoer til de eksisterende skallene for å øke mengden kommandoer som kan brukes?
+at kommandoklassene dine nøyaktig kan representere beståtte argumenter og brytere?
+at du kan forespørre beståtte brytere ved å bruke bryteradministrasjonsklassene som finnes i kjerne-APIet?
+at UESH inkluderer skriptfunksjonalitet for å gjøre det lettere å lage og kjøre skript?
+at skallet inkluderer funksjonalitet for å hindre kansellering for aktive applikasjoner?
+at Nitrocid er dypt integrert med Terminaux for å tillate raskere og bedre gjengivelse?
+at du nå kan endre størrelsen på de interaktive applikasjonene uten å bekymre deg for at utdataene blir ødelagt?
+at det er kommandoer som ber om brukerinndata, som er nyttige for skript?
+at du kan presentere brukerinndataspørsmålet ditt på flere måter, som valg, tabell, enkel, utvalg og så videre?
+at du kan plassere plassholderne til teksten din som støtter dem?
+at du kan bruke forskjellige kjernedrivere for å endre hvordan en spesifikk operasjon fungerer?
+at du kan lage dine egne skjermsparere og sprut i C# eller Visual Basic?
+at du kan spørre vertssystemet og terminalemulatoren ved å bruke kjerneplattformklassen?
+at du kan be om personvernsamtykke før du gjør noe sensitivt i moden din?
+at du kan slå av varsler ved hjelp av Ikke forstyrr-funksjonen?
+at du kan lagre varslingshistorikk ved å bruke en funksjon som finnes i varslingsbehandlingen?
+at du kan endre hvordan tilfeldige tall genereres ved å endre driver?
+at diverse API-er gir nyttige funksjoner for modsene dine?
+Å gjøre oppgavebehandling
+Viser alle tilgjengelige enheter
+Bruk TUI-versjonen av enhetsomformeren
+Til minne om 5-årsjubileet for kjernen
+Første utgivelse noensinne
+Denne kjernen ble først utgitt 22. februar 2018 for å lage en minimalistisk simulator som faktisk simulerer hvordan kjernen i kjernen fungerer.
+Det pleide bare å være vert for ett skall, og noen få kommandoer, og det fungerte bare med Windows på grunn av bruken av Windows Management Instrumentation-verktøyet.
+Den hadde heller ikke egen dokumentasjon.
+Kjerneraffinering
+Versjoner av kjernen ble utgitt, for eksempel den andre store utgivelsen for å legge til farger og grunnleggende funksjoner, og den fjerde store utgivelsen for å legge til konfigurasjon.
+Dokumentasjonen startet på den sjette store utgivelsen, og forskjellige fine ting har sakte blitt lagt til kjernen.
+Gjeldende versjon
+Denne versjonen avgrenser nå kjernen til det punktet at den ikke lenger oppfører seg som de gamle versjonene.
+Fordi de nye banebrytende funksjonene ble sluppet, bestemte vi oss for å navngi denne kjernen...
+Gratulerer med 5-årsdagen!
+Kan ikke hente ut noe.
+Arkiv er ikke skrivbart fordi type er
+Sørg for å spesifisere banen til en LRC-fil.
+Kan ikke spille av lyd fordi filen ikke ble funnet.
+Åpnet musikkfilen.
+Kan ikke åpne musikkfilen.
+Kan ikke spille av lyd på grunn av tidsavbrudd.
+Ukjent artist
+Ukjent sjanger
+Navn
+Artist
+Sjanger
+Varighet
+Trykk 'q' for å stoppe avspillingen.
+Kan ikke spille av lyd.
+Spiller nå
+Tittel
+Amerikansk kaffe
+Rød te
+Grønn te
+Ingen koffeinvarsler om abort.
+Sekundene når koppen din er klar er ugyldige.
+Hvis du prøver å oppgi navnet på drinken, sjekk ut listen nedenfor:
+Koppen din er nå klar!
+Det reelle tallet er ikke gyldig.
+Det imaginære tallet er ikke gyldig.
+Formel:
+Radius:
+Real til Radius i Radians:
+Imaginary to Radius in Radians:
+Vinkel i radianer:
+Eksponentiell:
+Trekantet:
+Arrangementer...
+Påminnelser...
+Den interaktive kalenderen mislyktes:
+Arrangementer og påminnelser for
+Lang form
+Kalendertype
+Fant ingen påminnelser for den valgte måneden
+Ingen hendelser funnet for den valgte måneden
+Cyan nivå:
+Magenta nivå:
+Gult nivå:
+Farge:
+Metning:
+Verdi:
+Gul fargenivå:
+Luma:
+I fase:
+Kvadratur:
+U-Chroma:
+V-Chroma:
+Kan ikke åpne filen '{0}' fordi den ikke ble funnet.
+Importerte kontakter.
+Kan ikke åpne filen '{0}' fordi kortfilen er ugyldig.
+Kontaktfilen eksisterer ikke.
+kontakter funnet
+Kontaktfilen er ugyldig.
+MeCard-syntaksen kan ikke være tom.
+Enten har den oppgitte kontaktfilen ikke informasjon om noen kontakt eller er ugyldig.
+Kunne ikke analysere kontakter. Se feildetaljene for mer informasjon.
+Kontaktindeksen er utenfor rekkevidde. Maksimal indeks er {0} mens oppgitt indeks er {1}.
+Det er ingen kontakter å få.
+Det er ingen kontakter å søke etter.
+Regeluttrykk er ugyldig.
+Vi tror at du kjører Windows 8 eller lavere. Denne operasjonen støttes ikke.
+Trådstabelsporingsinformasjon for {0}
+Ikke en Nitrocid KS-tråd
+Det er ingen dokkingskjerm med dette navnet.
+Det er ingen skjermdokking med dette navnet.
+Det er ingen skjermdokk.
+Skjermdokken har krasjet
+Leser innholdet i en ekstern fil til konsollen
+Går ut av skallet uten å koble fra
+Pass på at du angir porten riktig.
+Mer enn én profil funnet. Velg en:
+Depot ikke spesifisert. Går ut av skallet...
+Kunne ikke åpne depotet. Går ut av skallet...
+Henter listen over endringer i en fil linje for linje
+Sjekker ut en gren
+Forplikter seg
+Beskriver en forpliktelse
+Viser en forskjell mellom gjeldende commit og de lokale filene
+Viser en forskjell mellom gjeldende commit og de lokale filene etter innholdet i en patch hunk-form
+Viser en forskjell mellom gjeldende commit og de lokale filene ved deres eksistens
+Viser en forskjell mellom gjeldende commit og de lokale filene ved deres eksistens og etter innholdet
+Henter alle oppdateringer fra en fjernkontroll
+Henter filstatus
+Får en enkel depotinformasjon
+Viser alle grener
+Viser alle forpliktelser
+Viser alle fjernkontroller
+Viser alle tagger
+Lager en tag fra HEAD
+Henter alle oppdateringer fra serveren
+Sender alle oppdateringer til serveren
+Tilbakestiller det lokale depotet
+Utfører en myk tilbakestilling
+Gjør en blandet tilbakestilling
+Utfører en hard tilbakestilling
+Setter opp identiteten din
+Iscenesetter en endring
+Iscenesetter alle endringer
+Depotstatus
+Unstages en endring
+Fjerner alle endringer
+Legger til en overskrift med nøkkelen og verdien til alle kommende forespørsler
+Henter gjeldende brukeragent
+Redigerer en tast på overskriften til alle kommende forespørsler
+Viser forespørselshodene
+Setter filen til HTTP-serveren ved å bruke den angitte forespørselen
+Setter strengen til HTTP-serveren ved å bruke den angitte forespørselen
+Sender filen til HTTP-serveren ved å bruke den angitte forespørselen
+Poster strengen til HTTP-serveren ved å bruke den angitte forespørselen
+Fjerner en nøkkel på overskriften til alle kommende forespørsler
+Angir en brukeragent
+Legger til overskrift som allerede eksisterer.
+Fjerner overskrift som ikke eksisterer.
+Redigering av overskrift som ikke eksisterer.
+Portnummeret for nettradioen din er ugyldig.
+Full URL
+Nåværende lyttere
+Topplyttere
+Strømmer
+Aktive strømmer
+Stream info for ID
+Sti
+Spiller nå
+Oppetid
+Legger til en ny matrise, objekt eller egenskap
+Angir den overordnede banen
+Angir typen
+Angir egenskapsnavnet som skal opprettes med. Dette brukes hvis den overordnede banen er et objekt.
+Sletter JSON-filen
+Finner en eiendom
+Angir den overordnede egenskapen
+Viser informasjon om JSON-filen
+Ikke vis individuelle egenskaper
+Vis alle verdier
+Fjerner et målobjekt
+Forskjønnet JSON
+Forminsket JSON
+Angir en verdi til en eksisterende matrise, objekt eller egenskap
+Åpner JSON-filen i den interaktive editoren
+Tokenet inne i JSON-filen ble ikke funnet.
+Det overordnede tokenet ble ikke funnet. Kontroller at du har skrevet banen '{0}' riktig.
+Den angitte typen '{0}' er ugyldig.
+Kan ikke legge til et nytt element med egenskapsnavnet med den overordnede tokentypen '{0}'.
+Kan ikke legge til et nytt element med egenskapsnavnet «{0}» med den overordnede tokentypen «{1}».
+Egenskapsnavnet '{0}' i overordnet '{1}', skriv '{2}', finnes ikke
+Grunnfilen for engelske strenger eksisterer ikke. Vil du lage en tom en? Eller vil du bruke Nitrocids engelske strenger?
+Ingen gyldig språk er spesifisert.
+Velkommen til språkstudioet!
+Ny streng
+Fjern strengen
+Lagre oversettelser
+Velg en streng for å oversette:
+Skriv inn en ny streng
+Velg en streng som skal fjernes:
+Lagrer språk...
+Velg språk
+Velg et språk for å oversette denne strengen til:
+Skriv din oversettelse av
+Seddel-ID må være et seddelnummer
+Denne lappen er tom
+Kan ikke fjerne et ikke-eksisterende notat
+Søker i feeden etter en setning i tittel og/eller beskrivelse
+Søk etter tittel
+Søk etter beskrivelse
+Søk etter tittel og beskrivelse
+Søk etter store og små bokstaver
+Kunne ikke analysere feed-URL:
+Ingen beskrivelse
+Viser detaljene for filene og mappene
+Undertrykker "uautoriserte" meldinger
+Angi plasseringen av den private nøkkelen for {0}. Skriv "q" for å fullføre å legge til nøkler:
+Prøver å koble til {0}...
+Utfører en SQL-spørring
+Database info
+Åpner SQL-filen i den interaktive hex-editoren TUI
+Last inn tema fra fil...
+Spesifiser katalogen som temaet skal lagres i:
+Informasjon for
+Stoppeklokke er klar.
+Stoppeklokke kjører!
+Ny runde!
+Begynn å telle ned
+Ingen slik enhetstype:
+Tilgjengelige enhetstyper:
+enheter å konvertere
+Skriv inn et tall som skal konverteres...
+Du har ikke angitt et tall som skal konverteres.
+Det angitte nummeret er ugyldig.
+Kan ikke konvertere enhet.
+Fortsetter...
+Slutten
+Godt nytt år!
+Vennligst vent mens kjernen initialiseres...
+Vennligst vent mens kjernen slår seg av...
+Ukjent feil!
+Hest
+[ENTER] Start løpet | [ESC] Avslutt | [OPP/NED] Flytt valg
+Hesten din vant løpet!
+Hesten din tapte løpet!
+Du er hengt!
+Du vinner!
+Hva er din innsats?
+Du gjettet riktig!
+Du tok feil.
+Men du er uheldig. Taper.
+Du er heldig! Vinner!
+Det er uavgjort.
+Spiller {0} vinner!
+Nåværende karakter:
+Du gjettet riktig ord! Du vinner!
+Denne arkivtypen støttes ikke.
+Sørg for å spesifisere banen til en katalog som inneholder tekstfilene dine i LRC-formatet. Du kan også angi en egendefinert bane til musikkbiblioteksmappen som inneholder sangtekstfilene.
+Denne tekstfilen eksisterer ikke.
+Kultur finnes ikke.
+Kunne ikke vise kalenderen.
+Kunne ikke legge til en påminnelse.
+Ikke nok argumenter til å legge til en påminnelse.
+Kunne ikke fjerne en påminnelse.
+Ikke nok argumenter til å fjerne en påminnelse.
+Det er ingen hendelse.
+Det er ingen påminnelse.
+Det er ingen kontakt. Hvis du vil importere kontakter, vennligst bruk importalternativene ved å bruke tastetrykkene som er definert nederst på skjermen.
+Noen av kontaktene kan ikke importeres.
+Skriv inn banen til en VCF-fil som inneholder kontakten din. Androids contacts2.db-fil støttes også.
+Filen eksisterer ikke. Sørg for at du har skrevet riktig bane til en VCF-fil eller til en contacts2.db-fil.
+Skriv inn en gyldig MeCard-representasjon av kontakten din.
+Kontakt MeCard-syntaksen er ugyldig.
+Kontakt MeCard-syntaksen er kanskje ikke tom
+Skriv inn regulært uttrykk for å søke i kontaktene.
+Det er ingen kontakter som inneholder det forespurte uttrykket.
+Kontaktnavn
+Ingen kontaktnavn
+Kontaktadresse
+Kontakt mail
+Ingen kontaktpost
+Kontakt organisasjon
+Ingen kontaktorganisasjon
+Kontakt telefon
+Ingen kontakttelefon
+Kontakt URL
+Ingen kontakt-URL
+Kontakt geo
+Ingen kontakt geo
+Kontakt IMPP
+Ingen kontakt IMPP
+Kontaktkallenavn
+Ingen kontaktkallenavn
+Kontaktrolle
+Ingen kontaktrolle
+Kontakttittel
+Ingen kontakttittel
+Kontaktnotater
+Ingen kontaktnotater
+Skriv inn API-nøkkelen din:
+Du kan enten konsultere lenken nedenfor for listen over byer med deres IDer, eller sende "-list" til denne kommandoen.
+Er du sikker på at du vil slette {0}?
+Bruker
+nettsted
+Ingen symbollinkinformasjon
+Modifisert på
+Klandre status for filen
+Hunk nummer
+Antall linjer
+Opprinnelig linjenummer
+Endelig linjenummer
+Innledende forpliktelse
+Forplikte SHA
+Bekreft melding
+Forplikte forfatter
+Forplikte forplikter
+Antall foreldre
+Endelig forpliktelse
+Lagre arbeidet ditt først ved å opprette en commit før du sjekker ut en filial.
+Filial eksisterer ikke.
+Du må identifisere deg selv før du bruker denne kommandoen. Bruk
+å identifisere deg selv.
+Oppdatert repository med ny commit
+Beskrivelse for forpliktelse
+Generelle endringer i
+Innhold endres i
+Fjernkontroll finnes ikke.
+Fant ingen fjernkontroller å hente oppdateringer fra.
+Status for fil
+Bare depot
+Hodet løsnet
+Ingen referanse
+Grunn klon
+Sti til .git
+Veien til arbeidskatalogen
+Forplikter seg for filial
+Laget en ny tag! Her er etikettdetaljene dine:
+Din lokale kopi av repoen er oppdatert!
+Spol videre til
+Oppdatert depot til
+Sammenslåingen din resulterte i konflikter. Vennligst løs noen av konfliktene.
+Du har identifisert deg selv som
+Ingen modifikasjoner er gjort på scenen.
+Iscenesatt fil {0} vellykket!
+Kunne ikke iscenesette filen {0}.
+Status for filial {0}...
+Ingen modifikasjoner gjøres.
+Usporede filer
+Ingen usporede filer.
+Lagt til filer
+Ingen lagt til filer.
+Endrede filer
+Ingen endrede filer.
+Fjernet filer
+Ingen fjernede filer.
+Iscenesatte filer
+Ingen iscenesatte filer.
+Omdøpte iscenesatte filer
+Ingen omdøpte iscenesatte filer.
+Omdøpte filer
+Ingen omdøpte filer.
+Manglende filer
+Ingen mangler filer.
+Ingen modifikasjoner er gjort for å avscenen.
+Utsatt fil {0} vellykket!
+Kunne ikke fjerne filen {0}.
+Legger ut fil {0}...
+Legger inn streng til {0}...
+Laster opp streng til {0}...
+JSON-skallet klarte ikke å legge til et element.
+Eiendom er funnet i
+Eiendommen ble ikke funnet
+Base JSON-tokeninformasjon
+Base type
+Basen har verdier
+Antall barn symboler
+Grunnsti
+Individuell JSON-tokeninformasjon
+Token type
+Token har verdier
+Token bane
+Token verdi
+Eiendomsinformasjon for
+Eiendomstype
+Eiendom teller
+Eiendomsnavn
+Eiendomssti
+Eiendomsverdi
+JSON-skallet klarte ikke å fjerne et element.
+JSON-skallet klarte ikke å angi et element.
+Melding {0} fra {1} er flyttet. {2} meldinger gjenstår å analysere.
+Vedlegg:
+Denne tilkoblingen inneholder en ugyldig RSS-feedforekomst.
+Ukjent artikkeltittel
+Denne artikkelen har dessverre ikke noe innhold. Du kan fortsatt følge artikkelen på
+Denne artikkelen har ingen lenke.
+Kan ikke åpne vertsnettleseren til artikkellenken.
+Endret:
+Angi parameterverdi for {0}:
+SQL-kommandoen lyktes. Her er svarene:
+SQL-kommando mislyktes.
+Databasebane:
+Serverversjon:
+Tilkoblingstilstand:
+Tilkoblingsstreng:
+Databasenavn:
+Kunne ikke legge til eller fjerne en oppgave.
+Vennligst oppgi et navn på oppgaven din.
+Kunne ikke merke en oppgave.
+Denne delen viser driverinnstillingene.
+Innstillinger for kjernedriver
+Gjeldende konsolldriver
+Hvilken konsolldriver vil du bruke?
+Gjeldende driver for tilfeldig tallgenerator
+Hvilken driver for tilfeldig tallgenerator vil du bruke?
+Gjeldende nettverksdriver
+Hvilken nettverksdriver vil du bruke?
+Gjeldende filsystemdriver
+Hvilken filsystemdriver vil du bruke?
+Gjeldende krypteringsdriver
+Hvilken krypteringsdriver vil du bruke?
+Nåværende driver for regulære uttrykk
+Hvilken driver for regulære uttrykk vil du bruke?
+Gjeldende debug logger driver
+Hvilken debug logger driver vil du bruke?
+Gjeldende kodingsdriver
+Hvilken kodingsdriver vil du bruke?
+Nåværende hardware prober driver
+Hvilken hardware prober driver vil du bruke?
+Gjeldende sorteringsdriver
+Hvilken sorteringsdriver vil du bruke?
+Fallende linje med matrisetall.
+Slipp sjansen
+Sjanse til å slippe en ny fallende matrise
+Denne delen viser alle generelle kjerneinnstillinger, hovedsakelig for vedlikehold av kjernen.
+Generelle kjerneinnstillinger
+Språk
+Spesifiserer kjernespråket.
+Kultur
+Piper ved avslutning eller omstart
+Aktiverer pipelyd når kjernen slås av.
+Forsinkelse ved avslutning eller omstart
+Aktiverer forsinkelse ved avslutning av kjernen.
+Konsoll støtter ekte farger
+Hvis du er sikker på at konsollen støtter ekte farger, eller hvis du vil endre terminalen din til en terminal som støtter sann farge, endre denne verdien.
+Sett kodesett
+Still inn språkkodesiden når du bytter språk.
+Utviklingsvarsel erkjent
+Hvis satt til true, vil ikke kjernen vise deg utviklingsvarselet hver gang du starter opp til kjernen i utviklingsversjoner.
+Tillat lasting av uklarerte mods
+Hvis satt til true, vil ikke kjernen feile ut ved lasting av mods som ikke har den signerte offentlige nøkkelen.
+Bruk systemets tidssone
+Hvis dette alternativet er aktivert, bruker kjernen tidssonen fra datamaskininnstillingene. Ellers bruker den kjerneomfattende tidssonen som kan konfigureres.
+Tidssone for hele kjernen
+Tidssonen for hele kjernen som skal brukes
+Vis lisensinformasjonsboksen
+Om boksen for modal lisensinformasjon skal vises i tre sekunder etter hver pålogging. Det anbefales å beholde den på.
+Denne delen lar deg velge hvilken type farge du vil endre.
+Fargeinnstillinger
+Bruk aksentfarger
+Hvis satt til sann, fyller temabehandleren ut aksentfarger for spesifikke fargetyper som temaet støtter.
+Aksentfarge i forgrunnen
+For temaer som støtter aksenter, er dette den fremhevede fargen.
+Bakgrunnsaksentfarge
+For temaer som støtter aksenter, er dette bakgrunnsfargen med aksent.
+Bruk konsollfargepalett
+Når dette er satt til sant, brukes fargepaletten definert av terminalen.
+Tillat bakgrunnsfarge
+Når dette er satt til sant, blir gjeldende bakgrunnsfarge respektert. Ellers bruker den terminalens standardfarger.
+Brukernavn Shell Color
+Vertsnavn Shell Color
+Kontinuerlig kjernefeilfarge
+Ikke-kontinuerlig kjernefeilfarge
+Tekstfarge
+Lisensfarge
+Bakgrunnsfarge
+Inndatafarge
+Listeoppføringsfarge
+Listeverdi Farge
+Kernel Stage Farge
+Feil tekstfarge
+Farge på advarselstekst
+Alternativ Farge
+Bannerfarge
+Varslingstittelfarge
+Varsling Beskrivelse Farge
+Farge på varslingsfremdrift
+Farge på meldingsfeil
+Spørsmålsfarge
+Suksessfarge
+User Dollar Color
+Tips Farge
+Skilletekstfarge
+Separator farge
+Listetittelfarge
+Farge for utviklingsvarsel
+Stage Time Color
+Fremdriftsfarge
+Bakside Alternativ farge
+Lav prioritet kantfarge
+Middels prioritet kantfarge
+Høy prioritet kantfarge
+Bordskillerfarge
+Tabelloverskriftsfarge
+Tabell Verdi Farge
+Valgt alternativ farge
+Alternativ farge
+Helgedag farge
+Farge på begivenhetens dag
+Tabelltittelfarge
+Dagens farge
+Interaktiv TUI bakgrunnsfarge
+Interaktiv TUI forgrunnsfarge
+Interaktiv TUI-rutebakgrunnsfarge
+Interaktiv TUI-ruteseparatorfarge
+Interaktiv TUI valgt ruteseparatorfarge
+Interaktiv TUI-valgt ruteelements forgrunnsfarge
+Interaktiv TUI valgt bakgrunnsfarge på ruteelementet
+Interaktiv TUI-ruteelementets forgrunnsfarge
+Interaktiv TUI-ruteelements bakgrunnsfarge
+Interaktiv TUI-alternativ bakgrunnsfarge
+Interaktiv TUI-alternativ forgrunnsfarge
+Interaktiv TUI alternativ bindende navn farge
+Interaktiv TUI-boks bakgrunnsfarge
+Interaktiv TUI-boks forgrunnsfarge
+Deaktivert alternativ farge
+Denne delen endrer maskinvareprobens virkemåte.
+Denne delen representerer påloggingsinnstillingene. Logg ut av kontoen din for at endringene skal tre i kraft.
+Påloggingsinnstillinger
+Kjernens vertsnavn for å kommunisere med resten av datamaskinene
+Vis tilgjengelige brukernavn
+MOTD-sti
+MAL-sti
+Vis MAL på innlogging
+MOTD og Headline nederst på den moderne påloggingsklokken
+Om du skal vise MOTD og overskriften nederst eller øverst på klokken
+Innloggingsbehandler
+Påloggingsbehandler som skal brukes for påloggingsmeldinger.
+Denne delen viser skallinnstillingene.
+Generelle skallinnstillinger
+Gruppe av stier atskilt med kolon. Det fungerer på samme måte som PATH. Skriv en fullstendig bane til en mappe eller et mappenavn.
+Angi konsolltittel ved kommandoutførelse
+Angir konsolltittel ved kommandoutførelse.
+Vis antall skjell
+Spør forhåndsinnstilling
+Forhåndsinnstilling for tekstredigering
+Forhåndsinnstilling for hex-redigeringsprompt
+Forhåndsinnstilling av adminskall-ledetekst
+Debug Shell Prompt Preset
+Denne delen viser filsysteminnstillingene.
+Filsysteminnstillinger
+Får kommandoen "cat" til å skrive ut filens linjenumre.
+Denne delen viser nettverksinnstillingene, som FTP-skallet, de nettverksrelaterte kommandoinnstillingene og de eksterne feilsøkingsinnstillingene.
+Generelle nettverksinnstillinger
+Feilsøk Chat Port
+Skriv en ekstern debugger chatport. Den må være numerisk, og må ikke være i bruk allerede. Ellers vil ekstern debugger-chat ikke åpne porten.
+Last opp Prøv ganger
+Denne delen viser de generelle skjermsparerinnstillingene. For individuelle skjermsparerinnstillinger, gå ut av Innstillinger og åpne Skjermsparerinnstillinger.
+Grunnleggende skjermsparerinnstillinger
+Skjermsparer
+Hvilken skjermsparer vil du låse skjermen med?
+Aktiver skjermsparerlåsing når inaktiv
+Hvis den er aktivert, starter skjermspareren automatisk etter tomgang i den angitte perioden.
+Minimum tomgangsintervall for skjermsparer
+Bekreft advarselen om lysfølsomme anfall
+Hvis du ikke er lysfølsom for de raske animasjonene som noen av skjermsparerne viser deg, kan du deaktivere denne advarselen ved å aktivere dette alternativet. Vær oppmerksom på at vi ikke er ansvarlige for bivirkningene som kan ha kommet fra slike animasjoner. Oppsøk en profesjonell medisinsk spesialist for mer informasjon.
+Innstillinger som ikke passer i de aktuelle delene lander her.
+Diverse innstillinger
+Et tegn som ligner det øvre høyre hjørnet. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner det nedre høyre hjørnet. Pass på å bare skrive inn ett tegn.
+Viser kommandotellingen i kommandolisten, kontrollert av tellevisningsbryterne for forskjellige typer kommandoer.
+Vis antall skallkommandoer når du oppgir dem i hjelpekommandoen
+Vis antall kjernemodifikasjonskommandoer når du oppgir dem i hjelpekommandoen
+Vis antall aliaskommandoer når du oppgir dem i hjelpekommandoen
+Vis at de enhetlige kommandoene stoler på hjelp
+Vis antallet enhetlige skallkommandoer når du oppgir dem i hjelpekommandoen
+Vis tilleggskommandoer stole på hjelp
+Vis antall kjernetilleggskommandoer når du oppgir dem i hjelpekommandoen
+Aktiver rullefelt i utvalget
+Aktiverer rullefeltet i utvalgsskjermer
+Ikke forstyrr
+Hvis Ikke forstyrr er aktivert, vil alle mottatte varsler bli undertrykt fra skjermen. Dette betyr at du ikke vil kunne se noen varsler for å hjelpe deg med å fokusere.
+Øvre venstre hjørnetegnet for generell kantlinje
+Øvre høyre hjørnetegnet for generell kantlinje
+Tegn i nedre venstre hjørne for generell kantlinje
+Tegn i nedre høyre hjørne for generell kantlinje
+Øvre rammekarakter for generell kant
+Nedre rammekarakter for generell kant
+Venstre rammetegn for generell kantlinje
+Høyre rammekarakter for generell kant
+Sensurer privat informasjon om feilsøkingslogger
+Sensurer privat informasjon som kan skrives ut til feilsøkingsloggene.
+Vis nye varsler som stjerner
+Viser alle nye varsler som stjerner. Dette alternativet ignoreres i varsler med fremdriftslinje.
+Vis filstørrelsen i filbehandlingen
+Om filstørrelsen skal vises i statusen.
+Bruk klassisk stil med overskrifter i Innstillinger-appen
+Dette gir deg muligheten til å bytte til enten det moderne eller det klassiske overskriftsutseendet til innstillingsapplikasjonen.
+Standard figlet-font
+Standard figlet-font for bruk med flere områder av kjernen, inkludert din moderne påloggingsskjerm.
+CPU-bruk feilsøking aktivert
+Hvis aktivert, skriver den ut CPU-bruken mellom de to intervallene som spesifisert i oppdateringsintervallet for CPU-bruksfeilsøking.
+CPU-bruk feilsøkingsoppdateringsintervall
+Hvor mange millisekunder skal vente før du oppdaterer CPU-bruken og skriver den ut til feilsøkeren?
+Et slangespill.
+Viser deg fine kjente sitater.
+Velg din foretrukne vanskelighetsgrad, der 0 er lett, 1 er middels, 2 er vanskelig, 3 er veldig vanskelig og 4 er tilpasset.
+Bruk PowerLine for å gjengi romskip i ShipDuet
+Om du skal bruke PowerLine til å gjengi romskipet eller for å bruke standarden større enn karakter. Hvis du vil bruke PowerLine med ShipDuet, må du installere en passende font med PowerLine-støtte.
+Spillhastighet i ShipDuet
+Denne delen lar deg konfigurere hvordan arkivskallet fungerer.
+Innstillinger for denne skjermspareren er tilgjengelig her.
+Denne delen lar deg konfigurere hvordan BassBoom-tillegget fungerer.
+Lyrics Path
+Angir banen til en mappe som inneholder en gruppe .lrc-filer. Skriv en absolutt bane til enhver eksisterende katalog.
+Denne delen lar deg konfigurere hvordan Kalender fungerer.
+Denne delen lar deg konfigurere hvordan prognosen fungerer.
+Denne delen lar deg konfigurere hvordan FTP-skallet fungerer.
+Denne delen lar deg konfigurere hvordan Git-skallet fungerer.
+Denne delen lar deg konfigurere hvordan HTTP-skallet fungerer.
+Denne delen lar deg konfigurere hvordan JSON-skallet fungerer.
+Forhåndsinnstilling av JSON-skallprompt
+Aktiver automatisk lagring av JSON-editor
+Slår på eller av JSON-redigeringsfunksjonen for automatisk lagring.
+JSON editor autolagringsintervall
+Denne delen lar deg konfigurere hvordan e-postskallet fungerer.
+Maksimalt antall e-poster på én side
+Hvor mange e-postmeldinger skal vises på én side?
+Simulerer et databaseoppslag for en tilfeldig person.
+Denne delen lar deg konfigurere hvordan RSS-skallet fungerer.
+RSS-forespørselsforhåndsinnstilling
+Denne delen lar deg konfigurere hvordan SFTP-skallet fungerer.
+Denne delen lar deg konfigurere hvordan SQL-skallet fungerer.
+Forhåndsinnstilling av SQL Shell-ledetekst
+Denne delen lar deg konfigurere hvordan Tips fungerer.
+Vis kjernetips
+Hvis aktivert, viser skallet deg tipsene ved hver pålogging.
+Det fallende binære tallet på skjermen din.
+Blande farger og skrive dem ut til konsollen.
+Dette er discolyset, en av de aller første skjermsparerne.
+Farge glitrer over skjermen.
+En linje som vandrer rundt konsollen vertikalt.
+Løser opp de tilfeldige fargene.
+Viser deg en fargerik blokk som spretter over konsollen.
+Viser deg tre fremdriftslinjer som representerer tiden.
+Lysblokker.
+Tørker av skjermen med en farge.
+Enkel matrise.
+Matrisetall som spres tilfeldig over skjermen.
+Viser deg en tekst som spretter rundt konsollen.
+Fading tekst inn og ut.
+Fading bakgrunn inn og ut.
+Fading tekst inn og ut i takter.
+Slå farge
+Simulerer en person som skriver tekst med skrivefeil.
+Viser deg en rulletekst fra høyre til venstre.
+Simulerer en person som skriver tekst til en avis på linotype-tastaturet i gamle tider.
+Linjefyllmønstertype. 0 skriver ut det kjente mønsteret av etaoin-tegn, 1 skriver ut hele mønsteret av etaoin-tegn, og 2 skriver ut det tilfeldige settet med tegn for å raskt fylle ut linjen.
+Simulerer en person som skriver tekst perfekt.
+Vis pilposisjon
+Viser posisjonen for skrivemaskinens bokstavkolonne ved å vise en pil nederst på skjermen
+Blinkende farger på skjermen.
+Simulerer et søkelys som søker på tvers av teksten din.
+Fyller rampen med gradientfarger.
+Stabler boksene over skjermen.
+Simulerer en søyle som blir råtten med en annen bakgrunnsfarge, og lager en gradient.
+Viser deg fyrverkeri som blir avfyrt og sprengt.
+Viser deg en farget figlet-tekst.
+Regnbuemodus
+Aktiverer regnbuefarger-modus
+Vis deg en farget blinkende tekst.
+Simulerer en statisk TV-støy.
+Enkel dato og klokkeslett midt på skjermen.
+Simulerer en feil på skjermen.
+Viser deg en fallende linje som går ned og toner ut.
+Viser deg en ubestemt fremdriftslinje.
+Viser deg en pulserende bakgrunn.
+Viser deg en pulserende bakgrunn i beats.
+BeatPulse vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Viser deg en pulserende kant.
+Viser deg en pulserende kant i takter.
+BeatEdgePulse vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Viser deg en skjerm fylt med farger som sakte råtner til en annen farge, og skaper gradienter.
+Neste gradientråteintervall
+Hvor mange millisekunder skal du vente før neste skjerm råtner?
+Viser deg en gradient på skjermen.
+Viser deg en stjernereise i 2D.
+Endrer bakgrunnen i henhold til de angitte fargene, som simulerer en sirene.
+Sirene stil
+Sirenestilen.
+Spinnende skråstreker.
+Fyller konsollen med en farge som en slange.
+Viser deg en equalizer som viser deg bass, mid og diskant.
+Neste skjermforsinkelse i millisekunder
+Simulerer systemfeil fra forskjellige operativsystemer.
+Genererer farger fra tilfeldig skifting.
+Viser deg en tekst som toner ut og blinker i takt.
+ExcaliBeats vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Eksplisitt modus
+Endre teksten eksplisitt til Excalibur
+Trance-modus
+Trance-modus - Multipliserer BPM med 2 for å simulere trancemusikkstilen
+Viser deg en gruppe bølger i stolper.
+Frekvensnivå
+Nivået på frekvensen. Dette er nevneren for Pi-verdien i matematikk.
+Viser deg en bølge som genererer seg selv og avanserer.
+Gir deg en fascinerende følelse.
+Simulerer aurora borealis.
+Viser deg et slående lyn.
+Streiksannsynlighet
+Sjanse, i prosent, til å slå
+Viser deg en sakte skiftende bakgrunnsfarge.
+Mørke farger
+Om du skal bruke de mørke fargene eller lyse farger.
+Fargetrinn
+Hvor mange fargetrinn for overgang mellom to farger?
+Viser deg et ord og hash-summen.
+Viser deg en falmende firkant i fire hjørner.
+Hvor mange millisekunder skal man vente før kvadratet tones ut?
+Sprer tallet over hele skjermen.
+Gir deg et boksmønster.
+Fallende linje av farger.
+Muligheten til å slippe en ny fallende farge
+Viser deg en enkel tekst.
+Viser deg en enkel tekst i en tekstboks.
+Viser deg et ord som skriver sakte og hash-summen.
+Simulerer en sirene som bruker temaet ditt som et sett med farger.
+Sirenestil fra kjernetema
+Viser deg en gruppe stjerner i skipets frontvisning.
+Viser deg en gruppe flekker i skipets frontvisning.
+Viser deg en spredende bokstav over hele skjermen.
+Viser deg flere linjer.
+Viser deg laserstråler.
+Viser deg en tekst som vandrer over konsollen.
+Svingende bølge horisontalt og vertikalt for å lage flotte mønstre.
+Horisontalt frekvensnivå
+Nivået på den horisontale frekvensen. Dette er nevneren for Pi-verdien i matematikk. Bruk denne til å lage vakre bølgete svivler!
+Vertikalt frekvensnivå
+Nivået på den vertikale frekvensen. Dette er nevneren for Pi-verdien i matematikk. Bruk denne til å lage vakre bølgete svivler!
+Simulerer døråpning og lukking.
+Viser deg en dynamisk skiftende gradient.
+En komet løper raskt på himmelen.
+Diamanten som skinner.
+Endring av bakgrunnsfarge i henhold til økende fargetone. Regnbue!
+Fargetonemetning
+Hvor intens er fargen?
+Hvor lys er fargen?
+Endring av bakgrunnsfarge i henhold til økende fargetone. Mer regnbue!
+Fargerike partikler!
+Partikkeltetthet
+Hvor tette er partiklene?
+Oppdateres nødvendig før du endrer tidssone
+Hvor mange oppdateringer før tidssonen endres?
+Fyller hele skjermen blokk for blokk og toner den ut.
+Viser deg danselinjer.
+Genererer fine labyrinter ved hjelp av Kruskals algoritme.
+Ny labyrintforsinkelse på millisekunder
+Generasjonshastighet
+Labyrintgenereringshastighet i millisekunder
+Fremhev avdekkede posisjoner
+Hvis aktivert, uthever de ikke-dekkede posisjonene med den grå bakgrunnsfargen. Ellers gjengis de som bokser.
+Bruk Schwartzian Transform
+Hvis den er aktivert, bruker denne skjermspareren Schwartzians transformasjon for å blande labyrintens kanter. Ellers bruker den den vanlige transformasjonsmetoden.
+To grupper med prikker som snurrer over de to halvdelene av konsollen.
+Feirer forpliktelsesmilepælen hver 1000. forpliktelse.
+Viser deg sprayende stjerner.
+To linjer bytter fargene over skjermen.
+Enkel splash-skjerm.
+En splash-skjerm som viser deg fremgang.
+En splash-skjerm som viser deg fremgang ved hjelp av PowerLine-teksten.
+Nåværende inngangsdriver
+Hvilken inngangsdriver vil du bruke?
+Migrer gammel konfigurasjon
+Migrerer noe av din gamle konfigurasjon fra eldre versjoner av kjernen
+Konfigurasjonsmigrering er kanskje ikke fullført. Hvis du er sikker på at konfigurasjonsfilene dine er gyldige, kan du undersøke feilsøkingsloggene for mer informasjon.
+Velg ditt språk.
+Skriv inn ditt nye brukernavn. Du bør skrive inn et nytt brukernavn som ikke allerede eksisterer.
+Skriv inn brukerpassordet ditt. Du bør velge et sterkt passord for økt sikkerhet.
+Automatisk oppdateringssjekk
+Ja, det gjør jeg!
+Nei takk.
+Start eller stopp av mods er ikke tillatt i sikker modus.
+Det var en ukjent kjernefeil, muligens på grunn av enten at kjerneunntakstypen ikke ble spesifisert eller at noe var galt.
+Kjernenettverket har rapportert en feil for vertsnavnkomponenten.
+Ugyldig RSS-feed. Sørg for at du har referert til feeden riktig, og prøv igjen.
+Ugyldig RSS-feedkobling. Kontroller at du har skrevet inn lenken riktig, og prøv igjen.
+Ugyldig RSS-feedtype. Kontroller at du har angitt feedtypen riktig, og prøv igjen.
+Tillatelse nektet forsøk på å utføre en operasjon. Du må logge på som en bruker som har de nødvendige tillatelsene for å kunne utføre denne operasjonen.
+Det oppsto en feil under forsøk på å utføre en operasjon for miljøadministrasjonen.
+Det oppsto en feil under forsøk på å behandle en oppstartslasteroperasjon.
+Det oppsto en feil under forsøk på å behandle en alarmsystemoperasjon.
+Det oppsto en feil under forsøk på å behandle en widgetsystemoperasjon. Hvis du er sikker på at denne widgeten er registrert riktig, må du kontrollere at du har skrevet widgetklassens navn riktig.
+Ytterligere feil ble ikke funnet under operasjonen.
+Se etter flere installerte miljøer
+Flere miljøer
+Undertrådens indeksnummer er ugyldig.
+Alarmnavn
+Alarmbeskrivelse
+Forfallsdato for alarm
+Skriv alarmnavnet
+Alarmnavn er ikke spesifisert.
+Skriv alarmintervallet i dette formatet
+Alarmintervall er enten ikke spesifisert eller ugyldig.
+Filtype
+Viktig med varsling
+Fremdriftsprosent
+Fremdrift fullført
+Fremgangen er ubestemt
+Fremdriftstilstand
+Meldingstittel
+Reporter ga ingen informasjon!
+Henrette
+Logg ut
+Shell
+Bryter
+Filbehandler
+Alarmsjef
+Varsler
+Oppgavebehandling
+Om Nitrocid
+Hei, {0}! Velkommen til Nitrocid!
+Aktiver overskrifter ved pålogging for å vise RSS-feeder
+Innstillinger
+Nitrocid KS simulerer vår fremtidige kjerne, Nitrocid-kjernen.
+Mod API
+Nitrocid-hjemmesiden har krasjet og må gå tilbake til skallet.
+Ukjent skjermnummer.
+Kunne ikke gjengi påloggingsskjermen.
+Undersøk feilsøkingsloggene for mer informasjon om feilen.
+For å avvise for alltid, trykk enten ENTER på tastaturet eller aktiver "Utviklingsmelding bekreftet" i kjerneinnstillingene. Enhver annen nøkkel går videre uten bekreftelse.
+Du kjører Nitrocid KS i et uvanlig miljø. Vennligst bekreft at du har startet kjernen direkte. Hvis du er sikker på at du har startet kjernen på en vanlig måte, kan det være fordi du kjører en versjon av Nitrocid KS som ikke støttes.
+Ekstra - Navnegenerator
+Ekstrautstyr - Pastebin
+Ekstra - bilder
+Ekstra - Forbedret SHA256
+Ekstra - Forbedret SHA384
+Ekstra - Forbedret SHA512
+Ekstra - Aksjer
+Ekstra - Beep Synth
+Ekstra - SSH
+GRILO har opplevd en intern feil
+Trykk på hvilken som helst tast for å avslutte.
+Standard kontroller
+Kontroller definert av tilpasset oppstartsstil
+Ingen kontroller definert av tilpasset oppstartsstil
+Velger forrige oppstartsoppføring
+Velger neste oppstartsoppføring
+Velger den første oppstartsoppføringen
+Velger den siste oppstartsoppføringen
+Åpner denne hjelpesiden
+Starter den valgte oppføringen
+Miljø er ikke spesifisert
+Alarmdato og -klokkeslett er kanskje ikke i fortiden.
+Se hjelpeoppføringen for denne kommandoen for mer informasjon
+Denne kommandoen har argumentene nedenfor som endrer hvordan den fungerer:
+Uspesifisert argumentbeskrivelse
+Viser alle tilgjengelige funksjonsparametere fra en funksjon
+Administrer alarmene dine
+Starter en ekstern kjerneforekomst på nytt
+Kjernen i den eksterne forekomsten vil bli stengt
+Bruker stilen for eldre innstillinger
+Viser alle mottatte varsler i en interaktiv TUI
+Widget er ikke gitt.
+Widget eksisterer allerede.
+Widgetnavn er ikke oppgitt.
+Widget eksisterer ikke.
+Widget kan ikke fjernes.
+Widget er ikke en innebygd widget.
+Navnet på oppstartsappen er ikke spesifisert
+Oppstartsappmiljø er ikke spesifisert
+Oppstartsappen finnes allerede
+Oppstartsappen finnes ikke
+Velg oppstartsoppføring
+SHIFT + H for hjelp. Versjon
+Starter opp {0}...
+Liste over funksjonsparametere for
+Alarmen eksisterer allerede.
+Alarmintervallet er ugyldig.
+Alarmnavn og intervall er ikke spesifisert.
+Alarmen eksisterer ikke.
+Alarmnavn:
+Alarmbeskrivelse:
+Forfallsdato for alarm:
+Frekvensen er ugyldig. Pass på at du har skrevet frekvensen riktig i hertz.
+Varigheten er ugyldig. Sørg for at du har skrevet varigheten riktig i millisekunder.
+Kodet som streng
+Du har kommet inn i strømhandlingsmenyen. Vennligst skriv inn et valg med venstre og høyre piltaster og trykk ENTER, eller trykk ESC for å gå tilbake til hovedskjermen.
+Windows Boot Manager
+ENTER=Velg
+Velg et operativsystem du vil starte, eller trykk TAB for å velge et verktøy:
+For å spesifisere et avansert alternativ for dette valget, trykk F8.
+Sekunder til det uthevede valget starter automatisk:
+GNU GRUB versjon 2.06
+Bruk tastene ↑ og ↓ for å velge hvilken oppføring som er uthevet.
+Trykk enter for å starte det valgte operativsystemet, "e" for å redigere kommandoene
+før oppstart eller `c' for en kommandolinje.
+Den uthevede oppføringen kjøres automatisk om {0}s.
+Trykk enter for å starte det valgte operativsystemet, "e" for å redigere
+kommandoer før oppstart eller `c' for en kommandolinje.
+Starter opp «{0}»
+Filsystemtype er
+partisjonstype
+Trykk på hvilken som helst tast for å avbryte tidsavbrudd
+Bruk piltastene for å velge
+Skriv inn valg og alternativer, trykk CR for å starte opp
+Velg operativsystemet du vil starte
+Bruk pil opp og pil ned for å flytte uthevingen til ditt valg.
+Trykk ENTER for å velge.
+For feilsøking og avanserte oppstartsalternativer for Windows, trykk F8.
+Fortsette
+Velg oppstartsoppføring:
+Bruker den vanlige ordlisten.
+Bruker hele ordlisten.
+Ping-pong-spillet!
+Leser en pipesynth-fil
+Konverterer kildefargemodellen til målfargemodellen i tall.
+Konverterer kildefargemodellen til målfargemodellen i KS-format.
+Konverterer kildefargemodellen til hex.
+Konverterer kildefargemodellen ved å bruke fargespesifikasjonen til målfargemodellen.
+Konverterer kildefargemodellen ved å bruke fargespesifikasjonen til målfargemodellen i KS-format.
+Konverterer kildefargemodellen ved hjelp av fargespesifikasjonen til målfargemodellen i hex.
+Viser kontaktene dine
+Laster inn kontaktene dine
+Importerer kontaktene dine
+Behandler den nødvendige inngangen som MeCard-streng
+Får kontaktinformasjon
+Viser værinformasjon for spesifisert by. Bruker The Weather Channel fra IBM.
+Værinformasjon i en interaktiv TUI
+Viser alle tilgjengelige byer og deres breddegrad/lengdegrad-par
+Forhåndsviser et bilde
+Lager et nytt språk i en interaktiv TUI
+Limer inn innholdet av enten en fil eller en streng til en tekstvertsleverandør
+Angir URL-en til Pastebin-leverandøren
+Angir Pastebin-leverandørtypen
+Spesifiserer innleggssiden for Pastebin-leverandøren
+Angir postformatet for Pastebin-leverandøren
+Angir postfeltnavnet for Pastebin-leverandøren
+Får en timebasert lagerinformasjon
+Kort firmasymbol
+Lager et nytt tema i en interaktiv TUI
+at du kan lage oppstartbare programmer ved å bruke kjernemodsene dine?
+Stasjonstype
+Beep synth-fil eksisterer ikke.
+Kapittelnavn
+Synth-representasjon er ugyldig.
+Frekvensen er ugyldig.
+Varigheten er ugyldig.
+Kan ikke hente synth-informasjon fra den oppgitte representasjonen.
+Modellspesifikasjonen er ugyldig.
+Svart nøkkelnivå:
+Det første fargenivået må være numerisk.
+Det andre fargenivået må være numerisk.
+Det tredje fargenivået må være numerisk.
+Det fjerde nøkkelnivået må være numerisk.
+-- Værinformasjon --
+Breddegrad og lengdegrad
+Skydekke
+Tid på døgnet
+Minimum temperatur
+Maksimal temperatur
+Nedbør sjanse
+Nedbørstype
+Varmeindeks
+Vindkjøling
+Ultrafiolett indeks
+Ultrafiolett beskrivelse
+Banen til bildet er ikke oppgitt.
+Bildefilen eksisterer ikke.
+Angi enten et filnavn eller tekst som skal lastes opp.
+Pastebin-leverandørtypen støttes ikke.
+Limt inn til leverandøren!
+Kan ikke lime inn til leverandøren.
+Søker i feedbiblioteket etter en feed
+Skriv inn AlphaVantage API-nøkkelen
+Vennligst oppgi API-nøkkelen din.
+Demonstrasjon API-nøkkel kan ikke brukes.
+API-nøkkelen din skal være på 16 tegn.
+Det oppsto en feil under henting av aksjedata. Ytterligere informasjon finner du her
+Åpningsaksjekurs
+Høy aksjekurs
+Lav aksjekurs
+Sluttaksjekurs
+Lagervolum
+API-nøkkel kreves. Konfigurer fra innstillingene.
+Ingen lagerdata tilgjengelig.
+Kopier farge til...
+Velg kildefargetypen du vil kopiere fargen fra.
+Velg målfargetypene du vil kopiere kildefargetypen, {0}, til.
+Fargetype
+Farge
+Fargenavn
+Farge sekskant
+Fargelysstyrke
+Velg hvordan du vil lagre dette temaet
+Velg hvordan du vil laste et tema
+Score
+Nitrocid KS utgivelsesjubileum
+Ramadan
+Ingen kontakter.
+Kontaktnummeret er ugyldig.
+Kontaktnummer er utenfor rekkevidde.
+Fornavn
+Etternavn
+Kontakt Geo
+Kontaktnotat
+Noen av kontaktene kan ikke vises.
+Angi byens bredde- og lengdegrad.
+Du kan få din egen API-nøkkel ved å konsultere IBMs nettsted for veiledning.
+Laster værinformasjon fra geografisk plassering
+Værforhold
+Temperatur
+Vindhastighet
+Vindretning
+Fuktighetsgrad
+Breddegrad
+Lengdegrad
+Skriv inn et bynavn for å søke.
+Det er ingen byer med dette navnet. Hvis du prøver å søke etter en bestemt by, prøv å søke etter en bredere plassering som er nærmest byen du leter etter.
+Velg en by fra listen nedenfor. De to tallene representerer geografiske steder.
+Angi bybreddegrad.
+Angi bylengdegrad.
+Breddegrad er ugyldig.
+Lengdegrad er ugyldig.
+Du kan få din egen API-nøkkel ved å konsultere IBMs nettsted for veiledning. Skriv inn Weather Channel API-nøkkelen.
+Weather Channel API-nøkkelen er ikke oppgitt. Hvis du trenger hjelp, kan du gå til IBMs nettsted.
+Gjeldende asymmetrisk kodingsdriver
+Hvilken asymmetrisk kodingsdriver vil du bruke?
+Bootloader-stil
+Velg en bootloader-stil som samsvarer med dine preferanser.
+Bootloader standard tidsavbrudd for valg
+Bootloader standardvalg
+Aktiver 'The Nitrocid Homepage'
+Aktiverer "The Nitrocid Homepage" som lar deg se hva som skjer med et blikk.
+Interaktiv TUI innebygd nøkkelbinding bakgrunnsfarge
+Interaktiv TUI innebygd nøkkelbindende forgrunnsfarge
+Interaktiv TUI innebygd nøkkel binding navn farge
+Aktiver widgets
+Aktiverer widgetene i den moderne påloggingsbehandleren og alle behandlerne som bruker widget-APIet.
+Første widget
+Første widget for den moderne påloggingsbehandleren. Du kan konfigurere denne widgeten i dens respektive innstillingsoppføring.
+Andre widget
+Andre widget for den moderne påloggingsbehandleren. Du kan konfigurere denne widgeten i dens respektive innstillingsoppføring.
+Støtte for mus
+Om du skal initialisere musestøtten for kjernen eller ikke, noe som gjør at alle mods kan håndtere musepekeren.
+Støtte for musbevegelse
+Enten du også skal aktivere bevegelseshendelsene eller ikke, forbedre brukeropplevelsen til noen interaktive applikasjoner.
+Analog klokke med enkel dato og klokkeslett nederst på skjermen.
+Vis sekundviser
+Om du skal vise sekundviseren eller ikke.
+Vis dato
+Om du skal vise datoen eller ikke.
+Viser en emoji midt på skjermen.
+Aktiver Emoticon Cycling
+Om du skal sykle mellom uttrykksikoner
+Uttrykksikon
+Uttrykksikon å vise
+Denne delen lar deg konfigurere hvordan SSH fungerer.
+Brukernavn-ledetekststil for SSH
+Legg til nye tilkoblinger til SSH-kortnummer
+Hvis aktivert, legger du til en ny tilkobling til SSH-kortnummeret.
+Denne delen lar deg konfigurere aksjene.
+API-nøkkel
+Nøkkel for AlphaVantage Stocks API
+Bedriftskode
+Aksjeselskap
+Simulerer en hypotetisk funksjonsfeil svart skjerm med RGB-linjer som noen ganger vises.
+Feil sannsynlighet
+Sjansen, i prosent, for at skjermfeilen oppstår
+Sorter logisk
+Sorterer listen alfanumerisk hvis den er aktivert eller alfabetisk hvis den er deaktivert.
+Kunne ikke fylle ut standardtema
+Det er ingen temametadata definert.
+Kan ikke deserialisere metadata.
+Denne kodingen bør initialiseres.
+Kataloginformasjon er ikke spesifisert.
+Filinformasjon er ikke spesifisert.
+Generell nettverksoverføringsfeil
+Hex-filen er ikke åpen ennå.
+Tekstfilen er ikke åpen ennå.
+Behandler for utvidelse er ikke spesifisert.
+Kunne ikke skaffe standardbehandler
+Innlasting av standardbehandlere mislyktes.
+Velge
+Kopiere
+Flytte
+Slett
+Opp
+Info
+Gå til
+Gi nytt navn
+Ny mappe
+Hash...
+Verifisere...
+Forhåndsvisning
+Forhåndsvisning valgt
+Åpne
+Kan ikke sjekke konfigurasjonsvariabler når kjernekonfigurasjonen ikke er spesifisert.
+Kan ikke hente skjema for basisinnstillinger.
+Kan ikke hente innstillingsoppføringer.
+Kunne ikke hente oppføringer for driverinnstillinger.
+Kunne ikke hente hovedinnstillingsoppføringer.
+Kunne ikke hente oppføringer for skjermsparerinnstillinger.
+Kunne ikke hente oppføringer for widgetinnstillinger.
+Kunne ikke hente aliasinformasjon
+Det er ingenting å velge mellom.
+Får ikke type fra
+Sett
+Spare
+Lagre som
+Last fra
+Last inn på nytt
+Migrer
+Finner ikke innstillingsoppføringer.
+Sjekker etter systemoppdateringer (krever en aktiv Internett-tilkobling).
+Viser grunnleggende systeminformasjon (mer informasjon er tilgjengelig i 'sysinfo'-kommandoen).
+Får ikke seksjonen
+Ekstern feilsøkingsenhet ser ikke ut til å eksistere.
+Kan ikke hente eksterne feilsøkingsenheter fra
+Kan ikke åpne den engelske lokaliseringsressursen
+Kan ikke åpne lokaliseringsressursen for
+Kunne ikke få inngangspunkt.
+Tester knappene i informasjonsboksen (med tittel)
+Tester den fargede inndataboksen i informasjonsboksen (med tittel)
+Tester inndataboksen i informasjonsboksen (med tittel)
+Tester input-multivalgstilen i informasjonsboksen (med tittel)
+Tester inndatavalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking)
+Tester input-multivalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking)
+Tester input-multivalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking) (med tittelen
+Tester inndatavalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking) (med tittelen
+Tester inndatavalgstilen i informasjonsboksen (med tittelen
+Tester inndatavalgstilen (stort antall elementer for å teste rulling og personsøking)
+Tester inndatamultivelvalgstilen (stort antall elementer for å teste rulling og personsøking)
+Får ikke ramme
+Får ikke frem metoden
+Det oppsto en feil med regulære uttrykk mens teksten ble behandlet. Kontroller syntaksen for regulære uttrykk og prøv igjen. Hvis time-outen inntraff, sørg for at du ikke gjentar deg for mye (ikke vær grådig).
+Hjemmesideverktøyene har støtt på en feil under forsøk på å behandle forespørselen din. Sørg for at du har lagt inn alle nødvendige data riktig.
+Dessverre er den siste feilen ukjent, så vi vet ikke helt hva som gikk galt. Det kan imidlertid være nyttig hvis du har konsultert kjernefeilsøkingsloggene.
+Kan ikke få feltinformasjon for
+Kan ikke hente journaloppføringer
+(Bruk piltastene for å markere valget ditt, og trykk deretter ENTER.)
+GNU GRUB versjon 0.97 (638K nedre / 1046784K øvre minne)
+Ekstern feilsøking kunne ikke starte av ukjente årsaker.
+Tråden kan ikke regenereres
+Kunne ikke laste inn språkressurs for
+Kan ikke hente lokalisert tekst
+Kan ikke få engelske lokaliseringer
+Får ikke engelsk tekst
+Språktoken må spesifiseres
+Kan ikke hente språkmetadata
+Kan ikke hente språkmetadatamatrisen
+MIME-metadata (utvidet)
+Handler er registrert, men klarte på en eller annen måte ikke å få en utvidelsesbehandler for
+Kan ikke hente innstillingsoppføringer
+Kan ikke angi innstillinger
+Kan ikke lagre innstillingene
+Kan ikke laste inn innstillinger
+Kan ikke laste inn innstillingene på nytt
+Kan ikke migrere innstillinger
+Kan ikke se etter oppdateringer
+Får ikke systeminformasjon
+Skjermsparerforekomst er ikke spesifisert
+Spruttrådparametere er ikke spesifisert
+Kan ikke bestemme mod-versjonen
+Ukjent lasterunntak
+Kan ikke laste inn mod-lokaliseringer
+Kan ikke hente metode fra de to siste rammene.
+Om
+Handlingsnavn er ikke spesifisert.
+Handling er ikke spesifisert.
+Handlingen eksisterer allerede.
+Handling eksisterer ikke.
+Innebygd handling kan ikke fjernes.
+Kopier til
+Flytt til
+Hash
+Verifisere
+Legge til
+Avskjedige
+Avvis alle
+Drepe
+Copyright (C) 2018-2025 Aptivi – Alle rettigheter forbeholdt
+Kan ikke få argumentinformasjon for kommando eller argument
+Trådparametere er ikke spesifisert.
+Kan ikke hente trådparametere for prosesskjøring.
+Kan ikke hente internt felt for miljøvariabler
+Kan ikke få shell executor for
+Viser generelle kommandoer (standard)
+Endrer brukerens fulle navn (visningsnavn)
+Viser hovedbufferen som var på skjermen før du startet Nitrocid KS (kun Unix-systemer)
+Kan ikke hente tilleggspakken.
+Kan ikke hente brukerinformasjon for systembrukeren
+Kan ikke få brukerinformasjon for
+Starter Nitrocid på nytt med de forhøyede tillatelsene (kun Windows)
+Kan ikke deserialisere gruppeinformasjonsarray
+Kan ikke deserialisere gruppeinformasjon
+Kan ikke angi root-konto.
+Du har ikke tillatelse til å be om omstart eller avslutning.
+Kan ikke deserialisere brukerinformasjonsarrayen
+Kan ikke deserialisere brukerinformasjonsforekomsten
+Kunne ikke hente bruker
+Kunne ikke hente gjeldende bruker
+Kan ikke hente nødvendige data for å initialisere dette tillegget.
+Kunne ikke laste inn språkmetadata
+Kunne ikke deserialisere språkmetadata
+Kunne ikke laste inn språkmetadata for
+Kunne ikke deserialisere språkmetadata for
+Redigere
+Fjern alle
+Laste
+Notater
+Kunne ikke hente innstillingsoppføringer.
+at Nitrocid (Kernel Simulator 0.0.2) kalte det innebygde skallet 'UESH'-skallet?
+at skjermsparerne ble utpekt for å være en løsning mot skjerminnbrenninger i katodestrålerør (CRT) eller plasmaskjermer?
+Hesteveddeløp
+Bøddel
+Meteor Dodge
+Meteor skytespill
+Pong
+Skipsduett
+Snaker
+Wordle
+Wordle (original)
+Ukjent sitat.
+Ukjent forfatter.
+Kan ikke hente arkivoppføringer
+Arkivet er ikke lastet inn ennå.
+Kan ikke fastslå gjeldende arkivkatalog.
+Kalender
+Fant ingen påminnelser for den valgte dagen
+Ingen hendelser funnet for den valgte dagen
+Kontakter
+Slett alle
+Import
+Importer fra
+Søk
+Søk Neste
+Søk tilbake
+Rå info
+Importer fra MeCard
+Legg til manuelt
+Kan ikke få dag del array
+Kan ikke få del av dagen
+Kan ikke få en liste over oppgaver
+Timer
+Stoppeklokke
+Ingen runder ennå...
+Rundeliste
+Generer navnemerker (omlyd støttes for øyeblikket ikke)
+Konvertere...
+Enhetsomformer
+Internettradio (FM) info for
+Kan ikke få informasjon om internettradio.
+Endre...
+Spare...
+Laste...
+Kopiere...
+Oversett
+Luminans (Lyshet):
+Det siste skallet er ikke dette skallet å løsne fra.
+Klienten er ikke fylt ut.
+Det er ingen FTP-klient ennå.
+Klienten er ikke tilkoblet ennå.
+Kan ikke hente IMAP-serverkonfigurasjon
+Kan ikke få SMTP-serverkonfigurasjon
+Klienten er ikke tilkoblet ennå
+Les mer
+Forfriske
+Det er ingen artikkel.
+Det er ingen fôr.
+Får ikke tilkobling
+Filstrømmen er ikke åpen ennå.
+JSON-filen er ikke åpen ennå.
+Kan ikke få aksjeinformasjon.
+SSH er tilkoblet, men uten klient.
+Viser skalltellingen i det vanlige UESH-skallet (avhengig av forhåndsinnstillingen)
+Minimum tomgangsintervall for å starte skjermsparer. Enheten er i tidsromformat (TT:MM:SS).
+Standardtemaet for kjernen
+Aksenter overalt!
+Fargeløs, rykende og sterkt etsende væske
+Denne delen lar deg konfigurere hvordan kontakttillegget fungerer.
+Vis profilbilder
+Viser kontaktbilder hvis aktivert. Deaktivert som standard for å forhindre misbruk og av ytelsesgrunner.
+Velg din foretrukne enhet for temperatur (dette gjelder kun for "vær"-kommandoen). 1 er Kelvin, 2 er metrisk og 3 er Imperial.
+Fargetone luminans (lyshet)
+Lilla harmoni
+Dette er Android-maskotfargen i forgrunnen
+Vår merkevareharmoni
+Mørk versjon av et populært VIM-tema, Ayu
+Lettversjon av et populært VIM-tema, Ayu
+Mirage-versjon av et populært VIM-tema, Ayu
+Dette er første dag i det nye skoleåret
+Letteste terminal mulig
+Dette er den svarte rosen
+Fargeskjema for Breeze, et KDE Plasma 5-tema
+Populært fargeskjema for IDE-er, som IntelliJ
+Det er på tide å gå tilbake til den mørke siden.
+Fargeskjemaer for Debian
+Det levende standardtemaet for kjernen
+Bakgrunnsaksenter i kjernen din!
+Flere aksenter overalt!
+Bruk hvis du er en fan av EDM
+Brann nyanser
+Ditt episke gyldne palass på mørkeblå bakgrunn
+Drue og Kiwi blandet sammen
+Fargevalg for druer
+Levende og pusset grønne, blå og lilla farger
+Grønngjør miljøet ditt, gjør kjernen grønn. Gjør jorden grønnere!
+Vi har lagt til grønt og rødt som farger.
+Grønt og rosa blandet sammen
+Et av de kjente terminalfargeskjemaene
+Grønn tekst på grått
+Tradisjonelle indiske farger rett i konsollen din.
+Gjør terminalen din full av sitronsyre
+Lette treplanker
+Standard Linux-terminalfarger
+Grå terminal
+Litt Material Design-tekst på terminalen din
+Nyanser av oransje og brunt
+Melange-tema inspirert av VIM-temaet med samme navn
+Gjør terminalen din full av mynte
+Fargepalett fra Mirai Kuriyama fra Beyond the Boundary.
+Et tema inspirert av et VIM-tema med samme navn
+Liker du neonblått og rosa?
+Dette temaet bør være nøytralt for deg.
+Dette er nattehimmelen din på begynnelsen av natten!
+Oktober kommer snart, så gjør deg klar!
+Havet av appelsin
+Fosforholdig terminal som gjør alt til oransje
+Gir deg en bris av rødt.
+En blodig rød konsoll
+Sakura-trær vil gi deg litt kinesisk bris
+Alle blågrønne farger
+Et tema for teknologielskere
+Fan av trancemusikk? Dette er temaet for deg!
+Fargeskjemaer fra et populært Linux-operativsystem, Ubuntu
+Gir deg en perfekt Vice City-stemning
+Dette er din Vice City daggry.
+Fargeskjema for Visual Studio, en av de kraftigste IDE-ene
+Fargevalg for Windows 11, en nyere versjon av Windows
+Få tilbake nostalgien med dette temaet!
+Terminalen din består av treplanker
+Inspirert fra det kinesiske mønsteret av forskjellige frukter
+Ekstra - CRC32C (Castagnoli)
+Kan ikke tørke feilsøkingsfiler
+Vi vil ikke lenger støtte denne versjonen av Nitrocid KS etter denne datoen
+Sørg for at du oppgraderer til den støttede versjonen snart hvis du vil fortsette å motta støtte.
+Denne versjonen av Nitrocid KS støttes ikke lenger.
+Kunne ikke laste inn egendefinerte språk
+Kunne ikke laste inn viktige kjernetillegg
+Kunne ikke laste inn personvernsamtykke
+Kunne ikke laste inn splash
+Kunne ikke laste inn viktige mods
+Kunne ikke laste inn eksterne feilsøkingsenheter
+Det oppstod feil under forsøk på å initialisere viktige komponenter.
+Kunne ikke laste varslingstråden
+Kunne ikke laste inn kanselleringsbehandler
+Kunne ikke laste inn aliaser
+Kunne ikke laste inn kortnummeroppføringer
+Kunne ikke laste inn miljøvariabler
+Kunne ikke laste inn alarmlytteren
+Kunne ikke laste inn MOTD og MAL
+Kunne ikke laste inn shell-kommandohistorikk
+Kunne ikke laste utvidelsesbehandlere
+Det oppstod feil ved forsøk på å initialisere valgfrie komponenter.
+Kunne ikke tilbakestille generelle variabler
+Kunne ikke lagre shell-kommandohistorikk
+Kunne ikke lagre personvernsamtykker
+Kunne ikke stoppe ekstern debugger
+Kunne ikke tilbakestille språk
+Kunne ikke lagre utvidelsesbehandlere
+Kunne ikke stoppe alarmlytteren
+Kunne ikke lagre konfigurasjonen
+Kunne ikke stoppe mods
+Kunne ikke stoppe tillegg
+Kunne ikke stoppe RPC
+Kunne ikke lukke alle tilkoblinger
+Kunne ikke stoppe tidsavbrudd for skjermsparer
+Kunne ikke tilbakestille oppstartsloggbuffer
+Kunne ikke stoppe markørbehandleren
+Kunne ikke stoppe feilsøkeren
+Kunne ikke stoppe alle kjernetråder
+Det oppsto feil under forsøk på å tilbakestille komponenter.
+Unntak
+Se kjernefeilsøkingsloggene for mer informasjon.
+Uspesifisert bryterbeskrivelse
+Veien til en prosess
+Argumenter for å gå over i en prosess
+Kommando for å vise hjelpeoppføring
+Målkommando som skal utføres ved byggeargument basert på kildekommandoutgangen
+Kommando for å pakke utdataene
+Argument for å vise hjelpeinnlegg
+Sesjonsnummer fra null
+Brukernavn for å spørre
+Tillatelsestype for å gi eller avslå
+Falskt å nekte, sant å gi
+Nytt visningsnavn, eller "slett" for å slette visningsnavnet
+Språk-ID på tre bokstaver, eller "tøm" for å fjerne foretrukket språk
+Ugyldig økt-GUID
+Ingen slik økt-GUID
+Session GUID å finne
+Unntaksnummer
+Feltnavn for å spørre
+Eiendomsnavnet som skal søkes
+Tilleggsnavn for å spørre
+Funksjonsnavn fra den offentlige statiske typen for å spørre
+Splash navn for å spørre
+Bytenummer fra 0 til 255
+Byteposisjonsnummer
+Byte startposisjonsnummer
+Byte sluttposisjonsnummer
+Bytenummer fra 0 til 255 som skal erstattes
+Bytenummer fra 0 til 255 å erstatte med
+Innhold som skal legges til på slutten av filen
+Tegn nummer
+Linjenummer
+Linjenummer (entall eller begynnelsen av området)
+Sluttområde for linjenummer
+Ord eller uttrykk som skal slettes
+Et tegn å spørre etter
+Linjenummer (enten entall eller begynnelsen av området), eller "alle" for å spørre etter et tegn i alle linjer
+Et ord eller en setning å spørre etter
+Et regulært uttrykk for å spørre
+Et ord eller en setning som skal erstattes
+Et ord eller en setning å erstatte med
+Linjenummer (enten entall eller begynnelsen av området), eller 'alle' for å erstatte i alle linjer
+Et regulært uttrykk for å matche fraser som skal erstattes
+Nytt gruppenavn å legge til
+Nytt brukernavn å legge til
+Nytt passord å bruke
+Bekreft det nye passordet
+Brukernavn som skal legges til i gruppen
+Gruppenavn å legge brukeren til
+Starter alarmen
+Alarmintervall i et tidsrom i timer, minutter og sekunder
+Stopper alarmen
+Alarmnavn for å stoppe
+Viser alarmene
+Legger til et alias
+Skalltype for å hente kommandoer fra
+Alias navn
+Kommando som skal brukes som en snarvei
+Fjerner et alias
+Frekvens i Hz
+Tidsintervall for et enkelt pip
+IP-adresse som skal blokkeres
+Målkatalog
+Søkemønster
+Nytt navn å gi nytt navn til alle funnet filer til
+Bane til fil for å skrive ut innholdet
+Bane til fil
+Enten tillegg eller fjerning
+Attributtnavn
+Nytt vertsnavn å endre til
+Språk-ID
+Ny melding å bruke
+Svar å dele med en skråstrek
+Spørsmål å skrive ut på skjermen
+Første svartittel
+Andre svartittel, og så videre...
+Brukernavn for å endre passord
+Gjeldende brukerpassord
+Gammelt brukernavn å endre
+Nytt brukernavn å bruke
+Første input tekstfil
+Andre input tekstfil
+Tredje inndatatekstfil, og så videre...
+Utdatafil
+Kildeinndatatekstfil
+Målinndatatekstfil
+Sti til tekstfil
+Kildefil eller katalog
+Målfil eller katalog
+Bane til kodet fil
+Kodet strengrepresentasjon
+Kodet BASE64-streng
+Sti til katalog
+IP-adresse for å koble fra
+Disknummer
+Varslingsnummer
+Bytt en driver
+Måldrivertype
+Måldriver å bytte til
+Liste over drivere
+Liste drivertyper
+String for å skrive ut
+Fil som skal kodes
+String for å kode
+Regelmessig uttrykk for å finne en fil
+Koble til en ekstern ressurs, for eksempel HTTPS
+Navn på kjernekonfigurasjon
+Variabel for å få info
+Filtype
+Kodingsalgoritme
+Maskinvaretype
+UESH uttrykk for å teste
+Kommando for å utføre ved vellykket evaluering
+Bane til katalog for venstre rute
+Bane til katalog for høyre rute
+Laster inn, laster inn eller laster ut et tilpasset språk
+Egendefinert språknavn
+Viser eller laster inn alle egendefinerte språk
+Sti til UESH-skript
+Sti til katalog til liste
+Katalognavn som skal opprettes
+Filnavn som skal opprettes
+Katalog eller navn å flytte fra
+Katalog eller navn å flytte til
+Partisjonsnummer
+Filnavn for oppslag
+Brukernavn
+Enten tillat eller tilbakekall
+Tillatelsesnavn for å gi eller avslå
+Gruppenavn
+Første IP-adresse eller vertsnavn
+Andre IP-adresse eller vertsnavn, og så videre...
+Bane til fil for opplasting
+URL som peker til opplastingsendepunktet
+Vertsnavn som kjører Nitrocid KS
+Port of Nitrocid KS på det eksterne målet
+Kommando for å utføre eksternt
+Målkatalog eller fil
+Brukernavn å fjerne
+Gruppenavn som skal fjernes
+Brukernavn som skal fjernes fra gruppen
+Gruppenavn å fjerne bruker fra
+Enten skjermsparernavnet eller "tilfeldig"
+Regelmessig uttrykk for å søke
+Målfil
+Ord eller uttrykk for å søke
+Verdi å angi
+Navn på konfigurasjonsvariabel
+Implementernavn
+Første verdi
+Andre verdi
+Tredje verdi, og så videre...
+Tidssonenavn
+Intervall for å sove
+Kommando for å kjøre
+Krypteringsalgoritme
+Inndatafil for å beregne hash-summen
+Utdatafil for å lagre hash sum info
+Tekst for å få hash sum
+Symbolisk lenkenavn
+Målfil å lage en snarvei fra
+Temanavn
+IP-adresse for å oppheve blokkeringen
+Variabelnavn
+Bane til ZIP-fil
+Målvei for å trekke ut
+Beregnet hash
+Hash-fil eller forventet hash
+Fil for å teste
+ZIP-filnavn som skal opprettes
+Bane for å komprimere
+Legg merke til innholdet
+Merk nummer
+Bane til en katalog med Git repository
+Startområde for linjenummer
+Filialnavn
+Forplikte sammendrag
+Begå SHA-hash
+Eksternt navn
+Tag navn
+Melding for å kommentere taggen med
+Din e-post
+Brukernavnet ditt
+Bane til uoppgradert fil
+Bane til iscenesatt fil
+Bane til arkivfil
+Lokal katalog
+Katalog inne i arkivet
+Fil i arkivet
+Lokal katalog å trekke ut til
+Lokal fil
+Arkivkatalog å legge til
+Åpner kalenderens interaktive TUI
+Målår
+Målmånedsnummer
+Samspill med hendelsene
+Legger til en hendelse
+Måldato
+Fjerner en hendelse
+Hendelses-ID
+Viser alle hendelser
+Lagrer alle hendelsene
+Interaksjon med påminnelsene
+Måldato og klokkeslett
+Fjerner en påminnelse
+Påminnelses-ID
+Viser alle påminnelser
+Lagrer alle påminnelser
+Enten en bane til en vCard-kontaktfil eller en MeCard-representasjon
+Kontaktnummer
+Breddegrad å bruke
+Lengdegrad å bruke
+Weather.com API-nøkkel
+By-ID eller bynavn kjent for OpenWeatherMap
+OpenWeatherMap API-nøkkel
+Om du vil legge til, fjerne, merke som ferdig eller fjerne merking som ferdig på en oppgave
+Om du vil liste opp, lagre eller laste inn alle oppgaver
+Pomodoro timer
+Pomodoro-timeren er klar
+Pomodoro-timer nummer {0} i fire iterasjoner
+Kort pause
+Angi pausetidsavbrudd i millisekunder
+Still inn pauseintervall
+Ord å definere
+Søkeord
+Navneprefiks for å søke
+Navnesuffiks for å søke
+Etternavnsprefiks for å søke
+Etternavnssuffiks for å søke
+Hvor mange navn skal genereres?
+Enhetstype
+Mengde i kildeenheten som skal konverteres
+Kildeenhet
+Målenhet
+Stien til tekstfilen
+Banen til en MP3-fil
+Vertsnavn som er vert for MPEG-radiostasjonen
+Port til MPEG-radiostasjonen
+Matematisk uttrykk
+Reelt tall
+Tenkt nummer
+Vi feirer den 7000. forpliktelsen siden 0.0.1!
+igjen til neste år
+Temanavn å lage
+Sti til oversettelseskatalog
+Ferdig! Vennligst bruk Nitrocid.Locales-applikasjonen med passende argumenter for å fullføre språkene. Du kan bruke denne banen:
+Kilde fargemodell
+Målfargemodell
+Første nummer
+Andre nummer
+Tredje nummer
+Fjerde nummer
+Fargespesifikasjoner
+Dato og klokkeslett for å skrive ut informasjon fra
+Angi enten et antall sekunder eller et drikkenavn
+FTP-server å koble til
+Bane til ekstern fil
+Sti til lokal katalog
+Bane til ekstern katalog
+Bane til ekstern fil for å slette
+Serverkommando for å utføre
+Oppretter en lokal katalog
+Oppretter en ekstern katalog
+Bane til kildefil eller katalog
+Bane til målfil eller katalog
+Sti til lokal fil
+Tillatelsesnummer i henhold til chmod
+Angir om overføringstypen er ASCII eller binær
+Overskriftsnøkkel
+Overskriftsverdi
+HTTP-forespørsel
+Fil som skal lastes opp
+String for å laste opp
+Brukeragentstreng
+E-postadresse å logge på
+Navn på postkatalog
+Sidetall
+Meldings-ID
+Avsendernavn
+Gammelt e-postkatalognavn
+Nytt e-postkatalognavn
+SFTP-server å koble til
+RSS feed-lenke
+Innmatingsnummer
+Frase for å søke
+Første JSON-fil
+Andre JSON-fil
+Bane til JSON-fil
+Bane til utdata JSON-fil
+JSON-verdi å legge til
+JSON-egenskapsnavn
+Objektbane
+JSON-verdi
+Dokknavn
+Bane til en fil eller en streng å skrive
+Pastebin-argumenter
+Sti til bildefil
+Banen til synthfilen
+SSH-server å koble til
+Brukernavn å autentisere med
+Kommando for ekstern kjøring
+Samlet forsinkelse
+Hvis sant, muliggjør enhetlig skriveforsinkelse for alle skjermsparere. Ellers bruker den skjermsparerspesifikke konfigurerte forsinkelsesverdier.
+Denne delen lar deg konfigurere hvordan timerapplikasjonen fungerer.
+Denne delen lar deg konfigurere hvordan pomodoro timer-applikasjonen fungerer.
+Aktiver Figlet for pomodoro-timeren
+Hvis aktivert, bruker figlet for pomodoro-timeren. Vær oppmerksom på at den trenger en stor konsollskjerm for å gjengi tiden riktig med Figlet aktivert.
+Figlet-font for pomodoro-timeren
+Viser tekst under en linje i en mørk rød bakgrunn.
+Tilfeldige karakterer som sprer seg tilfeldig over skjermen.
+Enkel dato og klokkeslett midt på skjermen og endrer farge basert på gjeldende klokkeslett.
+Lys dato og klokkeslett
+Om du skal bruke lys eller mørk versjon.
+Viser deg dansende tall.
+Svingende bølge horisontalt og vertikalt for å lage flotte mønstre med stier som forsvinner.
+Løypelengde
+Løypelengden til den bevegelige svingende bølgen.
+Blokk som beveger seg i et bølgemønster med grønne linjaler som sporer posisjonen.
+Viser deg et enkelt tilfeldig tegn i en farget figlet-tekst.
+Viser deg et ord som blir valgt akkurat som en spilleautomat som finnes i kasinoer.
+Viser deg en farget figlet-tekst som veksler mellom to neonfarger: cyan og fuchsia.
+Hvilken kultur brukes for å endre månedsnavn, kalender osv.?
+Maksimalt bakgrunnsfargenivå
+Maksimalt bakgrunnsfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt linjefargenivå
+Maksimalt linjefargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt tekstfargenivå
+Maksimalt tekstfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Bruk systemkulturen
+Om skjermspareren bruker kulturen som er satt av hovedkjerneinnstillingene eller av denne skjermsparerinnstillingene.
+Informasjonstekst for først
+Skriv hvordan informasjonsteksten din for gjeldende time viser. {0} for gjeldende time av 24 først.
+Øvre venstre hjørnetegnet for den første stolpen
+Øvre høyre hjørnetegnet for den første stolpen
+Tegn i nedre venstre hjørne for den første stolpen
+Tegn i nedre høyre hjørne for den første stolpen
+Øvre rammekarakter for den første takten
+Nedre rammekarakter for den første stolpen
+Venstre rammetegn for den første stolpen
+Høyre rammetegn for den første takten
+Farge på First Bar
+Minimum rød fargenivå for først
+Minimum grønn fargenivå for først
+Minimum blåfargenivå for først
+Minimum fargenivå for først
+Maksimalt rødt fargenivå for først
+Maksimalt grønt fargenivå for først
+Maksimal blåfargenivå for først
+Maksimalt fargenivå for først
+Informasjonstekst for andre
+Skriv hvordan informasjonsteksten for gjeldende minutt viser. {0} for gjeldende minutt av 60 sekunder.
+Øvre venstre hjørnetegnet for den andre stolpen
+Øvre høyre hjørnetegnet for den andre stolpen
+Nedre venstre hjørnetegnet for den andre linjen
+Tegn i nedre høyre hjørne for den andre linjen
+Øvre rammekarakter for den andre takten
+Nedre rammekarakter for den andre stolpen
+Venstre rammetegn for den andre stolpen
+Høyre rammetegn for den andre stolpen
+Farge på Second Bar
+Minimum rød fargenivå for andre
+Minimum grønt fargenivå for andre
+Minimum blåfargenivå for andre
+Minimum fargenivå for andre
+Maksimalt rødt fargenivå for sekundet
+Maksimalt grønt fargenivå for sekundet
+Maksimalt blått fargenivå for sekundet
+Maksimalt fargenivå for sekundet
+Øvre venstre hjørnetegnet for den tredje stolpen
+Øvre høyre hjørnetegnet for den tredje stolpen
+Nedre venstre hjørnetegnet for den tredje stolpen
+Tegn i nedre høyre hjørne for den tredje stolpen
+Øvre rammekarakter for tredje takt
+Nedre rammekarakter for tredje takt
+Venstre rammetegn for tredje takt
+Høyre rammetegn for tredje takt
+Informasjonstekst for tredje
+Skriv hvordan informasjonsteksten for det gjeldende sekundet viser. {0} for gjeldende andre av 60 tredje.
+Farge på Third Bar
+Minimum rød fargenivå for tredje
+Minimum grønn fargenivå for tredje
+Minimum blåfargenivå for tredje
+Minimum fargenivå for tredje
+Maksimalt rødt fargenivå for tredje
+Maksimalt grønt fargenivå for tredje
+Maksimalt blåfargenivå for tredje
+Maksimalt fargenivå for tredje
+Fremdrift vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
+Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i Progresses? 1 hake = 0,5 tredjedel
+Ferdig! Vennligst bruk Nitrocid.Locales-applikasjonen med passende argumenter for å fullføre språkene. Du kan bruke denne banen:
+Kjernekonfigurasjon vil ikke fungere ordentlig. De ugyldige nøklene er
+Prøver å registrere en egendefinert innstilling med ugyldig innhold. De ugyldige nøklene er
+Prøver å registrere en basisinnstilling med ugyldig innhold. De ugyldige nøklene er
+Legger til en mod til svartelisten
+Fjerner en mod fra svartelisten
+Disse konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses:
+Starter alle mods
+Skriv ut en separator til konsoll med farge
+Skriv ut en separator til konsoll med formatering og farge
+Laster alle mods på nytt
+Statistikk
+Viser gjeldende teststatistikk
+Test alle
+Tester alle fasader
+Går tilbake til seksjonsvalget
+Velg en testfasade å kjøre
+Denne testen inneholder valgfrie parametere. Angi verdien til parameteren som skal legges til testparameterne.
+Parametere teller
+Ja!
+Prøv på nytt
+Gikk testen som forventet?
+Testen mislyktes. Forventet verdi er {0}, men faktisk verdi er {1}.
+Testen mislyktes uventet.
+Vellykkede tester:
+Mislykkede tester:
+Tester som skal kjøres:
+Kan ikke hente liste over funksjoner
+Kan ikke hente listen over eiendommer
+Kan ikke hente liste over felt
+Basert på språkinnstillingene på systemet ditt, er det riktige språket
+Kunne ikke laste inn fullfør tillegg
+Kjernemodifikasjoner
+Valgte '{0}'. Trykk ESC for å avslutte og bekrefte valget.
+Variabel {0} finnes ikke på noen av modulene.
+Metodetypen er ikke definert i basis Nitrocid-typelisten.
+Kan ikke kjøre egendefinert egenskap med ikke-eksisterende mod
+Kan ikke kjøre tilpasset felt med ikke-eksisterende mod
+Henter enkelt feilsøkingslogginformasjonen ved hjelp av øktnummeret
+Ja, sett det!
+Nei, ikke still den.
+Bruker systemspråkinnstillingene for å prøve å utlede språket fra
+Det er ingen eiendomsinformasjon for
+Pomodoro timer
+Ugyldig profilvalg.
+Endre kultur når du bytter språk
+Når du bytter språk, endre månedsnavn, kalender osv.
+Hvilken variant av det gjeldende språket brukes til å endre månedsnavn, kalender osv.?
+Tidsavbrudd i sekunder for å starte opp til standardvalget.
+Standard oppstartsvalg. Dette tallet er nullbasert, så det første elementet er indeks 0, og så videre.
+Denne delen viser de forhåndsinnstilte shellinnstillingene.
+Shell forhåndsinnstilte innstillinger
+Wrap liste utganger
+Omslutter listeutdataene hvis den virker for lang for gjeldende konsollgeometri.
+Denne delen lar deg konfigurere hvordan fornøyelsene fungerer.

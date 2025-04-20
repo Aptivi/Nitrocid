@@ -24,11 +24,11 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Journaling;
 using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using Textify.General;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -42,7 +42,7 @@ namespace Nitrocid.Misc.Splash
         internal static string _ProgressText = "";
         internal static bool _KernelBooted = false;
         internal static bool _InSplash = false;
-        internal static readonly List<string> logBuffer = [];
+        internal static readonly List<SplashReportInfo> logBuffer = [];
 
         /// <summary>
         /// The progress indicator of the kernel 
@@ -71,7 +71,7 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Log buffer of the boot process
         /// </summary>
-        public static string[] LogBuffer =>
+        public static SplashReportInfo[] LogBuffer =>
             [.. logBuffer];
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Nitrocid.Misc.Splash
                 severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
                 severity == SplashReportSeverity.Error ? KernelColorType.Error :
                 KernelColorType.Tip;
-            if (!KernelBooted && !KernelEntry.QuietKernel && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash) || force)
+            if (!KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && InSplash || !Config.MainConfig.EnableSplash) || force)
             {
                 // Check the progress value
                 if (Progress < 0)
@@ -221,7 +221,7 @@ namespace Nitrocid.Misc.Splash
                 // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (SplashManager.EnableSplash && splash != null)
+                    if (Config.MainConfig.EnableSplash && splash != null)
                     {
                         var openingPart = new ScreenPart();
                         DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
@@ -241,14 +241,15 @@ namespace Nitrocid.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriters.Write($"  [{_Progress}%] {Text}", true, finalColor, Vars);
+                        TextWriters.Write($"[{_Progress}%] {Text}", true, finalColor, Vars);
                     }
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] {severity.ToString()[0]}: {TextTools.FormatString(Text, Vars)}");
+                var reportInfo = new SplashReportInfo(TimeDateTools.KernelDateTime, _Progress, severity, TextTools.FormatString(Text, Vars));
+                logBuffer.Add(reportInfo);
             }
-            else if (KernelBooted && !KernelEntry.QuietKernel && (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash))
+            else if (KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && !InSplash || !Config.MainConfig.EnableSplash))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
                 TextWriters.Write(Text, true, finalColor, Vars);

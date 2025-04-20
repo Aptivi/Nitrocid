@@ -26,7 +26,6 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Users.Login;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH
@@ -48,14 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH
         {
             while (!Bail)
             {
-                if (Login.LogoutRequested)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
-                    Login.LogoutRequested = false;
-                    Login.LoggedIn = false;
-                    Bail = true;
-                }
-                else if (!ScreensaverManager.InSaver)
+                if (!ScreensaverManager.InSaver)
                 {
                     try
                     {

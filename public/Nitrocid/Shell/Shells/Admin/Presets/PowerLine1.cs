@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Admin.Presets
 {

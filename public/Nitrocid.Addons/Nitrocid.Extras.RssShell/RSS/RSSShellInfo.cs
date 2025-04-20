@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.RssShell.RSS
                     {
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Feed number"
                         })
                     })
                 ], new ArticleInfoCommand()),
@@ -81,7 +82,8 @@ namespace Nitrocid.Extras.RssShell.RSS
                     {
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
-                            IsNumeric = true
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "Feed number"
                         })
                     })
                 ], new ReadCommand()),
@@ -90,7 +92,10 @@ namespace Nitrocid.Extras.RssShell.RSS
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "phrase")
+                        new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Phrase to search"
+                        })
                     ],
                     [
                         new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
@@ -116,7 +121,10 @@ namespace Nitrocid.Extras.RssShell.RSS
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "phrase")
+                        new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Phrase to search"
+                        })
                     ])
                 ], new SelFeedCommand(), CommandFlags.Wrappable),
 

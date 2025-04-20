@@ -100,11 +100,6 @@
         "project": "Extras.HttpShell"
     },
     {
-        "name": "ExtrasInternetRadioInfo",
-        "display": "Extras - Internet Radio Information",
-        "project": "Extras.InternetRadioInfo"
-    },
-    {
         "name": "ExtrasJsonShell",
         "display": "Extras - JSON Shell",
         "project": "Extras.JsonShell"
@@ -190,8 +185,48 @@
         "project": "Extras.UnitConv"
     },
     {
-        "name": "LegacyHddUncleaner",
-        "display": "Legacy - HDD Uncleaner 2015",
-        "project": "Legacy.HddUncleaner"
+        "name": "ExtrasPastebin",
+        "display": "Extras - Pastebin",
+        "project": "Extras.Pastebin"
+    },
+    {
+        "name": "ExtrasImages",
+        "display": "Extras - Images",
+        "project": "Extras.Images"
+    },
+    {
+        "name": "ExtrasSha256Enhanced",
+        "display": "Extras - Enhanced SHA256",
+        "project": "Extras.Sha256Enhanced"
+    },
+    {
+        "name": "ExtrasSha384Enhanced",
+        "display": "Extras - Enhanced SHA384",
+        "project": "Extras.Sha384Enhanced"
+    },
+    {
+        "name": "ExtrasSha512Enhanced",
+        "display": "Extras - Enhanced SHA512",
+        "project": "Extras.Sha512Enhanced"
+    },
+    {
+        "name": "ExtrasCrc32C",
+        "display": "Extras - CRC32C (Castagnoli)",
+        "project": "Extras.Crc32C"
+    },
+    {
+        "name": "ExtrasStocks",
+        "display": "Extras - Stocks",
+        "project": "Extras.Stocks"
+    },
+    {
+        "name": "ExtrasBeepSynth",
+        "display": "Extras - Beep Synth",
+        "project": "Extras.BeepSynth"
+    },
+    {
+        "name": "ExtrasSsh",
+        "display": "Extras - SSH",
+        "project": "Extras.Ssh"
     }
 ]
