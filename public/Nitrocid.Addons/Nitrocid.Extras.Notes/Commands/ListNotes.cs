@@ -20,8 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.CyclicWriters;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.Notes.Commands

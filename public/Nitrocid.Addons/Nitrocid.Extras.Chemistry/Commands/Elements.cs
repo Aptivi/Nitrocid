@@ -24,8 +24,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.Chemistry.Commands
 {

@@ -17,14 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Interactive;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
-using Nitrocid.Misc.Interactives;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Files.Instances;
-using Nitrocid.Languages;
-using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

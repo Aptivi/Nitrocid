@@ -28,9 +28,9 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -123,13 +123,12 @@ namespace Nitrocid.SplashPacks.Splashes
                 KernelColorTools.GetColor(KernelColorType.Progress);
             var progress = new SimpleProgress(Progress, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = progressColor,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
                 ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
             };
-            PresetStringBuilder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
+            PresetStringBuilder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
             return PresetStringBuilder.ToString();
         }
 

@@ -27,7 +27,7 @@ using Nitrocid.Security.Permissions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers;
 using System;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -31,7 +31,6 @@ using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Kernel.Starting
 {

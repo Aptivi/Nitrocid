@@ -22,7 +22,6 @@ using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -32,7 +31,6 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using BassBoom.Basolia;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {

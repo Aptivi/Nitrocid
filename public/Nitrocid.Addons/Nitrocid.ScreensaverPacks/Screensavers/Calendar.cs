@@ -24,11 +24,11 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -74,8 +74,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Month = TimeDateTools.KernelDateTime.Month,
                     Left = 2,
                     Top = 1,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 4,
-                    InteriorHeight = ConsoleWrapper.WindowHeight - 4,
+                    Width = ConsoleWrapper.WindowWidth - 4,
+                    Height = ConsoleWrapper.WindowHeight - 4,
                     Culture =
                         ScreensaverPackInit.SaversConfig.CalendarUseSystemCulture ?
                         CultureManager.CurrentCulture :

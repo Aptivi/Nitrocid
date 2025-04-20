@@ -39,7 +39,6 @@ using Nitrocid.Kernel.Threading;
 using Textify.General;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Kernel.Exceptions;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {

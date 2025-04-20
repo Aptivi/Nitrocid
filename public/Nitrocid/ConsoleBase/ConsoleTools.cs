@@ -35,7 +35,7 @@ using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
 using Terminaux.Sequences;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -88,15 +88,15 @@ namespace Nitrocid.ConsoleBase
                 {
                     Left = 3,
                     Top = 3,
-                    InteriorWidth = times + 1,
-                    InteriorHeight = 3,
+                    Width = times + 1,
+                    Height = 3,
                 };
                 var hueBand = new BoxFrame()
                 {
                     Left = 3,
                     Top = 9,
-                    InteriorWidth = times + 1,
-                    InteriorHeight = 1,
+                    Width = times + 1,
+                    Height = 1,
                 };
                 band.Append(
                     rgbBand.Render() +

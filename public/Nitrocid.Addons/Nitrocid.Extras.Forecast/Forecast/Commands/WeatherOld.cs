@@ -26,7 +26,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Inputs;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {

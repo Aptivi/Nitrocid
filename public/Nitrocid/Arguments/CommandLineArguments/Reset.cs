@@ -24,7 +24,6 @@ using Nitrocid.Languages;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;

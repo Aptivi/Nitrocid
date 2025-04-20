@@ -20,8 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.CyclicWriters;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified

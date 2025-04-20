@@ -24,8 +24,8 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {
@@ -99,8 +99,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 {
                     Left = left,
                     Top = top,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
                 };
                 TextWriterRaw.WriteRaw(box.Render());
@@ -129,8 +129,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 {
                     Left = left,
                     Top = top,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
                 };
                 TextWriterRaw.WriteRaw(box.Render());

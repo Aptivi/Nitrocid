@@ -35,7 +35,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -118,8 +118,8 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                 Text = fileName,
                 Left = 2,
                 Top = ConsoleWrapper.WindowHeight - 4,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
-                InteriorHeight = 1,
+                Width = ConsoleWrapper.WindowWidth - 6,
+                Height = 1,
             };
             TextWriterRaw.WriteRaw(boxFrame.Render());
             DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", vars: [path, fileName]);

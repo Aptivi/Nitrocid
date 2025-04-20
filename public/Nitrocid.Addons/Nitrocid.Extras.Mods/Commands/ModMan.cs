@@ -24,7 +24,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;

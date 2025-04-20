@@ -20,10 +20,8 @@
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 

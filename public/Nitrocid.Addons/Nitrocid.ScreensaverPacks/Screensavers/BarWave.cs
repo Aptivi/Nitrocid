@@ -24,11 +24,11 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Transformation;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -89,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         ProgressActiveForegroundColor = ColorStorage,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(ColorStorage),
                     };
-                    TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(ThisBarLeft, 1)));
+                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(ThisBarLeft, 1)));
                 }
             }
 

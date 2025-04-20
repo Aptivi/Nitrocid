@@ -27,9 +27,9 @@ using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

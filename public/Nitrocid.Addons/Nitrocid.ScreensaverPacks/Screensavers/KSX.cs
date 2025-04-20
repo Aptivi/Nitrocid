@@ -34,9 +34,10 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -250,7 +251,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ForegroundColor = green,
                             BackgroundColor = black,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
                         ScreensaverManager.Delay(5000);
                         break;
                     case 5:
@@ -368,13 +369,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             double currentProg = Math.Pow((double)iteration / maxProg * 10, 2);
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
-                                LeftMargin = 5,
-                                RightMargin = 5,
+                                Width = ConsoleWrapper.WindowWidth - 10,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(progPosX, progPosY)));
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(progPosX, progPosY)));
 
                             // Show current date
                             long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
@@ -415,7 +415,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             Text = "SYSTEM ERROR",
                             ForegroundColor = red,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
                             ScreensaverManager.Delay(10);
@@ -439,13 +439,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             double currentProg = (double)iteration / sysWipeMaxProg * 100;
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
-                                LeftMargin = 5,
-                                RightMargin = 5,
+                                Width = ConsoleWrapper.WindowWidth - 10,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(sysWipeProgPosX, sysWipeProgPosY)));
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(sysWipeProgPosX, sysWipeProgPosY)));
 
                             // Now, do the glitch
                             Glitch.GlitchAt();

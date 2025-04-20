@@ -19,12 +19,10 @@
 
 using Nettify.EnglishDictionary;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {

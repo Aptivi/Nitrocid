@@ -55,7 +55,6 @@ using Terminaux.Base.Extensions;
 using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Kernel.Exceptions;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Starting

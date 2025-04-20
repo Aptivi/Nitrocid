@@ -30,9 +30,10 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -452,7 +453,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     ForegroundColor = green,
                                     BackgroundColor = black,
                                 };
-                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet2018, new(s8consoleX, s8consoleY)));
+                                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figlet2018, new(s8consoleX, s8consoleY)));
                                 TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s8consoleY + 5, green, black);
                                 selectedColor = green;
                                 year = "2018";
@@ -472,7 +473,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     ForegroundColor = red,
                                     BackgroundColor = black,
                                 };
-                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet2021, new(s8consoleX, s8consoleY)));
+                                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figlet2021, new(s8consoleX, s8consoleY)));
                                 TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s8consoleY + 5, red, black);
                                 selectedColor = red;
                                 year = "2021";
@@ -490,7 +491,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     ForegroundColor = pink,
                                     BackgroundColor = black,
                                 };
-                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet2022, new(s8consoleX, s8consoleY)));
+                                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figlet2022, new(s8consoleX, s8consoleY)));
                                 TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s8consoleY + 5, pink, black);
                                 TextWriterWhereColor.WriteWhereColorBack("You're lucky!", ConsoleWrapper.WindowWidth / 2 - "You're lucky!".Length / 2, s8consoleY + 6, pink, black);
                                 selectedColor = pink;
@@ -688,7 +689,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ForegroundColor = selectedColor,
                             BackgroundColor = black,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figletYear, new(s11consoleX, s11consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figletYear, new(s11consoleX, s11consoleY)));
                         ScreensaverManager.Delay(5000);
                         break;
                     // Step 12: Fade the console from the color to black

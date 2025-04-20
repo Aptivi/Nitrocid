@@ -29,7 +29,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style
@@ -58,8 +58,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             {
                 Left = 2,
                 Top = 3,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 8,
+                Width = ConsoleWrapper.WindowWidth - 6,
+                Height = ConsoleWrapper.WindowHeight - 8,
                 Color = KernelColorTools.GetColor(KernelColorType.Separator)
             };
             builder.Append(border.Render());
@@ -126,8 +126,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 Text = content,
                 Left = borderX,
                 Top = borderY,
-                InteriorWidth = maxWidth,
-                InteriorHeight = maxHeight,
+                Width = maxWidth,
+                Height = maxHeight,
                 Color = KernelColorTools.GetColor(KernelColorType.Separator)
             };
             return border.Render();

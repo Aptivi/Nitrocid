@@ -22,8 +22,8 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.FancyWriters;
 using BassBoom.Basolia.Radio;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {

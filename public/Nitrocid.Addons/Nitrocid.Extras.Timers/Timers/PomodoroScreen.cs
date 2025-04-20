@@ -35,10 +35,11 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Data;
 using Textify.General;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -155,8 +156,6 @@ namespace Nitrocid.Extras.Timers.Timers
                 var keybindings = new Keybindings()
                 {
                     KeybindingList = keyBindings,
-                    Left = 0,
-                    Top = KeysTextTopPosition,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -165,7 +164,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                 };
-                builder.Append(keybindings.Render());
+                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval
                 int modeY = TimeTopPosition + 2;
@@ -177,7 +176,7 @@ namespace Nitrocid.Extras.Timers.Timers
                         ForegroundColor = timerColor,
                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                     };
-                    builder.Append(ContainerTools.RenderRenderable(figlet, new(TimeLeftPosition, TimeTopPosition)));
+                    builder.Append(RendererTools.RenderRenderable(figlet, new(TimeLeftPosition, TimeTopPosition)));
                     modeY += FigletTools.GetFigletHeight(UntilText, FigletFont);
                 }
                 else

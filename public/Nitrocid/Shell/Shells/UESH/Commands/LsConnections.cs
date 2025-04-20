@@ -20,10 +20,8 @@
 using System;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.Connections;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
