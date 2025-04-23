@@ -17,20 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Timers.Timers;
+using Nitrocid.Extras.Dates.Timers;
 using Nitrocid.Shell.ShellBase.Commands;
 
-namespace Nitrocid.Extras.Timers.Commands
+namespace Nitrocid.Extras.Dates.Commands
 {
     /// <summary>
-    /// The Pomodoro Timer
+    /// The stopwatch CLI
     /// </summary>
-    class PomodoroCommand : BaseCommand, ICommand
+    /// <remarks>
+    /// If you want to record the time elapsed from when the stopwatch has started, you can use this command. It's useful for races, because it has the lap feature.
+    /// </remarks>
+    class StopwatchCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PomodoroScreen.OpenPomodoro();
+            StopwatchScreen.OpenStopwatch();
             return 0;
         }
     }

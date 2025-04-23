@@ -38,7 +38,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
 
-namespace Nitrocid.Extras.Timers.Timers
+namespace Nitrocid.Extras.Dates.Timers
 {
     /// <summary>
     /// Timer CLI module
@@ -86,8 +86,8 @@ namespace Nitrocid.Extras.Timers.Timers
         /// </summary>
         public static string TimerFigletFont
         {
-            get => TimersInit.TimersConfig.TimerFigletFont;
-            set => TimersInit.TimersConfig.TimerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
+            get => DatesInit.DatesConfig.TimerFigletFont;
+            set => DatesInit.DatesConfig.TimerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval
-                if (TimersInit.TimersConfig.EnableFigletTimer)
+                if (DatesInit.DatesConfig.EnableFigletTimer)
                 {
                     var figlet = new FigletText(FigletFont)
                     {
@@ -278,7 +278,7 @@ namespace Nitrocid.Extras.Timers.Timers
             // Now, get the normal time left and top position and update the values according to timer type
             TimeLeftPosition = (int)Math.Round(HalfWidth - RemainingTimeText.Length / 2d);
             TimeTopPosition = HalfHeight - 3;
-            if (TimersInit.TimersConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletTimer)
             {
                 TimeLeftPosition = FigletTimeLeftPosition;
                 TimeTopPosition = FigletTimeTopPosition;
@@ -300,7 +300,7 @@ namespace Nitrocid.Extras.Timers.Timers
             int FigletTimeBottomPosition = (int)Math.Round(HalfHeight + FigletTools.GetFigletHeight(RemainingTimeText, FigletFont) / 2d);
 
             // If figlet is enabled, clear the display
-            if (TimersInit.TimersConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletTimer)
             {
                 for (int FigletTimePosition = FigletTimeTopPosition; FigletTimePosition <= FigletTimeBottomPosition; FigletTimePosition++)
                 {

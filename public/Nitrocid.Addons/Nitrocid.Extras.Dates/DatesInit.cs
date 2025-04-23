@@ -17,18 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Extras.TimeInfo.Commands;
+using Nitrocid.Extras.Dates.Commands;
+using Nitrocid.Extras.Dates.Settings;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
+using Nitrocid.Extras.Dates.Timers;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace Nitrocid.Extras.TimeInfo
+namespace Nitrocid.Extras.Dates
 {
-    internal class TimeInfoInit : IAddon
+    internal class DatesInit : IAddon
     {
         private readonly List<CommandInfo> addonCommands =
         [
@@ -49,20 +53,44 @@ namespace Nitrocid.Extras.TimeInfo
                         })
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch", new StopwatchCommand()),
+
+            new CommandInfo("timer", /* Localizable */ "A simple timer", new TimerCommand()),
+
+            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer", new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimeInfo);
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDates);
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        internal static DatesConfig DatesConfig =>
+            (DatesConfig)Config.baseConfigurations[nameof(DatesConfig)];
 
-        void IAddon.StopAddon() =>
+        void IAddon.StartAddon()
+        {
+            var config = new DatesConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
+
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
+            HomepageTools.UnregisterBuiltinAction("Timer");
+            HomepageTools.UnregisterBuiltinAction("Stopwatch");
+            HomepageTools.UnregisterBuiltinAction("Pomodoro");
+        }
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Timer", TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Stopwatch", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pomodoro", PomodoroScreen.OpenPomodoro);
+        }
     }
 }

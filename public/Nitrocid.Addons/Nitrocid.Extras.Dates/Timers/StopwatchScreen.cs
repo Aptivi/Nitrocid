@@ -37,7 +37,7 @@ using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Nitrocid.Extras.Timers.Timers
+namespace Nitrocid.Extras.Dates.Timers
 {
     /// <summary>
     /// Stopwatch CLI module

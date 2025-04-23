@@ -160,14 +160,9 @@
         "project": "Extras.ThemeStudio"
     },
     {
-        "name": "ExtrasTimeInfo",
-        "display": "Extras - Time Info",
-        "project": "Extras.TimeInfo"
-    },
-    {
-        "name": "ExtrasTimers",
-        "display": "Extras - Timers",
-        "project": "Extras.Timers"
+        "name": "ExtrasDates",
+        "display": "Extras - Dates",
+        "project": "Extras.Dates"
     },
     {
         "name": "ExtrasTips",
