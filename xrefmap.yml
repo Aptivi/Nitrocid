@@ -26437,6 +26437,38 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnix
   nameWithType: TimeDateConverters.DateToUnix
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs(System.DateTime)
+  name: DateToUnixMs(DateTime)
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_DateToUnixMs_System_DateTime_
+  commentId: M:Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs(System.DateTime)
+  name.vb: DateToUnixMs(Date)
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs(System.DateTime)
+  fullName.vb: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs(Date)
+  nameWithType: TimeDateConverters.DateToUnixMs(DateTime)
+  nameWithType.vb: TimeDateConverters.DateToUnixMs(Date)
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs*
+  name: DateToUnixMs
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_DateToUnixMs_
+  commentId: Overload:Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixMs
+  nameWithType: TimeDateConverters.DateToUnixMs
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs(System.DateTime)
+  name: DateToUnixUs(DateTime)
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_DateToUnixUs_System_DateTime_
+  commentId: M:Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs(System.DateTime)
+  name.vb: DateToUnixUs(Date)
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs(System.DateTime)
+  fullName.vb: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs(Date)
+  nameWithType: TimeDateConverters.DateToUnixUs(DateTime)
+  nameWithType.vb: TimeDateConverters.DateToUnixUs(Date)
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs*
+  name: DateToUnixUs
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_DateToUnixUs_
+  commentId: Overload:Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.DateToUnixUs
+  nameWithType: TimeDateConverters.DateToUnixUs
 - uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.GetDateFromCalendar(Nitrocid.Kernel.Time.Calendars.CalendarTypes)
   name: GetDateFromCalendar(CalendarTypes)
   href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_GetDateFromCalendar_Nitrocid_Kernel_Time_Calendars_CalendarTypes_
@@ -26579,6 +26611,38 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDate
   nameWithType: TimeDateConverters.UnixToDate
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs(System.Double)
+  name: UnixToDateMs(double)
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_UnixToDateMs_System_Double_
+  commentId: M:Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs(System.Double)
+  name.vb: UnixToDateMs(Double)
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs(double)
+  fullName.vb: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs(Double)
+  nameWithType: TimeDateConverters.UnixToDateMs(double)
+  nameWithType.vb: TimeDateConverters.UnixToDateMs(Double)
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs*
+  name: UnixToDateMs
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_UnixToDateMs_
+  commentId: Overload:Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateMs
+  nameWithType: TimeDateConverters.UnixToDateMs
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs(System.Double)
+  name: UnixToDateUs(double)
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_UnixToDateUs_System_Double_
+  commentId: M:Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs(System.Double)
+  name.vb: UnixToDateUs(Double)
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs(double)
+  fullName.vb: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs(Double)
+  nameWithType: TimeDateConverters.UnixToDateUs(double)
+  nameWithType.vb: TimeDateConverters.UnixToDateUs(Double)
+- uid: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs*
+  name: UnixToDateUs
+  href: api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html#Nitrocid_Kernel_Time_Converters_TimeDateConverters_UnixToDateUs_
+  commentId: Overload:Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Time.Converters.TimeDateConverters.UnixToDateUs
+  nameWithType: TimeDateConverters.UnixToDateUs
 - uid: Nitrocid.Kernel.Time.FormatType
   name: FormatType
   href: api/Nitrocid.Kernel.Time.FormatType.html
