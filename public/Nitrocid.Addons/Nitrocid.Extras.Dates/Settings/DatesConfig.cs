@@ -25,12 +25,12 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
-namespace Nitrocid.Extras.Timers.Settings
+namespace Nitrocid.Extras.Dates.Settings
 {
     /// <summary>
-    /// Configuration instance for timers
+    /// Configuration instance for date tools
     /// </summary>
-    public class TimersConfig : BaseKernelConfig, IKernelConfig
+    public class DatesConfig : BaseKernelConfig, IKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Timers.Settings
         {
             get
             {
-                var dataStream = ResourcesManager.GetData("TimersSettings.json", ResourcesType.Misc, typeof(TimersConfig).Assembly) ??
+                var dataStream = ResourcesManager.GetData("DatesSettings.json", ResourcesType.Misc, typeof(DatesConfig).Assembly) ??
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);

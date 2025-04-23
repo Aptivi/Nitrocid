@@ -1,7 +1,7 @@
-<Project>
+﻿<Project>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
-  <!-- Extras.TimeInfo addon General Information -->
+  <!-- Extras.Dates addon General Information -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,16 +10,16 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - TimeInfo</Description>
-    <AssemblyTitle>Nitrocid KS Extras - TimeInfo</AssemblyTitle>
+    <Description>Nitrocid KS Extras - Dates</Description>
+    <AssemblyTitle>Nitrocid KS Extras - Dates</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <!-- Extras.TimeInfo addon General Information End -->
+  <!-- Extras.Dates addon General Information End -->
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
-  <!-- Extras.TimeInfo addon Platform Information -->
+  <!-- Extras.Dates addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineDebug>true</DefineDebug>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
-  <!-- Extras.TimeInfo addon Platform Information End -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
+  <!-- Extras.Dates addon Platform Information End -->
 
 </Project>

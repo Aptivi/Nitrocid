@@ -31,7 +31,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Textify.General;
 
-namespace Nitrocid.Extras.TimeInfo.Commands
+namespace Nitrocid.Extras.Dates.Commands
 {
     /// <summary>
     /// Shows time information

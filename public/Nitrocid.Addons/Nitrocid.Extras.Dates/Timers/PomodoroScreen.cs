@@ -41,7 +41,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Nitrocid.Extras.Timers.Timers
+namespace Nitrocid.Extras.Dates.Timers
 {
     /// <summary>
     /// Pomodoro CLI module
@@ -94,8 +94,8 @@ namespace Nitrocid.Extras.Timers.Timers
         /// </summary>
         public static string PomodoroFigletFont
         {
-            get => TimersInit.TimersConfig.PomodoroFigletFont;
-            set => TimersInit.TimersConfig.PomodoroFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
+            get => DatesInit.DatesConfig.PomodoroFigletFont;
+            set => DatesInit.DatesConfig.PomodoroFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Print the time interval
                 int modeY = TimeTopPosition + 2;
-                if (TimersInit.TimersConfig.EnableFigletPomodoro)
+                if (DatesInit.DatesConfig.EnableFigletPomodoro)
                 {
                     var figlet = new FigletText(FigletFont)
                     {
@@ -361,7 +361,7 @@ namespace Nitrocid.Extras.Timers.Timers
             // Now, get the normal time left and top position and update the values according to timer type
             TimeLeftPosition = (int)Math.Round(HalfWidth - RemainingTimeText.Length / 2d);
             TimeTopPosition = HalfHeight - 3;
-            if (TimersInit.TimersConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletTimer)
             {
                 TimeLeftPosition = FigletTimeLeftPosition;
                 TimeTopPosition = FigletTimeTopPosition;
@@ -383,7 +383,7 @@ namespace Nitrocid.Extras.Timers.Timers
             int FigletTimeBottomPosition = (int)Math.Round(HalfHeight + FigletTools.GetFigletHeight(RemainingTimeText, FigletFont) / 2d);
 
             // If figlet is enabled, clear the display
-            if (TimersInit.TimersConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletTimer)
             {
                 for (int FigletTimePosition = FigletTimeTopPosition; FigletTimePosition <= FigletTimeBottomPosition; FigletTimePosition++)
                 {

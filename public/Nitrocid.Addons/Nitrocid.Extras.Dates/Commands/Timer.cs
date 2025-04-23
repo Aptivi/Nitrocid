@@ -17,28 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using Terminaux.Colors;
+using Nitrocid.Extras.Dates.Timers;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace Nitrocid.Extras.Timers.Timers
+namespace Nitrocid.Extras.Dates.Commands
 {
-    class LapDisplayInfo
+    /// <summary>
+    /// The timer CLI
+    /// </summary>
+    /// <remarks>
+    /// If you want to set the time limit, you can do so using this command.
+    /// </remarks>
+    class TimerCommand : BaseCommand, ICommand
     {
 
-        /// <summary>
-        /// The lap color
-        /// </summary>
-        public readonly Color LapColor;
-        /// <summary>
-        /// The lap interval
-        /// </summary>
-        public readonly TimeSpan LapInterval;
-
-        public LapDisplayInfo(Color LapColor, TimeSpan LapInterval)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            this.LapColor = LapColor;
-            this.LapInterval = LapInterval;
+            TimerScreen.OpenTimer();
+            return 0;
         }
-
     }
 }

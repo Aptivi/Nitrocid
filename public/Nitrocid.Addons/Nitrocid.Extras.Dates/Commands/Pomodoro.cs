@@ -17,23 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Timers.Timers;
+using Nitrocid.Extras.Dates.Timers;
 using Nitrocid.Shell.ShellBase.Commands;
 
-namespace Nitrocid.Extras.Timers.Commands
+namespace Nitrocid.Extras.Dates.Commands
 {
     /// <summary>
-    /// The timer CLI
+    /// The Pomodoro Timer
     /// </summary>
-    /// <remarks>
-    /// If you want to set the time limit, you can do so using this command.
-    /// </remarks>
-    class TimerCommand : BaseCommand, ICommand
+    class PomodoroCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TimerScreen.OpenTimer();
+            PomodoroScreen.OpenPomodoro();
             return 0;
         }
     }

@@ -17,24 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Timers.Timers;
-using Nitrocid.Shell.ShellBase.Commands;
+using System;
+using Terminaux.Colors;
 
-namespace Nitrocid.Extras.Timers.Commands
+namespace Nitrocid.Extras.Dates.Timers
 {
-    /// <summary>
-    /// The stopwatch CLI
-    /// </summary>
-    /// <remarks>
-    /// If you want to record the time elapsed from when the stopwatch has started, you can use this command. It's useful for races, because it has the lap feature.
-    /// </remarks>
-    class StopwatchCommand : BaseCommand, ICommand
+    class LapDisplayInfo
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        /// <summary>
+        /// The lap color
+        /// </summary>
+        public readonly Color LapColor;
+        /// <summary>
+        /// The lap interval
+        /// </summary>
+        public readonly TimeSpan LapInterval;
+
+        public LapDisplayInfo(Color LapColor, TimeSpan LapInterval)
         {
-            StopwatchScreen.OpenStopwatch();
-            return 0;
+            this.LapColor = LapColor;
+            this.LapInterval = LapInterval;
         }
+
     }
 }
