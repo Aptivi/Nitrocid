@@ -23985,6 +23985,12 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32C
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32C
   nameWithType: KnownAddons.ExtrasCrc32C
+- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasDates
+  name: ExtrasDates
+  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasDates
+  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasDates
+  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasDates
+  nameWithType: KnownAddons.ExtrasDates
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasDiagnostics
   name: ExtrasDiagnostics
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasDiagnostics
@@ -24153,18 +24159,6 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasThemeStudio
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasThemeStudio
   nameWithType: KnownAddons.ExtrasThemeStudio
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimeInfo
-  name: ExtrasTimeInfo
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasTimeInfo
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimeInfo
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimeInfo
-  nameWithType: KnownAddons.ExtrasTimeInfo
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimers
-  name: ExtrasTimers
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasTimers
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimers
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTimers
-  nameWithType: KnownAddons.ExtrasTimers
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasTips
   name: ExtrasTips
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasTips
