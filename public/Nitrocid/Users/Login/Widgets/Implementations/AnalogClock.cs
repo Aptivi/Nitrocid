@@ -118,7 +118,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 
             // Now, draw the bezel
             int bezelTop = top + 1;
-            int bezelHeight = height - 6;
+            int bezelHeight = height - 4 - (height % 2 == 0 ? 1 : 0);
             int bezelWidth = bezelHeight * 2;
             int bezelLeft = width / 2 - bezelHeight + left + 1;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);

@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="6.1.8.2" />
+    <PackageReference Include="Terminaux" Version="6.1.8.4" />
   </ItemGroup>
 
   <ItemGroup>
