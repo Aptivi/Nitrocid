@@ -4412,6 +4412,19 @@
     "Nível máximo de cor azul para o terceiro",
     "Nível máximo de cor para o terceiro",
     "Os progressos selecionarão cores aleatórias se estiverem ativados. Caso contrário, utilize cores da configuração.",
-    "Se o ciclo de cores estiver activado, quantos tiques faltam para alterar as cores no Progresso? 1 tique = 0,5 terços"
+    "Se o ciclo de cores estiver activado, quantos tiques faltam para alterar as cores no Progresso? 1 tique = 0,5 terços",
+    "Data de produção inválida",
+    "O prazo de validade é inválido",
+    "Data de validade inválida",
+    "Data de produção",
+    "Data de validade",
+    "Período de expiração",
+    "Saúde do produto",
+    "Estado do produto",
+    "Falha ao obter informação sobre a validade do produto",
+    "Obtém as informações de validade do produto",
+    "Data de produção (ver na lateral ou na parte inferior do produto)",
+    "Data de validade ou período de tempo (escrito explicitamente no mesmo local ou em intervalos de tempo, como 6 meses ou 1 ano)",
+    "Se o produto alvo não especificar explicitamente a data de validade"
   ]
 }

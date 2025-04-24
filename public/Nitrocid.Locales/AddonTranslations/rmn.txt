@@ -4409,3 +4409,16 @@ Nivel maxim de culoare albastră pentru a treia
 Nivel maxim de culoare pentru a treia
 Progress va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.
 Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în Progress? 1 bif = 0,5 treime
+Data producției este invalidă
+Perioada de expirare este nevalidă
+Data de expirare este nevalidă
+Data producției
+Data de expirare
+Perioada de expirare
+Sănătatea produsului
+Starea produsului
+Nu s-au putut obține informațiile despre expirarea produsului
+Obține informațiile despre expirarea produsului
+Data producției (uitați-vă fie pe partea laterală, fie pe partea de jos a produsului)
+Data de expirare sau perioada de timp (fie scrisă explicit în același loc sau intervale de timp, cum ar fi 6 luni sau 1 an)
+Dacă produsul țintă nu specifică în mod explicit data de expirare

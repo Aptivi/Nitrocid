@@ -4412,6 +4412,19 @@
     "Tahap warna biru maksimum untuk ketiga",
     "Tahap warna maksimum untuk ketiga",
     "Kemajuan akan memilih warna rawak jika didayakan. Jika tidak, gunakan warna daripada config.",
-    "Jika kitaran warna didayakan, berapa tanda kutu sebelum menukar warna dalam Progress? 1 tanda = 0.5 pertiga"
+    "Jika kitaran warna didayakan, berapa tanda kutu sebelum menukar warna dalam Progress? 1 tanda = 0.5 pertiga",
+    "Tarikh pengeluaran tidak sah",
+    "Tempoh masa tamat adalah tidak sah",
+    "Tarikh luput tidak sah",
+    "Tarikh pengeluaran",
+    "tarikh luput",
+    "Jangka masa tamat tempoh",
+    "Kesihatan produk",
+    "Status produk",
+    "Gagal mendapatkan maklumat tamat tempoh produk",
+    "Mendapat maklumat tamat tempoh produk",
+    "Tarikh pengeluaran (lihat sama ada sisi atau bahagian bawah produk)",
+    "Tarikh luput atau tempoh masa (sama ada ditulis secara eksplisit pada tempat atau jangka masa yang sama, seperti 6 bulan atau 1 tahun)",
+    "Sama ada produk sasaran tidak menyatakan tarikh luput dengan jelas"
   ]
 }

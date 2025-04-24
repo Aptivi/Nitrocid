@@ -4412,6 +4412,19 @@
     "Livello massimo di colore blu per il terzo",
     "Livello massimo di colore per il terzo",
     "Progresses selezionerà colori casuali se è abilitato. In caso contrario, utilizza i colori dalla configurazione.",
-    "Se il ciclo di colori è abilitato, quanti tick prima di cambiare colore in Progresses? 1 tick = 0,5 terzi"
+    "Se il ciclo di colori è abilitato, quanti tick prima di cambiare colore in Progresses? 1 tick = 0,5 terzi",
+    "Data di produzione non valida",
+    "Periodo di scadenza non valido",
+    "Data di scadenza non valida",
+    "Data di produzione",
+    "Data di scadenza",
+    "Intervallo di scadenza",
+    "Stato del prodotto",
+    "Impossibile ottenere le informazioni sulla scadenza del prodotto",
+    "Ottiene le informazioni sulla scadenza del prodotto",
+    "Data di produzione (guardare sul lato o sul fondo del prodotto)",
+    "Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)",
+    "Se il prodotto di destinazione non specifica esplicitamente la data di scadenza",
+    "Whether the target product doesn't specify the expiry date explicitly"
   ]
 }

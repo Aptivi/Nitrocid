@@ -4412,6 +4412,19 @@
     "Nivel máximo de color azul para el tercero",
     "Nivel máximo de color para el tercero",
     "Progresses seleccionará colores aleatorios si está habilitado. De lo contrario, usa los colores de la configuración.",
-    "Si el ciclo de color está habilitado, ¿cuántos ticks antes de cambiar los colores en Progresses? 1 tick = 0,5 tercios"
+    "Si el ciclo de color está habilitado, ¿cuántos ticks antes de cambiar los colores en Progresses? 1 tick = 0,5 tercios",
+    "Fecha de producción no válida",
+    "Período de caducidad no válido",
+    "Fecha de caducidad no válida",
+    "Fecha de producción",
+    "Fecha de caducidad",
+    "Período de caducidad",
+    "Estado del producto",
+    "Estado del producto",
+    "No se pudo obtener la información de caducidad del producto",
+    "Obtiene la información de caducidad del producto",
+    "Fecha de producción (ver el lateral o la parte inferior del producto)",
+    "Fecha o período de caducidad (ya sea escrito explícitamente en el mismo lugar o en períodos de tiempo, como 6 meses o 1 año)",
+    "Si el producto de destino no especifica explícitamente la fecha de caducidad"
   ]
 }

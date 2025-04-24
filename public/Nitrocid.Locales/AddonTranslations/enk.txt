@@ -4409,3 +4409,16 @@ Maximum blue colour level for third
 Maximum colour level for third
 Progresses will select random colours if it's enabled. Otherwise, use colours from config.
 If colour cycling is enabled, how many ticks before changing colours in Progresses? 1 tick = 0.5 third
+Production date is invalid
+Expiry time period is invalid
+Expiry date is invalid
+Production date
+Expiry date
+Expiry time span
+Product health
+Product status
+Failed to get product expiry information
+Gets the product expiry information
+Production date (look at either the side or the bottom of the product)
+Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)
+Whether the target product doesn't specify the expiry date explicitly

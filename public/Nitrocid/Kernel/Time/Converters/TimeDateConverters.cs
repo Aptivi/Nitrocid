@@ -48,6 +48,30 @@ namespace Nitrocid.Kernel.Time.Converters
             UnixEpoch.AddSeconds(UnixTime);
 
         /// <summary>
+        /// Converts the date to Unix time (milliseconds since 1970/1/1) (UTC)
+        /// </summary>
+        public static double DateToUnixMs(DateTime TargetDate) =>
+            (TargetDate - UnixEpoch).TotalMilliseconds;
+
+        /// <summary>
+        /// Converts the Unix time (milliseconds since 1970/1/1) to date (UTC)
+        /// </summary>
+        public static DateTime UnixToDateMs(double UnixTime) =>
+            UnixEpoch.AddMilliseconds(UnixTime);
+
+        /// <summary>
+        /// Converts the date to Unix time (microseconds since 1970/1/1) (UTC)
+        /// </summary>
+        public static double DateToUnixUs(DateTime TargetDate) =>
+            (TargetDate - UnixEpoch).TotalMicroseconds;
+
+        /// <summary>
+        /// Converts the Unix time (microseconds since 1970/1/1) to date (UTC)
+        /// </summary>
+        public static DateTime UnixToDateUs(double UnixTime) =>
+            UnixEpoch.AddMicroseconds(UnixTime);
+
+        /// <summary>
         /// Gets a date from a specified calendar
         /// </summary>
         /// <param name="calendarType">Calendar to use during conversion</param>

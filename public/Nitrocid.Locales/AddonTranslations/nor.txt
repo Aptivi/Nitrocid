@@ -4409,3 +4409,16 @@ Maksimalt blåfargenivå for tredje
 Maksimalt fargenivå for tredje
 Fremdrift vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
 Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i Progresses? 1 hake = 0,5 tredjedel
+Produksjonsdatoen er ugyldig
+Utløpsperioden er ugyldig
+Utløpsdatoen er ugyldig
+Produksjonsdato
+Utløpsdato
+Utløpstid
+Produkthelse
+Produktstatus
+Kunne ikke hente informasjon om produktutløp
+Får informasjon om produktets utløpsdato
+Produksjonsdato (se enten på siden eller bunnen av produktet)
+Utløpsdato eller tidsperiode (enten eksplisitt skrevet på samme sted eller tidsrom, for eksempel 6 måneder eller 1 år)
+Om målproduktet ikke spesifiserer utløpsdatoen eksplisitt

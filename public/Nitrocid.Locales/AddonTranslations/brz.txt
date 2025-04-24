@@ -4409,3 +4409,16 @@ Nível máximo de cor azul para o terceiro
 Nível máximo de cor para o terceiro
 O Progresses selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
 Se o ciclo de cores estiver habilitado, quantos tiques antes de alterar as cores no Progresses? 1 tique = 0,5 terço
+Data de produção inválida
+Período de validade inválido
+Data de validade inválida
+Data de produção
+Data de validade
+Período de validade
+Saúde do produto
+Status do produto
+Falha ao obter informações de validade do produto
+Obtém as informações de validade do produto
+Data de produção (consulte a lateral ou a parte inferior do produto)
+Data ou período de validade (explicitamente escrito no mesmo local ou em períodos de tempo, como 6 meses ou 1 ano)
+Se o produto-alvo não especifica explicitamente a data de validade

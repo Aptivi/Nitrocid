@@ -4409,3 +4409,16 @@ Niveau de couleur bleu maximum pour la troisième
 Niveau de couleur maximum pour la troisième
 Progresses sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de la configuration.
 Si le cycle de couleurs est activé, combien de graduations avant de changer de couleur dans Progresses ? 1 graduation = 0,5 tiers
+Date de production non valide
+Délai de péremption non valide
+Date de péremption non valide
+Date de production
+Date de péremption
+Délai de péremption
+État du produit
+État du produit
+Échec de l'obtention des informations de péremption du produit
+Obtention des informations de péremption du produit
+Date de production (regarder sur le côté ou le dessous du produit)
+Date ou délai de péremption (écrit explicitement au même endroit ou par intervalles de temps, par exemple 6 mois ou 1 an)
+Si le produit cible ne précise pas explicitement la date de péremption

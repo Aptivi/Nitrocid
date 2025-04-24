@@ -4412,6 +4412,19 @@
     "Mức màu xanh lam tối đa cho thứ ba",
     "Mức màu tối đa cho thứ ba",
     "Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình.",
-    "Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba"
+    "Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba",
+    "Ngày sản xuất không hợp lệ",
+    "Thời hạn sử dụng không hợp lệ",
+    "Ngày hết hạn không hợp lệ",
+    "Ngày sản xuất",
+    "Ngày hết hạn",
+    "Khoảng thời gian hết hạn",
+    "Tình trạng sản phẩm",
+    "Trạng thái sản phẩm",
+    "Không lấy được thông tin hết hạn sản phẩm",
+    "Lấy thông tin hết hạn sản phẩm",
+    "Ngày sản xuất (xem ở mặt bên hoặc mặt dưới của sản phẩm)",
+    "Ngày hết hạn hoặc khoảng thời gian (được ghi rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)",
+    "Sản phẩm mục tiêu có ghi rõ ngày hết hạn không"
   ]
 }
