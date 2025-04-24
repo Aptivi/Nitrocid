@@ -4187,3 +4187,16 @@ Setări presetate ale carcasei
 Wrap list outputs
 Încheie ieșirile listei dacă pare prea lungă pentru geometria actuală a consolei.
 Această secțiune vă permite să configurați modul în care funcționează distracțiile.
+Data producției este invalidă
+Perioada de expirare este nevalidă
+Data de expirare este nevalidă
+Data producției
+Data de expirare
+Perioada de expirare
+Sănătatea produsului
+Starea produsului
+Nu s-au putut obține informațiile despre expirarea produsului
+Obține informațiile despre expirarea produsului
+Data producției (uitați-vă fie pe partea laterală, fie pe partea de jos a produsului)
+Data de expirare sau perioada de timp (fie scrisă explicit în același loc sau intervale de timp, cum ar fi 6 luni sau 1 an)
+Dacă produsul țintă nu specifică în mod explicit data de expirare

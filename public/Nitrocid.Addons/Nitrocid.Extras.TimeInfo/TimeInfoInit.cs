@@ -53,6 +53,27 @@ namespace Nitrocid.Extras.TimeInfo
                         })
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("expiry", /* Localizable */ "Gets the product expiry information",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Production date (look at either the side or the bottom of the product)"
+                        }),
+                        new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)"
+                        })
+                    ],
+                    [
+                        new SwitchInfo("implicit", /* Localizable */ "Whether the target product doesn't specify the expiry date explicitly", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new ExpiryCommand()),
         ];
 
         string IAddon.AddonName =>

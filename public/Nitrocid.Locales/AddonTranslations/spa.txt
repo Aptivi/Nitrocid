@@ -4187,3 +4187,16 @@ Configuraciones predeterminadas del shell
 Enrollar salidas de lista
 Enrolla las salidas de lista si parecen demasiado largas para la geometría actual de la consola.
 Esta sección te permite configurar cómo funcionan las diversiones.
+Fecha de producción no válida
+Período de caducidad no válido
+Fecha de caducidad no válida
+Fecha de producción
+Fecha de caducidad
+Período de caducidad
+Estado del producto
+Estado del producto
+No se pudo obtener la información de caducidad del producto
+Obtiene la información de caducidad del producto
+Fecha de producción (ver el lateral o la parte inferior del producto)
+Fecha o período de caducidad (ya sea escrito explícitamente en el mismo lugar o en períodos de tiempo, como 6 meses o 1 año)
+Si el producto de destino no especifica explícitamente la fecha de caducidad

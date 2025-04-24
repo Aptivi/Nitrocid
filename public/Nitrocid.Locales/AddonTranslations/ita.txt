@@ -4187,3 +4187,15 @@ Impostazioni predefinite della shell
 Esegui wrap list output
 Esegue wrap list output se sembra troppo lungo per la geometria della console corrente.
 Questa sezione consente di configurare il funzionamento dei divertimenti.
+Data di produzione non valida
+Periodo di scadenza non valido
+Data di scadenza non valida
+Data di produzione
+Data di scadenza
+Intervallo di scadenza
+Stato del prodotto
+Impossibile ottenere le informazioni sulla scadenza del prodotto
+Ottiene le informazioni sulla scadenza del prodotto
+Data di produzione (guardare sul lato o sul fondo del prodotto)
+Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)
+Se il prodotto di destinazione non specifica esplicitamente la data di scadenza

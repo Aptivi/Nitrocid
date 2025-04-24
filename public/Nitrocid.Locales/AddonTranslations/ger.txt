@@ -4187,3 +4187,16 @@ Shell-Vorgabeeinstellungen
 Listenausgaben umbrechen
 Umbricht die Listenausgaben, wenn sie für die aktuelle Konsolengeometrie zu lang erscheinen.
 In diesem Abschnitt können Sie konfigurieren, wie die Unterhaltungen funktionieren.
+Ungültiges Produktionsdatum
+Ungültiger Ablaufzeitraum
+Ungültiges Ablaufdatum
+Produktionsdatum
+Ablaufdatum
+Ablaufzeitraum
+Produktzustand
+Produktstatus
+Produktablaufinformationen konnten nicht abgerufen werden
+Ablaufinformationen werden abgerufen
+Produktionsdatum (siehe Seite oder Unterseite des Produkts)
+Ablaufdatum oder -zeitraum (entweder explizit an derselben Stelle angegeben oder Zeitspannen, z. B. 6 Monate oder 1 Jahr)
+Ob das Zielprodukt das Ablaufdatum nicht explizit angibt

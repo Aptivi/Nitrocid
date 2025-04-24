@@ -4187,3 +4187,16 @@ Configurações predefinidas do shell
 Saídas da lista de encapsulamento
 Encapsula as saídas da lista se parecerem muito longas para a geometria atual do console.
 Esta seção permite que você configure como as diversões funcionam.
+Data de produção inválida
+Período de validade inválido
+Data de validade inválida
+Data de produção
+Data de validade
+Período de validade
+Saúde do produto
+Status do produto
+Falha ao obter informações de validade do produto
+Obtém as informações de validade do produto
+Data de produção (consulte a lateral ou a parte inferior do produto)
+Data ou período de validade (explicitamente escrito no mesmo local ou em períodos de tempo, como 6 meses ou 1 ano)
+Se o produto-alvo não especifica explicitamente a data de validade

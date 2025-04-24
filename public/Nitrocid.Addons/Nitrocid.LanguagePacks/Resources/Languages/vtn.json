@@ -4190,6 +4190,19 @@
     "Cài đặt trước của shell",
     "Gói đầu ra danh sách",
     "Gói đầu ra danh sách nếu có vẻ quá dài đối với hình dạng bảng điều khiển hiện tại.",
-    "Phần này cho phép bạn định cấu hình cách thức hoạt động của các trò giải trí."
+    "Phần này cho phép bạn định cấu hình cách thức hoạt động của các trò giải trí.",
+    "Ngày sản xuất không hợp lệ",
+    "Thời hạn sử dụng không hợp lệ",
+    "Ngày hết hạn không hợp lệ",
+    "Ngày sản xuất",
+    "Ngày hết hạn",
+    "Khoảng thời gian hết hạn",
+    "Tình trạng sản phẩm",
+    "Trạng thái sản phẩm",
+    "Không lấy được thông tin hết hạn sản phẩm",
+    "Lấy thông tin hết hạn sản phẩm",
+    "Ngày sản xuất (xem ở mặt bên hoặc mặt dưới của sản phẩm)",
+    "Ngày hết hạn hoặc khoảng thời gian (được ghi rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)",
+    "Sản phẩm mục tiêu có ghi rõ ngày hết hạn không"
   ]
 }

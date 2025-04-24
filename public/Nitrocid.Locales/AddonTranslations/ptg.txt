@@ -4187,3 +4187,16 @@ Configurações predefinidas do shell
 Saídas da lista de avaria
 Encapsula as saídas da lista se parecerem demasiado longas para a geometria atual da consola.
 Esta secção permite configurar como funcionam as diversões.
+Data de produção inválida
+O prazo de validade é inválido
+Data de validade inválida
+Data de produção
+Data de validade
+Período de expiração
+Saúde do produto
+Estado do produto
+Falha ao obter informação sobre a validade do produto
+Obtém as informações de validade do produto
+Data de produção (ver na lateral ou na parte inferior do produto)
+Data de validade ou período de tempo (escrito explicitamente no mesmo local ou em intervalos de tempo, como 6 meses ou 1 ano)
+Se o produto alvo não especificar explicitamente a data de validade

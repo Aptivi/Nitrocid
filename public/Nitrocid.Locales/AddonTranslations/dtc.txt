@@ -4187,3 +4187,16 @@ Shell-presetinstellingen
 Wrap list outputs
 Wraps the list outputs if it seems too long for the current console geometry.
 In deze sectie kunt u configureren hoe de amusements werken.
+Productiedatum is ongeldig
+Vervaldatum is ongeldig
+Vervaldatum is ongeldig
+Productiedatum
+Vervaldatum
+Vervalperiode
+Productstatus
+Productstatus
+Kan de vervaldatum van het product niet ophalen
+Verkrijgt de vervaldatum van het product
+Productdatum (kijk naar de zijkant of onderkant van het product)
+Vervaldatum of -periode (expliciet op dezelfde plek geschreven of tijdsperioden, zoals 6 maanden of 1 jaar)
+Of het doelproduct de vervaldatum niet expliciet vermeldt

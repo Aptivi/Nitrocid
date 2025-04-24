@@ -4187,3 +4187,16 @@ Paramètres prédéfinis du shell
 Envelopper les sorties de liste
 Enveloppe les sorties de liste si elles semblent trop longues pour la géométrie actuelle de la console.
 Cette section vous permet de configurer le fonctionnement des divertissements.
+Date de production non valide
+Délai de péremption non valide
+Date de péremption non valide
+Date de production
+Date de péremption
+Délai de péremption
+État du produit
+État du produit
+Échec de l'obtention des informations de péremption du produit
+Obtention des informations de péremption du produit
+Date de production (regarder sur le côté ou le dessous du produit)
+Date ou délai de péremption (écrit explicitement au même endroit ou par intervalles de temps, par exemple 6 mois ou 1 an)
+Si le produit cible ne précise pas explicitement la date de péremption

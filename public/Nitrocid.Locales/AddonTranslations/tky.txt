@@ -4187,3 +4187,16 @@ Kabuk ön ayar ayarları
 Sarma listesi çıktıları
 Geçerli konsol geometrisi için çok uzun görünüyorsa liste çıktılarını sarar.
 Bu bölüm eğlencelerin nasıl çalıştığını yapılandırmanıza olanak tanır.
+Üretim tarihi geçersiz
+Son kullanma tarihi geçersiz
+Son kullanma tarihi geçersiz
+Üretim tarihi
+Son kullanma tarihi
+Son kullanma süresi aralığı
+Ürün sağlığı
+Ürün durumu
+Ürün son kullanma bilgisi alınamadı
+Ürün son kullanma bilgilerini alır
+Üretim tarihi (ürünün yan tarafına veya altına bakın)
+Son kullanma tarihi veya zaman aralığı (aynı yerde açıkça yazılmış veya 6 ay veya 1 yıl gibi zaman aralıkları)
+Hedef ürünün son kullanma tarihini açıkça belirtip belirtmediği

@@ -4190,6 +4190,19 @@
     "Testa preset occasus",
     "Wrap album outputs",
     "Involvit elenchos outputes si nimis longum videtur ad geometriam hodiernam consolandam.",
-    "Haec sectio permittit te configurare quomodo oblectamenta operantur."
+    "Haec sectio permittit te configurare quomodo oblectamenta operantur.",
+    "Productio date invalidum",
+    "Exitus tempus invalidum est",
+    "Exitus diem invalidum est",
+    "Productio diem",
+    "Exitus diem",
+    "Exitus temporis spatium",
+    "Product sanitas",
+    "Product status",
+    "Defecit ut productum exire notitia",
+    "Exitus ad productum accipit notitia",
+    "Productio date (vide vel latus vel imum producti)",
+    "Dies elapsus vel temporis periodus (vel expresse scriptus in eodem loco vel spatio temporis, ut 6 menses vel 1 annus)",
+    "Utrum scopum productum non dat terminum expresse"
   ]
 }
