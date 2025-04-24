@@ -1,10 +1,29 @@
-Since the release of 0.1.0 Service Pack 3, we've made a new version that incorporates general improvements.
+This is the fourth service pack of Nitrocid KS 0.1.0. We have ported all features from 0.1.1, so its changelogs will be repeated here to reflect the current state. This was because 0.1.1 has now become EOL.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[+]` Added The Nitrocid Homepage
+- `[+]` Added new commands
+- `[+]` Added new screensavers
+- `[+]` Added new themes
+- `[+]` Added playing radio stations
+- `[+]` Restored "beepsynth"
+- `[+]` Added more hashing algorithms
+- `[+]` Added image viewer
+- `[+]` Added the new "settings" UI
+- `[*]` Made some apps more interactive
+- `[*]` Merged GRILO into Nitrocid
+- `[*]` Theme studio classic UI now indicates color changes
+- `[*]` You can view file sizes directly next to their names in IFM
+- `[*]` Improved base configuration handling and initialization
+- `[*]` Enhanced VT support for text editor TUI
+- `[*]` Improved appearance of Snaker
+- `[*]` Improved appearance of boot log and journal log viewers
+- `[*]` ExecPath is now neutralized
+- `[*]` General improvements and bug fixes
+- `[-]` Removed time/date corner
 
 Review the commit history if you want to get a deep insight about the changes.
 
