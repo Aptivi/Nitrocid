@@ -1,3 +1,10 @@
+nitrocid-27 (3.1.27.49-0.1.2.8-1) noble; urgency=medium
+
+  * Added a feature from 0.1.3 (guess what...)
+  * Updated Terminaux
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 24 Apr 2025 19:20:19 +0300
+
 nitrocid-27 (3.1.27.48-0.1.2.7-1) noble; urgency=medium
 
   * General improvements
