@@ -40,10 +40,7 @@ namespace Nitrocid.Misc.Splash.Splashes
     class SplashWelcome : BaseSplash, ISplash
     {
         private bool cleared = false;
-        private ProgressBarNoText progress = new(0, 100)
-        {
-            Width = ConsoleWrapper.WindowWidth - 6,
-        };
+        private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
@@ -54,6 +51,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             var builder = new StringBuilder();
             progress.Position = 0;
             progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -116,6 +114,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             cleared = false;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)
             );
@@ -210,6 +209,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             int posX = 2;
             int posY = ConsoleWrapper.WindowHeight - 2;
             progress.Position = Progress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 RendererTools.RenderRenderable(progress, new(posX, posY))
             );
