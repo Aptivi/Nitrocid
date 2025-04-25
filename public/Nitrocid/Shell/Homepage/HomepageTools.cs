@@ -51,6 +51,8 @@ using Nitrocid.Files;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Audio;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -64,6 +66,8 @@ namespace Nitrocid.Shell.Homepage
         internal static bool isHomepageRssFeedEnabled = true;
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
+        private static bool isThemeMusicPlaying = false;
+        private static KernelThread themeMusicThread = new("Theme Music Thread", true, () => HandleThemeMusic());
         private static readonly Dictionary<string, Action> choiceActionsAddons = [];
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
@@ -81,6 +85,7 @@ namespace Nitrocid.Shell.Homepage
             new(/* Localizable */ "Shell", ConsoleKey.S),
             new(/* Localizable */ "Keybindings", ConsoleKey.K),
             new(/* Localizable */ "Switch", ConsoleKey.Tab),
+            new(/* Localizable */ "Play...", ConsoleKey.P),
 
             // Mouse
             new(/* Localizable */ "Execute", PointerButton.Left),
@@ -553,6 +558,14 @@ namespace Nitrocid.Shell.Homepage
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                                 break;
+                            case ConsoleKey.P:
+                                if (!isThemeMusicPlaying)
+                                {
+                                    if (themeMusicThread.BaseThread.ThreadState == ThreadState.Stopped)
+                                        themeMusicThread.Regen();
+                                    themeMusicThread.Start();
+                                }
+                                break;
                             default:
                                 render = false;
                                 break;
@@ -702,6 +715,26 @@ namespace Nitrocid.Shell.Homepage
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
                 Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io"
             );
+        }
+
+        private static void HandleThemeMusic()
+        {
+            try
+            {
+                if (isThemeMusicPlaying)
+                    return;
+                isThemeMusicPlaying = true;
+                AudioCuesTools.PlayAudioCue(AudioCueType.Full, false);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to play theme music: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            finally
+            {
+                isThemeMusicPlaying = false;
+            }
         }
     }
 }
