@@ -153,6 +153,13 @@ namespace Nitrocid.Misc.Audio
             ResourcesManager.GetData($"{Name}.startup.mp3", ResourcesType.Audio) ??
             ResourcesManager.GetData("the_mirage.startup.mp3", ResourcesType.Audio);
 
+        /// <summary>
+        /// A stream containing audio data for the full music
+        /// </summary>
+        public Stream? FullStream =>
+            ResourcesManager.GetData($"{Name}.full.mp3", ResourcesType.Audio) ??
+            ResourcesManager.GetData("the_mirage.full.mp3", ResourcesType.Audio);
+
         internal Stream? GetStream(AudioCueType cueType) =>
             cueType switch
             {
@@ -172,6 +179,7 @@ namespace Nitrocid.Misc.Audio
                 AudioCueType.Shutdown => ShutdownStream,
                 AudioCueType.SpecialBeep => SpecialBeepStream,
                 AudioCueType.Startup => StartupStream,
+                AudioCueType.Full => FullStream,
                 _ => throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("There is no such audio cue type.")),
             };
 

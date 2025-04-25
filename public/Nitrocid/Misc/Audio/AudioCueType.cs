@@ -88,5 +88,9 @@ namespace Nitrocid.Misc.Audio
         /// Startup sound
         /// </summary>
         Startup,
+        /// <summary>
+        /// Full theme music
+        /// </summary>
+        Full,
     }
 }
