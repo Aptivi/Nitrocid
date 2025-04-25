@@ -28736,6 +28736,19 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Misc.Audio.AudioCueContainer.DisplayName
   nameWithType: AudioCueContainer.DisplayName
+- uid: Nitrocid.Misc.Audio.AudioCueContainer.FullStream
+  name: FullStream
+  href: api/Nitrocid.Misc.Audio.AudioCueContainer.html#Nitrocid_Misc_Audio_AudioCueContainer_FullStream
+  commentId: P:Nitrocid.Misc.Audio.AudioCueContainer.FullStream
+  fullName: Nitrocid.Misc.Audio.AudioCueContainer.FullStream
+  nameWithType: AudioCueContainer.FullStream
+- uid: Nitrocid.Misc.Audio.AudioCueContainer.FullStream*
+  name: FullStream
+  href: api/Nitrocid.Misc.Audio.AudioCueContainer.html#Nitrocid_Misc_Audio_AudioCueContainer_FullStream_
+  commentId: Overload:Nitrocid.Misc.Audio.AudioCueContainer.FullStream
+  isSpec: "True"
+  fullName: Nitrocid.Misc.Audio.AudioCueContainer.FullStream
+  nameWithType: AudioCueContainer.FullStream
 - uid: Nitrocid.Misc.Audio.AudioCueContainer.KeyboardCueBackspaceStream
   name: KeyboardCueBackspaceStream
   href: api/Nitrocid.Misc.Audio.AudioCueContainer.html#Nitrocid_Misc_Audio_AudioCueContainer_KeyboardCueBackspaceStream
@@ -28914,6 +28927,12 @@ references:
   commentId: F:Nitrocid.Misc.Audio.AudioCueType.BeepMedium
   fullName: Nitrocid.Misc.Audio.AudioCueType.BeepMedium
   nameWithType: AudioCueType.BeepMedium
+- uid: Nitrocid.Misc.Audio.AudioCueType.Full
+  name: Full
+  href: api/Nitrocid.Misc.Audio.AudioCueType.html#Nitrocid_Misc_Audio_AudioCueType_Full
+  commentId: F:Nitrocid.Misc.Audio.AudioCueType.Full
+  fullName: Nitrocid.Misc.Audio.AudioCueType.Full
+  nameWithType: AudioCueType.Full
 - uid: Nitrocid.Misc.Audio.AudioCueType.KeyboardCueBackspace
   name: KeyboardCueBackspace
   href: api/Nitrocid.Misc.Audio.AudioCueType.html#Nitrocid_Misc_Audio_AudioCueType_KeyboardCueBackspace
