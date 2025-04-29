@@ -154,3 +154,18 @@ pushall() {
     find $ROOTDIR/public/Nitrocid/KS*/ -maxdepth 1 -type f -name "*.nupkg" -exec sh -c "echo {} ; dotnet nuget push {} --api-key $NUGET_APIKEY --source \"$nugetsource\"" \;
     checkvendorerror $?
 }
+
+clean() {
+    OUTPUTS=(
+        '-name "bin" -or'
+        '-name "obj" -or'
+        '-name "KSBuild" -or'
+        '-name "KSAnalyzer" -or'
+        '-name "KSTest" -or'
+        '-name "nitrocid-27" -or'
+        '-name "nitrocid-27-lite" -or'
+        '-name "tmp" -or'
+        '-name "docs"'
+    )
+    find "$ROOTDIR" -type d \( ${OUTPUTS[@]} \) -print -exec rm -rf "{}" +
+}
