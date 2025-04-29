@@ -1,15 +1,5 @@
 MODAPI = 25
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
-OUTPUTS  := \
-	-name "bin" -or \
-	-name "obj" -or \
-	-name "KSBuild" -or \
-	-name "KSAnalyzer" -or \
-	-name "KSTest" -or \
-	-name "nitrocid-$(MODAPI)" -or \
-	-name "nitrocid-$(MODAPI)-lite" -or \
-	-name "tmp" -or \
-	-name "docs"
 
 OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net8.0"
 BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-jl"
@@ -47,7 +37,7 @@ rel-ci:
 doc: invoke-doc-build
 
 clean:
-	find "$(ROOT_DIR)" -type d \( $(OUTPUTS) \) -print -exec rm -rf "{}" +
+	bash tools/clean.sh
 
 all-offline:
 	$(MAKE) invoke-build-offline BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
