@@ -1,10 +1,9 @@
-This is the first (and the small) service pack of 0.1.2 that adds a small feature and an upgrade to the latest version of Terminaux.
+We have released this version of Nitrocid to fix some mouse bugs.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added a feature from 0.1.3 (guess what...)
 - `[*]` Updated Terminaux
 
 Review the commit history if you want to get a deep insight about the changes.
