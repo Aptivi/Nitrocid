@@ -35,7 +35,7 @@
   <!-- Extras.Images.Icons addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-beta1-20250425144915" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-beta1-20250430093829" />
   </ItemGroup>
 
 </Project>
