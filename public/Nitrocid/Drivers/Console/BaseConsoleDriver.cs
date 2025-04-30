@@ -271,9 +271,9 @@ namespace Nitrocid.Drivers.Console
             if (!IsDumb)
             {
                 if (loadBack)
-                    SystemConsole.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
+                    TextWriterRaw.WriteRaw(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
                 SetCursorPosition(0, 0);
-                SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(0));
+                TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiEraseInDisplay(0));
             }
         }
 
