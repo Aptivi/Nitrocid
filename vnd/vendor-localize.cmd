@@ -19,13 +19,13 @@ echo There was an error trying to copy dependencies (%errorlevel%).
 goto :finished
 
 :initconfig
-echo "<?xml version=""1.0"" encoding=""utf-8""?>" > %ROOTDIR%\NuGet.config
-echo "<configuration>" >> %ROOTDIR%\NuGet.config
-echo "  <packageSources>" >> %ROOTDIR%\NuGet.config
-echo "    <clear />" >> %ROOTDIR%\NuGet.config
-echo "    <add key=""nuget.org"" value=""./deps"" />" >> %ROOTDIR%\NuGet.config
-echo "  </packageSources>" >> %ROOTDIR%\NuGet.config
-echo "</configuration>" >> %ROOTDIR%\NuGet.config
+echo "<?xml version=""1.0"" encoding=""utf-8""?>" > "%ROOTDIR%\NuGet.config"
+echo "<configuration>" >> "%ROOTDIR%\NuGet.config"
+echo "  <packageSources>" >> "%ROOTDIR%\NuGet.config"
+echo "    <clear />" >> "%ROOTDIR%\NuGet.config"
+echo "    <add key=""nuget.org"" value=""./deps"" />" >> "%ROOTDIR%\NuGet.config"
+echo "  </packageSources>" >> "%ROOTDIR%\NuGet.config"
+echo "</configuration>" >> "%ROOTDIR%\NuGet.config"
 rd /s /q "%ROOTDIR%\nuget"
 if %errorlevel% == 0 goto :success
 echo There was an error trying to delete cache (%errorlevel%).
