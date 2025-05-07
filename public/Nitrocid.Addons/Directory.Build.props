@@ -1,4 +1,6 @@
 <Project>
+    <Import Project="..\..\Directory.Build.props" />
+
     <!-- ThemePacks addon General Information -->
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
