@@ -6,6 +6,10 @@
     <AssemblyTitle>Nitrocid KS Extras - Mods</AssemblyTitle>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
+
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>
