@@ -339,6 +339,7 @@ namespace Nitrocid.Drivers.Console
 
         /// <inheritdoc/>
         [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suggestion is invalid")]
         public virtual void SetBufferDimensions(int width, int height)
         {
             if (!IsDumb)
@@ -389,6 +390,7 @@ namespace Nitrocid.Drivers.Console
 
         /// <inheritdoc/>
         [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suggestion is invalid")]
         public virtual void SetBufferWidth(int width)
         {
             if (!IsDumb)
@@ -405,6 +407,7 @@ namespace Nitrocid.Drivers.Console
 
         /// <inheritdoc/>
         [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suggestion is invalid")]
         public virtual void SetBufferHeight(int height)
         {
             if (!IsDumb)
