@@ -82,6 +82,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.StandaloneAnalyzer
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Addons", "Addons", "{B60F276A-FE12-4001-916E-080344ED1FD9}"
+	ProjectSection(SolutionItems) = preProject
+		public\Nitrocid.Addons\Directory.Build.props = public\Nitrocid.Addons\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.ThemePacks", "public\Nitrocid.Addons\Nitrocid.ThemePacks\Nitrocid.ThemePacks.csproj", "{795E304D-A5A0-45B6-BE43-D2842A28EB45}"
 EndProject

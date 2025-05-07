@@ -1,39 +1,15 @@
 <Project>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
-  <!-- SplashPacks addon General Information -->
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
     <Description>Nitrocid KS Splash Packs</Description>
     <AssemblyTitle>Nitrocid KS Splash Packs</AssemblyTitle>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <!-- SplashPacks addon General Information End -->
-
-  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
-  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
-
-  <!-- SplashPacks addon Platform Information -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineDebug>true</DefineDebug>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DefineDebug>false</DefineDebug>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
-  </ItemGroup>
+  
   <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
-  <!-- ThemePacks addon Platform Information End -->
 
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+  <Import Project="NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>
