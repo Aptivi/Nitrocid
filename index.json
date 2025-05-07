@@ -1159,6 +1159,16 @@
     "title": "Namespace Nitrocid.Languages | Nitrocid KS API - Aptivi",
     "summary": "Namespace Nitrocid.Languages Classes CultureManager Culture management module LanguageInfo Language information LanguageManager Lanaguage management module Translate Translation module Structs LocalizedString Localized string"
   },
+  "api/Nitrocid.Localized.LocalStrings.html": {
+    "href": "api/Nitrocid.Localized.LocalStrings.html",
+    "title": "Class LocalStrings | Nitrocid KS API - Aptivi",
+    "summary": "Class LocalStrings Localized string tools Inheritance object LocalStrings Namespace: Nitrocid.Localized Assembly: Nitrocid.dll Syntax public static class LocalStrings Properties Languages Queries the languages Declaration public static string[] Languages { get; } Property Value Type Description string[] Localizations Queries the localizations Declaration public static string[] Localizations { get; } Property Value Type Description string[] Methods Exists(string, string) Checks to see if the given string using the string ID in a specific langauge exists Declaration public static bool Exists(string id, string lang) Parameters Type Name Description string id String ID that represents a localization string lang Language to translate to Returns Type Description bool True if exists; false otherwise Translate(string, string) Translates the given string using the string ID in a specific langauge Declaration public static string Translate(string id, string lang) Parameters Type Name Description string id String ID that represents a localization string lang Language to translate to Returns Type Description string A translated string"
+  },
+  "api/Nitrocid.Localized.html": {
+    "href": "api/Nitrocid.Localized.html",
+    "title": "Namespace Nitrocid.Localized | Nitrocid KS API - Aptivi",
+    "summary": "Namespace Nitrocid.Localized Classes LocalStrings Localized string tools"
+  },
   "api/Nitrocid.Misc.Audio.AudioCueContainer.html": {
     "href": "api/Nitrocid.Misc.Audio.AudioCueContainer.html",
     "title": "Class AudioCueContainer | Nitrocid KS API - Aptivi",

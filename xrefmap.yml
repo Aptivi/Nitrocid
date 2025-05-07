@@ -28620,6 +28620,76 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.Translate.DoTranslation
   nameWithType: Translate.DoTranslation
+- uid: Nitrocid.Localized
+  name: Nitrocid.Localized
+  href: api/Nitrocid.Localized.html
+  commentId: N:Nitrocid.Localized
+  fullName: Nitrocid.Localized
+  nameWithType: Nitrocid.Localized
+- uid: Nitrocid.Localized.LocalStrings
+  name: LocalStrings
+  href: api/Nitrocid.Localized.LocalStrings.html
+  commentId: T:Nitrocid.Localized.LocalStrings
+  fullName: Nitrocid.Localized.LocalStrings
+  nameWithType: LocalStrings
+- uid: Nitrocid.Localized.LocalStrings.Exists(System.String,System.String)
+  name: Exists(string, string)
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Exists_System_String_System_String_
+  commentId: M:Nitrocid.Localized.LocalStrings.Exists(System.String,System.String)
+  name.vb: Exists(String, String)
+  fullName: Nitrocid.Localized.LocalStrings.Exists(string, string)
+  fullName.vb: Nitrocid.Localized.LocalStrings.Exists(String, String)
+  nameWithType: LocalStrings.Exists(string, string)
+  nameWithType.vb: LocalStrings.Exists(String, String)
+- uid: Nitrocid.Localized.LocalStrings.Exists*
+  name: Exists
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Exists_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.Exists
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.Exists
+  nameWithType: LocalStrings.Exists
+- uid: Nitrocid.Localized.LocalStrings.Languages
+  name: Languages
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Languages
+  commentId: P:Nitrocid.Localized.LocalStrings.Languages
+  fullName: Nitrocid.Localized.LocalStrings.Languages
+  nameWithType: LocalStrings.Languages
+- uid: Nitrocid.Localized.LocalStrings.Languages*
+  name: Languages
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Languages_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.Languages
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.Languages
+  nameWithType: LocalStrings.Languages
+- uid: Nitrocid.Localized.LocalStrings.Localizations
+  name: Localizations
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Localizations
+  commentId: P:Nitrocid.Localized.LocalStrings.Localizations
+  fullName: Nitrocid.Localized.LocalStrings.Localizations
+  nameWithType: LocalStrings.Localizations
+- uid: Nitrocid.Localized.LocalStrings.Localizations*
+  name: Localizations
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Localizations_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.Localizations
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.Localizations
+  nameWithType: LocalStrings.Localizations
+- uid: Nitrocid.Localized.LocalStrings.Translate(System.String,System.String)
+  name: Translate(string, string)
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Translate_System_String_System_String_
+  commentId: M:Nitrocid.Localized.LocalStrings.Translate(System.String,System.String)
+  name.vb: Translate(String, String)
+  fullName: Nitrocid.Localized.LocalStrings.Translate(string, string)
+  fullName.vb: Nitrocid.Localized.LocalStrings.Translate(String, String)
+  nameWithType: LocalStrings.Translate(string, string)
+  nameWithType.vb: LocalStrings.Translate(String, String)
+- uid: Nitrocid.Localized.LocalStrings.Translate*
+  name: Translate
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Translate_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.Translate
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.Translate
+  nameWithType: LocalStrings.Translate
 - uid: Nitrocid.Misc.Audio
   name: Nitrocid.Misc.Audio
   href: api/Nitrocid.Misc.Audio.html
