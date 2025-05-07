@@ -1,7 +1,7 @@
 ﻿<Project>
-  <PropertyGroup>
-    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
+  <PropertyGroup>
     <Description>Nitrocid KS Extras - SHA384</Description>
     <AssemblyTitle>Nitrocid KS Extras - SHA384</AssemblyTitle>
   </PropertyGroup>
