@@ -391,19 +391,21 @@ namespace Nitrocid.Shell.Homepage
                         ScreenTools.Render();
                         render = false;
                     }
-                    if (!SpinWait.SpinUntil(() => Input.InputAvailable, 1000))
+                    InputEventInfo? data = null;
+                    bool idle = !SpinWait.SpinUntil(() =>
+                    {
+                        data = Input.ReadPointerOrKeyNoBlock();
+                        return data.EventType == InputEventType.Keyboard || data.EventType == InputEventType.Mouse;
+                    }, 1000);
+                    if (idle)
                     {
                         render = true;
                         continue;
                     }
 
                     // Read the available input
-                    if (Input.MouseInputAvailable)
+                    if (data?.PointerEventContext is PointerEventContext context)
                     {
-                        var context = Input.ReadPointer();
-                        if (context is null)
-                            continue;
-
                         // Get the necessary positions
                         int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
                         int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
@@ -486,10 +488,9 @@ namespace Nitrocid.Shell.Homepage
                             render = true;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
                         render = true;
-                        var keypress = Input.ReadKey();
                         int widgetHeight = ConsoleWrapper.WindowHeight - 10;
                         int currentPage = (choiceIdx - 1) / widgetHeight;
                         int startIndex = widgetHeight * currentPage;

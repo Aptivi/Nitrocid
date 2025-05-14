@@ -224,7 +224,7 @@ namespace Nitrocid.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                SpinWait.SpinUntil(() => Input.InputAvailable);
+                InputEventInfo eventInfo = Input.ReadPointerOrKey();
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
@@ -235,21 +235,10 @@ namespace Nitrocid.Misc.Screensaver
                 // we need to make sure that we ignore the Clicked event and listen to the Released event to ensure that
                 // there are no more mouse events left, or the screensaver would exit instantly, causing info to be displayed
                 // longer than the set duration.
-                while (Input.InputAvailable)
+                if (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress == PointerButtonPress.Clicked)
                 {
-                    var descriptor = Input.ReadPointerOrKey();
-                    if (descriptor.Item1 is not null)
-                    {
-                        switch (descriptor.Item1.Button)
-                        {
-                            case PointerButton.Left:
-                            case PointerButton.Right:
-                            case PointerButton.Middle:
-                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
-                                    Input.ReadPointer();
-                                break;
-                        }
-                    }
+                    while (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress != PointerButtonPress.Released)
+                        eventInfo = Input.ReadPointerOrKey(InputEventType.Mouse);
                 }
 
                 // Now, show the password prompt
@@ -433,7 +422,6 @@ namespace Nitrocid.Misc.Screensaver
                 SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                 while (!PowerManager.KernelShutdown)
                 {
-                    int OldCursorLeft = termDriver.CursorLeft;
                     SpinWait.SpinUntil(() => !noLock);
                     SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown || noLock);
                     if (!ScrnTimeReached)

@@ -105,7 +105,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 ConsoleKeyInfo cki;
                 if (timeout > 0 && BootloaderState.WaitingForFirstBootKey)
                 {
-                    var result = Input.ReadKeyTimeout(true, TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
+                    var result = Input.ReadKeyTimeout(TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
                     if (!result.provided)
                         cki = new('\x0A', ConsoleKey.Enter, false, false, false);
                     else

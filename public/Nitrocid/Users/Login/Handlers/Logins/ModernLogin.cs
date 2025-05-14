@@ -127,7 +127,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
 
             // The password is not empty. Prompt for password.
-            pass = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(Translate.DoTranslation("Enter the password for user") + $" {user}: ");
+            pass = InfoBoxInputColor.WriteInfoBoxInputPassword(Translate.DoTranslation("Enter the password for user") + $" {user}: ");
             KernelColorTools.LoadBackground();
 
             // Validate the password

@@ -175,7 +175,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             {
                 do
                 {
-                    Forecast.ApiKey = InfoBoxInputPasswordColor.WriteInfoBoxInputPasswordColorBack(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInputPasswordColorBack(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                     if (string.IsNullOrEmpty(Forecast.ApiKey))
                         InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("The Weather Channel API key is not provided. If you need help, consult the IBM website."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 } while (string.IsNullOrEmpty(Forecast.ApiKey));
