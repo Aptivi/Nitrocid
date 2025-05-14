@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
+using Nitrocid.Kernel.Power;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -434,7 +435,7 @@ namespace Nitrocid.Misc.Splash
                 if (threadParameters is null)
                     throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Splash thread parameters are not specified"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-                while (!splash.SplashClosing)
+                while (!splash.SplashClosing && !PowerManager.KernelShutdown)
                 {
                     var displayPart = new ScreenPart();
                     displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
