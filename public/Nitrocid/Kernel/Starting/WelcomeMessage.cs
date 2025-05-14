@@ -142,7 +142,7 @@ namespace Nitrocid.Kernel.Starting
             {
                 TextWriters.Write($"  * {message}", true, KernelColorType.DevelopmentWarning);
                 TextWriters.Write($"  * {devNoticeClassic}", true, KernelColorType.DevelopmentWarning);
-                var key = Input.ReadKey(true);
+                var key = Input.ReadKey();
                 if (key.Key == ConsoleKey.Enter)
                     Config.MainConfig.DevNoticeConsented = true;
             }

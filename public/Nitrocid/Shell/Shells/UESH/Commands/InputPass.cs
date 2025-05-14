@@ -33,7 +33,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Answer = TermReader.ReadPassword(parameters.ArgumentsList[0]);
+            string Answer = TermReader.Read(parameters.ArgumentsList[0], true);
             variableValue = Answer;
             return 0;
         }

@@ -40,6 +40,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Misc.Audio;
 using Terminaux.Reader;
+using Terminaux.Inputs;
+using Terminaux.Base.Structures;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -117,14 +119,19 @@ namespace Nitrocid.Drivers.Console
             {
                 if (IsDumb)
                     return 0;
+                if (ConsoleMode.IsRaw)
+                {
+                    Write("\x1b[6n");
+                    while (true)
+                    {
+                        var data = Terminaux.Inputs.Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.X;
+                    }
+                }
                 return SystemConsole.CursorLeft;
             }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.CursorLeft = value;
-                _moved = true;
-            }
+            set => SetCursorLeft(value);
         }
 
         /// <inheritdoc/>
@@ -134,14 +141,19 @@ namespace Nitrocid.Drivers.Console
             {
                 if (IsDumb)
                     return 0;
+                if (ConsoleMode.IsRaw)
+                {
+                    Write("\x1b[6n");
+                    while (true)
+                    {
+                        var data = Terminaux.Inputs.Input.ReadPointerOrKeyNoBlock(InputEventType.Position);
+                        if (data.ReportedPos is Coordinate coord)
+                            return coord.Y;
+                    }
+                }
                 return SystemConsole.CursorTop;
             }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.CursorTop = value;
-                _moved = true;
-            }
+            set => SetCursorTop(value);
         }
 
         /// <inheritdoc/>
@@ -315,6 +327,35 @@ namespace Nitrocid.Drivers.Console
         {
             if (!IsDumb)
                 SystemConsole.SetCursorPosition(left, top);
+            _moved = true;
+        }
+
+        // TODO: Make the below functions virtual later
+        private void SetCursorLeft(int left)
+        {
+            if (IsDumb)
+                return;
+            if (ConsoleMode.IsRaw)
+            {
+                int top = CursorTop;
+                Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
+            }
+            else
+                SystemConsole.CursorLeft = left;
+            _moved = true;
+        }
+
+        private void SetCursorTop(int top)
+        {
+            if (IsDumb)
+                return;
+            if (ConsoleMode.IsRaw)
+            {
+                int left = CursorLeft;
+                Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
+            }
+            else
+                SystemConsole.CursorTop = top;
             _moved = true;
         }
 
