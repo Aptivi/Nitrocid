@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Homepage
             new(/* Localizable */ "Shell", ConsoleKey.S),
             new(/* Localizable */ "Keybindings", ConsoleKey.K),
             new(/* Localizable */ "Switch", ConsoleKey.Tab),
-            new(/* Localizable */ "Play...", ConsoleKey.P, true),
+            new("Play...", ConsoleKey.P, true),
 
             // Mouse
             new(/* Localizable */ "Execute", PointerButton.Left),
