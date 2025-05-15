@@ -88,6 +88,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("System information"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset all"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset entry"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Select configuration"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
@@ -116,7 +117,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates"), Translate.DoTranslation("Checks for system updates (requires an active Internet connection).")),
                     new($"{MaxSections + 7}", Translate.DoTranslation("System information"), Translate.DoTranslation("Shows you basic system information (more info available in the 'sysinfo' command).")),
                     new($"{MaxSections + 8}", Translate.DoTranslation("Migrate old configuration"), Translate.DoTranslation("Migrates some of your old configuration from older versions of the kernel")),
-                    new($"{MaxSections + 9}", Translate.DoTranslation("Exit")),
+                    new($"{MaxSections + 9}", Translate.DoTranslation("Select configuration"), Translate.DoTranslation("Prompts you to select a configuration instance")),
+                    new($"{MaxSections + 10}", Translate.DoTranslation("Exit")),
                 };
 
                 // Prompt for selection and check the answer
@@ -168,12 +170,23 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else if (Answer == MaxSections + 8)
                 {
-                    // The selected answer is "Migrate old configuration"
+                    // The selected answer is "Select configuration"
                     if (!ConfigMigration.MigrateAllConfig())
                         InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
                             Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error));
                 }
-                else if (Answer == MaxSections + 9 || Answer == -1)
+                else if (Answer == MaxSections + 9)
+                {
+                    // The selected answer is "Migrate old configuration"
+                    var selectedConfig = SettingsAppTools.SelectConfig();
+                    if (selectedConfig is not null && selectedConfig.SettingsEntries is not null)
+                    {
+                        settingsType = selectedConfig;
+                        SettingsEntries = settingsType.SettingsEntries;
+                        MaxSections = SettingsEntries.Length;
+                    }
+                }
+                else if (Answer == MaxSections + 10 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
