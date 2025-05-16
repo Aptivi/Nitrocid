@@ -130,6 +130,12 @@
         "country": "Malaysia"
     },
     {
+        "three": "ndo",
+        "name": "Indonesian",
+        "transliterable": false,
+        "country": "Indonesia"
+    },
+    {
         "three": "nor",
         "name": "Norwegian",
         "transliterable": false,
