@@ -151,7 +151,20 @@ pushall() {
 
     # Push packages
     echo Pushing packages with configuration $releaseconf to $nugetsource...
-    find $ROOTDIR/public/Nitrocid/KS*/ -maxdepth 1 -type f -name "*.nupkg" -exec sh -c "echo {} ; dotnet nuget push {} --api-key $NUGET_APIKEY --source \"$nugetsource\"" \;
+    packages=()
+    while IFS= read -r pkg; do
+        packages+=("$pkg")
+    done < <(find "$ROOTDIR/public/Nitrocid/KS*/" -maxdepth 1 -type f -name "*.nupkg")
+    for pkg in "${packages[@]}"; do
+        echo "$pkg"
+        dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource"
+        push_result=$?
+        if [ $push_result -ne 0 ]; then
+            checkvendorerror $push_result
+            return $push_result
+        fi
+    done
+    
     checkvendorerror $?
 }
 
