@@ -1,3 +1,10 @@
+nitrocid-27 (3.1.27.49-0.1.2.11-1) noble; urgency=medium
+
+  * Added Indonesian language
+  * General improvements
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 16 May 2025 17:42:13 +0300
+
 nitrocid-27 (3.1.27.49-0.1.2.10-1) noble; urgency=medium
 
   * Added a new audio theme
