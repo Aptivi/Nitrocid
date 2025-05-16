@@ -8,12 +8,22 @@ set ROOTDIR=%~dp0..
 
 REM This script pushes.
 echo Pushing...
-forfiles /s /m *.nupkg /p "%ROOTDIR%" /C "cmd /c echo @path && dotnet nuget push @path --api-key %apikey% --source %source%"
-if %errorlevel% == 0 goto :success
-echo There was an error trying to push (%errorlevel%).
-goto :finished
 
-:success
-echo Push successful.
+REM Find nupkg files
+set "found_packages=0"
+for /r "%ROOTDIR%" %%f in (*.nupkg) do (
+    set /a found_packages+=1
+    set "package_path[!found_packages!]=%%f"
+)
 
-:finished
+REM Try to push packages one by one
+set error=0
+for /l %%i in (1,1,%found_packages%) do (
+    echo !package_path[%%i]!
+    dotnet nuget push "!package_path[%%i]!" --api-key %apikey% --source %source%
+    if !errorlevel! neq 0 (
+        set error=!errorlevel!
+        echo !package_path[%%i]! (!error!^)
+        exit /b !error!
+    )
+)
