@@ -19,6 +19,7 @@
 
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
+using System;
 
 namespace Nitrocid.Languages
 {
@@ -60,10 +61,19 @@ namespace Nitrocid.Languages
             {
                 // We might have this language from a mod
                 DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
-                var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
-                string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
-                return result;
+                try
+                {
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get string \"{0}\" from one of the mods: {1}", vars: [text, ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return text;
+                }
             }
         }
 
@@ -96,10 +106,19 @@ namespace Nitrocid.Languages
             {
                 // We might have this language from a mod
                 DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
-                var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
-                string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
-                return text;
+                try
+                {
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang.ThreeLetterLanguageName) ?? text;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get string \"{0}\" from one of the mods: {1}", vars: [text, ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return text;
+                }
             }
         }
 
