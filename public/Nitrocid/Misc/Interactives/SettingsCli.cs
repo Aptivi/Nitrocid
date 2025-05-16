@@ -66,7 +66,7 @@ namespace Nitrocid.Misc.Interactives
                     var configs = config.SettingsEntries ??
                         throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                     var configNames = configs.Select((se, idx) =>
-                        (Translate.DoTranslation(!string.IsNullOrEmpty(se.DisplayAs) ? se.DisplayAs : se.Name), idx)
+                        (!string.IsNullOrEmpty(se.DisplayAs) ? Translate.DoTranslation(se.DisplayAs) : se.Name, idx)
                     ).ToArray();
                     var entry = configs[FirstPaneCurrentSelection - 1];
                     var keys = entry.Keys;
