@@ -4421,3 +4421,7 @@ Ottiene le informazioni sulla scadenza del prodotto
 Data di produzione (guardare sul lato o sul fondo del prodotto)
 Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)
 Se il prodotto di destinazione non specifica esplicitamente la data di scadenza
+Seleziona un'istanza di configurazione a cui passare.
+Impossibile selezionare la configurazione
+Seleziona configurazione
+Ti chiede di selezionare un'istanza di configurazione

@@ -4425,6 +4425,10 @@
     "Lấy thông tin hết hạn sản phẩm",
     "Ngày sản xuất (xem ở mặt bên hoặc mặt dưới của sản phẩm)",
     "Ngày hết hạn hoặc khoảng thời gian (được ghi rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)",
-    "Sản phẩm mục tiêu có ghi rõ ngày hết hạn không"
+    "Sản phẩm mục tiêu có ghi rõ ngày hết hạn không",
+    "Chọn một phiên bản cấu hình để chuyển sang.",
+    "Không thể chọn cấu hình",
+    "Chọn cấu hình",
+    "Nhắc bạn chọn một phiên bản cấu hình"
   ]
 }

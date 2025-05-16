@@ -4422,3 +4422,7 @@ Faigheann sé faisnéis faoi dhul in éag an táirge
 Dáta táirgthe (féach ar thaobh nó bun an táirge)
 Dáta éaga nó tréimhse ama (scríofa go sainráite sa láthair chéanna nó sna tréimhsí ama céanna, amhail 6 mhí nó 1 bhliain)
 Cibé nach sonraítear an dáta éaga go sainráite sa sprioctháirge
+Roghnaigh sampla cumraíochta le haistriú chuige.
+Ní féidir cumraíocht a roghnú
+Roghnaigh cumraíocht
+Spreagann tú sampla cumraíochta a roghnú

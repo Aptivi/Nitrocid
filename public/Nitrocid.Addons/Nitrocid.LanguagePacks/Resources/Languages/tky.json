@@ -4425,6 +4425,10 @@
     "Ürün son kullanma bilgilerini alır",
     "Üretim tarihi (ürünün yan tarafına veya altına bakın)",
     "Son kullanma tarihi veya zaman aralığı (aynı yerde açıkça yazılmış veya 6 ay veya 1 yıl gibi zaman aralıkları)",
-    "Hedef ürünün son kullanma tarihini açıkça belirtip belirtmediği"
+    "Hedef ürünün son kullanma tarihini açıkça belirtip belirtmediği",
+    "Geçiş yapmak için bir yapılandırma örneği seçin.",
+    "Yapılandırma seçilemiyor",
+    "Yapılandırmayı seçin",
+    "Bir yapılandırma örneği seçmenizi ister"
   ]
 }

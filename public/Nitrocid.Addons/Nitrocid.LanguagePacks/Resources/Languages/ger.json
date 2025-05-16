@@ -4425,6 +4425,10 @@
     "Ablaufinformationen werden abgerufen",
     "Produktionsdatum (siehe Seite oder Unterseite des Produkts)",
     "Ablaufdatum oder -zeitraum (entweder explizit an derselben Stelle angegeben oder Zeitspannen, z. B. 6 Monate oder 1 Jahr)",
-    "Ob das Zielprodukt das Ablaufdatum nicht explizit angibt"
+    "Ob das Zielprodukt das Ablaufdatum nicht explizit angibt",
+    "Wählen Sie eine Konfigurationsinstanz zum Wechseln aus.",
+    "Konfiguration kann nicht ausgewählt werden.",
+    "Konfiguration auswählen.",
+    "Sie werden aufgefordert, eine Konfigurationsinstanz auszuwählen."
   ]
 }

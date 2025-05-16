@@ -4425,6 +4425,10 @@
     "Obține informațiile despre expirarea produsului",
     "Data producției (uitați-vă fie pe partea laterală, fie pe partea de jos a produsului)",
     "Data de expirare sau perioada de timp (fie scrisă explicit în același loc sau intervale de timp, cum ar fi 6 luni sau 1 an)",
-    "Dacă produsul țintă nu specifică în mod explicit data de expirare"
+    "Dacă produsul țintă nu specifică în mod explicit data de expirare",
+    "Selectați o instanță de configurare la care să comutați.",
+    "Nu se poate selecta configurația",
+    "Selectați configurația",
+    "Vă solicită să selectați o instanță de configurare"
   ]
 }

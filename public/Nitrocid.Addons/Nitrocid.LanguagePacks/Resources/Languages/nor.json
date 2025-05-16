@@ -4425,6 +4425,10 @@
     "Får informasjon om produktets utløpsdato",
     "Produksjonsdato (se enten på siden eller bunnen av produktet)",
     "Utløpsdato eller tidsperiode (enten eksplisitt skrevet på samme sted eller tidsrom, for eksempel 6 måneder eller 1 år)",
-    "Om målproduktet ikke spesifiserer utløpsdatoen eksplisitt"
+    "Om målproduktet ikke spesifiserer utløpsdatoen eksplisitt",
+    "Velg en konfigurasjonsforekomst å bytte til.",
+    "Kan ikke velge konfigurasjon",
+    "Velg konfigurasjon",
+    "Ber deg velge en konfigurasjonsforekomst"
   ]
 }

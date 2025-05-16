@@ -4425,6 +4425,10 @@
     "Gets the product expiry information",
     "Production date (look at either the side or the bottom of the product)",
     "Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)",
-    "Whether the target product doesn't specify the expiry date explicitly"
+    "Whether the target product doesn't specify the expiry date explicitly",
+    "Select a configuration instance to switch to.",
+    "Can't select configuration",
+    "Select configuration",
+    "Prompts you to select a configuration instance"
   ]
 }
