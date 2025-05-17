@@ -2,7 +2,7 @@
     <!-- KS General Information -->
     <PropertyGroup>
         <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
-        <Version>0.1.2.11</Version>
+        <Version>0.1.2.12</Version>
         <Copyright>Copyright (c) Aptivi 2018-2025</Copyright>
         <Company>Aptivi</Company>
         <Product>Nitrocid</Product>
@@ -17,8 +17,8 @@
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
 
         <!--
-          Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is
-          3.0.26. Also, increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition
+          NitrocidModAPIVersionMajor now stays like that, because we're currently in the 0.1.2.x servicing branch. Please
+          don't modify at all. Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition
           in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
           changes!
         -->
