@@ -434,7 +434,7 @@ namespace Nitrocid.Misc.Splash
                 if (threadParameters is null)
                     throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Splash thread parameters are not specified"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-                while (!splash.SplashClosing)
+                while (!splash.SplashClosing && !SplashThread.IsStopping)
                 {
                     var displayPart = new ScreenPart();
                     displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
