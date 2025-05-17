@@ -28632,6 +28632,22 @@ references:
   commentId: T:Nitrocid.Localized.LocalStrings
   fullName: Nitrocid.Localized.LocalStrings
   nameWithType: LocalStrings
+- uid: Nitrocid.Localized.LocalStrings.CheckCulture(System.String,System.String)
+  name: CheckCulture(string, string)
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_CheckCulture_System_String_System_String_
+  commentId: M:Nitrocid.Localized.LocalStrings.CheckCulture(System.String,System.String)
+  name.vb: CheckCulture(String, String)
+  fullName: Nitrocid.Localized.LocalStrings.CheckCulture(string, string)
+  fullName.vb: Nitrocid.Localized.LocalStrings.CheckCulture(String, String)
+  nameWithType: LocalStrings.CheckCulture(string, string)
+  nameWithType.vb: LocalStrings.CheckCulture(String, String)
+- uid: Nitrocid.Localized.LocalStrings.CheckCulture*
+  name: CheckCulture
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_CheckCulture_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.CheckCulture
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.CheckCulture
+  nameWithType: LocalStrings.CheckCulture
 - uid: Nitrocid.Localized.LocalStrings.Exists(System.String,System.String)
   name: Exists(string, string)
   href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Exists_System_String_System_String_
@@ -28661,6 +28677,22 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Localized.LocalStrings.Languages
   nameWithType: LocalStrings.Languages
+- uid: Nitrocid.Localized.LocalStrings.ListLanguagesCulture(System.String)
+  name: ListLanguagesCulture(string)
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_ListLanguagesCulture_System_String_
+  commentId: M:Nitrocid.Localized.LocalStrings.ListLanguagesCulture(System.String)
+  name.vb: ListLanguagesCulture(String)
+  fullName: Nitrocid.Localized.LocalStrings.ListLanguagesCulture(string)
+  fullName.vb: Nitrocid.Localized.LocalStrings.ListLanguagesCulture(String)
+  nameWithType: LocalStrings.ListLanguagesCulture(string)
+  nameWithType.vb: LocalStrings.ListLanguagesCulture(String)
+- uid: Nitrocid.Localized.LocalStrings.ListLanguagesCulture*
+  name: ListLanguagesCulture
+  href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_ListLanguagesCulture_
+  commentId: Overload:Nitrocid.Localized.LocalStrings.ListLanguagesCulture
+  isSpec: "True"
+  fullName: Nitrocid.Localized.LocalStrings.ListLanguagesCulture
+  nameWithType: LocalStrings.ListLanguagesCulture
 - uid: Nitrocid.Localized.LocalStrings.Localizations
   name: Localizations
   href: api/Nitrocid.Localized.LocalStrings.html#Nitrocid_Localized_LocalStrings_Localizations
