@@ -1,11 +1,10 @@
-This version of Nitrocid incorporates general improvements.
+We've released an emergency version to fix a bug where shutdown is sometimes delayed 60 seconds.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added Indonesian language
-- `[*]` General improvements
+- `[*]` Fixed shutdown delay
 
 Review the commit history if you want to get a deep insight about the changes.
 
