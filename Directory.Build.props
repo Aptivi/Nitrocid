@@ -13,6 +13,10 @@
         <WarningsAsErrors>CS9057,CS8002,nullable</WarningsAsErrors>
         <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
         <SignAssembly>True</SignAssembly>
+        <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
 
@@ -67,12 +71,6 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     </ItemGroup>
-    <PropertyGroup>
-        <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    </PropertyGroup>
     <Target Name="EnsureCommitShaInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != '' And '$(ContinuousIntegrationBuild)' == 'true'">
         <ReadLinesFromFile File="$(RootPath)/private/Nitrocid.BuildTargets/obj/.dtp">
             <Output TaskParameter="Lines" ItemName="DateTimePart"/>
