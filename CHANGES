@@ -1,10 +1,10 @@
-We've released an emergency version to fix a bug where shutdown is sometimes delayed 60 seconds.
+We've released an emergency version to fix a bug where mods are unable to use the spinner selector efficiently.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed shutdown delay
+- `[*]` Fixed a serious bug affecting the spinner selector
 
 Review the commit history if you want to get a deep insight about the changes.
 

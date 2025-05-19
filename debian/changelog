@@ -1,3 +1,9 @@
+nitrocid-27 (3.0.27.49-0.1.2.13-1) noble; urgency=medium
+
+  * Fixed a serious bug affecting the spinner selector
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 19 May 2025 12:57:52 +0300
+
 nitrocid-27 (3.1.27.49-0.1.2.12-1) noble; urgency=medium
 
   * Fixed shutdown delay
