@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.8.3">
+﻿<Project Sdk="MSTest.Sdk/3.9.0">
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="7.0.0-beta3-20250520102505" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta3-20250520105855" />
   </ItemGroup>
 
   <ItemGroup>
@@ -101,4 +101,8 @@
     <Delete Files="@(BuildDirs)" />
     <RemoveDir Directories="KSTest\" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+  </ItemGroup>
 </Project>

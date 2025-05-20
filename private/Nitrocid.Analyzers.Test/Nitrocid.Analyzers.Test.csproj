@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.8.3">
+﻿<Project Sdk="MSTest.Sdk/3.9.0">
 
   <PropertyGroup>
     <OutputPath>..\KSTest\</OutputPath>
@@ -19,6 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers.CodeFixes\Nitrocid.Analyzers.CodeFixes.csproj" />
     <ProjectReference Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.14.0" />
   </ItemGroup>
 
 </Project>
