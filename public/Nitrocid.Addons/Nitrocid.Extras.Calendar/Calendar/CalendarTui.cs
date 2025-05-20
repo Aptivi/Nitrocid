@@ -244,7 +244,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     TextColor = boxForeground,
                     TextSettings = new()
                     {
-                        TitleAlignment = TextAlignment.Middle
+                        Alignment = TextAlignment.Middle
                     },
                     BackgroundColor = background,
                 };
