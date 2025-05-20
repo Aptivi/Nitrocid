@@ -235,12 +235,17 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int boxHeight = 13;
                 var border = new Border()
                 {
-                    Text = CalendarTitle,
+                    Title = CalendarTitle,
                     Left = boxLeft,
                     Top = boxTop,
                     Width = boxWidth,
                     Height = boxHeight,
                     Color = boxForeground,
+                    TextColor = boxForeground,
+                    TextSettings = new()
+                    {
+                        TitleAlignment = TextAlignment.Middle
+                    },
                     BackgroundColor = background,
                 };
                 builder.Append(border.Render());
@@ -333,12 +338,13 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int eventBoxHeight = ConsoleWrapper.WindowHeight - 8;
                 var eventBorder = new Border()
                 {
-                    Text = Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}",
+                    Title = Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}",
                     Left = eventBoxLeft,
                     Top = eventBoxTop,
                     Width = eventBoxWidth,
                     Height = eventBoxHeight,
                     Color = boxForeground,
+                    TextColor = boxForeground,
                     BackgroundColor = background,
                 };
                 builder.Append(eventBorder.Render());
