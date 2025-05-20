@@ -121,7 +121,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             finalInfoRendered.AppendLine(finalRenderedArticleVars);
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
         }
 
         internal void OpenArticleLink(RSSArticle? item)
@@ -132,7 +132,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("This article doesn't have a link."), Settings.InfoBoxSettings);
                 return;
             }
 
@@ -143,7 +143,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             }
             catch (Exception e)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }
 

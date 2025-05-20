@@ -25,6 +25,7 @@ using System.Text;
 using VisualCard;
 using VisualCard.Parts.Enums;
 using Nitrocid.Files;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -34,17 +35,26 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't open file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because it's not found."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                }, path);
                 return;
             }
             try
             {
                 ContactsManager.InstallContacts(path);
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Imported contacts successfully."), KernelColorTools.GetColor(KernelColorType.Success));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Imported contacts successfully."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error), path);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                }, path);
             }
         }
 
@@ -52,7 +62,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't open file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because it's not found."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                }, path);
                 return Translate.DoTranslation("Contact file doesn't exist.");
             }
             try
@@ -66,7 +79,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error), path);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                }, path);
                 return Translate.DoTranslation("Contact file is invalid.");
             }
         }

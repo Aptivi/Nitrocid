@@ -53,6 +53,7 @@ using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Audio;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -553,11 +554,13 @@ namespace Nitrocid.Shell.Homepage
                                 exiting = true;
                                 break;
                             case ConsoleKey.K:
-                                InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                                    "Available keys",
-                                    KeybindingTools.RenderKeybindingHelpText(bindings), 
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                                InfoBoxModalColor.WriteInfoBoxModal(
+                                    KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+                                    {
+                                        Title = "Available keys",
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                                    });
                                 break;
                             case ConsoleKey.P:
                                 if (!isThemeMusicPlaying)
@@ -577,7 +580,10 @@ namespace Nitrocid.Shell.Homepage
             catch (Exception ex)
             {
                 KernelColorTools.LoadBackground();
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {
@@ -710,11 +716,13 @@ namespace Nitrocid.Shell.Homepage
         private static void OpenAboutBox()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
-                Translate.DoTranslation("About Nitrocid"),
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
+                {
+                    Title = Translate.DoTranslation("About Nitrocid"),
+                }
             );
         }
 

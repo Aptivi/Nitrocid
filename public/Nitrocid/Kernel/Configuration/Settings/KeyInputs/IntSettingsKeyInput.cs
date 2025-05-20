@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -41,7 +42,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write a natural number in the below prompt.")} [{KeyDefaultValue}]");
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{Translate.DoTranslation("Write a natural number in the below prompt.")} [{KeyDefaultValue}]", new InfoBoxSettings()
+            {
+                Title = keyName,
+            });
 
             // Neutralize path if required with the assumption that the keytype is not list
             int answer = 0;

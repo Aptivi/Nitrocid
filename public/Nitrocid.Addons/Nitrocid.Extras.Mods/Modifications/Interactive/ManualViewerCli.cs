@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             finalInfoRendered.AppendLine(finalRenderedManualRevision);
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
         }
     }
 }

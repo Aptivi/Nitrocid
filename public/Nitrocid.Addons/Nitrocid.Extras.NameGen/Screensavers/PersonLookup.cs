@@ -25,6 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Time.Renderers;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {
@@ -44,7 +45,10 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            InfoBoxNonModalColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", ConsoleColors.Green);
+            InfoBoxNonModalColor.WriteInfoBox("Welcome to the database! Fetching identities...", new InfoBoxSettings()
+            {
+                ForegroundColor = ConsoleColors.Lime
+            });
             NameGenerator.PopulateNames();
         }
 
@@ -87,7 +91,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
 
                 // Print all information
                 ConsoleWrapper.Clear();
-                InfoBoxNonModalColor.WriteInfoBoxColor(
+                InfoBoxNonModalColor.WriteInfoBox(
                     "- Name:                  {0}\n" +
                    $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
                     "\n" +
@@ -97,10 +101,13 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     "  - Birth date:          {4}\n",
 
                     // We don't want to wait for input as we're on the screensaver environment.
-                    ConsoleColors.Green,
+                    new InfoBoxSettings()
+                    {
+                        ForegroundColor = ConsoleColors.Lime
+                    },
 
                     // Necessary variables to print
-                    [GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate)]
+                    GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate)
                 );
 
                 // Lookup delay

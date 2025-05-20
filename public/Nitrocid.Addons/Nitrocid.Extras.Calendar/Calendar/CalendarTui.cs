@@ -43,6 +43,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -115,7 +116,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Interactive calendar failed: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The interactive calendar failed:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The interactive calendar failed:") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);
@@ -440,9 +444,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
             // Show the available keys list
             if (bindings.Length == 0)
                 return;
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(KeybindingTools.RenderKeybindingHelpText(bindings),
-                KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+            {
+                ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)
+            });
             return;
         }
 

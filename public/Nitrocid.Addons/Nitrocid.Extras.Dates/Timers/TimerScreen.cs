@@ -37,6 +37,7 @@ using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Dates.Timers
 {
@@ -221,12 +222,18 @@ namespace Nitrocid.Extras.Dates.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorTools.GetColor(KernelColorType.Question), TimerInterval);
+                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", new InfoBoxSettings()
+                        {
+                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+                        }, TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
                             timerScreen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
+                            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
+                            {
+                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                            });
                             TimerInterval = 60000d;
                         }
                         timerScreen.RequireRefresh();

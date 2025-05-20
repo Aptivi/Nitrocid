@@ -92,7 +92,7 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Out of introductory run. Going straight to the rest once language configuration has been saved.");
 
                 // Save all the changes
-                InfoBoxNonModalColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."));
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
                 int selectedLanguageIdx = firstRunPres.Pages[0].Inputs[0].InputMethod.GetValue<int?>() ?? 0;
                 string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", vars: [selectedLanguage]);

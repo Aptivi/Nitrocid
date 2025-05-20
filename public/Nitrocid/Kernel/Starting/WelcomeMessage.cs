@@ -31,6 +31,7 @@ using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -128,12 +129,14 @@ namespace Nitrocid.Kernel.Starting
                     new InputChoiceInfo("ok", devNoticeOk),
                     new InputChoiceInfo("acknowledged", devNoticeAck),
                 ];
-                int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
-                    devNoticeTitle,
+                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
                     answers,
                     $"{message}\n\n" +
-                    $"{devNoticeMessage}",
-                    KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
+                    $"{devNoticeMessage}", new InfoBoxSettings()
+                    {
+                        Title = devNoticeTitle,
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
+                    }
                 );
                 if (answer == 1)
                     Config.MainConfig.DevNoticeConsented = true;
@@ -160,11 +163,13 @@ namespace Nitrocid.Kernel.Starting
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
                 ];
-                InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
-                    Translate.DoTranslation("Unusual environment notice"),
+                InfoBoxButtonsColor.WriteInfoBoxButtons(
                     answers,
-                    message + "\n\n" + message2,
-                    KernelColorTools.GetColor(KernelColorType.Warning)
+                    message + "\n\n" + message2, new InfoBoxSettings()
+                    {
+                        Title = Translate.DoTranslation("Unusual environment notice"),
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Warning)
+                    }
                 );
             }
             else

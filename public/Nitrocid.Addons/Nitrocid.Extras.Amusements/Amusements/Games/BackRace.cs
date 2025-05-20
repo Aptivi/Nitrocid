@@ -37,6 +37,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -177,7 +178,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Your horse won the race!"), KernelColorTools.GetColor(KernelColorType.Success));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Your horse won the race!"), new InfoBoxSettings()
+                        {
+                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                        });
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }

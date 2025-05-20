@@ -32,6 +32,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
 using Nitrocid.Kernel.Power;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -305,7 +306,10 @@ namespace Nitrocid.Misc.Splash
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    });
                 }
                 finally
                 {

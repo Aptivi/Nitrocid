@@ -123,14 +123,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, Settings.InfoBoxSettings);
             }
         }
 
         internal void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            string path = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), Settings.InfoBoxSettings);
             if (FilesystemTools.FileExists(path))
             {
                 try
@@ -140,17 +140,17 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Contact file is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Contact file is invalid."), Settings.InfoBoxSettings);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), Settings.InfoBoxSettings);
         }
 
         internal void ImportContactFromMeCard()
         {
             // Now, render the search box
-            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            string meCard = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), Settings.InfoBoxSettings);
             if (!string.IsNullOrEmpty(meCard))
             {
                 try
@@ -160,11 +160,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Contact MeCard syntax is invalid."), Settings.InfoBoxSettings);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Contact MeCard syntax may not be empty"), Settings.InfoBoxSettings);
         }
 
         internal void ShowContactInfo(int index)
@@ -209,7 +209,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
         }
 
         internal void ShowContactRawInfo(int index)
@@ -222,23 +222,23 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.Append(finalRenderedContactVcardInfo);
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
         }
 
         internal void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            string exp = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter regular expression to search the contacts."), Settings.InfoBoxSettings);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("There are no contacts that contains your requested expression."), Settings.InfoBoxSettings);
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Regular expression is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Regular expression is invalid."), Settings.InfoBoxSettings);
         }
 
         internal void SearchNext()
@@ -603,7 +603,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return;
 
             // Ask for the new name
-            string newName = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter new name for this contact") + $": {GetContactNameFinal(card)}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)).Trim();
+            string newName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter new name for this contact") + $": {GetContactNameFinal(card)}", Settings.InfoBoxSettings).Trim();
             if (string.IsNullOrWhiteSpace(newName))
                 newName = "Unnamed contact";
 

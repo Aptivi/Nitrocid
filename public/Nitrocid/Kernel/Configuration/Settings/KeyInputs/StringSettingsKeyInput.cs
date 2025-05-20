@@ -27,6 +27,7 @@ using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -43,10 +44,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
+            var settings = new InfoBoxSettings()
+            {
+                Title = keyName,
+            };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputColor.WriteInfoBoxInputPassword(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}") :
-                InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+                InfoBoxInputColor.WriteInfoBoxInputPassword($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}", settings) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
