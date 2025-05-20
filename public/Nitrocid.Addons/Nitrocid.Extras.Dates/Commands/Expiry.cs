@@ -19,7 +19,6 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Extras.Dates.Timers;
 using Nitrocid.Extras.Dates.Tools;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;

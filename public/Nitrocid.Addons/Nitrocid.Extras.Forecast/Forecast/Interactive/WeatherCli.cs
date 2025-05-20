@@ -23,7 +23,6 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Colors;
 using Nettify.Weather;
 using Terminaux.Inputs.Styles;
 
