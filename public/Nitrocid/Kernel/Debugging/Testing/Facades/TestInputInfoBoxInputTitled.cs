@@ -20,6 +20,7 @@
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -29,7 +30,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInput(nameof(TestInputInfoBoxInputTitled), "Write your text.");
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your text.", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxInputTitled)
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

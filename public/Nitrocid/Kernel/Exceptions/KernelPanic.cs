@@ -41,6 +41,7 @@ using System.Threading;
 using Textify.General;
 using Terminaux.Inputs;
 using Nitrocid.Files;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Exceptions
 {
@@ -443,7 +444,10 @@ namespace Nitrocid.Kernel.Exceptions
                 failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
                 failureBuilder.AppendLine(finalMessage + "\n");
                 failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
-                InfoBoxModalColor.WriteInfoBoxModalColor(failureBuilder.ToString(), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(failureBuilder.ToString(), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
         }

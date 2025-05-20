@@ -21,6 +21,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,7 +52,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (currentHueAngle > 360)
                     currentHueAngle = 0;
             }
-            InfoBoxNonModalColor.WriteInfoBoxColor(renderedTextBox, color);
+            InfoBoxNonModalColor.WriteInfoBox(renderedTextBox, new InfoBoxSettings()
+            {
+                ForegroundColor = color
+            });
 
             // Delay
             int delay = ScreensaverPackInit.SaversConfig.TextBoxRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.TextBoxDelay;

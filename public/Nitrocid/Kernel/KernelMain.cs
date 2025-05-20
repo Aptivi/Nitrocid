@@ -37,6 +37,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
 using Aptivestigate.CrashHandler;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel
 {
@@ -145,11 +146,17 @@ namespace Nitrocid.Kernel
 
                 // If "No APM" is enabled, simply print the text
                 if (Config.MainConfig.SimulateNoAPM)
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("It's now safe to turn off your computer."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                    });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
             }
             finally
             {

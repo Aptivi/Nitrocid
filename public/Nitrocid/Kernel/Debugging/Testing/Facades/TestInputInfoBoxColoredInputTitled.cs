@@ -21,6 +21,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -30,7 +31,12 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(nameof(TestInputInfoBoxColoredInputTitled), "Write your text.", ConsoleColors.Yellow, ConsoleColors.DarkBlue);
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your text.", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxColoredInputTitled),
+                ForegroundColor = ConsoleColors.Yellow,
+                BackgroundColor = ConsoleColors.DarkBlue,
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

@@ -36,6 +36,7 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -172,8 +173,11 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // The selected answer is "Select configuration"
                     if (!ConfigMigration.MigrateAllConfig())
-                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
-                            Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
+                            Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                            {
+                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                            });
                 }
                 else if (Answer == MaxSections + 9)
                 {
@@ -197,7 +201,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error), Answer);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }, Answer);
                 }
             }
         }
@@ -405,12 +412,18 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    });
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
             }
         }
 

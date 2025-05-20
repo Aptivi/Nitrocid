@@ -30,6 +30,7 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 #if SPECIFIERREL
 using Nitrocid.Kernel.Updates;
@@ -79,7 +80,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -95,25 +99,34 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
         internal static void SaveSettingsAs()
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to save the current kernel settings?"), new InfoBoxSettings()
+            {
+                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+            });
             Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
             if (!FilesystemTools.FileExists(Location))
                 SaveSettings(Location);
             else
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't save kernel settings on top of existing file."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
         }
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorTools.GetColor(KernelColorType.Question));
             Location = FilesystemTools.NeutralizePath(Location);
             if (FilesystemTools.FileExists(Location))
             {
@@ -126,12 +139,18 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 catch (Exception ex)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    });
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("File not found."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("File not found."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
         }
 
         internal static void ReloadConfig()
@@ -268,24 +287,28 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxModalColor.WriteInfoBoxModalColor(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
-                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
-                    KernelColorTools.GetColor(KernelColorType.Error)
+                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }
                 );
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", vars: [ex.Message]);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxModalColor.WriteInfoBoxModalColor(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +
                     $"  - {ex.Message}\n\n" +
-                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
-                    KernelColorTools.GetColor(KernelColorType.Error)
+                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }
                 );
             }
         }
