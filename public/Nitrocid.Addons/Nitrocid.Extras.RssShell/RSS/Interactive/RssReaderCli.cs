@@ -28,7 +28,6 @@ using System.Linq;
 using System.Text;
 using Textify.General;
 using Nitrocid.Network.Connections;
-using Nitrocid.ConsoleBase.Colors;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive

@@ -24,7 +24,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
-using System.Threading;
 using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;

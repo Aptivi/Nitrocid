@@ -27,7 +27,6 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Magico.Enumeration;
-using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {

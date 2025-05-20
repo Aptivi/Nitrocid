@@ -31,7 +31,6 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
-using Nitrocid.Kernel.Power;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Splash
