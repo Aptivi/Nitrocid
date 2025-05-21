@@ -29,6 +29,7 @@ using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -67,9 +68,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var cultures = CultureManager.GetCulturesDictionary();
                 var calendar = new Calendars()
                 {
-                    HeaderColor = CalendarColor,
-                    ValueColor = CalendarColor,
-                    SeparatorColor = TransformationTools.GetDarkBackground(CalendarColor),
+                    HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
+                    TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
+                    WeekendColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
                     Year = TimeDateTools.KernelDateTime.Year,
                     Month = TimeDateTools.KernelDateTime.Month,
                     Left = 2,
