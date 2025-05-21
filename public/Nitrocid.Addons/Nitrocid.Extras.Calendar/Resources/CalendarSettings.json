@@ -8,6 +8,119 @@
                 "Type": "SBoolean",
                 "Variable": "SaveEventsRemindersDestructively",
                 "Description": "If enabled, deletes all events and/or reminders before saving all of them using the calendar command."
+            },
+            {
+                "Name": "Screensaver settings...",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the culture used by the calendar screensaver",
+                "Variables": [
+                    {
+                        "Name": "Delay in Milliseconds",
+                        "Type": "SInt",
+                        "Variable": "CalendarDelay",
+                        "Description": "How many milliseconds to wait before making the next write?"
+                    },
+                    {
+                        "Name": "Culture settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the culture used by the calendar screensaver",
+                        "Variables": [
+                            {
+                                "Name": "Use the system culture",
+                                "Type": "SBoolean",
+                                "Variable": "CalendarUseSystemCulture",
+                                "Description": "Whether the screensaver uses the culture set by the main kernel settings or by this screensaver settings."
+                            },
+                            {
+                                "Name": "Culture",
+                                "Type": "SSelection",
+                                "Variable": "CalendarCultureName",
+                                "IsEnumeration": false,
+                                "SelectionFunctionName": "GetCultureCodes",
+                                "SelectionFunctionType": "CultureManager",
+                                "SelectionFallback": [ "en-US" ],
+                                "Description": "Which culture is being used to change the month names, calendar, etc.?"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Color settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the colors",
+                        "Variables": [
+                            {
+                                "Name": "Activate true colors",
+                                "Type": "SBoolean",
+                                "Variable": "CalendarTrueColor",
+                                "Description": "Activates the true color support."
+                            },
+                            {
+                                "Name": "Minimum red color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMinimumRedColorLevel",
+                                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Minimum green color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMinimumGreenColorLevel",
+                                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Minimum blue color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMinimumBlueColorLevel",
+                                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Minimum color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMinimumColorLevel",
+                                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Maximum red color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMaximumRedColorLevel",
+                                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Maximum green color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMaximumGreenColorLevel",
+                                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Maximum blue color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMaximumBlueColorLevel",
+                                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            },
+                            {
+                                "Name": "Maximum color level",
+                                "Type": "SIntSlider",
+                                "Variable": "CalendarMaximumColorLevel",
+                                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                                "MinimumValue": 0,
+                                "MaximumValue": 255
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
