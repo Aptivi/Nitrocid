@@ -208,132 +208,29 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 // Populate some necessary variables
                 var builder = new StringBuilder();
                 var calendarInstance = CalendarTools.GetCalendar(state.calendar);
-                var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
                 var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
-                var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
                 var maxDate = calendarInstance.Calendar.GetDaysInMonth(state.Year, state.Month);
                 var selectedDate = new DateTime(state.Year, state.Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
                 var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, state.calendar);
-                var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
-                int CurrentWeek = 1;
                 string CalendarTitle = CalendarMonths[month - 1] + " " + year;
-
-                // Re-arrange the days according to the first day of week
-                Dictionary<DayOfWeek, int> mappedDays = [];
-                int dayOfWeek = (int)CalendarWeek;
-                for (int i = 0; i < CalendarDays.Length; i++)
-                {
-                    var day = (DayOfWeek)dayOfWeek;
-                    mappedDays.Add(day, i);
-                    dayOfWeek++;
-                    if (dayOfWeek > 6)
-                        dayOfWeek = 0;
-                }
-
-                // Write the calendar title in a box
                 var boxForeground = KernelColorTools.GetColor(KernelColorType.NeutralText);
                 var background = KernelColorTools.GetColor(KernelColorType.Background);
-                int boxLeft = 4;
-                int boxTop = 3;
-                int boxWidth = 4 + (6 * 6);
-                int boxHeight = 13;
-                var border = new Border()
+                var calendar = new FullCalendar()
                 {
-                    Title = CalendarTitle,
-                    Left = boxLeft,
-                    Top = boxTop,
-                    Width = boxWidth,
-                    Height = boxHeight,
-                    Color = boxForeground,
-                    TextColor = boxForeground,
-                    TextSettings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    },
+                    Left = 4,
+                    Top = 3,
+                    Year = state.Year,
+                    Month = state.Month,
+                    ForegroundColor = boxForeground,
                     BackgroundColor = background,
+                    HighlightToday = false,
+                    HighlightedDay = new(state.Year, state.Month, state.Day),
+                    TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
+                    WeekendColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
+                    HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
+                    Culture = calendarInstance.Culture,
                 };
-                builder.Append(border.Render());
-
-                // Make a calendar
-                int dayPosX = boxLeft + 1;
-                int dayPosY = 6;
-                for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
-                {
-                    // Populate some variables
-                    var CurrentDate = new DateTime(year, month, CurrentDay);
-                    if (CurrentDate.DayOfWeek == CalendarWeek)
-                    {
-                        CurrentWeek += 1;
-                        dayPosY += 2;
-                    }
-                    int CurrentWeekIndex = CurrentWeek - 1;
-                    int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                    dayPosX = boxLeft + 1 + (6 * (currentDay - 1));
-                    string CurrentDayMark;
-
-                    // Some flags
-                    bool ReminderMarked = false;
-                    bool EventMarked = false;
-                    bool IsWeekend = currentDay > 5;
-                    bool IsToday = CurrentDate == new DateTime(state.Year, state.Month, state.Day);
-                    var foreground =
-                        IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
-                        IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        KernelColorTools.GetColor(KernelColorType.TuiForeground);
-
-                    // Know where and how to put the day number
-                    foreach (ReminderInfo Reminder in ReminderManager.Reminders)
-                    {
-                        var rDate = Reminder.ReminderDate.Date;
-                        var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), state.calendar);
-                        rDate = new(rYear, rMonth, rDay);
-                        if (rDate == CurrentDate & !ReminderMarked)
-                            ReminderMarked = true;
-                    }
-                    foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
-                    {
-                        EventInstance.UpdateEventInfo(new DateTime(state.Year, 1, 1));
-                        var nDate = EventInstance.EventDate.Date;
-                        var sDate = EventInstance.Start.Date;
-                        var eDate = EventInstance.End.Date;
-                        var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), state.calendar);
-                        var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), state.calendar);
-                        var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), state.calendar);
-                        nDate = new(nYear, nMonth, nDay);
-                        sDate = new(sYear, sMonth, sDay);
-                        eDate = new(eYear, eMonth, eDay);
-                        if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
-                             (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
-                        {
-                            foreground = IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) : KernelColorTools.GetColor(KernelColorType.EventDay);
-                            EventMarked = true;
-                        }
-                    }
-                    string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
-                    string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
-                    CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                    builder.Append(
-                        CsiSequences.GenerateCsiCursorPosition(dayPosX + 1, dayPosY + 1) +
-                        $"{ColorTools.RenderSetConsoleColor(foreground)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}" +
-                        CurrentDayMark
-                    );
-                }
-
-                // Make a single-letter day indicator
-                int dayIndicatorPosX = boxLeft + 1;
-                int dayIndicatorPosY = 4;
-                for (int i = 0; i < mappedDays.Count; i++)
-                {
-                    string dayName = $"{CalendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                    char dayChar = char.ToUpper(dayName[0]);
-                    builder.Append(
-                        CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
-                        $"{ColorTools.RenderSetConsoleColor(boxForeground)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}" +
-                        dayChar
-                    );
-                }
+                builder.Append(calendar.Render());
 
                 // Write the side box representing the list of events
                 int eventBoxLeft = 4 + (6 * 7) + 2;
