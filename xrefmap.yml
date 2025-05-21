@@ -23901,6 +23901,12 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.AddonScreensaverPacks
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.AddonScreensaverPacks
   nameWithType: KnownAddons.AddonScreensaverPacks
+- uid: Nitrocid.Kernel.Extensions.KnownAddons.AddonShellPacks
+  name: AddonShellPacks
+  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_AddonShellPacks
+  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.AddonShellPacks
+  fullName: Nitrocid.Kernel.Extensions.KnownAddons.AddonShellPacks
+  nameWithType: KnownAddons.AddonShellPacks
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.AddonSplashPacks
   name: AddonSplashPacks
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_AddonSplashPacks
@@ -24027,6 +24033,12 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasGitShell
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasGitShell
   nameWithType: KnownAddons.ExtrasGitShell
+- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasHashes
+  name: ExtrasHashes
+  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasHashes
+  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasHashes
+  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasHashes
+  nameWithType: KnownAddons.ExtrasHashes
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasHttpShell
   name: ExtrasHttpShell
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasHttpShell
