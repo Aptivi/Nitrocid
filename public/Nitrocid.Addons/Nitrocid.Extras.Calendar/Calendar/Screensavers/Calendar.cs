@@ -74,8 +74,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
                     Year = TimeDateTools.KernelDateTime.Year,
                     Month = TimeDateTools.KernelDateTime.Month,
-                    Left = 2,
-                    Top = 1,
+                    Left = ConsoleWrapper.WindowWidth / 2 - FullCalendar.calendarWidth / 2,
+                    Top = ConsoleWrapper.WindowHeight / 2 - FullCalendar.calendarHeight / 2 - 1,
                     Culture =
                         CalendarInit.CalendarConfig.CalendarUseSystemCulture ?
                         CultureManager.CurrentCulture :
