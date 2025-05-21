@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 var cultures = CultureManager.GetCulturesDictionary();
-                var calendar = new Calendars()
+                var calendar = new FullCalendar()
                 {
                     HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
                     TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
@@ -76,8 +76,6 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
                     Month = TimeDateTools.KernelDateTime.Month,
                     Left = 2,
                     Top = 1,
-                    Width = ConsoleWrapper.WindowWidth - 4,
-                    Height = ConsoleWrapper.WindowHeight - 4,
                     Culture =
                         CalendarInit.CalendarConfig.CalendarUseSystemCulture ?
                         CultureManager.CurrentCulture :
