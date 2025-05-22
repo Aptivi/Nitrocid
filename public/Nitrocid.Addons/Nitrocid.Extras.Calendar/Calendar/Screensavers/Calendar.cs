@@ -24,14 +24,13 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
 using Nitrocid.ConsoleBase.Colors;
 
-namespace Nitrocid.ScreensaverPacks.Screensavers
+namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
 {
     /// <summary>
     /// Display code for Calendar
@@ -66,8 +65,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 var cultures = CultureManager.GetCultureNamesFromCurrentLang();
-                var selectedCustomCulture = cultures.Contains(ScreensaverPackInit.SaversConfig.CalendarCultureName) ? new CultureInfo(ScreensaverPackInit.SaversConfig.CalendarCultureName) : CultureManager.CurrentCult;
-                var calendar = new Calendars()
+                var selectedCustomCulture = cultures.Contains(CalendarInit.CalendarConfig.CalendarCultureName) ? new CultureInfo(CalendarInit.CalendarConfig.CalendarCultureName) : CultureManager.CurrentCult;
+                var calendar = new FullCalendar()
                 {
                     HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
                     TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
@@ -75,18 +74,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
                     Year = TimeDateTools.KernelDateTime.Year,
                     Month = TimeDateTools.KernelDateTime.Month,
+                    Left = ConsoleWrapper.WindowWidth / 2 - FullCalendar.calendarWidth / 2,
+                    Top = ConsoleWrapper.WindowHeight / 2 - FullCalendar.calendarHeight / 2 - 1,
                     Culture =
-                        ScreensaverPackInit.SaversConfig.CalendarUseSystemCulture ?
+                        CalendarInit.CalendarConfig.CalendarUseSystemCulture ?
                         CultureManager.CurrentCult : selectedCustomCulture,
                 };
-                calendar.Left = ConsoleWrapper.WindowWidth / 2 - calendar.Width / 2;
-                calendar.Top = ConsoleWrapper.WindowHeight / 2 - calendar.Height / 2 - 1;
                 TextWriterRaw.WriteRaw(calendar.Render());
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.CalendarDelay);
+            ScreensaverManager.Delay(CalendarInit.CalendarConfig.CalendarDelay);
         }
 
         /// <summary>
@@ -95,16 +94,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public Color ChangeCalendarColor()
         {
             Color ColorInstance;
-            if (ScreensaverPackInit.SaversConfig.CalendarTrueColor)
+            if (CalendarInit.CalendarConfig.CalendarTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CalendarMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.CalendarMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CalendarMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.CalendarMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CalendarMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.CalendarMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(CalendarInit.CalendarConfig.CalendarMinimumRedColorLevel, CalendarInit.CalendarConfig.CalendarMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(CalendarInit.CalendarConfig.CalendarMinimumGreenColorLevel, CalendarInit.CalendarConfig.CalendarMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(CalendarInit.CalendarConfig.CalendarMinimumBlueColorLevel, CalendarInit.CalendarConfig.CalendarMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CalendarMinimumColorLevel, ScreensaverPackInit.SaversConfig.CalendarMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(CalendarInit.CalendarConfig.CalendarMinimumColorLevel, CalendarInit.CalendarConfig.CalendarMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             return ColorInstance;

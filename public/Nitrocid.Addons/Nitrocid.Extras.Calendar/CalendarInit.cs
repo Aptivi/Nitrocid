@@ -38,6 +38,8 @@ using Nitrocid.Extras.Calendar.Calendar;
 using Nitrocid.Kernel.Time.Calendars;
 using EventInfo = Nitrocid.Extras.Calendar.Calendar.Events.EventInfo;
 using Nitrocid.Shell.Homepage;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Extras.Calendar.Calendar.Screensavers;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -293,6 +295,7 @@ namespace Nitrocid.Extras.Calendar
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
         }
 
         void IAddon.StopAddon()
@@ -302,6 +305,7 @@ namespace Nitrocid.Extras.Calendar
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
             HomepageTools.UnregisterBuiltinAction("Calendar");
+            ScreensaverManager.AddonSavers.Remove("calendar");
         }
     }
 }
