@@ -4200,3 +4200,5 @@ Obtention des informations de péremption du produit
 Date de production (regarder sur le côté ou le dessous du produit)
 Date ou délai de péremption (écrit explicitement au même endroit ou par intervalles de temps, par exemple 6 mois ou 1 an)
 Si le produit cible ne précise pas explicitement la date de péremption
+Paramètres de l'économiseur d'écran…
+Cela vous permet de configurer la culture utilisée par l'économiseur d'écran du calendrier.

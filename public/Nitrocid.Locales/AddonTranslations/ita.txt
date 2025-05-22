@@ -4199,3 +4199,5 @@ Ottiene le informazioni sulla scadenza del prodotto
 Data di produzione (guardare sul lato o sul fondo del prodotto)
 Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)
 Se il prodotto di destinazione non specifica esplicitamente la data di scadenza
+Impostazioni salvaschermo...
+Consente di configurare la cultura utilizzata dallo screensaver del calendario.

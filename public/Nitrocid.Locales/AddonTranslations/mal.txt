@@ -4200,3 +4200,5 @@ Mendapat maklumat tamat tempoh produk
 Tarikh pengeluaran (lihat sama ada sisi atau bahagian bawah produk)
 Tarikh luput atau tempoh masa (sama ada ditulis secara eksplisit pada tempat atau jangka masa yang sama, seperti 6 bulan atau 1 tahun)
 Sama ada produk sasaran tidak menyatakan tarikh luput dengan jelas
+Tetapan penyelamat skrin...
+Ini membolehkan anda mengkonfigurasi budaya yang digunakan oleh penyelamat skrin kalendar

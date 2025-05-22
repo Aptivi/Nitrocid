@@ -4203,6 +4203,8 @@
     "Obtém as informações de validade do produto",
     "Data de produção (ver na lateral ou na parte inferior do produto)",
     "Data de validade ou período de tempo (escrito explicitamente no mesmo local ou em intervalos de tempo, como 6 meses ou 1 ano)",
-    "Se o produto alvo não especificar explicitamente a data de validade"
+    "Se o produto alvo não especificar explicitamente a data de validade",
+    "Definições do protetor de ecrã...",
+    "Isto permite configurar a cultura usada pelo protetor de ecrã do calendário"
   ]
 }

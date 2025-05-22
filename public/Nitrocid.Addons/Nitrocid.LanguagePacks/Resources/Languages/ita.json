@@ -4203,6 +4203,8 @@
     "Data di produzione (guardare sul lato o sul fondo del prodotto)",
     "Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)",
     "Se il prodotto di destinazione non specifica esplicitamente la data di scadenza",
-    "Whether the target product doesn't specify the expiry date explicitly"
+    "Impostazioni salvaschermo...",
+    "Consente di configurare la cultura utilizzata dallo screensaver del calendario.",
+    "This allows you to configure the culture used by the calendar screensaver"
   ]
 }

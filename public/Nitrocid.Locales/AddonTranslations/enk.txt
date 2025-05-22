@@ -4200,3 +4200,5 @@ Gets the product expiry information
 Production date (look at either the side or the bottom of the product)
 Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)
 Whether the target product doesn't specify the expiry date explicitly
+Screensaver settings...
+This allows you to configure the culture used by the calendar screensaver
