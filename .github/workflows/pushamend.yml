@@ -47,6 +47,7 @@ jobs:
       - name: Install required packages
         run: |
           sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
         
