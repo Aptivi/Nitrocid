@@ -217,7 +217,7 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.HardwareProber)]
         [DataRow(DriverTypes.Sorting)]
         [DataRow(DriverTypes.Input)]
-        [DataRow(DriverTypes.Encoding)]
+        [DataRow(DriverTypes.EncodingAsymmetric)]
         [Description("Management")]
         public void TestGetDrivers(DriverTypes type)
         {
@@ -237,7 +237,7 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.HardwareProber)]
         [DataRow(DriverTypes.Sorting)]
         [DataRow(DriverTypes.Input)]
-        [DataRow(DriverTypes.Encoding)]
+        [DataRow(DriverTypes.EncodingAsymmetric)]
         [Description("Management")]
         public void TestGetDriverNames(DriverTypes type)
         {
