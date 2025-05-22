@@ -1,10 +1,10 @@
-We've released an emergency version to fix a bug where mods are unable to use the spinner selector efficiently.
+We've released a version to update the calendar appearance.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed a serious bug affecting the spinner selector
+- `[*]` Made calendars more gorgeous
 
 Review the commit history if you want to get a deep insight about the changes.
 

@@ -1,3 +1,9 @@
+nitrocid-27 (3.1.27.49-0.1.2.14-1) noble; urgency=medium
+
+  * Made calendars more gorgeous
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 22 May 2025 18:56:34 +0300
+
 nitrocid-27 (3.1.27.49-0.1.2.13-1) noble; urgency=medium
 
   * Fixed a serious bug affecting the spinner selector
