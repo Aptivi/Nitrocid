@@ -321,14 +321,8 @@ namespace Nitrocid.Kernel.Configuration
             try
             {
                 var vars = ConfigTools.CheckConfigVariables();
-                if (vars.Values.Any((varFound) => !varFound))
-                {
-                    var invalidKeys = vars
-                        .Where((kvp) => !kvp.Value)
-                        .Select((kvp) => kvp.Key)
-                        .ToArray();
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Kernel configuration will not work properly. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
-                }
+                if (vars.Any((varFound) => !varFound))
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Kernel configuration will not work properly. Consult the kernel debugger for more info."));
             }
             catch (KernelException cex)
             {

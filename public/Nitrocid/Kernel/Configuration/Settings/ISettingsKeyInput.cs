@@ -23,7 +23,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 {
     internal interface ISettingsKeyInput
     {
-        object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail);
+        object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail);
         object? TranslateStringValue(SettingsKey key, string value);
         object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue);
         void SetValue(SettingsKey key, object? value, BaseKernelConfig configType);

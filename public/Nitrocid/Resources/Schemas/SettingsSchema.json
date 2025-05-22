@@ -31,6 +31,9 @@
                         "Description": {
                             "type": "string"
                         },
+                        "Masked": {
+                            "type": "boolean"
+                        },
                         "IsEnumeration": {
                             "type": "boolean"
                         },
@@ -94,8 +97,7 @@
                     },
                     "required": [
                         "Name",
-                        "Type",
-                        "Variable"
+                        "Type"
                     ]
                 }
             }

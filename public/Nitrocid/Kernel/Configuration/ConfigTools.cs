@@ -88,6 +88,12 @@ namespace Nitrocid.Kernel.Configuration
         public static object? GetValueFromEntry(SettingsKey Setting, BaseKernelConfig configType)
         {
             object? CurrentValue = "Unknown";
+
+            // Check to see if we're dealing with Multivar
+            if (Setting.Type == SettingsKeyType.SMultivar)
+                return $"{Setting.Variables.Length} entries...";
+
+            // This is not a multivar, so go ahead
             string Variable = Setting.Variable;
             var configTypeInstance = configType.GetType();
             string configTypeName = configTypeInstance.Name;
@@ -162,9 +168,9 @@ namespace Nitrocid.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables()
+        public static List<bool> CheckConfigVariables()
         {
-            var Results = new Dictionary<string, bool>();
+            var Results = new List<bool>();
             var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>();
             foreach (var config in Config.GetKernelConfigs())
                 entries.Add(config.SettingsEntries ?? [], config);
@@ -172,7 +178,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 var variables = CheckConfigVariables(entry.Key, entry.Value);
                 foreach (var variable in variables)
-                    Results.Add(variable.Key, variable.Value);
+                    Results.Add(variable);
             }
             return Results;
         }
@@ -180,7 +186,7 @@ namespace Nitrocid.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables(string configTypeName)
+        public static List<bool> CheckConfigVariables(string configTypeName)
         {
             if (string.IsNullOrEmpty(configTypeName))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no type specified."));
@@ -192,62 +198,103 @@ namespace Nitrocid.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries)
+        public static List<bool> CheckConfigVariables(BaseKernelConfig? entries)
         {
             if (entries is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
             return CheckConfigVariables(entries.SettingsEntries ?? [], entries);
         }
 
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
+        public static List<bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
         {
             if (config is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
             if (entries is null || entries.Length == 0)
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
-            var Results = new Dictionary<string, bool>();
+            var Results = new List<bool>();
 
             // Parse all the settings
-            foreach (var entry in entries)
+            for (int entryIdx = 0; entryIdx < entries.Length; entryIdx++)
             {
+                SettingsEntry? entry = entries[entryIdx];
                 var keys = entry.Keys;
-                foreach (var key in keys)
+                DebugWriter.WriteDebug(DebugLevel.I, "[Entry: {0}/{1}] Checking {2} settings keys on {3}...", vars: [entryIdx + 1, entries.Length, keys.Length, entry.Name]);
+                Results.AddRange(CheckConfigVariables(keys, config));
+            }
+
+            // Return the results
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
+            return Results;
+        }
+
+        /// <summary>
+        /// Checks all the config variables to see if they can be parsed
+        /// </summary>
+        public static List<bool> CheckConfigVariables(SettingsKey[]? keys, BaseKernelConfig? config)
+        {
+            if (config is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
+            if (keys is null || keys.Length == 0)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no keys are specified."));
+            var Results = new List<bool>();
+
+            // Parse all the settings
+            for (int keyIdx = 0; keyIdx < keys.Length; keyIdx++)
+            {
+                SettingsKey? key = keys[keyIdx];
+                string KeyName = key.Name;
+                string KeyVariable = key.Variable;
+                string KeyEnumeration = key.Enumeration;
+                bool KeyEnumerationInternal = key.EnumerationInternal;
+                string KeyEnumerationAssembly = key.EnumerationAssembly;
+
+                // Check for multivar
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key name: {2}.", vars: [keyIdx + 1, keys.Length, KeyName]);
+                if (key.Type == SettingsKeyType.SMultivar)
                 {
-                    string KeyName = key.Name;
-                    string KeyVariable = key.Variable;
-                    string KeyEnumeration = key.Enumeration;
-                    bool KeyEnumerationInternal = key.EnumerationInternal;
-                    string KeyEnumerationAssembly = key.EnumerationAssembly;
-                    bool KeyFound;
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {2} variables...", vars: [keyIdx + 1, keys.Length, key.Variables.Length]);
+                    Results.AddRange(CheckConfigVariables(key.Variables, config));
+                    continue;
+                }
 
-                    // Check the variable
-                    DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
-                    KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
-                    Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
+                // Check the variable
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking {2} for existence...", vars: [keyIdx + 1, keys.Length, KeyVariable]);
+                bool KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
+                DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result for {2}: {3}.", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
+                DebugWriter.WriteDebugConditional(!KeyFound, DebugLevel.E, "[Key: {0}/{1}] {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
+                Results.Add(KeyFound);
 
-                    // Check the enumeration
-                    if (!string.IsNullOrEmpty(KeyEnumeration))
+                // Check the enumeration
+                if (!string.IsNullOrEmpty(KeyEnumeration))
+                {
+                    string fullType;
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Checking enumeration {2} used in {3} for existence...", vars: [keyIdx + 1, keys.Length, KeyEnumeration, KeyVariable]);
+                    if (KeyEnumerationInternal)
                     {
-                        bool Result;
-                        if (KeyEnumerationInternal)
-                        {
-                            // Apparently, we need to have a full assembly name for getting types.
-                            Result = Type.GetType($"{KernelMain.rootNameSpace}.{KeyEnumeration}, {Assembly.GetExecutingAssembly().FullName}") is not null;
-                        }
-                        else
-                        {
-                            Result = Type.GetType($"{KeyEnumeration}, {KeyEnumerationAssembly}") is not null;
-                        }
-                        Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
+                        // Apparently, we need to have a full assembly name for getting types.
+                        fullType = $"{KernelMain.rootNameSpace}.{KeyEnumeration}, {Assembly.GetExecutingAssembly().FullName}";
+                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Nitrocid enumeration {2} resolved to {3}.", vars: [keyIdx + 1, keys.Length, KeyEnumeration, fullType]);
                     }
+                    else
+                    {
+                        // Add enumeration name and assembly info
+                        fullType = $"{KeyEnumeration}, {KeyEnumerationAssembly}";
+                        DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] External enumeration {2} on {3} resolved to {4}.", vars: [keyIdx + 1, keys.Length, KeyEnumeration, KeyEnumerationAssembly, fullType]);
+                    }
+
+                    // Try to get the type
+                    bool Result = Type.GetType(fullType) is not null;
+                    DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result: {2}.", vars: [keyIdx + 1, keys.Length, Result]);
+                    DebugWriter.WriteDebugConditional(!Result, DebugLevel.E, "[Key: {0}/{1}] Enum {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
+                    Results.Add(Result);
                 }
             }
 
             // Return the results
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", Results.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
             return Results;
         }
 
@@ -271,14 +318,10 @@ namespace Nitrocid.Kernel.Configuration
 
             // Now, verify that we have a valid kernel config.
             var vars = CheckConfigVariables(kernelConfig);
-            if (vars.Values.Any((varFound) => !varFound))
+            if (vars.Any((varFound) => !varFound))
             {
-                var invalidKeys = vars
-                    .Where((kvp) => !kvp.Value)
-                    .Select((kvp) => kvp.Key)
-                    .ToArray();
                 Config.customConfigurations.Remove(name);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with invalid content. Consult the kernel debugger for more info."));
             }
 
             // Make a configuration file
@@ -463,14 +506,10 @@ namespace Nitrocid.Kernel.Configuration
 
             // Now, verify that we have a valid kernel config.
             var vars = CheckConfigVariables(kernelConfig);
-            if (vars.Values.Any((varFound) => !varFound))
+            if (vars.Any((varFound) => !varFound))
             {
-                var invalidKeys = vars
-                    .Where((kvp) => !kvp.Value)
-                    .Select((kvp) => kvp.Key)
-                    .ToArray();
                 Config.baseConfigurations.Remove(name);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with invalid content. Consult the kernel debugger for more info"));
             }
 
             // Make a configuration file

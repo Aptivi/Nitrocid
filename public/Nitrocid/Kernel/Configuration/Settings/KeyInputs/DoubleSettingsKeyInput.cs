@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class DoubleSettingsKeyInput : ISettingsKeyInput
     {
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             ConsoleWrapper.Clear();
 

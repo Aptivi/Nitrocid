@@ -71,8 +71,9 @@ namespace Nitrocid.Misc.Interactives
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
-                        object? currentValue = ConfigTools.GetValueFromEntry(key, config);
-                        return ($"{Translate.DoTranslation(key.Name)} [{currentValue}]", idx);
+                        object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
+                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{key.Name}..." : $"{key.Name} [{currentValue}]";
+                        return (finalKeyName, idx);
                     }).ToArray();
                     entryNames.Clear();
                     entryNames.AddRange(configNames);
@@ -203,7 +204,7 @@ namespace Nitrocid.Misc.Interactives
                     throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                 var key = configs[entryIdx].Keys[keyIdx];
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
-                var input = key.KeyInput.PromptForSet(key, defaultValue, out bool provided);
+                var input = key.KeyInput.PromptForSet(key, defaultValue, config, out bool provided);
                 if (provided)
                 {
                     key.KeyInput.SetValue(key, input, config);

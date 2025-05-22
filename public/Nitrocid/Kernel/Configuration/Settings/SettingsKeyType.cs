@@ -80,5 +80,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// The value is an icon font name that allows Settings to use the icon selector.
         /// </summary>
         SIcon,
+        /// <summary>
+        /// The value consists of multiple variables.
+        /// </summary>
+        SMultivar,
     }
 }

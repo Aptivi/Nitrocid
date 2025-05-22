@@ -324,7 +324,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                     // Prompt for input
                     var keyInput = KeyToken.KeyInput;
-                    var keyInputUser = keyInput.PromptForSet(KeyToken, KeyDefaultValue, out KeyFinished);
+                    var keyInputUser = keyInput.PromptForSet(KeyToken, KeyDefaultValue, settingsType, out KeyFinished);
 
                     // Now, set the value if input is provided correctly
                     if (KeyFinished)

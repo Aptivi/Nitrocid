@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class FigletSettingsKeyInput : ISettingsKeyInput
     {
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             string figletFont = FigletSelector.PromptForFiglet((string?)KeyDefaultValue ?? Config.MainConfig.DefaultFigletFontName);
 

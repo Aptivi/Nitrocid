@@ -24,7 +24,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class IconSettingsKeyInput : ISettingsKeyInput
     {
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             string icon = IconsSelector.PromptForIcons((string?)KeyDefaultValue ?? "heart-suit");
 

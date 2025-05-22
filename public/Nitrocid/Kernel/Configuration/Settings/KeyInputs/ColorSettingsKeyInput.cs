@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class ColorSettingsKeyInput : ISettingsKeyInput
     {
-        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             Color keyColorValue = Color.Empty;
 

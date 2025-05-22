@@ -42,6 +42,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonProperty(nameof(Description))]
         internal string description = "";
 
+        // String
+        [JsonProperty(nameof(Masked))]
+        internal bool masked;
+
         // Selection
         [JsonProperty(nameof(SelectionFunctionName))]
         internal string selectionFunctionName = "";
@@ -93,6 +97,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
         internal string shellType = "";
         [JsonProperty(nameof(Tip))]
         internal string tip = "";
+        [JsonProperty(nameof(Variables))]
+        internal SettingsKey[] variables = [];
 
         // Internal
         [JsonIgnore]
@@ -133,6 +139,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public string Description =>
             description;
+
+        /// <summary>
+        /// Is this string masked? (useful for passwords)
+        /// </summary>
+        [JsonIgnore]
+        public bool Masked =>
+            masked;
 
         /// <summary>
         /// Is this variable an enumeration?
@@ -282,6 +295,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         public string Tip =>
             tip;
 
+        /// <summary>
+        /// List of needed variables (for <see cref="SettingsKeyType.SMultivar"/>)
+        /// </summary>
+        [JsonIgnore]
+        public SettingsKey[] Variables =>
+            variables;
+
         [JsonIgnore]
         internal bool Unsupported =>
             SettingsAppTools.IsUnsupported(this);
@@ -308,6 +328,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     SettingsKeyType.SPreset => new PresetSettingsKeyInput(),
                     SettingsKeyType.SFiglet => new FigletSettingsKeyInput(),
                     SettingsKeyType.SIcon => new IconSettingsKeyInput(),
+                    SettingsKeyType.SMultivar => new MultivarSettingsKeyInput(),
                     SettingsKeyType.SUnknown => new UnknownSettingsKeyInput(),
                     _ => new UnknownSettingsKeyInput(),
                 };

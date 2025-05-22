@@ -128,7 +128,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
             var SettingsVariables = ConfigTools.CheckConfigVariables();
             SettingsVariables.ShouldNotBeNull();
             SettingsVariables.ShouldNotBeEmpty();
-            SettingsVariables.Where((kvp) => !kvp.Value).ShouldBeEmpty();
+            SettingsVariables.Where((result) => !result).ShouldBeEmpty();
         }
     }
 }
