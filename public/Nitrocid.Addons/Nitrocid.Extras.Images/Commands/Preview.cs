@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using System.Linq;
 using System.Text;
 using Terminaux.Images;
 using Terminaux.Inputs.Styles.Editor;
@@ -67,8 +68,8 @@ namespace Nitrocid.Extras.Images.Commands
             }
 
             // Use the interactive text viewer to describe the image.
-            string[] lines = builder.ToString().SplitNewLines();
-            TextViewInteractive.OpenInteractive([.. lines]);
+            var lines = builder.ToString().SplitNewLines().ToList();
+            TextEditInteractive.OpenInteractive(ref lines, edit: false);
             return 0;
         }
 
