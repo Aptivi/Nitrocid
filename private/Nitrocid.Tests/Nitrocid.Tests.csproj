@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.8.3">
+﻿<Project Sdk="MSTest.Sdk/3.9.0">
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="6.1.12.1" />
+    <PackageReference Include="Terminaux" Version="6.1.13" />
   </ItemGroup>
 
   <ItemGroup>
