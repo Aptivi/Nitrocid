@@ -29,6 +29,7 @@ using Terminaux.Colors.Transformation;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -68,19 +69,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var selectedCustomCulture = cultures.Contains(ScreensaverPackInit.SaversConfig.CalendarCultureName) ? new CultureInfo(ScreensaverPackInit.SaversConfig.CalendarCultureName) : CultureManager.CurrentCult;
                 var calendar = new Calendars()
                 {
-                    HeaderColor = CalendarColor,
-                    ValueColor = CalendarColor,
-                    SeparatorColor = TransformationTools.GetDarkBackground(CalendarColor),
+                    HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
+                    TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
+                    WeekendColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
                     Year = TimeDateTools.KernelDateTime.Year,
                     Month = TimeDateTools.KernelDateTime.Month,
-                    Left = 2,
-                    Top = 1,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 4,
-                    InteriorHeight = ConsoleWrapper.WindowHeight - 4,
                     Culture =
                         ScreensaverPackInit.SaversConfig.CalendarUseSystemCulture ?
                         CultureManager.CurrentCult : selectedCustomCulture,
                 };
+                calendar.Left = ConsoleWrapper.WindowWidth / 2 - calendar.Width / 2;
+                calendar.Top = ConsoleWrapper.WindowHeight / 2 - calendar.Height / 2 - 1;
                 TextWriterRaw.WriteRaw(calendar.Render());
             }
 
