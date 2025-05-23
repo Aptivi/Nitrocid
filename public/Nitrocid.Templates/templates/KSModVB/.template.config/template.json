@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Aptivi",
+    "classifications": [ "Library" ],
+    "identity": "KSModVB",
+    "name": "Nitrocid KS Mod (Visual Basic)",
+    "shortName": "KSModVB",
+    "tags": {
+        "language": "Visual Basic",
+        "type": "project"
+    },
+    "sourceName": "KSModVB",
+    "preferNameDirectory": true
+}

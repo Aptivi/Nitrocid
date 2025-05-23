@@ -165,7 +165,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Benchmarks", "priv
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{0F3600BA-D929-4E70-957D-71992819CE61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "templatepack", "public\Nitrocid.Templates\templatepack.csproj", "{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Templates", "public\Nitrocid.Templates\Nitrocid.Templates.csproj", "{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0E7228D6-AAAE-41FC-BE8C-7731DDA0BA16} = {0E7228D6-AAAE-41FC-BE8C-7731DDA0BA16}
 	EndProjectSection

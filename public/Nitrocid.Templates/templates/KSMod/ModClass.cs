@@ -5,10 +5,11 @@ using System.Reflection;
 
 namespace KSMod
 {
-    public class ModName : IMod
+    public class ModClass : IMod
     {
-        public string Name { get; set; } = "My Mod";
-        public string Version { get; set; } = "1.0.0";
+        public string Name => "KSMod";
+
+        public string Version => "1.0.0";
 
         public Version MinimumSupportedApiVersion => new(3, 0, 25, 520);
 
