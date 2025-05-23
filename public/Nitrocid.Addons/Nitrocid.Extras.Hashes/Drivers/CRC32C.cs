@@ -17,24 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Kernel.Debugging;
+using Force.Crc32;
+using FS = Nitrocid.Files.FilesystemTools;
 using System.IO;
 using System.Text.RegularExpressions;
-using Encryptor = System.Security.Cryptography.SHA1;
-using FS = Nitrocid.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
 
-namespace Nitrocid.Extras.Sha1
+namespace Nitrocid.Extras.Hashes.Drivers
 {
     /// <summary>
-    /// SHA1 encryptor
+    /// CRC32C (Castagnoli) encryptor
     /// </summary>
-    public class SHA1 : BaseEncryptionDriver, IEncryptionDriver
+    public class CRC32C : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "SHA1";
+        public override string DriverName => "CRC32C";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -43,16 +43,16 @@ namespace Nitrocid.Extras.Sha1
         public override string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 40;
+        public override int HashLength => 8;
 
         /// <inheritdoc/>
-        public override Regex HashRegex => new("^([a-fA-F0-9]{40})$");
+        public override Regex HashRegex => new("^([a-fA-F0-9]{8})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [stream.Length]);
-            var hashbyte = Encryptor.Create().ComputeHash(stream);
+            var hashbyte = new Crc32CAlgorithm().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
 
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Sha1
         public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
-            var hashbyte = Encryptor.HashData(TextEncoding.UTF8.GetBytes(str));
+            var hashbyte = new Crc32CAlgorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 
