@@ -65,11 +65,6 @@
         "project": "Extras.Contacts"
     },
     {
-        "name": "ExtrasCrc32",
-        "display": "Extras - CRC32",
-        "project": "Extras.Crc32"
-    },
-    {
         "name": "ExtrasDiagnostics",
         "display": "Extras - Diagnostics",
         "project": "Extras.Diagnostics"
@@ -120,11 +115,6 @@
         "project": "Extras.MailShell"
     },
     {
-        "name": "ExtrasMd5",
-        "display": "Extras - MD5",
-        "project": "Extras.Md5"
-    },
-    {
         "name": "ExtrasNameGen",
         "display": "Extras - Name Generator",
         "project": "Extras.NameGen"
@@ -143,16 +133,6 @@
         "name": "ExtrasSftpShell",
         "display": "Extras - SFTP Shell",
         "project": "Extras.SftpShell"
-    },
-    {
-        "name": "ExtrasSha1",
-        "display": "Extras - SHA1",
-        "project": "Extras.Sha1"
-    },
-    {
-        "name": "ExtrasSha384",
-        "display": "Extras - SHA384",
-        "project": "Extras.Sha384"
     },
     {
         "name": "ExtrasSqlShell",
@@ -193,26 +173,6 @@
         "name": "ExtrasImages",
         "display": "Extras - Images",
         "project": "Extras.Images"
-    },
-    {
-        "name": "ExtrasSha256Enhanced",
-        "display": "Extras - Enhanced SHA256",
-        "project": "Extras.Sha256Enhanced"
-    },
-    {
-        "name": "ExtrasSha384Enhanced",
-        "display": "Extras - Enhanced SHA384",
-        "project": "Extras.Sha384Enhanced"
-    },
-    {
-        "name": "ExtrasSha512Enhanced",
-        "display": "Extras - Enhanced SHA512",
-        "project": "Extras.Sha512Enhanced"
-    },
-    {
-        "name": "ExtrasCrc32C",
-        "display": "Extras - CRC32C (Castagnoli)",
-        "project": "Extras.Crc32C"
     },
     {
         "name": "ExtrasStocks",

@@ -4,10 +4,11 @@
   <PropertyGroup>
     <Description>Nitrocid KS Extras - Hashes</Description>
     <AssemblyTitle>Nitrocid KS Extras - Hashes</AssemblyTitle>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\*" />
+    <PackageReference Include="Crc32.NET" Version="1.2.0" />
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

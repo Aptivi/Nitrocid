@@ -26,15 +26,15 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 
-namespace Nitrocid.Extras.Crc32Castagnoli
+namespace Nitrocid.Extras.Hashes.Drivers
 {
     /// <summary>
-    /// CRC32C (Castagnoli) encryptor
+    /// CRC32 encryptor
     /// </summary>
-    public class CRC32C : BaseEncryptionDriver, IEncryptionDriver
+    public class CRC32 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "CRC32C";
+        public override string DriverName => "CRC32";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.Crc32Castagnoli
         public override string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [stream.Length]);
-            var hashbyte = new Crc32CAlgorithm().ComputeHash(stream);
+            var hashbyte = new Crc32Algorithm().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
 
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Crc32Castagnoli
         public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
-            var hashbyte = new Crc32CAlgorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
+            var hashbyte = new Crc32Algorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 

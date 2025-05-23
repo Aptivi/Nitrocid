@@ -26,7 +26,7 @@ using Encryptor = System.Security.Cryptography.SHA3_384;
 using FS = Nitrocid.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Extras.Sha384Enhanced
+namespace Nitrocid.Extras.Hashes.Drivers
 {
     /// <summary>
     /// SHA384 enhanced encryptor

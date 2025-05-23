@@ -26,7 +26,7 @@ using Encryptor = System.Security.Cryptography.MD5;
 using FS = Nitrocid.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Extras.Md5
+namespace Nitrocid.Extras.Hashes.Drivers
 {
     /// <summary>
     /// MD5 encryptor
