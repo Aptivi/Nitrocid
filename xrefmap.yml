@@ -23979,18 +23979,6 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasContacts
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasContacts
   nameWithType: KnownAddons.ExtrasContacts
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32
-  name: ExtrasCrc32
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasCrc32
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32
-  nameWithType: KnownAddons.ExtrasCrc32
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32C
-  name: ExtrasCrc32C
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasCrc32C
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32C
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCrc32C
-  nameWithType: KnownAddons.ExtrasCrc32C
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasDates
   name: ExtrasDates
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasDates
@@ -24075,12 +24063,6 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMailShell
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMailShell
   nameWithType: KnownAddons.ExtrasMailShell
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMd5
-  name: ExtrasMd5
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasMd5
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMd5
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMd5
-  nameWithType: KnownAddons.ExtrasMd5
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasMods
   name: ExtrasMods
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasMods
@@ -24117,36 +24099,6 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSftpShell
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSftpShell
   nameWithType: KnownAddons.ExtrasSftpShell
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha1
-  name: ExtrasSha1
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSha1
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha1
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha1
-  nameWithType: KnownAddons.ExtrasSha1
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha256Enhanced
-  name: ExtrasSha256Enhanced
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSha256Enhanced
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha256Enhanced
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha256Enhanced
-  nameWithType: KnownAddons.ExtrasSha256Enhanced
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384
-  name: ExtrasSha384
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSha384
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384
-  nameWithType: KnownAddons.ExtrasSha384
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384Enhanced
-  name: ExtrasSha384Enhanced
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSha384Enhanced
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384Enhanced
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha384Enhanced
-  nameWithType: KnownAddons.ExtrasSha384Enhanced
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha512Enhanced
-  name: ExtrasSha512Enhanced
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSha512Enhanced
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha512Enhanced
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSha512Enhanced
-  nameWithType: KnownAddons.ExtrasSha512Enhanced
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasSqlShell
   name: ExtrasSqlShell
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasSqlShell
