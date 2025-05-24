@@ -45,37 +45,37 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// Notify on new mail arrival
         /// </summary>
         public static bool NotifyNewMail =>
-            ShellsInit.MailConfig.MailNotifyNewMail;
+            ShellsInit.ShellsConfig.MailNotifyNewMail;
         /// <summary>
         /// IMAP ping interval in milliseconds
         /// </summary>
         public static int ImapPingInterval =>
-            ShellsInit.MailConfig.MailImapPingInterval;
+            ShellsInit.ShellsConfig.MailImapPingInterval;
         /// <summary>
         /// SMTP ping interval in milliseconds
         /// </summary>
         public static int SmtpPingInterval =>
-            ShellsInit.MailConfig.MailSmtpPingInterval;
+            ShellsInit.ShellsConfig.MailSmtpPingInterval;
         /// <summary>
         /// Max messages per page
         /// </summary>
         public static int MaxMessagesInPage =>
-            ShellsInit.MailConfig.MailMaxMessagesInPage;
+            ShellsInit.ShellsConfig.MailMaxMessagesInPage;
         /// <summary>
         /// Message text format
         /// </summary>
         public static TextFormat TextFormat =>
-            (TextFormat)ShellsInit.MailConfig.MailTextFormat;
+            (TextFormat)ShellsInit.ShellsConfig.MailTextFormat;
         /// <summary>
         /// Mail progress style
         /// </summary>
         public static string ProgressStyle =>
-            ShellsInit.MailConfig.MailProgressStyle;
+            ShellsInit.ShellsConfig.MailProgressStyle;
         /// <summary>
         /// Mail progress style (single)
         /// </summary>
         public static string ProgressStyleSingle =>
-            ShellsInit.MailConfig.MailProgressStyleSingle;
+            ShellsInit.ShellsConfig.MailProgressStyleSingle;
         /// <summary>
         /// The mail progress
         /// </summary>

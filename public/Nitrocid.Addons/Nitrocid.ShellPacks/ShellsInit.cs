@@ -201,53 +201,13 @@ namespace Nitrocid.ShellPacks
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        internal static ArchiveConfig ArchiveConfig =>
-            (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
-
-        internal static FtpConfig FtpConfig =>
-            (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];
-
-        internal static GitConfig GitConfig =>
-            (GitConfig)Config.baseConfigurations[nameof(GitConfig)];
-
-        internal static HttpConfig HttpConfig =>
-            (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
-
-        internal static JsonConfig JsonConfig =>
-            (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
-
-        internal static MailConfig MailConfig =>
-            (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
-
-        internal static RssConfig RssConfig =>
-            (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
-
-        internal static SftpConfig SftpConfig =>
-            (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
-
-        internal static SqlConfig SqlConfig =>
-            (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];
+        internal static ShellsConfig ShellsConfig =>
+            (ShellsConfig)Config.baseConfigurations[nameof(ShellsConfig)];
 
         void IAddon.FinalizeAddon()
         {
-            var archiveConfig = new ArchiveConfig();
-            var ftpConfig = new FtpConfig();
-            var gitConfig = new GitConfig();
-            var httpConfig = new HttpConfig();
-            var jsonConfig = new JsonConfig();
-            var mailConfig = new MailConfig();
-            var rssConfig = new RssConfig();
-            var sftpConfig = new SftpConfig();
-            var sqlConfig = new SqlConfig();
-            ConfigTools.RegisterBaseSetting(archiveConfig);
-            ConfigTools.RegisterBaseSetting(ftpConfig);
-            ConfigTools.RegisterBaseSetting(gitConfig);
-            ConfigTools.RegisterBaseSetting(httpConfig);
-            ConfigTools.RegisterBaseSetting(jsonConfig);
-            ConfigTools.RegisterBaseSetting(mailConfig);
-            ConfigTools.RegisterBaseSetting(rssConfig);
-            ConfigTools.RegisterBaseSetting(sftpConfig);
-            ConfigTools.RegisterBaseSetting(sqlConfig);
+            var config = new ShellsConfig();
+            ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("ArchiveShell", new ArchiveShellInfo());
             ShellManager.RegisterAddonShell("FTPShell", new FTPShellInfo());
             ShellManager.RegisterAddonShell("GitShell", new GitShellInfo());
@@ -288,15 +248,7 @@ namespace Nitrocid.ShellPacks
             ShellManager.UnregisterAddonShell("RSSShell");
             ShellManager.UnregisterAddonShell("SFTPShell");
             ShellManager.UnregisterAddonShell("SqlShell");
-            ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(MailConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
-            ConfigTools.UnregisterBaseSetting(nameof(SqlConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(ShellsConfig));
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. archiveAddonCommands.Select((ci) => ci.Command)]);
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. ftpAddonCommands.Select((ci) => ci.Command)]);
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. gitAddonCommands.Select((ci) => ci.Command)]);

@@ -69,17 +69,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         /// SFTP show file details in list
         /// </summary>
         public static bool SFTPShowDetailsInList =>
-            ShellsInit.SftpConfig.SFTPShowDetailsInList;
+            ShellsInit.ShellsConfig.SFTPShowDetailsInList;
         /// <summary>
         /// SFTP user prompt style
         /// </summary>
         public static string SFTPUserPromptStyle =>
-            ShellsInit.SftpConfig.SFTPUserPromptStyle;
+            ShellsInit.ShellsConfig.SFTPUserPromptStyle;
         /// <summary>
         /// SFTP add new connections to speed dial
         /// </summary>
         public static bool SFTPNewConnectionsToSpeedDial =>
-            ShellsInit.SftpConfig.SFTPNewConnectionsToSpeedDial;
+            ShellsInit.ShellsConfig.SFTPNewConnectionsToSpeedDial;
 
     }
 }

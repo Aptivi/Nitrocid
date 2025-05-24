@@ -44,17 +44,17 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// JSON formatting
         /// </summary>
         public static Formatting Formatting =>
-            (Formatting)ShellsInit.JsonConfig.JsonShellFormatting;
+            (Formatting)ShellsInit.ShellsConfig.JsonShellFormatting;
         /// <summary>
         /// Auto save flag
         /// </summary>
         public static bool AutoSaveFlag =>
-            ShellsInit.JsonConfig.JsonEditAutoSaveFlag;
+            ShellsInit.ShellsConfig.JsonEditAutoSaveFlag;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
         public static int AutoSaveInterval =>
-            ShellsInit.JsonConfig.JsonEditAutoSaveInterval;
+            ShellsInit.ShellsConfig.JsonEditAutoSaveInterval;
 
     }
 }

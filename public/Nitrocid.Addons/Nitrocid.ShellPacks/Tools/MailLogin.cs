@@ -50,19 +50,19 @@ namespace Nitrocid.ShellPacks.Tools
         internal static NetworkCredential Authentication = new();
 
         public static string UserPromptStyle =>
-            ShellsInit.MailConfig.MailUserPromptStyle;
+            ShellsInit.ShellsConfig.MailUserPromptStyle;
         public static string PassPromptStyle =>
-            ShellsInit.MailConfig.MailPassPromptStyle;
+            ShellsInit.ShellsConfig.MailPassPromptStyle;
         public static string IMAPPromptStyle =>
-            ShellsInit.MailConfig.MailIMAPPromptStyle;
+            ShellsInit.ShellsConfig.MailIMAPPromptStyle;
         public static string SMTPPromptStyle =>
-            ShellsInit.MailConfig.MailSMTPPromptStyle;
+            ShellsInit.ShellsConfig.MailSMTPPromptStyle;
         public static string GPGPromptStyle =>
-            ShellsInit.MailConfig.MailGPGPromptStyle;
+            ShellsInit.ShellsConfig.MailGPGPromptStyle;
         public static bool Debug =>
-            ShellsInit.MailConfig.MailDebug;
+            ShellsInit.ShellsConfig.MailDebug;
         public static bool AutoDetectServer =>
-            ShellsInit.MailConfig.MailAutoDetectServer;
+            ShellsInit.ShellsConfig.MailAutoDetectServer;
 
         /// <summary>
         /// Mail server type

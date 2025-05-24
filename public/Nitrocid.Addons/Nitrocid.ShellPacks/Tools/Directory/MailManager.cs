@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
         /// Whether to show the message preview or not
         /// </summary>
         public static bool ShowPreview =>
-            ShellsInit.MailConfig.ShowPreview;
+            ShellsInit.ShellsConfig.ShowPreview;
 
         /// <summary>
         /// Lists messages

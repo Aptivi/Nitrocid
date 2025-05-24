@@ -1,0 +1,388 @@
+[
+    {
+        "Name": "Archive",
+        "Desc": "This section lets you configure how the archive shell work.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "ArchivePromptPreset",
+                "ShellType": "ArchiveShell",
+                "Description": ""
+            }
+        ]
+    },
+    {
+        "Name": "FTP",
+        "Desc": "This section lets you configure how the FTP shell works.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "FtpPromptPreset",
+                "ShellType": "FTPShell",
+                "Description": ""
+            },
+            {
+                "Name": "Log FTP username",
+                "Type": "SBoolean",
+                "Variable": "FtpLoggerUsername",
+                "Description": "Whether or not to log FTP username."
+            },
+            {
+                "Name": "Log FTP IP address",
+                "Type": "SBoolean",
+                "Variable": "FtpLoggerIP",
+                "Description": "Whether or not to log FTP IP address."
+            },
+            {
+                "Name": "Return only first FTP profile",
+                "Type": "SBoolean",
+                "Variable": "FtpFirstProfileOnly",
+                "Description": "Pick the first profile only when connecting."
+            },
+            {
+                "Name": "Show file details in FTP list",
+                "Type": "SBoolean",
+                "Variable": "FtpShowDetailsInList",
+                "Description": "Shows the FTP file details while listing remote directories."
+            },
+            {
+                "Name": "Username prompt style for FTP",
+                "Type": "SString",
+                "Variable": "FtpUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Password prompt style for FTP",
+                "Type": "SString",
+                "Variable": "FtpPassPromptStyle",
+                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Use first FTP profile",
+                "Type": "SBoolean",
+                "Variable": "FtpUseFirstProfile",
+                "Description": "Uses the first FTP profile to connect to FTP."
+            },
+            {
+                "Name": "Add new connections to FTP speed dial",
+                "Type": "SBoolean",
+                "Variable": "FtpNewConnectionsToSpeedDial",
+                "Description": "If enabled, adds a new connection to the FTP speed dial."
+            },
+            {
+                "Name": "Try to validate secure FTP certificates",
+                "Type": "SBoolean",
+                "Variable": "FtpTryToValidateCertificate",
+                "Description": "Tries to validate the FTP certificates. Turning it off is not recommended."
+            },
+            {
+                "Name": "Show FTP MOTD on connection",
+                "Type": "SBoolean",
+                "Variable": "FtpShowMotd",
+                "Description": "Shows the FTP message of the day on login."
+            },
+            {
+                "Name": "Always accept invalid FTP certificates",
+                "Type": "SBoolean",
+                "Variable": "FtpAlwaysAcceptInvalidCerts",
+                "Description": "Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."
+            },
+            {
+                "Name": "Recursive hashing for FTP",
+                "Type": "SBoolean",
+                "Variable": "FtpRecursiveHashing",
+                "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
+            },
+            {
+                "Name": "Verify retry attempts for FTP transmission",
+                "Type": "SInt",
+                "Variable": "FtpVerifyRetryAttempts",
+                "Description": "How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?"
+            },
+            {
+                "Name": "FTP connection timeout",
+                "Type": "SInt",
+                "Variable": "FtpConnectTimeout",
+                "Description": "How many milliseconds to wait before the FTP connection timeout?"
+            },
+            {
+                "Name": "FTP data connection timeout",
+                "Type": "SInt",
+                "Variable": "FtpDataConnectTimeout",
+                "Description": "How many milliseconds to wait before the FTP data connection timeout?"
+            },
+            {
+                "Name": "FTP IP versions",
+                "Type": "SSelection",
+                "Variable": "FtpProtocolVersions",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "FluentFTP.FtpIpVersion",
+                "EnumerationAssembly": "FluentFTP",
+                "EnumerationZeroBased": false,
+                "Description": "Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses."
+            }
+        ]
+    },
+    {
+        "Name": "Git",
+        "Desc": "This section lets you configure how the Git shell work.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "GitPromptPreset",
+                "ShellType": "GitShell",
+                "Description": ""
+            }
+        ]
+    },
+    {
+        "Name": "HTTP",
+        "Desc": "This section lets you configure how the HTTP shell works.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "HttpShellPromptPreset",
+                "ShellType": "HTTPShell",
+                "Description": ""
+            }
+        ]
+    },
+    {
+        "Name": "JSON",
+        "Desc": "This section lets you configure how the JSON shell works.",
+        "Keys": [
+            {
+                "Name": "JSON Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "JsonShellPromptPreset",
+                "ShellType": "JsonShell",
+                "Description": ""
+            },
+            {
+                "Name": "Enable JSON editor autosave",
+                "Type": "SBoolean",
+                "Variable": "JsonEditAutoSaveFlag",
+                "Description": "Turns on or off the JSON editor autosave feature."
+            },
+            {
+                "Name": "JSON editor autosave interval",
+                "Type": "SInt",
+                "Variable": "JsonEditAutoSaveInterval",
+                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+            },
+            {
+                "Name": "Default JSON formatting for JSON shell",
+                "Type": "SSelection",
+                "Variable": "JsonShellFormatting",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "Newtonsoft.Json.Formatting",
+                "EnumerationAssembly": "Newtonsoft.Json",
+                "EnumerationZeroBased": true,
+                "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
+            }
+        ]
+    },
+    {
+        "Name": "Mail",
+        "Desc": "This section lets you configure how the mail shell works.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "MailPromptPreset",
+                "ShellType": "MailShell",
+                "Description": ""
+            },
+            {
+                "Name": "Show mail message preview",
+                "Type": "SBoolean",
+                "Variable": "ShowPreview",
+                "Description": "When listing mail messages, show body preview."
+            },
+            {
+                "Name": "Username prompt style for mail",
+                "Type": "SString",
+                "Variable": "MailUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Password prompt style for mail",
+                "Type": "SString",
+                "Variable": "MailPassPromptStyle",
+                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "IMAP prompt style for mail",
+                "Type": "SString",
+                "Variable": "MailIMAPPromptStyle",
+                "Description": "Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "SMTP prompt style for mail",
+                "Type": "SString",
+                "Variable": "MailSMTPPromptStyle",
+                "Description": "Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Automatically detect mail server",
+                "Type": "SBoolean",
+                "Variable": "MailAutoDetectServer",
+                "Description": "Automatically detect the mail server based on the given address."
+            },
+            {
+                "Name": "Enable mail debug",
+                "Type": "SBoolean",
+                "Variable": "MailDebug",
+                "Description": "Enables mail server debug."
+            },
+            {
+                "Name": "Notify for new mail messages",
+                "Type": "SBoolean",
+                "Variable": "MailNotifyNewMail",
+                "Description": "Notifies you for any new mail messages."
+            },
+            {
+                "Name": "GPG password prompt style for mail",
+                "Type": "SString",
+                "Variable": "MailGPGPromptStyle",
+                "Description": "Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Send IMAP ping interval",
+                "Type": "SInt",
+                "Variable": "MailImapPingInterval",
+                "Description": "How many milliseconds to send the IMAP ping?"
+            },
+            {
+                "Name": "Send SMTP ping interval",
+                "Type": "SInt",
+                "Variable": "MailSmtpPingInterval",
+                "Description": "How many milliseconds to send the SMTP ping?"
+            },
+            {
+                "Name": "Mail text format",
+                "Type": "SSelection",
+                "Variable": "MailTextFormat",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "MimeKit.Text.TextFormat",
+                "EnumerationAssembly": "MimeKit",
+                "EnumerationZeroBased": true,
+                "Description": "Controls how the mail text will be shown."
+            },
+            {
+                "Name": "Maximum number of e-mails in one page",
+                "Type": "SIntSlider",
+                "Variable": "MailMaxMessagesInPage",
+                "Description": "How many e-mail messages to display in one page?",
+                "MinimumValue": 0,
+                "MaximumValue": 25
+            },
+            {
+                "Name": "Show mail transfer progress",
+                "Type": "SBoolean",
+                "Variable": "MailShowProgress",
+                "Description": "If enabled, the mail shell will show how many bytes transmitted when downloading mail."
+            },
+            {
+                "Name": "Mail transfer progress",
+                "Type": "SString",
+                "Variable": "MailProgressStyle",
+                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size."
+            },
+            {
+                "Name": "Mail transfer progress (single)",
+                "Type": "SString",
+                "Variable": "MailProgressStyleSingle",
+                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
+            }
+        ]
+    },
+    {
+        "Name": "RSS",
+        "Desc": "This section lets you configure how the RSS shell works.",
+        "Keys": [
+            {
+                "Name": "RSS Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "RSSPromptPreset",
+                "ShellType": "RSSShell",
+                "Description": ""
+            },
+            {
+                "Name": "RSS feed URL prompt style",
+                "Type": "SString",
+                "Variable": "RSSFeedUrlPromptStyle",
+                "Description": "Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Auto refresh RSS feed",
+                "Type": "SBoolean",
+                "Variable": "RSSRefreshFeeds",
+                "Description": "Auto refresh RSS feed"
+            },
+            {
+                "Name": "Auto refresh RSS feed interval",
+                "Type": "SInt",
+                "Variable": "RSSRefreshInterval",
+                "Description": "How many milliseconds to refresh the RSS feed?"
+            },
+            {
+                "Name": "RSS feed fetch timeout",
+                "Type": "SInt",
+                "Variable": "RSSFetchTimeout",
+                "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
+            }
+        ]
+    },
+    {
+        "Name": "SFTP",
+        "Desc": "This section lets you configure how the SFTP shell works.",
+        "Keys": [
+            {
+                "Name": "Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "SftpPromptPreset",
+                "ShellType": "SFTPShell",
+                "Description": ""
+            },
+            {
+                "Name": "Show file details in SFTP list",
+                "Type": "SBoolean",
+                "Variable": "SFTPShowDetailsInList",
+                "Description": "Shows the SFTP file details while listing remote directories."
+            },
+            {
+                "Name": "Username prompt style for SFTP",
+                "Type": "SString",
+                "Variable": "SFTPUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Add new connections to SFTP speed dial",
+                "Type": "SBoolean",
+                "Variable": "SFTPNewConnectionsToSpeedDial",
+                "Description": "If enabled, adds a new connection to the SFTP speed dial."
+            }
+        ]
+    },
+    {
+        "Name": "SQL",
+        "Desc": "This section lets you configure how the SQL shell works.",
+        "Keys": [
+            {
+                "Name": "SQL Shell Prompt Preset",
+                "Type": "SPreset",
+                "Variable": "SqlShellPromptPreset",
+                "ShellType": "SqlShell",
+                "Description": ""
+            }
+        ]
+    }
+]
