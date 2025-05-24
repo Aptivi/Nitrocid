@@ -50,17 +50,17 @@ namespace Nitrocid.ShellPacks.Tools
         /// Log username for FTP
         /// </summary>
         public static bool FtpLoggerUsername =>
-            ShellsInit.FtpConfig.FtpLoggerUsername;
+            ShellsInit.ShellsConfig.FtpLoggerUsername;
         /// <summary>
         /// Log IP address for FTP
         /// </summary>
         public static bool FtpLoggerIP =>
-            ShellsInit.FtpConfig.FtpLoggerIP;
+            ShellsInit.ShellsConfig.FtpLoggerIP;
         /// <summary>
         /// Only first profile will be returned
         /// </summary>
         public static bool FtpFirstProfileOnly =>
-            ShellsInit.FtpConfig.FtpFirstProfileOnly;
+            ShellsInit.ShellsConfig.FtpFirstProfileOnly;
 
         /// <summary>
         /// Prompts user for a password

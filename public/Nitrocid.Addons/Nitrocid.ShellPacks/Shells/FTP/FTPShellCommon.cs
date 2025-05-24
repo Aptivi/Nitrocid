@@ -48,67 +48,67 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// FTP verify retry attempts
         /// </summary>
         public static int FtpVerifyRetryAttempts =>
-            ShellsInit.FtpConfig.FtpVerifyRetryAttempts;
+            ShellsInit.ShellsConfig.FtpVerifyRetryAttempts;
         /// <summary>
         /// FTP connection timeout in milliseconds
         /// </summary>
         public static int FtpConnectTimeout =>
-            ShellsInit.FtpConfig.FtpConnectTimeout;
+            ShellsInit.ShellsConfig.FtpConnectTimeout;
         /// <summary>
         /// FTP data connection timeout in milliseconds
         /// </summary>
         public static int FtpDataConnectTimeout =>
-            ShellsInit.FtpConfig.FtpDataConnectTimeout;
+            ShellsInit.ShellsConfig.FtpDataConnectTimeout;
         /// <summary>
         /// FTP show details in list
         /// </summary>
         public static bool FtpShowDetailsInList =>
-            ShellsInit.FtpConfig.FtpShowDetailsInList;
+            ShellsInit.ShellsConfig.FtpShowDetailsInList;
         /// <summary>
         /// FTP user prompt style
         /// </summary>
         public static string FtpUserPromptStyle =>
-            ShellsInit.FtpConfig.FtpUserPromptStyle;
+            ShellsInit.ShellsConfig.FtpUserPromptStyle;
         /// <summary>
         /// FTP password prompt style
         /// </summary>
         public static string FtpPassPromptStyle =>
-            ShellsInit.FtpConfig.FtpPassPromptStyle;
+            ShellsInit.ShellsConfig.FtpPassPromptStyle;
         /// <summary>
         /// FTP always use first profile
         /// </summary>
         public static bool FtpUseFirstProfile =>
-            ShellsInit.FtpConfig.FtpUseFirstProfile;
+            ShellsInit.ShellsConfig.FtpUseFirstProfile;
         /// <summary>
         /// FTP add new connections to speed dial
         /// </summary>
         public static bool FtpNewConnectionsToSpeedDial =>
-            ShellsInit.FtpConfig.FtpNewConnectionsToSpeedDial;
+            ShellsInit.ShellsConfig.FtpNewConnectionsToSpeedDial;
         /// <summary>
         /// FTP try to validate the certificate
         /// </summary>
         public static bool FtpTryToValidateCertificate =>
-            ShellsInit.FtpConfig.FtpTryToValidateCertificate;
+            ShellsInit.ShellsConfig.FtpTryToValidateCertificate;
         /// <summary>
         /// FTP recursive hashing
         /// </summary>
         public static bool FtpRecursiveHashing =>
-            ShellsInit.FtpConfig.FtpRecursiveHashing;
+            ShellsInit.ShellsConfig.FtpRecursiveHashing;
         /// <summary>
         /// FTP show MOTD
         /// </summary>
         public static bool FtpShowMotd =>
-            ShellsInit.FtpConfig.FtpShowMotd;
+            ShellsInit.ShellsConfig.FtpShowMotd;
         /// <summary>
         /// FTP always accept invalid certificates. Turning it on is not recommended.
         /// </summary>
         public static bool FtpAlwaysAcceptInvalidCerts =>
-            ShellsInit.FtpConfig.FtpAlwaysAcceptInvalidCerts;
+            ShellsInit.ShellsConfig.FtpAlwaysAcceptInvalidCerts;
         /// <summary>
         /// FTP protocol versions
         /// </summary>
         public static FtpIpVersion FtpProtocolVersions =>
-            (FtpIpVersion)ShellsInit.FtpConfig.FtpProtocolVersions;
+            (FtpIpVersion)ShellsInit.ShellsConfig.FtpProtocolVersions;
         /// <summary>
         /// FTP current local directory
         /// </summary>
