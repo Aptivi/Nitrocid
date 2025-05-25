@@ -80,6 +80,15 @@ namespace Nitrocid.Misc.Interactives
                     keyNames.Clear();
                     keyNames.AddRange(finalkeyNames);
                     lastFirstPaneIdx = FirstPaneCurrentSelection - 1;
+
+                    // Determine whether to switch sides or not
+                    // TODO: Please provide a more powerful version of SelectionMovement in the next Terminaux 6.1 point release.
+                    bool switchSides = CurrentPane != 2;
+                    if (switchSides)
+                        InteractiveTuiTools.SwitchSides(this);
+                    InteractiveTuiTools.SelectionMovement(this, 0);
+                    if (switchSides)
+                        InteractiveTuiTools.SwitchSides(this);
                     return configNames;
                 }
                 catch (Exception ex)
