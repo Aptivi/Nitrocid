@@ -18,7 +18,7 @@
 //
 
 using Magico.Enumeration;
-using System;
+using System.Numerics;
 using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.Sorting
@@ -42,31 +42,8 @@ namespace Nitrocid.Drivers.Sorting
             false;
 
         /// <inheritdoc/>
-        public virtual byte[] SortNumbersInt8(byte[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual short[] SortNumbersInt16(short[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual int[] SortNumbersInt32(int[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual long[] SortNumbersInt64(long[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual Int128[] SortNumbersInt128(Int128[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual float[] SortNumbersFloat(float[] unsorted) =>
-            ArrayTools.SortNumbers(unsorted);
-
-        /// <inheritdoc/>
-        public virtual double[] SortNumbersDouble(double[] unsorted) =>
+        public virtual T[] SortNumbers<T>(T[] unsorted)
+            where T : INumber<T> =>
             ArrayTools.SortNumbers(unsorted);
     }
 }

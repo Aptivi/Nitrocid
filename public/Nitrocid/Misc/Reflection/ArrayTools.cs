@@ -23,6 +23,7 @@ using Nitrocid.Drivers.Sorting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using MagicoArrayTools = Magico.Enumeration.ArrayTools;
 
 namespace Nitrocid.Misc.Reflection
@@ -49,7 +50,7 @@ namespace Nitrocid.Misc.Reflection
         /// <returns>A new array containing elements that are shuffled.</returns>
         public static T[] RandomizeArraySystem<T>(this T[] array)
         {
-            Random.Shared.Shuffle(array);
+            MagicoArrayTools.RandomShared.Shuffle(array);
             return array;
         }
 
@@ -58,56 +59,9 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="unsorted">An unsorted array of numbers</param>
         /// <returns>Sorted array of byte numbers</returns>
-        public static byte[] SortNumbers(this byte[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt8(unsorted);
-
-        /// <summary>
-        /// Sorts the short numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of short numbers</returns>
-        public static short[] SortNumbers(this short[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt16(unsorted);
-
-        /// <summary>
-        /// Sorts the integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of integers</returns>
-        public static int[] SortNumbers(this int[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt32(unsorted);
-
-        /// <summary>
-        /// Sorts the 64-bit integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of 64-bit integers</returns>
-        public static long[] SortNumbers(this long[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt64(unsorted);
-
-        /// <summary>
-        /// Sorts the 128-bit integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of 128-bit integers</returns>
-        public static Int128[] SortNumbers(this Int128[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt128(unsorted);
-
-        /// <summary>
-        /// Sorts the single-precision decimal numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of single-precision decimal numbers</returns>
-        public static float[] SortNumbers(this float[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersFloat(unsorted);
-
-        /// <summary>
-        /// Sorts the double-precision decimal numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <returns>Sorted array of double-precision decimal numbers</returns>
-        public static double[] SortNumbers(this double[] unsorted) =>
-            DriverHandler.CurrentSortingDriverLocal.SortNumbersDouble(unsorted);
+        public static T[] SortNumbers<T>(this T[] unsorted)
+            where T : INumber<T> =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbers(unsorted);
 
         /// <summary>
         /// Sorts the byte numbers
@@ -115,61 +69,8 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="unsorted">An unsorted array of numbers</param>
         /// <param name="driverName">The sorting driver name to use</param>
         /// <returns>Sorted array of byte numbers</returns>
-        public static byte[] SortNumbers(this byte[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersInt8(unsorted);
-
-        /// <summary>
-        /// Sorts the short numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of short numbers</returns>
-        public static short[] SortNumbers(this short[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersInt16(unsorted);
-
-        /// <summary>
-        /// Sorts the integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of integers</returns>
-        public static int[] SortNumbers(this int[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersInt32(unsorted);
-
-        /// <summary>
-        /// Sorts the 64-bit integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of 64-bit integers</returns>
-        public static long[] SortNumbers(this long[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersInt64(unsorted);
-
-        /// <summary>
-        /// Sorts the 128-bit integers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of 128-bit integers</returns>
-        public static Int128[] SortNumbers(this Int128[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersInt128(unsorted);
-
-        /// <summary>
-        /// Sorts the single-precision decimal numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of single-precision decimal numbers</returns>
-        public static float[] SortNumbers(this float[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersFloat(unsorted);
-
-        /// <summary>
-        /// Sorts the double-precision decimal numbers
-        /// </summary>
-        /// <param name="unsorted">An unsorted array of numbers</param>
-        /// <param name="driverName">The sorting driver name to use</param>
-        /// <returns>Sorted array of double-precision decimal numbers</returns>
-        public static double[] SortNumbers(this double[] unsorted, string driverName) =>
-            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbersDouble(unsorted);
+        public static T[] SortNumbers<T>(this T[] unsorted, string driverName)
+            where T : INumber<T> =>
+            DriverHandler.GetDriver<ISortingDriver>(driverName).SortNumbers(unsorted);
     }
 }

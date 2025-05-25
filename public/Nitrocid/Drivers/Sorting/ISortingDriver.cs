@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
+using System.Numerics;
 
 namespace Nitrocid.Drivers.Sorting
 {
@@ -29,43 +29,9 @@ namespace Nitrocid.Drivers.Sorting
         /// <summary>
         /// Sorts the byte numbers
         /// </summary>
+        /// <typeparam name="T">Numeric type that the array contains</typeparam>
         /// <returns>Sorted array of byte numbers</returns>
-        byte[] SortNumbersInt8(byte[] unsorted);
-
-        /// <summary>
-        /// Sorts the short numbers
-        /// </summary>
-        /// <returns>Sorted array of short numbers</returns>
-        short[] SortNumbersInt16(short[] unsorted);
-
-        /// <summary>
-        /// Sorts the integers
-        /// </summary>
-        /// <returns>Sorted array of integers</returns>
-        int[] SortNumbersInt32(int[] unsorted);
-
-        /// <summary>
-        /// Sorts the 64-bit integers
-        /// </summary>
-        /// <returns>Sorted array of 64-bit integers</returns>
-        long[] SortNumbersInt64(long[] unsorted);
-
-        /// <summary>
-        /// Sorts the 128-bit integers
-        /// </summary>
-        /// <returns>Sorted array of 128-bit integers</returns>
-        Int128[] SortNumbersInt128(Int128[] unsorted);
-
-        /// <summary>
-        /// Sorts the single-precision decimal numbers
-        /// </summary>
-        /// <returns>Sorted array of single-precision decimal numbers</returns>
-        float[] SortNumbersFloat(float[] unsorted);
-
-        /// <summary>
-        /// Sorts the double-precision decimal numbers
-        /// </summary>
-        /// <returns>Sorted array of double-precision decimal numbers</returns>
-        double[] SortNumbersDouble(double[] unsorted);
+        T[] SortNumbers<T>(T[] unsorted)
+            where T : INumber<T>;
     }
 }

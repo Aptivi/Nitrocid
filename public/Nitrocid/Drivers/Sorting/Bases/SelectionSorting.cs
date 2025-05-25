@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
 namespace Nitrocid.Drivers.Sorting.Bases
 {
     internal class SelectionSorting : BaseSortingDriver, ISortingDriver
@@ -28,7 +26,7 @@ namespace Nitrocid.Drivers.Sorting.Bases
             "Selection";
 
         /// <inheritdoc/>
-        public override byte[] SortNumbersInt8(byte[] unsorted)
+        public override T[] SortNumbers<T>(T[] unsorted)
         {
             // Implementation
             int length = unsorted.Length;
@@ -46,126 +44,5 @@ namespace Nitrocid.Drivers.Sorting.Bases
             }
             return unsorted;
         }
-
-        /// <inheritdoc/>
-        public override short[] SortNumbersInt16(short[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
-        /// <inheritdoc/>
-        public override int[] SortNumbersInt32(int[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
-        /// <inheritdoc/>
-        public override long[] SortNumbersInt64(long[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
-        /// <inheritdoc/>
-        public override Int128[] SortNumbersInt128(Int128[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
-        /// <inheritdoc/>
-        public override float[] SortNumbersFloat(float[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
-        /// <inheritdoc/>
-        public override double[] SortNumbersDouble(double[] unsorted)
-        {
-            // Implementation
-            int length = unsorted.Length;
-            for (int i = 0; i < length - 1; i++)
-            {
-                var smallest = i;
-                for (int j = i + 1; j < length; j++)
-                {
-                    if (unsorted[j] < unsorted[smallest])
-                        smallest = j;
-                }
-
-                // Do the swap!
-                (unsorted[smallest], unsorted[i]) = (unsorted[i], unsorted[smallest]);
-            }
-            return unsorted;
-        }
-
     }
 }

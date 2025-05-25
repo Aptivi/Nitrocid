@@ -38,7 +38,7 @@ namespace Nitrocid.Benchmarks.Fixtures
                 int num = random.Random();
                 array[i] = num;
             }
-            sort.SortNumbersInt32(array);
+            sort.SortNumbers(array);
         }
 
         [Benchmark]
@@ -50,7 +50,7 @@ namespace Nitrocid.Benchmarks.Fixtures
                 int num = random.Random();
                 array[i] = num;
             }
-            sort.SortNumbersInt32(array);
+            sort.SortNumbers(array);
         }
     }
 }
