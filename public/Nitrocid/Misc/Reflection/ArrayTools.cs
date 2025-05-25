@@ -23,6 +23,7 @@ using Nitrocid.Drivers.Sorting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MagicoArrayTools = Magico.Enumeration.ArrayTools;
 
 namespace Nitrocid.Misc.Reflection
 {
@@ -37,23 +38,8 @@ namespace Nitrocid.Misc.Reflection
         /// <typeparam name="T">Target type. It's not necessarily an integer.</typeparam>
         /// <param name="array">Target array to sort randomly</param>
         /// <returns>A new array containing elements that are shuffled.</returns>
-        public static T[]? RandomizeArray<T>(this T[] array)
-        {
-            if (array == null || array.Length == 0)
-                return array;
-
-            // First, create a new list of random numbers with the array's value indexes
-            List<(double, T)> valuesToShuffle = [];
-            for (int i = 0; i < array.Length; i++)
-                valuesToShuffle.Add((RandomDriver.RandomDouble(), array[i]));
-
-            // Then, randomize the array after ordering the numbers
-            var randomized = valuesToShuffle
-                .OrderBy((val) => val.Item1)
-                .Select((kvp) => kvp.Item2)
-                .ToArray();
-            return randomized;
-        }
+        public static T[]? RandomizeArray<T>(this T[] array) =>
+            MagicoArrayTools.RandomizeArray(array);
 
         /// <summary>
         /// Randomizes the array by shuffling elements, irrespective of the type, using <see cref="Random.Shuffle{T}(T[])"/>

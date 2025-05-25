@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Magico.Enumeration;
 using System;
 using System.Runtime.Serialization;
 
@@ -41,124 +42,20 @@ namespace Nitrocid.Drivers.Sorting
             false;
 
         /// <inheritdoc/>
-        public virtual byte[] SortNumbersInt8(byte[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual byte[] SortNumbersInt8(byte[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
 
         /// <inheritdoc/>
-        public virtual short[] SortNumbersInt16(short[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual short[] SortNumbersInt16(short[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
 
         /// <inheritdoc/>
-        public virtual int[] SortNumbersInt32(int[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual int[] SortNumbersInt32(int[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
 
         /// <inheritdoc/>
-        public virtual long[] SortNumbersInt64(long[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual long[] SortNumbersInt64(long[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
 
         /// <inheritdoc/>
         public virtual Int128[] SortNumbersInt128(Int128[] unsorted)
@@ -191,63 +88,11 @@ namespace Nitrocid.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public virtual float[] SortNumbersFloat(float[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual float[] SortNumbersFloat(float[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
 
         /// <inheritdoc/>
-        public virtual double[] SortNumbersDouble(double[] unsorted)
-        {
-            // Get the number of iterations
-            int iteration = unsorted.Length;
-            bool swap;
-
-            // Now, iterate through the whole array to check to see if we need to sort or not
-            for (int i = 0; i < iteration - 1; i++)
-            {
-                // Reset the swap requirement
-                swap = false;
-
-                // Now, compare the two values to see if they need sorting
-                for (int j = 0; j < iteration - i - 1; j++)
-                {
-                    if (unsorted[j] > unsorted[j + 1])
-                    {
-                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
-                        swap = true;
-                    }
-                }
-
-                // Break if swap is not required
-                if (!swap)
-                    break;
-            }
-            return unsorted;
-        }
+        public virtual double[] SortNumbersDouble(double[] unsorted) =>
+            ArrayTools.SortNumbers(unsorted);
     }
 }
