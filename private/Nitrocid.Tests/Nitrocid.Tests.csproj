@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="7.0.0-beta3-20250523115049" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta3-20250525125834" />
   </ItemGroup>
 
   <ItemGroup>
