@@ -5,9 +5,12 @@ VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.BuildTargets", "private\Nitrocid.BuildTargets\Nitrocid.BuildTargets.csproj", "{1205F12D-A766-4431-A8DC-CABDCE31B55C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.AddonPruner", "private\Nitrocid.AddonPruner\Nitrocid.AddonPruner.csproj", "{F8D7CCE0-5C68-4446-9176-1B930964A64B}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid", "public\Nitrocid\Nitrocid.csproj", "{C7B37899-C361-423D-9512-FE0A87A46866}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Tests", "private\Nitrocid.Tests\Nitrocid.Tests.csproj", "{2698CB71-9EF6-06A7-2A14-1AFF675F88CB}"
@@ -51,6 +54,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers", "public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj", "{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.CodeFixes", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.CodeFixes\Nitrocid.Analyzers.CodeFixes.csproj", "{92EFB380-0B78-4B92-A227-F0B6BF982F19}"
@@ -130,6 +134,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Templates", "public\Nitrocid.Templates\Nitrocid.Templates.csproj", "{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5C239BD3-9597-4D5C-86C8-1940B9437A1C}"
@@ -155,6 +160,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Generators.KnownAddons", "private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj", "{E1B8ED9D-541A-4D9E-AAF5-2671114E179B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleChecker", "private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj", "{A9DBA465-7F73-449F-B5BD-E143767513E4}"
@@ -168,11 +174,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Base", "public\Nitrocid.Base\Nitrocid.Base.csproj", "{E47A4664-21AD-4D05-85A5-9E3D86A9AC45}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Core", "public\Nitrocid.Core\Nitrocid.Core.csproj", "{2617CFBB-4AF9-48DB-B2A7-7BEAF8575011}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1205F12D-A766-4431-A8DC-CABDCE31B55C} = {1205F12D-A766-4431-A8DC-CABDCE31B55C}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {F8D7CCE0-5C68-4446-9176-1B930964A64B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Locales", "public\Nitrocid.Locales\Nitrocid.Locales.csproj", "{38B58904-50C4-4E0D-A8E7-FD8766D7923C}"
@@ -967,6 +975,22 @@ Global
 		{6941B2A6-73FC-4BBA-BC1E-58335AE5628D}.Release|x64.Build.0 = Release|Any CPU
 		{6941B2A6-73FC-4BBA-BC1E-58335AE5628D}.Release|x86.ActiveCfg = Release|Any CPU
 		{6941B2A6-73FC-4BBA-BC1E-58335AE5628D}.Release|x86.Build.0 = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|x64.Build.0 = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Debug|x86.Build.0 = Debug|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|ARM64.Build.0 = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|x64.ActiveCfg = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|x64.Build.0 = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|x86.ActiveCfg = Release|Any CPU
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1030,6 +1054,7 @@ Global
 		{19A1D1F6-21D9-454F-95C8-2D4BF633D9C7} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{568698A4-BF6F-4FDA-A238-1C8798D1FDDE} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{6941B2A6-73FC-4BBA-BC1E-58335AE5628D} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{F8D7CCE0-5C68-4446-9176-1B930964A64B} = {047A44A0-6338-4EC1-BC4D-9CF8DB608269}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

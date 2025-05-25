@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.7.56" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PruneAddons" BeforeTargets="Build">
+    <Message Importance="high" Text="Pruning addons..." />
+    <!-- TODO: Fill this area with efficient code for pruning the addons -->
+    <Message Importance="high" Text="Pruning done!" />
+  </Target>
+
+</Project>
