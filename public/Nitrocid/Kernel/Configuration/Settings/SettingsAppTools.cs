@@ -68,6 +68,31 @@ namespace Nitrocid.Kernel.Configuration.Settings
             return [.. sections];
         }
 
+        internal static BaseKernelConfig? SelectConfig()
+        {
+            var configs = Config.GetKernelConfigs();
+            var choices = configs.Select((bkc, idx) => new InputChoiceInfo($"{idx + 1}", bkc.GetType().Name)).ToArray();
+
+            // Prompt user to provide the base kernel config
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a configuration instance to switch to."));
+
+            // Check the index
+            if (selected == -1)
+                return null;
+            else
+            {
+                // Check for settings entries
+                var selectedConfig = configs[selected];
+                SettingsEntry[]? settingsEntries = selectedConfig.SettingsEntries;
+                if (settingsEntries is null || settingsEntries.Length == 0)
+                {
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Settings entries are not found."));
+                    return null;
+                }
+                return configs[selected];
+            }
+        }
+
         internal static void SaveSettings()
         {
             // Just a wrapper for CreateConfig() that SettingsApp uses

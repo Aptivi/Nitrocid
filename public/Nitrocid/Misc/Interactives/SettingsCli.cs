@@ -328,5 +328,25 @@ namespace Nitrocid.Misc.Interactives
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
+
+        internal void SelectConfig()
+        {
+            try
+            {
+                // Select configuration
+                var selectedConfig = SettingsAppTools.SelectConfig();
+                if (selectedConfig is not null)
+                {
+                    config = selectedConfig;
+                    lastFirstPaneIdx = -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't select configuration") + TextTools.FormatString(": {0}", ex.Message));
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
     }
 }
