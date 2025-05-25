@@ -4,10 +4,64 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <Target Name="PruneAddons" BeforeTargets="Build">
+  <Target Name="PruneAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons')">
     <Message Importance="high" Text="Pruning addons..." />
-    <!-- TODO: Fill this area with efficient code for pruning the addons -->
-    <Message Importance="high" Text="Pruning done!" />
+    
+    <!--
+        List all addon folders from the public/Nitrocid.Addons folder. Any addon folder, even if it does not
+        necessarily represent a valid project, will have their names un-prefixed to add them to the whitelist.
+    -->
+    <ItemGroup>
+      <NitrocidAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid.Addons'))" />
+      <NitrocidAddonsNames>
+        <AddonProjectName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonProjectName>
+      </NitrocidAddonsNames>
+    </ItemGroup>
+
+    <!--
+        Process the names so that we can get the directory names, then un-prefix them to add them to the addon
+        pruning whitelist.
+    -->
+    <ItemGroup>
+      <NitrocidAddonsOutputs Include="%(NitrocidAddonsNames.AddonProjectName)" />
+      <NitrocidAddonsOutputs>
+        <AddonOutputName>$([System.String]::Copy('%(Identity)').Replace('Nitrocid.',''))</AddonOutputName>
+      </NitrocidAddonsOutputs>
+    </ItemGroup>
+
+    <!--
+        We have a whitelist now. So, use it to remove any extraneous addons. First, we need to query the build
+        output of the main Nitrocid project. In the Addons folder, the addons are already un-prefixed.
+    -->
+    <ItemGroup>
+      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons'))" />
+      <OutputAddonsNames>
+        <AddonOutputName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonOutputName>
+      </OutputAddonsNames>
+    </ItemGroup>
+
+    <!--
+        Create a filtered list of addons that are to be wiped
+    -->
+    <ItemGroup>
+      <ExcludedAddons Include="@(OutputAddonsNames->'%(AddonOutputName)'->Distinct())" />
+      <ExcludedAddons Remove="@(NitrocidAddonsOutputs->'%(AddonOutputName)')" />
+    </ItemGroup>
+
+    <!--
+        Wipe out all folders that are in the ExcludedAddons item
+    -->
+    <ItemGroup>
+      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
+    </ItemGroup>
+    <Message Importance="high" Text="Pruning addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
+    <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
+
+    <!--
+        Declare victory!
+    -->
+    <Message Importance="high" Text="No obsolete addons!" Condition=" '@(ExcludedAddons)' == '' " />
+    <Message Importance="high" Text="Pruning done!" Condition=" '@(ExcludedAddons)' != '' " />
   </Target>
 
 </Project>
