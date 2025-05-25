@@ -104,7 +104,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_RandomizeArraySystem__1___0___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.RandomizeArraySystem%60%601(%60%600%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L50">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L51">View Source</a>
   </span>
   <a id="Nitrocid_Misc_Reflection_ArrayTools_RandomizeArraySystem_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.RandomizeArraySystem*"></a>
   <h4 id="Nitrocid_Misc_Reflection_ArrayTools_RandomizeArraySystem__1___0___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.RandomizeArraySystem``1(``0[])">RandomizeArraySystem&lt;T&gt;(T[])</h4>
@@ -170,7 +170,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_RandomizeArray__1___0___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.RandomizeArray%60%601(%60%600%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L41">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L42">View Source</a>
   </span>
   <a id="Nitrocid_Misc_Reflection_ArrayTools_RandomizeArray_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.RandomizeArray*"></a>
   <h4 id="Nitrocid_Misc_Reflection_ArrayTools_RandomizeArray__1___0___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.RandomizeArray``1(``0[])">RandomizeArray&lt;T&gt;(T[])</h4>
@@ -233,19 +233,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers%60%601(%60%600%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L61">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L62">View Source</a>
   </span>
   <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[])">SortNumbers(byte[])</h4>
+  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[])">SortNumbers&lt;T&gt;(T[])</h4>
   <div class="markdown level1 summary"><p>Sorts the byte numbers</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] SortNumbers(this byte[] unsorted)</code></pre>
+    <pre><code class="lang-csharp hljs">public static T[] SortNumbers&lt;T&gt;(this T[] unsorted) where T : INumber&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -258,7 +258,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">byte</span>[]</td>
+        <td>T[]</td>
         <td><span class="parametername">unsorted</span></td>
         <td><p>An unsorted array of numbers</p>
 </td>
@@ -275,27 +275,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">byte</span>[]</td>
+        <td>T[]</td>
         <td><p>Sorted array of byte numbers</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers%60%601(%60%600%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L118">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L72">View Source</a>
   </span>
   <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[],System.String)">SortNumbers(byte[], string)</h4>
+  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[],System.String)">SortNumbers&lt;T&gt;(T[], string)</h4>
   <div class="markdown level1 summary"><p>Sorts the byte numbers</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static byte[] SortNumbers(this byte[] unsorted, string driverName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static T[] SortNumbers&lt;T&gt;(this T[] unsorted, string driverName) where T : INumber&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -308,7 +323,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">byte</span>[]</td>
+        <td>T[]</td>
         <td><span class="parametername">unsorted</span></td>
         <td><p>An unsorted array of numbers</p>
 </td>
@@ -331,645 +346,24 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">byte</span>[]</td>
+        <td>T[]</td>
         <td><p>Sorted array of byte numbers</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L109">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[])">SortNumbers(double[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the double-precision decimal numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double[] SortNumbers(this double[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">double</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">double</span>[]</td>
-        <td><p>Sorted array of double-precision decimal numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L172">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[],System.String)">SortNumbers(double[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the double-precision decimal numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double[] SortNumbers(this double[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">double</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">double</span>[]</td>
-        <td><p>Sorted array of double-precision decimal numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L93">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[])">SortNumbers(Int128[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the 128-bit integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Int128[] SortNumbers(this Int128[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Int128</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Int128</span>[]</td>
-        <td><p>Sorted array of 128-bit integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L154">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[],System.String)">SortNumbers(Int128[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the 128-bit integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Int128[] SortNumbers(this Int128[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Int128</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Int128</span>[]</td>
-        <td><p>Sorted array of 128-bit integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L69">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[])">SortNumbers(short[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the short numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static short[] SortNumbers(this short[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">short</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">short</span>[]</td>
-        <td><p>Sorted array of short numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L127">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[],System.String)">SortNumbers(short[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the short numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static short[] SortNumbers(this short[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">short</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">short</span>[]</td>
-        <td><p>Sorted array of short numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L77">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[])">SortNumbers(int[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] SortNumbers(this int[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">int</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">int</span>[]</td>
-        <td><p>Sorted array of integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L136">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[],System.String)">SortNumbers(int[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] SortNumbers(this int[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">int</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">int</span>[]</td>
-        <td><p>Sorted array of integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L85">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[])">SortNumbers(long[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the 64-bit integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long[] SortNumbers(this long[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">long</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">long</span>[]</td>
-        <td><p>Sorted array of 64-bit integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L145">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[],System.String)">SortNumbers(long[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the 64-bit integers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long[] SortNumbers(this long[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">long</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">long</span>[]</td>
-        <td><p>Sorted array of 64-bit integers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L101">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[])">SortNumbers(float[])</h4>
-  <div class="markdown level1 summary"><p>Sorts the single-precision decimal numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float[] SortNumbers(this float[] unsorted)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">float</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">float</span>[]</td>
-        <td><p>Sorted array of single-precision decimal numbers</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L163">View Source</a>
-  </span>
-  <a id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*"></a>
-  <h4 id="Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___System_String_" data-uid="Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[],System.String)">SortNumbers(float[], string)</h4>
-  <div class="markdown level1 summary"><p>Sorts the single-precision decimal numbers</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float[] SortNumbers(this float[] unsorted, string driverName)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">float</span>[]</td>
-        <td><span class="parametername">unsorted</span></td>
-        <td><p>An unsorted array of numbers</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">driverName</span></td>
-        <td><p>The sorting driver name to use</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">float</span>[]</td>
-        <td><p>Sorted array of single-precision decimal numbers</p>
-</td>
+        <td><span class="parametername">T</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -985,7 +379,7 @@
                     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Misc_Reflection_ArrayTools.md&amp;value=---%0Auid%3A%20Nitrocid.Misc.Reflection.ArrayTools%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L33" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Misc/Reflection/ArrayTools.cs/#L34" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

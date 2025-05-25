@@ -11465,236 +11465,44 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.DriverType
   nameWithType: BaseSortingDriver.DriverType
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble(System.Double[])
-  name: SortNumbersDouble(double[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersDouble_System_Double___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble(System.Double[])
-  name.vb: SortNumbersDouble(Double())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble(double[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble(Double())
-  nameWithType: BaseSortingDriver.SortNumbersDouble(double[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersDouble(Double())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble*
-  name: SortNumbersDouble
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersDouble_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble
+- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers*
+  name: SortNumbers
+  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbers_
+  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers
   isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersDouble
-  nameWithType: BaseSortingDriver.SortNumbersDouble
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat(System.Single[])
-  name: SortNumbersFloat(float[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersFloat_System_Single___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat(System.Single[])
-  name.vb: SortNumbersFloat(Single())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat(float[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat(Single())
-  nameWithType: BaseSortingDriver.SortNumbersFloat(float[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersFloat(Single())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat*
-  name: SortNumbersFloat
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersFloat_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersFloat
-  nameWithType: BaseSortingDriver.SortNumbersFloat
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128(System.Int128[])
-  name: SortNumbersInt128(Int128[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt128_System_Int128___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128(System.Int128[])
-  name.vb: SortNumbersInt128(Int128())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128(System.Int128[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128(System.Int128())
-  nameWithType: BaseSortingDriver.SortNumbersInt128(Int128[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersInt128(Int128())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128*
-  name: SortNumbersInt128
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt128_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt128
-  nameWithType: BaseSortingDriver.SortNumbersInt128
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16(System.Int16[])
-  name: SortNumbersInt16(short[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt16_System_Int16___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16(System.Int16[])
-  name.vb: SortNumbersInt16(Short())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16(short[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16(Short())
-  nameWithType: BaseSortingDriver.SortNumbersInt16(short[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersInt16(Short())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16*
-  name: SortNumbersInt16
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt16_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt16
-  nameWithType: BaseSortingDriver.SortNumbersInt16
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32(System.Int32[])
-  name: SortNumbersInt32(int[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt32_System_Int32___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32(System.Int32[])
-  name.vb: SortNumbersInt32(Integer())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32(int[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32(Integer())
-  nameWithType: BaseSortingDriver.SortNumbersInt32(int[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersInt32(Integer())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32*
-  name: SortNumbersInt32
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt32_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt32
-  nameWithType: BaseSortingDriver.SortNumbersInt32
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64(System.Int64[])
-  name: SortNumbersInt64(long[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt64_System_Int64___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64(System.Int64[])
-  name.vb: SortNumbersInt64(Long())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64(long[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64(Long())
-  nameWithType: BaseSortingDriver.SortNumbersInt64(long[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersInt64(Long())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64*
-  name: SortNumbersInt64
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt64_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt64
-  nameWithType: BaseSortingDriver.SortNumbersInt64
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8(System.Byte[])
-  name: SortNumbersInt8(byte[])
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt8_System_Byte___
-  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8(System.Byte[])
-  name.vb: SortNumbersInt8(Byte())
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8(byte[])
-  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8(Byte())
-  nameWithType: BaseSortingDriver.SortNumbersInt8(byte[])
-  nameWithType.vb: BaseSortingDriver.SortNumbersInt8(Byte())
-- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8*
-  name: SortNumbersInt8
-  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbersInt8_
-  commentId: Overload:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbersInt8
-  nameWithType: BaseSortingDriver.SortNumbersInt8
+  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers
+  nameWithType: BaseSortingDriver.SortNumbers
+- uid: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers``1(``0[])
+  name: SortNumbers<T>(T[])
+  href: api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html#Nitrocid_Drivers_Sorting_BaseSortingDriver_SortNumbers__1___0___
+  commentId: M:Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers``1(``0[])
+  name.vb: SortNumbers(Of T)(T())
+  fullName: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers<T>(T[])
+  fullName.vb: Nitrocid.Drivers.Sorting.BaseSortingDriver.SortNumbers(Of T)(T())
+  nameWithType: BaseSortingDriver.SortNumbers<T>(T[])
+  nameWithType.vb: BaseSortingDriver.SortNumbers(Of T)(T())
 - uid: Nitrocid.Drivers.Sorting.ISortingDriver
   name: ISortingDriver
   href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html
   commentId: T:Nitrocid.Drivers.Sorting.ISortingDriver
   fullName: Nitrocid.Drivers.Sorting.ISortingDriver
   nameWithType: ISortingDriver
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble(System.Double[])
-  name: SortNumbersDouble(double[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersDouble_System_Double___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble(System.Double[])
-  name.vb: SortNumbersDouble(Double())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble(double[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble(Double())
-  nameWithType: ISortingDriver.SortNumbersDouble(double[])
-  nameWithType.vb: ISortingDriver.SortNumbersDouble(Double())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble*
-  name: SortNumbersDouble
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersDouble_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble
+- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers*
+  name: SortNumbers
+  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbers_
+  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers
   isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersDouble
-  nameWithType: ISortingDriver.SortNumbersDouble
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat(System.Single[])
-  name: SortNumbersFloat(float[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersFloat_System_Single___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat(System.Single[])
-  name.vb: SortNumbersFloat(Single())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat(float[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat(Single())
-  nameWithType: ISortingDriver.SortNumbersFloat(float[])
-  nameWithType.vb: ISortingDriver.SortNumbersFloat(Single())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat*
-  name: SortNumbersFloat
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersFloat_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersFloat
-  nameWithType: ISortingDriver.SortNumbersFloat
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128(System.Int128[])
-  name: SortNumbersInt128(Int128[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt128_System_Int128___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128(System.Int128[])
-  name.vb: SortNumbersInt128(Int128())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128(System.Int128[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128(System.Int128())
-  nameWithType: ISortingDriver.SortNumbersInt128(Int128[])
-  nameWithType.vb: ISortingDriver.SortNumbersInt128(Int128())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128*
-  name: SortNumbersInt128
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt128_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt128
-  nameWithType: ISortingDriver.SortNumbersInt128
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16(System.Int16[])
-  name: SortNumbersInt16(short[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt16_System_Int16___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16(System.Int16[])
-  name.vb: SortNumbersInt16(Short())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16(short[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16(Short())
-  nameWithType: ISortingDriver.SortNumbersInt16(short[])
-  nameWithType.vb: ISortingDriver.SortNumbersInt16(Short())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16*
-  name: SortNumbersInt16
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt16_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt16
-  nameWithType: ISortingDriver.SortNumbersInt16
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32(System.Int32[])
-  name: SortNumbersInt32(int[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt32_System_Int32___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32(System.Int32[])
-  name.vb: SortNumbersInt32(Integer())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32(int[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32(Integer())
-  nameWithType: ISortingDriver.SortNumbersInt32(int[])
-  nameWithType.vb: ISortingDriver.SortNumbersInt32(Integer())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32*
-  name: SortNumbersInt32
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt32_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt32
-  nameWithType: ISortingDriver.SortNumbersInt32
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64(System.Int64[])
-  name: SortNumbersInt64(long[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt64_System_Int64___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64(System.Int64[])
-  name.vb: SortNumbersInt64(Long())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64(long[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64(Long())
-  nameWithType: ISortingDriver.SortNumbersInt64(long[])
-  nameWithType.vb: ISortingDriver.SortNumbersInt64(Long())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64*
-  name: SortNumbersInt64
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt64_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt64
-  nameWithType: ISortingDriver.SortNumbersInt64
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8(System.Byte[])
-  name: SortNumbersInt8(byte[])
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt8_System_Byte___
-  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8(System.Byte[])
-  name.vb: SortNumbersInt8(Byte())
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8(byte[])
-  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8(Byte())
-  nameWithType: ISortingDriver.SortNumbersInt8(byte[])
-  nameWithType.vb: ISortingDriver.SortNumbersInt8(Byte())
-- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8*
-  name: SortNumbersInt8
-  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbersInt8_
-  commentId: Overload:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8
-  isSpec: "True"
-  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbersInt8
-  nameWithType: ISortingDriver.SortNumbersInt8
+  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers
+  nameWithType: ISortingDriver.SortNumbers
+- uid: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers``1(``0[])
+  name: SortNumbers<T>(T[])
+  href: api/Nitrocid.Drivers.Sorting.ISortingDriver.html#Nitrocid_Drivers_Sorting_ISortingDriver_SortNumbers__1___0___
+  commentId: M:Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers``1(``0[])
+  name.vb: SortNumbers(Of T)(T())
+  fullName: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers<T>(T[])
+  fullName.vb: Nitrocid.Drivers.Sorting.ISortingDriver.SortNumbers(Of T)(T())
+  nameWithType: ISortingDriver.SortNumbers<T>(T[])
+  nameWithType.vb: ISortingDriver.SortNumbers(Of T)(T())
 - uid: Nitrocid.Drivers.Sorting.SortingDriverTools
   name: SortingDriverTools
   href: api/Nitrocid.Drivers.Sorting.SortingDriverTools.html
@@ -30707,132 +30515,6 @@ references:
   fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.RandomizeArray(Of T)(T())
   nameWithType: ArrayTools.RandomizeArray<T>(T[])
   nameWithType.vb: ArrayTools.RandomizeArray(Of T)(T())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[])
-  name: SortNumbers(byte[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[])
-  name.vb: SortNumbers(Byte())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(byte[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Byte())
-  nameWithType: ArrayTools.SortNumbers(byte[])
-  nameWithType.vb: ArrayTools.SortNumbers(Byte())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[],System.String)
-  name: SortNumbers(byte[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Byte___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Byte[],System.String)
-  name.vb: SortNumbers(Byte(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(byte[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Byte(), String)
-  nameWithType: ArrayTools.SortNumbers(byte[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Byte(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[])
-  name: SortNumbers(double[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[])
-  name.vb: SortNumbers(Double())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(double[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Double())
-  nameWithType: ArrayTools.SortNumbers(double[])
-  nameWithType.vb: ArrayTools.SortNumbers(Double())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[],System.String)
-  name: SortNumbers(double[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Double___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Double[],System.String)
-  name.vb: SortNumbers(Double(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(double[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Double(), String)
-  nameWithType: ArrayTools.SortNumbers(double[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Double(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[])
-  name: SortNumbers(Int128[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[])
-  name.vb: SortNumbers(Int128())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128())
-  nameWithType: ArrayTools.SortNumbers(Int128[])
-  nameWithType.vb: ArrayTools.SortNumbers(Int128())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[],System.String)
-  name: SortNumbers(Int128[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int128___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[],System.String)
-  name.vb: SortNumbers(Int128(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int128(), String)
-  nameWithType: ArrayTools.SortNumbers(Int128[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Int128(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[])
-  name: SortNumbers(short[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[])
-  name.vb: SortNumbers(Short())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(short[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Short())
-  nameWithType: ArrayTools.SortNumbers(short[])
-  nameWithType.vb: ArrayTools.SortNumbers(Short())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[],System.String)
-  name: SortNumbers(short[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int16___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int16[],System.String)
-  name.vb: SortNumbers(Short(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(short[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Short(), String)
-  nameWithType: ArrayTools.SortNumbers(short[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Short(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[])
-  name: SortNumbers(int[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[])
-  name.vb: SortNumbers(Integer())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(int[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Integer())
-  nameWithType: ArrayTools.SortNumbers(int[])
-  nameWithType.vb: ArrayTools.SortNumbers(Integer())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[],System.String)
-  name: SortNumbers(int[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int32___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int32[],System.String)
-  name.vb: SortNumbers(Integer(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(int[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Integer(), String)
-  nameWithType: ArrayTools.SortNumbers(int[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Integer(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[])
-  name: SortNumbers(long[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[])
-  name.vb: SortNumbers(Long())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(long[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Long())
-  nameWithType: ArrayTools.SortNumbers(long[])
-  nameWithType.vb: ArrayTools.SortNumbers(Long())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[],System.String)
-  name: SortNumbers(long[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Int64___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Int64[],System.String)
-  name.vb: SortNumbers(Long(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(long[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Long(), String)
-  nameWithType: ArrayTools.SortNumbers(long[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Long(), String)
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[])
-  name: SortNumbers(float[])
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[])
-  name.vb: SortNumbers(Single())
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(float[])
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Single())
-  nameWithType: ArrayTools.SortNumbers(float[])
-  nameWithType.vb: ArrayTools.SortNumbers(Single())
-- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[],System.String)
-  name: SortNumbers(float[], string)
-  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_System_Single___System_String_
-  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(System.Single[],System.String)
-  name.vb: SortNumbers(Single(), String)
-  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(float[], string)
-  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Single(), String)
-  nameWithType: ArrayTools.SortNumbers(float[], string)
-  nameWithType.vb: ArrayTools.SortNumbers(Single(), String)
 - uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers*
   name: SortNumbers
   href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers_
@@ -30840,6 +30522,24 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers
   nameWithType: ArrayTools.SortNumbers
+- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[])
+  name: SortNumbers<T>(T[])
+  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___
+  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[])
+  name.vb: SortNumbers(Of T)(T())
+  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers<T>(T[])
+  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Of T)(T())
+  nameWithType: ArrayTools.SortNumbers<T>(T[])
+  nameWithType.vb: ArrayTools.SortNumbers(Of T)(T())
+- uid: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[],System.String)
+  name: SortNumbers<T>(T[], string)
+  href: api/Nitrocid.Misc.Reflection.ArrayTools.html#Nitrocid_Misc_Reflection_ArrayTools_SortNumbers__1___0___System_String_
+  commentId: M:Nitrocid.Misc.Reflection.ArrayTools.SortNumbers``1(``0[],System.String)
+  name.vb: SortNumbers(Of T)(T(), String)
+  fullName: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers<T>(T[], string)
+  fullName.vb: Nitrocid.Misc.Reflection.ArrayTools.SortNumbers(Of T)(T(), String)
+  nameWithType: ArrayTools.SortNumbers<T>(T[], string)
+  nameWithType.vb: ArrayTools.SortNumbers(Of T)(T(), String)
 - uid: Nitrocid.Misc.Reflection.AssemblyLookup
   name: AssemblyLookup
   href: api/Nitrocid.Misc.Reflection.AssemblyLookup.html
