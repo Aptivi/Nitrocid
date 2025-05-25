@@ -26,7 +26,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Timezones;
-using Nitrocid.ShellPacks.Shells.Git;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

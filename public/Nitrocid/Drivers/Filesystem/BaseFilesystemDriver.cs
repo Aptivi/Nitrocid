@@ -45,7 +45,6 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
-using System.Runtime.Serialization;
 using Terminaux.Colors;
 using Textify.General.Comparers;
 using Nitrocid.Files;
@@ -55,7 +54,6 @@ namespace Nitrocid.Drivers.Filesystem
     /// <summary>
     /// Base Filesystem driver
     /// </summary>
-    [DataContract]
     public abstract class BaseFilesystemDriver : IFilesystemDriver
     {
         /// <inheritdoc/>

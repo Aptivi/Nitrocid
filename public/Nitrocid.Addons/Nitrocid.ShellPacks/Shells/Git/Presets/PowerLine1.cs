@@ -23,7 +23,6 @@ using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.ShellPacks.Shells.Git;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Presets
 {

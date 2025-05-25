@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.Drivers.RNG;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomRNGDriver : BaseRandomDriver, IRandomDriver
     {
         public override string DriverName => "MyCustom";

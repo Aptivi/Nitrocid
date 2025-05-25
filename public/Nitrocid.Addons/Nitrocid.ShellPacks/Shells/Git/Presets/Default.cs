@@ -20,7 +20,6 @@
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.Git;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Presets

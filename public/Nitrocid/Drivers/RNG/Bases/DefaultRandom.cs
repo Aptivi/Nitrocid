@@ -17,12 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Runtime.Serialization;
 using System.Security.Cryptography;
 
 namespace Nitrocid.Drivers.RNG.Bases
 {
-    [DataContract]
     internal class DefaultRandom : BaseRandomDriver, IRandomDriver
     {
         /// <inheritdoc/>

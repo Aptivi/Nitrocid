@@ -18,14 +18,12 @@
 //
 
 using Nitrocid.Kernel.Debugging;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.DebugLogger
 {
     /// <summary>
     /// Base DebugLogger driver
     /// </summary>
-    [DataContract]
     public abstract class BaseDebugLoggerDriver : IDebugLoggerDriver
     {
         /// <inheritdoc/>

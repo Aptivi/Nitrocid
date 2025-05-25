@@ -22,7 +22,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using System.Text;
 using Textify.General;
 using TextEncoding = System.Text.Encoding;
@@ -32,7 +31,6 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
     /// <summary>
     /// BASE64 encoding
     /// </summary>
-    [DataContract]
     public abstract class BaseEncodingAsymmetricDriver : IEncodingAsymmetricDriver
     {
         /// <inheritdoc/>

@@ -39,7 +39,6 @@ using Renci.SshNet;
 using Renci.SshNet.Sftp;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using Nitrocid.ShellPacks.Shells.SFTP;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 {

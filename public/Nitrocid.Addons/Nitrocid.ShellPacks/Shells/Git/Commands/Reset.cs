@@ -20,7 +20,6 @@
 using LibGit2Sharp;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.ShellPacks.Shells.Git;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

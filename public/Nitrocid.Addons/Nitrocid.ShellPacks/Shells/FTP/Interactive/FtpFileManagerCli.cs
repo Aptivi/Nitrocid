@@ -38,7 +38,6 @@ using Nitrocid.ConsoleBase.Colors;
 using FluentFTP;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
 {

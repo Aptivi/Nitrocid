@@ -26,7 +26,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.RSS;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {

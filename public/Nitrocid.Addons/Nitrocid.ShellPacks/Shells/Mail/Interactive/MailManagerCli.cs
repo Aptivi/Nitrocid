@@ -35,7 +35,6 @@ using System.Linq;
 using MailKit.Net.Imap;
 using MimeKit.Cryptography;
 using Terminaux.Inputs.Styles;
-using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {

@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.SFTP;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {

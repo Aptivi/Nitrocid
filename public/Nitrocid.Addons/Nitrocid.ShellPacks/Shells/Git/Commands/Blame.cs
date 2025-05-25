@@ -25,7 +25,6 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Shells.Git;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

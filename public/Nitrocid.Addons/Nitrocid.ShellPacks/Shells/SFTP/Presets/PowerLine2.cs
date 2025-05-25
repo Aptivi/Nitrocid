@@ -25,7 +25,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Languages;
-using Nitrocid.ShellPacks.Shells.SFTP;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
 {

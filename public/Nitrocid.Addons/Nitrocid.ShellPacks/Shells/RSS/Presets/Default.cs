@@ -21,7 +21,6 @@ using System;
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.RSS;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Presets

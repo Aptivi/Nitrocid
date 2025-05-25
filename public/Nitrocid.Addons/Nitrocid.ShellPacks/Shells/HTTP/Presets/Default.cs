@@ -21,7 +21,6 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.HTTP;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Presets

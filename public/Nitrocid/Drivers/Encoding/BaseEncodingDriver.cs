@@ -23,7 +23,6 @@ using Nitrocid.Languages;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Text;
 using Textify.General;
@@ -34,7 +33,6 @@ namespace Nitrocid.Drivers.Encoding
     /// <summary>
     /// AES encoding
     /// </summary>
-    [DataContract]
     public abstract class BaseEncodingDriver : IEncodingDriver
     {
         private Aes? aes;

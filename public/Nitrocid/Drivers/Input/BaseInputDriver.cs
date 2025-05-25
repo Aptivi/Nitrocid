@@ -20,7 +20,6 @@
 using In = Nitrocid.ConsoleBase.Inputs.InputTools;
 using System;
 using Terminaux.Reader;
-using System.Runtime.Serialization;
 using System.Threading;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
@@ -34,7 +33,6 @@ namespace Nitrocid.Drivers.Input
     /// <summary>
     /// Base input driver
     /// </summary>
-    [DataContract]
     public abstract class BaseInputDriver : IInputDriver
     {
         /// <inheritdoc/>

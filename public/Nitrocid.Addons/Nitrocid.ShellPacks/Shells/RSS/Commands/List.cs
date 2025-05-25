@@ -24,7 +24,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.General;
 using Terminaux.Base.Extensions;
-using Nitrocid.ShellPacks.Shells.RSS;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {

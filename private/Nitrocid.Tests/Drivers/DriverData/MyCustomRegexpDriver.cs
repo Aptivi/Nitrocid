@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.Drivers.Regexp;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomRegexpDriver : BaseRegexpDriver, IRegexpDriver
     {
         public override string DriverName => "MyCustom";

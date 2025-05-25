@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
-using Nitrocid.ShellPacks.Shells.Git;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

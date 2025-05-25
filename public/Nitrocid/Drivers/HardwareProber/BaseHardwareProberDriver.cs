@@ -28,7 +28,6 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using System.Runtime.Serialization;
 using Nitrocid.Users.Windows;
 using SpecProbe.Parts;
 
@@ -37,7 +36,6 @@ namespace Nitrocid.Drivers.HardwareProber
     /// <summary>
     /// Base Hardware prober driver
     /// </summary>
-    [DataContract]
     public abstract class BaseHardwareProberDriver : IHardwareProberDriver
     {
         /// <inheritdoc/>

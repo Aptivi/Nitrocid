@@ -19,7 +19,6 @@
 
 using Newtonsoft.Json.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.Json;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {

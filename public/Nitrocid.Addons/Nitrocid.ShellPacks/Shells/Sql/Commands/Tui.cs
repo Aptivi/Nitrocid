@@ -20,7 +20,6 @@
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Files;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.Sql;
 using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands

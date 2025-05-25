@@ -19,14 +19,12 @@
 
 using Magico.Enumeration;
 using System.Numerics;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.Sorting
 {
     /// <summary>
     /// Base sorting driver using the bubble sort algorithm
     /// </summary>
-    [DataContract]
     public abstract class BaseSortingDriver : ISortingDriver
     {
         /// <inheritdoc/>

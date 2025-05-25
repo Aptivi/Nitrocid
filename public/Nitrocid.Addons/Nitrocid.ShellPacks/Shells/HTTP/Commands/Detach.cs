@@ -21,7 +21,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.ShellPacks.Shells.HTTP;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
