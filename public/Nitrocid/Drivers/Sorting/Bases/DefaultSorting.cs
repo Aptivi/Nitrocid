@@ -17,11 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Runtime.Serialization;
-
 namespace Nitrocid.Drivers.Sorting.Bases
 {
-    [DataContract]
     internal class DefaultSorting : BaseSortingDriver, ISortingDriver
     { }
 }

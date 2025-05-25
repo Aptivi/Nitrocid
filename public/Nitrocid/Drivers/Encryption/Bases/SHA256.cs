@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Runtime.Serialization;
-
 namespace Nitrocid.Drivers.Encryption.Bases
 {
     /// <summary>
     /// SHA256 encryptor
     /// </summary>
-    [DataContract]
     public class SHA256 : BaseEncryptionDriver, IEncryptionDriver
     { }
 }

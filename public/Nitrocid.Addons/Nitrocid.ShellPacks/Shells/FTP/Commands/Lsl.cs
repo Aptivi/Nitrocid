@@ -22,7 +22,6 @@ using System.Linq;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

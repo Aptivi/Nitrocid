@@ -19,11 +19,9 @@
 
 using Nitrocid.Drivers.Console;
 using System;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomConsoleDriver : BaseConsoleDriver, IConsoleDriver
     {
         public override string DriverName => "MyCustom";

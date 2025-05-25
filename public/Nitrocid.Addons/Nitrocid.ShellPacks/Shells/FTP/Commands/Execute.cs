@@ -23,7 +23,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

@@ -21,7 +21,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

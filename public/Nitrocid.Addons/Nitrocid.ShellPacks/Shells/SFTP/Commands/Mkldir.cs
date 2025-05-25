@@ -19,7 +19,6 @@
 
 using Nitrocid.Files;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.SFTP;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {

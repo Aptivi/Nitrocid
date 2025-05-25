@@ -22,7 +22,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.RSS;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {

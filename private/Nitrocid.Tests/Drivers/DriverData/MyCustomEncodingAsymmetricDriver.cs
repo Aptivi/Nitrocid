@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.Drivers.EncodingAsymmetric;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomEncodingAsymmetricDriver : BaseEncodingAsymmetricDriver, IEncodingAsymmetricDriver
     {
         public override string DriverName => "MyCustom";

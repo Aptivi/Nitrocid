@@ -18,11 +18,8 @@
 //
 
 using Nitrocid.Drivers;
-using Nitrocid.Drivers.RNG;
 using Nitrocid.Drivers.Sorting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using MagicoArrayTools = Magico.Enumeration.ArrayTools;
 

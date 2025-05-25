@@ -38,7 +38,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.ShellPacks.Tools.Directory;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Tools.Transfer

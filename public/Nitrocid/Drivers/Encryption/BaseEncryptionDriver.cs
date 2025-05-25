@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Debugging;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA256;
 using FS = Nitrocid.Files.FilesystemTools;
@@ -30,7 +29,6 @@ namespace Nitrocid.Drivers.Encryption
     /// <summary>
     /// SHA256 encryptor
     /// </summary>
-    [DataContract]
     public abstract class BaseEncryptionDriver : IEncryptionDriver
     {
         /// <inheritdoc/>

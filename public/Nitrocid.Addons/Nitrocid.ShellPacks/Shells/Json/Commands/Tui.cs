@@ -23,7 +23,6 @@ using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.Json;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Editor;
 

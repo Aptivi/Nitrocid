@@ -21,7 +21,6 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.Mail;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets

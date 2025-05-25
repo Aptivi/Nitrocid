@@ -21,7 +21,6 @@ extern alias TextifyDep;
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Textify.General;
 using TextifyDep::System.Diagnostics.CodeAnalysis;
@@ -31,7 +30,6 @@ namespace Nitrocid.Drivers.Regexp
     /// <summary>
     /// Base regexp driver
     /// </summary>
-    [DataContract]
     public abstract class BaseRegexpDriver : IRegexpDriver
     {
         /// <inheritdoc/>

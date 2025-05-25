@@ -22,7 +22,6 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.Json;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Presets

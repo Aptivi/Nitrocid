@@ -24,7 +24,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ShellPacks.Shells.Json;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {

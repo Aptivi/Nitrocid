@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.Drivers.HardwareProber;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomHardwareProberDriver : BaseHardwareProberDriver, IHardwareProberDriver
     {
         public override string DriverName => "MyCustom";

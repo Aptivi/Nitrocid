@@ -48,7 +48,6 @@ namespace Nitrocid.Drivers.Console
     /// <summary>
     /// Base console driver
     /// </summary>
-    [DataContract]
     public abstract class BaseConsoleDriver : IConsoleDriver
     {
         internal static readonly object WriteLock = new();

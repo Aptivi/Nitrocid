@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Runtime.Serialization;
-
 namespace Nitrocid.Drivers.Encoding.Bases
 {
     /// <summary>
     /// AES encryptor
     /// </summary>
-    [DataContract]
     public class AesEncoding : BaseEncodingDriver, IEncodingDriver
     { }
 }

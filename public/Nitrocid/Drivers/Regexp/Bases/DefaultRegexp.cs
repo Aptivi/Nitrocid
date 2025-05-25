@@ -17,11 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Runtime.Serialization;
-
 namespace Nitrocid.Drivers.Regexp.Bases
 {
-    [DataContract]
     internal class DefaultRegexp : BaseRegexpDriver, IRegexpDriver
     { }
 }

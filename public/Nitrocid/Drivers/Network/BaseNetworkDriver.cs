@@ -27,7 +27,6 @@ using System.Net.Http;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
-using System.Runtime.Serialization;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Notifications;
@@ -45,7 +44,6 @@ namespace Nitrocid.Drivers.Network
     /// <summary>
     /// Base network driver
     /// </summary>
-    [DataContract]
     public abstract class BaseNetworkDriver : INetworkDriver
     {
         /// <inheritdoc/>

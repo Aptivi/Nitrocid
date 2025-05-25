@@ -24,7 +24,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

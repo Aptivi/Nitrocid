@@ -18,14 +18,12 @@
 //
 
 using System;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.RNG
 {
     /// <summary>
     /// Base random number generation driver
     /// </summary>
-    [DataContract]
     public abstract class BaseRandomDriver : IRandomDriver
     {
         internal static readonly Random random = new();

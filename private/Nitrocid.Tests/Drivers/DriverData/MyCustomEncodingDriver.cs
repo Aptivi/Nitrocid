@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.Drivers.Encoding;
-using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
-    [DataContract]
     internal class MyCustomEncodingDriver : BaseEncodingDriver, IEncodingDriver
     {
         public override string DriverName => "MyCustom";
