@@ -44,6 +44,7 @@ namespace Nitrocid.Misc.Interactives
     {
         internal BaseKernelConfig? config;
         internal int lastFirstPaneIdx = -1;
+        internal bool resetFirstPos = true;
         internal List<(string, int)> entryNames = [];
         internal List<(string, int)> keyNames = [];
 
@@ -69,7 +70,8 @@ namespace Nitrocid.Misc.Interactives
                     var configNames = configs.Select((se, idx) =>
                         (!string.IsNullOrEmpty(se.DisplayAs) ? Translate.DoTranslation(se.DisplayAs) : se.Name, idx)
                     ).ToArray();
-                    var entry = configs[FirstPaneCurrentSelection - 1];
+                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
+                    var entry = configs[finalIdx];
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
@@ -81,7 +83,13 @@ namespace Nitrocid.Misc.Interactives
                     entryNames.AddRange(configNames);
                     keyNames.Clear();
                     keyNames.AddRange(finalkeyNames);
-                    lastFirstPaneIdx = FirstPaneCurrentSelection - 1;
+                    lastFirstPaneIdx = finalIdx;
+
+                    // Reset the position in the second pane
+                    if (resetFirstPos)
+                        InteractiveTuiTools.SelectionMovement(this, 0, 1);
+                    InteractiveTuiTools.SelectionMovement(this, 0, 2);
+                    resetFirstPos = false;
                     return configNames;
                 }
                 catch (Exception ex)
@@ -461,6 +469,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     config = selectedConfig;
                     lastFirstPaneIdx = -1;
+                    resetFirstPos = true;
                 }
             }
             catch (Exception ex)
