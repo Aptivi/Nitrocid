@@ -58,6 +58,28 @@
     <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
 
     <!--
+        Now, we need to check the source addon folders to see if there are folders without a valid
+        csproj file for an addon.
+    -->
+    <ItemGroup>
+      <AddonSources Include="@(NitrocidAddonsNames)">
+        <AddonProjectName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonProjectName>
+        <FullAddonSourcePaths>$(RootPath)/public/Nitrocid.Addons/%(AddonProjectName)</FullAddonSourcePaths>
+        <FullAddonSourceProjectPaths>$(RootPath)/public/Nitrocid.Addons/%(AddonProjectName)/%(AddonProjectName).csproj</FullAddonSourceProjectPaths>
+      </AddonSources>
+    </ItemGroup>
+    <CreateItem Include="%(AddonSources.FullAddonSourcePaths)"
+                Condition="!$([System.IO.File]::Exists('%(AddonSources.FullAddonSourceProjectPaths)'))">
+      <Output TaskParameter="Include" ItemName="InvalidAddonSources"/>
+    </CreateItem>
+
+    <!--
+        Wipe out all folders that are in the InvalidAddonSources item
+    -->
+    <Message Importance="high" Text="Pruning addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
+    <RemoveDir Directories="@(InvalidAddonSources)" ContinueOnError="true" Condition=" '@(InvalidAddonSources)' != '' " />
+
+    <!--
         Declare victory!
     -->
     <Message Importance="high" Text="No obsolete addons!" Condition=" '@(ExcludedAddons)' == '' " />
