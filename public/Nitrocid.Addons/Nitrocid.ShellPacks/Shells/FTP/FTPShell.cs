@@ -61,7 +61,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             FTPShellCommon.clientConnection = ftpConnection;
 
             // If MOTD exists, show it
-            if (FTPShellCommon.FtpShowMotd)
+            if (ShellsInit.ShellsConfig.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
                     TextWriters.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
@@ -80,8 +80,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
 
             // Initialize logging
             clientFTP.Logger = new FTPLogger();
-            clientFTP.Config.LogUserName = FTPTools.FtpLoggerUsername;
-            clientFTP.Config.LogHost = FTPTools.FtpLoggerIP;
+            clientFTP.Config.LogUserName = ShellsInit.ShellsConfig.FtpLoggerUsername;
+            clientFTP.Config.LogHost = ShellsInit.ShellsConfig.FtpLoggerIP;
 
             // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
             clientFTP.Config.LogPassword = false;

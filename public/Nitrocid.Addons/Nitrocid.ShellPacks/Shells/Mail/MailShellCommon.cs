@@ -42,41 +42,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// </summary>
         public static string IMAP_CurrentDirectory { get; set; } = "Inbox";
         /// <summary>
-        /// Notify on new mail arrival
-        /// </summary>
-        public static bool NotifyNewMail =>
-            ShellsInit.ShellsConfig.MailNotifyNewMail;
-        /// <summary>
-        /// IMAP ping interval in milliseconds
-        /// </summary>
-        public static int ImapPingInterval =>
-            ShellsInit.ShellsConfig.MailImapPingInterval;
-        /// <summary>
-        /// SMTP ping interval in milliseconds
-        /// </summary>
-        public static int SmtpPingInterval =>
-            ShellsInit.ShellsConfig.MailSmtpPingInterval;
-        /// <summary>
-        /// Max messages per page
-        /// </summary>
-        public static int MaxMessagesInPage =>
-            ShellsInit.ShellsConfig.MailMaxMessagesInPage;
-        /// <summary>
-        /// Message text format
-        /// </summary>
-        public static TextFormat TextFormat =>
-            (TextFormat)ShellsInit.ShellsConfig.MailTextFormat;
-        /// <summary>
-        /// Mail progress style
-        /// </summary>
-        public static string ProgressStyle =>
-            ShellsInit.ShellsConfig.MailProgressStyle;
-        /// <summary>
-        /// Mail progress style (single)
-        /// </summary>
-        public static string ProgressStyleSingle =>
-            ShellsInit.ShellsConfig.MailProgressStyleSingle;
-        /// <summary>
         /// The mail progress
         /// </summary>
         public readonly static MailTransferProgress Progress = new();

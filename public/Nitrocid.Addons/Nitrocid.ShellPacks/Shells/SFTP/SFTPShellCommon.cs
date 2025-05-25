@@ -65,21 +65,6 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         /// SFTP current remote directory
         /// </summary>
         public static string SFTPCurrentRemoteDir { get; set; } = "";
-        /// <summary>
-        /// SFTP show file details in list
-        /// </summary>
-        public static bool SFTPShowDetailsInList =>
-            ShellsInit.ShellsConfig.SFTPShowDetailsInList;
-        /// <summary>
-        /// SFTP user prompt style
-        /// </summary>
-        public static string SFTPUserPromptStyle =>
-            ShellsInit.ShellsConfig.SFTPUserPromptStyle;
-        /// <summary>
-        /// SFTP add new connections to speed dial
-        /// </summary>
-        public static bool SFTPNewConnectionsToSpeedDial =>
-            ShellsInit.ShellsConfig.SFTPNewConnectionsToSpeedDial;
 
     }
 }

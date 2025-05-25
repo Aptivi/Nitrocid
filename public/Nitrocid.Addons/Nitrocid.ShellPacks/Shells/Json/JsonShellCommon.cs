@@ -40,21 +40,6 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// JSON shell file token
         /// </summary>
         public static JToken FileToken { get; set; } = JToken.Parse("{}");
-        /// <summary>
-        /// JSON formatting
-        /// </summary>
-        public static Formatting Formatting =>
-            (Formatting)ShellsInit.ShellsConfig.JsonShellFormatting;
-        /// <summary>
-        /// Auto save flag
-        /// </summary>
-        public static bool AutoSaveFlag =>
-            ShellsInit.ShellsConfig.JsonEditAutoSaveFlag;
-        /// <summary>
-        /// Auto save interval in seconds
-        /// </summary>
-        public static int AutoSaveInterval =>
-            ShellsInit.ShellsConfig.JsonEditAutoSaveInterval;
 
     }
 }

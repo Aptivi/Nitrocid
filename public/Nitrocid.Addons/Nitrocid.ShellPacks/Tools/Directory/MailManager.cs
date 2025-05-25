@@ -39,19 +39,13 @@ namespace Nitrocid.ShellPacks.Tools.Directory
     /// </summary>
     public static class MailManager
     {
-
-        /// <summary>
-        /// Whether to show the message preview or not
-        /// </summary>
-        public static bool ShowPreview =>
-            ShellsInit.ShellsConfig.ShowPreview;
-
         /// <summary>
         /// Lists messages
         /// </summary>
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void MailListMessages(int PageNum) => MailListMessages(PageNum, MailShellCommon.MaxMessagesInPage);
+        public static void MailListMessages(int PageNum) =>
+            MailListMessages(PageNum, ShellsInit.ShellsConfig.MailMaxMessagesInPage);
 
         /// <summary>
         /// Lists messages
@@ -104,7 +98,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                     // Display them now.
                     TextWriters.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, KernelColorType.ListEntry);
                     TextWriters.Write(MsgSubject, true, KernelColorType.ListValue);
-                    if (ShowPreview & !string.IsNullOrWhiteSpace(MsgPreview))
+                    if (ShellsInit.ShellsConfig.ShowPreview & !string.IsNullOrWhiteSpace(MsgPreview))
                     {
                         // For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                         // this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
@@ -361,6 +355,5 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             }
             return true;
         }
-
     }
 }

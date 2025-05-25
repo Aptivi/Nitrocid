@@ -58,7 +58,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
             RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
 
             // Send ping to keep the connection alive
-            if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & RSSShellCommon.RSSRefreshFeeds)
+            if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & ShellsInit.ShellsConfig.RSSRefreshFeeds)
             {
                 RSSShellCommon.RSSRefresher.Start();
                 DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
@@ -92,7 +92,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                     if (!detaching)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
-                        if (RSSShellCommon.RSSRefreshFeeds)
+                        if (ShellsInit.ShellsConfig.RSSRefreshFeeds)
                             RSSShellCommon.RSSRefresher.Stop();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(rssConnection);
                         NetworkConnectionTools.CloseConnection(connectionIndex);

@@ -158,7 +158,7 @@ namespace Nitrocid.ShellPacks.Tools
                             }
                         }
                     }
-                    Thread.Sleep(RSSShellCommon.RSSRefreshInterval);
+                    Thread.Sleep(ShellsInit.ShellsConfig.RSSRefreshInterval);
                 }
             }
             catch (ThreadInterruptedException)

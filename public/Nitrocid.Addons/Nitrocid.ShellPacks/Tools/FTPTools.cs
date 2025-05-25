@@ -45,23 +45,6 @@ namespace Nitrocid.ShellPacks.Tools
     /// </summary>
     public static class FTPTools
     {
-
-        /// <summary>
-        /// Log username for FTP
-        /// </summary>
-        public static bool FtpLoggerUsername =>
-            ShellsInit.ShellsConfig.FtpLoggerUsername;
-        /// <summary>
-        /// Log IP address for FTP
-        /// </summary>
-        public static bool FtpLoggerIP =>
-            ShellsInit.ShellsConfig.FtpLoggerIP;
-        /// <summary>
-        /// Only first profile will be returned
-        /// </summary>
-        public static bool FtpFirstProfileOnly =>
-            ShellsInit.ShellsConfig.FtpFirstProfileOnly;
-
         /// <summary>
         /// Prompts user for a password
         /// </summary>
@@ -77,11 +60,11 @@ namespace Nitrocid.ShellPacks.Tools
             {
                 var ftpConfig = new FtpConfig()
                 {
-                    RetryAttempts = FTPShellCommon.FtpVerifyRetryAttempts,
-                    ConnectTimeout = FTPShellCommon.FtpConnectTimeout,
-                    DataConnectionConnectTimeout = FTPShellCommon.FtpDataConnectTimeout,
+                    RetryAttempts = ShellsInit.ShellsConfig.FtpVerifyRetryAttempts,
+                    ConnectTimeout = ShellsInit.ShellsConfig.FtpConnectTimeout,
+                    DataConnectionConnectTimeout = ShellsInit.ShellsConfig.FtpDataConnectTimeout,
                     EncryptionMode = EncryptionMode,
-                    InternetProtocolVersions = FTPShellCommon.FtpProtocolVersions
+                    InternetProtocolVersions = (FtpIpVersion)ShellsInit.ShellsConfig.FtpProtocolVersions
                 };
                 clientFTP = new FtpClient()
                 {
@@ -92,8 +75,8 @@ namespace Nitrocid.ShellPacks.Tools
             }
 
             // Prompt for password
-            if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpPassPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.FtpPassPromptStyle))
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpPassPromptStyle), false, KernelColorType.Input, user);
             else
                 TextWriters.Write(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
 
@@ -131,11 +114,11 @@ namespace Nitrocid.ShellPacks.Tools
                 // Make a new FTP client object instance
                 FtpConfig ftpConfig = new()
                 {
-                    RetryAttempts = FTPShellCommon.FtpVerifyRetryAttempts,
-                    ConnectTimeout = FTPShellCommon.FtpConnectTimeout,
-                    DataConnectionConnectTimeout = FTPShellCommon.FtpDataConnectTimeout,
+                    RetryAttempts = ShellsInit.ShellsConfig.FtpVerifyRetryAttempts,
+                    ConnectTimeout = ShellsInit.ShellsConfig.FtpConnectTimeout,
+                    DataConnectionConnectTimeout = ShellsInit.ShellsConfig.FtpDataConnectTimeout,
                     EncryptionMode = FtpEncryptionMode.Auto,
-                    InternetProtocolVersions = FTPShellCommon.FtpProtocolVersions
+                    InternetProtocolVersions = (FtpIpVersion)ShellsInit.ShellsConfig.FtpProtocolVersions
                 };
                 FtpClient _clientFTP = new()
                 {
@@ -145,18 +128,14 @@ namespace Nitrocid.ShellPacks.Tools
                 };
 
                 // Add handler for SSL validation
-                if (FTPShellCommon.FtpTryToValidateCertificate)
+                if (ShellsInit.ShellsConfig.FtpTryToValidateCertificate)
                     _clientFTP.ValidateCertificate += new FtpSslValidation(TryToValidate);
 
                 // Prompt for username
-                if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpUserPromptStyle))
-                {
-                    TextWriters.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
-                }
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.FtpUserPromptStyle))
+                    TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, KernelColorType.Input, address);
                 else
-                {
                     TextWriters.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
-                }
                 FTPShellCommon.FtpUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
                 {
@@ -183,13 +162,13 @@ namespace Nitrocid.ShellPacks.Tools
         {
             // Prepare profiles
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));
-            var profiles = clientFTP.AutoDetect(FtpFirstProfileOnly);
+            var profiles = clientFTP.AutoDetect(ShellsInit.ShellsConfig.FtpFirstProfileOnly);
             var profsel = new FtpProfile();
             DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", vars: [profiles.Count]);
             if (profiles.Count > 1)
             {
                 // More than one profile
-                if (FTPShellCommon.FtpUseFirstProfile)
+                if (ShellsInit.ShellsConfig.FtpUseFirstProfile)
                     profsel = profiles[0];
                 else
                 {
@@ -277,7 +256,7 @@ namespace Nitrocid.ShellPacks.Tools
                 DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
                 TextWriters.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
                 TextWriters.Write("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
-                if (FTPShellCommon.FtpAlwaysAcceptInvalidCerts)
+                if (ShellsInit.ShellsConfig.FtpAlwaysAcceptInvalidCerts)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
                     DebugWriter.WriteDebug(DebugLevel.I, e.Certificate.GetRawCertDataString());
@@ -308,6 +287,5 @@ namespace Nitrocid.ShellPacks.Tools
                 }
             }
         }
-
     }
 }

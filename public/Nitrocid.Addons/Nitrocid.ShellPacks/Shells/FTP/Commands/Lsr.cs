@@ -54,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || FTPShellCommon.FtpShowDetailsInList;
+            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || ShellsInit.ShellsConfig.FtpShowDetailsInList;
             var Entries = new List<string>();
             if (parameters.ArgumentsList.Length != 0)
             {

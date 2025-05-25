@@ -42,7 +42,8 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> SFTPListRemote(string Path) => SFTPListRemote(Path, SFTPShellCommon.SFTPShowDetailsInList);
+        public static List<string> SFTPListRemote(string Path) =>
+            SFTPListRemote(Path, ShellsInit.ShellsConfig.SFTPShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files

@@ -174,9 +174,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                     }
                 }
                 else
-                {
-                    TextWriters.Write(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
-                }
+                    TextWriters.Write(Msg.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Populate attachments

@@ -41,28 +41,12 @@ using Nitrocid.ShellPacks.Tools.PGP;
 
 namespace Nitrocid.ShellPacks.Tools
 {
-    static class MailLogin
+    internal static class MailLogin
     {
-
         // Variables
         public static ImapClient IMAP_Client = new();
         public static SmtpClient SMTP_Client = new();
         internal static NetworkCredential Authentication = new();
-
-        public static string UserPromptStyle =>
-            ShellsInit.ShellsConfig.MailUserPromptStyle;
-        public static string PassPromptStyle =>
-            ShellsInit.ShellsConfig.MailPassPromptStyle;
-        public static string IMAPPromptStyle =>
-            ShellsInit.ShellsConfig.MailIMAPPromptStyle;
-        public static string SMTPPromptStyle =>
-            ShellsInit.ShellsConfig.MailSMTPPromptStyle;
-        public static string GPGPromptStyle =>
-            ShellsInit.ShellsConfig.MailGPGPromptStyle;
-        public static bool Debug =>
-            ShellsInit.ShellsConfig.MailDebug;
-        public static bool AutoDetectServer =>
-            ShellsInit.ShellsConfig.MailAutoDetectServer;
 
         /// <summary>
         /// Mail server type
@@ -85,14 +69,10 @@ namespace Nitrocid.ShellPacks.Tools
         public static NetworkConnection? PromptUser()
         {
             // Username or mail address
-            if (!string.IsNullOrWhiteSpace(UserPromptStyle))
-            {
-                TextWriters.Write(PlaceParse.ProbePlaces(UserPromptStyle), false, KernelColorType.Input);
-            }
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailUserPromptStyle))
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailUserPromptStyle), false, KernelColorType.Input);
             else
-            {
                 TextWriters.Write(Translate.DoTranslation("Enter username or mail address: "), false, KernelColorType.Input);
-            }
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = InputTools.ReadLine();
@@ -108,9 +88,9 @@ namespace Nitrocid.ShellPacks.Tools
             // Password
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", vars: [Username]);
             Authentication.UserName = Username;
-            if (!string.IsNullOrWhiteSpace(PassPromptStyle))
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailPassPromptStyle))
             {
-                TextWriters.Write(PlaceParse.ProbePlaces(PassPromptStyle), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPassPromptStyle), false, KernelColorType.Input);
             }
             else
             {
@@ -118,8 +98,8 @@ namespace Nitrocid.ShellPacks.Tools
             }
             Authentication.Password = InputTools.ReadLineNoInput();
 
-            string DynamicAddressIMAP = AutoDetectServer ? ServerDetect(Username, ServerType.IMAP) : "";
-            string DynamicAddressSMTP = AutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
+            string DynamicAddressIMAP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.IMAP) : "";
+            string DynamicAddressSMTP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
 
             if (!string.IsNullOrEmpty(DynamicAddressIMAP) && !string.IsNullOrEmpty(DynamicAddressSMTP))
                 return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0);
@@ -137,26 +117,18 @@ namespace Nitrocid.ShellPacks.Tools
             int SMTP_Port;
 
             // IMAP server address and port
-            if (!string.IsNullOrWhiteSpace(IMAPPromptStyle))
-            {
-                TextWriters.Write(PlaceParse.ProbePlaces(IMAPPromptStyle), false, KernelColorType.Input);
-            }
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, KernelColorType.Input);
             else
-            {
                 TextWriters.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
-            }
             IMAP_Address = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
-            if (!string.IsNullOrWhiteSpace(SMTPPromptStyle))
-            {
-                TextWriters.Write(PlaceParse.ProbePlaces(SMTPPromptStyle), false, KernelColorType.Input);
-            }
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailSMTPPromptStyle))
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, KernelColorType.Input);
             else
-            {
                 TextWriters.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
-            }
             string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
@@ -246,7 +218,7 @@ namespace Nitrocid.ShellPacks.Tools
             try
             {
                 // Register the context and initialize the loggers if debug mode is on
-                if (KernelEntry.DebugMode & Debug)
+                if (KernelEntry.DebugMode & ShellsInit.ShellsConfig.MailDebug)
                 {
                     IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
                     SMTP_Client = new SmtpClient(new ProtocolLogger(PathsManagement.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
@@ -288,6 +260,5 @@ namespace Nitrocid.ShellPacks.Tools
                 return null;
             }
         }
-
     }
 }

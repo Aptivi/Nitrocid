@@ -35,6 +35,7 @@ using System.Linq;
 using MailKit.Net.Imap;
 using MimeKit.Cryptography;
 using Terminaux.Inputs.Styles;
+using MimeKit.Text;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -84,7 +85,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                         refreshSecondPaneListing = false;
                         secondPaneListing.Clear();
                         MailTransfer.PopulateMessages();
-                        int MsgsLimitForPg = MailShellCommon.MaxMessagesInPage;
+                        int MsgsLimitForPg = ShellsInit.ShellsConfig.MailMaxMessagesInPage;
                         int FirstIndex = MsgsLimitForPg * pageNum - 10;
                         int LastIndex = MsgsLimitForPg * pageNum - 1;
                         var messages = MailShellCommon.IMAP_Messages ?? [];
@@ -282,7 +283,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                         }
                     }
                     else
-                        messageBuilder.AppendLine(currentEntry.GetTextBody(MailShellCommon.TextFormat));
+                        messageBuilder.AppendLine(currentEntry.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat));
                     messageBuilder.AppendLine();
 
                     // Populate attachments

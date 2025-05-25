@@ -40,14 +40,10 @@ namespace Nitrocid.ShellPacks.Tools.PGP
         /// <returns>Entered Password</returns>
         protected override string GetPasswordForKey(PgpSecretKey key)
         {
-            if (!string.IsNullOrWhiteSpace(MailLogin.GPGPromptStyle))
-            {
-                TextWriters.Write(PlaceParse.ProbePlaces(MailLogin.GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
-            }
+            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailGPGPromptStyle))
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             else
-            {
                 TextWriters.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
-            }
             string Password = InputTools.ReadLineNoInput();
             return Password;
         }
