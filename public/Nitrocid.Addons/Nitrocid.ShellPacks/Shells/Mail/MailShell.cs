@@ -74,7 +74,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                 {
                     // Populate messages
                     MailTransfer.PopulateMessages();
-                    if (MailShellCommon.NotifyNewMail)
+                    if (ShellsInit.ShellsConfig.MailNotifyNewMail)
                         MailHandlers.InitializeHandlers();
 
                     // Prompt for the command
@@ -98,7 +98,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                     if (!detaching)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
-                        if (MailShellCommon.NotifyNewMail)
+                        if (ShellsInit.ShellsConfig.MailNotifyNewMail)
                             MailHandlers.ReleaseHandlers();
                         IMAP_NoOp.Stop();
                         SMTP_NoOp.Stop();

@@ -92,7 +92,7 @@ namespace Nitrocid.ShellPacks.Tools
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SaveFile(bool ClearJson) =>
-            SaveFile(ClearJson, JsonShellCommon.Formatting);
+            SaveFile(ClearJson, (Formatting)ShellsInit.ShellsConfig.JsonShellFormatting);
 
         /// <summary>
         /// Saves JSON file
@@ -131,11 +131,11 @@ namespace Nitrocid.ShellPacks.Tools
         /// </summary>
         public static void HandleAutoSaveJsonFile()
         {
-            if (JsonShellCommon.AutoSaveFlag)
+            if (ShellsInit.ShellsConfig.JsonEditAutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(JsonShellCommon.AutoSaveInterval * 1000);
+                    Thread.Sleep(ShellsInit.ShellsConfig.JsonEditAutoSaveInterval * 1000);
                     if (JsonShellCommon.FileStream is not null)
                         SaveFile(false);
                 }

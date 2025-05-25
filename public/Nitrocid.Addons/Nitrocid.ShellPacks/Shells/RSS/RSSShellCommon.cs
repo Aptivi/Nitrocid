@@ -37,7 +37,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         internal static int fetchTimeout = 60000;
         internal static int refreshInterval = 60000;
         internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSShellTools.RefreshFeeds);
-        internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
+        internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(ShellsInit.ShellsConfig.RSSFetchTimeout) };
         internal static string rssFeedLink = "";
 
         /// <summary>
@@ -45,26 +45,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         /// </summary>
         public static RSSFeed? RSSFeedInstance =>
             feedInstance;
-        /// <summary>
-        /// RSS feed URL prompt style
-        /// </summary>
-        public static string RSSFeedUrlPromptStyle =>
-            ShellsInit.ShellsConfig.RSSFeedUrlPromptStyle;
-        /// <summary>
-        /// RSS fetch timeout in milliseconds
-        /// </summary>
-        public static int RSSFetchTimeout =>
-            ShellsInit.ShellsConfig.RSSFetchTimeout;
-        /// <summary>
-        /// Whether to refresh RSS feeds or not
-        /// </summary>
-        public static bool RSSRefreshFeeds =>
-            ShellsInit.ShellsConfig.RSSRefreshFeeds;
-        /// <summary>
-        /// RSS refresh interval in milliseconds
-        /// </summary>
-        public static int RSSRefreshInterval =>
-            ShellsInit.ShellsConfig.RSSRefreshInterval;
         /// <summary>
         /// Whether to keep the connection alive or not
         /// </summary>

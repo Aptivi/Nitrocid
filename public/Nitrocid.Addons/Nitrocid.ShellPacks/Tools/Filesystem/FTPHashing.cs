@@ -71,7 +71,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, FTPShellCommon.FtpRecursiveHashing);
+        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, ShellsInit.ShellsConfig.FtpRecursiveHashing);
 
         /// <summary>
         /// Gets a hash for files in a directory

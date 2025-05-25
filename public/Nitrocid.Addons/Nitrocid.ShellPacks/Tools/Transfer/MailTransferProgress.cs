@@ -41,14 +41,10 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
         {
             if (Config.MainConfig.ShowProgress)
             {
-                if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyle))
-                {
-                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
-                }
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailProgressStyle))
+                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailProgressStyle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
                 else
-                {
                     TextWriters.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
-                }
             }
         }
 
@@ -57,14 +53,10 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
         {
             if (Config.MainConfig.ShowProgress)
             {
-                if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyleSingle))
-                {
-                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyleSingle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
-                }
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailProgressStyleSingle))
+                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailProgressStyleSingle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
                 else
-                {
                     TextWriters.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
-                }
             }
         }
 

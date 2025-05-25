@@ -40,7 +40,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
                 while (client.IsConnected)
                 {
-                    Thread.Sleep(MailShellCommon.ImapPingInterval);
+                    Thread.Sleep(ShellsInit.ShellsConfig.MailImapPingInterval);
                     if (client.IsConnected)
                     {
                         lock (client.SyncRoot)
@@ -72,7 +72,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
                 while (client.IsConnected)
                 {
-                    Thread.Sleep(MailShellCommon.SmtpPingInterval);
+                    Thread.Sleep(ShellsInit.ShellsConfig.MailSmtpPingInterval);
                     if (client.IsConnected)
                     {
                         lock (client.SyncRoot)

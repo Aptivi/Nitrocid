@@ -63,14 +63,10 @@ namespace Nitrocid.ShellPacks.Tools
                 }
 
                 // Prompt for username
-                if (!string.IsNullOrWhiteSpace(SFTPShellCommon.SFTPUserPromptStyle))
-                {
-                    TextWriters.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
-                }
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.SFTPUserPromptStyle))
+                    TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.SFTPUserPromptStyle), false, KernelColorType.Input, address);
                 else
-                {
                     TextWriters.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
-                }
                 SFTPShellCommon.SFTPUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
                 {
