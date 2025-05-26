@@ -1,3 +1,9 @@
+nitrocid-27 (3.1.27.49-0.1.2.15-1) noble; urgency=medium
+
+  * Improved the settings selection logic
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 26 May 2025 08:51:35 +0300
+
 nitrocid-27 (3.1.27.49-0.1.2.14-1) noble; urgency=medium
 
   * Made calendars more gorgeous
