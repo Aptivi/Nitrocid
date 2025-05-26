@@ -4213,3 +4213,8 @@ Intentando registrar una configuración base con contenido no válido. Consulte 
 Elija una entrada para
 No se puede seleccionar la configuración.
 Una o más entradas de configuración tienen variables o enumeraciones no válidas y deben corregirse. Consulte el depurador del kernel para obtener más información.
+El nombre de la entrada de configuración puede estar vacío.
+La descripción de la entrada de configuración puede estar vacía.
+La entrada de configuración puede no tener una lista de claves de configuración vacía.
+El nombre de la clave de configuración puede estar vacío.
+La clave de configuración puede no contener un tipo de clave no válido.

@@ -4213,3 +4213,8 @@ Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. 
 Wählen Sie einen Eintrag für
 Konfiguration kann nicht ausgewählt werden.
 Ein oder mehrere Konfigurationseinträge enthalten ungültige Variablen oder Enumerationen und müssen korrigiert werden. Weitere Informationen finden Sie im Kernel-Debugger.
+Der Name des Einstellungseintrags darf nicht leer sein.
+Die Beschreibung des Einstellungseintrags darf nicht leer sein.
+Die Liste der Einstellungsschlüssel darf nicht leer sein.
+Der Name des Einstellungsschlüssels darf nicht leer sein.
+Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten.

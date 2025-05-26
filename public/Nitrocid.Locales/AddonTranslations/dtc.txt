@@ -4213,3 +4213,8 @@ Proberen een basisinstelling met ongeldige inhoud te registreren. Raadpleeg de k
 Kies een item voor
 Kan configuratie niet selecteren
 Een of meer configuratie-items bevatten ongeldige variabelen of opsommingen en moeten worden hersteld. Raadpleeg de kerneldebugger voor meer informatie.
+De naam van het instellingenitem mag niet leeg zijn
+De beschrijving van het instellingenitem mag niet leeg zijn
+Het instellingenitem mag geen lege lijst met instellingensleutels bevatten
+De naam van de instellingensleutel mag niet leeg zijn
+De instellingensleutel mag geen ongeldig sleuteltype bevatten

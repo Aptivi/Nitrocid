@@ -4216,6 +4216,11 @@
     "Trying to register a base setting with invalid content. Consult the kernel debugger for more info",
     "Choose an entry for",
     "Can't select configuration",
-    "One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info."
+    "One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info.",
+    "Settings entry name may not be empty",
+    "Settings entry description may not be empty",
+    "Settings entry may not have empty settings key list",
+    "Settings key name may not be empty",
+    "Settings key may not hold invalid key type"
   ]
 }

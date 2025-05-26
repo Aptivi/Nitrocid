@@ -4216,6 +4216,11 @@
     "Tentativo di registrare un'impostazione di base con contenuto non valido. Consulta il debugger del kernel per ulteriori informazioni",
     "Scegli una voce per",
     "Impossibile selezionare la configurazione",
-    "Una o più voci di configurazione contengono variabili o enumerazioni non valide e devono essere corrette. Consulta il debugger del kernel per ulteriori informazioni."
+    "Una o più voci di configurazione contengono variabili o enumerazioni non valide e devono essere corrette. Consulta il debugger del kernel per ulteriori informazioni.",
+    "Il nome della voce Impostazioni non può essere vuoto",
+    "La descrizione della voce Impostazioni non può essere vuota",
+    "La voce Impostazioni non può avere un elenco di chiavi Impostazioni vuoto",
+    "Il nome della chiave Impostazioni non può essere vuoto",
+    "La chiave Impostazioni non può contenere un tipo di chiave non valido"
   ]
 }

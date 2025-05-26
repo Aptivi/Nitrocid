@@ -4216,6 +4216,11 @@
     "Încercarea de a înregistra o setare de bază cu conținut nevalid. Consultați depanatorul kernelului pentru mai multe informații",
     "Alegeți o intrare pentru",
     "Nu se poate selecta configurația",
-    "Una sau mai multe dintre intrările de configurare au variabile sau enumerari nevalide și trebuie remediate. Consultați depanatorul kernelului pentru mai multe informații."
+    "Una sau mai multe dintre intrările de configurare au variabile sau enumerari nevalide și trebuie remediate. Consultați depanatorul kernelului pentru mai multe informații.",
+    "Este posibil ca numele intrării setărilor să nu fie necompletat",
+    "Este posibil ca descrierea intrării setărilor să nu fie goală",
+    "Este posibil ca intrarea de setări să nu aibă o listă de chei de setări goală",
+    "Numele cheii de setări poate să nu fie gol",
+    "Este posibil ca cheia de setări să nu dețină un tip de cheie nevalid"
   ]
 }

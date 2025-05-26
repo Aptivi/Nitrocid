@@ -4213,3 +4213,8 @@ Cuba mendaftar tetapan asas dengan kandungan tidak sah. Rujuk penyahpepijat kern
 Pilih entri untuk
 Tidak dapat memilih konfigurasi
 Satu atau lebih entri konfigurasi mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Nama masukan tetapan mungkin tidak kosong
+Perihalan entri tetapan mungkin tidak kosong
+Entri tetapan mungkin tidak mempunyai senarai kunci tetapan kosong
+Nama kunci tetapan mungkin tidak kosong
+Kunci tetapan mungkin tidak menyimpan jenis kunci yang tidak sah

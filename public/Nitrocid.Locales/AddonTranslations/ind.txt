@@ -4213,3 +4213,8 @@ amaany saamagree ke saath bes seting panjeekrt karane ka prayaas kar raha hai. a
 ke lie ek pravishti chunen
 konfigareshan ka chayan nahin kiya ja sakata
 konfigareshan pravishtiyon mein se ek ya adhik mein amaany vairiebal ya gananaen hain aur unhen theek karane kee aavashyakata hai. adhik jaanakaaree ke lie karnel deebagar se paraamarsh karen.
+seting pravishti ka naam rikt nahin ho sakata
+seting pravishti ka vivaran rikt nahin ho sakata
+seting pravishti mein rikt seting kunjee soochee nahin ho sakatee
+seting kunjee ka naam rikt nahin ho sakata
+seting kunjee mein amaany kunjee prakaar nahin ho sakata

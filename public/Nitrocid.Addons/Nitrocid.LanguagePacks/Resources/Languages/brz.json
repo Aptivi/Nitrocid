@@ -4216,6 +4216,11 @@
     "Tentando registrar uma configuração base com conteúdo inválido. Consulte o depurador do kernel para obter mais informações",
     "Escolha uma entrada para",
     "Não é possível selecionar a configuração",
-    "Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas. Consulte o depurador do kernel para obter mais informações."
+    "Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas. Consulte o depurador do kernel para obter mais informações.",
+    "O nome da entrada de configurações não pode estar vazio.",
+    "A descrição da entrada de configurações não pode estar vazia.",
+    "A entrada de configurações não pode ter uma lista de chaves de configurações vazia.",
+    "O nome da chave de configurações não pode estar vazio.",
+    "A chave de configurações não pode conter um tipo de chave inválido."
   ]
 }

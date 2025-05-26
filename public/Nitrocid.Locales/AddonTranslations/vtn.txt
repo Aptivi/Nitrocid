@@ -4213,3 +4213,8 @@ Không thể kiểm tra các biến cấu hình khi không chỉ định khóa.
 Chọn một mục nhập cho
 Không thể chọn cấu hình
 Một hoặc nhiều mục nhập cấu hình có các biến hoặc liệt kê không hợp lệ và cần được sửa. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.
+Tên mục nhập cài đặt không được để trống
+Mô tả mục nhập cài đặt không được để trống
+Mục nhập cài đặt không được để trống danh sách khóa cài đặt
+Tên khóa cài đặt không được để trống
+Khóa cài đặt không được giữ loại khóa không hợp lệ

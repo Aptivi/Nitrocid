@@ -4213,3 +4213,8 @@ A tentar registar uma configuração base com conteúdo inválido. Consulte o de
 Escolha uma entrada para
 Não é possível selecionar a configuração
 Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam de ser corrigidas. Consulte o depurador do kernel para obter mais informações.
+O nome da entrada de definições não pode estar vazio
+A descrição da entrada de definições não pode estar vazia
+A entrada de definições pode não ter uma lista de chaves de definições vazia
+O nome da chave de configuração não pode estar vazio
+A chave de definições pode não conter um tipo de chave inválido

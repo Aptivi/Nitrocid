@@ -4216,6 +4216,11 @@
     "Geçersiz içerikle temel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın",
     "Şunun için bir giriş seçin",
     "Yapılandırma seçilemiyor",
-    "Yapılandırma girişlerinden bir veya daha fazlasında geçersiz değişkenler veya numaralandırmalar var ve bunların düzeltilmesi gerekiyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın."
+    "Yapılandırma girişlerinden bir veya daha fazlasında geçersiz değişkenler veya numaralandırmalar var ve bunların düzeltilmesi gerekiyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.",
+    "Ayarlar giriş adı boş olmayabilir",
+    "Ayarlar giriş açıklaması boş olmayabilir",
+    "Ayarlar girişi boş ayarlar anahtar listesine sahip olmayabilir",
+    "Ayarlar anahtar adı boş olmayabilir",
+    "Ayarlar anahtarı geçersiz anahtar türünü tutamayabilir"
   ]
 }

@@ -4213,3 +4213,8 @@ Prøver å registrere en basisinnstilling med ugyldig innhold. Se kjernefeilsøk
 Velg en oppføring for
 Kan ikke velge konfigurasjon
 En eller flere av konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses. Se kjernefeilsøkeren for mer informasjon.
+Innstillingsoppføringsnavnet er kanskje ikke tomt
+Innstillingsbeskrivelsen er kanskje ikke tom
+Innstillingsoppføringen har kanskje ikke tom innstillingsnøkkelliste
+Innstillingsnøkkelnavnet er kanskje ikke tomt
+Innstillingsnøkkel inneholder kanskje ikke ugyldig nøkkeltype
