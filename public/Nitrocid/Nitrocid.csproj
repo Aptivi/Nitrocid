@@ -39,7 +39,7 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Aptivestigate.Serilog" Version="1.2.2" PrivateAssets="all" />
-    <PackageReference Include="Magico" Version="1.4.0" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.4.1" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" PrivateAssets="all" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="3.5.1" PrivateAssets="all" />
@@ -48,8 +48,8 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="6.1.13" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="6.1.13" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="6.1.14" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="6.1.14" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.10.0" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
