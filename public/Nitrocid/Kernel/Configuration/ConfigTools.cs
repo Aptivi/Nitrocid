@@ -474,9 +474,33 @@ namespace Nitrocid.Kernel.Configuration
             if (string.IsNullOrEmpty(entriesText))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
 
-            // Now, try to get the settings entry array.
-            return JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText) ??
+            // Deserialize the settings entry array
+            var entries = JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText) ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries."));
+
+            // Validate the contents
+            foreach (var entry in entries)
+            {
+                // Name, description, and a non-empty key list is required.
+                if (string.IsNullOrEmpty(entry.Name))
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry name may not be empty"));
+                if (string.IsNullOrEmpty(entry.Desc))
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry description may not be empty") + $" [{entry.Name}]");
+                if (entry.Keys is null || entry.Keys.Length == 0)
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry may not have empty settings key list") + $" [{entry.Name}]");
+
+                // Validate the keys
+                foreach (var key in entry.Keys)
+                {
+                    if (string.IsNullOrEmpty(key.Name))
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key name may not be empty") + $" [{entry.Name}]");
+                    if (!Enum.IsDefined(key.Type))
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key may not hold invalid key type") + $" [{entry.Name} -> {key.Name}]");
+                }
+            }
+
+            // Now, try to get the settings entry array.
+            return entries;
         }
 
         /// <summary>
