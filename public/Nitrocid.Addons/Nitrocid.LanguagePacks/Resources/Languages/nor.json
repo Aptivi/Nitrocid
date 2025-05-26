@@ -4205,6 +4205,17 @@
     "Utløpsdato eller tidsperiode (enten eksplisitt skrevet på samme sted eller tidsrom, for eksempel 6 måneder eller 1 år)",
     "Om målproduktet ikke spesifiserer utløpsdatoen eksplisitt",
     "Skjermsparerinnstillinger...",
-    "Dette lar deg konfigurere kulturen som brukes av kalenderskjermspareren"
+    "Dette lar deg konfigurere kulturen som brukes av kalenderskjermspareren",
+    "Velg en konfigurasjonsforekomst å bytte til.",
+    "Velg konfigurasjon",
+    "Ber deg velge en konfigurasjonsforekomst",
+    "Kan ikke sjekke konfigurasjonsvariabler når ingen basiskjernekonfigurasjon er spesifisert.",
+    "Kjernekonfigurasjon vil ikke fungere ordentlig. Se kjernefeilsøkeren for mer informasjon.",
+    "Kan ikke sjekke konfigurasjonsvariabler når ingen nøkler er spesifisert.",
+    "Prøver å registrere en egendefinert innstilling med ugyldig innhold. Se kjernefeilsøkeren for mer informasjon.",
+    "Prøver å registrere en basisinnstilling med ugyldig innhold. Se kjernefeilsøkeren for mer informasjon",
+    "Velg en oppføring for",
+    "Kan ikke velge konfigurasjon",
+    "En eller flere av konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses. Se kjernefeilsøkeren for mer informasjon."
   ]
 }

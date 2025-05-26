@@ -4202,3 +4202,14 @@ Tarikh luput atau tempoh masa (sama ada ditulis secara eksplisit pada tempat ata
 Sama ada produk sasaran tidak menyatakan tarikh luput dengan jelas
 Tetapan penyelamat skrin...
 Ini membolehkan anda mengkonfigurasi budaya yang digunakan oleh penyelamat skrin kalendar
+Pilih contoh konfigurasi untuk ditukar.
+Pilih konfigurasi
+Mengesa anda untuk memilih contoh konfigurasi
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada konfigurasi kernel asas ditentukan.
+Konfigurasi kernel tidak akan berfungsi dengan betul. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada kunci ditentukan.
+Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Cuba mendaftar tetapan asas dengan kandungan tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut
+Pilih entri untuk
+Tidak dapat memilih konfigurasi
+Satu atau lebih entri konfigurasi mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.

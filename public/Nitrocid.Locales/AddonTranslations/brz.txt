@@ -4138,7 +4138,7 @@ Tentando registrar uma configuração personalizada com conteúdo inválido. As 
 Tentando registrar uma configuração base com conteúdo inválido. As chaves inválidas são
 Adiciona um mod à lista negra
 Remove um mod da lista negra
-Estas entradas de configuração têm variáveis ​​ou enumerações inválidas e precisam ser corrigidas:
+Estas entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas:
 Inicia todos os mods
 Imprime um separador no console com cor
 Imprime um separador no console com formatação e cor
@@ -4202,3 +4202,14 @@ Data ou período de validade (explicitamente escrito no mesmo local ou em perío
 Se o produto-alvo não especifica explicitamente a data de validade
 Configurações do protetor de tela...
 Isso permite que você configure a cultura usada pelo protetor de tela do calendário.
+Selecione uma instância de configuração para alternar.
+Selecionar configuração
+Solicita que você selecione uma instância de configuração
+Não é possível verificar as variáveis de configuração quando nenhuma configuração base do kernel é especificada.
+A configuração do kernel não funcionará corretamente. Consulte o depurador do kernel para obter mais informações.
+Não é possível verificar as variáveis de configuração quando nenhuma chave é especificada.
+Tentando registrar uma configuração personalizada com conteúdo inválido. Consulte o depurador do kernel para obter mais informações.
+Tentando registrar uma configuração base com conteúdo inválido. Consulte o depurador do kernel para obter mais informações
+Escolha uma entrada para
+Não é possível selecionar a configuração
+Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas. Consulte o depurador do kernel para obter mais informações.

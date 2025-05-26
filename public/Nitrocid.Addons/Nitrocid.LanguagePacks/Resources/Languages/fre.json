@@ -4205,6 +4205,17 @@
     "Date ou délai de péremption (écrit explicitement au même endroit ou par intervalles de temps, par exemple 6 mois ou 1 an)",
     "Si le produit cible ne précise pas explicitement la date de péremption",
     "Paramètres de l'économiseur d'écran…",
-    "Cela vous permet de configurer la culture utilisée par l'économiseur d'écran du calendrier."
+    "Cela vous permet de configurer la culture utilisée par l'économiseur d'écran du calendrier.",
+    "Sélectionnez une instance de configuration vers laquelle basculer.",
+    "Sélectionner la configuration",
+    "Vous invite à sélectionner une instance de configuration.",
+    "Impossible de vérifier les variables de configuration si aucune configuration de base du noyau n'est spécifiée.",
+    "La configuration du noyau ne fonctionnera pas correctement. Consultez le débogueur du noyau pour plus d'informations.",
+    "Impossible de vérifier les variables de configuration si aucune clé n'est spécifiée.",
+    "Tentative d'enregistrement d'un paramètre personnalisé avec un contenu non valide. Consultez le débogueur du noyau pour plus d'informations.",
+    "Tentative d'enregistrement d'un paramètre de base avec un contenu non valide. Consultez le débogueur du noyau pour plus d'informations.",
+    "Choisissez une entrée pour",
+    "Impossible de sélectionner la configuration",
+    "Une ou plusieurs entrées de configuration contiennent des variables ou des énumérations non valides et doivent être corrigées. Consultez le débogueur du noyau pour plus d'informations."
   ]
 }

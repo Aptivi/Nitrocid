@@ -4193,6 +4193,7 @@ Data di scadenza non valida
 Data di produzione
 Data di scadenza
 Intervallo di scadenza
+Salute del prodotto
 Stato del prodotto
 Impossibile ottenere le informazioni sulla scadenza del prodotto
 Ottiene le informazioni sulla scadenza del prodotto
@@ -4201,3 +4202,14 @@ Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in inter
 Se il prodotto di destinazione non specifica esplicitamente la data di scadenza
 Impostazioni salvaschermo...
 Consente di configurare la cultura utilizzata dallo screensaver del calendario.
+Seleziona un'istanza di configurazione a cui passare.
+Seleziona configurazione
+Ti chiede di selezionare un'istanza di configurazione
+Impossibile controllare le variabili di configurazione se non è specificata alcuna configurazione di base del kernel.
+La configurazione del kernel non funzionerà correttamente. Consulta il debugger del kernel per ulteriori informazioni.
+Impossibile controllare le variabili di configurazione se non sono specificate chiavi.
+Tentativo di registrare un'impostazione personalizzata con contenuto non valido. Consulta il debugger del kernel per ulteriori informazioni.
+Tentativo di registrare un'impostazione di base con contenuto non valido. Consulta il debugger del kernel per ulteriori informazioni
+Scegli una voce per
+Impossibile selezionare la configurazione
+Una o più voci di configurazione contengono variabili o enumerazioni non valide e devono essere corrette. Consulta il debugger del kernel per ulteriori informazioni.

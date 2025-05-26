@@ -4205,6 +4205,17 @@
     "Ngày hết hạn hoặc khoảng thời gian (được ghi rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)",
     "Sản phẩm mục tiêu có ghi rõ ngày hết hạn không",
     "Cài đặt bảo vệ màn hình...",
-    "Điều này cho phép bạn cấu hình văn hóa được sử dụng bởi trình bảo vệ màn hình lịch"
+    "Điều này cho phép bạn cấu hình văn hóa được sử dụng bởi trình bảo vệ màn hình lịch",
+    "Chọn một phiên bản cấu hình để chuyển sang.",
+    "Chọn cấu hình",
+    "Nhắc bạn chọn một phiên bản cấu hình",
+    "Không thể kiểm tra các biến cấu hình khi không chỉ định cấu hình hạt nhân cơ sở.",
+    "Cấu hình hạt nhân sẽ không hoạt động bình thường. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.",
+    "Không thể kiểm tra các biến cấu hình khi không chỉ định khóa.",
+    "Đang cố gắng đăng ký một thiết lập tùy chỉnh với nội dung không hợp lệ. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.",
+    "Đang cố gắng đăng ký một thiết lập cơ sở với nội dung không hợp lệ. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin",
+    "Chọn một mục nhập cho",
+    "Không thể chọn cấu hình",
+    "Một hoặc nhiều mục nhập cấu hình có các biến hoặc liệt kê không hợp lệ và cần được sửa. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin."
   ]
 }

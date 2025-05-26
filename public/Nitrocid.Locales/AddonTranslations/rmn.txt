@@ -4202,3 +4202,14 @@ Data de expirare sau perioada de timp (fie scrisă explicit în același loc sau
 Dacă produsul țintă nu specifică în mod explicit data de expirare
 Setări pentru screensaver...
 Acest lucru vă permite să configurați cultura utilizată de screensaver-ul calendarului
+Selectați o instanță de configurare la care să comutați.
+Selectați configurația
+Vă solicită să selectați o instanță de configurare
+Nu se pot verifica variabilele de configurare când nu este specificată nicio configurație de bază a nucleului.
+Configurația kernelului nu va funcționa corect. Consultați depanatorul kernelului pentru mai multe informații.
+Nu se pot verifica variabilele de configurare când nu sunt specificate chei.
+Se încearcă să înregistreze o setare personalizată cu conținut nevalid. Consultați depanatorul kernelului pentru mai multe informații.
+Încercarea de a înregistra o setare de bază cu conținut nevalid. Consultați depanatorul kernelului pentru mai multe informații
+Alegeți o intrare pentru
+Nu se poate selecta configurația
+Una sau mai multe dintre intrările de configurare au variabile sau enumerari nevalide și trebuie remediate. Consultați depanatorul kernelului pentru mai multe informații.

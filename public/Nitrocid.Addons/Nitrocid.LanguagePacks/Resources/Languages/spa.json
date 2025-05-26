@@ -4205,6 +4205,17 @@
     "Fecha o período de caducidad (ya sea escrito explícitamente en el mismo lugar o en períodos de tiempo, como 6 meses o 1 año)",
     "Si el producto de destino no especifica explícitamente la fecha de caducidad",
     "Configuración del protector de pantalla...",
-    "Esto le permite configurar la cultura que usará el protector de pantalla del calendario."
+    "Esto le permite configurar la cultura que usará el protector de pantalla del calendario.",
+    "Seleccione una instancia de configuración a la que cambiar.",
+    "Seleccionar configuración",
+    "Le solicita que seleccione una instancia de configuración.",
+    "No se pueden comprobar las variables de configuración si no se especifica una configuración base del kernel.",
+    "La configuración del kernel no funcionará correctamente. Consulte el depurador del kernel para obtener más información.",
+    "No se pueden comprobar las variables de configuración si no se especifican claves.",
+    "Intentando registrar una configuración personalizada con contenido no válido. Consulte el depurador del kernel para obtener más información.",
+    "Intentando registrar una configuración base con contenido no válido. Consulte el depurador del kernel para obtener más información.",
+    "Elija una entrada para",
+    "No se puede seleccionar la configuración.",
+    "Una o más entradas de configuración tienen variables o enumeraciones no válidas y deben corregirse. Consulte el depurador del kernel para obtener más información."
   ]
 }

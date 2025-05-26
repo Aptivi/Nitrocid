@@ -4202,3 +4202,14 @@ Expiry date or time period (either explicitly written in the same spot or time s
 Whether the target product doesn't specify the expiry date explicitly
 Screensaver settings...
 This allows you to configure the culture used by the calendar screensaver
+Select a configuration instance to switch to.
+Select configuration
+Prompts you to select a configuration instance
+Can't check configuration variables when no base kernel configuration is specified.
+Kernel configuration will not work properly. Consult the kernel debugger for more info.
+Can't check configuration variables when no keys are specified.
+Trying to register a custom setting with invalid content. Consult the kernel debugger for more info.
+Trying to register a base setting with invalid content. Consult the kernel debugger for more info
+Choose an entry for
+Can't select configuration
+One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info.

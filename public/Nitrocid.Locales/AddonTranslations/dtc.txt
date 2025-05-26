@@ -4140,8 +4140,8 @@ Voegt een mod toe aan de zwarte lijst
 Verwijdert een mod van de zwarte lijst
 Deze configuratie-items hebben ongeldige variabelen of opsommingen en moeten worden opgelost:
 Start alle mods
-Druk een scheidingsteken af ​​naar de console met kleur
-Druk een scheidingsteken af ​​naar de console met opmaak en kleur
+Druk een scheidingsteken af naar de console met kleur
+Druk een scheidingsteken af naar de console met opmaak en kleur
 Laadt alle mods opnieuw
 Statistieken
 Toont de huidige teststatistieken
@@ -4202,3 +4202,14 @@ Vervaldatum of -periode (expliciet op dezelfde plek geschreven of tijdsperioden,
 Of het doelproduct de vervaldatum niet expliciet vermeldt
 Schermbeveiligingsinstellingen...
 Hiermee kunt u de cultuur configureren die door de kalenderschermbeveiliging wordt gebruikt.
+Selecteer een configuratie-instantie om naar over te schakelen.
+Configuratie selecteren
+Vraagt u een configuratie-instantie te selecteren.
+Kan configuratievariabelen niet controleren als er geen basiskernelconfiguratie is opgegeven.
+De kernelconfiguratie werkt niet correct. Raadpleeg de kerneldebugger voor meer informatie.
+Kan configuratievariabelen niet controleren als er geen sleutels zijn opgegeven.
+Proberen een aangepaste instelling met ongeldige inhoud te registreren. Raadpleeg de kerneldebugger voor meer informatie.
+Proberen een basisinstelling met ongeldige inhoud te registreren. Raadpleeg de kerneldebugger voor meer informatie.
+Kies een item voor
+Kan configuratie niet selecteren
+Een of meer configuratie-items bevatten ongeldige variabelen of opsommingen en moeten worden hersteld. Raadpleeg de kerneldebugger voor meer informatie.

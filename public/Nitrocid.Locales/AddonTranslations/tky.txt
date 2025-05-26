@@ -4202,3 +4202,14 @@ Son kullanma tarihi veya zaman aralığı (aynı yerde açıkça yazılmış vey
 Hedef ürünün son kullanma tarihini açıkça belirtip belirtmediği
 Ekran koruyucu ayarları...
 Bu, takvim ekran koruyucusu tarafından kullanılan kültürü yapılandırmanıza olanak tanır
+Geçiş yapmak için bir yapılandırma örneği seçin.
+Yapılandırmayı seçin
+Bir yapılandırma örneği seçmenizi ister
+Temel çekirdek yapılandırması belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
+Çekirdek yapılandırması düzgün çalışmayacaktır. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
+Anahtar belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
+Geçersiz içerikle özel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
+Geçersiz içerikle temel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın
+Şunun için bir giriş seçin
+Yapılandırma seçilemiyor
+Yapılandırma girişlerinden bir veya daha fazlasında geçersiz değişkenler veya numaralandırmalar var ve bunların düzeltilmesi gerekiyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.

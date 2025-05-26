@@ -4202,3 +4202,14 @@ Ablaufdatum oder -zeitraum (entweder explizit an derselben Stelle angegeben oder
 Ob das Zielprodukt das Ablaufdatum nicht explizit angibt
 Schermbeveiligingsinstellingen...
 Hiermee kunt u de cultuur configureren die door de kalenderschermbeveiliging wordt gebruikt.
+Wählen Sie eine Konfigurationsinstanz aus, zu der gewechselt werden soll.
+Konfiguration auswählen
+Fordert Sie auf, eine Konfigurationsinstanz auszuwählen.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Kernel-Basiskonfiguration angegeben ist.
+Die Kernelkonfiguration funktioniert nicht ordnungsgemäß. Weitere Informationen finden Sie im Kernel-Debugger.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Schlüssel angegeben sind.
+Es wird versucht, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
+Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
+Wählen Sie einen Eintrag für
+Konfiguration kann nicht ausgewählt werden.
+Ein oder mehrere Konfigurationseinträge enthalten ungültige Variablen oder Enumerationen und müssen korrigiert werden. Weitere Informationen finden Sie im Kernel-Debugger.
