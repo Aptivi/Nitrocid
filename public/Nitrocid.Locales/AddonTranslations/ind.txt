@@ -4426,3 +4426,4 @@ svich karane ke lie konfigareshan instens chunen.
 konfigareshan nahin chuna ja sakata
 konfigareshan chunen
 aapako konfigareshan instens chunane ke lie sanket deta hai
+skreenasevar setings...

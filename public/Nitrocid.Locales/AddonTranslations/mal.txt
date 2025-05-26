@@ -4426,3 +4426,4 @@ Pilih contoh konfigurasi untuk ditukar.
 Tidak dapat memilih konfigurasi
 Pilih konfigurasi
 Mengesa anda untuk memilih contoh konfigurasi
+Tetapan penyelamat skrin...

@@ -4426,3 +4426,4 @@ Selecione uma instância de configuração para alternar.
 Não é possível selecionar a configuração
 Selecionar configuração
 Solicita que você selecione uma instância de configuração
+Configurações do protetor de tela...

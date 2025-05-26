@@ -4426,3 +4426,4 @@ Seleccione una instancia de configuración a la que cambiar.
 No se puede seleccionar la configuración.
 Seleccionar configuración.
 Se le solicita que seleccione una instancia de configuración.
+Configuración del protector de pantalla...

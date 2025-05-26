@@ -4429,6 +4429,7 @@
     "Select a configuration instance to switch to.",
     "Can't select configuration",
     "Select configuration",
-    "Prompts you to select a configuration instance"
+    "Prompts you to select a configuration instance",
+    "Screensaver settings..."
   ]
 }

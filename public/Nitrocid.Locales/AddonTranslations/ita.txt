@@ -4426,3 +4426,4 @@ Seleziona un'istanza di configurazione a cui passare.
 Impossibile selezionare la configurazione
 Seleziona configurazione
 Ti chiede di selezionare un'istanza di configurazione
+Impostazioni dello screensaver...
