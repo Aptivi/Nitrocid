@@ -67,7 +67,8 @@ namespace Nitrocid.Misc.Interactives
                     var configNames = configs.Select((se, idx) =>
                         (Translate.DoTranslation(!string.IsNullOrEmpty(se.DisplayAs) ? se.DisplayAs : se.Name), idx)
                     ).ToArray();
-                    var entry = configs[FirstPaneCurrentSelection - 1];
+                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
+                    var entry = configs[finalIdx];
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
@@ -79,16 +80,7 @@ namespace Nitrocid.Misc.Interactives
                     entryNames.AddRange(configNames);
                     keyNames.Clear();
                     keyNames.AddRange(finalkeyNames);
-                    lastFirstPaneIdx = FirstPaneCurrentSelection - 1;
-
-                    // Determine whether to switch sides or not
-                    // TODO: Please provide a more powerful version of SelectionMovement in the next Terminaux 6.1 point release.
-                    bool switchSides = CurrentPane != 2;
-                    if (switchSides)
-                        InteractiveTuiTools.SwitchSides(this);
-                    InteractiveTuiTools.SelectionMovement(this, 0);
-                    if (switchSides)
-                        InteractiveTuiTools.SwitchSides(this);
+                    lastFirstPaneIdx = finalIdx;
                     return configNames;
                 }
                 catch (Exception ex)
@@ -348,6 +340,8 @@ namespace Nitrocid.Misc.Interactives
                 {
                     config = selectedConfig;
                     lastFirstPaneIdx = -1;
+                    InteractiveTuiTools.SelectionMovement(this, 0, 1);
+                    InteractiveTuiTools.SelectionMovement(this, 0, 2);
                 }
             }
             catch (Exception ex)
