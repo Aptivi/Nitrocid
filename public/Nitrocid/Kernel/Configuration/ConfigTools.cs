@@ -473,13 +473,6 @@ namespace Nitrocid.Kernel.Configuration
             if (string.IsNullOrEmpty(entriesText))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
 
-            // Verify that the configuration is of a valid format
-            string? schemaStr = ResourcesManager.ConvertToString(ResourcesManager.GetData("SettingsSchema.json", ResourcesType.Schemas) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get base settings schema.")));
-            var schema = JSchema.Parse(schemaStr);
-            var configObj = JArray.Parse(entriesText);
-            configObj.Validate(schema);
-
             // Now, try to get the settings entry array.
             return JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText) ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries."));
