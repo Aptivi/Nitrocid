@@ -4427,3 +4427,8 @@ Tidak dapat memilih konfigurasi
 Pilih konfigurasi
 Mengesa anda untuk memilih contoh konfigurasi
 Tetapan penyelamat skrin...
+Nama masukan tetapan mungkin tidak kosong
+Perihalan entri tetapan mungkin tidak kosong
+Entri tetapan mungkin tidak mempunyai senarai kunci tetapan kosong
+Nama kunci tetapan mungkin tidak kosong
+Kunci tetapan mungkin tidak menyimpan jenis kunci yang tidak sah

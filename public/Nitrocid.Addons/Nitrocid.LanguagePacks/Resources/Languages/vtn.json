@@ -4430,6 +4430,11 @@
     "Không thể chọn cấu hình",
     "Chọn cấu hình",
     "Nhắc bạn chọn một phiên bản cấu hình",
-    "Cài đặt trình bảo vệ màn hình..."
+    "Cài đặt trình bảo vệ màn hình...",
+    "Tên mục nhập cài đặt không được để trống",
+    "Mô tả mục nhập cài đặt không được để trống",
+    "Mục nhập cài đặt không được để trống danh sách khóa cài đặt",
+    "Tên khóa cài đặt không được để trống",
+    "Khóa cài đặt không được giữ loại khóa không hợp lệ"
   ]
 }

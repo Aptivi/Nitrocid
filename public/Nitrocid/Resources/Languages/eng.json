@@ -4430,6 +4430,11 @@
     "Can't select configuration",
     "Select configuration",
     "Prompts you to select a configuration instance",
-    "Screensaver settings..."
+    "Screensaver settings...",
+    "Settings entry name may not be empty",
+    "Settings entry description may not be empty",
+    "Settings entry may not have empty settings key list",
+    "Settings key name may not be empty",
+    "Settings key may not hold invalid key type"
   ]
 }

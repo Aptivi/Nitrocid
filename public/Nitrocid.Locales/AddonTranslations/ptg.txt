@@ -4427,3 +4427,8 @@ Não é possível selecionar a configuração
 Selecione a configuração
 Solicita que selecione uma instância de configuração
 Definições do protetor de ecrã...
+O nome da entrada de definições não pode estar vazio
+A descrição da entrada de definições não pode estar vazia
+A entrada de definições pode não ter uma lista de chaves de definições vazia
+O nome da chave de configuração não pode estar vazio
+A chave de definições pode não conter um tipo de chave inválido

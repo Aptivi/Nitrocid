@@ -4427,3 +4427,8 @@ Kan configuratie niet selecteren
 Configuratie selecteren
 Vraagt u een configuratie-instantie te selecteren
 Schermbeveiligingsinstellingen...
+De naam van het instellingenitem mag niet leeg zijn
+De beschrijving van het instellingenitem mag niet leeg zijn
+Het instellingenitem mag geen lege lijst met instellingensleutels bevatten
+De naam van de instellingensleutel mag niet leeg zijn
+De instellingensleutel mag geen ongeldig sleuteltype bevatten

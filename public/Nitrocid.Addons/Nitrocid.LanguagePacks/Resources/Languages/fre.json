@@ -4430,6 +4430,11 @@
     "Impossible de sélectionner la configuration",
     "Sélectionner la configuration",
     "Vous invite à sélectionner une instance de configuration.",
-    "Paramètres de l'économiseur d'écran..."
+    "Paramètres de l'économiseur d'écran...",
+    "Le nom de l'entrée de paramètres peut être rempli.",
+    "La description de l'entrée de paramètres peut être remplie.",
+    "La liste des touches de paramètres peut être remplie.",
+    "Le nom de la touche de paramètres peut être rempli.",
+    "La touche de paramètres peut contenir un type de touche non valide."
   ]
 }

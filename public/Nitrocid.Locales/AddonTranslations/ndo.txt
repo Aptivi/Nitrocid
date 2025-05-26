@@ -4427,3 +4427,8 @@ Tidak dapat memilih konfigurasi
 Pilih konfigurasi
 Meminta Anda untuk memilih contoh konfigurasi
 Pengaturan screensaver...
+Nama entri pengaturan tidak boleh kosong
+Deskripsi entri pengaturan tidak boleh kosong
+Entri pengaturan tidak boleh memiliki daftar kunci pengaturan yang kosong
+Nama kunci pengaturan tidak boleh kosong
+Kunci pengaturan tidak boleh berisi jenis kunci yang tidak valid

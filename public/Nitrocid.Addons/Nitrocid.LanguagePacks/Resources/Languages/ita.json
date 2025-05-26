@@ -4430,6 +4430,11 @@
     "Impossibile selezionare la configurazione",
     "Seleziona configurazione",
     "Ti chiede di selezionare un'istanza di configurazione",
-    "Impostazioni dello screensaver..."
+    "Impostazioni dello screensaver...",
+    "Il nome della voce Impostazioni non può essere vuoto",
+    "La descrizione della voce Impostazioni non può essere vuota",
+    "La voce Impostazioni non può avere un elenco di chiavi Impostazioni vuoto",
+    "Il nome della chiave Impostazioni non può essere vuoto",
+    "La chiave Impostazioni non può contenere un tipo di chiave non valido"
   ]
 }

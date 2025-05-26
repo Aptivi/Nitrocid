@@ -4427,3 +4427,8 @@ Não é possível selecionar a configuração
 Selecionar configuração
 Solicita que você selecione uma instância de configuração
 Configurações do protetor de tela...
+O nome da entrada de configurações não pode estar vazio.
+A descrição da entrada de configurações não pode estar vazia.
+A entrada de configurações não pode ter uma lista de chaves de configurações vazia.
+O nome da chave de configurações não pode estar vazio.
+A chave de configurações não pode conter um tipo de chave inválido.

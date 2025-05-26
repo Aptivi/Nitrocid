@@ -4427,3 +4427,8 @@ Nu se poate selecta configurația
 Selectați configurația
 Vă solicită să selectați o instanță de configurare
 Setări pentru screensaver...
+Este posibil ca numele intrării setărilor să nu fie necompletat
+Este posibil ca descrierea intrării setărilor să nu fie goală
+Este posibil ca intrarea de setări să nu aibă o listă de chei de setări goală
+Numele cheii de setări poate să nu fie gol
+Este posibil ca cheia de setări să nu dețină un tip de cheie nevalid

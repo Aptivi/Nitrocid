@@ -4427,3 +4427,8 @@ Kan ikke velge konfigurasjon
 Velg konfigurasjon
 Ber deg velge en konfigurasjonsforekomst
 Skjermsparerinnstillinger...
+Innstillingsoppføringsnavnet er kanskje ikke tomt
+Innstillingsbeskrivelsen er kanskje ikke tom
+Innstillingsoppføringen har kanskje ikke tom innstillingsnøkkelliste
+Innstillingsnøkkelnavnet er kanskje ikke tomt
+Innstillingsnøkkel inneholder kanskje ikke ugyldig nøkkeltype
