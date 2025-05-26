@@ -208,5 +208,10 @@
         "name": "ExtrasHashes",
         "display": "Extras - Hashes",
         "project": "Extras.Hashes"
+    },
+    {
+        "name": "ExtrasChatbotAI",
+        "display": "Extras - Chatbot AI",
+        "project": "Extras.ChatbotAI"
     }
 ]
