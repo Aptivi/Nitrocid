@@ -51,6 +51,14 @@
         "Nitrocid.Locales - Help": {
             "commandName": "Project",
             "commandLineArgs": "help"
+        },
+        "Nitrocid.Locales - Report": {
+            "commandName": "Project",
+            "commandLineArgs": "report"
+        },
+        "Nitrocid.Locales - Report - Dry": {
+            "commandName": "Project",
+            "commandLineArgs": "report -dry"
         }
     }
 }

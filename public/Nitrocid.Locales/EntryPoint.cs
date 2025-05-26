@@ -87,6 +87,16 @@ namespace Nitrocid.Locales
                     ])
                 ], new TrimmerArgument()),
 
+            new("report", "Makes a report for every localizable string found in every project (internal)",
+                [
+                    new CommandArgumentInfo([
+                        new SwitchInfo("dry", "Performs this operation dryly", new()
+                        {
+                            AcceptsValues = false,
+                        }),
+                    ])
+                ], new ReporterArgument()),
+
             new("help", "Shows this help page",
                 [
                     new CommandArgumentInfo([

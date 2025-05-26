@@ -17,13 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.CodeAnalysis;
+using Terminaux.Shell.Arguments.Base;
+using Terminaux.Shell.Switches;
 
-namespace Nitrocid.Locales.Actions.Analyzers
+namespace Nitrocid.Locales.Actions.Arguments
 {
-    internal interface IAnalyzer
+    internal class ReporterArgument : ArgumentExecutor, IArgument
     {
-        bool Analyze(Document document, out string[] unlocalized, bool reportMode = false);
-        bool ReverseAnalyze(Document document, out string[] localized, bool reportMode = false);
+        public override void Execute(ArgumentParameters parameters)
+        {
+            bool dry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-dry");
+            Reporter.Execute(dry);
+        }
     }
 }

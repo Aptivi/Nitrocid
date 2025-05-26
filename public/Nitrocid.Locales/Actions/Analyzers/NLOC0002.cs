@@ -28,7 +28,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
 {
     internal class NLOC0002 : IAnalyzer
     {
-        public bool Analyze(Document document, out string[] unlocalized)
+        public bool Analyze(Document document, out string[] unlocalized, bool reportMode = false)
         {
             unlocalized = [];
             var tree = document.GetSyntaxTreeAsync().Result;
@@ -37,6 +37,9 @@ namespace Nitrocid.Locales.Actions.Analyzers
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             bool found = false;
             List<string> unlocalizedStrings = [];
+            HashSet<string> source =
+                reportMode ? Reporter.localizationList : Checker.localizationList;
+
             foreach (var syntaxNode in syntaxNodeNodes)
             {
                 // Check for argument
@@ -65,9 +68,10 @@ namespace Nitrocid.Locales.Actions.Analyzers
                                 var location = literalText.GetLocation();
                                 string text = literalText.ToString();
                                 text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                                if (!string.IsNullOrWhiteSpace(text) && !Checker.localizationList.Contains(text))
+                                if (!string.IsNullOrWhiteSpace(text) && !source.Contains(text))
                                 {
-                                    AnalyzerTools.PrintFromLocation(location, document, GetType(), $"Unlocalized string found: {text}");
+                                    if (!reportMode)
+                                        AnalyzerTools.PrintFromLocation(location, document, GetType(), $"Unlocalized string found: {text}");
                                     found = true;
                                     unlocalizedStrings.Add(text);
                                 }
@@ -100,11 +104,11 @@ namespace Nitrocid.Locales.Actions.Analyzers
                     }
                 }
             }
-            unlocalized = [.. unlocalizedStrings];
+            unlocalized = [.. unlocalizedStrings.Distinct()];
             return found;
         }
 
-        public bool ReverseAnalyze(Document document, out string[] localized)
+        public bool ReverseAnalyze(Document document, out string[] localized, bool reportMode = false)
         {
             localized = [];
             var tree = document.GetSyntaxTreeAsync().Result;
@@ -113,6 +117,9 @@ namespace Nitrocid.Locales.Actions.Analyzers
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             bool found = false;
             List<string> localizedStrings = [];
+            HashSet<string> source =
+                reportMode ? Reporter.localizationList : [.. Cleaner.localizationList];
+
             foreach (var syntaxNode in syntaxNodeNodes)
             {
                 // Check for argument
@@ -141,7 +148,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
                                 var location = literalText.GetLocation();
                                 string text = literalText.ToString();
                                 text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                                if (Cleaner.localizationList.Contains(text))
+                                if (source.Contains(text))
                                 {
                                     found = true;
                                     localizedStrings.Add(text);
@@ -175,7 +182,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
                     }
                 }
             }
-            localized = [.. localizedStrings];
+            localized = [.. localizedStrings.Distinct()];
             return found;
         }
     }
