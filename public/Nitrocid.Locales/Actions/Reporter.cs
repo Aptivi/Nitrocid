@@ -90,6 +90,9 @@ namespace Nitrocid.Locales.Actions
                     localizationList.Add(localizationString);
                 }
 
+                // Make a list of paths to print and to process
+                List<string> paths = [];
+
                 // Add the Nitrocid analyzer to all the projects
                 var projects = solution.Projects;
                 foreach (var project in projects)
@@ -139,10 +142,16 @@ namespace Nitrocid.Locales.Actions
                     if (totalUnlocalized.Count > 0 || totalLocalized.Count > 0)
                     {
                         if (!dry)
+                        {
                             File.WriteAllText($"unlocalized.{project.Name}.txt", unlocalizedBuilder.ToString());
+                            paths.Add($"unlocalized.{project.Name}.txt");
+                        }
                         TextWriterColor.WriteColor($"[{project.Name} - codebase] Total unlocalized strings: {totalUnlocalized.Count}", true, totalUnlocalized.Count > 0 ? ConsoleColors.Red : ConsoleColors.Lime);
                         if (!dry)
+                        {
                             File.WriteAllText($"localized.{project.Name}.txt", localizedBuilder.ToString());
+                            paths.Add($"localized.{project.Name}.txt");
+                        }
                         TextWriterColor.WriteColor($"[{project.Name} - codebase] Total localized strings: {totalLocalized.Count}", true, totalLocalized.Count > 0 ? ConsoleColors.Lime : ConsoleColors.Red);
                     }
                     else
@@ -172,14 +181,29 @@ namespace Nitrocid.Locales.Actions
                     if (unlocalizedResourceStrings.Length > 0 || localizedResourceStrings.Length > 0)
                     {
                         if (!dry)
+                        {
                             File.AppendAllText($"unlocalized.{projectName}.txt", unlocalizedBuilder.ToString());
+                            paths.Add($"unlocalized.{projectName}.txt");
+                        }
                         TextWriterColor.WriteColor($"[{projectName} - resources] Total unlocalized strings: {unlocalizedResourceStrings.Length}", true, unlocalizedResourceStrings.Length > 0 ? ConsoleColors.Red : ConsoleColors.Lime);
                         if (!dry)
+                        {
                             File.AppendAllText($"localized.{projectName}.txt", localizedBuilder.ToString());
+                            paths.Add($"localized.{projectName}.txt");
+                        }
                         TextWriterColor.WriteColor($"[{projectName} - resources] Total localized strings: {localizedResourceStrings.Length}", true, localizedResourceStrings.Length > 0 ? ConsoleColors.Lime : ConsoleColors.Red);
                     }
                     else
                         TextWriterColor.WriteColor($"[{projectName} - resources] Nothing to process", true, ConsoleColors.Yellow);
+                }
+
+                // Open the text files to remove duplicates
+                TextWriterColor.Write("==================================================================");
+                foreach (var textFile in paths.Distinct())
+                {
+                    string[] lines = [.. File.ReadAllLines(textFile).Distinct()];
+                    File.WriteAllLines(textFile, lines);
+                    TextWriterColor.Write($"Saved as {Path.GetFullPath(textFile)}...");
                 }
             }
             catch (Exception ex)
