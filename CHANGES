@@ -6,7 +6,10 @@ From Nitrocid KS 0.1.0.0 (March 11th, 2025) to Nitrocid KS 0.1.0.50 (as of now),
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` TBD...
+- `[+]` Added `SMultivar`
+- `[+]` Added VB templates
+- `[*]` Improved the calendar look
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 

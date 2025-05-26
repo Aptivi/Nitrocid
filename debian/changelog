@@ -1,3 +1,12 @@
+nitrocid-25 (3.0.25.520-0.1.0.50-1) noble; urgency=medium
+
+  * Added SMultivar
+  * Added VB templates
+  * Improved the calendar look
+  * General improvements and bug fixes
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 26 May 2025 09:34:54 +0300
+
 nitrocid-25 (3.0.25.519-0.1.0.49-1) noble; urgency=medium
 
   * Fixed a serious bug affecting the spinner selector
