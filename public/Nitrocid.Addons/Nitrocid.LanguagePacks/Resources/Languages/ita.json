@@ -4419,6 +4419,7 @@
     "Data di produzione",
     "Data di scadenza",
     "Intervallo di scadenza",
+    "Salute del prodotto",
     "Stato del prodotto",
     "Impossibile ottenere le informazioni sulla scadenza del prodotto",
     "Ottiene le informazioni sulla scadenza del prodotto",
@@ -4428,7 +4429,6 @@
     "Seleziona un'istanza di configurazione a cui passare.",
     "Impossibile selezionare la configurazione",
     "Seleziona configurazione",
-    "Ti chiede di selezionare un'istanza di configurazione",
-    "Prompts you to select a configuration instance"
+    "Ti chiede di selezionare un'istanza di configurazione"
   ]
 }

@@ -4415,6 +4415,7 @@ Data di scadenza non valida
 Data di produzione
 Data di scadenza
 Intervallo di scadenza
+Salute del prodotto
 Stato del prodotto
 Impossibile ottenere le informazioni sulla scadenza del prodotto
 Ottiene le informazioni sulla scadenza del prodotto
