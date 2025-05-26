@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.520-0.1.0.51-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+    
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 26 May 2025 18:11:09 +0300
+
 nitrocid-25 (3.0.25.520-0.1.0.50-1) noble; urgency=medium
 
   * Added SMultivar
