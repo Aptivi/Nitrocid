@@ -23769,6 +23769,12 @@ references:
   commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCalendar
   fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasCalendar
   nameWithType: KnownAddons.ExtrasCalendar
+- uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasChatbotAI
+  name: ExtrasChatbotAI
+  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasChatbotAI
+  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.ExtrasChatbotAI
+  fullName: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasChatbotAI
+  nameWithType: KnownAddons.ExtrasChatbotAI
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.ExtrasChemistry
   name: ExtrasChemistry
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_ExtrasChemistry
