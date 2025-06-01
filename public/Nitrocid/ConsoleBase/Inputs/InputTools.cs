@@ -206,7 +206,9 @@ namespace Nitrocid.ConsoleBase.Inputs
             ConsoleWrapperTools.ActionClear = () => DriverHandler.CurrentConsoleDriverLocal.Clear();
             ConsoleWrapperTools.ActionClearLoadBack = () => DriverHandler.CurrentConsoleDriverLocal.Clear(true);
             ConsoleWrapperTools.ActionCursorLeft = () => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
+            ConsoleWrapperTools.ActionSetCursorLeft = DriverHandler.CurrentConsoleDriverLocal.SetCursorLeft;
             ConsoleWrapperTools.ActionCursorTop = () => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
+            ConsoleWrapperTools.ActionSetCursorTop = DriverHandler.CurrentConsoleDriverLocal.SetCursorTop;
             ConsoleWrapperTools.ActionCursorVisible = (value) => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value;
             ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
             ConsoleWrapperTools.ActionKeyAvailable = () => DriverHandler.CurrentConsoleDriverLocal.KeyAvailable;

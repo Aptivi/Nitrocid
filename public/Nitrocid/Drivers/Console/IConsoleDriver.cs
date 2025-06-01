@@ -237,6 +237,18 @@ namespace Nitrocid.Drivers.Console
         void SetCursorPosition(int left, int top);
 
         /// <summary>
+        /// Sets the cursor left position
+        /// </summary>
+        /// <param name="left">The left to be set (from 0)</param>
+        void SetCursorLeft(int left);
+
+        /// <summary>
+        /// Sets the cursor top position
+        /// </summary>
+        /// <param name="top">The top to be set (from 0)</param>
+        void SetCursorTop(int top);
+
+        /// <summary>
         /// Sets the window dimensions
         /// </summary>
         /// <param name="width">The window width to be set (from 0)</param>
