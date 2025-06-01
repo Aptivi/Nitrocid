@@ -104,6 +104,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             int MaxSections = SettingsEntries.Length;
 
+            // TODO: We need to remove the legacy settings app in v0.2.1.
+            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The legacy settings app has been deprecated and will be removed in a future release."));
             while (!PromptFinished)
             {
                 // Populate sections and alt options
