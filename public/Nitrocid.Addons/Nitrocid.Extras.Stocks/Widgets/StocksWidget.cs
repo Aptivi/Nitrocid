@@ -50,8 +50,8 @@ namespace Nitrocid.Extras.Stocks.Widgets
             var displayer = new AlignedText()
             {
                 Top = top + (height / 2),
-                LeftMargin = left,
-                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                Left = left,
+                Width = width,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle

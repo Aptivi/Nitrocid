@@ -75,8 +75,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                     ForegroundColor = clockColor,
                     Top = consoleInfoY,
                     OneLine = true,
-                    LeftMargin = left,
-                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Left = left,
+                    Width = width,
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle,

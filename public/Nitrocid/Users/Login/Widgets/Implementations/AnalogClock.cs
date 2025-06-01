@@ -86,8 +86,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 {
                     Text = new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)),
                     Top = posY,
-                    LeftMargin = left,
-                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Left = oldPosX,
+                    Width = width,
                     ForegroundColor = timeColor
                 };
                 builder.Append(timeDateClear.Render());
@@ -105,8 +105,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 Text = rendered,
                 Top = posY,
-                LeftMargin = left,
-                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                Left = left,
+                Width = width,
                 ForegroundColor = timeColor,
                 Settings = new()
                 {
