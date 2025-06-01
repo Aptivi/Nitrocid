@@ -45,6 +45,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
+        public override string Name =>
+            Translate.DoTranslation("Kernel driver settings");
+
+        /// <inheritdoc/>
+        [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {
             get
