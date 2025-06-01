@@ -3207,20 +3207,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Languages.LocalizedString.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Languages.LocalizedString.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Languages.LocalizedString",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Languages.LocalizedString.yml\" sourcestartlinenumber=\"1\">Localized string</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Languages.Translate.yml",
       "output": {
         ".html": {
