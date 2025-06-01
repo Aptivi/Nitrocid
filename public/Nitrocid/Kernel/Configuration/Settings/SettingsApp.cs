@@ -238,7 +238,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Check for platform compatibility
                     string Notes = "";
                     var unsupportedConfigs = SectionToken.Where((sk) => sk.Unsupported).ToArray();
-                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => sk.Name.Localized).ToArray();
+                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
                     bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
                     if (hasUnsupportedConfigs)
                         Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", unsupportedConfigNames)}";

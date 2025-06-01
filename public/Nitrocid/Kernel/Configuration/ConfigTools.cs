@@ -244,7 +244,7 @@ namespace Nitrocid.Kernel.Configuration
             for (int keyIdx = 0; keyIdx < keys.Length; keyIdx++)
             {
                 SettingsKey? key = keys[keyIdx];
-                string KeyName = key.Name.Original;
+                string KeyName = key.Name;
                 string KeyVariable = key.Variable;
                 string KeyEnumeration = key.Enumeration;
                 bool KeyEnumerationInternal = key.EnumerationInternal;
