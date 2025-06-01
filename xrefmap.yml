@@ -2479,6 +2479,22 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetBufferWidth
   nameWithType: BaseConsoleDriver.SetBufferWidth
+- uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft(System.Int32)
+  name: SetCursorLeft(int)
+  href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetCursorLeft_System_Int32_
+  commentId: M:Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft(System.Int32)
+  name.vb: SetCursorLeft(Integer)
+  fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft(int)
+  fullName.vb: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft(Integer)
+  nameWithType: BaseConsoleDriver.SetCursorLeft(int)
+  nameWithType.vb: BaseConsoleDriver.SetCursorLeft(Integer)
+- uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft*
+  name: SetCursorLeft
+  href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetCursorLeft_
+  commentId: Overload:Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft
+  isSpec: "True"
+  fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorLeft
+  nameWithType: BaseConsoleDriver.SetCursorLeft
 - uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorPosition(System.Int32,System.Int32)
   name: SetCursorPosition(int, int)
   href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetCursorPosition_System_Int32_System_Int32_
@@ -2495,6 +2511,22 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorPosition
   nameWithType: BaseConsoleDriver.SetCursorPosition
+- uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop(System.Int32)
+  name: SetCursorTop(int)
+  href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetCursorTop_System_Int32_
+  commentId: M:Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop(System.Int32)
+  name.vb: SetCursorTop(Integer)
+  fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop(int)
+  fullName.vb: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop(Integer)
+  nameWithType: BaseConsoleDriver.SetCursorTop(int)
+  nameWithType.vb: BaseConsoleDriver.SetCursorTop(Integer)
+- uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop*
+  name: SetCursorTop
+  href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetCursorTop_
+  commentId: Overload:Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop
+  isSpec: "True"
+  fullName: Nitrocid.Drivers.Console.BaseConsoleDriver.SetCursorTop
+  nameWithType: BaseConsoleDriver.SetCursorTop
 - uid: Nitrocid.Drivers.Console.BaseConsoleDriver.SetOut(System.IO.TextWriter)
   name: SetOut(TextWriter)
   href: api/Nitrocid.Drivers.Console.BaseConsoleDriver.html#Nitrocid_Drivers_Console_BaseConsoleDriver_SetOut_System_IO_TextWriter_
@@ -3164,6 +3196,22 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetBufferWidth
   nameWithType: IConsoleDriver.SetBufferWidth
+- uid: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft(System.Int32)
+  name: SetCursorLeft(int)
+  href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetCursorLeft_System_Int32_
+  commentId: M:Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft(System.Int32)
+  name.vb: SetCursorLeft(Integer)
+  fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft(int)
+  fullName.vb: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft(Integer)
+  nameWithType: IConsoleDriver.SetCursorLeft(int)
+  nameWithType.vb: IConsoleDriver.SetCursorLeft(Integer)
+- uid: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft*
+  name: SetCursorLeft
+  href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetCursorLeft_
+  commentId: Overload:Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft
+  isSpec: "True"
+  fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorLeft
+  nameWithType: IConsoleDriver.SetCursorLeft
 - uid: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorPosition(System.Int32,System.Int32)
   name: SetCursorPosition(int, int)
   href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetCursorPosition_System_Int32_System_Int32_
@@ -3180,6 +3228,22 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorPosition
   nameWithType: IConsoleDriver.SetCursorPosition
+- uid: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop(System.Int32)
+  name: SetCursorTop(int)
+  href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetCursorTop_System_Int32_
+  commentId: M:Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop(System.Int32)
+  name.vb: SetCursorTop(Integer)
+  fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop(int)
+  fullName.vb: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop(Integer)
+  nameWithType: IConsoleDriver.SetCursorTop(int)
+  nameWithType.vb: IConsoleDriver.SetCursorTop(Integer)
+- uid: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop*
+  name: SetCursorTop
+  href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetCursorTop_
+  commentId: Overload:Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop
+  isSpec: "True"
+  fullName: Nitrocid.Drivers.Console.IConsoleDriver.SetCursorTop
+  nameWithType: IConsoleDriver.SetCursorTop
 - uid: Nitrocid.Drivers.Console.IConsoleDriver.SetOut(System.IO.TextWriter)
   name: SetOut(TextWriter)
   href: api/Nitrocid.Drivers.Console.IConsoleDriver.html#Nitrocid_Drivers_Console_IConsoleDriver_SetOut_System_IO_TextWriter_
