@@ -143,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -187,7 +187,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -231,7 +231,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -275,7 +275,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -319,7 +319,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -363,7 +363,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
@@ -407,14 +407,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 2: 0.1.0 doesn't fade out, but a glitch shows
                     case 2:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
                         break;
@@ -428,7 +428,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ColorTools.LoadBackDry(green);
                             else
                                 ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
@@ -437,7 +437,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ColorTools.LoadBackDry(red);
                             else
                                 ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
@@ -446,7 +446,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ColorTools.LoadBackDry(pink);
                             else
                                 ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
@@ -455,13 +455,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ColorTools.LoadBackDry(blue);
                             else
                                 ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                            ScreensaverManager.Delay(50, true);
                         }
                         break;
                     // Step 4: White background for a few seconds
                     case 4:
                         ColorTools.LoadBackDry(white);
-                        ScreensaverManager.Delay(5000);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                     // Step 5: "THE END" shows for a few seconds
                     case 5:
@@ -482,7 +482,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             };
                             TextWriterRaw.WriteRaw(endText.Render());
                         }
-                        ScreensaverManager.Delay(5000);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                     // Step 6: With the figlet text, the background fades out
                     case 6:
@@ -533,7 +533,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(endText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                 }
