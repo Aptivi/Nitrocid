@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Widgets kernel configuration instance
     /// </summary>
-    public class KernelWidgetsConfig : BaseKernelConfig, IKernelConfig
+    public class KernelWidgetsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

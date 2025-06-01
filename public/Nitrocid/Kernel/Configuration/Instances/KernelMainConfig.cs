@@ -63,7 +63,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Main kernel configuration instance
     /// </summary>
-    public class KernelMainConfig : BaseKernelConfig, IKernelConfig
+    public class KernelMainConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

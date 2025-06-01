@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Splash kernel configuration instance
     /// </summary>
-    public class KernelSplashConfig : BaseKernelConfig, IKernelConfig
+    public class KernelSplashConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

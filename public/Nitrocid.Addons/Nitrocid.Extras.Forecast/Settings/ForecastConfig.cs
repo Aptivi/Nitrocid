@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Forecast.Settings
     /// <summary>
     /// Configuration instance for forecast
     /// </summary>
-    public class ForecastConfig : BaseKernelConfig, IKernelConfig
+    public class ForecastConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

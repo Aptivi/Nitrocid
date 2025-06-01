@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class KernelSaverConfig : BaseKernelConfig, IKernelConfig
+    public class KernelSaverConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

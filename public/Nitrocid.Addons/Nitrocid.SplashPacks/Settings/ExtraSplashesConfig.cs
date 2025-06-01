@@ -32,7 +32,7 @@ namespace Nitrocid.SplashPacks.Settings
     /// <summary>
     /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public class ExtraSplashesConfig : BaseKernelConfig, IKernelConfig
+    public class ExtraSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Calendar.Settings
     /// <summary>
     /// Configuration instance for calendar
     /// </summary>
-    public class CalendarConfig : BaseKernelConfig, IKernelConfig
+    public class CalendarConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

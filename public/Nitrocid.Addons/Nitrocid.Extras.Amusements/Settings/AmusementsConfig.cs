@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Amusements.Settings
     /// <summary>
     /// Configuration instance for amusements
     /// </summary>
-    public class AmusementsConfig : BaseKernelConfig, IKernelConfig
+    public class AmusementsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

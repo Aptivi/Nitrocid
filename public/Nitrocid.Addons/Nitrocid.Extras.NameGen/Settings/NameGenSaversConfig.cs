@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.NameGen.Settings
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class NameGenSaversConfig : BaseKernelConfig, IKernelConfig
+    public class NameGenSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

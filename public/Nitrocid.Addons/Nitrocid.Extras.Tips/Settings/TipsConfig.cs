@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Tips.Settings
     /// <summary>
     /// Configuration instance for tips
     /// </summary>
-    public class TipsConfig : BaseKernelConfig, IKernelConfig
+    public class TipsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

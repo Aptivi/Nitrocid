@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Contacts.Settings
     /// <summary>
     /// Configuration instance for contacts
     /// </summary>
-    public class ContactsConfig : BaseKernelConfig, IKernelConfig
+    public class ContactsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

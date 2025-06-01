@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Driver kernel configuration instance
     /// </summary>
-    public class KernelDriverConfig : BaseKernelConfig, IKernelConfig
+    public class KernelDriverConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

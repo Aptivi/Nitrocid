@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Dates.Settings
     /// <summary>
     /// Configuration instance for date tools
     /// </summary>
-    public class DatesConfig : BaseKernelConfig, IKernelConfig
+    public class DatesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
