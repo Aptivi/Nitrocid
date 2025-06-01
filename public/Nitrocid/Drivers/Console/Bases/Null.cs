@@ -83,6 +83,12 @@ namespace Nitrocid.Drivers.Console.Bases
         public override void SetCursorPosition(int left, int top) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
+        public override void SetCursorLeft(int left) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public override void SetCursorTop(int top) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
         public override void SetWindowDimensions(int width, int height) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 

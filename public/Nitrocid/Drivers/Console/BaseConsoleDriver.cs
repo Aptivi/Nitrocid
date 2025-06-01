@@ -329,8 +329,8 @@ namespace Nitrocid.Drivers.Console
             _moved = true;
         }
 
-        // TODO: Make the below functions virtual later
-        private void SetCursorLeft(int left)
+        /// <inheritdoc/>
+        public virtual void SetCursorLeft(int left)
         {
             if (IsDumb)
                 return;
@@ -344,7 +344,8 @@ namespace Nitrocid.Drivers.Console
             _moved = true;
         }
 
-        private void SetCursorTop(int top)
+        /// <inheritdoc/>
+        public virtual void SetCursorTop(int top)
         {
             if (IsDumb)
                 return;
