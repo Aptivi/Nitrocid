@@ -81,12 +81,11 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             if (clear)
             {
                 // Clear old date/time
-                int oldPosX = (left + width) / 2 - lastRendered.Length / 2;
                 var timeDateClear = new AlignedText()
                 {
-                    Text = new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)),
+                    Text = new string(' ', width),
                     Top = posY,
-                    Left = oldPosX,
+                    Left = left,
                     Width = width,
                     ForegroundColor = timeColor
                 };
