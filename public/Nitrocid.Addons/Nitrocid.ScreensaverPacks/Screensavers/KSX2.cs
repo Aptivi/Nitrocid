@@ -371,9 +371,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentFigletR, currentFigletG, currentFigletB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("0.0.16.0 M5", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "0.0.16.0 M5",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = red,
                                 Settings = new()

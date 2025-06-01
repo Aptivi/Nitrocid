@@ -70,9 +70,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string currentYearStr = currentYear.ToString();
                 var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 var yearText = new AlignedFigletText(figFont)
                 {
                     Text = currentYearStr,
+                    Top = consoleY,
                     ForegroundColor = green,
                     BackgroundColor = black,
                     Settings = new()
@@ -104,9 +106,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string nextYearStr = $"{currentYear + 1}";
                 var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 var yearText = new AlignedFigletText(figFont)
                 {
                     Text = nextYearStr,
+                    Top = consoleY,
                     ForegroundColor = darkGreen,
                     BackgroundColor = black,
                     Settings = new()
