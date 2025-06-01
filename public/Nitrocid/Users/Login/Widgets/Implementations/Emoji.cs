@@ -51,8 +51,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 {
                     Text = Translate.DoTranslation("The icons addon needs to be installed before being able to display this emoji."),
                     Top = iconTop,
-                    LeftMargin = left,
-                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Left = left,
+                    Width = width,
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                     Settings = new()
                     {

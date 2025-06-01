@@ -289,12 +289,12 @@ namespace Nitrocid.Shell.Homepage
                     };
                     var settingsText = new AlignedText()
                     {
+                        Left = settingsButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("Settings"),
                         ForegroundColor = foregroundSettingsText,
                         BackgroundColor = backgroundSettings,
-                        LeftMargin = settingsButtonPosX + 1,
-                        RightMargin = buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -320,12 +320,12 @@ namespace Nitrocid.Shell.Homepage
                     };
                     var aboutText = new AlignedText()
                     {
+                        Left = aboutButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("About"),
                         ForegroundColor = foregroundAboutText,
                         BackgroundColor = backgroundAbout,
-                        LeftMargin = aboutButtonPosX + 1,
-                        RightMargin = buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
