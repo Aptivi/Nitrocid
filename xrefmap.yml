@@ -16198,12 +16198,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.SettingsEntries
   nameWithType: BaseKernelConfig.SettingsEntries
-- uid: Nitrocid.Kernel.Configuration.Instances.IKernelConfig
-  name: IKernelConfig
-  href: api/Nitrocid.Kernel.Configuration.Instances.IKernelConfig.html
-  commentId: T:Nitrocid.Kernel.Configuration.Instances.IKernelConfig
-  fullName: Nitrocid.Kernel.Configuration.Instances.IKernelConfig
-  nameWithType: IKernelConfig
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig
   name: KernelDriverConfig
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.html
