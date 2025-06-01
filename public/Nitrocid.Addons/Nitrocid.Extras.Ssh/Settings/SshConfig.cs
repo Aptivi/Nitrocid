@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Ssh.Settings
     /// <summary>
     /// Configuration instance for SSH
     /// </summary>
-    public class SshConfig : BaseKernelConfig, IKernelConfig
+    public class SshConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class BassBoomSaversConfig : BaseKernelConfig, IKernelConfig
+    public class BassBoomSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

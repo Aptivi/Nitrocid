@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
     /// <summary>
     /// Configuration instance for BassBoom
     /// </summary>
-    public class BassBoomConfig : BaseKernelConfig, IKernelConfig
+    public class BassBoomConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

@@ -38,7 +38,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class ExtraSaversConfig : BaseKernelConfig, IKernelConfig
+    public class ExtraSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

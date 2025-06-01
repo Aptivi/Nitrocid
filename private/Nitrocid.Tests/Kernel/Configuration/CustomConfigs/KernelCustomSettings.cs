@@ -24,7 +24,7 @@ using Terminaux.Colors;
 
 namespace Nitrocid.Tests.Kernel.Configuration.CustomConfigs
 {
-    internal class KernelCustomSettings : BaseKernelConfig, IKernelConfig
+    internal class KernelCustomSettings : BaseKernelConfig
     {
         private readonly string _entriesJson =
             """

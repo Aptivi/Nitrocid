@@ -37,7 +37,7 @@ namespace Nitrocid.ShellPacks.Settings
     /// <summary>
     /// Configuration instance for all shells
     /// </summary>
-    public class ShellsConfig : BaseKernelConfig, IKernelConfig
+    public class ShellsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

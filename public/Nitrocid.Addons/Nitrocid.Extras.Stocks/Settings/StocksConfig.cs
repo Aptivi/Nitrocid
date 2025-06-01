@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Stocks.Settings
     /// <summary>
     /// Configuration instance for stocks
     /// </summary>
-    public class StocksConfig : BaseKernelConfig, IKernelConfig
+    public class StocksConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

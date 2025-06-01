@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Mods.Settings
     /// <summary>
     /// Configuration instance for Mods
     /// </summary>
-    public class ModsConfig : BaseKernelConfig, IKernelConfig
+    public class ModsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

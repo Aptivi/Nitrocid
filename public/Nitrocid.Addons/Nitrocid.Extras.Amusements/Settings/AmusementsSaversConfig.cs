@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Amusements.Settings
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class AmusementsSaversConfig : BaseKernelConfig, IKernelConfig
+    public class AmusementsSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]

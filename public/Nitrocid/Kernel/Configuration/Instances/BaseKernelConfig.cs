@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
     /// <summary>
     /// Base kernel configuration. Left blank to allow flexibility.
     /// </summary>
-    public class BaseKernelConfig : IKernelConfig
+    public class BaseKernelConfig
     {
         /// <summary>
         /// List of settings entries

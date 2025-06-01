@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Amusements.Settings
     /// <summary>
     /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public class AmusementsSplashesConfig : BaseKernelConfig, IKernelConfig
+    public class AmusementsSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
