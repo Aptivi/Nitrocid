@@ -113,7 +113,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// Settings key name
         /// </summary>
         [JsonIgnore]
-        public LocalizedString Name =>
+        public string Name =>
             name;
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// Settings description
         /// </summary>
         [JsonIgnore]
-        public LocalizedString Description =>
+        public string Description =>
             description;
 
         /// <summary>
