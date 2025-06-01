@@ -105,9 +105,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -133,9 +136,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Pulse the X character, alternating between darkGreen and Green colors
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = finalCol,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -171,9 +177,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
