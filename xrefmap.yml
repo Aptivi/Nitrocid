@@ -16185,6 +16185,19 @@ references:
   commentId: T:Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig
   fullName: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig
   nameWithType: BaseKernelConfig
+- uid: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.html#Nitrocid_Kernel_Configuration_Instances_BaseKernelConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name
+  nameWithType: BaseKernelConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.html#Nitrocid_Kernel_Configuration_Instances_BaseKernelConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.Name
+  nameWithType: BaseKernelConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.SettingsEntries
   name: SettingsEntries
   href: api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.html#Nitrocid_Kernel_Configuration_Instances_BaseKernelConfig_SettingsEntries
@@ -16360,6 +16373,19 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.CurrentSortingDriver
   nameWithType: KernelDriverConfig.CurrentSortingDriver
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelDriverConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name
+  nameWithType: KernelDriverConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelDriverConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.Name
+  nameWithType: KernelDriverConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.SettingsEntries
   name: SettingsEntries
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelDriverConfig_SettingsEntries
@@ -17666,6 +17692,19 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.MotdHeadlineBottom
   nameWithType: KernelMainConfig.MotdHeadlineBottom
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name
+  nameWithType: KernelMainConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.Name
+  nameWithType: KernelMainConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.NotificationDescriptionColor
   name: NotificationDescriptionColor
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_NotificationDescriptionColor
@@ -19206,6 +19245,19 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.MatrixBleedMaxSteps
   nameWithType: KernelSaverConfig.MatrixBleedMaxSteps
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSaverConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name
+  nameWithType: KernelSaverConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSaverConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.Name
+  nameWithType: KernelSaverConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.SettingsEntries
   name: SettingsEntries
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSaverConfig_SettingsEntries
@@ -19225,6 +19277,19 @@ references:
   commentId: T:Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig
   nameWithType: KernelSplashConfig
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSplashConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name
+  nameWithType: KernelSplashConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSplashConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.Name
+  nameWithType: KernelSplashConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.SettingsEntries
   name: SettingsEntries
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelSplashConfig_SettingsEntries
@@ -19569,6 +19634,19 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.EmojiWidgetEmoticonName
   nameWithType: KernelWidgetsConfig.EmojiWidgetEmoticonName
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelWidgetsConfig_Name
+  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name
+  nameWithType: KernelWidgetsConfig.Name
+- uid: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name*
+  name: Name
+  href: api/Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelWidgetsConfig_Name_
+  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name
+  isSpec: "True"
+  fullName: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.Name
+  nameWithType: KernelWidgetsConfig.Name
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.SettingsEntries
   name: SettingsEntries
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelWidgetsConfig_SettingsEntries

@@ -1607,7 +1607,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.yml\" sourcestartlinenumber=\"1\">Base kernel configuration. Left blank to allow flexibility.</p>\n"
+      "Summary": "<p sourcefile=\"api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.yml\" sourcestartlinenumber=\"1\">Base kernel configuration</p>\n"
     },
     {
       "type": "ManagedReference",
