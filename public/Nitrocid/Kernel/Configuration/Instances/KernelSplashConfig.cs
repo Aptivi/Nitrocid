@@ -32,6 +32,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
+        public override string Name =>
+            Translate.DoTranslation("Kernel splash settings");
+
+        /// <inheritdoc/>
+        [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {
             get

@@ -33,6 +33,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
+        public override string Name =>
+            Translate.DoTranslation("Kernel widgets settings");
+
+        /// <inheritdoc/>
+        [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {
             get

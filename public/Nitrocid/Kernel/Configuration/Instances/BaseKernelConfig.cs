@@ -23,10 +23,16 @@ using Nitrocid.Kernel.Configuration.Settings;
 namespace Nitrocid.Kernel.Configuration.Instances
 {
     /// <summary>
-    /// Base kernel configuration. Left blank to allow flexibility.
+    /// Base kernel configuration
     /// </summary>
     public class BaseKernelConfig
     {
+        /// <summary>
+        /// Configuration instance name
+        /// </summary>
+        [JsonIgnore]
+        public virtual string Name { get; } = "";
+
         /// <summary>
         /// List of settings entries
         /// </summary>

@@ -202,9 +202,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         internal static BaseKernelConfig? SelectConfig()
         {
-            // TODO: Introduce friendly name for config instances
             var configs = Config.GetKernelConfigs();
-            var choices = configs.Select((bkc, idx) => new InputChoiceInfo($"{idx + 1}", bkc.GetType().Name)).ToArray();
+            var choices = configs.Select((bkc, idx) => new InputChoiceInfo(bkc.GetType().Name, bkc.Name)).ToArray();
 
             // Prompt user to provide the base kernel config
             int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a configuration instance to switch to."));
