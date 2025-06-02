@@ -4409,3 +4409,35 @@ Uasleibhéal dath gorm don tríú
 Uasleibhéal datha don tríú
 Roghnóidh Progresses dathanna randamacha má tá sé cumasaithe. Seachas sin, bain úsáid as dathanna ó config.
 Má tá rothaíocht dathanna cumasaithe, cé mhéad tic sula n-athraítear dathanna in Progresses? 1 tic = 0.5 sa tríú háit
+Seans nach mbeidh an t-ainm iontrála socruithe folamh
+Seans nach mbeidh cur síos ar iontráil socruithe folamh
+Seans nach bhfuil liosta eochracha socruithe folamh ag iontráil socruithe
+Seans nach bhfuil ainm na heochrach socruithe folamh
+Seans nach bhfuil cineál eochrach neamhbhailí in eochair shocruithe
+Príomhshocruithe eithne
+Socruithe spárálaíscáileáin eithne
+Socruithe splancscáileáin eithne
+Socruithe giuirléidí eithne
+Roghnaigh cumraíocht
+Tá an aip socruithe oidhreachta imithe i léig agus bainfear í in eisiúint amach anseo.
+Spreagann tú sampla cumraíochta a roghnú
+Roghnaigh sampla cumraíochta le haistriú chuige.
+Ní féidir cumraíocht a roghnú
+Tá an dáta táirgthe neamhbhailí
+Tá an tréimhse ama éaga neamhbhailí
+Tá an dáta éaga neamhbhailí
+Dáta táirgthe
+Dáta éaga
+Réise ama éaga
+Sláinte táirge
+Stádas an táirge
+Theip ar fhaisnéis éaga an táirge a fháil
+Faigheann sé faisnéis faoi dhul in éag an táirge
+Dáta táirgthe (féach ar thaobh nó bun an táirge)
+Dáta éaga nó tréimhse ama (scríofa go sainráite sa láthair chéanna nó sna tréimhsí ama céanna, amhail 6 mhí nó 1 bhliain)
+Cibé nach sonraítear an dáta éaga go sainráite sa sprioctháirge
+Socruithe spárálaíscáileáin...
+Pacáiste Sliogáin Breise
+Extras - Dátaí
+Extras - hashes
+Extras - Chatbot AI

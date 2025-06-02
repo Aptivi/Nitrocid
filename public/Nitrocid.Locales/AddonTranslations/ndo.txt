@@ -4409,3 +4409,35 @@ Tingkat warna biru maksimum untuk ketiga
 Tingkat warna maksimum untuk ketiga
 Progress akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari konfigurasi.
 Jika siklus warna diaktifkan, berapa banyak tanda centang sebelum mengubah warna di Progresses? 1 tanda centang = 0,5 pertiga
+Nama entri pengaturan tidak boleh kosong
+Deskripsi entri pengaturan tidak boleh kosong
+Entri pengaturan tidak boleh memiliki daftar kunci pengaturan yang kosong
+Nama kunci pengaturan tidak boleh kosong
+Kunci pengaturan tidak boleh berisi jenis kunci yang tidak valid
+Pengaturan utama kernel
+Pengaturan screensaver kernel
+Pengaturan splash kernel
+Pengaturan widget kernel
+Pilih konfigurasi
+Aplikasi pengaturan lama telah ditinggalkan dan akan dihapus dalam rilis mendatang.
+Meminta Anda untuk memilih contoh konfigurasi
+Pilih contoh konfigurasi untuk beralih ke.
+Tidak dapat memilih konfigurasi
+Tanggal produksi tidak valid
+Periode waktu kedaluwarsa tidak valid
+Tanggal kedaluwarsa tidak valid
+Tanggal produksi
+Tanggal kedaluwarsa
+Rentang waktu kedaluwarsa
+Kesehatan produk
+Status produk
+Gagal mendapatkan informasi kedaluwarsa produk
+Mendapatkan informasi kedaluwarsa produk
+Tanggal produksi (lihat bagian samping atau bawah produk)
+Tanggal kedaluwarsa atau periode waktu (baik ditulis secara eksplisit di tempat atau rentang waktu yang sama, seperti 6 bulan atau 1 tahun)
+Apakah produk target tidak menentukan tanggal kedaluwarsa secara eksplisit
+Pengaturan screensaver...
+Paket Shell Ekstra
+Ekstra - Tanggal
+Ekstra - Hash
+Ekstra - Chatbot AI

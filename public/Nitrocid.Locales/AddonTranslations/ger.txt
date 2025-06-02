@@ -4409,3 +4409,35 @@ Maximales Blau-Farbniveau für dritte
 Maximales Farbniveau für dritte
 Progresses wählt zufällige Farben aus, wenn es aktiviert ist. Andernfalls verwenden Sie Farben aus der Konfiguration.
 Wenn Farbwechsel aktiviert ist, wie viele Ticks vergehen, bevor die Farben in Progresses geändert werden? 1 Tick = 0,5 Drittel
+Der Name des Einstellungseintrags darf nicht leer sein.
+Die Beschreibung des Einstellungseintrags darf nicht leer sein.
+Die Liste der Einstellungsschlüssel darf nicht leer sein.
+Der Name des Einstellungsschlüssels darf nicht leer sein.
+Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten.
+Kernel-Haupteinstellungen
+Kernel-Bildschirmschoner-Einstellungen
+Kernel-Splash-Einstellungen
+Kernel-Widget-Einstellungen
+Konfiguration auswählen
+Die alte Einstellungs-App ist veraltet und wird in einer zukünftigen Version entfernt.
+Fordert Sie zur Auswahl einer Konfigurationsinstanz auf.
+Wählen Sie eine Konfigurationsinstanz aus, zu der gewechselt werden soll.
+Konfiguration kann nicht ausgewählt werden
+Produktionsdatum ist ungültig
+Ablaufdatum ist ungültig
+Ablaufdatum ist ungültig
+Produktionsdatum
+Ablaufdatum
+Ablaufzeitraum
+Produktzustand
+Produktstatus
+Produktablaufinformationen konnten nicht abgerufen werden
+Ablaufinformationen werden abgerufen
+Produktionsdatum (siehe Seite oder Unterseite des Produkts)
+Ablaufdatum oder Zeitraum (entweder explizit an derselben Stelle angegeben oder Zeitspannen, z. B. 6 Monate oder 1 Jahr)
+Ob das Zielprodukt das Ablaufdatum nicht explizit angibt
+Bildschirmschonereinstellungen…
+Extra-Shells-Paket
+Extras – Daten
+Extras – Hashes
+Extras – Chatbot-KI

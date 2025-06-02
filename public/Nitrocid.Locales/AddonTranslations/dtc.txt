@@ -4409,3 +4409,35 @@ Maximum blauw kleurniveau voor derde
 Maximum kleurniveau voor derde
 Progresses selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
 Als kleurcyclus is ingeschakeld, hoeveel ticks voordat kleuren worden gewijzigd in Progresses? 1 tick = 0,5 derde
+De naam van het instellingenitem mag niet leeg zijn
+De beschrijving van het instellingenitem mag niet leeg zijn
+De lijst met instellingensleutels mag niet leeg zijn
+De naam van de instellingensleutel mag niet leeg zijn
+De instellingensleutel mag geen ongeldig sleuteltype bevatten
+Hoofdinstellingen van de kernel
+Instellingen voor de kernelscreensaver
+Instellingen voor de kernelsplash
+Instellingen voor de kernelwidgets
+Configuratie selecteren
+De oude instellingen-app is verouderd en wordt in een toekomstige release verwijderd.
+Vraagt u een configuratie-instantie te selecteren
+Selecteer een configuratie-instantie waarnaar u wilt overschakelen.
+Kan configuratie niet selecteren
+Productiedatum is ongeldig
+Vervaldatum is ongeldig
+Vervaldatum is ongeldig
+Productiedatum
+Vervaldatum
+Vervalperiode
+Productstatus
+Productstatus
+Kan productvervaldatuminformatie niet ophalen
+Verkrijgt de productvervaldatuminformatie
+Productdatum (kijk naar de zijkant of onderkant van het product)
+Vervaldatum of periode (expliciet op dezelfde plek geschreven of tijdsperioden, zoals 6 maanden of 1 jaar)
+Of het doelproduct de vervaldatum niet expliciet specificeert
+Instellingen voor schermbeveiliging...
+Extra Shells-pakket
+Extra's - Datums
+Extra's - Hashes
+Extra's - Chatbot AI
