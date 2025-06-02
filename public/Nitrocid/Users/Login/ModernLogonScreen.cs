@@ -40,6 +40,7 @@ using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Users.Login
 {
@@ -256,9 +257,13 @@ namespace Nitrocid.Users.Login
                             var part = new ScreenPart();
                             part.AddDynamicText(() =>
                             {
+                                string text = Translate.DoTranslation("Unknown screen number.");
+                                string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
+                                int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                                 var errorText = new AlignedText()
                                 {
-                                    Text = Translate.DoTranslation("Unknown screen number."),
+                                    Top = top,
+                                    Text = text,
                                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                                     Settings = new()
                                     {
@@ -280,9 +285,13 @@ namespace Nitrocid.Users.Login
                         var part = new ScreenPart();
                         part.AddDynamicText(() =>
                         {
+                            string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                            string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
+                            int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                             var errorText = new AlignedText()
                             {
-                                Text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : ""),
+                                Top = top,
+                                Text = text,
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                                 Settings = new()
                                 {
