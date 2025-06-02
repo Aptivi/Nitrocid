@@ -4409,3 +4409,35 @@ se beonjjaeui choedae palansaeg saegsang lebel
 se beonjjaeui choedae saegsang lebel
 Progressesga hwalseonghwadoen gyeong-u mujag-wi saegsang-eul seontaeghabnida. geuleohji anh-eumyeon config-ui saegsang-eul sayonghabnida.
 saegsang sunhwan-i hwalseonghwadoen gyeong-u Progresses-eseo saegsang-eul byeongyeonghagi jeon-e myeoch tig-i pil-yohabnikka? 1tig = 0.5se beonjjae
+seoljeong hangmog ileum-i bieo iss-eul su eobs-seubnida.
+seoljeong hangmog seolmyeong-i bieo iss-eul su eobs-seubnida.
+seoljeong hangmog-ui seoljeong ki moglog-i bieo iss-eul su eobs-seubnida.
+seoljeong ki ileum-i bieo iss-eul su eobs-seubnida.
+seoljeong kie jalmosdoen ki yuhyeong-i pohamdoeeo iss-eul su eobs-seubnida.
+keoneol gibon seoljeong
+keoneol hwamyeonbohogi seoljeong
+keoneol sijag hwamyeon seoljeong
+keoneol wijes seoljeong
+guseong seontaeg
+legeosi seoljeong aeb-eun deo isang jiwondoeji anh-eumyeo hyanghu lilliseueseo jegeodoel yejeong-ibnida.
+guseong inseuteonseuleul seontaeghalaneun mesijileul pyosihabnida.
+jeonhwanhal guseong inseuteonseuleul seontaeghabnida.
+guseong-eul seontaeghal su eobs-seubnida.
+saengsan naljjaga jalmosdoeeossseubnida.
+manlyo gigan-i jalmosdoeeossseubnida.
+manlyo naljjaga jalmosdoeeossseubnida.
+saengsan naljja
+manlyo naljja
+manlyo gigan
+jepum sangtae
+jepum sangtae
+jepum manlyo jeongboleul gajyeooji moshaessseubnida.
+jepum manlyo jeongboleul gajyeoobnida.
+saengsan naljja(jepum cheugmyeon ttoneun hadan chamjo)
+manlyo naljja ttoneun gigan(gat-eun wichie myeongsijeog-eulo jagseongdoegeona 6gaewol ttoneun 1nyeongwa gat-i gigan)
+daesang jepum-i manlyo naljjaleul myeongsijeog-eulo jijeonghaji anh-assneunji yeobu
+seukeulinseibeo seoljeong...
+chuga syel paeg
+chuga - naljja
+chuga - haesi
+chuga - chaesbos AI

@@ -4409,3 +4409,35 @@ Livello massimo di colore blu per il terzo
 Livello massimo di colore per il terzo
 Progresses selezionerà colori casuali se è abilitato. In caso contrario, utilizza i colori dalla configurazione.
 Se il ciclo di colori è abilitato, quanti tick prima di cambiare colore in Progresses? 1 tick = 0,5 terzi
+Il nome della voce Impostazioni non può essere vuoto
+La descrizione della voce Impostazioni non può essere vuota
+La voce Impostazioni non può avere un elenco di chiavi di impostazioni vuoto
+Il nome della chiave di impostazioni non può essere vuoto
+La chiave di impostazioni non può contenere un tipo di chiave non valido
+Impostazioni principali del kernel
+Impostazioni dello screensaver del kernel
+Impostazioni della schermata iniziale del kernel
+Impostazioni dei widget del kernel
+Seleziona configurazione
+L'app Impostazioni legacy è stata deprecata e verrà rimossa in una versione futura.
+Richiede di selezionare un'istanza di configurazione
+Seleziona un'istanza di configurazione a cui passare.
+Impossibile selezionare la configurazione
+Data di produzione non valida
+Periodo di scadenza non valido
+Data di scadenza non valida
+Data di produzione
+Data di scadenza
+Intervallo di scadenza
+Stato del prodotto
+Stato del prodotto
+Impossibile ottenere le informazioni sulla scadenza del prodotto
+Ottiene le informazioni sulla scadenza del prodotto
+Data di produzione (guardare sul lato o sul fondo del prodotto)
+Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)
+Se il prodotto di destinazione non specifica esplicitamente la data di scadenza
+Impostazioni screensaver...
+Pacchetto di Shell extra
+Extra - Date
+Extra - Hash
+Extra - Chatbot AI

@@ -4409,3 +4409,35 @@ Maksimalt blåfargenivå for tredje
 Maksimalt fargenivå for tredje
 Fremdrift vil velge tilfeldige farger hvis det er aktivert. Ellers bruker du farger fra config.
 Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i Progresses? 1 hake = 0,5 tredjedel
+Innstillingsoppføringsnavnet er kanskje ikke tomt
+Innstillingsoppføringsbeskrivelsen er kanskje ikke tom
+Innstillingsoppføring har kanskje ikke tom innstillingsnøkkelliste
+Innstillingsnøkkelnavnet er kanskje ikke tomt
+Innstillingsnøkkel inneholder kanskje ikke ugyldig nøkkeltype
+Kjernens hovedinnstillinger
+Innstillinger for kjerneskjermsparer
+Innstillinger for kjernesprut
+Innstillinger for kjerne-widgets
+Velg konfigurasjon
+Den eldre innstillingsappen er avviklet og vil bli fjernet i en fremtidig utgivelse.
+Ber deg velge en konfigurasjonsforekomst
+Velg en konfigurasjonsforekomst å bytte til.
+Kan ikke velge konfigurasjon
+Produksjonsdatoen er ugyldig
+Utløpsperioden er ugyldig
+Utløpsdatoen er ugyldig
+Produksjonsdato
+Utløpsdato
+Utløpstid
+Produkthelse
+Produktstatus
+Kunne ikke hente informasjon om produktutløp
+Får informasjon om produktets utløpsdato
+Produksjonsdato (se enten på siden eller bunnen av produktet)
+Utløpsdato eller tidsperiode (enten eksplisitt skrevet på samme sted eller tidsrom, for eksempel 6 måneder eller 1 år)
+Om målproduktet ikke spesifiserer utløpsdatoen eksplisitt
+Skjermsparerinnstillinger...
+Ekstra skallpakke
+Ekstra - Datoer
+Ekstra - Hashes
+Ekstra - Chatbot AI

@@ -4409,3 +4409,35 @@ Mức màu xanh lam tối đa cho thứ ba
 Mức màu tối đa cho thứ ba
 Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba
+Tên mục nhập cài đặt không được để trống
+Mô tả mục nhập cài đặt không được để trống
+Mục nhập cài đặt không được để trống danh sách khóa cài đặt
+Tên khóa cài đặt không được để trống
+Khóa cài đặt không được giữ loại khóa không hợp lệ
+Cài đặt chính của hạt nhân
+Cài đặt trình bảo vệ màn hình hạt nhân
+Cài đặt màn hình chào mừng hạt nhân
+Cài đặt tiện ích hạt nhân
+Chọn cấu hình
+Ứng dụng cài đặt cũ đã không còn được sử dụng nữa và sẽ bị xóa trong bản phát hành trong tương lai.
+Nhắc bạn chọn một phiên bản cấu hình
+Chọn một phiên bản cấu hình để chuyển sang.
+Không thể chọn cấu hình
+Ngày sản xuất không hợp lệ
+Thời hạn hết hạn không hợp lệ
+Ngày hết hạn không hợp lệ
+Ngày sản xuất
+Ngày hết hạn
+Khoảng thời gian hết hạn
+Tình trạng sản phẩm
+Trạng thái sản phẩm
+Không lấy được thông tin hết hạn sản phẩm
+Lấy thông tin hết hạn sản phẩm
+Ngày sản xuất (xem ở mặt bên hoặc mặt dưới của sản phẩm)
+Ngày hết hạn hoặc khoảng thời gian (được viết rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)
+Sản phẩm mục tiêu có chỉ định rõ ràng ngày hết hạn không
+Cài đặt trình bảo vệ màn hình...
+Gói Shell bổ sung
+Phần bổ sung - Ngày
+Phần bổ sung - Băm
+Phần bổ sung - AI của Chatbot

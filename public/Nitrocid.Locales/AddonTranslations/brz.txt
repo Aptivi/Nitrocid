@@ -4409,3 +4409,35 @@ Nível máximo de cor azul para o terceiro
 Nível máximo de cor para o terceiro
 O Progresses selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
 Se o ciclo de cores estiver habilitado, quantos tiques antes de alterar as cores no Progresses? 1 tique = 0,5 terço
+O nome da entrada de configurações não pode estar vazio
+A descrição da entrada de configurações não pode estar vazia
+A entrada de configurações não pode ter uma lista de chaves de configurações vazia
+O nome da chave de configurações não pode estar vazio
+A chave de configurações não pode conter um tipo de chave inválido
+Configurações principais do kernel
+Configurações do protetor de tela do kernel
+Configurações da tela inicial do kernel
+Configurações dos widgets do kernel
+Selecionar configuração
+O aplicativo de configurações legado foi descontinuado e será removido em uma versão futura.
+Solicita que você selecione uma instância de configuração
+Selecione uma instância de configuração para alternar.
+Não é possível selecionar a configuração
+Data de produção inválida
+Período de validade inválido
+Data de validade inválida
+Data de produção
+Data de validade
+Período de validade
+Saúde do produto
+Status do produto
+Falha ao obter informações de validade do produto
+Obtém as informações de validade do produto
+Data de produção (consulte a lateral ou a parte inferior do produto)
+Data ou período de validade (explicitamente escritos no mesmo local ou em períodos de tempo, como 6 meses ou 1 ano)
+Se o produto de destino não especifica a data de validade explicitamente
+Configurações do protetor de tela...
+Pacote de Shells Extras
+Extras - Datas
+Extras - Hashes
+Extras - IA do Chatbot

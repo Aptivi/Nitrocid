@@ -4409,3 +4409,35 @@ Maximum blue color level for third
 Maximum color level for third
 Progresses will select random colors if it's enabled. Otherwise, use colors from config.
 If color cycling is enabled, how many ticks before changing colors in Progresses? 1 tick = 0.5 third
+Settings entry name may not be empty
+Settings entry description may not be empty
+Settings entry may not have empty settings key list
+Settings key name may not be empty
+Settings key may not hold invalid key type
+Kernel main settings
+Kernel screensaver settings
+Kernel splash settings
+Kernel widgets settings
+Select configuration
+The legacy settings app has been deprecated and will be removed in a future release.
+Prompts you to select a configuration instance
+Select a configuration instance to switch to.
+Can't select configuration
+Production date is invalid
+Expiry time period is invalid
+Expiry date is invalid
+Production date
+Expiry date
+Expiry time span
+Product health
+Product status
+Failed to get product expiry information
+Gets the product expiry information
+Production date (look at either the side or the bottom of the product)
+Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)
+Whether the target product doesn't specify the expiry date explicitly
+Screensaver settings...
+Extra Shells Pack
+Extras - Dates
+Extras - Hashes
+Extras - Chatbot AI
