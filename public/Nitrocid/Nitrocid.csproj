@@ -1,25 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <!-- KS NuGet Information -->
-  <PropertyGroup>
-    <PackageId>KS</PackageId>
-    <Authors>Aptivi</Authors>
-    <Title>Nitrocid KS</Title>
-    <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API that you can use for your mods.</PackageDescription>
-    <PackageTags>kernel;simulator;csharp</PackageTags>
-    <!-- URL settings -->
-    <PackageProjectUrl>https://github.com/Aptivi/Nitrocid</PackageProjectUrl>
-    <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
-    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-1</PackageReleaseNotes>
-    <!-- MSBuild Tags -->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeSymbols>True</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageOutputPath>KSBuild</PackageOutputPath>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
-  <!-- KS NuGet Information End -->
-
   <!-- KS General Information -->
   <PropertyGroup>
     <DebugSymbols>true</DebugSymbols>
@@ -31,8 +10,6 @@
     <ApplicationIcon>OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
   <!-- KS General Information End -->
 
@@ -99,13 +76,6 @@
   </ItemGroup>
   <!-- KS Release Changelogs -->
 
-  <!-- KS Package Files -->
-  <ItemGroup>
-    <None Include="OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <!-- KS Package Files End -->
-
   <!-- KS extra targets -->
   <Target Name="WipeBuild" AfterTargets="Clean">
     <ItemGroup>
@@ -130,10 +100,4 @@
     <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Base/Core projects End -->
-
-  <!-- KS Generated -->
-  <ItemGroup>
-    <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
-  </ItemGroup>
-  <!-- KS Generated End -->
 </Project>
