@@ -25,12 +25,12 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="7.0.0-beta3-20250601152250" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta3-20250601152250" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Textify.Offline" Version="2.11.0" PrivateAssets="contentfiles;analyzers;build;runtime">
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250603102016" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250603102016" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Textify.Offline" Version="2.11.1" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
-    <PackageReference Include="Textify.Offline.Data" Version="2.11.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline.Data" Version="2.11.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.5.5.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.5" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
