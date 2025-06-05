@@ -2,7 +2,7 @@
     <!-- KS General Information -->
     <PropertyGroup>
         <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
-        <Version>0.1.2.16</Version>
+        <Version>0.1.2.17</Version>
         <Copyright>Copyright (c) Aptivi 2018-2025</Copyright>
         <Company>Aptivi</Company>
         <Product>Nitrocid</Product>
