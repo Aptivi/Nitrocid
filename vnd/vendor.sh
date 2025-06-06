@@ -217,6 +217,20 @@ increment() {
         fi
     done
 
+    # Modify the NitrocidModAPIVersionMajor and the NitrocidModAPIVersionChangeset properties
+    IFS='.' read -ra NKSMODAPIVERSPLITOLD <<< "$OLDAPIVER"
+    IFS='.' read -ra NKSMODAPIVERSPLITNEW <<< "$NEWAPIVER"
+    OLDAPIMAJOR="${NKSMODAPIVERSPLITOLD[0]}.${NKSMODAPIVERSPLITOLD[1]}.${NKSMODAPIVERSPLITOLD[2]}"
+    NEWAPIMAJOR="${NKSMODAPIVERSPLITNEW[0]}.${NKSMODAPIVERSPLITNEW[1]}.${NKSMODAPIVERSPLITNEW[2]}"
+    sed -b -i "s/<NitrocidModAPIVersionMajor>${OLDAPIMAJOR}/<NitrocidModAPIVersionMajor>${NEWAPIMAJOR}/g" "$ROOTDIR/Directory.Build.props"
+    sed -b -i "s/<NitrocidModAPIVersionChangeset>${NKSMODAPIVERSPLITOLD[3]}/<NitrocidModAPIVersionChangeset>${NKSMODAPIVERSPLITNEW[3]}/g" "$ROOTDIR/Directory.Build.props"
+
+    # Modify the template mod files, too
+    OLDAPIMAJORTMPL="${NKSMODAPIVERSPLITOLD[0]}, ${NKSMODAPIVERSPLITOLD[1]}, ${NKSMODAPIVERSPLITOLD[2]}, ${NKSMODAPIVERSPLITOLD[3]}"
+    NEWAPIMAJORTMPL="${NKSMODAPIVERSPLITNEW[0]}, ${NKSMODAPIVERSPLITNEW[1]}, ${NKSMODAPIVERSPLITNEW[2]}, ${NKSMODAPIVERSPLITNEW[3]}"
+    sed -b -i "s/new(${OLDAPIMAJORTMPL})/new(${NEWAPIMAJORTMPL})/g" "$ROOTDIR/public/Nitrocid.Templates/templates/KSMod/ModClass.cs"
+    sed -b -i "s/New Version(${OLDAPIMAJORTMPL})/New Version(${NEWAPIMAJORTMPL})/g" "$ROOTDIR/public/Nitrocid.Templates/templates/KSModVB/ModClass.vb"
+
     # Add a Debian changelog entry
     printf "Changing Debian changelogs info...\n"
     DEBIAN_CHANGES_FILE="$ROOTDIR/debian/changelog"

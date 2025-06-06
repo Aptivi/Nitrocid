@@ -33,6 +33,9 @@ for %%f in (%releaseFiles%) do (
     powershell %ROOTDIR%\vnd\eng\incrementor.ps1 "%%f" "%oldVer%" "%newVer%" "%oldApiVer%" "%newApiVer%"
 )
 
+REM Run the N-KS mod version changer
+powershell %ROOTDIR%\vnd\eng\nks-mod-api-version-change.ps1 "%ROOTDIR%" "%oldApiVer%" "%newApiVer%"
+
 REM Add Debian changelogs info
 echo Changing Debian changelogs info
 powershell %ROOTDIR%\vnd\eng\debian-changes.ps1 "%ROOTDIR%\debian\changelog" "%newVer%" "%newApiVer%"
