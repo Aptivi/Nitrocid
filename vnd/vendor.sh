@@ -168,6 +168,71 @@ pushall() {
     checkvendorerror $?
 }
 
+increment() {
+    # Check the versions
+    OLDVER=$1
+    NEWVER=$2
+    OLDAPIVER=$3
+    NEWAPIVER=$4
+    if [ -z $OLDVER ]; then
+        printf "Old version must be specified.\n"
+        exit 1
+    fi
+    if [ -z $NEWVER ]; then
+        printf "New version must be specified to replace old version $OLDVER.\n"
+        exit 1
+    fi
+    if [ -z $OLDAPIVER ]; then
+        printf "Old API version must be specified.\n"
+        exit 1
+    fi
+    if [ -z $NEWAPIVER ]; then
+        printf "New API version must be specified to replace old API version $NEWAPIVER.\n"
+        exit 1
+    fi
+
+    # Populate some of the files needed to replace the old version with the new version
+    FILES=(
+        "$ROOTDIR/PKGBUILD-REL"
+        "$ROOTDIR/PKGBUILD-REL-LITE"
+        "$ROOTDIR/.github/workflows/build-ppa-package-with-lintian.yml"
+        "$ROOTDIR/.github/workflows/build-ppa-package.yml"
+        "$ROOTDIR/.github/workflows/pushamend.yml"
+        "$ROOTDIR/.github/workflows/pushppa.yml"
+        "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.Installer/Package.wxs"
+        "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.InstallerBundle/Bundle.wxs"
+        "$ROOTDIR/public/Nitrocid.Templates/templates/KSMod/KSMod.csproj"
+        "$ROOTDIR/public/Nitrocid.Templates/templates/KSModVB/KSModVB.vbproj"
+        "$ROOTDIR/Directory.Build.props"
+        "$ROOTDIR/CHANGES.TITLE"
+    )
+    for FILE in "${FILES[@]}"; do
+        printf "Processing $FILE...\n"
+        sed -b -i "s/$OLDVER/$NEWVER/g" "$FILE"
+        sed -b -i "s/$OLDAPIVER/$NEWAPIVER/g" "$FILE"
+        result=$?
+        if [ $result -ne 0 ]; then
+            checkvendorerror $result
+            return $result
+        fi
+    done
+
+    # Add a Debian changelog entry
+    printf "Changing Debian changelogs info...\n"
+    DEBIAN_CHANGES_FILE="$ROOTDIR/debian/changelog"
+    DEBIAN_CHANGES_DATE=$(date "+%a, %d %b %Y %H:%M:%S %z")
+    DEBIAN_CHANGES_ENTRY=$(cat <<EOF
+nitrocid-25 ($NEWAPIVER-$NEWVER-1) noble; urgency=medium
+
+  * Please populate changelogs here
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  $DEBIAN_CHANGES_DATE
+EOF
+    )
+    DEBIAN_CHANGES_CONTENT=$(printf "$DEBIAN_CHANGES_ENTRY\n\n$(cat "$DEBIAN_CHANGES_FILE")")
+    printf "$DEBIAN_CHANGES_CONTENT\n" > $DEBIAN_CHANGES_FILE
+}
+
 clean() {
     OUTPUTS=(
         '-name "bin" -or'
