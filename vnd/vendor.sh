@@ -206,10 +206,13 @@ increment() {
         "$ROOTDIR/Directory.Build.props"
         "$ROOTDIR/CHANGES.TITLE"
     )
+    IFS='.' read -ra NKSMODAPIVERSPLITOLD <<< "$OLDAPIVER"
+    IFS='.' read -ra NKSMODAPIVERSPLITNEW <<< "$NEWAPIVER"
     for FILE in "${FILES[@]}"; do
         printf "Processing $FILE...\n"
         sed -b -i "s/$OLDVER/$NEWVER/g" "$FILE"
         sed -b -i "s/$OLDAPIVER/$NEWAPIVER/g" "$FILE"
+        sed -b -i "s/nitrocid-${NKSMODAPIVERSPLITOLD[2]}/nitrocid-${NKSMODAPIVERSPLITNEW[2]}/g" "$FILE"
         result=$?
         if [ $result -ne 0 ]; then
             checkvendorerror $result
@@ -218,8 +221,6 @@ increment() {
     done
 
     # Modify the NitrocidModAPIVersionMajor and the NitrocidModAPIVersionChangeset properties
-    IFS='.' read -ra NKSMODAPIVERSPLITOLD <<< "$OLDAPIVER"
-    IFS='.' read -ra NKSMODAPIVERSPLITNEW <<< "$NEWAPIVER"
     OLDAPIMAJOR="${NKSMODAPIVERSPLITOLD[0]}.${NKSMODAPIVERSPLITOLD[1]}.${NKSMODAPIVERSPLITOLD[2]}"
     NEWAPIMAJOR="${NKSMODAPIVERSPLITNEW[0]}.${NKSMODAPIVERSPLITNEW[1]}.${NKSMODAPIVERSPLITNEW[2]}"
     sed -b -i "s/<NitrocidModAPIVersionMajor>${OLDAPIMAJOR}/<NitrocidModAPIVersionMajor>${NEWAPIMAJOR}/g" "$ROOTDIR/Directory.Build.props"
@@ -246,7 +247,7 @@ increment() {
     DEBIAN_CHANGES_FILE="$ROOTDIR/debian/changelog"
     DEBIAN_CHANGES_DATE=$(date "+%a, %d %b %Y %H:%M:%S %z")
     DEBIAN_CHANGES_ENTRY=$(cat <<EOF
-nitrocid-28 ($NEWAPIVER-$NEWVER-1) noble; urgency=medium
+nitrocid-${NKSMODAPIVERSPLITNEW[2]} ($NEWAPIVER-$NEWVER-1) noble; urgency=medium
 
   * Please populate changelogs here
 
