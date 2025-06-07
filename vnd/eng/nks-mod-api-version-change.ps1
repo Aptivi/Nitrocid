@@ -1,13 +1,16 @@
 $rootDir = $args[0]
-$oldApiVersion = $args[1]
-$newApiVersion = $args[2]
-
-$oldApiVersionSplit = $oldApiVersion.Split(".")
-$newApiVersionSplit = $newApiVersion.Split(".")
+$oldVersion = $args[1]
+$newVersion = $args[2]
+$oldApiVersion = $args[3]
+$newApiVersion = $args[4]
 
 # Modify the NitrocidModAPIVersionMajor and the NitrocidModAPIVersionChangeset properties
-$oldApiMajor = "<NitrocidModAPIVersionMajor>$($oldApiVersionSplit[0]).$($oldApiVersionSplit[1]).$($oldApiVersionSplit[2])"
-$newApiMajor = "<NitrocidModAPIVersionMajor>$($newApiVersionSplit[0]).$($newApiVersionSplit[1]).$($newApiVersionSplit[2])"
+$oldApiVersionSplit = $oldApiVersion.Split(".")
+$newApiVersionSplit = $newApiVersion.Split(".")
+$oldApiVerNoPatch = "$($oldApiVersionSplit[0]).$($oldApiVersionSplit[1]).$($oldApiVersionSplit[2])"
+$newApiVerNoPatch = "$($newApiVersionSplit[0]).$($newApiVersionSplit[1]).$($newApiVersionSplit[2])"
+$oldApiMajor = "<NitrocidModAPIVersionMajor>$oldApiVerNoPatch"
+$newApiMajor = "<NitrocidModAPIVersionMajor>$newApiVerNoPatch"
 $oldApiChangeset = "<NitrocidModAPIVersionChangeset>$($oldApiVersionSplit[3])"
 $newApiChangeset = "<NitrocidModAPIVersionChangeset>$($newApiVersionSplit[3])"
 $directoryBuild = "$rootDir\Directory.Build.props"
@@ -23,3 +26,21 @@ $modClassCsContent = [System.IO.File]::ReadAllText($modClassCs).Replace($oldApiM
 $modClassVbContent = [System.IO.File]::ReadAllText($modClassVb).Replace($oldApiMajorTmpl, $newApiMajorTmpl)
 [System.IO.File]::WriteAllText($modClassCs, $modClassCsContent)
 [System.IO.File]::WriteAllText($modClassVb, $modClassVbContent)
+
+# Modify the changes.chg file
+$oldChanges = "version $oldVersion (mod API $oldApiVersion)"
+$newChanges = "version $newVersion (mod API $newApiVersion)"
+$changesFile = "$rootDir\vnd\changes.chg"
+$changesContent = [System.IO.File]::ReadAllText($changesFile).Replace($oldChanges, $newChanges)
+[System.IO.File]::WriteAllText($changesFile, $changesContent)
+
+# Modify the Package.wxs file
+$oldVersionSplit = $oldVersion.Split(".")
+$newVersionSplit = $newVersion.Split(".")
+$oldVerNoPatch = "$($oldVersionSplit[0]).$($oldVersionSplit[1]).$($oldVersionSplit[2])"
+$newVerNoPatch = "$($newVersionSplit[0]).$($newVersionSplit[1]).$($newVersionSplit[2])"
+$oldPackageWxs = "Name=`"Nitrocid $oldVerNoPatch`""
+$newPackageWxs = "Name=`"Nitrocid $newVerNoPatch`""
+$packageWxsFile = "$rootDir\public\Nitrocid.Installers\Nitrocid.Installer\Package.wxs"
+$packageWxsContent = [System.IO.File]::ReadAllText($packageWxsFile).Replace($oldPackageWxs, $newPackageWxs)
+[System.IO.File]::WriteAllText($packageWxsFile, $packageWxsContent)
