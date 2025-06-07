@@ -34,7 +34,7 @@ for %%f in (%releaseFiles%) do (
 )
 
 REM Run the N-KS mod version changer
-powershell %ROOTDIR%\vnd\eng\nks-mod-api-version-change.ps1 "%ROOTDIR%" "%oldApiVer%" "%newApiVer%"
+powershell %ROOTDIR%\vnd\eng\nks-mod-api-version-change.ps1 "%ROOTDIR%" "%oldVer%" "%newVer%" "%oldApiVer%" "%newApiVer%"
 
 REM Add Debian changelogs info
 echo Changing Debian changelogs info
