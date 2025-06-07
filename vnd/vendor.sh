@@ -231,6 +231,16 @@ increment() {
     sed -b -i "s/new(${OLDAPIMAJORTMPL})/new(${NEWAPIMAJORTMPL})/g" "$ROOTDIR/public/Nitrocid.Templates/templates/KSMod/ModClass.cs"
     sed -b -i "s/New Version(${OLDAPIMAJORTMPL})/New Version(${NEWAPIMAJORTMPL})/g" "$ROOTDIR/public/Nitrocid.Templates/templates/KSModVB/ModClass.vb"
 
+    # Modify the changes.chg file
+    sed -b -i "s/version $OLDVER (mod API $OLDAPIVER)/version $NEWVER (mod API $NEWAPIVER)/g" "$ROOTDIR/vnd/changes.chg"
+
+    # Modify the Package.wxs file
+    IFS='.' read -ra NKSVERSPLITOLD <<< "$OLDVER"
+    IFS='.' read -ra NKSVERSPLITNEW <<< "$NEWVER"
+    OLDMAJOR="${NKSVERSPLITOLD[0]}.${NKSVERSPLITOLD[1]}.${NKSVERSPLITOLD[2]}"
+    NEWMAJOR="${NKSVERSPLITNEW[0]}.${NKSVERSPLITNEW[1]}.${NKSVERSPLITNEW[2]}"
+    sed -b -i "s/Name=\"Nitrocid $OLDMAJOR\"/Name=\"Nitrocid $NEWMAJOR\"/g" "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.Installer/Package.wxs"
+
     # Add a Debian changelog entry
     printf "Changing Debian changelogs info...\n"
     DEBIAN_CHANGES_FILE="$ROOTDIR/debian/changelog"
