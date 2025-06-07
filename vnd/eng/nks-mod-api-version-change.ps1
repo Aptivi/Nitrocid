@@ -44,3 +44,17 @@ $newPackageWxs = "Name=`"Nitrocid $newVerNoPatch`""
 $packageWxsFile = "$rootDir\public\Nitrocid.Installers\Nitrocid.Installer\Package.wxs"
 $packageWxsContent = [System.IO.File]::ReadAllText($packageWxsFile).Replace($oldPackageWxs, $newPackageWxs)
 [System.IO.File]::WriteAllText($packageWxsFile, $packageWxsContent)
+
+# Modify the PKGBUILD VCS files
+$pkgBuildVcsFile = "$rootDir\PKGBUILD-VCS"
+$pkgBuildVcsLiteFile = "$rootDir\PKGBUILD-VCS-LITE"
+$oldPkgNameVcs = "pkgname=nitrocid-$($oldApiVersionSplit[2])"
+$newPkgNameVcs = "pkgname=nitrocid-$($newApiVersionSplit[2])"
+$oldPkgVerVcs = "pkgver=v$oldVerNoPatch"
+$newPkgVerVcs = "pkgver=v$newVerNoPatch"
+$oldBranchVcs = "branch=v$oldVerNoPatch"
+$newBranchVcs = "branch=v$newVerNoPatch"
+$pkgBuildVcsContent = [System.IO.File]::ReadAllText($pkgBuildVcsFile).Replace($oldPkgNameVcs, $newPkgNameVcs).Replace($oldPkgVerVcs, $newPkgVerVcs).Replace($oldBranchVcs, $newBranchVcs)
+$pkgBuildVcsLiteContent = [System.IO.File]::ReadAllText($pkgBuildVcsLiteFile).Replace($oldPkgNameVcs, $newPkgNameVcs).Replace($oldPkgVerVcs, $newPkgVerVcs).Replace($oldBranchVcs, $newBranchVcs)
+[System.IO.File]::WriteAllText($pkgBuildVcsFile, $pkgBuildVcsContent)
+[System.IO.File]::WriteAllText($pkgBuildVcsLiteFile, $pkgBuildVcsLiteContent)
