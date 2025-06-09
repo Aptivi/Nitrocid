@@ -60,7 +60,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
         {
             List<string> unlocalizedStrings = [];
             HashSet<string> source =
-                reportMode ? Reporter.localizationList : Checker.localizationList;
+                reportMode ? [.. Reporter.localizationList] : Checker.localizationList;
 
             // Open the resource and load it to a JSON token instance
             var stream = EntryPoint.thisAssembly.GetManifestResourceStream(resourceName) ??
@@ -180,7 +180,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
         {
             List<string> localizedStrings = [];
             HashSet<string> source =
-                reportMode ? Reporter.localizationList : [.. Cleaner.localizationList];
+                reportMode ? [.. Reporter.localizationList] : [.. Cleaner.localizationList];
 
             // Open the resource and load it to a JSON token instance
             var stream = EntryPoint.thisAssembly.GetManifestResourceStream(resourceName) ??
