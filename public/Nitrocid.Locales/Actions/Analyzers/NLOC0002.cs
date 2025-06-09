@@ -38,7 +38,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
             bool found = false;
             List<string> unlocalizedStrings = [];
             HashSet<string> source =
-                reportMode ? Reporter.localizationList : Checker.localizationList;
+                reportMode ? [.. Reporter.localizationList] : Checker.localizationList;
 
             foreach (var syntaxNode in syntaxNodeNodes)
             {
@@ -118,7 +118,7 @@ namespace Nitrocid.Locales.Actions.Analyzers
             bool found = false;
             List<string> localizedStrings = [];
             HashSet<string> source =
-                reportMode ? Reporter.localizationList : [.. Cleaner.localizationList];
+                reportMode ? [.. Reporter.localizationList] : [.. Cleaner.localizationList];
 
             foreach (var syntaxNode in syntaxNodeNodes)
             {

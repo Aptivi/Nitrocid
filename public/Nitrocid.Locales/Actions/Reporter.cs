@@ -23,6 +23,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Locales.Actions.Analyzers;
+using Nitrocid.Locales.Serializer;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -36,7 +37,7 @@ namespace Nitrocid.Locales.Actions
 {
     internal static class Reporter
     {
-        internal static readonly HashSet<string> localizationList = [];
+        internal static readonly List<string> localizationList = [];
 
         internal static void Execute(bool dry = false)
         {
@@ -204,6 +205,45 @@ namespace Nitrocid.Locales.Actions
                     string[] lines = [.. File.ReadAllLines(textFile).Distinct()];
                     File.WriteAllLines(textFile, lines);
                     TextWriterColor.Write($"Saved as {Path.GetFullPath(textFile)}...");
+                }
+
+                // Open the saved files to get the localization indexes
+                Dictionary<string, List<int>> locIndexes = [];
+                foreach (var textFile in paths.Distinct())
+                {
+                    string[] lines = [.. File.ReadAllLines(textFile)];
+                    string name = Path.GetFileNameWithoutExtension(textFile);
+                    List<int> loc = [];
+                    for (int i = 0; i < localizationList.Count; i++)
+                    {
+                        string line = localizationList[i];
+                        foreach (var projLine in lines)
+                        {
+                            if (projLine == line)
+                                loc.Add(i);
+                        }
+                    }
+                    locIndexes.Add(name, loc);
+                }
+
+                // Map those indexes to get localized strings from each language file
+                var langs = LocalizationLister.PopulateLanguages();
+                foreach (var path in langs.Keys)
+                {
+                    string localization = Path.GetFileNameWithoutExtension(path);
+                    string[] localizedStrings = [.. langs[path]];
+                    foreach (var projName in locIndexes.Keys)
+                    {
+                        List<int> locIndexList = locIndexes[projName];
+                        List<string> lines = [];
+                        foreach (int idx in locIndexList)
+                        {
+                            string localizedString = localizedStrings[idx];
+                            lines.Add(localizedString);
+                        }
+                        string finalName = projName + "_" + localization + ".txt";
+                        File.WriteAllLines(finalName, lines);
+                    }
                 }
             }
             catch (Exception ex)
