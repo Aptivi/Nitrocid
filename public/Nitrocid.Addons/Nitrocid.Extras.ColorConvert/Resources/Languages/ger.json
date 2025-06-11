@@ -1,0 +1,159 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Rote Farbstufe:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Grüne Farbstufe:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Blaue Farbstufe:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "Cyan-Pegel:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "Magenta-Stufe:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Gelbstufe:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "Farbton:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "Sättigung:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "Wert:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Farbstufe Gelb:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "Luma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "In-Phase:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "Quadratur:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "Konvertiert das Quellfarbmodell in das Zielfarbmodell in Zahlen."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Konvertiert das Quellfarbmodell in das Zielfarbmodell im KS-Format."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Konvertiert das Quellfarbmodell in Hex."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Konvertiert das Quellfarbmodell mithilfe des Farbspezifizierers in das Zielfarbmodell im KS-Format."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell im Hex-Format."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "Die Modellspezifikation ist ungültig."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Schwarze Tastenebene:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "Die erste Farbebene muss numerisch sein."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "Die zweite Farbebene muss numerisch sein."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Die dritte Farbebene muss numerisch sein."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Die vierte Schlüsselebene muss numerisch sein."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "Luminanz (Helligkeit):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Quellfarbmodell"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Zielfarbmodell"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "Erste Zahl"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "Zweite Zahl"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Dritte Zahl"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Vierte Zahl"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Farbspezifizierer"
+    }
+  ]
+}

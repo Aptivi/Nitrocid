@@ -1,0 +1,520 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "maerifat ma 'iidha kan yumkinuk halu almueadalat alriyadiat fi alwaqt almuhadad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "haliha tamamana!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "haliha bishakl ghyr sahihin."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "qum bitanshit al'alwan alhaqiqia"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "altaakhir fi mili thany"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "maerifat ma 'iidha kan yumkinuk aldaght ealaa miftah fi alwaqt almuhadad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "lam yatima aldaght ealaa alshakhsiat fi alwaqt almuhadadi."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "laqad daghatt ealaa alshakhsiat alsahihati!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "laqad daghatt ealaa alhiraf alkhata'a."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "aidghat ealaa ESC lilkhuruwji."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn al'ahmar"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "'adnaa mustawa lilawn al'akhdar"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn al'azraq"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'ahmar"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'akhdar"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'azraq"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "'adnaa mustawan lilawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "alhadu al'adnaa lieadad Solver"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "alhadu al'aqsaa lieadad Solver"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "'iidkhal eard Solver"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "ma 'iidha kan sayatimu 'iizhar ma hu maktub fi muajah al'iidkhal 'am la."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "ma hu 'aqalu eadad liliakhtiari?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "ma hu aleadad al'aqsaa liliakhtiari?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "yanshut daem allawn alhaqiqii."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "alsueubat aliaftiradiat li SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "muhlat aldaght ealaa miftah SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "kam milli thaniat liaintizar aldaght ealaa almiftah qabl aintiha' almuhlati? (fi alsueubat almukhasasati)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "takhir almarhalat bialmili thania"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "kam mili thaniatan tantazir qabl rasm almarhalat altaaliati?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "tabda alluebat fi sueubat sahla"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "tabda alluebat bimustawaaan mutawasit alsueuba"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "yabda alluebat bisueubat baligha"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "tabda alluebat fi sueubat baligha"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "tabda alluebat bisueubat mukhasasatan. alraja' mulahazat 'anah yajib kitabat almuhlat almukhasasat bialmalli thaniatan kawasitati."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "taqadam mawqie alnasi"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "hadad mawqie nasi altaqadum almufadal ladayka."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "yumkinuk faqat kitabat al'arqami."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "aidghat ealaa \"q\" lilkhuruwji."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "luebat althuebani!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "'ant safinat fada' walnayazik qadimat litudamiraka. hal yumkinuk hifzuhu?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "aintahat allueba"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "khata ghayr mutawaqae"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "astakhdim PowerLine litaqdim safinat alfada'"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "sureat luebat alnayzak"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "ma 'iidha kan yajib astikhdam PowerLine litaqdim safinat alfada' 'aw astikhdam almieyar 'akbar min alharafa. 'iidha kunt targhab fi astikhdam PowerLine mae Meteor , fa'ant bihajat 'iilaa tathbit khatin munasib mae daem PowerLine."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "yuhadid sureat alluebat bialmalli thaniatan."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "hl tdʿm al-ḥṣān al-ẖṭʾa?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "tbdʾa lʿbẗ al-ǧlād"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "rsālẗ wāḥdẗ ẖāṭʾiẗ ūʾant mʿlq!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "aẖtbr mhārātk fī al-ǧlād ʿn ṭrīq rmī ẖṭāb ʿšwāʾī."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "ant sfīnẗ fḍāʾ wālnīāzk qādmẗ ltdmīrk. hl īmknk mrāūġthm?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "īḥṣl ʿli aqtbās ʿšwāʾī"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "al-rūlīt al-rūsīẗ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "sfīntān fḍāʾītān ttqātlān mʿ bʿḍhmā al-bʿḍ. ṭlqẗ wāḥdẗ ūsūf tnfǧr sfīnẗ al-fḍāʾ. hḏh lʿbẗ mḥlīẗ llāʿbīn."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "lʿbẗ mḥākāẗ Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "al-ʿb lʿbẗ Wordle fī al-ʾaṣl"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "īḥtfl bālḏkri al-snwyẗ al-ẖāmsẗ liṣdār al-nwāẗ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "iḥīāʾ al-ḏkri al-ẖāmsẗ llnwāẗ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "al-iṣdār al-ʾaūl ʿli al-iṭlāq"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "tm iṣdār hḏh al-nwāẗ lʾaūl mrẗ fī 22 fbrāīr 2018 linšāʾ ǧhāz mḥākāẗ bsīṭ īḥākī fī al-wāqʿ kīfīẗ ʿml ǧūhr al-nwāẗ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "kān īstẖdm lāstḍāfẗ ġlāf wāḥd fqṭ, ūʿdd qlīl mn al-ʾawāmr, ūkān īʿml fqṭ mʿ Windows bsbb astẖdāmh lʾadāẗ Windows Management Instrumentation."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "kmā anhā lm īkn ldīhā ūṯāʾiqhā al-ẖāṣẗ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "ṣql al-nwāẗ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "tm iṣdār iṣdārāt al-nwāẗ, mṯl al-iṣdār al-rʾīsī al-ṯānī liḍāfẗ al-ʾalwān wālmīzāt al-ʾasāsīẗ, wāliṣdār al-rʾīsī al-rābʿ liḍāfẗ al-tkwyn."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "bdʾa al-tūṯīq fī al-iṣdār al-rʾīsī al-sāds, ūtmt iḍāfẗ al-ʿdīd mn al-ʾašīāʾ al-rāʾiʿẗ bbṭʾ ili al-nwāẗ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "al-nsẖẗ al-ḥālīẗ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "īʿml hḏā al-iṣdār al-ʾān ʿli tḥsīn al-nwāẗ ili drǧẗ anhā lm tʿd ttṣrf mṯl al-iṣdārāt al-qdīmẗ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "nẓrrā liṣdār al-mīzāt al-ǧdīdẗ al-rāʾidẗ, qrrnā tsmīẗ hḏh al-nwāẗ..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "ḏkri mrūr 5 snwāt sʿīdẗ!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "ḥṣān"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[ʾadẖl] abdʾa al-sbāq | [ESC] ẖrūǧ | [ʾaʿli/ʾasfl] nql al-tḥdīd"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "fāz ḥṣānk bālsbāq!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "ḥṣānk ẖsr al-sbāq!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "ant mʿlq!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "fzt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "mā hū rhānk?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "lqd ẖmnt ḏlk bškl ṣḥīḥ!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "lqd fhmt ẖṭʾa."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "lknk ġīr mḥẓūẓ. al-ẖāsr."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "ant mḥẓūẓ! al-fāʾiz!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "inh tʿādl."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "al-lāʿb {0} īfūz!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "al-ḥrf al-ḥālī:"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "lqd ẖmnt al-klmẗ al-ṣḥīḥẗ! fzt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "iʿdādāt al-ʾalwān"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "lʿbẗ al-ṯʿbān."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "īẓhr lk aqtbāsāt mšhūrẗ lṭīfẗ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "ḥdd al-ṣʿūbẗ al-mfḍlẗ ldīk, ḥīṯ 0 shl, 1 mtūsṭ, 2 ṣʿb, 3 ṣʿb ǧddā, ū4 mẖṣṣ."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "astẖdm PowerLine lʿrḍ sfīnẗ al-fḍāʾ fī ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "mā iḏā knt trīd astẖdām PowerLine lʿrḍ sfīnẗ al-fḍāʾ aū astẖdām al-mʿīār akbr mn al-ḥrf. iḏā knt trīd astẖdām PowerLine mʿ ShipDuet, fstḥtāǧ ili tṯbīt ẖṭ mnāsb mʿ dʿm PowerLine."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "srʿẗ al-lʿbẗ fī ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "yastakhdim qayimat alkalimat alshaayieati."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "yastakhdim qayimat alkalimat alkamilati."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "luebat albinj bunji!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "natijatan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "sibaq alkhayl"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "Hangman"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "Meteor Dodge"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "Meteor Shooter"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "Pong"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "Ship Duet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "Snaker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "Wordle (al'asla)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "aiqtibas ghayr maerufin."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "mualif ghayr maerufin."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "yutih lak hadha takwin al'alwan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "yutih lak hadha alqism takwin Solver."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "yutih lak hadha alqism takwin SpeedPress."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "yutih lak hadha alqism takwin Meteor waShipDuet."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_WELCOME",
+      "text": "Bienvenue!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
+      "text": "Couleur de la barre de progression"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
+      "text": "Emplacement du texte de progression"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC",
+      "text": "Sélectionnez votre emplacement de texte de progression préféré."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE",
+      "text": "Au revoir!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
+      "text": "Départ"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
+      "text": "Veuillez patienter pendant l'initialisation du noyau..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
+      "text": "Veuillez patienter pendant que le noyau s'arrête..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
+      "text": "Erreur inconnue!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
+      "text": "Écran de démarrage simple."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
+      "text": "Un écran de démarrage qui vous montre vos progrès."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
+      "text": "Un écran de démarrage qui vous montre votre progression en utilisant le texte PowerLine."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
+      "text": "Impossible d'obtenir les entrées de paramètres."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_WELCOME",
+      "text": "Καλως ΗΡΘΑΤΕ!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
+      "text": "Χρώμα γραμμής προόδου"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
+      "text": "Θέση κειμένου προόδου"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC",
+      "text": "Επιλέξτε την προτιμώμενη θέση κειμένου προόδου."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE",
+      "text": "Αντιο σας!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
+      "text": "Εκκίνηση"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
+      "text": "Περιμένετε όσο γίνεται η προετοιμασία του πυρήνα..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
+      "text": "Περιμένετε όσο κλείνει ο πυρήνας..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
+      "text": "Αγνωστο σφάλμα!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
+      "text": "Απλή οθόνη εκκίνησης."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
+      "text": "Μια splash οθόνη που σας δείχνει την πρόοδο."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
+      "text": "Μια οθόνη εκκίνησης που σας δείχνει την πρόοδο χρησιμοποιώντας το κείμενο PowerLine."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    }
+  ]
+}

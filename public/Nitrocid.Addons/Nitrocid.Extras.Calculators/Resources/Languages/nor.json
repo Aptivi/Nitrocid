@@ -1,0 +1,74 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Kalkulator for å beregne uttrykk."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Feil i beregningen."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Vis informasjon om den imaginære tallformelen spesifisert av et spesifisert reelt og imaginært tall"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Det reelle tallet er ikke gyldig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Det imaginære tallet er ikke gyldig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formel:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Radius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real til Radius i Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginary to Radius in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Vinkel i radianer:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Eksponentiell:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Trekantet:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Matematisk uttrykk"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Reelt tall"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Tenkt nummer"
+    }
+  ]
+}

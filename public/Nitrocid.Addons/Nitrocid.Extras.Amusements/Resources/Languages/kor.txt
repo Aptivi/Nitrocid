@@ -1,0 +1,121 @@
+sigan-e suhag bangjeongsig-eul pul su issneunji hwag-inhasibsio
+wanbyeoghage haegyeoldoeeossseubnida!
+jalmos haegyeoldoeeossseubnida.
+teulu keolleo hwalseonghwa
+milli cho dan-wiui jiyeon
+da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?
+sigan-e kileul nuleul su issneunji hwag-in
+sigan-e nulliji anh-eun munja.
+olbaleun kaeligteoleul nulleossseubnida!
+jalmosdoen munjaleul nulleossseubnida.
+jonglyohalyeomyeon ESCleul nuleusibsio.
+choeso jeogsaeg lebel
+choeso nogsaeg saegsang sujun
+choeso palansaeg sujun
+choeso saegsang sujun
+choedae jeogsaeg lebel
+choedae nogsaeg saegsang sujun
+choedae palansaeg sujun
+choedae saegsang sujun
+choeso bulg-eun saeg sujun. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choeso nogsaeg saegsang sujun-ibnida. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choeso palansaeg saegsang sujun-ibnida. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choeso saegsang sujun. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255saeg-ui gyeong-u 255, 16saeg-ui gyeong-u 16ibnida.
+choedae jeogsaeg lebel. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choedae nogsaeg saegsang sujun-ibnida. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choedae palansaeg sujun-ibnida. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida.
+choedae saegsang sujun. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255saeg-ui gyeong-u 255, 16saeg-ui gyeong-u 16ibnida.
+solbeo choeso su
+solbeo choedae su
+solbeo syo iblyeog
+iblyeog peulompeuteue jagseongdoen naeyong-eul pyosihalji yeobu-ibnida.
+seontaeghal su issneun choeso suneun eolmaibnikka?
+seontaeghal su issneun choedae suneun eolmaibnikka?
+teulu keolleo jiwon-eul hwalseonghwahabnida.
+SpeedPress-ui gibon nan-ido
+SpeedPress-e daehan ki nuleugi sigan chogwa
+sigan chogwa jeon-e ki nuleum-eul gidalineun de myeoch millichoga soyodoebnikka? (keoseuteom nan-ido-eseo)
+millicho dan-wiui dangye jiyeon
+da-eum dangyeleul geuligi jeon-e myeoch millicholeul gidalyeoya habnikka?
+swiun nan-idolo geim sijag
+jung-gan nan-idolo geim sijag
+eolyeoun nan-idolo geim sijag
+maeu eolyeoun nan-idolo geim-eul sijaghabnida
+keoseuteom nan-idolo geim-eul sijaghabnida. millicho dan-wiui sayongja jijeong sigan chogwaneun insulo jagseongdoeeoya habnida.
+jinhaeng tegseuteu wichi
+wonhaneun jinhaeng tegseuteu wichileul seontaeghasibsio.
+susjaman sseul su issseubnida.
+jonglyohalyeomyeon "q"leul nuleusibsio.
+baem geim!
+dangsin-eun ujuseon-igo yuseong-eun dangsin-eul pagoehagi wihae ogo issseubnida. jeojanghal su issseubnikka?
+geim kkeut
+yesangchi moshan eleo
+ujuseon lendeoling-e PowerLine sayong
+yuseong geim sogdo
+ujuseon-eul lendeolinghagi wihae PowerLineeul sayonghalji animyeon munjaboda keun pyojun-eul sayonghalji yeobu. Meteorwa hamkke PowerLineeul sayonghalyeomyeon PowerLineeul jiwonhaneun jeogjeolhan geulkkol-eul seolchihaeya habnida.
+geim sogdoleul millicho dan-wilo jijeonghabnida.
+jalmosdoen mareul jiwonhapnikka?
+haengmaen geimeul sijakhapnida
+pyeonji hanaga jalmosdoemyeon gyosuhyeonge cheohaejipnida!
+mujagwiro pyeonjireul deonjyeo gyosuhyeong jiphaeng gisureul teseuteuhaeboseyo.
+dangsineun ujuseonigo yuseongeun dangsineul pagoehagi wihaeogo issseupnida. dangsineun geudeureul pihal su issseupnikka?
+mujagwiro gyeonjeogeul batseupnida
+reosiaeo rulles
+du ujuseoni seoro ssaugo issseupnida. han balman ssomyeon ujuseoni teojil geosipnida. igeoseun rokeol 2inyong geimipnida.
+Wordle geim simyulleiteo
+wonrae Wordle geimeul peulleihaseyo
+keoneol chulsi 5junyeoneul ginyeomhapnida.
+keoneol 5junyeon ginyeom
+sasang choecho chulsi
+i keoneoreun keoneol koeoui jakdong bangsigeul siljero simyulleisyeonhaneun choesohanui simyulleiteoreul mandeulgi wihae 2018nyeon 2wol 22ire cheoeum chulsidoeeossseupnida.
+ijeoneneun hanaui syelgwa myeot gaji myeongryeongman hoseutinghaesseumyeo Windowt Management Instrumentation dogu sayongeuro inhae Windowseseoman jakdonghaessseupnida.
+ttohan jache munseodo eopseossseupnida.
+keoneol gaeseon
+keolleoringgwa gibon gineungeul chugahan du beonjjae meijeo rillijeu, guseongeul chugahan ne beonjjae meijeo rillijeu deung keoneol beojeoni chulsidwaessda.
+munseohwaneun 6beonjjae juyo rilliseubuteo sijakdoeeosseumyeo dayanghan joheun geosdeuri keoneore cheoncheonhi chugadoeeossseupnida.
+hyeonjae beojeon
+i beojeoneun ije deo isang ijeon beojeoncheoreom jakdonghaji anheul jeongdoro keoneoreul gaeseonhapnida.
+saeroun hoekgijeogin gineungi chulsidoeeossgi ttaemune urineun i keoneorui ireumeul...
+5junyeon chukhahaeyo!
+mal
+[ENTER] gyeongju sijak | [ESC] jongryo | [UP/tOWN] seontaek hangmok idong
+dangsinui mari gyeongjueseo seungrihaessseupnida!
+dangsinui mari gyeongjueseo jyeossseupnida!
+neon maedallyeosseo!
+nega igyeossda!
+dangsinui naegineun mueosipnikka?
+dangsinui chucheugi majassseupnida!
+dangsini teullyeosseoyo.
+hajiman dangsineun uni johji anhseupnida. silpaeja.
+dangsineun uni johda! useungja!
+museungbuipnida.
+peulleieo {0}i(ga) seungrihaessseupnida!
+hyeonjae kaerikteo:
+dangsineun olbareun daneoreul chucheukhaessseupnida! nega igyeossda!
+saeksang seoljeong
+baem geim.
+dangsinege joheun yumyeonghan inyongmuneul boyeojupnida.
+0eun swium, 1eun botong, 2neun eoryeoum, 3eun maeu eoryeoum, 4neun sayongja jeonguiro wonhaneun nanidoreul seontaekhaseyo.
+Shipdueteseo ujuseon rendeoringe Powerrine sayong
+Powerrineeul sayonghayeo ujuseoneul rendeoringhalji animyeon munjaboda keun pyojuneul sayonghalji yeobuipnida. Shipduetgwa hamkke Powerrineeul sayongharyeomyeon Powerrineeul jiwonhaneun jeokjeolhan geulkkoreul seolchihaeya hapnida.
+Shipduetui geim sokdo
+gongtong dan-eo moglog-eul sayonghabnida.
+jeonche dan-eo moglog-eul sayonghabnida.
+taggu geim!
+jeomsu
+seoljeong hangmog-eul gajyeooji moshaessseubnida.
+gyeongma
+haengmaen
+yuseong hoepi
+yuseong syuteo
+pong
+seonbag dyues
+seuneikeo
+Wordle
+Wordle(wonbon)
+al su eobsneun in-yongmun.
+al su eobsneun jagseongja.
+saegsang-eul guseonghal su issseubnida.
+i segsyeon-eseoneun Solverleul guseonghal su issseubnida.
+i segsyeon-eseoneun SpeedPressleul guseonghal su issseubnida.
+i segsyeon-eseoneun Meteorwa ShipDuet-eul guseonghal su issseubnida.

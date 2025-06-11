@@ -1,0 +1,282 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "baahar jaen"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "dinaank aur samay kee jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "mileesekand:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "sekand:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "minat:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "ghante:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "din:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "maheene:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "saal:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "varsh ka din:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "saptaah ke din:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "bainaree:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "sthaaneey samay:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "saarvabhaumik samay:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "yooniks samay:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "dinaank jaanakaaree paars karane mein viphal"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "sunishchit karen ki praaroop sahee hai."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "taareekh:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "samay:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "ek saadhaaran stopavoch"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "staart ya stop"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "god"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "reeset"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "ek saadhaaran taimar"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "antaraal set karen"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "sanketit samayabaahy saankhyik nahin hai."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "mileesekand mein taimaut nirdisht karen"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "ek phigalet phont likhen jo phigal laibreree dvaara samarthit ho. adhik jaanakaaree ke lie pustakaalay ke dastaavez dekhen"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "taimar ke lie phigalet font"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "taimar ke lie phigalet saksham karen"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "saksham hone par, taimar ke lie phigalet ka upayog karega. krpaya dhyaan den ki figlait saksham ke saath samay ko theek se prastut karane ke lie ise ek badee kansol skreen kee aavashyakata hai."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "vartamaan dinaank aur samay kee jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "isake lie jaanakaaree"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "stopavoch taiyaar hai."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "stopavoch chal rahee hai!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "naya laip!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "ultee ginatee shuroo karen"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "taimar"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "stopavoch"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "abhee tak koee laip nahin..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "laip soochee"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "pomodoro taimar"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "pomodoro taimar taiyaar hai"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "chaar punaraavrttiyon mein pomodoro taimar sankhya {0}"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "chhota brek"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "mileesekand mein brek taimaut nirdisht karen"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "brek antaraal set karen"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "soochana print karane kee tithi aur samay"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki taimar eplikeshan kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki pomodoro taimar eplikeshan kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "pomodoro taimar ke lie phigalet saksham karen"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "yadi saksham hai, to pomodoro taimar ke lie phigalet ka upayog kiya jaega. krpaya dhyaan den ki phigalet saksham hone par samay ko theek se prastut karane ke lie ise ek badee kansol skreen kee aavashyakata hotee hai."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "pomodoro taimar ke lie phigalet font"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "utpaadan tithi amaany hai"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "samaapti samay avadhi amaany hai"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "samaapti tithi amaany hai"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "utpaadan tithi"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "samaapti tithi"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "samaapti samay avadhi"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "utpaad svaasthy"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "utpaad sthiti"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "utpaad samaapti jaanakaaree praapt karane mein viphal"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "utpaad samaapti jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "utpaadan tithi (utpaad ke kinaare ya neeche dekhen)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "samaapti tithi ya samay avadhi (ya to ek hee sthaan par ya samay avadhi mein spasht roop se likhee gaee hai, jaise ki 6 maheene ya 1 varsh)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "kya lakshy utpaad samaapti tithi ko spasht roop se nirdisht nahin karata hai"
+    }
+  ]
+}

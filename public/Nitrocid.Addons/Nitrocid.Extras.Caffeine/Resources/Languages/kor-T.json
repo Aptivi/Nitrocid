@@ -1,0 +1,51 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "차나 커피가 준비되면 알려주는 알람을 추가합니다."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "차나 커피가 준비되면 알려주는 알람을 중단합니다."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "아메리칸 커피"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "홍차"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "녹차"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "중단하라는 카페인 경고가 없습니다."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "컵이 준비되는 시간(초)은 유효하지 않습니다."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "음료 이름을 입력하려는 경우 아래 목록을 확인하세요."
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "이제 컵이 준비되었습니다!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "초 수 또는 음료 이름을 지정하세요."
+    }
+  ]
+}

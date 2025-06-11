@@ -1,0 +1,189 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "以毫秒為單位的延遲"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "在進行下一次寫入之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "從歌詞檔案中獲取所有歌詞行"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "播放歌詞文件"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "播放聲音"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "獲取有關您的在線廣播電台的信息"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "確保指定 LRC 檔案的路徑。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "無法播放聲音，因為找不到該檔案。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "成功開啟音樂檔案。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "無法開啟音樂檔案。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "由於逾時而無法播放聲音。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "未知藝術家"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "未知類型"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "姓名"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "藝術家"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "類型"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "期間"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "按“q”停止播放。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "無法播放聲音。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "標題"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "您的線上廣播的連接埠號碼無效。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "完整網址"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "當前聽眾"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "聽眾高峰"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "流"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "活動流"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "ID 的串流資訊"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "小路"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "目前正在播放"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "正常運作時間"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "確保指定包含 LRC 格式歌詞檔案的目錄路徑。您也可以指定包含歌詞檔案的音樂庫資料夾的自訂路徑。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "該歌詞檔案不存在。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "此畫面保護程式的設定可在此處找到。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "本部分可讓您配置 BassBoom 插件的工作方式。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "歌詞路徑"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "設定包含一組 .lrc 檔案的資料夾的路徑。寫入任何現有目錄的絕對路徑。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "車站類型"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "網路廣播 (FM) 訊息"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "無法取得網路廣播資訊。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "歌詞檔案路徑"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "MP3 檔案的路徑"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "託管 MPEG 廣播電台的主機名"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "移植到 MPEG 廣播電台"
+    }
+  ]
+}

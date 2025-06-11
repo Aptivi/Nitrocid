@@ -1,0 +1,26 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Mendapatkan backtrace untuk semua thread"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Kami yakin Anda menjalankan Windows 8 atau yang lebih lama. Operasi ini tidak didukung."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Informasi jejak tumpukan utas untuk {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Bukan utas Nitrocid KS"
+    }
+  ]
+}

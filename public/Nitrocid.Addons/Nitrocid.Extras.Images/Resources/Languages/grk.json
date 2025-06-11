@@ -1,0 +1,27 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Προεπισκόπηση μιας εικόνας"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Η διαδρομή προς την εικόνα δεν παρέχεται."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Το αρχείο εικόνας δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Διαδρομή προς το αρχείο εικόνας"
+    }
+  ]
+}

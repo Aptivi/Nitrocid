@@ -1,0 +1,1798 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME",
+      "text": "Показаний текст"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT",
+      "text": "Напишіть будь-який текст, який ви хочете показати. Краще коротше."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Активуйте справжні кольори"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME",
+      "text": "Циклічні кольори"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Коли ввімкнено, Disco змінюватиме кольори. В іншому випадку виберіть довільні кольори."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME",
+      "text": "Колір фону"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Затримка в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Скільки мілісекунд чекати перед наступним записом?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME",
+      "text": "Колір секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME",
+      "text": "Колір хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME",
+      "text": "Кольоровий рядок годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME",
+      "text": "Колір інформації"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME",
+      "text": "Галочки для зміни кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC",
+      "text": "Якщо циклічність кольорів увімкнена, скільки тиків перед зміною кольорів у ProgressClock? 1 тик = 0,5 секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC",
+      "text": "ProgressClock вибере випадкові кольори, якщо його ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME",
+      "text": "Максимальна кількість позицій"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC",
+      "text": "Скільки позицій освітлюється перед затемненням?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
+      "text": "Затримка згасання в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
+      "text": "Макс. кроки згасання"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж текст зникне?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
+      "text": "Скільки кроків зникнення потрібно зробити?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME",
+      "text": "Затримка повторного запису в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC",
+      "text": "Скільки мілісекунд чекати перед повторним написанням тексту?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
+      "text": "Напишіть будь-який текст, який ви хочете показати. Довше – краще."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
+      "text": "Мінімальна швидкість запису в WPM"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME",
+      "text": "Максимальна швидкість запису в WPM"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME",
+      "text": "Імовірність помилки у відсотках"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME",
+      "text": "Серветки для зміни напрямку"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC",
+      "text": "Скільки витирань потрібно зробити, перш ніж випадково змінити напрямок?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME",
+      "text": "Завжди по центру"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC",
+      "text": "Напишіть будь-який текст, який ви хочете показати."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC",
+      "text": "Чи текст, який відображається на рамці, завжди вирівнюється по центру."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME",
+      "text": "Використовуйте API консолі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC",
+      "text": "Визначає, чи використовувати консольний API для очищення тексту чи швидшу послідовність очищення рядка VT. Якщо False, Marquee використовуватиме відповідну послідовність VT. Інакше він використовуватиме ймовірно повільніший API консолі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME",
+      "text": "Використовуйте ударів за хвилину"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
+      "text": "Чи використовувати одиницю ударів за хвилину для запису наступного кольору."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
+      "text": "Затримка в ударах за хвилину"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
+      "text": "Скільки ударів на хвилину чекати перед наступним записом?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatFader вибере випадкові кольори, якщо його ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
+      "text": "Нова затримка екрана в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME",
+      "text": "Підрахунок стовпців"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME",
+      "text": "Поріг заповнення лінії"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME",
+      "text": "Імовірність заповнення лінії у відсотках"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME",
+      "text": "Тип заливки лінії"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж знову написати текст на новому екрані?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC",
+      "text": "Стовпці тексту для друку."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC",
+      "text": "Скільки символів потрібно написати перед запуском \"заповнення рядка\"?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC",
+      "text": "Можливість того, що шаблон заливки лінії буде надруковано великими літерами у відсотках"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME",
+      "text": "Імовірність промаху у відсотках"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME",
+      "text": "Наступний інтервал рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC",
+      "text": "Скільки мілісекунд чекати перед заповненням наступної рампи?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Мінімальний рівень червоного кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Мінімальний рівень зеленого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Мінімальний рівень синього кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Мінімальний рівень кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Максимальний рівень червоного кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Максимальний рівень зеленого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Максимальний рівень синього кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Максимальний рівень кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Мінімальний рівень червоного кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Мінімальний рівень зеленого кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Мінімальний рівень синього кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Мінімальний рівень кольору. Мінімальне допустиме значення — 0, а максимальне — 255 для 255 кольорів або 16 для 16 кольорів."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Максимальний рівень червоного кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Максимальний рівень зеленого кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Максимальний рівень синього кольору. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Максимальний рівень кольору. Мінімальне допустиме значення — 0, а максимальне — 255 для 255 кольорів або 16 для 16 кольорів."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME",
+      "text": "Колір переднього плану"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
+      "text": "Символ лінії"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC",
+      "text": "Символ для формування лінії. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME",
+      "text": "Верхній лівий кутовий символ для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME",
+      "text": "Символ у верхньому лівому куті для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME",
+      "text": "Символ у верхньому лівому куті для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME",
+      "text": "Верхній правий кут символу годинника"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME",
+      "text": "Символ верхнього правого кута для панелі хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME",
+      "text": "Символ верхнього правого кута для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME",
+      "text": "Символ у нижньому лівому куті для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME",
+      "text": "Символ у нижньому лівому куті для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME",
+      "text": "Символ у нижньому лівому куті для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME",
+      "text": "Нижній правий кутовий символ для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME",
+      "text": "Символ у нижньому правому куті для панелі хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME",
+      "text": "Символ нижнього правого кута для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME",
+      "text": "Символ верхньої рамки для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME",
+      "text": "Символ верхньої рамки для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME",
+      "text": "Символ верхнього кадру для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME",
+      "text": "Символ нижньої рамки для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME",
+      "text": "Символ нижньої рамки для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME",
+      "text": "Символ нижньої рамки для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME",
+      "text": "Символ лівого кадру для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME",
+      "text": "Символ лівого кадру для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME",
+      "text": "Символ лівого кадру для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME",
+      "text": "Символ правої рамки для панелі годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME",
+      "text": "Символ правої рамки для хвилинної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME",
+      "text": "Символ правої рамки для секундної панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME",
+      "text": "Інформаційний текст на години"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME",
+      "text": "Інформаційний текст на хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME",
+      "text": "Інформаційний текст секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME",
+      "text": "Мінімальний рівень червоного кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME",
+      "text": "Мінімальний рівень зеленого кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME",
+      "text": "Мінімальний рівень синього кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME",
+      "text": "Мінімальний рівень кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME",
+      "text": "Максимальний рівень червоного кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME",
+      "text": "Максимальний рівень зеленого кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME",
+      "text": "Максимальний рівень синього кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME",
+      "text": "Максимальний рівень кольору протягом годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME",
+      "text": "Мінімальний рівень червоного кольору протягом хв"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME",
+      "text": "Мінімальний рівень зеленого кольору протягом хв"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME",
+      "text": "Мінімальний рівень синього кольору протягом хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME",
+      "text": "Мінімальний рівень кольору хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME",
+      "text": "Максимальний рівень червоного кольору протягом хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME",
+      "text": "Максимальний рівень зеленого кольору протягом хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME",
+      "text": "Максимальний рівень синього кольору протягом хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME",
+      "text": "Максимальний рівень кольору протягом хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME",
+      "text": "Мінімальний рівень червоного кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME",
+      "text": "Мінімальний рівень зеленого кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME",
+      "text": "Мінімальний рівень синього кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME",
+      "text": "Мінімальний рівень кольору секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME",
+      "text": "Максимальний рівень червоного кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME",
+      "text": "Максимальний рівень зеленого кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME",
+      "text": "Максимальний рівень синього кольору протягом секунд"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME",
+      "text": "Максимальний рівень кольору за секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC",
+      "text": "Символ, який нагадує лівий верхній кут. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC",
+      "text": "Символ, який нагадує нижній лівий кут. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC",
+      "text": "Символ, що нагадує верхню рамку. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC",
+      "text": "Символ, що нагадує нижню рамку. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC",
+      "text": "Персонаж, що нагадує ліву рамку. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC",
+      "text": "Персонаж, що нагадує праву рамку. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст на поточну годину. {0} за поточну годину з 24 годин."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст за поточну хвилину. {0} за поточну хвилину з 60 хвилин."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст за поточну секунду. {0} за поточну секунду з 60 секунд."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME",
+      "text": "Колір тексту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME",
+      "text": "Верхній лівий кутовий символ для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME",
+      "text": "Символ верхнього правого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME",
+      "text": "Символ нижнього лівого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME",
+      "text": "Символ нижнього правого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME",
+      "text": "Символ верхньої рамки для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME",
+      "text": "Символ нижньої рамки для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME",
+      "text": "Символ лівого кадру для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME",
+      "text": "Символ правої рамки для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME",
+      "text": "Мінімальний рівень червоного кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME",
+      "text": "Мінімальний рівень зеленого кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME",
+      "text": "Мінімальний рівень синього кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME",
+      "text": "Мінімальний рівень кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME",
+      "text": "Максимальний рівень червоного кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME",
+      "text": "Максимальний рівень зеленого кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME",
+      "text": "Максимальний рівень синього кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME",
+      "text": "Максимальний рівень кольору для початкового кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME",
+      "text": "Мінімальний рівень червоного кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME",
+      "text": "Мінімальний рівень зеленого кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME",
+      "text": "Мінімальний рівень синього кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME",
+      "text": "Мінімальний рівень кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME",
+      "text": "Максимальний рівень червоного кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME",
+      "text": "Максимальний рівень зеленого кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME",
+      "text": "Максимальний рівень синього кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME",
+      "text": "Максимальний рівень кольору для кінцевого кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Активує підтримку справжніх кольорів."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME",
+      "text": "Колір верхнього лівого кута рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME",
+      "text": "Колір верхнього правого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME",
+      "text": "Колір нижнього лівого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME",
+      "text": "Колір нижнього правого кута для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME",
+      "text": "Колір верхньої рамки рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME",
+      "text": "Колір нижньої рамки рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME",
+      "text": "Колір лівої рамки для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME",
+      "text": "Правильний колір рами для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME",
+      "text": "Використовуйте кольори рамок для рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC",
+      "text": "Використовуйте кольори рамки для рампи. Якщо вимкнено, буде створено сіру смугу."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME",
+      "text": "Заповніть ящики"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC",
+      "text": "Ми малюємо коробку в цілому чи малюємо лише межі?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME",
+      "text": "Наступний інтервал гниття рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж зруйнується один кінець наступної рампи?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME",
+      "text": "Радіус вибуху феєрверку"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC",
+      "text": "Скільки блоків (до 10) становить радіус вибуху феєрверку при запалюванні?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME",
+      "text": "Шрифт Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC",
+      "text": "Напишіть шрифт figlet, який підтримується бібліотекою Figgle. Зверніться до бібліотечної документації для отримання додаткової інформації"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME",
+      "text": "Увімкніть чорно-білий режим"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC",
+      "text": "Робить дискотеку чорно-білою. Ваші очі будуть дуже болячими, якщо це буде занадто швидко, тому не рекомендується, якщо ви відчуваєте захоплення швидких зображень."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME",
+      "text": "Щільність шуму"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж писати на новому екрані?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC",
+      "text": "Чим більший відсоток, тим шумніший сигнал"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
+      "text": "Щільність глюків"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
+      "text": "Чим більше відсоток, тим щільніше глюк!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
+      "text": "Завантаження..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
+      "text": "Продовження буде..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
+      "text": "Кінець"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
+      "text": "З новим роком!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME",
+      "text": "Випадіть шанс"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Параметри кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC",
+      "text": "Символ, який нагадує правий верхній кут. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC",
+      "text": "Символ, що нагадує правий нижній кут. Обов’язково введіть лише один символ."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC",
+      "text": "Двійкове число, що спадає на екрані."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC",
+      "text": "Змішування кольорів і друк їх на консоль."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC",
+      "text": "Це диско світло, одна з найперших заставок."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC",
+      "text": "Кольори блищать по екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC",
+      "text": "Лінія, яка блукає по консолі вертикально."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC",
+      "text": "Розчиняє випадкові кольори."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC",
+      "text": "Показує кольоровий блок, який підстрибує по консолі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC",
+      "text": "Показує три індикатори прогресу, які представляють час."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC",
+      "text": "Освітлювальні блоки."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC",
+      "text": "Протирає екран кольоровим."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC",
+      "text": "Проста матриця."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC",
+      "text": "Матричні числа, які випадково розподіляються по екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
+      "text": "Показує вам текст, який підстрибує навколо консолі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
+      "text": "Зникнення тексту."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
+      "text": "Зникнення фону."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
+      "text": "Зникнення тексту в тактах."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
+      "text": "Обіграти колір"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
+      "text": "Імітує людину, яка пише текст із помилками."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC",
+      "text": "Показує текст, який прокручується справа наліво."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC",
+      "text": "Імітує людину, яка писала текст для газети на лінотипній клавіатурі в старі часи."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC",
+      "text": "Тип шаблону заливки лінії. 0 друкує відомий шаблон etaoin символів, 1 друкує повний шаблон etaoin символів, а 2 друкує випадковий набір символів для швидкого заповнення рядка."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC",
+      "text": "Ідеально імітує людину, яка пише текст."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME",
+      "text": "Показати положення стрілки"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC",
+      "text": "Показує положення колонки літер друкарської машинки за допомогою стрілки внизу екрана"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC",
+      "text": "Миготливі кольори на вашому екрані."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC",
+      "text": "Імітує прожектор, який просувається по тексту."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC",
+      "text": "Заповнює рампу градієнтними кольорами."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC",
+      "text": "Складає коробки по екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC",
+      "text": "Імітує смугу, яка стає гнилою з іншим фоновим кольором, створюючи градієнт."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC",
+      "text": "Показує вам феєрверки, які запускаються та вибухають."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC",
+      "text": "Показує вам кольоровий текст філе."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME",
+      "text": "Режим веселки"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC",
+      "text": "Вмикає режим кольорів веселки"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC",
+      "text": "Показати вам кольоровий миготливий текст."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC",
+      "text": "Імітує статичний шум телевізора."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC",
+      "text": "Проста дата й час посередині екрана."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
+      "text": "Імітує збій на екрані."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
+      "text": "Показує спадаючу лінію, яка йде вниз і зникає."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
+      "text": "Показує невизначену панель прогресу."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
+      "text": "Показує пульсуючий фон."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
+      "text": "Показує пульсуючий фон у ритмах."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatPulse вибере випадкові кольори, якщо це ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
+      "text": "Показує вам пульсуючий край."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
+      "text": "Показує пульсуючий край у ударах."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatEdgePulse вибере випадкові кольори, якщо його ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
+      "text": "Показує вам екран, заповнений кольором, який повільно перетворюється на інший колір, створюючи градієнти."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME",
+      "text": "Наступний інтервал гниття градієнта"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж загнивати наступний екран?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC",
+      "text": "Показує градієнт на екрані."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC",
+      "text": "Показує вам зіркову подорож у 2D."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC",
+      "text": "Змінює фон відповідно до встановлених кольорів, що імітує сирену."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME",
+      "text": "Стиль сирени"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC",
+      "text": "Стиль сирени."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
+      "text": "Обертання похилих рис."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
+      "text": "Заповнює консоль кольором змії."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC",
+      "text": "Показує еквалайзер, який показує низькі, середні та високі частоти."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME",
+      "text": "Затримка наступного екрана в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
+      "text": "Імітує системні помилки з різних операційних систем."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
+      "text": "Генерує кольори з випадкового зсуву."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
+      "text": "Показує вам текст, який поступово згасає та блимає."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
+      "text": "ExcaliBeats вибере випадкові кольори, якщо це ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
+      "text": "Явний режим"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
+      "text": "Явно змініть текст на Excalibur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
+      "text": "Режим трансу"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
+      "text": "Режим Trance - множить BPM на 2, щоб імітувати музичний стиль транс"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
+      "text": "Показує вам групу хвиль у смугах."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME",
+      "text": "Рівень частоти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC",
+      "text": "Рівень частоти. Це знаменник числа Пі в математиці."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC",
+      "text": "Показує вам хвилю, яка сама генерується та просувається."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC",
+      "text": "Дарує відчуття зачарування."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC",
+      "text": "Імітує полярне сяйво."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC",
+      "text": "Показує яскраву блискавку."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME",
+      "text": "Імовірність страйку"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC",
+      "text": "Шанс, у відсотках, ударити"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC",
+      "text": "Показує колір фону, який повільно змінюється."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME",
+      "text": "Темні кольори"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC",
+      "text": "Використовувати темні або світлі кольори."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME",
+      "text": "Кольорові сходинки"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC",
+      "text": "Скільки кроків кольору для переходу між двома кольорами?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
+      "text": "Показує вам слово та його хеш-суму."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
+      "text": "Показує згасаючий квадрат у чотирьох кутах."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж зникне квадрат?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
+      "text": "Розкидає число по всьому екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC",
+      "text": "Дає вам шаблон коробки."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC",
+      "text": "Падаюча лінія кольорів."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC",
+      "text": "Шанс викинути новий колір падіння"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC",
+      "text": "Показує простий текст."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC",
+      "text": "Показує простий текст у текстовому полі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC",
+      "text": "Показує слово, яке повільно записується, і його хеш-суму."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC",
+      "text": "Імітує сирену, яка використовує вашу тему як набір кольорів."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC",
+      "text": "Стиль сирени з теми ядра"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC",
+      "text": "Показує вам групу зірок у передній частині корабля."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC",
+      "text": "Показує вам групу крапок у передній частині корабля."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC",
+      "text": "Показує букву, що розсипається по всьому екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC",
+      "text": "Показує кілька рядків."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC",
+      "text": "Показує вам лазерні промені."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC",
+      "text": "Показує вам текст, який блукає по консолі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC",
+      "text": "Поворотна хвиля горизонтально та вертикально для створення чудових візерунків."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME",
+      "text": "Горизонтальний рівень частоти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC",
+      "text": "Рівень горизонтальної частоти. Це знаменник числа Пі в математиці. Використовуйте це, щоб створити красиві хвилясті повороти!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME",
+      "text": "Вертикальний рівень частоти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC",
+      "text": "Рівень вертикальної частоти. Це знаменник числа Пі в математиці. Використовуйте це, щоб створити красиві хвилясті повороти!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC",
+      "text": "Імітує відкриття та закриття дверей."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC",
+      "text": "Показує градієнт, що динамічно змінюється."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC",
+      "text": "По небу швидко біжить комета."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC",
+      "text": "Діамант, який сяє."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC",
+      "text": "Зміна кольору фону відповідно до збільшення відтінку. Веселка!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME",
+      "text": "Насиченість відтінку кольору"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC",
+      "text": "Наскільки інтенсивний колір?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC",
+      "text": "Наскільки світлий колір?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC",
+      "text": "Зміна кольору фону відповідно до збільшення відтінку. Більше веселки!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC",
+      "text": "Різнокольорові частинки!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME",
+      "text": "Щільність частинок"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC",
+      "text": "Наскільки щільні частинки?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME",
+      "text": "Перед зміною часового поясу потрібно оновити"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC",
+      "text": "Скільки оновлень перед зміною часового поясу?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC",
+      "text": "Блок за блоком заповнює весь екран, а потім зникає."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC",
+      "text": "Показує вам танцювальні лінії."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC",
+      "text": "Створює гарні лабіринти за допомогою алгоритму Крускала."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME",
+      "text": "Нова затримка лабіринту в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME",
+      "text": "Швидкість генерації"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC",
+      "text": "Швидкість створення лабіринту в мілісекундах"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME",
+      "text": "Виділіть незакриті позиції"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC",
+      "text": "Якщо ввімкнено, незакриті позиції підсвічуються сірим фоновим кольором. Інакше вони відтворюються як ящики."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME",
+      "text": "Використовуйте перетворення Шварца"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC",
+      "text": "Якщо ввімкнено, ця заставка використовує перетворення Шварціана для перемішування країв лабіринту. В іншому випадку він використовує простий метод перетворення."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC",
+      "text": "Дві групи точок, що обертаються поперек двох половинок консолі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC",
+      "text": "Кожне 1000-е фіксування відзначає віху коміту."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC",
+      "text": "Показує розпилення зірок."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC",
+      "text": "Дві лінії, що міняються кольорами на екрані."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC",
+      "text": "Аналоговий годинник із простою датою та часом у нижній частині екрана."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME",
+      "text": "Показати секундну стрілку"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC",
+      "text": "Показувати секундну стрілку чи ні."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC",
+      "text": "Імітує гіпотетичний несправний чорний екран, на якому іноді з’являються лінії RGB."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME",
+      "text": "Імовірність збою"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC",
+      "text": "Ймовірність, у відсотках, виникнення збоїв на екрані"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME",
+      "text": "Кольоровий відтінок яскравість (світлота)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS",
+      "text": "Святкування 7000-го коміту з 0.0.1!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_LEFT",
+      "text": "залишилося до наступного року"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Це дозволяє налаштувати кольори"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME",
+      "text": "Налаштування рампи годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC",
+      "text": "Це дає змогу налаштувати ліміт годин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME",
+      "text": "Параметри зміни хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC",
+      "text": "Це дозволяє налаштувати зміну хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME",
+      "text": "Налаштування секундної зміни"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC",
+      "text": "Це дозволяє налаштувати секундну рампу"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME",
+      "text": "Налаштування рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC",
+      "text": "Це дозволяє налаштувати пандуси"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC",
+      "text": "Показує текст під лінією на похмурому червоному тлі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC",
+      "text": "Випадкові символи, які випадково розподіляються по екрану."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC",
+      "text": "Прості дата й час у центрі екрана та змінюють колір залежно від поточного часу."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME",
+      "text": "Яскрава дата і час"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC",
+      "text": "Використовувати яскраву або темну версію."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC",
+      "text": "Показує вам танцювальні номери."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC",
+      "text": "Поворотні хвилі горизонтально та вертикально, щоб створити чудові візерунки зі слідами, які залишаються позаду, щоб зникнути."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME",
+      "text": "Довжина сліду"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC",
+      "text": "Довжина сліду рухомої поворотної хвилі."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC",
+      "text": "Блок рухається хвилеподібно із зеленими лінійками, які відстежують його положення."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC",
+      "text": "Показує окремий випадковий символ у кольоровому тексті."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC",
+      "text": "Показує вам слово, яке вибирається так само, як ігровий автомат у казино."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC",
+      "text": "Показує вам кольоровий текст у формі фіґлету, що чергується між двома неоновими кольорами: блакитним і фуксією."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME",
+      "text": "Перші налаштування рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC",
+      "text": "Це дозволяє налаштувати перший пандус"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME",
+      "text": "Налаштування другої рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC",
+      "text": "Це дозволяє налаштувати другий пандус"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME",
+      "text": "Налаштування третьої рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC",
+      "text": "Це дозволяє налаштувати третій пандус"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME",
+      "text": "Налаштування зовнішнього вигляду"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC",
+      "text": "Це дозволяє налаштувати вигляд годинника"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC",
+      "text": "Це дозволяє налаштувати колір годинника"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC",
+      "text": "Це дає змогу налаштувати вигляд зміни хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC",
+      "text": "Це дозволяє налаштувати колір зміни хвилин"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC",
+      "text": "Це дозволяє налаштувати вигляд секундної рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC",
+      "text": "Це дозволяє налаштувати колір секундної рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME",
+      "text": "Параметри кольору початкової позиції"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC",
+      "text": "Це дозволяє налаштувати кольори початкової позиції"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME",
+      "text": "Параметри кольору кінцевої позиції"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC",
+      "text": "Це дозволяє налаштувати кольори кінцевої позиції"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME",
+      "text": "Налаштування рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC",
+      "text": "Це дозволяє налаштувати панель рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC",
+      "text": "Це дозволяє налаштувати зовнішній вигляд рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC",
+      "text": "Це дозволяє налаштувати кольори рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME",
+      "text": "Параметри початку градієнта"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC",
+      "text": "Це дозволяє налаштувати початкові кольори градієнта"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME",
+      "text": "Налаштування кінця градієнта"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC",
+      "text": "Це дозволяє налаштувати кольори кінцевого градієнта"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "Максимальний рівень кольору фону"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "Максимальний рівень кольору фону. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME",
+      "text": "Максимальний рівень кольору лінії"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC",
+      "text": "Максимальний рівень кольору лінії. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME",
+      "text": "Максимальний рівень кольору тексту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC",
+      "text": "Максимальний рівень кольору тексту. Мінімальне допустиме значення — 0, а максимальне — 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC",
+      "text": "Це дозволяє налаштувати вигляд першої рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME",
+      "text": "Інформаційний текст для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст на поточну годину. Спочатку {0} за поточну годину з 24."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME",
+      "text": "Символ верхнього лівого кута для першого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME",
+      "text": "Символ верхнього правого кута для першого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME",
+      "text": "Символ нижнього лівого кута для першого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME",
+      "text": "Символ нижнього правого кута для першого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME",
+      "text": "Символ верхнього кадру для першого такту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME",
+      "text": "Символ нижнього кадру для першого такту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME",
+      "text": "Символ лівого кадру для першого такту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME",
+      "text": "Символ правого кадру для першого такту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC",
+      "text": "Це дозволяє налаштувати перший колір рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME",
+      "text": "Колір першої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME",
+      "text": "Мінімальний рівень червоного кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME",
+      "text": "Мінімальний рівень зеленого кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME",
+      "text": "Мінімальний рівень синього кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME",
+      "text": "Мінімальний рівень кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME",
+      "text": "Максимальний рівень червоного кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME",
+      "text": "Максимальний рівень зеленого кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME",
+      "text": "Максимальний рівень синього кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME",
+      "text": "Максимальний рівень кольору для першого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC",
+      "text": "Це дозволяє налаштувати вигляд другої рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME",
+      "text": "Інформаційний текст для другого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст за поточну хвилину. {0} за поточну хвилину з 60 секунд."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME",
+      "text": "Символ верхнього лівого кута для другої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME",
+      "text": "Символ верхнього правого кута для другої панелі"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME",
+      "text": "Символ нижнього лівого кута для другої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME",
+      "text": "Символ нижнього правого кута для другої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME",
+      "text": "Символ верхньої рамки для другого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME",
+      "text": "Символ нижньої рамки для другого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME",
+      "text": "Символ лівого кадру для другого рядка"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME",
+      "text": "Символ правої рамки для другої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC",
+      "text": "Це дозволяє налаштувати другий колір рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME",
+      "text": "Колір другої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME",
+      "text": "Мінімальний рівень червоного кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME",
+      "text": "Мінімальний рівень зеленого кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME",
+      "text": "Мінімальний рівень синього кольору для другого"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME",
+      "text": "Мінімальний рівень кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME",
+      "text": "Максимальний рівень червоного кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME",
+      "text": "Максимальний рівень зеленого кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME",
+      "text": "Максимальний рівень синього кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME",
+      "text": "Максимальний рівень кольору для секунди"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC",
+      "text": "Це дозволяє налаштувати зовнішній вигляд третьої рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME",
+      "text": "Символ верхнього лівого кута для третьої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME",
+      "text": "Символ верхнього правого кута для третьої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME",
+      "text": "Символ нижнього лівого кута для третьої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME",
+      "text": "Символ нижнього правого кута для третьої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME",
+      "text": "Символ верхньої рамки для третьої такти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME",
+      "text": "Символ нижньої рамки для третього такту"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME",
+      "text": "Символ лівого кадру для третьої такти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME",
+      "text": "Символ правої рамки для третьої такти"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME",
+      "text": "Інформаційний текст для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC",
+      "text": "Напишіть, як виглядає ваш інформаційний текст за поточну секунду. {0} для поточного другого з 60 третіх."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC",
+      "text": "Це дозволяє налаштувати третій колір рампи"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME",
+      "text": "Колір третьої смуги"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME",
+      "text": "Мінімальний рівень червоного кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME",
+      "text": "Мінімальний рівень зеленого кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME",
+      "text": "Мінімальний рівень синього кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME",
+      "text": "Мінімальний рівень кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME",
+      "text": "Максимальний рівень червоного кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME",
+      "text": "Максимальний рівень зеленого кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME",
+      "text": "Максимальний рівень синього кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME",
+      "text": "Максимальний рівень кольору для третього"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Прогрес вибере випадкові кольори, якщо це ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
+      "text": "Якщо зміну кольорів увімкнено, скільки позначок перед зміною кольорів у прогресі? 1 тик = 0,5 третини"
+    }
+  ]
+}

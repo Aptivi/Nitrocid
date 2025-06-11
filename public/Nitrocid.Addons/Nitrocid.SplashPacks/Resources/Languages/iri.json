@@ -1,0 +1,63 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_WELCOME",
+      "text": "Fáilte romhat!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
+      "text": "Dath barra dul chun cinn"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
+      "text": "Dul chun cinn suíomh téacs"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC",
+      "text": "Roghnaigh an suíomh téacs dul chun cinn is fearr leat."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE",
+      "text": "Slán!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
+      "text": "Ag tosú"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
+      "text": "Fan le do thoil agus an eithne á thúsú..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
+      "text": "Fan le do thoil agus an eithne ag múchadh..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
+      "text": "Earráid anaithnid!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
+      "text": "Splancscáileán simplí."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
+      "text": "Splancscáileán a thaispeánann dul chun cinn duit."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
+      "text": "Splancscáileán a thaispeánann tú dul chun cinn ag baint úsáide as an téacs PowerLine."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    }
+  ]
+}

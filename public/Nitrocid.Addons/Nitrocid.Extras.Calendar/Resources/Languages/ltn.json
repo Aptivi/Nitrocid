@@ -1,0 +1,382 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+      "text": "Ostendit date and time"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EXIT",
+      "text": "Exitus"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
+      "text": "Strenuus colorum"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Mora in Milliseconds"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Quot milliseconds expectare ante quam proxime scribes?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Minimum rufus color gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Minimum viridis color gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Minimum hyacintho color level"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
+      "text": "Minimum color level"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Maxime rufus color gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Maxime viridis color gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Maximum caeruleum colorem gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
+      "text": "Maximum color gradu"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Minimum colore rubro gradu. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Minimum viridis color gradu. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Minimum colore caeruleo. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
+      "text": "Minimum color massa. Valor minimus acceptus 0 est et maximus valor acceptus 255 pro 255 coloribus vel 16 pro 16 coloribus."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Maxime ruber color gradu. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Maxime viridis color gradu. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Maximum colorem caeruleum. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
+      "text": "Maximum colorem massa. Valor minimus acceptus 0 est et maximus valor acceptus 255 pro 255 coloribus vel 16 pro 16 coloribus."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC",
+      "text": "Color verus operatur auxilium."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTADDFAILED",
+      "text": "Defecit eventus addere."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTREMOVEFAILED",
+      "text": "Rem incassum tollere."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD",
+      "text": "Non satis argumenta provisa ad eventum apponendum."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE",
+      "text": "Non satis argumenta provisa ad eventum tollendum."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED",
+      "text": "Non satis argumentis ad eventum flexibus provisa."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED",
+      "text": "Non satis argumentis ad commonitionem flexibus cautum est."
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDREMINDER",
+      "text": "Untitled commemoratio"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDEVENT",
+      "text": "Untitled res"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENT_NOTIFICATION",
+      "text": "Nunc eventus est dies!"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDER_NOTIFICATION",
+      "text": "Hoc non requiro!"
+    },
+    {
+      "loc": "NKS_CALENDAR_INVALIDACTION",
+      "text": "Irrita actio."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
+      "text": "Salvum fac omnia et / vel commemorationes destructively"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC",
+      "text": "Si confortavit, omnes eventus delet et/vel commemorationes antequam omnes salvifices eorum mandato calendarii utentes."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC",
+      "text": "Nomen cultura"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_STATUS_READY",
+      "text": "Paratus"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC",
+      "text": "Propono nomen"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS",
+      "text": "Keybindings"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC",
+      "text": "Sicut ostendit diem"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC",
+      "text": "Ostendit iustus tempus"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC",
+      "text": "Utitur UTC loco loci"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+      "text": "Calendarium, eventum et admonitio procurator"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC",
+      "text": "Calendarium genus ad operandum"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC",
+      "text": "Utere tabula-fundatur calendarium videntium"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EVENTS",
+      "text": "Events..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_REMINDERS",
+      "text": "Admonitiones..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_FAILED",
+      "text": "Defecit in calendario interactive;"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE",
+      "text": "Events ac monimenta for"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_LONGFORM",
+      "text": "Longa forma"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_CALENDARTYPE",
+      "text": "Calendarium genus"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSMONTH",
+      "text": "Nulla memoria pro lectus mensis"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSMONTH",
+      "text": "Nulla certe pro lectus mensis"
+    },
+    {
+      "loc": "NKS_CALENDAR_NOCULTURE",
+      "text": "Cultura non invenitur."
+    },
+    {
+      "loc": "NKS_CALENDAR_SHOWCALENDARFAILED",
+      "text": "Fastorum monstra omisit."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDFAILED",
+      "text": "Defecit monimentum addere."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDNEEDSARGS",
+      "text": "Non satis argumentis cautum est admonitionem addere."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVEFAILED",
+      "text": "Defecit commonitorium tollere."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVENEEDSARGS",
+      "text": "Non satis argumentis cautum est ad commonitionem tollendam."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOEVENT",
+      "text": "Nulla elit."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOREMINDER",
+      "text": "Nulla commemoratio."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Culture"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
+      "text": "Color occasus"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_DESC",
+      "text": "Haec sectio permittit te configurare quomodo opera Calendarium."
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_NKSANNIVERSARY",
+      "text": "Nitrocid KS, Dimitte Anniversarium"
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_RAMADAN",
+      "text": "Ramadan"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+      "text": "Calendarium"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSDAY",
+      "text": "Non recordationes pro delectae diem"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSDAY",
+      "text": "Nullae certe pro delectae diem"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC",
+      "text": "Fastis interactive TUI aperit"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC",
+      "text": "Anno scopum"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC",
+      "text": "Scopum mensis numerus"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC",
+      "text": "Commercium cum certe"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC",
+      "text": "Addit res"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC",
+      "text": "Scopum date"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC",
+      "text": "Rem removet"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC",
+      "text": "Eventus ID"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC",
+      "text": "Certe omnes libros"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC",
+      "text": "Salvum certe omnia"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC",
+      "text": "Commercium cum iteratis"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC",
+      "text": "Scopum date and time"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC",
+      "text": "Removet commonitorium"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC",
+      "text": "Admonitio ID"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC",
+      "text": "Omnia commemorat memorias"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC",
+      "text": "Servat omnium monimenta"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
+      "text": "Hoc sino vos colores configurare"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Culture occasus"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
+      "text": "Hoc permittit ut culturam qua utitur ad calendarium Screensaverium configurare"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC",
+      "text": "Quae cultura adhibetur ut nomina, calendarium, mutare mensem, etc.?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
+      "text": "Utere ratio culturae"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC",
+      "text": "Utrum screensaver utitur culturae ad nucleos praecipuos occasus vel hac occasus Screensaver."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
+      "text": "Screensaver occasus..."
+    }
+  ]
+}

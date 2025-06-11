@@ -1,0 +1,259 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "Belirtilen şehir için hava durumu bilgilerini gösterir. OpenWeatherMap kullanır."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "-- {0} için hava durumu bilgisi --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "Hava Durumu: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "Basınç: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "Nem: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "https://home.openweathermap.org/api_keys adresinden kendi API anahtarınızı alabilirsiniz."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "Sıcaklık için Tercih Edilen Birim"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "Şuna benziyor: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "Sıcaklık: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "Rüzgar hızı: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "Rüzgar yönü: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "Mevcut tüm şehirleri gösterir"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "Kaldırmak"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "API anahtarınızı girin:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "Şehirlerin ID'leri ile birlikte listesine aşağıdaki bağlantıdan ulaşabilirsiniz veya bu komuta \"-list\" verebilirsiniz."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "Bu bölüm Forecast'ın nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "Belirtilen şehir için hava durumu bilgilerini gösterir. IBM'den The Weather Channel'ı kullanır."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "Etkileşimli TUI'de hava durumu bilgisi"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "Mevcut tüm şehirleri ve enlem/boylam çiftlerini gösterir"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- Hava durumu bilgisi --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "Enlem ve Boylam"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "Bulut örtüsü"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "Günün saati"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "Minimum sıcaklık"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "Maksimum sıcaklık"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "Yağış olasılığı"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "Yağış türü"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "Isı indeksi"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "Rüzgarın soğukluğu"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "Ultraviyole indeksi"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "Ultraviyole açıklaması"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "Şehrin enlem ve boylamını girin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "Rehberlik için IBM web sitesine başvurarak kendi API anahtarınızı alabilirsiniz."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "Coğrafi konumdan hava durumu bilgisi yükleniyor"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "Hava durumu"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "Sıcaklık"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "Rüzgar hızı"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "Rüzgar yönü"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "Nem oranı"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "Enlem"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "Boylam"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "Arama yapmak için bir şehir adı girin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "Bu isimde şehir yok. Belirli bir şehri aramaya çalışıyorsanız, aradığınız şehre en yakın olan daha geniş bir konumu aramayı deneyin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "Aşağıdaki listeden bir şehir seçin. İki sayı coğrafi konumları temsil eder."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "Şehrin enlemini girin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "Şehir boylamını girin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "Enlem geçersiz."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "Boylam geçersiz."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "Rehberlik için IBM web sitesine danışarak kendi API anahtarınızı alabilirsiniz. The Weather Channel API anahtarını girin."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "Weather Channel API anahtarı sağlanmamıştır. Yardıma ihtiyacınız varsa, IBM web sitesine bakın."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "Eklemek"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "Tümünü Kaldır"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "Manuel olarak ekle"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "Gün bölümü dizisi alınamıyor"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "Gün bölümünü alamıyorum"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "Sıcaklık için tercih ettiğiniz birimi seçin (bu yalnızca \"hava durumu\" komutu için geçerlidir). 1 Kelvin, 2 Metrik ve 3 İngiliz'dir."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "Kullanılacak enlem"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "Kullanılacak boylam"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Weather.com API anahtarı"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "OpenWeatherMap tarafından bilinen şehir kimliği veya şehir adı"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "OpenWeatherMap API anahtarı"
+    }
+  ]
+}

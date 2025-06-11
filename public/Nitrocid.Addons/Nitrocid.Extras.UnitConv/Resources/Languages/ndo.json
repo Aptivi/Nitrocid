@@ -1,0 +1,78 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
+      "text": "Konverter satuan"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS",
+      "text": "Tipe unit yang tersedia dan unitnya:"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
+      "text": "Mencantumkan semua unit yang tersedia"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC",
+      "text": "Gunakan versi TUI dari konverter unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_NOUNITTYPE",
+      "text": "Tidak ada tipe unit seperti itu:"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPES",
+      "text": "Tipe unit yang tersedia:"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_UNITSTOCONVERT",
+      "text": "unit untuk dikonversi"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NUMBERPROMPT",
+      "text": "Masukkan angka yang akan dikonversi..."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NONUMBER",
+      "text": "Anda belum memasukkan angka untuk dikonversi."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_INVALIDNUMBER",
+      "text": "Nomor yang dimasukkan tidak valid."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_CANTCONVERT",
+      "text": "Tidak dapat mengonversi satuan."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_KEYBINDING_CONVERT",
+      "text": "Mengubah..."
+    },
+    {
+      "loc": "NKS_UNITCONV_HOMEPAGE_UNITCONV",
+      "text": "Konverter Satuan"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC",
+      "text": "Tipe unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC",
+      "text": "Jumlah dalam satuan sumber yang akan dikonversi"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC",
+      "text": "Unit sumber"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
+      "text": "Satuan sasaran"
+    }
+  ]
+}

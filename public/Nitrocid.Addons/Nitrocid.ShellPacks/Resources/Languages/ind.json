@@ -1,0 +1,2574 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "{0} ke lie upayogakarta naam: "
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "{0} ke lie paasavard: "
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "{0}  se kanekt kiya gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "{0}: se kanekt karane ka prayaas karate samay truti ({1})"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "sthaaneey nirdeshika {0} maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "ek sthaaneey nirdeshika darj karen. \"..\" vaapas jaane ke lie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "nirdeshika {0} nahin milee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "ek doorasth nirdeshika darj karen. \"..\" vaapas jaane ke lie"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "sthaaneey nirdeshika: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "doorasth nirdeshika: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "fail daunalod kar raha hai {0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "daunalod kee gaee fail {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "fail apalod kar raha hai {0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "apalod kee gaee fail {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "vartamaan sthaaneey nirdeshika  praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "vartamaan rimot nirdeshika  praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "se daunalod ya apalod karane ke lie sthaaneey nirdeshika badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "se daunalod ya apalod karane ke lie doorasth nirdeshika badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "sarvar se doorasth fail hata deta hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "dviaadhaaree ya paath  ka upayog kar sthaaneey nirdeshika mein doorasth fail daunalod karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "sthaaneey nirdeshika soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "doorasth nirdeshika soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "bainaree ya tekst  ka upayog kar doorasth nirdeshika mein sthaaneey fail apalod karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "nirdeshika badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "sarvar ke saath sanvaad karane ke lie ek efateepee khol ka prayog karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "khol mein ek truti thee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "amaany profail chayan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "profail {1} se {0} se kanekt karane ka prayaas kar raha hai ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "naam: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "fail rakam kee ganana karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "amaany enkripshan elgorithm."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "{0} ke lie paasavard darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "aakaar: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "{0} se kanekt karane ka prayaas karate samay truti: kanekshan taimaut ya khoya kanekshan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "nirdisht nirdeshika mein failon kee rakam kee ganana karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "upayogakarta naam ya mel pata darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "paas vard darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "{0}: {1} se kanekt karate samay truti"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "{0} se kanekt ho raha hai ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "pramaanit kar raha hai ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "sandesh daunalod karata hai aur unhen soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "ek sandesh kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "prshth ek sankhyaatmak maan nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "sandesh sankhya rnaatmak ya shoony nahin ho sakatee hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "sandesh sankhya ek sankhyaatmak maan nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- {0} se"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- {0} ke lie"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- {0} mein {1} par bheja gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "nirdisht sandesh nahin mila hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "profail taiyaar kar raha hai ... isamen kaee minat lag sakate hain ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "vartamaan mel nirdeshika ko badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "mel foldar kholane mein asamarth {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "apane mel pate mein nirdeshikaon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "pramaanapatr satyaapan ke dauraan, pramaanapatr trutiyaan hain. yah pahalee baar ho sakata hai ki aap sarvar se jude hon ya pramaanapatr kee samay seema samaapt ho gaee ho. yahaan ek truti hai:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "kya aap vaakee kanekt karana chaahate hain?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "amaany uttar. krpaya pun: prayaas karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "imap sarvar pata aur port darj karen (<pata> ya <pata>: [port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "smtp sarvar pata aur port (<pata> ya <pata>: [port]) darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "ek pate par ek sandesh bhejata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "praaptakarta mel pata darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "vishay darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "apana sandesh neeche darj karen. pushti karane ke lie \"EOF\" likhen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "sandesh bhejana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "maisej beja gaya."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "amaany eemel pata. sunishchit karen ki aapane pata sahee likha hai aur yah dikhae gae udaaharan ke praaroop se mel khaata hai:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "ek sandesh nikaalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "praaptakarta se sabhee sandeshon ko nikaalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "{1} se {0} sandesh {2} se hata diya gaya. {3} sandesh paars karane ke lie shesh hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "inaboks se {0} sandesh {0} hatae gae. {2} sandesh paars karane ke lie shesh hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "fail kholane mein asamarth. shel se baahar ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "nirdisht vikalp {0} amaany hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "uttar sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "efateepee yoozaranem log in karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "efateepee aaeepee pata log karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "keval pahale efateepee profail par lauten"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "{0} apalod karane mein viphal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "fail {0} ke lie daunalod viphal raha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "doorasth failon ko soocheebaddh karane mein viphal: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "{0} hata raha hai ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "{0} sarvar mein nahin paaya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "{0} dvaara kie gae sabhee mel saphalataapoorvak hata die jaate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "{0} dvaara kie gae sabhee mel ko nikaalane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "sandesh bhejane mein truti"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "mooving {0} se {1} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "saphalataapoorvak chala gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "fail ya nirdeshika ko kisee any fail ya nirdeshika mein le jaata hai. aap failon ka naam badalane ke lie bhee isaka upayog kar sakate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "{0} ko {1} mein le jaane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "{0} se {1} kopee karana ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "saphalataapoorvak kopee kiya gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "fail ya nirdeshika ko kisee any fail ya nirdeshika mein kopee karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "{0} se {1} kopee karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "ek sandesh le jaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "praaptakarta ke sabhee sandeshon ko le jaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "{0} dvaara kie gae sabhee mel saphalataapoorvak sthaanaantarit kar die gae hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "{0} dvaara kie gae sabhee mel ko sthaanaantarit karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "{0} se {0} sandesh {2} se sthaanaantarit kiya gaya. {3} sandesh paars karane ke lie shesh hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "efateepee yoozaranem log in karen ya nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "efateepee aaeepee pate par log in karen ya nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "kanekt karate samay pahalee profail chunen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "{0} nae sandesh inaboks mein aae."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "unhen dekhane ke lie \"mail\" kholen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "poora naam: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "nirmaan samay: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "antim pahunch samay: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "antim samay likhen: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "visheshataen: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "mool nirdeshika: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "kahaan khojen: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "fail ka aakaar: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "anulagnakon ke lie fail path darj karen. pushti karane ke lie rikt path par aintair dabaen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "ek enkripted sandesh kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "kunjee aaeedee {0} ke lie paasavard likhen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "ek pate par ek enkripted sandesh bhejata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "vaapas jaane ke lie koee bhee kunjee dabaen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "mel foldar banaane mein asamarth {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "vartamaan kaaryasheel nirdeshika mein ek nirdeshika banaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "vartamaan kaaryasheel nirdeshika se ek nirdeshika nikaalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "mel foldar {0} nahin mila."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "mel foldar {0}: {1} ko hataane mein asamarth"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "ek foldar ka naam badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "mel sandesh poorvaavalokan dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "mel sandeshon ko soocheebaddh karate samay, nikaay poorvaavalokan dikhaen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "yadi otosaiv saksham hai, to paath fail pratyek \"n\" sekand ke lie sahejee jaegee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "aapako ssh ftp sarvar ka upayog karane deta hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "sangrah ke andar sabhee phailon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "kisee fail ko kisee nirdisht nirdeshika ya vartamaan nirdeshika mein nikaalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "sangrah nirdeshika badalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "nirdeshika {0} maujood nahin hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "sangrah nirdeshika {0} maujood nahin hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "ftp shel mein ek truti thee:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "sftp shel mein ek truti thee:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "aap kaise pramaanit karana chaahate hain?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "nijee kunjee fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "kunjika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "kunjee {0} ke lie paasafrez darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "kunjee fail {0} maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "nijee kunjee jodane ka prayaas karane mein truti:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "fail anumatiyaan set karata hai. yah keval yooniks chalaane vaale ftp sarvar par samarthit hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "is satr ke lie prakaar set karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "{0} kee anumatiyon ko {1} par set karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "fail ke lie anumatiyaan saphalataapoorvak set kee gaeen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "deta prakaar aschii par set!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "deta prakaar bainaree par set!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "amaany deta prakaar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "saavadhaan rahen ki adhikaansh failen is mod ka upayog karake theek se daunalod ya apalod nahin hongee, isalie ham adhikaansh sthitiyon mein bainaree mod ka upayog karane kee atyadhik anushansa karate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "feed padhane ke lie rss shel kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "sabhee feed soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "veb brauzar mein feed padhata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "lekh kee jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "aalekh sankhya upalabdh lekhon se badee nahin ho sakatee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "sheershak:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "sampark:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "feed jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "vivaran:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "feed prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "lekhon kee sankhya:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "lekh ka link nahin hai!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "url khola ja raha hai... skreen par dikhae gae charanon ka paalan karana sunishchit karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "json fail ko sushobhit karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "bainaree ya tekst ka upayog karake doorasth foldar ko sthaaneey nirdeshika mein daunalod karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "bainaree ya tekst ka upayog karake sthaaneey foldar ko doorasth nirdeshika mein apalod karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "foldar daunalod ho raha hai {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "daunalod kiya gaya foldar {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "foldar {0} ke lie daunalod viphal raha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "foldar apalod ho raha hai {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "apalod kiya gaya foldar {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "json fail ko chhota karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "json sampaadak ne abhee tak koee fail streem nahin kholee hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "parivartanon ko saheje bina json shel se baahar nikalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "json fail sahejata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "json fail print karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "likhen ki aap apane login prompt ko kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "likhen ki aap kaise chaahate hain ki aapaka paasavard sheeghr ho. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "efateepee soochee mein fail vivaran dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "efateepee ke lie upayogakarta naam sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "efateepee ke lie paasavard sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "pahale efateepee profail ka prayog karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "ftp speed daayal mein nae kanekshan joden"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "surakshit ftp pramaanapatr satyaapit karane ka prayaas karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "kanekshan par ftp motd dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "hamesha amaany ftp pramaanapatr sveekaar karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "doorasth nirdeshikaon ko soocheebaddh karate samay ftp fail vivaran dikhaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "ftp se kanekt karane ke lie pahale ftp profail ka upayog karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "saksham hone par, ftp speed daayal mein ek naya kanekshan jodata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "ftp pramaanapatron ko maany karane ka prayaas karata hai. ise band karane kee anushansa nahin kee jaatee hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "login par din ka efateepee sandesh dikhaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "hamesha amaany ftp pramaanapatr sveekaar karen. ise chaaloo karane kee anushansa nahin kee jaatee hai kyonki isase suraksha jokhim ho sakate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "mel ke lie upayogakarta naam sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "mel ke lie paasavard sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "mel ke lie imap sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "mel ke lie esemateepee sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "svachaalit roop se mel sarvar ka pata lagaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "mel deebag saksham karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "nae mel sandeshon ke lie soochit karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "mel ke lie gpg paasavard sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "imap ping antaraal bhejen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "esemateepee ping antaraal bhejen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "mel tekst praaroop"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "likhen ki aap apane imap sarvar ko kaise prompt karana chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "likhen ki aap apane esemateepee sarvar ko kaise sanket dena chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "die gae pate ke aadhaar par mel sarvar ka svachaalit roop se pata lagaen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "mel sarvar deebag saksham karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "kisee bhee nae mel sandesh ke lie aapako soochit karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "likhen ki aap apane jeepeejee paasavard ko kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "imap ping bhejane ke lie kitane mileesekand?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "smtp ping bhejane ke lie kitane mileesekand?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "niyantrit karata hai ki mel tekst kaise dikhaaya jaega."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "rss feed url sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "rss feed ko svatah reefresh karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "rss feed antaraal ko svatah taaza karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "likhen ki aap apane rss feed sarvar ko kaisa chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "rss feed ko reefresh karane ke lie kitane mileesekand?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "esefateepee soochee mein fail vivaran dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "sftp ke lie upayogakarta naam sheeghr shailee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "sftp speed daayal mein nae kanekshan joden"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "doorasth nirdeshikaon ko soocheebaddh karate samay sftp fail vivaran dikhaata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "saksham hone par, sftp speed daayal mein ek naya kanekshan jodata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "efateepee sarvar jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "sarvar pata:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "sarvar port:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "sarvar prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "sarvar sistam prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "sarvar enkripshan mod:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "sarvar deta kanekshan prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "sarvar sistam:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "sarvar daunalod deta prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "sarvar apalod deta prakaar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "haish karane ke lie ek doorasth fail darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "ek doorasth nirdeshika darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "efateepee ke lie punaraavartee haishing"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "nirdeshika ko punaraavartee haish karana hai ya nahin. krpaya dhyaan den ki sabhee ftp sarvar isaka samarthan nahin karate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "ek ftp sarvar kamaand nishpaadit karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "mel ke traansaphar..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "host ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "upayogakarta naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "tathy prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "enkoding"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "kootalekhan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "protokol"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "mel sthaanaantaran pragati dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "mel sthaanaantaran pragati"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "mel sthaanaantaran pragati (ekal)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "yadi saksham kiya gaya hai, to mel shel dikhaega ki mel daunalod karate samay kitane bait prasaarit hue."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "likhen ki aap apanee mel sthaanaantaran pragati shailee kaisee chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai. sthaanaantarit aakaar ke lie {0} aur kul aakaar ke lie {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "likhen ki aap apanee mel sthaanaantaran pragati shailee kaisee chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai. {0} sthaanaantarit aakaar ke lie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "http shel praarambh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "nirdisht anurodh ka upayog karake http sarvar se pratikriya praapt karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "http sarvar se saamagree hataata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "http shel mein ek truti thee:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "nirdisht anurodh ka upayog karake http sarvar se string praapt karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "mil raha hai {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "sangrah mein ek sthaaneey fail paik karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "kuchh bhee paik nahin kar sakata."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "rss feed fech taimaut"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "rss feed ke samayabaahy hone se pahale kitane mileesekand prateeksha karen?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "efateepee sancharan ke lie pun: prayaas prayaas satyaapit karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "efateepee kanekshan taimaut"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "efateepee deta kanekshan taimaut"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "efateepee aaeepee sanskaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "apalod ko satyaapit karane ke lie kitanee baar aur daunalod ko pooree tarah se viphal hone se pahale satyaapan viphal hone par punah prayaas karen?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "ftp kanekshan taimaut se pahale kitane mileesekand prateeksha karen?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "ftp deta kanekshan taimaut se pahale kitane mileesekand prateeksha karen?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "intaranet protokol ka vah sanskaran chunen jisaka efateepee sarvar samarthan karata hai aur jise efateepee klaint upayog karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "json shel ke lie difolt json svaroopan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "json shel ko sahejane ke lie difolt json svaroopan (sundar ya chhota) ka chayan karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "soochee mein fail vivaran dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "kashtaprad \"anumati asveekrt\" sandeshon ko dabaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "ingit karata hai ki lakshy path nirapeksh hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "fail nirdisht nahin hai. shel se baahar nikal raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "feed ko bukamaark karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "feed bukamaark hataata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "bukamaark mein feed maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "sabhee bukamaark kie gae feed soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "fail {0} nahin milee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "fail maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "koee jaanakaaree nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "fail ya foldar nahin khola ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "nyoolain stail:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "bainaree fail:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "mimai metaadeta:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "poora naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "sanskaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "sanskrti ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "saamagree prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "fail ek maany .nait asembalee nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "fail sistam jaanakaaree praapt nahin kee ja sakatee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "fail ya nirdeshika kee pratilipi nahin banaee ja sakatee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "fail ya nirdeshika ko sthaanaantarit nahin kiya ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "fail ya nirdeshika ko hataaya nahin ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "chayanit fail ko kopee karane ke lie gantavy foldar ka path ya poora path darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "sunishchit karen ki aapane sahee path likha hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "fail maujood nahin hai. sunishchit karen ki aapane sahee path likha hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "chayanit fail ko le jaane ke lie gantavy foldar ka path ya poorn path darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "naya fail naam darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "sunishchit karen ki aapane sahee fail naam likha hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "fail pahale se maujood hai. naam kisee any fail dvaara kabja nahin kiya jaana chaahie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "naya nirdeshika naam darj karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "foldar pahale se maujood hai. naam kisee any foldar dvaara kabja nahin kiya jaana chaahie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "koee sanshodhan nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "kanekshan abhee tak sthaapit nahin hua hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "sarvar pata darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "intaraiktiv sistam host fail prabandhak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "aarkaiv fail ko aarkaiv shel mein kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "git shel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "do json failon ke beech antar dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "imap mel klaint kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "pop3 mel klaint kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "pop3 mel 0.0.20.0 se vaapas aa raha hai, lekin ham vartamaan mein ise is sanskaran mein jaaree karane kee yojana nahin bana rahe hain. agale sanskaran kee prateeksha karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "rss feed url darj karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "pata paars karane ka prayaas karate samay truti. sunishchit karen ki aapane pata sahee likha hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "ek intaraiktiv rss feed reedar tui kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "kuchh bhee nahin nikaala ja sakata."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "sangrah likhane yogy nahin hai kyonki prakaar hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "kansol par rimot fail kee saamagree padhata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "diskanekt kie bina shel se baahar nikalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "sunishchit karen ki aapane port ko sahee tareeke se nirdisht kiya hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "ek se adhik profail milee. ek ka chayan karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "ripojitaree nirdisht nahin hai. shel se baahar nikal raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "ripojitaree kholane mein viphal. shel se baahar nikal raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "fail mein lain dar lain badalaavon kee soochee praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "shaakha kee jaanch karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "kamit banaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "kamit ka varnan karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "vartamaan kamit aur sthaaneey failon ke beech antar dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "paich hank form mein unakee saamagree ke aadhaar par vartamaan kamit aur sthaaneey failon ke beech antar dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "vartamaan kamit aur sthaaneey failon ke beech unake astitv ke aadhaar par antar dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "vartamaan kamit aur sthaaneey failon ke beech unake astitv aur unakee saamagree ke aadhaar par antar dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "rimot se sabhee apadet praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "fail kee sthiti praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "ek saral ripojitaree jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "sabhee shaakhaon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "sabhee kamit ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "sabhee rimot ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "sabhee taig ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "haiad se ek taig banaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "sarvar se sabhee apadet kheenchata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "sabhee apadet ko sarvar par bhejata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "sthaaneey ripojitaree ko reeset karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "sopht reeset karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "mishrit reeset karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "haard reeset karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "aapakee pahachaan set karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "parivartan ko charanabaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "sabhee parivartanon ko charanabaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "ripojitaree kee sthiti"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "parivartan ko anastej karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "sabhee ko anastej karata hai parivartan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "sabhee aagaamee anurodhon mein kunjee aur maan ke saath ek sheershalekh jodata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "vartamaan upayogakarta ejent praapt karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "sabhee aagaamee anurodhon ke lie sheershalekh par ek kunjee sampaadit karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "anurodh sheershalekhon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "nirdisht anurodh ka upayog karake fail ko http sarvar par daalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "nirdisht anurodh ka upayog karake string ko http sarvar par daalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "nirdisht anurodh ka upayog karake fail ko http sarvar par post karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "nirdisht anurodh ka upayog karake string ko http sarvar par post karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "sabhee aagaamee anurodhon ke lie sheershalekh par ek kunjee nikaalata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "upayogakarta ejent set karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "pahale se maujood sheershalekh jodana."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "jo sheershalekh maujood nahin hai use hataana."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "jo sheershalekh maujood nahin hai use sampaadit karana."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "ek naee saranee, objekt ya propartee jodata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "pairent path nirdisht karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "prakaar nirdisht karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "banae jaane vaale propartee naam ko nirdisht karata hai. isaka upayog tab kiya jaata hai jab pairent path koee objekt ho."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "json fail saaf karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "ek propartee dhoondhata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "pairent propartee nirdisht karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "json fail ke baare mein jaanakaaree dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "vyaktigat propartee na dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "sabhee maan dikhaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "lakshy objekt hataata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "sundar json"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "nyoonatam json"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "maujooda saranee, objekt ya propartee ke lie maan set karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "intaraiktiv editar mein json fail kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "json fail ke andar tokan nahin mila hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "pairent tokan nahin mila hai. sunishchit karen ki aapane path {0} sahee dhang se likha hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "nirdisht prakaar {0} amaany hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "pairent tokan prakaar {0} vaale propartee naam ke saath koee naya aaitam nahin joda ja sakata."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "pairent tokan prakaar {1} vaale propartee naam ke saath koee naya aaitam nahin joda ja sakata."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "pairent {1} ke bheetar propartee ka naam {0}, taip {2}, maujood nahin hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "sheershak aur/ya vivaran mein kisee vaakyaansh ke lie feed khojata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "sheershak ke lie khojen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "vivaran ke lie khojen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "sheershak aur vivaran ke lie khojen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "kes sanvedanasheel khoj"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "feed url paars karane mein viphal:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "koee vivaran nahin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "failon aur foldaron ka vivaran dikhaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "\"anadhikrt\" sandeshon ko dabaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "{0} ke lie nijee kunjee ka sthaan darj karen. kunjiyaan jodane ka kaam poora karane ke lie \"q\" likhen: "
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "{0} se kanekt karane ka prayaas kar raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "sql kveree nishpaadit karata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "detaabes jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "intaraiktiv heks sampaadak tui mein sql fail kholata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "yah sangrah prakaar samarthit nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "kya aap vaakee {0} ko hataana chaahate hain?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "upayogakarta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "sait"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "koee simbalik jaanakaaree nahin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "sanshodhit"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "fail ke lie dosh sthiti"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "hank sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "panktiyon kee sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "praarambhik pankti sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "antim pankti sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "praarambhik kamit"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "kamit sh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "kamit sandesh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "kamit lekhak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "kamit kamitar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "maata-pita kee sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "antim kamit"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "braanch chek aaut karane se pahale kamit banaakar apana kaam pahale sev karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "braanch maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "is kamaand ka upayog karane se pahale aapako khud ko pahachaanana hoga. khud ko pahachaanane ke lie"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "ka upayog karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "nae kamit ke saath ripojitaree apadet kee gaee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "kamit ke lie vivaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "mein saamaany parivartan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "mein saamagree parivartan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "rimot maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "apadet kheenchane ke lie koee rimot nahin mila."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "fail ke lie sthiti"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "nange ripojitaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "hed alag ho gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "koee sandarbh nahin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "uthala klon"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": ".git ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "kaaryasheel nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "shaakha ke lie pratibaddhataen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "ek naya taig banaaya! yahaan aapake taig ka vivaran hai:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "ripo kee aapakee sthaaneey prati adyatit hai!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "faast foravard kiya gaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "apadet kiya gaya ripojitaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "aapake marj ke parinaamasvaroop sangharsh hua. krpaya kisee bhee sangharsh ko hal karen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "aapane khud ko saphalataapoorvak pahachaan liya hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "stej mein koee sanshodhan nahin kiya gaya hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "fail {0} ko saphalataapoorvak stej kiya gaya!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "fail {0} ko stej karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "shaakha {0} ke lie sthiti..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "koee sanshodhan nahin kiya gaya hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "anatraik kee gaee failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "koee anatraik kee gaee failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "failen jodee gaeen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "koee jodee gaee failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "sanshodhit failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "koee sanshodhit failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "hata dee gaee failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "koee hataee gaee failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "stej kee gaee failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "koee stej kee gaee failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "stej kee gaee failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "koee stej kee gaee failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "naam badalee gaee failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "koee naam badala gaya fail nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "gum failen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "koee gum failen nahin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "anastej karane ke lie koee sanshodhan nahin kiya gaya hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "fail {0} ko saphalataapoorvak anastej kiya gaya!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "fail {0} ko anastej karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "fail {0} post kee ja rahee hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "string ko {0} par post kiya ja raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "string ko {0} par apalod kiya ja raha hai..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "json shel aaitam jodane mein viphal raha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "sampatti yahaan paee gaee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "sampatti nahin milee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "aadhaar json tokan jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "aadhaar prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "aadhaar mein maan hain"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "chaild tokan ginatee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "aadhaar path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "vyaktigat json tokan jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "tokan prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "tokan mein maan hain"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "tokan path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "tokan maan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "sampatti kee jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "sampatti prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "sampatti ginatee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "sampatti ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "sampatti path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "sampatti maan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "json shel aaitam hataane mein viphal raha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "json shel aaitam set karane mein viphal raha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "{1} se sandesh {0} ko sthaanaantarit kar diya gaya. paars karane ke lie {2} sandesh shesh hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "anulagnak:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "is kanekshan mein ek amaany rss feed instens hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "agyaat lekh sheershak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "durbhaagy se, is lekh mein koee saamagree nahin hai. aap abhee bhee lekh ka anusaran kar sakate hain"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "is lekh mein koee link nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "lekh link ke lie host brauzar nahin khola ja sakata."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "sanshodhit:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "{0} ke lie pairaameetar maan darj karen:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "sql kamaand saphal hua. yahaan uttar die gae hain:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "sql kamaand viphal hua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "detaabes path:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "sarvar sanskaran:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "kanekshan sthiti:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "kanekshan string:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "detaabes naam:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "prompt preeset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki aarkaiv shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki ftp shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki git shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki http shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki json shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "json shel prompt preeset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "json sampaadak otosev saksham karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "json sampaadak otosev suvidha ko chaaloo ya band karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "json sampaadak otosev antaraal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki mel shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "ek prshth mein adhikatam ee-mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "ek prshth mein kitane ee-mel sandesh pradarshit karane hain?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki rss shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "rss prompt preeset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki sftp shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki sql shel kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "sql shel prompt preeset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "fail prakaar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "feed laibreree mein feed khojata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "kopee karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "sthaanaantarit karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "hataen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "oopar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "jaanakaaree"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "naam badalen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "naya foldar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "kholen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "mimai metaadeta (vistaarit)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "haindalar panjeekrt hai, lekin kisee tarah eksatenshan haindalar praapt karane mein viphal raha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "kopee karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "le jaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "sangrah pravishtiyaan praapt nahin kee ja sakateen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "sangrah abhee tak lod nahin hua hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "vartamaan sangrah nirdeshika nirdhaarit nahin kee ja sakatee."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "antim shel yah shel nahin hai jisase alag kiya ja sake."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "klaint populet nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "abhee tak koee ftp klaint nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "klaint abhee tak kanekt nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "imap sarvar konfigareshan nahin mil sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "smtp sarvar konfigareshan nahin mil sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "klaint abhee tak kanekt nahin hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "aur padhen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "taaza karen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "koee lekh nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "koee feed nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "kanekshan nahin mil sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "fail streem abhee tak khulee nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "json fail abhee tak khulee nahin hai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "pankti sankhya samaapti shrenee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "srot fail ya nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "lakshy fail ya nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "enkripshan elgoridam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "git ripojitaree vaalee nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "pankti sankhya aarambhik seema"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "shaakha ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "kamit saaraansh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "kamit sh haish"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "doorasth naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "taig ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "taig ko enotet karane ke lie sandesh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "aapaka ee-mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "aapaka upayogakarta naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "anastejd fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "stejd fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "sangrah fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "sthaaneey nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "sangrah ke andar nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "sangrah mein fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "nikaalane ke lie sthaaneey nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "sthaaneey fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "jodane ke lie sangrah nirdeshika"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "kanekt karane ke lie ftp sarvar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "doorasth fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "sthaaneey nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "doorasth nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "hataane ke lie doorasth fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "nishpaadit karane ke lie sarvar kamaand"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "sthaaneey nirdeshika banaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "doorasth nirdeshika banaata hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "srot fail ya nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "lakshy fail ya nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "sthaaneey fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "chhmod ke anusaar anumati sankhyaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "nirdisht karata hai ki sthaanaantaran prakaar aschii ya bainaree hai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "prateekaatmak link: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "hedar kunjee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "hedar maan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "http anurodh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "apalod karane ke lie fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "apalod karane ke lie string"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "upayogakarta ejent string"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "login karane ke lie eemel pata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "foldar banaen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "le jaen..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "sabhee le jaen..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "foldar ka naam badalen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "foldar hataen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "sandesh hataen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "hataen sabhee..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "foldar ya sandesh nahin khola ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "naee nirdeshika ka naam likhen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "nirdeshika banaana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "foldar nahin banaaya ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "is sandesh ko le jaane ke lie ek naee nirdeshika chunen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "sandesh le jaana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "sandesh nahin le ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "ek hee preshak dvaara sabhee sandeshon ko le jaane ke lie ek naee nirdeshika chunen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "preshak {0} dvaara sandeshon ko le jaana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "ek hee preshak dvaara sabhee sandeshon ko le nahin ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "naam badalane ke lie naee nirdeshika ka naam likhen {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "nirdeshika ka naam badalana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "foldar ka naam nahin badala ja sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "nirdeshika hataana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "foldar nahin hata sakata"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "sandesh hataana..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "sandesh nahin hata sakate"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "preshak {0} dvaara sandesh hata rahe hain..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "ek hee preshak dvaara sabhee sandesh nahin hata sakate"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "mel nirdeshika naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "prshth sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "sandesh aaeedee"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "preshak ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "puraanee mel nirdeshika naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "naee mel nirdeshika naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "intaraiktiv mel prabandhan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "kanekt karane ke lie sftp sarvar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "rss feed link"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "feed sankhya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "khojane ke lie vaakyaansh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "pahalee json fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "doosaree json fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "json fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "aautaput json fail ka path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "jodane ke lie json maan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "json propartee ka naam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "objekt path"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "json maan"
+    }
+  ]
+}

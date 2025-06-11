@@ -1,0 +1,317 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "wúfǎ qǔdé chūshǐhuà cǐ wàiguà chéngshì suǒ xū de zīliào."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "zǐsè héxié"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "zhè shì qiánjǐng de Android jíxiáng wù yánsè"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "wǒmen de pǐnpái héxié"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "liúxíng de VIM zhǔtí Ayu de shēn sè bǎnběn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "liúxíng de VIM zhǔtí Ayu de jīngjiǎn bǎn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "liúxíng VIM zhǔtí Ayu de Mirage bǎnběn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "zhè shì xīn xuénián de dì yī tiān"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "zuì qīng de zhōngduān"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "zhè shì hēi méiguī"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "KDE Plasma 5 zhǔtí Breeze de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "IDE de liúxíng pèisè fāng'àn, lìrú IntelliJ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "shì shíhòu huí dào hēi'àn miànle."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "Debian de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "shēngdòng de nèihé yù shè zhǔtí"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "nèihé zhōng de bèijǐng zhòngyīn!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "Dàochù dōu yǒu gèng duō kǒuyīn!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "Rúguǒ nín shì EDM àihào zhě, qǐng shǐyòng"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "fánghuǒ zhào"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "shēnlán sè bèijǐng zhōng nín shǐshī bān de jīnsè gōngdiàn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "pútáo hé míhóutáo hùnhé zài yīqǐ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "pútáo de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "xiānyàn de lǜsè, lán sè hé zǐsè"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "lǜhuà nǐ de huánjìng, lǜhuà nǐ de héxīn. Ràng dìqiú gèng lǜ!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "Wǒmen tiānjiāle lǜsè hé hóngsè zuòwéi yánsè."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "Lǜsè hé fěnhóngsè hùnhé zài yīqǐ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "yǐ zhī de zhōngduān pèisè fāng'àn zhī yī"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "huīsè bèijǐng shàng de lǜsè wénběn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "chuántǒng de yìndù yánsè jiù zài nín de kòngzhì táizhōng."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "Ràng nǐ de zhōngdiǎn chōngmǎn níngméng suān"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "qīng zhì mùbǎn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "biāozhǔn Linux zhōngduān yánsè"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "huīsè duānzǐ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "zhōngduān jī shàng de yīxiē Material Design wénběn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "chéngsè hé zōngsè sèdiào"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "Melange zhǔtí línggǎn yuán zì tóngmíng VIM zhǔtí"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "ràng nǐ de zhōngduān jī chōngmǎn bòhé wèi"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "láizì Beyond the Boundary de lìshān wèilái de tiáo sè bǎn."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "Zhǔtí línggǎn láizì tóngmíng VIM zhǔtí"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "nǐ xǐhuān ní hóng lán hé fěnhóngsè ma?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "Zhège zhǔtí duì nǐ lái shuō yīnggāi shì zhōng xìng de."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "Zhè shì nǐ yèwǎn kāishǐ shí de yèkōng!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "Shí yuè jíjiāng dàolái, zuò hǎo zhǔnbèi!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "Jú sè dì hǎiyáng"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "lín duānzǐ jiāng yīqiè biànchéng chéngsè"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "gěi nǐ yī gǔ hóng sè de qìxí."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "Xiě hóng sè de kòngzhì tái"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "yīnghuā shù huì dài gěi nǐ yīsī zhōngguó fēng"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "suǒyǒu qīngsè"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "kējì àihào zhě de zhǔtí"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "Trance yīnyuè mí? Zhè jiùshì wèi nǐ zhǔnbèi de zhǔtí!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "Láizì liúxíng Linux zuòyè xìtǒng Ubuntu de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "gěi nǐ wánměi de zuì'è dūshì fēnwéi"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "zhè shì zuì'è dūshì dí límíng."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "Visual Studio de pèisè fāng'àn, zuìqiáng dà de IDE zhī yī"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "Windows 11(Windows de zuìxīn bǎnběn) de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "yòng zhège zhǔtí dài huí huáijiù zhī qíng!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "Nín de zhōngduān yóu mùbǎn zǔchéng"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "línggǎn yuán zì bùtóng shuǐguǒ de zhōngguó tú'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Red Hat Linux zuòyè xìtǒng de yǎnshēng chǎnpǐn Alma Linux de yánsè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Linux zuòyè xìtǒng Arch Linux de yánsè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "EndeavourOS de pèisè fāng'àn, tā shì Linux zuòyè xìtǒng Arch Linux de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Fedora de pèisè fāng'àn,Linux zuòyè xìtǒng Red Hat de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Linux zuòyè xìtǒng Gentoo de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "záo kè de tú'àn yánsè xíngchéng duōcǎi de màntuóluó"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "Kubuntu de pèisè fāng'àn,Kubuntu shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "Linux Mint de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de fēi guānfāng yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "Lubuntu de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Manjaro de pèisè fāng'àn (Linux zuòyè xìtǒng Arch Linux de yǎnshēng chǎnpǐn)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "Linux zuòyè xìtǒng openSUSE de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Linux zuòyè xìtǒng Red Hat de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "hóng sè yīnyǐng dāpèi dòngtài qiáng tiáo sè, dǎzào yǐn rén zhùmù dì wénběn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Rocky Linux de yánsè fāng'àn, zhè shì Linux zuòyè xìtǒng Red Hat de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Linux zuòyè xìtǒng Slackware de pèisè fāng'àn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "Xubuntu de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "Zorin OS de pèisè fāng'àn,Zorin OS shì liúxíng Linux zuòyè xìtǒng Ubuntu de fēi guānfāng yǎnshēng chǎnpǐn"
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "निम्न के कारण मॉड लोड नहीं किया जा सकता है:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1} शुरू हुआ"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "अमान्य भाषा"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "सुरक्षित मोड पर पार्सिंग मोड की अनुमति नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "मोद {०} रुक गया"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1} रुका"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "मॉड को अंतिम रूप देने में विफल {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "प्रारंभिक मोड"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "मॉड संस्करण:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "मॉड {0} नहीं मिला।"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "आधुनिक नाम:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "मॉड फ़ाइल नाम:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "मॉड फ़ाइल पथ:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "अपने मोड प्रबंधित करें"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "मॉड प्रबंधन सुरक्षित मोड में अक्षम है।"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "अमान्य आदेश {0}. नीचे उपयोग की जाँच करें:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "मॉड नहीं मिला या फ़ाइल में अमान्य वर्ण हैं।"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "मैनुअल पेज {0} अमान्य है।"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "इस मैनुअल पेज को भरने पर विचार करें।"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "मॉड मैनुअल"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "सुरक्षित मोड पर स्टॉपिंग मोड की अनुमति नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "मॉड पहले ही शुरू हो चुका है!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "मॉड अभी तक शुरू नहीं हुआ है!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "मॉड को संगत संस्करण में अपग्रेड करने के लिए मॉड के विक्रेता से संपर्क करें।"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "ब्लैक लिस्टेड मोड"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "उन मॉड के फ़ाइल नाम लिखें जो स्टार्टअप पर नहीं चलेंगे। जब आप समाप्त कर लें, तो \"q\" लिखें। मौजूदा मॉड को हटाने के लिए पथ के आगे एक ऋण चिह्न लिखें।"
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "मॉड {0} को काली सूची में डाल दिया गया है।"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "बूट पर कर्नेल संशोधन प्रारंभ करें"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "बूट पर कर्नेल संशोधनों को स्वचालित रूप से प्रारंभ करें."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "मॉड फ़ाइल निर्दिष्ट नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "पहले से स्थापित मॉड को स्थापित करने का प्रयास कर रहा है। मोड अपडेट किया जा रहा है..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "के लिए स्थापना विफल"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "प्रदान की गई मॉड फ़ाइल असंगत है।"
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "स्थापना रद्द करने में विफल"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "कस्टम भाषा को स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी आवश्यक स्थानीयकरण प्रदान नहीं करती है।"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "मॉड कमांड दिखाएं मदद पर भरोसा करें"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "मॉडफाइल अमान्य है।"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "बिना शीर्षक वाला मैनुअल पेज"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "कस्टम भाषा स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी मौजूद नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "मॉड स्क्रिप्ट शून्य नहीं हो सकती."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "कोई मॉड नहीं पाया गया."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "मॉड को रोक रहा है {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "मॉड दृढ़ता से हस्ताक्षरित नहीं है. इसमें अविश्वसनीय कोड हो सकता है."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "मॉड को लोड नहीं किया जा सकता क्योंकि कर्नेल के इस संस्करण और इस मॉड के बीच असंगतता है:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "यहां त्रुटियों की एक सूची दी गई है जो इस असंगति की जांच करने में आपकी सहायता कर सकती है:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "मॉड {0} को बिल्कुल एपीआई संस्करण {1} की आवश्यकता है, लेकिन आपके पास संस्करण {2} है। नाइट्रोसिड केएस और/या मॉड को अपग्रेड करने से आमतौर पर मदद मिलती है। मॉड पार्सिंग विफल."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "मॉड {0} इस एपीआई संस्करण के साथ ठीक से काम नहीं कर सकता है। मॉड प्रारंभ होने में विफल हो सकता है. नवीनतम प्रति प्राप्त करने के लिए मॉड विक्रेता से संपर्क करें।"
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "मॉड {0} का नाम नहीं है. मॉड पार्सिंग विफल. स्रोत कोड की समीक्षा करें."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "मॉड {0} का संस्करण नहीं है. मॉड पार्सिंग विफल. स्रोत कोड की समीक्षा करें."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "मॉड {0} में अमान्य संस्करण है। मॉड पार्सिंग विफल. संस्करण था"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "संस्करण"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "फ़ाइल का नाम"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "दस्तावेज पथ"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "दुर्भाग्य से, इस मैनुअल पेज में कोई सामग्री नहीं है। हालाँकि, यह दस्तावेज़ मॉड विक्रेता के वेबपेज के अंतर्गत पाया जा सकता है। यदि आपको अभी भी यह दस्तावेज़ नहीं मिल रहा है, तो अधिक जानकारी के लिए मॉड के डेवलपर्स से पूछें।"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "द्वारा आपके समक्ष प्रस्तुत है"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "कंटेंट की लम्बाई"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "कोई सामग्री नहीं."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "कोई संशोधन नहीं."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "गैर-मौजूद मॉड के साथ कस्टम फ़ंक्शन निष्पादित नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "निर्भरता असंतुष्ट. विफल निर्भरताएँ नीचे सूचीबद्ध हैं:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "अस्तित्वहीन मॉड {0} के लिए मैनुअल से पूछताछ करने का प्रयास किया गया।"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "अस्तित्वहीन मॉड {1} के लिए मैनुअल {0} को आरंभ करने का प्रयास किया गया।"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "अस्तित्वहीन मॉड {1} के लिए मैन्युअल फ़ाइल {0} को प्रारंभ करने का प्रयास किया गया।"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "मैन्युअल फ़ाइल {0} को प्रारंभ करने का प्रयास किया गया जो मॉड {1} के लिए मौजूद नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "नाम"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "अविश्वसनीय मॉड लोड करने की अनुमति दें"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "यदि सही पर सेट किया जाता है, तो कर्नेल उन मॉड्स को लोड करने पर त्रुटि नहीं करेगा जिनमें हस्ताक्षरित सार्वजनिक कुंजी नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "सहायता कमांड में सूचीबद्ध करते समय कर्नेल संशोधन कमांड की गिनती दिखाएं"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "सुरक्षित मोड पर मॉड्स को शुरू या बंद करने की अनुमति नहीं है।"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "फ़ील्ड जानकारी प्राप्त नहीं की जा सकी"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "मॉड संस्करण निर्धारित नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "अज्ञात लोडर अपवाद"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "मॉड स्थानीयकरण लोड नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "मॉड प्रारंभ करें (चयन करें)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "मॉड प्रारंभ करें (इनपुट)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "मॉड बंद करो"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "मॉड पुनः लोड करें"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "मॉड स्थापित करें (चयन करें)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "मॉड स्थापित करें (इनपुट)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "मॉड अनइंस्टॉल करें"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "सभी प्रारंभ करें"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "सभी को रोकें"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "सभी पुनः लोड करें"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "मॉड असेंबली से गैर-मौजूद वर्ग प्रकार वापस नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "मॉड '{1}' में फ़ंक्शन '{0}' नहीं मिल सका."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "मॉड '{1}' में गुण '{0}' नहीं मिल सका."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "मॉड '{1}' में फ़ील्ड '{0}' नहीं मिल सका."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "यह वर्ग मॉड वर्ग नहीं है"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "बोली"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "प्रवेश बिंदु"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "उस मॉड का पथ दर्ज करें जिसे आप शुरू करना चाहते हैं"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "मॉड प्रारंभ करने में विफल"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "उस मॉड का पथ दर्ज करें जिसे आप इंस्टॉल करना चाहते हैं"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "मॉड स्थापित करने में विफल"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "इस मॉड को शुरू या बंद नहीं किया जा सकता!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "मॉड को शुरू करना, रोकना, जानकारी प्राप्त करना, पुनः लोड करना, इंस्टॉल करना या अनइंस्टॉल करना"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "मॉड नाम या फ़ाइल नाम"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "सभी मॉड को सूचीबद्ध करना, पुनः लोड करना, रोकना, शुरू करना या इंटरैक्टिव रूप से प्रबंधित करना"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "मॉड नाम"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको कर्नेल संशोधन प्रणाली के कार्य करने के तरीके को कॉन्फ़िगर करने देता है।"
+    }
+  ]
+}

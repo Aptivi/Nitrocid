@@ -1,0 +1,133 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMESTUDIO_APP_EXIT",
+      "text": "出口"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
+      "text": "製作新主題"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
+      "text": "製作新主題“{0}”。"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
+      "text": "將主題保存到當前目錄"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
+      "text": "將主題保存到另一個目錄..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENTAS",
+      "text": "將主題保存到當前目錄為..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHERAS",
+      "text": "將主題另存為另一個目錄..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAMEPROMPT",
+      "text": "指定主題名稱："
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROMBUILTIN",
+      "text": "從預建主題加載主題..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEFILEPROMPT",
+      "text": "指定沒有 .json 擴展名的主題文件名："
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
+      "text": "預覽..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
+      "text": "加載當前顏色"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROM",
+      "text": "從檔案載入主題..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
+      "text": "指定保存主題的目錄："
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
+      "text": "在互動式 TUI 中建立新主題"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
+      "text": "將顏色複製到..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
+      "text": "選擇要從中複製顏色的來源顏色類型。"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
+      "text": "選擇要將來源顏色類型 {0} 複製到的目標顏色類型。"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORTYPE",
+      "text": "顏色類型"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLOR",
+      "text": "顏色"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORNAME",
+      "text": "顏色名稱"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORHEX",
+      "text": "顏色六角形"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT",
+      "text": "色彩亮度"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
+      "text": "選擇您想要如何儲存此主題"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
+      "text": "選擇您想要如何載入主題"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
+      "text": "改變..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "節省..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
+      "text": "載入..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",
+      "text": "複製..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
+      "text": "要建立的主題名稱"
+    }
+  ]
+}

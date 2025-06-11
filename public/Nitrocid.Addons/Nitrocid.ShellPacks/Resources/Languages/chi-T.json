@@ -1,0 +1,2582 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "{0}的用户名："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "{0}的密码："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "已连接到{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "尝试连接到{0}时出错：{1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "本地目录{0}不存在。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "输入本地目录。 “..“ 回去。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "找不到目录{0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "输入一个远程目录。 “..“ 回去"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "本地目录：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "远程目录：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "正在下载文件{0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "下载文件{0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "正在上传文件{0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "上传的文件{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "获取当前本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "获取当前的远程目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "更改本地目录以下载或上传"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "更改远程目录以从中下载或上传到"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "从服务器删除远程文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "使用二进制或文本将远程文件下载到本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "列出本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "列出远程目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "使用二进制或文本将本地文件上传到远程目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "变更目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "使用FTP Shell与服务器进行交互"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "外壳错误。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "无效的配置文件选择。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "尝试使用配置文件{1}连接到{0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "名称：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "计算文件总和。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "无效的加密算法。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "输入{0}的密码："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "大小：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "尝试连接到{0}时出错：连接超时或连接丢失"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "计算指定目录中文件的总和。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "输入用户名或邮件地址："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "输入密码："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "连接到{0}时出错：{1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "正在连接到{0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "正在验证..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "下载消息并列出它们"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "打开一条消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "页面不是数值。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "消息号不能为负或零。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "消息号不是数字值。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "-从{0}起"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "-至{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "-在{1}中的{0}发送"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "找不到指定的消息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "正在准备个人资料...可能需要几分钟的时间..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "更改当前邮件目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "无法打开邮件文件夹{0}：{1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "列出您的邮件地址中的目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "证书验证期间，存在证书错误。这可能是您第一次连接到服务器，或者证书可能已过期。这是一个错误："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "确定要连接吗？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "无效的答案。请再试一遍。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "输入IMAP服务器地址和端口（<地址>或<地址>：[端口]）："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "输入SMTP服务器地址和端口（<地址>或<地址>：[端口]）："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "发送消息到一个地址"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "输入收件人的邮件地址："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "输入主题："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "在下面输入您的消息。输入“ EOF”进行确认。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "正在传送讯息..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "讯息已发送。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "无效的邮件地址。确保您正确输入了地址，并且该地址与所示示例的格式匹配："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "删除一条消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "从收件人中删除所有邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "来自{1}的消息{0}已从{2}中删除。剩下{3}条消息需要解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "{1}中的消息{0}已从收件箱中删除。剩下{2}条消息需要解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "无法打开文件。正在退出外壳..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "指定的选项{0}无效。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "答案必须是数字。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "记录FTP用户名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "记录FTP IP地址"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "仅返回第一个FTP配置文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "无法上传{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "文件{0}下载失败。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "无法列出远程文件：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "正在删除{0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "在服务器中找不到{0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "由{0}发送的所有邮件均已成功删除。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "无法删除所有{0}发送的邮件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "发送消息时出错。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "正在将{0}移至{1} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "成功移动"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "将文件或目录移动到另一个文件或目录。您也可以使用它来重命名文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "无法将{0}移至{1}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "正在将{0}复制到{1} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "复制成功"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "将文件或目录复制到另一个文件或目录。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "无法将{0}复制到{1}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "移动消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "移动来自收件人的所有邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "{0}发送的所有邮件均已成功移动。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "无法移动{0}发送的所有邮件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "来自{1}的消息{0}从{2}移动。剩下{3}条消息需要解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "是否登录FTP用户名。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "是否记录FTP IP地址。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "仅在连接时选择第一个配置文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "{0}条新邮件到达收件箱。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "打开“ mail”以查看它们。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "全名：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "创建时间：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "上次访问时间：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "上次写入时间：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "属性：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "父目录：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "哪里可以找到：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "档案大小：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "输入附件的文件路径。在空白路径上按ENTER确认。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "打开一个加密的消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "为密钥ID {0}写入密码"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "将加密的消息发送到一个地址"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "按任意键返回。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "无法创建邮件文件夹{0}：{1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "在当前工作目录中创建目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "从当前工作目录中删除目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "找不到邮件文件夹{0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "无法删除邮件文件夹{0}：{1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "重命名文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "显示邮件预览"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "列出邮件时，显示正文预览。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "如果启用了自动保存，则文本文件将每“ n”秒保存一次。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "使您可以使用SSH FTP服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "列出存档中的所有文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "将文件解压到指定目录或当前目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "更改存档目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "目录 {0} 不存在"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "存档目录 {0} 不存在"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "FTP shell 中出现错误："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "SFTP shell 中出现错误："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "您想如何进行身份验证？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "私钥文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "密码"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "输入密钥 {0} 的密码："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "密钥文件 {0} 不存在。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "尝试添加私钥时出错："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "设置文件权限。这仅在运行 Unix 的 FTP 服务器上受支持。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "设置此会话的类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "未能将 {0} 的权限设置为 {1}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "文件权限设置成功"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "数据类型设置为 ASCII！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "数据类型设置为二进制！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "无效的数据类型。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "请注意，使用此模式无法正确下载或上传大多数文件，因此我们强烈建议在大多数情况下使用二进制模式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "打开 RSS shell 以读取提要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "列出所有提要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "在 Web 浏览器中读取提要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "获取文章信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "文章编号不能大于可用文章。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "标题："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "关联："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "获取提要信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "描述："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "饲料类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "文章数："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "文章没有链接！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "正在打开 URL... 确保按照屏幕上显示的步骤进行操作。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "美化 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "使用二进制或文本将远程文件夹下载到本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "使用二进制或文本将本地文件夹上传到远程目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "正在下载文件夹 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "已下载文件夹 {0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "文件夹 {0} 的下载失败。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "正在上传文件夹 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "上传的文件夹 {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "缩小 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "JSON 编辑器尚未打开文件流。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "退出 JSON shell 而不保存更改"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "保存 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "打印 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "写下您希望登录提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "写下您希望密码提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "在 FTP 列表中显示文件详细信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "FTP 的用户名提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "FTP 的密码提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "使用第一个 FTP 配置文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "向 FTP 快速拨号添加新连接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "尝试验证安全的 FTP 证书"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "在连接时显示 FTP MOTD"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "始终接受无效的 FTP 证书"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "列出远程目录时显示 FTP 文件详细信息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "使用第一个 FTP 配置文件连接到 FTP。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "如果启用，则向 FTP 快速拨号添加新连接。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "尝试验证 FTP 证书。不建议关闭它。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "在登录时显示当天的 FTP 消息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "始终接受无效的 FTP 证书。不建议打开它，因为它可能会带来安全风险。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "邮件的用户名提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "邮件的密码提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "邮件的 IMAP 提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "邮件的 SMTP 提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "自动检测邮件服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "启用邮件调试"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "通知新邮件消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "邮件的 GPG 密码提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "发送 IMAP ping 间隔"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "发送 SMTP ping 间隔"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "邮件文本格式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "写下您希望 IMAP 服务器提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "写下您希望 SMTP 服务器提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "根据给定地址自动检测邮件服务器。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "启用邮件服务器调试。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "通知您任何新的邮件消息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "写下您希望 GPG 密码提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "发送 IMAP ping 需要多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "发送 SMTP ping 需要多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "控制邮件文本的显示方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "RSS feed URL 提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "自动刷新 RSS 提要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "自动刷新 RSS 提要间隔"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "写下您希望 RSS 提要服务器提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "刷新 RSS 提要需要多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "在 SFTP 列表中显示文件详细信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "SFTP 的用户名提示样式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "向 SFTP 快速拨号添加新连接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "在列出远程目录时显示 SFTP 文件详细信息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "如果启用，则向 SFTP 快速拨号添加新连接。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "FTP服务器信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "服务器地址："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "服务器端口："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "服务器类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "服务器系统类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "服务器加密方式："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "服务器数据连接类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "服务器系统："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "服务器下载数据类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "服务器上传数据类型："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "输入要散列的远程文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "输入远程目录。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "FTP的递归散列"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "是否递归地散列一个目录。请注意，并非所有的 FTP 服务器都支持这一点。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "执行 FTP 服务器命令"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "转寄的邮件..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "主机名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "用户名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "数据类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "编码"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "加密"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "协议"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "显示邮件传输进度"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "邮件传输进度"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "邮件传输进度（单）"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "如果启用，邮件外壳将显示下载邮件时传输了多少字节。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "写下您希望的邮件传输进度样式。留空以使用默认样式。占位符被解析。{0} 表示传输的大小，{1} 表示总大小。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "写下您希望的邮件传输进度样式。留空以使用默认样式。占位符被解析。{0} 用于传输的大小。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "启动 HTTP 外壳"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "使用指定请求从 HTTP 服务器获取响应"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "从 HTTP 服务器中删除内容"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "HTTP shell 中出现错误："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "使用指定请求从 HTTP 服务器获取字符串"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "正在获取 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "将本地文件打包到存档中"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "什么都装不下。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "RSS 提要获取超时"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "在 RSS 提要获取超时之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "验证 FTP 传输的重试尝试"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "FTP 连接超时"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "FTP数据连接超时"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "FTP IP 版本"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "多少次验证上传和下载，如果验证失败，则在整个下载失败之前重试？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "FTP 连接超时前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "FTP数据连接超时前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "选择 FTP 服务器支持和 FTP 客户端使用的 Internet 协议版本。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "JSON shell 的默认 JSON 格式"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "选择要保存的 JSON shell 的默认 JSON 格式（美化或缩小）。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "在列表中显示文件详细信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "抑制烦人的“权限被拒绝”消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "表示目标路径是绝对的"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "未指定文件。退出外壳..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "为提要添加书签"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "删除提要书签"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "书签中不存在该提要。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "列出所有已添加书签的提要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "未找到文件 {0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "文件不存在。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "没有信息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "无法打开文件或文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "换行样式："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "二进制文件："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "MIME 元数据："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "全名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "版本"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "文化名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "内容类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "文件不是有效的 .NET 程序集。\\n"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "无法获取文件系统信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "无法复制文件或目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "无法移动文件或目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "无法删除文件或目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "输入要将所选文件复制到的目标文件夹的路径或完整路径。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "确保您编写了正确的路径。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "文件不存在。确保您编写了正确的路径。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "输入要将所选文件移动到的目标文件夹的路径或完整路径。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "输入新文件名。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "确保您写入了正确的文件名。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "文件已存在。该名称不应被其他文件占用。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "输入新的目录名称。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "文件夹已存在。该名称不应被其他文件夹占用。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "没有修订。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "连接尚未建立。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "输入服务器地址："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "交互式系统主机文件管理器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "在归档 shell 中打开归档文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "git shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "显示两个 JSON 文件之间的差异"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "打开 IMAP 邮件客户端"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "打开 POP3 邮件客户端"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "POP3 邮件从 0.0.20.0 开始恢复，但我们目前不打算在此版本中发布它。等待下一个版本。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "输入 RSS 源 URL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "尝试解析地址时出错。确保您所写的地址正确。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "打开交互式 RSS 提要阅读器 TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "什么也提取不出来。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "存档不可写，因为类型是"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "将远程文件的内容读取到控制台"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "退出 shell 而不断开连接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "确保正确指定端口。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "找到多个个人资料。选择一项："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "未指定存储库。退出外壳..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "无法打开存储库。退出外壳..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "逐行获取文件中的更改列表"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "检查一个分支"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "进行提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "描述一次提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "显示当前提交和本地文件之间的差异"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "以补丁块的形式通过内容显示当前提交和本地文件之间的差异"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "显示当前提交和本地文件之间存在的差异"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "显示当前提交和本地文件之间的存在及其内容的差异"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "从远程获取所有更新"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "获取文件状态"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "获取简单的仓库信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "列出所有分支"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "列出所有提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "列出所有遥控器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "列出所有标签"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "从 HEAD 制作标签"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "从服务器拉取所有更新"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "将所有更新推送到服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "重置本地存储库"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "是否进行软重置"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "是否进行混合重置"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "是否进行硬重置"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "设置您的身份"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "进行变革"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "暂存所有变更"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "存储库状态"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "取消暂存更改"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "取消暂存所有更改"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "向所有即将到来的请求添加带有键和值的标头"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "获取当前用户代理"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "编辑所有即将到来的请求的标头上的键"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "列出请求标头"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "使用指定的请求将文件发送到 HTTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "使用指定的请求将字符串发送到 HTTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "使用指定的请求将文件发布到 HTTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "使用指定的请求将字符串发布到 HTTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "删除所有即将到来的请求标头上的键"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "设置用户代理"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "添加已存在的标头。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "删除不存在的标头。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "编辑不存在的标题。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "添加新数组、对象或属性"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "指定父路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "指定类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "指定要使用的属性名称。如果父路径是对象，则使用此选项。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "清除 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "找到房产"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "指定父属性"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "显示有关 JSON 文件的信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "不显示个别属性"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "显示所有值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "移除目标对象"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "美化的 JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "缩小 JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "将值设置为现有数组、对象或属性"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "在交互式编辑器中打开 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "找不到 JSON 文件内的令牌。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "未找到父令牌。确保您正确书写了路径“{0}”。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "指定的类型“{0}”无效。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "无法附加属性名称父标记类型为“{0}”的新项目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "无法附加属性名称为“{0}”且父标记类型为“{1}”的新项目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "父级“{1}”中类型“{2}”的属性名称“{0}”不存在"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "在提要中搜索标题和/或描述中的短语"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "搜索标题"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "搜索描述"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "搜索标题和描述"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "区分大小写的搜索"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "无法解析提要 URL："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "没有说明"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "显示文件和文件夹的详细信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "抑制“未经授权”的消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "输入 {0} 的私钥位置。写“q”完成添加键："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "正在尝试连接到 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "执行 SQL 查询"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "数据库信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "在交互式十六进制编辑器 TUI 中打开 SQL 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "不支持此存档类型。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "您确定要删除 {0} 吗？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "用户"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "地点"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "没有符号链接信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "修改于"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "文件的责备状态"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "猛男号"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "行数"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "初始行号"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "最终行号"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "初始提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "提交SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "提交消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "提交作者"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "提交者"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "家长人数"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "最终提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "在签出分支之前，首先通过创建提交来保存您的工作。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "分支不存在。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "在使用此命令之前，您需要确认自己的身份。使用"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "来表明你自己的身份。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "使用新提交更新了存储库"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "提交说明"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "一般变化"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "内容变更于"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "远程不存在。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "找不到可从中提取更新的遥控器。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "文件状态"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "裸存储库"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "头部脱落"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "无参考"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "浅克隆"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": ".git 的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "工作目录的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "分支提交"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "创建了一个新标签！这是您的标签详细信息："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "您的本地存储库副本是最新的！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "快进至"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "将存储库更新为"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "您的合并导致了冲突。请解决任何冲突。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "您已成功将自己标识为"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "没有对舞台进行任何修改。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "已成功暂存文件 {0}！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "无法暂存文件 {0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "分支 {0} 的状态..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "不进行任何修改。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "未跟踪的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "没有未跟踪的文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "添加的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "没有添加文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "修改文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "没有修改过的文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "已删除的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "没有删除的文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "暂存文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "没有暂存文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "重命名暂存文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "没有重命名的暂存文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "重命名的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "没有重命名的文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "丢失文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "没有丢失文件。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "未进行任何修改即可取消暂存。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "已成功取消暂存文件 {0}！"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "无法取消暂存文件 {0}。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "正在发布文件{0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "正在将字符串发布到 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "正在将字符串上传到 {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "JSON shell 无法添加项目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "财产发现于"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "未找到财产"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "基础 JSON 令牌信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "底座类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "基础有价值观"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "儿童代币计数"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "基本路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "单独的 JSON 令牌信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "代币类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "代币具有价值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "令牌路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "代币价值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "物业信息为"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "财产种类"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "财产数量"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "物业名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "属性路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "适当的价值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "JSON shell 无法删除项目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "JSON shell 无法设置项目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "来自{1}的消息{0}已移动。还剩 {2} 条消息需要解析。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "附件："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "此连接包含无效的 RSS 源实例。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "文章标题未知"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "不幸的是，这篇文章没有任何内容。您仍然可以关注该文章"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "这篇文章没有链接。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "无法打开主机浏览器访问文章链接。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "修改的："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "输入 {0} 的参数值："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "SQL 命令成功。以下是回复："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "SQL 命令失败。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "数据库路径："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "服务器版本："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "连接状态："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "连接字符串："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "数据库名称："
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "提示预设"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置存档 shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 FTP shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 Git shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 HTTP shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 JSON shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "JSON Shell 提示预设"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "启用 JSON 编辑器自动保存"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "打开或关闭 JSON 编辑器自动保存功能。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "JSON 编辑器自动保存间隔"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置邮件 shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "一页中的最大电子邮件数"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "在一页中显示多少封电子邮件？"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 RSS shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "RSS 提示预设"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 SFTP shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "本部分允许您配置 SQL shell 的工作方式。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "SQL Shell 提示预设"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "文件类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "在 feed 库中搜索 feed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "复制"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "移动"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "删除"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "向上"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "信息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "重命名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "新建文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "打开"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "MIME 元数据（扩展）"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "处理程序已注册，但不知何故未能获取扩展处理程序"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "复制到"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "移至"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "无法获取存档条目"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "档案尚未加载。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "无法确定当前存档目录。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "最后的壳不是这个要脱离的壳。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "客户端尚未填充。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "尚无 FTP 客户端。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "客户端尚未连接。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "无法获取 IMAP 服务器配置"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "无法获取 SMTP 服务器配置"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "客户端尚未连接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "阅读更多"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "刷新"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "没有文章。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "没有饲料。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "无法连接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "文件流尚未打开。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "JSON 文件尚未打开。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "行号结束范围"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "文件路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "源文件或目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "目标文件或目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "加密算法"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "Git 存储库目录的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "行号起始范围"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "支行名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "提交摘要"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "提交 SHA 哈希"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "远程名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "标签名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "用于注释标签的消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "您的电子邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "您的用户名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "未暂存文件的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "暂存文件的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "归档文件路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "档案内的目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "档案中的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "解压到本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "本地文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "要添加到的存档目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "要连接的 FTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "远程文件路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "本地目录路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "远程目录的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "要删除的远程文件的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "要执行的服务器命令"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "创建本地目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "创建远程目录"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "源文件或目录的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "目标文件或目录的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "本地文件路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "根据 chmod 的权限编号"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "指定传输类型是 ASCII 还是二进制"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "符号链接到：{0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "标题键"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "标头值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "HTTP 请求"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "要上传的文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "要上传的字符串"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "用户代理字符串"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "登录电子邮件地址"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "创建文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "移动..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "全部移动..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "重命名文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "删除文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "删除消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "全部删除..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "无法打开文件夹或邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "写入新目录名称。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "创建目录..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "无法创建文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "选择将此消息移动到的新目录。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "正在移动的消息..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "无法移动消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "选择一个新目录，将同一发件人的所有邮件移动到其中。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "按发件人 {0} 移动邮件..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "无法移动同一发件人的所有邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "写入要将 {0} 重命名为的新目录名称。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "重命名目录..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "无法重命名文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "正在删除目录..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "无法删除文件夹"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "正在删除消息..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "无法删除消息"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "正在删除发件人 {0} 的邮件..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "无法删除同一发件人的所有邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "邮件目录名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "页码"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "消息 ID"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "发件人姓名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "旧邮件目录名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "新邮件目录名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "交互式邮件管理"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "要连接的 SFTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "RSS 订阅链接"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "进给数量"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "要搜索的短语"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "第一个 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "第二个 JSON 文件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "JSON 文件的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "输出 JSON 文件的路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "要添加的 JSON 值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "JSON 属性名称"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "对象路径"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "JSON 值"
+    }
+  ]
+}

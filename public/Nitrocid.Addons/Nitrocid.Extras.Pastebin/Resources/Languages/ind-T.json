@@ -1,0 +1,58 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "किसी फ़ाइल या स्ट्रिंग की सामग्री को टेक्स्ट होस्टिंग प्रदाता पर चिपकाता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "पेस्टबिन प्रदाता के लिए URL निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "पेस्टबिन प्रदाता प्रकार निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "पेस्टबिन प्रदाता पोस्ट पृष्ठ निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "पेस्टबिन प्रदाता पोस्ट प्रारूप निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "पेस्टबिन प्रदाता पोस्ट फ़ील्ड नाम निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "अपलोड करने के लिए फ़ाइल नाम या पाठ निर्दिष्ट करें."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "पेस्टबिन प्रदाता प्रकार समर्थित नहीं है."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "प्रदाता पर सफलतापूर्वक चिपकाया गया!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "प्रदाता को चिपकाने में असमर्थ."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "लिखने के लिए फ़ाइल या स्ट्रिंग का पथ"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "पेस्टबिन तर्क"
+    }
+  ]
+}

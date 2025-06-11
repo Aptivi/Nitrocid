@@ -1,0 +1,130 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMESTUDIO_APP_EXIT",
+      "text": "Вихід"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
+      "text": "Створює нову тему"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
+      "text": "Створення нової теми \"{0}\"."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
+      "text": "Зберегти тему в поточний каталог"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
+      "text": "Зберегти тему в інший каталог..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENTAS",
+      "text": "Зберегти тему в поточному каталозі як..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHERAS",
+      "text": "Зберегти тему в інший каталог як..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAMEPROMPT",
+      "text": "Вкажіть назву теми:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROMBUILTIN",
+      "text": "Завантажити тему з готових тем..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEFILEPROMPT",
+      "text": "Вкажіть назву файлу теми без розширення .json:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
+      "text": "Попередній перегляд..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
+      "text": "Завантажити поточні кольори"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROM",
+      "text": "Завантажити тему з файлу..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
+      "text": "Вкажіть каталог для збереження теми:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
+      "text": "Створює нову тему в інтерактивному TUI"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
+      "text": "Копіювати колір до..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
+      "text": "Виберіть вихідний тип кольору, з якого потрібно скопіювати колір."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
+      "text": "Виберіть цільові типи кольорів, до яких потрібно скопіювати вихідний тип кольору {0}."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORTYPE",
+      "text": "Кольоротип"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLOR",
+      "text": "колір"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORNAME",
+      "text": "Назва кольору"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORHEX",
+      "text": "Шістнадцятковий колір"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT",
+      "text": "Яскравість кольору"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
+      "text": "Виберіть, як ви хочете зберегти цю тему"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
+      "text": "Виберіть спосіб завантаження теми"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
+      "text": "змінити..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "зберегти..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
+      "text": "Завантажити..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",
+      "text": "Копіювати..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
+      "text": "Назва теми для створення"
+    }
+  ]
+}

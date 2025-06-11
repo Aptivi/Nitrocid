@@ -1,0 +1,190 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Forsinkelse i millisekunder"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Hvor mange millisekunder skal du vente før du skriver neste gang?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Henter alle tekstlinjer fra sangtekstfilen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Spiller av en tekstfil"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Spiller en lyd"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Får informasjon om nettradiostasjonen din"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "Sørg for å spesifisere banen til en LRC-fil."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Kan ikke spille av lyd fordi filen ikke ble funnet."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "Åpnet musikkfilen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Kan ikke åpne musikkfilen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Kan ikke spille av lyd på grunn av tidsavbrudd."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Ukjent artist"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Ukjent sjanger"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "Navn"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Artist"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Sjanger"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Varighet"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Trykk 'q' for å stoppe avspillingen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Kan ikke spille av lyd."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Tittel"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Portnummeret for nettradioen din er ugyldig."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "Full URL"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Nåværende lyttere"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Topplyttere"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Strømmer"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Aktive strømmer"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Stream info for ID"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "Sti"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "Spiller nå"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Oppetid"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "Sørg for å spesifisere banen til en katalog som inneholder tekstfilene dine i LRC-formatet. Du kan også angi en egendefinert bane til musikkbiblioteksmappen som inneholder sangtekstfilene."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Denne tekstfilen eksisterer ikke."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Innstillinger for denne skjermspareren er tilgjengelig her."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Denne delen lar deg konfigurere hvordan BassBoom-tillegget fungerer."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Lyrics Path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "Angir banen til en mappe som inneholder en gruppe .lrc-filer. Skriv en absolutt bane til enhver eksisterende katalog."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Stasjonstype"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "Internettradio (FM) info for"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "Kan ikke få informasjon om internettradio."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Stien til tekstfilen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Banen til en MP3-fil"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "Vertsnavn som er vert for MPEG-radiostasjonen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "Port til MPEG-radiostasjonen"
+    }
+  ]
+}

@@ -1,0 +1,1801 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME",
+      "text": "顯示的文字"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT",
+      "text": "寫下您想要顯示的任何文本。越短越好。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "激活真實色彩"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME",
+      "text": "循環顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC",
+      "text": "啟用時，Disco 將循環顏色。否則，選擇隨機顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME",
+      "text": "背景顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "以毫秒為單位的延遲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "在進行下一次寫入之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME",
+      "text": "秒條的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME",
+      "text": "分鐘欄的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME",
+      "text": "營業時間條的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME",
+      "text": "信息顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME",
+      "text": "改變顏色的蜱蟲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC",
+      "text": "如果啟用顏色循環，在 ProgressClock 中更改顏色之前有多少滴答聲？ 1 滴答 = 0.5 秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，ProgressClock 將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME",
+      "text": "最大職位數"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC",
+      "text": "調光前點亮了多少個位置？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
+      "text": "以毫秒為單位的淡出延遲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
+      "text": "最大漸變步數"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "在淡出文本之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
+      "text": "要執行多少個淡入淡出步驟？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME",
+      "text": "以毫秒為單位的再次寫入延遲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC",
+      "text": "在再次寫入文本之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
+      "text": "寫下您想要顯示的任何文本。越長越好。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
+      "text": "WPM 中的最低寫入速度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME",
+      "text": "WPM 中的最大寫入速度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME",
+      "text": "拼寫錯誤的概率（百分比）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME",
+      "text": "擦拭以改變方向"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC",
+      "text": "在隨機改變方向之前要擦拭多少次？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME",
+      "text": "始終居中"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC",
+      "text": "寫下您想要顯示的任何文本。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC",
+      "text": "選取框上顯示的文本是否始終居中。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME",
+      "text": "使用控制台 API"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC",
+      "text": "是使用控制台 API 清除文本還是使用更快的行清除 VT 序列。如果為 False，Marquee 將使用適當的 VT 序列。否則，它將使用可能較慢的 Console API。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME",
+      "text": "使用每分鐘節拍"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
+      "text": "是否使用 Beats Per Minute 單位寫入下一種顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
+      "text": "每分鐘節拍延遲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
+      "text": "在進行下一次寫入之前要等待每分鐘多少次？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，BeatFader 將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
+      "text": "以毫秒為單位的新屏幕延遲"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME",
+      "text": "列數"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME",
+      "text": "線填充閾值"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME",
+      "text": "行填充封頂概率（百分比）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME",
+      "text": "線條填充類型"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "再次在新屏幕中寫入文本之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC",
+      "text": "要打印的文本列。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC",
+      "text": "在觸發“行填充”之前要寫多少個字符？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC",
+      "text": "線條填充圖案將以百分比形式打印在所有大寫字母中的可能性"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME",
+      "text": "以百分比表示的未命中概率"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME",
+      "text": "下一個斜坡間隔"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC",
+      "text": "在填充下一個斜坡之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "最低紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "最低綠色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "最低藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "最低色階"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "最大綠色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "最大色階"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "最低紅色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "最低綠色水平。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "最低藍色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "最低顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "最大紅色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "最大綠色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "最大藍色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "最大顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME",
+      "text": "前景色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
+      "text": "行字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC",
+      "text": "一個字符組成一條線。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME",
+      "text": "小時欄的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME",
+      "text": "分鐘欄的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME",
+      "text": "秒條的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME",
+      "text": "小時欄的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME",
+      "text": "分鐘欄的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME",
+      "text": "秒條的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME",
+      "text": "小時欄的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME",
+      "text": "分鐘欄的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME",
+      "text": "秒條的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME",
+      "text": "小時欄的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME",
+      "text": "分鐘欄的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME",
+      "text": "秒條的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME",
+      "text": "小時欄的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME",
+      "text": "分鐘欄的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME",
+      "text": "秒條的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME",
+      "text": "小時欄的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME",
+      "text": "分鐘欄的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME",
+      "text": "秒條的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME",
+      "text": "小時欄的左框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME",
+      "text": "分鐘欄的左框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME",
+      "text": "秒條的左框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME",
+      "text": "小時欄的右框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME",
+      "text": "分鐘欄的右邊框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME",
+      "text": "秒條的右框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME",
+      "text": "幾個小時的信息文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME",
+      "text": "幾分鐘的信息文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME",
+      "text": "幾秒鐘的信息文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME",
+      "text": "幾個小時的最低紅色水平"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME",
+      "text": "幾個小時的最低綠色水平"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME",
+      "text": "幾個小時的最低藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME",
+      "text": "幾個小時的最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME",
+      "text": "數小時內的最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME",
+      "text": "數小時內的最大綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME",
+      "text": "數小時內的最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME",
+      "text": "數小時的最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME",
+      "text": "分鐘的最低紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME",
+      "text": "幾分鐘的最低綠色水平"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME",
+      "text": "分鐘的最低藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME",
+      "text": "分鐘的最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME",
+      "text": "數分鐘內的最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME",
+      "text": "數分鐘內的最大綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME",
+      "text": "幾分鐘內的最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME",
+      "text": "分鐘的最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME",
+      "text": "秒的最小紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME",
+      "text": "秒的最低綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME",
+      "text": "秒的最低藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME",
+      "text": "秒的最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME",
+      "text": "秒的最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME",
+      "text": "秒的最大綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME",
+      "text": "秒的最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME",
+      "text": "秒的最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC",
+      "text": "類似於左上角的字符。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC",
+      "text": "類似於左下角的字符。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC",
+      "text": "類似於上框的字符。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC",
+      "text": "類似於下框的角色。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC",
+      "text": "一個類似於左框架的字符。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC",
+      "text": "一個類似於右框架的角色。確保只輸入一個字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC",
+      "text": "寫下當前小時的信息文本如何顯示。{0} 表示 24 小時內的當前小時。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC",
+      "text": "寫下當前分鐘的信息文本如何顯示。{0} 表示當前分鐘（共 60 分鐘）。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC",
+      "text": "寫下當前第二個信息文本的顯示方式。{0} 表示 60 秒中的當前秒。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME",
+      "text": "文字顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME",
+      "text": "斜坡條的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME",
+      "text": "斜坡條的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME",
+      "text": "斜坡條的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME",
+      "text": "斜坡條的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME",
+      "text": "斜坡條的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME",
+      "text": "斜坡條的下框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME",
+      "text": "斜坡條的左框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME",
+      "text": "斜坡條的右框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME",
+      "text": "起始顏色的最小紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME",
+      "text": "起始顏色的最低綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME",
+      "text": "起始顏色的最低藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME",
+      "text": "起始顏色的最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME",
+      "text": "起始顏色的最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME",
+      "text": "起始顏色的最大綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME",
+      "text": "起始顏色的最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME",
+      "text": "起始顏色的最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME",
+      "text": "最終顏色的最低紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME",
+      "text": "最終顏色的最低綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME",
+      "text": "最終顏色的最低藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME",
+      "text": "最終顏色的最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME",
+      "text": "最終顏色的最大紅色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME",
+      "text": "最終顏色的最大綠色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME",
+      "text": "最終顏色的最大藍色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME",
+      "text": "最終顏色的最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "激活真彩色支持。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME",
+      "text": "漸變條的左上角顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME",
+      "text": "漸變條的右上角顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME",
+      "text": "斜坡條的左下角顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME",
+      "text": "斜坡條的右下角顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME",
+      "text": "斜坡條的上框顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME",
+      "text": "斜坡條的下邊框顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME",
+      "text": "漸變條的左邊框顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME",
+      "text": "斜坡條的右邊框顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME",
+      "text": "使用漸變條的邊框顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC",
+      "text": "使用漸變欄的邊框顏色。如果禁用，將生成一個灰色條。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME",
+      "text": "填滿箱子"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC",
+      "text": "我們是把盒子畫成一個整體還是只畫邊框？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME",
+      "text": "下一個斜坡腐爛間隔"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC",
+      "text": "在腐爛下一個坡道的一端之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME",
+      "text": "煙花爆炸半徑"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC",
+      "text": "點燃時煙花的爆炸半徑是多少塊（最多 10 個）？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME",
+      "text": "無花果字體"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC",
+      "text": "編寫一個由 Figgle 庫支持的 figlet 字體。有關更多信息，請參閱庫文檔"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME",
+      "text": "啟用黑白模式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC",
+      "text": "使迪斯科變成黑白。如果速度太快，真的會傷害您的眼睛，因此如果您遇到快速圖像癲癇發作，不建議使用。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME",
+      "text": "噪聲密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "在新屏幕中寫入之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC",
+      "text": "百分比越大，信號越嘈雜"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
+      "text": "毛刺密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
+      "text": "百分比越大，故障越密集！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
+      "text": "載入中..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
+      "text": "待續..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
+      "text": "結束"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
+      "text": "新年快樂！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME",
+      "text": "掉落幾率"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "顏色設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC",
+      "text": "類似於右上角的字元。請務必只輸入一個字元。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC",
+      "text": "類似於右下角的字元。請務必只輸入一個字元。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC",
+      "text": "螢幕上下降的二進制數。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC",
+      "text": "混合顏色並將其列印到控制台。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC",
+      "text": "這是迪斯科燈，最早的螢幕保護程式之一。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC",
+      "text": "螢幕上閃爍著色彩。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC",
+      "text": "圍繞控制台垂直延伸的一條線。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC",
+      "text": "溶解隨機顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC",
+      "text": "向您顯示一個在控制台上彈跳的彩色塊。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC",
+      "text": "顯示三個代表時間的進度條。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC",
+      "text": "照明塊。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC",
+      "text": "用顏色擦拭螢幕。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC",
+      "text": "簡單矩陣。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC",
+      "text": "矩陣數字在螢幕上隨機分佈。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
+      "text": "顯示在控制台周圍彈跳的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
+      "text": "文字淡入淡出。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
+      "text": "背景淡入淡出。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
+      "text": "以節拍淡入和淡出文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
+      "text": "打色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
+      "text": "模擬一個人寫有拼字錯誤的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC",
+      "text": "顯示從右到左滾動的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC",
+      "text": "模擬舊時代人們在排版鍵盤上為報紙撰寫文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC",
+      "text": "線條填滿圖案類型。0 列印 etaoin 字元的已知模式，1 列印 etaoin 字元的完整模式，2 列印隨機字元集以快速填入該行。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC",
+      "text": "完美模擬人書寫文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME",
+      "text": "顯示箭頭位置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC",
+      "text": "透過在螢幕底部顯示箭頭來顯示打字機字母列位置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC",
+      "text": "螢幕上閃爍的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC",
+      "text": "模擬在文字中尋找的聚光燈。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC",
+      "text": "用漸層顏色填滿漸層。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC",
+      "text": "將盒子堆疊在螢幕上。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC",
+      "text": "模擬用另一種背景顏色腐爛的條形，形成漸層。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC",
+      "text": "向您展示發射和爆炸的煙火。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC",
+      "text": "向您顯示彩色 Figlet 文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME",
+      "text": "彩虹模式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC",
+      "text": "啟用彩虹色模式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC",
+      "text": "向您顯示彩色閃爍文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC",
+      "text": "類比電視靜態噪音。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC",
+      "text": "螢幕中間的簡單日期和時間。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
+      "text": "模擬螢幕上的故障。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
+      "text": "向您顯示一條下降並逐漸消失的線。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
+      "text": "顯示一個不確定的進度條。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
+      "text": "向您展示脈動的背景。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
+      "text": "以節拍向您展示脈動的背景。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，BeatPulse 將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
+      "text": "向您展示脈動的邊緣。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
+      "text": "向您展示節拍的脈動邊緣。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，BeatEdgePulse 將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
+      "text": "向您展示一個充滿顏色的螢幕，該顏色會慢慢地變成另一種顏色，從而創建漸變。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME",
+      "text": "下一個梯度旋轉間隔"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC",
+      "text": "在旋轉下一個畫面之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC",
+      "text": "在螢幕上顯示漸層。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC",
+      "text": "以 2D 方式向您展示星際之旅。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC",
+      "text": "根據設定的顏色變更背景，模擬警報器。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME",
+      "text": "海妖風格"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC",
+      "text": "塞壬風格。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
+      "text": "旋轉斜線。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
+      "text": "用像蛇一樣的顏色填滿控制台。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC",
+      "text": "向您顯示均衡器，其中顯示低音、中音和高音。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME",
+      "text": "下一畫面延遲（以毫秒為單位）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
+      "text": "模擬不同作業系統的系統錯誤。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
+      "text": "透過隨機移動生成顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
+      "text": "向您顯示淡出並按下節拍閃爍的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，ExcaliBeats 將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
+      "text": "顯式模式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
+      "text": "明確將文本更改為 Excalibur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
+      "text": "恍惚模式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
+      "text": "Trance 模式 - 將 BPM 乘以 2 以模擬 Trance 音樂風格"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
+      "text": "向您顯示條形圖中的一組波浪。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME",
+      "text": "頻率等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC",
+      "text": "頻率的水平。這是數學中Pi值的分母。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC",
+      "text": "向您展示一種自行產生並前進的波浪。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC",
+      "text": "給你一種如痴如醉的感覺。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC",
+      "text": "模擬北極光。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC",
+      "text": "向您展示一道引人注目的閃電。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME",
+      "text": "打擊機率"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC",
+      "text": "罷工機會（百分比）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC",
+      "text": "向您顯示緩慢變化的背景顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME",
+      "text": "暗色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC",
+      "text": "是否使用深色或淺色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME",
+      "text": "顏色步驟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC",
+      "text": "兩種顏色之間的過渡需要多少個顏色步長？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
+      "text": "顯示一個單字及其哈希值。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
+      "text": "向您顯示四個角落的褪色正方形。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "方塊淡出前需要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
+      "text": "將數字分散到整個螢幕上。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC",
+      "text": "給你一個盒子圖案。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC",
+      "text": "顏色下降的線。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC",
+      "text": "有機會掉落新的掉落顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC",
+      "text": "向您顯示一個簡單的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC",
+      "text": "在文字方塊中顯示簡單的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC",
+      "text": "顯示一個寫得很慢的單字及其雜湊值。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC",
+      "text": "模擬使用您的主題作為一組顏色的警報器。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC",
+      "text": "來自內核主題的 Siren 風格"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC",
+      "text": "在船的前視圖中向您顯示一組星星。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC",
+      "text": "在船的前視圖中向您顯示一組斑點。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC",
+      "text": "在整個螢幕上顯示一個分散的字母。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC",
+      "text": "顯示多行。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC",
+      "text": "向您展示雷射光束。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC",
+      "text": "顯示在控制台上徘徊的文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC",
+      "text": "水平和垂直旋轉波浪以形成精美的圖案。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME",
+      "text": "行頻電平"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC",
+      "text": "水平頻率的水平。這是數學中Pi值的分母。用它來創造美麗的波浪旋轉！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME",
+      "text": "垂直頻率電平"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC",
+      "text": "水平垂直頻率。這是數學中Pi值的分母。用它來創造美麗的波浪旋轉！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC",
+      "text": "模擬門的開啟和關閉。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC",
+      "text": "向您顯示動態變化的漸層。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC",
+      "text": "一顆彗星在天空中快速奔跑。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC",
+      "text": "閃閃發光的鑽石。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC",
+      "text": "根據增加的色調變更背景顏色。彩虹！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME",
+      "text": "色彩飽和度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC",
+      "text": "顏色有多深？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC",
+      "text": "顏色有多淺？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC",
+      "text": "根據增加的色調變更背景顏色。更多彩虹！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC",
+      "text": "七彩顆粒！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME",
+      "text": "顆粒密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC",
+      "text": "粒子的密度有多大？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME",
+      "text": "更改時區之前需要刷新"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC",
+      "text": "時區更改前刷新了幾次？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC",
+      "text": "逐塊填滿整個螢幕，然後淡出。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC",
+      "text": "向您展示舞蹈線條。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC",
+      "text": "使用克魯斯卡爾演算法生成漂亮的迷宮。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME",
+      "text": "新迷宮延遲（以毫秒為單位）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME",
+      "text": "生成速度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC",
+      "text": "迷宮生成速度（毫秒）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME",
+      "text": "突出顯示未覆蓋的職位"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC",
+      "text": "如果啟用，則以灰色背景顏色反白顯示未覆蓋的位置。否則，它們呈現為盒子。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME",
+      "text": "使用施瓦茨變換"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC",
+      "text": "如果啟用，此螢幕保護程式將使用 Schwartzian 變換來打亂迷宮邊緣。否則，它使用簡單的轉換方法。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC",
+      "text": "兩組點在控制台的兩半上旋轉。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC",
+      "text": "每第 1000 次提交就慶祝提交里程碑。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC",
+      "text": "向您展示噴灑星星。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC",
+      "text": "兩條線在螢幕上交換顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC",
+      "text": "模擬時鐘，螢幕底部有簡單的日期和時間。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME",
+      "text": "顯示秒針"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC",
+      "text": "是否顯示秒針。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC",
+      "text": "模擬假設的故障黑屏，有時會出現 RGB 線。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME",
+      "text": "毛刺機率"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC",
+      "text": "螢幕故障發生的幾率（以百分比為單位）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME",
+      "text": "顏色色調亮度（明度）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS",
+      "text": "慶祝自 0.0.1 以來第 7,000 次提交！"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_LEFT",
+      "text": "留到明年"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "這使你可以配置顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME",
+      "text": "小時數斜坡設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC",
+      "text": "這使您可以配置小時數斜坡"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME",
+      "text": "分鐘斜坡設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC",
+      "text": "這使您可以配置分鐘斜坡"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME",
+      "text": "秒斜坡設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC",
+      "text": "這使您可以配置秒數斜坡"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME",
+      "text": "斜坡設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC",
+      "text": "這允許您配置坡道"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC",
+      "text": "在陰暗的紅色背景中顯示線下文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC",
+      "text": "隨機字元在螢幕上隨機分佈。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC",
+      "text": "螢幕中間顯示簡單的日期和時間，並根據當前時間改變顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME",
+      "text": "明亮的日期和時間"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC",
+      "text": "是否使用明亮版本或深色版本。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC",
+      "text": "向您展示舞蹈的數字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC",
+      "text": "水平和垂直旋轉波浪以形成美麗的圖案，並留下消失的痕跡。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME",
+      "text": "路徑長度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC",
+      "text": "移動旋轉波的尾跡長度。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC",
+      "text": "塊以波浪形移動，綠色標尺跟踪其位置。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC",
+      "text": "在彩色的 figlet 文字中顯示一個隨機字元。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC",
+      "text": "向您顯示正在選擇的單詞，就像賭場中的老虎機一樣。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC",
+      "text": "向您顯示在兩種霓虹色（青色和紫紅色）之間交替的彩色 figlet 文字。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME",
+      "text": "第一個坡道設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC",
+      "text": "這允許您配置第一個坡道"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME",
+      "text": "第二坡道設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC",
+      "text": "這允許您配置第二個坡道"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME",
+      "text": "第三坡道設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC",
+      "text": "這允許您配置第三個坡道"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME",
+      "text": "外觀設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC",
+      "text": "這使您可以配置小時數斜坡外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC",
+      "text": "這使您可以配置小時數漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC",
+      "text": "這使您可以配置分鐘斜坡外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC",
+      "text": "這使你可以配置分鐘漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC",
+      "text": "這使您可以配置秒斜坡外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC",
+      "text": "這允許您配置秒數漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME",
+      "text": "起始位置顏色設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC",
+      "text": "這允許您配置起始位置顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME",
+      "text": "結束位置顏色設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC",
+      "text": "這使您可以配置結束位置顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME",
+      "text": "坡道欄設置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC",
+      "text": "這允許您配置坡道欄"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC",
+      "text": "這允許您配置坡道外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC",
+      "text": "這允許您配置漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME",
+      "text": "梯度開始設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC",
+      "text": "這允許您配置開始漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME",
+      "text": "漸變結束設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC",
+      "text": "這使你可以配置最終漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "最大背景顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "最大背景色彩等級。可接受的最小值為 0，可接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME",
+      "text": "最大線條色彩等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC",
+      "text": "最大線條色彩等級。可接受的最小值為 0，可接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME",
+      "text": "最大文字顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC",
+      "text": "最大文字顏色等級。可接受的最小值為 0，可接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC",
+      "text": "這允許您配置第一個坡道外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME",
+      "text": "第一個資訊文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC",
+      "text": "寫下目前小時的資訊文字如何顯示。目前小時為 {0}（共 24 小時）。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME",
+      "text": "第一小節的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME",
+      "text": "第一小節的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME",
+      "text": "第一個小節的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME",
+      "text": "第一個小節的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME",
+      "text": "第一小節的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME",
+      "text": "第一小節的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME",
+      "text": "第一小節的左框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME",
+      "text": "第一小節的右邊框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC",
+      "text": "這允許您配置第一個漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME",
+      "text": "第一根柱線的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME",
+      "text": "第一個最低紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME",
+      "text": "第一個最低綠色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME",
+      "text": "第一個最低藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME",
+      "text": "第一個最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME",
+      "text": "第一個最大紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME",
+      "text": "第一個綠色最高等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME",
+      "text": "第一個最大藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME",
+      "text": "第一個最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC",
+      "text": "這允許您配置第二個坡道外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME",
+      "text": "第二個資訊文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC",
+      "text": "寫下當前分鐘的資訊文字如何顯示。當前分鐘為 {0}（共 60 秒）。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME",
+      "text": "第二小節的左上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME",
+      "text": "第二小節的右上角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME",
+      "text": "第二小節的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME",
+      "text": "第二小節的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME",
+      "text": "第二條的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME",
+      "text": "第二小節的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME",
+      "text": "第二小節的左框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME",
+      "text": "第二小節的右邊框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC",
+      "text": "這允許您配置第二個漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME",
+      "text": "第二條柱的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME",
+      "text": "第二個的最低紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME",
+      "text": "第二個的最低綠色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME",
+      "text": "第二個最低藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME",
+      "text": "第二個最低顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME",
+      "text": "最大紅色等級為秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME",
+      "text": "第二個最大綠色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME",
+      "text": "最大藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME",
+      "text": "最大色彩等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC",
+      "text": "這允許您配置第三個坡道外觀"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME",
+      "text": "第三欄左上角的字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME",
+      "text": "第三欄右上角的字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME",
+      "text": "第三小節的左下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME",
+      "text": "第三欄的右下角字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME",
+      "text": "第三小節的上框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME",
+      "text": "第三小節的下框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME",
+      "text": "第三小節的左框字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME",
+      "text": "第三小節的右邊框架字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME",
+      "text": "第三方資訊文字"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC",
+      "text": "寫下目前秒的訊息文字如何顯示。目前排名第二（共 60 個第三名）的是 {0}。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC",
+      "text": "這允許您配置第三個漸層顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME",
+      "text": "第三條橫線的顏色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME",
+      "text": "第三個的最低紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME",
+      "text": "第三個綠色等級最低"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME",
+      "text": "第三個最低藍色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME",
+      "text": "第三個最低色彩等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME",
+      "text": "第三個最大紅色等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME",
+      "text": "第三個綠色顏色等級最高"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME",
+      "text": "第三個藍色最高等級"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME",
+      "text": "第三個最大顏色級別"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC",
+      "text": "如果啟用，進度將選擇隨機顏色。否則，請使用配置中的顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
+      "text": "如果啟用了顏色循環，那麼在進度中需要多少個刻度才能改變顏色？ 1 刻 = 0.5 秒"
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Mod kan ikke lastes på grunn av følgende:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} startet"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Ugyldig språk"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Parsing mods er ikke tillatt i sikker modus."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Modus {0} stoppet"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} stoppet"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Kunne ikke fullføre mod {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Starter mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Mod versjon:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Modus {0} ikke funnet."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Mods navn:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Mod filnavn:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Mod filbane:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Administrer modsene dine"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Modadministrasjon er deaktivert i sikker modus."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Ugyldig kommando {0}. Sjekk bruken nedenfor:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Modus ikke funnet eller filen har ugyldige tegn."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Den manuelle siden {0} er ugyldig."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Vurder å fylle ut denne manualsiden."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Modus manual"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Stoppe mods er ikke tillatt i sikker modus."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Mod er allerede startet!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Mod har ikke startet ennå!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Kontakt leverandøren av moden for å oppgradere moden til den kompatible versjonen."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Svartelistede mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Skriv filnavnene til modsene som ikke vil kjøre ved oppstart. Når du er ferdig, skriv \"q\". Skriv et minustegn ved siden av banen for å fjerne en eksisterende mod."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} er svartelistet."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Start kjernemodifikasjoner ved oppstart"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Start kjernemodifikasjonene automatisk ved oppstart."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Mod-fil er ikke spesifisert."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Prøver å installere en allerede installert mod. Oppdaterer mod..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Installasjonen mislyktes for"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Modfilen som følger med er inkompatibel."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Avinstallering mislyktes for"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Metadatainformasjonen som trengs for å installere det tilpassede språket, gir ikke de nødvendige lokaliseringene som trengs."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Vis mod-kommandoene stole på hjelp"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Modfilen er ugyldig."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Unavngitt manualside"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Metadatainformasjonen som trengs for å installere det tilpassede språket, eksisterer ikke."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Mod-skriptet er kanskje ikke null."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Ingen mods oppdaget."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Stopper mod {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Moden er ikke sterkt signert. Den kan inneholde uklarert kode."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Mod kan ikke lastes fordi det er en inkompatibilitet mellom denne versjonen av kjernen og denne moden:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Her er en liste over feil som kan hjelpe deg med å undersøke denne inkompatibiliteten:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid KS og/eller moden hjelper vanligvis. Mod-parsing mislyktes."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} fungerer kanskje ikke ordentlig med denne API-versjonen. Mod kan ikke starte opp. Kontakt mod-leverandøren for å få en siste kopi."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0} har ikke navnet. Mod-parsing mislyktes. Se gjennom kildekoden."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} har ikke versjonen. Mod-parsing mislyktes. Se gjennom kildekoden."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} inneholder ugyldig versjon. Mod-parsing mislyktes. Versjon var"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Versjon"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Filnavn"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Filbane"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Denne manualsiden har dessverre ikke noe innhold. Imidlertid kan denne dokumentasjonen ha blitt funnet under mod-leverandørens nettside. Hvis du fortsatt ikke finner denne dokumentasjonen, spør utviklerne av moden for mer informasjon."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Presentert for deg av"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Innholdslengde"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Ingen innhold."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Ingen revisjon."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Kan ikke kjøre egendefinert funksjon med ikke-eksisterende mod"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Avhengighet utilfredsstilt. Mislykkede avhengigheter er oppført nedenfor:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Prøvde å spørre i manualene for ikke-eksisterende mod {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Prøvde å initialisere manualen {0} for ikke-eksisterende mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Prøvde å initialisere den manuelle filen {0} for ikke-eksisterende mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Prøvde å initialisere den manuelle filen {0} som ikke eksisterer for mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Navn"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Tillat lasting av uklarerte mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Hvis satt til true, vil ikke kjernen feile ut ved lasting av mods som ikke har den signerte offentlige nøkkelen."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Vis antall kjernemodifikasjonskommandoer når du oppgir dem i hjelpekommandoen"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Start eller stopp av mods er ikke tillatt i sikker modus."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Kan ikke få feltinformasjon for"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Kan ikke bestemme mod-versjonen"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Ukjent lasterunntak"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Kan ikke laste inn mod-lokaliseringer"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Start mod (velg)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Start mod (inngang)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Stopp mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Last inn mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Installer mod (velg)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Installer mod (inngang)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Avinstaller mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Start alt"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Stopp alt"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Last inn alle på nytt"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Kan ikke returnere ikke-eksisterende klassetype fra modmontering"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Finner ikke funksjon '{0}' i mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Finner ikke egenskapen '{0}' i mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Finner ikke feltet '{0}' i mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Denne klassen er ikke en mod-klasse"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Språk"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Inngangspunkt"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Skriv inn en bane til moden du vil starte"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Kunne ikke starte mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Skriv inn en bane til moden du vil installere"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Kunne ikke installere mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Kan ikke starte eller stoppe denne moden!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Enten du skal starte, stoppe, hente informasjon fra, laste på nytt, installere eller avinstallere en mod"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Modnavn eller filnavn"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Enten du skal liste opp, laste på nytt, stoppe, starte eller administrere alle mods interaktivt"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Mods navn"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Denne delen lar deg konfigurere hvordan kjernemodifikasjonssystemet fungerer."
+    }
+  ]
+}

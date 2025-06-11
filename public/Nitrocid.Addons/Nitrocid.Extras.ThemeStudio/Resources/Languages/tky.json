@@ -1,0 +1,131 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMESTUDIO_APP_EXIT",
+      "text": "Çıkış"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
+      "text": "Yeni bir tema oluşturur"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
+      "text": "\"{0}\" adında yeni bir tema oluşturuluyor."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
+      "text": "Temayı Mevcut Dizine Kaydet"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
+      "text": "Temayı Başka Bir Dizine Kaydet..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENTAS",
+      "text": "Temayı Geçerli Dizine Farklı Kaydet..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHERAS",
+      "text": "Temayı Başka Bir Dizine Farklı Kaydet..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAMEPROMPT",
+      "text": "Tema adını belirtin:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROMBUILTIN",
+      "text": "Önceden Oluşturulmuş Temalardan Tema Yükle..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEFILEPROMPT",
+      "text": "Tema dosya adını .json uzantısı olmadan belirtin:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
+      "text": "Önizleme..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
+      "text": "Mevcut Renkleri Yükle"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROM",
+      "text": "Temayı Dosyadan Yükle..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
+      "text": "Temanın kaydedileceği dizini belirtin:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
+      "text": "Etkileşimli bir TUI'de yeni bir tema oluşturur"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
+      "text": "Rengi Kopyala..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
+      "text": "Rengin kopyalanacağı kaynak renk türünü seçin."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
+      "text": "Kaynak renk türü {0}'ı kopyalamak için hedef renk türlerini seçin."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORTYPE",
+      "text": "Renk türü"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLOR",
+      "text": "Renk"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORNAME",
+      "text": "Renk adı"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORHEX",
+      "text": "Renk altıgeni"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT",
+      "text": "Renk parlaklığı"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
+      "text": "Bu temayı nasıl kaydetmek istediğinizi seçin"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
+      "text": "Bir temayı nasıl yüklemek istediğinizi seçin"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
+      "text": "Değiştirmek..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "Kaydetmek..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
+      "text": "Yük..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",
+      "text": "Kopyala..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
+      "text": "Oluşturulacak tema adı"
+    }
+  ]
+}

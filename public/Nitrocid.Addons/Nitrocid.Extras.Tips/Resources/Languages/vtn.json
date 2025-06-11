@@ -1,0 +1,310 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "rằng bạn có thể thực thi các lệnh xử lý theo hai cách: nhập trực tiếp tên tệp thực thi và sử dụng lệnh 'exec'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "rằng bạn có thể khóa màn hình bằng lệnh 'lockscreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "rằng bạn có thể xây dựng các sửa đổi hạt nhân của riêng mình bằng C# và Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "rằng bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu chấm phẩy giữa các lệnh?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "rằng bạn có thể thoát khỏi dấu ngoặc kép bên trong các đối số được trích dẫn khi thực hiện lệnh không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "rằng bạn có thể thay đổi cài đặt hạt nhân bằng lệnh 'settings'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "rằng bạn có thể lưu màn hình của mình bằng lệnh 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "rằng bạn có thể báo cáo lỗi cho chúng tôi bằng cách truy cập trang dự án GitHub của Nitrocid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "rằng bạn có thể tạo lối tắt tới lệnh mong muốn bằng lệnh 'alias'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "rằng bạn có thể xây dựng màn hình chào mừng của riêng mình bằng C# và Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "rằng bạn có thể cài đặt thêm các tiện ích bổ sung để làm cho hạt nhân của bạn hữu ích và thú vị hơn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "rằng bạn có thể tạo ra những chủ đề tuyệt vời của riêng mình bằng lệnh 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "rằng bạn có thể thay đổi màu hạt nhân của mình bằng cách sử dụng lệnh 'cài đặt' hoặc bằng cách sử dụng một trong những chủ đề được dựng sẵn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "rằng bạn có thể khôi phục lại kernel về mặc định gốc bằng cách sử dụng đối số 'reset'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "rằng bạn có thể truy cập vào tài liệu mở rộng của chúng tôi tại trang GitBook?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "rằng các bản phát hành dài hạn được hỗ trợ trong năm năm đối với hỗ trợ chính và ba năm đối với các bản cập nhật bảo mật?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "rằng 0.0.1 là phiên bản đầu tiên của Nitrocid KS được phát hành vào ngày 22 tháng 2 năm 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "rằng phiên bản 0.0.24.x là phiên bản duy nhất có phiên bản API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "rằng các bản phát hành ngắn hạn chỉ được hỗ trợ trong chín tháng?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "phiên bản 0.1.x không tương thích ngược với phiên bản 0.0.24.x hoặc cũ hơn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "bạn có thể chạy Nitrocid KS trên Linux, macOS và Android không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "rằng bạn có thể tham khảo tài liệu API để giúp bạn tạo bản mod của mình không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "rằng bạn có thể tải được một số trò chơi tuyệt vời như Hangman và ShipDuet bằng cách cài đặt thêm tiện ích bổ sung?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "rằng, trong Meteor, nếu bạn va phải một cơn bão sao băng đỏ, tàu vũ trụ của bạn sẽ bị rơi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "rằng bạn có thể chuyển đổi hạt nhân của mình thành trung tâm thông tin bằng tính năng kết nối?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "rằng bạn có thể tạo nhóm người dùng để sắp xếp tài khoản người dùng?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "rằng nếu bạn là thành viên của một nhóm cấp một số quyền nhất định thì bạn được phép thực hiện các hoạt động như vậy?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "rằng bạn có thể thay đổi múi giờ hạt nhân mà không ảnh hưởng đến hệ thống máy chủ của bạn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "rằng bạn có thể sử dụng trình soạn thảo văn bản tương tác và hex để tiết kiệm thời gian?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "rằng trình soạn thảo văn bản lâu đời nhất được biết đến là hoạt động với hệ thống Unix đầu tiên là ed, trình soạn thảo văn bản sớm nhất được phát hành vào năm 1973 được cài sẵn trong hệ thống Unix trên PDP-7 tại AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "rằng bạn cũng có thể buộc lệnh chỉnh sửa khởi chạy trình chỉnh sửa theo một kiểu cụ thể?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "rằng trình soạn thảo văn bản tương tác này cố gắng mô phỏng các tính năng cơ bản nhất của các trình soạn thảo văn bản Unix phổ biến nhất, vi và vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "rằng trừ khi bạn biết mình đang làm gì với tệp nhị phân, việc chỉnh sửa tệp theo cách này sẽ dẫn đến hỏng dữ liệu hoặc mất dữ liệu trong tệp mục tiêu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "trên hệ thống Linux, shell được khởi tạo với sự trợ giúp của cả trình xử lý đăng nhập và chương trình khởi tạo hệ thống, thường nằm trong /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "rằng bạn có thể thực hiện các thao tác tập tin thông thường, chẳng hạn như sao chép, di chuyển, xóa, chỉnh sửa, v.v.?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "rằng TUI tương tác của trình quản lý tệp mô phỏng chức năng của Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "rằng nếu hạt nhân gặp sự cố, nó thường tạo ra một tệp dump?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "rằng bạn có thể chẩn đoán hạt nhân bằng cách gỡ lỗi nó bằng chức năng gỡ lỗi tích hợp?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "rằng bạn có thể tải xuống và tải lên các tập tin trực tiếp từ shell UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "rằng hạt nhân có thể được dịch ngay cả ở giai đoạn trước khi khởi động bằng cách khởi động nó với đối số 'lang'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "rằng bạn có thể xây dựng trình bảo vệ màn hình của riêng mình bằng cách đăng ký chúng trong bản mod của bạn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "rằng trình bảo vệ màn hình đầu tiên có chức năng làm màn hình đen sau ba phút không hoạt động trên máy tính IBM đầu tiên, scrnsave, được John Socha tạo ra vào năm 1983?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "rằng một số màn hình bảo vệ tốc độ cao có thể gây ra chứng động kinh nhạy cảm với ánh sáng?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "rằng nhật ký hạt nhân được sử dụng làm nhật ký khởi động và tắt máy?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "rằng bản mod của bạn bây giờ có thể dịch được?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "rằng các bản mod của bạn có thể giao tiếp với các tiện ích bổ sung của kernel và các bản mod khác, tạo ra một số loại giao tiếp và đạt được khả năng tương tác?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "rằng bạn có thể kết nối với trình gỡ lỗi từ xa và tùy chọn là máy chủ trò chuyện?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "rằng bạn có thể sử dụng shell gỡ lỗi, chỉ có trong phiên bản phát triển?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "rằng các mod của bạn bây giờ có thể có cấu hình riêng bằng cách đăng ký các lớp liên quan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "rằng người quản lý của bạn có thể đăng ký shell của riêng họ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "rằng người quản lý của bạn có thể thêm lệnh vào shell hiện có để tăng số lượng lệnh có thể sử dụng không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "rằng các lớp lệnh của bạn có thể biểu diễn chính xác các đối số và công tắc được truyền không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "rằng bạn có thể truy vấn các công tắc đã chuyển bằng cách sử dụng các lớp quản lý công tắc có trong API hạt nhân?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "rằng UESH bao gồm chức năng viết kịch bản để tạo điều kiện thuận lợi cho việc tạo và chạy các kịch bản?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "rằng shell bao gồm chức năng ngăn chặn việc hủy bỏ các ứng dụng đang hoạt động?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "rằng Nitrocid được tích hợp sâu với Terminaux để cho phép kết xuất nhanh hơn và tốt hơn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "rằng bây giờ bạn có thể thay đổi kích thước các ứng dụng tương tác mà không lo đầu ra bị hỏng?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "rằng có những lệnh yêu cầu người dùng nhập dữ liệu, có ích cho các tập lệnh không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "rằng bạn có thể trình bày câu hỏi đầu vào của người dùng theo nhiều cách, chẳng hạn như lựa chọn, bảng, đơn giản, lựa chọn, v.v.?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "rằng bạn có thể đặt chỗ giữ chỗ vào văn bản để hỗ trợ chúng không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "rằng bạn có thể sử dụng các trình điều khiển hạt nhân khác nhau để thay đổi cách thức hoạt động của một hoạt động cụ thể?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "rằng bạn có thể tự tạo màn hình bảo vệ và hình nền bằng C# hoặc Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "rằng bạn có thể truy vấn hệ thống máy chủ và trình giả lập thiết bị đầu cuối bằng cách sử dụng lớp nền tảng hạt nhân?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "rằng bạn có thể yêu cầu sự đồng ý về quyền riêng tư trước khi thực hiện điều gì đó nhạy cảm trong bản mod của bạn không?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "rằng bạn có thể tắt thông báo bằng tính năng Không làm phiền?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "rằng bạn có thể lưu lịch sử thông báo bằng chức năng có trong trình quản lý thông báo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "rằng bạn có thể thay đổi cách tạo ra số ngẫu nhiên bằng cách thay đổi trình điều khiển?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "rằng các API khác nhau cung cấp các chức năng hữu ích cho bản mod của bạn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của Mẹo."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Hiển thị các mẹo về hạt nhân"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Nếu được bật, shell sẽ hiển thị cho bạn các mẹo sau mỗi lần đăng nhập."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "rằng bạn có thể tạo ra các chương trình có thể khởi động bằng cách sử dụng bản mod hạt nhân của mình?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "rằng Nitrocid (Kernel Simulator 0.0.2) gọi shell tích hợp là shell 'UESH'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "rằng màn hình bảo vệ được quảng cáo là giải pháp chống hiện tượng lưu ảnh trên màn hình ống tia âm cực (CRT) hoặc màn hình plasma?"
+    }
+  ]
+}

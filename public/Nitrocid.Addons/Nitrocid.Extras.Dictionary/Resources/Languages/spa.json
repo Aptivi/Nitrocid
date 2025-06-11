@@ -1,0 +1,87 @@
+{
+  "lang": "spa",
+  "name": "Spanish",
+  "cultures": [
+    "es",
+    "es-419",
+    "es-AR",
+    "es-BO",
+    "es-BR",
+    "es-BZ",
+    "es-CL",
+    "es-CO",
+    "es-CR",
+    "es-CU",
+    "es-DO",
+    "es-EC",
+    "es-ES",
+    "es-GQ",
+    "es-GT",
+    "es-HN",
+    "es-MX",
+    "es-NI",
+    "es-PA",
+    "es-PE",
+    "es-PH",
+    "es-PR",
+    "es-PY",
+    "es-SV",
+    "es-US",
+    "es-UY",
+    "es-VE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Información de licencia"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "El Diccionario Inglés"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Palabra de información para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API tiene licencia bajo"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Palabra:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "significados de palabras para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Parte del discurso:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definición:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Ejemplo en oración:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Fuentes utilizadas para definir"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinónimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antónimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Palabra para definir"
+    }
+  ]
+}

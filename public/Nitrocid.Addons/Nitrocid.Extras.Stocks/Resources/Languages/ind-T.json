@@ -1,0 +1,94 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "प्रति घंटे स्टॉक की जानकारी प्राप्त करें"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "लघु कंपनी प्रतीक"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "अपनी अल्फावेंटेज API कुंजी दर्ज करें"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "कृपया अपनी API कुंजी प्रदान करें."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "प्रदर्शन API कुंजी का उपयोग नहीं किया जा सकता."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "आपकी API कुंजी 16 अक्षरों की होनी चाहिए."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "स्टॉक डेटा प्राप्त करते समय कोई त्रुटि हुई। अतिरिक्त जानकारी यहाँ पाई जा सकती है"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "प्रारंभिक स्टॉक मूल्य"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "उच्च स्टॉक मूल्य"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "कम स्टॉक मूल्य"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "समापन स्टॉक मूल्य"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "स्टॉक वॉल्यूम"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API कुंजी आवश्यक है। सेटिंग्स से कॉन्फ़िगर करें।"
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "कोई स्टॉक डेटा उपलब्ध नहीं है."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको स्टॉक कॉन्फ़िगर करने देता है।"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "एपीआई कुंजी"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "अल्फावेंटेज स्टॉक एपीआई के लिए कुंजी"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "कंपनी कोड"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "स्टॉक कंपनी"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "स्टॉक की जानकारी नहीं मिल पा रही है."
+    }
+  ]
+}

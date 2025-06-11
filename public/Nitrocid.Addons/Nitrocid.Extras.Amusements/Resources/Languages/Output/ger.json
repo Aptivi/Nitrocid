@@ -1,0 +1,503 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "Finden Sie heraus, ob Sie mathematische Gleichungen rechtzeitig lösen können"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "Perfekt gelöst!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "Falsch gelöst."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "Aktivieren Sie echte Farben"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "Verzögerung in Millisekunden"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "Sehen Sie, ob Sie rechtzeitig eine Taste drücken können"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "Zeichen nicht rechtzeitig gedrückt."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "Sie haben das richtige Zeichen gedrückt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "Sie haben das falsche Zeichen gedrückt."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "Drücken Sie zum Beenden ESC."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "Minimaler roter Farbpegel"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "Minimaler grüner Farbpegel"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "Minimaler blauer Farbpegel"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "Minimales Farbniveau"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "Maximale rote Farbstufe"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "Maximale grüne Farbstufe"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "Maximale blaue Farbstufe"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Maximale Farbstufe"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "Minimaler roter Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "Minimaler grüner Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "Minimaler blauer Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "Minimales Farbniveau. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "Maximale rote Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "Maximale grüne Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "Maximale blaue Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Maximale Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "Solver-Mindestzahl"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "Solver-Maximalzahl"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "Solver-Show-Eingabe"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "Ob angezeigt werden soll, was in der Eingabeaufforderung geschrieben steht."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "Was ist die Mindestanzahl zur Auswahl?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "Was ist die maximale Anzahl zu wählen?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "Aktiviert die True-Color-Unterstützung."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "Standardschwierigkeit für SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "Tastendruck-Timeout für SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "Wie viele Millisekunden soll vor dem Timeout auf den Tastendruck gewartet werden? (In benutzerdefinierter Schwierigkeit)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "Stufenverzögerung in Millisekunden"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "Wie viele Millisekunden soll gewartet werden, bevor die nächste Stufe gezeichnet wird?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "Startet das Spiel im einfachen Schwierigkeitsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "Startet das Spiel im mittleren Schwierigkeitsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "Startet das Spiel im Schwierigkeitsgrad „Schwer“."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "Startet das Spiel im sehr schweren Schwierigkeitsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "Startet das Spiel im benutzerdefinierten Schwierigkeitsgrad. Bitte beachten Sie, dass das benutzerdefinierte Timeout in Millisekunden als Argument geschrieben werden sollte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "Position des Fortschrittstexts"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "Wählen Sie Ihre bevorzugte Position für Fortschrittstexte aus."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "Sie können nur die Zahlen schreiben."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "Drücken Sie zum Beenden \"q\"."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "Das Schlangenspiel!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "Du bist ein Raumschiff und die Meteore kommen, um dich zu zerstören. Kannst du es speichern?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "Spiel ist aus"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "Unerwarteter Fehler"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "Verwenden Sie PowerLine zum Rendern von Raumschiffen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "Meteor-Spielgeschwindigkeit"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "Ob PowerLine verwendet werden soll, um das Raumschiff zu rendern, oder ob das Standardgrößer-als-Zeichen verwendet werden soll. Wenn Sie PowerLine mit Meteor verwenden möchten, müssen Sie eine entsprechende Schriftart mit PowerLine-Unterstützung installieren."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "Gibt die Spielgeschwindigkeit in Millisekunden an."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "Setzen Sie auf das falsche Pferd?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "Startet das Hangman-Spiel"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "Ein falscher Buchstabe und du bist aufgehängt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "Testen Sie Ihre Galgenmännchenfähigkeiten, indem Sie einen zufälligen Buchstaben werfen."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "Du bist ein Raumschiff und die Meteore kommen, um dich zu zerstören. Kannst du ihnen ausweichen?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "Ruft ein zufälliges Zitat ab"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "Russisches Roulette"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "Zwei Raumschiffe liefern sich einen Kampf miteinander. Ein Schuss und das Raumschiff wird explodieren. Dies ist ein lokales Spiel für zwei Spieler."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "Der Wordle-Spielsimulator"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "Spielen Sie das Wordle-Spiel ursprünglich"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "Gedenkt des 5-jährigen Jubiläums der Kernel-Veröffentlichung"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "Gedenken an das 5-jährige Jubiläum des Kernels"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "Erste Veröffentlichung überhaupt"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "Dieser Kernel wurde erstmals am 22. Februar 2018 veröffentlicht, um einen minimalistischen Simulator zu erstellen, der tatsächlich simuliert, wie der Kernel funktioniert."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "Früher beherbergte es nur eine Shell und einige Befehle und funktionierte aufgrund der Verwendung des Windows Management Instrumentation-Tools nur mit Windows."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "Es gab auch keine eigene Dokumentation."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "Kernel-Verfeinerung"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "Es wurden Versionen des Kernels veröffentlicht, beispielsweise die zweite Hauptversion, um Farbgebung und grundlegende Funktionen hinzuzufügen, und die vierte Hauptversion, um Konfiguration hinzuzufügen."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "Die Dokumentation begann mit der sechsten Hauptversion, und dem Kernel wurden nach und nach verschiedene nette Dinge hinzugefügt."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "Aktuelle Version"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "Diese Version verfeinert den Kernel nun so weit, dass er sich nicht mehr wie die alten Versionen verhält."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "Da die neuen bahnbrechenden Funktionen veröffentlicht wurden, haben wir beschlossen, diesen Kernel zu benennen ..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "Alles Gute zum 5-jährigen Jubiläum!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "Pferd"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[ENTER] Das Rennen starten | [ESC] Beenden | [UP/DOWN] Auswahl verschieben"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "Dein Pferd hat das Rennen gewonnen!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "Dein Pferd hat das Rennen verloren!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "Du bist aufgehängt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "Du gewinnst!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "Was ist Ihre Wette?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "Du hast es richtig erraten!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "Du hast es falsch verstanden."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "Aber du hast Pech. Verlierer."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "Du hast Glück! Gewinner!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "Es ist eine Zeichnung."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "Spieler {0} gewinnt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "Aktueller Charakter:"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "Du hast das richtige Wort erraten! Du gewinnst!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "Farbeinstellungen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "Ein Schlangenspiel."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "Zeigt Ihnen schöne berühmte Zitate."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "Wählen Sie Ihren bevorzugten Schwierigkeitsgrad aus: 0 ist einfach, 1 ist mittel, 2 ist schwer, 3 ist sehr schwer und 4 ist benutzerdefiniert."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "Verwenden Sie PowerLine zum Rendern von Raumschiffen in ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "Ob PowerLine zum Rendern des Raumschiffs verwendet werden soll oder ob das Standard-Größer-als-Zeichen verwendet werden soll. Wenn Sie PowerLine mit ShipDuet verwenden möchten, müssen Sie eine entsprechende Schriftart mit PowerLine-Unterstützung installieren."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "Spielgeschwindigkeit in ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "Verwendet die Liste der gebräuchlichen Wörter."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "Verwendet die vollständige Wortliste."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "Das Ping-Pong-Spiel!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "Punktzahl"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "Pferderennen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "Henker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "Meteor-Ausweichen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "Meteor Shooter"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "Pong"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "Schiffsduett"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "Schlangenmensch"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "Wordle (Original)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "Unbekanntes Zitat."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "Unbekannter Autor."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "Hiermit können Sie die Farben konfigurieren"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "In diesem Abschnitt können Sie Solver konfigurieren."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "In diesem Abschnitt können Sie SpeedPress konfigurieren."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "In diesem Abschnitt können Sie Meteor und ShipDuet konfigurieren."
+    }
+  ]
+}

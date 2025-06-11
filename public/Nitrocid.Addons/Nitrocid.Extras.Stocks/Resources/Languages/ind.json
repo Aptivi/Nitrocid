@@ -1,0 +1,94 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "prati ghante stok jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "laghu kampanee prateek"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "apanee alphavantagai api kunjee darj karen"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "krpaya apanee api kunjee pradaan karen."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "pradarshan api kunjee ka upayog nahin kiya ja sakata."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "aapakee api kunjee 16 varnon kee honee chaahie."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "stok deta praapt karate samay koee truti huee. atirikt jaanakaaree yahaan paee ja sakatee hai"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "shuruaatee stok keemat"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "uchch stok keemat"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "kam stok keemat"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "band stok keemat"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "stok volyoom"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "api kunjee aavashyak hai. setings se konfigar karen."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "koee stok deta upalabdh nahin hai."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "yah anubhaag aapako stok konfigar karane deta hai."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "api kunjee"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "alphavantagai stok api ke lie kunjee"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "kampanee kod"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "stok kampanee"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "stok jaanakaaree nahin mil sakatee."
+    }
+  ]
+}

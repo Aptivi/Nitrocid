@@ -1,0 +1,328 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "Sortie"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "Obtient les informations de date et d'heure"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "Millisecondes :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "Secondes :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "Minutes:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "Les heures:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "Journées:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "Mois:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "An:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "Jour de l'année :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "Jour de la semaine:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "Binaire:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "Heure locale:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "Temps universel:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "Temps Unix :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "Échec de l'analyse des informations de date pour"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "Assurez-vous que le format est correct."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "Date:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "Temps:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "Un simple chronomètre"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "Démarrer ou arrêter"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "Genoux"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "Réinitialiser"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "Une simple minuterie"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "Définir l'intervalle"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "Le délai d'attente indiqué n'est pas numérique."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "Spécifiez le délai d'attente en millisecondes"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d'informations"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "Police Figlet pour la minuterie"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Activer Figlet pour la minuterie"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Si activé, utilisera figlet pour la minuterie. Veuillez noter qu'il a besoin d'un grand écran de console pour afficher correctement l'heure avec Figlet activé."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "Obtient les informations de date et d'heure actuelles"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "Information pour"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "Le chronomètre est prêt."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "Chronomètre en marche !"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "Nouveau tour !"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "Commencez le compte à rebours"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossible d'obtenir les entrées de paramètres."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "Minuteur"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "Chronomètre"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "Pas encore de tours..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "Liste des tours"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "Minuterie Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "Le minuteur Pomodoro est prêt"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "Minuterie Pomodoro numéro {0} en quatre itérations"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "Courte pause"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "Spécifiez le délai d'expiration de la pause en millisecondes"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "Définir l'intervalle de pause"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "Date et heure d'impression des informations"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "Cette section vous permet de configurer le fonctionnement de l'application du minuteur."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "Cette section vous permet de configurer le fonctionnement de l'application de minuterie Pomodoro."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Activer Figlet pour le minuteur Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Si cette option est activée, Figlet sera utilisé pour le minuteur Pomodoro. Veuillez noter qu'un grand écran de console est nécessaire pour afficher correctement l'heure avec Figlet activé."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "Police Figlet pour le minuteur Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "Date de production non valide"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "Délai d'expiration non valide"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "Date d'expiration non valide"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "Date de production"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "Date d'expiration"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "Délai d'expiration"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "État du produit"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "État du produit"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "Échec de l'obtention des informations d'expiration du produit"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "Obtention des informations d'expiration du produit"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "Date de production (regardez sur le côté ou le dessous du produit)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "Date ou délai d'expiration (écrit explicitement au même endroit ou par intervalles, par exemple 6 mois ou 1 an)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "Si le produit cible ne précise pas explicitement la date d'expiration"
+    }
+  ]
+}

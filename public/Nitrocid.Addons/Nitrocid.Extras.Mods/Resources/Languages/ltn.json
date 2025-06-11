@@ -1,0 +1,414 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Mod non potest onerari propter haec:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} incepit"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Lingua invalida"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Parsing mods non permisit in tutum modus."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0} substitit"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} substitit"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Deficere potuit mod {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "incipiens mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Mod versio:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} non invenitur."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Mod nomen:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Mod lima nomen:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Mod lima iter:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Mods Curo tuum"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Modus administratione in tuto erret modus."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Mandatum invalidum {0}. Reprehendo usus infra:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Mod not found or file has invalid characters."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Pagina manualis {0} invalida est."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Considera paginam hanc manualem implentem."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Mod manual"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Restitit mods non permisit in tutum modus."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Mod iam incepit!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Mod hasn't started yet!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Contact venditorem mod ad upgrade mod ad versionem compatibilem."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "notarat mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Filenames modorum scribe quae in startup non persequuntur. Cum finieris, scribe \"q\". Scribere signum minus signum iuxta viam ad mod exsistens auferendum."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} notarat."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Satus kernel modificationes in tabernus"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Automatice incipit nucleus modificationes in tabernus."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Mod lima non datum est."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Conatur inaugurare iam institutum mod. Adaequationis mod..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Defecit enim institutionem"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Modus lima provisum est compatitur."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Uninstallation defecit in"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Informatio metadata quae opus est ad instituendam linguam consuetudinum necessarias localizationes necessarias non praebet."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Monstra in mod imperium numerare in auxilium"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Modfile irritum est."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Untitled paginam manualem"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Informationes metadatae necessariae ad institutionem linguae consuetudinis non est."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Modus scripto nullus sit."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Nulla mods deprehenditur."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Restitit mod {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Mod is not valde signatus est. Continere potest untrusted codice."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Mod potest onustus quod illic 'an repugnat res inter hoc version of kernel et hoc mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Hic est index errorum qui te adiuvet hanc incompatibilitatem investigare:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} exigit exacte an API version {I}, vos have poema poematis {II}. Upgrading nitrocid ks et / vel mod plerumque adjuvat. Mod parsing defuit."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} ut non operatur bene cum hoc API version. Mod ut deficere incipere est. Contact in mod vendor ut a tardus copy."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0} non habet nomen. Mod parsing defuit. Fons recensere codicem."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} non habent versionem. Mod parsing defuit. Fons recensere codicem."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} versionem invalidam continet. Mod parsing defecit. Poema erat"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Version"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "File nomen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "File iter"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Infeliciter, haec pagina manualis nulla contenta habet. Nihilominus haec documenta inventa sub pagina telae moduli venditoris poterant. Si adhuc documenta haec invenire non potes, pete tincidunt moduli pro magis informatione."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Oblatum est tibi per"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Contentus longitudo"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Nulli contenta."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Nulla recognitio."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Morem exequi non potest cum non-existentibus functionis mod"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Dependentia inanis. Deficio clientelae infra enumerantur:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Conatus investigare manual pro nullo mod {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Conatus manualem {0} pro nullo exstare {1} initialize."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Documentum manuale {0} initializere conatus est nullo mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Documentum manuale {0} initializere conatus est qui non exsistit pro mod {1} {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Nomen"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Liceat loading untrusted mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Si verum statutum est, nucleus non errat in oneratione modulorum qui clavem publicam signatam non habent."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Ostende comitem kernel modificatio imperium cum listing in auxilium imperium"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Incipiens aut retinens mods non permisit in tutum modum."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Non potest info for ager"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Non potest determinare mod version"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Ignotum oneratus exceptione"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Non potest load mod localizations"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Mod initium (selectis)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Satus mod (input)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Desine mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Reload mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Mod install (eligere)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Mod install (input)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Uninstall mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Satus all"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Nolite omnes"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Reload all"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Non potest redire non-esse genus generis ex mod ecclesia"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Munus invenire non potest '{0}' in mod'{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Proprietatem invenire non potest '{0}' in mod'{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Agrum invenire non potest '{0}' in mod'{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Hoc genus non est mod classis"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Linguae"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Ingressus punctum"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Intra viam ad mod quod vis incipere"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Deficio incipere mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Intra viam ad mod ut vis ut install"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Deficio ad install mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Can't start or stop this mod!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Utrum incipere, desine, info exire, reload, instituere, an modm amoveas"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Mod nomen vel lima nomen"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Utrum recensere, reload, desinere, inire, vel interactive omnia tractare"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Mod nomen"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Haec sectio permittit te configurare quomodo ratio modificationis nuclei operatur."
+    }
+  ]
+}

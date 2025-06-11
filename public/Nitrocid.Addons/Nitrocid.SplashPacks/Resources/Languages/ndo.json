@@ -1,0 +1,62 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_WELCOME",
+      "text": "Selamat datang!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
+      "text": "Warna bilah kemajuan"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
+      "text": "Lokasi teks kemajuan"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC",
+      "text": "Pilih lokasi teks kemajuan yang Anda inginkan."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE",
+      "text": "Selamat tinggal!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
+      "text": "Memulai"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
+      "text": "Harap tunggu sementara kernel sedang diinisialisasi..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
+      "text": "Harap tunggu sementara kernel sedang dimatikan..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
+      "text": "Kesalahan tidak diketahui!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
+      "text": "Layar pembuka sederhana."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
+      "text": "Layar pembuka yang menunjukkan kemajuan Anda."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
+      "text": "Layar pembuka yang menunjukkan kemajuan Anda menggunakan teks PowerLine."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
+      "text": "Gagal mendapatkan entri pengaturan."
+    }
+  ]
+}

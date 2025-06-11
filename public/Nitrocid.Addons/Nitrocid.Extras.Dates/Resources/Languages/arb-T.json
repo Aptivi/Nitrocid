@@ -1,0 +1,308 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "خروج"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "يحصل على معلومات التاريخ والوقت"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "ميلي ثانية:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "ثواني:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "الدقائق:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "ساعات:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "أيام:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "شهور:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "سنة:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "يوم من السنة:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "يوم من الأسبوع:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "الثنائية:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "الوقت المحلي:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "التوقيت العالمي:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "وقت يونكس:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "فشل تحليل معلومات التاريخ لـ"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "تأكد من صحة التنسيق."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "تاريخ:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "زمن:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "ساعة توقيت بسيطة"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "ابدأ أو توقف"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "حجر"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "إعادة ضبط"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "جهاز توقيت بسيط"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "ضبط الفاصل الزمني"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "المهلة المشار إليها ليست رقمية."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "حدد المهلة بالمللي ثانية"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "اكتب خط الشكل الذي تدعمه مكتبة Figgle. راجع وثائق المكتبة لمزيد من المعلومات"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "الخط Figlet للمؤقت"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "تمكين Figlet للمؤقت"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "في حالة التمكين ، سيتم استخدام الشكل الصغير للمؤقت. يرجى ملاحظة أنه يحتاج إلى شاشة وحدة تحكم كبيرة لعرض الوقت بشكل صحيح مع تمكين Figlet."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "يحصل على معلومات التاريخ والوقت الحالي"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "معلومات عن"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "ساعة التوقيت جاهزة."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "تشغيل ساعة توقيت!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "لفة جديدة!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "ابدأ العد التنازلي"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "مؤقت"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "ساعة توقيت"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "لا توجد لفات بعد..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "قائمة اللفة"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "مؤقت بومودورو"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "بومودورو"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "مؤقت بومودورو جاهز"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "رقم مؤقت بومودورو {0} في أربع تكرارات"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "استراحة قصيرة"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "حدد مهلة التوقف بالمللي ثانية"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "تعيين فترة الراحة"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "التاريخ والوقت لطباعة المعلومات من"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "يسمح لك هذا القسم بتكوين كيفية عمل تطبيق المؤقت."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "يتيح لك هذا القسم تكوين كيفية عمل تطبيق مؤقت بومودورو."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "تمكين Figlet لمؤقت بومودورو"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "إذا تم تمكينه، فسوف نستخدم figlet لمؤقت بومودورو. يرجى ملاحظة أنه يحتاج إلى شاشة وحدة تحكم كبيرة لعرض الوقت بشكل صحيح مع تمكين Figlet."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "خط Figlet لمؤقت Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "تاريخ الإنتاج غير صحيح"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "فترة انتهاء الصلاحية غير صحيحة"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "تاريخ الانتهاء غير صحيح"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "تاريخ الإنتاج"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "تاريخ الانتهاء"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "فترة انتهاء الصلاحية"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "صحة المنتج"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "حالة المنتج"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "فشل الحصول على معلومات انتهاء صلاحية المنتج"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "الحصول على معلومات انتهاء صلاحية المنتج"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "تاريخ الإنتاج (انظر إلى جانب المنتج أو أسفله)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "تاريخ الانتهاء أو الفترة الزمنية (سواءً مكتوبة صراحةً في نفس المكان أو فترات زمنية، مثل 6 أشهر أو سنة واحدة)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "هل المنتج المستهدف لا يحدد تاريخ انتهاء الصلاحية صراحةً؟"
+    }
+  ]
+}

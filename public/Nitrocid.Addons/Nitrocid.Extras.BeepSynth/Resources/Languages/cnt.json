@@ -1,0 +1,49 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BEEPSYNTH_NOWPLAYING",
+      "text": "zhèng zài bō fàng"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
+      "text": "dòu qǔ fēng míng shēng héchéng wénjiàn"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_FILENOTFOUND",
+      "text": "fēng míng héchéng dàng bù cúnzài."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_CHAPTERNAME",
+      "text": "Zhāngjié míngchēng"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDSYNTH",
+      "text": "héchéng qì biǎoshì wúxiào."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDFREQ",
+      "text": "Pínlǜ wúxiào."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDDURATION",
+      "text": "Chíxù shíjiān wúxiào."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO",
+      "text": "Wúfǎ cóng tígōng de biǎoshì zhōng huòqǔ héchéng zīxùn."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC",
+      "text": "héchéng dǎng'àn de lùjìng"
+    }
+  ]
+}

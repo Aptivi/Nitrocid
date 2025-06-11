@@ -1,0 +1,151 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Επίπεδο κόκκινου χρώματος:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Επίπεδο πράσινου χρώματος:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Επίπεδο μπλε χρώματος:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "Κυανό επίπεδο:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "Επίπεδο ματζέντα:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Κίτρινο επίπεδο:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "Απόχρωση:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "Κορεσμός:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "Αξία:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Επίπεδο κίτρινου χρώματος:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "Λούμα:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "Σε φάση:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "Τετραγωνισμός:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος προέλευσης στο μοντέλο χρώματος στόχου σε αριθμούς."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος προέλευσης στο μοντέλο χρώματος προορισμού σε μορφή KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος πηγής σε εξαγωνικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος προέλευσης χρησιμοποιώντας τον προσδιοριστή χρώματος στο μοντέλο χρώματος προορισμού."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος προέλευσης χρησιμοποιώντας τον προσδιοριστή χρώματος στο μοντέλο χρώματος προορισμού σε μορφή KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Μετατρέπει το μοντέλο χρώματος προέλευσης χρησιμοποιώντας τον προσδιοριστή χρώματος στο μοντέλο χρώματος προορισμού σε δεκαεξαδικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "Η προδιαγραφή μοντέλου δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Επίπεδο μαύρου κλειδιού:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "Το πρώτο επίπεδο χρώματος πρέπει να είναι αριθμητικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "Το δεύτερο επίπεδο χρώματος πρέπει να είναι αριθμητικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Το τρίτο επίπεδο χρώματος πρέπει να είναι αριθμητικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Το τέταρτο επίπεδο κλειδιού πρέπει να είναι αριθμητικό."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "Φωτεινότητα (Ελαφρότητα):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Μοντέλο χρώματος πηγής"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Μοντέλο χρώματος στόχου"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "Πρώτος αριθμός"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "Δεύτερος αριθμός"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Τρίτος αριθμός"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Τέταρτος αριθμός"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Προσδιοριστής χρώματος"
+    }
+  ]
+}

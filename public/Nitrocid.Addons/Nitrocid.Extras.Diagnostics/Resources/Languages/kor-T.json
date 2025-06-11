@@ -1,0 +1,27 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "모든 스레드에 대한 역추적을 가져옵니다."
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "우리는 귀하가 Windows 8 이하를 실행하고 있다고 믿습니다. 이 작업은 지원되지 않습니다."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0}에 대한 스레드 스택 추적 정보"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Nitrocid KS 스레드가 아닙니다."
+    }
+  ]
+}

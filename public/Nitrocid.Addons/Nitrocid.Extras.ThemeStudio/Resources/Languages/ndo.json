@@ -1,0 +1,130 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMESTUDIO_APP_EXIT",
+      "text": "KELUAR"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
+      "text": "Membuat tema baru"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
+      "text": "Membuat tema baru \"{0}\"."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
+      "text": "Simpan Tema ke Direktori Saat Ini"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
+      "text": "Simpan Tema ke Direktori Lain..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENTAS",
+      "text": "Simpan Tema ke Direktori Saat Ini sebagai..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHERAS",
+      "text": "Simpan Tema ke Direktori Lain sebagai..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAMEPROMPT",
+      "text": "Tentukan nama tema:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROMBUILTIN",
+      "text": "Muat Tema Dari Tema yang Sudah Dibuat..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEFILEPROMPT",
+      "text": "Tentukan nama file tema tanpa ekstensi .json:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
+      "text": "Pratinjau..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
+      "text": "Muat Warna Saat Ini"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROM",
+      "text": "Muat Tema Dari File..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
+      "text": "Tentukan direktori untuk menyimpan tema:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
+      "text": "Membuat tema baru dalam TUI interaktif"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
+      "text": "Salin Warna Ke..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
+      "text": "Pilih jenis warna sumber untuk menyalin warnanya."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
+      "text": "Pilih jenis warna target untuk menyalin jenis warna sumber, {0}."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORTYPE",
+      "text": "Jenis warna"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLOR",
+      "text": "Warna"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORNAME",
+      "text": "Nama warna"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORHEX",
+      "text": "Warna heksagonal"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT",
+      "text": "Kecerahan warna"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
+      "text": "Pilih bagaimana Anda ingin menyimpan tema ini"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
+      "text": "Pilih bagaimana Anda ingin memuat tema"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
+      "text": "Mengubah..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "Menyimpan..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
+      "text": "Memuat..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",
+      "text": "Menyalin..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
+      "text": "Nama tema yang akan dibuat"
+    }
+  ]
+}

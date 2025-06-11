@@ -1,0 +1,2575 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "Ainm úsáideora le haghaidh {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "Pasfhocal le haghaidh {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "Ceangailte le {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "Earráid agus iarracht á déanamh ceangal le {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "Níl an t-eolaire áitiúil {0} ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "Cuir isteach eolaire áitiúil. \"..\" chun dul ar ais."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "Eolaire {0} gan aimsiú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "Cuir isteach eolaire cianda. \"..\" chun dul ar ais"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "Eolaire áitiúil: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "Comhadlann cianda: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "Comhad {0} á íoslódáil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "Comhad íosluchtaithe {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "Comhad {0} á uaslódáil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "Comhad uaslódála {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "Faigheann sé eolaire áitiúil reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "Faigheann sé an t-eolaire cianda reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "Athraítear eolaire áitiúil le híoslódáil chuige nó le huaslódáil uaidh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "Athraítear cianchomhadlann le híoslódáil uaidh nó le huaslódáil chuige"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "Scriostar comhad cianda ón bhfreastalaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "Íoslódálann sé comhad cianda chuig an eolaire áitiúil ag úsáid dénártha nó téacs"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "Liostaíonn eolaire áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "Liostaí eolaire cianda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "Uaslódálann sé comhad áitiúil chuig an gcianeolaire trí úsáid a bhaint as dénártha nó téacs"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "Athruithe eolaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "Bain úsáid as blaosc FTP chun idirghníomhú le freastalaithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "Tharla earráid sa bhlaosc."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "Roghnú próifíle neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "Ag iarraidh ceangal le {0} le próifíl {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "Ainm: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "Ríomhann sé suimeanna comhaid."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "Algartam criptithe neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "Cuir isteach an pasfhocal le haghaidh {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "Méid: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "Earráid agus iarracht á déanamh ceangal le {0}: Teorainn ama an cheangail nó ceangal caillte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "Ríomhann sé suimeanna na gcomhad san eolaire sonraithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "Cuir isteach ainm úsáideora nó seoladh ríomhphoist:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "Iontráil pasfhocal:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "Earráid agus ceangal á dhéanamh le {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "Ag nascadh le {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "Ag fíordheimhniú..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "Íoslódálann sé teachtaireachtaí agus liostaítear iad"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "Osclaíonn sé teachtaireacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "Ní luach uimhriúil é leathanach."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "Seans nach mbeidh uimhir na teachtaireachta diúltach nó náid."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "Ní luach uimhriúil í uimhir na teachtaireachta."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- Ó {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- Go {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- Seolta ag {0} i {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "Ní bhfuarthas an teachtaireacht sonraithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "Próifílí a ullmhú... Seans go dtógfadh sé roinnt nóiméad..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "Athraítear an eolaire ríomhphoist reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "Ní féidir fillteán ríomhphoist {0}: {1} a oscailt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "Liostaigh na heolairí i do sheoladh ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "Le linn bailíochtú deimhnithe, tá earráidí deimhnithe. Seans gurb é seo an chéad uair a nasc tú leis an bhfreastalaí nó seans go bhfuil an teastas imithe in éag. Seo earráid:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "An bhfuil tú cinnte gur mhaith leat nascadh?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "Freagra neamhbhailí. Bain triail eile as."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "Cuir isteach seoladh freastalaí IMAP agus port (<seoladh> nó <seoladh>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "Cuir isteach seoladh freastalaí SMTP agus port (<seoladh> nó <seoladh>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "Seoltar teachtaireacht chuig seoladh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "Cuir isteach seoladh ríomhphoist an fhaighteora:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "Cuir isteach an t-ábhar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "Cuir isteach do theachtaireacht thíos. Scríobh \"EOF\" lena dheimhniú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "Teachtaireacht á seoladh..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "Teachtaireacht seolta."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "Seoladh r-phoist neamhbhailí. Cinntigh gur scríobh tú an seoladh i gceart agus go dtagann sé le formáid an tsampla a thaispeántar:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "Baintear teachtaireacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "Baintear gach teachtaireacht ón bhfaighteoir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "Scriosadh an teachtaireacht {0} ó {1} ó {2}. {3} teachtaireacht fágtha le parsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "Scriosadh an teachtaireacht {0} ó {1} ón mbosca isteach. {2} teachtaireacht fágtha le parsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "Theip ar an gcomhad a oscailt. blaosc ag éirí as..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "Tá an rogha shonraithe {0} neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "Caithfidh an freagra a bheith uimhriúil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "Logáil isteach FTP ainm úsáideora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "Logáil seoladh IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "Ná tabhair ar ais ach an chéad phróifíl FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "Theip ar {0} a uaslódáil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "Theip ar an íoslódáil don chomhad {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "Theip ar liostáil comhaid chianda: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "{0} á scriosadh…"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "Níl {0} le fáil sa fhreastalaí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "Baintear gach ríomhphost a rinne {0} go rathúil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "Theip ar gach ríomhphost a rinne {0} a bhaint."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "Earráid agus teachtaireacht á seoladh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "Ag bogadh {0} go {1}…"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "Ar athraíodh a ionad go rathúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "Bogtar comhad nó eolaire chuig comhad nó eolaire eile. Is féidir leat é sin a úsáid freisin chun comhaid a athainmniú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "Theip ar {0} a bhogadh go {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "Ag cóipeáil {0} go {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "D'éirigh le cóipeáil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "Cóipeáil comhad nó eolaire chuig comhad nó eolaire eile."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "Theip ar chóipeáil {0} go {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "Bogann teachtaireacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "Bogtar gach teachtaireacht ón bhfaighteoir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "Bogtar gach ríomhphost a rinne {0} go rathúil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "Theip ar gach ríomhphost déanta ag {0} a bhogadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "Bogadh an teachtaireacht {0} ó {1} ó {2}. {3} teachtaireacht fágtha le parsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "Cibé an logáiltear nó nach ndéanfar ainm úsáideora FTP a logáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "Cibé an logáilfidh tú seoladh IP FTP nó nach ndéanfar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "Roghnaigh an chéad phróifíl amháin nuair a nascadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "Tháinig {0} teachtaireacht nua isteach sa bhosca isteach."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "Oscail \"mail\" chun iad a fheiceáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "Ainm iomlán: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "Am cruthaithe: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "An t-am rochtana deiridh: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "Am scríofa deiridh: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "Tréithe: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "Eolaire tuismitheora: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "Cá háit a bhfaighidh tú: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "Méid comhaid: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "Cuir isteach cosáin comhaid chuig ceangaltáin. Brúigh ENTER ar chonair bhán lena dhearbhú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "Osclaíonn sé teachtaireacht criptithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "Scríobh pasfhocal don eochair-aitheantas {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "Seoltar teachtaireacht criptithe chuig seoladh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "Brúigh eochair ar bith chun dul ar ais."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "Ní féidir fillteán ríomhphoist {0}: {1} a chruthú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "Déanann sé eolaire sa chomhadlann oibre reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "Baineann sé eolaire as an eolaire oibre reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "Ní bhfuarthas fillteán ríomhphoist {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "Ní féidir fillteán ríomhphoist {0}: {1} a scriosadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "Athainmnítear fillteán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "Taispeáin réamhamharc teachtaireacht ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "Agus teachtaireachtaí ríomhphoist á liostú, taispeáin réamhamharc coirp."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "Má tá sábháil uathoibríoch cumasaithe, déanfar an comhad téacs a shábháil ar feadh gach \"n\" soicind."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "Ligeann sé duit freastalaí SSH FTP a úsáid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "Liostaíonn sé gach comhad laistigh den chartlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "Sleachta comhad chuig eolaire sonraithe nó eolaire reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "Athruithe eolaire cartlainne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "Níl an t-eolaire {0} ann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "Níl an t-eolaire cartlainne {0} ann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "Tharla earráid sa bhlaosc FTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "Tharla earráid sa bhlaosc SFTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "Conas is mian leat a fhíordheimhniú?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "Comhad eochair phríobháideach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "Pasfhocal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "Cuir isteach an pasfhrása don eochair {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "Níl an eochairchomhad {0} ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "Earráid agus eochair phríobháideach á cur leis:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "Socraíonn sé ceadanna comhaid. Ní thacaítear leis seo ach ar fhreastalaithe FTP a ritheann Unix."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "Socraíonn sé an cineál don seisiún seo"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "Theip ar cheadanna {0} go {1} a shocrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "D'éirigh le ceadanna a shocrú don chomhad"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "Cineál sonraí socraithe chuig ASCII!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "Cineál sonraí socraithe go Dénártha!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "Cineál sonraí neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "Tabhair faoi deara nach n-íoslódálann nó nach n-uaslódálann formhór na gcomhad i gceart ag baint úsáide as an mód seo, mar sin molaimid go mór an modh Dénártha a úsáid i bhformhór na gcásanna."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "Osclaíonn sé blaosc RSS chun na fothaí a léamh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "Liostaíonn gach fothaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "Léann sé fotha i mbrabhsálaí gréasáin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "Faigheann an t-alt eolas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "Ní fhéadfadh uimhir ailt a bheith níos mó ná na hailt atá ar fáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "Teideal:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "Nasc:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "Faigheann sé an fhaisnéis fotha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "Cur síos:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "Cineál beathaithe:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "Líon na n-alt:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "Níl nasc ag an alt!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "URL a oscailt... Bí cinnte go lean tú na céimeanna a thaispeántar ar an scáileán."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "Álainn an comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "Íoslódálacha fillteán cianda chuig eolaire áitiúil ag baint úsáide as dénártha nó téacs"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "Uaslódálann sé fillteán áitiúil chuig an gcianeolaire ag úsáid dénártha nó téacs"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "Fillteán {0} á íoslódáil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "Fillteán íosluchtaithe {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "Theip ar an íoslódáil don fhillteán {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "Fillteán {0} á uaslódáil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "Fillteán uaslódála {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "Mionlaghdaítear an comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "Níor oscail eagarthóir JSON sruth comhaid fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "Scoir an bhlaosc JSON gan na hathruithe a shábháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "Sábháiltear an comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "Priontálann an comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid logáil isteach a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid pasfhocal a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Taispeáin sonraí an chomhaid sa liosta FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Stíl leid ainm úsáideora le haghaidh FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Stíl leid pasfhocail le haghaidh FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "Úsáid an chéad phróifíl FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Cuir naisc nua le luasdhiailiú FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "Déan iarracht deimhnithe FTP slán a bhailíochtú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "Taispeáin FTP MOTD ar nasc"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "Glac le teastais FTP neamhbhailí i gcónaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Taispeánann sé sonraí an chomhaid FTP agus cian-eolairí á liostú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "Úsáideann sé an chéad phróifíl FTP chun ceangal le FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Má tá sé cumasaithe, cuireann sé nasc nua leis an diail luais FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "Déanann sé iarracht na teastais FTP a bhailíochtú. Ní mholtar é a mhúchadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "Taispeánann sé teachtaireacht FTP an lae ar logáil isteach."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "Glac le teastais FTP neamhbhailí i gcónaí. Ní mholtar é a chur ar siúl mar d’fhéadfadh rioscaí slándála a bheith i gceist leis."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Stíl leid ainm úsáideora le haghaidh ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Stíl leid pasfhocail don ríomhphost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "Stíl leide IMAP don ríomhphost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "Stíl leide SMTP don phost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "Braith go huathoibríoch freastalaí ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "Cumasaigh dífhabhtú ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "Fógra a thabhairt le haghaidh teachtaireachtaí ríomhphoist nua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "Stíl leid phasfhocal GPG don phost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "Seol eatramh ping IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "Seol SMTP ping eatramh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "Formáid téacs ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "Scríobh conas is mian leat leid do fhreastalaí IMAP a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid freastalaí SMTP a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "Braith an freastalaí ríomhphoist go huathoibríoch bunaithe ar an seoladh a tugadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "Cumasaíonn sé dífhabhtú freastalaí ríomhphoist."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "Cuireann sé seo in iúl duit le haghaidh aon teachtaireachtaí ríomhphoist nua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid pasfhocal GPG a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "Cé mhéad milleasoicind chun an ping IMAP a sheoladh?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "Cé mhéad milleasoicind chun an ping SMTP a sheoladh?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "Rialaíonn sé conas a thaispeánfar téacs an phoist."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "Stíl leid URL fotha RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "Fotha RSS a athnuachan go huathoibríoch"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "Eatramh fotha RSS a athnuachan go huathoibríoch"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid freastalaí fothaí RSS a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "Cé mhéad milleasoicind chun an fotha RSS a athnuachan?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Taispeáin sonraí an chomhaid i liosta SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Stíl leid ainm úsáideora le haghaidh SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Cuir naisc nua le diail luais SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Taispeánann sé sonraí an chomhaid SFTP agus cian-eolairí á liostú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Má tá sé cumasaithe, cuireann sé nasc nua leis an diail luais SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "Faisnéise freastalaí FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "Seoladh an fhreastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "Port freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "Cineál freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "Cineál córais freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "Mód criptithe an fhreastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "Cineál ceangail sonraí freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "Córas freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "Cineál sonraí íoslódála freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "Cineál sonraí uaslódála freastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "Cuir isteach cianchomhad a bheidh le hash."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "Cuir isteach eolaire cianda."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "hashing athfhillteach le haghaidh FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "Cibé ar cheart eolaire a hash go hathchúrsach. Tabhair faoi deara le do thoil nach dtacaíonn gach freastalaí FTP leis sin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "Feidhmíonn sé ordú freastalaí FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "ríomhphoist aistrithe..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "Ainm Óstach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "Ainm úsáideora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "Cineál Sonraí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "Ionchódú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "Criptiú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "Prótacail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "Taispeáin dul chun cinn aistrithe ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "Dul chun cinn aistrithe poist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "Dul chun cinn ar aistriú ríomhphoist (singil)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "Má tá sé cumasaithe, taispeánfaidh an bhlaosc ríomhphoist cé mhéad beart a tharchuirtear agus ríomhphost á íoslódáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "Scríobh conas is mian leat do stíl dul chun cinn aistrithe poist a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil. {0} don mhéid aistrithe agus {1} don mhéid iomlán."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "Scríobh conas is mian leat do stíl dul chun cinn aistrithe poist a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil. {0} le haghaidh méid aistrithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "Tosaíonn an bhlaosc HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "Faigheann sé an freagra ón bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "Scriosann sé ábhar ó fhreastalaí HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "Tharla earráid sa bhlaosc HTTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "Faigheann sé an teaghrán ón bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "{0} á fháil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "Pacálann sé comhad áitiúil sa chartlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "Ní féidir aon rud a phacáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "Fotha RSS faigh teorainn ama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh am istigh fotha RSS a fháil?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "Fíoraigh iarrachtaí arís le haghaidh tarchur FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "Teorainn ama ceangail FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "Teorainn ama nasctha sonraí FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "Leaganacha IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "Cé mhéad uair chun an uaslódáil agus an íoslódáil a fhíorú agus a thriail arís má theipeann ar an bhfíorú sula dteipeann ar an íoslódáil ina iomláine?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh an teorainn ama don nasc FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh an teorainn ama don nasc sonraí FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "Roghnaigh an leagan de Phrótacal Idirlín a thacaíonn an freastalaí FTP agus a úsáideann an cliant FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "Formáidiú réamhshocraithe JSON don bhlaosc JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "Roghnaíonn sé an fhormáidiú réamhshocraithe JSON (álainn nó mionghearrtha) chun an bhlaosc JSON a shábháil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "Taispeánann sé sonraí an chomhaid sa liosta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Sochtann sé na teachtaireachtaí annoying \"cead diúltaithe\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "Tugann sé le fios go bhfuil an cosán sprice absalóideach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "Níl an comhad sonraithe. blaosc ag éirí as..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "Leabharmharcanna an fotha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "Baintear an leabharmharc fothaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "Níl an fotha ann i leabharmharcanna."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "Liostaíonn sé gach fothaí leabharmharcáilte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "Comhad {0} gan aimsiú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "Níl an comhad ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "Gan eolas."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "Ní féidir comhad nó fillteán a oscailt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "Stíl nualíne:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "Comhad dénártha:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "meiteashonraí MIME:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "Ainm iomlán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "Leagan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "Ainm cultúir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "Cineál ábhair"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "Ní tionól bailí .NET é an comhad.\\n"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "Ní féidir faisnéis chórais comhad a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "Ní féidir an comhad nó an t-eolaire a chóipeáil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "Ní féidir comhad nó eolaire a bhogadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "Ní féidir an comhad nó an t-eolaire a bhaint"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "Cuir isteach cosán nó cosán iomlán chuig fillteán sprice chun an comhad roghnaithe a chóipeáil chuige."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "Bí cinnte go bhfuil an cosán ceart scríofa agat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "Níl an comhad ann. Bí cinnte go bhfuil an cosán ceart scríofa agat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "Cuir isteach cosán nó cosán iomlán chuig fillteán sprice chun an comhad roghnaithe a bhogadh chuige."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "Cuir isteach ainm comhaid nua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "Bí cinnte go bhfuil an t-ainm ceart comhaid scríofa agat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "Tá an comhad ann cheana féin. Níor cheart go mbeadh an t-ainm áitithe ag comhad eile."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "Cuir isteach ainm eolaire nua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "Tá fillteán ann cheana féin. Níor cheart go mbeadh an t-ainm áitithe i bhfillteán eile."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "Gan athbhreithniú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "Níl ceangal bunaithe fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "Cuir isteach seoladh an fhreastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "Bainisteoir comhad óstach córais idirghníomhach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "Osclaíonn sé an comhad cartlainne chuig an bhlaosc cartlainne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "blaosc git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "Taispeánann sé an difríocht idir dhá chomhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "Osclaítear cliant ríomhphoist IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "Osclaíonn sé an cliant ríomhphoist POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "Tá post POP3 ag filleadh ó 0.0.20.0, ach níl sé beartaithe againn faoi láthair é a scaoileadh sa leagan seo. Fan le haghaidh an chéad leagan eile."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "Cuir isteach an fotha RSS URL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "Earráid agus an seoladh á pharsáil. Déan cinnte go bhfuil an seoladh scríofa agat i gceart."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "Osclaíonn sé léitheoir fotha RSS idirghníomhach TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "Ní féidir aon rud a bhaint as."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "Níl an chartlann inscríofa toisc go bhfuil cineál"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "Léann an t-ábhar i gcomhad cianda chuig an consól"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "Scoir an bhlaosc gan dícheangal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "Bí cinnte go sonróidh tú an port i gceart."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "Fuarthas níos mó ná próifíl amháin. Roghnaigh ceann amháin:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "Níl an stór sonraithe. blaosc ag éirí as..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "Theip ar an stór a oscailt. blaosc ag éirí as..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "Fetches liosta na n-athruithe i gcomhad líne ar líne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "Seiceann brainse amach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "Déanann sé gealltanas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "Cur síos ar thiomantas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "Léiríonn sé difríocht idir an tiomantas reatha agus na comhaid áitiúla"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "Léiríonn sé difríocht idir an tiomantas reatha agus na comhaid áitiúla de réir a n-ábhar i bhfoirm paiste"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "Léiríonn sé difríocht idir an tiomantas reatha agus na comhaid áitiúla de bharr iad a bheith ann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "Léiríonn sé difríocht idir an tiomantas reatha agus na comhaid áitiúla de réir mar a bhfuil siad ann agus de réir a n-ábhar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "Faigh gach nuashonrú ó chianchlár"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "Fetches stádas an chomhaid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "Faigheann sé stór faisnéise simplí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "Liostaíonn gach craobh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "Liostaíonn gach gealltanas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "Liostaíonn sé gach cianda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "Liostaíonn gach clib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "Déanann sé clib ón CEANN"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "Íosluchtaigh gach nuashonruithe ón bhfreastalaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "Gach nuashonrú a bhrú ar an bhfreastalaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "Athshocraigh an stór áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "Déanann athshocrú bog"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "Déanann athshocrú measctha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "Déanann athshocrú crua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "Socraíonn sé d'aitheantas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "Céimeanna a athrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "Céimeanna gach athrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "Stádas stórtha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "Unstages a athrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "Unstages gach athrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "Cuireann sé ceanntásc leis an eochair agus an luach leis na hiarratais go léir atá le teacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "Faigheann gníomhaire úsáideora reatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "Cuir eochair ar an gceanntásc in eagar do na hiarratais go léir atá le teacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "Liostaíonn sé na ceanntásca iarratais"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "Cuireann sé an comhad chuig an bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "Cuireann sé an teaghrán chuig an bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "Postáil an comhad chuig an bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "Postáil an teaghrán chuig an bhfreastalaí HTTP ag baint úsáide as an iarratas sonraithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "Baintear eochair ar an gceanntásc de na hiarratais go léir atá le teacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "Socraíonn gníomhaire úsáideora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Ag cur ceanntásc atá ann cheana féin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Ag baint ceanntásc nach bhfuil ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Ag cur ceanntásc nach bhfuil ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "Cuirtear eagar, réad nó airí nua leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "Sonraíonn an cosán tuismitheora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "Sonraíonn an cineál"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "Sonraíonn an t-ainm maoine atá le cruthú leis. Úsáidtear é seo más rud é cosán an tuismitheora."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "Glanann an comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "Faigheann sé maoin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "Sonraíonn an tuismitheoir airí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "Taispeánann sé faisnéis faoin gcomhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "Ná taispeáin airíonna aonair"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "Taispeáin gach luach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "Baineann sé cuspóir sprice"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "Álainn JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "JSON mionghearrtha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "Socraíonn sé luach ar eagar, réad nó airí atá ann cheana féin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "Osclaítear an comhad JSON san eagarthóir idirghníomhach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "Ní bhfuarthas an comhartha laistigh den chomhad JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "Níl an comhartha tuismitheora le fáil. Cinntigh gur scríobh tú an chonair '{0}' i gceart."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "Tá an cineál sonraithe '{0}' neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "Ní féidir mír nua leis an ainm airí a chur i gceangal leis an gcineál dearbháin tuismitheora de '{0}'."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "Ní féidir mír nua leis an ainm airí '{0}' a chur i gceangal leis an gcineál dearbháin tuismitheora de '{1}'."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "Níl ainm na maoine '{0}' laistigh de thuismitheoir '{1}', cineál '{2}', ann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "Cuardaíonn sé an fotha le haghaidh frása sa teideal agus/nó cur síos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "Cuardaigh le haghaidh teideal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "Cuardaigh le haghaidh cur síos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "Cuardaigh le haghaidh teideal agus cur síos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "Cuardach cás-íogair"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "Theip ar URL an fhotha a pharsáil:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "Gan tuairisc"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "Taispeánann sé sonraí na gcomhad agus na bhfillteán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Shochtadh na teachtaireachtaí \"neamhúdaraithe\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "Cuir isteach suíomh na heochrach príobháidí le haghaidh {0}. Scríobh \"q\" chun eochracha a chur leis:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "Ag iarraidh ceangal le {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "Feidhmíonn sé ceist SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "Eolas bunachar sonraí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "Osclaíonn sé an comhad SQL san eagarthóir heicsidheachúil idirghníomhach TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "Ní thacaítear leis an gcineál cartlainne seo."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "An bhfuil tú cinnte gur mhaith leat {0} a scriosadh?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "Úsáideoir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "Suíomh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "Gan eolas nasc simplí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "Athraithe ar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "Cuir milleán ar stádas an chomhaid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "Uimhir Hunk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "Líon línte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "Uimhir líne tosaigh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "Uimhir líne deiridh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "Gealltanas tosaigh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "Tiomantas SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "Tiomantas teachtaireacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "Geall údar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "Tiomantas a dhéanamh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "Líon tuismitheoirí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "Gealltanas deiridh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "Sábháil do chuid oibre ar dtús trí ghealltanas a chruthú sula seiceáil amach brainse."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "Níl brainse ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "Ní mór duit tú féin a aithint sula n-úsáideann tú an t-ordú seo. Úsáid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "chun tú féin a aithint."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "Stór nuashonraithe le gealltanas nua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "Cur síos ar ghealltanas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "Athruithe ginearálta i"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "Athraíonn ábhar i"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "Níl cianda ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "Níor aimsíodh aon chianrialtáin chun nuashonruithe a bhaint astu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "Stádas don chomhad"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "Stór lom"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "Ceann scoite"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "Gan tagairt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "Clón éadomhain"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": "Conair go .git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "Conair chuig an eolaire oibre"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "Tiomantas don bhrainse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "Cruthaíodh clib nua! Seo do shonraí clibe:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "Tá do chóip áitiúil den repo cothrom le dáta!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "Ar aghaidh go tapa chuig"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "Stór nuashonraithe go"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "Bhí coinbhleachtaí ann de bharr do chumasc. Réitigh aon cheann de na coinbhleachtaí le do thoil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "D'éirigh leat tú féin a aithint mar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "Ní dhéantar aon mhodhnuithe ar an stáitse."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "D'éirigh le céimniú comhad {0}!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "Theip ar chomhad stáitse {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "Stádas do bhrainse {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "Ní dhéantar aon mhodhnuithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "Comhaid gan rian"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "Níl aon chomhaid gan rian."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "Comhaid curtha leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "Níl aon chomhaid curtha leis."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "Comhaid modhnaithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "Gan comhaid modhnaithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "Comhaid bainte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "Níl aon chomhaid bainte."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "Comhaid stáitse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "Gan comhaid stáitse."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "Athainmníodh comhaid stáitse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "Níl aon chomhaid stáitse athainmnithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "Comhaid athainmnithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "Níl aon chomhaid athainmnithe."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "Comhaid ar iarraidh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "Níl aon chomhaid in easnamh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "Ní dhéantar aon mhodhnuithe ar an gcéim."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "D'éirigh le comhad gan stáitse {0}!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "Theip ar an gcomhad a bhaint den stáitse {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "Comhad {0} á phostáil..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "Teaghrán á postáil chuig {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "Teaghrán á uaslódáil chuig {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "Theip ar bhlaosc JSON mír a chur leis."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "Faightear maoin i"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "Ní aimsítear maoin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "Buneolas comharthaíochta JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "Cineál bonn"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "Tá luachanna ag an mbonn"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "Comhaireamh comharthaí leanaí"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "Conair bonn"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "Faisnéis chomhartha aonair JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "Cineál comhartha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "Tá luachanna ag Token"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "Conair comhartha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "Luach comhartha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "Faisnéis maoine le haghaidh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "Cineál maoine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "Áireamh maoine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "Ainm maoine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "Conair maoine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "Luach maoine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "Theip ar bhlaosc JSON mír a bhaint."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "Theip ar bhlaosc JSON mír a shocrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "Bogadh an teachtaireacht {0} ó {1}. {2} teachtaireacht fágtha le parsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "Ceangaltáin:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "Tá fotha RSS neamhbhailí sa nasc seo."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "Teideal an ailt anaithnid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "Ar an drochuair, níl aon ábhar san alt seo. Is féidir leat an t-alt a leanúint fós ag"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "Níl nasc ag an alt seo."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "Ní féidir an brabhsálaí ósta a oscailt go dtí an nasc alt."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "Athraithe:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "Cuir isteach luach paraiméadar le haghaidh {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "D'éirigh le ordú SQL. Seo iad na freagraí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "Theip ar ordú SQL."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "Conair bhunachar sonraí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "Leagan an fhreastalaí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "Staid ceangail:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "Teaghrán ceangail:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "Ainm an bhunachair shonraí:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "Pras Réamhshocrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc cartlainne a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc FTP a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc Git a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc HTTP a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an rannán seo duit conas a oibríonn an bhlaosc JSON a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "Réamhshocrú Pras JSON Shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "Cumasaigh sábhálann eagarthóir JSON go huathoibríoch"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "Cuireann sé an ghné uathshábháil an eagarthóra JSON air nó as."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "Eatramh uathshábháil eagarthóir JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc ríomhphoist a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "Líon uasta na r-phoist ar aon leathanach amháin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "Cé mhéad teachtaireacht ríomhphoist atá le taispeáint ar aon leathanach amháin?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc RSS a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "Réamhshocrú Pras RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc SFTP a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an bhlaosc SQL a chumrú."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "SQL Shell Pras Réamhshocrú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "Cineál comhaid"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "Cuardaíonn sé an leabharlann fothaí le haghaidh fotha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "Cóip"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "Bog"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "Scrios"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "Suas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "Eolas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "Athainmnigh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "Fillteán Nua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "Oscail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "meiteashonraí MIME (sínte)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "Tá láimhseálaí cláraithe ach níor éirigh leis láimhseálaí síntí a fháil le haghaidh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Cóipeáil Chuig"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Bog go"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "Ní féidir iontrálacha cartlainne a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "Níl an chartlann luchtaithe fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "Ní féidir an t-eolaire cartlainne reatha a chinneadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Ní hé an bhlaosc deireanach an bhlaosc seo le scaradh uaidh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "Níl an cliant daonra."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "Níl aon chliant FTP ann fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "Níl an cliant ceangailte go fóill."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "Ní féidir cumraíocht fhreastalaí IMAP a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "Ní féidir cumraíocht fhreastalaí SMTP a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "Níl an cliant ceangailte go fóill"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "Léigh Tuilleadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "Athnuaigh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "Níl aon alt."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "Níl aon bheathú ann."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "Ní féidir ceangal a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "Níl an sruth comhaid oscailte fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "Níl an comhad JSON oscailte fós."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "Raon críochnuithe uimhir líne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "Conair go comhad"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Comhad foinse nó eolaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "Comhad nó eolaire sprice"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "Algartam criptithe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "Conair chuig eolaire le stór Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "Réimse tosaigh uimhir líne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "Ainm brainse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "Geall achoimre"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "Tiomantas SHA hash"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "Ainm cianda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "Ainm chlibe"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "Teachtaireacht chun an chlib a anótáil léi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "Do r-phost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "D'ainm úsáideora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "Conair chuig comhad gan stáitse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "Conair chuig an gcomhad stáitse"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "Conair chuig an gcartlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "Eolaire áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "Eolaire taobh istigh den chartlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "Comhad sa chartlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "Eolaire áitiúil le sliocht go"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "Comhad áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "Comhadlann cartlainne le cur leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "Freastalaí FTP chun ceangal leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Conair chuig an gcomhad cianda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "Conair chuig an eolaire áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "Conair chuig an gcianeolaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Conair chuig an gcomhad cianda le scriosadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "Ordú freastalaí le rith"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "Cruthaíonn eolaire áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "Cruthaíonn cianchomhadlann"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Conair chuig comhad foinse nó eolaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "Conair chuig spriocchomhad nó eolaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "Conair chuig an gcomhad áitiúil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "Uimhreacha ceada de réir chmod"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "Sonraítear an bhfuil an cineál aistrithe ASCII nó Dénártha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "Nasc siombalach chuig: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "Eochair ceanntásca"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "Luach ceanntásca"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "Iarratas HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "Comhad le huaslódáil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "Teaghrán le huaslódáil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "Teaghrán gníomhaire úsáideora"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "Seoladh r-phoist le logáil isteach air"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "Cruthaigh fillteán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "Bog..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "Bog ar fad..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "Athainmnigh fillteán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "Bain fillteán"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "Bain teachtaireacht"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "Bain gach..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "Ní féidir fillteán nó teachtaireacht a oscailt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "Scríobh an t-ainm eolaire nua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "Eolaire á cruthú..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "Ní féidir fillteán a dhéanamh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "Roghnaigh eolaire nua chun an teachtaireacht seo a bhogadh chuige."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "Teachtaireacht á bogadh..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "Ní féidir an teachtaireacht a bhogadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "Roghnaigh eolaire nua chun gach teachtaireacht a bhogadh ag an seoltóir céanna chuige."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "Teachtaireachtaí á mbogadh ag seoltóir {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "Ní féidir gach teachtaireacht a bhogadh leis an seoltóir céanna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "Scríobh an t-ainm eolaire nua chun {0} a athainmniú chuige."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "Eolaire á hathainmniú..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "Ní féidir fillteán a athainmniú"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "Eolaire á baint..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "Ní féidir an fillteán a bhaint"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "Teachtaireacht á baint..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "Ní féidir an teachtaireacht a scriosadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "Teachtaireachtaí ón seoltóir {0} á mbaint..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "Ní féidir gach teachtaireacht ón seoltóir céanna a scriosadh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "Ainm eolaire ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "Uimhir an leathanaigh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "Aitheantas na teachtaireachta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "Ainm an tseoltóra"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "Sean-ainm eolaire ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "Ainm eolaire ríomhphoist nua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "Bainistíocht poist idirghníomhach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "Freastalaí SFTP chun ceangal leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "Nasc fotha RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "Uimhir bheatha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "Frása le cuardach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "An chéad chomhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "Dara comhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "Conair chuig an gcomhad JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "Conair chuig an gcomhad JSON a aschur"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "Luach JSON le cur leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "Ainm maoine JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "Conair réad"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "luach JSON"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Πληροφορίες άδειας χρήσης"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Το αγγλικό λεξικό"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Πληροφορίες Word για"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "Το API αδειοδοτείται σύμφωνα με"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Λέξη:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Έννοιες λέξεων για"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Μέρος του λόγου:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Ορισμός:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Παράδειγμα σε πρόταση:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Πηγές που χρησιμοποιούνται για τον ορισμό"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Συνώνυμα:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Αντώνυμα:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Λέξη για ορισμό"
+    }
+  ]
+}

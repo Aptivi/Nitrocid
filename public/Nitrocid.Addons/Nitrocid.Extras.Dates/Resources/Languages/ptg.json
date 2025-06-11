@@ -1,0 +1,292 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "Saída"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "Obtém as informações de data e hora"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "Milissegundos:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "Segundos:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "Minutos:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "Horas:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "Dias:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "Meses:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "Ano:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "Dia do ano:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "Dia da semana:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "Binário:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "Horário local:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "Tempo Universal:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "Hora Unix:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "Falha ao analisar informações de data para"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "Certifique-se de que o formato está correto."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "Data:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "Tempo:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "Um simples cronômetro"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "Iniciar ou parar"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "Colo"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "Redefinir"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "Um temporizador simples"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "Definir intervalo"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "O tempo limite indicado não é numérico."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "Especifique o tempo limite em milissegundos"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "Escreva uma fonte figlet compatível com a biblioteca Figgle. Consulte a documentação da biblioteca para obter mais informações"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "Fonte Figlet para temporizador"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Ativar Figlet para temporizador"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Se habilitado, usará figlet para timer. Observe que ele precisa de uma grande tela de console para renderizar a hora corretamente com o Figlet ativado."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "Obtém as informações atuais de data e hora"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "Informações para"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "O cronômetro está pronto."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "Cronômetro funcionando!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "Nova volta!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "Comece a contagem regressiva"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Falha à obtenção de entradas de definições."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "Temporizador"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "Paragem"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "Ainda não há voltas..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "Lista de voltas"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "Temporizador Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "O temporizador Pomodoro está pronto"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "Número do temporizador Pomodoro {0} em quatro iterações"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "Pequena pausa"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "Especifique o tempo limite de interrupção em milissegundos"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "Definir intervalo de pausa"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "Data e hora para imprimir informação de"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "Esta secção permite configurar como funciona a aplicação de temporizador."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "Esta secção permite configurar como funciona a aplicação temporizador Pomodoro."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Activar Figlet para o temporizador pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Se estiver ativado, utilizará o figlet para o temporizador pomodoro. Note que é necessário um ecrã de consola grande para renderizar a hora corretamente com o Figlet ativado."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "Fonte Figlet para o cronómetro pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "Data de produção inválida"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "Período de validade inválido"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "Data de validade inválida"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "Data de produção"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "Data de validade"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "Período de validade"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "Saúde do produto"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "Estado do produto"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "Falha ao obter informações de validade do produto"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "Obtém as informações de validade do produto"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "Data de produção (consulte a parte lateral ou inferior do produto)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "Data ou período de validade (explicitamente escritos no mesmo local ou em períodos de tempo, como por exemplo 6 meses ou 1 ano)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "Se o produto de destino não especificar a data de validade explicitamente"
+    }
+  ]
+}

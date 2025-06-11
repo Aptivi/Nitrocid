@@ -1,0 +1,414 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Không thể tải bản mod vì những lý do sau:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} đã bắt đầu"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Ngôn ngữ không hợp lệ"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Không được phép phân tích cú pháp mod ở chế độ an toàn."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0} đã dừng"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} đã dừng lại"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Không thể hoàn tất bản mod {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Bản mod bắt đầu"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Phiên bản mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Không tìm thấy Mod {0}."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Tên mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Tên tệp mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Đường dẫn tệp mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Quản lý mod của bạn"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Quản lý mod bị vô hiệu hóa ở chế độ an toàn."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Lệnh không hợp lệ {0}. Kiểm tra cách sử dụng bên dưới:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Không tìm thấy bản mod hoặc file có ký tự không hợp lệ."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Trang hướng dẫn {0} không hợp lệ."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Hãy cân nhắc việc điền vào trang hướng dẫn này."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Hướng dẫn sử dụng mod"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Không được phép dừng mod ở chế độ an toàn."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Bản mod đã được bắt đầu!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Bản mod vẫn chưa bắt đầu!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Liên hệ với nhà cung cấp bản mod để nâng cấp bản mod lên phiên bản tương thích."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Các bản mod bị đưa vào danh sách đen"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Viết tên tệp của các mod sẽ không chạy khi khởi động. Khi bạn hoàn tất, hãy viết \"q\". Viết dấu trừ bên cạnh đường dẫn để xóa mod hiện có."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} đã bị đưa vào danh sách đen."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Bắt đầu sửa đổi hạt nhân khi khởi động"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Tự động bắt đầu sửa đổi kernel khi khởi động."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Tệp mod không được chỉ định."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Đang cố gắng cài đặt bản mod đã cài đặt. Đang cập nhật bản mod..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Cài đặt không thành công cho"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Tệp mod được cung cấp không tương thích."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Gỡ cài đặt không thành công cho"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Hiển thị số lệnh mod trên trợ giúp"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Tệp mod không hợp lệ."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Trang hướng dẫn không có tiêu đề"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Không có thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Tập lệnh mod không được để giá trị null."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Không phát hiện bản mod nào."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Đang dừng mod {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Bản mod không được ký hiệu mạnh. Nó có thể chứa mã không đáng tin cậy."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Không thể tải bản mod vì có sự không tương thích giữa phiên bản kernel này và bản mod này:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Sau đây là danh sách các lỗi có thể giúp bạn điều tra sự không tương thích này:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} yêu cầu chính xác phiên bản API {1}, nhưng bạn có phiên bản {2}. Nâng cấp Nitrocid KS và/hoặc mod thường giúp ích. Phân tích cú pháp mod không thành công."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} có thể không hoạt động bình thường với phiên bản API này. Mod có thể không khởi động được. Liên hệ với nhà cung cấp mod để nhận bản sao mới nhất."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0} không có tên. Phân tích cú pháp mod không thành công. Xem lại mã nguồn."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} không có phiên bản. Phân tích cú pháp của Mod không thành công. Xem lại mã nguồn."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} chứa phiên bản không hợp lệ. Phân tích cú pháp mod không thành công. Phiên bản là"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Phiên bản"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Tên tập tin"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Đường dẫn tập tin"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Thật không may, trang hướng dẫn này không có nội dung nào. Tuy nhiên, tài liệu này có thể được tìm thấy trong trang web của nhà cung cấp mod. Nếu bạn vẫn không tìm thấy tài liệu này, hãy hỏi nhà phát triển mod để biết thêm thông tin."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Được trình bày cho bạn bởi"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Độ dài nội dung"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Không có nội dung."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Không cần sửa đổi."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Không thể thực hiện chức năng tùy chỉnh với mod không tồn tại"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Phụ thuộc không được thỏa mãn. Các phụ thuộc không thành công được liệt kê dưới đây:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Đã thử tìm kiếm hướng dẫn sử dụng cho bản mod {0} không tồn tại."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Đã cố gắng khởi tạo hướng dẫn sử dụng {0} cho bản mod {1} không tồn tại."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Đã cố gắng khởi tạo tệp hướng dẫn {0} cho bản mod {1} không tồn tại."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Đã cố gắng khởi tạo tệp hướng dẫn {0} không tồn tại cho bản mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Tên"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Cho phép tải các bản mod không đáng tin cậy"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Nếu đặt thành true, kernel sẽ không báo lỗi khi tải các bản mod không có khóa công khai đã ký."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Hiển thị số lượng lệnh sửa đổi hạt nhân khi liệt kê chúng trong lệnh trợ giúp"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Không được phép bắt đầu hoặc dừng mod ở chế độ an toàn."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Không thể lấy thông tin trường cho"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Không thể xác định phiên bản mod"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Ngoại lệ trình tải không xác định"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Không thể tải bản địa hóa mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Bắt đầu mod (chọn)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Bắt đầu mod (đầu vào)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Dừng mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Tải lại bản mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Cài đặt mod (chọn)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Cài đặt mod (đầu vào)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Gỡ cài đặt mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Bắt đầu tất cả"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Dừng tất cả"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Tải lại tất cả"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Không thể trả về kiểu lớp không tồn tại từ mod assembly"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Không tìm thấy hàm '{0}' trong mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Không tìm thấy thuộc tính '{0}' trong mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Không tìm thấy trường '{0}' trong mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Lớp này không phải là lớp mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Ngôn ngữ"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Điểm vào"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Nhập đường dẫn đến bản mod mà bạn muốn bắt đầu"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Không thể khởi động mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Nhập đường dẫn đến bản mod mà bạn muốn cài đặt"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Không cài được mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Không thể bắt đầu hoặc dừng bản mod này!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Có nên bắt đầu, dừng, lấy thông tin, tải lại, cài đặt hoặc gỡ cài đặt bản mod không?"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Tên mod hoặc tên file"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Có nên liệt kê, tải lại, dừng, bắt đầu hay quản lý tương tác tất cả các bản mod không"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Tên mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của hệ thống sửa đổi hạt nhân."
+    }
+  ]
+}

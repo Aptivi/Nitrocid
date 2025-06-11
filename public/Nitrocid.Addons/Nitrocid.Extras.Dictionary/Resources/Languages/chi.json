@@ -1,0 +1,70 @@
+{
+  "lang": "chi",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Xǔkě zhèng xìnxī"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Yīngyǔ cídiǎn"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "dāncí xìnxī"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API yǐ huòdé xǔkě"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "dāncí:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Cíyì wèi"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "bùfèn yǎnjiǎng:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Dìngyì:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Jùzi zhōng de lìzi:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Yòng yú dìngyì de láiyuán"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "tóngyìcí:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Fǎnyìcí:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "yào dìngyì de dāncí"
+    }
+  ]
+}

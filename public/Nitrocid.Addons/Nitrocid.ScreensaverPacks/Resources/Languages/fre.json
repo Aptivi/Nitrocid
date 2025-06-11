@@ -1,0 +1,1844 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME",
+      "text": "Texte affiché"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT",
+      "text": "Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Activez les vraies couleurs"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME",
+      "text": "Couleurs du cycle"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Disco fera défiler les couleurs lorsqu'il est activé. Sinon, sélectionnez des couleurs aléatoires."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME",
+      "text": "Couleur de l'arrière plan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Retard en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Combien de millisecondes attendre avant de faire la prochaine écriture?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME",
+      "text": "Couleur de la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME",
+      "text": "Couleur de la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME",
+      "text": "Barre de couleur des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME",
+      "text": "Couleur des informations"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME",
+      "text": "Tiques pour changer de couleur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC",
+      "text": "Si le cycle des couleurs est activé, combien de ticks avant de changer les couleurs dans ProgressClock ? 1 tick = 0,5 seconde"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC",
+      "text": "ProgressClock sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME",
+      "text": "Nombre maximal de positions"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC",
+      "text": "Combien de positions sont allumées avant la gradation ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
+      "text": "Délai de fondu en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
+      "text": "Étapes de fondu max."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "Combien de millisecondes attendre avant de faire disparaître le texte ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
+      "text": "Combien d'étapes de fondu faire ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME",
+      "text": "Délai d'écriture à nouveau en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC",
+      "text": "Combien de millisecondes attendre avant de réécrire du texte ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
+      "text": "Écrivez le texte que vous souhaitez afficher. Plus c'est long, mieux c'est."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
+      "text": "Vitesse d'écriture minimale en WPM"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME",
+      "text": "Vitesse d'écriture maximale en WPM"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME",
+      "text": "Probabilité de faute de frappe en pourcentage"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME",
+      "text": "Lingettes pour changer de direction"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC",
+      "text": "Combien de balayages faire avant de changer de direction au hasard ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME",
+      "text": "Toujours centré"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC",
+      "text": "Écrivez le texte que vous souhaitez afficher."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC",
+      "text": "Si le texte affiché sur le rectangle de sélection est toujours centré."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME",
+      "text": "Utiliser l'API de la console"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC",
+      "text": "Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME",
+      "text": "Beats pro Minute verwenden"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
+      "text": "Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
+      "text": "Verzögerung in Schlägen pro Minute"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
+      "text": "Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
+      "text": "Nouveau délai d'écran en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME",
+      "text": "Nombre de colonnes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME",
+      "text": "Seuil de remplissage de ligne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME",
+      "text": "Probabilité de bouchage de remplissage de ligne en pourcentage"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME",
+      "text": "Type de remplissage de ligne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "Combien de millisecondes attendre avant de réécrire le texte dans le nouvel écran ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC",
+      "text": "Les colonnes de texte à imprimer."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC",
+      "text": "Combien de caractères écrire avant de déclencher le \"remplissage de ligne\" ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC",
+      "text": "Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME",
+      "text": "Probabilité d'échec en pourcentage"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME",
+      "text": "Prochain intervalle de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC",
+      "text": "Combien de millisecondes attendre avant de remplir la rampe suivante ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge minimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Niveau minimum de couleur verte"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu minimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Niveau de couleur minimal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge maximum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Niveau maximum de couleur verte"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu maximum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Niveau de couleur maximal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Niveau de couleur rouge minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Niveau minimum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Niveau de couleur bleu minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Niveau de couleur minimal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Niveau maximum de couleur rouge. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Niveau maximum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Niveau maximum de couleur bleue. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Niveau de couleur maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME",
+      "text": "Couleur de premier plan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
+      "text": "Caractère de ligne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC",
+      "text": "Un caractère pour former une ligne. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME",
+      "text": "Caractère du coin supérieur gauche pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME",
+      "text": "Caractère du coin supérieur gauche pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME",
+      "text": "Caractère du coin supérieur gauche pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME",
+      "text": "Caractère du coin supérieur droit pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME",
+      "text": "Caractère du coin supérieur droit pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME",
+      "text": "Caractère du coin supérieur droit pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME",
+      "text": "Caractère du coin inférieur gauche pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME",
+      "text": "Caractère du coin inférieur gauche pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME",
+      "text": "Caractère du coin inférieur gauche pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME",
+      "text": "Caractère du coin inférieur droit pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME",
+      "text": "Caractère du coin inférieur droit pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME",
+      "text": "Caractère du coin inférieur droit pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME",
+      "text": "Caractère de cadre supérieur pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME",
+      "text": "Caractère de cadre supérieur pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME",
+      "text": "Caractère du cadre supérieur pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME",
+      "text": "Caractère de cadre inférieur pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME",
+      "text": "Caractère de cadre inférieur pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME",
+      "text": "Caractère de cadre inférieur pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME",
+      "text": "Caractère de cadre gauche pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME",
+      "text": "Caractère de cadre gauche pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME",
+      "text": "Caractère de cadre gauche pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME",
+      "text": "Caractère du cadre droit pour la barre des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME",
+      "text": "Caractère de cadre droit pour la barre des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME",
+      "text": "Caractère du cadre droit pour la barre des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME",
+      "text": "Texte d'information pour les heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME",
+      "text": "Texte d'information pour les minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME",
+      "text": "Texte d'information pendant les secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur rouge minimum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur verte minimum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME",
+      "text": "Niveau de couleur bleu minimum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur minimum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur rouge maximum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur vert maximum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME",
+      "text": "Niveau de couleur bleu maximum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME",
+      "text": "Niveau de couleur maximum pendant des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur rouge minimum pendant minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur vert minimum pendant minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur bleu minimum pendant minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur minimum pendant minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur rouge maximum pendant des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME",
+      "text": "Niveau maximum de couleur verte pendant des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur bleu maximum pendant quelques minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME",
+      "text": "Niveau de couleur maximal pendant quelques minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur rouge minimum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur vert minimum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur bleu minimum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur minimum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur rouge maximum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME",
+      "text": "Niveau maximum de couleur verte pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur bleu maximum pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME",
+      "text": "Niveau de couleur maximal pendant quelques secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC",
+      "text": "Un caractère qui ressemble au coin supérieur gauche. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC",
+      "text": "Un caractère qui ressemble au coin inférieur gauche. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC",
+      "text": "Un personnage qui ressemble au cadre supérieur. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC",
+      "text": "Un personnage qui ressemble au cadre inférieur. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC",
+      "text": "Un caractère qui ressemble au cadre de gauche. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC",
+      "text": "Un personnage qui ressemble au cadre droit. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC",
+      "text": "Écrivez comment votre texte d'information pour l'heure actuelle s'affiche. {0} pour l'heure actuelle sur 24 heures."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC",
+      "text": "Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute actuelle sur 60 minutes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC",
+      "text": "Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 secondes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME",
+      "text": "Couleur du texte"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME",
+      "text": "Caractère du coin supérieur gauche pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME",
+      "text": "Caractère du coin supérieur droit pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME",
+      "text": "Caractère du coin inférieur gauche pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME",
+      "text": "Caractère du coin inférieur droit pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME",
+      "text": "Caractère de cadre supérieur pour barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME",
+      "text": "Caractère de cadre inférieur pour barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME",
+      "text": "Caractère de cadre gauche pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME",
+      "text": "Caractère de cadre droit pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME",
+      "text": "Niveau de couleur rouge minimum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME",
+      "text": "Niveau de couleur vert minimum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME",
+      "text": "Niveau de couleur bleu minimum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME",
+      "text": "Niveau de couleur minimum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME",
+      "text": "Niveau de couleur rouge maximum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME",
+      "text": "Niveau de couleur vert maximum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME",
+      "text": "Niveau de couleur bleu maximum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME",
+      "text": "Niveau de couleur maximum pour la couleur de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME",
+      "text": "Niveau de couleur rouge minimum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME",
+      "text": "Niveau de couleur vert minimum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME",
+      "text": "Niveau de bleu minimum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME",
+      "text": "Niveau de couleur minimum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME",
+      "text": "Niveau de couleur rouge maximum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME",
+      "text": "Niveau de couleur vert maximum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME",
+      "text": "Niveau maximum de bleu pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME",
+      "text": "Niveau de couleur maximum pour la couleur finale"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Active la prise en charge des couleurs vraies."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME",
+      "text": "Couleur du coin supérieur gauche de la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME",
+      "text": "Couleur du coin supérieur droit de la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME",
+      "text": "Couleur du coin inférieur gauche de la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME",
+      "text": "Couleur du coin inférieur droit de la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME",
+      "text": "Couleur du cadre supérieur pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME",
+      "text": "Couleur du cadre inférieur pour barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME",
+      "text": "Couleur du cadre gauche pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME",
+      "text": "Couleur du cadre droit pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME",
+      "text": "Utiliser les couleurs de bordure pour la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC",
+      "text": "Utilisez les couleurs de bordure pour la barre de rampe. Si désactivé, générera une barre grise."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME",
+      "text": "Remplissez les cases"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC",
+      "text": "Dessine-t-on la boîte dans son ensemble ou dessine-t-on seulement la bordure ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME",
+      "text": "Prochain intervalle de pourriture de la rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC",
+      "text": "Combien de millisecondes attendre avant de pourrir une extrémité de la rampe suivante ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME",
+      "text": "Rayon d'explosion du feu d'artifice"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC",
+      "text": "Combien de blocs (jusqu'à 10) est le rayon d'explosion du feu d'artifice lorsqu'il est allumé ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME",
+      "text": "Police Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC",
+      "text": "Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d'informations"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME",
+      "text": "Activer le mode noir et blanc"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC",
+      "text": "Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c'était trop rapide, donc déconseillé si vous rencontrez une crise d'images rapides."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME",
+      "text": "Densité de bruit"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "Combien de millisecondes attendre avant d'écrire dans le nouvel écran ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC",
+      "text": "Plus le pourcentage est élevé, plus le signal est bruyant"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
+      "text": "Densité de glitch"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
+      "text": "Plus le pourcentage est élevé, plus le glitch est dense !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
+      "text": "Chargement..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
+      "text": "À suivre..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
+      "text": "La fin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
+      "text": "Bonne année!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME",
+      "text": "Laissez tomber la chance"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Paramètres de couleur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC",
+      "text": "Un caractère qui ressemble au coin supérieur droit. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC",
+      "text": "Un caractère qui ressemble au coin inférieur droit. Assurez-vous de ne saisir qu'un seul caractère."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC",
+      "text": "Le nombre binaire qui tombe sur votre écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC",
+      "text": "Mélanger les couleurs et les imprimer sur la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC",
+      "text": "C'est la lumière disco, l'un des tout premiers économiseurs d'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC",
+      "text": "La couleur brille sur l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC",
+      "text": "Une ligne qui erre verticalement autour de la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC",
+      "text": "Dissout les couleurs aléatoires."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC",
+      "text": "Vous montre un bloc coloré qui rebondit sur la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC",
+      "text": "Vous montre trois barres de progression qui représentent le temps."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC",
+      "text": "Blocs d'éclairage."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC",
+      "text": "Essuie l'écran avec une couleur."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC",
+      "text": "Matrice simple."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC",
+      "text": "Numéros matriciels qui se propagent de manière aléatoire sur l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
+      "text": "Vous montre un texte qui rebondit sur la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
+      "text": "Fondu du texte entrant et sortant."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
+      "text": "Fondu en fondu entrant et sortant."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
+      "text": "Fondu du texte entrant et sortant en rythmes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
+      "text": "Battre la couleur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
+      "text": "Simule une personne écrivant un texte avec des fautes de frappe."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC",
+      "text": "Vous montre un texte défilant de droite à gauche."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC",
+      "text": "Simule une personne écrivant du texte pour un journal sur le clavier linotype dans les temps anciens."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC",
+      "text": "Type de motif de remplissage de ligne. 0 imprime le modèle connu de caractères etaoin, 1 imprime le modèle complet de caractères etaoin et 2 imprime l'ensemble aléatoire de caractères pour remplir rapidement la ligne."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC",
+      "text": "Simule parfaitement une personne qui écrit un texte."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME",
+      "text": "Afficher la position de la flèche"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC",
+      "text": "Affiche la position de la colonne des lettres de la machine à écrire en affichant une flèche en bas de l'écran"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC",
+      "text": "Couleurs clignotantes sur votre écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC",
+      "text": "Simule un projecteur qui cherche à travers votre texte."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC",
+      "text": "Remplit la rampe avec des couleurs dégradées."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC",
+      "text": "Empile les boîtes sur l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC",
+      "text": "Simule une barre qui pourrit avec une autre couleur d'arrière-plan, créant ainsi un dégradé."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC",
+      "text": "Vous montre des feux d'artifice qui sont lancés et explosent."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC",
+      "text": "Vous montre un texte figlet coloré."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME",
+      "text": "Mode arc-en-ciel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC",
+      "text": "Active le mode couleurs arc-en-ciel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC",
+      "text": "Vous montre un texte clignotant en couleur."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC",
+      "text": "Simule le bruit statique d'un téléviseur."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC",
+      "text": "Date et heure simples au milieu de l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
+      "text": "Simule un problème sur votre écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
+      "text": "Vous montre une ligne descendante qui descend et disparaît."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
+      "text": "Vous montre une barre de progression indéterminée."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
+      "text": "Vous montre un arrière-plan palpitant."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
+      "text": "Vous montre un arrière-plan palpitant en rythmes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatPulse sélectionnera des couleurs aléatoires s'il est activé. Sinon, utilisez les couleurs de config."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
+      "text": "Vous montre un front pulsé."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
+      "text": "Vous montre un front pulsé en battements."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "BeatEdgePulse sélectionnera des couleurs aléatoires s'il est activé. Sinon, utilisez les couleurs de config."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
+      "text": "Vous montre un écran rempli de couleurs qui se décomposent lentement en une autre couleur, créant des dégradés."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME",
+      "text": "Prochain intervalle de pourriture du gradient"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC",
+      "text": "Combien de millisecondes attendre avant de pourrir l'écran suivant ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC",
+      "text": "Vous montre un dégradé sur votre écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC",
+      "text": "Vous montre un voyage d'étoile en 2D."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC",
+      "text": "Modifie l'arrière-plan en fonction des couleurs définies, ce qui simule une sirène."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME",
+      "text": "Style sirène"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC",
+      "text": "Le style sirène."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
+      "text": "Des coupures tournantes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
+      "text": "Remplit la console d'une couleur comme un serpent."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC",
+      "text": "Vous montre un égaliseur qui vous montre les basses, les médiums et les aigus."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME",
+      "text": "Délai de l'écran suivant en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
+      "text": "Simule les erreurs système de différents systèmes d'exploitation."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
+      "text": "Génère des couleurs à partir du décalage aléatoire."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
+      "text": "Vous montre un texte qui disparaît et clignote en rythme."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
+      "text": "ExcaliBeats sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
+      "text": "Mode explicite"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
+      "text": "Changer explicitement le texte en Excalibur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
+      "text": "Mode transe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
+      "text": "Mode Trance - Multiplie le BPM par 2 pour simuler le style de musique trance"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
+      "text": "Vous montre un groupe de vagues dans des barres."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME",
+      "text": "Niveau de fréquence"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC",
+      "text": "Le niveau de la fréquence. C'est le dénominateur de la valeur Pi en mathématiques."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC",
+      "text": "Vous montre une vague qui se génère et avance."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC",
+      "text": "Vous donne une sensation fascinante."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC",
+      "text": "Simule les aurores boréales."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC",
+      "text": "Vous montre un éclair frappant."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME",
+      "text": "Probabilité de frappe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC",
+      "text": "Chance, en pourcentage, de frapper"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC",
+      "text": "Vous montre une couleur d'arrière-plan qui change lentement."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME",
+      "text": "Couleurs sombres"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC",
+      "text": "Que ce soit pour utiliser les couleurs sombres ou les couleurs claires."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME",
+      "text": "Étapes de couleur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC",
+      "text": "Combien d’étapes de couleur pour la transition entre deux couleurs ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
+      "text": "Vous montre un mot et sa somme de hachage."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
+      "text": "Vous montre un carré qui s'estompe aux quatre coins."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "Combien de millisecondes attendre avant de faire disparaître le carré ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
+      "text": "Disperse le numéro sur tout l’écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC",
+      "text": "Vous donne un modèle de boîte."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC",
+      "text": "Ligne de couleurs descendante."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC",
+      "text": "Chance de laisser tomber une nouvelle couleur tombante"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC",
+      "text": "Vous montre un texte simple."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC",
+      "text": "Vous montre un texte simple dans une zone de texte."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC",
+      "text": "Vous montre un mot qui s'écrit lentement et sa somme de hachage."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC",
+      "text": "Simule une sirène qui utilise votre thème comme un ensemble de couleurs."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC",
+      "text": "Style de sirène du thème du noyau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC",
+      "text": "Vous montre un groupe d'étoiles dans la vue de face du navire."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC",
+      "text": "Vous montre un groupe de taches dans la vue avant du navire."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC",
+      "text": "Vous montre une lettre dispersée sur tout l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC",
+      "text": "Vous montre plusieurs lignes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC",
+      "text": "Vous montre des faisceaux laser."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC",
+      "text": "Vous montre un texte qui parcourt la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC",
+      "text": "Vague pivotante horizontalement et verticalement pour créer de superbes motifs."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME",
+      "text": "Niveau de fréquence horizontal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC",
+      "text": "Le niveau de la fréquence horizontale. C'est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME",
+      "text": "Niveau de fréquence vertical"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC",
+      "text": "Le niveau de la fréquence verticale. C'est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC",
+      "text": "Simule l'ouverture et la fermeture de la porte."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC",
+      "text": "Vous montre un dégradé à changement dynamique."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC",
+      "text": "Une comète court rapidement dans le ciel."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC",
+      "text": "Le diamant qui brille."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC",
+      "text": "Changer la couleur d’arrière-plan en fonction de la teinte croissante. Arc-en-ciel!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME",
+      "text": "Saturation des teintes de couleur"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC",
+      "text": "Quelle est l'intensité de la couleur ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC",
+      "text": "Quelle est la couleur claire?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC",
+      "text": "Changer la couleur d’arrière-plan en fonction de la teinte croissante. Plus d'arc-en-ciel !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC",
+      "text": "Des particules colorées !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME",
+      "text": "Densité de particules"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC",
+      "text": "Quelle est la densité des particules ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME",
+      "text": "Actualisations requises avant de changer de fuseau horaire"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC",
+      "text": "Combien de rafraîchissements avant que le fuseau horaire ne soit modifié ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC",
+      "text": "Remplit tout l'écran bloc par bloc, puis le fait disparaître."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC",
+      "text": "Vous montre des lignes de danse."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC",
+      "text": "Génère de jolis labyrinthes en utilisant l'algorithme de Kruskal."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME",
+      "text": "Nouveau délai de labyrinthe en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME",
+      "text": "Vitesse de génération"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC",
+      "text": "Vitesse de génération du labyrinthe en millisecondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME",
+      "text": "Mettre en évidence les positions non couvertes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC",
+      "text": "Si activé, met en surbrillance les positions non couvertes avec la couleur de fond gris. Sinon, ils s'affichent sous forme de boîtes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME",
+      "text": "Utiliser la transformation schwartzienne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC",
+      "text": "S'il est activé, cet économiseur d'écran utilise la transformation de Schwartzian pour mélanger les bords du labyrinthe. Sinon, il utilise la méthode simple de transformation."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC",
+      "text": "Deux groupes de points tournant sur les deux moitiés de la console."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC",
+      "text": "Célèbre les jalons de validation à chaque 1000ème validation."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC",
+      "text": "Vous montre des étoiles pulvérisées."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC",
+      "text": "Deux lignes échangeant leurs couleurs sur l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC",
+      "text": "Horloge analogique avec une simple date et heure en bas de l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME",
+      "text": "Afficher l'aiguille des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC",
+      "text": "S'il faut afficher ou non l'aiguille des secondes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC",
+      "text": "Simule un hypothétique écran noir défectueux avec des lignes RVB apparaissant parfois."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME",
+      "text": "Probabilité de pépin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC",
+      "text": "Chance, en pourcentage, que le problème d'écran se produise"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossible d'obtenir les entrées de paramètres."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME",
+      "text": "Luminance de la teinte de la couleur (clarté)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS",
+      "text": "Nous célébrons le 7 000e commit depuis la version 0.0.1 !"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_LEFT",
+      "text": "laissé jusqu'à l'année prochaine"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Cela vous permet de configurer les couleurs"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME",
+      "text": "Réglages de la rampe d'heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC",
+      "text": "Cela vous permet de configurer la rampe horaire"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME",
+      "text": "Réglages de la rampe des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC",
+      "text": "Cela vous permet de configurer la rampe des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME",
+      "text": "Réglages de la rampe des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC",
+      "text": "Cela vous permet de configurer la rampe des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME",
+      "text": "Réglages de la rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC",
+      "text": "Cela vous permet de configurer les rampes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC",
+      "text": "Vous montre du texte sous une ligne sur un fond rouge sombre."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC",
+      "text": "Des personnages aléatoires qui se répartissent de manière aléatoire sur l'écran."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC",
+      "text": "Date et heure simples au milieu de l'écran et change de couleur en fonction de l'heure actuelle."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME",
+      "text": "Date et heure lumineuses"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC",
+      "text": "Faut-il utiliser la version claire ou sombre ?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC",
+      "text": "Vous montre des numéros de danse."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC",
+      "text": "Onde pivotante horizontalement et verticalement pour créer de superbes motifs avec des traînées laissées derrière pour disparaître."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME",
+      "text": "Longueur du sentier"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC",
+      "text": "La longueur de la traînée de l'onde pivotante en mouvement."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC",
+      "text": "Bloc se déplaçant selon un motif ondulé avec des règles vertes suivant sa position."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC",
+      "text": "Vous montre un seul caractère aléatoire dans un texte figlet coloré."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC",
+      "text": "Vous montre un mot qui est sélectionné, tout comme une machine à sous trouvée dans les casinos."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC",
+      "text": "Vous montre un texte figlet coloré alternant entre deux couleurs néon : cyan et fuchsia."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME",
+      "text": "Premiers réglages de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC",
+      "text": "Cela vous permet de configurer la première rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME",
+      "text": "Réglages de la deuxième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC",
+      "text": "Cela vous permet de configurer la deuxième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME",
+      "text": "Troisièmes réglages de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC",
+      "text": "Cela vous permet de configurer la troisième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME",
+      "text": "Paramètres d'apparence"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la rampe des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC",
+      "text": "Cela vous permet de configurer la couleur de la rampe des heures"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la rampe des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC",
+      "text": "Cela vous permet de configurer la couleur de la rampe des minutes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la rampe des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC",
+      "text": "Cela vous permet de configurer la couleur de la rampe des secondes"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME",
+      "text": "Paramètres de couleur de position de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC",
+      "text": "Cela vous permet de configurer les couleurs de position de départ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME",
+      "text": "Paramètres de couleur de position de fin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC",
+      "text": "Cela vous permet de configurer les couleurs de position de fin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME",
+      "text": "Paramètres de barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC",
+      "text": "Cela vous permet de configurer la barre de rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC",
+      "text": "Cela vous permet de configurer les couleurs de la rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME",
+      "text": "Paramètres de début de dégradé"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC",
+      "text": "Cela vous permet de configurer les couleurs de dégradé de début"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME",
+      "text": "Paramètres de fin de dégradé"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC",
+      "text": "Cela vous permet de configurer les couleurs de dégradé de fin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "Niveau de couleur d'arrière-plan maximal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "Niveau de couleur d'arrière-plan maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME",
+      "text": "Niveau de couleur de ligne maximal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC",
+      "text": "Niveau de couleur de ligne maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME",
+      "text": "Niveau de couleur de texte maximal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC",
+      "text": "Niveau de couleur de texte maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la première rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME",
+      "text": "Texte d'information pour le premier"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC",
+      "text": "Écrivez comment votre texte d'information pour l'heure en cours s'affiche. {0} pour l'heure en cours sur 24 en premier."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME",
+      "text": "Caractère du coin supérieur gauche pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME",
+      "text": "Caractère du coin supérieur droit pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME",
+      "text": "Caractère du coin inférieur gauche pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME",
+      "text": "Caractère du coin inférieur droit pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME",
+      "text": "Caractère du cadre supérieur pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME",
+      "text": "Caractère du cadre inférieur pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME",
+      "text": "Caractère du cadre gauche pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME",
+      "text": "Caractère du cadre droit pour la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC",
+      "text": "Cela vous permet de configurer la couleur de la première rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME",
+      "text": "Couleur de la première barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge minimum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert minimum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu minimum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME",
+      "text": "Niveau de couleur minimum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge maximum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert maximum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu maximum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME",
+      "text": "Niveau de couleur maximum pour la première"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la deuxième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME",
+      "text": "Texte d'information pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC",
+      "text": "Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute en cours sur 60 secondes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME",
+      "text": "Caractère du coin supérieur gauche pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME",
+      "text": "Caractère du coin supérieur droit pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME",
+      "text": "Caractère du coin inférieur gauche pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME",
+      "text": "Caractère du coin inférieur droit pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME",
+      "text": "Caractère du cadre supérieur pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME",
+      "text": "Caractère du cadre inférieur pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME",
+      "text": "Caractère du cadre gauche pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME",
+      "text": "Caractère du cadre droit pour la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC",
+      "text": "Cela vous permet de configurer la couleur de la deuxième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME",
+      "text": "Couleur de la deuxième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge minimum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert minimum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu minimum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME",
+      "text": "Niveau de couleur minimum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge maximum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert maximum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu maximum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME",
+      "text": "Niveau de couleur maximum pour la deuxième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC",
+      "text": "Cela vous permet de configurer l'apparence de la troisième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME",
+      "text": "Caractère du coin supérieur gauche pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME",
+      "text": "Caractère du coin supérieur droit pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME",
+      "text": "Caractère du coin inférieur gauche pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME",
+      "text": "Caractère du coin inférieur droit pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME",
+      "text": "Caractère du cadre supérieur pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME",
+      "text": "Caractère du cadre inférieur pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME",
+      "text": "Caractère du cadre gauche pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME",
+      "text": "Caractère du cadre droit pour la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME",
+      "text": "Texte d'information pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC",
+      "text": "Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 troisièmes."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC",
+      "text": "Cela vous permet de configurer la couleur de la troisième rampe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME",
+      "text": "Couleur de la troisième barre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge minimum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert minimum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu minimum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME",
+      "text": "Niveau de couleur minimum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME",
+      "text": "Niveau de couleur rouge maximum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME",
+      "text": "Niveau de couleur vert maximum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME",
+      "text": "Niveau de couleur bleu maximum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME",
+      "text": "Niveau de couleur maximum pour la troisième"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Progresses sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de la configuration."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
+      "text": "Si le cycle de couleurs est activé, combien de graduations avant de changer de couleur dans Progresses ? 1 graduation = 0,5 tiers"
+    }
+  ]
+}

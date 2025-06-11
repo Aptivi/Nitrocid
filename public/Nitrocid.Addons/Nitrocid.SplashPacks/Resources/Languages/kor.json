@@ -1,0 +1,63 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_WELCOME",
+      "text": "eoseo osibsio!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
+      "text": "jinhaenglyul pyosijul saegsang"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
+      "text": "jinhaeng tegseuteu wichi"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC",
+      "text": "wonhaneun jinhaeng tegseuteu wichileul seontaeghasibsio."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE",
+      "text": "annyeonghi gaseyo!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
+      "text": "sijak"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
+      "text": "keoneoreul chogihwahaneun dongan jamsi gidaryeo jusipsio..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
+      "text": "keoneori jongryodoeneun dongan jamsi gidaryeo jusipsio..."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
+      "text": "alsueopsneun oryu!"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
+      "text": "gandanhan seupeullaesi hwamyeon."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
+      "text": "jinhaeng sanghwangeul boyeojuneun seupeullaesi hwamyeon."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
+      "text": "Powerrine tekseuteureul sayonghayeo jinhaeng sanghwangeul boyeojuneun seupeullaesi hwamyeon."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    }
+  ]
+}

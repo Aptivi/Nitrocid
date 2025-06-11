@@ -1,0 +1,89 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "消除"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "新增註釋"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "刪除註釋"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "刪除所有註釋"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "列出所有筆記"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "儲存所有筆記"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "重新載入所有筆記"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "筆記檢視器 TUI"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "註釋 ID 必須是註釋編號"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "此註釋為空"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "無法刪除不存在的註釋"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "節省"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "添加"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "編輯"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "全部刪除"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "載入"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "筆記"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "注意要新增的內容"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "註釋編號"
+    }
+  ]
+}

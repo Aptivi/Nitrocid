@@ -1,0 +1,420 @@
+{
+  "lang": "eng",
+  "name": "English",
+  "cultures": [
+    "en",
+    "en-001",
+    "en-029",
+    "en-150",
+    "en-AE",
+    "en-AG",
+    "en-AI",
+    "en-AS",
+    "en-AT",
+    "en-AU",
+    "en-BB",
+    "en-BE",
+    "en-BI",
+    "en-BM",
+    "en-BS",
+    "en-BW",
+    "en-BZ",
+    "en-CA",
+    "en-CC",
+    "en-CH",
+    "en-CK",
+    "en-CM",
+    "en-CX",
+    "en-CY",
+    "en-DE",
+    "en-DK",
+    "en-DM",
+    "en-ER",
+    "en-FI",
+    "en-FJ",
+    "en-FK",
+    "en-FM",
+    "en-GD",
+    "en-GG",
+    "en-GH",
+    "en-GI",
+    "en-GM",
+    "en-GU",
+    "en-GY",
+    "en-HK",
+    "en-ID",
+    "en-IE",
+    "en-IL",
+    "en-IM",
+    "en-IN",
+    "en-IO",
+    "en-JE",
+    "en-JM",
+    "en-KE",
+    "en-KI",
+    "en-KN",
+    "en-KY",
+    "en-LC",
+    "en-LR",
+    "en-LS",
+    "en-MG",
+    "en-MH",
+    "en-MO",
+    "en-MP",
+    "en-MS",
+    "en-MT",
+    "en-MU",
+    "en-MV",
+    "en-MW",
+    "en-MY",
+    "en-NA",
+    "en-NF",
+    "en-NG",
+    "en-NL",
+    "en-NR",
+    "en-NU",
+    "en-NZ",
+    "en-PG",
+    "en-PH",
+    "en-PK",
+    "en-PN",
+    "en-PR",
+    "en-PW",
+    "en-RW",
+    "en-SB",
+    "en-SC",
+    "en-SD",
+    "en-SE",
+    "en-SG",
+    "en-SH",
+    "en-SI",
+    "en-SL",
+    "en-SS",
+    "en-SX",
+    "en-SZ",
+    "en-TC",
+    "en-TK",
+    "en-TO",
+    "en-TT",
+    "en-TV",
+    "en-TZ",
+    "en-UG",
+    "en-UM",
+    "en-US",
+    "en-US-POSIX",
+    "en-VC",
+    "en-VG",
+    "en-VI",
+    "en-VU",
+    "en-WS",
+    "en-ZA",
+    "en-ZM",
+    "en-ZW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "Can't get necessary data to initialize this addon."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "Purple harmony"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "This is the Android mascot color in the foreground"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "Our branding harmony"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "Dark version of a popular VIM theme, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "Light version of a popular VIM theme, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "Mirage version of a popular VIM theme, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "This is the first day of the new school year"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "Lightest terminal possible"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "This is the black rose"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "Color scheme for Breeze, a KDE Plasma 5 theme"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "Popular color scheme for IDEs, like IntelliJ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "It's time to go back to the dark side."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "Color schemes for Debian"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "The vivid default theme for the kernel"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "Background accents in your kernel!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "More accents everywhere!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "Use if you are a fan of EDM"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "Fire shades"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "Your epic golden palace on dark blue background"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "Grape and Kiwi mixed together"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "Color scheme for grapes"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "Vivid and plastered green, blue, and purple colors"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "Greenify your environment, greenify your kernel. Make Earth greener!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "We've added green and red as colors."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "Green and pink mixed together"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "One of the known terminal color schemes"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "Green text on gray"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "Traditional Indian colors right in your console."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "Make your terminal full of lemon acid"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "Light wood planks"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "Standard Linux terminal colors"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "Gray terminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "Some Material Design text on your terminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "Shades of orange and brown"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "Melange theme inspired by the VIM theme of the same name"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "Make your terminal full of mint"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "Color palette from Mirai Kuriyama from Beyond the Boundary."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "A theme inspired by a VIM theme of the same name"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "Do you like neon blue and pink?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "This theme should be neutral to you."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "This is your night sky at the beginning of the night!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "October is coming soon, so get ready!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "The sea of orange"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "Phosphoric terminal that turns everything to orange"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "Gives you a breeze of red."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "A bloody red console"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "Sakura trees will give you some Chinese breeze"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "All teal colors"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "A theme for technology lovers"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "Trance music fan? This is the theme for you!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "Color schemes from a popular Linux operating system, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "Gives you a perfect Vice City vibe"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "This is your Vice City dawn."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "Color scheme for Visual Studio, one of the most powerful IDEs"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "Color scheme for Windows 11, a recent version of Windows"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "Bring back nostalgia with this theme!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "Your terminal consists of wood planks"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "Inspired from the Chinese pattern of different fruits"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Color schemes from Alma Linux, a spinoff of a Linux operating system, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Color schemes from a Linux operating system, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "Color schemes from EndeavourOS, a spinoff of a Linux operating system, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Color schemes from Fedora, a spinoff of a Linux operating system, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Color schemes from a Linux operating system, Gentoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "Chiseled pattern colors forming a colorful mandala"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "Color schemes from Kubuntu, a spinoff of a popular Linux operating system, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "Color schemes from Linux Mint, an unofficial spinoff of a popular Linux operating system, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "Color schemes from Lubuntu, a spinoff of a popular Linux operating system, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Color schemes from Manjaro, a spinoff of a Linux operating system, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "Color schemes from a Linux operating system, openSUSE"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Color schemes from a Linux operating system, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "Red shades with dynamic accent colors for attention-worthy text"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Color schemes from Rocky Linux, a spinoff of a Linux operating system, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Color schemes from a Linux operating system, Slackware"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "Color schemes from Xubuntu, a spinoff of a popular Linux operating system, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "Color schemes from Zorin OS, an unofficial spinoff of a popular Linux operating system, Ubuntu"
+    }
+  ]
+}

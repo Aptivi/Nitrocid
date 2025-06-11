@@ -1,0 +1,46 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Недійсна дія."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Назва завдання"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Диспетчер завдань"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Не вдалося додати або видалити завдання."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Будь ласка, назвіть своє завдання."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Не вдалося позначити завдання."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Не вдається отримати список завдань"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Додавати, видаляти, позначати як виконане чи знімати позначку як виконане для завдання"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Вибір списку, збереження чи завантаження всіх завдань"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "बाहर जाएं"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "दिनांक और समय की जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "मिलीसेकंड:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "सेकंड:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "मिनट:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "घंटे:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "महीने:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "साल:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "वर्ष का दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "सप्ताह के दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "बाइनरी:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "स्थानीय समय:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "सार्वभौमिक समय:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "यूनिक्स समय:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "दिनांक जानकारी पार्स करने में विफल"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "सुनिश्चित करें कि प्रारूप सही है।"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "तारीख:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "समय:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "एक साधारण स्टॉपवॉच"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "स्टार्ट या स्टॉप"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "गोद"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "रीसेट"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "एक साधारण टाइमर"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "अंतराल सेट करें"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "संकेतित समयबाह्य सांख्यिक नहीं है।"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "मिलीसेकंड में टाइमआउट निर्दिष्ट करें"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "एक फिगलेट फॉन्ट लिखें जो फिगल लाइब्रेरी द्वारा समर्थित हो। अधिक जानकारी के लिए पुस्तकालय के दस्तावेज़ देखें"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "टाइमर के लिए फिगलेट फ़ॉन्ट"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "टाइमर के लिए फिगलेट सक्षम करें"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "यदि सक्षम किया गया है, तो टाइमर के लिए फिगलेट का उपयोग करेगा। कृपया ध्यान दें कि Figlet सक्षम के साथ समय को ठीक से प्रस्तुत करने के लिए इसे एक बड़ी कंसोल स्क्रीन की आवश्यकता है।"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "वर्तमान दिनांक और समय की जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "की जानकारी"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "स्टॉपवॉच तैयार है."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "स्टॉपवॉच चल रही है!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "नई गोद!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "उल्टी गिनती शुरू करें"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "घड़ी"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "स्टॉपवॉच देखनी"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "अभी तक कोई लैप नहीं..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "लैप सूची"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "पोमोडोरो टाइमर"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "पोमोडोरो"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "पोमोडोरो टाइमर तैयार है"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "पोमोडोरो टाइमर संख्या {0} चार पुनरावृत्तियों में"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "छोटा सा ब्रेक"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "ब्रेक टाइमआउट को मिलीसेकंड में निर्दिष्ट करें"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "ब्रेक अंतराल सेट करें"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "जानकारी प्रिंट करने की तिथि और समय"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि टाइमर एप्लिकेशन कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि पोमोडोरो टाइमर एप्लिकेशन कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "पोमोडोरो टाइमर के लिए फिगलेट सक्षम करें"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "यदि सक्षम है, तो पोमोडोरो टाइमर के लिए फिगलेट का उपयोग किया जाएगा। कृपया ध्यान दें कि फिगलेट सक्षम होने पर समय को ठीक से प्रस्तुत करने के लिए इसे एक बड़ी कंसोल स्क्रीन की आवश्यकता होती है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "पोमोडोरो टाइमर के लिए फ़िगलेट फ़ॉन्ट"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "उत्पादन तिथि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "समाप्ति समय अवधि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "समाप्ति तिथि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "उत्पादन तिथि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "समाप्ति तिथि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "समाप्ति समय अवधि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "उत्पाद स्वास्थ्य"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "उत्पाद स्थिति"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "उत्पाद समाप्ति जानकारी प्राप्त करने में विफल"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "उत्पाद समाप्ति जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "उत्पादन तिथि (उत्पाद के किनारे या नीचे देखें)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "समाप्ति तिथि या समय अवधि (या तो एक ही स्थान पर या समय अवधि में स्पष्ट रूप से लिखी गई है, जैसे कि 6 महीने या 1 वर्ष)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "क्या लक्ष्य उत्पाद समाप्ति तिथि को स्पष्ट रूप से निर्दिष्ट नहीं करता है"
+    }
+  ]
+}

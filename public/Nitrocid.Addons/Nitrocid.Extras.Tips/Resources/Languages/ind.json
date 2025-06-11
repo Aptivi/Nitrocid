@@ -1,0 +1,310 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "ki aap prakriya aadeshon ko do tareekon se nishpaadit kar sakate hain: nishpaadan yogy fail naam seedhe darj karana, aur aixaich kamaand ka upayog karana?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "ki aap lochkschraiain kamaand ka upayog karake apanee skreen ko lok kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "ki aap ch# aur visual basich ka upayog karake apane svayan ke karnel sanshodhan bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "ki aap aadeshon ke beech ardhaviraam ka upayog karake kaee aadeshon ka upayog kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "ki aap aadeshon ko nishpaadit karate samay uddhrt tarkon ke andar dohare uddharan chihnon se bach sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "ki aap saittings kamaand ka upayog karake karnel setings badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "ki aap savaischraiain kamaand ka upayog karake apanee skreen ko sahej sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "ki aap nitrochid ke github projekt prshth par jaakar hamen bag kee riport kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "ki aap alias kamaand ka upayog karake apane ichchhit kamaand ka shortakat bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "ki aap ch# aur visual basich ka upayog karake apanee khud kee splaish skreen bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "ki aap apane karnel ko adhik upayogee aur manoranjak banaane ke lie atirikt aidon instol kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "ki aap mkthaimai kamaand ka upayog karake apanee khud kee shaanadaar theem bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "ki aap setings kamaand ka upayog karake ya pahale se nirmit theem mein se kisee ek ka upayog karake apane karnel ke rang badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "ki aap reeset tark ka upayog karake apane karnel ko faiktaree difolt par reeset kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "ki aap hamaare gitbook prshth par hamaare vistrt dastaavezon tak pahunch sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "ki mukhy samarthan ke lie deerghakaalik rileez paanch saal aur suraksha apadet ke lie teen saal tak samarthit hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "ki 0.0.1 nitrochid ks ka sabase pahala sanskaran tha jise 22 pharavaree, 2018 ko rileez kiya gaya tha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "ki 0.0.24.x seereez ekamaatr sanskaran seereez thee jisamen api v2.1 sanskaran tha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "ki alpakaalik rileez keval nau maheene tak samarthit hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "ki 0.1.x shrrnkhala 0.0.24.x shrrnkhala ya puraane ke saath peechhe kee or asangat hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "ki aap linaks, maikoes aur endroid par naitrosid kees chala sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "ki aap apane mod banaane mein madad ke lie epeeaee dastaavez ka sandarbh le sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "ki aap atirikt aidon instol karake haingamain aur shipadyooet jaise kaee shaanadaar gem praapt kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "ki, metiyor mein, yadi aap laal ulka toophaan ke saath durghatanaagrast ho jaate hain, to aapaka antariksh yaan durghatanaagrast ho jaata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "ki aap doking suvidha ka upayog karake apane karnel ko soochana kendron mein badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "ki aap upayogakarta khaaton ko vyavasthit karane ke lie upayogakarta samooh bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "ki yadi aap kisee aise samooh ke sadasy hain jo kuchh anumatiyaan pradaan karata hai, to aapako aise opareshan karane kee anumati hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "ki aap apane host sistam ko prabhaavit kie bina apane karnel samay kshetr ko badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "ki aap samay bachaane ke lie intaraiktiv tekst aur heks sampaadak ka upayog kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "ki sabase puraana tekst editar jo pahale yooniks sistam ke saath kaam karane ke lie jaana jaata hai, vah aid hai, jo 1973 mein rileez kiya gaya sabase pahala tekst editar hai, jo at&t bel laibs mein pdp-7 par pae gae yooniks sistam ke saath bheja gaya tha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "ki aap editar ko kisee khaas prakaar mein lonch karane ke lie edit kamaand ko bhee phors kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "ki intarektiv tekst editar sabase lokapriy yooniks tekst editar, vi aur vim kee sabase buniyaadee visheshataon ka anukaran karane ka prayaas karata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "ki jab tak aap nahin jaanate ki aap bainaree fail ke saath kya kar rahe hain, is tarah se aisee fail ko sampaadit karane se lakshit fail mein deta karapshan ya deta los ho jaega?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "ki linaks sistam par, shel ko log-in haindalar aur sistam inishiyalaizeshan prograam donon kee madad se shuroo kiya jaata hai, jo aamataur par /sbin/init mein paaya jaata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "ki aap saamaany fail opareshan kar sakate hain, jaise kopee karana, moov karana, dileet karana, edit karana, ityaadi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "ki fail mainejar ka intarektiv tui midanait kamaandar kee kaaryakshamata ka anukaran karata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "ki agar karnel kraish hota hai, to yah aamataur par damp fail banaata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "ki aap antarnihit deebag kaaryakshamata ka upayog karake karnel ko deebag karake usaka nidaan kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "ki aap uaish shel se seedhe failen daunalod aur apalod kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "ki karnel ko laing tark ke saath shuroo karake pree-boot charanon mein bhee anuvaadit kiya ja sakata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "ki aap apane mod mein unhen panjeekrt karake apane svayan ke skreenasevar bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "ki mool ibm pch par teen minat kee nishkriyata ke baad skreen ko khaalee karane vaala pahala skreenasevar, skranasev, 1983 mein jon socha dvaara banaaya gaya tha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "ki kuchh tez gati vaale skreenasevar photosensitiv daure ka kaaran ban sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "ki karnel jarnal ka upayog boot aur shatadaun log ke roop mein kiya jaata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "ki aapake mod ab anuvaad yogy ho sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "ki aapake mod karnel aidon aur any mod ke saath sanvaad kar sakate hain, kisee prakaar ka sanchaar bana sakate hain aur intaroparebilitee praapt kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "ki aap rimot deebagar se aur vaikalpik roop se, chait sarvar se kanekt kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "ki aap deebag shel ka upayog kar sakate hain, jo keval vikaas sanskaranon ke lie upalabdh hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "ki aapake mods ab apane sambandhit vargon ko panjeekrt karake apana svayan ka konfigareshan praapt kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "ki aapake mods apane svayan ke shel panjeekrt kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "ki aapake mods maujooda shels mein kamaand jod sakate hain taaki upayog kie ja sakane vaale kamaand kee maatra badh sake?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "ki aapake kamaand varg paas kie gae tarkon aur svichon ka sateek roop se pratinidhitv kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "ki aap karnel api mein pae gae svich prabandhan vargon ka upayog karake paas kie gae svichon kee kveree kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "ki uaish mein skript banaane aur chalaane kee suvidha ke lie skripting kaaryakshamata shaamil hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "ki shel mein sakriy anuprayogon ke lie raddeekaran ko rokane kee kaaryakshamata shaamil hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "ki naitrosid ko tejee se aur behatar rendaring kee anumati dene ke lie tarminoks ke saath gaharaee se ekeekrt kiya gaya hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "ki ab aap aautaput ke dooshit hone kee chinta kie bina intaraiktiv anuprayogon ka aakaar badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "ki aise kamaand hain jo upayogakarta inaput maangate hain, jo skript ke lie upayogee hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "ki aap apane upayogakarta inaput prashn ko kaee tareekon se prastut kar sakate hain, jaise ki vikalp, taalika, saral, chayan, aur isee tarah?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "ki aap apane paath mein plesaholdar rakh sakate hain jo unaka samarthan karata hai?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "ki aap kisee vishisht opareshan ke kaam karane ke tareeke ko badalane ke lie vibhinn karnel draivaron ka upayog kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "ki aap ch# ya visual basich mein apane svayan ke skreenasevar aur splaish bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "ki aap karnel pletaform klaas ka upayog karake host sistam aur tarminal emuletar se poochhataachh kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "ki aap apane mod mein kuchh sanvedanasheel kaary karane se pahale gopaneeyata sahamati maang sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "ki aap doo not distarb suvidha ka upayog karake adhisoochanaon ko band kar sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "ki aap adhisoochana prabandhak mein pae gae fankshan ka upayog karake adhisoochana itihaas sahej sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "ki aap draivar ko badalakar yaadrchchhik sankhyaen kaise utpann kee jaatee hain, ise badal sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "ki vividh api aapake mod ke lie upayogee fankshan pradaan karate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki tips kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "karnel tips dikhaen"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "yadi saksham hai, to shel aapako har login par tips dikhaata hai."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "ki aap apane karnel mod ka upayog karake boot karane yogy prograam bana sakate hain?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "ki naitrosid (karnel simyuletar 0.0.2) ne bilt-in shel ko yooeeesech shel kaha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "ki skreenasevar ko kaithod re-tyoob (seeaaratee) ya plaajma disple mein skreen barn-in ke khilaaph ek samaadhaan ke roop mein bataaya gaya tha?"
+    }
+  ]
+}

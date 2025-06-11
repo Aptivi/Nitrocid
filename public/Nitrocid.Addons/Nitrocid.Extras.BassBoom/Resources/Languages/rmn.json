@@ -1,0 +1,187 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Întârziere în milisecunde"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Obține toate liniile versurilor din fișierul versurilor"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Redă un fișier cu versuri"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Redă un sunet"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Obține informații despre postul dvs. de radio online"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "Asigurați-vă că specificați calea către un fișier LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Nu se poate reda sunetul deoarece fișierul nu a fost găsit."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "Fișierul muzical a fost deschis cu succes."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Nu se poate deschide fișierul muzical."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Nu se poate reda sunetul din cauza timeout."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Artist necunoscut"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Gen necunoscut"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "Nume"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Artist"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Gen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Durată"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Apăsați „q” pentru a opri redarea."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Nu se poate reda sunetul."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Titlu"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Numărul portului pentru radioul dvs. online este nevalid."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "Adresa URL completă"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Ascultătorii actuali"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Ascultători de vârf"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Fluxuri"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Fluxuri active"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Transmite informații pentru ID"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "cale"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "În prezent se joacă"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Timp de funcționare"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "Asigurați-vă că specificați calea către un director care conține fișierele cu versuri în format LRC. De asemenea, puteți specifica o cale personalizată către folderul bibliotecii muzicale care conține fișierele versurilor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Acest fișier cu versuri nu există."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Setările pentru acest screensaver sunt disponibile aici."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Această secțiune vă permite să configurați modul în care funcționează addonul BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Calea versurilor"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "Setează calea către un folder care conține un grup de fișiere .lrc. Scrieți o cale absolută către orice director existent."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Tipul stației"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "Informații radio pe Internet (FM) pentru"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "Nu pot obține informații radio pe internet."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Calea către fișierul versurilor"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Calea către un fișier MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "Nume gazdă care găzduiește postul de radio MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "Port la postul de radio MPEG"
+    }
+  ]
+}

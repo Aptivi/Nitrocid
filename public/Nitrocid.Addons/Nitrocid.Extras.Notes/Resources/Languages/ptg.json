@@ -1,0 +1,96 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "Remover"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "Adiciona uma nota"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "Remove uma nota"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "Remove todas as notas"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "Lista todas as notas"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "Salva todas as notas"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "Recarrega todas as notas"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "TUI do visualizador de notas"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "O ID da nota deve ser um número de nota"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "Esta nota está vazia"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "Não é possível remover nota inexistente"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "Guardar"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "Adicionar"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "Editar"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "Remova tudo"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "Carga"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "Notas"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "Conteúdo da nota a adicionar"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "Número da nota"
+    }
+  ]
+}

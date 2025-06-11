@@ -1,0 +1,383 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+      "text": "Εμφανίζει ημερομηνία και ώρα"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EXIT",
+      "text": "Εξοδος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
+      "text": "Ενεργοποιήστε τα αληθινά χρώματα"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Καθυστέρηση σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC",
+      "text": "Ενεργοποιεί την υποστήριξη πραγματικού χρώματος."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTADDFAILED",
+      "text": "Αποτυχία προσθήκης συμβάντος."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTREMOVEFAILED",
+      "text": "Αποτυχία κατάργησης ενός συμβάντος."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD",
+      "text": "Δεν παρέχονται αρκετά ορίσματα για την προσθήκη ενός συμβάντος."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE",
+      "text": "Δεν παρέχονται αρκετά ορίσματα για την κατάργηση ενός συμβάντος."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED",
+      "text": "Δεν παρέχονται αρκετά επιχειρήματα για χειραγώγηση συμβάντων."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED",
+      "text": "Δεν παρέχονται αρκετά επιχειρήματα για χειρισμό υπενθύμισης."
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDREMINDER",
+      "text": "Υπενθύμιση χωρίς τίτλο"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDEVENT",
+      "text": "Εκδήλωση χωρίς τίτλο"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENT_NOTIFICATION",
+      "text": "Τώρα είναι ημέρα εκδήλωσης!"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDER_NOTIFICATION",
+      "text": "Μην το χάσετε αυτό!"
+    },
+    {
+      "loc": "NKS_CALENDAR_INVALIDACTION",
+      "text": "Μη έγκυρη ενέργεια."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
+      "text": "Αποθηκεύστε όλα τα συμβάντα ή/και υπενθυμίσεις καταστροφικά"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, διαγράφει όλα τα συμβάντα ή/και υπενθυμίσεις πριν τα αποθηκεύσει όλα χρησιμοποιώντας την εντολή ημερολογίου."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC",
+      "text": "Όνομα πολιτισμού"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_STATUS_READY",
+      "text": "Ετοιμος"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC",
+      "text": "Εμφανιζόμενο όνομα"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS",
+      "text": "Keybindings"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC",
+      "text": "Δείχνει μόνο την ημερομηνία"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC",
+      "text": "Δείχνει μόνο την ώρα"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC",
+      "text": "Χρησιμοποιεί UTC αντί για τοπικό"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+      "text": "Διαχείριση ημερολογίου, συμβάντων και υπενθυμίσεων"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC",
+      "text": "Τύπος ημερολογίου για εργασία"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC",
+      "text": "Χρησιμοποιήστε το πρόγραμμα προβολής ημερολογίου βάσει πίνακα"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EVENTS",
+      "text": "Εκδηλώσεις..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_REMINDERS",
+      "text": "Υπενθυμίσεις..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_FAILED",
+      "text": "Το διαδραστικό ημερολόγιο απέτυχε:"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE",
+      "text": "Εκδηλώσεις και υπενθυμίσεις για"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_LONGFORM",
+      "text": "Μακροσκελές έντυπο"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_CALENDARTYPE",
+      "text": "Τύπος ημερολογίου"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSMONTH",
+      "text": "Δεν βρέθηκαν υπενθυμίσεις για τον επιλεγμένο μήνα"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSMONTH",
+      "text": "Δεν βρέθηκαν συμβάντα για τον επιλεγμένο μήνα"
+    },
+    {
+      "loc": "NKS_CALENDAR_NOCULTURE",
+      "text": "Ο πολιτισμός δεν βρίσκεται."
+    },
+    {
+      "loc": "NKS_CALENDAR_SHOWCALENDARFAILED",
+      "text": "Αποτυχία εμφάνισης του ημερολογίου."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDFAILED",
+      "text": "Αποτυχία προσθήκης υπενθύμισης."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDNEEDSARGS",
+      "text": "Δεν παρέχονται αρκετά ορίσματα για την προσθήκη υπενθύμισης."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVEFAILED",
+      "text": "Αποτυχία αφαίρεσης υπενθύμισης."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVENEEDSARGS",
+      "text": "Δεν παρέχονται αρκετά ορίσματα για την κατάργηση μιας υπενθύμισης."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOEVENT",
+      "text": "Δεν υπάρχει εκδήλωση."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOREMINDER",
+      "text": "Δεν υπάρχει υπενθύμιση."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Πολιτισμός"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
+      "text": "Ρυθμίσεις χρώματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του Ημερολογίου."
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_NKSANNIVERSARY",
+      "text": "Επέτειος κυκλοφορίας Nitrocid KS"
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_RAMADAN",
+      "text": "Ραμαζάνι"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+      "text": "Ημερολόγιο"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSDAY",
+      "text": "Δεν βρέθηκαν υπενθυμίσεις για την επιλεγμένη ημέρα"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSDAY",
+      "text": "Δεν βρέθηκαν συμβάντα για την επιλεγμένη ημέρα"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC",
+      "text": "Ανοίγει το διαδραστικό TUI ημερολογίου"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC",
+      "text": "Έτος στόχος"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC",
+      "text": "Αριθμός μήνα στόχου"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC",
+      "text": "Αλληλεπίδραση με τα γεγονότα"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC",
+      "text": "Προσθέτει ένα συμβάν"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC",
+      "text": "Ημερομηνία στόχος"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC",
+      "text": "Καταργεί ένα συμβάν"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC",
+      "text": "Αναγνωριστικό συμβάντος"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC",
+      "text": "Παραθέτει όλα τα συμβάντα"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC",
+      "text": "Αποθηκεύει όλα τα συμβάντα"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC",
+      "text": "Αλληλεπίδραση με τις υπενθυμίσεις"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC",
+      "text": "Ημερομηνία και ώρα στόχος"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC",
+      "text": "Αφαιρεί μια υπενθύμιση"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC",
+      "text": "Αναγνωριστικό υπενθύμισης"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC",
+      "text": "Εμφανίζει όλες τις υπενθυμίσεις"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC",
+      "text": "Αποθηκεύει όλες τις υπενθυμίσεις"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
+      "text": "Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Ρυθμίσεις πολιτισμού"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
+      "text": "Αυτό σας επιτρέπει να διαμορφώσετε την κουλτούρα που χρησιμοποιείται από την προφύλαξη οθόνης ημερολογίου"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC",
+      "text": "Ποια κουλτούρα χρησιμοποιείται για την αλλαγή των ονομάτων των μηνών, του ημερολογίου κ.λπ.;"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
+      "text": "Χρησιμοποιήστε την κουλτούρα του συστήματος"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC",
+      "text": "Είτε η προφύλαξη οθόνης χρησιμοποιεί την κουλτούρα που έχει οριστεί από τις κύριες ρυθμίσεις του πυρήνα είτε από αυτές τις ρυθμίσεις προφύλαξης οθόνης."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
+      "text": "Ρυθμίσεις προφύλαξης οθόνης..."
+    }
+  ]
+}

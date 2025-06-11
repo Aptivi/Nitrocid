@@ -1,0 +1,60 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "īʿrḍ lk nẓrẗ ʿāmẗ bmlʾ al-šāšẗ ḥūl ʿrḍ al-irsāʾ al-mḥdd lttmkn mn astẖdāmh klūḥẗ mʿlūmāt"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "lā tūǧd šāšẗ irsāʾ bhḏā al-āsm."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "lā īūǧd irsāʾ šāšẗ bhḏā al-āsm."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "lā īūǧd qfṣ al-āthām al-šāšẗ."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "lqd tḥṭmt qāʿdẗ al-šāšẗ"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "asm Dock"
+    }
+  ]
+}

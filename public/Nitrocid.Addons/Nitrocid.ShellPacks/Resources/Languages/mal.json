@@ -1,0 +1,2577 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "Nama pengguna untuk {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "Kata laluan untuk {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "Disambungkan ke {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "Ralat semasa cuba menyambung ke {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "Direktori tempatan {0} tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "Masukkan direktori tempatan. \"..\" untuk balik."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "Direktori {0} tidak ditemui."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "Masukkan direktori jauh. \"..\" untuk balik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "Direktori setempat: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "Direktori jauh: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "Memuat turun fail {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "Fail dimuat turun {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "Memuat naik fail {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "Fail dimuat naik {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "Mendapat direktori tempatan semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "Mendapat direktori jauh semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "Menukar direktori tempatan untuk dimuat turun atau dimuat naik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "Menukar direktori jauh untuk dimuat turun atau dimuat naik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "Memadam fail jauh dari pelayan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "Memuat turun fail jauh ke direktori tempatan menggunakan binari atau teks"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "Menyenaraikan direktori tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "Menyenaraikan direktori jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "Memuat naik fail tempatan ke direktori jauh menggunakan binari atau teks"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "Tukar direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "Gunakan shell FTP untuk berinteraksi dengan pelayan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "Terdapat ralat dalam shell."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "Pemilihan profil tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "Cuba menyambung ke {0} dengan profil {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "Nama: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "Mengira jumlah fail."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "Algoritma penyulitan tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "Masukkan kata laluan untuk {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "Saiz: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "Ralat semasa cuba menyambung ke {0}: Tamat masa sambungan atau sambungan terputus"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "Mengira jumlah fail dalam direktori tertentu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "Masukkan nama pengguna atau alamat mel:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "Masukkan kata laluan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "Ralat semasa menyambung ke {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "Menyambung ke {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "Mengesahkan..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "Memuat turun mesej dan menyenaraikannya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "Membuka mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "Halaman bukan nilai angka."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "Nombor mesej mungkin tidak negatif atau sifar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "Nombor mesej bukan nilai angka."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- Daripada {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- Kepada {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- Dihantar pada {0} dalam {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "Mesej yang dinyatakan tidak ditemui."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "Menyediakan profil... Ia boleh mengambil masa beberapa minit..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "Menukar direktori mel semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "Tidak dapat membuka folder mel {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "Menyenaraikan direktori dalam alamat mel anda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "Semasa pengesahan sijil, terdapat ralat sijil. Ini mungkin kali pertama anda menyambung ke pelayan atau sijil mungkin telah tamat tempoh. Berikut ialah ralat:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "Adakah anda pasti mahu menyambung?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "Jawapan tidak sah. Sila cuba lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "Masukkan alamat dan port pelayan IMAP (<alamat> atau <alamat>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "Masukkan alamat dan port pelayan SMTP (<alamat> atau <alamat>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "Menghantar mesej ke alamat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "Masukkan alamat mel penerima:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "Masukkan subjek:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "Masukkan mesej anda di bawah. Tulis \"EOF\" untuk mengesahkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "Menghantar mesej..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "Mesej dihantar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "Alamat e-mel tidak sah. Pastikan anda telah menulis alamat dengan betul dan ia sepadan dengan format contoh yang ditunjukkan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "Mengalih keluar mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "Mengalih keluar semua mesej daripada penerima"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "Mesej {0} daripada {1} dipadamkan daripada {2}. {3} mesej tinggal untuk dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "Mesej {0} daripada {1} dipadamkan daripada peti masuk. {2} mesej tinggal untuk dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "Gagal membuka fail. Keluar dari shell..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "Pilihan {0} yang ditentukan adalah tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "Jawapannya mestilah angka."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "Log nama pengguna FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "Log alamat IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "Kembalikan profil FTP pertama sahaja"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "Gagal memuat naik {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "Muat turun gagal untuk fail {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "Gagal menyenaraikan fail jauh: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "Memadamkan {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "{0} tidak ditemui dalam pelayan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "Semua mel yang dibuat oleh {0} berjaya dialih keluar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "Gagal mengalih keluar semua mel yang dibuat oleh {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "Ralat menghantar mesej."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "Memindahkan {0} ke {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "Berjaya dipindahkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "Memindahkan fail atau direktori ke fail atau direktori lain. Anda juga boleh menggunakannya untuk menamakan semula fail."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "Gagal mengalihkan {0} ke {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "Menyalin {0} ke {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "Berjaya disalin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "Menyalin fail atau direktori ke fail atau direktori lain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "Gagal menyalin {0} ke {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "Menggerakkan mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "Mengalihkan semua mesej daripada penerima"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "Semua mel yang dibuat oleh {0} berjaya dialihkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "Gagal mengalihkan semua mel yang dibuat oleh {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "Mesej {0} daripada {1} dialihkan dari {2}. {3} mesej tinggal untuk dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "Sama ada untuk log nama pengguna FTP atau tidak."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "Sama ada untuk log alamat IP FTP atau tidak."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "Pilih profil pertama hanya apabila menyambung."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "{0} mesej baharu tiba dalam peti masuk."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "Buka \"mel\" untuk melihat mereka."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "Nama penuh: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "Masa penciptaan: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "Masa akses terakhir: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "Masa menulis terakhir: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "Atribut: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "Direktori induk: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "Tempat untuk mencari: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "Saiz fail: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "Masukkan laluan fail ke lampiran. Tekan ENTER pada laluan kosong untuk mengesahkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "Membuka mesej yang disulitkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "Tulis kata laluan untuk ID kunci {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "Menghantar mesej yang disulitkan ke alamat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "Tekan sebarang kekunci untuk kembali."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "Tidak dapat mencipta folder mel {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "Membuat direktori dalam direktori kerja semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "Mengalih keluar direktori daripada direktori kerja semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "Folder mel {0} tidak ditemui."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "Tidak dapat memadam folder mel {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "Menamakan semula folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "Tunjukkan pratonton mesej mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "Apabila menyenaraikan mesej mel, tunjukkan pratonton badan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "Jika autosimpan didayakan, fail teks akan disimpan untuk setiap \"n\" saat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "Membolehkan anda menggunakan pelayan SSH FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "Menyenaraikan semua fail di dalam arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "Mengekstrak fail ke direktori tertentu atau direktori semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "Menukar direktori arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "Direktori {0} tidak wujud"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "Direktori arkib {0} tidak wujud"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "Terdapat ralat dalam shell FTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "Terdapat ralat dalam shell SFTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "Bagaimana anda ingin mengesahkan?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "Fail kunci peribadi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "Kata laluan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "Masukkan frasa laluan untuk kunci {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "Fail kunci {0} tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "Ralat semasa cuba menambah kunci peribadi:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "Menetapkan kebenaran fail. Ini hanya disokong pada pelayan FTP yang menjalankan Unix."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "Menetapkan jenis untuk sesi ini"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "Gagal menetapkan kebenaran {0} kepada {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "Kebenaran ditetapkan dengan jayanya untuk fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "Jenis data ditetapkan kepada ASCII!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "Jenis data ditetapkan kepada Binari!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "Jenis data tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "Berhati-hati bahawa kebanyakan fail tidak akan memuat turun atau memuat naik dengan betul menggunakan mod ini, jadi kami amat mengesyorkan menggunakan mod Binari pada kebanyakan situasi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "Membuka cangkerang RSS untuk membaca suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "Menyenaraikan semua suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "Membaca suapan dalam pelayar web"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "Mendapat maklumat artikel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "Nombor artikel tidak boleh lebih besar daripada artikel yang tersedia."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "Tajuk:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "Pautan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "Mendapat maklumat suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "Penerangan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "Jenis suapan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "Bilangan artikel:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "Artikel tidak mempunyai pautan!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "Membuka URL... Pastikan anda mengikuti langkah yang ditunjukkan pada skrin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "Mencantikkan fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "Memuat turun folder jauh ke direktori tempatan menggunakan binari atau teks"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "Memuat naik folder tempatan ke direktori jauh menggunakan binari atau teks"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "Memuat turun folder {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "Memuat turun folder {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "Muat turun gagal untuk folder {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "Memuat naik folder {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "Folder dimuat naik {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "Meminimumkan fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "Editor JSON belum membuka strim fail lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "Keluar dari shell JSON tanpa menyimpan perubahan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "Menyimpan fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "Mencetak fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu gesaan log masuk anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu kata laluan anda digesa. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Tunjukkan butiran fail dalam senarai FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Gaya gesaan nama pengguna untuk FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Gaya gesaan kata laluan untuk FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "Gunakan profil FTP pertama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Tambahkan sambungan baharu pada dail laju FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "Cuba sahkan sijil FTP selamat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "Tunjukkan FTP MOTD pada sambungan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "Sentiasa terima sijil FTP yang tidak sah"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Menunjukkan butiran fail FTP semasa menyenaraikan direktori jauh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "Menggunakan profil FTP pertama untuk menyambung ke FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Jika didayakan, tambahkan sambungan baharu pada dail laju FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "Cuba untuk mengesahkan sijil FTP. Mematikannya tidak disyorkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "Menunjukkan mesej FTP hari itu semasa log masuk."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "Sentiasa terima sijil FTP yang tidak sah. Menghidupkannya tidak disyorkan kerana ia boleh menimbulkan risiko keselamatan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Gaya gesaan nama pengguna untuk mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Gaya gesaan kata laluan untuk mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "Gaya gesaan IMAP untuk mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "Gaya gesaan SMTP untuk mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "Mengesan pelayan mel secara automatik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "Dayakan nyahpepijat mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "Maklumkan untuk mesej mel baharu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "Gaya gesaan kata laluan GPG untuk mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "Hantar selang ping IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "Hantar selang ping SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "Format teks mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu gesaan pelayan IMAP anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu gesaan pelayan SMTP anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "Mengesan pelayan mel secara automatik berdasarkan alamat yang diberikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "Mendayakan nyahpepijat pelayan mel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "Memberitahu anda untuk sebarang mesej mel baharu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu kata laluan GPG anda digesa. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "Berapa milisaat untuk menghantar ping IMAP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "Berapa milisaat untuk menghantar ping SMTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "Mengawal cara teks mel akan ditunjukkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "Gaya gesaan URL suapan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "Muat semula automatik suapan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "Selang suapan RSS automatik muat semula"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "Tulis bagaimana anda mahu gesaan pelayan suapan RSS anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "Berapa milisaat untuk memuat semula suapan RSS?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Tunjukkan butiran fail dalam senarai SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Gaya gesaan nama pengguna untuk SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Tambahkan sambungan baharu pada dail laju SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Menunjukkan butiran fail SFTP semasa menyenaraikan direktori jauh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Jika didayakan, tambahkan sambungan baharu pada dail laju SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "Maklumat pelayan FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "Alamat pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "Port pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "Jenis pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "Jenis sistem pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "Mod penyulitan pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "Jenis sambungan data pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "Sistem pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "Jenis data muat turun pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "Jenis data muat naik pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "Masukkan fail jauh untuk dicincang."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "Masukkan direktori jauh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "Pencincangan rekursif untuk FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "Sama ada hendak mencincang direktori secara rekursif. Sila ambil perhatian bahawa tidak semua pelayan FTP menyokongnya."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "Melaksanakan arahan pelayan FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "mel yang dipindahkan..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "Nama Hos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "Nama pengguna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "Jenis Data"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "Pengekodan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "Penyulitan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "Protokol"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "Tunjukkan kemajuan pemindahan mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "Kemajuan pemindahan mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "Kemajuan pemindahan mel (tunggal)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "Jika didayakan, cangkerang mel akan menunjukkan bilangan bait yang dihantar semasa memuat turun mel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "Tulis bagaimana anda mahukan gaya kemajuan pemindahan mel anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dipindahkan dan {1} untuk jumlah saiz."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "Tulis bagaimana anda mahukan gaya kemajuan pemindahan mel anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dipindahkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "Memulakan shell HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "Mendapat respons daripada pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "Memadamkan kandungan daripada pelayan HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "Terdapat ralat dalam cangkerang HTTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "Mendapat rentetan daripada pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "Mendapat {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "Pek fail tempatan ke arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "Tidak boleh mengemas apa-apa."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "Tamat masa pengambilan suapan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "Berapa milisaat untuk menunggu sebelum suapan RSS tamat masa pengambilan?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "Sahkan percubaan cuba semula untuk penghantaran FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "tamat masa sambungan FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "tamat masa sambungan data FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "Versi IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "Berapa kali untuk mengesahkan muat naik dan memuat turun dan mencuba semula jika pengesahan gagal sebelum muat turun gagal secara keseluruhan?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "Berapa milisaat untuk menunggu sebelum tamat masa sambungan FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "Berapa milisaat untuk menunggu sebelum tamat masa sambungan data FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "Pilih versi Internet Protocol yang disokong oleh pelayan FTP dan yang digunakan oleh klien FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "Pemformatan JSON lalai untuk shell JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "Memilih pemformatan JSON lalai (dipercantikkan atau diperkecilkan) untuk disimpan oleh shell JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "Menunjukkan butiran fail dalam senarai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Menyekat mesej \"kebenaran ditolak\" yang menjengkelkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "Menunjukkan bahawa laluan sasaran adalah mutlak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "Fail tidak dinyatakan. Keluar dari shell..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "Menanda halaman suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "Mengalih keluar penanda halaman suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "Suapan tidak wujud dalam penanda halaman."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "Menyenaraikan semua suapan yang ditanda halaman"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "Fail {0} tidak ditemui."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "Fail tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "Tiada maklumat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "Tidak dapat membuka fail atau folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "Gaya baris baharu:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "Fail binari:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "Metadata MIME:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "Nama penuh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "Versi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "Nama budaya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "Jenis kandungan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "Fail bukan perhimpunan .NET yang sah.\\n"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "Tidak boleh mendapatkan maklumat sistem fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "Tidak boleh menyalin fail atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "Tidak dapat mengalihkan fail atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "Tidak dapat mengalih keluar fail atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "Masukkan laluan atau laluan penuh ke folder destinasi untuk menyalin fail yang dipilih."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "Pastikan anda telah menulis laluan yang betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "Fail tidak wujud. Pastikan anda telah menulis laluan yang betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "Masukkan laluan atau laluan penuh ke folder destinasi untuk mengalihkan fail yang dipilih."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "Masukkan nama fail baharu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "Pastikan anda telah menulis nama fail yang betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "Fail sudah wujud. Nama itu tidak boleh diduduki oleh fail lain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "Masukkan nama direktori baharu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "Folder sudah wujud. Nama itu tidak boleh diduduki oleh folder lain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "Tiada semakan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "Sambungan belum diwujudkan lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "Masukkan alamat pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "Pengurus fail hos sistem interaktif"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "Membuka fail arkib ke shell arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "Cangkang Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "Menunjukkan perbezaan antara dua fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "Membuka klien mel IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "Membuka klien mel POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "Mel POP3 kembali daripada 0.0.20.0, tetapi pada masa ini kami tidak merancang untuk mengeluarkannya dalam versi ini. Tunggu versi seterusnya."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "Masukkan URL suapan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "Ralat semasa cuba menghuraikan alamat. Pastikan anda telah menulis alamat dengan betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "Membuka TUI pembaca suapan RSS interaktif"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "Tidak boleh mengeluarkan apa-apa."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "Arkib tidak boleh ditulis kerana jenisnya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "Membaca kandungan fail jauh ke konsol"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "Keluar dari shell tanpa memutuskan sambungan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "Pastikan anda menentukan port dengan betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "Lebih daripada satu profil ditemui. Pilih satu:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "Repositori tidak dinyatakan. Keluar dari shell..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "Gagal membuka repositori. Keluar dari shell..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "Mengambil senarai perubahan dalam fail baris demi baris"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "Memeriksa cawangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "Membuat komitmen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "Menggambarkan komitmen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "Menunjukkan perbezaan antara komit semasa dan fail tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "Menunjukkan perbezaan antara komit semasa dan fail tempatan dengan kandungannya dalam bentuk tampalan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "Menunjukkan perbezaan antara komit semasa dan fail tempatan dengan kewujudannya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "Menunjukkan perbezaan antara komit semasa dan fail tempatan dengan kewujudannya dan dengan kandungannya"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "Mengambil semua kemas kini daripada alat kawalan jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "Mengambil status fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "Mendapat maklumat repositori mudah"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "Menyenaraikan semua cawangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "Menyenaraikan semua komitmen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "Menyenaraikan semua alat kawalan jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "Menyenaraikan semua tag"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "Membuat tag daripada HEAD"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "Menarik semua kemas kini daripada pelayan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "Menolak semua kemas kini ke pelayan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "Menetapkan semula repositori tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "Melakukan tetapan semula lembut"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "Melakukan tetapan semula bercampur"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "Melakukan tetapan semula keras"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "Tetapkan identiti anda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "Tahap perubahan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "Peringkat semua perubahan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "Status repositori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "Menyahperingkatkan perubahan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "Menghapuskan semua perubahan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "Menambahkan pengepala dengan kunci dan nilai pada semua permintaan yang akan datang"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "Mendapat ejen pengguna semasa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "Mengedit kunci pada pengepala kepada semua permintaan yang akan datang"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "Menyenaraikan tajuk permintaan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "Meletakkan fail ke pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "Meletakkan rentetan ke pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "Siarkan fail ke pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "Siarkan rentetan ke pelayan HTTP menggunakan permintaan yang ditentukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "Mengalih keluar kunci pada pengepala kepada semua permintaan yang akan datang"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "Menetapkan ejen pengguna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Menambah pengepala yang sudah wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Mengalih keluar pengepala yang tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Mengedit pengepala yang tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "Menambah tatasusunan, objek atau harta baharu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "Menentukan laluan induk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "Menentukan jenis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "Menentukan nama harta yang akan dibuat dengan. Ini digunakan jika laluan induk ialah objek."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "Membersihkan fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "Mencari harta benda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "Menentukan harta induk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "Menunjukkan maklumat tentang fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "Jangan tunjukkan sifat individu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "Tunjukkan semua nilai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "Mengeluarkan objek sasaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "JSON yang dipercantikkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "JSON yang dikecilkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "Menetapkan nilai kepada tatasusunan, objek atau harta sedia ada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "Membuka fail JSON dalam editor interaktif"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "Token dalam fail JSON tidak ditemui."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "Token induk tidak ditemui. Pastikan anda telah menulis laluan '{0}' dengan betul."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "Jenis '{0}' yang ditentukan adalah tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "Tidak dapat menambahkan item baharu dengan nama sifat dengan jenis token induk '{0}'."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "Tidak dapat menambahkan item baharu dengan nama sifat '{0}' dengan jenis token induk '{1}'."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "Nama harta '{0}' dalam induk '{1}', jenis '{2}', tidak wujud"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "Mencari suapan untuk frasa dalam tajuk dan/atau perihalan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "Cari tajuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "Cari penerangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "Cari tajuk dan penerangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "Carian sensitif huruf besar-besaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "Gagal menghuraikan URL suapan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "Tiada penerangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "Menunjukkan butiran fail dan folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Menyekat mesej \"tidak dibenarkan\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "Masukkan lokasi kunci peribadi untuk {0}. Tulis \"q\" untuk menyelesaikan penambahan kunci:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "Cuba menyambung ke {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "Melaksanakan pertanyaan SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "Maklumat pangkalan data"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "Membuka fail SQL dalam editor hex interaktif TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "Jenis arkib ini tidak disokong."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "Adakah anda pasti mahu memadamkan {0}?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "pengguna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "tapak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "Tiada maklumat pautan sym"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "Diubah suai pada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "Status menyalahkan untuk fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "Nombor bongkok"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "Bilangan baris"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "Nombor baris awal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "Nombor baris akhir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "Komitmen awal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "Komit SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "Komit mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "Komit pengarang"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "Komitter"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "Bilangan ibu bapa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "Komitmen akhir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "Simpan kerja anda terlebih dahulu dengan membuat komitmen sebelum menyemak cawangan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "Cawangan tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "Anda perlu mengenal pasti diri anda sebelum menggunakan arahan ini. guna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "untuk mengenal pasti diri anda."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "Repositori dikemas kini dengan komit baharu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "Penerangan untuk komitmen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "Perubahan umum dalam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "Perubahan kandungan dalam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "Jauh tidak wujud."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "Tiada alat kawalan jauh ditemui untuk menarik kemas kini."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "Status untuk fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "Repositori kosong"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "Kepala tertanggal"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "Tiada rujukan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "Klon cetek"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": "Laluan ke .git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "Laluan ke direktori kerja"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "Berkomitmen untuk cawangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "Teg baharu telah dibuat! Berikut ialah butiran teg anda:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "Salinan repo tempatan anda adalah terkini!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "Dimajukan pantas kepada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "Repositori dikemas kini kepada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "Gabungan anda mengakibatkan konflik. Sila selesaikan mana-mana konflik."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "Anda telah berjaya mengenal pasti diri anda sebagai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "Tiada pengubahsuaian dilakukan pada pentas."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "Fail berperingkat {0} berjaya!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "Gagal mementaskan fail {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "Status untuk cawangan {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "Tiada pengubahsuaian dilakukan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "Fail tidak dijejaki"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "Tiada fail yang tidak dijejaki."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "Menambah fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "Tiada fail tambahan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "Fail yang diubah suai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "Tiada fail yang diubah suai."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "Fail yang dialih keluar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "Tiada fail yang dialih keluar."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "Fail berperingkat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "Tiada fail berperingkat."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "Menamakan semula fail berperingkat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "Tiada fail berperingkat yang dinamakan semula."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "Namakan semula fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "Tiada fail yang dinamakan semula."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "fail hilang"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "Tiada fail yang hilang."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "Tiada pengubahsuaian dilakukan untuk membatalkan pentas."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "Fail tidak berperingkat {0} berjaya!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "Gagal membuka pentas fail {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "Menyiarkan fail {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "Menyiarkan rentetan ke {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "Memuat naik rentetan ke {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "Cangkang JSON gagal menambah item."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "Hartanah terdapat di"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "Harta tidak dijumpai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "Maklumat token JSON asas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "Jenis asas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "Asas mempunyai nilai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "Kiraan token kanak-kanak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "Laluan asas"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "Maklumat token JSON individu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "Jenis token"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "Token mempunyai nilai"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "Laluan token"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "Nilai token"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "Maklumat hartanah untuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "Jenis harta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "Kiraan harta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "Nama harta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "Laluan harta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "Nilai harta"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "Cangkang JSON gagal mengalih keluar item."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "Cangkang JSON gagal menetapkan item."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "Mesej {0} daripada {1} dialihkan. {2} mesej tinggal untuk dihuraikan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "Lampiran:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "Sambungan ini mengandungi contoh suapan RSS yang tidak sah."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "Tajuk artikel tidak diketahui"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "Malangnya, artikel ini tidak mempunyai apa-apa kandungan. Anda masih boleh mengikuti artikel di"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "Artikel ini tidak mempunyai pautan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "Tidak dapat membuka penyemak imbas hos ke pautan artikel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "Diubah suai:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "Masukkan nilai parameter untuk {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "Perintah SQL berjaya. Berikut adalah balasannya:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "Perintah SQL gagal."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "Laluan pangkalan data:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "Versi pelayan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "Keadaan sambungan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "Rentetan sambungan:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "Nama pangkalan data:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "Pratetap Gesa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell arkib berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell FTP berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell Git berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell HTTP berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell JSON berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "Pratetap Prompt JSON Shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "Dayakan autosimpan editor JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "Menghidupkan atau mematikan ciri autosimpan editor JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "Selang autosimpan editor JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara cangkerang mel berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "Bilangan maksimum e-mel dalam satu halaman"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "Berapa banyak mesej e-mel untuk dipaparkan dalam satu halaman?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell RSS berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "Pratetap Gesaan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell SFTP berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara shell SQL berfungsi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "Pratetap Prompt SQL Shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "Jenis fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "Mencari suapan di perpustakaan suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "salin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "Bergerak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "Padam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "Naik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "info"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "Namakan semula"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "Folder Baharu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "Buka"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "Metadata MIME (dilanjutkan)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "Pengendali didaftarkan tetapi entah bagaimana gagal mendapatkan pengendali sambungan untuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Salin Ke"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Pindah ke"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri tetapan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "Tidak boleh mendapatkan entri arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "Arkib belum dimuatkan lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "Tidak dapat menentukan direktori arkib semasa."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Cangkang terakhir bukan cangkerang ini untuk dipisahkan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "Pelanggan tidak berpenghuni."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "Belum ada klien FTP lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "Pelanggan belum disambungkan lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "Tidak boleh mendapatkan konfigurasi pelayan IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "Tidak boleh mendapatkan konfigurasi pelayan SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "Pelanggan belum disambungkan lagi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "Baca Lagi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "Segarkan semula"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "Tiada artikel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "Tiada suapan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "Tidak dapat sambungan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "Strim fail belum dibuka lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "Fail JSON belum dibuka lagi."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "Julat penamat nombor baris"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "Laluan ke fail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Fail sumber atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "Sasaran fail atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "Algoritma penyulitan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "Laluan ke direktori dengan repositori Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "Julat permulaan nombor baris"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "Nama cawangan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "Komit ringkasan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "Komit cincang SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "Nama jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "Tag nama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "Mesej untuk memberi anotasi pada teg"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "e-mel anda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "nama pengguna anda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "Laluan ke fail tidak berperingkat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "Laluan ke fail berperingkat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "Laluan ke fail arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "Direktori tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "Direktori di dalam arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "Fail dalam arkib"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "Direktori tempatan untuk diekstrak"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "Fail tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "Arkib direktori untuk ditambah"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "Pelayan FTP untuk disambungkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Laluan ke fail jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "Laluan ke direktori tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "Laluan ke direktori jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Laluan ke fail jauh untuk dipadam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "Perintah pelayan untuk dilaksanakan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "Mencipta direktori tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "Mencipta direktori jauh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Laluan ke fail sumber atau direktori"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "Laluan ke fail atau direktori sasaran"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "Laluan ke fail tempatan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "Nombor kebenaran mengikut chmod"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "Menentukan sama ada jenis pemindahan ialah ASCII atau Binari"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "Pautan simbolik ke: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "Kekunci pengepala"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "Nilai pengepala"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "Permintaan HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "Fail untuk dimuat naik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "Rentetan untuk dimuat naik"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "Rentetan ejen pengguna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "Alamat e-mel untuk log masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "Buat folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "Bergerak..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "Gerakkan semua..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "Namakan semula folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "Alih keluar folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "Alih keluar mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "Alih keluar semua..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "Tidak dapat membuka folder atau mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "Tulis nama direktori baharu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "Mencipta direktori..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "Tidak boleh membuat folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "Pilih direktori baharu untuk mengalihkan mesej ini."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "Mesej bergerak..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "Tidak dapat mengalihkan mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "Pilih direktori baharu untuk mengalihkan semua mesej oleh pengirim yang sama."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "Mengalihkan mesej oleh pengirim {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "Tidak dapat mengalihkan semua mesej oleh pengirim yang sama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "Tulis nama direktori baharu untuk menamakan semula {0} kepada."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "Menamakan semula direktori..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "Tidak boleh menamakan semula folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "Mengalih keluar direktori..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "Tidak dapat mengalih keluar folder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "Mengalih keluar mesej..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "Tidak dapat memadam mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "Mengalih keluar mesej oleh pengirim {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "Tidak boleh memadam semua mesej oleh pengirim yang sama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "Nama direktori mel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "Nombor halaman"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "ID mesej"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "Nama penghantar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "Nama direktori mel lama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "Nama direktori mel baharu"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "Pengurusan mel interaktif"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "Pelayan SFTP untuk disambungkan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "Pautan suapan RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "Nombor suapan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "Frasa untuk dicari"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "Fail JSON pertama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "Fail JSON kedua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "Laluan ke fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "Laluan untuk mengeluarkan fail JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "nilai JSON untuk ditambah"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "nama harta JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "Laluan objek"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "nilai JSON"
+    }
+  ]
+}

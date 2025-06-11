@@ -1,0 +1,408 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+      "text": "yuzhir alttarikh walwaqt"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EXIT",
+      "text": "khuruj"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
+      "text": "qum bitanshit al'alwan alhaqiqia"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "altaakhir fi mili thany"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn al'ahmar"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "'adnaa mustawa lilawn al'akhdar"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn al'azraq"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
+      "text": "alhadu al'adnaa limustawaa allawn"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'ahmar"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'akhdar"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn al'azraq"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
+      "text": "alhadu al'aqsaa limustawaa allawn"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "'adnaa mustawan lilawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
+      "text": "alhadu al'adnaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
+      "text": "alhadu al'aqsaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC",
+      "text": "yanshut daem allawn alhaqiqii."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTADDFAILED",
+      "text": "fashil fi 'iidafat hadthi."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTREMOVEFAILED",
+      "text": "fashal 'iizalat alhadathi."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD",
+      "text": "lam yatima tawfir wasitat kafiat li'iidafat hadthi."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE",
+      "text": "lam yatima tawfir wasitat kafiat li'iizalat hadthi."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED",
+      "text": "lam yatima tawfir alhujaj alkafiat liltalaeub bialhadathi."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED",
+      "text": "lam yatima tawfir alhujaj alkafiat liltalaeub bialtadhkiri."
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDREMINDER",
+      "text": "tadhkir bidun eunwan"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDEVENT",
+      "text": "hadath bila eunwan"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENT_NOTIFICATION",
+      "text": "alan hu yawm hadatha!"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDER_NOTIFICATION",
+      "text": "la tufawit hadha!"
+    },
+    {
+      "loc": "NKS_CALENDAR_INVALIDACTION",
+      "text": "eamil ghayr salihi."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
+      "text": "hifz jamie al'ahdath w / 'aw altadhkirat bishakl mudamir"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC",
+      "text": "fi halat altamkin , yahdhif jamie al'ahdath w / 'aw altadhkirat qabl hifziha jmyean biastikhdam 'amr altaqwimi."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC",
+      "text": "asm al-ṯqāfẗ"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_STATUS_READY",
+      "text": "mstʿd"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC",
+      "text": "asm al-ʿrḍ"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS",
+      "text": "rwābṭ al-mfātīḥ"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC",
+      "text": "īẓhr al-tārīẖ fqṭ"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC",
+      "text": "īẓhr al-ūqt fqṭ"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC",
+      "text": "īstẖdm UTC bdlāً mn al-mḥlī"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+      "text": "mdīr al-tqwym wālḥdṯ wāltḏkīr"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC",
+      "text": "nūʿ al-tqwym al-ḏī sītm al-ʿml ʿlīh"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC",
+      "text": "astẖdm ʿārḍ al-tqwym al-mstnd ili al-ǧdūl"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EVENTS",
+      "text": "al-ʾaḥdāṯ..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_REMINDERS",
+      "text": "tḏkīrāt..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_FAILED",
+      "text": "fšl al-tqwym al-tfāʿlī:"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE",
+      "text": "al-ʾaḥdāṯ wāltḏkīrāt l"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_LONGFORM",
+      "text": "ūṯīqẗṭwylẗ"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_CALENDARTYPE",
+      "text": "nūʿ al-tqwym"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSMONTH",
+      "text": "lm ītm al-ʿṯūr ʿli tḏkīrāt llšhr al-mḥdd"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSMONTH",
+      "text": "lm ītm al-ʿṯūr ʿli aḥdāṯ llšhr al-mḥdd"
+    },
+    {
+      "loc": "NKS_CALENDAR_NOCULTURE",
+      "text": "lm ītm al-ʿṯūr ʿli al-ṯqāfẗ."
+    },
+    {
+      "loc": "NKS_CALENDAR_SHOWCALENDARFAILED",
+      "text": "fšl fī iẓhār al-tqwym."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDFAILED",
+      "text": "fšlt iḍāfẗ tḏkīr."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDNEEDSARGS",
+      "text": "lm ītm tūfīr ūsāʾiṭ kāfīẗ liḍāfẗ tḏkīr."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVEFAILED",
+      "text": "fšlt izālẗ al-tḏkīr."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVENEEDSARGS",
+      "text": "lm ītm tūfīr ūsāʾiṭ kāfīẗ lizālẗ al-tḏkīr."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOEVENT",
+      "text": "lā īūǧd ḥdṯ."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOREMINDER",
+      "text": "lā īūǧd tḏkīr."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "ṯqāfẗ"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
+      "text": "iʿdādāt al-ʾalwān"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_DESC",
+      "text": "ītīḥ lk hḏā al-qsm tkwyn kīfīẗ ʿml al-tqwym."
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_NKSANNIVERSARY",
+      "text": "aldhikraa alsanawiat li'iisdar Nitrocid KS"
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_RAMADAN",
+      "text": "ramadan"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+      "text": "altaqwim"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSDAY",
+      "text": "lam yatima aleuthur ealaa tadhkirat lilyawm almuhadad"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSDAY",
+      "text": "lam yatima aleuthur ealaa 'ahdath lilyawm almuhadad"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC",
+      "text": "yaftah wajihat almustakhdim altafaeuliat liltaqwim"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC",
+      "text": "alsanat almustahdafa"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC",
+      "text": "raqm alshahr almustahdaf"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC",
+      "text": "altafaeul mae al'ahdath"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC",
+      "text": "yudif hdthan"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC",
+      "text": "altaarikh almustahdaf"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC",
+      "text": "yuzil hdthan"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC",
+      "text": "maerif alhadath"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC",
+      "text": "yasrud jamie al'ahdath"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC",
+      "text": "yahfaz jamie al'ahdath"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC",
+      "text": "altafaeul mae altadhkirat"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC",
+      "text": "altaarikh walwaqt almustahdafan"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC",
+      "text": "'iizalat tadhkir"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC",
+      "text": "maerif altadhkir"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC",
+      "text": "sarad jamie altadhkirat"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC",
+      "text": "hifz jamie altadhkirat"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
+      "text": "yutih lak hadha takwin al'alwan"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "'iiedadat althaqafa"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
+      "text": "yutih lak hadha takwin althaqafat almustakhdimat biwasitat shashat altawaquf altaqwimia"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC",
+      "text": "ma hi althaqafat alati yatimu astikhdamuha litaghyir 'asma' al'ashhur waltaqwim wama 'iilaa dhalika?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
+      "text": "aistakhdim thaqafat alnizam"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC",
+      "text": "sawa' kanat shashat altawaquf tastakhdim althaqafat alati tama dabtuha biwasitat 'iiedadat alnawat alrayiysiat 'aw biwasitat 'iiedadat shashat altawaquf hadhihi."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
+      "text": "'iiedadat shashat altawaqufi..."
+    }
+  ]
+}

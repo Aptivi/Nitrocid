@@ -1,0 +1,34 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "预览图像"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "未提供图像的路径。"
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "图像文件不存在。"
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "图像文件路径"
+    }
+  ]
+}

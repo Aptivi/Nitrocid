@@ -1,0 +1,149 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Nível de cor vermelha:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Nível de cor verde:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Nível de cor azul:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "Nível ciano:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "Nível magenta:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Nível amarelo:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "Matiz:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "Saturação:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "Valor:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Nível de cor amarela:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "Luma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "Em fase:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "Quadratura:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-Croma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-Croma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "Converte o modelo de cor de origem no modelo de cor de destino em números."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Converte o modelo de cor de origem no modelo de cor de destino no formato KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Converte o modelo de cor de origem em hexadecimal."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino no formato KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Converte o modelo de cor de origem usando o especificador de cor para o modelo de cor de destino em hexadecimal."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "A especificação do modelo é inválida."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Nível da tecla preta:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "O primeiro nível de cor deve ser numérico."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "O segundo nível de cor deve ser numérico."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "O terceiro nível de cor deve ser numérico."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "O quarto nível de chave deve ser numérico."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "Luminância (luminosidade):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Modelo de cor de origem"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Modelo de cor alvo"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "Primeiro número"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "Segundo número"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Terceiro número"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Quarto número"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Especificador de cor"
+    }
+  ]
+}

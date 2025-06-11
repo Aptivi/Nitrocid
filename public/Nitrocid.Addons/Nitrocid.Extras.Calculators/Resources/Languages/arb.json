@@ -1,0 +1,96 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "alat hasibat lihisab altaebirat."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "khata fi alhasab."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "ʿrḍ mʿlūmāt ḥūl ṣīġẗ al-ʿdd al-tẖīlī al-mḥddẗ brqm ḥqīqī ūtẖīlī mḥdd"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "al-rqm al-ḥqīqī ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "al-rqm al-ẖīālī ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "mʿādlẗ:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "nṣf al-qṭr:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "al-ḥqīqī ili nṣf al-qṭr bālrādīān:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "ūhmī lnṣf al-qṭr fī rādīān:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "al-zāwyẗ bālrādīān:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "mtsārʿ:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "al-ṯlāṯī:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "altaebir alriyadiu"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "eadad haqiqiun"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "eadad takhayuli"
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Δεν είναι δυνατή η φόρτωση του Mod για τα ακόλουθα:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} ξεκίνησε"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Μη έγκυρη γλώσσα"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Οι τροποποιήσεις ανάλυσης δεν επιτρέπονται σε ασφαλή λειτουργία."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Το Mod {0} σταμάτησε"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} σταμάτησε"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Απέτυχε η οριστικοποίηση της τροποποίησης {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Εκκίνηση mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Mod έκδοση:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Το mod {0} δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Όνομα mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Όνομα αρχείου mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Διαδρομή αρχείου mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Διαχειριστείτε τα mods σας"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Η διαχείριση mod είναι απενεργοποιημένη σε ασφαλή λειτουργία."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Μη έγκυρη εντολή {0}. Ελέγξτε τη χρήση παρακάτω:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Το mod δεν βρέθηκε ή το αρχείο έχει μη έγκυρους χαρακτήρες."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Η μη αυτόματη σελίδα {0} δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Εξετάστε το ενδεχόμενο να συμπληρώσετε αυτήν τη σελίδα εγχειριδίου."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Εγχειρίδιο Mod"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Δεν επιτρέπεται η διακοπή των mods σε ασφαλή λειτουργία."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Το Mod έχει ήδη ξεκινήσει!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Το Mod δεν έχει ξεκινήσει ακόμα!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Επικοινωνήστε με τον προμηθευτή του mod για να αναβαθμίσετε το mod στη συμβατή έκδοση."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Μοντάδες στη μαύρη λίστα"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Γράψτε τα ονόματα αρχείων των mods που δεν θα εκτελούνται κατά την εκκίνηση. Όταν τελειώσετε, γράψτε \"q\". Γράψτε ένα σύμβολο μείον δίπλα στη διαδρομή για να αφαιρέσετε ένα υπάρχον mod."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Το Mod {0} βρίσκεται στη μαύρη λίστα."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Ξεκινήστε τις τροποποιήσεις του πυρήνα κατά την εκκίνηση"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Αυτόματη έναρξη των τροποποιήσεων του πυρήνα κατά την εκκίνηση."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Το αρχείο mod δεν έχει καθοριστεί."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Προσπαθώ να εγκαταστήσω ένα ήδη εγκατεστημένο mod. Ενημέρωση mod..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Η εγκατάσταση απέτυχε για"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Το αρχείο mod που παρέχεται δεν είναι συμβατό."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Η απεγκατάσταση απέτυχε για"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν παρέχουν τις απαραίτητες τοπικές ρυθμίσεις που απαιτούνται."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Εμφάνιση των εντολών mod βασίζονται στη βοήθεια"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Το αρχείο τροποποίησης δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Σελίδα εγχειριδίου χωρίς τίτλο"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν υπάρχουν."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Το σενάριο mod ενδέχεται να μην είναι μηδενικό."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Δεν εντοπίστηκαν mods."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Διακοπή λειτουργίας {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Το mod δεν είναι ισχυρά υπογεγραμμένο. Μπορεί να περιέχει μη αξιόπιστο κώδικα."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Το Mod δεν μπορεί να φορτωθεί επειδή υπάρχει ασυμβατότητα μεταξύ αυτής της έκδοσης του πυρήνα και αυτού του mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Ακολουθεί μια λίστα σφαλμάτων που μπορεί να σας βοηθήσουν να διερευνήσετε αυτήν την ασυμβατότητα:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Το Mod {0} απαιτεί ακριβώς μια έκδοση API {1}, αλλά έχετε την έκδοση {2}. Η αναβάθμιση του Nitrocid KS ή/και του mod συνήθως βοηθά. Η ανάλυση mod απέτυχε."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Το Mod {0} ενδέχεται να μην λειτουργεί σωστά με αυτήν την έκδοση API. Το Mod ενδέχεται να αποτύχει να ξεκινήσει. Επικοινωνήστε με τον προμηθευτή mod για να λάβετε ένα πιο πρόσφατο αντίγραφο."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Το Mod {0} δεν έχει το όνομα. Η ανάλυση mod απέτυχε. Ελέγξτε τον πηγαίο κώδικα."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Το Mod {0} δεν έχει την έκδοση. Η ανάλυση mod απέτυχε. Ελέγξτε τον πηγαίο κώδικα."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Το Mod {0} περιέχει μη έγκυρη έκδοση. Η ανάλυση mod απέτυχε. Έκδοση ήταν"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Εκδοχή"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Ονομα αρχείου"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Διαδρομή αρχείου"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Δυστυχώς, αυτή η σελίδα εγχειριδίου δεν έχει περιεχόμενο. Ωστόσο, αυτή η τεκμηρίωση μπορεί να βρέθηκε στην ιστοσελίδα του προμηθευτή mod. Εάν εξακολουθείτε να μην μπορείτε να βρείτε αυτήν την τεκμηρίωση, ρωτήστε τους προγραμματιστές του mod για περισσότερες πληροφορίες."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Σας παρουσιάζεται από"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Μήκος περιεχομένου"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Χωρίς περιεχόμενο."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Καμία αναθεώρηση."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Δεν είναι δυνατή η εκτέλεση προσαρμοσμένης λειτουργίας με ανύπαρκτο mod"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Εξάρτηση ανικανοποίητη. Οι αποτυχημένες εξαρτήσεις παρατίθενται παρακάτω:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Προσπάθησε να ρωτήσω τα εγχειρίδια για ανύπαρκτο mod {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Προσπάθησε να προετοιμάσει το εγχειρίδιο {0} για ανύπαρκτο mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Προσπάθησε να προετοιμάσει το μη αυτόματο αρχείο {0} για ανύπαρκτο mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Προσπάθησε να προετοιμάσει το μη αυτόματο αρχείο {0} που δεν υπάρχει για το mod {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Ονομα"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Να επιτρέπεται η φόρτωση μη αξιόπιστων mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Εάν οριστεί σε true, ο πυρήνας δεν θα εμφανίσει σφάλμα κατά τη φόρτωση των mods που δεν έχουν το υπογεγραμμένο δημόσιο κλειδί."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Εμφάνιση του αριθμού των εντολών τροποποίησης του πυρήνα κατά την καταχώρισή τους στην εντολή βοήθειας"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Δεν επιτρέπεται η έναρξη ή η διακοπή των mods σε ασφαλή λειτουργία."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Δεν είναι δυνατή η λήψη πληροφοριών πεδίου για"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Δεν είναι δυνατός ο προσδιορισμός της έκδοσης mod"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Άγνωστη εξαίρεση φορτωτή"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Δεν είναι δυνατή η φόρτωση τοπικών προσαρμογών mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Έναρξη λειτουργίας (επιλογή)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Έναρξη λειτουργίας (εισαγωγή)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Stop mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Επαναφόρτωση mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Εγκατάσταση mod (επιλογή)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Εγκατάσταση mod (είσοδος)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Απεγκατάσταση mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Ξεκινήστε όλα"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Σταματήστε όλα"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Επαναφόρτωση όλων"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Δεν είναι δυνατή η επιστροφή ανύπαρκτου τύπου κλάσης από τη συναρμολόγηση mod"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Δεν είναι δυνατή η εύρεση της συνάρτησης \"{0}\" στο mod \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Δεν είναι δυνατή η εύρεση της ιδιότητας \"{0}\" στο mod \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Δεν είναι δυνατή η εύρεση του πεδίου \"{0}\" στο mod \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Αυτή η τάξη δεν είναι κατηγορία mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Γλώσσες"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Σημείο εισόδου"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς το mod που θέλετε να ξεκινήσετε"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Αποτυχία εκκίνησης mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή προς το mod που θέλετε να εγκαταστήσετε"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Αποτυχία εγκατάστασης του mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Δεν μπορείτε να ξεκινήσετε ή να σταματήσετε αυτό το mod!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Αν θέλετε να ξεκινήσετε, να σταματήσετε, να λάβετε πληροφορίες, να φορτώσετε ξανά, να εγκαταστήσετε ή να απεγκαταστήσετε ένα mod"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Όνομα mod ή όνομα αρχείου"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Είτε για λίστα, επαναφόρτωση, διακοπή, έναρξη ή διαδραστική διαχείριση όλων των mods"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Όνομα mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του συστήματος τροποποίησης πυρήνα."
+    }
+  ]
+}

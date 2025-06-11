@@ -1,0 +1,103 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "chulgu"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "dol-a gagi ..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "jegeohada"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "saeroun eoneoreul mandeunda"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "gibon yeongeo munjayeol pairi jonjaehaji anhseupnida. bin geoseul saengseonghasigessseupnikka? animyeon Nitrocidui yeongeo munjayeoreul sayonghasigessseupnikka?"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "yuhyohan eoneoga jijeongdoeji anhassseupnida."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "eoneo seutyudioe osin geoseul hwanyeonghapnida!"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "sae munjayeol"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "munjayeol jegeo"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "beonyeok jeojang"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "beonyeokhal munjayeoreul seontaekhaseyo:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "sae munjayeoreul ipryeokhaseyo."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "jegeohal munjayeoreul seontaekhaseyo:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "eoneo jeojang jung..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "eoneo seontaek"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "i munjayeoreul beonyeokhal eoneoreul seontaekhaseyo:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "dangsinui beonyeogeul sseuseyo"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "daehwahyeong TUIeseo saeloun eon-eoleul mandeubnida."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "jeojang"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "chuga"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "beon-yeog"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "beon-yeog dilegtoli gyeonglo"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "wanlyo! jeogjeolhan insuwa hamkke Nitrocid.Locales aepeullikeisyeon-eul sayonghayeo eon-eoleul mamulihaseyo. da-eum gyeongloleul sayonghal su issseubnida."
+    }
+  ]
+}

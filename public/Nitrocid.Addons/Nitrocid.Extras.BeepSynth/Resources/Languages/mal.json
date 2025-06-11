@@ -1,0 +1,49 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BEEPSYNTH_NOWPLAYING",
+      "text": "Sekarang bermain"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
+      "text": "Membaca fail synth bip"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_FILENOTFOUND",
+      "text": "Fail synth bip tidak wujud."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_CHAPTERNAME",
+      "text": "Nama bab"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDSYNTH",
+      "text": "Perwakilan sintetik tidak sah."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDFREQ",
+      "text": "Kekerapan tidak sah."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDDURATION",
+      "text": "Tempoh tidak sah."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO",
+      "text": "Tidak boleh mendapatkan maklumat synth daripada perwakilan yang disediakan."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC",
+      "text": "Laluan ke fail synth"
+    }
+  ]
+}

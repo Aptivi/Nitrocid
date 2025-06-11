@@ -1,0 +1,2574 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "Ім'я користувача для {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "Пароль для {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "Підключено до {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "Помилка під час спроби підключитися до {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "Локальний каталог {0} не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "Введіть локальний каталог. \"..\" щоб повернутися."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "Каталог {0} не знайдено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "Введіть віддалений каталог. \"..\" щоб повернутися"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "Локальний каталог: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "Віддалений каталог: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "Завантаження файлу {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "Завантажено файл {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "Завантаження файлу {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "Завантажений файл {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "Отримує поточний локальний каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "Отримує поточний віддалений каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "Змінює локальний каталог для завантаження або завантаження"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "Змінює віддалений каталог для завантаження або завантаження"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "Видаляє віддалений файл із сервера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "Завантажує віддалений файл у локальний каталог у двійковому або текстовому вигляді"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "Перераховує локальний каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "Перераховує віддалений каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "Завантажує локальний файл у віддалений каталог за допомогою двійкового або текстового файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "Змінює каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "Використовуйте оболонку FTP для взаємодії з серверами"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "Виникла помилка в оболонці."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "Недійсний профіль FilesystemTools."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "Спроба підключитися до {0} за допомогою профілю {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "Ім'я: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "Обчислює суми файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "Недійсний алгоритм шифрування."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "Введіть пароль для {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "Розмір: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "Помилка під час спроби підключитися до {0}: Час очікування з’єднання або втрачене з’єднання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "Обчислює суму файлів у вказаному каталозі."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "Введіть ім'я користувача або адресу електронної пошти:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "Введіть пароль:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "Помилка під час підключення до {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "Підключення до {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "Автентифікація..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "Завантажує повідомлення та відображає їх"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "Відкриває повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "Сторінка не є числовим значенням."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "Номер повідомлення не може бути від’ємним або нульовим."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "Номер повідомлення не є числовим значенням."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- Від {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- До {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- Надіслано о {0} у {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "Вказане повідомлення не знайдено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "Підготовка профілів... Це може зайняти кілька хвилин..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "Змінює поточний каталог електронної пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "Неможливо відкрити поштову папку {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "Перераховує каталоги вашої електронної адреси"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "Під час перевірки сертифіката виникають помилки сертифіката. Можливо, ви вперше підключилися до сервера або термін дії сертифіката закінчився. Ось помилка:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "Ви впевнені, що хочете підключитися?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "Невірна відповідь. Спробуйте ще раз."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "Введіть адресу та порт сервера IMAP (<адреса> або <адреса>:[порт]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "Введіть адресу та порт SMTP-сервера (<адреса> або <адреса>:[порт]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "Надсилає повідомлення на адресу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "Введіть електронну адресу одержувача:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "Введіть тему:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "Введіть своє повідомлення нижче. Напишіть \"EOF\" для підтвердження."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "Надсилання повідомлення..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "Повідомлення надіслано."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "Недійсна адреса електронної пошти. Переконайтеся, що ви написали адресу правильно та вона відповідає формату наведеного прикладу:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "Видаляє повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "Видаляє всі повідомлення від одержувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "Повідомлення {0} від {1} видалено з {2}. Для аналізу залишилося {3} повідомлень."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "Повідомлення {0} від {1} видалено з папки \"Вхідні\". Для аналізу залишилося {2} повідомлень."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "Не вдалося відкрити файл. Вихід із оболонки..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "Вказана опція {0} недійсна."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "Відповідь має бути числовим."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "Ім'я користувача журналу FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "Зареєструвати IP-адресу FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "Повернути лише перший профіль FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "Не вдалося завантажити {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "Не вдалося завантажити файл {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "Не вдалося створити список віддалених файлів: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "Видалення {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "{0} не знайдено на сервері."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "Усю пошту, надіслану {0}, успішно видалено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "Не вдалося видалити всю пошту, надіслану {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "Помилка надсилання повідомлення."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "Переміщення {0} до {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "Переїхав успішно"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "Переміщує файл або каталог в інший файл або каталог. Ви також можете використовувати це для перейменування файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "Не вдалося перемістити {0} до {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "Копіювання {0} в {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "Успішно скопійовано"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "Копіює файл або каталог в інший файл або каталог."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "Не вдалося скопіювати {0} до {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "Переміщує повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "Переміщує всі повідомлення від одержувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "Усю пошту, надіслану {0}, успішно переміщено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "Не вдалося перемістити всю пошту, надіслану {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "Повідомлення {0} від {1} переміщено з {2}. Для аналізу залишилося {3} повідомлень."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "Чи реєструвати ім’я користувача FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "Чи реєструвати IP-адресу FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "Вибирайте перший профіль тільки при підключенні."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "{0} нових повідомлень надійшло до папки \"Вхідні\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "Щоб побачити їх, відкрийте «пошту»."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "Повне ім'я: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "Час створення: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "Час останнього доступу: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "Час останнього запису: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "Атрибути: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "Батьківський каталог: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "Де знайти: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "Розмір файлу: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "Введіть шлях до вкладених файлів. Натисніть ENTER на порожньому шляху для підтвердження."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "Відкриває зашифроване повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "Введіть пароль для ідентифікатора ключа {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "Надсилає зашифроване повідомлення на адресу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "Натисніть будь-яку клавішу, щоб повернутися."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "Не вдалося створити поштову папку {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "Створює каталог у поточному робочому каталозі"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "Видаляє каталог із поточного робочого каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "Поштова папка {0} не знайдена."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "Неможливо видалити папку електронної пошти {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "Перейменовує папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "Показати попередній перегляд поштового повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "Під час переліку повідомлень електронної пошти показувати попередній перегляд тексту."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "Якщо автозбереження ввімкнено, текстовий файл зберігатиметься кожні «n» секунд."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "Дозволяє використовувати FTP-сервер SSH"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "Перелічує всі файли в архіві"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "Розпаковує файл у вказаний або поточний каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "Змінює каталог архіву"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "Каталог {0} не існує"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "Архівний каталог {0} не існує"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "В оболонці FTP сталася помилка:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "Виникла помилка в оболонці SFTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "Як ви хочете автентифікуватися?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "Файл закритого ключа"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "Пароль"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "Введіть парольну фразу для ключа {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "Ключовий файл {0} не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "Помилка при спробі додати закритий ключ:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "Встановлює права доступу до файлів. Це підтримується лише на FTP-серверах, які працюють під управлінням Unix."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "Встановлює тип для цього сеансу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "Не вдалося встановити дозволи для {0} на {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "Дозволи успішно встановлено для файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "Встановлено тип даних ASCII!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "Встановлено тип даних Binary!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "Недійсний тип даних."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "Майте на увазі, що більшість файлів не завантажуються чи завантажуються належним чином у цьому режимі, тому ми наполегливо рекомендуємо використовувати двійковий режим у більшості ситуацій."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "Відкриває оболонку RSS для читання каналів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "Перераховує всі канали"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "Читає канал у веб-браузері"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "Отримує інформацію про статтю"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "Номер статті не може бути більшим, ніж доступні статті."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "Назва:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "Посилання:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "Отримує інформацію про канал"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "опис:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "Тип корму:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "Кількість статей:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "Стаття не має посилання!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "Відкриття URL-адреси... Обов’язково виконайте кроки, показані на екрані."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "Прикрашає файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "Завантажує віддалену папку в локальний каталог за допомогою двійкового або текстового файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "Завантажує локальну папку до віддаленого каталогу за допомогою двійкового або текстового файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "Завантаження папки {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "Завантажено папку {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "Не вдалося завантажити папку {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "Завантаження папки {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "Завантажено папку {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "Зменшує файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "Редактор JSON ще не відкрив потік файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "Вихід із оболонки JSON без збереження змін"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "Зберігає файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "Друкує файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "Напишіть, як ви хочете, щоб ваш запит входу був. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "Напишіть, як ви хочете, щоб ваш запит пароля виглядав. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Показати деталі файлу в списку FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Стиль підказки імені користувача для FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Стиль запиту пароля для FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "Використовуйте перший профіль FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Додайте нові підключення до швидкого набору FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "Спробуйте перевірити безпечні сертифікати FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "Показувати FTP MOTD під час підключення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "Завжди приймайте недійсні сертифікати FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Показує деталі файлу FTP під час переліку віддалених каталогів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "Використовує перший профіль FTP для підключення до FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Якщо ввімкнено, додає нове підключення до швидкого набору FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "Намагається перевірити сертифікати FTP. Вимикати його не рекомендується."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "Показує FTP-повідомлення дня під час входу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "Завжди приймайте недійсні сертифікати FTP. Не рекомендується вмикати його, оскільки це може становити загрозу безпеці."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Стиль підказки імені користувача для пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Стиль запиту пароля для пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "Стиль підказки IMAP для пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "Стиль підказки SMTP для пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "Автоматичне визначення поштового сервера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "Увімкнути налагодження пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "Сповіщати про нові повідомлення електронної пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "Стиль запиту пароля GPG для пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "Надсилати інтервал ping IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "Надсилати інтервал ping SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "Формат тексту листа"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "Напишіть, як ви хочете, щоб запит сервера IMAP виглядав. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "Напишіть, як ви бажаєте, щоб ваш запит сервера SMTP був. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "Автоматично визначати поштовий сервер за вказаною адресою."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "Вмикає налагодження поштового сервера."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "Сповіщає вас про будь-які нові повідомлення електронної пошти."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "Напишіть, як ви хочете, щоб ваш запит пароля GPG виглядав. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "Скільки мілісекунд для надсилання ping IMAP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "Скільки мілісекунд потрібно надіслати ping SMTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "Керує відображенням тексту листа."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "Стиль підказки URL-адреси RSS-каналу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "Автоматичне оновлення RSS-каналу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "Інтервал автоматичного оновлення RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "Напишіть, як ви хочете, щоб ваш сервер RSS-каналів мав виглядати підказку. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "Скільки мілісекунд для оновлення RSS-каналу?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Показати деталі файлу в списку SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Стиль підказки імені користувача для SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Додайте нові підключення до швидкого набору SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Показує деталі файлу SFTP під час переліку віддалених каталогів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Якщо ввімкнено, додає нове підключення до швидкого набору SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "Інформація про FTP-сервер"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "Адреса сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "Порт сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "Тип сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "Тип серверної системи:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "Режим шифрування сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "Тип підключення даних до сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "Серверна система:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "Тип даних завантаження сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "Тип даних завантаження на сервер:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "Введіть віддалений файл для хешування."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "Введіть віддалений каталог."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "Рекурсивне хешування для FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "Чи потрібно рекурсивно хешувати каталог. Зверніть увагу, що не всі FTP-сервери підтримують це."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "Виконує команду FTP-сервера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "пошти передано..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "Ім'я хоста"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "Ім'я користувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "Тип даних"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "Кодування"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "Шифрування"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "Протоколи"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "Показати хід передачі пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "Хід передачі пошти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "Хід передавання пошти (один)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "Якщо ввімкнено, поштова оболонка показуватиме, скільки байтів передано під час завантаження пошти."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "Напишіть, яким би ви хотіли, щоб ваш стиль передачі пошти був. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються. {0} для переданого розміру та {1} для загального розміру."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "Напишіть, яким би ви хотіли, щоб ваш стиль передачі пошти був. Залиште поле порожнім, щоб використовувати стиль за замовчуванням. Заповнювачі аналізуються. {0} для переданого розміру."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "Запускає оболонку HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "Отримує відповідь від сервера HTTP за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "Видаляє вміст із сервера HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "Виникла помилка в оболонці HTTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "Отримує рядок із HTTP-сервера за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "Отримання {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "Пакує локальний файл в архів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "Нічого не можу запакувати."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "Тайм-аут отримання каналу RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж закінчиться час очікування отримання RSS-каналу?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "Перевірте повторні спроби передачі FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "Тайм-аут з'єднання FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "Тайм-аут підключення даних FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "IP-версії FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "Скільки разів перевірити завантаження та завантаження та повторити спробу, якщо перевірка не вдасться, перш ніж завантаження завершиться збій?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж закінчиться тайм-аут з’єднання FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "Скільки мілісекунд чекати, перш ніж закінчиться тайм-аут підключення даних FTP?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "Виберіть версію Інтернет-протоколу, яку підтримує FTP-сервер і використовує FTP-клієнт."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "Стандартне форматування JSON для оболонки JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "Вибирає форматування JSON за замовчуванням (прикрашене або зменшене) для оболонки JSON для збереження."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "Показує відомості про файл у списку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Пригнічує дратівливі повідомлення \"дозвіл заборонено\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "Вказує, що цільовий шлях є абсолютним"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "Файл не вказано. Вихід із оболонки..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "Додає стрічку в закладки"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "Видаляє закладку каналу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "Канал не існує в закладках."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "Перераховує всі закладки каналів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "Файл {0} не знайдено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "Файл не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "Немає інформації."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "Не вдається відкрити файл або папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "Стиль нового рядка:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "Двійковий файл:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "Метадані MIME:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "ПІБ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "Версія"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "Назва культури"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "Тип вмісту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "Файл не є дійсною збіркою .NET.\\n"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "Не вдається отримати інформацію про файлову систему"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "Не вдається скопіювати файл або каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "Не вдається перемістити файл або каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "Не вдається видалити файл або каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "Введіть шлях або повний шлях до папки призначення, до якої потрібно скопіювати вибраний файл."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "Переконайтеся, що ви написали правильний шлях."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "Файл не існує. Переконайтеся, що ви написали правильний шлях."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "Введіть шлях або повний шлях до папки призначення, до якої потрібно перемістити вибраний файл."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "Введіть нове ім'я файлу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "Переконайтеся, що ви написали правильну назву файлу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "Файл уже існує. Назва не повинна бути зайнята іншим файлом."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "Введіть нову назву каталогу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "Папка вже існує. Назва не повинна бути зайнята іншою папкою."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "Без перегляду."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "Підключення ще не встановлено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "Введіть адресу сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "Менеджер файлів хоста інтерактивної системи"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "Відкриває архівний файл в архівній оболонці"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "Оболонка Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "Показує різницю між двома файлами JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "Відкриває поштовий клієнт IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "Відкриває поштовий клієнт POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "Пошта POP3 повертається з версії 0.0.20.0, але наразі ми не плануємо випускати її в цій версії. Чекайте наступної версії."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "Введіть URL-адресу каналу RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "Помилка під час аналізу адреси. Переконайтеся, що ви правильно написали адресу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "Відкриває TUI для читання інтерактивних каналів RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "Нічого не вдається витягти."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "Архів неможливий для запису, оскільки тип є"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "Читає вміст віддаленого файлу на консоль"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "Виходить із оболонки без відключення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "Переконайтеся, що ви правильно вказали порт."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "Знайдено більше одного профілю. Виберіть один:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "Репозиторій не вказано. Вихід із оболонки..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "Не вдалося відкрити сховище. Вихід із оболонки..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "Отримує список змін у файлі рядок за рядком"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "Перевіряє гілку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "Здійснює фіксацію"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "Описує коміт"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "Показує різницю між поточним комітом і локальними файлами"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "Показує різницю між поточним комітом і локальними файлами за їхнім вмістом у формі шматка виправлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "Показує різницю між поточним комітом і локальними файлами за їх існуванням"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "Показує різницю між поточним комітом і локальними файлами за їх існуванням і вмістом"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "Отримує всі оновлення з віддаленого пристрою"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "Отримує статус файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "Отримує просту інформацію про сховище"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "Перелічує всі гілки"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "Перераховує всі коміти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "Перераховує всі пульти"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "Перераховує всі теги"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "Робить тег з ГОЛОВИ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "Витягує всі оновлення з сервера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "Надсилає всі оновлення на сервер"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "Скидає локальне сховище"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "Виконує програмне скидання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "Виконує змішане скидання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "Робить апаратне скидання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "Встановлює вашу особистість"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "Стадії зміни"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "Стадує всі зміни"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "Статус сховища"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "Відміняє зміну"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "Скасує всі зміни"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "Додає заголовок із ключем і значенням до всіх майбутніх запитів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "Отримує поточний агент користувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "Редагує ключ у заголовку для всіх майбутніх запитів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "Перелічує заголовки запитів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "Передає файл на HTTP-сервер за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "Передає рядок на сервер HTTP за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "Публікує файл на сервер HTTP за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "Надсилає рядок на сервер HTTP за допомогою вказаного запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "Видаляє ключ у заголовку для всіх майбутніх запитів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "Встановлює агент користувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Додавання вже існуючого заголовка."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Видалення заголовка, якого не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Редагування заголовка, якого не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "Додає новий масив, об’єкт або властивість"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "Визначає батьківський шлях"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "Визначає тип"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "Визначає назву властивості, яку буде створено. Це використовується, якщо батьківський шлях є об’єктом."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "Очищає файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "Знаходить нерухомість"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "Визначає батьківську властивість"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "Показує інформацію про файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "Не показувати окремі властивості"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "Показати всі значення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "Видаляє цільовий об'єкт"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "Прикрашений JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "Зменшений JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "Встановлює значення для існуючого масиву, об’єкта або властивості"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "Відкриває файл JSON в інтерактивному редакторі"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "Маркер у файлі JSON не знайдено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "Батьківський маркер не знайдено. Переконайтеся, що ви правильно написали шлях \"{0}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "Указаний тип \"{0}\" недійсний."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "Неможливо додати новий елемент із назвою властивості з типом батьківського маркера \"{0}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "Неможливо додати новий елемент із назвою властивості \"{0}\" із типом батьківського маркера \"{1}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "Назва властивості \"{0}\" у батьківському \"{1}\", тип \"{2}\", не існує"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "Шукає у каналі фразу в заголовку та/або описі"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "Пошук за назвою"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "Пошук опису"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "Пошук за назвою та описом"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "Пошук з урахуванням регістру"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "Не вдалося проаналізувати URL-адресу каналу:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "Без опису"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "Показує деталі файлів і папок"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Пригнічує «неавторизовані» повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "Введіть розташування закритого ключа для {0}. Напишіть \"q\", щоб завершити додавання ключів:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "Спроба підключитися до {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "Виконує SQL-запит"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "Інформація про базу даних"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "Відкриває файл SQL в інтерактивному шістнадцятковому редакторі TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "Цей тип архіву не підтримується."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "Ви впевнені, що хочете видалити {0}?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "Користувач"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "Сайт"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "Немає інформації про символічні посилання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "Змінено на"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "Статус звинувачення для файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "Номер шматочка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "Кількість ліній"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "Початковий номер рядка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "Кінцевий номер рядка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "Початкова фіксація"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "Здійснити SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "Зафіксувати повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "Зафіксувати автора"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "Комітент фіксації"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "Кількість батьків"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "Остаточна фіксація"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "Спершу збережіть свою роботу, створивши комміт перед перевіркою гілки."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "Відділення не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "Перед використанням цієї команди вам потрібно ідентифікувати себе. використання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "ідентифікувати себе."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "Оновлений репозиторій із новим комітом"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "Опис для коміту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "Загальні зміни в"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "Зміни вмісту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "Пульта не існує."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "Не знайдено пультів дистанційного керування для отримання оновлень."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "Статус файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "Голе сховище"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "Голова відокремлена"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "Без посилання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "Дрібний клон"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": "Шлях до .git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "Шлях до робочого каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "Коміти для гілки"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "Створено новий тег! Ось деталі вашого тегу:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "Ваша локальна копія репо оновлена!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "Швидка перемотка до"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "Оновлено сховище до"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "Ваше об’єднання призвело до конфліктів. Будь ласка, вирішіть будь-які конфлікти."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "Ви успішно ідентифікували себе як"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "До сцени не вносяться жодні зміни."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "Поетапний файл {0} успішно виконано!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "Не вдалося створити файл {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "Статус філії {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "Жодних змін не зроблено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "Невідстежувані файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "Немає невідстежених файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "Додані файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "Немає доданих файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "Змінені файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "Немає змінених файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "Видалені файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "Немає видалених файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "Поетапні файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "Немає поетапних файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "Перейменовані поетапні файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "Немає перейменованих поетапних файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "Перейменовані файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "Немає перейменованих файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "Відсутні файли"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "Немає відсутніх файлів."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "Для скасування сцени не вносяться жодні зміни."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "Файл {0} видалено успішно!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "Не вдалося видалити файл {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "Публікація файлу {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "Публікація рядка в {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "Завантаження рядка в {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "Оболонці JSON не вдалося додати елемент."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "Майно знайдено в"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "Майно не знайдено"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "Інформація про базовий маркер JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "Базовий тип"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "База має значення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "Підрахунок дочірніх жетонів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "Базовий шлях"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "Інформація про індивідуальний маркер JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "Тип маркера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "Токен має значення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "Маркерний шлях"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "Значення токена"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "Інформація про власність для"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "Тип власності"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "Кількість майна"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "Назва властивості"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "Шлях власності"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "Вартість майна"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "Оболонці JSON не вдалося видалити елемент."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "Оболонці JSON не вдалося встановити елемент."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "Повідомлення {0} від {1} переміщено. Для аналізу залишилося {2} повідомлень."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "Додатки:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "Це підключення містить недійсний екземпляр каналу RSS."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "Невідома назва статті"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "На жаль, ця стаття не має жодного змісту. Ви все ще можете стежити за статтею на"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "Ця стаття не має посилання."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "Не вдається відкрити хост-браузер для посилання на статтю."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "Змінено:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "Введіть значення параметра для {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "Команда SQL виконана успішно. Ось відповіді:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "Помилка команди SQL."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "Шлях до бази даних:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "Версія сервера:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "Стан підключення:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "Рядок підключення:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "Назва бази даних:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "Попереднє налаштування запиту"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки архіву."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки Git."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки HTTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "Попереднє налаштування підказки оболонки JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "Увімкнути автозбереження редактора JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "Вмикає або вимикає функцію автозбереження редактора JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "Інтервал автозбереження редактора JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу поштової оболонки."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "Максимальна кількість електронних листів на одній сторінці"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "Скільки повідомлень електронної пошти відображати на одній сторінці?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки RSS."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "Попереднє налаштування запиту RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "У цьому розділі можна налаштувати роботу оболонки SQL."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "SQL Shell Prompt Preset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "Тип файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "Пошук каналу в бібліотеці каналів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "Копія"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "рухатися"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "Видалити"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "вгору"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "Інформація"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "Перейменувати"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "Нова папка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "ВІДЧИНЕНО"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "Метадані MIME (розширені)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "Обробник зареєстровано, але чомусь не вдалося отримати обробник розширення для"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Копіювати в"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Перейти до"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "Не вдається отримати архівні записи"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "Архів ще не завантажено."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "Неможливо визначити поточний каталог архіву."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Остання оболонка - це не ця оболонка, від якої можна відірватися."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "Клієнт не заповнюється."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "Ще немає клієнта FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "Клієнт ще не підключений."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "Не вдається отримати конфігурацію сервера IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "Не вдається отримати конфігурацію сервера SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "Клієнт ще не підключений"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "Детальніше"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "Оновити"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "Немає статті."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "Корму немає."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "Не вдається підключитися"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "Файловий потік ще не відкритий."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "Файл JSON ще не відкрито."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "Кінцевий діапазон номерів рядків"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "Шлях до файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Вихідний файл або каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "Цільовий файл або каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "Алгоритм шифрування"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "Шлях до каталогу зі сховищем Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "Початковий діапазон номерів рядків"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "Назва відділення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "Резюме фіксації"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "Зафіксувати хеш SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "Віддалена назва"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "Назва тега"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "Повідомлення, яким потрібно анотувати тег"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "Ваш e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "Ваше ім'я користувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "Шлях до файлу без етапів"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "Шлях до поетапного файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "Шлях до файлу архіву"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "Локальний каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "Каталог всередині архіву"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "Файл в архіві"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "Локальний каталог для розпакування"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "Локальний файл"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "Архівний каталог для додавання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "FTP-сервер для підключення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Шлях до віддаленого файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "Шлях до локального каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "Шлях до віддаленого каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Шлях до віддаленого файлу для видалення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "Команда сервера для виконання"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "Створює локальний каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "Створює віддалений каталог"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Шлях до вихідного файлу або каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "Шлях до цільового файлу або каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "Шлях до локального файлу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "Номери дозволів згідно chmod"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "Визначає тип передачі: ASCII чи двійковий"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "Символічне посилання на: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "Ключ заголовка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "Значення заголовка"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "HTTP запит"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "Файл для завантаження"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "Рядок для завантаження"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "Рядок агента користувача"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "Адреса електронної пошти для входу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "Створити папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "Перемістити..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "Перенеси все..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "Перейменувати папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "Видалити папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "Видалити повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "Видалити всі..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "Не вдається відкрити папку чи повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "Напишіть нову назву каталогу."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "Створення каталогу..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "Не вдається створити папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "Виберіть новий каталог для переміщення цього повідомлення."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "Переміщення повідомлення..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "Не вдається перемістити повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "Виберіть новий каталог, до якого потрібно перемістити всі повідомлення від того самого відправника."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "Переміщення повідомлень за відправником {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "Неможливо перемістити всі повідомлення від одного відправника"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "Напишіть нову назву каталогу, щоб перейменувати {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "Перейменування каталогу..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "Не вдається перейменувати папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "Видалення каталогу..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "Не вдається видалити папку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "Видалення повідомлення..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "Не можу видалити повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "Видалення повідомлень за відправником {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "Неможливо видалити всі повідомлення від одного відправника"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "Назва поштового каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "Номер сторінки"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "ID повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "Ім'я відправника"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "Стара назва поштового каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "Нова назва поштового каталогу"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "Інтерактивне управління поштою"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "Сервер SFTP для підключення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "Посилання на канал RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "Номер корму"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "Фраза для пошуку"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "Перший файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "Другий файл JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "Шлях до файлу JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "Шлях до вихідного файлу JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "Значення JSON, яке потрібно додати"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "Назва властивості JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "Шлях об'єкта"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "Значення JSON"
+    }
+  ]
+}

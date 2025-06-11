@@ -1,0 +1,187 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Milisaniye Cinsinden Gecikme"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Bir sonraki yazma işlemini yapmadan önce kaç milisaniye beklenmeli?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Şarkı sözü dosyasından tüm şarkı sözü satırlarını alır"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Bir şarkı sözü dosyasını oynatır"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Bir ses çalar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Çevrimiçi radyo istasyonunuz hakkında bilgi alır"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "LRC dosyasının yolunu belirttiğinizden emin olun."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Dosya bulunamadığından ses çalınamıyor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "Müzik dosyası başarıyla açıldı."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Müzik dosyası açılamıyor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Zaman aşımı nedeniyle ses çalınamıyor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Bilinmeyen Sanatçı"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Bilinmeyen Tür"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "İsim"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Sanatçı"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Tür"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Süre"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Oynatmayı durdurmak için 'q' tuşuna basın."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Ses çalınamıyor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Başlık"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Çevrimiçi radyonuz için port numarası geçersiz."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "Tam URL"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Mevcut dinleyiciler"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Zirve dinleyiciler"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Akışlar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Aktif akışlar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Kimlik için akış bilgisi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "Yol"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "Şu anda oynuyor"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Çalışma süresi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "LRC formatında şarkı sözü dosyalarınızı içeren bir dizine giden yolu belirttiğinizden emin olun. Ayrıca şarkı sözü dosyalarını içeren müzik kütüphanesi klasörünüze giden özel bir yol da belirtebilirsiniz."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Bu şarkı sözü dosyası mevcut değil."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Bu ekran koruyucunun ayarlarına buradan ulaşabilirsiniz."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Bu bölüm BassBoom eklentisinin nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Şarkı Sözü Yolu"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": ".lrc dosyaları grubunu içeren bir klasörün yolunu ayarlar. Mevcut herhangi bir dizine mutlak bir yol yazın."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "İstasyon tipi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "İnternet Radyo (FM) bilgisi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "İnternet radyosu bilgisine ulaşılamıyor."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Şarkı sözü dosyasına giden yol"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Bir MP3 dosyasının yolu"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "MPEG radyo istasyonunu barındıran ana bilgisayar adı"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "MPEG radyo istasyonuna bağlantı"
+    }
+  ]
+}

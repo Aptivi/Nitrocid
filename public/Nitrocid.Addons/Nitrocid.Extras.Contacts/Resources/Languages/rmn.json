@@ -1,0 +1,323 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Gestionează contactele dvs"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Nu se poate deschide fișierul „{0}” deoarece nu a fost găsit."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Contacte importate cu succes."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Nu se poate deschide fișierul „{0}” deoarece fișierul cardului este nevalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Fișierul de contact nu există."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "contacte găsite"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Fișierul de contact este nevalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "Sintaxa MeCard nu poate fi goală."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Fie că fișierul de contacte furnizat nu conține informații despre niciun contact sau nu este valid."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Nu s-a putut analiza contactele. Consultați detaliile erorii pentru mai multe informații."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Indexul de contact este în afara intervalului. Indexul maxim este {0}, în timp ce indexul furnizat este {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Nu există contacte de obținut."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Nu există persoane de contact de căutat."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Expresia regulată este invalidă."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Nu există niciun contact. Dacă doriți să importați contacte, vă rugăm să utilizați opțiunile de import folosind tastele definite în partea de jos a ecranului."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Unele dintre contacte nu pot fi importate."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Introduceți calea către un fișier VCF care conține persoana de contact. Fișierul contacts2.db al Android este, de asemenea, acceptat."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Fișierul nu există. Asigurați-vă că ați scris calea corectă către un fișier VCF sau într-un fișier contacts2.db."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Introduceți o reprezentare validă MeCard a persoanei de contact."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Sintaxa Contact MeCard este nevalidă."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Este posibil ca sintaxa Contact MeCard să nu fie goală"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Introduceți expresia regulată pentru a căuta contacte."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "Nu există persoane de contact care să conțină expresia solicitată."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Nume de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "Fără nume de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Adresa"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "E-mail de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "Fără e-mail de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Contactați organizația"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Nicio organizație de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Telefon de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "Fără telefon de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "Adresa URL de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "Nicio adresă URL de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Contact geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Fără contact geografic"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Contactați IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Fără contact IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Pseudonim de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "Nici un pseudonim de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Rolul de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Nici un rol de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Titlu de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "Fără titlu de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Note de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "Fără note de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Listează contactele dvs"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Îți încarcă contactele"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Importă contactele dvs"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Tratează intrarea necesară ca șir MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Obține informații de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Fără contacte."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Numărul de contact este nevalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Numărul de contact este în afara intervalului."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "Nume"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Nume"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Contactați Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Notă de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Unele dintre contacte nu pot fi listate."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Şterge"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Contacte"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Ștergeți toate"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Import"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Import din"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Căutare"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Caută în continuare"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Caută Înapoi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Informații brute"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Import din MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "Această secțiune vă permite să configurați modul în care funcționează suplimentul de contacte."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Afișați imagini de profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Dacă este activat, afișează imagini de contact. Dezactivat implicit pentru a preveni utilizarea greșită și din motive de performanță."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Fie o cale către un fișier de contact vCard, fie o reprezentare MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Număr de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Edita..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Introduceți un nume nou pentru acest contact"
+    }
+  ]
+}

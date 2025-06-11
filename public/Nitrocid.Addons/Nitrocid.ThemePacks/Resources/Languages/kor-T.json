@@ -1,0 +1,315 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "이 애드온을 초기화하는 데 필요한 데이터를 얻을 수 없습니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "퍼플 하모니"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "이것은 전경에 있는 안드로이드 마스코트 색상입니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "우리의 브랜딩 하모니"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "인기 있는 VIM 테마인 Ayu의 다크 버전"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "인기 있는 VIM 테마인 Ayu의 라이트 버전"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "인기 있는 VIM 테마인 Ayu의 Mirage 버전"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "오늘은 새 학년의 첫날입니다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "가능한 가장 가벼운 단말기"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "이것은 검은 장미입니다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "KDE Plasma 5 테마인 Breeze의 색 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "IntelliJ와 같은 IDE의 인기 있는 색 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "이제 어둠의 면으로 돌아갈 때가 왔습니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "데비안의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "커널을 위한 생생한 기본 테마"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "커널에 배경 악센트를 추가하세요!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "곳곳에 악센트가 더 많아졌어요!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "EDM 팬이라면 사용해보세요"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "방화 쉐이드"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "진한 파란색 배경에 그려진 장엄한 황금 궁전"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "포도와 키위를 섞은 것"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "포도의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "생생하고 짙게 칠해진 녹색, 파란색, 보라색 색상"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "환경을 녹색화하고, 커널을 녹색화하세요. 지구를 더 녹색으로 만드세요!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "우리는 녹색과 빨간색을 색상으로 추가했습니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "녹색과 분홍색이 섞여있다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "알려진 터미널 색상 구성표 중 하나"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "회색에 녹색 텍스트"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "콘솔에서 바로 전통적인 인도 색상을 느껴보세요."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "터미널을 레몬산으로 가득 채우세요"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "가벼운 나무 판자"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "표준 Linux 터미널 색상"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "회색 터미널"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "터미널의 일부 Material Design 텍스트"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "오렌지와 갈색의 음영"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "같은 이름의 VIM 테마에서 영감을 받은 Melange 테마"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "터미널을 민트로 가득 채우세요"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "Beyond the Boundary의 미라이 쿠리야마가 만든 컬러 팔레트입니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "같은 이름의 VIM 테마에서 영감을 받은 테마"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "네온 블루와 핑크를 좋아하시나요?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "이 주제는 당신에게 중립적이어야 합니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "이것은 밤이 시작될 때의 밤하늘입니다!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "10월이 곧 다가옵니다. 준비하세요!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "오렌지의 바다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "모든 것을 주황색으로 바꾸는 인산 말단"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "붉은색의 바람이 불어옵니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "피 묻은 붉은 콘솔"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "벚꽃나무가 중국 바람을 선사합니다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "모든 청록색"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "기술 애호가를 위한 테마"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "트랜스 음악 팬이신가요? 이게 바로 당신을 위한 테마입니다!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "완벽한 Vice City 분위기를 선사합니다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "이것은 바이스 시티의 새벽입니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "가장 강력한 IDE 중 하나인 Visual Studio의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "최신 버전의 Windows인 Windows 11의 색 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "이 테마로 향수를 불러일으켜 보세요!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "귀하의 터미널은 나무 판자로 구성되어 있습니다"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "다양한 과일의 중국 패턴에서 영감을 얻었습니다."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Linux 운영 체제인 Red Hat의 분사인 Alma Linux의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Linux 운영 체제인 Arch Linux의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "Linux 운영 체제인 Arch Linux의 파생 제품인 EndeavourOS의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Linux 운영 체제인 Red Hat의 분사인 Fedora의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Linux 운영 체제인 Genoo의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "다채로운 만다라를 형성하는 끌로 깎은 패턴 색상"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 파생 제품인 Kubuntu의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 비공식적인 파생 버전인 Linux Mint의 색 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 파생 제품인 Lubuntu의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Linux 운영 체제인 Arch Linux의 파생 제품인 Manjaro의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "Linux 운영 체제인 openSUSE의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Linux 운영 체제인 Red Hat의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "주목을 끄는 텍스트를 위한 역동적인 악센트 색상이 적용된 빨간색 음영"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Linux 운영 체제인 Red Hat의 스핀오프인 Rocky Linux의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Linux 운영 체제, Slackware의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 파생 제품인 Xubuntu의 색상 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "인기 있는 Linux 운영 체제인 Ubuntu의 비공식적인 파생 제품인 Zorin OS의 색 구성표"
+    }
+  ]
+}

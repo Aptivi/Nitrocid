@@ -1,0 +1,131 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMESTUDIO_APP_EXIT",
+      "text": "Ieșire"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
+      "text": "Creează o temă nouă"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
+      "text": "Crearea unei noi teme „{0}”."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
+      "text": "Salvați tema în directorul curent"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
+      "text": "Salvați tema într-un alt director..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENTAS",
+      "text": "Salvați tema în directorul curent ca..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHERAS",
+      "text": "Salvați tema într-un alt director ca..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAMEPROMPT",
+      "text": "Specificați numele temei:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROMBUILTIN",
+      "text": "Încărcați tema din temele preconstruite..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEFILEPROMPT",
+      "text": "Specificați numele fișierului temă fără extensia .json:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
+      "text": "Previzualizare..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
+      "text": "Încărcați culorile curente"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_LOADFROM",
+      "text": "Încărcați tema din fișier..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
+      "text": "Specificați directorul în care să salvați tema:"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
+      "text": "Creează o temă nouă într-un TUI interactiv"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
+      "text": "Copiați culoarea în..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
+      "text": "Selectați tipul de culoare sursă din care să copiați culoarea."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
+      "text": "Selectați tipurile de culoare țintă în care să copiați tipul de culoare sursă, {0}."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORTYPE",
+      "text": "Tip de culoare"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLOR",
+      "text": "Culoare"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORNAME",
+      "text": "Numele culorii"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORHEX",
+      "text": "Hex de culoare"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT",
+      "text": "Luminozitatea culorii"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
+      "text": "Alegeți cum doriți să salvați această temă"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
+      "text": "Alegeți cum doriți să încărcați o temă"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
+      "text": "Schimba..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "Salva..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
+      "text": "Încărca..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",
+      "text": "Copie..."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
+      "text": "Numele temei de creat"
+    }
+  ]
+}

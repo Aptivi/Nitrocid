@@ -1,0 +1,258 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "Показує інформацію про погоду для вказаного міста. Використовує OpenWeatherMap."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "-- Інформація про погоду для {0} --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "Погода: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "Тиск: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "Вологість: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "Ви можете отримати власний ключ API на сторінці https://home.openweathermap.org/api_keys."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "Бажана одиниця вимірювання температури"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "Відчуття: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "Температура: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "Швидкість вітру: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "Напрямок вітру: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "Показує всі доступні міста"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "видалити"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "Введіть ключ API:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "Ви можете перейти за посиланням нижче, щоб переглянути список міст із їхніми ідентифікаторами, або передати цій команді \"-list\"."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "У цьому розділі можна налаштувати роботу програми Forecast."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "Показує інформацію про погоду для вказаного міста. Використовує Weather Channel від IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "Інформація про погоду в інтерактивному TUI"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "Показує всі доступні міста та їхні пари широти/довготи"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- Інформація про погоду --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "Широта і довгота"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "Хмарність"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "Час доби"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "Мінімальна температура"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "Максимальна температура"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "Можливість опадів"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "Тип опадів"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "Індекс тепла"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "Охолодження вітром"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "Ультрафіолетовий індекс"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "Ультрафіолетовий опис"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "Введіть широту та довготу міста."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "Ви можете отримати власний ключ API, звернувшись до веб-сайту IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "Завантаження інформації про погоду з географічного розташування"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "Погодні умови"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "температура"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "Швидкість вітру"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "Напрямок вітру"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "Показник вологості"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "Широта"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "Довгота"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "Введіть назву міста для пошуку."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "Міст з такою назвою немає. Якщо ви намагаєтесь шукати конкретне місто, спробуйте знайти ширше розташування, яке є найближчим до міста, яке ви шукаєте."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "Виберіть місто зі списку нижче. Два числа представляють географічні положення."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "Введіть широту міста."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "Введіть довготу міста."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "Широта недійсна."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "Недійсна довгота."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "Ви можете отримати власний ключ API, звернувшись до веб-сайту IBM. Введіть ключ API Weather Channel."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "Ключ API Weather Channel не надається. Якщо вам потрібна допомога, зверніться на веб-сайт IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "додати"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "Видалити все"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "Додати вручну"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "Не вдається отримати масив частин дня"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "Не вдається отримати частину дня"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "Виберіть потрібну одиницю вимірювання температури (це стосується лише команди «погода»). 1 – Кельвін, 2 – Метричний, 3 – Імперський."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "Latitude для використання"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "Довгота для використання"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Ключ API Weather.com"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "Ідентифікатор міста або назва міста, відома OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "Ключ API OpenWeatherMap"
+    }
+  ]
+}

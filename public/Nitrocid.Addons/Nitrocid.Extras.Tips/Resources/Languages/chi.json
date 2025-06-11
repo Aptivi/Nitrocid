@@ -1,0 +1,318 @@
+{
+  "lang": "chi",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "nín kě yǐ tōng guò liǎng zhǒng fāng shì zhí xíng jìn chéng mìng líng ： zhí jiē shū rù kě zhí xíng wén jiàn míng ， yǐ jí shǐ yòng “exec” mìng líng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "nín kě yǐ shǐ yòng “lockscreen” mìng líng suǒ dìng píng mù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "nín kě yǐ shǐ yòng C# hé Visual Basic gòu jiàn zì jǐ de nèi hé xiū gǎi má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "nín kě yǐ shǐ yòng mìng líng zhī jiān de fēn hào lái shǐ yòng duō gè mìng líng má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "zài zhí xíng mìng líng shí kě yǐ zhuǎn yì dài yǐn hào de cān shù nèi de shuāng yǐn hào má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "nín kě yǐ shǐ yòng “settings” mìng líng gēng gǎi nèi hé shè zhì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "nín kě yǐ shǐ yòng “savescreen” mìng líng bǎo cún píng mù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "nín kě yǐ tōng guò fǎng wèn Nitrocid de GitHub xiàng mù yè miàn xiàng wǒ mén bào gào cuò wù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "nín kě yǐ shǐ yòng “ bié míng ” mìng líng chuàng jiàn suǒ xū mìng líng de kuài jié fāng shì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "nín kě yǐ shǐ yòng C# hé Visual Basic gòu jiàn zì jǐ de qǐ dòng píng mù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "nín kě yǐ ān zhuāng é wài de chā jiàn lái shǐ nín de nèi hé gēng yǒu yòng 、 gēng yǒu qù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "nín kě yǐ shǐ yòng “mktheme” mìng líng zhì zuò zì jǐ de jīng cǎi zhǔ tí má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "nín kě yǐ tōng guò shǐ yòng “ shè zhì ” mìng líng huò shǐ yòng yù gòu jiàn de zhǔ tí zhī yī lái gēng gǎi nèi hé yán sè má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "nín kě yǐ shǐ yòng “reset” cān shù jiāng nèi hé zhòng zhì wéi chū chǎng mò rèn shè zhì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "nín kě yǐ zài wǒ mén de GitBook yè miàn fǎng wèn wǒ mén fēng fù de wén dàng má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "cháng qī bǎn běn de zhǔ yào zhī chí zhī chí wǔ nián ， ān quán gēng xīn zhī chí sān nián ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "0.0.1 shì Nitrocid KS de dì yī gè bǎn běn ， yú 2018 nián 2 yuè 22 rì fā bù ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "0.0.24.x xì liè shì wéi yī yōng yǒu API v2.1 bǎn běn de bǎn běn xì liè ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "duǎn qī bǎn běn jǐn zhī chí jiǔ gè yuè ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "0.1.x xì liè yǔ 0.0.24.x xì liè huò gēng zǎo bǎn běn xiàng hòu bù jiān róng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "nín kě yǐ zài Linux、macOS hé Android shàng yùn xíng Nitrocid KS má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "nín kě yǐ cān kǎo API wén dàng lái bāng zhù nín zhì zuò mó zǔ má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "tōng guò ān zhuāng é wài de chā jiàn ， nín kě yǐ huò dé yī xiē hěn bàng de yóu xì ， lì rú Hangman hé ShipDuet？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "zài 《 liú xīng 》 zhōng ， rú guǒ nǐ zāo yù hóng sè liú xīng fēng bào ， nǐ de yǔ zhòu fēi chuán yě huì zhuì huǐ ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "nín kě yǐ shǐ yòng duì jiē gōng néng jiāng nèi hé zhuǎn huàn wéi xìn xī zhōng xīn má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "nín kě yǐ chuàng jiàn yòng hù zǔ lái zǔ zhī yòng hù zhàng hù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "rú guǒ nín shì shòu yú mǒu xiē quán xiàn de zǔ de chéng yuán ， nín jiù kě yǐ zhí xíng cǐ lèi cāo zuò ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "nín kě yǐ gēng gǎi nèi hé shí qū ér bù yǐng xiǎng zhǔ jī xì tǒng má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "nín kě yǐ shǐ yòng jiāo hù shì wén běn hé shí liù jìn zhì biān jí qì lái jié shěng shí jiān má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "yǐ zhī yǔ dì yī gè Unix xì tǒng pèi hé shǐ yòng de zuì gǔ lǎo de wén běn biān jí qì shì ed， tā shì 1973 nián suí Unix xì tǒng yī qǐ fā bù de zuì zǎo de wén běn biān jí qì ， kě yǐ zài AT&T bèi ěr shí yàn shì de PDP-7 shàng zhǎo dào ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "nín huán kě yǐ qiáng zhì biān jí mìng líng yǐ tè dìng lèi xíng qǐ dòng biān jí qì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "jiāo hù shì wén běn biān jí qì shì tú mó nǐ zuì liú xíng de Unix wén běn biān jí qì vi hé vim de zuì jī běn gōng néng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "chú fēi nín zhī dào rú hé chǔ lǐ èr jìn zhì wén jiàn ， fǒu zé yǐ zhè zhǒng fāng shì biān jí cǐ lèi wén jiàn huì dǎo zhì mù biāo wén jiàn zhōng de shù jù sǔn huài huò shù jù diū shī ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "zài Linux xì tǒng shàng ，shell shì zài dēng lù chǔ lǐ chéng xù hé xì tǒng chū shǐ huà chéng xù de bāng zhù xià qǐ dòng de ， tōng cháng kě yǐ zài /sbin/init zhōng zhǎo dào ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "nín kě yǐ zhí xíng cháng jiàn de wén jiàn cāo zuò ， lì rú fù zhì 、 yí dòng 、 shān chú 、 biān jí děng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "wén jiàn guǎn lǐ qì de jiāo hù shì TUI mó nǐ liǎo Midnight Commander de gōng néng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "rú guǒ nèi hé bēng kuì ， tā tōng cháng huì chuàng jiàn yī gè zhuǎn chǔ wén jiàn ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "nín kě yǐ tōng guò shǐ yòng nèi zhì diào shì gōng néng diào shì nèi hé lái zhěn duàn nèi hé má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "nín kě yǐ zhí jiē cóng UESH shell xià zài hé shàng chuán wén jiàn má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "jí shǐ zài yù yǐn dǎo jiē duàn ， yě kě yǐ tōng guò shǐ yòng “lang” cān shù qǐ dòng nèi hé lái fān yì nèi hé ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "nín kě yǐ tōng guò zài nín de mod zhōng zhù cè lái gòu jiàn zì jǐ de píng mù bǎo hù chéng xù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "zuì chū de IBM PC shàng dì yī gè zài sān fēn zhōng bù huó dòng hòu shǐ píng mù biàn hēi de píng mù bǎo hù chéng xù scrnsave shì yóu John Socha yú 1983 nián chuàng jiàn de ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "yī xiē kuài jié zòu de píng mù bǎo hù chéng xù kě néng huì dǎo zhì guāng mǐn xìng diān xián fā zuò ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "nèi hé rì zhì yòng zuò qǐ dòng hé guān bì rì zhì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "nǐ de mó zǔ xiàn zài kě yǐ fān yì liǎo má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "nín de mod kě yǐ yǔ nèi hé chā jiàn hé qí tā mod jìn xíng tōng xìn ， chuàng jiàn mǒu zhǒng tōng xìn bìng shí xiàn hù cāo zuò xìng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "nín kě yǐ lián jiē dào yuǎn chéng diào shì qì ， yě kě yǐ xuǎn zé lián jiē dào liáo tiān fú wù qì ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "nín kě yǐ shǐ yòng diào shì shell， gāi shell jǐn shì yòng yú kāi fā bǎn běn ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "nín de mod xiàn zài kě yǐ tōng guò zhù cè guān lián de lèi lái yōng yǒu zì jǐ de pèi zhì ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "nǐ de mods kě yǐ zhù cè zì jǐ de shell má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "nín de mod kě yǐ xiàng xiàn yǒu shell tiān jiā mìng líng yǐ zēng jiā kě yǐ shǐ yòng de mìng líng shù liáng má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "nín de mìng líng lèi kě yǐ zhǔn què dì biǎo shì chuán dì de cān shù hé kāi guān má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "nín kě yǐ shǐ yòng nèi hé API zhōng de kāi guān guǎn lǐ lèi lái chá xún chuán dì de kāi guān má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "UESH bāo hán jiǎo běn gōng néng yǐ fāng biàn zhì zuò hé yùn xíng jiǎo běn ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "shell bāo hán jīn zhǐ qǔ xiāo huó dòng yīng yòng chéng xù de gōng néng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "Nitrocid yǔ Terminaux shēn dù jí chéng yǐ shí xiàn gēng kuài gēng hǎo de xuàn rǎn ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "nín xiàn zài kě yǐ diào zhěng jiāo hù shì yīng yòng chéng xù de dà xiǎo ér bù bì dān xīn shū chū bèi sǔn huài ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "yǒu xiē mìng líng yào qiú yòng hù shū rù ， zhè duì jiǎo běn hěn yǒu yòng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "nín kě yǐ tōng guò duō zhǒng fāng shì chéng xiàn yòng hù shū rù de wèn tí ， lì rú xuǎn zé 、 biǎo gé 、 jiǎn dān 、 xuǎn zé děng děng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "nín kě yǐ jiāng zhān wèi fú fàng zhì dào zhī chí tā mén de wén běn zhōng má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "nín kě yǐ shǐ yòng bù tóng de nèi hé qū dòng chéng xù lái gēng gǎi tè dìng cāo zuò de gōng zuò fāng shì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "nín kě yǐ shǐ yòng C# huò Visual Basic zhì zuò zì jǐ de píng mù bǎo hù chéng xù hé qǐ dòng huà miàn má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "nín kě yǐ shǐ yòng nèi hé píng tái lèi chá xún zhǔ jī xì tǒng hé zhōng duān fǎng zhēn qì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "zài nǐ de mó zǔ zhōng zuò yī xiē mǐn gǎn de shì qíng zhī qián nǐ kě yǐ qǐng qiú yǐn sī tóng yì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "nín kě yǐ shǐ yòng “ qǐng wù dǎ rǎo ” gōng néng guān bì tōng zhī má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "nín kě yǐ shǐ yòng tōng zhī guǎn lǐ qì zhōng de gōng néng bǎo cún tōng zhī lì shǐ jì lù má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "nín kě yǐ tōng guò gēng gǎi qū dòng chéng xù lái gēng gǎi suí jī shù de shēng chéng fāng shì má ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "gè zhǒng API shì fǒu wéi nín de mod tí gōng yǒu yòng de gōng néng ？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "cǐ bù fēn yǔn xǔ nín pèi zhì tí shì de gōng zuò fāng shì 。"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "xiǎn shì nèi hé tí shì"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "rú guǒ qǐ yòng ，shell huì zài měi cì dēng lù shí xiǎn shì tí shì 。"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "nín kěyǐ shǐyòng nèihé mókuài zhìzuò kě qǐdòng chéngxù ma?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "wúfǎ huòqǔ shèzhì tiáomù."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "Nitrocid (Kernel Simulator 0.0.2) Jiāng nèizhì shell chēng wèi “UESH”shell?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "Píngmù bǎohù chéngxù bèi chuīpěng wèi jiějué yīnjí shèxiàn guǎn (CRT) huò děnglízǐ xiǎnshìqì píngmù shāo píng wèntí de jiějué fāng'àn?"
+    }
+  ]
+}

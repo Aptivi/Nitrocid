@@ -1,0 +1,428 @@
+{
+  "lang": "eng",
+  "name": "English",
+  "cultures": [
+    "en",
+    "en-001",
+    "en-029",
+    "en-150",
+    "en-AE",
+    "en-AG",
+    "en-AI",
+    "en-AS",
+    "en-AT",
+    "en-AU",
+    "en-BB",
+    "en-BE",
+    "en-BI",
+    "en-BM",
+    "en-BS",
+    "en-BW",
+    "en-BZ",
+    "en-CA",
+    "en-CC",
+    "en-CH",
+    "en-CK",
+    "en-CM",
+    "en-CX",
+    "en-CY",
+    "en-DE",
+    "en-DK",
+    "en-DM",
+    "en-ER",
+    "en-FI",
+    "en-FJ",
+    "en-FK",
+    "en-FM",
+    "en-GD",
+    "en-GG",
+    "en-GH",
+    "en-GI",
+    "en-GM",
+    "en-GU",
+    "en-GY",
+    "en-HK",
+    "en-ID",
+    "en-IE",
+    "en-IL",
+    "en-IM",
+    "en-IN",
+    "en-IO",
+    "en-JE",
+    "en-JM",
+    "en-KE",
+    "en-KI",
+    "en-KN",
+    "en-KY",
+    "en-LC",
+    "en-LR",
+    "en-LS",
+    "en-MG",
+    "en-MH",
+    "en-MO",
+    "en-MP",
+    "en-MS",
+    "en-MT",
+    "en-MU",
+    "en-MV",
+    "en-MW",
+    "en-MY",
+    "en-NA",
+    "en-NF",
+    "en-NG",
+    "en-NL",
+    "en-NR",
+    "en-NU",
+    "en-NZ",
+    "en-PG",
+    "en-PH",
+    "en-PK",
+    "en-PN",
+    "en-PR",
+    "en-PW",
+    "en-RW",
+    "en-SB",
+    "en-SC",
+    "en-SD",
+    "en-SE",
+    "en-SG",
+    "en-SH",
+    "en-SI",
+    "en-SL",
+    "en-SS",
+    "en-SX",
+    "en-SZ",
+    "en-TC",
+    "en-TK",
+    "en-TO",
+    "en-TT",
+    "en-TV",
+    "en-TZ",
+    "en-UG",
+    "en-UM",
+    "en-US",
+    "en-US-POSIX",
+    "en-VC",
+    "en-VG",
+    "en-VI",
+    "en-VU",
+    "en-WS",
+    "en-ZA",
+    "en-ZM",
+    "en-ZW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Manages your contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Can't open file '{0}' because it's not found."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Imported contacts successfully."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Can't open file '{0}' because the card file is invalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Contact file doesn't exist."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "contacts found"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Contact file is invalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "The MeCard syntax can't be empty."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Either the provided contacts file doesn't have information about any contact or isn't valid."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Failed to parse contacts. See the error details for more information."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Contact index is out of range. Maximum index is {0} while provided index is {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "There are no contacts to get."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "There are no contacts to search for."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Regular expression is invalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Some of the contacts can't be imported."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Enter a valid MeCard representation of your contact."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contact MeCard syntax is invalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contact MeCard syntax may not be empty"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Enter regular expression to search the contacts."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "There are no contacts that contains your requested expression."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Contact name"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "No contact name"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Contact address"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "Contact mail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "No contact mail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Contact organization"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "No contact organization"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Contact telephone"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "No contact telephone"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "Contact URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "No contact URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Contact geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "No contact geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Contact IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "No contact IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Contact nickname"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "No contact nickname"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Contact role"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "No contact role"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Contact title"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "No contact title"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Contact notes"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "No contact notes"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Lists your contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Loads your contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Imports your contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Treats the required input as MeCard string"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Gets contact information"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "No contacts."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Contact number is invalid."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Contact number is out of range."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "First name"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Last name"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Contact Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Contact note"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Some of the contacts can't be listed."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Delete"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Failed to obtain settings entries."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Delete All"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Import"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Import From"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Search"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Search Next"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Search Back"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Raw Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Import From MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "This section lets you configure how the contacts addon works."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Show profile pictures"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Either a path to a vCard contact file or a MeCard represnetation"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Contact number"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Edit..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Enter new name for this contact"
+    }
+  ]
+}

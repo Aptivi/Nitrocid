@@ -1,0 +1,498 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "Se om du kan løse matematiske ligninger i tide"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "Løst perfekt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "Løst feil."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "Aktiver ekte farger"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "Forsinkelse i millisekunder"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Hvor mange millisekunder skal du vente før du skriver neste gang?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "Se om du kan trykke på en tast i tide"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "Karakteren er ikke trykket i tide."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "Du har trykket på riktig karakter!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "Du har trykket på feil tegn."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "Trykk ESC for å avslutte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "Minimum rød fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "Minimum grønn fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "Minimum blåfargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "Minimum fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "Maksimalt rødt fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "Maksimalt grønt fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "Maksimalt blått fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Maksimalt fargenivå"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "Minimum rød fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "Minimum grønn fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "Minimum blåfargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "Minimum fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "Maksimalt rødt fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "Maksimalt grønt fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "Maksimalt blått fargenivå. Minste aksepterte verdi er 0 og maksimalt akseptert verdi er 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Maksimalt fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "Løser minimum antall"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "Løser maksimalt antall"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "Løser viser input"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "Om det skal vises hva som er skrevet i inndatameldingen."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "Hva er minimumsantallet å velge?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "Hva er det maksimale antallet å velge?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "Aktiverer ekte fargestøtte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "Standard vanskelighetsgrad for SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "Tastetrykk tidsavbrudd for SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "Hvor mange millisekunder skal man vente på tastetrykk før tidsavbruddet? (I tilpasset vanskelighetsgrad)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "Etappeforsinkelse i millisekunder"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "Hvor mange millisekunder skal du vente før du tegner neste trinn?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "Starter spillet i lett vanskelighetsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "Starter spillet i middels vanskelighetsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "Starter spillet i vanskelig vanskelighetsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "Starter spillet i svært vanskelig vanskelighetsgrad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "Starter spillet i tilpasset vanskelighetsgrad. Vær oppmerksom på at den egendefinerte tidsavbruddet i millisekunder skal skrives som argument."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "Sted for fremdriftstekst"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "Velg ønsket sted for fremdriftstekst."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "Du kan bare skrive tallene."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "Trykk \"q\" for å avslutte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "Slangespillet!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "Du er et romskip og meteorene kommer for å ødelegge deg. Kan du lagre det?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "Spillet er over"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "Uventet feil"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "Bruk PowerLine for å gjengi romskip"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "Meteor spillhastighet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "Om du skal bruke PowerLine til å gjengi romskipet eller for å bruke standarden større enn karakter. Hvis du vil bruke PowerLine med Meteor, må du installere en passende font med PowerLine-støtte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "Spesifiserer spillhastigheten i millisekunder."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "Rykker du feil hest?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "Starter Hangman-spillet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "En feil bokstav og du er hengt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "Test hangman-ferdighetene dine ved å kaste en tilfeldig bokstav."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "Du er et romskip og meteorene kommer for å ødelegge deg. Kan du unngå dem?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "Får et tilfeldig tilbud"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "Russisk rulett"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "To romskip er i kamp med hverandre. Ett skudd og romskipet vil blåse. Dette er et lokalt tospillerspill."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "Wordle-spillsimulatoren"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "Spill Wordle-spillet opprinnelig"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "Til minne om 5-årsjubileet for kjerneutgivelsen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "Til minne om 5-årsjubileet for kjernen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "Første utgivelse noensinne"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "Denne kjernen ble først utgitt 22. februar 2018 for å lage en minimalistisk simulator som faktisk simulerer hvordan kjernen i kjernen fungerer."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "Det pleide bare å være vert for ett skall, og noen få kommandoer, og det fungerte bare med Windows på grunn av bruken av Windows Management Instrumentation-verktøyet."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "Den hadde heller ikke egen dokumentasjon."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "Kjerneraffinering"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "Versjoner av kjernen ble utgitt, for eksempel den andre store utgivelsen for å legge til farger og grunnleggende funksjoner, og den fjerde store utgivelsen for å legge til konfigurasjon."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "Dokumentasjonen startet på den sjette store utgivelsen, og forskjellige fine ting har sakte blitt lagt til kjernen."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "Gjeldende versjon"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "Denne versjonen avgrenser nå kjernen til det punktet at den ikke lenger oppfører seg som de gamle versjonene."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "Fordi de nye banebrytende funksjonene ble sluppet, bestemte vi oss for å navngi denne kjernen..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "Gratulerer med 5-årsdagen!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "Hest"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[ENTER] Start løpet | [ESC] Avslutt | [OPP/NED] Flytt valg"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "Hesten din vant løpet!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "Hesten din tapte løpet!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "Du er hengt!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "Du vinner!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "Hva er din innsats?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "Du gjettet riktig!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "Du tok feil."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "Men du er uheldig. Taper."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "Du er heldig! Vinner!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "Det er uavgjort."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "Spiller {0} vinner!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "Nåværende karakter:"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "Du gjettet riktig ord! Du vinner!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "Fargeinnstillinger"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "Et slangespill."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "Viser deg fine kjente sitater."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "Velg din foretrukne vanskelighetsgrad, der 0 er lett, 1 er middels, 2 er vanskelig, 3 er veldig vanskelig og 4 er tilpasset."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "Bruk PowerLine for å gjengi romskip i ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "Om du skal bruke PowerLine til å gjengi romskipet eller for å bruke standarden større enn karakter. Hvis du vil bruke PowerLine med ShipDuet, må du installere en passende font med PowerLine-støtte."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "Spillhastighet i ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "Bruker den vanlige ordlisten."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "Bruker hele ordlisten."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "Ping-pong-spillet!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "Score"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "Hesteveddeløp"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "Bøddel"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "Meteor Dodge"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "Meteor skytespill"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "Pong"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "Skipsduett"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "Snaker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "Wordle (original)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "Ukjent sitat."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "Ukjent forfatter."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "Dette lar deg konfigurere fargene"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "Denne delen lar deg konfigurere Solver."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "Denne delen lar deg konfigurere SpeedPress."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "Denne delen lar deg konfigurere Meteor og ShipDuet."
+    }
+  ]
+}

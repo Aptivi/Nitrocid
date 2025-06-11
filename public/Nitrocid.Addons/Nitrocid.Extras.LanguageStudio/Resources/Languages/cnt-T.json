@@ -1,0 +1,105 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "出口"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "回去..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "消除"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "創造一種新語言"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "基本英文字串檔不存在。您想創建一個空的嗎？或者你想使用 Nitrocid 的英文字串？"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "未指定有效語言。"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "歡迎來到語言工作室！"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "新字串"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "刪除字串"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "保存翻譯"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "選擇要翻譯的字串："
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "輸入新字串"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "選擇要刪除的字串："
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "正在儲存語言..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "選擇語言"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "選擇將此字串翻譯為的語言："
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "寫下你的翻譯"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "在互動式 TUI 中創造一種新語言"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "節省"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "添加"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "翻譯"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "翻譯目錄的路徑"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "完畢！請使用 Nitrocid.Locales 應用程式和適當的參數來確定語言。您可以使用這個路徑："
+    }
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "看看你能不能按時解出數學方程"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "完美解決！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "解決不正確。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "激活真實色彩"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "以毫秒為單位的延遲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "在進行下一次寫入之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "看看你能不能按時按一個鍵"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "字符沒有按時。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "你按對了角色！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "你按錯了字符。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "按 ESC 退出。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "最低紅色等級"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "最低綠色等級"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "最低藍色等級"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "最低色階"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "最大紅色級別"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "最大綠色等級"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "最大藍色級別"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "最大色階"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "最低紅色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "最低綠色水平。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "最低藍色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "最低顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "最大紅色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "最大綠色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "最大藍色級別。接受的最小值為 0，接受的最大值為 255。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "最大顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "求解器最小數量"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "求解器最大數"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "求解器顯示輸入"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "是否顯示輸入提示中寫入的內容。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "最少可以選擇多少？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "最多可以選擇多少個？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "激活真彩色支持。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "SpeedPress 的默認難度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "SpeedPress 的按鍵超時"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "在超時之前等待按鍵多少毫秒？（自定義難度）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "以毫秒為單位的階段延遲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "在繪製下一階段之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "以簡單難度開始遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "以中等難度開始遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "以困難難度開始遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "以非常困難的難度開始遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "以自定義難度開始遊戲。請注意，以毫秒為單位的自定義超時應寫為參數。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "進度文本位置"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "選擇您喜歡的進度文本位置。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "你只能寫數字。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "按“q”退出。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "蛇遊戲！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "你是一艘宇宙飛船，流星正在摧毀你。 你能保存嗎？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "遊戲結束"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "意外的錯誤"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "使用 PowerLine 渲染宇宙飛船"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "流星遊戲速度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "是使用 PowerLine 渲染飛船還是使用標準大於字符。 如果您想將 PowerLine 與 Meteor 一起使用，則需要安裝支持 PowerLine 的適當字體。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "以毫秒為單位指定遊戲速度。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "你是不是背錯馬了？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "開始絞刑文遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "只要寫錯一個字母，你就完蛋了！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "透過隨機扔一封信來測試你的劊子手技能。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "你是一艘太空船，流星即將摧毀你。你能躲開他們嗎？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "取得隨機報價"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "俄羅斯輪盤賭"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "兩艘太空船正在互相爭鬥。一槍下去，飛船就會爆炸。這是一個本地兩人遊戲。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "Wordle 遊戲模擬器"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "最初玩 Wordle 遊戲"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "紀念內核發布 5 週年"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "紀念內核誕生 5 週年"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "首次發布"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "該核心於 2018 年 2 月 22 日首次發布，旨在製作簡約的模擬器，實際模擬核心核心的工作方式。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "它過去只承載一個 shell 和一些命令，並且由於使用了 Windows Management Instrumentation 工具，因此它只能在 Windows 上運行。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "它也沒有自己的文檔。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "內核細化"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "內核版本已發布，例如第二個主要版本添加了顏色和基本功能，第四個主要版本添加了配置。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "文件從第六個主要版本開始，各種好東西已經慢慢添加到核心中。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "目前版本"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "該版本現在對核心進行了改進，使其行為不再像舊版本一樣。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "由於新的突破性功能已發布，我們決定將此核心命名為..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "五週年快樂！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "馬"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[輸入] 開始比賽 | [ESC] 退出 | [上/下] 移動選擇"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "你的馬贏得了比賽！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "你的馬輸掉了比賽！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "你掛了！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "你贏了！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "你的賭注是什麼？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "你猜對了！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "你理解錯了。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "但是，你運氣不好。失敗者。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "你很幸運！優勝者！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "這是一個平局。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "玩家{0}獲勝！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "當前角色："
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "你猜對了這個詞！你贏了！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "顏色設定"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "蛇遊戲。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "向您展示精彩的名言。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "選擇您喜歡的難度，其中 0 是簡單，1 是中等，2 是困難，3 是非常困難，4 是自訂。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "在 ShipDuet 中使用 PowerLine 渲染太空船"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "是使用PowerLine渲染飛船還是使用標準大於字元。如果您想要將 PowerLine 與 ShipDuet 一起使用，則需要安裝支援 PowerLine 的適當字型。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "ShipDuet 中的遊戲速度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "使用常用單字列表。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "使用完整的單字列表。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "乒乓球比賽！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "分數"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "賽馬"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "劊子手"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "流星閃避"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "流星射手"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "乒乓球"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "船二重唱"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "蛇形"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "沃德爾"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "字詞（原創）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "未知的報價。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "作者不詳。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "這使你可以配置顏色"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "此部分可讓您配置規劃求解。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "此部分讓您配置 SpeedPress。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "本部分讓您配置 Meteor 和 ShipDuet。"
+    }
+  ]
+}

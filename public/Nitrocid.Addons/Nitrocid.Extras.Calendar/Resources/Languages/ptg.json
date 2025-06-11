@@ -1,0 +1,392 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+      "text": "Mostra data e hora"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EXIT",
+      "text": "Saída"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
+      "text": "Ative cores verdadeiras"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Atraso em Milissegundos"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Quantos milissegundos esperar antes de fazer a próxima gravação?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Nível mínimo de cor vermelha"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Nível mínimo de cor verde"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Nível mínimo de cor azul"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
+      "text": "Nível mínimo de cor"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Nível máximo de cor vermelha"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Nível máximo de cor verde"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Nível máximo de cor azul"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
+      "text": "Nível máximo de cor"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Nível mínimo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Nível mínimo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Nível mínimo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
+      "text": "Nível mínimo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Nível máximo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Nível máximo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Nível máximo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
+      "text": "Nível máximo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC",
+      "text": "Ativa o suporte a cores verdadeiras."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTADDFAILED",
+      "text": "Falha ao adicionar um evento."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTREMOVEFAILED",
+      "text": "Falha ao remover um evento."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD",
+      "text": "Não foram fornecidos argumentos suficientes para adicionar um evento."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE",
+      "text": "Não há argumentos suficientes fornecidos para remover um evento."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED",
+      "text": "Não há argumentos suficientes fornecidos para manipulação de eventos."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED",
+      "text": "Não há argumentos suficientes fornecidos para manipulação de lembretes."
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDREMINDER",
+      "text": "Lembrete sem título"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDEVENT",
+      "text": "Evento sem título"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENT_NOTIFICATION",
+      "text": "Agora é dia de evento!"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDER_NOTIFICATION",
+      "text": "Não perca isso!"
+    },
+    {
+      "loc": "NKS_CALENDAR_INVALIDACTION",
+      "text": "Ação inválida."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
+      "text": "Salve todos os eventos e/ou lembretes de forma destrutiva"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC",
+      "text": "Se ativado, exclui todos os eventos e/ou lembretes antes de salvá-los usando o comando calendar."
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC",
+      "text": "Nome da cultura"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_STATUS_READY",
+      "text": "Preparar"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC",
+      "text": "Nome de exibição"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS",
+      "text": "Combinações de teclas"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC",
+      "text": "Mostra apenas a data"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC",
+      "text": "Mostra exatamente a hora"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC",
+      "text": "Usa UTC em vez de local"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+      "text": "Gerenciador de calendário, eventos e lembretes"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC",
+      "text": "Tipo de calendário para trabalhar"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC",
+      "text": "Use o visualizador de calendário baseado em tabela"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EVENTS",
+      "text": "Eventos..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_REMINDERS",
+      "text": "Lembretes..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_FAILED",
+      "text": "O calendário interativo falhou:"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE",
+      "text": "Eventos e lembretes para"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_LONGFORM",
+      "text": "Forma longa"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_CALENDARTYPE",
+      "text": "Tipo de calendário"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSMONTH",
+      "text": "Nenhum lembrete encontrado para o mês selecionado"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSMONTH",
+      "text": "Nenhum evento encontrado para o mês selecionado"
+    },
+    {
+      "loc": "NKS_CALENDAR_NOCULTURE",
+      "text": "A cultura não é encontrada."
+    },
+    {
+      "loc": "NKS_CALENDAR_SHOWCALENDARFAILED",
+      "text": "Falha ao mostrar o calendário."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDFAILED",
+      "text": "Falha ao adicionar um lembrete."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDNEEDSARGS",
+      "text": "Não foram fornecidos argumentos suficientes para adicionar um lembrete."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVEFAILED",
+      "text": "Falha ao remover um lembrete."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVENEEDSARGS",
+      "text": "Não foram fornecidos argumentos suficientes para remover um lembrete."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOEVENT",
+      "text": "Não há evento."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOREMINDER",
+      "text": "Não há lembrete."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Cultura"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
+      "text": "Configurações de cores"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_DESC",
+      "text": "Esta seção permite configurar como o Calendário funciona."
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_NKSANNIVERSARY",
+      "text": "Aniversário de lançamento do Nitrocid KS"
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_RAMADAN",
+      "text": "Ramadã"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Falha à obtenção de entradas de definições."
+    },
+    {
+      "loc": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+      "text": "Calendário"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSDAY",
+      "text": "Não foram encontrados lembretes para o dia selecionado"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSDAY",
+      "text": "Nenhum evento encontrado para o dia selecionado"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC",
+      "text": "Abre o calendário interativo TUI"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC",
+      "text": "Ano alvo"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC",
+      "text": "Número do mês alvo"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC",
+      "text": "Interação com os acontecimentos"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC",
+      "text": "Adiciona um evento"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC",
+      "text": "Data alvo"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC",
+      "text": "Remove um evento"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC",
+      "text": "ID do evento"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC",
+      "text": "Lista todos os eventos"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC",
+      "text": "Guarda todos os eventos"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC",
+      "text": "Interação com os lembretes"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC",
+      "text": "Data e hora alvo"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC",
+      "text": "Remove um lembrete"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC",
+      "text": "ID do lembrete"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC",
+      "text": "Lista todos os lembretes"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC",
+      "text": "Guarda todos os lembretes"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
+      "text": "Isto permite que configure as cores"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "Configurações de cultura"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
+      "text": "Isto permite configurar a cultura utilizada pelo protetor de ecrã do calendário"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC",
+      "text": "Qual a cultura que está a ser utilizada para alterar os nomes dos meses, calendário, etc.?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
+      "text": "Utilize a cultura do sistema"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC",
+      "text": "Se o protetor de ecrã utiliza a cultura definida pelas definições principais do kernel ou pelas definições deste protetor de ecrã."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
+      "text": "Definições do protetor de ecrã..."
+    }
+  ]
+}

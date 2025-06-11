@@ -1,0 +1,52 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BEEPSYNTH_NOWPLAYING",
+      "text": "Nu aan het spelen"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
+      "text": "Leest een piepsynthbestand"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_FILENOTFOUND",
+      "text": "Beep synth-bestand bestaat niet."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_CHAPTERNAME",
+      "text": "Hoofdstuknaam"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDSYNTH",
+      "text": "Synth-weergave is ongeldig."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDFREQ",
+      "text": "Frequentie is ongeldig."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDDURATION",
+      "text": "Duur is ongeldig."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO",
+      "text": "Kan geen synth-informatie ophalen uit de opgegeven weergave."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC",
+      "text": "Pad naar het synthbestand"
+    }
+  ]
+}

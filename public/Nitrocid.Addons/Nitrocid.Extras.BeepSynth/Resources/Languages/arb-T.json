@@ -1,0 +1,72 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BEEPSYNTH_NOWPLAYING",
+      "text": "الان العب"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
+      "text": "يقرأ ملف موالفة صوتية"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_FILENOTFOUND",
+      "text": "ملف موالفة الصوت غير موجود."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_CHAPTERNAME",
+      "text": "اسم الفصل"
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDSYNTH",
+      "text": "تمثيل المركب غير صالح."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDFREQ",
+      "text": "التردد غير صالح."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_INVALIDDURATION",
+      "text": "المدة غير صالحة."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO",
+      "text": "لا يمكن الحصول على معلومات التركيب من التمثيل المقدم."
+    },
+    {
+      "loc": "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC",
+      "text": "المسار إلى ملف المزج"
+    }
+  ]
+}

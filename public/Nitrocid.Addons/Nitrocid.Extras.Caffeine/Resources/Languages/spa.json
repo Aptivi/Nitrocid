@@ -1,0 +1,75 @@
+{
+  "lang": "spa",
+  "name": "Spanish",
+  "cultures": [
+    "es",
+    "es-419",
+    "es-AR",
+    "es-BO",
+    "es-BR",
+    "es-BZ",
+    "es-CL",
+    "es-CO",
+    "es-CR",
+    "es-CU",
+    "es-DO",
+    "es-EC",
+    "es-ES",
+    "es-GQ",
+    "es-GT",
+    "es-HN",
+    "es-MX",
+    "es-NI",
+    "es-PA",
+    "es-PE",
+    "es-PH",
+    "es-PR",
+    "es-PY",
+    "es-SV",
+    "es-US",
+    "es-UY",
+    "es-VE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Agrega una alarma para avisarte cuando tu taza de té o café esté lista."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Cancela una alarma que le avisa cuando su taza de té o café está lista."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Cafe americano"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Té rojo"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Té verde"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Sin alertas de cafeína para abortar."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Los segundos en los que tu taza estará lista no son válidos."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Si estás intentando proporcionar el nombre de la bebida, consulta la lista a continuación:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "¡Tu taza ya está lista!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Especifique un número de segundos o el nombre de una bebida."
+    }
+  ]
+}

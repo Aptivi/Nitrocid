@@ -1,0 +1,71 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Αριθμομηχανή για τον υπολογισμό των εκφράσεων."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Σφάλμα στον υπολογισμό."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Εμφάνιση πληροφοριών σχετικά με τον τύπο του φανταστικού αριθμού που καθορίζεται από έναν καθορισμένο πραγματικό και φανταστικό αριθμό"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Ο πραγματικός αριθμός δεν είναι έγκυρος."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Ο φανταστικός αριθμός δεν είναι έγκυρος."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Τύπος:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Ακτίνα κύκλου:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real to Radius σε Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginary to Radius σε Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Γωνία σε ακτίνια:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Εκθετικός:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Τριγωνικός:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Μαθηματική έκφραση"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Πραγματικός αριθμός"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Φανταστικός αριθμός"
+    }
+  ]
+}

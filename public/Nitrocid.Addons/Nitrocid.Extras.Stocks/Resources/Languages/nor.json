@@ -1,0 +1,98 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Får en timebasert lagerinformasjon"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Kort firmasymbol"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Skriv inn AlphaVantage API-nøkkelen"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Vennligst oppgi API-nøkkelen din."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Demonstrasjon API-nøkkel kan ikke brukes."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "API-nøkkelen din skal være på 16 tegn."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Det oppsto en feil under henting av aksjedata. Ytterligere informasjon finner du her"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Åpningsaksjekurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Høy aksjekurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Lav aksjekurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Sluttaksjekurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Lagervolum"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API-nøkkel kreves. Konfigurer fra innstillingene."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Ingen lagerdata tilgjengelig."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Denne delen lar deg konfigurere aksjene."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API-nøkkel"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Nøkkel for AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Bedriftskode"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Aksjeselskap"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Kan ikke få aksjeinformasjon."
+    }
+  ]
+}

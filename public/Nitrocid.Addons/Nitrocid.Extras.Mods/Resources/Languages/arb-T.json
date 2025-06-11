@@ -1,0 +1,440 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "لا يمكن تحميل وزارة الدفاع بسبب ما يلي:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1} بدأ"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "لغة غير صالحة"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "تحليل التعديل غير مسموح به في الوضع الآمن."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "تم إيقاف Mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1} توقف"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "فشل إنهاء التعديل {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "بدء وزارة الدفاع"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "نسخة وزارة الدفاع:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} غير موجود."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "اسم التعديل:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "اسم ملف التعديل:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "مسار ملف Mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "إدارة التعديلات الخاصة بك"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "تم تعطيل إدارة التعديل في الوضع الآمن."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "أمر غير صالح {0}. تحقق من الاستخدام أدناه:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "لم يتم العثور على وزارة الدفاع أو أن الملف يحتوي على أحرف غير صالحة."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "صفحة الدليل {0} غير صالحة."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "ضع في اعتبارك ملء صفحة الدليل هذه."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "دليل وزارة الدفاع"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "لا يُسمح بإيقاف التعديلات في الوضع الآمن."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "تم بالفعل بدء وزارة الدفاع!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "وزارة الدفاع لم تبدأ بعد!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "اتصل ببائع التعديل لترقية التعديل إلى الإصدار المتوافق."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "تعديل القائمة السوداء"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "اكتب أسماء ملفات التعديلات التي لن تعمل عند بدء التشغيل. عند الانتهاء ، اكتب \"q\". اكتب علامة الطرح بجانب المسار لإزالة تعديل موجود."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "الوضع {0} مدرج في القائمة السوداء."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "ابدأ تعديلات kernel عند التشغيل"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "ابدأ تلقائيًا تعديلات kernel عند التشغيل."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "لم يتم تحديد ملف Mod."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "محاولة تثبيت تعديل مثبت بالفعل. جارٍ تحديث الوضع ..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "فشل التثبيت لـ"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "ملف mod المتوفر غير متوافق."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "فشل إلغاء التثبيت لـ"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "لا توفر معلومات البيانات الوصفية اللازمة لتثبيت اللغة المخصصة الترجمات المطلوبة المطلوبة."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "أظهر أن أوامر التعديل تعتمد على المساعدة"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "النموذج غير صالح."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "صفحة دليل بدون عنوان"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "معلومات البيانات التعريفية اللازمة لتثبيت اللغة المخصصة غير موجودة."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "قد لا يكون البرنامج النصي المعدل فارغًا."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "لم يتم اكتشاف أي تعديلات."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "جارٍ إيقاف الوضع {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "لم يتم التوقيع على الوضع بقوة. قد يحتوي على تعليمات برمجية غير موثوق بها."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "لا يمكن تحميل التعديل بسبب عدم التوافق بين هذا الإصدار من النواة وهذا التعديل:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "فيما يلي قائمة بالأخطاء التي قد تساعدك في التحقق من عدم التوافق هذا:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "يتطلب Mod {0} إصدار API {1} بالضبط، ولكن لديك الإصدار {2}. عادةً ما تساعد ترقية Nitrocid KS و/أو الوضع. فشل تحليل وزارة الدفاع."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "قد لا يعمل Mod {0} بشكل صحيح مع إصدار API هذا. قد يفشل التعديل في بدء التشغيل. اتصل ببائع التعديل للحصول على أحدث نسخة."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "الطراز {0} ليس له اسم. فشل تحليل وزارة الدفاع. قم بمراجعة الكود المصدري."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "لا يحتوي الطراز {0} على الإصدار. فشل تحليل وزارة الدفاع. قم بمراجعة الكود المصدري."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "يحتوي النموذج {0} على إصدار غير صالح. فشل تحليل وزارة الدفاع. كان الإصدار"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "إصدار"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "اسم الملف"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "مسار الملف"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "لسوء الحظ، لا تحتوي صفحة الدليل هذه على أي محتويات. ومع ذلك، ربما تم العثور على هذه الوثائق ضمن صفحة الويب الخاصة ببائع التعديل. إذا كنت لا تزال غير قادر على العثور على هذه الوثائق، فاطلب من مطوري التعديل الحصول على مزيد من المعلومات."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "مقدم لكم من"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "طول المحتوى"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "لا محتويات."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "لا مراجعة."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "لا يمكن تنفيذ وظيفة مخصصة باستخدام تعديل غير موجود"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "التبعية غير راضية. التبعيات الفاشلة مدرجة أدناه:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "حاولت الاستعلام في الأدلة عن الوضع غير الموجود {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "تمت محاولة تهيئة الدليل {0} للوضع غير الموجود {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "تمت محاولة تهيئة الملف اليدوي {0} للوضع غير الموجود {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "تمت محاولة تهيئة الملف اليدوي {0} وهو غير موجود للنموذج {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "اسم"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "السماح بتحميل التعديلات غير الموثوق بها"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "إذا تم التعيين على \"صحيح\"، فلن يحدث خطأ في النواة عند تحميل التعديلات التي لا تحتوي على المفتاح العام الموقع."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "إظهار عدد أوامر تعديل kernel عند إدراجها في أمر المساعدة"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "لا يُسمح ببدء التعديلات أو إيقافها في الوضع الآمن."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "لا يمكن الحصول على معلومات الحقل لـ"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "لا يمكن تحديد إصدار التعديل"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "استثناء محمل غير معروف"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "لا يمكن تحميل توطينات التعديل"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "بدء التعديل (اختيار)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "بدء التعديل (الإدخال)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "إيقاف التعديل"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "إعادة تحميل التعديل"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "تثبيت التعديل (اختيار)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "تثبيت التعديل (الإدخال)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "إلغاء تثبيت التعديل"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "ابدأ كل شيء"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "اوقف كل شيء"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "إعادة تحميل الكل"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "لا يمكن إرجاع نوع فئة غير موجود من تجميع التعديل"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "لا يمكن العثور على الوظيفة '{0}' في الوضع '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "لا يمكن العثور على الخاصية '{0}' في الوضع '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "لا يمكن العثور على الحقل '{0}' في الوضع '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "هذه الفئة ليست فئة تعديل"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "اللغات"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "نقطة الدخول"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "أدخل المسار إلى التعديل الذي تريد بدء تشغيله"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "فشل في بدء التعديل"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "أدخل المسار إلى التعديل الذي تريد تثبيته"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "فشل في تثبيت التعديل"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "لا يمكن بدء أو إيقاف هذا التعديل!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "سواء لبدء أو إيقاف أو الحصول على معلومات أو إعادة تحميل أو تثبيت أو إلغاء تثبيت تعديل"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "اسم التعديل أو اسم الملف"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "سواء كان ذلك لإدراج أو إعادة تحميل أو إيقاف أو بدء أو إدارة جميع التعديلات بشكل تفاعلي"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "اسم التعديل"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "يتيح لك هذا القسم تكوين كيفية عمل نظام تعديل النواة."
+    }
+  ]
+}

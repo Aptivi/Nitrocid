@@ -1,0 +1,74 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAME",
+      "text": "Nomen"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+      "text": "Procer informationes de substantia chemica ad consolatorium."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC",
+      "text": "Aut nomen, symbolum, aut substantia atomicus"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC",
+      "text": "Procer informationes de omnibus substantiis chemicis ad consolandum."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM",
+      "text": "Nulla substantia est numerus atomicus"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME",
+      "text": "Nulla substantia est cum signo vel nomine"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER",
+      "text": "Numerus atomicus"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICMASS",
+      "text": "Massa atomicus"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SYMBOL",
+      "text": "Symbolum"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SUMMARY",
+      "text": "Summary"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_PHASE",
+      "text": "Phase"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONPT",
+      "text": "Positus in periodica mensa"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONCOORD",
+      "text": "Positionem in coordinatis"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_DISCOVERER",
+      "text": "Inventor"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAMEDBY",
+      "text": "Nominatur per"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ELECTRON",
+      "text": "Electron configuratione"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "数学の方程式を時間通りに解けるかどうかを確認する"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "完全に解決しました！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "誤って解決しました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "トゥルーカラーを有効にする"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "ミリ秒単位の遅延"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "次の書き込みを行うまでに何ミリ秒待機しますか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "時間通りにキーを押すことができるかどうかを確認します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "キャラクターは時間通りに押されていません。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "正しい文字を押しました!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "あなたは間違った文字を押しました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "Esc キーを押して終了します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "最小赤色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "最小緑色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "最小の青色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "最小カラーレベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "最大赤色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "最大緑色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "最大青色レベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "最大カラーレベル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "最小の赤色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "最小緑色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "最小の青色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "最小カラーレベル。最小許容値は0で、最大許容値は255色の場合は255、16色の場合は16です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "最大赤色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "最大緑色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "最大青色レベル。最小許容値は0で、最大許容値は255です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "最大カラーレベル。最小許容値は0で、最大許容値は255色の場合は255、16色の場合は16です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "ソルバーの最小数"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "ソルバーの最大数"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "ソルバー表示入力"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "入力プロンプトに何が書かれているかを表示するかどうか。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "選択する最小数はいくつですか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "選択できる最大数はいくつですか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "トゥルーカラーサポートをアクティブにします。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "SpeedPressのデフォルトの難易度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "SpeedPressのキープレスタイムアウト"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "タイムアウトする前にキーが押されるのを何ミリ秒待つのですか？（カスタム難易度）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "ミリ秒単位のステージ遅延"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "次のステージを描画する前に何ミリ秒待機しますか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "簡単な難易度でゲームを開始します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "中程度の難易度でゲームを開始します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "難易度の高いゲームを開始します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "非常に難しい難易度でゲームを開始します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "カスタム難易度でゲームを開始します。ミリ秒単位のカスタムタイムアウトは引数として記述する必要があることに注意してください。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "進行状況テキストの場所"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "希望する進行状況テキストの場所を選択します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "数字しか書けません。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "「q」を押して終了します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "ヘビゲーム！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "あなたは宇宙船であり、流星があなたを破壊するために来ています。 保存できますか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "ゲームオーバー"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "予期しないエラー"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "宇宙船のレンダリングに PowerLine を使用する"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "流星のゲーム速度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "PowerLine を使用して宇宙船をレンダリングするか、標準の大なり文字を使用するか。 Meteor で PowerLine を使用する場合は、PowerLine をサポートする適切なフォントをインストールする必要があります。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "ゲーム速度をミリ秒単位で指定します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "間違った馬を支持しますか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "ハングマンゲームを開始します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "1 文字間違えるとハングアップしてしまいます。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "ランダムな手紙を投げてハングマンのスキルをテストします。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "あなたは宇宙船で、隕石があなたを破壊するためにやって来ます。あなたはそれらを避けることができますか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "ランダムな見積もりを取得します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "ロシアンルーレット"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "2 隻の宇宙船が互いに戦っています。一発撃てば宇宙船は吹き飛ぶ。これはローカルの 2 人用ゲームです。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "Wordle ゲームシミュレータ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "もともとWordleゲームをプレイする"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "カーネルリリース5周年を記念"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "カーネル5周年を記念して"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "史上初のリリース"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "このカーネルは、カーネルのコアがどのように動作するかを実際にシミュレートする最小限のシミュレーターを作成するために、2018 年 2 月 22 日に初めてリリースされました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "以前は 1 つのシェルといくつかのコマンドのみをホストしており、Windows Management Instrumentation ツールを使用していたため、Windows でのみ動作していました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "また、独自のドキュメントもありませんでした。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "カーネルの改良"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "カラーリングと基本機能を追加する 2 番目のメジャー リリース、構成を追加する 4 番目のメジャー リリースなど、カーネルのバージョンがリリースされました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "6 番目のメジャー リリースでドキュメントの作成が開始され、さまざまな優れた機能が徐々にカーネルに追加されました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "現行版"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "このバージョンでは、カーネルが改良され、古いバージョンのように動作しなくなりました。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "新しい画期的な機能がリリースされたため、このカーネルに名前を付けることにしました..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "5周年おめでとうございます！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "馬"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[ENTER] レースを開始します | [ESC] 終了 | [UP/DOWN] 選択範囲を移動します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "あなたの馬がレースに勝ちました！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "あなたの馬はレースに負けました！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "首吊りですよ！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "あなたが勝ちます！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "あなたの賭けは何ですか？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "あなたはそれを正しく推測しました！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "間違えている。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "しかし、あなたは不運です。敗者。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "幸運ですね！勝者！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "それは引き分けです。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "プレイヤー {0} が勝ちました!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "現在のキャラクター:"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "あなたは正しい言葉を推測しました! あなたが勝ちます！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "色の設定"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "ヘビゲーム。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "素敵な名言を紹介します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "好みの難易度を選択します。0 は簡単、1 は中程度、2 は難しい、3 は非常に難しい、4 はカスタムです。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "ShipDuet で宇宙船をレンダリングするために PowerLine を使用する"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "PowerLine を使用して宇宙船をレンダリングするか、標準の「以上」文字を使用するか。ShipDuet で PowerLine を使用する場合は、PowerLine をサポートする適切なフォントをインストールする必要があります。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "ShipDuet のゲーム速度"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "共通単語リストを使用します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "完全な単語リストを使用します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "ピンポンゲーム！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "スコア"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "競馬"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "ハングマン"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "流星ダッジ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "メテオシューター"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "ポン"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "シップデュエット"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "スネーカー"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "ワードル"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "ワードル（オリジナル）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "不明な引用。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "著者不明。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "これにより色を設定できます"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "このセクションでは、ソルバーを設定できます。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "このセクションでは、SpeedPress を設定できます。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "このセクションでは、Meteor と ShipDuet を設定できます。"
+    }
+  ]
+}

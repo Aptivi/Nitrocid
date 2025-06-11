@@ -1,0 +1,26 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "画像をプレビューします"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "画像へのパスが指定されていません。"
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "画像ファイルが存在しません。"
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "画像ファイルへのパス"
+    }
+  ]
+}

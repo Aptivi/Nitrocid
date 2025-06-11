@@ -1,0 +1,151 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Kırmızı renk seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Yeşil renk seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Mavi renk seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "Siyan seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "Macenta seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Sarı seviye:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "Renk:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "Doygunluk:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "Değer:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Sarı renk seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "Luma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "Eş fazlı:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "Dördün:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-Kroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-Kroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "Kaynak renk modelini hedef renk modeline sayılarla dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Kaynak renk modelini KS formatında hedef renk modeline dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Kaynak renk modelini onaltılıya dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Kaynak renk modelini renk belirleyicisini kullanarak hedef renk modeline dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Kaynak renk modelini, renk belirleyicisini kullanarak KS formatında hedef renk modeline dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Kaynak renk modelini renk belirtecini kullanarak onaltılık düzende hedef renk modeline dönüştürür."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "Model spesifikasyonu geçersiz."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Siyah tuş seviyesi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "İlk renk seviyesi sayısal olmalıdır."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "İkinci renk seviyesi sayısal olmalıdır."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Üçüncü renk seviyesi sayısal olmalıdır."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Dördüncü anahtar seviyesi sayısal olmalıdır."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "Parlaklık (Aydınlık):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Kaynak renk modeli"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Hedef renk modeli"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "İlk sayı"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "İkinci sayı"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Üçüncü sayı"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Dördüncü sayı"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Renk belirleyici"
+    }
+  ]
+}

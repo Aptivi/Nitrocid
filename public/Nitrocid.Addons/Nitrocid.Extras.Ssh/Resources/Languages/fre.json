@@ -1,0 +1,164 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Se connecte à un serveur SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Entrez le mot de passe pour {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH déconnecté."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Erreur lors de la tentative de connexion au serveur SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "L'option spécifiée {0} n'est pas valide."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "La réponse doit être numérique."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Appuyez sur n'importe quelle touche pour revenir en arrière."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Se connecte à un serveur SSH pour exécuter une commande."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Comment voulez-vous vous authentifier ?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Fichier de clé privée"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Mot de passe"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Saisissez la phrase secrète pour la clé {0} :"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Le fichier de clé {0} n'existe pas."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Erreur lors de la tentative d'ajout de clé privée :"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Erreur lors de l'exécution de la commande SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Erreur sur le shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Écrivez comment vous voulez que votre invite de connexion soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Saisissez l'emplacement de la clé privée pour {0}. Écrivez \"q\" pour terminer l'ajout de clés :"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Cette section vous permet de configurer le fonctionnement de SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Style d'invite de nom d'utilisateur pour SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Ajouter de nouvelles connexions à la numérotation rapide SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Si activé, ajoute une nouvelle connexion à la numérotation rapide SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossible d'obtenir les entrées de paramètres."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH est connecté mais sans client."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Serveur SSH auquel se connecter"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Nom d'utilisateur pour s'authentifier"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Commande à exécuter à distance"
+    }
+  ]
+}

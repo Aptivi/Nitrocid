@@ -1,0 +1,86 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "निकालना"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "एक नोट जोड़ता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "एक नोट निकालता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "सभी नोट हटा देता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "सभी नोट्स सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "सभी नोट सहेजता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "सभी नोट्स पुनः लोड करता है"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "नोट्स दर्शक टीयूआई"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "नोट आईडी एक नोट नंबर होना चाहिए"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "यह नोट खाली है"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "अस्तित्वहीन नोट को हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "बचाना"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "जोड़ना"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "संपादन करना"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "सभी हटाएं"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "भार"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "नोट्स"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "जोड़ने के लिए सामग्री नोट करें"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "नोट संख्या"
+    }
+  ]
+}

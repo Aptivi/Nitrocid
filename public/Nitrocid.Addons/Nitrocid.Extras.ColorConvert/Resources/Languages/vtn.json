@@ -1,0 +1,150 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Mức độ màu đỏ:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Mức độ màu xanh lá cây:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Mức độ màu xanh:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "Mức độ màu lục lam:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "Mức độ màu đỏ tươi:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Mức độ màu vàng:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "Màu sắc:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "Độ bão hòa:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "Giá trị:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "Mức độ màu vàng:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "Độ sáng:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "Trong pha:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "Phép vuông góc:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-Chroma:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn sang mô hình màu đích bằng số."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn sang mô hình màu đích theo định dạng KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn sang hệ thập lục phân."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích theo định dạng KS."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích ở dạng thập lục phân."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "Thông số kỹ thuật của mô hình không hợp lệ."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Cấp độ phím đen:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "Mức màu đầu tiên phải là số."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "Mức màu thứ hai phải là số."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Mức màu thứ ba phải là số."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Cấp độ khóa thứ tư phải là số."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "Độ sáng (Độ sáng):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Mô hình màu nguồn"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "Mô hình màu mục tiêu"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "Số đầu tiên"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "Số thứ hai"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "Số thứ ba"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "Số thứ tư"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "Chỉ định màu sắc"
+    }
+  ]
+}

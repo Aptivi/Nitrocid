@@ -1,0 +1,70 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Computus dictionum computare."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Error in calculo."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Monstrare informationes de numero imaginario formulae certae per certum numerum realem et imaginariam"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Numerus realis non valet."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Numerus imaginarius non valet."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formulae:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Badius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Verus ad Badius in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Radians in Imaginaria ad Radius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Rectus in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponentialis:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triangularis:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Mathematica expressio"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Verus numerus"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Numerus imaginarius"
+    }
+  ]
+}

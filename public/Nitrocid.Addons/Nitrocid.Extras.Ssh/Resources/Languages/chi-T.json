@@ -1,0 +1,126 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "连接到SSH服务器。"
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "输入{0}的密码："
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH断开连接。"
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "尝试连接SSH服务器时出错：{0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "指定的选项{0}无效。"
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "答案必须是数字。"
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "按任意键返回。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "连接到 SSH 服务器以执行命令。"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "您想如何进行身份验证？"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "私钥文件"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "密码"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "输入密钥 {0} 的密码："
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "密钥文件 {0} 不存在。"
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "尝试添加私钥时出错："
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "执行 SSH 命令时出错"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH 外壳错误"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "写下您希望登录提示的方式。留空以使用默认样式。占位符被解析。"
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "输入 {0} 的私钥位置。写“q”完成添加键："
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "本节让您配置 SSH 的工作方式。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH 的用户名提示样式"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "将新连接添加到 SSH 快速拨号"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "如果启用，则向 SSH 快速拨号添加新连接。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH 已连接，但没有客户端。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "要连接的 SSH 服务器"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "要验证的用户名"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "远程执行命令"
+    }
+  ]
+}

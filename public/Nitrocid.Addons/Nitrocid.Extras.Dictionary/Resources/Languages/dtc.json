@@ -1,0 +1,68 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Licentie-informatie"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Het Engelse Woordenboek"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Woordinformatie voor"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API is gelicentieerd onder:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Woord:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Woordbetekenissen voor"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Woordsoort:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definitie:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Voorbeeld in zin:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Bronnen die worden gebruikt om te definiëren"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synoniemen:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antoniemen:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Woord om te definiëren"
+    }
+  ]
+}

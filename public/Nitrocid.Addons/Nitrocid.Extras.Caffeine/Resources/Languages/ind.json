@@ -1,0 +1,50 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "jab aapakee chaay ya kophee ka kap taiyaar hota hai to aapako sachet karane ke lie ek alaarm jodata hai."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "ek alaarm ko nirast karata hai jo aapako tab sachet karata hai jab aapaka chaay ya kophee ka kap taiyaar ho jaata hai."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "amerikan kofee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "laal chaay"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "haree chaay"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "koee kaifeen alart nirast karane ke lie nahin."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "aapaka kap taiyaar hone mein lagane vaale sekand amaany hain."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "yadi aap pey ka naam bataane ka prayaas kar rahe hain, to neeche dee gaee soochee dekhen:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "aapaka kap ab taiyaar hai!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "ya to sekand kee sankhya ya pey naam nirdisht karen"
+    }
+  ]
+}

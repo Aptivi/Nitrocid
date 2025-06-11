@@ -1,0 +1,315 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "Δεν είναι δυνατή η λήψη των απαραίτητων δεδομένων για την προετοιμασία αυτού του πρόσθετου."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "Μωβ αρμονία"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "Αυτό είναι το χρώμα μασκότ Android στο πρώτο πλάνο"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "Η αρμονία επωνυμίας μας"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "Σκοτεινή έκδοση ενός δημοφιλούς θέματος VIM, του Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "Ελαφριά έκδοση ενός δημοφιλούς θέματος VIM, του Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "Έκδοση Mirage ενός δημοφιλούς θέματος VIM, του Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "Αυτή είναι η πρώτη μέρα της νέας σχολικής χρονιάς"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "Το ελαφρύτερο δυνατό τερματικό"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "Αυτό είναι το μαύρο τριαντάφυλλο"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "Χρωματικός συνδυασμός για το Breeze, ένα θέμα KDE Plasma 5"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "Δημοφιλής συνδυασμός χρωμάτων για IDE, όπως το IntelliJ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "Ήρθε η ώρα να επιστρέψουμε στη σκοτεινή πλευρά."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "Σχέδια χρωμάτων για το Debian"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "Το ζωντανό προεπιλεγμένο θέμα για τον πυρήνα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "Προφορές φόντου στον πυρήνα σας!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "Περισσότεροι τόνοι παντού!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "Χρησιμοποιήστε το εάν είστε λάτρης του EDM"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "Αποχρώσεις φωτιάς"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "Το επικό σας χρυσό παλάτι σε σκούρο μπλε φόντο"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "Σταφύλι και ακτινίδιο αναμειγνύονται μαζί"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "Σχέδιο χρωμάτων για σταφύλια"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "Ζωντανά και σοβατισμένα πράσινα, μπλε και μωβ χρώματα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "Πρασινοποιήστε το περιβάλλον σας, πρασινίστε τον πυρήνα σας. Κάντε τη Γη πιο πράσινη!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "Προσθέσαμε το πράσινο και το κόκκινο ως χρώματα."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "Πράσινο και ροζ αναμειγνύονται μαζί"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "Ένας από τους γνωστούς συνδυασμούς χρωμάτων τερματικών"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "Πράσινο κείμενο σε γκρι"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "Παραδοσιακά ινδικά χρώματα ακριβώς στην κονσόλα σας."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "Κάντε το τερματικό σας γεμάτο με οξύ λεμονιού"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "Σανίδες από ανοιχτόχρωμο ξύλο"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "Τυπικά χρώματα τερματικού Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "Γκρι τερματικό"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "Κάποιο κείμενο σχεδίασης υλικού στο τερματικό σας"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "Αποχρώσεις του πορτοκαλί και του καφέ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "Θέμα Melange εμπνευσμένο από το ομώνυμο θέμα VIM"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "Κάντε το τερματικό σας γεμάτο μέντα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "Χρωματική παλέτα από το Mirai Kuriyama από το Beyond the Boundary."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "Ένα θέμα εμπνευσμένο από ένα θέμα VIM με το ίδιο όνομα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "Σας αρέσει το νέον μπλε και ροζ;"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "Αυτό το θέμα πρέπει να είναι ουδέτερο για εσάς."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "Αυτός είναι ο νυχτερινός σας ουρανός στην αρχή της νύχτας!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "Ο Οκτώβριος έρχεται σύντομα, οπότε ετοιμαστείτε!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "Η θάλασσα του πορτοκαλιού"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "Φωσφορικό τερματικό που μετατρέπει τα πάντα σε πορτοκαλί"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "Σου δίνει ένα κόκκινο αεράκι."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "Μια κατακόκκινη κονσόλα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "Τα δέντρα Sakura θα σας δώσουν λίγο κινέζικο αεράκι"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "Όλα τα γαλαζοπράσινα χρώματα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "Ένα θέμα για τους λάτρεις της τεχνολογίας"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "Θαυμαστής της μουσικής Trance; Αυτό είναι το θέμα για εσάς!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "Χρωματικοί συνδυασμοί από ένα δημοφιλές λειτουργικό σύστημα Linux, το Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "Σας δίνει μια τέλεια ατμόσφαιρα Vice City"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "Αυτή είναι η αυγή του Vice City."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "Χρωματικός συνδυασμός για το Visual Studio, ένα από τα πιο ισχυρά IDE"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "Χρωματικός συνδυασμός για Windows 11, μια πρόσφατη έκδοση των Windows"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "Φέρτε πίσω τη νοσταλγία με αυτό το θέμα!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "Το τερματικό σας αποτελείται από ξύλινες σανίδες"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "Εμπνευσμένο από το κινέζικο μοτίβο διαφορετικών φρούτων"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Χρωματικοί συνδυασμοί από το Alma Linux, ένα spinoff ενός λειτουργικού συστήματος Linux, το Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Χρωματικοί συνδυασμοί από ένα λειτουργικό σύστημα Linux, το Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "Χρωματικοί συνδυασμοί από το EndeavourOS, ένα spinoff ενός λειτουργικού συστήματος Linux, το Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Χρωματικοί συνδυασμοί από το Fedora, ένα spinoff ενός λειτουργικού συστήματος Linux, το Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Χρωματικοί συνδυασμοί από λειτουργικό σύστημα Linux, Gentoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "Σμιλεμένα χρώματα σχεδίων που σχηματίζουν μια πολύχρωμη μάνταλα"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "Χρωματικοί συνδυασμοί από το Kubuntu, ένα spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "Χρωματικοί συνδυασμοί από το Linux Mint, ένα ανεπίσημο spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "Χρωματικοί συνδυασμοί από το Lubuntu, ένα spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Χρωματικοί συνδυασμοί από το Manjaro, ένα spinoff ενός λειτουργικού συστήματος Linux, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "Χρωματικοί συνδυασμοί από λειτουργικό σύστημα Linux, openSUSE"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Χρωματικοί συνδυασμοί από λειτουργικό σύστημα Linux, το Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "Κόκκινες αποχρώσεις με δυναμικά χρώματα έμφασης για κείμενο που αξίζει την προσοχή"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Χρωματικοί συνδυασμοί από το Rocky Linux, ένα spinoff ενός λειτουργικού συστήματος Linux, το Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Χρωματικοί συνδυασμοί από λειτουργικό σύστημα Linux, Slackware"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "Χρωματικοί συνδυασμοί από το Xubuntu, ένα spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "Χρωματικοί συνδυασμοί από το Zorin OS, ένα ανεπίσημο spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    }
+  ]
+}

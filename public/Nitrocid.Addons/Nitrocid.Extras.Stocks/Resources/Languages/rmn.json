@@ -1,0 +1,95 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Obține informații de stoc pe oră"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Simbol scurt al companiei"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Introduceți cheia AlphaVantage API"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Vă rugăm să furnizați cheia dvs. API."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Cheia API demonstrativă nu poate fi utilizată."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Cheia dvs. API trebuie să aibă 16 caractere."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "A apărut o eroare la preluarea datelor privind stocurile. Informații suplimentare pot fi găsite aici"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Prețul acțiunilor de deschidere"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Preț ridicat al acțiunilor"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Preț scăzut al stocului"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Prețul acțiunilor de închidere"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Volumul stocului"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Cheia API este necesară. Configurați din setări."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Nu sunt disponibile date de stoc."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Această secțiune vă permite să configurați stocurile."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "cheie API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Cheie pentru AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Codul companiei"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Companie de acțiuni"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Nu pot obține informații despre stoc."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "baahar jaen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "vaapas jao..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "hataen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "ek naee bhaasha banaata hai"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "bes inglish strings fail maujood nahin hai. kya aap ek khaalee fail banaana chaahate hain? ya aap naitrosid kee inglish strings ka upayog karana chaahate hain?"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "koee maany bhaasha nirdisht nahin hai."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "laingvej stoodiyo mein aapaka svaagat hai!"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "naya string"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "string nikaalen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "anuvaad sahejen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "anuvaad karane ke lie ek string chunen:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "ek naya string darj karen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "hataane ke lie ek string chunen:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "bhaasha sahejee ja rahee hai..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "bhaasha chunen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "is string ka anuvaad karane ke lie ek bhaasha chunen:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "apana anuvaad likhen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "ek intaraiktiv tui mein ek naee bhaasha banaata hai"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "sahejen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "joden"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "anuvaad karen"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "anuvaad nirdeshika ka path"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "ho gaya! krpaya bhaashaon ko antim roop dene ke lie uchit tarkon ke saath nitrochid.lochalais eplikeshan ka upayog karen. aap is path ka upayog kar sakate hain:"
+    }
+  ]
+}

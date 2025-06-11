@@ -1,0 +1,86 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "hataen"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "ek not jodata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "not hataata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "sabhee not hataata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "sabhee not soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "sabhee not sahejata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "sabhee not punah lod karata hai"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "not vyooar tui"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "not aaeedee ek not nambar hona chaahie"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "yah not khaalee hai"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "gair-maujood not ko hataaya nahin ja sakata"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "sahejen"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "joden"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "sampaadit karen"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "sabhee hataen"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "lod karen"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "nots"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "jodane ke lie not saamagree"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "not sankhya"
+    }
+  ]
+}

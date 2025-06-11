@@ -1,0 +1,74 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAME",
+      "text": "नाम"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+      "text": "किसी रासायनिक पदार्थ के बारे में जानकारी कंसोल पर प्रिंट करता है।"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC",
+      "text": "किसी पदार्थ का नाम, प्रतीक या परमाणु क्रमांक"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC",
+      "text": "सभी रासायनिक पदार्थों के बारे में जानकारी कंसोल पर प्रिंट करता है।"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM",
+      "text": "परमाणु क्रमांक वाला कोई पदार्थ नहीं है"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME",
+      "text": "प्रतीक या नाम से कोई पदार्थ नहीं है"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER",
+      "text": "परमाणु संख्या"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICMASS",
+      "text": "परमाणु द्रव्यमान"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SYMBOL",
+      "text": "प्रतीक"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SUMMARY",
+      "text": "सारांश"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_PHASE",
+      "text": "चरण"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONPT",
+      "text": "आवर्त सारणी में स्थान"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONCOORD",
+      "text": "निर्देशांक में स्थिति"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_DISCOVERER",
+      "text": "खोजकर्ता"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAMEDBY",
+      "text": "द्वारा नामित"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ELECTRON",
+      "text": "इलेक्ट्रॉन विन्यास"
+    }
+  ]
+}

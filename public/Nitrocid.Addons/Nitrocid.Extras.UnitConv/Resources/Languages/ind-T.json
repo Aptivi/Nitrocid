@@ -1,0 +1,78 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
+      "text": "इकाई कनवर्टर"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS",
+      "text": "उपलब्ध इकाई प्रकार और उनकी इकाइयाँ:"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
+      "text": "सभी उपलब्ध इकाइयों को सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC",
+      "text": "यूनिट कनवर्टर के टीयूआई संस्करण का उपयोग करें"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_NOUNITTYPE",
+      "text": "ऐसी कोई इकाई प्रकार नहीं:"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPES",
+      "text": "उपलब्ध इकाई प्रकार:"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_UNITSTOCONVERT",
+      "text": "परिवर्तित करने के लिए इकाइयाँ"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NUMBERPROMPT",
+      "text": "कनवर्ट करने के लिए एक नंबर दर्ज करें..."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NONUMBER",
+      "text": "आपने कनवर्ट करने के लिए कोई संख्या दर्ज नहीं की है."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_INVALIDNUMBER",
+      "text": "दर्ज किया गया नंबर अमान्य है."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_CANTCONVERT",
+      "text": "इकाई परिवर्तित नहीं कर सकते."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_KEYBINDING_CONVERT",
+      "text": "बदलना..."
+    },
+    {
+      "loc": "NKS_UNITCONV_HOMEPAGE_UNITCONV",
+      "text": "यूनिट कनवर्टर"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC",
+      "text": "इकाई प्रकार"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC",
+      "text": "स्रोत इकाई में परिवर्तित करने के लिए मात्रा"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC",
+      "text": "स्रोत इकाई"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
+      "text": "लक्ष्य इकाई"
+    }
+  ]
+}

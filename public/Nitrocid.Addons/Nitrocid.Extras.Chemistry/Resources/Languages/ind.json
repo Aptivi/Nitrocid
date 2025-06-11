@@ -1,0 +1,74 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAME",
+      "text": "naam"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+      "text": "kansol par kisee raasaayanik padaarth ke baare mein jaanakaaree print karata hai."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC",
+      "text": "kisee padaarth ka naam, prateek ya paramaanu sankhya"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC",
+      "text": "kansol par sabhee raasaayanik padaarthon ke baare mein jaanakaaree print karata hai."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM",
+      "text": "paramaanu kramaank vaala koee padaarth nahin hai"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME",
+      "text": "prateek ya naam vaala koee padaarth nahin hai"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER",
+      "text": "paramaanu kramaank"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICMASS",
+      "text": "paramaanu dravyamaan"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SYMBOL",
+      "text": "prateek"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SUMMARY",
+      "text": "saaraansh"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_PHASE",
+      "text": "charan"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONPT",
+      "text": "aavart saaranee mein sthiti"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONCOORD",
+      "text": "nirdeshaank mein sthiti"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_DISCOVERER",
+      "text": "khojakarta"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAMEDBY",
+      "text": "dvaara naamit"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ELECTRON",
+      "text": "ilektron vinyaas"
+    }
+  ]
+}

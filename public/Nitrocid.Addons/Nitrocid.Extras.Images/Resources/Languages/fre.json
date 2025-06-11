@@ -1,0 +1,72 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Prévisualise une image"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Le chemin d'accès à l'image n'est pas fourni."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Le fichier image n'existe pas."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Chemin vers le fichier image"
+    }
+  ]
+}

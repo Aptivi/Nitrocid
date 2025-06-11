@@ -1,0 +1,102 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "Вихід"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "Назад..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "видалити"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "Створює нову мову"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "Базового файлу рядків англійською мовою не існує. Ви хочете створити порожній? Або ви хочете використовувати англійські рядки Nitrocid?"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "Не вказано дійсну мову."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "Ласкаво просимо до мовної студії!"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "Новий рядок"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "Видалити рядок"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "Зберегти переклади"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "Виберіть рядок для перекладу:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "Введіть новий рядок"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "Виберіть рядок для видалення:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "Збереження мови..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "Виберіть мову"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "Виберіть мову для перекладу цього рядка:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "Напишіть свій переклад"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "Створює нову мову в інтерактивному TUI"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "зберегти"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "додати"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "Перекласти"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "Шлях до каталогу перекладів"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "Готово! Будь ласка, використовуйте програму Nitrocid.Locales з відповідними аргументами, щоб завершити мову. Ви можете використовувати цей шлях:"
+    }
+  ]
+}

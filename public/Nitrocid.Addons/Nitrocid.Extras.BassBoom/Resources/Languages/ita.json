@@ -1,0 +1,189 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Ritardo in millisecondi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Quanti millisecondi attendere prima di effettuare la successiva scrittura?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Ottiene tutte le linee del testo dal file del testo"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Riproduce un file di testi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Riproduce un suono"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Ottiene informazioni sulla tua stazione radio online"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "Assicurati di specificare il percorso di un file LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Impossibile riprodurre l'audio perché il file non è stato trovato."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "File musicale aperto con successo."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Impossibile aprire il file musicale."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Impossibile riprodurre l'audio a causa del timeout."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Artista sconosciuto"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Genere sconosciuto"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "Nome"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Artista"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Genere"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Durata"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Premi \"q\" per interrompere la riproduzione."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Impossibile riprodurre l'audio."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Titolo"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Il numero di porta della tua radio online non è valido."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "URL completo"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Ascoltatori attuali"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Ascoltatori di punta"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Flussi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Flussi attivi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Trasmetti informazioni per l'ID"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "Sentiero"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "Attualmente in riproduzione"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Tempo di attività"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "Assicurati di specificare il percorso di una directory contenente i file dei testi nel formato LRC. Puoi anche specificare un percorso personalizzato per la cartella della libreria musicale contenente i file dei testi."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Questo file dei testi non esiste."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Le impostazioni per questo salvaschermo sono disponibili qui."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Questa sezione ti consente di configurare il funzionamento del componente aggiuntivo BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Percorso dei testi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "Imposta il percorso di una cartella contenente un gruppo di file .lrc. Scrivi un percorso assoluto a qualsiasi directory esistente."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Tipo di stazione"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossibile ottenere le voci delle impostazioni."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "Informazioni sulla radio Internet (FM) per"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "Non riesco a ottenere informazioni sulla radio Internet."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Percorso al file del testo"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Percorso verso un file MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "Nome host che ospita la stazione radio MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "Porta alla stazione radio MPEG"
+    }
+  ]
+}

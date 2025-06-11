@@ -1,0 +1,322 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "apane samparkon ka prabandhan karata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "fail {0} nahin kholee ja sakatee kyonki yah nahin milee."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "sampark saphalataapoorvak aayaat kie gae."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "fail {0} nahin kholee ja sakatee kyonki kaard fail amaany hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "sampark fail maujood nahin hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "sampark mile"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "sampark fail amaany hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "maichard sintaiks khaalee nahin ho sakata."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "ya to pradaan kee gaee sampark fail mein kisee sampark ke baare mein jaanakaaree nahin hai ya vah maany nahin hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "samparkon ko paars karane mein viphal. adhik jaanakaaree ke lie truti vivaran dekhen."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "sampark anukramanika seema se baahar hai. adhikatam anukramanika {0} hai jabaki pradaan kee gaee anukramanika {1} hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "praapt karane ke lie koee sampark nahin hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "khojane ke lie koee sampark nahin hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "niyamit abhivyakti amaany hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "koee sampark nahin hai. yadi aap sampark aayaat karana chaahate hain, to krpaya skreen ke neeche paribhaashit keestroks ka upayog karake aayaat vikalpon ka upayog karen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "kuchh sampark aayaat nahin kie ja sakate."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "apane sampark vaalee vchf fail ka path darj karen. android kee chontacht2.db fail bhee samarthit hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "fail maujood nahin hai. sunishchit karen ki aapane vchf fail ya chontacht2.db fail ka sahee path likha hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "apane sampark ka ek maany maichard pratinidhitv darj karen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "sampark maichard sintaiks amaany hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "sampark maichard sintaiks khaalee nahin ho sakata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "samparkon ko khojane ke lie niyamit abhivyakti darj karen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "aise koee sampark nahin hain jinamen aapakee anurodhit abhivyakti ho."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "sampark naam"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "koee sampark naam nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "sampark pata"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "sampark mel"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "koee sampark mel nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "sampark sangathan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "koee sampark sangathan nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "sampark teleefon"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "koee sampark teleefon nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "sampark url"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "koee sampark url nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "sampark bhoo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "koee sampark bhoo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "sampark impp"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "koee sampark impp nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "sampark upanaam"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "koee sampark upanaam nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "sampark bhoomika"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "koee sampark bhoomika nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "sampark sheershak"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "koee sampark sheershak nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "sampark not"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "koee sampark not nahin"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "aapake samparkon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "aapake samparkon ko lod karata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "aapake samparkon ko aayaat karata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "aavashyak inaput ko maichard string ke roop mein maanata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "sampark jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "koee sampark nahin."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "sampark nambar amaany hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "sampark nambar seema se baahar hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "pahala naam"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "antim naam"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "sampark jiyo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "sampark not"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "kuchh sampark soocheebaddh nahin kie ja sakate."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "hataen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "jaanakaaree"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "sampark"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "sabhee mitaen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "aayaat karen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "se aayaat karen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "khojen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "agala khojen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "vaapas khojen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "kachchee jaanakaaree"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "meekaard se aayaat karen"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "yah anubhaag aapako sampark aidon ke kaam karane ke tareeke ko konfigar karane deta hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "profail chitr dikhaen"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "yadi saksham hai, to sampark chhaviyaan dikhaata hai. durupayog ko rokane aur pradarshan kaaranon se difolt roop se aksham hai."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "ya to vchard sampark fail ya maichard pratinidhitv ka path"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "sampark sankhya"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "sampaadit karen..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "is sampark ke lie naya naam darj karen"
+    }
+  ]
+}

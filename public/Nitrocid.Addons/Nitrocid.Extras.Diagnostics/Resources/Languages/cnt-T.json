@@ -1,0 +1,29 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "獲取所有線程的回溯"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "我們相信您使用的是 Windows 8 或更低版本。不支援該操作。"
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} 的線程堆疊追蹤訊息"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "不是 Nitrocid KS 螺紋"
+    }
+  ]
+}

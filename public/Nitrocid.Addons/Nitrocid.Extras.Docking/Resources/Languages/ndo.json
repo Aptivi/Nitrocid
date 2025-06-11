@@ -1,0 +1,34 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Menunjukkan kepada Anda ikhtisar layar penuh tentang tampilan dok yang dipilih untuk dapat menggunakannya sebagai panel info"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Tidak ada layar dok dengan nama ini."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Tidak ada dok layar dengan nama ini."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Tidak ada dok layar."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Dock layar telah rusak"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nama dermaga"
+    }
+  ]
+}

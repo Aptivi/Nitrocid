@@ -1,0 +1,87 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "Αφαιρώ"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "Προσθέτει μια σημείωση"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "Αφαιρεί μια σημείωση"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "Αφαιρεί όλες τις σημειώσεις"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "Παραθέτει όλες τις σημειώσεις"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "Αποθηκεύει όλες τις σημειώσεις"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "Φορτώνει ξανά όλες τις σημειώσεις"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "TUI προβολής σημειώσεων"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "Το αναγνωριστικό της σημείωσης πρέπει να είναι αριθμός σημείωσης"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "Αυτή η σημείωση είναι κενή"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "Δεν είναι δυνατή η κατάργηση της ανύπαρκτης σημείωσης"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "Εκτός"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "Προσθέτω"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "Εκδίδω"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "Κατάργηση όλων"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "Φορτίο"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "Σημειώσεις"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "Σημειώστε τα περιεχόμενα για προσθήκη"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "Αριθμός σημείωσης"
+    }
+  ]
+}

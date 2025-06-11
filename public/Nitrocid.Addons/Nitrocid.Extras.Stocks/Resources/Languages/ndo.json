@@ -1,0 +1,94 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Mendapatkan informasi saham per jam"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Simbol perusahaan pendek"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Masukkan kunci API AlphaVantage Anda"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Harap berikan kunci API Anda."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Kunci API demonstrasi tidak dapat digunakan."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Kunci API Anda harus sepanjang 16 karakter."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Terjadi kesalahan saat mengambil data saham. Informasi tambahan dapat ditemukan di sini"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Harga saham pembukaan"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Harga saham tinggi"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Harga saham rendah"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Harga saham penutupan"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Volume stok"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Diperlukan Kunci API. Konfigurasikan dari pengaturan."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Tidak ada data stok tersedia."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Bagian ini memungkinkan Anda mengonfigurasi saham."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "kunci API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Kunci untuk API Saham AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Kode perusahaan"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Perusahaan saham"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri pengaturan."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Tidak dapat memperoleh informasi saham."
+    }
+  ]
+}

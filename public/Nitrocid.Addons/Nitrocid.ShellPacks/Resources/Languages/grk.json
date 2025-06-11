@@ -1,0 +1,2575 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME",
+      "text": "Όνομα χρήστη για {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD",
+      "text": "Κωδικός πρόσβασης για {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO",
+      "text": "Συνδέθηκε στο {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING",
+      "text": "Σφάλμα κατά την προσπάθεια σύνδεσης στο {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND",
+      "text": "Ο τοπικός κατάλογος {0} δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR",
+      "text": "Εισαγάγετε έναν τοπικό κατάλογο. \"..\" να επιστρεψει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND",
+      "text": "Ο κατάλογος {0} δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR",
+      "text": "Εισαγάγετε έναν απομακρυσμένο κατάλογο. \"..\" να επιστρεψει"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_LOCALDIR",
+      "text": "Τοπικός κατάλογος: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_REMOTEDIR",
+      "text": "Απομακρυσμένος κατάλογος: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE",
+      "text": "Λήψη αρχείου {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE",
+      "text": "Λήψη αρχείου {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "Μεταφόρτωση αρχείου {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE",
+      "text": "Μεταφορτωμένο αρχείο {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC",
+      "text": "Λαμβάνει τον τρέχοντα τοπικό κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC",
+      "text": "Λαμβάνει τον τρέχοντα απομακρυσμένο κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC",
+      "text": "Αλλάζει τον τοπικό κατάλογο για λήψη ή αποστολή από"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC",
+      "text": "Αλλάζει τον απομακρυσμένο κατάλογο για λήψη ή αποστολή σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC",
+      "text": "Διαγράφει το απομακρυσμένο αρχείο από τον διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC",
+      "text": "Λήψη απομακρυσμένου αρχείου στον τοπικό κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC",
+      "text": "Παραθέτει τον τοπικό κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC",
+      "text": "Παραθέτει τον απομακρυσμένο κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC",
+      "text": "Μεταφορτώνει τοπικό αρχείο σε απομακρυσμένο κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+      "text": "Κατάλογος αλλαγών"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
+      "text": "Χρησιμοποιήστε ένα κέλυφος FTP για αλληλεπίδραση με διακομιστές"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "Παρουσιάστηκε σφάλμα στο κέλυφος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDPROFILE",
+      "text": "Μη έγκυρη επιλογή προφίλ."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECTING",
+      "text": "Προσπάθεια σύνδεσης στο {0} με το προφίλ {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME",
+      "text": "Όνομα: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC",
+      "text": "Υπολογίζει αθροίσματα αρχείων."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_INVALIDENCRYPTION",
+      "text": "Μη έγκυρος αλγόριθμος κρυπτογράφησης."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_PASSWORDPROMPT",
+      "text": "Εισαγάγετε τον κωδικό πρόσβασης για το {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE",
+      "text": "Μέγεθος: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT",
+      "text": "Σφάλμα κατά την προσπάθεια σύνδεσης στο {0}: Λήξη χρονικού ορίου σύνδεσης ή απώλεια σύνδεσης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC",
+      "text": "Υπολογίζει αθροίσματα αρχείων σε καθορισμένο κατάλογο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "Εισαγάγετε όνομα χρήστη ή διεύθυνση email:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "Εισάγετε τον κωδικό πρόσβασης:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "Σφάλμα κατά τη σύνδεση στο {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "Σύνδεση στο {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "Έλεγχος ταυτότητας..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "Κατεβάζει μηνύματα και τα παραθέτει"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "Ανοίγει ένα μήνυμα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "Η σελίδα δεν είναι αριθμητική τιμή."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "Ο αριθμός μηνύματος μπορεί να μην είναι αρνητικός ή μηδενικός."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "Ο αριθμός μηνύματος δεν είναι αριθμητική τιμή."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- Από {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- Προς {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- Στάλθηκε στο {0} σε {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "Το μήνυμα που καθορίστηκε δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PREPARINGPROFILES",
+      "text": "Προετοιμασία προφίλ... Μπορεί να χρειαστούν αρκετά λεπτά..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "Αλλάζει τον τρέχοντα κατάλογο αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "Δεν είναι δυνατό το άνοιγμα του φακέλου αλληλογραφίας {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "Εμφανίζει καταλόγους στη διεύθυνση αλληλογραφίας σας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE",
+      "text": "Κατά την επικύρωση του πιστοποιητικού, υπάρχουν σφάλματα πιστοποιητικού. Μπορεί να είναι η πρώτη φορά που συνδέεστε στον διακομιστή ή το πιστοποιητικό να έχει λήξει. Εδώ είναι ένα σφάλμα:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT",
+      "text": "Είστε βέβαιοι ότι θέλετε να συνδεθείτε;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID",
+      "text": "Μη έγκυρη απάντηση. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση και τη θύρα διακομιστή IMAP (<διεύθυνση> ή <διεύθυνση>:[θύρα]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση και τη θύρα διακομιστή SMTP (<διεύθυνση> ή <διεύθυνση>:[θύρα]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "Στέλνει ένα μήνυμα σε μια διεύθυνση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση αλληλογραφίας του παραλήπτη:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "Εισαγάγετε το θέμα:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "Εισαγάγετε το μήνυμά σας παρακάτω. Γράψε «ΕΟΦ» για επιβεβαίωση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "Αποστολή μηνύματος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "Το μήνυμα στάλθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "Μη έγκυρη διεύθυνση e-mail. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διεύθυνση και ότι ταιριάζει με τη μορφή του παραδείγματος που εμφανίζεται:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "Αφαιρεί ένα μήνυμα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "Καταργεί όλα τα μηνύματα από τον παραλήπτη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "Το μήνυμα {0} από {1} διαγράφηκε από {2}. Απομένουν {3} μηνύματα για ανάλυση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "Το μήνυμα {0} από τον χρήστη {1} διαγράφηκε από τα εισερχόμενα. Απομένουν {2} μηνύματα για ανάλυση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
+      "text": "Απέτυχε το άνοιγμα του αρχείου. Έξοδος από το κέλυφος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION",
+      "text": "Η καθορισμένη επιλογή {0} δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC",
+      "text": "Η απάντηση πρέπει να είναι αριθμητική."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
+      "text": "Καταγραφή ονόματος χρήστη FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
+      "text": "Καταγραφή διεύθυνσης IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
+      "text": "Επιστροφή μόνο του πρώτου προφίλ FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_PUT_FAILED",
+      "text": "Απέτυχε η μεταφόρτωση του {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_GET_FAILED",
+      "text": "Η λήψη απέτυχε για το αρχείο {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_LIST_FAILED",
+      "text": "Απέτυχε η λίστα απομακρυσμένων αρχείων: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "Διαγραφή {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_NOTFOUND",
+      "text": "Το {0} δεν βρίσκεται στον διακομιστή."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "Όλα τα μηνύματα που έστειλε ο χρήστης {0} καταργήθηκαν με επιτυχία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "Αποτυχία κατάργησης όλων των μηνυμάτων που έγιναν από τον χρήστη {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "Σφάλμα κατά την αποστολή μηνύματος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVING",
+      "text": "Μετακίνηση του {0} στο {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVED",
+      "text": "Μετακινήθηκε με επιτυχία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_DESC",
+      "text": "Μετακινεί αρχείο ή κατάλογο σε άλλο αρχείο ή κατάλογο. Μπορείτε επίσης να το χρησιμοποιήσετε για να μετονομάσετε αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_MOVEFAILED",
+      "text": "Αποτυχία μετακίνησης του {0} στο {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYING",
+      "text": "Αντιγραφή {0} στο {1}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPIED",
+      "text": "Αντιγράφηκε με επιτυχία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_CP_DESC",
+      "text": "Αντιγράφει αρχείο ή κατάλογο σε άλλο αρχείο ή κατάλογο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COPYFAILED",
+      "text": "Αποτυχία αντιγραφής του {0} στο {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "Μετακινεί ένα μήνυμα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "Μετακινεί όλα τα μηνύματα από τον παραλήπτη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "Όλα τα μηνύματα που γράφονται από τον χρήστη {0} μετακινήθηκαν με επιτυχία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "Απέτυχε η μετακίνηση όλων των μηνυμάτων που έγιναν από τον χρήστη {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε από το {2}. Απομένουν {3} μηνύματα για ανάλυση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC",
+      "text": "Αν θέλετε να καταγράψετε το όνομα χρήστη FTP ή όχι."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC",
+      "text": "Αν θέλετε να καταγράψετε ή όχι τη διεύθυνση IP FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC",
+      "text": "Επιλέξτε το πρώτο προφίλ μόνο όταν συνδέεστε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "Έφτασαν {0} νέα μηνύματα στα εισερχόμενα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "Ανοίξτε το \"mail\" για να τα δείτε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME",
+      "text": "Πλήρες όνομα: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME",
+      "text": "Χρόνος δημιουργίας: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME",
+      "text": "Χρόνος τελευταίας πρόσβασης: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME",
+      "text": "Τελευταία ώρα εγγραφής: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES",
+      "text": "Χαρακτηριστικά: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR",
+      "text": "Γονικός κατάλογος: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND",
+      "text": "Πού να βρείτε: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE",
+      "text": "Μέγεθος αρχείου: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "Εισαγάγετε διαδρομές αρχείων στα συνημμένα. Πατήστε ENTER σε μια κενή διαδρομή για επιβεβαίωση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "Ανοίγει ένα κρυπτογραφημένο μήνυμα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "Γράψτε τον κωδικό πρόσβασης για το αναγνωριστικό κλειδιού {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "Στέλνει ένα κρυπτογραφημένο μήνυμα σε μια διεύθυνση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK",
+      "text": "Πατήστε οποιοδήποτε πλήκτρο για να επιστρέψετε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "Δεν είναι δυνατή η δημιουργία φακέλου αλληλογραφίας {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "Δημιουργεί έναν κατάλογο στον τρέχοντα κατάλογο εργασίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "Καταργεί έναν κατάλογο από τον τρέχοντα κατάλογο εργασίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "Ο φάκελος αλληλογραφίας {0} δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "Δεν είναι δυνατή η διαγραφή του φακέλου αλληλογραφίας {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "Μετονομάζει έναν φάκελο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "Εμφάνιση προεπισκόπησης μηνύματος αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "Κατά την καταχώριση μηνυμάτων αλληλογραφίας, εμφανίστε προεπισκόπηση σώματος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC",
+      "text": "Εάν είναι ενεργοποιημένη η αυτόματη αποθήκευση, το αρχείο κειμένου θα αποθηκεύεται για κάθε \"n\" δευτερόλεπτα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
+      "text": "Σας επιτρέπει να χρησιμοποιείτε έναν διακομιστή SSH FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+      "text": "Εμφανίζει όλα τα αρχεία μέσα στο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+      "text": "Εξάγει ένα αρχείο σε έναν καθορισμένο κατάλογο ή σε έναν τρέχοντα κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+      "text": "Αλλάζει τον κατάλογο αρχειοθέτησης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND",
+      "text": "Ο κατάλογος {0} δεν υπάρχει"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND",
+      "text": "Ο κατάλογος αρχειοθέτησης {0} δεν υπάρχει"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR",
+      "text": "Παρουσιάστηκε ένα σφάλμα στο κέλυφος FTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR",
+      "text": "Παρουσιάστηκε ένα σφάλμα στο κέλυφος SFTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD",
+      "text": "Πώς θέλετε να γίνει έλεγχος ταυτότητας;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY",
+      "text": "Αρχείο ιδιωτικού κλειδιού"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD",
+      "text": "Κωδικός πρόσβασης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE",
+      "text": "Εισαγάγετε τη φράση πρόσβασης για το κλειδί {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND",
+      "text": "Το αρχείο κλειδιού {0} δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED",
+      "text": "Σφάλμα κατά την προσπάθεια προσθήκης ιδιωτικού κλειδιού:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC",
+      "text": "Ορίζει δικαιώματα αρχείων. Αυτό υποστηρίζεται μόνο σε διακομιστές FTP που εκτελούν Unix."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC",
+      "text": "Ορίζει τον τύπο για αυτήν την περίοδο λειτουργίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETFAILED",
+      "text": "Αποτυχία ορισμού αδειών από {0} σε {1}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED",
+      "text": "Τα δικαιώματα ορίστηκαν με επιτυχία για το αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII",
+      "text": "Ο τύπος δεδομένων ορίστηκε σε ASCII!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_BINARY",
+      "text": "Ο τύπος δεδομένων ορίστηκε σε Binary!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_INVALID",
+      "text": "Μη έγκυρος τύπος δεδομένων."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING",
+      "text": "Προσέξτε ότι τα περισσότερα αρχεία δεν θα λάβουν ή δεν θα μεταφορτωθούν σωστά χρησιμοποιώντας αυτήν τη λειτουργία, γι' αυτό συνιστούμε ανεπιφύλακτα τη χρήση της δυαδικής λειτουργίας στις περισσότερες περιπτώσεις."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
+      "text": "Ανοίγει ένα κέλυφος RSS για ανάγνωση των ροών"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC",
+      "text": "Εμφανίζει όλες τις ροές"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+      "text": "Διαβάζει μια ροή σε ένα πρόγραμμα περιήγησης ιστού"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+      "text": "Λαμβάνει τις πληροφορίες του άρθρου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE",
+      "text": "Ο αριθμός του άρθρου δεν θα μπορούσε να είναι μεγαλύτερος από τα διαθέσιμα άρθρα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE",
+      "text": "Τίτλος:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK",
+      "text": "Σύνδεσμος:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC",
+      "text": "Λαμβάνει τις πληροφορίες ροής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC",
+      "text": "Περιγραφή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE",
+      "text": "Τύπος ροής:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT",
+      "text": "Αριθμός άρθρων:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READ_NOLINK",
+      "text": "Το άρθρο δεν έχει σύνδεσμο!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "Άνοιγμα URL... Φροντίστε να ακολουθήσετε τα βήματα που εμφανίζονται στην οθόνη."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
+      "text": "Ομορφαίνει το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC",
+      "text": "Λήψη απομακρυσμένου φακέλου στον τοπικό κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC",
+      "text": "Μεταφορτώνει τοπικό φάκελο σε απομακρυσμένο κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING",
+      "text": "Λήψη φακέλου {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED",
+      "text": "Έγινε λήψη του φακέλου {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED",
+      "text": "Η λήψη απέτυχε για το φάκελο {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING",
+      "text": "Μεταφόρτωση φακέλου {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED",
+      "text": "Μεταφορτώθηκε ο φάκελος {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
+      "text": "Ελαχιστοποιεί το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN",
+      "text": "Το πρόγραμμα επεξεργασίας JSON δεν έχει ανοίξει ακόμα ροή αρχείου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC",
+      "text": "Έξοδος από το κέλυφος JSON χωρίς αποθήκευση των αλλαγών"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
+      "text": "Αποθηκεύει το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
+      "text": "Εκτυπώνει το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή σύνδεσής σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή του κωδικού πρόσβασής σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Εμφάνιση λεπτομερειών αρχείου στη λίστα FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Στυλ προτροπής ονόματος χρήστη για FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Στυλ προτροπής κωδικού πρόσβασης για FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
+      "text": "Χρησιμοποιήστε το πρώτο προφίλ FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Προσθήκη νέων συνδέσεων στην ταχεία κλήση FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
+      "text": "Προσπαθήστε να επικυρώσετε ασφαλή πιστοποιητικά FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
+      "text": "Εμφάνιση FTP MOTD στη σύνδεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
+      "text": "Να αποδέχεστε πάντα μη έγκυρα πιστοποιητικά FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Εμφανίζει τις λεπτομέρειες του αρχείου FTP ενώ παραθέτει τους απομακρυσμένους καταλόγους."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC",
+      "text": "Χρησιμοποιεί το πρώτο προφίλ FTP για σύνδεση στο FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, προσθέτει μια νέα σύνδεση στην ταχεία κλήση FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC",
+      "text": "Προσπαθεί να επικυρώσει τα πιστοποιητικά FTP. Η απενεργοποίησή του δεν συνιστάται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC",
+      "text": "Εμφανίζει το μήνυμα FTP της ημέρας κατά τη σύνδεση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC",
+      "text": "Να αποδέχεστε πάντα μη έγκυρα πιστοποιητικά FTP. Η ενεργοποίησή του δεν συνιστάται καθώς μπορεί να εγκυμονεί κινδύνους για την ασφάλεια."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Στυλ προτροπής ονόματος χρήστη για αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "Στυλ προτροπής κωδικού πρόσβασης για αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "Στυλ προτροπής IMAP για αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "Στυλ προτροπής SMTP για αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "Αυτόματος εντοπισμός διακομιστή αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "Ενεργοποίηση εντοπισμού σφαλμάτων αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "Ειδοποίηση για νέα μηνύματα ηλεκτρονικού ταχυδρομείου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "Στυλ προτροπής κωδικού πρόσβασης GPG για αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "Αποστολή διαστήματος ping IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "Αποστολή διαστήματος ping SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "Μορφή κειμένου αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή IMAP. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή SMTP. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "Αυτόματος εντοπισμός του διακομιστή αλληλογραφίας με βάση τη δεδομένη διεύθυνση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "Ενεργοποιεί τον εντοπισμό σφαλμάτων διακομιστή αλληλογραφίας."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "Σας ειδοποιεί για τυχόν νέα μηνύματα αλληλογραφίας."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή κωδικού πρόσβασης GPG. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου για να στείλετε το ping IMAP;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου για να στείλετε το ping SMTP;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "Ελέγχει πώς θα εμφανίζεται το κείμενο αλληλογραφίας."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
+      "text": "Στυλ προτροπής διεύθυνσης URL ροής RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
+      "text": "Αυτόματη ανανέωση ροής RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
+      "text": "Αυτόματη ανανέωση διάστημα τροφοδοσίας RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή τροφοδοσίας RSS. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου για να ανανεώσετε τη ροή RSS;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
+      "text": "Εμφάνιση λεπτομερειών αρχείου στη λίστα SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "Στυλ προτροπής ονόματος χρήστη για SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
+      "text": "Προσθέστε νέες συνδέσεις στη γρήγορη κλήση SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC",
+      "text": "Εμφανίζει τις λεπτομέρειες του αρχείου SFTP ενώ παραθέτει τους απομακρυσμένους καταλόγους."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, προσθέτει μια νέα σύνδεση στη γρήγορη κλήση SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TITLE",
+      "text": "Πληροφορίες διακομιστή FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS",
+      "text": "Διεύθυνση διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_PORT",
+      "text": "Θύρα διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_TYPE",
+      "text": "Τύπος διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE",
+      "text": "Τύπος συστήματος διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION",
+      "text": "Λειτουργία κρυπτογράφησης διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION",
+      "text": "Τύπος σύνδεσης δεδομένων διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM",
+      "text": "Σύστημα διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE",
+      "text": "Τύπος δεδομένων λήψης διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE",
+      "text": "Τύπος δεδομένων μεταφόρτωσης διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH",
+      "text": "Εισαγάγετε ένα απομακρυσμένο αρχείο που θα κατακερματιστεί."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED",
+      "text": "Εισαγάγετε έναν απομακρυσμένο κατάλογο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
+      "text": "Αναδρομικός κατακερματισμός για FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC",
+      "text": "Εάν θα κατακερματιστεί αναδρομικά ένας κατάλογος. Λάβετε υπόψη ότι δεν το υποστηρίζουν όλοι οι διακομιστές FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC",
+      "text": "Εκτελεί μια εντολή διακομιστή FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "της αλληλογραφίας που μεταφέρθηκε..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME",
+      "text": "Όνομα κεντρικού υπολογιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME",
+      "text": "Όνομα χρήστη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE",
+      "text": "Τύπος δεδομένων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING",
+      "text": "Κωδικοποίηση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION",
+      "text": "Κρυπτογράφηση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS",
+      "text": "Πρωτόκολλα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "Εμφάνιση προόδου μεταφοράς αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "Πρόοδος μεταφοράς αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "Πρόοδος μεταφοράς αλληλογραφίας (μονό)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, το κέλυφος αλληλογραφίας θα δείχνει πόσα byte μεταδόθηκαν κατά τη λήψη αλληλογραφίας."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι το στυλ προόδου της μεταφοράς αλληλογραφίας σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται. {0} για μεταφερόμενο μέγεθος και {1} για συνολικό μέγεθος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι το στυλ προόδου της μεταφοράς αλληλογραφίας σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται. {0} για μεταφερόμενο μέγεθος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "Ξεκινά το κέλυφος HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "Λαμβάνει την απάντηση από τον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "Διαγράφει περιεχόμενο από τον διακομιστή HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "Παρουσιάστηκε σφάλμα στο κέλυφος HTTP:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "Λαμβάνει τη συμβολοσειρά από τον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "Λήψη {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+      "text": "Συσκευάζει ένα τοπικό αρχείο στο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK",
+      "text": "Δεν μπορώ να συσκευάσω τίποτα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
+      "text": "Λήξη χρονικού ορίου ανάκτησης ροής RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν από το χρονικό όριο ανάκτησης ροής RSS;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
+      "text": "Επαληθεύστε τις προσπάθειες επανάληψης για μετάδοση FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
+      "text": "Λήξη χρόνου σύνδεσης FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
+      "text": "Χρονικό όριο σύνδεσης δεδομένων FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
+      "text": "Εκδόσεις IP FTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC",
+      "text": "Πόσες φορές να επαληθεύσετε τη μεταφόρτωση και τη λήψη και να προσπαθήσετε ξανά εάν η επαλήθευση αποτύχει πριν αποτύχει η λήψη συνολικά;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν το χρονικό όριο της σύνδεσης FTP;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν από το χρονικό όριο της σύνδεσης δεδομένων FTP;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC",
+      "text": "Επιλέξτε την έκδοση του Πρωτοκόλλου Διαδικτύου που υποστηρίζει ο διακομιστής FTP και που χρησιμοποιεί ο πελάτης FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
+      "text": "Προεπιλεγμένη μορφοποίηση JSON για το κέλυφος JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC",
+      "text": "Επιλέγει την προεπιλεγμένη μορφοποίηση JSON (βελτιωμένη ή ελαχιστοποιημένη) για αποθήκευση του κελύφους JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC",
+      "text": "Εμφανίζει τις λεπτομέρειες του αρχείου στη λίστα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Καταστέλλει τα ενοχλητικά μηνύματα \"δεν επιτρέπεται η άδεια\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC",
+      "text": "Υποδεικνύει ότι η διαδρομή στόχου είναι απόλυτη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FILESHELLS_NEEDSFILE",
+      "text": "Το αρχείο δεν προσδιορίζεται. Έξοδος από το κέλυφος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC",
+      "text": "Προσθέτει σελιδοδείκτη στη ροή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC",
+      "text": "Καταργεί τον σελιδοδείκτη ροής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS",
+      "text": "Η ροή δεν υπάρχει στους σελιδοδείκτες."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC",
+      "text": "Εμφανίζει όλες τις ροές με σελιδοδείκτες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND",
+      "text": "Το αρχείο {0} δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND",
+      "text": "Το αρχείο δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO",
+      "text": "Καμία πληροφορία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN",
+      "text": "Δεν είναι δυνατό το άνοιγμα αρχείου ή φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE",
+      "text": "Στυλ νέας γραμμής:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE",
+      "text": "Δυαδικό αρχείο:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA",
+      "text": "Μεταδεδομένα MIME:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2",
+      "text": "Πλήρες όνομα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION",
+      "text": "Εκδοχή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME",
+      "text": "Όνομα πολιτισμού"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE",
+      "text": "Τύπος περιεχομένου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY",
+      "text": "Το αρχείο δεν είναι έγκυρο συγκρότημα .NET.\\n"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO",
+      "text": "Δεν είναι δυνατή η λήψη πληροφοριών συστήματος αρχείων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY",
+      "text": "Δεν είναι δυνατή η αντιγραφή αρχείου ή καταλόγου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE",
+      "text": "Δεν είναι δυνατή η μετακίνηση αρχείου ή καταλόγου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE",
+      "text": "Δεν είναι δυνατή η κατάργηση αρχείου ή καταλόγου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή ή μια πλήρη διαδρομή προς έναν φάκελο προορισμού για να αντιγράψετε το επιλεγμένο αρχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH",
+      "text": "Βεβαιωθείτε ότι έχετε γράψει τη σωστή διαδρομή."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND",
+      "text": "Το αρχείο δεν υπάρχει. Βεβαιωθείτε ότι έχετε γράψει τη σωστή διαδρομή."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT",
+      "text": "Εισαγάγετε μια διαδρομή ή μια πλήρη διαδρομή σε έναν φάκελο προορισμού για να μετακινήσετε το επιλεγμένο αρχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT",
+      "text": "Εισαγάγετε ένα νέο όνομα αρχείου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID",
+      "text": "Βεβαιωθείτε ότι έχετε γράψει το σωστό όνομα αρχείου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND",
+      "text": "Ο φάκελος υπάρχει ήδη. Το όνομα δεν πρέπει να καταλαμβάνεται από άλλο αρχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT",
+      "text": "Εισαγάγετε ένα νέο όνομα καταλόγου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND",
+      "text": "Ο φάκελος υπάρχει ήδη. Το όνομα δεν πρέπει να καταλαμβάνεται από άλλο φάκελο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV",
+      "text": "Καμία αναθεώρηση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
+      "text": "Η σύνδεση δεν έχει δημιουργηθεί ακόμα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC",
+      "text": "Διαδραστικό σύστημα διαχείρισης αρχείων κεντρικού υπολογιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
+      "text": "Ανοίγει το αρχείο αρχειοθέτησης στο κέλυφος αρχειοθέτησης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
+      "text": "Git shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
+      "text": "Δείχνει τη διαφορά μεταξύ δύο αρχείων JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "Η αλληλογραφία POP3 επιστρέφει από την 0.0.20.0, αλλά προς το παρόν δεν σκοπεύουμε να την κυκλοφορήσουμε σε αυτήν την έκδοση. Περιμένετε την επόμενη έκδοση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση URL της ροής RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE",
+      "text": "Σφάλμα κατά την ανάλυση της διεύθυνσης. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διεύθυνση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
+      "text": "Ανοίγει ένα διαδραστικό πρόγραμμα ανάγνωσης ροών RSS TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
+      "text": "Δεν μπορώ να εξαγάγω τίποτα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
+      "text": "Το αρχείο δεν είναι εγγράψιμο επειδή ο τύπος είναι"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC",
+      "text": "Διαβάζει το περιεχόμενο ενός απομακρυσμένου αρχείου στην κονσόλα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "Εξέρχεται από το κέλυφος χωρίς αποσύνδεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED",
+      "text": "Βεβαιωθείτε ότι έχετε καθορίσει σωστά τη θύρα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT",
+      "text": "Βρέθηκαν περισσότερα από ένα προφίλ. Επέλεξε ένα:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSREPO",
+      "text": "Το αποθετήριο δεν προσδιορίζεται. Έξοδος από το κέλυφος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_REPOFAILED",
+      "text": "Απέτυχε το άνοιγμα του αποθετηρίου. Έξοδος από το κέλυφος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC",
+      "text": "Ανακτά τη λίστα των αλλαγών σε ένα αρχείο γραμμή προς γραμμή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC",
+      "text": "Ελέγχει ένα υποκατάστημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC",
+      "text": "Αναλαμβάνει μια δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC",
+      "text": "Περιγράφει μια δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC",
+      "text": "Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC",
+      "text": "Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων με βάση το περιεχόμενό τους σε μορφή ενημερωμένης έκδοσης κώδικα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC",
+      "text": "Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων λόγω της ύπαρξής τους"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC",
+      "text": "Δείχνει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων λόγω της ύπαρξής τους και του περιεχομένου τους"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC",
+      "text": "Λαμβάνει όλες τις ενημερώσεις από ένα τηλεχειριστήριο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC",
+      "text": "Ανακτά την κατάσταση του αρχείου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC",
+      "text": "Λαμβάνει μια απλή πληροφορία αποθετηρίου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC",
+      "text": "Παραθέτει όλους τους κλάδους"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC",
+      "text": "Εμφανίζει όλες τις δεσμεύσεις"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC",
+      "text": "Εμφανίζει όλα τα τηλεχειριστήρια"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC",
+      "text": "Εμφανίζει όλες τις ετικέτες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC",
+      "text": "Φτιάχνει μια ετικέτα από το ΚΕΦΑΛΙ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC",
+      "text": "Παίρνει όλες τις ενημερώσεις από το διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC",
+      "text": "Προωθεί όλες τις ενημερώσεις στον διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC",
+      "text": "Επαναφέρει το τοπικό αποθετήριο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC",
+      "text": "Κάνει μαλακή επαναφορά"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC",
+      "text": "Κάνει μικτή επαναφορά"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC",
+      "text": "Κάνει hard reset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC",
+      "text": "Ρυθμίζει την ταυτότητά σας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC",
+      "text": "Στάδια μια αλλαγή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC",
+      "text": "Στάδια όλες οι αλλαγές"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC",
+      "text": "Κατάσταση αποθετηρίου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC",
+      "text": "Καταργεί μια αλλαγή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC",
+      "text": "Καταργεί όλες τις αλλαγές"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "Προσθέτει μια κεφαλίδα με το κλειδί και την τιμή σε όλα τα επερχόμενα αιτήματα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "Λαμβάνει τον τρέχοντα πράκτορα χρήστη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "Επεξεργάζεται ένα κλειδί στην κεφαλίδα για όλα τα επερχόμενα αιτήματα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "Παραθέτει τις κεφαλίδες αιτημάτων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "Τοποθετεί το αρχείο στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "Βάζει τη συμβολοσειρά στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "Δημοσιεύει το αρχείο στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "Δημοσιεύει τη συμβολοσειρά στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "Αφαιρεί ένα κλειδί στην κεφαλίδα για όλα τα επερχόμενα αιτήματα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "Ορίζει έναν παράγοντα χρήστη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Προσθήκη κεφαλίδας που υπάρχει ήδη."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Αφαίρεση κεφαλίδας που δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Επεξεργασία κεφαλίδας που δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
+      "text": "Προσθέτει έναν νέο πίνακα, αντικείμενο ή ιδιότητα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC",
+      "text": "Καθορίζει τη γονική διαδρομή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC",
+      "text": "Καθορίζει τον τύπο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC",
+      "text": "Καθορίζει το όνομα ιδιότητας με το οποίο θα δημιουργηθεί. Αυτό χρησιμοποιείται εάν η γονική διαδρομή είναι ένα αντικείμενο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC",
+      "text": "Διαγράφει το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
+      "text": "Βρίσκει ένα ακίνητο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC",
+      "text": "Καθορίζει τη μητρική ιδιότητα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
+      "text": "Εμφανίζει πληροφορίες σχετικά με το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC",
+      "text": "Μην εμφανίζετε μεμονωμένες ιδιότητες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC",
+      "text": "Εμφάνιση όλων των τιμών"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
+      "text": "Αφαιρεί ένα αντικείμενο στόχο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC",
+      "text": "Ομορφωμένο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC",
+      "text": "Ελαχιστοποιημένο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
+      "text": "Ορίζει μια τιμή σε έναν υπάρχοντα πίνακα, αντικείμενο ή ιδιότητα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC",
+      "text": "Ανοίγει το αρχείο JSON στο διαδραστικό πρόγραμμα επεξεργασίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN",
+      "text": "Το διακριτικό μέσα στο αρχείο JSON δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN",
+      "text": "Το γονικό διακριτικό δεν βρέθηκε. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διαδρομή \"{0}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE",
+      "text": "Ο καθορισμένος τύπος \"{0}\" δεν είναι έγκυρος."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED",
+      "text": "Δεν είναι δυνατή η προσθήκη νέου στοιχείου με το όνομα ιδιότητας με τον τύπο γονικού διακριτικού \"{0}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED",
+      "text": "Δεν είναι δυνατή η προσθήκη νέου στοιχείου με το όνομα ιδιότητας \"{0}\" με τον τύπο γονικού διακριτικού \"{1}\"."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT",
+      "text": "Το όνομα ιδιότητας \"{0}\" στο γονικό \"{1}\", πληκτρολογήστε \"{2}\", δεν υπάρχει"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+      "text": "Αναζητά τη ροή για μια φράση στον τίτλο ή/και στην περιγραφή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC",
+      "text": "Αναζήτηση τίτλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC",
+      "text": "Αναζήτηση για περιγραφή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC",
+      "text": "Αναζήτηση τίτλου και περιγραφής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC",
+      "text": "Αναζήτηση με διάκριση πεζών-κεφαλαίων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL",
+      "text": "Απέτυχε η ανάλυση της διεύθυνσης URL ροής:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDNODESC",
+      "text": "Χωρίς περιγραφή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC",
+      "text": "Εμφανίζει τις λεπτομέρειες των αρχείων και των φακέλων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC",
+      "text": "Καταστέλλει τα \"μη εξουσιοδοτημένα\" μηνύματα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT",
+      "text": "Εισαγάγετε τη θέση του ιδιωτικού κλειδιού για το {0}. Γράψτε \"q\" για να ολοκληρώσετε την προσθήκη κλειδιών:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_CONNECTING",
+      "text": "Προσπάθεια σύνδεσης στο {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC",
+      "text": "Εκτελεί ένα ερώτημα SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC",
+      "text": "Πληροφορίες βάσης δεδομένων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC",
+      "text": "Ανοίγει το αρχείο SQL στο διαδραστικό εξαγωνικό πρόγραμμα επεξεργασίας TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED",
+      "text": "Αυτός ο τύπος αρχείου δεν υποστηρίζεται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "Είστε βέβαιοι ότι θέλετε να διαγράψετε το {0};"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER",
+      "text": "Χρήστης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "Ιστοσελίδα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO",
+      "text": "Δεν υπάρχουν πληροφορίες συμβόλων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON",
+      "text": "Τροποποιήθηκε στις"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE",
+      "text": "Κατάσταση ευθυνών για το αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM",
+      "text": "Αριθμός Hunk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM",
+      "text": "Αριθμός γραμμών"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE",
+      "text": "Αρχικός αριθμός γραμμής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE",
+      "text": "Τελικός αριθμός γραμμής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE",
+      "text": "Αρχική δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA",
+      "text": "Δέσμευση SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE",
+      "text": "Μήνυμα δέσμευσης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR",
+      "text": "Δέσμευση συγγραφέα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER",
+      "text": "Δέσμευση δεσμεύσεως"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM",
+      "text": "Αριθμός γονέων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE",
+      "text": "Τελική δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSSAVING",
+      "text": "Αποθηκεύστε την εργασία σας πρώτα δημιουργώντας μια δέσμευση πριν ελέγξετε ένα υποκατάστημα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NOBRANCH",
+      "text": "Υποκατάστημα δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1",
+      "text": "Πρέπει να αναγνωρίσετε τον εαυτό σας πριν χρησιμοποιήσετε αυτήν την εντολή. Χρήση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2",
+      "text": "να προσδιορίσεις τον εαυτό σου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_SUCCESS",
+      "text": "Ενημερώθηκε το αποθετήριο με νέα δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMIT_DESC",
+      "text": "Περιγραφή για δέσμευση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES",
+      "text": "Γενικές αλλαγές σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES",
+      "text": "Το περιεχόμενο αλλάζει σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND",
+      "text": "Το τηλεχειριστήριο δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FETCH_NOREMOTES",
+      "text": "Δεν βρέθηκαν τηλεχειριστήρια για λήψη ενημερώσεων."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_FILESTATUS_TITLE",
+      "text": "Κατάσταση για το αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_BARE",
+      "text": "Γυμνό αποθετήριο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_DETACHED",
+      "text": "Το κεφάλι αποσπάται"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_NOREF",
+      "text": "Καμία αναφορά"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_SHALLOW",
+      "text": "Ρηχός κλώνος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT",
+      "text": "Διαδρομή προς το .git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR",
+      "text": "Διαδρομή στον κατάλογο εργασίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE",
+      "text": "Δεσμεύσεις για υποκατάστημα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_MAKETAG_CREATED",
+      "text": "Δημιούργησε μια νέα ετικέτα! Εδώ είναι τα στοιχεία της ετικέτας σας:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPTODATE",
+      "text": "Το τοπικό σας αντίγραφο του repo είναι ενημερωμένο!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_FASTFORWARD",
+      "text": "Γρήγορη προώθηση σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_UPDATED",
+      "text": "Ενημερώθηκε το αποθετήριο σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS",
+      "text": "Η συγχώνευσή σας οδήγησε σε διενέξεις. Επιλύστε οποιαδήποτε από τις διενέξεις."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETID_SUCCESS",
+      "text": "Αναγνωρίσατε επιτυχώς τον εαυτό σας ως"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_NOCHANGES",
+      "text": "Δεν γίνονται τροποποιήσεις στο στάδιο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_SUCCESS",
+      "text": "Το αρχείο {0} σταδιοποιήθηκε με επιτυχία!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STAGE_FAILURE",
+      "text": "Απέτυχε η σταδιοποίηση του αρχείου {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_TITLE",
+      "text": "Κατάσταση για το υποκατάστημα {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOCHANGES",
+      "text": "Δεν γίνονται τροποποιήσεις."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_UNTRACKED",
+      "text": "Μη παρακολουθημένα αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED",
+      "text": "Δεν υπάρχουν αρχεία χωρίς παρακολούθηση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_ADDED",
+      "text": "Προστέθηκαν αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOADDED",
+      "text": "Δεν προστέθηκαν αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MODIFIED",
+      "text": "Τροποποιημένα αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED",
+      "text": "Δεν υπάρχουν τροποποιημένα αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_REMOVED",
+      "text": "Καταργήθηκαν αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOREMOVED",
+      "text": "Δεν αφαιρέθηκαν αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_STAGED",
+      "text": "Σταδιακά αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOSTAGED",
+      "text": "Δεν υπάρχουν σταδιακά αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED",
+      "text": "Μετονομασία σταδιακά αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "text": "Δεν υπάρχουν μετονομασμένα σταδιακά αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",
+      "text": "Μετονομασμένα αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMED",
+      "text": "Δεν υπάρχουν μετονομασμένα αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_MISSING",
+      "text": "Λείπουν αρχεία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NOMISSING",
+      "text": "Δεν λείπουν αρχεία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES",
+      "text": "Δεν γίνονται τροποποιήσεις στο unstage."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS",
+      "text": "Το αρχείο {0} καταργήθηκε με επιτυχία!"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE",
+      "text": "Αποτυχία κατάργησης σκηνής του αρχείου {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "Δημοσίευση αρχείου {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "Δημοσίευση συμβολοσειράς στο {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "Μεταφόρτωση συμβολοσειράς στο {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE",
+      "text": "Το κέλυφος JSON απέτυχε να προσθέσει ένα στοιχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_FOUND",
+      "text": "Το ακίνητο βρίσκεται σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND",
+      "text": "Το ακίνητο δεν βρέθηκε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TITLE",
+      "text": "Βασικές πληροφορίες διακριτικού JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_TYPE",
+      "text": "Τύπος βάσης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_VALUES",
+      "text": "Η βάση έχει αξίες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS",
+      "text": "Παιδική συμβολική καταμέτρηση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH",
+      "text": "Μονοπάτι βάσης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE",
+      "text": "Μεμονωμένες πληροφορίες διακριτικού JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE",
+      "text": "Τύπος κουπονιού"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES",
+      "text": "Το Token έχει αξίες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH",
+      "text": "Συμβολική διαδρομή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE",
+      "text": "Συμβολική αξία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE",
+      "text": "Πληροφορίες ιδιοκτησίας για"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE",
+      "text": "Τύπος ακινήτου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT",
+      "text": "Καταμέτρηση περιουσίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME",
+      "text": "Ονομα ιδιοκτησίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH",
+      "text": "Διαδρομή ιδιοκτησίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE",
+      "text": "Αξία περιουσίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_REMOVEITEMFAILED",
+      "text": "Το κέλυφος JSON απέτυχε να αφαιρέσει ένα στοιχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
+      "text": "Το κέλυφος JSON απέτυχε να ορίσει ένα στοιχείο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε. Απομένουν {2} μηνύματα για ανάλυση."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "Συνημμένα:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE",
+      "text": "Αυτή η σύνδεση περιέχει μια μη έγκυρη παρουσία ροής RSS."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE",
+      "text": "Άγνωστος τίτλος άρθρου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS",
+      "text": "Δυστυχώς, αυτό το άρθρο δεν έχει περιεχόμενο. Μπορείτε ακόμα να παρακολουθήσετε το άρθρο στο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOLINK",
+      "text": "Αυτό το άρθρο δεν έχει σύνδεσμο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED",
+      "text": "Δεν είναι δυνατό το άνοιγμα του προγράμματος περιήγησης κεντρικού υπολογιστή στον σύνδεσμο του άρθρου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED",
+      "text": "Τροποποιήθηκε:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT",
+      "text": "Εισαγάγετε τιμή παραμέτρου για {0}:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDSUCCESS",
+      "text": "Η εντολή SQL πέτυχε. Εδώ είναι οι απαντήσεις:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_COMMANDFAILURE",
+      "text": "Η εντολή SQL απέτυχε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_PATH",
+      "text": "Διαδρομή βάσης δεδομένων:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_VERSION",
+      "text": "Έκδοση διακομιστή:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STATE",
+      "text": "Κατάσταση σύνδεσης:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_STRING",
+      "text": "Συμβολοσειρά σύνδεσης:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NAME",
+      "text": "Ονομα βάσης δεδομένων:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "Προεπιλογή προεπιλογής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους του αρχείου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους Git."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους HTTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
+      "text": "JSON Shell Prompt Preset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
+      "text": "Ενεργοποίηση αυτόματης αποθήκευσης του επεξεργαστή JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC",
+      "text": "Ενεργοποιεί ή απενεργοποιεί τη δυνατότητα αυτόματης αποθήκευσης του προγράμματος επεξεργασίας JSON."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
+      "text": "Διάστημα αυτόματης αποθήκευσης προγράμματος επεξεργασίας JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους αλληλογραφίας."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "Μέγιστος αριθμός e-mail σε μία σελίδα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "Πόσα μηνύματα ηλεκτρονικού ταχυδρομείου να εμφανίζονται σε μία σελίδα;"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους RSS."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
+      "text": "Προρύθμιση προτροπής RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους SFTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους SQL."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
+      "text": "SQL Shell Prompt Preset"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE",
+      "text": "Τύπος αρχείου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+      "text": "Πραγματοποιεί αναζήτηση στη βιβλιοθήκη ροής δεδομένων για μια ροή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY",
+      "text": "Αντίγραφο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE",
+      "text": "Κίνηση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE",
+      "text": "Διαγράφω"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP",
+      "text": "Επάνω"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO",
+      "text": "Πληροφορίες"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME",
+      "text": "Μετονομάζω"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER",
+      "text": "Νέος φάκελος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "Ανοιχτό"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED",
+      "text": "Μεταδεδομένα MIME (εκτεταμένα)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED",
+      "text": "Το Handler είναι εγγεγραμμένο αλλά κατά κάποιο τρόπο απέτυχε να αποκτήσει ένα πρόγραμμα χειρισμού επέκτασης για"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Αντιγραφή σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "text": "Μετακίνηση σε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES",
+      "text": "Δεν είναι δυνατή η λήψη εγγραφών αρχείου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED",
+      "text": "Το αρχείο δεν έχει φορτωθεί ακόμα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE",
+      "text": "Δεν είναι δυνατός ο προσδιορισμός του τρέχοντος καταλόγου αρχειοθέτησης."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Το τελευταίο κέλυφος δεν είναι αυτό το κέλυφος για να ξεκολλήσετε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT",
+      "text": "Ο πελάτης δεν έχει συμπληρωθεί."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT",
+      "text": "Δεν υπάρχει ακόμη πρόγραμμα-πελάτης FTP."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "Ο πελάτης δεν έχει συνδεθεί ακόμα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "Δεν είναι δυνατή η λήψη της διαμόρφωσης διακομιστή IMAP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "Δεν είναι δυνατή η λήψη της διαμόρφωσης διακομιστή SMTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2",
+      "text": "Ο πελάτης δεν έχει συνδεθεί ακόμα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE",
+      "text": "Διαβάστε περισσότερα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH",
+      "text": "Φρεσκάρω"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE",
+      "text": "Δεν υπάρχει άρθρο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED",
+      "text": "Δεν υπάρχει τροφοδοσία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION",
+      "text": "Δεν είναι δυνατή η σύνδεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_STREAMNOTOPEN",
+      "text": "Η ροή του αρχείου δεν έχει ανοίξει ακόμα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN",
+      "text": "Το αρχείο JSON δεν είναι ακόμη ανοιχτό."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC",
+      "text": "Εύρος λήξης αριθμού γραμμής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC",
+      "text": "Διαδρομή προς το αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Αρχείο προέλευσης ή κατάλογος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC",
+      "text": "Αρχείο ή κατάλογος στόχος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC",
+      "text": "Αλγόριθμος κρυπτογράφησης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC",
+      "text": "Διαδρομή σε έναν κατάλογο με το αποθετήριο Git"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC",
+      "text": "Εύρος έναρξης αριθμού γραμμής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC",
+      "text": "Όνομα υποκαταστήματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC",
+      "text": "Περίληψη δέσμευσης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC",
+      "text": "Δέσμευση κατακερματισμού SHA"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC",
+      "text": "Όνομα απομακρυσμένου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC",
+      "text": "Όνομα ετικέτας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC",
+      "text": "Μήνυμα για να σχολιάσετε την ετικέτα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC",
+      "text": "Το email σας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC",
+      "text": "Το όνομα χρήστη σας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC",
+      "text": "Διαδρομή προς το μη σταδιοποιημένο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC",
+      "text": "Διαδρομή στο σταδιοποιημένο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC",
+      "text": "Διαδρομή προς το αρχείο αρχειοθέτησης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC",
+      "text": "Τοπικός κατάλογος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC",
+      "text": "Κατάλογος μέσα στο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC",
+      "text": "Αρχείο στο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC",
+      "text": "Τοπικός κατάλογος για εξαγωγή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC",
+      "text": "Τοπικό αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC",
+      "text": "Αρχειοθέτηση καταλόγου για προσθήκη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC",
+      "text": "Διακομιστής FTP για σύνδεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Διαδρομή προς το απομακρυσμένο αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC",
+      "text": "Διαδρομή προς τον τοπικό κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC",
+      "text": "Διαδρομή προς τον απομακρυσμένο κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC",
+      "text": "Διαδρομή προς το απομακρυσμένο αρχείο προς διαγραφή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC",
+      "text": "Εντολή διακομιστή για εκτέλεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC",
+      "text": "Δημιουργεί έναν τοπικό κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC",
+      "text": "Δημιουργεί έναν απομακρυσμένο κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC",
+      "text": "Διαδρομή προς το αρχείο προέλευσης ή τον κατάλογο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC",
+      "text": "Διαδρομή προς το αρχείο ή τον κατάλογο προορισμού"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC",
+      "text": "Διαδρομή προς το τοπικό αρχείο"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC",
+      "text": "Αριθμοί αδειών σύμφωνα με το chmod"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC",
+      "text": "Καθορίζει εάν ο τύπος μεταφοράς είναι ASCII ή Binary"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK",
+      "text": "Συμβολικός σύνδεσμος προς: {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "Κλειδί κεφαλίδας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "Τιμή κεφαλίδας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "Αίτημα HTTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "Αρχείο για μεταφόρτωση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "Συμβολοσειρά για μεταφόρτωση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "Συμβολοσειρά παράγοντα χρήστη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "Διεύθυνση ηλεκτρονικού ταχυδρομείου για να συνδεθείτε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "Δημιουργία φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "Κίνηση..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "Μετακινήστε όλα..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "Μετονομασία φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "Κατάργηση φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "Κατάργηση μηνύματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "Κατάργηση όλων..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "Δεν είναι δυνατό το άνοιγμα φακέλου ή μηνύματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "Γράψτε το νέο όνομα καταλόγου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "Δημιουργία καταλόγου..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "Δεν είναι δυνατή η δημιουργία φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "Επιλέξτε έναν νέο κατάλογο για να μετακινήσετε αυτό το μήνυμα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "Μετακινούμενο μήνυμα..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "Δεν είναι δυνατή η μετακίνηση του μηνύματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "Επιλέξτε έναν νέο κατάλογο για να μετακινήσετε όλα τα μηνύματα από τον ίδιο αποστολέα."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "Μετακίνηση μηνυμάτων από τον αποστολέα {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "Δεν είναι δυνατή η μετακίνηση όλων των μηνυμάτων από τον ίδιο αποστολέα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "Γράψτε το νέο όνομα καταλόγου για μετονομασία του {0}."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "Μετονομασία καταλόγου..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "Δεν είναι δυνατή η μετονομασία του φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "Κατάργηση καταλόγου..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "Δεν είναι δυνατή η κατάργηση του φακέλου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "Αφαίρεση μηνύματος..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "Δεν είναι δυνατή η διαγραφή του μηνύματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "Κατάργηση μηνυμάτων από τον αποστολέα {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "Δεν είναι δυνατή η διαγραφή όλων των μηνυμάτων από τον ίδιο αποστολέα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "Όνομα καταλόγου αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "Αριθμός σελίδας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "Αναγνωριστικό μηνύματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "Όνομα αποστολέα"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "Όνομα παλιού καταλόγου αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "Όνομα νέου καταλόγου αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "Διαδραστική διαχείριση αλληλογραφίας"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC",
+      "text": "Διακομιστής SFTP για σύνδεση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC",
+      "text": "Σύνδεσμος τροφοδοσίας RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC",
+      "text": "Αριθμός ροής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC",
+      "text": "Φράση για αναζήτηση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC",
+      "text": "Πρώτο αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC",
+      "text": "Δεύτερο αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC",
+      "text": "Διαδρομή προς το αρχείο JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC",
+      "text": "Διαδρομή για την έξοδο του αρχείου JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC",
+      "text": "Αξία JSON για προσθήκη"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC",
+      "text": "Όνομα ιδιοκτησίας JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC",
+      "text": "Διαδρομή αντικειμένου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
+      "text": "Τιμή JSON"
+    }
+  ]
+}

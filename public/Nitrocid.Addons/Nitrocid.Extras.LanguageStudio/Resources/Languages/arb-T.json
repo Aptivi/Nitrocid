@@ -1,0 +1,128 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "خروج"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "عد..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "يزيل"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "يصنع لغة جديدة"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "ملف السلاسل الإنجليزية الأساسي غير موجود. هل تريد إنشاء واحدة فارغة؟ أو هل تريد استخدام سلاسل Nitrocid الإنجليزية؟"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "لم يتم تحديد لغة صالحة."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "مرحبًا بكم في استوديو اللغات!"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "سلسلة جديدة"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "إزالة السلسلة"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "حفظ الترجمات"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "حدد سلسلة لترجمتها:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "أدخل سلسلة جديدة"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "حدد سلسلة لإزالتها:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "جارٍ حفظ اللغة..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "اختار اللغة"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "حدد لغة لترجمة هذه السلسلة إليها:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "اكتب ترجمتك ل"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "يصنع لغة جديدة في واجهة TUI التفاعلية"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "يحفظ"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "يضيف"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "يترجم"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "المسار إلى دليل الترجمات"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "تم! يرجى استخدام تطبيق Nitrocid.Locales مع الوسائط المناسبة لإكمال اللغات. يمكنك استخدام هذا المسار:"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calculadora para calcular expressões."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Erro no cálculo."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Mostrar informações sobre a fórmula do número imaginário especificada por um número real e imaginário especificado"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "O número real não é válido."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "O número imaginário não é válido."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Fórmula:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Raio:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real para raio em radianos:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginário para Raio em Radianos:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Ângulo em radianos:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponencial:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triangular:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Expressão matemática"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Número real"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Número imaginário"
+    }
+  ]
+}

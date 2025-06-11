@@ -1,0 +1,212 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "التأخير في ميلي ثانية"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "كم ميلي ثانية يجب الانتظار قبل إجراء الكتابة التالية؟"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "يحصل على كافة الأسطر الغنائية من الملف الغنائي"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "تشغيل ملف غنائي"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "يلعب الصوت"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "يحصل على معلومات حول محطة الراديو الخاصة بك على الإنترنت"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "تأكد من تحديد المسار إلى ملف LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "لا يمكن تشغيل الصوت لأنه لم يتم العثور على الملف."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "تم فتح ملف الموسيقى بنجاح."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "لا يمكن فتح ملف الموسيقى."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "لا يمكن تشغيل الصوت بسبب انتهاء المهلة."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "فنان غير معروف"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "نوع غير معروف"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "اسم"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "فنان"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "النوع"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "مدة"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "اضغط على \"q\" لإيقاف اللعب."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "لا يمكن تشغيل الصوت."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "عنوان"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "رقم المنفذ الخاص بالراديو عبر الإنترنت غير صالح."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "عنوان URL الكامل"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "المستمعين الحاليين"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "ذروة المستمعين"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "تيارات"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "تيارات نشطة"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "دفق المعلومات للمعرف"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "طريق"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "يلعب حاليا"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "مدة التشغيل"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "تأكد من تحديد المسار إلى الدليل الذي يحتوي على ملفات كلمات الأغاني الخاصة بك بتنسيق LRC. يمكنك أيضًا تحديد مسار مخصص لمجلد مكتبة الموسيقى الخاص بك الذي يحتوي على ملفات الكلمات الغنائية."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "ملف كلمات الأغاني هذا غير موجود."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "إعدادات شاشة التوقف هذه متاحة هنا."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "يتيح لك هذا القسم تكوين كيفية عمل الملحق BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "مسار الأغاني"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "يضبط المسار إلى مجلد يحتوي على مجموعة من ملفات .lrc. اكتب مسارًا مطلقًا لأي دليل موجود."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "نوع المحطة"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "معلومات عن راديو الإنترنت (FM)"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "لا يمكن الحصول على معلومات راديو الإنترنت."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "المسار إلى ملف الأغاني"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "المسار إلى ملف MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "اسم المضيف الذي يستضيف محطة الراديو MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "منفذ إلى محطة راديو MPEG"
+    }
+  ]
+}

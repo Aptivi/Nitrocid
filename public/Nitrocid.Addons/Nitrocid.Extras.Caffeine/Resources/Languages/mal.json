@@ -1,0 +1,53 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Menambahkan penggera untuk memaklumkan anda apabila secawan teh atau kopi anda sudah sedia."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Menggugurkan penggera yang memberi amaran kepada anda apabila secawan teh atau kopi anda sudah sedia."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Kopi Amerika"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Teh Merah"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Teh Hijau"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Tiada amaran kafein untuk menggugurkan kandungan."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Detik semasa cawan anda akan siap adalah tidak sah."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Jika anda cuba membekalkan nama minuman itu, lihat senarai di bawah:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Cawan anda sudah sedia!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Sama ada nyatakan beberapa saat atau nama minuman"
+    }
+  ]
+}

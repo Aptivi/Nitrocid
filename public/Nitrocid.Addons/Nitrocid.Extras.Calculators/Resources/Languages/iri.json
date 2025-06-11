@@ -1,0 +1,71 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Áireamhán chun slonn a ríomh."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Earráid sa ríomh."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Taispeáin eolas faoin bhfoirmle uimhir shamhailteach atá sonraithe ag fíoruimhir agus samhailfhadú sonraithe"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Níl an fhíoruimhir bailí."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Níl an uimhir shamhailteach bailí."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Foirmle:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Ga:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real to Radius i Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Samhailteach do Gha sna Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Uillinn i Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Easpónantúil:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triantánach:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Sloinneadh matamaitice"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Fíoruimhir"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Uimhir shamhailteach"
+    }
+  ]
+}

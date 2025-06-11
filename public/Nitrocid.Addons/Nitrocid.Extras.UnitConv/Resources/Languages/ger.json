@@ -1,0 +1,87 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
+      "text": "Einheitenumwandler"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS",
+      "text": "Verfügbare Einheitentypen und ihre Einheiten:"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
+      "text": "Listet alle verfügbaren Einheiten auf"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC",
+      "text": "Verwenden Sie die TUI-Version des Einheitenumrechners"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_NOUNITTYPE",
+      "text": "Kein solcher Einheitentyp:"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPES",
+      "text": "Verfügbare Gerätetypen:"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_UNITSTOCONVERT",
+      "text": "Einheiten umzurechnen"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NUMBERPROMPT",
+      "text": "Geben Sie eine Zahl zum Konvertieren ein..."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NONUMBER",
+      "text": "Sie haben keine Zahl zum Umrechnen eingegeben."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_INVALIDNUMBER",
+      "text": "Die eingegebene Nummer ist ungültig."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_CANTCONVERT",
+      "text": "Einheit kann nicht konvertiert werden."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_KEYBINDING_CONVERT",
+      "text": "Konvertieren..."
+    },
+    {
+      "loc": "NKS_UNITCONV_HOMEPAGE_UNITCONV",
+      "text": "Einheitenrechner"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC",
+      "text": "Gerätetyp"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC",
+      "text": "Umzurechnende Menge in der Quelleinheit"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC",
+      "text": "Quelleinheit"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
+      "text": "Zieleinheit"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Độ trễ tính bằng mili giây"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Phải đợi bao nhiêu mili giây trước khi thực hiện lệnh ghi tiếp theo?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Lấy tất cả các dòng lời bài hát từ tệp lời bài hát"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Phát một tập tin lời bài hát"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Phát ra âm thanh"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Nhận thông tin về đài phát thanh trực tuyến của bạn"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "Hãy đảm bảo chỉ định đường dẫn đến tệp LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Không thể phát âm thanh vì không tìm thấy tệp."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "Đã mở tệp nhạc thành công."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Không thể mở tệp nhạc."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Không thể phát âm thanh vì hết thời gian."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Nghệ sĩ vô danh"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Thể loại chưa biết"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "Tên"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Nghệ sĩ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Thể loại"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Khoảng thời gian"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Nhấn 'q' để dừng phát."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Không phát được âm thanh."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Tiêu đề"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Số cổng cho radio trực tuyến của bạn không hợp lệ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "URL đầy đủ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Người nghe hiện tại"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Người nghe đỉnh cao"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Các luồng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Luồng đang hoạt động"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Thông tin luồng cho ID"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "Con đường"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "Hiện đang chơi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Thời gian hoạt động"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "Đảm bảo chỉ định đường dẫn đến thư mục chứa tệp lời bài hát của bạn theo định dạng LRC. Bạn cũng có thể chỉ định đường dẫn tùy chỉnh đến thư mục thư viện nhạc chứa tệp lời bài hát."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Tệp lời bài hát này không tồn tại."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Cài đặt cho trình bảo vệ màn hình này có sẵn tại đây."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của tiện ích bổ sung BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Lời bài hát Path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "Đặt đường dẫn đến thư mục chứa một nhóm các tệp .lrc. Viết đường dẫn tuyệt đối đến bất kỳ thư mục hiện có nào."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Loại trạm"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "Thông tin về Đài phát thanh Internet (FM)"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "Không thể lấy được thông tin về radio internet."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Đường dẫn đến tệp lời bài hát"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Đường dẫn đến tệp MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "Tên máy chủ lưu trữ đài phát thanh MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "Cổng vào đài phát thanh MPEG"
+    }
+  ]
+}

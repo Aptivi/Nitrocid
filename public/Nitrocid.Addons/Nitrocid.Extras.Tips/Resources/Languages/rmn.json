@@ -1,0 +1,311 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "că puteți executa comenzi de proces în două moduri: introducând direct numele fișierului executabil și folosind comanda „exec”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "că vă puteți bloca ecranul folosind comanda „lockscreen”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "că vă puteți construi propriile modificări ale nucleului folosind C# și Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "că puteți folosi mai multe comenzi folosind punctul și virgulă dintre comenzi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "că puteți scăpa de ghilimele duble în interiorul argumentelor citate atunci când executați comenzi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "că puteți modifica setările nucleului folosind comanda „settings”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "că vă puteți salva ecranul folosind comanda „salvare ecran”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "că ne puteți raporta erori accesând pagina de proiect GitHub a Nitrocid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "că puteți face o comandă rapidă la comanda dorită folosind comanda „alias”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "că vă puteți construi propriul ecran de introducere folosind C# și Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "că puteți instala suplimente suplimentare pentru a face kernel-ul mai util și amuzant?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "că vă puteți crea propriile teme minunate folosind comanda „mktheme”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "că vă puteți schimba culorile nucleului fie folosind comanda „settings”, fie folosind una dintre temele pre-construite?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "că vă puteți reseta nucleul la valorile implicite din fabrică folosind argumentul „resetare”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "că puteți accesa documentația noastră extinsă pe pagina noastră GitBook?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "că versiunile pe termen lung sunt acceptate timp de cinci ani pentru suportul principal și trei ani pentru actualizările de securitate?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "că 0.0.1 a fost prima versiune a Nitrocid KS care a fost lansată pe 22 februarie 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "că seria 0.0.24.x a fost singura serie de versiuni care deținea versiunea API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "că versiunile pe termen scurt sunt acceptate doar nouă luni?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "că seria 0.1.x este incompatibilă cu seria 0.0.24.x sau mai veche?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "că puteți rula Nitrocid KS pe Linux, macOS și Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "că puteți consulta documentația API pentru a vă ajuta să vă modificați?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "că puteți obține câteva dintre jocurile minunate, cum ar fi Hangman și ShipDuet, instalând suplimente suplimentare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "că, în Meteor, dacă te prăbușești cu o furtună de meteoriți roșii, nava ta se prăbușește?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "că vă puteți converti nucleul în centre de informare folosind funcția de andocare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "că puteți face grupuri de utilizatori pentru a organiza conturile de utilizatori?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "că dacă ești membru al unui grup care acordă anumite permisiuni, ai voie să faci astfel de operațiuni?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "că vă puteți schimba fusul orar al nucleului fără a vă afecta sistemul gazdă?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "că poți folosi editorul interactiv de text și hexadecimal pentru a economisi timp?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "că cel mai vechi editor de text despre care se știe că lucrează cu primul sistem Unix este ed, cel mai vechi editor de text lansat în 1973 livrat cu sistemul Unix găsit pe un PDP-7 la AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "că puteți forța și comanda de editare pentru a lansa editorul într-un anumit tip?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "că editorul de text interactiv încearcă să simuleze cele mai de bază caracteristici ale celor mai populare editoare de text Unix, vi și vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "că dacă nu știți ce faceți cu fișierul binar, editarea unui astfel de fișier în acest fel va duce la coruperea sau pierderea datelor din fișierul vizat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "că pe sistemele Linux, shell-ul este inițiat atât cu ajutorul handler-ului de conectare, cât și al programului de inițializare a sistemului, de obicei găsit în /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "că puteți efectua operațiuni comune de fișiere, cum ar fi copierea, mutarea, ștergerea, editarea și așa mai departe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "că TUI-ul interactiv al unui manager de fișiere simulează funcționalitatea Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "că dacă nucleul se blochează, de obicei creează un fișier dump?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "că puteți diagnostica nucleul prin depanarea acestuia folosind funcționalitatea încorporată de depanare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "că puteți descărca și încărca fișiere direct din shell-ul UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "că nucleul poate fi tradus chiar și în fazele pre-boot, pornindu-l cu argumentul „lang”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "că vă puteți construi propriile screensavere înregistrându-le în mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "că primul screensaver care a golit ecranul după trei minute de inactivitate pe PC-urile IBM originale, scrnsave, a fost creat în 1983 de John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "că unele dintre screensaverele cu ritm rapid pot provoca convulsii fotosensibile?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "că jurnalele nucleului sunt folosite ca jurnale de pornire și oprire?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "că modurile tale pot deveni acum traducibile?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "că modurile dvs. pot comunica cu suplimentele nucleului și alte moduri, creând un fel de comunicare și realizând interoperabilitate?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "că vă puteți conecta la depanatorul de la distanță și, opțional, la serverul de chat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "că puteți utiliza shell-ul de depanare, care este disponibil doar pentru versiunile de dezvoltare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "că modurile tale pot avea acum propria lor configurație prin înregistrarea claselor asociate?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "că modurile tale își pot înregistra propriile shell-uri?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "că modurile dvs. pot adăuga comenzi la shell-urile existente pentru a crește cantitatea de comenzi care pot fi utilizate?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "că clasele dvs. de comandă pot reprezenta cu acuratețe argumentele și comutatoarele transmise?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "că puteți interoga comutatoarele trecute folosind clasele de gestionare a comutatoarelor găsite în API-ul kernelului?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "că UESH include funcționalitatea de scripting pentru a facilita realizarea și rularea scripturilor?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "că shell-ul include funcționalitate pentru a inhiba anularea aplicațiilor active?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "că Nitrocid este profund integrat cu Terminaux pentru a permite o randare mai rapidă și mai bună?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "că acum puteți redimensiona aplicațiile interactive fără să vă faceți griji că rezultatul este corupt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "că există comenzi care solicită intrarea utilizatorului, care sunt utile pentru scripturi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "că puteți prezenta întrebarea introdusă de utilizator în mai multe moduri, cum ar fi alegere, tabel, simplu, selecție și așa mai departe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "că puteți plasa substituenții în textul dvs. care le susține?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "că puteți folosi diferite drivere de kernel pentru a schimba modul în care funcționează o anumită operațiune?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "că vă puteți face propriile screensavere și stropi în C# sau Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "că puteți interoga sistemul gazdă și emulatorul de terminal folosind clasa platformei kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "că poți cere un acord de confidențialitate înainte de a face ceva sensibil în modul tău?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "că poți dezactiva notificările folosind funcția Nu deranja?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "că puteți salva istoricul notificărilor folosind o funcție găsită în managerul de notificări?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "că puteți schimba modul în care sunt generate numere aleatorii prin schimbarea driverului?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "că diversele API-uri oferă funcții utile pentru modurile dvs.?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Această secțiune vă permite să configurați modul în care funcționează Sfaturile."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Afișați sfaturi pentru nucleu"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Dacă este activat, shell-ul vă arată sfaturi pentru fiecare conectare."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "că puteți face programe de pornire folosind modurile de kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "că Nitrocid (Kernel Simulator 0.0.2) a numit shell-ul încorporat shell-ul „UESH”?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "că screensaverele au fost promovate ca fiind o soluție împotriva arderilor de ecran în ecranele cu tub catodic (CRT) sau cu plasmă?"
+    }
+  ]
+}

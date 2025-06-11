@@ -1,0 +1,62 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "laisens jaanakaaree"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "angrejee shabdakosh"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "shabd kee jaanakaaree"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "epeeaee ke tahat laisens praapt hai"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "shabd:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "ke lie shabd arth"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "shabd bhed:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "paribhaasha:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "vaaky mein udaaharan:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "paribhaashit karane ke lie prayukt srot"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "samaanaarthee shabd:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "vilom shabd:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "paribhaashit karane ke lie shabd"
+    }
+  ]
+}

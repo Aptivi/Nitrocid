@@ -1,0 +1,283 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "chulgu"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "naljja mich sigan jeongboleul gajyeoobnida."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "milli cho :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "cho :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "uisalog:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "sigan:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "yoil :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "gaewol :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "nyeon:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "il :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "yoil :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "baineoli :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "hyeonji sigag:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "segyesi :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "yunigseu sigan :"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "naljja jeongboleul pasinghaji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "hyeongsig-i olbaleunji hwag-inhasibsio."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "deiteu:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "sigag:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "gandanhan seutob-wochi"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "sijag ttoneun jungji"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "muleup"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "chogihwa"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "gandanhan taimeo"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "gangyeog seoljeong"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "pyosidoen sigan chogwaneun susjaga anibnida."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "sigan chogwaleul millicho dan-wilo jijeong"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "Figgle laibeuleolieseo jiwonhaneun figlet geulkkol-eul jagseonghasibsio. jasehan naeyong-eun laibeuleoli seolmyeongseoleul chamjohasibsio."
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "taimeoyong Figlet geulkkol"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "taimeoe Figlet hwalseonghwa"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "hwalseonghwadoemyeon taimeoe figlet-eul sayonghabnida. Figlet-i hwalseonghwadoen sangtaeeseo sigan-eul jeogjeolhage lendeolinghalyeomyeon keun konsol hwamyeon-i pil-yohabnida."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "hyeonjae naljja mit sigan jeongboreul gajyeoopnida."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "jeongbo"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "seutobwochiga junbidoeeossseupnida."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "seutobwochi silhaeng jung!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "saeroun raep!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "kaunteudaun sijak"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "taimeo"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "seutob-wochi"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "ajig laeb-i eobs-seubnida..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "laeb moglog"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "pomodolo taimeo"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "pomodolo"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "pomodolo taimeoga junbidoeeossseubnida."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "4beon-ui banbog-eseo pomodolo taimeo beonho {0}"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "jjalb-eun hyusig"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "hyusig sigan jehan-eul millicho dan-wilo jijeong"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "hyusig gangyeog seoljeong"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "jeongboleul inswaehal naljja mich sigan"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "i segsyeon-eseoneun taimeo aepeullikeisyeon-ui jagdong bangsig-eul guseonghal su issseubnida."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "i segsyeon-eseoneun pomodoro taimeo aepeullikeisyeon-ui jagdong bangsig-eul guseonghal su issseubnida."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "pomodoro taimeoe Figlet hwalseonghwa"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "hwalseonghwahamyeon pomodoro taimeoe figlet-eul sayonghabnida. Figlet-eul hwalseonghwahayeo sigan-eul jedaelo lendeolinghalyeomyeon keun konsol hwamyeon-i pil-yohadaneun jeom-e yuuihaseyo."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "pomodolo taimeoui Figlet geulkkol"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "saengsan naljjaga jalmosdoeeossseubnida."
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "manlyo gigan-i jalmosdoeeossseubnida."
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "manlyo naljjaga jalmosdoeeossseubnida."
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "saengsan naljja"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "manlyo naljja"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "manlyo gigan"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "jepum sangtae"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "jepum sangtae"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "jepum manlyo jeongboleul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "jepum manlyo jeongboleul gajyeoobnida."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "saengsan naljja(jepum cheugmyeon ttoneun hadan chamjo)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "manlyo naljja ttoneun gigan(gat-eun wichie myeongsijeog-eulo jagseongdoegeona 6gaewol ttoneun 1nyeongwa gat-i gigan)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "daesang jepum-i manlyo naljjaleul myeongsijeog-eulo jijeonghaji anh-assneunji yeobu"
+    }
+  ]
+}

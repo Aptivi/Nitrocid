@@ -1,0 +1,118 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Connectit ad SSH servo."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Tesseram intrant pro {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH Disconnected."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Error coniungere conatur cum servo SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Optio definita {0} invalida est."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Dicendum est, quod numerorum est."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Preme aliqua clavis ire."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Connectit ad SSH servo mandatum exequi."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Quomodo vis signo authenticitatis incisionem?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Privata clavis file"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Password"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Intrant passphrasim clavem {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Fasciculus key {0} non est."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Error privatim clavem addere conatur:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Error exequendi mandatum SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Error in SSH testa"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Scribe quomodo aperiens conventum tuum vis promptum esse. Relinque blank ut default style. Placeholders parsed sunt."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Intra locum clavis privatis ad {0}. Scribere \"q\" claves addendo ad perficiendum:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Haec sectio permittit te configurare quomodo opera SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Username promptum style ad SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Addere novos hospites ad celeritatem SSH dial"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Si enabled, novam nexum addit cum celeritate SSH dial."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH connectitur sed nullo cliente."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH servo ad coniungere ad"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Username signo authenticitatis incisionem cum"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Mandatum ad remotius exequendum"
+    }
+  ]
+}

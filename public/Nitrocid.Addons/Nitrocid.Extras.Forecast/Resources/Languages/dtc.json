@@ -1,0 +1,264 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "Toont weersinformatie voor de opgegeven stad. Maakt gebruik van OpenWeatherMap."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "- Weersinformatie voor {0} -"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "Weer: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "Druk: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "Vochtigheid: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "U kunt uw eigen API-sleutel krijgen op https://home.openweathermap.org/api_keys."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "Voorkeurseenheid voor temperatuur"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "Voelt als: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "Temperatuur: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "Windsnelheid: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "Windrichting: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "Toont alle beschikbare steden"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "Verwijderen"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "Voer uw API-sleutel in:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "U kunt de onderstaande link raadplegen voor de lijst met steden met hun ID's, of u kunt \"-list\" doorgeven aan deze opdracht."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "In deze sectie kunt u configureren hoe Prognose werkt."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "Toont weersinformatie voor de opgegeven stad. Maakt gebruik van The Weather Channel van IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "Weerinformatie in een interactieve TUI"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "Toont alle beschikbare steden en hun lengte- en breedtegraadparen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- Weerinformatie --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "Breedtegraad en lengtegraad"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "Bewolking"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "Tijdstip"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "Minimale temperatuur"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "Maximale temperatuur"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "Kans op neerslag"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "Soort neerslag"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "Warmte-index"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "Gevoelstemperatuur"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "Ultraviolette index"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "Ultraviolette beschrijving"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "Voer de breedte- en lengtegraad van de stad in."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "U kunt uw eigen API-sleutel verkrijgen door de IBM-website te raadplegen voor richtlijnen."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "Weerinformatie laden vanaf geografische locatie"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "Weerconditie"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "Temperatuur"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "Windsnelheid"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "Windrichting"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "Vochtigheidsgraad"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "Breedtegraad"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "Lengtegraad"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "Voer een plaatsnaam in om te zoeken."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "Er zijn geen steden met deze naam. Als u naar een specifieke stad probeert te zoeken, probeer dan te zoeken naar een bredere locatie die het dichtst bij de stad ligt die u zoekt."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "Selecteer een stad uit de onderstaande lijst. De twee cijfers vertegenwoordigen geografische locaties."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "Voer de breedtegraad van de stad in."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "Voer de lengtegraad van de stad in."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "Breedtegraad is ongeldig."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "Lengtegraad is ongeldig."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "U kunt uw eigen API-sleutel verkrijgen door de IBM-website te raadplegen voor richtlijnen. Voer de API-sleutel van het weerkanaal in."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "De Weather Channel API-sleutel wordt niet verstrekt. Raadpleeg de IBM-website als u hulp nodig hebt."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "Toevoegen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "Alles verwijderen"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Het is niet gelukt om de instellingen op te halen."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "Handmatig toevoegen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "Kan dagdeelarray niet ophalen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "Kan geen dagdeel krijgen"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "Selecteer de gewenste eenheid voor temperatuur (dit geldt alleen voor de opdracht 'weer'). 1 is Kelvin, 2 is metrisch en 3 is imperiaal."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "Breedtegraad om te gebruiken"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "Lengtegraad om te gebruiken"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Weather.com API-sleutel"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "Stad-ID of stadsnaam bekend bij OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "OpenWeatherMap API-sleutel"
+    }
+  ]
+}

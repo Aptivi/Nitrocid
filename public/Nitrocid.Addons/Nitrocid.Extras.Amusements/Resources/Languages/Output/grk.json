@@ -1,0 +1,495 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC",
+      "text": "Δείτε αν μπορείτε να λύσετε έγκαιρα μαθηματικές εξισώσεις"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_CORRECT",
+      "text": "Λύθηκε τέλεια!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_INCORRECT",
+      "text": "Λύθηκε λάθος."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
+      "text": "Ενεργοποιήστε τα αληθινά χρώματα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
+      "text": "Καθυστέρηση σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
+      "text": "Δείτε αν μπορείτε να πατήσετε ένα πλήκτρο εγκαίρως"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME",
+      "text": "Ο χαρακτήρας δεν πατήθηκε στην ώρα του."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CORRECT",
+      "text": "Έχετε πατήσει τον σωστό χαρακτήρα!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT",
+      "text": "Έχετε πατήσει λάθος χαρακτήρα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_ESC",
+      "text": "Πατήστε ESC για έξοδο."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
+      "text": "Ελάχιστος αριθμός επίλυσης"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
+      "text": "Μέγιστος αριθμός επίλυσης"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
+      "text": "Είσοδος εμφάνισης επίλυσης"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC",
+      "text": "Εάν θα εμφανιστεί αυτό που γράφεται στη γραμμή εντολών εισαγωγής."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC",
+      "text": "Ποιος είναι ο ελάχιστος αριθμός για επιλογή;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC",
+      "text": "Ποιος είναι ο μέγιστος αριθμός για επιλογή;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC",
+      "text": "Ενεργοποιεί την υποστήριξη πραγματικού χρώματος."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
+      "text": "Προεπιλεγμένη δυσκολία για το SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
+      "text": "Λήξη χρονικού ορίου πατήματος για το SpeedPress"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε για το πάτημα του πλήκτρου πριν από το χρονικό όριο; (Σε προσαρμοσμένη δυσκολία)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
+      "text": "Καθυστέρηση σταδίου σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν σχεδιάσετε το επόμενο στάδιο;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC",
+      "text": "Ξεκινά το παιχνίδι με εύκολη δυσκολία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC",
+      "text": "Ξεκινά το παιχνίδι με μέτρια δυσκολία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC",
+      "text": "Ξεκινά το παιχνίδι σε δύσκολη δυσκολία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC",
+      "text": "Ξεκινά το παιχνίδι με πολύ δύσκολη δυσκολία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC",
+      "text": "Ξεκινά το παιχνίδι με προσαρμοσμένη δυσκολία. Λάβετε υπόψη ότι το προσαρμοσμένο χρονικό όριο σε χιλιοστά του δευτερολέπτου πρέπει να γραφτεί ως όρισμα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
+      "text": "Θέση κειμένου προόδου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC",
+      "text": "Επιλέξτε την προτιμώμενη θέση κειμένου προόδου."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_NEEDSNUM",
+      "text": "Μπορείτε να γράψετε μόνο τους αριθμούς."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT",
+      "text": "Πατήστε \"q\" για έξοδο."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC",
+      "text": "Το παιχνίδι με το φίδι!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METEOR_DESC",
+      "text": "Είσαι διαστημόπλοιο και οι μετεωρίτες έρχονται να σε καταστρέψουν. Μπορείτε να το αποθηκεύσετε;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_GAMEOVER",
+      "text": "Τέλος παιχνιδιού"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR",
+      "text": "Απρόσμενο σφάλμα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
+      "text": "Χρησιμοποιήστε το PowerLine για την απόδοση του διαστημόπλοιου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
+      "text": "Ταχύτητα παιχνιδιού μετεωρίτη"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC",
+      "text": "Είτε θα χρησιμοποιήσετε το PowerLine για να αποδώσετε το διαστημόπλοιο είτε για να χρησιμοποιήσετε το πρότυπο μεγαλύτερο από χαρακτήρα. Εάν θέλετε να χρησιμοποιήσετε το PowerLine με το Meteor, πρέπει να εγκαταστήσετε μια κατάλληλη γραμματοσειρά με υποστήριξη PowerLine."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC",
+      "text": "Καθορίζει την ταχύτητα του παιχνιδιού σε χιλιοστά του δευτερολέπτου."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC",
+      "text": "Υποστηρίζετε το λάθος άλογο;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
+      "text": "Ξεκινά το παιχνίδι Hangman"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC",
+      "text": "Ένα λάθος γράμμα και είσαι κρεμασμένος!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC",
+      "text": "Δοκιμάστε τις δεξιότητές σας στον Κρεμάλα πετώντας ένα τυχαίο γράμμα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC",
+      "text": "Είσαι διαστημόπλοιο και οι μετεωρίτες έρχονται να σε καταστρέψουν. Μπορείς να τους αποφύγεις;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC",
+      "text": "Λαμβάνει μια τυχαία προσφορά"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC",
+      "text": "Ρωσική ρουλέτα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC",
+      "text": "Δύο διαστημόπλοια τσακώνονται μεταξύ τους. Μια βολή και το διαστημόπλοιο θα φυσήξει. Αυτό είναι ένα τοπικό παιχνίδι δύο παικτών."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
+      "text": "Ο προσομοιωτής παιχνιδιού Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC",
+      "text": "Παίξτε το παιχνίδι Wordle αρχικά"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
+      "text": "Εορτάζει την 5η επέτειο από την κυκλοφορία του πυρήνα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
+      "text": "Εορτασμός της 5ης επετείου του πυρήνα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
+      "text": "Πρώτη κυκλοφορία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
+      "text": "Αυτός ο πυρήνας κυκλοφόρησε για πρώτη φορά στις 22 Φεβρουαρίου 2018 για να φτιάξει έναν μινιμαλιστικό προσομοιωτή που στην πραγματικότητα προσομοιώνει πώς λειτουργεί ο πυρήνας του πυρήνα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
+      "text": "Παλαιότερα φιλοξενούσε μόνο ένα κέλυφος και μερικές εντολές και λειτουργούσε μόνο με τα Windows λόγω της χρήσης του εργαλείου Windows Management Instrumentation."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
+      "text": "Επίσης, δεν είχε τη δική του τεκμηρίωση."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
+      "text": "Βελτιστοποίηση πυρήνα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
+      "text": "Κυκλοφόρησαν εκδόσεις του πυρήνα, όπως η δεύτερη σημαντική έκδοση για προσθήκη χρωματισμού και βασικών χαρακτηριστικών, και η τέταρτη κύρια έκδοση για προσθήκη διαμόρφωσης."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
+      "text": "Η τεκμηρίωση ξεκίνησε για την έκτη σημαντική κυκλοφορία και σιγά σιγά προστέθηκαν διάφορα ωραία πράγματα στον πυρήνα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
+      "text": "Τρέχουσα έκδοση"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
+      "text": "Αυτή η έκδοση βελτιώνει πλέον τον πυρήνα σε σημείο που δεν συμπεριφέρεται πλέον όπως οι παλιές εκδόσεις."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
+      "text": "Επειδή κυκλοφόρησαν τα νέα πρωτοποριακά χαρακτηριστικά, αποφασίσαμε να ονομάσουμε αυτόν τον πυρήνα..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
+      "text": "Χρόνια πολλά για τα 5 χρόνια!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
+      "text": "Αλογο"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS",
+      "text": "[ENTER] Ξεκινήστε τον αγώνα | [ESC] Έξοδος | [ΕΠΑΝΩ/ΚΑΤΩ] Μετακίνηση επιλογής"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOUWIN",
+      "text": "Το άλογό σας κέρδισε τον αγώνα!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_BACKRACE_YOULOSE",
+      "text": "Το άλογό σας έχασε την κούρσα!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOULOSE",
+      "text": "Είσαι κρεμασμένος!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HANGMAN_YOUWIN",
+      "text": "Κερδίζεις!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_QUESTION",
+      "text": "Ποιο είναι το στοίχημά σας;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_RIGHT",
+      "text": "Σωστά το μαντέψατε!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_WRONG",
+      "text": "Κάνετε λάθος."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_UNLUCKY",
+      "text": "Αλλά, είσαι άτυχος. Ηττημένος."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_ROULETTE_LUCKY",
+      "text": "Είστε τυχεροί! Νικητής!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_DRAW",
+      "text": "Είναι ισοπαλία."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SHIPDUET_WINNING",
+      "text": "Ο παίκτης {0} κερδίζει!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR",
+      "text": "Τρέχων χαρακτήρας:"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_WORDLE_WIN",
+      "text": "Μαντέψατε τη σωστή λέξη! Κερδίζεις!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
+      "text": "Ρυθμίσεις χρώματος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+      "text": "Ένα παιχνίδι με φίδια."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
+      "text": "Σας δείχνει ωραία διάσημα αποσπάσματα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
+      "text": "Επιλέξτε τη δυσκολία που προτιμάτε, όπου το 0 είναι εύκολο, το 1 είναι μεσαίο, το 2 είναι δύσκολο, το 3 είναι πολύ δύσκολο και το 4 είναι προσαρμοσμένο."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
+      "text": "Χρησιμοποιήστε το PowerLine για απόδοση διαστημόπλοιου στο ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC",
+      "text": "Είτε θα χρησιμοποιήσετε το PowerLine για να αποδώσετε το διαστημόπλοιο είτε για να χρησιμοποιήσετε το πρότυπο μεγαλύτερο από χαρακτήρα. Εάν θέλετε να χρησιμοποιήσετε το PowerLine με το ShipDuet, πρέπει να εγκαταστήσετε μια κατάλληλη γραμματοσειρά με υποστήριξη PowerLine."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
+      "text": "Ταχύτητα παιχνιδιού στο ShipDuet"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC",
+      "text": "Χρησιμοποιεί τη λίστα κοινών λέξεων."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC",
+      "text": "Χρησιμοποιεί την πλήρη λίστα λέξεων."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_PONG_DESC",
+      "text": "Το παιχνίδι πινγκ πονγκ!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PONG_SCORE",
+      "text": "Σκορ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE",
+      "text": "Ιπποδρομίες"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN",
+      "text": "Δήμιος"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE",
+      "text": "Meteor Dodge"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER",
+      "text": "Meteor Shooter"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_PONG",
+      "text": "Πονγκ"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET",
+      "text": "Ντουέτο πλοίου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+      "text": "Snaker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLE",
+      "text": "Wordle"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG",
+      "text": "Wordle (πρωτότυπο)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN",
+      "text": "Άγνωστο απόσπασμα."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN",
+      "text": "Άγνωστος συγγραφέας."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
+      "text": "Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να ρυθμίσετε το Solver."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε το SpeedPress."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε το Meteor και το ShipDuet."
+    }
+  ]
+}

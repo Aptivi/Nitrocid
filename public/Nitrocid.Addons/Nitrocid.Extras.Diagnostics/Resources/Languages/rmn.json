@@ -1,0 +1,27 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Obține backtrace pentru toate firele"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Credem că rulați Windows 8 sau o versiune anterioară. Această operațiune nu este acceptată."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Informații de urmărire a stivei de fire pentru {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Nu este un fir Nitrocid KS"
+    }
+  ]
+}

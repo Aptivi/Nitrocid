@@ -1,0 +1,27 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Tüm iş parçacıkları için geri izlemeyi alır"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Windows 8 veya daha düşük bir sürüm kullandığınızı düşünüyoruz. Bu işlem desteklenmiyor."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} için iş parçacığı yığın izleme bilgisi"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Nitrocid KS konusu değil"
+    }
+  ]
+}

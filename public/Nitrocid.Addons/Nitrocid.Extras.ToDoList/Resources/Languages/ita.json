@@ -1,0 +1,49 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Azione non valida."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Nome dell'attività"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Gestore delle attività da fare"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Impossibile aggiungere o rimuovere un'attività."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Fornisci un nome per la tua attività."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Impossibile contrassegnare un'attività."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Non riesco a ottenere un elenco di attività"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Se aggiungere, rimuovere, contrassegnare come fatto o deselezionare come fatto un'attività"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Se elencare, salvare o caricare tutte le attività"
+    }
+  ]
+}

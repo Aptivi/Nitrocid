@@ -1,0 +1,119 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_NAME",
+      "text": "milli cho dan-wiui jiyeon"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_DESC",
+      "text": "da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_NAME",
+      "text": "saeloun hwamyeon jiyeon(millicho)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_DESC",
+      "text": "sae hwamyeon-e sseugi jeon-e myeoch millicholeul gidalyeoya habnikka?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "ileum mich seong saengseong-gi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_NAME",
+      "text": "choeso ileum su"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_NAME",
+      "text": "choedae ileum su"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_DESC",
+      "text": "saengseonghal ileum-ui choesolyang"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_DESC",
+      "text": "saengseonghal choedae ileum su"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
+      "text": "choeso yeonlyeong su"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
+      "text": "choedae yeonlyeong su"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
+      "text": "saengseonghal choeso yeonlyeong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
+      "text": "saengseonghal su issneun choedae yeonlyeong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "ireum chajgi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "namseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "yeoseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "tonghap ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "seong chajgi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DESC",
+      "text": "imuiui sarame daehan deiteobeiseu johoereul simyulleisyeonhapnida."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "ileum taegeu saengseong(umlauteuneun hyeonjae jiwondoeji anh-eum)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "geomsaeg-eo"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "geomsaeghal ileum jeobdusa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "geomsaeghal ileum jeobmisa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "geomsaeghal seong jeobdusa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "geomsaeghal seong jeobmisa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "saengseonghal ileum su?"
+    }
+  ]
+}

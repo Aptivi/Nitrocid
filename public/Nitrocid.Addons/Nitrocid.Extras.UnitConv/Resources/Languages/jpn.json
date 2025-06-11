@@ -1,0 +1,78 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
+      "text": "単位変換器"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS",
+      "text": "利用可能なユニットタイプとそのユニット："
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
+      "text": "利用可能なすべてのユニットをリストします"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC",
+      "text": "TUI バージョンの単位コンバータを使用する"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_NOUNITTYPE",
+      "text": "そのようなユニットタイプはありません:"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPES",
+      "text": "利用可能なユニットタイプ:"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_UNITSTOCONVERT",
+      "text": "変換する単位"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NUMBERPROMPT",
+      "text": "変換する数値を入力してください..."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NONUMBER",
+      "text": "変換する数値が入力されていません。"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_INVALIDNUMBER",
+      "text": "入力された番号は無効です。"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_CANTCONVERT",
+      "text": "単位変換ができない。"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_KEYBINDING_CONVERT",
+      "text": "変換する..."
+    },
+    {
+      "loc": "NKS_UNITCONV_HOMEPAGE_UNITCONV",
+      "text": "単位換算"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC",
+      "text": "ユニットタイプ"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC",
+      "text": "変換する元の単位の数量"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC",
+      "text": "ソースユニット"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
+      "text": "対象ユニット"
+    }
+  ]
+}

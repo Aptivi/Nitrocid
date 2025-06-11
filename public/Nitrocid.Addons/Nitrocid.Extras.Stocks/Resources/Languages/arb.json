@@ -1,0 +1,120 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "yahsul ealaa maelumat al'ashum kulu saea"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "ramz alsharikat alqasir"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "'adkhul miftah AlphaVantage API alkhasu bik"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "yurjaa taqdim miftah API alkhasi bika."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "la yumkin astikhdam miftah wajihat barmajat altatbiqat altawdihiati."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "yajib 'an yatakawan miftah API alkhasi bik min 16 hrfan."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "hadath khata 'athna' jalb bayanat al'ashumi. maelumat adafiat yumkin ayjaduha huna"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "sier alsahm alaiftitahiu"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "airtifae sier alsahm"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "ainkhifad sier alsahm"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "sier 'iighlaq alsahm"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "hajm almakhzun"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "matlub miftah API. takwin min al'iiedadati."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "la tujad bayanat almakhzun almutahati."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "yutih lak hadha alqism takwin al'ashimi."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "miftah API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "miftah wajihat barmajat tatbiqat AlphaVantage Stocks"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "ramz alsharika"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "sharikat al'ashum"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "la yumkin alhusul ealaa maelumat almakhzuni."
+    }
+  ]
+}

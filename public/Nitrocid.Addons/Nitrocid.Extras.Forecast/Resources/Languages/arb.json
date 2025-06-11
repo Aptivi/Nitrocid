@@ -1,0 +1,284 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "yuzhir maelumat altaqs limadinat muhadadatin. yustakhdam OpenWeatherMap."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "- maelumat altaqs li {0} -"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "altaqsa: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "aldaghta: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "alrutubatu: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "yumkinuk alhusul ealaa miftah API alkhasi bik ealaa https://home.openweathermap.org/api_keys."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "alwahdat almufadalat lidarajat alharara"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "yshbh: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "darajat alhrart: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "sureat alryah: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "aitijah alriyah: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "yuzhir kulu almudun almutaha"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "īzīl"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "adẖl mftāḥ API al-ẖāṣ bk:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "īmknk imā al-rǧūʿ ili al-rābṭ adnāh llḥṣūl ʿli qāʾimẗ al-mdn bmʿrfāthā, aū tmrīr \"-list\" ili hḏā al-ʾamr."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "ītīḥ lk hḏā al-qsm tkwyn kīfīẗ ʿml al-tūqʿāt."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "yuzhir maelumat altaqs limadinat muhadadatin. yustakhdim qanat altaqs min IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "maelumat altaqs fi TUI altafaeulia"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "yaerid jamie almudun almutahat wa'azwaj khutut altuwl waleard alkhasat biha"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "- maelumat altaqs -"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "khutut altuwl waleard"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "ghita' min alghuyum"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "waqt alyawm"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "darajat alhararat aldunya"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "darajat alhararat alquswaa"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "fursat hutul al'amtar"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "nawe hutul al'amtar"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "muashir alharara"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "hawa' barid"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "muashir al'ashieat fawq albanafsajia"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "wasf al'ashieat fawq albanafsajia"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "'adkhul khata aleard wakhata altuwl lilmadinati."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "yumkinuk alhusul ealaa miftah wajihat barmajat altatbiqat (API) alkhasu bik ean tariq alrujue 'iilaa mawqie IBM al'iiliktrunii lilhusul ealaa 'iirshadati."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "tahmil maelumat altaqs min almawqie aljughrafii"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "halat altaqs"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "darajat harara"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "sureat alriyah"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "atijah alriyah"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "mueadal alrutuba"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "khatu aleard"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "khatu altuwl"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "'adkhul asm almadinat lilbahtha."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "la tujad mudun bihadha alaismi. 'iidha kunt tuhawil albahth ean madinat mueayanatin, fahawal albahth ean mawqie 'awsae wa'aqrab 'iilaa almadinat alati tabhath eanha."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "akhtar madinatan min alqayimat 'adnahu. alraqman yumathilan almawaqie aljughrafiata."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "'adkhul khata aleard lilmadinati."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "'adkhul khata altuwl lilmadinati."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "khatu aleard ghayr salihi."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "khatu altuwl ghayr salihi."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "yumkinuk alhusul ealaa miftah wajihat barmajat altatbiqat (API) alkhasu bik ean tariq alrujue 'iilaa mawqie IBM al'iiliktrunii lilhusul ealaa 'iirshadat. 'adkhal miftah wajihat barmajat tatbiqat qanaat altaqsi."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "lam yatima tawfir miftah Weather Channel API. 'iidha kunt bihajat 'iilaa musaeadati, qum biziarat mawqie wib IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "'iidafatan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "'iizalat alkuli"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "'iidafat ydwyan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "la yumkin alhusul ealaa majmueat 'ajza' alyawm"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "la yumkin alhusul ealaa juz' alyawm"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "hadad alwahdat almufadalat ladayk lidarajat alharara (yantabiq hadha faqat ealaa 'amr \"altaqsi\"). 1 hi kalifn, wa2 hi mitri, wa3 hi 'iimbiraturi."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "khatu aleard almurad aistikhdamuh"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "khatu altuwl almurad aistikhdamuh"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "miftah API alkhasi bi Weather.com"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "maerif almadinat 'aw asm almadinat almaeruf li OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "miftah API alkhasi bi OpenWeatherMap"
+    }
+  ]
+}

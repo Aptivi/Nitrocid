@@ -1,0 +1,118 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Terhubung ke server SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Masukkan kata sandi untuk {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH terputus."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Terjadi kesalahan saat mencoba terhubung ke server SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Opsi yang ditentukan {0} tidak valid."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Jawabannya harus berupa angka."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Tekan tombol apa saja untuk kembali."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Terhubung ke server SSH untuk menjalankan perintah."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Bagaimana Anda ingin melakukan autentikasi?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "File kunci pribadi"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Kata sandi"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Masukkan frasa sandi untuk kunci {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Berkas kunci {0} tidak ada."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Terjadi kesalahan saat mencoba menambahkan kunci pribadi:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Kesalahan saat menjalankan perintah SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Kesalahan pada shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Tuliskan bagaimana Anda ingin prompt login Anda. Kosongkan untuk menggunakan gaya default. Placeholder diurai."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Masukkan lokasi kunci pribadi untuk {0}. Tulis \"q\" untuk menyelesaikan penambahan kunci:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Bagian ini memungkinkan Anda mengonfigurasikan cara kerja SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Gaya permintaan nama pengguna untuk SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Tambahkan koneksi baru ke panggilan cepat SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Jika diaktifkan, menambahkan koneksi baru ke panggilan cepat SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri pengaturan."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH terhubung tetapi tanpa klien."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Server SSH untuk terhubung ke"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Nama pengguna untuk autentikasi"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Perintah untuk mengeksekusi dari jarak jauh"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "Menunjukkan maklumat cuaca untuk bandar tertentu. Menggunakan OpenWeatherMap."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "-- Maklumat cuaca untuk {0} --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "Cuaca: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "Tekanan: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "Kelembapan: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "Anda boleh mendapatkan kunci API anda sendiri di https://home.openweathermap.org/api_keys."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "Unit Pilihan untuk Suhu"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "Terasa seperti: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "Suhu: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "Kelajuan angin: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "Arah angin: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "Menunjukkan semua bandar yang ada"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "Alih keluar"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "Masukkan kunci API anda:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "Anda boleh sama ada merujuk pautan di bawah untuk senarai bandar dengan ID mereka, atau, hantar \"-list\" kepada arahan ini."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara Ramalan berfungsi."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "Menunjukkan maklumat cuaca untuk bandar tertentu. Menggunakan The Weather Channel daripada IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "Maklumat cuaca dalam TUI interaktif"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "Menunjukkan semua bandar yang tersedia dan pasangan latitud/longitudnya"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- Maklumat cuaca --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "Latitud dan Longitud"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "Penutup awan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "Masa hari"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "Suhu minimum"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "Suhu maksimum"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "Peluang hujan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "Jenis kerpasan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "Indeks haba"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "Sejuk angin"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "Indeks ultraviolet"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "Penerangan ultraviolet"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "Masukkan latitud dan longitud bandar."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "Anda boleh mendapatkan kunci API anda sendiri dengan merujuk tapak web IBM untuk mendapatkan panduan."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "Memuatkan maklumat cuaca dari lokasi geografi"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "Keadaan cuaca"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "Suhu"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "Kelajuan angin"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "Arah angin"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "Kadar kelembapan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "Latitud"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "Longitud"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "Masukkan nama bandar untuk dicari."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "Tiada bandar dengan nama ini. Jika anda cuba mencari bandar tertentu, cuba cari lokasi yang lebih luas yang paling hampir dengan bandar yang anda cari."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "Pilih bandar daripada senarai di bawah. Dua nombor mewakili lokasi geografi."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "Masukkan latitud bandar."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "Masukkan longitud bandar."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "Latitud tidak sah."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "Longitud tidak sah."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "Anda boleh mendapatkan kunci API anda sendiri dengan merujuk tapak web IBM untuk mendapatkan panduan. Masukkan kunci API Saluran Cuaca."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "Kunci API Saluran Cuaca tidak disediakan. Jika anda memerlukan bantuan, rujuk tapak web IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "Tambah"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "Keluarkan Semua"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri tetapan."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "Tambah Secara Manual"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "Tidak boleh mendapatkan tatasusunan bahagian hari"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "Tidak dapat bahagian hari"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "Pilih unit pilihan anda untuk suhu (ini hanya terpakai pada arahan \"cuaca\"). 1 ialah Kelvin, 2 ialah Metrik, dan 3 ialah Imperial."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "Latitud untuk digunakan"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "Longitud untuk digunakan"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Kunci API Weather.com"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "ID bandar atau nama bandar yang dikenali OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "Kunci API OpenWeatherMap"
+    }
+  ]
+}

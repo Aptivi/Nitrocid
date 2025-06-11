@@ -1,0 +1,52 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "يحصل على أثر عكسي لجميع المواضيع"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "نعتقد أنك تستخدم نظام التشغيل Windows 8 أو أقل. لا يتم اعتماد هذه العملية."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "معلومات تتبع مكدس مؤشر الترابط لـ {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "ليس موضوع Nitrocid KS"
+    }
+  ]
+}

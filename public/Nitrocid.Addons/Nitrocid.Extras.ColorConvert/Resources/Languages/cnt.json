@@ -1,0 +1,153 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "Hóngsè děngjí:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "Lǜsè děngjí:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "Lán sè děngjí:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "qīng sè děng jí ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "yáng hóng sè jí bié ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "huáng sè děng jí ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "sè diào ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "bǎo hé ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "jià zhí ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "huáng sè jí bié ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "liàng dù ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "tóng xiāng ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "zhèng jiāo ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U- sè dù ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V- sè dù ："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "jiāng láiyuán sècǎi móxíng yǐ shùzì xíng shì zhuǎnhuàn wèi mùbiāo sècǎi móxíng."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "Jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi KS géshì de mùbiāo sècǎi móxíng."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "Jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi shíliù jìnwèi."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "Shǐyòng yánsè shuōmíng fú jiāng láiyuán yánsè móxíng zhuǎnhuàn wèi mùbiāo yánsè móxíng."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "Shǐyòng yánsè shuōmíng fú jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi KS géshì de mùbiāo sècǎi móxíng."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "Shǐyòng yánsè shuōmíng fú jiāng láiyuán yánsè móxíng zhuǎnhuàn wèi shíliù jìn zhì de mùbiāo yánsè móxíng."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "Xínghào guīgé wúxiào."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "Hēi jiàn diàn píng:"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "Dì yī gè yánsè děngjí bìxū shì shùzì."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "Dì èr gè yánsè děngjí bìxū shì shùzì."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "Dì sān gè yánsè děngjí bìxū shì shùzì."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "Dì sì gè jiàn jíbié bìxū shì shùzì."
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "liàngdù (míngdù):"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "Láiyuán sècǎi móxíng"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "mùbiāo sècǎi móxíng"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "dì yīgè shùzì"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "dì èr gè shùzì"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "dì sān gè shùzì"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "dì sì"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "yánsè zhǐdìng qì"
+    }
+  ]
+}

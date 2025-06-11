@@ -1,0 +1,415 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Modul nu poate fi încărcat din cauza următoarelor:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} a început"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Limbă nevalidă"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Analizarea modurilor nu este permisă în modul sigur."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0} oprit"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} sa oprit"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Nu s-a finalizat modul {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Pornirea mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Versiunea mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} nu a fost găsit."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Nume mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Nume fișier mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Calea fișierului mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Gestionați-vă modurile"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Gestionarea modurilor este dezactivată în modul sigur."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Comanda {0} nevalidă. Verificați mai jos utilizarea:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Modul nu a fost găsit sau fișierul are caractere nevalide."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Pagina de manual {0} este nevalidă."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Luați în considerare completarea acestei pagini de manual."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Manualul modului"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Oprirea modurilor nu este permisă în modul sigur."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Modul a fost deja pornit!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Mod încă nu a început!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Contactați furnizorul modului pentru a actualiza modulul la versiunea compatibilă."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Moduri pe lista neagră"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Scrieți numele de fișiere ale modurilor care nu vor rula la pornire. Când ai terminat, scrie „q”. Scrieți un semn minus lângă cale pentru a elimina un mod existent."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} este pe lista neagră."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Porniți modificările kernelului la pornire"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Porniți automat modificările kernelului la pornire."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Fișierul mod nu este specificat."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Încercarea de a instala un mod deja instalat. Se actualizează modul..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Instalarea a eșuat pentru"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Fișierul mod furnizat este incompatibil."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Dezinstalarea a eșuat pentru"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Informațiile despre metadate necesare pentru a instala limba personalizată nu oferă localizările necesare."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Afișați comenzile de mod se bazează pe ajutor"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Fișierul mod este invalid."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Pagina de manual fără titlu"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Informațiile despre metadate necesare pentru a instala limba personalizată nu există."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Este posibil ca scriptul de modificare să nu fie nul."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Nu au fost detectate modificări."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Se oprește modul {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Modulul nu este puternic semnat. Poate conține cod nede încredere."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Modul nu poate fi încărcat deoarece există o incompatibilitate între această versiune a nucleului și acest mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Iată o listă de erori care vă pot ajuta să investigați această incompatibilitate:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Modul {0} necesită exact o versiune API {1}, dar aveți versiunea {2}. Actualizarea Nitrocid KS și/sau a modului ajută de obicei. Analiza modului a eșuat."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Este posibil ca modul {0} să nu funcționeze corect cu această versiune API. Este posibil ca modulul să nu pornească. Contactați furnizorul de mod pentru a obține cea mai recentă copie."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0} nu are numele. Analiza modului a eșuat. Examinați codul sursă."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} nu are versiunea. Analiza modului a eșuat. Examinați codul sursă."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} conține o versiune nevalidă. Analiza modului a eșuat. Versiunea a fost"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Versiune"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Nume de fișier"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Calea fișierului"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Din păcate, această pagină de manual nu are niciun conținut. Cu toate acestea, această documentație ar fi putut fi găsită pe pagina web a furnizorului de mod. Dacă tot nu puteți găsi această documentație, întrebați dezvoltatorii modului pentru mai multe informații."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Prezentat vouă de"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Lungimea conținutului"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Fără conținut."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Nicio revizuire."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Nu se poate executa funcția personalizată cu un mod inexistent"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Dependența nesatisfăcută. Dependențe nereușite sunt enumerate mai jos:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Am încercat să interogheze manualele pentru modul inexistent {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Am încercat să inițializeze manualul {0} pentru modul inexistent {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Am încercat să inițializeze fișierul manual {0} pentru modul inexistent {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Am încercat să inițializeze fișierul manual {0} care nu există pentru modul {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Nume"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Permite încărcarea modurilor care nu sunt de încredere"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Dacă se setează la true, nucleul nu va da eroare la încărcarea modurilor care nu au cheia publică semnată."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Afișați numărul comenzilor de modificare a nucleului când le enumerați în comanda de ajutor"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Pornirea sau oprirea modurilor nu este permisă în modul sigur."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Nu pot obține informații despre câmp pentru"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Nu se poate determina versiunea mod"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Excepție de încărcare necunoscută"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Nu se pot încărca localizările modului"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Porniți modul (selectați)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Porniți modul (intrare)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Opriți mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Reîncărcare mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Instalați modul (selectați)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Instalați modul (intrare)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Dezinstalează mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Începe totul"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Opreste totul"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Reîncărcați totul"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Nu se poate returna tipul de clasă inexistent din ansamblul mod"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Nu se poate găsi funcția „{0}” în modul „{1}”."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Nu se poate găsi proprietatea „{0}” în modul „{1}”."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Nu se găsește câmpul „{0}” în modul „{1}”."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Această clasă nu este o clasă de mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Limbi"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Punct de intrare"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Introduceți o cale către modul pe care doriți să îl porniți"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Nu s-a pornit mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Introduceți o cale către modul pe care doriți să îl instalați"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Nu s-a instalat mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Nu pot porni sau opri acest mod!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Indiferent dacă să porniți, să opriți, să obțineți informații din, să reîncărcați, să instalați sau să dezinstalați un mod"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Numele modului sau numele fișierului"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Indiferent dacă listați, reîncărcați, opriți, porniți sau gestionați interactiv toate modurile"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Numele modului"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Această secțiune vă permite să configurați modul în care funcționează sistemul de modificare a nucleului."
+    }
+  ]
+}

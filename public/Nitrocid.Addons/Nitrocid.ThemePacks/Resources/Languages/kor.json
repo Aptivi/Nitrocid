@@ -1,0 +1,315 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "i aedeuon-eul chogihwahaneun de pil-yohan deiteoleul gajyeool su eobs-seubnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "bolasaeg johwa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "jeongyeong-e issneun Android maseukoteu saegsang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "beulaending johwa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "ingi issneun VIM tema Ayuui eoduun beojeon"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "ingi issneun VIM tema Ayuui balg-eun beojeon"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "ingi issneun VIM tema Ayuui Mirage beojeon"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "sae hagnyeon cheosnal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "ganeunghan gajang gabyeoun teomineol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "geom-eun jangmi"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "KDE Plasma 5 temain Breeze-ui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "IntelliJwa gat-eun IDEui ingi issneun saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "dakeu saideulo dol-agal sigan-ibnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "Debian-ui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "keoneol-ui saengsaenghan gibon tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "keoneol-ui baegyeong agsenteu!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "modeun gos-e deo manh-eun agsenteu!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "EDM paen-ilamyeon sayonghaseyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "bulbich eum-yeong"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "jit-eun palansaeg baegyeong-e jang-eomhan hwang-geum gungjeon"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "podowa kiwiga seokk-im"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "podoui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "saengsaenghago seoggolo chilhan nogsaeg, palansaeg, bolasaeg"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "hwangyeong-eul nogsaeg-eulo bakkugo, keoneol-eul nogsaeg-eulo bakkuseyo. jiguleul deo puleuge mandeul-eo boseyo!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "nogsaeggwa ppalgansaeg-eul saegsang-eulo chugahaessseubnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "nogsaeggwa bunhongsaeg-i seokk-im"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "allyeojin teomineol saegsang guseongpyo jung hana"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "hoesaeg wie nogsaeg tegseuteu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "konsol-e balo issneun jeontongjeog-in indo saegsang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "teomineol-eul lemon san-eulo gadeug chaeuseyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "balg-eun namu panja"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "pyojun Linux teomineol saegsang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "hoesaeg teomineol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "teomineol-e Material Design tegseuteu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "juhwangsaeggwa galsaeg eum-yeong"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "gat-eun ileum-ui VIM tema-eseo yeong-gam-eul bad-eun Melange tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "teomineol-eul minteulo gadeug chaeuseyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "Beyond the Boundaryui Mirai Kuriyamaui saegsang palleteu."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "gat-eun ileum-ui VIM tema-eseo yeong-gam-eul bad-eun tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "ne-on beulluwa bunhongsaeg-eul joh-ahaseyo?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "i temaneun dangsin-ege junglibjeog-ieoya habnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "igeos-eun bam-ui sijag-e dangsin-ui bamhaneul-ibnida!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "10wol-i god dagaoni, junbihaseyo!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "juhwangsaeg bada"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "modeun geos-eul juhwangsaeg-eulo bakkuneun insan teomineol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "bulg-eunsaeg-ui balam-eul jubnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "pi mud-eun bulg-eunsaeg konsol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "sakula namuga jung-gug balam-eul jul geos-ibnida"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "modeun cheonglogsaeg"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "gisul aehogaleul wihan tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "teulaenseu eum-ag paen-isingayo? i temaga dangsin-eul wihan geos-ibnida!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "ingi issneun Linux un-yeong chejein Ubuntuui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "wanbyeoghan Vice City bun-wigileul seonsahabnida"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "igeos-i balo yeoleobun-ui Vice City saebyeog-ibnida."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "gajang ganglyeoghan IDE jung hanain Visual Studioui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "choesin beojeon-ui Windowsin Windows 11ui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "i temalo hyangsuleul doesallyeoboseyo!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "teomineol-eun namu panjalo guseongdoeeo issseubnida"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "dayanghan gwail-ui jung-gug paeteon-eseo yeong-gam-eul bad-assseubnida"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Linux un-yeong cheje Red Hat-ui bunsain Alma Linuxui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Linux un-yeong cheje Arch Linuxui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "Linux un-yeong cheje Arch Linuxui bunsain EndeavourOSui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Linux un-yeong cheje Red Hat-ui bunsain Fedoraui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Linux un-yeong cheje Gentooui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "saegchilhan mandalaleul hyeongseonghaneun kkakk-ajileun deushan paeteon saegsang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "ingi issneun Linux un-yeong cheje Ubuntuui bunsain Kubuntuui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "ingi issneun Linux un-yeong cheje Ubuntuui bigongsig bunsain Linux Mintui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "ingi issneun Linux un-yeong cheje Ubuntuui bunsain Lubuntuui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Linux un-yeong cheje Arch Linuxui bunsain Manjaroui saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "saeg guseongpyo Linux un-yeong cheje, openSUSEeseo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Linux un-yeong cheje, Red Hat-eseo saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "jumoghal manhan tegseuteuleul wihan dongjeog agsenteu saegsang-i issneun ppalgansaeg eum-yeong"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Linux un-yeong cheje, Red Hat-eseo pasaengdoen Rocky Linuxeseo saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Linux un-yeong cheje, Slackwareeseo saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "ingi issneun Linux un-yeong cheje, Ubuntueseo pasaengdoen Xubuntueseo saeg guseongpyo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "ingi issneun Linux un-yeong cheje, Ubuntueseo pasaengdoen bigongsigjeog-in Zorin OSeseo saeg guseongpyo"
+    }
+  ]
+}

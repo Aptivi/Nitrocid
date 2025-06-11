@@ -1,0 +1,117 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Conecta-se a um servidor SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Digite a senha para {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH desconectado."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Erro ao tentar conectar ao servidor SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "A opção especificada {0} é inválida."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "A resposta deve ser numérica."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Pressione qualquer tecla para voltar."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Conecta-se a um servidor SSH para executar um comando."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Como você deseja autenticar?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Arquivo de chave privada"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Senha"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Digite a senha para a chave {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "O arquivo de chave {0} não existe."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Erro ao tentar adicionar chave privada:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Erro ao executar comando SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Erro no shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Escreva como você quer que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os placeholders são analisados."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Insira o local da chave privada para {0}. Escreva \"q\" para terminar de adicionar chaves:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Esta seção permite que você configure como o SSH funciona."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Estilo de prompt de nome de usuário para SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Adicionar novas conexões à discagem rápida SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Se habilitado, adiciona uma nova conexão à discagem rápida SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Falha ao obter entradas de configurações."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "O SSH está conectado, mas sem cliente."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Servidor SSH para conectar"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Nome de usuário para autenticação"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Comando para executar remotamente"
+    }
+  ]
+}

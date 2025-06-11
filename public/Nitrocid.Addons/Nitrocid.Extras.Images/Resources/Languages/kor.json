@@ -1,0 +1,27 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "imiji milibogi"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "imiji gyeongloga jegongdoeji anhseubnida."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "imiji pail-i jonjaehaji anhseubnida."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "imiji pail gyeonglo"
+    }
+  ]
+}

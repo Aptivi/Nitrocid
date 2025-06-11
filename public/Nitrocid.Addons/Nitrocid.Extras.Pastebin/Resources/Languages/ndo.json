@@ -1,0 +1,58 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "Menempelkan konten file atau string ke penyedia hosting teks"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "Menentukan URL ke penyedia Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "Menentukan jenis penyedia Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "Menentukan halaman posting penyedia Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "Menentukan format posting penyedia Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "Menentukan nama bidang posting penyedia Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "Tentukan nama berkas atau teks yang akan diunggah."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Jenis penyedia Pastebin tidak didukung."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "Berhasil ditempel ke penyedia!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "Tidak dapat menempel ke penyedia."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "Jalur ke file atau string untuk ditulis"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Argumen Pastebin"
+    }
+  ]
+}

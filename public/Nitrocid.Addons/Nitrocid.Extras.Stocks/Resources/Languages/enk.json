@@ -1,0 +1,93 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Gets an hourly stock information"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Short company symbol"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Enter your AlphaVantage API key"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Please provide your API key."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Demonstration API key can't be used."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Your API key should be 16 characters long."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "An error occurred while fetching the stocks data. Additional information can be found here"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Opening stock price"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "High stock price"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Low stock price"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Closing stock price"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Stock volume"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API Key is required. Configure from the settings."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "No stock data available."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "This section lets you configure the stocks."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API key"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Key for the AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Company code"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Stocks company"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Failed to obtain settings entries."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Can't get stock information."
+    }
+  ]
+}

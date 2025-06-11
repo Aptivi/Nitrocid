@@ -1,0 +1,73 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calcolatrice per calcolare le espressioni."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Errore nel calcolo."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Mostra informazioni sulla formula del numero immaginario specificata da un numero reale e immaginario specificato"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Il numero reale non è valido."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Il numero immaginario non è valido."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formula:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Raggio:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Reale a Raggio in radianti:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Immaginario al raggio in radianti:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Angolo in radianti:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Esponenziale:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triangolare:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Espressione matematica"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Numero reale"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Numero immaginario"
+    }
+  ]
+}

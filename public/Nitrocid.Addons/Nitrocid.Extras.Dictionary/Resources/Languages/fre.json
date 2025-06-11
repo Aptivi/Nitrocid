@@ -1,0 +1,108 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informations sur la licence"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Le dictionnaire anglais"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informations sur les mots pour"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "L'API est sous licence"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Mot:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Signification des mots pour"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Partie du discours:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Définition:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Exemple dans la phrase :"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Sources utilisées pour définir"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synonymes :"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonymes :"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Mot pour définir"
+    }
+  ]
+}

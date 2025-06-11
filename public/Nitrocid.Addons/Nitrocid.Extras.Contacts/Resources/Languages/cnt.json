@@ -1,0 +1,325 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "guǎn lǐ nín de lián xì rén"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "wú fǎ dǎ kāi wén jiàn “{0}”， yīn wéi wèi zhǎo dào gāi wén jiàn 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "lián xì rén dǎo rù chéng gōng 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "wú fǎ dǎ kāi wén jiàn “{0}”， yīn wéi qiǎ wén jiàn wú xiào 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "lián xì rén wén jiàn bù cún zài 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "zhǎo dào lián xì rén"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "lián xì wén jiàn wú xiào 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard yǔ fǎ bù néng wéi kōng 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "tí gōng de lián xì rén wén jiàn méi yǒu rèn hé lián xì rén de xìn xī ， huò zhě wú xiào 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "wú fǎ jiě xī lián xì rén 。 qǐng cān yuè cuò wù xiáng xì xìn xī yǐ huò qǔ gēng duō xìn xī 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "jiē chù zhǐ shù chāo chū fàn wéi 。 zuì dà suǒ yǐn wéi {0}， ér tí gōng de suǒ yǐn wéi {1}。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "méi yǒu lián xì fāng shì 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "méi yǒu kě sōu suǒ de lián xì rén 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "zhèng zé biǎo dá shì wú xiào 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "méi yǒu lián xì 。 rú guǒ nín xiǎng dǎo rù lián xì rén ， qǐng shǐ yòng píng mù dǐ bù dìng yì de àn jiàn lái shǐ yòng dǎo rù xuǎn xiàng 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "yǒu xiē lián xì rén wú fǎ dǎo rù 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "shū rù bāo hán nín de lián xì rén de VCF wén jiàn de lù jìng 。Android de contacts2.db wén jiàn yě shòu zhī chí 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "wén jiàn bù cún zài 。 què bǎo nín yǐ jiāng zhèng què de lù jìng xiě rù VCF wén jiàn huò contacts2.db wén jiàn 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "shū rù nín lián xì rén de yǒu xiào MeCard biǎo shì xíng shì 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contact MeCard yǔ fǎ wú xiào 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contact MeCard yǔ fǎ bù néng wéi kōng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "shū rù zhèng zé biǎo dá shì lái sōu suǒ lián xì rén 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "méi yǒu bāo hán nín qǐng qiú de biǎo dá de lián xì rén 。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "lián xì rén xìng míng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "wú lián xì rén xìng míng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "lián xì dì zhǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "lián xì yóu xiāng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "méi yǒu lián xì yóu jiàn"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "lián xì jī gòu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "wú lián xì zǔ zhī"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "lián xì diàn huà"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "wú lián xì diàn huà"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "lián xì wǎng zhǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "méi yǒu lián xì wǎng zhǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "lián xì dì lǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "wú lián xì dì lǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "lián xì IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "méi yǒu lián xì IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "lián xì nì chēng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "méi yǒu lián xì nì chēng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "lián xì jiǎo sè"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "wú lián xì jiǎo sè"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "lián xì rén xìng míng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "wú lián xì rén xìng míng"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "lián xì fāng shì"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "méi yǒu lián xì fāng shì"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Liè chū nín de liánluò rén"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "jiāzài nín de liánluò rén"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "huì rù nín de liánluò rén"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "jiāng suǒ xū de shūrù shì wéi MeCard zì chuàn"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "huòqǔ liánluò zīxùn"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "méiyǒu liánluò fāngshì."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Liánluò diànhuà hàomǎ wúxiào."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Liánluò diànhuà hàomǎ chāochū fànwéi."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "Míng"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "xìng"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "liánxì dìlǐ"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "liánluò fāngshì bèizhù"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "yǒuxiē liánluò rén wúfǎ liè chū."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "shānchú"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "zīxùn"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "liánluò fāngshì"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "quánbù shānchú"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "jìnkǒu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "dǎorù zì"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "sōuxún"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "sōuxún xià yīgè"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "fǎnhuí sōuxún"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "yuánshǐ xùnxí"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "cóng MeCard dǎorù"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "běn bùfèn kě ràng nín pèizhì liánluò rén wàiguà chéngshì de gōngzuò fāngshì."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Xiǎnshì gèrén zīliào túpiàn"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "rúguǒ qǐyòng, jiāng xiǎnshì liánluò rén yǐngxiàng. Yù shè qíngkuàng xià tíng yòng yǐ fángzhǐ wùyòng hé chū yú xiàonéng yuányīn."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "vCard liánluò rén dǎng'àn de lùjìng huò MeCard biǎoshì"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "liánluò diànhuà"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "biānjí..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Shūrù cǐ liánluò rén de xīn míngchēng"
+    }
+  ]
+}

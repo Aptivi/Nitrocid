@@ -1,0 +1,66 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "将文件或字符串的内容粘贴到文本托管提供商"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "规定 Pastebin 提供程序的 URL"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "指定 Pastebin 提供程序类型"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "指定 Pastebin 提供商发布页面"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "指定 Pastebin 提供程序帖子格式"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "指定 Pastebin 提供程序帖子字段名称"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "指定要上传的文件名或文本。"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Pastebin 提供程序类型不受支持。"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "已成功粘贴至提供商！"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "无法粘贴至提供商。"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "要写入的文件或字符串的路径"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Pastebin 参数"
+    }
+  ]
+}

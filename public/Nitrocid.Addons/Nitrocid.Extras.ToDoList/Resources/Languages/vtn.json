@@ -1,0 +1,46 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Hành động không hợp lệ."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Tên nhiệm vụ"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Trình quản lý công việc cần làm"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Không thể thêm hoặc xóa nhiệm vụ."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Vui lòng cung cấp tên cho nhiệm vụ của bạn."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Không đánh dấu được nhiệm vụ."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Không thể có được danh sách các nhiệm vụ"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Có nên thêm, xóa, đánh dấu là đã hoàn thành hoặc bỏ đánh dấu là đã hoàn thành trên một nhiệm vụ không?"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Có nên liệt kê, lưu hoặc tải tất cả các tác vụ không"
+    }
+  ]
+}

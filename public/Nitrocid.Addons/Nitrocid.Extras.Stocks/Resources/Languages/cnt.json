@@ -1,0 +1,97 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "huòqǔ měi xiǎoshí de gǔpiào xìnxī"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "gōngsī jiǎnchēng"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "shūrù nín de AlphaVantage API jīn yào"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "qǐng tígōng nín de API jīn yào."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Wúfǎ shǐyòng yǎnshì API jīn yào."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Nín de API jīn yào chángdù yīng wèi 16 gè zì yuán."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Qǔdé gǔpiào zīliào shí fāshēng cuòwù. Kěyǐ zài cǐ chù zhǎodào gèng duō xìnxī"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Kāipán gǔjià"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "gāo gǔjià"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "gǔjià dī"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "shōupán gǔjià"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "kùcún liàng"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "xūyào API jīn yào. Cóng shèdìng jìnxíng pèizhì."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Wú kěyòng kùcún zīliào."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Cǐ bùfèn yǔnxǔ nín pèizhì kùcún."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API jīn yào"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage gǔpiào API de jīn yào"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "gōngsī dàimǎ"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "gǔpiào gōngsī"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Wúfǎ qǔdé gǔpiào zīxùn."
+    }
+  ]
+}

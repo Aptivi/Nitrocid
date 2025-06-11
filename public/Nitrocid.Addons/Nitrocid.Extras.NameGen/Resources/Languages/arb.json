@@ -1,0 +1,144 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_NAME",
+      "text": "altaakhir fi mili thany"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_DESC",
+      "text": "kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_NAME",
+      "text": "takhir alshaashat aljadid bialmalli thaniatan"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_DESC",
+      "text": "kam mili thaniat yajib aliaintizar qabl alkitabat fi alshaashat aljadidati?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "mawlid aliasm wallaqab"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_NAME",
+      "text": "alhadu al'adnaa lieadad al'asma'"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_NAME",
+      "text": "alhadu al'aqsaa lieadad al'asma'"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_DESC",
+      "text": "alhadu al'adnaa min al'asma' almurad 'iinshawuha"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_DESC",
+      "text": "alhadu al'aqsaa lieadad al'asma' almurad 'iinshawuha"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
+      "text": "alhadu al'adnaa lieumar aleadi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
+      "text": "alhadu al'aqsaa lieumar aleadi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
+      "text": "alhadu al'adnaa limiqdar aleumur sanawat almurad 'iinshawuha"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
+      "text": "alhadu al'aqsaa limiqdar aleumr sanawat almurad 'iinshawuha"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "mktšf al-āsm al-ʾaūl"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ asmāʾ al-ḏkūr"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ asmāʾ al-ināṯ"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "tūlīd al-ʾasmāʾ bāstẖdām qāʾimẗ al-ʾasmāʾ al-mūḥdẗ"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "mktšf al-lqb"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DESC",
+      "text": "īḥākī al-bḥṯ fī qāʿdẗ al-bīānāt lšẖṣ ʿšwāʾī."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "'iinsha' ealamat al'asma' (la yatimu daem ealamat altashkil halyan)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "mustalah albahth"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "badiat aliasm lilbahth"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "lahiqat aliasm lilbahth"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "badiat allaqab lilbahth"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "allaqab lahiqat lilbahth"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "kam eadad al'asma' almurad 'iinshawuha?"
+    }
+  ]
+}

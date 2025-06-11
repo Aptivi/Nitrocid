@@ -1,0 +1,95 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "시간별 주식 정보를 가져옵니다."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "짧은 회사 기호"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "AlphaVantage API 키를 입력하세요"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "API 키를 제공해 주세요."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "데모 API 키를 사용할 수 없습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "API 키는 16자여야 합니다."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "주식 데이터를 가져오는 중에 오류가 발생했습니다. 추가 정보는 여기에서 확인할 수 있습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "개장 주가"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "높은 주가"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "낮은 주가"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "종가"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "재고량"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API 키가 필요합니다. 설정에서 구성하세요."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "재고 데이터가 없습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "이 섹션에서는 재고를 구성할 수 있습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API 키"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage Stocks API의 키"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "회사 코드"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "주식 회사"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "주식 정보를 얻을 수 없습니다."
+    }
+  ]
+}

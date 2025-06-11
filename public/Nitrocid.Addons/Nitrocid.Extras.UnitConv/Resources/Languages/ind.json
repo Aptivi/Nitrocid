@@ -1,0 +1,78 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
+      "text": "ikaee kanavartar"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS",
+      "text": "upalabdh ikaee prakaar aur unakee ikaiyaan:"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
+      "text": "sabhee upalabdh ikaiyon ko soocheebaddh karata hai"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC",
+      "text": "yoonit kanavartar ke tui sanskaran ka upayog karen"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_NOUNITTYPE",
+      "text": "aisa koee ikaee prakaar nahin:"
+    },
+    {
+      "loc": "NKS_UNITCONV_LISTUNITS_AVAILABLETYPES",
+      "text": "upalabdh ikaee prakaar:"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_UNITSTOCONVERT",
+      "text": "roopaantarit karane ke lie ikaiyaan"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NUMBERPROMPT",
+      "text": "roopaantarit karane ke lie koee sankhya darj karen..."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_NONUMBER",
+      "text": "aapane roopaantarit karane ke lie koee sankhya darj nahin kee hai."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_INVALIDNUMBER",
+      "text": "darj kee gaee sankhya amaany hai."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_CANTCONVERT",
+      "text": "ikaee roopaantarit nahin kee ja sakatee."
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_KEYBINDING_CONVERT",
+      "text": "roopaantarit karen..."
+    },
+    {
+      "loc": "NKS_UNITCONV_HOMEPAGE_UNITCONV",
+      "text": "yoonit kanavartar"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC",
+      "text": "ikaee prakaar"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC",
+      "text": "roopaantarit karane ke lie srot ikaee mein maatra"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC",
+      "text": "srot ikaee"
+    },
+    {
+      "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
+      "text": "lakshy ikaee"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+Lihat apakah Anda dapat menyelesaikan persamaan matematika tepat waktu
+Terpecahkan dengan sempurna!
+Diselesaikan secara tidak benar.
+Aktifkan warna asli
+Penundaan dalam Milidetik
+Berapa milidetik yang harus ditunggu sebelum melakukan penulisan berikutnya?
+Lihat apakah Anda dapat menekan tombol tepat waktu
+Karakter tidak tertekan pada waktu yang tepat.
+Anda telah menekan karakter yang tepat!
+Anda menekan karakter yang salah.
+Tekan ESC untuk keluar.
+Tingkat warna merah minimum
+Tingkat warna hijau minimum
+Tingkat warna biru minimum
+Tingkat warna minimum
+Tingkat warna merah maksimum
+Tingkat warna hijau maksimum
+Tingkat warna biru maksimum
+Tingkat warna maksimum
+Tingkat warna merah minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna hijau minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna biru minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255 untuk 255 warna atau 16 untuk 16 warna.
+Tingkat warna merah maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna hijau maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna biru maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.
+Tingkat warna maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255 untuk 255 warna atau 16 untuk 16 warna.
+Jumlah minimum pemecah
+Jumlah maksimum pemecah
+Pemecah menunjukkan masukan
+Apakah akan menampilkan apa yang tertulis pada prompt input.
+Berapa jumlah minimal yang harus dipilih?
+Berapa jumlah maksimum yang harus dipilih?
+Mengaktifkan dukungan warna sebenarnya.
+Kesulitan default untuk SpeedPress
+Batas waktu penekanan tombol untuk SpeedPress
+Berapa milidetik waktu tunggu untuk menekan tombol sebelum batas waktu habis? (Dalam tingkat kesulitan khusus)
+Penundaan tahap dalam milidetik
+Berapa milidetik yang harus ditunggu sebelum menggambar tahap berikutnya?
+Memulai permainan dalam tingkat kesulitan mudah
+Memulai permainan dalam tingkat kesulitan sedang
+Memulai permainan dalam tingkat kesulitan sulit
+Memulai permainan dengan tingkat kesulitan yang sangat sulit
+Memulai permainan dengan tingkat kesulitan khusus. Harap perhatikan bahwa batas waktu khusus dalam milidetik harus ditulis sebagai argumen.
+Lokasi teks kemajuan
+Pilih lokasi teks kemajuan yang Anda inginkan.
+Anda hanya dapat menuliskan angka.
+Tekan "q" untuk keluar.
+Permainan ular!
+Anda adalah pesawat luar angkasa dan meteor akan datang untuk menghancurkan Anda. Bisakah Anda menyelamatkannya?
+Permainan telah berakhir
+Kesalahan tak terduga
+Gunakan PowerLine untuk merender pesawat luar angkasa
+Kecepatan permainan meteor
+Apakah akan menggunakan PowerLine untuk membuat pesawat luar angkasa atau menggunakan karakter standar lebih besar dari. Jika Anda ingin menggunakan PowerLine dengan Meteor, Anda perlu memasang font yang sesuai dengan dukungan PowerLine.
+Menentukan kecepatan permainan dalam milidetik.
+Apakah Anda mendukung kuda yang salah?
+Memulai permainan Hangman
+Satu huruf yang salah dan Anda akan digantung!
+Uji keterampilan Hangman Anda dengan melemparkan huruf acak.
+Anda adalah pesawat luar angkasa dan meteor-meteor akan datang untuk menghancurkan Anda. Bisakah Anda menghindarinya?
+Mendapatkan kutipan acak
+Rolet Rusia
+Dua pesawat ruang angkasa saling bertarung. Satu tembakan dan pesawat ruang angkasa itu akan meledak. Ini adalah permainan lokal dua pemain.
+Simulator permainan Wordle
+Mainkan game Wordle aslinya
+Memperingati ulang tahun ke-5 rilis kernel
+Memperingati ulang tahun ke-5 kernel
+Rilis pertama kalinya
+Kernel ini pertama kali dirilis pada tanggal 22 Februari 2018 untuk membuat simulator minimalis yang benar-benar mensimulasikan cara kerja inti kernel.
+Dulu ia hanya menampung satu shell dan beberapa perintah, dan hanya berfungsi pada Windows karena menggunakan alat Windows Management Instrumentation.
+Ia juga tidak memiliki dokumentasinya sendiri.
+Penyempurnaan Kernel
+Versi kernel dirilis, seperti rilis utama kedua untuk menambahkan pewarnaan dan fitur dasar, dan rilis utama keempat untuk menambahkan konfigurasi.
+Dokumentasi dimulai pada rilis utama keenam, dan berbagai hal bagus telah ditambahkan perlahan ke kernel.
+Versi saat ini
+Versi ini sekarang menyempurnakan kernel hingga tidak lagi berperilaku seperti versi lama.
+Karena fitur-fitur inovatif baru telah dirilis, kami memutuskan untuk memberi nama kernel ini...
+Selamat ulang tahun ke-5!
+Kuda
+[ENTER] Mulai balapan | [ESC] Keluar | [ATAS/BAWAH] Pindahkan pilihan
+Kuda Anda memenangkan perlombaan!
+Kuda Anda kalah dalam perlombaan!
+Kamu digantung!
+Kamu menang!
+Berapa taruhan Anda?
+Anda menebaknya dengan benar!
+Anda salah.
+Tapi, kamu tidak beruntung. Pecundang.
+Anda beruntung! Pemenang!
+Itu seri.
+Pemain {0} menang!
+Karakter saat ini:
+Anda menebak kata yang tepat! Anda menang!
+Pengaturan warna
+Permainan ular.
+Menunjukkan kutipan-kutipan terkenal yang bagus.
+Pilih tingkat kesulitan yang Anda inginkan, di mana 0 berarti mudah, 1 berarti sedang, 2 berarti sulit, 3 berarti sangat sulit, dan 4 berarti khusus.
+Gunakan PowerLine untuk merender pesawat luar angkasa di ShipDuet
+Apakah akan menggunakan PowerLine untuk membuat pesawat luar angkasa atau menggunakan karakter standar lebih besar dari. Jika Anda ingin menggunakan PowerLine dengan ShipDuet, Anda perlu memasang font yang sesuai dengan dukungan PowerLine.
+Kecepatan permainan di ShipDuet
+Menggunakan daftar kata umum.
+Menggunakan daftar kata yang lengkap.
+Permainan pingpong!
+Skor
+Gagal mendapatkan entri pengaturan.
+Balapan Kuda
+Algojo
+Penghindaran Meteor
+Penembak Meteor
+Pong
+Kapal Duet
+Ular
+Bahasa Inggris
+Wordle (asli)
+Kutipan tidak diketahui.
+Penulis tidak diketahui.
+Ini memungkinkan Anda untuk mengonfigurasi warna
+Bagian ini memungkinkan Anda mengonfigurasi Solver.
+Bagian ini memungkinkan Anda mengonfigurasi SpeedPress.
+Bagian ini memungkinkan Anda mengonfigurasi Meteor dan ShipDuet.

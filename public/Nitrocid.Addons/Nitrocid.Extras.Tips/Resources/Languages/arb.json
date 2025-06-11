@@ -1,0 +1,336 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "anh īmknk tnfīḏ awāmr al-ʿmlīẗ bṭrīqtīn: idẖāl asm al-mlf al-qābl lltnfīḏ mbāšrẗً, wāstẖdām al-ʾamr \"exec\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "anh īmknk qfl šāštk bāstẖdām amr \"lockscreen\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "anh īmknk inšāʾ tʿdīlāt kernel al-ẖāṣẗ bk bāstẖdām C# ūVisual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "anh īmknk astẖdām awāmr mtʿddẗ bāstẖdām al-fāṣlẗ al-mnqūṭẗ bīn al-ʾawāmr?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "anh īmknk al-hrūb mn ʿlāmāt al-āqtbās al-mzdūǧẗ dāẖl al-ūsāʾiṭ al-mqtbsẗ ʿnd tnfīḏ al-ʾawāmr?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "anh īmknk tġyir iʿdādāt kernel bāstẖdām amr \"āliʿdādāt\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "anh īmknk ḥfẓ šāštk bāstẖdām al-ʾamr \"savescreen\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "anh īmknk iblāġnā bālʾaẖṭāʾ bālāntqāl ili ṣfḥẗ mšrūʿ Nitrocid's GitHub?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "anh īmknk ʿml aẖtṣār llʾamr al-ḏī trīdh bāstẖdām al-ʾamr \"ālāsm al-mstʿār\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "hl īmknk inšāʾ šāšẗ al-bdāīẗ al-ẖāṣẗ bk bāstẖdām C# ūVisual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "anh īmknk tṯbīt iḍāfāt iḍāfīẗ lǧʿl al-nwāẗ al-ẖāṣẗ bk akṯr fāʾidẗ ūtslīẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "anh īmknk inšāʾ smātk al-rāʾiʿẗ bāstẖdām al-ʾamr \"mktheme\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "anh īmknk tġyir al-wān al-nwāẗ al-ẖāṣẗ bk imā bāstẖdām amr \"āliʿdādāt\" aū bāstẖdām aḥd al-smāt al-mʿdẗ msbqًā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "anh īmknk iʿādẗ ḍbṭ al-nwāẗ ʿli iʿdādāt al-mṣnʿ al-āftrāḍīẗ bāstẖdām ūsīṭẗ \"iʿādẗ al-ḍbṭ\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "anh īmknk al-ūṣūl ili ūṯāʾiqnā al-šāmlẗ ʿli ṣfḥẗ GitBook al-ẖāṣẗ bnā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "hl ītm dʿm al-iṣdārāt ṭwylẗ al-mdi lmdẗ ẖms snwāt lldʿm al-rʾīsī ūṯlāṯ snwāt lltḥdīṯāt al-ʾamnīẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "an 0.0.1 kān al-iṣdār al-ʾaūl mn Nitrocid KS al-ḏī tm iṣdārh fī 22 fbrāīr 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "an slslẗ 0.0.24.x kānt slslẗ al-iṣdārāt al-ūḥīdẗ al-tī tḥml iṣdār API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "an al-iṣdārāt qṣīrẗ al-mdi mdʿūmẗ lmdẗ tsʿẗ ašhr fqṭ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "an al-slslẗ 0.1.x ġīr mtwāfqẗ mʿ al-slslẗ 0.0.24.x aū al-ʾaqdm?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "hl īmknk tšġīl Nitrocid KS ʿli Linux ūmacOS ūAndroid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "hl īmknk al-rǧūʿ ili ūṯāʾiq wāǧhẗ brmǧẗ al-tṭbīqāt (API) lmsāʿdtk fī iǧrāʾ tʿdīlātk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "hl īmknk al-ḥṣūl ʿli al-ʿdīd mn al-ʾalʿāb al-rāʾiʿẗ, mṯl Hangman ūShipDuet, ʿn ṭrīq tṯbīt al-iḍāfāt al-iḍāfīẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "anh fī lʿbẗ Meteor, iḏā aṣṭdmt bʿāṣfẗ nīzkīẗ ḥmrāʾ, fin sfīnẗ al-fḍāʾ al-ẖāṣẗ bk sttḥṭm?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "anh īmknk tḥwyl al-nwāẗ al-ẖāṣẗ bk ili mrākz mʿlūmāt bāstẖdām mīzẗ al-irsāʾ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "anh īmknk inšāʾ mǧmūʿāt mstẖdmīn ltnẓīm ḥsābāt al-mstẖdmīn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "anh iḏā knt ʿḍūًā fī mǧmūʿẗ tmnḥ aḏūnāt mʿīnẗ, fīusmḥ lk biǧrāʾ mṯl hḏh al-ʿmlīāt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "anh īmknk tġyir al-mnṭqẗ al-zmnīẗ llnwāẗ al-ẖāṣẗ bk dūn al-tʾaṯīr ʿli nẓāmk al-mḍīf?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "anh īmknk astẖdām al-nṣ al-tfāʿlī wālmḥrr al-sdāsī ltūfīr al-ūqt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "an aqdm mḥrr nṣūṣ mʿrūf anh īʿml mʿ nẓām Unix al-ʾaūl hū ed, ūʾaqdm mḥrr nṣūṣ tm iṣdārh fī ʿām 1973 tm šḥnh mʿ nẓām Unix al-mūǧūd ʿli PDP-7 fī AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "anh īmknk aīḍḍā frḍ amr al-tḥrīr ltšġīl al-mḥrr fī nūʿ mʿīn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "an mḥrr al-nṣūṣ al-tfāʿlī īḥāūl mḥākāẗ mʿẓm al-mīzāt al-ʾasāsīẗ lmḥrrī al-nṣūṣ al-ʾakṯr šhrẗ fī Unix, vi ūvim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "anh mā lm tkn tʿrf mā tfʿlh bālmlf al-ṯnāʾī, fin tḥrīr hḏā al-mlf bhḏh al-ṭrīqẗ sīuʾdī ili tlf al-bīānāt aū fqdān al-bīānāt fī al-mlf al-msthdf?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "anh fī anẓmẗ Linux, ītm bdʾ tšġīl al-ṣdfẗ bmsāʿdẗ kl mn mʿālǧ tsǧīl al-dẖūl ūbrnāmǧ thīʾiẗ al-nẓām, al-mūǧūd ʿādẗ fī /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "anh īmknk iǧrāʾ ʿmlīāt al-mlfāt al-šāʾiʿẗ, mṯl al-nsẖ wālnql wālḥḏf wāltḥrīr ūmā ili ḏlk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "an TUI al-tfāʿlī lmdīr al-mlfāt īḥākī ūẓīfẗ Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "anh fī ḥālẗ tʿṭl al-nwāẗ, finh ʿādẗً mā īqūm binšāʾ mlf tfrīġ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "anh īmknk tšẖīṣ al-nwāẗ ʿn ṭrīq tṣḥīḥ aẖṭāʾihā bāstẖdām ūẓīfẗ al-tṣḥīḥ al-mḍmnẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "anh īmknk tnzīl ūtḥmīl al-mlfāt mbāšrẗ mn shell UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "hl īmkn trǧmẗ al-nwāẗ ḥti fī mrāḥl mā qbl al-tmhīd ʿn ṭrīq tšġīlhā bāstẖdām al-ūsīṭẗ \"lang\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "anh īmknk inšāʾ šāšāt al-tūqf al-ẖāṣẗ bk ʿn ṭrīq tsǧīlhā fī ǧhāzk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "an šāšẗ al-tūqf al-ʾaūli al-tī ġṭt al-šāšẗ bʿd ṯlāṯ dqāʾiq mn ʿdm al-nšāṭ ʿli aǧhzẗ kmbīūtr IBM al-ʾaṣlīẗ, scrnsave, tm inšāuʾhā fī ʿām 1983 bwāsṭẗ ǧūn sūšā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "an bʿḍ šāšāt al-tūqf srīʿẗ al-ẖṭi qd tsbb nūbāt ḥsāsīẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "an ītm astẖdām mǧlāt kernel ksǧlāt lltmhīd wīqāf al-tšġīl?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "an al-tʿdīlāt al-ẖāṣẗ bk īmkn an tṣbḥ al-ʾān qāblẗ lltrǧmẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "hl īmkn ltʿdīlātk al-twāṣl mʿ iḍāfāt kernel wāltʿdīlāt al-ʾaẖri, mmā īuʾdī ili inšāʾ nūʿ mn al-ātṣāl ūtḥqīq imkānīẗ al-tšġīl al-bīnī?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "anh īmknk al-ātṣāl bmṣḥḥ al-ʾaẖṭāʾ ʿn bʿd, wāẖtīārīًā, bẖādm al-drdšẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "anh īmknk astẖdām tṣḥīḥ al-ʾaẖṭāʾ, ūhū mtāḥ fqṭ liṣdārāt al-tṭwyr?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "hl īmkn ltʿdīlātk al-ʾān al-ḥṣūl ʿli tkwyn ẖāṣ bhā ʿn ṭrīq tsǧīl al-fʾiāt al-mrtbṭẗ bhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "an al-tʿdīlāt al-ẖāṣẗ bk īmknhā tsǧīl al-ʾaṣdāf al-ẖāṣẗ bhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "an tʿdīlātk īmknhā iḍāfẗ awāmr ili al-ʾaṣdāf al-mūǧūdẗ lzīādẗ kmīẗ al-ʾawāmr al-tī īmkn astẖdāmhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "an fʾiāt al-ʾawāmr al-ẖāṣẗ bk īmkn an tmṯl bdqẗ al-ūsāʾiṭ wālmfātīḥ al-tī tm tmrīrhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "anh īmknk al-āstʿlām ʿn al-mfātīḥ al-tī tm tmrīrhā bāstẖdām fʾiāt idārẗ al-tbdīl al-mūǧūdẗ fī wāǧhẗ brmǧẗ tṭbīqāt kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "an UESH ītḍmn ūẓīfẗ al-brmǧẗ al-nṣīẗ ltshīl inšāʾ al-brāmǧ al-nṣīẗ ūtšġīlhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "an al-ġlāf ītḍmn ūẓīfẗ lmnʿ ilġāʾ al-tṭbīqāt al-nšṭẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "an Nitrocid mtkāml bʿmq mʿ Terminaux llsmāḥ bʿrḍ asrʿ ūʾafḍl?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "hl īmknk al-ʾān tġyir ḥǧm al-tṭbīqāt al-tfāʿlīẗ dūn al-qlq mn tlf al-mẖrǧāt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "an hnāk awāmr tṭlb idẖāl al-mstẖdm, ūhī mfīdẗ llnṣūṣ al-brmǧīẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "anh īmknk tqdīm suʾāl idẖāl al-mstẖdm al-ẖāṣ bk bʿdẗ ṭrq, mṯl al-āẖtīār wālǧdūl wālbsāṭẗ wālāẖtīār ūmā ili ḏlk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "anh īmknk ūḍʿ al-ʿnāṣr al-nāʾibẗ ʿli al-nṣ al-ḏī īdʿmhā?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "anh īmknk astẖdām brāmǧ tšġīl kernel mẖtlfẗ ltġyir kīfīẗ ʿml ʿmlīẗ mʿīnẗ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "hl īmknk inšāʾ šāšāt tūqf ūbqʿ šāšẗ ẖāṣẗ bk bāstẖdām lġẗ C# aū Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "anh īmknk al-āstʿlām ʿn al-nẓām al-mḍīf wālmḥākī al-ṭrfī bāstẖdām fʾiẗ al-nẓām al-ʾasāsī kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "anh īmknk ṭlb mwāfqẗ al-ẖṣūṣīẗ qbl al-qīām bšīʾ ḥsās fī tʿdīlk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "anh īmknk īqāf tšġīl al-išʿārāt bāstẖdām mīzẗ ʿdm al-izʿāǧ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "hl īmknk ḥfẓ sǧl al-išʿārāt bāstẖdām ūẓīfẗ mūǧūdẗ fī mdīr al-išʿārāt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "anh īmknk tġyir kīfīẗ inšāʾ al-ʾarqām al-ʿšwāʾīẗ ʿn ṭrīq tġyir brnāmǧ al-tšġīl?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "an wāǧhāt brmǧẗ al-tṭbīqāt al-mtnūʿẗ tūfr ūẓāʾif mfīdẗ ltʿdīlātk?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "ītīḥ lk hḏā al-qsm tkwyn kīfīẗ ʿml al-tlmīḥāt."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "ʿrḍ nṣāʾiḥ al-nwāẗ"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "iḏā tm tmkīnh, īʿrḍ lk shell al-nṣāʾiḥ ḥūl kl tsǧīl dẖūl."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "'anah yumkinuk 'iinsha' baramij qabilat liltamhid biastikhdam taedilat kernel alkhasat biki?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "hal 'utliq Nitrocid (Kernel Simulator 0.0.2) ealaa alghilaf almudmaj ghilaf \"UESH\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "hal tama altarwij lishashat altawaquf biaetibariha hlaan dida ahtiraq alshaashat fi 'anabib 'ashieat alkathud (CRT) 'aw shashat albilazma?"
+    }
+  ]
+}

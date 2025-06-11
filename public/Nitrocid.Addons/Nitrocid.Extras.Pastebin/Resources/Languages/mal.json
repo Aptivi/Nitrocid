@@ -1,0 +1,61 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "Menampal kandungan sama ada fail atau rentetan ke penyedia pengehosan teks"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "Menentukan URL kepada pembekal Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "Menentukan jenis pembekal Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "Menentukan halaman siaran pembekal Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "Menentukan format siaran pembekal Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "Menentukan nama medan siaran pembekal Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "Tentukan sama ada nama fail atau teks untuk dimuat naik."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Jenis pembekal pastebin tidak disokong."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "Berjaya ditampal pada pembekal!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "Tidak dapat menampal pada pembekal."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "Laluan ke fail atau rentetan untuk ditulis"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Hujah pastebin"
+    }
+  ]
+}

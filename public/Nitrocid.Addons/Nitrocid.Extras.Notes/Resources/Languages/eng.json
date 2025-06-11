@@ -1,0 +1,192 @@
+{
+  "lang": "eng",
+  "name": "English",
+  "cultures": [
+    "en",
+    "en-001",
+    "en-029",
+    "en-150",
+    "en-AE",
+    "en-AG",
+    "en-AI",
+    "en-AS",
+    "en-AT",
+    "en-AU",
+    "en-BB",
+    "en-BE",
+    "en-BI",
+    "en-BM",
+    "en-BS",
+    "en-BW",
+    "en-BZ",
+    "en-CA",
+    "en-CC",
+    "en-CH",
+    "en-CK",
+    "en-CM",
+    "en-CX",
+    "en-CY",
+    "en-DE",
+    "en-DK",
+    "en-DM",
+    "en-ER",
+    "en-FI",
+    "en-FJ",
+    "en-FK",
+    "en-FM",
+    "en-GD",
+    "en-GG",
+    "en-GH",
+    "en-GI",
+    "en-GM",
+    "en-GU",
+    "en-GY",
+    "en-HK",
+    "en-ID",
+    "en-IE",
+    "en-IL",
+    "en-IM",
+    "en-IN",
+    "en-IO",
+    "en-JE",
+    "en-JM",
+    "en-KE",
+    "en-KI",
+    "en-KN",
+    "en-KY",
+    "en-LC",
+    "en-LR",
+    "en-LS",
+    "en-MG",
+    "en-MH",
+    "en-MO",
+    "en-MP",
+    "en-MS",
+    "en-MT",
+    "en-MU",
+    "en-MV",
+    "en-MW",
+    "en-MY",
+    "en-NA",
+    "en-NF",
+    "en-NG",
+    "en-NL",
+    "en-NR",
+    "en-NU",
+    "en-NZ",
+    "en-PG",
+    "en-PH",
+    "en-PK",
+    "en-PN",
+    "en-PR",
+    "en-PW",
+    "en-RW",
+    "en-SB",
+    "en-SC",
+    "en-SD",
+    "en-SE",
+    "en-SG",
+    "en-SH",
+    "en-SI",
+    "en-SL",
+    "en-SS",
+    "en-SX",
+    "en-SZ",
+    "en-TC",
+    "en-TK",
+    "en-TO",
+    "en-TT",
+    "en-TV",
+    "en-TZ",
+    "en-UG",
+    "en-UM",
+    "en-US",
+    "en-US-POSIX",
+    "en-VC",
+    "en-VG",
+    "en-VI",
+    "en-VU",
+    "en-WS",
+    "en-ZA",
+    "en-ZM",
+    "en-ZW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVE",
+      "text": "Remove"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+      "text": "Adds a note"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+      "text": "Removes a note"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+      "text": "Removes all notes"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+      "text": "Lists all notes"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+      "text": "Saves all notes"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+      "text": "Reloads all notes"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+      "text": "Notes viewer TUI"
+    },
+    {
+      "loc": "NKS_NOTES_NOTEIDNOTNUMERIC",
+      "text": "The note ID must be a note number"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_EMPTYNOTE",
+      "text": "This note is empty"
+    },
+    {
+      "loc": "NKS_NOTES_EXCEPTION_NOTENOTFOUND",
+      "text": "Can't remove non-existent note"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_SAVE",
+      "text": "Save"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_ADD",
+      "text": "Add"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_EDIT",
+      "text": "Edit"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_REMOVEALL",
+      "text": "Remove All"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_KEYBINDING_LOAD",
+      "text": "Load"
+    },
+    {
+      "loc": "NKS_NOTES_HOMEPAGE_NOTES",
+      "text": "Notes"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC",
+      "text": "Note contents to add"
+    },
+    {
+      "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
+      "text": "Note number"
+    }
+  ]
+}

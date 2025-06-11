@@ -1,0 +1,63 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informații despre licență"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Dicționarul englez"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informații de cuvânt pentru"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API este licențiat sub"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Cuvânt:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Sensurile cuvintelor pentru"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Parte de vorbire:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definiție:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Exemplu în propoziție:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Surse folosite pentru a defini"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinonime:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonime:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Cuvânt de definit"
+    }
+  ]
+}

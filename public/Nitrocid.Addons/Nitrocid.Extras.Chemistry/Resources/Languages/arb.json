@@ -1,0 +1,100 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAME",
+      "text": "asm"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+      "text": "tibaeat maelumat hawl madat kimiayiyat ealaa wahdat altahakumi."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC",
+      "text": "'iimaa asm 'aw ramz 'aw raqm dhariyun limada"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC",
+      "text": "tibaeat maelumat hawl jamie almawadi alkimiayiyat ealaa wahdat altahakumi."
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM",
+      "text": "la yujad madat laha raqm dhariyun"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME",
+      "text": "la yujad madat laha ramz 'aw asm"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER",
+      "text": "alraqm aldhariyu"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICMASS",
+      "text": "alkutlat aldhariya"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SYMBOL",
+      "text": "alramz"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SUMMARY",
+      "text": "almulakhas"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_PHASE",
+      "text": "alttwr"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONPT",
+      "text": "almawdie fi aljadwal aldawrii"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONCOORD",
+      "text": "almawdie fi al'iihdathiaat"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_DISCOVERER",
+      "text": "almuktashaf"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAMEDBY",
+      "text": "almusamaa biwasita"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ELECTRON",
+      "text": "takwin al'iilikturun"
+    }
+  ]
+}

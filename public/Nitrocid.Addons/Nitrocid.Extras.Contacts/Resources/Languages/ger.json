@@ -1,0 +1,331 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Verwaltet Ihre Kontakte"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Die Datei „{0}“ kann nicht geöffnet werden, da sie nicht gefunden wurde."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Kontakte erfolgreich importiert."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Die Datei „{0}“ kann nicht geöffnet werden, da die Kartendatei ungültig ist."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Die Kontaktdatei ist nicht vorhanden."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "Kontakte gefunden"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Die Kontaktdatei ist ungültig."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "Die MeCard-Syntax darf nicht leer sein."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Entweder enthält die bereitgestellte Kontaktdatei keine Informationen zu einem Kontakt oder ist ungültig."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Kontakte konnten nicht analysiert werden. Weitere Informationen finden Sie in den Fehlerdetails."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Der Kontaktindex liegt außerhalb des zulässigen Bereichs. Der maximale Index ist {0}, während der bereitgestellte Index {1} ist."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Es sind keine Kontakte verfügbar."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Es sind keine Kontakte zum Suchen vorhanden."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Der reguläre Ausdruck ist ungültig."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Es besteht kein Kontakt. Wenn Sie Kontakte importieren möchten, nutzen Sie bitte die Importoptionen über die am unteren Bildschirmrand definierten Tastenkombinationen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Einige Kontakte können nicht importiert werden."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Geben Sie den Pfad zu einer VCF-Datei ein, die Ihren Kontakt enthält. Die Datei „contacts2.db“ von Android wird ebenfalls unterstützt."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Datei existiert nicht. Stellen Sie sicher, dass Sie den richtigen Pfad zu einer VCF-Datei oder einer Datei „contacts2.db“ angegeben haben."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Geben Sie eine gültige MeCard-Darstellung Ihres Kontakts ein."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Die Contact MeCard-Syntax ist ungültig."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Die Contact MeCard-Syntax darf nicht leer sein"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Geben Sie einen regulären Ausdruck ein, um die Kontakte zu durchsuchen."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "Es gibt keine Kontakte, die Ihren gewünschten Ausdruck enthalten."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Kontaktname"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "Kein Kontaktname"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Kontakt Adresse"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "Kontaktmail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "Keine Kontaktmail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Kontaktieren Sie die Organisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Keine Kontaktorganisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Kontakt Telefon"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "Kein Kontakttelefon"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "Kontakt-URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "Keine Kontakt-URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Kontaktieren Sie Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Kein geografischer Kontakt"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Kontaktieren Sie IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Kein IMPP-Kontakt"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Spitzname des Kontakts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "Kein Kontakt-Nickname"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Kontaktrolle"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Keine Kontaktrolle"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Kontakttitel"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "Kein Kontakttitel"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Kontaktnotizen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "Keine Kontaktnotizen"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Listet Ihre Kontakte auf"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Lädt Ihre Kontakte"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Importiert Ihre Kontakte"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Behandelt die erforderliche Eingabe als MeCard-Zeichenfolge"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Ruft Kontaktinformationen ab"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Keine Kontakte."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Die Kontaktnummer ist ungültig."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Die Kontaktnummer ist außerhalb des Bereichs."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "Vorname"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Familienname, Nachname"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Kontakt Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Kontakthinweis"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Einige der Kontakte können nicht aufgelistet werden."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Löschen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Kontakte"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Alle löschen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Import"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Importieren von"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Suchen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Weiter suchen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Suche zurück"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Rohdaten"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Importieren aus MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "In diesem Abschnitt können Sie die Funktionsweise des Kontakte-Add-ons konfigurieren."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Profilbilder anzeigen"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Wenn aktiviert, werden Kontaktbilder angezeigt. Standardmäßig deaktiviert, um Missbrauch zu verhindern und aus Leistungsgründen."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Entweder ein Pfad zu einer vCard-Kontaktdatei oder einer MeCard-Darstellung"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Kontaktnummer"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Bearbeiten..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Geben Sie einen neuen Namen für diesen Kontakt ein"
+    }
+  ]
+}

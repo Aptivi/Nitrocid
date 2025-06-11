@@ -1,0 +1,121 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_NAME",
+      "text": "Yǐ háomiǎo wèi dānwèi de yánchí"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_DESC",
+      "text": "zài jìnxíng xià yīcì xiě rù zhīqián yào děngdài duōshǎo háomiǎo?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_NAME",
+      "text": "yǐ háomiǎo wèi dānwèi de xīn píngmù yánchí"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_DESC",
+      "text": "zài xīn píngmù zhōng xiě rù zhīqián yào děngdài duōshǎo háomiǎo?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "xìngmíng hé xìngshì shēngchéng qì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_NAME",
+      "text": "zuìshǎo xìngmíng jìshù"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_NAME",
+      "text": "zuìdà míngchēng jìshù"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_DESC",
+      "text": "yào shēngchéng de zuìxiǎo míng chèn shùliàng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_DESC",
+      "text": "yào shēngchéng de zuìdà míng chèn shùliàng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
+      "text": "zuìdī niánlíng jìsuàn"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
+      "text": "zuìdà niánlíng jìsuàn"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
+      "text": "shēngchéng de zuìxiǎo niánlíng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
+      "text": "shēngchéng de zuìdà niánlíng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "míng zì chá zhǎo qì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "shǐ yòng nán xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "shǐ yòng nǚ xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "shǐ yòng tǒng yī xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "xìng shì chá zhǎo qì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DESC",
+      "text": "mó nǐ suí jī rén yuán de shù jù kù chá zhǎo 。"
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "chǎnshēng míngchēng biāoqiān (mùqián bù zhīyuán biàn yīn fúhào)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "sōuxún cí"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "yào sōuxún dì míngchēng qiánzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "yào sōuxún dì míngchēng hòuzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "yào sōuxún dì xìngshì qiánzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "yào sōuxún dì xìngshì hòuzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "yào chǎnshēng duōshǎo gè míngchēng?"
+    }
+  ]
+}

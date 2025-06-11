@@ -1,0 +1,34 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "aapako ek chayanit dok drshy ke baare mein ek poorn-skreen avalokan dikhaata hai taaki aap ise ek soochana painal ke roop mein upayog kar saken"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "is naam se koee dok skreen nahin hai."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "is naam se koee skreen dok nahin hai."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "koee skreen dok nahin hai."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "skreen dok kraish ho gaya hai"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "dok naam"
+    }
+  ]
+}

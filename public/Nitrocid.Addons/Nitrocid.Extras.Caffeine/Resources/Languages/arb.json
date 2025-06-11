@@ -1,0 +1,76 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "iḍāfẗ mnbh ltnbīhk ʿndmā īkūn kūb al-šāī aū al-qhūẗ ǧāhzًā."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "īlġī al-mnbh al-ḏī īnbhk ʿndmā īkūn kūb al-šāī aū al-qhūẗ ǧāhzًā."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "al-qhūẗ al-ʾamrīkīẗ"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "šāī aḥmr"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "šāī aẖḍr"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "lā tūǧd tnbīhāt al-kāfyin lliǧhāḍ."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "al-ṯwānī al-tī sīkūn fīhā kūbk ǧāhzًā ġīr ṣālḥẗ."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "iḏā knt tḥāūl tqdīm asm llmšrūb, frāǧʿ al-qāʾimẗ adnāh:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "kūbk ǧāhz al-ʾān!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "'iimaa tahdid eadad althawani 'aw aism almashrub"
+    }
+  ]
+}

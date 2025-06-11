@@ -1,0 +1,414 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "次の理由により、MODをロードできません。"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1}が開始しました"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "無効な言語"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "modの解析はセーフモードでは許可されていません。"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0}が停止しました"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1}が停止しました"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "mod {0} のファイナライズに失敗しました: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "開始 mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "モッドバージョン:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} が見つかりません。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Mod名："
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Modファイル名："
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Modファイルパス："
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "あなたの改造を管理する"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Mod管理はセーフモードでは無効になっています。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "コマンド{0}が無効です。以下の使用法を確認してください。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Modが見つからないか、ファイルに無効な文字が含まれています。"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "マニュアルページ{0}が無効です。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "このマニュアルページに記入することを検討してください。"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Modマニュアル"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "セーフモードではMODの停止は許可されていません。"
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Modはすでに開始されています！"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Modはまだ開始されていません！"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "modのベンダーに連絡して、modを互換性のあるバージョンにアップグレードしてください。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "ブラックリストに載っている改造"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "起動時に実行されないmodのファイル名を書き込みます。終わったら、「q」と書いてください。パスの横にマイナス記号を書き込んで、既存のmodを削除します。"
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0}はブラックリストに登録されています。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "起動時にカーネルの変更を開始します"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "起動時にカーネルの変更を自動的に開始します。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Modファイルが指定されていません。"
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "すでにインストールされているmodをインストールしようとしています。modを更新しています..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "インストールに失敗しました"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "提供されているmodファイルには互換性がありません。"
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "のアンインストールに失敗しました"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "カスタム言語をインストールするために必要なメタデータ情報は、必要なローカリゼーションを提供しません。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "ヘルプにmodコマンドの数を表示する"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "modfileが無効です。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "無題のマニュアルページ"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "カスタム言語のインストールに必要なメタデータ情報が存在しません。"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "MOD スクリプトは null であってはなりません。"
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "MODは検出されませんでした。"
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "モジュール {0} を停止しています..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "MOD は強力に署名されていません。信頼できないコードが含まれている可能性があります。"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "このバージョンのカーネルとこの MOD の間に互換性がないため、MOD をロードできません:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "この非互換性の調査に役立つエラーのリストを次に示します。"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "モジュール {0} には API バージョン {1} が必要ですが、バージョン {2} があります。通常、Nitrocid KS および/または MOD をアップグレードすると役に立ちます。MODの解析に失敗しました。"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} は、この API バージョンでは正しく動作しない可能性があります。MODの起動に失敗する場合があります。最新コピーを入手するには、MOD ベンダーに問い合わせてください。"
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "モジュール {0} には名前がありません。MODの解析に失敗しました。ソースコードを確認します。"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} にはバージョンがありません。MODの解析に失敗しました。ソースコードを確認します。"
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "モジュール {0} には無効なバージョンが含まれています。MODの解析に失敗しました。以前のバージョン"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "バージョン"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "ファイル名"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "ファイルパス"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "残念ながら、このマニュアル ページにはコンテンツがありません。ただし、このドキュメントは MOD ベンダーの Web ページにある可能性があります。それでもこのドキュメントが見つからない場合は、MOD の開発者に詳細を問い合わせてください。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "あなたに贈られたのは、"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "コンテンツの長さ"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "内容はありません。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "改訂はありません。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "存在しないMODではカスタム関数を実行できません"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "依存関係が満たされていない。失敗した依存関係を以下に示します。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "存在しない MOD {0} のマニュアルを照会しようとしました。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "存在しない MOD {1} のマニュアル {0} を初期化しようとしました。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "存在しない MOD {1} のマニュアル ファイル {0} を初期化しようとしました。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "mod {1} には存在しないマニュアル ファイル {0} を初期化しようとしました。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "名前"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "信頼できない MOD の読み込みを許可する"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "true に設定すると、署名された公開キーを持たない MOD をロードするときにカーネルはエラーを出しません。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "ヘルプコマンドにカーネル変更コマンドをリストするときに、そのコマンドの数を表示します。"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "セーフモードでは MOD の起動または停止は許可されません。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "フィールド情報を取得できません"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "MODのバージョンを判別できません"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "不明なローダー例外"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "MODのローカリゼーションを読み込めません"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "開始モード（選択）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "開始モード（入力）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "停止モード"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "リロードモッド"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "MODをインストール（選択）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "mod をインストール (入力)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "MODをアンインストールする"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "すべて開始"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "すべて停止"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "すべて再読み込み"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "存在しないクラス型を mod アセンブリから返すことはできません"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "mod '{1}' に関数 '{0}' が見つかりません。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "mod '{1}' にプロパティ '{0}' が見つかりません。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "mod '{1}' にフィールド '{0}' が見つかりません。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "このクラスはmodクラスではありません"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "言語"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "エントリーポイント"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "起動したいMODへのパスを入力してください"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "MODの起動に失敗しました"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "インストールしたいMODへのパスを入力してください"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "MODのインストールに失敗しました"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "この mod を開始または停止できません。"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "MODの開始、停止、情報の取得、リロード、インストール、アンインストールを行うかどうか"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Mod名またはファイル名"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "すべてのMODを一覧表示、リロード、停止、開始、または対話的に管理するかどうか"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "モッド名"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "このセクションでは、カーネル変更システムの動作を設定できます。"
+    }
+  ]
+}

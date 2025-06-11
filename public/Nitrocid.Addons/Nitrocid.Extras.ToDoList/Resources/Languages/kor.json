@@ -1,0 +1,47 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "jalmosdoen jag-eob-ibnida."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "jageop ireum"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "hal il jageop gwanrija"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "jageobeul chugahageona jegeohaji moshaessseupnida."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "jageop ireumeul ipryeokhaseyo."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "jageobeul pyosihaji moshaessseupnida."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "jag-eob moglog-eul gajyeool su eobs-seubnida."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "jag-eob-e chuga, jegeo, wanlyolo pyosi ttoneun wanlyolo pyosi haeje"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "modeun jag-eob-eul nayeol, jeojang ttoneun lodeuhalji yeobu"
+    }
+  ]
+}

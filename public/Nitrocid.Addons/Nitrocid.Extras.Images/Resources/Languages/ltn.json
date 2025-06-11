@@ -1,0 +1,26 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Praevius imaginem"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Iter imagini non providetur."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Imago file non est."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Iter ad imaginem file"
+    }
+  ]
+}

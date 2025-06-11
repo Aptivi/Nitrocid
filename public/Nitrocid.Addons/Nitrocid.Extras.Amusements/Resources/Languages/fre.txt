@@ -1,0 +1,121 @@
+Voyez si vous pouvez résoudre des équations mathématiques à temps
+Résolu parfaitement!
+Résolu incorrectement.
+Activez les vraies couleurs
+Retard en millisecondes
+Combien de millisecondes attendre avant de faire la prochaine écriture?
+Voyez si vous pouvez appuyer sur une touche à temps
+Personnage pas pressé à temps.
+Vous avez appuyé sur le bon caractère !
+Vous avez appuyé sur le mauvais caractère.
+Appuyez sur ESC pour quitter.
+Niveau de couleur rouge minimum
+Niveau minimum de couleur verte
+Niveau de couleur bleu minimum
+Niveau de couleur minimal
+Niveau de couleur rouge maximum
+Niveau maximum de couleur verte
+Niveau de couleur bleu maximum
+Niveau de couleur maximal
+Niveau de couleur rouge minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau minimum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur bleu minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur minimal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs.
+Niveau maximum de couleur rouge. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau maximum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau maximum de couleur bleue. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs.
+Nombre minimum de solveur
+Nombre maximum de solveur
+Solveur afficher l'entrée
+Indique s'il faut afficher ce qui est écrit dans l'invite de saisie.
+Quel est le nombre minimum à choisir ?
+Quel est le nombre maximum à choisir ?
+Active la prise en charge des couleurs vraies.
+Difficulté par défaut pour SpeedPress
+Délai d'expiration de la touche pour SpeedPress
+Combien de millisecondes attendre l'appui sur la touche avant l'expiration du délai ? (En difficulté personnalisée)
+Délai d'étape en millisecondes
+Combien de millisecondes attendre avant de dessiner l'étape suivante ?
+Démarre le jeu en difficulté facile
+Commence le jeu en difficulté moyenne
+Démarre le jeu en difficulté difficile
+Démarre le jeu en difficulté très difficile
+Démarre le jeu en difficulté personnalisée. Veuillez noter que le délai d'attente personnalisé en millisecondes doit être écrit en argument.
+Emplacement du texte de progression
+Sélectionnez votre emplacement de texte de progression préféré.
+Vous ne pouvez écrire que les chiffres.
+Appuyez sur "q" pour quitter.
+Le jeu du serpent !
+Vous êtes un vaisseau spatial et les météores viennent vous détruire. Pouvez-vous le sauver?
+Jeu terminé
+Erreur inattendue
+Utilisez PowerLine pour le rendu du vaisseau spatial
+Vitesse de jeu Meteor
+Que ce soit pour utiliser PowerLine pour rendre le vaisseau spatial ou pour utiliser le caractère standard supérieur à. Si vous souhaitez utiliser PowerLine avec Meteor, vous devez installer une police appropriée avec le support PowerLine.
+Spécifie la vitesse du jeu en millisecondes.
+Vous pariez sur le mauvais cheval ?
+Démarre le jeu du Pendu
+Une mauvaise lettre et vous êtes pendu !
+Testez vos compétences de pendu en lançant une lettre au hasard.
+Vous êtes un vaisseau spatial et les météores viennent vous détruire. Pouvez-vous les esquiver ?
+Obtient un devis aléatoire
+Roulette russe
+Deux vaisseaux spatiaux se battent. Un coup et le vaisseau spatial explosera. Il s'agit d'un jeu local à deux joueurs.
+Le simulateur de jeu Wordle
+Jouez au jeu Wordle de manière originale
+Commémore le 5ème anniversaire de la sortie du noyau
+Commémoration du 5ème anniversaire du noyau
+Première sortie
+Ce noyau a été publié pour la première fois le 22 février 2018 pour créer un simulateur minimaliste qui simule réellement le fonctionnement du cœur du noyau.
+Auparavant, il n'hébergeait qu'un seul shell et quelques commandes, et il ne fonctionnait qu'avec Windows en raison de son utilisation de l'outil Windows Management Instrumentation.
+Il ne disposait pas non plus de sa propre documentation.
+Raffinement du noyau
+Des versions du noyau ont été publiées, comme la deuxième version majeure pour ajouter des couleurs et des fonctionnalités de base, et la quatrième version majeure pour ajouter une configuration.
+La documentation a commencé sur la sixième version majeure, et diverses choses intéressantes ont été lentement ajoutées au noyau.
+Version actuelle
+Cette version affine désormais le noyau au point qu'il ne se comporte plus comme les anciennes versions.
+Parce que les nouvelles fonctionnalités révolutionnaires ont été publiées, nous avons décidé de nommer ce noyau...
+Joyeux 5ème anniversaire !
+Cheval
+[ENTER] Démarrer la course | [ESC] Quitter | [HAUT/BAS] Déplacer la sélection
+Votre cheval a gagné la course !
+Votre cheval a perdu la course !
+Vous êtes pendu !
+Vous gagnez!
+Quel est votre pari ?
+Vous l'avez bien deviné !
+Vous avez tort.
+Mais tu n'as pas de chance. Perdant.
+Tu es chanceux! Gagnant!
+C'est un match nul.
+Le joueur {0} gagne !
+Caractère actuel :
+Vous avez deviné le bon mot ! Vous gagnez!
+Paramètres de couleur
+Un jeu de serpent.
+Vous montre de belles citations célèbres.
+Sélectionnez votre difficulté préférée, où 0 est facile, 1 est moyen, 2 est difficile, 3 est très difficile et 4 est personnalisé.
+Utilisez PowerLine pour le rendu du vaisseau spatial dans ShipDuet
+Qu'il s'agisse d'utiliser PowerLine pour restituer le vaisseau spatial ou d'utiliser le caractère standard supérieur à. Si vous souhaitez utiliser PowerLine avec ShipDuet, vous devez installer une police appropriée avec prise en charge PowerLine.
+Vitesse de jeu dans ShipDuet
+Utilise la liste de mots courants.
+Utilise la liste complète de mots.
+Le jeu de ping-pong !
+Score
+Impossible d'obtenir les entrées de paramètres.
+Course de chevaux
+Bourreau
+Dodge Météore
+Lanceur de météores
+Pong
+Duo de navires
+Serpent
+Wordle
+Wordle (original)
+Citation inconnue.
+Auteur inconnu.
+Cela vous permet de configurer les couleurs
+Cette section vous permet de configurer Solver.
+Cette section vous permet de configurer SpeedPress.
+Cette section vous permet de configurer Meteor et ShipDuet.
