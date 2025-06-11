@@ -1,0 +1,103 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Ruft stündliche Bestandsinformationen ab"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Kurzes Firmensymbol"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Geben Sie Ihren AlphaVantage API-Schlüssel ein"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Bitte geben Sie Ihren API-Schlüssel ein."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Der Demonstrations-API-Schlüssel kann nicht verwendet werden."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Ihr API-Schlüssel sollte 16 Zeichen lang sein."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Beim Abrufen der Bestandsdaten ist ein Fehler aufgetreten. Weitere Informationen finden Sie hier"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Eröffnungskurs der Aktie"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Hoher Aktienkurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Niedriger Aktienkurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Schlusskurs"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Lagerbestand"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API-Schlüssel ist erforderlich. Konfigurieren Sie ihn über die Einstellungen."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Keine Bestandsdaten vorhanden."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "In diesem Abschnitt können Sie die Bestände konfigurieren."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API-Schlüssel"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Schlüssel für die AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Buchungskreis"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Aktiengesellschaft"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Es können keine Bestandsinformationen abgerufen werden."
+    }
+  ]
+}

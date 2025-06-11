@@ -1,0 +1,34 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "選択したドック ビューに関する全画面概要を表示し、情報パネルとして使用できるようにします。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "この名前のドック画面はありません。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "この名前のスクリーンドックはありません。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "スクリーンドックはありません。"
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "スクリーンドックがクラッシュしました"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "ドック名"
+    }
+  ]
+}

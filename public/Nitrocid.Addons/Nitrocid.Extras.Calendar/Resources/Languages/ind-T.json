@@ -1,0 +1,382 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+      "text": "तारीख और समय दिखाता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EXIT",
+      "text": "बाहर जाएं"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
+      "text": "सच्चे रंगों को सक्रिय करें"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "मिलीसेकंड में देरी"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "अगला लेखन करने से पहले कितने मिलीसेकंड तक प्रतीक्षा करनी होगी?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
+      "text": "न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
+      "text": "न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
+      "text": "अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
+      "text": "न्यूनतम लाल रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "न्यूनतम हरा रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "न्यूनतम नीला रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
+      "text": "न्यूनतम रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 रंगों के लिए 255 या 16 रंगों के लिए 16 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "अधिकतम लाल रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "अधिकतम हरा रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "अधिकतम नीला रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
+      "text": "अधिकतम रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 रंगों के लिए 255 या 16 रंगों के लिए 16 है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC",
+      "text": "असली रंग समर्थन को सक्रिय करता है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTADDFAILED",
+      "text": "कोई ईवेंट जोड़ने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTREMOVEFAILED",
+      "text": "किसी ईवेंट को निकालने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD",
+      "text": "किसी ईवेंट को जोड़ने के लिए पर्याप्त तर्क नहीं दिए गए हैं।"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE",
+      "text": "किसी ईवेंट को निकालने के लिए पर्याप्त तर्क नहीं दिए गए हैं."
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED",
+      "text": "घटना में हेरफेर के लिए पर्याप्त तर्क नहीं दिए गए हैं।"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED",
+      "text": "रिमाइंडर हेरफेर के लिए पर्याप्त तर्क नहीं दिए गए हैं।"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDREMINDER",
+      "text": "बिना शीर्षक वाला रिमाइंडर"
+    },
+    {
+      "loc": "NKS_CALENDAR_UNTITLEDEVENT",
+      "text": "शीर्षकहीन घटना"
+    },
+    {
+      "loc": "NKS_CALENDAR_EVENT_NOTIFICATION",
+      "text": "अब यह एक घटना का दिन है!"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDER_NOTIFICATION",
+      "text": "इसे याद मत करो!"
+    },
+    {
+      "loc": "NKS_CALENDAR_INVALIDACTION",
+      "text": "अमान्य कार्रवाई।"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
+      "text": "सभी ईवेंट और/या रिमाइंडर को विनाशकारी रूप से सहेजें"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC",
+      "text": "सक्षम होने पर, कैलेंडर कमांड का उपयोग करके सभी ईवेंट और/या रिमाइंडर सहेजने से पहले सभी ईवेंट और/या रिमाइंडर हटा देता है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC",
+      "text": "संस्कृति का नाम"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_STATUS_READY",
+      "text": "तैयार"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC",
+      "text": "प्रदर्शित होने वाला नाम"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS",
+      "text": "कुंजी बाइंडिंग"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC",
+      "text": "सिर्फ तारीख दिखाता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC",
+      "text": "सिर्फ समय दिखाता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC",
+      "text": "स्थानीय के बजाय यूटीसी का उपयोग करता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+      "text": "कैलेंडर, ईवेंट और अनुस्मारक प्रबंधक"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC",
+      "text": "काम करने के लिए कैलेंडर प्रकार"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC",
+      "text": "तालिका-आधारित कैलेंडर व्यूअर का उपयोग करें"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_EVENTS",
+      "text": "आयोजन..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_KEYBINDING_REMINDERS",
+      "text": "अनुस्मारक..."
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_FAILED",
+      "text": "इंटरैक्टिव कैलेंडर विफल:"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE",
+      "text": "घटनाओं और अनुस्मारक के लिए"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_LONGFORM",
+      "text": "लंबा प्रपत्र"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_CALENDARTYPE",
+      "text": "कैलेंडर प्रकार"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSMONTH",
+      "text": "चयनित माह के लिए कोई अनुस्मारक नहीं मिला"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSMONTH",
+      "text": "चयनित माह के लिए कोई ईवेंट नहीं मिला"
+    },
+    {
+      "loc": "NKS_CALENDAR_NOCULTURE",
+      "text": "संस्कृति नहीं मिलती."
+    },
+    {
+      "loc": "NKS_CALENDAR_SHOWCALENDARFAILED",
+      "text": "कैलेंडर दिखाने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDFAILED",
+      "text": "अनुस्मारक जोड़ने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERADDNEEDSARGS",
+      "text": "अनुस्मारक जोड़ने के लिए पर्याप्त तर्क उपलब्ध नहीं कराए गए।"
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVEFAILED",
+      "text": "अनुस्मारक हटाने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_REMINDERREMOVENEEDSARGS",
+      "text": "अनुस्मारक को हटाने के लिए पर्याप्त तर्क उपलब्ध नहीं कराए गए।"
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOEVENT",
+      "text": "कोई आयोजन नहीं है."
+    },
+    {
+      "loc": "NKS_CALENDAR_EXCEPTION_NOREMINDER",
+      "text": "कोई अनुस्मारक नहीं है."
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "संस्कृति"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
+      "text": "रंग सेटिंग"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि कैलेंडर कैसे काम करता है."
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_NKSANNIVERSARY",
+      "text": "नाइट्रोसिड केएस रिलीज की सालगिरह"
+    },
+    {
+      "loc": "NKS_CALENDAR_BUILTIN_RAMADAN",
+      "text": "रमजान"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+      "text": "कैलेंडर"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOREMINDERSDAY",
+      "text": "चयनित दिन के लिए कोई अनुस्मारक नहीं मिला"
+    },
+    {
+      "loc": "NKS_CALENDAR_TUI_NOEVENTSDAY",
+      "text": "चयनित दिन के लिए कोई ईवेंट नहीं मिला"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC",
+      "text": "कैलेंडर इंटरैक्टिव TUI खोलता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC",
+      "text": "लक्ष्य वर्ष"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC",
+      "text": "लक्ष्य माह संख्या"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC",
+      "text": "घटनाओं के साथ बातचीत"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC",
+      "text": "एक ईवेंट जोड़ता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC",
+      "text": "नियोजित तारीख"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC",
+      "text": "किसी ईवेंट को हटाता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC",
+      "text": "इवेंट आईडी"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC",
+      "text": "सभी घटनाओं की सूची"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC",
+      "text": "सभी घटनाओं को सहेजता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC",
+      "text": "अनुस्मारकों के साथ बातचीत"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC",
+      "text": "लक्ष्य तिथि और समय"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC",
+      "text": "रिमाइंडर हटाता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC",
+      "text": "रिमाइंडर आईडी"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC",
+      "text": "सभी अनुस्मारक सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC",
+      "text": "सभी अनुस्मारक सहेजता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
+      "text": "यह आपको रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+      "text": "संस्कृति सेटिंग्स"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
+      "text": "यह आपको कैलेंडर स्क्रीनसेवर द्वारा उपयोग की जाने वाली संस्कृति को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC",
+      "text": "महीनों के नाम, कैलेंडर इत्यादि बदलने के लिए किस संस्कृति का उपयोग किया जा रहा है?"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
+      "text": "सिस्टम संस्कृति का उपयोग करें"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC",
+      "text": "क्या स्क्रीनसेवर मुख्य कर्नेल सेटिंग्स या इस स्क्रीनसेवर सेटिंग्स द्वारा निर्धारित संस्कृति का उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
+      "text": "स्क्रीनसेवर सेटिंग्स..."
+    }
+  ]
+}

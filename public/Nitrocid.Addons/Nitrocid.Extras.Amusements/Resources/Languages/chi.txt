@@ -1,0 +1,121 @@
+kàn kàn nín néng fǒu ànshí qiú xiè shùxué fāngchéngshì
+Jiějué wánměi!
+Jiějué bù zhèngquè.
+Jīhuó zhēn cǎi
+Yánchí háomiǎo
+jìnxíng xià yīcì xiě rù zhīqián yào děngdài jǐ háomiǎo?
+kàn kàn nǐ néng bùnéng ànshí àn yīgè jiàn
+zìfú méiyǒu ànshí.
+Nǐ àn duìle juésè!
+Nǐ àn cuòle zìfú.
+Àn ESC tuìchū.
+zuìdī hóngsè děngjí
+zuìdī lǜsè děngjí
+zuìdī lán sè děngjí
+zuìdī sè jiē
+zuìdà hóngsè jíbié
+zuìdà lǜsè děngjí
+zuìdà lán sè jíbié
+zuìdà sè jiē
+zuìdī hóngsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdī lǜsè shuǐpíng. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdī lán sè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdī yánsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255(255 sè) huò 16(16 sè).
+Zuìdà hóngsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdà lǜsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdà lán sè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255.
+Zuìdà yánsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255(255 sè) huò 16(16 sè).
+qiújiě qì zuìxiǎo shùliàng
+qiújiě qì zuìdà shù
+qiújiě qì xiǎnshì shūrù
+shìfǒu xiǎnshì shūrù tíshì zhōng xiě rù de nèiróng.
+Zuìshǎo kěyǐ xuǎnzé duōshǎo?
+Zuìduō kěyǐ xuǎnzé duōshǎo gè?
+Jīhuó zhēn cǎisè zhīchí.
+SpeedPress de mòrèn nándù
+SpeedPress de ànjiàn chāoshí
+Zài chāoshí zhīqián děngdài ànjiàn duōshǎo háomiǎo? (Zì dìngyì nándù)
+Yǐ háomiǎo wèi dānwèi de jiēduàn yánchí
+zài huìzhì xià yī jiēduàn zhīqián yào děngdài duōshǎo háomiǎo?
+yǐ jiǎndān nándù kāishǐ yóuxì
+yǐ zhōngděng nándù kāishǐ yóuxì
+yǐ kùnnán nándù kāishǐ yóuxì
+yǐ fēicháng kùnnán de nándù kāishǐ yóuxì
+yǐ zì dìngyì nándù kāishǐ yóuxì. Qǐng zhùyì, yǐ háomiǎo wèi dānwèi de zì dìngyì chāoshí yīng xiě wèi cānshù.
+jìndù wénběn wèizhì
+xuǎnzé nín xǐhuān de jìndù wénběn wèizhì.
+Nǐ zhǐ néng xiě shùzì.
+Àn “q” tuìchū.
+Shé yóuxì!
+Nǐ shì yī sōu yǔzhòu fēichuán, liúxīng zhèngzài cuīhuǐ nǐ. Nǐ néng bǎocún ma?
+Yóuxì jiéshù
+yìwài de cuòwù
+Shǐyòng PowerLine xuànrǎn yǔzhòu fēichuán
+liúxīng yóuxì sùdù
+shì shǐyòng PowerLine xuànrǎn fēichuán háishì shǐyòng biāozhǔn dàyú zìfú. Rúguǒ nín xiǎng jiāng PowerLine yǔ Meteor yīqǐ shǐyòng, zé xūyào ānzhuāng zhīchí PowerLine de shìdàng zìtǐ.
+Yǐ háomiǎo wèi dānwèi zhǐdìng yóuxì sùdù.
+nǐ shì bù shì bèi cuò liǎo mǎ ？
+kāi shǐ jiǎo xíng lì yóu xì
+zhī yào xiě cuò yī gè zì mǔ ， nǐ jiù wán dàn liǎo ！
+tōng guò suí jī rēng yī fēng xìn lái cè shì nǐ de guì zǐ shǒu jì néng 。
+nǐ shì yī sōu yǔ zhòu fēi chuán ， liú xīng jí jiāng cuī huǐ nǐ 。 nǐ néng duǒ kāi tā mén má ？
+huò qǔ suí jī bào jià
+é luó sī lún pán dǔ
+liǎng sōu yǔ zhòu fēi chuán zhèng zài hù xiāng zhēng dǒu 。 yī qiāng xià qù ， fēi chuán jiù huì bào zhà 。 zhè shì yī gè běn dì liǎng rén yóu xì 。
+Wordle yóu xì mó nǐ qì
+zuì chū wán Wordle yóu xì
+jì niàn nèi hé fā bù 5 zhōu nián
+jì niàn nèi hé dàn shēng 5 zhōu nián
+shǒu cì fā bù
+gāi nèi hé yú 2018 nián 2 yuè 22 rì shǒu cì fā bù ， zhǐ zài zhì zuò yī gè jiǎn yuē de mó nǐ qì ， shí jì mó nǐ nèi hé hé xīn de gōng zuò fāng shì 。
+tā guò qù zhī chéng zài yī gè shell hé yī xiē mìng líng ， bìng qiě yóu yú shǐ yòng liǎo Windows Management Instrumentation gōng jù ， yīn cǐ tā zhī néng zài Windows shàng yùn xíng 。
+tā yě méi yǒu zì jǐ de wén dàng 。
+nèi hé xì huà
+nèi hé bǎn běn yǐ fā bù ， lì rú dì èr gè zhǔ yào bǎn běn tiān jiā liǎo yán sè hé jī běn gōng néng ， dì sì gè zhǔ yào bǎn běn tiān jiā liǎo pèi zhì 。
+wén dàng cóng dì liù gè zhǔ yào bǎn běn kāi shǐ ， gè zhǒng hǎo dōng xī yǐ jīng màn màn tiān jiā dào nèi hé zhōng 。
+dāng qián bǎn běn
+gāi bǎn běn xiàn zài duì nèi hé jìn xíng liǎo gǎi jìn ， shǐ qí xíng wéi bù zài xiàng jiù bǎn běn yī yàng 。
+yóu yú xīn de tū pò xìng gōng néng yǐ fā bù ， wǒ mén jué dìng jiāng cǐ nèi hé mìng míng wéi ...
+wǔ zhōu nián kuài lè ！
+mǎ
+[ shū rù ] kāi shǐ bǐ sài | [ESC] tuì chū | [ shàng / xià ] yí dòng xuǎn zé
+nǐ de mǎ yíng dé liǎo bǐ sài ！
+nǐ de mǎ shū diào liǎo bǐ sài ！
+nǐ guà liǎo ！
+nǐ yíng liǎo ！
+nǐ de dǔ zhù shì shén me ？
+nǐ cāi duì liǎo ！
+nǐ lǐ jiě cuò liǎo 。
+dàn shì ， nǐ yùn qì bù hǎo 。 shī bài zhě 。
+nǐ hěn xìng yùn ！ yōu shèng zhě ！
+zhè shì yī gè píng jú 。
+wán jiā {0} huò shèng ！
+dāng qián jiǎo sè ：
+nǐ cāi duì liǎo zhè gè cí ！ nǐ yíng liǎo ！
+yán sè shè zhì
+shé yóu xì 。
+xiàng nín zhǎn shì jīng cǎi de míng yán 。
+xuǎn zé nín xǐ huān de nán dù ， qí zhōng 0 shì jiǎn dān ，1 shì zhōng děng ，2 shì kùn nán ，3 shì fēi cháng kùn nán ，4 shì zì dìng yì 。
+zài ShipDuet zhōng shǐ yòng PowerLine xuàn rǎn tài kōng fēi chuán
+shì shǐ yòng PowerLine xuàn rǎn fēi chuán huán shì shǐ yòng biāo zhǔn dà yú zì fú 。 rú guǒ nín xiǎng jiāng PowerLine yǔ ShipDuet yī qǐ shǐ yòng ， zé xū yào ān zhuāng zhī chí PowerLine de shì dāng zì tǐ 。
+ShipDuet zhōng de yóu xì sù dù
+Shǐyòng chángyòng dāncí lièbiǎo.
+Shǐyòng wánzhěng dāncí lièbiǎo.
+Pīngpāng qiú yóuxì!
+fēnshù
+wúfǎ huòqǔ shèzhì tiáomù.
+Sàimǎ
+jiǎoxíng shī
+liúxīng duǒbì
+liúxīng shèshǒu
+pīngpāng qiú
+fēichuán èrchóngzòu
+shé xíng yóuxì
+Wordle
+Wordle (yuánshǐ)
+wèizhī yǐnyòng.
+Wèizhī zuòzhě.
+zhè yǔnxǔ nín pèizhì yánsè
+cǐ bùfèn yǔnxǔ nín pèizhì Solver.
+Cǐ bùfèn yǔnxǔ nín pèizhì SpeedPress.
+Cǐ bùfèn yǔnxǔ nín pèizhì Meteor hé ShipDuet.

@@ -1,0 +1,26 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "sabhee thred ke lie baikatres praapt karata hai"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "hamen lagata hai ki aap windows 8 ya usase kam chala rahe hain. yah opareshan samarthit nahin hai."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} ke lie thred staik tres jaanakaaree"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "naitrosid ks thred nahin"
+    }
+  ]
+}

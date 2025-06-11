@@ -1,0 +1,95 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Λαμβάνει ωριαίες πληροφορίες αποθεμάτων"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Σύντομο σύμβολο της εταιρείας"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Εισαγάγετε το κλειδί API AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Δώστε το κλειδί API σας."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Το κλειδί API επίδειξης δεν μπορεί να χρησιμοποιηθεί."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Το κλειδί API σας θα πρέπει να έχει μήκος 16 χαρακτήρες."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Παρουσιάστηκε σφάλμα κατά την ανάκτηση των δεδομένων αποθεμάτων. Πρόσθετες πληροφορίες μπορείτε να βρείτε εδώ"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Τιμή μετοχής ανοίγματος"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Υψηλή τιμή μετοχής"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Χαμηλή τιμή μετοχής"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Τιμή μετοχής κλεισίματος"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Όγκος αποθεμάτων"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Απαιτείται το κλειδί API. Διαμόρφωση από τις ρυθμίσεις."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Δεν υπάρχουν διαθέσιμα στοιχεία αποθεμάτων."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τα αποθέματα."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Κλειδί API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Κλειδί για το AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Κωδικός εταιρείας"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Εταιρεία μετοχών"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Δεν είναι δυνατή η λήψη πληροφοριών μετοχών."
+    }
+  ]
+}

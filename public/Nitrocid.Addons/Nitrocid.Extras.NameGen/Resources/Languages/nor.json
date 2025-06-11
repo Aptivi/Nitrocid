@@ -1,0 +1,122 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_NAME",
+      "text": "Forsinkelse i millisekunder"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_DESC",
+      "text": "Hvor mange millisekunder skal du vente før du skriver neste gang?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_NAME",
+      "text": "Ny skjermforsinkelse i millisekunder"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_DESC",
+      "text": "Hvor mange millisekunder skal du vente før du skriver i den nye skjermen?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Navne- og etternavnsgenerator"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_NAME",
+      "text": "Minimumsnavn teller"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_NAME",
+      "text": "Maksimalt antall navn teller"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_DESC",
+      "text": "Minimum antall navn å generere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_DESC",
+      "text": "Maksimalt antall navn å generere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
+      "text": "Minimumsalder år teller"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
+      "text": "Maksimal alder år teller"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
+      "text": "Minimum antall år å generere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
+      "text": "Maksimalt antall aldersår å generere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Fornavnsøker"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "Generer navn ved å bruke listen over mannlige navn"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "Generer navn ved å bruke kvinnenavnlisten"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "Generer navn ved å bruke den enhetlige navnelisten"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Etternavn finner"
+    },
+    {
+      "loc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DESC",
+      "text": "Simulerer et databaseoppslag for en tilfeldig person."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "Generer navnemerker (omlyd støttes for øyeblikket ikke)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "Søkeord"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Navneprefiks for å søke"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Navnesuffiks for å søke"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Etternavnsprefiks for å søke"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Etternavnssuffiks for å søke"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Hvor mange navn skal genereres?"
+    }
+  ]
+}

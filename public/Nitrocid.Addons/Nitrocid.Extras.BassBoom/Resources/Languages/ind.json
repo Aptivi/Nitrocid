@@ -1,0 +1,186 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "mileesekand mein deree"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "geet fail se sabhee geet panktiyaan praapt karata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "geet fail chalaata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "dhvani bajaata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "aapake onalain rediyo steshan ke baare mein jaanakaaree praapt karata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "kisee lrch fail ka path nirdisht karana sunishchit karen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "fail nahin milane ke kaaran dhvani nahin bajaee ja sakatee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "sangeet fail saphalataapoorvak kholee gaee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "sangeet fail nahin kholee ja sakatee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "samay samaapt hone ke kaaran dhvani nahin bajaee ja sakatee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "agyaat kalaakaar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "agyaat shailee"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "naam"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "kalaakaar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "shailee"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "avadhi"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "bajaana band karane ke lie q dabaen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "dhvani nahin bajaee ja sakatee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "sheershak"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "aapake onalain rediyo ke lie port nambar amaany hai."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "poorn url"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "vartamaan shrota"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "sheersh shrota"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "streem"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "sakriy streem"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "id ke lie streem jaanakaaree"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "vartamaan mein chal raha hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "apataim"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "sunishchit karen ki lrch praaroop mein aapakee geet failon vaalee nirdeshika ka path nirdisht kiya gaya hai. aap geet failon vaale apane sangeet laibreree foldar ke lie ek kastam path bhee nirdisht kar sakate hain."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "yah geet fail maujood nahin hai."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "is skreenasevar ke lie setings yahaan upalabdh hain."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki baasaboom aidon kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "geet path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": ".lrch failon ke samooh vaale foldar ka path set karata hai. kisee bhee maujooda nirdeshika ke lie ek poorn path likhen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "steshan prakaar"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "intaranet rediyo (fm) jaanakaaree"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "intaranet rediyo jaanakaaree nahin mil sakatee."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "geet fail ka path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "mp3 fail ka path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "host naam jo mpaig rediyo steshan ko host karata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "mpaig rediyo steshan ka port"
+    }
+  ]
+}

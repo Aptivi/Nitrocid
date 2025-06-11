@@ -1,0 +1,121 @@
+Kijk of je wiskundige vergelijkingen op tijd kunt oplossen
+Perfect opgelost!
+Onjuist opgelost.
+Activeer echte kleuren
+Vertraging in milliseconden
+Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?
+Kijk of je op tijd op een toets kunt drukken
+Karakter niet op tijd gedrukt.
+Je hebt op het juiste personage gedrukt!
+Je hebt op het verkeerde teken gedrukt.
+Druk op ESC om af te sluiten.
+Minimaal rood kleurniveau
+Minimaal groen kleurniveau
+Minimaal blauw kleurniveau
+Minimaal kleurniveau
+Maximaal rood kleurniveau
+Maximaal groen kleurniveau
+Maximaal blauw kleurniveau
+Maximaal kleurniveau
+Minimaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.
+Maximaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.
+Oplosser minimum aantal
+Oplosser maximum aantal
+Oplosser toon invoer
+Of er moet worden weergegeven wat er in de invoerprompt staat.
+Wat is het minimum aantal om te kiezen?
+Wat is het maximale aantal om te kiezen?
+Activeert de ondersteuning voor ware kleuren.
+Standaard moeilijkheidsgraad voor SpeedPress
+Time-out toetsaanslag voor SpeedPress
+Hoeveel milliseconden wachten op de toetsaanslag voor de time-out? (In aangepaste moeilijkheidsgraad)
+Stagevertraging in milliseconden
+Hoeveel milliseconden wachten voordat de volgende fase wordt getekend?
+Start het spel in gemakkelijke moeilijkheidsgraad
+Start het spel met gemiddelde moeilijkheidsgraad
+Start het spel in moeilijkheidsgraad
+Start het spel in zeer moeilijke moeilijkheidsgraad
+Start het spel in aangepaste moeilijkheidsgraad. Houd er rekening mee dat de aangepaste time-out in milliseconden als argument moet worden geschreven.
+Locatie van voortgangstekst
+Selecteer de gewenste voortgangstekstlocatie.
+U kunt alleen de cijfers schrijven.
+Druk op "q" om af te sluiten.
+Het slangenspel!
+Je bent een ruimteschip en de meteoren komen om je te vernietigen. Kun je het redden?
+Spel is over
+Onverwachte fout
+Gebruik PowerLine voor het renderen van een ruimteschip
+Meteor spelsnelheid
+Of je nu PowerLine wilt gebruiken om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met Meteor wilt gebruiken, moet u een geschikt lettertype installeren met PowerLine-ondersteuning.
+Specificeert de spelsnelheid in milliseconden.
+Staat u op het verkeerde paard?
+Start het Hangman-spel
+Eén verkeerde letter en je hangt!
+Test je Galgje-vaardigheden door een willekeurige letter te gooien.
+Je bent een ruimteschip en de meteoren komen je vernietigen. Kun jij ze ontwijken?
+Krijgt een willekeurig citaat
+Russische roulette
+Twee ruimteschepen zijn met elkaar in gevecht. Eén schot en het ruimteschip ontploft. Dit is een lokaal spel voor twee spelers.
+De Wordle-spelsimulator
+Speel het Wordle-spel oorspronkelijk
+Herdenkt het 5-jarig jubileum van de kerneluitgave
+Ter herdenking van het 5-jarig jubileum van de kernel
+Eerste uitgave ooit
+Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt.
+Vroeger hostte het slechts één shell en een paar opdrachten, en het werkte alleen met Windows vanwege het gebruik van de Windows Management Instrumentation-tool.
+Het had ook geen eigen documentatie.
+Kernelverfijning
+Er zijn versies van de kernel uitgebracht, zoals de tweede grote release om kleuren en basisfuncties toe te voegen, en de vierde grote release om configuratie toe te voegen.
+De documentatie begon bij de zesde grote release en er zijn langzaam verschillende leuke dingen aan de kernel toegevoegd.
+Huidige versie
+Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt als de oude versies.
+Omdat de nieuwe baanbrekende functies zijn vrijgegeven, hebben we besloten deze kernel de naam te geven...
+Gelukkig 5-jarig jubileum!
+Paard
+[ENTER] Start de race | [ESC] Afsluiten | [UP/DOWN] Selectie verplaatsen
+Jouw paard heeft de race gewonnen!
+Je paard heeft de race verloren!
+Je bent opgehangen!
+Jij wint!
+Wat is jouw weddenschap?
+Je raadt het goed!
+Je hebt het fout.
+Maar je hebt pech. Verliezer.
+Jij hebt geluk! Winnaar!
+Het is een tekening.
+Speler {0} wint!
+Huidig karakter:
+Je raadt het juiste woord! Jij wint!
+Kleurinstellingen
+Een slangenspel.
+Toont je leuke bekende citaten.
+Selecteer de moeilijkheidsgraad van uw voorkeur, waarbij 0 gemakkelijk is, 1 gemiddeld, 2 moeilijk, 3 zeer moeilijk en 4 aangepast.
+Gebruik PowerLine voor het weergeven van ruimteschepen in ShipDuet
+Of PowerLine moet worden gebruikt om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met ShipDuet wilt gebruiken, moet u een geschikt lettertype met PowerLine-ondersteuning installeren.
+Spelsnelheid in ShipDuet
+Gebruikt de algemene woordenlijst.
+Gebruikt de volledige woordenlijst.
+Het pingpongspel!
+Scoren
+Het is niet gelukt om de instellingen op te halen.
+Paardenraces
+Beul
+Meteoor ontwijken
+Meteoorschutter
+Pong
+Schip Duet
+Slangenjager
+Woordle
+Wordle (origineel)
+Onbekend citaat.
+Onbekende auteur.
+Hiermee kunt u de kleuren configureren
+In dit gedeelte kunt u Solver configureren.
+In dit gedeelte kunt u SpeedPress configureren.
+In dit gedeelte kunt u Meteor en ShipDuet configureren.

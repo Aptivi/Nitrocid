@@ -1,0 +1,103 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_EXIT",
+      "text": "Εξοδος"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_GOBACK",
+      "text": "Πήγαινε πίσω..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE",
+      "text": "Αφαιρώ"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+      "text": "Φτιάχνει μια νέα γλώσσα"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND",
+      "text": "Το βασικό αρχείο αγγλικών συμβολοσειρών δεν υπάρχει. Θέλετε να δημιουργήσετε ένα κενό; Ή θέλετε να χρησιμοποιήσετε τις αγγλικές χορδές του Nitrocid;"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED",
+      "text": "Δεν έχει καθοριστεί έγκυρη γλώσσα."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_HEADER",
+      "text": "Καλώς ήρθατε στο Language Studio!"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRING",
+      "text": "Νέα χορδή"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_REMOVESTRING",
+      "text": "Αφαιρέστε τη συμβολοσειρά"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVE",
+      "text": "Αποθήκευση μεταφράσεων"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE",
+      "text": "Επιλέξτε μια συμβολοσειρά για μετάφραση:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT",
+      "text": "Εισαγάγετε μια νέα συμβολοσειρά"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE",
+      "text": "Επιλέξτε μια συμβολοσειρά για κατάργηση:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SAVINGLANG",
+      "text": "Αποθήκευση γλώσσας..."
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE",
+      "text": "Επιλέξτε γλώσσα"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT",
+      "text": "Επιλέξτε μια γλώσσα για να μεταφράσετε αυτήν τη συμβολοσειρά:"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT",
+      "text": "Γράψτε τη μετάφρασή σας"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC",
+      "text": "Δημιουργεί μια νέα γλώσσα σε ένα διαδραστικό TUI"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE",
+      "text": "Εκτός"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD",
+      "text": "Προσθέτω"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE",
+      "text": "Μεταφράζω"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC",
+      "text": "Διαδρομή στον κατάλογο μεταφράσεων"
+    },
+    {
+      "loc": "NKS_LANGUAGESTUDIO_SAVESUCCESS",
+      "text": "Γινώμενος! Χρησιμοποιήστε την εφαρμογή Nitrocid.Locales με κατάλληλα ορίσματα για να οριστικοποιήσετε τις γλώσσες. Μπορείτε να χρησιμοποιήσετε αυτήν τη διαδρομή:"
+    }
+  ]
+}

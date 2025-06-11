@@ -1,0 +1,440 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "la yumkin tahmil altaedil bsbb ma yly: "
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1} bada"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "lughatan ghyr saliha"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "tahlil altaedil ghyr masmuh bih fi alwade alamina."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "tama 'iiqaf Mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1} tawaqaf"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "fashal 'iinha' altaedil {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "bad' wizarat aldifae"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "nuskhat wizarat aldifaei:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} ghayr mawjudi."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "aism altaedili:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "aism milafi altaedili:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "masar milafi Mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "'iidarat altaedilat alkhasat bik"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "tama taetil 'iidarat altaedil fi alwade alamana."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "'amr ghayr salih {0}. tahaqaq min aliastikhdam 'adnahu:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "lam yatima aleuthur ealaa wizarat aldifae 'aw 'ana almilafa yahtawi ealaa 'ahruf ghayr salihatin."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "safhat aldalil {0} ghayr salihatin."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "dae fi aetibarik mil' safhat aldalil hadhihi."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "dalil wizarat aldifae"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "la yusmh bi'iiqaf altaedilat fi alwade alamana."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "tama bialfiel bad' wizarat aldifaei!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "wizarat aldifae lam tabda biedu!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "aitasal bibayie altaedil litarqiat altaedil 'iilaa al'iisdar almutawafiqi."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "taedil alqayimat alsawda'"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "aktub 'asma' milafaat altaedilat alati lan taemal eind bad' altashghili. eind aliantiha' , aktub \"q\". auktub ealamat altarh bijanib almasar li'iizalat taedil mawjudi."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "alwade {0} mudraj fi alqayimat alsawda'a."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "abda taedilat kernel eind altashghil"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "abda tlqayyan taedilat kernel eind altashghili."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "lam yatima tahdid milafi Mod."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "muhawalat tathbit taedil muthabat bialfieli. jar tahdith alwade ..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "fashil altathbit l"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "milafun mod almutawafir ghayr mutawafiqin."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "fashil 'iilgha' altathbit l"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "la tuafir maelumat albayanat alwasfiat allaazimat litathbit allughat almukhasasat altarjumat almatlubat almatlubata."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "'azhar 'ana 'awamir altaedil taetamid ealaa almusaeada"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "alnamudhaj ghayr salihin."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "safhat dalil bidun eunwan"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ ltṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "qd lā īkūn al-brnāmǧ al-nṣī al-mʿdl fārġًā."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "lm ītm aktšāf aī tʿdīlāt."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "ǧārٍ īqāf al-ūḍʿ {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "lm ītm al-tūqīʿ ʿli al-ūḍʿ bqūẗ. qd īḥtwy ʿli tʿlīmāt brmǧīẗ ġīr mūṯūq bhā."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "lā īmkn tḥmīl al-tʿdīl bsbb ʿdm al-twāfq bīn hḏā al-iṣdār mn al-nwāẗ ūhḏā al-tʿdīl:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "fīmā īlī qāʾimẗ bālʾaẖṭāʾ al-tī qd tsāʿdk fī al-tḥqq mn ʿdm al-twāfq hḏā:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "ītṭlb Mod {0} iṣdār API {1} bālḍbṭ, ūlkn ldīk al-iṣdār {2}. ʿādẗً mā tsāʿd trqīẗ Nitrocid KS ū/ʾaū al-ūḍʿ. fšl tḥlīl ūzārẗ al-dfāʿ."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "qd lā īʿml Mod {0} bškl ṣḥīḥ mʿ iṣdār API hḏā. qd īfšl al-tʿdīl fī bdʾ al-tšġīl. atṣl bbāʾiʿ al-tʿdīl llḥṣūl ʿli aḥdṯ nsẖẗ."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "al-ṭrāz {0} līs lh asm. fšl tḥlīl ūzārẗ al-dfāʿ. qm bmrāǧʿẗ al-kūd al-mṣdrī."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "lā īḥtwy al-ṭrāz {0} ʿli al-iṣdār. fšl tḥlīl ūzārẗ al-dfāʿ. qm bmrāǧʿẗ al-kūd al-mṣdrī."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "īḥtwy al-nmūḏǧ {0} ʿli iṣdār ġīr ṣālḥ. fšl tḥlīl ūzārẗ al-dfāʿ. kān al-iṣdār"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "iṣdār"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "asm al-mlf"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "msār al-mlf"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "lsūʾ al-ḥẓ, lā tḥtwy ṣfḥẗ al-dlīl hḏh ʿli aī mḥtwyāt. ūmʿ ḏlk, rbmā tm al-ʿṯūr ʿli hḏh al-ūṯāʾiq ḍmn ṣfḥẗ al-wyb al-ẖāṣẗ bbāʾiʿ al-tʿdīl. iḏā knt lā tzāl ġīr qādr ʿli al-ʿṯūr ʿli hḏh al-ūṯāʾiq, fāṭlb mn mṭūrī al-tʿdīl al-ḥṣūl ʿli mzīd mn al-mʿlūmāt."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "mqdm lkm mn"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "ṭūl al-mḥtwi"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "lā mḥtwyāt."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "lā mrāǧʿẗ."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "lā īmkn tnfīḏ ūẓīfẗ mẖṣṣẗ bāstẖdām tʿdīl ġīr mūǧūd"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "al-tbʿīẗ ġīr rāḍīẗ. al-tbʿīāt al-fāšlẗ mdrǧẗ adnāh:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "ḥāūlt al-āstʿlām fī al-ʾadlẗ ʿn al-ūḍʿ ġīr al-mūǧūd {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "tmt mḥāūlẗ thīʾiẗ al-dlīl {0} llūḍʿ ġīr al-mūǧūd {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "tmt mḥāūlẗ thīʾiẗ al-mlf al-īdwy {0} llūḍʿ ġīr al-mūǧūd {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "tmt mḥāūlẗ thīʾiẗ al-mlf al-īdwy {0} ūhū ġīr mūǧūd llnmūḏǧ {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "asm"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "al-smāḥ btḥmīl al-tʿdīlāt ġīr al-mūṯūq bhā"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "iḏā tm al-tʿyin ʿli \"ṣḥīḥ\", fln īḥdṯ ẖṭʾa fī al-nwāẗ ʿnd tḥmīl al-tʿdīlāt al-tī lā tḥtwy ʿli al-mftāḥ al-ʿām al-mūqʿ."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "iẓhār ʿdd awāmr tʿdīl kernel ʿnd idrāǧhā fī amr al-msāʿdẗ"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "la yusmh bibad' altaedilat 'aw 'iiqafiha fi alwade alamana."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "la yumkin alhusul ealaa maelumat alhaql"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "la yumkin tahdid 'iisdar altaedil"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "astithna' mahmal ghayr maeruf"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "la yumkin tahmil tarjamat altaedil"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "bad' mod (akhtiari)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "bad' mod ('iidkhali)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "'iiqaf mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "'iieadat tahmil mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "tathbit mod (akhtiari)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "tathbit mod ('iidkhali)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "'iilgha' tathbit mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "bad' alkuli"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "'iiqaf alkuli"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "'iieadat tahmil alkuli"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "la yumkin 'iirjae nawe fiat ghayr mawjud min tajmie mod"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "la yumkin aleuthur ealaa aldaala '{0}' fi mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "la yumkin aleuthur ealaa alkhasia '{0}' fi mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "la yumkin aleuthur ealaa alhaql '{0}' fi mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "hadhih alfiat laysat fiat taedil"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "allughat"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "nuqtat aldukhul"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "'udkhil msaran liltaedil aladhi turid bad' tashghilih"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "fashil fi bad' altaedil"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "'udkhil msaran liltaedil aladhi turid tathbitah"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "fashil fi tathbit altaedil"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "la yumkin bad' 'aw 'iiqaf hadha altaedili!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "sawa' libad' 'aw 'iiqaf 'aw alhusul ealaa maelumat min 'aw 'iieadat tahmil 'aw tathbit 'aw 'iilgha' tathbit taedil"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "asm altaedil 'aw asm almilafi"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "sawa' li'iidraj 'aw 'iieadat tahmil 'aw 'iiqaf 'aw bad' 'aw 'iidarat jamie altaedilat bishakl tafaeuliin"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "aism altaedil"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "yutih lak hadha alqism takwin kayfiat eamal nizam taedil alnawati."
+    }
+  ]
+}

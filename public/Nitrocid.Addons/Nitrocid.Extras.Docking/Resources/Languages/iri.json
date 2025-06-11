@@ -1,0 +1,35 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Léiríonn sé forbhreathnú lánscáileáin duit ar radharc duga roghnaithe chun go mbeidh tú in ann é a úsáid mar phainéal faisnéise"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Níl aon scáileán duga leis an ainm seo."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Níl aon duga scáileáin leis an ainm seo."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Níl aon duga scáileáin ann."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Tá duga scáileáin tuairteála"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Ainm an duga"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "altaakhir fi mili thany"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "kam mili thanyt yjb alaintizar qabl 'iijra' alkitabat altalia?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "īḥṣl ʿli kāfẗ al-ʾasṭr al-ġnāʾīẗ mn al-mlf al-ġnāʾī"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "tšġīl mlf ġnāʾī"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "īlʿb al-ṣūt"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "īḥṣl ʿli mʿlūmāt ḥūl mḥṭẗ al-rādīū al-ẖāṣẗ bk ʿli al-intrnt"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "tʾakd mn tḥdīd al-msār ili mlf LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "lā īmkn tšġīl al-ṣūt lʾanh lm ītm al-ʿṯūr ʿli al-mlf."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "tm ftḥ mlf al-mūsīqi bnǧāḥ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "lā īmkn ftḥ mlf al-mūsīqi."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "lā īmkn tšġīl al-ṣūt bsbb anthāʾ al-mhlẗ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "fnān ġīr mʿrūf"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "nūʿ ġīr mʿrūf"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "asm"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "fnān"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "al-nūʿ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "mdẗ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "aḍġṭ ʿli \"q\" līqāf al-lʿb."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "lā īmkn tšġīl al-ṣūt."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "ʿnwān"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "rqm al-mnfḏ al-ẖāṣ bālrādīū ʿbr al-intrnt ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "ʿnwān URL al-kāml"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "al-mstmʿīn al-ḥālyin"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "ḏrūẗ al-mstmʿīn"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "tīārāt"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "tīārāt nšṭẗ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "dfq al-mʿlūmāt llmʿrf"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "ṭrīq"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "īlʿb ḥālīā"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "mdẗ al-tšġīl"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "tʾakd mn tḥdīd al-msār ili al-dlīl al-ḏī īḥtwy ʿli mlfāt klmāt al-ʾaġānī al-ẖāṣẗ bk btnsīq LRC. īmknk aīḍḍā tḥdīd msār mẖṣṣ lmǧld mktbẗ al-mūsīqi al-ẖāṣ bk al-ḏī īḥtwy ʿli mlfāt al-klmāt al-ġnāʾīẗ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "mlf klmāt al-ʾaġānī hḏā ġīr mūǧūd."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "iʿdādāt šāšẗ al-tūqf hḏh mtāḥẗ hnā."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "ītīḥ lk hḏā al-qsm tkwyn kīfīẗ ʿml al-mlḥq BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "msār al-ʾaġānī"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "īḍbṭ al-msār ili mǧld īḥtwy ʿli mǧmūʿẗ mn mlfāt .lrc. aktb msārrā mṭlqًā lʾaī dlīl mūǧūd."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "nawe almahata"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "maelumat radyu al'iintarnit (FM) li"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "la yumkin alhusul ealaa maelumat radiu al'iintirnti."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "almasar 'iilaa milafi al'aghani"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "almasar 'iilaa milafi MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "asm almudif aladhi yastadif mahatat alraadyu MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "almanfadh 'iilaa mahatat alraadyu MPEG"
+    }
+  ]
+}

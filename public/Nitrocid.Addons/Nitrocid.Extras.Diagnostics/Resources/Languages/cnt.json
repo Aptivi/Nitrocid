@@ -1,0 +1,29 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "huò qǔ suǒ yǒu xiàn chéng de huí sù"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "wǒ mén xiāng xìn nín yùn xíng de shì Windows 8 huò gēng dī bǎn běn 。 bù zhī chí gāi cāo zuò 。"
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} de xiàn chéng duī zhàn gēn zōng xìn xī"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "bù shì Nitrocid KS luó wén"
+    }
+  ]
+}

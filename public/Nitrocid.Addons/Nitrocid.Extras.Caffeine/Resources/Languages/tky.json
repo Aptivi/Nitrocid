@@ -1,0 +1,51 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Çayınız veya kahveniz hazır olduğunda sizi uyarmak için bir alarm ekler."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Çayınız veya kahveniz hazır olduğunda sizi uyaran bir alarmı iptal eder."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Amerikan Kahvesi"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Kırmızı Çay"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Yeşil çay"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Düşük için kafein uyarısı yok."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Fincanınızın hazır olacağı saniyeler geçersizdir."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Eğer içeceğin adını söylemeye çalışıyorsanız, aşağıdaki listeye göz atın:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Artık bardağınız hazır!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Ya saniye sayısını ya da bir içecek adını belirtin"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "amaany kaarravaee."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "kaary ka naam"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "too-doo taask mainejar"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "koee kaary jodane ya hataane mein viphal."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "krpaya apane kaary ke lie koee naam pradaan karen."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "koee kaary chihnit karane mein viphal."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "kaaryon kee soochee nahin mil sakatee"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "kisee kaary par jodana, hataana, poorn ke roop mein chihnit karana ya poorn ke roop mein achihnit karana hai ya nahin"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "sabhee kaaryon ko soocheebaddh karana, sahejana ya lod karana hai ya nahin"
+    }
+  ]
+}

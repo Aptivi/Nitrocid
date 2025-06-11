@@ -1,0 +1,47 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Geçersiz eylem."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Görev adı"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Yapılacaklar görev yöneticisi"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Görev eklenemedi veya kaldırılamadı."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Lütfen görevinize bir isim verin."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Görev işaretlenemedi."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Görevlerin listesi alınamıyor"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Bir göreve ekleme, kaldırma, tamamlanmış olarak işaretleme veya tamamlanmış olarak işaretini kaldırma"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Tüm görevleri listelemek, kaydetmek veya yüklemek isteyip istemediğiniz"
+    }
+  ]
+}

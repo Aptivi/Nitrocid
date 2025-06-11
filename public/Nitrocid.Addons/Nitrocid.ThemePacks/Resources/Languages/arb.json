@@ -1,0 +1,340 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "la yumkin alhusul ealaa albayanat allaazimat litahyiat hadhih alwazifat al'iidafiati."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "altanaghum al'urjiwaniu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "hadha hu lawn tamimat Android fi almuqadima"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "tanaghum ealamatina altijaria"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "'iisdar dakin min simat VIM alshahirati, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "'iisdar fatih min simat VIM alshahirati, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "'iisdar Mirage min simat VIM alshahirati, Ayu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "hadha hu 'awal yawm fi aleam aldirasii aljadid"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "'aftah mahatatan mumkinatan"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "hadhih alwardat alsawda'"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "mukhatat al'alwan li Breeze, simat KDE Plasma 5"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "mukhatat al'alwan alshaayie libiyaat altatwir almutakamilati, mithl IntelliJ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "han alwaqt lileawdat 'iilaa aljanib almuzlimi."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "mukhatatat al'alwan li Debian"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "almawdue aliaiftiradiu alzaahi lilnawa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "lamasat khalfiat fi nawat alnizam alkhasat biki!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "almazid min allamasat fi kuli makani!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "astakhdimh 'iidha kunt min muhibiy EDM"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "zilal alnaar"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "qasruk aldhahabiu almalhamiu ealaa khalfiat zarqa' dakina"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "einab wakiwiun mukhtalitan mean"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "mukhatat al'alwan lileinab"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "'alwan khadra' wazarqa' wa'urjuaniat zahiat wamulsaqa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "ajeal biyatak khadara'a, ajeal nawat alnizam alkhasat bik khadra'a. ajeal al'ard 'akthar akhdraran!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "laqad 'adafna allawnayn al'akhdar wal'ahmaru."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "mazij min al'akhdar walwardii mean"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "'ahad mukhatatat 'alwan almahataat altarafiat almaerufa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "nasun 'akhdar ealaa ramadi"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "'alwan hindiat taqlidiat mubashirat fi wahdat altahakum alkhasat bika."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "aijeal mahatatak altarafiat maliyatan bihamd allaymun"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "'alwah khashabiat fatiha"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "'alwan mahatat tarafiat qiasiat linizam Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "mahatat tarafiat ramadia"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "baed nusus altasmim almadiyi ealaa mahatatik altarafia"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "darajat allawn alburtuqalii walbuniyu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "mawdue mazij mustawhan min mawdue VIM aladhi yahmil nafs aliasm"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "ajeal mahatatak altarafiat maliyatan bialnaenae"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "lawhat 'alwan min Mirai Kuriyama min Beyond the Boundary."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "mawdue mustawhan min mawdue VIM aladhi yahmil nafs aliasm"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "hal tuhibu allawn al'azraq alniyun walwardi?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "yajib 'an yakun hadha almawdue mhaydan bialnisbat lika."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "hadhih hi sama' allayl fi bidayat alliyl!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "yati shahr 'uktubar qryban, lidha astaeada!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "bahr alburtuqalii"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "mahatat tarafiat fasufuriat tahawal kula shay' 'iilaa allawn alburtuqalii"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "tamnahuk nsyman min allawn al'ahmaru."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "lawhat tahkum hamra' damawiatan"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "'ashjar alsaakura satamnahuk baed alnasim alsiynii"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "jamie al'alwan khadra' muzraqa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "mawdue limuhibiy altiknulujia"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "hal 'ant min muhibiy musiqaa altiransi? hadha almawdue munasib lika!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "mukhatatat al'alwan min nizam altashghil Linux alshahiri, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "tamnahuk 'ajwa'an Vice City almithalia"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "hadhih hi fajr Vice City alkhasu bika."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "mukhatat al'alwan libarnamaj Visual Studio, 'ahad 'aqwaa biyat altatwir almutakamila"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "mukhatat al'alwan linizam altashghil Windows 11, al'iisdar al'akhir min Windows"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "aistaeida lilhanin 'iilaa almadi mae hadha almazhari!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "yatakawan mahatatuk min 'alwah khashabia"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "mustawhaat min alnamat alsiynii lilfawakih almukhtalifa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "'anzimat al'alwan min Alma Linux, wahu fare min nizam tashghil Linux, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "'anzimat al'alwan min nizam tashghil Linux, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "'anzimat al'alwan min EndeavourOS, wahu fare min nizam tashghil Linux, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "'anzimat al'alwan min Fedora, wahu fare min nizam tashghil Linux, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "'anzimat al'alwan min nizam tashghil Linux, Gentoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "'alwan namatiat manhutat tushakil mandala mulawanatan"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "'anzimat al'alwan min Kubuntu, wahu fare min nizam tashghil Linux alshahiri, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "'anzimat al'alwan min Linux Mint, wahu fare ghayr rasmiin min nizam tashghil Linux alshahiri, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "'anzimat al'alwan min Lubuntu, wahu fare min nizam tashghil Linux alshahiri, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "'anzimat al'alwan min Manjaro, wahu nuskhat fareiat min nizam tashghil Linux, Arch Linux"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "'anzimat al'alwan min nizam tashghil Linux, openSUSE"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "'anzimat al'alwan min nizam tashghil Linux, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "zilal hamra' mae 'alwan mumayazat dinamikiat linusus tajdhib alaintibah"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "'anzimat al'alwan min Rocky Linux, nuskhat fareiat min nizam tashghil Linux, Red Hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "'anzimat al'alwan min nizam tashghil Linux, Slackware"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "'anzimat al'alwan min Xubuntu, nuskhat fareiat min nizam tashghil Linux alshahiri, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "'anzimat al'alwan min Zorin OS, nuskhat fareiat ghayr rasmiat min nizam tashghil Linux alshahiri, Ubuntu"
+    }
+  ]
+}

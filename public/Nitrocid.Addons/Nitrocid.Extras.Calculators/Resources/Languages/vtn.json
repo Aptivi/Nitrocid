@@ -1,0 +1,70 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Máy tính để tính toán biểu thức."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Lỗi tính toán."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Hiển thị thông tin về công thức số ảo được chỉ định bởi một số thực và số ảo cụ thể"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Con số thực tế không hợp lệ."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Số ảo này không hợp lệ."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Công thức:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Bán kính:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Thực sang Bán kính tính bằng Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Chuyển đổi từ bán kính sang tưởng tượng tính bằng radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Góc tính bằng Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Số mũ:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Hình tam giác:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Biểu thức toán học"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Số thực"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Số ảo"
+    }
+  ]
+}

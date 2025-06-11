@@ -1,0 +1,414 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "nimnalikhit ke kaaran mod lod nahin kiya ja sakata hai: "
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} vee {1} shuroo hua"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "amaany bhaasha"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "surakshit mod par paarsing mod kee anumati nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "mod {0} ruk gaya"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1} ruka"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "mod ko antim roop dene mein viphal {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "praarambhik mod"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "mod sanskaran:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "mod {0} nahin mila."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "aadhunik naam:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "mod fail naam:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "mod fail path:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "apane mod prabandhit karen"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "mod prabandhan surakshit mod mein aksham hai."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "amaany aadesh {0}. neeche upayog kee jaanch karen:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "mod nahin mila ya fail mein amaany varn hain."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "mainual pej {0} amaany hai."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "is mainual pej ko bharane par vichaar karen."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "mod mainual"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "surakshit mod par mod ko rokane kee anumati nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "mod pahale hee shuroo ho chuka hai!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "mod abhee tak shuroo nahin hua hai!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "mod ko sangat sanskaran mein apagred karane ke lie mod ke vikreta se sampark karen."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "blaik listed mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "un mod ke fail naam likhen jo staartap par nahin chalenge. jab aap samaapt kar len, to \"q\" likhen. maujooda mod ko hataane ke lie path ke aage ek rn chihn likhen."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "mod {0} ko kaalee soochee mein daal diya gaya hai."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "boot par karnel sanshodhan praarambh karen"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "boot par karnel sanshodhanon ko svachaalit roop se praarambh karen."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "mod fail nirdisht nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "pahale se sthaapit mod ko sthaapit karane ka prayaas kar raha hai. mod apadet kiya ja raha hai..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "ke lie sthaapana viphal"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "pradaan kee gaee mod fail asangat hai."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "sthaapana radd karane mein viphal"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree aavashyak sthaaneeyakaran pradaan nahin karatee hai."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "mod kamaand dikhaen madad par bharosa karen"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "modaphail amaany hai."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "bina sheershak vaala mainual pej"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree maujood nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "mod skript shoony nahin ho sakatee hai."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "koee mod nahin mila."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "mod {0} ko roka ja raha hai..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "mod par drdhata se hastaakshar nahin kie gae hain. isamen avishvasaneey kod ho sakata hai."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "mod lod nahin kiya ja sakata kyonki karnel ke is sanskaran aur is mod ke beech asangati hai:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "yahaan trutiyon kee ek soochee dee gaee hai jo is asangati kee jaanch karane mein aapakee madad kar sakatee hai:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "mod {0} ko bilkul api sanskaran {1} kee aavashyakata hai, lekin aapake paas sanskaran {2} hai. nitrochid ks aur/ya mod ko apagred karana aamataur par madad karata hai. mod paarsing viphal."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "mod {0} is api sanskaran ke saath theek se kaam nahin kar sakata hai. mod shuroo hone mein viphal ho sakata hai. naveenatam prati praapt karane ke lie mod vikreta se sampark karen."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "mod {0} mein naam nahin hai. mod paarsing viphal. srot kod kee sameeksha karen."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "mod {0} mein sanskaran nahin hai. mod paarsing viphal. srot kod kee sameeksha karen."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "mod {0} mein amaany sanskaran hai. mod paarsing viphal. sanskaran tha"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "sanskaran"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "fail naam"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "fail path"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "durbhaagy se, is mainual pej mein koee saamagree nahin hai. haalaanki, yah dastaavez mod vikreta ke vebapej ke antargat paaya ja sakata hai. yadi aapako abhee bhee yah dastaavez nahin mil raha hai, to adhik jaanakaaree ke lie mod ke devalapars se poochhen."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "aapake lie prastut hai"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "saamagree kee lambaee"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "koee saamagree nahin."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "koee sanshodhan nahin."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "gair-maujood mod ke saath kastam fankshan nishpaadit nahin kiya ja sakata"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "nirbharata asantusht. viphal nirbharataen neeche soocheebaddh hain:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "gair-maujood mod {0} ke lie mainual kveree karane ka prayaas kiya."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "gair-maujood mod {1} ke lie mainual {0} ko aarambh karane ka prayaas kiya."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "gair-maujood mod {1} ke lie mainual fail {0} ko aarambh karane ka prayaas kiya."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "mainual fail {0} ko aarambh karane ka prayaas kiya jo mod {1} ke lie maujood nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "naam"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "avishvasaneey mod lod karane kee anumati den"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "yadi saty par set kiya jaata hai, to karnel un mod ko lod karane par truti nahin dega jinake paas hastaaksharit saarvajanik kunjee nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "help kamaand mein soocheebaddh karate samay karnel sanshodhan kamaand kee ginatee dikhaen"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "surakshit mod par mod shuroo ya band karane kee anumati nahin hai."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "feeld jaanakaaree praapt nahin kar sakate"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "mod sanskaran nirdhaarit nahin kar sakate"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "agyaat lodar apavaad"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "mod sthaaneeyakaran lod nahin kar sakate"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "mod shuroo karen (chayan karen)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "mod shuroo karen (inaput)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "mod roken"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "mod punah lod karen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "mod instol karen (chayan karen)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "mod instol karen (inaput)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "mod aninstol karen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "sab shuroo karen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "sab roken"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "sab punah lod karen"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "mod asembalee se gair-maujood varg prakaar vaapas nahin kiya ja sakata"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "mod {1} mein fankshan {0} nahin mil sakata."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "mod {1} mein propartee {0} nahin mil sakata."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "mod {1} mein feeld {0} nahin mil sakata."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "yah klaas mod klaas nahin hai"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "bhaashaen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "pravesh bindu"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "us mod ka path darj karen jise aap shuroo karana chaahate hain"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "mod shuroo karane mein viphal"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "us mod ka path darj karen jise aap instol karana chaahate hain"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "mod instol karane mein viphal"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "is mod ko shuroo ya band nahin kiya ja sakata!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "mod ko shuroo karana, rokana, jaanakaaree praapt karana, punah lod karana, instol karana ya aninstol karana"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "mod ka naam ya fail ka naam"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "sabhee mod ko soocheebaddh karana, punah lod karana, rokana, shuroo karana ya intarektiv roop se prabandhit karana"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "mod ka naam"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "yah anubhaag aapako konfigar karane deta hai ki karnel sanshodhan pranaalee kaise kaam karatee hai."
+    }
+  ]
+}

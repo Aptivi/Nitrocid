@@ -1,0 +1,311 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "İşlem komutlarını iki şekilde çalıştırabileceğinizi biliyor muydunuz: çalıştırılabilir dosya adını doğrudan girerek ve 'exec' komutunu kullanarak?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "'lockscreen' komutunu kullanarak ekranınızı kilitleyebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "C# ve Visual Basic kullanarak kendi çekirdek değişikliklerinizi oluşturabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "Komutlar arasında noktalı virgül kullanarak birden fazla komut kullanabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "Komutları çalıştırırken tırnak içindeki argümanların içindeki çift tırnak işaretlerinden kaçabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "'settings' komutunu kullanarak çekirdek ayarlarını değiştirebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "'savescreen' komutunu kullanarak ekranınızı kaydedebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "Hataları bize Nitrocid'in GitHub proje sayfasına giderek bildirebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "'alias' komutunu kullanarak istediğiniz komuta kısayol oluşturabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "C# ve Visual Basic kullanarak kendi açılış ekranınızı oluşturabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "Çekirdeğinizi daha kullanışlı ve eğlenceli hale getirmek için ekstra eklentiler yükleyebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "'mktheme' komutunu kullanarak kendi harika temalarınızı yapabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "Çekirdek renklerinizi 'ayarlar' komutunu kullanarak veya önceden oluşturulmuş temalardan birini kullanarak değiştirebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "'reset' argümanını kullanarak çekirdeğinizi fabrika ayarlarına sıfırlayabileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "Kapsamlı dokümanlarımıza GitBook sayfamızdan erişebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "Uzun vadeli sürümlerin ana destek için beş yıl, güvenlik güncellemeleri için ise üç yıl desteklendiği doğru mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "0.0.1'in 22 Şubat 2018'de yayınlanan Nitrocid KS'nin ilk sürümü olduğunu biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "0.0.24.x serisinin API v2.1 sürümünü barındıran tek sürüm serisi olduğunu mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "Kısa vadeli sürümlerin yalnızca dokuz ay boyunca desteklendiği mi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "0.1.x serisinin 0.0.24.x serisi veya daha eskileriyle geriye dönük uyumsuz olduğu doğru mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "Nitrocid KS'yi Linux, macOS ve Android'de çalıştırabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "Modlarınızı yaparken API dokümantasyonuna başvurabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "Hangman ve ShipDuet gibi harika oyunlardan birçoğunu ekstra eklentiler yükleyerek oynayabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "Meteor'da kırmızı meteor fırtınasına yakalanırsanız uzay geminizin de parçalanacağını mı söylüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "Yerleştirme özelliğini kullanarak çekirdeğinizi bilgi merkezlerine dönüştürebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "Kullanıcı hesaplarını düzenlemek için kullanıcı grupları oluşturabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "eğer belirli izinleri veren bir grubun üyesiyseniz, bu tür işlemleri gerçekleştirmenize izin veriliyor mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "Ana bilgisayarınızı etkilemeden çekirdek saat diliminizi değiştirebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "Zaman kazanmak için etkileşimli metin ve hex düzenleyiciyi kullanabileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "İlk Unix sistemiyle çalıştığı bilinen en eski metin düzenleyicisinin, 1973 yılında piyasaya sürülen ve Unix sistemiyle birlikte gelen en eski metin düzenleyicisi olan ed olduğu ve AT&T Bell Laboratuvarları'ndaki bir PDP-7'de bulunduğu doğru mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "Edit komutunun editörü belirli bir türde başlatmasını da zorlayabilir misiniz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "Etkileşimli metin düzenleyicisinin, en popüler Unix metin düzenleyicileri olan vi ve vim'in en temel özelliklerini taklit etmeye çalıştığını mı düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "İkili dosyayla ne yaptığınızı bilmediğiniz sürece, bu dosyayı bu şekilde düzenlemenin hedeflenen dosyada veri bozulmasına veya veri kaybına yol açacağını mı düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "Linux sistemlerinde kabuğun hem oturum açma işleyicisi hem de sistem başlatma programının yardımıyla başlatıldığı, genellikle /sbin/init dizininde bulunduğu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "Kopyalama, taşıma, silme, düzenleme vb. gibi yaygın dosya işlemlerini gerçekleştirebiliyor musunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "Bir dosya yöneticisinin etkileşimli TUI'sinin Midnight Commander'ın işlevselliğini simüle ettiğini biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "çekirdek çökerse genellikle bir döküm dosyası mı oluşturulur?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "Yerleşik hata ayıklama işlevini kullanarak çekirdeği hata ayıklayarak teşhis edebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "UESH kabuğundan doğrudan dosya indirip yükleyebileceğinizi mi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "çekirdeğin 'lang' argümanı ile başlatılarak ön-önceki aşamalarda bile çevrilebileceği mi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "modunuza kaydederek kendi ekran koruyucularınızı oluşturabileceğinizi mi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "Orijinal IBM PC'lerde üç dakikalık hareketsizlikten sonra ekranı karartan ilk ekran koruyucu olan scrnsave'in 1983 yılında John Socha tarafından yaratıldığını biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "Bazı hızlı ekran koruyucuların ışığa duyarlı nöbetlere neden olabileceği doğru mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "Çekirdek günlüklerinin önyükleme ve kapatma günlükleri olarak kullanıldığı doğru mu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "modlarınızın artık çevrilebilir hale gelebileceğini mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "Modlarınızın çekirdek eklentileri ve diğer modlarla iletişim kurabilmesi, bir tür iletişim yaratabilmesi ve birlikte çalışabilirlik sağlayabilmesi mümkün mü?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "Uzaktan hata ayıklayıcıya ve isteğe bağlı olarak sohbet sunucusuna bağlanabiliyor musunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "Yalnızca geliştirme sürümlerinde kullanılabilen hata ayıklama kabuğunu kullanabiliyor musunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "Moderatörlerinizin artık ilişkili sınıflarını kaydederek kendi yapılandırmalarına sahip olabileceklerini mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "modlarınızın kendi kabuklarını kaydedebilmeleri mümkün mü?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "Moderatörlerinizin mevcut kabuklara komutlar ekleyerek kullanılabilecek komut sayısını artırabileceğini mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "Komut sınıflarınızın geçirilen argümanları ve anahtarları doğru bir şekilde temsil edebilmesi mümkün mü?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "Çekirdek API'sinde bulunan anahtar yönetim sınıflarını kullanarak geçirilen anahtarları sorgulayabileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "UESH'nin komut dosyası oluşturmayı ve çalıştırmayı kolaylaştırmak için komut dosyası işlevini içerdiğini mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "Kabuğun aktif uygulamalar için iptali engelleyecek bir işlevselliğe sahip olması mı?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "Nitrocid'in Terminaux ile derinlemesine entegre edilerek daha hızlı ve daha iyi render alınmasına olanak sağladığını biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "Artık çıktı bozulması endişesi duymadan etkileşimli uygulamaların boyutunu değiştirebiliyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "Kullanıcıdan girdi isteyen ve scriptler için kullanışlı olan komutların olduğunu biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "Kullanıcı girişi sorunuzu seçenek, tablo, basit, seçim vb. gibi çeşitli şekillerde sunabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "metninize onları destekleyen yer tutucuları yerleştirebilir misiniz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "Belirli bir işlemin nasıl çalıştığını değiştirmek için farklı çekirdek sürücülerini kullanabileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "C# veya Visual Basic'te kendi ekran koruyucularınızı ve açılış görsellerinizi yapabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "Çekirdek platform sınıfını kullanarak ana sisteme ve terminal emülatörüne sorgu gönderebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "Modunuzda hassas bir şey yapmadan önce gizlilik izni isteyebileceğinizi biliyor musunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "Rahatsız Etmeyin özelliğini kullanarak bildirimleri kapatabileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "Bildirim yöneticisinde bulunan bir fonksiyonu kullanarak bildirim geçmişini kaydedebileceğinizi biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "Sürücüyü değiştirerek rastgele sayıların nasıl üretileceğini değiştirebileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "Çeşitli API'lerin modlarınız için yararlı işlevler sağladığını biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Bu bölüm İpuçları'nın nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Çekirdek ipuçlarını göster"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Etkinleştirildiğinde, kabuk size her oturum açmada ipuçlarını gösterir."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "Çekirdek modlarınızı kullanarak önyüklenebilir programlar yapabileceğinizi mi düşünüyorsunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "Nitrocid'in (Kernel Simulator 0.0.2) yerleşik kabuğa 'UESH' kabuğu adını verdiğini biliyor muydunuz?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "Ekran koruyucuların katot ışınlı tüp (CRT) veya plazma ekranlardaki ekran yanmasına karşı bir çözüm olduğu öne sürülmüştü?"
+    }
+  ]
+}

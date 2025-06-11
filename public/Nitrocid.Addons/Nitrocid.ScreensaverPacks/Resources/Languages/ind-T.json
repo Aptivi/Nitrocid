@@ -1,0 +1,1798 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME",
+      "text": "पाठ दिखाया गया"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT",
+      "text": "आपके द्वारा दिखाए गए किसी भी पाठ को लिखें। कम बेहतर है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "सच्चे रंगों को सक्रिय करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME",
+      "text": "साइकिल के रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC",
+      "text": "सक्षम होने पर डिस्को रंग चक्र करेगा। अन्यथा, यादृच्छिक रंगों का चयन करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME",
+      "text": "पीछे का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "मिलीसेकंड में देरी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "अगला लेखन करने से पहले कितने मिलीसेकंड तक प्रतीक्षा करनी होगी?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME",
+      "text": "सेकंड का रंग बार"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME",
+      "text": "मिनटों का रंग बार"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME",
+      "text": "घंटे का रंग बार"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME",
+      "text": "सूचना का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME",
+      "text": "रंग बदलने के लिए टिक्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC",
+      "text": "यदि कलर साइकलिंग सक्षम है, तो प्रोग्रेसक्लॉक में रंग बदलने से पहले कितने टिक होंगे? 1 टिक = 0.5 सेकंड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC",
+      "text": "प्रोग्रेसक्लॉक सक्षम होने पर यादृच्छिक रंगों का चयन करेगा। अन्यथा, config से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME",
+      "text": "अधिकतम पदों की गणना"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC",
+      "text": "डिमिंग से पहले कितने पोजीशन जलाए जाते हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
+      "text": "मिलीसेकंड में फ़ेड आउट विलंब"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
+      "text": "अधिकतम फीका कदम"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "टेक्स्ट फ़ेड आउट करने से पहले कितने मिलीसेकंड प्रतीक्षा करें?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
+      "text": "कितने फीके कदम करने हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME",
+      "text": "मिलीसेकंड में फिर से देरी लिखें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC",
+      "text": "पाठ को दोबारा लिखने से पहले कितने मिलीसेकंड प्रतीक्षा करनी है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
+      "text": "कोई भी पाठ लिखें जिसे आप दिखाना चाहते हैं। लंबा बेहतर है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
+      "text": "WPM में न्यूनतम लेखन गति"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME",
+      "text": "WPM में अधिकतम लेखन गति"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME",
+      "text": "टाइपो की प्रायिकता प्रतिशत में"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME",
+      "text": "दिशा बदलने के लिए पोंछे"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC",
+      "text": "बेतरतीब ढंग से दिशा बदलने से पहले कितने वाइप्स करने चाहिए?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME",
+      "text": "हमेशा केंद्रित"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC",
+      "text": "कोई भी पाठ लिखें जिसे आप दिखाना चाहते हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC",
+      "text": "क्या मार्की पर दिखाया गया टेक्स्ट हमेशा केंद्रित होता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME",
+      "text": "कंसोल एपीआई का प्रयोग करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC",
+      "text": "पाठ को साफ करने के लिए कंसोल एपीआई का उपयोग करना है या तेज लाइन समाशोधन वीटी अनुक्रम का उपयोग करना है। यदि गलत है, तो मार्की उपयुक्त वीटी अनुक्रम का उपयोग करेगा। अन्यथा, यह संभवतः धीमे कंसोल API का उपयोग करेगा।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME",
+      "text": "बीट्स प्रति मिनट का प्रयोग करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
+      "text": "अगला रंग लिखने के लिए बीट्स प्रति मिनट इकाई का उपयोग करना है या नहीं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
+      "text": "बीट्स प्रति मिनट में देरी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
+      "text": "अगला लिखने से पहले प्रति मिनट कितने बीट्स प्रतीक्षा करें?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
+      "text": "यदि यह सक्षम है तो बीटफैडर यादृच्छिक रंगों का चयन करेगा। अन्यथा, config से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
+      "text": "मिलीसेकंड में नया स्क्रीन विलंब"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME",
+      "text": "कॉलम गणना"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME",
+      "text": "लाइन भरण दहलीज"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME",
+      "text": "लाइन फिल कैपिंग प्रायिकता प्रतिशत में"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME",
+      "text": "लाइन भरण प्रकार"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "नई स्क्रीन में टेक्स्ट को दोबारा लिखने से पहले कितने मिलीसेकंड प्रतीक्षा करें?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC",
+      "text": "मुद्रित किए जाने वाले टेक्स्ट कॉलम।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC",
+      "text": "\"लाइन फिल\" को ट्रिगर करने से पहले कितने अक्षर लिखने हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC",
+      "text": "संभावना है कि लाइन भरण पैटर्न सभी कैप्स में प्रतिशत में मुद्रित किया जाएगा"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME",
+      "text": "प्रतिशत में छूटने की प्रायिकता"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME",
+      "text": "अगला रैंप अंतराल"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC",
+      "text": "अगले रैंप में भरने से पहले कितने मिलीसेकंड प्रतीक्षा करें?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "न्यूनतम लाल रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "न्यूनतम हरा रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "न्यूनतम नीला रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "न्यूनतम रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 रंगों के लिए 255 या 16 रंगों के लिए 16 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "अधिकतम लाल रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "अधिकतम हरा रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "अधिकतम नीला रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "अधिकतम रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 रंगों के लिए 255 या 16 रंगों के लिए 16 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME",
+      "text": "अग्रभूमि रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
+      "text": "रेखा वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC",
+      "text": "एक रेखा बनाने के लिए एक चरित्र। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए ऊपरी दाएं कोने वाला वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए ऊपरी दाएं कोने वाला वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए ऊपरी दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए निचले दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए निचले दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए निचले दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए ऊपरी फ्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए अपर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए अपर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए निचला फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए लोअर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए लोअर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए लेफ्ट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए लेफ्ट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए लेफ्ट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME",
+      "text": "घंटे बार के लिए दायां फ्रेम चरित्र"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME",
+      "text": "मिनट बार के लिए राइट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME",
+      "text": "सेकंड बार के लिए राइट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME",
+      "text": "घंटों के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME",
+      "text": "मिनटों के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME",
+      "text": "सेकंड के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए न्यूनतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए न्यूनतम हरे रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME",
+      "text": "घंटों के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME",
+      "text": "घंटों के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME",
+      "text": "घंटों के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए न्यूनतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए न्यूनतम हरे रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए अधिकतम हरे रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME",
+      "text": "मिनटों के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME",
+      "text": "सेकंड के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC",
+      "text": "एक वर्ण जो ऊपरी बाएँ कोने जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC",
+      "text": "एक वर्ण जो निचले बाएँ कोने जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC",
+      "text": "एक चरित्र जो ऊपरी फ्रेम जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC",
+      "text": "एक चरित्र जो निचले फ्रेम जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC",
+      "text": "एक चरित्र जो बाएं फ्रेम जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC",
+      "text": "एक चरित्र जो सही फ्रेम जैसा दिखता है। केवल एक वर्ण इनपुट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC",
+      "text": "लिखें कि वर्तमान घंटे के लिए आपका सूचना पाठ कैसा दिखता है। {0} 24 घंटे में से वर्तमान घंटे के लिए।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC",
+      "text": "लिखें कि वर्तमान मिनट के लिए आपका सूचना पाठ कैसे दिखाता है। {0} 60 मिनट में से वर्तमान मिनट के लिए।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC",
+      "text": "लिखें कि वर्तमान दूसरे शो के लिए आपका सूचना पाठ कैसा है। {0} 60 सेकंड में से वर्तमान सेकंड के लिए।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME",
+      "text": "लिखावट का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME",
+      "text": "रैंप बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME",
+      "text": "रैंप बार के लिए ऊपरी दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME",
+      "text": "रैंप बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME",
+      "text": "रैंप बार के लिए निचले दाएं कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME",
+      "text": "रैंप बार के लिए अपर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME",
+      "text": "रैंप बार के लिए लोअर फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME",
+      "text": "रैंप बार के लिए लेफ्ट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME",
+      "text": "रैंप बार के लिए राइट फ्रेम कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME",
+      "text": "प्रारंभ रंग के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME",
+      "text": "अंतिम रंग के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "असली रंग समर्थन को सक्रिय करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME",
+      "text": "रैंप बार के लिए ऊपरी बाएँ कोने का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME",
+      "text": "रैंप बार के लिए ऊपरी दाएं कोने का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME",
+      "text": "रैंप बार के लिए निचले बाएँ कोने का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME",
+      "text": "रैंप बार के लिए निचले दाएं कोने का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME",
+      "text": "रैंप बार के लिए ऊपरी फ्रेम रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME",
+      "text": "रैंप बार के लिए निचला फ्रेम रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME",
+      "text": "रैंप बार के लिए बायां फ्रेम रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME",
+      "text": "रैंप बार के लिए सही फ्रेम रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME",
+      "text": "रैंप बार के लिए बॉर्डर रंगों का प्रयोग करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC",
+      "text": "रैंप बार के लिए बॉर्डर कलर्स का इस्तेमाल करें। अक्षम होने पर, एक धूसर बार जनरेट करेगा."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME",
+      "text": "बक्सों को भरें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC",
+      "text": "क्या हम बॉक्स को समग्र रूप से खींचते हैं या हम केवल बॉर्डर बनाते हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME",
+      "text": "अगला रैंप सड़ांध अंतराल"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC",
+      "text": "अगले रैंप के एक छोर को सड़ने से पहले कितने मिलीसेकंड प्रतीक्षा करनी है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME",
+      "text": "आतिशबाजी विस्फोट त्रिज्या"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC",
+      "text": "प्रज्वलित होने पर आतिशबाजी के लिए विस्फोट त्रिज्या कितने ब्लॉक (10 तक) है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME",
+      "text": "फिगलेट फॉन्ट"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC",
+      "text": "एक फिगलेट फॉन्ट लिखें जो फिगल लाइब्रेरी द्वारा समर्थित हो। अधिक जानकारी के लिए पुस्तकालय के दस्तावेज़ देखें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME",
+      "text": "ब्लैक एंड व्हाइट मोड सक्षम करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC",
+      "text": "डिस्को को ब्लैक एंड व्हाइट बनाता है। यदि यह बहुत तेज़ था, तो वास्तव में आपकी आँखों को चोट पहुँचाएगा, इसलिए यदि आप तेज़ छवियों के जब्ती का अनुभव कर रहे हैं तो इसकी अनुशंसा नहीं की जाती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME",
+      "text": "शोर घनत्व"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC",
+      "text": "नई स्क्रीन में लिखने से पहले कितने मिलीसेकंड प्रतीक्षा करनी है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC",
+      "text": "प्रतिशत जितना अधिक होगा, सिग्नल उतना ही शोर होगा"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
+      "text": "गड़बड़ घनत्व"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
+      "text": "प्रतिशत जितना अधिक होगा, गड़बड़ उतनी ही घनी होगी!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
+      "text": "लोड हो रहा है..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
+      "text": "करने के लिए जारी..."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
+      "text": "समाप्त"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
+      "text": "नए साल की शुभकामनाएँ!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME",
+      "text": "मौका छोड़ो"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "रंग सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC",
+      "text": "एक वर्ण जो ऊपरी दाएँ कोने जैसा दिखता है। सुनिश्चित करें कि केवल एक अक्षर ही इनपुट करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC",
+      "text": "एक वर्ण जो निचले दाएं कोने जैसा दिखता है। सुनिश्चित करें कि केवल एक अक्षर ही इनपुट करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC",
+      "text": "आपकी स्क्रीन पर गिरती बाइनरी संख्या।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC",
+      "text": "रंगों को मिलाकर उन्हें कंसोल पर प्रिंट करना।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC",
+      "text": "यह डिस्को लाइट है, जो सबसे पहले स्क्रीनसेवर में से एक है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC",
+      "text": "स्क्रीन पर रंग चमकते हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC",
+      "text": "एक रेखा जो कंसोल के चारों ओर लंबवत घूमती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC",
+      "text": "बेतरतीब रंगों को घोलता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC",
+      "text": "आपको एक रंगीन ब्लॉक दिखाता है जो कंसोल पर उछलता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC",
+      "text": "आपको तीन प्रगति पट्टियाँ दिखाता है जो समय का प्रतिनिधित्व करती हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC",
+      "text": "प्रकाश ब्लॉक."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC",
+      "text": "स्क्रीन को रंग से पोंछता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC",
+      "text": "सरल मैट्रिक्स."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC",
+      "text": "मैट्रिक्स संख्याएँ जो स्क्रीन पर बेतरतीब ढंग से फैलती हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
+      "text": "आपको एक टेक्स्ट दिखाता है जो कंसोल के चारों ओर उछलता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
+      "text": "अंदर और बाहर लुप्त होता पाठ।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
+      "text": "अंदर और बाहर लुप्त होती पृष्ठभूमि।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
+      "text": "बीट्स में अंदर और बाहर लुप्त होता पाठ।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
+      "text": "रंग मारो"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
+      "text": "टाइपो के साथ पाठ लिखने वाले व्यक्ति का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC",
+      "text": "आपको दाएँ से बाएँ स्क्रॉल करने वाला टेक्स्ट दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC",
+      "text": "पुराने समय में लिनोटाइप कीबोर्ड में अखबार के लिए टेक्स्ट लिखने वाले व्यक्ति का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC",
+      "text": "लाइन भरण पैटर्न प्रकार. 0 etaoin वर्णों के ज्ञात पैटर्न को प्रिंट करता है, 1 etaoin वर्णों का पूरा पैटर्न प्रिंट करता है, और 2 पंक्ति को तेज़ी से भरने के लिए वर्णों के यादृच्छिक सेट को प्रिंट करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC",
+      "text": "पाठ लिखने वाले व्यक्ति का आदर्श रूप से अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME",
+      "text": "तीर की स्थिति दिखाएँ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC",
+      "text": "स्क्रीन के नीचे एक तीर दिखाकर टाइपराइटर अक्षर कॉलम की स्थिति दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC",
+      "text": "आपकी स्क्रीन पर चमकते रंग।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC",
+      "text": "एक स्पॉटलाइट का अनुकरण करता है जो आपके पाठ को खोजता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC",
+      "text": "रैम्प को ढाल रंगों से भर देता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC",
+      "text": "बक्सों को स्क्रीन पर ढेर कर दें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC",
+      "text": "एक बार का अनुकरण करता है जो किसी अन्य पृष्ठभूमि रंग के साथ सड़ जाता है, जिससे एक ग्रेडिएंट बनता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC",
+      "text": "आपको आतिशबाज़ी दिखाता है जो शुरू होती हैं और फूट जाती हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC",
+      "text": "आपको एक रंगीन फिगलेट टेक्स्ट दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME",
+      "text": "इंद्रधनुष मोड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC",
+      "text": "इंद्रधनुष रंग मोड सक्षम करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC",
+      "text": "आपको एक रंगीन चमकता पाठ दिखाएँ।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC",
+      "text": "एक टीवी स्थैतिक शोर का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC",
+      "text": "स्क्रीन के मध्य में सरल दिनांक और समय।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
+      "text": "आपकी स्क्रीन पर एक गड़बड़ी का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
+      "text": "आपको एक गिरती हुई रेखा दिखाता है जो नीचे जाती है और लुप्त हो जाती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
+      "text": "आपको एक अनिश्चित प्रगति पट्टी दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
+      "text": "आपको एक स्पंदित पृष्ठभूमि दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
+      "text": "आपको धड़कनों में स्पंदित पृष्ठभूमि दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "यदि बीटपल्स सक्षम है तो यह यादृच्छिक रंगों का चयन करेगा। अन्यथा, कॉन्फिग से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
+      "text": "आपको एक स्पंदित धार दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
+      "text": "आपको धड़कनों में स्पंदित धार दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
+      "text": "यदि यह सक्षम है तो BeatEdgePulse यादृच्छिक रंगों का चयन करेगा। अन्यथा, कॉन्फिग से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
+      "text": "आपको रंग से भरी एक स्क्रीन दिखाता है जो धीरे-धीरे खुद को दूसरे रंग में बदल लेता है, जिससे ग्रेडिएंट बनते हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME",
+      "text": "अगला ग्रेडिएंट रोट अंतराल"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC",
+      "text": "अगली स्क्रीन ख़राब होने से पहले कितने मिलीसेकेंड इंतज़ार करना होगा?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC",
+      "text": "आपको आपकी स्क्रीन में एक ग्रेडिएंट दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC",
+      "text": "आपको 2डी में एक सितारा यात्रा दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC",
+      "text": "निर्धारित रंगों के अनुसार पृष्ठभूमि बदलता है, जो एक सायरन का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME",
+      "text": "सायरन शैली"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC",
+      "text": "सायरन शैली."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
+      "text": "घूमते हुए टुकड़े।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
+      "text": "कंसोल को साँप जैसे रंग से भर देता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC",
+      "text": "आपको एक इक्वलाइज़र दिखाता है जो आपको बास, मध्य और ट्रेबल दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME",
+      "text": "अगली स्क्रीन विलंब मिलीसेकंड में"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
+      "text": "विभिन्न ऑपरेटिंग सिस्टम से सिस्टम त्रुटियों का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
+      "text": "यादृच्छिक स्थानांतरण से रंग उत्पन्न होता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
+      "text": "आपको एक पाठ दिखाता है जो फीका पड़ जाता है और धड़कनों में चमकता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
+      "text": "यदि यह सक्षम है तो ExcaliBeats यादृच्छिक रंगों का चयन करेगा। अन्यथा, कॉन्फिग से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
+      "text": "स्पष्ट विधा"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
+      "text": "टेक्स्ट को स्पष्ट रूप से एक्सकैलिबर में बदलें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
+      "text": "ट्रांस मोड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
+      "text": "ट्रान्स मोड - ट्रान्स संगीत शैली का अनुकरण करने के लिए बीपीएम को 2 से गुणा करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
+      "text": "आपको बारों में तरंगों का एक समूह दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME",
+      "text": "आवृत्ति स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC",
+      "text": "आवृत्ति का स्तर. यह गणित में पाई मान का हर है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC",
+      "text": "आपको एक लहर दिखाता है जो स्वयं उत्पन्न होती है और आगे बढ़ती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC",
+      "text": "आपको एक मंत्रमुग्ध कर देने वाला एहसास देता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC",
+      "text": "अरोरा बोरेलिस का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC",
+      "text": "आपको एक चमकती हुई बिजली दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME",
+      "text": "हड़ताल की संभावना"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC",
+      "text": "मौका, प्रतिशत में, हड़ताल करने के लिए"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC",
+      "text": "आपको धीरे-धीरे बदलता पृष्ठभूमि रंग दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME",
+      "text": "गहरे रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC",
+      "text": "चाहे गहरे रंगों का प्रयोग करें या हल्के रंगों का।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME",
+      "text": "रंग चरण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC",
+      "text": "दो रंगों के बीच परिवर्तन के लिए कितने रंग चरण हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
+      "text": "आपको एक शब्द और उसका हैश योग दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
+      "text": "आपको चारों कोनों में एक लुप्त होता वर्ग दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
+      "text": "वर्ग को लुप्त करने से पहले कितने मिलीसेकंड तक प्रतीक्षा करनी होगी?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
+      "text": "संख्या को संपूर्ण स्क्रीन पर बिखेर देता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC",
+      "text": "आपको एक बॉक्स पैटर्न देता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC",
+      "text": "रंगों की गिरती रेखा."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC",
+      "text": "एक नया गिरता हुआ रंग छोड़ने का मौका"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC",
+      "text": "आपको एक सरल पाठ दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC",
+      "text": "आपको टेक्स्ट बॉक्स में एक साधारण टेक्स्ट दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC",
+      "text": "आपको एक शब्द दिखाता है जो धीरे-धीरे लिखा जाता है और उसका हैश योग।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC",
+      "text": "एक सायरन का अनुकरण करता है जो आपकी थीम को रंगों के सेट के रूप में उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC",
+      "text": "कर्नेल थीम से सायरन शैली"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC",
+      "text": "आपको जहाज के सामने के दृश्य में तारों का एक समूह दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC",
+      "text": "आपको जहाज के सामने के दृश्य में धब्बों का एक समूह दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC",
+      "text": "आपको संपूर्ण स्क्रीन पर बिखरा हुआ एक अक्षर दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC",
+      "text": "आपको अनेक पंक्तियाँ दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC",
+      "text": "आपको लेज़र किरणें दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC",
+      "text": "आपको एक टेक्स्ट दिखाता है जो कंसोल पर घूमता रहता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC",
+      "text": "शानदार पैटर्न बनाने के लिए लहर को क्षैतिज और लंबवत रूप से घुमाएं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME",
+      "text": "क्षैतिज आवृत्ति स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC",
+      "text": "क्षैतिज आवृत्ति का स्तर. यह गणित में पाई मान का हर है। सुंदर लहरदार कुंडा बनाने के लिए इसका उपयोग करें!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME",
+      "text": "लंबवत आवृत्ति स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC",
+      "text": "ऊर्ध्वाधर आवृत्ति का स्तर. यह गणित में पाई मान का हर है। सुंदर लहरदार कुंडा बनाने के लिए इसका उपयोग करें!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC",
+      "text": "दरवाज़ा खोलने और बंद करने का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC",
+      "text": "आपको गतिशील रूप से बदलती ग्रेडिएंट दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC",
+      "text": "आसमान पर एक धूमकेतु तेजी से दौड़ रहा है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC",
+      "text": "हीरा जो चमकता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC",
+      "text": "बढ़ते रंग के अनुसार पृष्ठभूमि का रंग बदलना। इंद्रधनुष!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME",
+      "text": "रंग रंग संतृप्ति"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC",
+      "text": "रंग कितना गहरा है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC",
+      "text": "रंग कितना हल्का है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC",
+      "text": "बढ़ते रंग के अनुसार पृष्ठभूमि का रंग बदलना। और अधिक इंद्रधनुष!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC",
+      "text": "रंग-बिरंगे कण!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME",
+      "text": "कणों का घनत्व"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC",
+      "text": "कण कितने घने हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME",
+      "text": "समय क्षेत्र बदलने से पहले ताज़ा करना आवश्यक है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC",
+      "text": "समय क्षेत्र बदलने से पहले कितने बार ताज़ा किया गया?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC",
+      "text": "संपूर्ण स्क्रीन को ब्लॉक दर ब्लॉक भरता है और फिर उसे फीका कर देता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC",
+      "text": "आपको नृत्य पंक्तियाँ दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC",
+      "text": "क्रुस्कल के एल्गोरिदम का उपयोग करके अच्छी भूलभुलैया उत्पन्न करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME",
+      "text": "मिलीसेकंड में नई भूलभुलैया विलंब"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME",
+      "text": "पीढ़ी की गति"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC",
+      "text": "भूलभुलैया निर्माण की गति मिलीसेकेंड में"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME",
+      "text": "खुले स्थानों को हाइलाइट करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC",
+      "text": "यदि सक्षम किया गया है, तो गैर-कवर स्थितियों को ग्रे पृष्ठभूमि रंग से हाइलाइट करता है। अन्यथा, वे बक्से के रूप में प्रस्तुत होते हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME",
+      "text": "श्वार्टज़ियन ट्रांसफ़ॉर्म का उपयोग करें"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC",
+      "text": "यदि सक्षम किया गया है, तो यह स्क्रीनसेवर भूलभुलैया के किनारों को फेरने के लिए श्वार्टज़ियन के ट्रांसफॉर्म का उपयोग करता है। अन्यथा, यह परिवर्तन की सरल विधि का उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC",
+      "text": "कंसोल के दोनों हिस्सों में घूमते बिंदुओं के दो समूह।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC",
+      "text": "प्रत्येक 1000वीं प्रतिबद्धता का जश्न मनाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC",
+      "text": "आपको तारे छिड़कते हुए दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC",
+      "text": "स्क्रीन पर दो रेखाएँ अपना रंग बदल रही हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC",
+      "text": "स्क्रीन के निचले भाग में सरल दिनांक और समय वाली एनालॉग घड़ी।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME",
+      "text": "सेकंड का हाथ दिखाएं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC",
+      "text": "सेकेण्ड की सुई दिखानी है या नहीं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC",
+      "text": "कभी-कभी RGB लाइनों के साथ एक काल्पनिक खराब काली स्क्रीन का अनुकरण करता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME",
+      "text": "गड़बड़ी की संभावना"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC",
+      "text": "स्क्रीन में गड़बड़ी होने की संभावना प्रतिशत में"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME",
+      "text": "रंग रंग चमक (हल्कापन)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS",
+      "text": "0.0.1 के बाद से 7,000वीं प्रतिबद्धता का जश्न!"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_LEFT",
+      "text": "अगले साल तक छोड़ दिया"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "यह आपको रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME",
+      "text": "घंटे रैंप सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC",
+      "text": "यह आपको घंटों के रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME",
+      "text": "मिनट रैंप सेटिंग्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC",
+      "text": "यह आपको मिनट रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME",
+      "text": "सेकंड रैंप सेटिंग्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC",
+      "text": "यह आपको सेकंड रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME",
+      "text": "रैम्प सेटिंग्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC",
+      "text": "यह आपको रैम्प को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC",
+      "text": "आपको एक पंक्ति के नीचे एक धुंधली लाल पृष्ठभूमि में पाठ दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC",
+      "text": "यादृच्छिक अक्षर जो स्क्रीन पर अनियमित रूप से फैले हुए हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC",
+      "text": "स्क्रीन के मध्य में सरल दिनांक और समय तथा वर्तमान समय के आधार पर रंग बदलता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME",
+      "text": "उज्ज्वल तिथि और समय"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC",
+      "text": "उज्ज्वल या गहरे संस्करण का उपयोग करना है या नहीं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC",
+      "text": "आपको नृत्य संख्याएँ दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC",
+      "text": "लहरों को क्षैतिज और ऊर्ध्वाधर रूप से घुमाकर शानदार पैटर्न बनाएं, जिससे पीछे निशान गायब हो जाएं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME",
+      "text": "ट्रेल की लंबाई"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC",
+      "text": "चलती हुई घूमती हुई लहर की निशान लंबाई।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC",
+      "text": "ब्लॉक एक लहरदार पैटर्न में घूम रहा है और हरे रंग के रूलर इसकी स्थिति पर नज़र रख रहे हैं।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC",
+      "text": "आपको रंगीन फ़िग्लेट पाठ में एक एकल यादृच्छिक वर्ण दिखाता है."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC",
+      "text": "आपको एक शब्द दिखाया जाता है जिसका चयन ठीक उसी तरह किया जाता है जैसे कैसीनो में पाए जाने वाले स्लॉट मशीन में किया जाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC",
+      "text": "आपको दो नीऑन रंगों: सियान और फ्यूशिया के बीच बारी-बारी से रंगीन फिगलेट पाठ दिखाता है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME",
+      "text": "प्रथम रैम्प सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC",
+      "text": "यह आपको पहले रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME",
+      "text": "दूसरा रैंप सेटिंग्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC",
+      "text": "यह आपको दूसरे रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME",
+      "text": "तीसरा रैंप सेटिंग्स"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC",
+      "text": "यह आपको तीसरे रैंप को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME",
+      "text": "उपस्थिति सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC",
+      "text": "यह आपको घंटे रैंप उपस्थिति कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC",
+      "text": "यह आपको घंटे रैंप रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC",
+      "text": "यह आपको मिनट रैंप उपस्थिति कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC",
+      "text": "यह आपको मिनट रैंप रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC",
+      "text": "यह आपको सेकंड रैंप उपस्थिति कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC",
+      "text": "यह आपको सेकंड रैंप रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME",
+      "text": "प्रारंभ स्थिति रंग सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC",
+      "text": "यह आपको प्रारंभ स्थिति रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME",
+      "text": "अंत स्थिति रंग सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC",
+      "text": "यह आपको अंत स्थिति रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME",
+      "text": "रैंप बार सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC",
+      "text": "यह आपको रैंप बार कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC",
+      "text": "यह आपको रैंप उपस्थिति कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC",
+      "text": "यह आपको रैंप रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME",
+      "text": "ग्रेडिएंट प्रारंभ सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC",
+      "text": "यह आपको प्रारंभ ग्रेडिएंट रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME",
+      "text": "ग्रेडिएंट अंत सेटिंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC",
+      "text": "यह आपको अंत ग्रेडिएंट रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "अधिकतम पृष्ठभूमि रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "अधिकतम पृष्ठभूमि रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME",
+      "text": "अधिकतम रेखा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC",
+      "text": "अधिकतम रेखा रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME",
+      "text": "अधिकतम टेक्स्ट रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC",
+      "text": "अधिकतम टेक्स्ट रंग स्तर। न्यूनतम स्वीकृत मान 0 है और अधिकतम स्वीकृत मान 255 है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC",
+      "text": "यह आपको पहले रैंप उपस्थिति को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME",
+      "text": "पहले के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC",
+      "text": "लिखें कि वर्तमान घंटे के लिए आपका सूचना पाठ कैसे दिखाई देता है। 24 में से वर्तमान घंटे के लिए {0} पहले।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME",
+      "text": "पहले बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME",
+      "text": "पहले बार के लिए ऊपरी दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME",
+      "text": "पहले बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME",
+      "text": "पहले बार के लिए निचले दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME",
+      "text": "पहले बार के लिए ऊपरी फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME",
+      "text": "पहले बार के लिए निचले फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME",
+      "text": "पहले बार के लिए बाएँ फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME",
+      "text": "पहले बार के लिए दाएँ फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC",
+      "text": "इससे आप पहले रैंप का रंग कॉन्फ़िगर कर सकते हैं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME",
+      "text": "पहले बार का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME",
+      "text": "पहले के लिए न्यूनतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME",
+      "text": "पहले के लिए न्यूनतम हरा रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME",
+      "text": "पहले के लिए न्यूनतम नीला रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME",
+      "text": "पहले के लिए न्यूनतम रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME",
+      "text": "पहले के लिए अधिकतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME",
+      "text": "पहले के लिए अधिकतम हरा रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME",
+      "text": "पहले के लिए अधिकतम नीला रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME",
+      "text": "पहले के लिए अधिकतम रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC",
+      "text": "इससे आप दूसरे रैंप की उपस्थिति कॉन्फ़िगर कर सकते हैं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME",
+      "text": "दूसरे के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC",
+      "text": "लिखें कि वर्तमान मिनट के लिए आपका सूचना पाठ कैसे दिखाई देता है। 60 सेकंड में से वर्तमान मिनट के लिए {0}।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME",
+      "text": "दूसरे बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME",
+      "text": "दूसरे बार के लिए ऊपरी दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME",
+      "text": "दूसरे बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME",
+      "text": "दूसरे बार के लिए निचले दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME",
+      "text": "दूसरे बार के लिए ऊपरी फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME",
+      "text": "दूसरे बार के लिए निचले फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME",
+      "text": "दूसरे बार के लिए बाएँ फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME",
+      "text": "दूसरे बार के लिए दाएँ फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC",
+      "text": "इससे आप दूसरे रैंप के रंग को कॉन्फ़िगर कर सकते हैं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME",
+      "text": "दूसरे बार का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME",
+      "text": "दूसरे बार के लिए न्यूनतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME",
+      "text": "दूसरे बार के लिए न्यूनतम हरा रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME",
+      "text": "दूसरे बार के लिए न्यूनतम नीला रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME",
+      "text": "दूसरे बार के लिए न्यूनतम रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME",
+      "text": "दूसरे बार के लिए अधिकतम लाल रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME",
+      "text": "दूसरे बार के लिए अधिकतम हरा रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME",
+      "text": "दूसरे बार के लिए अधिकतम नीला रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME",
+      "text": "दूसरे बार के लिए अधिकतम रंग का स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC",
+      "text": "इससे आप तीसरे रैंप के स्वरूप को कॉन्फ़िगर कर सकते हैं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME",
+      "text": "तीसरे बार के लिए ऊपरी बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME",
+      "text": "तीसरे बार के लिए ऊपरी दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME",
+      "text": "तीसरे बार के लिए निचले बाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME",
+      "text": "तीसरे बार के लिए निचले दाएँ कोने का वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME",
+      "text": "तीसरे बार के लिए ऊपरी फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME",
+      "text": "तीसरे बार के लिए निचले फ़्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME",
+      "text": "तीसरे बार के लिए बाएँ फ़्रेम वर्ण तीसरी पट्टी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME",
+      "text": "तीसरी पट्टी के लिए दायाँ फ्रेम वर्ण"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME",
+      "text": "तीसरी पट्टी के लिए सूचना पाठ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC",
+      "text": "लिखें कि वर्तमान सेकंड के लिए आपका सूचना पाठ किस प्रकार प्रदर्शित होता है। 60 तीसरी में से वर्तमान सेकंड के लिए {0}।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC",
+      "text": "यह आपको तीसरी रैंप का रंग कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME",
+      "text": "तीसरी पट्टी का रंग"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए न्यूनतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए न्यूनतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए न्यूनतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए न्यूनतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए अधिकतम लाल रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए अधिकतम हरा रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए अधिकतम नीला रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME",
+      "text": "तीसरी पट्टी के लिए अधिकतम रंग स्तर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC",
+      "text": "यदि यह सक्षम है तो प्रगति यादृच्छिक रंगों का चयन करेगी। अन्यथा, कॉन्फ़िगरेशन से रंगों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
+      "text": "यदि रंग साइकलिंग सक्षम है, तो प्रगति में रंग बदलने से पहले कितने टिक हैं? 1 टिक = 0.5 तीसरी"
+    }
+  ]
+}

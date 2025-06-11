@@ -1,0 +1,121 @@
+Hãy xem bạn có thể giải các phương trình toán học đúng thời hạn không
+Đã giải quyết hoàn hảo!
+Giải quyết không đúng.
+Kích hoạt màu sắc thực
+Độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi thực hiện lệnh ghi tiếp theo?
+Xem bạn có thể nhấn phím đúng lúc không
+Nhân vật không bị ép về thời gian.
+Bạn đã nhấn đúng ký tự!
+Bạn đã nhấn nhầm ký tự.
+Nhấn ESC để thoát.
+Mức độ màu đỏ tối thiểu
+Mức độ màu xanh lá cây tối thiểu
+Mức độ màu xanh tối thiểu
+Mức màu tối thiểu
+Mức màu đỏ tối đa
+Mức màu xanh lá cây tối đa
+Mức màu xanh tối đa
+Mức màu tối đa
+Mức màu đỏ tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu xanh lá cây tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu xanh tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu tối thiểu. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255 cho 255 màu hoặc 16 cho 16 màu.
+Mức màu đỏ tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu xanh lá cây tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu xanh tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
+Mức màu tối đa. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255 cho 255 màu hoặc 16 cho 16 màu.
+Số lượng tối thiểu của bộ giải
+Số lượng tối đa của trình giải
+Trình giải quyết hiển thị đầu vào
+Có hiển thị nội dung được viết trong dấu nhắc nhập hay không.
+Số lượng tối thiểu cần chọn là bao nhiêu?
+Số lượng tối đa có thể chọn là bao nhiêu?
+Kích hoạt hỗ trợ màu sắc thực.
+Độ khó mặc định cho SpeedPress
+Thời gian chờ nhấn phím cho SpeedPress
+Phải đợi bao nhiêu mili giây để nhấn phím trước khi hết thời gian chờ? (Ở mức độ khó tùy chỉnh)
+Độ trễ của giai đoạn tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi vẽ giai đoạn tiếp theo?
+Bắt đầu trò chơi ở mức độ dễ
+Bắt đầu trò chơi ở mức độ khó trung bình
+Bắt đầu trò chơi ở mức độ khó
+Bắt đầu trò chơi ở mức độ khó rất cao
+Bắt đầu trò chơi ở độ khó tùy chỉnh. Xin lưu ý rằng thời gian chờ tùy chỉnh tính bằng mili giây phải được viết dưới dạng đối số.
+Vị trí văn bản tiến trình
+Chọn vị trí văn bản tiến trình bạn muốn.
+Bạn chỉ có thể viết số.
+Nhấn "q" để thoát.
+Trò chơi rắn!
+Bạn là một con tàu vũ trụ và các thiên thạch đang lao tới để tiêu diệt bạn. Bạn có thể cứu nó không?
+Trò chơi kết thúc
+Lỗi không mong muốn
+Sử dụng PowerLine để dựng hình tàu vũ trụ
+Tốc độ trò chơi thiên thạch
+Có nên sử dụng PowerLine để hiển thị tàu vũ trụ hay sử dụng ký tự chuẩn lớn hơn. Nếu bạn muốn sử dụng PowerLine với Meteor, bạn cần cài đặt phông chữ phù hợp có hỗ trợ PowerLine.
+Chỉ định tốc độ trò chơi tính bằng mili giây.
+Bạn có ủng hộ nhầm ngựa không?
+Bắt đầu trò chơi Hangman
+Sai một chữ cái là bạn sẽ bị treo cổ!
+Kiểm tra kỹ năng Hangman của bạn bằng cách ném một chữ cái ngẫu nhiên.
+Bạn là một con tàu vũ trụ và các thiên thạch đang lao tới để tiêu diệt bạn. Bạn có thể né tránh chúng không?
+Nhận được một trích dẫn ngẫu nhiên
+Cò Quay Nga
+Hai tàu vũ trụ đang chiến đấu với nhau. Chỉ cần bắn một phát là tàu vũ trụ sẽ nổ tung. Đây là trò chơi hai người chơi cục bộ.
+Trình mô phỏng trò chơi Wordle
+Chơi trò chơi Wordle ban đầu
+Kỷ niệm 5 năm ngày phát hành kernel
+Kỷ niệm 5 năm ngày thành lập hạt nhân
+Lần đầu tiên phát hành
+Hạt nhân này được phát hành lần đầu tiên vào ngày 22 tháng 2 năm 2018 để tạo ra một trình mô phỏng tối giản thực sự mô phỏng cách thức hoạt động của lõi hạt nhân.
+Trước đây nó chỉ lưu trữ một shell và một vài lệnh, và nó chỉ hoạt động với Windows do sử dụng công cụ Windows Management Instrumentation.
+Nó cũng không có tài liệu hướng dẫn riêng.
+Tinh chỉnh hạt nhân
+Các phiên bản của hạt nhân đã được phát hành, chẳng hạn như bản phát hành chính thứ hai bổ sung tính năng tô màu và tính năng cơ bản, và bản phát hành chính thứ tư bổ sung tính năng cấu hình.
+Tài liệu bắt đầu được biên soạn từ bản phát hành chính thứ sáu và nhiều tính năng thú vị đã dần được thêm vào kernel.
+Phiên bản hiện tại
+Phiên bản này hiện đã cải tiến hạt nhân đến mức nó không còn hoạt động giống như các phiên bản cũ nữa.
+Vì các tính năng đột phá mới đã được phát hành nên chúng tôi quyết định đặt tên cho hạt nhân này là...
+Chúc mừng kỷ niệm 5 năm!
+Ngựa
+[ENTER] Bắt đầu cuộc đua | [ESC] Thoát | [LÊN/XUỐNG] Lựa chọn di chuyển
+Con ngựa của bạn đã thắng cuộc đua!
+Con ngựa của bạn thua cuộc rồi!
+Bạn bị treo rồi!
+Bạn thắng rồi!
+Bạn cược bao nhiêu?
+Bạn đoán đúng rồi!
+Bạn đã sai rồi.
+Nhưng bạn thật không may mắn. Kẻ thua cuộc.
+Bạn thật may mắn! Người chiến thắng!
+Kết quả hòa.
+Người chơi {0} thắng!
+Nhân vật hiện tại:
+Bạn đã đoán đúng từ rồi! Bạn thắng rồi!
+Cài đặt màu sắc
+Trò chơi rắn.
+Hiển thị cho bạn những câu trích dẫn nổi tiếng hay.
+Chọn mức độ khó mà bạn mong muốn, trong đó 0 là dễ, 1 là trung bình, 2 là khó, 3 là rất khó và 4 là tùy chỉnh.
+Sử dụng PowerLine để dựng hình tàu vũ trụ trong ShipDuet
+Có nên sử dụng PowerLine để hiển thị tàu vũ trụ hay sử dụng ký tự chuẩn lớn hơn. Nếu bạn muốn sử dụng PowerLine với ShipDuet, bạn cần cài đặt phông chữ phù hợp có hỗ trợ PowerLine.
+Tốc độ trò chơi trong ShipDuet
+Sử dụng danh sách từ thông dụng.
+Sử dụng danh sách từ đầy đủ.
+Trò chơi bóng bàn!
+Điểm
+Không lấy được mục cài đặt.
+Đua ngựa
+Người treo cổ
+né tránh thiên thạch
+Bắn thiên thạch
+Pông
+Song ca tàu
+con rắn
+Từ ngữ
+Wordle (bản gốc)
+Trích dẫn không rõ nguồn gốc.
+Tác giả không rõ.
+Điều này cho phép bạn cấu hình màu sắc
+Phần này cho phép bạn cấu hình Solver.
+Phần này cho phép bạn cấu hình SpeedPress.
+Phần này cho phép bạn cấu hình Meteor và ShipDuet.

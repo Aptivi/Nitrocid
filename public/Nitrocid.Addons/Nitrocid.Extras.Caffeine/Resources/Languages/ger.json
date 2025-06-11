@@ -1,0 +1,59 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Fügt einen Alarm hinzu, der Sie benachrichtigt, wenn Ihre Tasse Tee oder Kaffee fertig ist."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Bricht einen Alarm ab, der Sie benachrichtigt, wenn Ihre Tasse Tee oder Kaffee fertig ist."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Amerikanischer Kaffee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Roter Tee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Grüner Tee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Keine Koffeinwarnungen zum Abbruch."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Die Sekunden, in denen Ihre Tasse fertig sein wird, sind ungültig."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Wenn Sie versuchen, einen Namen für das Getränk anzugeben, sehen Sie sich die folgende Liste an:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Ihre Tasse ist jetzt fertig!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Geben Sie entweder eine Anzahl von Sekunden oder einen Getränkenamen an"
+    }
+  ]
+}

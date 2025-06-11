@@ -1,0 +1,118 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "ek ssh sarvar se judata hai."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0} ke lie paasavard darj karen:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "ssh diskanekt kiya gaya."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "ssh sarvar se kanekt karane ka prayaas karane mein truti: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "nirdisht vikalp {0} amaany hai."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "uttar sankhyaatmak hona chaahie."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "vaapas jaane ke lie koee bhee kunjee dabaen."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "ek kamaand nishpaadit karane ke lie ek ssh sarvar se judata hai."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "aap kaise pramaanit karana chaahate hain?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "nijee kunjee fail"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "kunjika"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "kunjee {0} ke lie paasafrez darj karen:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "kunjee fail {0} maujood nahin hai."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "nijee kunjee jodane ka prayaas karane mein truti:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "ssh kamaand nishpaadit karane mein truti"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "ssh shel mein truti"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "likhen ki aap apane login prompt ko kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0} ke lie nijee kunjee ka sthaan darj karen. kunjiyaan jodane ka kaam poora karane ke lie \"q\" likhen: "
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "yah anubhaag aapako yah konfigar karane deta hai ki ssh kaise kaam karata hai."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "ssh ke lie upayogakarta naam prompt shailee"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "ssh speed daayal mein nae kanekshan joden"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "yadi saksham hai, to ssh speed daayal mein ek naya kanekshan jodata hai."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "ssh kanekt hai lekin klaint nahin hai."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "kanekt karane ke lie ssh sarvar"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "pramaanit karane ke lie upayogakarta naam"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "doorasth roop se nishpaadit karane ke lie kamaand"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "modeun seuredeue daehan yeokchujeogeul gajyeoopnida."
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "urineun gwihaga Windowt 8 ihareul silhaenghago issdago mitseupnida. i jageobeun jiwondoeji anhseupnida."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0}e daehan seuredeu seutaek chujeok jeongbo"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Nitrocid KS seuredeuga anipnida."
+    }
+  ]
+}

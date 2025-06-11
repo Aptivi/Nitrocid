@@ -1,0 +1,187 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "밀리 초 단위의 지연"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "다음 쓰기를하기 전에 몇 밀리 초를 기다려야합니까?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "가사 파일에서 모든 가사 대사를 가져옵니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "가사 파일을 재생합니다"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "소리를 재생합니다"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "온라인 라디오 방송국에 대한 정보를 얻습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "LRC 파일의 경로를 지정해야 합니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "파일을 찾을 수 없어 소리를 재생할 수 없습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "음악 파일을 성공적으로 열었습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "음악 파일을 열 수 없습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "시간 초과로 인해 소리를 재생할 수 없습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "무명 화가"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "장르를 알 수 없음"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "이름"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "아티스트"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "장르"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "지속"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "재생을 중지하려면 'q'를 누르세요."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "소리를 재생할 수 없습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "제목"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "온라인 라디오의 포트 번호가 잘못되었습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "전체 URL"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "현재 청취자"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "최대 청취자"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "스트림"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "활성 스트림"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "ID에 대한 스트림 정보"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "길"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "현재 재생 중"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "가동 시간"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "LRC 형식의 가사 파일이 포함된 디렉터리의 경로를 지정해야 합니다. 가사 파일이 포함된 음악 라이브러리 폴더에 대한 사용자 정의 경로를 지정할 수도 있습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "이 가사 파일은 존재하지 않습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "이 화면 보호기에 대한 설정은 여기에서 확인할 수 있습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "이 섹션에서는 BassBoom 애드온 작동 방식을 구성할 수 있습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "가사 경로"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": ".lrc 파일 그룹이 포함된 폴더에 대한 경로를 설정합니다. 기존 디렉터리에 대한 절대 경로를 작성합니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "스테이션 유형"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "인터넷 라디오(FM) 정보"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "인터넷 라디오 정보를 얻을 수 없습니다."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "가사 파일 경로"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "MP3 파일 경로"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "MPEG 라디오 방송국을 호스팅하는 호스트 이름"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "MPEG 라디오 방송국으로 포팅"
+    }
+  ]
+}

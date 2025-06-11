@@ -1,0 +1,415 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Ní féidir mod a luchtú mar gheall ar an méid seo a leanas:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "Thosaigh {0} v{1}"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Teanga neamhbhailí"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Ní cheadaítear mods a pharsáil i mód sábháilte."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Cuireadh deireadh le Mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "Stopadh {0} v{1}"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Theip ar an mod {0}: {1} a thabhairt chun críche"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Mod tosaithe"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Leagan Mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} gan aimsiú."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Ainm an Mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Ainm comhaid Mod:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Conair comhaid mod:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Bainistigh do mods"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Díchumasaítear bainistíocht mod i mód sábháilte."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Ordú neamhbhailí {0}. Seiceáil an úsáid thíos:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Mod gan aimsiú nó tá carachtair neamhbhailí sa chomhad."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Tá an leathanach láimhe {0} neamhbhailí."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Smaoinigh ar an leathanach láimhe seo a líonadh."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Lámhleabhar modo"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Ní cheadaítear mods a stopadh ar mhód sábháilte."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Tá an mod tosaithe cheana féin!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Níl an mod tosaithe fós!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Déan teagmháil le díoltóir an mod chun an mod a uasghrádú go dtí an leagan comhoiriúnach."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Mods ar liosta dubh"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Scríobh na comhaid de na mods nach mbeidh ar siúl ar am tosaithe. Nuair a bheidh tú críochnaithe, scríobh \"q\". Scríobh comhartha lúide in aice leis an gcosán chun mod atá ann cheana a bhaint."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Tá Mod {0} ar an liosta dubh."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Cuir tús le modhnuithe eithne ar tosaithe"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Cuir tús go huathoibríoch leis na modhnuithe eithne ar tosaithe."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Níl comhad mod sonraithe."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Ag iarraidh mod suiteáilte cheana féin a shuiteáil. Mod á nuashonrú..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Theip ar an tsuiteáil le haghaidh"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Níl an comhad mod a chuirtear ar fáil comhoiriúnach."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Theip ar an díshuiteáil le haghaidh"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Ní sholáthraíonn an fhaisnéis meiteashonraí atá riachtanach chun an teanga shaincheaptha na logánuithe riachtanacha a theastaíonn a shuiteáil."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Taispeáin na horduithe mod ag brath ar chabhair"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Tá an modfile neamhbhailí."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Leathanach láimhe gan teideal"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Níl an fhaisnéis meiteashonraí a theastaíonn chun an teanga shaincheaptha a shuiteáil ann."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Seans nach bhfuil an mod script ar neamhní."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Níor aimsíodh aon mods."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Mod {0} á stopadh..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Níl an mod sínithe go láidir. Seans go bhfuil cód neamhiontaofa ann."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Ní féidir mod a luchtú toisc go bhfuil neamh-chomhoiriúnacht idir an leagan seo den eithne agus an mod seo:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Seo liosta earráidí a d’fhéadfadh cabhrú leat an neamh-chomhoiriúnacht seo a fhiosrú:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Tá leagan API {1} díreach ag teastáil ó Mod {0}, ach tá leagan {2} agat. Cuidíonn uasghrádú KS Nitrocid agus/nó an mod de ghnáth. Theip ar pharsáil mod."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Seans nach n-oibreoidh Mod {0} i gceart leis an leagan API seo. Seans go dteipfidh ar Mod a thosú. Déan teagmháil leis an díoltóir mod chun cóip is déanaí a fháil."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Níl an t-ainm ag Mod {0}. Theip ar pharsáil mod. Athbhreithnigh an cód foinse."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Níl an leagan ag Mod {0}. Theip ar pharsáil mod. Athbhreithnigh an cód foinse."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Tá leagan neamhbhailí i Mod {0}. Theip ar pharsáil mod. Leagan a bhí"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Leagan"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Ainm comhaid"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Conair comhaid"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Ar an drochuair, níl aon ábhar ar an leathanach láimhe seo. Mar sin féin, seans go bhfuarthas an doiciméadú seo faoi leathanach gréasáin an díoltóra modúil. Mura bhfuil tú in ann an doiciméadú seo a aimsiú go fóill, iarr ar fhorbróirí an mod le haghaidh tuilleadh eolais."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Arna chur i láthair duit ag"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Fad ábhar"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Gan ábhar."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Gan athbhreithniú."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Ní féidir feidhm shaincheaptha a rith le mod nach bhfuil ann"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Spleáchas míshásta. Tá spleáchais theipthe liostaithe thíos:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Rinneadh iarracht na lámhleabhair a cheistiú le haghaidh mod {0} nach bhfuil ann."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Rinneadh iarracht an lámhleabhar {0} a thúsú le haghaidh mod {1} nach bhfuil ann."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Rinneadh iarracht an comhad láimhe {0} a thúsú le haghaidh mod {1} nach bhfuil ann."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Rinneadh iarracht an comhad láimhe {0} nach bhfuil ann le haghaidh mod {1} a thúsú."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Ainm"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Ceadaigh mods neamhiontaofa a lódáil"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Má tá sé fíor, ní dhéanfar earráid ar an eithne agus modhnuithe á lódáil nach bhfuil an eochair phoiblí sínithe acu."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Taispeáin comhaireamh na n-orduithe modhnú eithne agus iad á liostú san ordú cabhrach"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Ní cheadaítear mods a thosú nó a stopadh ar mhód sábháilte."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Ní féidir faisnéis réimse a fháil le haghaidh"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Ní féidir leagan mod a chinneadh"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Eisceacht lódóra anaithnid"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Ní féidir logánuithe mod a lódáil"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Tosaigh mod (roghnaigh)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Mod tosaithe (ionchur)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Stop mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Athlódáil mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Suiteáil mod (roghnaigh)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Suiteáil mod (ionchur)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Díshuiteáil mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Tosaigh ar fad"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Stop go léir"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Athlódáil go léir"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Ní féidir cineál ranga nach bhfuil ann a thabhairt ar ais ó thionól moda"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Ní féidir feidhm '{0}' a aimsiú i mod '{1}'."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Ní féidir an t-airí '{0}' sa mhód '{1}' a aimsiú."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Ní féidir an réimse '{0}' sa mhód '{1}' a aimsiú."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Ní rang mod é an rang seo"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Teangacha"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Pointe iontrála"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Cuir isteach cosán go dtí an mod gur mian leat a thosú"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Theip ar an mod a thosú"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Cuir isteach cosán go dtí an mod gur mian leat a shuiteáil"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Theip ar shuiteáil mod"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Ní féidir an mod seo a thosú nó a stopadh!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Cibé ar cheart tús a chur, stop a chur leis, eolas a bhaint as, modh a athlódáil, a shuiteáil nó a dhíshuiteáil"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Ainm mod nó ainm comhaid"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Cibé ar chóir gach modh a liostú, a athlódáil, a stopadh, a thosú nó a bhainistiú go hidirghníomhach"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Ainm mod"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an córas modhnuithe eithne a chumrú."
+    }
+  ]
+}

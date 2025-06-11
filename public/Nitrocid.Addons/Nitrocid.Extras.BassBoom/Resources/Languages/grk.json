@@ -1,0 +1,187 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Καθυστέρηση σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "Λαμβάνει όλες τις λυρικές γραμμές από το λυρικό αρχείο"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "Παίζει ένα αρχείο στίχων"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "Παίζει έναν ήχο"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "Λαμβάνει πληροφορίες για τον διαδικτυακό σας ραδιοφωνικό σταθμό"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "Βεβαιωθείτε ότι έχετε καθορίσει τη διαδρομή προς ένα αρχείο LRC."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "Δεν είναι δυνατή η αναπαραγωγή ήχου επειδή το αρχείο δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "Το αρχείο μουσικής άνοιξε με επιτυχία."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "Δεν είναι δυνατό το άνοιγμα του αρχείου μουσικής."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "Δεν είναι δυνατή η αναπαραγωγή ήχου λόγω χρονικού ορίου."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "Αγνωστος καλλιτέχνης"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "Άγνωστο Είδος"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "Ονομα"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "Καλλιτέχνης"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "Είδος"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "Διάρκεια"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "Πατήστε 'q' για να σταματήσετε την αναπαραγωγή."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "Δεν είναι δυνατή η αναπαραγωγή ήχου."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "Τίτλος"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "Ο αριθμός θύρας για το διαδικτυακό σας ραδιόφωνο δεν είναι έγκυρος."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "Πλήρης διεύθυνση URL"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "Τρέχοντες ακροατές"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "Κορυφαίοι ακροατές"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "Ρεύματα"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "Ενεργές ροές"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "Πληροφορίες ροής για αναγνωριστικό"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "Μονοπάτι"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "Παίζει αυτήν τη στιγμή"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "Χρόνος λειτουργίας"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "Βεβαιωθείτε ότι έχετε καθορίσει τη διαδρομή προς έναν κατάλογο που περιέχει τα λυρικά αρχεία σας σε μορφή LRC. Μπορείτε επίσης να καθορίσετε μια προσαρμοσμένη διαδρομή προς το φάκελο της μουσικής βιβλιοθήκης που περιέχει τα αρχεία στίχων."
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "Αυτό το αρχείο στίχων δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "Οι ρυθμίσεις για αυτήν την προφύλαξη οθόνης είναι διαθέσιμες εδώ."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του πρόσθετου BassBoom."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "Στίχοι μονοπάτι"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "Ορίζει τη διαδρομή σε ένα φάκελο που περιέχει μια ομάδα αρχείων .lrc. Γράψτε μια απόλυτη διαδρομή σε οποιονδήποτε υπάρχοντα κατάλογο."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Τύπος σταθμού"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "Πληροφορίες Internet Radio (FM) για"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "Δεν είναι δυνατή η λήψη πληροφοριών διαδικτυακού ραδιοφώνου."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "Διαδρομή προς το λυρικό αρχείο"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "Διαδρομή σε αρχείο MP3"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "Όνομα κεντρικού υπολογιστή που φιλοξενεί τον ραδιοφωνικό σταθμό MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "Μεταφορά στον ραδιοφωνικό σταθμό MPEG"
+    }
+  ]
+}

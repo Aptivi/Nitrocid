@@ -1,0 +1,102 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "获取每小时的股票信息"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "公司简称"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "输入您的 AlphaVantage API 密钥"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "请提供您的 API 密钥。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "演示 API 密钥无法使用。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "您的 API 密钥长度应为 16 个字符。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "获取股票数据时出错。更多信息可在此处找到"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "开盘股价"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "股价高"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "股价低"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "收盘价"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "库存量"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "需要 API 密钥。从设置中配置。"
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "没有可用的股票数据。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "此部分可让您配置股票。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API 密钥"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage 股票 API 的密钥"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "公司代码"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "股票公司"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "无法获取股票信息。"
+    }
+  ]
+}

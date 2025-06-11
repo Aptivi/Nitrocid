@@ -1,0 +1,59 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "pail-ina munjayeol-ui naeyong-eul tegseuteu hoseuting gong-geubja-e but-yeoneohseubnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "Pastebin gong-geubjaui URLeul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "Pastebin gong-geubja yuhyeong-eul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "Pastebin gong-geubja gesimul peijileul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "Pastebin gong-geubja gesi hyeongsig-eul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "Pastebin gong-geubja gesi pildeu ileum-eul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "eoblodeuhal pail ileum-ina tegseuteuleul jijeonghaseyo."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Pastebin gong-geubja yuhyeong-eun jiwondoeji anhseubnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "gong-geubja-ege seong-gongjeog-eulo but-yeoneoh-eossseubnida!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "gong-geubja-e but-yeoneoh-eul su eobs-seubnida."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "sseul pail ttoneun munjayeol gyeonglo"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Pastebin insu"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COLORCONVERT_REDCOLOR",
+      "text": "红色等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_GREENCOLOR",
+      "text": "绿色等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLUECOLOR",
+      "text": "蓝色等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_CYANCOLOR",
+      "text": "青色等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_MAGENTACOLOR",
+      "text": "洋红色级别："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "黄色等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_HUE",
+      "text": "色调："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SATURATION",
+      "text": "饱和："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VALUE",
+      "text": "价值："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
+      "text": "黄色级别："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMA",
+      "text": "亮度："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INPHASE",
+      "text": "同相："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_QUADRATURE",
+      "text": "正交："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_UCHROMA",
+      "text": "U-色度："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_VCHROMA",
+      "text": "V-色度："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTO_DESC",
+      "text": "将源颜色模型以数字形式转换为目标颜色模型。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC",
+      "text": "将源颜色模型转换为 KS 格式的目标颜色模型。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC",
+      "text": "将源颜色模型转换为十六进制。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC",
+      "text": "使用颜色说明符将源颜色模型转换为目标颜色模型。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC",
+      "text": "将使用颜色说明符的源颜色模型转换为 KS 格式的目标颜色模型。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC",
+      "text": "将使用颜色说明符的源颜色模型转换为十六进制的目标颜色模型。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_INVALIDMODEL",
+      "text": "模型规格无效。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_BLACKKEY",
+      "text": "黑键等级："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FIRSTLEVELNUMERIC",
+      "text": "第一个颜色级别必须是数字。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_SECONDLEVELNUMERIC",
+      "text": "第二个颜色级别必须是数字。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_THIRDLEVELNUMERIC",
+      "text": "第三个颜色级别必须是数字。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_FOURTHLEVELNUMERIC",
+      "text": "第四个关键级别必须是数字。"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_LUMINANCE",
+      "text": "亮度（亮度）："
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC",
+      "text": "源颜色模型"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC",
+      "text": "目标颜色模型"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC",
+      "text": "第一个数字"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC",
+      "text": "第二个数字"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC",
+      "text": "第三个数字"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC",
+      "text": "第四"
+    },
+    {
+      "loc": "NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC",
+      "text": "颜色指定器"
+    }
+  ]
+}

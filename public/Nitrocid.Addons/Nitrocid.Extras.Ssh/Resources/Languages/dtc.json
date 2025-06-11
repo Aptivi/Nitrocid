@@ -1,0 +1,124 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Maakt verbinding met een SSH-server."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Voer het wachtwoord in voor {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH Verbinding verbroken."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Fout bij verbinding maken met SSH-server: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Opgegeven optie {0} is ongeldig."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Het antwoord moet numeriek zijn."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Druk op een willekeurige toets om terug te gaan."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Maakt verbinding met een SSH-server om een opdracht uit te voeren."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Hoe wil je authenticeren?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Privé sleutel bestand"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Wachtwoord"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Voer de wachtwoordzin in voor sleutel {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Sleutelbestand {0} bestaat niet."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Fout bij het toevoegen van een persoonlijke sleutel:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Fout bij uitvoeren van SSH-opdracht"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Fout op SSH-shell"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Schrijf hoe u wilt dat uw aanmeldingsprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Voer de locatie van de privésleutel voor {0} in. Schrijf \"q\" om het toevoegen van sleutels te voltooien:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "In deze sectie kunt u configureren hoe de SSH werkt."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Gebruikersnaampromptstijl voor SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Voeg nieuwe verbindingen toe aan SSH-snelkeuze"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Indien ingeschakeld, wordt een nieuwe verbinding toegevoegd aan het SSH-snelkeuzenummer."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Het is niet gelukt om de instellingen op te halen."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH is verbonden, maar er is geen client."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH-server om verbinding mee te maken"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Gebruikersnaam om mee te authenticeren"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Opdracht om op afstand uit te voeren"
+    }
+  ]
+}

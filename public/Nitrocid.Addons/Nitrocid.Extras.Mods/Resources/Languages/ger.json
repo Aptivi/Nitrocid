@@ -1,0 +1,423 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Der Mod kann wegen folgendem nicht geladen werden:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1} gestartet"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Ungültige Sprache"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Parsing-Mods im abgesicherten Modus nicht erlaubt."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0} gestoppt"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1} gestoppt"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Fehler beim Fertigstellen von Mod {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Startmodus"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Mod-Version:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} nicht gefunden."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Mod-Name:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Name der Mod-Datei:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Pfad der Mod-Datei:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Verwalten Sie Ihre Mods"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Die Mod-Verwaltung ist im abgesicherten Modus deaktiviert."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Ungültiger Befehl {0}. Überprüfen Sie die Verwendung unten:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Mod nicht gefunden oder Datei enthält ungültige Zeichen."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Die Handbuchseite {0} ist ungültig."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Ziehen Sie in Betracht, diese Handbuchseite auszufüllen."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Mod-Handbuch"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Mods stoppen ist im abgesicherten Modus nicht erlaubt."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Mod wurde bereits gestartet!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Mod hat noch nicht begonnen!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Wenden Sie sich an den Anbieter des Mods, um den Mod auf die kompatible Version zu aktualisieren."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Mods auf der schwarzen Liste"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Schreiben Sie die Dateinamen der Mods, die beim Start nicht ausgeführt werden. Wenn Sie fertig sind, schreiben Sie \"q\". Schreiben Sie ein Minuszeichen neben den Pfad, um einen vorhandenen Mod zu entfernen."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} ist auf der schwarzen Liste."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Kernel-Modifikationen beim Booten starten"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Starten Sie automatisch die Kernel-Modifikationen beim Booten."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Mod-Datei ist nicht angegeben."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Versuch, einen bereits installierten Mod zu installieren. Mod aktualisieren..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Installation fehlgeschlagen für"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Die bereitgestellte Mod-Datei ist nicht kompatibel."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Deinstallation fehlgeschlagen für"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Die zum Installieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Die Moddatei ist ungültig."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Unbenannte Handbuchseite"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Die für die Installation der benutzerdefinierten Sprache erforderlichen Metadateninformationen sind nicht vorhanden."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Das Mod-Skript darf nicht null sein."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Keine Mods erkannt."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Mod {0} wird gestoppt..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Der Mod ist nicht stark signiert. Es kann nicht vertrauenswürdigen Code enthalten."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Mod kann nicht geladen werden, da eine Inkompatibilität zwischen dieser Version des Kernels und diesem Mod besteht:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Hier ist eine Liste von Fehlern, die Ihnen bei der Untersuchung dieser Inkompatibilität helfen können:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} erfordert genau eine API-Version {1}, aber Sie haben Version {2}. Ein Upgrade von Nitrocid KS und/oder der Mod hilft normalerweise. Mod-Parsing ist fehlgeschlagen."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} funktioniert möglicherweise nicht ordnungsgemäß mit dieser API-Version. Der Mod startet möglicherweise nicht. Kontaktieren Sie den Mod-Anbieter, um eine aktuelle Kopie zu erhalten."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0} hat den Namen nicht. Mod-Parsing ist fehlgeschlagen. Überprüfen Sie den Quellcode."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} hat die Version nicht. Mod-Parsing ist fehlgeschlagen. Überprüfen Sie den Quellcode."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} enthält eine ungültige Version. Mod-Parsing ist fehlgeschlagen. Version war"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Ausführung"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Dateiname"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Dateipfad"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Leider hat diese Handbuchseite keinen Inhalt. Diese Dokumentation wurde jedoch möglicherweise auf der Webseite des Mod-Anbieters gefunden. Wenn Sie diese Dokumentation immer noch nicht finden können, fragen Sie die Entwickler des Mods nach weiteren Informationen."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Präsentiert von"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Inhaltslänge"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Kein Inhalt."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Keine Überarbeitung."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Benutzerdefinierte Funktion kann mit nicht vorhandenem Mod nicht ausgeführt werden"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Abhängigkeit unbefriedigt. Nachfolgend sind fehlgeschlagene Abhängigkeiten aufgeführt:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Es wurde versucht, die Handbücher nach dem nicht vorhandenen Mod {0} abzufragen."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Es wurde versucht, das Handbuch {0} für den nicht vorhandenen Mod {1} zu initialisieren."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Es wurde versucht, die manuelle Datei {0} für den nicht vorhandenen Mod {1} zu initialisieren."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Es wurde versucht, die manuelle Datei {0} zu initialisieren, die für Mod {1} nicht existiert."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Name"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Erlaube das Laden nicht vertrauenswürdiger Mods"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Wenn es auf „true“ gesetzt ist, gibt der Kernel beim Laden von Mods, die nicht über den signierten öffentlichen Schlüssel verfügen, keinen Fehler aus."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Zeigt die Anzahl der Kernel-Änderungsbefehle an, wenn sie im Hilfebefehl aufgelistet werden"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Das Starten oder Stoppen von Mods ist im abgesicherten Modus nicht zulässig."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Feldinformationen können nicht abgerufen werden für"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Mod-Version kann nicht ermittelt werden"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Unbekannte Loader-Ausnahme"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Mod-Lokalisierungen können nicht geladen werden"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Mod starten (auswählen)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Startmod (Eingabe)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Mod stoppen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Mod neu laden"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Mod installieren (auswählen)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Mod installieren (Eingabe)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Mod deinstallieren"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Alle starten"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Stoppen Sie alle"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Alle neu laden"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Nicht vorhandener Klassentyp kann nicht aus Mod-Assembly zurückgegeben werden"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Funktion „{0}“ kann im Mod „{1}“ nicht gefunden werden."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Die Eigenschaft „{0}“ kann im Mod „{1}“ nicht gefunden werden."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Feld „{0}“ kann im Mod „{1}“ nicht gefunden werden."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Diese Klasse ist keine Mod-Klasse"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Sprachen"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Einstiegspunkt"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Geben Sie einen Pfad zu dem Mod ein, den Sie starten möchten"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Mod konnte nicht gestartet werden"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Geben Sie einen Pfad zu dem Mod ein, den Sie installieren möchten"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Mod konnte nicht installiert werden"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Dieser Mod kann nicht gestartet oder gestoppt werden!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Ob ein Mod gestartet, gestoppt, Informationen abgerufen, neu geladen, installiert oder deinstalliert werden soll"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Modname oder Dateiname"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Ob alle Mods aufgelistet, neu geladen, gestoppt, gestartet oder interaktiv verwaltet werden sollen"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Mod-Name"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "In diesem Abschnitt können Sie die Funktionsweise des Kernel-Änderungssystems konfigurieren."
+    }
+  ]
+}

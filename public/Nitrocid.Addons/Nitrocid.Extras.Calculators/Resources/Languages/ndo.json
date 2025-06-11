@@ -1,0 +1,70 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Kalkulator untuk menghitung ekspresi."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Kesalahan dalam perhitungan."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Menampilkan informasi tentang rumus bilangan imajiner yang ditentukan oleh bilangan riil dan imajiner tertentu"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Angka sebenarnya tidak valid."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Angka imajiner tidak valid."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Rumus:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Radius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Riil ke Radius dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imajiner ke Radius dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Sudut dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Eksponensial:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Segitiga:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Ekspresi matematika"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Angka riil"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Angka imajiner"
+    }
+  ]
+}

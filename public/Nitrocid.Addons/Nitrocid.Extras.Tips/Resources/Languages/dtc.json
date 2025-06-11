@@ -1,0 +1,316 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "dat u procesopdrachten op twee manieren kunt uitvoeren: rechtstreeks de naam van het uitvoerbare bestand invoeren en het commando 'exec' gebruiken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "dat je je scherm kunt vergrendelen met het commando 'lockscreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "dat je je eigen kernelmodificaties kunt bouwen met C# en Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "dat u meerdere opdrachten kunt gebruiken met behulp van de puntkomma tussen opdrachten?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "dat u dubbele aanhalingstekens binnen de geciteerde argumenten kunt vermijden bij het uitvoeren van opdrachten?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "dat je de kernelinstellingen kunt wijzigen met het commando 'settings'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "dat u uw scherm kunt opslaan met het commando 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "dat u bugs aan ons kunt melden door naar de GitHub-projectpagina van Nitrocid te gaan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "dat je met het commando 'alias' een snelkoppeling naar het gewenste commando kunt maken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "dat je je eigen splashscreen kunt bouwen met C# en Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "dat je extra add-ons kunt installeren om je kernel nuttiger en leuker te maken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "dat je je eigen geweldige thema's kunt maken met de opdracht 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "dat je je kernelkleuren kunt veranderen door het commando 'settings' te gebruiken of door een van de vooraf gebouwde thema's te gebruiken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "dat je je kernel kunt resetten naar de fabrieksinstellingen met behulp van het 'reset'-argument?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "dat je toegang hebt tot onze uitgebreide documentatie op onze GitBook-pagina?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "dat langetermijnreleases vijf jaar worden ondersteund voor hoofdondersteuning, en drie jaar voor beveiligingsupdates?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "dat 0.0.1 de allereerste versie was van Nitrocid KS die op 22 februari 2018 werd uitgebracht?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "dat de 0.0.24.x-serie de enige versieserie was die de API v2.1-versie bevatte?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "dat kortetermijnreleases slechts negen maanden worden ondersteund?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "dat de 0.1.x-serie achterwaarts incompatibel is met de 0.0.24.x-serie of ouder?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "dat je Nitrocid KS op Linux, macOS en Android kunt draaien?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "dat u de API-documentatie kunt raadplegen om u te helpen bij het maken van uw mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "dat je een aantal van de geweldige games, zoals Hangman en ShipDuet, kunt krijgen door de extra add-ons te installeren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "dat als je in Meteor neerstort met een rode meteorenstorm, je ruimteschip neerstort?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "dat je je kernel kunt omzetten naar informatiecentra met behulp van de dockingfunctie?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "dat u gebruikersgroepen kunt maken om gebruikersaccounts te organiseren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "dat als u lid bent van een groep die bepaalde machtigingen verleent, u dergelijke bewerkingen mag uitvoeren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "dat u de tijdzone van uw kernel kunt wijzigen zonder uw hostsysteem te beïnvloeden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "dat u de interactieve tekst- en hex-editor kunt gebruiken om tijd te besparen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "dat de oudste teksteditor waarvan bekend is dat hij met het eerste Unix-systeem werkte, de vroegste teksteditor is die in 1973 werd uitgebracht en werd meegeleverd met het Unix-systeem dat op een PDP-7 bij AT&T Bell Labs werd gevonden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "dat je ook de bewerkingsopdracht kunt forceren om de editor in een specifiek type te starten?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "dat de interactieve teksteditor de meest basisfuncties van de populairste Unix-teksteditors, vi en vim, probeert te simuleren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "dat tenzij u weet wat u met het binaire bestand doet, het op deze manier bewerken van een dergelijk bestand zal leiden tot gegevensbeschadiging of gegevensverlies in het beoogde bestand?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "dat op Linux-systemen de shell wordt geïnitieerd met behulp van zowel de login-handler als het systeeminitialisatieprogramma, meestal te vinden in /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "dat u algemene bestandsbewerkingen kunt uitvoeren, zoals kopiëren, verplaatsen, verwijderen, bewerken, enzovoort?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "dat de interactieve TUI van een bestandsbeheerder de functionaliteit van Midnight Commander simuleert?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "dat als de kernel crasht, er meestal een dumpbestand wordt aangemaakt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "dat je de kernel kunt diagnosticeren door er fouten in te maken met behulp van de ingebouwde debug-functionaliteit?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "dat u bestanden rechtstreeks vanuit de UESH-shell kunt downloaden en uploaden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "dat de kernel zelfs in pre-boot-stadia vertaald kan worden door hem op te starten met het 'lang'-argument?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "dat je je eigen screensavers kunt bouwen door ze in je mod te registreren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "dat de eerste screensaver die het scherm leegmaakte na drie minuten inactiviteit op de originele IBM-pc's, scrnsave, in 1983 werd gemaakt door John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "dat sommige van de snelle screensavers lichtgevoelige aanvallen kunnen veroorzaken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "dat kerneljournalen worden gebruikt als opstart- en afsluitlogboeken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "dat je mods nu vertaalbaar kunnen worden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "dat je mods kunnen communiceren met kernel-add-ons en andere mods, waardoor een soort communicatie ontstaat en interoperabiliteit wordt bereikt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "dat u verbinding kunt maken met de externe debugger en optioneel met de chatserver?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "dat u de debug-shell kunt gebruiken, die alleen beschikbaar is voor ontwikkelingsversies?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "dat je mods nu hun eigen configuratie kunnen hebben door de bijbehorende klassen te registreren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "dat je mods hun eigen shells kunnen registreren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "dat je mods commando's aan de bestaande shells kunnen toevoegen om het aantal commando's dat kan worden gebruikt te vergroten?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "dat uw opdrachtklassen doorgegeven argumenten en schakelaars nauwkeurig kunnen weergeven?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "dat u doorgegeven switches kunt opvragen met behulp van de switchbeheerklassen in de kernel-API?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "dat UESH de scriptfunctionaliteit bevat om het maken en uitvoeren van scripts te vergemakkelijken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "dat de shell functionaliteit bevat om annulering voor actieve applicaties te voorkomen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "dat Nitrocid diep geïntegreerd is met Terminaux om een snellere en betere weergave mogelijk te maken?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "dat u nu het formaat van de interactieve toepassingen kunt wijzigen zonder dat u zich zorgen hoeft te maken dat de uitvoer beschadigd raakt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "dat er commando's zijn die om gebruikersinvoer vragen, wat handig is voor scripts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "dat u uw gebruikersinvoervraag op verschillende manieren kunt presenteren, zoals keuze, tabel, eenvoudig, selectie, enzovoort?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "dat u de tijdelijke aanduidingen bij uw tekst kunt plaatsen die deze ondersteunt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "dat je verschillende kernelstuurprogramma's kunt gebruiken om de manier waarop een specifieke bewerking werkt te wijzigen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "dat je je eigen screensavers en splashes kunt maken in C# of Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "dat je het hostsysteem en de terminalemulator kunt bevragen met behulp van de kernelplatformklasse?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "dat je toestemming voor privacy kunt vragen voordat je iets gevoeligs doet in je mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "dat je meldingen kunt uitschakelen met de functie Niet storen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "dat u de meldingsgeschiedenis kunt opslaan met een functie in de meldingsmanager?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "dat je kunt wijzigen hoe willekeurige getallen worden gegenereerd door het stuurprogramma te wijzigen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "dat diverse API's nuttige functies bieden voor uw mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "In deze sectie kunt u configureren hoe Tips werken."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Kerneltips weergeven"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Indien ingeschakeld, toont de shell u de tips bij elke login."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "dat je opstartbare programma's kunt maken met behulp van je kernelmods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Het is niet gelukt om de instellingen op te halen."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "dat Nitrocid (Kernel Simulator 0.0.2) de ingebouwde shell de 'UESH'-shell noemde?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "dat de screensavers werden aangeprezen als een oplossing tegen inbranden in beeldbuizen of plasmaschermen?"
+    }
+  ]
+}

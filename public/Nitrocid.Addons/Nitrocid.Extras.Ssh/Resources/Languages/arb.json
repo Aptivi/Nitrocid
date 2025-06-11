@@ -1,0 +1,144 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "yatasil bakhadum SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "'udkhul kalimat almurur l {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH ghyr mutasalin."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "khata fi muhawalat alaitisal bikhadum SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "alkhiar almuhadad {0} ghayr salihi."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "yajib 'an takun al'iijabat raqmiata."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "adghut ealaa 'ayi miftah lileawdat."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "yatasil bikhadim SSH litanfidh al'amri."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "kayf turid almusadaqata?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "milafu miftah khasin"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "kalamah alsiru"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "'adkhul eibarat murur almiftah {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "almilafu alrayiysiu {0} ghayr mawjudi."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "khataan fi muhawalat 'iidafat almiftah alkhasi:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "khataan fi tanfidh 'amr SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "khataan fi qadhifat SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "aiktub kayf turid 'an takun mutalabat tasjil aldukhul alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibati."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "adẖl mūqʿ al-mftāḥ al-ẖāṣ l. {0}. aktb \"q\" linhāʾ iḍāfẗ al-mfātīḥ:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "yutih lak hadha alqism takwin kayfiat eamal SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "namat almutalabat biasm almustakhdam la SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "'iidafat aitisalat jadidat lilaitisal alsarie SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "'iidha tama tamkinuhu, fa'iinah yudif atsalaan jdydan 'iilaa aliatisal alsarie SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "tama tawsil SSH walakin bidun aleamili."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "khadim SSH lilaitisal bih"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "aism almustakhdam lilmusadaqat bih"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "'amr liltanfidh ean bued"
+    }
+  ]
+}

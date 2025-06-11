@@ -1,0 +1,45 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Invalid action."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Task name"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "To-do task manager"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Failed to add or remove a task."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Please provide a name for your task."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Failed to mark a task."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Can't get a list of tasks"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Whether to add, remove, mark as done, or unmark as done on a task"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Whether to list, save, or load all tasks"
+    }
+  ]
+}

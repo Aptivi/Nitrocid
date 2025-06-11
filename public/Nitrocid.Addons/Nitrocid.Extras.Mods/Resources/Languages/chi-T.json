@@ -1,0 +1,422 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "由于以下原因，无法加载Mod："
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v {1}开始"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "语言无效"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "在安全模式下不允许解析mod。"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0}已停止"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v {1}已停止"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "未能完成 mod {0}：{1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "启动模式"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "模组版本："
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "未找到模组 {0}。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "模组名称："
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "模组文件名："
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "修改文件路径："
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "管理你的模组"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Mod管理在安全模式下被禁用。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "无效命令 {0}。检查以下用法："
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "未找到 Mod 或文件包含无效字符。"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "手册页 {0} 无效。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "考虑填写本手册页。"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "模组手册"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "在安全模式下不允许停止模组。"
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "模组已经开始了！"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "模组还没开始！"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "联系模组供应商将模组升级到兼容版本。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "列入黑名单的模组"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "写下启动时不会运行的模组的文件名。完成后，写“q”。在路径旁边写一个减号以删除现有的 mod。"
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} 被列入黑名单。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "启动时启动内核修改"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "在引导时自动启动内核修改。"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "未指定 Mod 文件。"
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "尝试安装已安装的 mod。更新模式..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "安装失败"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "提供的 mod 文件不兼容。"
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "卸载失败"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "安装自定义语言所需的元数据信息不提供所需的必要本地化。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "显示 mod 命令依靠帮助"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "模组文件无效。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "无标题手册页"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "安装自定义语言所需的元数据信息不存在。"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "mod 脚本不能为空。"
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "未检测到模组。"
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "正在停止模组 {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "该模组没有强签名。它可能包含不受信任的代码。"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Mod 无法加载，因为此版本的内核与此 mod 不兼容："
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "以下是可以帮助您调查这种不兼容性的错误列表："
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} 完全需要 API 版本 {1}，但您拥有版本 {2}。升级 Nitrocid KS 和/或 mod 通常会有所帮助。Mod 解析失败。"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} 可能无法在此 API 版本上正常工作。Mod 可能无法启动。请联系模组供应商以获取最新副本。"
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "模组 {0} 没有名称。Mod 解析失败。查看源代码。"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} 没有该版本。Mod 解析失败。查看源代码。"
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "模组 {0} 包含无效版本。Mod 解析失败。版本是"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "版本"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "文件名"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "文件路径"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "不幸的是，这个手册页没有任何内容。但是，该文档可能可以在模组供应商的网页下找到。如果您仍然找不到此文档，请向该模组的开发人员询问更多信息。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "呈现给您的是"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "内容长度"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "没有内容。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "没有修订。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "无法使用不存在的 mod 执行自定义函数"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "依赖性未得到满足。下面列出了失败的依赖项："
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "尝试在手册中查询不存在的 mod {0}。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "尝试为不存在的 mod {1} 初始化手册 {0}。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "尝试为不存在的 mod {1} 初始化手动文件 {0}。"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "尝试初始化手册文件 {0}，该文件对于 mod {1} 来说不存在。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "姓名"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "允许加载不受信任的模组"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "如果设置为 true，则内核在加载没有签名公钥的 mod 时不会出错。"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "在帮助命令中列出内核修改命令时显示内核修改命令的计数"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "在安全模式下不允许启动或停止模块。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "无法获取字段信息"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "无法确定模组版本"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "未知加载器异常"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "无法加载模组本地化"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "开始模式（选择）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "启动模式（输入）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "停止模式"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "重新加载模式"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "安装模块（选择）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "安装模块（输入）"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "卸载模块"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "全部开始"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "全部停止"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "重新加载全部"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "无法从 mod 程序集返回不存在的类类型"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "在模块“{1}”中找不到函数“{0}”。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "在模块“{1}”中找不到属性“{0}”。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "在模型“{1}”中找不到字段“{0}”。"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "此类不是 mod 类"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "语言"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "入口点"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "输入要启动的模块的路径"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "无法启动模块"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "输入要安装的模块的路径"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "无法安装模块"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "无法启动或停止此模式！"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "是否启动、停止、获取信息、重新加载、安装或卸载模块"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "模组名称或文件名"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "是否列出、重新加载、停止、启动或以交互方式管理所有模块"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "模组名称"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "本节让您配置内核修改系统的工作方式。"
+    }
+  ]
+}

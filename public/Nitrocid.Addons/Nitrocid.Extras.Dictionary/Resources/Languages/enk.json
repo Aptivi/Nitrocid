@@ -1,0 +1,61 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Licence information"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "The English Dictionary"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Word information for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API is licenced under"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Word:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Word meanings for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Part of Speech:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definition:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Example in Sentence:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Sources used to define"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synonyms:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonyms:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Word to define"
+    }
+  ]
+}

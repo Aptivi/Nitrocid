@@ -1,0 +1,259 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "Εμφανίζει πληροφορίες καιρού για συγκεκριμένη πόλη. Χρησιμοποιεί το OpenWeatherMap."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "-- Πληροφορίες καιρού για {0} --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "Καιρός: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "Πίεση: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "Υγρασία: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "Μπορείτε να αποκτήσετε το δικό σας κλειδί API στη διεύθυνση https://home.openweathermap.org/api_keys."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "Προτιμώμενη μονάδα για τη θερμοκρασία"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "Αισθάνεται σαν: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "Θερμοκρασία: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "Ταχύτητα ανέμου: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "Διεύθυνση ανέμου: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "Εμφανίζει όλες τις διαθέσιμες πόλεις"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "Αφαιρώ"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "Εισαγάγετε το κλειδί API σας:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "Μπορείτε είτε να συμβουλευτείτε τον παρακάτω σύνδεσμο για τη λίστα των πόλεων με τα αναγνωριστικά τους είτε να περάσετε το \"-list\" σε αυτήν την εντολή."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας της Πρόβλεψης."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "Εμφανίζει πληροφορίες καιρού για συγκεκριμένη πόλη. Χρησιμοποιεί το κανάλι καιρού από την IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "Πληροφορίες για τον καιρό σε ένα διαδραστικό TUI"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "Εμφανίζει όλες τις διαθέσιμες πόλεις και τα ζεύγη γεωγραφικού πλάτους/μήκους τους"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- Πληροφορίες καιρού --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "Γεωγραφικό πλάτος και γεωγραφικό μήκος"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "Νεφοκάλυψη"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "Ωρα της ημέρας"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "Ελάχιστη θερμοκρασία"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "Μέγιστη θερμοκρασία"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "Πιθανότητα βροχόπτωσης"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "Τύπος βροχόπτωσης"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "Δείκτης θερμότητας"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "Δροσιά"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "Δείκτης υπεριώδους"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "Περιγραφή υπεριώδους"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "Εισαγάγετε το γεωγραφικό πλάτος και μήκος της πόλης."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "Μπορείτε να αποκτήσετε το δικό σας κλειδί API συμβουλευόμενοι τον ιστότοπο της IBM για καθοδήγηση."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "Φόρτωση πληροφοριών καιρού από γεωγραφική τοποθεσία"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "Κατάσταση του καιρού"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "Θερμοκρασία"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "ΤΑΧΥΤΗΤΑ ΑΝΕΜΟΥ"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "Κατεύθυνση ανέμου"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "Ποσοστό υγρασίας"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "Γεωγραφικό πλάτος"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "Γεωγραφικό μήκος"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "Εισαγάγετε ένα όνομα πόλης για αναζήτηση."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "Δεν υπάρχουν πόλεις με αυτό το όνομα. Εάν προσπαθείτε να αναζητήσετε μια συγκεκριμένη πόλη, δοκιμάστε να αναζητήσετε μια ευρύτερη τοποθεσία που είναι πιο κοντά στην πόλη που αναζητάτε."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "Επιλέξτε μια πόλη από την παρακάτω λίστα. Οι δύο αριθμοί αντιπροσωπεύουν γεωγραφικές τοποθεσίες."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "Εισαγάγετε το γεωγραφικό πλάτος της πόλης."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "Εισαγάγετε γεωγραφικό μήκος πόλης."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "Το γεωγραφικό πλάτος δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "Το γεωγραφικό μήκος δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "Μπορείτε να αποκτήσετε το δικό σας κλειδί API συμβουλευόμενοι τον ιστότοπο της IBM για καθοδήγηση. Εισαγάγετε το κλειδί API του καναλιού καιρού."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "Το κλειδί API καναλιού καιρού δεν παρέχεται. Εάν χρειάζεστε βοήθεια, συμβουλευτείτε τον ιστότοπο της IBM."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "Προσθέτω"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "Κατάργηση όλων"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "Προσθήκη χειροκίνητα"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "Δεν είναι δυνατή η λήψη του πίνακα μερικής ημέρας"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "Δεν μπορώ να λάβω μέρος της ημέρας"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "Επιλέξτε τη μονάδα που προτιμάτε για τη θερμοκρασία (αυτό ισχύει μόνο για την εντολή \"καιρός\"). Το 1 είναι το Kelvin, το 2 το Metric και το 3 το Imperial."
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "Γεωγραφικό πλάτος προς χρήση"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "Γεωγραφικό μήκος προς χρήση"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Κλειδί API Weather.com"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "Το αναγνωριστικό πόλης ή το όνομα πόλης είναι γνωστό στο OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "Κλειδί API OpenWeatherMap"
+    }
+  ]
+}

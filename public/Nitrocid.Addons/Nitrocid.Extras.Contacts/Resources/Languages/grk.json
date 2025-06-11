@@ -1,0 +1,323 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Διαχειρίζεται τις επαφές σας"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Δεν είναι δυνατό το άνοιγμα του αρχείου \"{0}\" επειδή δεν βρέθηκε."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Η εισαγωγή επαφών έγινε με επιτυχία."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Δεν είναι δυνατό το άνοιγμα του αρχείου \"{0}\" επειδή το αρχείο της κάρτας δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Το αρχείο επαφής δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "επαφές που βρέθηκαν"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Το αρχείο επαφής δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "Η σύνταξη MeCard δεν μπορεί να είναι κενή."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Είτε το παρεχόμενο αρχείο επαφών δεν περιέχει πληροφορίες για καμία επαφή είτε δεν είναι έγκυρο."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Απέτυχε η ανάλυση των επαφών. Δείτε τις λεπτομέρειες του σφάλματος για περισσότερες πληροφορίες."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Το ευρετήριο επαφών είναι εκτός εύρους. Το μέγιστο ευρετήριο είναι {0} ενώ το παρεχόμενο ευρετήριο είναι {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Δεν υπάρχουν επαφές για λήψη."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Δεν υπάρχουν επαφές για αναζήτηση."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Η τυπική έκφραση δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Δεν υπάρχει επαφή. Εάν θέλετε να εισαγάγετε επαφές, χρησιμοποιήστε τις επιλογές εισαγωγής χρησιμοποιώντας τα πλήκτρα που ορίζονται στο κάτω μέρος της οθόνης."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Δεν είναι δυνατή η εισαγωγή ορισμένων επαφών."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Εισαγάγετε τη διαδρομή προς ένα αρχείο VCF που περιέχει την επαφή σας. Υποστηρίζεται επίσης το αρχείο contacts2.db του Android."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Το αρχείο δεν υπάρχει. Βεβαιωθείτε ότι έχετε γράψει τη σωστή διαδρομή σε ένα αρχείο VCF ή σε ένα αρχείο contacts2.db."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Εισαγάγετε μια έγκυρη αναπαράσταση MeCard της επαφής σας."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Η σύνταξη επικοινωνίας MeCard δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Η σύνταξη του MeCard μπορεί να μην είναι κενή"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Εισαγάγετε κανονική έκφραση για αναζήτηση στις επαφές."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "Δεν υπάρχουν επαφές που να περιέχουν την έκφραση που ζητήσατε."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Ονομα επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "Χωρίς όνομα επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Διεύθυνση Επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "Ταχυδρομείο επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "Δεν υπάρχει αλληλογραφία επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Επικοινωνήστε με τον οργανισμό"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Κανένας οργανισμός επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Τηλέφωνο επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "Κανένα τηλέφωνο επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "Διεύθυνση URL επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "Δεν υπάρχει διεύθυνση URL επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Επικοινωνήστε με τη γεωγραφική θέση"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Χωρίς γεωγραφική επαφή"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Επικοινωνήστε με το IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Καμία επαφή IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Ψευδώνυμο επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "Χωρίς ψευδώνυμο επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Ρόλος επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Κανένας ρόλος επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Τίτλος επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "Χωρίς τίτλο επαφής"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Σημειώσεις επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "Δεν υπάρχουν σημειώσεις επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Εμφανίζει τις επαφές σας"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Φορτώνει τις επαφές σας"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Εισάγει τις επαφές σας"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Αντιμετωπίζει την απαιτούμενη είσοδο ως συμβολοσειρά MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Λαμβάνει στοιχεία επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Δεν υπάρχουν επαφές."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Ο αριθμός επικοινωνίας δεν είναι έγκυρος."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Ο αριθμός επικοινωνίας είναι εκτός εμβέλειας."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "Ονομα"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Επίθετο"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Επικοινωνήστε με την Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Σημείωμα επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Μερικές από τις επαφές δεν μπορούν να καταχωρηθούν."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Διαγράφω"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Πληροφορίες"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Επαφές"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Διαγραφή όλων"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Εισαγωγή"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Εισαγωγή από"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Ερευνα"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Αναζήτηση στη συνέχεια"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Αναζήτηση πίσω"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Ακατέργαστες πληροφορίες"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Εισαγωγή από MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του πρόσθετου επαφών."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Εμφάνιση φωτογραφιών προφίλ"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, εμφανίζει εικόνες επαφών. Απενεργοποιήθηκε από προεπιλογή για αποφυγή κακής χρήσης και για λόγους απόδοσης."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Είτε μια διαδρομή προς ένα αρχείο επαφής vCard είτε μια αναπαράσταση MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Αριθμός επικοινωνίας"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Εκδίδω..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Εισαγάγετε νέο όνομα για αυτήν την επαφή"
+    }
+  ]
+}

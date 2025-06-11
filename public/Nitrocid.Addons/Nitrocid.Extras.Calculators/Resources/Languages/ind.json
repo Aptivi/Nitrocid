@@ -1,0 +1,70 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "bhaavon kee ganana karane ke lie kailakuletar."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "ganana mein truti."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "ek nirdisht vaastavik aur kaalpanik sankhya dvaara nirdisht kaalpanik sankhya sootr ke baare mein jaanakaaree dikhaen"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "vaastavik sankhya maany nahin hai."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "kaalpanik sankhya maany nahin hai."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "sootr:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "trijya:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "vaastavik se rediyan mein trijya:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "kaalpanik se rediyan mein trijya:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "rediyan mein kon:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "ghaataankeey:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "trikoneey:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "ganiteey abhivyakti"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "vaastavik sankhya"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "kaalpanik sankhya"
+    }
+  ]
+}

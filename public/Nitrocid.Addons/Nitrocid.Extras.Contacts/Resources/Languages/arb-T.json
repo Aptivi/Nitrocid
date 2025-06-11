@@ -1,0 +1,348 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "يدير جهات الاتصال الخاصة بك"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "لا يمكن فتح الملف '{0}' لأنه لم يتم العثور عليه."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "تم استيراد جهات الاتصال بنجاح."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "لا يمكن فتح الملف '{0}' لأن ملف البطاقة غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "ملف الاتصال غير موجود."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "تم العثور على جهات الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "ملف الاتصال غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "لا يمكن أن يكون بناء جملة MeCard فارغًا."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "إما أن ملف جهات الاتصال المقدم لا يحتوي على معلومات حول أي جهة اتصال أو أنه غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "فشل في تحليل جهات الاتصال. راجع تفاصيل الخطأ لمزيد من المعلومات."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "فهرس جهة الاتصال خارج النطاق. الحد الأقصى للفهرس هو {0} بينما الفهرس المقدم هو {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "لا توجد اتصالات للحصول عليها."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "لا توجد جهات اتصال للبحث عنها."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "التعبير العادي غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "لا يوجد اتصال. إذا كنت ترغب في استيراد جهات الاتصال، فيرجى استخدام خيارات الاستيراد باستخدام ضغطات المفاتيح المحددة في الجزء السفلي من الشاشة."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "لا يمكن استيراد بعض جهات الاتصال."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "أدخل المسار إلى ملف VCF الذي يحتوي على جهة الاتصال الخاصة بك. يتم أيضًا دعم ملف Contacts2.db الخاص بنظام Android."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "الملف غير موجود. تأكد من كتابة المسار الصحيح إلى ملف VCF أو إلى ملف Contacts2.db."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "أدخل تمثيل MeCard صالحًا لجهة الاتصال الخاصة بك."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "بناء جملة جهة الاتصال MeCard غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "قد لا يكون بناء جملة Contact MeCard فارغًا"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "أدخل التعبير العادي للبحث في جهات الاتصال."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "لا توجد جهات اتصال تحتوي على التعبير المطلوب."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "اسم جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "لا يوجد اسم جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "عنوان الإتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "بريد الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "لا يوجد بريد اتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "اتصل بالمنظمة"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "لا توجد منظمة اتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "اتصال هاتفي"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "لا يوجد هاتف اتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "عنوان URL لجهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "لا يوجد عنوان URL لجهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "الاتصال الجغرافي"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "لا توجد منطقة اتصال جغرافية"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "اتصل بـIMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "لا يوجد اتصال IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "لقب جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "لا يوجد لقب جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "دور الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "لا يوجد دور الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "عنوان الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "لا يوجد عنوان جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "ملاحظات الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "لا توجد ملاحظات الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "يسرد جهات الاتصال الخاصة بك"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "يقوم بتحميل جهات الاتصال الخاصة بك"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "استيراد جهات الاتصال الخاصة بك"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "يعامل الإدخال المطلوب كسلسلة MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "يحصل على معلومات الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "لا اتصالات."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "رقم الاتصال غير صالح."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "رقم الاتصال خارج النطاق."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "الاسم الأول"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "اسم العائلة"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "اتصل بـ جيو"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "ملاحظة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "لا يمكن إدراج بعض جهات الاتصال."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "يمسح"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "معلومات"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "جهات الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "حذف الكل"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "يستورد"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "استيراد من"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "يبحث"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "البحث التالي"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "البحث العودة"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "معلومات أولية"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "الاستيراد من MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "يسمح لك هذا القسم بتكوين كيفية عمل الوظيفة الإضافية لجهات الاتصال."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "إظهار صور الملف الشخصي"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "إذا تم تمكينه، فسيتم عرض صور جهات الاتصال. يتم تعطيله افتراضيًا لمنع سوء الاستخدام ولأسباب تتعلق بالأداء."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "إما مسار إلى ملف جهة اتصال vCard أو تمثيل MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "رقم التواصل"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "يحرر..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "أدخل اسمًا جديدًا لهذه جهة الاتصال"
+    }
+  ]
+}

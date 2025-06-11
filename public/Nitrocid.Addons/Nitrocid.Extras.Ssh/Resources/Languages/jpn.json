@@ -1,0 +1,118 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "SSHサーバーに接続します。"
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0}のパスワードを入力してください："
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSHが切断されました。"
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "SSHサーバーに接続しようとしてエラーが発生しました：{0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "指定されたオプション{0}は無効です。"
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "答えは数値でなければなりません。"
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "いずれかのキーを押して戻ります。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "コマンドを実行するために SSH サーバーに接続します。"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "どのように認証しますか?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "秘密鍵ファイル"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "パスワード"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "キー {0} のパスフレーズを入力してください:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "キー ファイル {0} は存在しません。"
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "秘密鍵の追加中にエラーが発生しました:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "SSH コマンドの実行中にエラーが発生しました"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH シェルのエラー"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "ログインプロンプトをどのようにするかを記述します。デフォルトのスタイルを使用するには、空白のままにします。プレースホルダーが解析されます。"
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0} の秘密キーの場所を入力します。「q」を入力してキーの追加を終了します。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "このセクションでは、SSH の動作を設定できます。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH のユーザー名プロンプト スタイル"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "SSHスピードダイヤルに新しい接続を追加する"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "有効にすると、SSH スピードダイヤルに新しい接続が追加されます。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH は接続されていますが、クライアントがありません。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "接続するSSHサーバー"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "認証に使用するユーザー名"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "リモートで実行するコマンド"
+    }
+  ]
+}

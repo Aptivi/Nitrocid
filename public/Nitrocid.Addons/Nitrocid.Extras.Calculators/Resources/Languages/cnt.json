@@ -1,0 +1,73 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "jìsuàn biǎodá shì de jìsuàn qì."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Jìsuàn cuòwù."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "xiǎn shì yǒu guān yóu zhǐ dìng shí shù hé xū shù zhǐ dìng de xū shù gōng shì de xìn xī"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "zhēn shí hào mǎ wú xiào 。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "xū shù wú xiào 。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "gōng shì ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "bàn jìng ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "shí shù dào yǐ hú dù biǎo shì de bàn jìng ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "xū shù dào yǐ hú dù wéi dān wèi de bàn jìng ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "yǐ hú dù biǎo shì de jiǎo dù ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "zhǐ shù ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "sān jiǎo xíng ："
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "shùxué biǎodá shì"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "shíshù"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "xūshù"
+    }
+  ]
+}

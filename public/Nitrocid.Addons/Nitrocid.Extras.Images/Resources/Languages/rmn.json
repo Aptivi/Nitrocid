@@ -1,0 +1,27 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Previzualizează o imagine"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Calea către imagine nu este furnizată."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Fișierul imagine nu există."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Calea către fișierul imagine"
+    }
+  ]
+}

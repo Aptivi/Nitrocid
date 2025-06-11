@@ -1,0 +1,121 @@
+Vedi se riesci a risolvere le equazioni matematiche in tempo
+Risolto perfettamente!
+Risolto in modo errato
+Attiva i veri colori
+Ritardo in millisecondi
+Quanti millisecondi attendere prima di effettuare la successiva scrittura?
+Vedi se riesci a premere un tasto in tempo
+Carattere non premuto in tempo.
+Hai premuto il carattere giusto!
+Hai premuto il carattere sbagliato.
+Premere ESC per uscire.
+Livello minimo di colore rosso
+Livello minimo di colore verde
+Livello minimo di colore blu
+Livello di colore minimo
+Livello massimo di colore rosso
+Livello massimo di colore verde
+Livello massimo di colore blu
+Massimo livello di colore
+Livello minimo di colore rosso. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello minimo di colore verde. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello minimo di colore blu. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello di colore minimo. Il valore minimo accettato è 0 e il valore massimo accettato è 255 per 255 colori o 16 per 16 colori.
+Livello massimo di colore rosso. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello massimo di colore verde. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Livello massimo di colore blu. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
+Massimo livello di colore. Il valore minimo accettato è 0 e il valore massimo accettato è 255 per 255 colori o 16 per 16 colori.
+Numero minimo del risolutore
+Numero massimo del risolutore
+Risolutore mostra input
+Se mostrare ciò che è scritto nel prompt di input.
+Qual è il numero minimo da scegliere?
+Qual è il numero massimo da scegliere?
+Attiva il supporto True Color.
+Difficoltà predefinita per SpeedPress
+Timeout pressione tasti per SpeedPress
+Quanti millisecondi devono attendere la pressione del tasto prima del timeout? (In difficoltà personalizzata)
+Ritardo di fase in millisecondi
+Quanti millisecondi devono aspettare prima di disegnare la fase successiva?
+Inizia il gioco a difficoltà facile
+Inizia il gioco a difficoltà media
+Avvia il gioco in difficoltà difficile
+Inizia il gioco in difficoltà molto difficile
+Avvia il gioco a difficoltà personalizzata. Si noti che il timeout personalizzato in millisecondi deve essere scritto come argomento.
+Posizione del testo di avanzamento
+Seleziona la posizione del testo di avanzamento preferita.
+Puoi solo scrivere i numeri.
+Premere "q" per uscire.
+Il gioco del serpente!
+Sei un'astronave e le meteore stanno arrivando per distruggerti. Puoi salvarlo?
+Gioco finito
+Errore inaspettato
+Usa PowerLine per il rendering dell'astronave
+Velocità di gioco della meteora
+Se utilizzare PowerLine per rendere l'astronave o utilizzare lo standard maggiore del carattere. Se si desidera utilizzare PowerLine con Meteor, è necessario installare un font appropriato con supporto PowerLine.
+Specifica la velocità di gioco in millisecondi.
+Sostieni il cavallo sbagliato?
+Avvia il gioco dell'Impiccato
+Una lettera sbagliata e sei impiccato!
+Metti alla prova le tue abilità di boia lanciando una lettera casuale.
+Sei un'astronave e le meteore stanno arrivando per distruggerti. Puoi schivarli?
+Ottiene una citazione casuale
+Roulette russa
+Due astronavi sono in lotta tra loro. Un colpo e l'astronave esploderà. Questo è un gioco locale per due giocatori.
+Il simulatore di giochi Wordle
+Gioca originariamente al gioco Wordle
+Commemora il 5° anniversario del rilascio del kernel
+Commemorazione del 5° anniversario del kernel
+Prima uscita in assoluto
+Questo kernel è stato rilasciato per la prima volta il 22 febbraio 2018 per creare un simulatore minimalista che simula effettivamente il funzionamento del nucleo del kernel.
+Ospitava solo una shell e alcuni comandi e funzionava solo con Windows grazie all'utilizzo dello strumento Strumentazione gestione Windows.
+Inoltre non aveva una propria documentazione.
+Perfezionamento del kernel
+Sono state rilasciate versioni del kernel, come la seconda versione principale per aggiungere colorazione e funzionalità di base e la quarta versione principale per aggiungere configurazione.
+La documentazione è iniziata con la sesta major release, e varie cose carine sono state lentamente aggiunte al kernel.
+Versione attuale
+Questa versione ora perfeziona il kernel al punto che non si comporta più come le vecchie versioni.
+Poiché sono state rilasciate nuove funzionalità rivoluzionarie, abbiamo deciso di chiamare questo kernel...
+Buon 5° anniversario!
+Cavallo
+[INVIO] Inizia la gara | [ESC] Esci | [SU/GIÙ] Sposta la selezione
+Il tuo cavallo ha vinto la corsa!
+Il tuo cavallo ha perso la corsa!
+Sei impiccato!
+Hai vinto!
+Qual è la tua scommessa?
+Hai indovinato bene!
+Hai capito male.
+Ma sei sfortunato. Perdente.
+Sei fortunato! Vincitore!
+È un pareggio.
+Il giocatore {0} vince!
+Personaggio attuale:
+Hai indovinato la parola giusta! Hai vinto!
+Impostazioni del colore
+Un gioco di serpenti.
+Ti mostra belle citazioni famose.
+Seleziona la difficoltà che preferisci, dove 0 è facile, 1 è medio, 2 è difficile, 3 è molto difficile e 4 è personalizzato.
+Usa PowerLine per eseguire il rendering dell'astronave in ShipDuet
+Se utilizzare PowerLine per eseguire il rendering dell'astronave o utilizzare il carattere standard maggiore di. Se desideri utilizzare PowerLine con ShipDuet, devi installare un carattere appropriato con il supporto PowerLine.
+Velocità di gioco in ShipDuet
+Utilizza l'elenco di parole comuni.
+Utilizza l'elenco completo delle parole.
+Il gioco del ping-pong!
+Punto
+Impossibile ottenere le voci delle impostazioni.
+Corse di cavalli
+Boia
+Schivata meteora
+Sparatutto di meteore
+Pong
+Duetto di navi
+Serpente
+Parola chiave
+Wordle (originale)
+Citazione sconosciuta.
+Autore sconosciuto.
+Questo ti permette di configurare i colori
+Questa sezione consente di configurare Solver.
+Questa sezione consente di configurare SpeedPress.
+Questa sezione consente di configurare Meteor e ShipDuet.

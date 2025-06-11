@@ -1,0 +1,43 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Zeigt Ihnen eine Vollbildübersicht über eine ausgewählte Dockansicht, um diese als Infopanel nutzen zu können"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Es gibt keinen Dock-Bildschirm mit diesem Namen."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Es gibt kein Bildschirmdock mit diesem Namen."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Es gibt kein Bildschirmdock."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Das Bildschirmdock ist abgestürzt"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Dockname"
+    }
+  ]
+}

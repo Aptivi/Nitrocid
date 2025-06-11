@@ -1,0 +1,47 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Gníomh neamhbhailí."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Ainm an taisc"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Bainisteoir tasc le déanamh"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Theip ar thasc a chur leis nó a bhaint."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Tabhair ainm do do thasc."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Theip ar thasc a mharcáil."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Ní féidir liosta tascanna a fháil"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Cibé ar cheart é a shuimiú, a bhaint, a mharcáil mar a rinneadh, nó an dímharcáil mar a rinneadh ar thasc"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Cibé ar cheart na tascanna go léir a liostáil, a shábháil nó a luchtú"
+    }
+  ]
+}

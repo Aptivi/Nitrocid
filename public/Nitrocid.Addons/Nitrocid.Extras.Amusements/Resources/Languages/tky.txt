@@ -1,0 +1,121 @@
+Matematiksel denklemleri zamanında çözüp çözemeyeceğini gör
+Mükemmel bir şekilde çözüldü!
+Yanlış çözüldü.
+Gerçek renkleri etkinleştir
+Milisaniye Cinsinden Gecikme
+Bir sonraki yazma işlemini yapmadan önce kaç milisaniye beklenmeli?
+Bir tuşa zamanında basabiliyor musun bakalım
+Karakter zamanında basılmadı.
+Doğru karaktere bastınız!
+Yanlış karaktere bastınız.
+Çıkmak için ESC tuşuna basın.
+Minimum kırmızı renk seviyesi
+Minimum yeşil renk seviyesi
+Minimum mavi renk seviyesi
+Minimum renk seviyesi
+Maksimum kırmızı renk seviyesi
+Maksimum yeşil renk seviyesi
+Maksimum mavi renk seviyesi
+Maksimum renk seviyesi
+Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255'tir.
+Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.
+Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.
+Minimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.
+Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.
+Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.
+Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.
+Maksimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.
+Çözücü minimum sayısı
+Çözücü maksimum sayısı
+Çözücü girişi göster
+Giriş isteminde yazılanların gösterilip gösterilmeyeceği.
+Seçilebilecek en az sayı kaçtır?
+En fazla kaç tane seçilebilir?
+Gerçek renk desteğini aktifleştirir.
+SpeedPress için varsayılan zorluk
+SpeedPress için tuşa basma zaman aşımı
+Zaman aşımından önce tuşa basılması için kaç milisaniye beklenmeli? (Özel zorlukta)
+Sahne gecikmesi milisaniye cinsinden
+Bir sonraki aşamayı çizmeden önce kaç milisaniye beklenmeli?
+Oyunu kolay zorlukta başlatır
+Oyunu orta zorlukta başlatır
+Oyunu zor zorluk seviyesinde başlatır
+Oyunu çok zor zorlukta başlatır
+Oyunu özel zorlukta başlatır. Lütfen milisaniye cinsinden özel zaman aşımının argüman olarak yazılması gerektiğini unutmayın.
+İlerleme metin konumu
+Tercih ettiğiniz ilerleme metni konumunu seçin.
+Sadece rakamları yazabilirsiniz.
+Çıkmak için "q" tuşuna basın.
+Yılan oyunu!
+Sen bir uzay gemisisin ve meteorlar seni yok etmeye geliyor. Onu kurtarabilir misin?
+Oyun bitti
+Beklenmeyen hata
+Uzay gemisini oluşturmak için PowerLine'ı kullanın
+Meteor oyun hızı
+Uzay gemisini işlemek için PowerLine mı yoksa standart büyük karakteri mi kullanılacağı. PowerLine'ı Meteor ile kullanmak istiyorsanız, PowerLine desteği olan uygun bir yazı tipi yüklemeniz gerekir.
+Oyun hızını milisaniye cinsinden belirtir.
+Yanlış ata mı oynuyorsun?
+Adam Asmaca oyununu başlatır
+Bir yanlış harf ve asılırsın!
+Rastgele bir harf atarak Adam Asmaca yeteneklerinizi test edin.
+Sen bir uzay gemisisin ve meteorlar seni yok etmeye geliyor. Onlardan kaçabilir misin?
+Rastgele bir alıntı alır
+Rus Ruleti
+İki uzay gemisi birbirleriyle savaşıyor. Bir atış ve uzay gemisi patlayacak. Bu yerel iki oyunculu bir oyundur.
+Wordle oyun simülatörü
+Wordle oyununu orijinal olarak oyna
+Çekirdek sürümünün 5. yıl dönümünü anıyor
+Çekirdeğin 5. yıl dönümü anılıyor
+İlk yayın
+Bu çekirdek ilk olarak 22 Şubat 2018'de çekirdeğin nasıl çalıştığını gerçekten simüle eden minimalist bir simülatör yapmak için yayınlandı.
+Daha önce sadece bir kabuk ve birkaç komut barındırıyordu ve Windows Yönetim Araçları aracını kullanması nedeniyle sadece Windows ile çalışıyordu.
+Ayrıca kendine ait bir dokümantasyonu da yoktu.
+Çekirdek Rafine Etme
+Çekirdek sürümleri yayınlandı; renklendirme ve temel özellikler ekleyen ikinci büyük sürüm ve yapılandırma ekleyen dördüncü büyük sürüm.
+Altıncı büyük sürümde dokümantasyon başladı ve çekirdeğe yavaş yavaş çeşitli güzel şeyler eklendi.
+Güncel versiyon
+Bu sürüm artık çekirdeği eski sürümler gibi davranmayacak noktaya kadar geliştiriyor.
+Yeni çığır açan özellikler yayınlandığı için bu çekirdeğe... adını vermeye karar verdik.
+5. yıl dönümümüz kutlu olsun!
+Atış
+[ENTER] Yarışı başlat | [ESC] Çıkış | [UP/DOWN] Seçimi taşı
+Atınız yarışı kazandı!
+Atınız yarışı kaybetti!
+Asıldın!
+Kazandın!
+Bahsiniz ne?
+Doğru bildiniz!
+Yanlış anladın.
+Ama şanssızsın. Kaybeden.
+Şanslısın! Kazandın!
+Berabere.
+{0} numaralı oyuncu kazanır!
+Şu anki karakter:
+Doğru kelimeyi bildiniz! Kazandınız!
+Renk ayarları
+Yılan oyunu.
+Size güzel ünlü alıntılar gösterir.
+Tercih ettiğiniz zorluk seviyesini seçin; 0 kolay, 1 orta, 2 zor, 3 çok zor ve 4 özeldir.
+ShipDuet'te uzay gemisini oluşturmak için PowerLine'ı kullanın
+Uzay gemisini işlemek için PowerLine mı yoksa standart büyük karakteri mi kullanılacağı. PowerLine'ı ShipDuet ile kullanmak istiyorsanız, PowerLine desteği olan uygun bir yazı tipi yüklemeniz gerekir.
+ShipDuet'te oyun hızı
+Yaygın kelime listesini kullanır.
+Kelime listesinin tamamını kullanır.
+Masa tenisi oyunu!
+Gol
+Ayar girişleri alınamadı.
+At yarışı
+Cellat
+Meteordan Kurtulma
+Meteor Atıcısı
+Pongo
+Gemi düeti
+Yılan
+Kelime
+Wordle (orijinal)
+Bilinmeyen alıntı.
+Yazarı bilinmiyor.
+Bu, renkleri yapılandırmanıza olanak tanır
+Bu bölüm Solver'ı yapılandırmanıza olanak tanır.
+Bu bölüm SpeedPress'i yapılandırmanızı sağlar.
+Bu bölüm Meteor ve ShipDuet'i yapılandırmanızı sağlar.

@@ -1,0 +1,314 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "is aidon ko aarambh karane ke lie aavashyak deta praapt nahin kar sakata."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "bainganee sadbhaav"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "yah agrabhoomi mein android shubhankar rang hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "hamaaree braanding sadbhaav"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "ek lokapriy vim theem, aayu ka gahara sanskaran"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "ek lokapriy vim theem, aayu ka halka sanskaran"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "ek lokapriy vim theem, aayu ka miraaj sanskaran"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "yah nae skool varsh ka pahala din hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "sambhavatah sabase halka tarminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "yah kaala gulaab hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "breez ke lie rang yojana, ek kdai plaajma 5 theem"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "idais ke lie lokapriy rang yojana, jaise intaillij"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "yah andhere paksh par vaapas jaane ka samay hai."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "debiyan ke lie rang yojanaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "karnel ke lie jvalant difolt theem"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "aapake karnel mein prshthabhoomi uchchaaran!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "har jagah aur adhik uchchaaran!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "yadi aap aidm ke prashansak hain to upayog karen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "aag ke rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "gahare neele rang kee prshthabhoomi par aapaka mahaakaavy sunahara mahal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "angoor aur keevee ek saath mishrit"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "angoor ke lie rang yojana"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "ujjval aur plaastard hara, neela aur bainganee rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "apane paryaavaran ko hara-bhara banaen, apane karnel ko hara-bhara banaen. prthvee ko hara-bhara banaen!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "hamane hare aur laal rang jode hain."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "hara aur gulaabee ek saath mila hua"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "gyaat tarminal rang yojanaon mein se ek"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "gre par hara paath"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "aapake kansol mein paaramparik bhaarateey rang."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "apane tarminal ko neemboo ke esid se bharapoor banaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "halke lakadee ke takhte"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "maanak linaks tarminal rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "gre tarminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "apane tarminal par kuchh materiyal dizain paath"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "naarangee aur bhoore rang ke sheds"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "melenj theem isee naam kee vim theem se prerit hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "apane tarminal ko mint se bharapoor banaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "biyond da baundree se miraee kuriyaama ka rang pailet."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "isee naam kee vim theem se prerit theem"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "kya aapako niyon neela aur gulaabee pasand hai?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "yah theem aapake lie tatasth honee chaahie."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "yah raat kee shuruaat mein aapaka raat ka aakaash hai!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "aktoobar jald hee aa raha hai, isalie taiyaar ho jaie!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "naarangee ka samudr"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "phosphorik tarminal jo sab kuchh naarangee mein badal deta hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "aapako laal hava deta hai."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "ek khoonee laal kansol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "sakura ke ped aapako kuchh cheenee hava denge"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "sabhee chaitee rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "praudyogikee premiyon ke lie ek theem"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "traans sangeet ke prashansak? yah aapake lie theem hai!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "lokapriy linaks opareting sistam, ubantoo se rang yojanaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "aapako ek behatareen vais sitee vaib detee hain"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "yah aapakee vais sitee kee subah hai."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "vijual stoodiyo ke lie rang yojana, jo sabase shaktishaalee idai mein se ek hai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "vindoj 11 ke lie rang yojana, vindoj ka haaliya sanskaran"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "is theem ke saath puraanee yaaden vaapas laen!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "aapake tarminal mein lakadee ke takhte hain"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "vibhinn phalon ke cheenee paitarn se prerit"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "alma linaks se rang yojanaen, linaks opareting sistam ka ek spinof, red hait"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "linaks opareting sistam, aark linaks se rang yojanaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "endevaroes se rang yojanaen, linaks opareting sistam ka ek spinof, aark linaks"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "phedora se rang yojanaen, linaks opareting sistam ka ek spinof, red hait"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "linaks opareting sistam, jentoo se rang yojanaen"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "rangeen mandala banaane vaale chheneedaar paitarn rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "kubantoo se rang yojanaen, lokapriy linaks opareting sistam ka ek spinof, ubantoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "linaks mint se rang yojanaen, lokapriy linaks opareting sistam ka ek anaupachaarik spinof, ubantoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "lubantoo se rang yojanaen, lokapriy linaks opareting sistam ka ek spinof, ubantoo"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "manjaaro se rang yojanaen, linaks opareting sistam ka ek spinof, aark linaks"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "linaks opareting sistam se rang yojanaen, opainsusai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "linaks opareting sistam se rang yojanaen, raid hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "dhyaan dene yogy tekst ke lie gatisheel uchchaaran rangon ke saath laal sheds"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "rokee linaks se rang yojanaen, linaks opareting sistam ka ek spinof, raid hat"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "linaks opareting sistam se rang yojanaen, slachkwarai"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "xubuntu se rang yojanaen, ek lokapriy linaks opareting sistam ka ek spinof, ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "zorin oes se rang yojanaen, ek lokapriy linaks opareting sistam ka ek anaupachaarik spinof, ubuntu"
+    }
+  ]
+}

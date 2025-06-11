@@ -1,0 +1,79 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Rechner zur Berechnung von Ausdrücken."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Fehler bei der Berechnung."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Zeigt Informationen über die imaginäre Zahlenformel an, die durch eine bestimmte reelle und imaginäre Zahl angegeben wird"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Die tatsächliche Zahl ist ungültig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Die imaginäre Zahl ist ungültig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formel:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Radius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real zu Radius im Bogenmaß:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginär zu Radius im Bogenmaß:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Winkel im Bogenmaß:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponentiell:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Dreieckig:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Mathematischer Ausdruck"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Reelle Zahl"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Imaginäre Zahl"
+    }
+  ]
+}

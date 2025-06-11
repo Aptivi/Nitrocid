@@ -1,0 +1,52 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "īḥṣl ʿli aṯr ʿksī lǧmīʿ al-mwāḍīʿ"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "nʿtqd ank tstẖdm nẓām al-tšġīl Windows 8 aū aql. lā ītm aʿtmād hḏh al-ʿmlīẗ."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "mʿlūmāt ttbʿ mkds muʾšr al-trābṭ l. {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "līs mūḍūʿ Nitrocid KS"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "मिलीसेकंड में देरी"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "अगला लेखन करने से पहले कितने मिलीसेकंड तक प्रतीक्षा करनी होगी?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "गीत फ़ाइल से सभी गीत पंक्तियाँ प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "एक गीत फ़ाइल चलाता है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "एक ध्वनि बजाता है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "आपके ऑनलाइन रेडियो स्टेशन के बारे में जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "एलआरसी फ़ाइल का पथ निर्दिष्ट करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "फ़ाइल नहीं मिलने के कारण ध्वनि नहीं बजाई जा सकती."
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "संगीत फ़ाइल सफलतापूर्वक खोली गई."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "संगीत फ़ाइल नहीं खुल सकती."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "समय समाप्त होने के कारण ध्वनि नहीं बजाई जा सकती."
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "अज्ञात कलाकार"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "अज्ञात शैली"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "नाम"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "कलाकार"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "शैली"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "अवधि"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "खेलना बंद करने के लिए 'q' दबाएँ।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "ध्वनि नहीं बजा सकते."
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "शीर्षक"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "आपके ऑनलाइन रेडियो का पोर्ट नंबर अमान्य है।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "पूरा यूआरएल"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "वर्तमान श्रोता"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "चरम श्रोता"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "स्ट्रीम"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "सक्रिय धाराएँ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "आईडी के लिए स्ट्रीम जानकारी"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "पथ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "इस समय खेल रहा है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "अपटाइम"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "एलआरसी प्रारूप में अपनी गीत फ़ाइलों वाली निर्देशिका का पथ निर्दिष्ट करना सुनिश्चित करें। आप गीत फ़ाइलों वाले अपने संगीत लाइब्रेरी फ़ोल्डर के लिए एक कस्टम पथ भी निर्दिष्ट कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "यह गीत फ़ाइल मौजूद नहीं है."
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "इस स्क्रीनसेवर के लिए सेटिंग्स यहां उपलब्ध हैं।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि बैसबूम ऐडऑन कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "गीत पथ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": ".lrc फ़ाइलों के समूह वाले फ़ोल्डर का पथ सेट करता है। किसी भी मौजूदा निर्देशिका के लिए एक पूर्ण पथ लिखें।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "स्टेशन का प्रकार"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "इंटरनेट रेडियो (FM) के लिए जानकारी"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "इंटरनेट रेडियो की जानकारी नहीं मिल पा रही है।"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "गीत फ़ाइल का पथ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "MP3 फ़ाइल का पथ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "होस्ट नाम जो MPEG रेडियो स्टेशन को होस्ट करता है"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "MPEG रेडियो स्टेशन पर पोर्ट करें"
+    }
+  ]
+}

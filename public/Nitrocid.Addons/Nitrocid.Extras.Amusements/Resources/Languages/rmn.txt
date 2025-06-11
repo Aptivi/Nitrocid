@@ -1,0 +1,121 @@
+Vezi dacă poți rezolva ecuațiile matematice la timp
+Rezolvat perfect!
+Rezolvat incorect.
+Activați culorile adevărate
+Întârziere în milisecunde
+Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?
+Vezi dacă poți apăsa o tastă la timp
+Caracter nu a fost apăsat la timp.
+Ați apăsat pe caracterul potrivit!
+Ați apăsat pe caracterul greșit.
+Apăsați ESC pentru a ieși.
+Nivel minim de culoare roșie
+Nivel minim de culoare verde
+Nivel minim de culoare albastră
+Nivel minim de culoare
+Nivel maxim de culoare roșie
+Nivel maxim de culoare verde
+Nivel maxim de culoare albastră
+Nivel maxim de culoare
+Nivel minim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Nivel maxim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Numărul minim de rezolvare
+Numărul maxim de rezolvare
+Rezolvatorul arată intrarea
+Dacă să arate ce este scris în promptul de intrare.
+Care este numărul minim de ales?
+Care este numărul maxim de ales?
+Activează suportul adevărat al culorilor.
+Dificultate implicită pentru SpeedPress
+Timeout pentru apăsarea tastelor pentru SpeedPress
+Câte milisecunde trebuie să așteptați apăsarea tastei înainte de expirare? (În dificultate personalizată)
+Întârziere de etapă în milisecunde
+Câte milisecunde trebuie să așteptați înainte de a desena următoarea etapă?
+Începe jocul în dificultate ușoară
+Începe jocul la dificultate medie
+Începe jocul în dificultate grea
+Începe jocul în dificultate foarte grea
+Începe jocul în dificultate personalizată. Vă rugăm să rețineți că timeout-ul personalizat în milisecunde ar trebui să fie scris ca argument.
+Locația textului de progres
+Selectați locația preferată a textului de progres.
+Poți scrie doar numerele.
+Apăsați „q” pentru a ieși.
+Jocul șarpelui!
+Ești o navă spațială și meteorii vin să te distrugă. Îl poți salva?
+Joc încheiat
+Eroare neașteptată
+Utilizați PowerLine pentru redarea navei spațiale
+Viteza jocului Meteor
+Dacă să folosiți PowerLine pentru a reda nava spațială sau să folosiți standardul mai mare decât caracterul. Dacă doriți să utilizați PowerLine cu Meteor, trebuie să instalați un font adecvat cu suport PowerLine.
+Specifică viteza jocului în milisecunde.
+Dai înapoi calul greșit?
+Începe jocul Spânzuratului
+O scrisoare greșită și ești spânzurat!
+Testează-ți abilitățile de spânzurat aruncând o scrisoare aleatorie.
+Ești o navă spațială și meteorii vin să te distrugă. Le poți eschiva?
+Obține o cotație aleatorie
+Ruletă rusească
+Două nave spațiale se luptă între ele. O singură lovitură și nava spațială va exploda. Acesta este un joc local de doi jucători.
+Simulatorul de joc Wordle
+Joacă inițial jocul Wordle
+Comemora 5 ani de la lansarea kernelului
+Comemorarea a 5 ani de la kernel
+Prima lansare
+Acest nucleu a fost lansat pentru prima dată pe 22 februarie 2018 pentru a realiza un simulator minimalist care simulează de fapt modul în care funcționează nucleul nucleului.
+Obișnuia să găzduiască un singur shell și câteva comenzi și a funcționat doar cu Windows datorită utilizării instrumentului Windows Management Instrumentation.
+De asemenea, nu avea documentație proprie.
+Rafinarea nucleului
+Au fost lansate versiuni ale nucleului, cum ar fi a doua versiune majoră pentru a adăuga colorare și caracteristici de bază și a patra versiune majoră pentru a adăuga configurație.
+Documentația a început cu cea de-a șasea lansare majoră și diverse lucruri frumoase au fost adăugate încet la nucleu.
+Versiune curentă
+Această versiune rafinează acum nucleul până la punctul în care nu se mai comportă ca versiunile vechi.
+Deoarece noile caracteristici inovatoare au fost lansate, am decis să denumim acest nucleu...
+La mulți ani de 5 ani!
+Cal
+[ENTER] Începe cursa | [ESC] Ieșire | [SUS/JOS] Mută selecția
+Calul tău a câștigat cursa!
+Calul tău a pierdut cursa!
+Ești spânzurat!
+Ai castigat!
+Care este pariul tău?
+Ai ghicit bine!
+Ai înțeles greșit.
+Dar, ai ghinion. Ratat.
+Esti norocos! Câştigător!
+Este o remiză.
+Jucătorul {0} câștigă!
+Personajul actual:
+Ai ghicit cuvântul potrivit! Ai castigat!
+Setări de culoare
+Un joc cu șarpe.
+Vă arată citate faimoase frumoase.
+Selectați dificultatea preferată, unde 0 este ușor, 1 este mediu, 2 este greu, 3 este foarte greu și 4 este personalizat.
+Utilizați PowerLine pentru redarea navei spațiale în ShipDuet
+Dacă să folosiți PowerLine pentru a reda nava spațială sau să folosiți standardul mai mare decât caracterul. Dacă doriți să utilizați PowerLine cu ShipDuet, trebuie să instalați un font adecvat cu suport PowerLine.
+Viteza jocului în ShipDuet
+Folosește lista de cuvinte obișnuită.
+Folosește lista completă de cuvinte.
+Jocul de ping-pong!
+Scor
+Nu s-au putut obține intrările de setări.
+Curse de cai
+Călău
+Meteor Dodge
+Meteor Shooter
+Pong
+Duetul de nave
+Snaker
+Wordle
+Wordle (original)
+Citat necunoscut.
+Autor necunoscut.
+Acest lucru vă permite să configurați culorile
+Această secțiune vă permite să configurați Solver.
+Această secțiune vă permite să configurați SpeedPress.
+Această secțiune vă permite să configurați Meteor și ShipDuet.

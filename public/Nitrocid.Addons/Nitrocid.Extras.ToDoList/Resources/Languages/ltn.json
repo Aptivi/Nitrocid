@@ -1,0 +1,46 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Irrita actio."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "negotium nomen"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Ad negotium procurator,"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Deficio addere vel removere negotium."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Placere providere nomen tuum opus."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Negotium notare neglexit."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Non potest a album of negotium"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Sive addere, removere, signare factum, seu signare sicut factum est"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Utrum enumerare, nisi vel omnia onera onerare"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informazioni sulla licenza"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Il dizionario inglese"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informazioni sulla parola per"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "L'API è concessa in licenza"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Parola:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Significati delle parole per"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Parte del discorso:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definizione:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Esempio nella frase:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Fonti utilizzate per definire"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinonimi:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Contrari:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Parola per definire"
+    }
+  ]
+}

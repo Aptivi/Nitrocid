@@ -1,0 +1,119 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "SSH seobeoe yeongyeolhabnida."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0}ui bimilbeonholeul iblyeoghasibsio."
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH yeongyeol-i kkeunh-eojyeossseubnida."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "SSH seobeoe yeongyeolhaneun jung olyuga balsaenghaessseubnida : {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "jijeongdoen obsyeon {0}i (ga) jalmosdoeeossseubnida."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "dab-eun susja yeoyahabnida."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "dol-agalyeomyeon amu kina nuleusibsio."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "SSH seobeoe yeongyeolhayeo myeonglyeong-eul silhaenghabnida."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "eotteohge injeung hasigessseubnikka?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "gaein ki pail"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "amho"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "{0} kiui amho iblyeog :"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "{0} ki pail-i eobs-seubnida."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "gaein ki chuga sido olyu :"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "SSH myeonglyeong silhaeng olyu"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH syel olyu"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "wonhaneun logeu-in peulompeuteuleul jagseonghasibsio. gibon seutail-eul sayonghalyeomyeon biwo dubnida. jali pyosijaga gumun bunseogdoebnida."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0}ui gaein ki wichireul ipryeokhaseyo. ki chugareul wanryoharyeomyeon \"q\"reul jakseonghaseyo."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "i segsyeon-eseoneun SSH jagdong bangsig-eul guseonghal su issseubnida."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSHui sayongja ileum peulompeuteu seutail"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "SSH danchug daieol-e sae yeongyeol chuga"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "hwalseonghwadoen gyeong-u SSH danchug daieol-e sae yeongyeol-eul chugahabnida."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSHga yeongyeoldoeeossjiman keullaieonteuga eobs-seubnida."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "yeongyeolhal SSH seobeo"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "injeunghal sayongja ileum"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "wongyeog-eulo silhaenghal myeonglyeong"
+    }
+  ]
+}

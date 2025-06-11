@@ -1,0 +1,33 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Mostra uma visão geral em tela cheia sobre uma visualização de dock selecionada para poder usá-la como um painel de informações"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Não há nenhuma tela de encaixe com esse nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Não há nenhum dock de tela com esse nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Não há dock de tela."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "O dock de tela travou"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nome da doca"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Visualizza l'anteprima di un'immagine"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Il percorso dell'immagine non è fornito."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Il file immagine non esiste."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Percorso al file immagine"
+    }
+  ]
+}

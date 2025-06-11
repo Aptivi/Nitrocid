@@ -1,0 +1,63 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Lisans bilgisi"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "İngilizce Sözlük"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Kelime bilgisi için"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API lisansı altında"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Kelime:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Kelime anlamları"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Kelimenin Bir Parçası:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Tanım:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Cümle içinde örnek:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Tanımlamak için kullanılan kaynaklar"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Eş anlamlılar:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Zıt anlamlılar:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Tanımlanacak kelime"
+    }
+  ]
+}

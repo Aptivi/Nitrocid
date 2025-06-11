@@ -1,0 +1,348 @@
+{
+  "lang": "arb",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "īdīr ǧhāt al-ātṣāl al-ẖāṣẗ bk"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "lā īmkn ftḥ al-mlf '{0}' lʾanh lm ītm al-ʿṯūr ʿlīh."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "tm astīrād ǧhāt al-ātṣāl bnǧāḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "lā īmkn ftḥ al-mlf '{0}' lʾan mlf al-bṭāqẗ ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "mlf al-ātṣāl ġīr mūǧūd."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "tm al-ʿṯūr ʿli ǧhāt al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "mlf al-ātṣāl ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "lā īmkn an īkūn bnāʾ ǧmlẗ MeCard fārġًā."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "imā an mlf ǧhāt al-ātṣāl al-mqdm lā īḥtwy ʿli mʿlūmāt ḥūl aī ǧhẗ atṣāl aū anh ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "fšl fī tḥlīl ǧhāt al-ātṣāl. rāǧʿ tfāṣīl al-ẖṭʾa lmzīd mn al-mʿlūmāt."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "fhrs ǧhẗ al-ātṣāl ẖārǧ al-nṭāq. al-ḥd al-ʾaqṣi llfhrs hū {0} bīnmā al-fhrs al-mqdm hū {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "lā tūǧd atṣālāt llḥṣūl ʿlīhā."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "lā tūǧd ǧhāt atṣāl llbḥṯ ʿnhā."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "al-tʿbīr al-ʿādī ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "lā īūǧd atṣāl. iḏā knt trġb fī astīrād ǧhāt al-ātṣāl, fīrǧi astẖdām ẖīārāt al-āstīrād bāstẖdām ḍġṭāt al-mfātīḥ al-mḥddẗ fī al-ǧzʾ al-sflī mn al-šāšẗ."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "lā īmkn astīrād bʿḍ ǧhāt al-ātṣāl."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "adẖl al-msār ili mlf VCF al-ḏī īḥtwy ʿli ǧhẗ al-ātṣāl al-ẖāṣẗ bk. ītm aīḍḍā dʿm mlf Contacts2.db al-ẖāṣ bnẓām Android."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "al-mlf ġīr mūǧūd. tʾakd mn ktābẗ al-msār al-ṣḥīḥ ili mlf VCF aū ili mlf Contacts2.db."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "adẖl tmṯīl MeCard ṣālḥًā lǧhẗ al-ātṣāl al-ẖāṣẗ bk."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "bnāʾ ǧmlẗ ǧhẗ al-ātṣāl MeCard ġīr ṣālḥ."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "qd lā īkūn bnāʾ ǧmlẗ Contact MeCard fārġًā"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "adẖl al-tʿbīr al-ʿādī llbḥṯ fī ǧhāt al-ātṣāl."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "lā tūǧd ǧhāt atṣāl tḥtwy ʿli al-tʿbīr al-mṭlūb."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "asm ǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "lā īūǧd asm ǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "ʿnwān al-itṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "brīd al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "lā īūǧd brīd atṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "atṣl bālmnẓmẗ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "lā tūǧd mnẓmẗ atṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "atṣāl hātfī"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "lā īūǧd hātf atṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "ʿnwān URL lǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "lā īūǧd ʿnwān URL lǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "al-ātṣāl al-ǧġrāfī"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "lā tūǧd mnṭqẗ atṣāl ǧġrāfīẗ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "atṣl b.IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "lā īūǧd atṣāl IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "lqb ǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "lā īūǧd lqb ǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "dūr al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "lā īūǧd dūr al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "ʿnwān al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "lā īūǧd ʿnwān ǧhẗ al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "mlāḥẓāt al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "lā tūǧd mlāḥẓāt al-ātṣāl"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "yasrud jihat alaitisal alkhasat bik"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "yaqum bitahmil jihat alaitisal alkhasat bik"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "aistirad jihat alaitisal alkhasat bik"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "yueamal al'iidkhal almatlub kasilsilat MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "yahsul ealaa maelumat alaitisal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "la aitisalati."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "raqm alaitisal ghayr salih."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "raqm alaitisal kharij alnitaqi."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "alaism al'awal"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "aism aleayila"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "aitasil bi jiu"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "mulahazat alaitisal"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "la yumkin 'iidraj baed jihat aliaitisali."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "hadhf"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "maelumat"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "jihat alaitisal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "hadhf alkuli"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "aistirad"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "aistirad min"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "bahath"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "bahth altaali"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "bahath rujue"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "maelumat 'awalia"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "astirad min MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "yutih lak hadha alqism takwin kayfiat eamal alwazifat al'iidafiat lijihat aliatisali."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "'iizhar suar almilafi alshakhsii"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "'iidha tama tamkinuhu, fa'iinah yaerid suar jihat alaitisali. mueatal aftradyan limane su' alaistikhdam wali'asbab tataealaq bial'ada'i."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "'iimaa masar 'iilaa milafi jihat atisal vCard 'aw tamthil MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "raqm jihat alaitisal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "tahrirun..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "'adkhul asman jdydan lihadhih jihat aliaitisal"
+    }
+  ]
+}

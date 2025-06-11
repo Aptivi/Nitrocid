@@ -1,0 +1,26 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "ek chhavi ka poorvaavalokan karata hai"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "chhavi ka path pradaan nahin kiya gaya hai."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "chhavi fail maujood nahin hai."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "chhavi fail ka path"
+    }
+  ]
+}

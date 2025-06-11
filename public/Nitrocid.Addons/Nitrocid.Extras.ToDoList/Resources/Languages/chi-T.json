@@ -1,0 +1,54 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "无效的操作。"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "任务名称"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "待办任务管理器"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "添加或删除任务失败。"
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "请提供您的任务的名称。"
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "无法标记任务。"
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "无法获取任务列表"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "是否添加、删除、标记为已完成或取消标记为已完成的任务"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "是否列出、保存或加载所有任务"
+    }
+  ]
+}

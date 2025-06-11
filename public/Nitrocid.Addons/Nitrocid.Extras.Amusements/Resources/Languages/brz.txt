@@ -1,0 +1,121 @@
+Veja se você consegue resolver equações matemáticas a tempo
+Resolvido perfeitamente!
+Resolvido incorretamente.
+Ativar cores verdadeiras
+Atraso em Milissegundos
+Quantos milissegundos esperar antes de fazer a próxima gravação?
+Veja se você consegue pressionar uma tecla a tempo
+Personagem não pressionado a tempo.
+Você pressionou o caractere certo!
+Você pressionou o caractere errado.
+Pressione ESC para sair.
+Nível mínimo de cor vermelha
+Nível mínimo de cor verde
+Nível mínimo de cor azul
+Nível mínimo de cor
+Nível máximo de cor vermelha
+Nível máximo de cor verde
+Nível máximo de cor azul
+Nível máximo de cor
+Nível mínimo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Nível máximo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Número mínimo do solucionador
+Número máximo do solucionador
+Solver mostra entrada
+Se deve mostrar o que está escrito no prompt de entrada.
+Qual é o número mínimo para escolher?
+Qual é o número máximo para escolher?
+Ativa o suporte a cores verdadeiras.
+Dificuldade padrão para SpeedPress
+Tempo limite de pressionamento de tecla para SpeedPress
+Quantos milissegundos esperar para pressionar a tecla antes do tempo limite? (Na dificuldade personalizada)
+Atraso de estágio em milissegundos
+Quantos milissegundos esperar antes de desenhar o próximo estágio?
+Inicia o jogo na dificuldade fácil
+Inicia o jogo em dificuldade média
+Inicia o jogo na dificuldade difícil
+Inicia o jogo em dificuldade muito difícil
+Inicia o jogo em dificuldade personalizada. Observe que o tempo limite personalizado em milissegundos deve ser escrito como argumento.
+Localização do texto de progresso
+Selecione o local de texto de progresso de sua preferência.
+Você só pode escrever os números.
+Pressione "q" para sair.
+O jogo da cobrinha!
+Você é uma nave espacial e os meteoros estão vindo para destruí-la. Você pode salvá-la?
+Game Over
+Erro inesperado
+Use PowerLine para renderizar nave espacial
+Velocidade do jogo Meteor
+Se deve usar PowerLine para renderizar a nave espacial ou usar o caractere maior que padrão. Se quiser usar PowerLine com Meteor, você precisa instalar uma fonte apropriada com suporte a PowerLine.
+Especifica a velocidade do jogo em milissegundos.
+Você aposta no cavalo errado?
+Inicia o jogo da forca
+Uma letra errada e você está ferrado!
+Teste suas habilidades no jogo da forca jogando uma letra aleatória.
+Você é uma nave espacial e os meteoros estão vindo para destruí-lo. Você consegue desviar deles?
+Obtém uma cotação aleatória
+Roleta Russa
+Duas naves espaciais estão em uma luta entre si. Um tiro e a nave espacial explodirá. Este é um jogo local para dois jogadores.
+O simulador de jogo Wordle
+Jogue o jogo Wordle originalmente
+Comemora o aniversário de 5 anos do lançamento do kernel
+Comemorando o 5º aniversário do kernel
+Primeiro lançamento
+Este kernel foi lançado pela primeira vez em 22 de fevereiro de 2018 para criar um simulador minimalista que realmente simula como o núcleo do kernel funciona.
+Ele costumava hospedar apenas um shell e alguns comandos, e só funcionava com o Windows devido ao uso da ferramenta Instrumentação de Gerenciamento do Windows.
+Também não tinha documentação própria.
+Refinamento do Kernel
+Versões do kernel foram lançadas, como a segunda versão principal para adicionar cores e recursos básicos, e a quarta versão principal para adicionar configuração.
+A documentação começou na sexta versão principal, e várias coisas interessantes foram adicionadas lentamente ao kernel.
+Versão atual
+Esta versão agora refina o kernel a ponto de ele não se comportar mais como as versões antigas.
+Como novos recursos inovadores foram lançados, decidimos nomear este kernel...
+Feliz aniversário de 5 anos!
+Cavalo
+[ENTER] Iniciar a corrida | [ESC] Sair | [UP/DOWN] Mover seleção
+Seu cavalo venceu a corrida!
+Seu cavalo perdeu a corrida!
+Você está ferrado!
+Você venceu!
+Qual é a sua aposta?
+Você adivinhou certo!
+Você entendeu errado.
+Mas você não tem sorte. Perdedor.
+Você tem sorte! Vencedor!
+É um empate.
+O jogador {0} vence!
+Personagem atual:
+Você adivinhou a palavra certa! Você venceu!
+Configurações de cor
+Um jogo de cobra.
+Mostra citações famosas e legais.
+Selecione sua dificuldade preferida, onde 0 é fácil, 1 é médio, 2 é difícil, 3 é muito difícil e 4 é personalizado.
+Use PowerLine para renderizar nave espacial no ShipDuet
+Se deve usar PowerLine para renderizar a nave espacial ou usar o caractere maior que padrão. Se você quiser usar PowerLine com ShipDuet, precisa instalar uma fonte apropriada com suporte a PowerLine.
+Velocidade do jogo no ShipDuet
+Usa a lista de palavras comuns.
+Usa a lista completa de palavras.
+O jogo de pingue-pongue!
+Pontuação
+Falha ao obter entradas de configurações.
+Corrida de cavalos
+Carrasco
+Desvio de meteoro
+Atirador de meteoros
+Pong
+Dueto de Navios
+Serpentário
+Palavra
+Wordle (original)
+Citação desconhecida.
+Autor desconhecido.
+Isso permite que você configure as cores
+Esta seção permite que você configure o Solver.
+Esta seção permite que você configure o SpeedPress.
+Esta seção permite que você configure o Meteor e o ShipDuet.

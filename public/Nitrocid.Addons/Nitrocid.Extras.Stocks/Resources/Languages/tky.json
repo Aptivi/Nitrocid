@@ -1,0 +1,95 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Saatlik hisse senedi bilgisi alır"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Kısa şirket sembolü"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "AlphaVantage API anahtarınızı girin"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Lütfen API anahtarınızı girin."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Gösterim API anahtarı kullanılamıyor."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "API anahtarınız 16 karakter uzunluğunda olmalıdır."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Hisse senedi verileri alınırken bir hata oluştu. Ek bilgiler burada bulunabilir"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Açılış hisse senedi fiyatı"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Yüksek hisse senedi fiyatı"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Düşük hisse senedi fiyatı"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Kapanış hisse senedi fiyatı"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Stok hacmi"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API Anahtarı gereklidir. Ayarlardan yapılandırın."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Hisse senedi verisi mevcut değil."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Bu bölüm stokları yapılandırmanıza olanak tanır."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API anahtarı"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage Hisse Senetleri API'si için anahtar"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Şirket kodu"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Hisse senedi şirketi"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Stok bilgisine ulaşılamıyor."
+    }
+  ]
+}

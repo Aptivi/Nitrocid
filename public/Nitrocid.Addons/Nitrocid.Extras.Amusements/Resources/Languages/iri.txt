@@ -1,0 +1,121 @@
+Féach an féidir leat cothromóidí matamaitice a réiteach in am
+Réitithe go foirfe!
+Réitíodh go mícheart.
+Gníomhachtaigh dathanna fíor
+Moill sna Milleasoicindí
+Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?
+Féach an féidir leat eochair a bhrú in am
+Carachtar nach bhfuil brúite in am.
+Tá an carachtar ceart brúite agat!
+Tá an carachtar mícheart brúite agat.
+Brúigh ESC chun imeacht.
+Íosleibhéal dath dearg
+Íosleibhéal dath glas
+Íosleibhéal dath gorm
+Leibhéal dath íosta
+Uasleibhéal dath dearg
+Uasleibhéal dath glas
+Uasleibhéal dath gorm
+Uasleibhéal datha
+Íosleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Íosleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Íosleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Leibhéal dath íosta. Is é 0 an luach íosta a nglactar leis agus is é 255 le haghaidh 255 dathanna nó 16 le haghaidh 16 dathanna an t-uasluach a nglactar leis.
+Uasleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Uasleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Uasleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.
+Uasleibhéal datha. Is é 0 an luach íosta a nglactar leis agus is é 255 le haghaidh 255 dathanna nó 16 le haghaidh 16 dathanna an t-uasluach a nglactar leis.
+Íoslíon an réiteora
+Uimhir uasta an réiteora
+Ionchuir seó réitigh
+Cibé an dtaispeánfar cad atá scríofa sa leid ionchuir.
+Cad é an t-íoslíon atá le roghnú?
+Cad é an t-uaslíon atá le roghnú?
+Gníomhachtaigh an tacaíocht dath fíor.
+Deacracht réamhshocraithe do SpeedPress
+Teorainn ama an mhéarchláir do SpeedPress
+Cé mhéad milleasoicind chun fanacht leis an eochairbhrú roimh an teorainn ama? (I deacracht saincheaptha)
+Moill stáitse i milleasoicindí
+Cé mhéad milleasoicind atá le fanacht roimh an gcéad chéim eile a tharraingt?
+Tosaíonn an cluiche i deacracht éasca
+Tosaíonn an cluiche i deacracht mheán
+Tosaíonn an cluiche i gcruachás
+Tosaíonn an cluiche i deacracht an-deacair
+Tosaíonn an cluiche i deacracht saincheaptha. Tabhair faoi deara gur chóir an teorainn ama saincheaptha i milleasoicindí a scríobh mar argóint.
+Dul chun cinn suíomh téacs
+Roghnaigh an suíomh téacs dul chun cinn is fearr leat.
+Ní féidir leat ach na huimhreacha a scríobh.
+Brúigh "q" chun imeacht.
+An cluiche nathair!
+Is spásárthach tú agus tá na meteors ag teacht chun tú a mhilleadh. An féidir leat é a shábháil?
+Cluiche thart
+Earráid gan choinne
+Úsáid PowerLine chun spásárthach a rindreáil
+Luas cluiche meteor
+Cibé an n-úsáidfear PowerLine chun an spásárthach a sholáthar nó an úsáidfear an caighdeán is mó ná an carachtar. Más mian leat PowerLine a úsáid le Meteor, ní mór duit cló cuí a shuiteáil le tacaíocht PowerLine.
+Sonraíonn an luas cluiche i milleasoicindí.
+An dtugann tú siar an capall mícheart?
+Tosaíonn an cluiche Hangman
+Litir mícheart amháin agus tá tú ar crochadh!
+Déan do scileanna Hangman a thástáil trí litir randamach a chaitheamh.
+Is spásárthach tú agus tá na meteors ag teacht chun tú a mhilleadh. An féidir leat iad a sheachaint?
+Faigheann sé luachan randamach
+Roulette na rúise
+Tá dhá spásárthach ag troid lena chéile. Lámhaigh amháin agus séideadh an spásárthach. Is cluiche áitiúil dhá imreoir é seo.
+Insamhlóir cluiche Wordle
+Seinn an cluiche Wordle ar dtús
+Déanann sé comóradh 5 bliana ar scaoileadh na heithne
+Ag comóradh 5 bliana an eithne
+An chéad scaoileadh riamh
+Eisíodh an eithne seo den chéad uair ar 22 Feabhra, 2018 chun insamhlóir íostach a dhéanamh a shamhlaíonn go hiarbhír conas a oibríonn croí na heithne.
+Ní gnách leis ach blaosc amháin a óstáil, agus roinnt orduithe, agus níor oibrigh sé ach le Windows mar gheall ar an úsáid a bhain sé as uirlis Windows Management Instrumentation.
+Ní raibh a cháipéisíocht féin aige ach an oiread.
+Eithne scagadh
+Scaoileadh leaganacha den eithne, mar shampla an dara scaoileadh mór chun dathú agus gnéithe bunúsacha a chur leis, agus an ceathrú scaoileadh mór chun cumraíocht a chur leis.
+Cuireadh tús le doiciméadú ar an séú mór-eisiúint, agus cuireadh rudaí deasa éagsúla leis an eithne go mall.
+Leagan reatha
+Déanann an leagan seo an t-eithne a bheachtú anois go dtí an pointe nach n-iompraíonn sé mar na seanleaganacha a thuilleadh.
+Toisc gur scaoileadh na gnéithe úrnua nua, bheartaíomar an t-eithne seo a ainmniú...
+Comóradh 5 bliana sona duit!
+Capall
+[ENTER] Cuir tús leis an rás | [ESC] Scoir | [UP/SÍOS] Bog an roghnúchán
+Bhuaigh do chapall an rás!
+Chaill do chapall an rás!
+Tá tú ar crochadh!
+Bhuaigh tú!
+Cad é do geall?
+Rinne tú buille faoi thuairim ceart!
+Fuair tú mícheart é.
+Ach, tá tú mí-ádh. fear caillte na himeartha.
+Tá an t-ádh ort! Buaiteoir!
+Is tarraingt é.
+Bhuaigh imreoir {0}!
+Carachtar reatha:
+Rinne tú buille faoi thuairim an focal ceart! Bhuaigh tú!
+Socruithe datha
+Cluiche nathair.
+Taispeánann sé Sleachta cáiliúla deasa duit.
+Roghnaigh an deacracht is fearr leat, áit a bhfuil 0 éasca, 1 meánach, 2 crua, 3 an-chrua, agus 4 cinn saincheaptha.
+Úsáid PowerLine chun spásárthach a sholáthar i ShipDuet
+Cibé an n-úsáidfear PowerLine chun an spásárthach a sholáthar nó an úsáidfear an caighdeán is mó ná an carachtar. Más mian leat PowerLine a úsáid le ShipDuet, ní mór duit cló cuí a shuiteáil le tacaíocht PowerLine.
+Luas an chluiche i ShipDuet
+Úsáideann sé an liosta focal coitianta.
+Úsáideann sé an liosta focal iomlán.
+An cluiche ping-pong!
+Scór
+Theip ar na hiontrálacha socruithe a fháil.
+Rásaíocht Capall
+Crochaire
+Meteor Dodge
+Cluiche Líne Meteor Shooter
+pong
+Díséad Loinge
+Snaker
+Focal
+Wordle (bunaidh)
+Athfhriotail anaithnid.
+Údar anaithnid.
+Ligeann sé seo duit na dathanna a chumrú
+Ligeann an chuid seo duit Réitigh a chumrú.
+Ligeann an chuid seo duit SpeedPress a chumrú.
+Ligeann an chuid seo duit Meteor agus ShipDuet a chumrú.

@@ -1,0 +1,415 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Mod aşağıdaki sebeplerden dolayı yüklenemiyor:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} başladı"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Geçersiz dil"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Güvenli modda modların ayrıştırılmasına izin verilmez."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Mod {0} durduruldu"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} durduruldu"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "{0} modu sonlandırılamadı: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Başlangıç modu"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Mod versiyonu:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Mod {0} bulunamadı."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Mod adı:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Mod dosya adı:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Mod dosya yolu:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Modlarınızı yönetin"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "Güvenli modda mod yönetimi devre dışıdır."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Geçersiz komut {0}. Aşağıdaki kullanımı kontrol edin:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Mod bulunamadı veya dosyada geçersiz karakterler var."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "{0} kılavuz sayfası geçersiz."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Bu kılavuz sayfasını doldurmayı düşünün."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Mod kılavuzu"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Güvenli modda modların durdurulmasına izin verilmez."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Mod zaten başlatıldı!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Mod henüz başlamadı!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Modu uyumlu sürüme yükseltmek için mod satıcısıyla iletişime geçin."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Kara listeye alınmış modlar"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Başlangıçta çalışmayacak modların dosya adlarını yazın. Bitirdiğinizde \"q\" yazın. Mevcut bir modu kaldırmak için yolun yanına eksi işareti yazın."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Mod {0} kara listeye alındı."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Önyükleme sırasında çekirdek değişikliklerini başlat"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Önyükleme sırasında çekirdek değişikliklerini otomatik olarak başlat."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Mod dosyası belirtilmemiş."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Zaten kurulu bir modu yüklemeye çalışıyorum. Mod güncelleniyor..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Kurulum başarısız oldu"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Sağlanan mod dosyası uyumsuz."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Kaldırma işlemi başarısız oldu"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Özel dili yüklemek için gereken meta veri bilgileri, ihtiyaç duyulan yerelleştirmeleri sağlamıyor."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Mod komutlarının yardıma olan sayısını göster"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Mod dosyası geçersiz."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Başlıksız kılavuz sayfası"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Özel dili yüklemek için gereken meta veri bilgisi mevcut değil."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Mod betiği boş olamaz."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Hiçbir mod algılanmadı."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Mod {0} durduruluyor..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Mod güçlü bir şekilde imzalanmamış. Güvenilmeyen kod içerebilir."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Mod yüklenemiyor çünkü bu çekirdek sürümü ile bu mod arasında bir uyumsuzluk var:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Bu uyumsuzluğu araştırmanıza yardımcı olabilecek hataların listesi aşağıdadır:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Mod {0} tam olarak bir API sürümü {1} gerektirir, ancak siz {2} sürümüne sahipsiniz. Nitrocid KS'yi ve/veya modu yükseltmek genellikle yardımcı olur. Mod ayrıştırma başarısız oldu."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Mod {0} bu API sürümüyle düzgün çalışmayabilir. Mod başlatılamayabilir. En son kopyayı almak için mod satıcısıyla iletişime geçin."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Mod {0}'ın adı yok. Mod ayrıştırma başarısız oldu. Kaynak kodunu inceleyin."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Mod {0} sürümüne sahip değil. Mod ayrıştırma başarısız oldu. Kaynak kodunu inceleyin."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Mod {0} geçersiz sürüm içeriyor. Mod ayrıştırma başarısız oldu. Sürüm"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Sürüm"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Dosya adı"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Dosya yolu"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "Ne yazık ki, bu kılavuz sayfasının herhangi bir içeriği yok. Ancak, bu dokümantasyon mod satıcısının web sayfasında bulunabilir. Bu dokümantasyonu hala bulamıyorsanız, daha fazla bilgi için modun geliştiricilerine sorun."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Size tarafından sunuldu"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "İçerik uzunluğu"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "İçerik yok."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Revizyon yok."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Varolmayan mod ile özel fonksiyon çalıştırılamaz"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Bağımlılık karşılanmadı. Başarısız bağımlılıklar aşağıda listelenmiştir:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Varolmayan mod {0} için kılavuzlara sorgu göndermeye çalıştım."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Varolmayan mod {1} için {0} kılavuzunu başlatmaya çalıştım."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Varolmayan mod {1} için {0} manuel dosyasını başlatmaya çalıştım."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "{1} modu için mevcut olmayan {0} kılavuz dosyasını başlatmaya çalıştım."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "İsim"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Güvenilmeyen modların yüklenmesine izin ver"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "True olarak ayarlanırsa, çekirdek imzalanmış ortak anahtara sahip olmayan modları yüklerken hata vermez."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Yardım komutunda listelendiğinde çekirdek değişikliği komutlarının sayısını göster"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Güvenli modda modların başlatılması veya durdurulmasına izin verilmez."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Alan bilgisi alınamıyor"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Mod sürümü belirlenemiyor"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Bilinmeyen yükleyici istisnası"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Mod yerelleştirmeleri yüklenemiyor"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Modu başlat (seç)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Mod başlat (giriş)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Durdurma modu"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Modu yeniden yükle"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Modu yükle (seç)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Mod kurulumu (giriş)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Modu kaldır"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Tümünü başlat"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Hepsini durdur"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Tümünü yeniden yükle"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Mod derlemesinden varolmayan sınıf türü döndürülemez"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "'{1}' modunda '{0}' fonksiyonu bulunamadı."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "'{1}' modunda '{0}' özelliği bulunamadı."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "'{1}' modunda '{0}' alanı bulunamadı."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Bu sınıf bir mod sınıfı değildir"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Diller"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Giriş noktası"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Başlatmak istediğiniz moda giden bir yol girin"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Mod başlatılamadı"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Yüklemek istediğiniz modun yolunu girin"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Mod kurulumu başarısız oldu"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Bu mod başlatılamıyor veya durdurulamıyor!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Bir modun başlatılması, durdurulması, bilgi alınması, yeniden yüklenmesi, kurulması veya kaldırılması gerekip gerekmediği"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Mod adı veya dosya adı"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Tüm modları listelemek, yeniden yüklemek, durdurmak, başlatmak veya etkileşimli olarak yönetmek"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Mod adı"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "Bu bölüm çekirdek değişiklik sisteminin nasıl çalışacağını yapılandırmanızı sağlar."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "添加鬧鐘，在您的茶或咖啡準備好時提醒您。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "當您的茶或咖啡準備好時，中止提醒您的警報。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "美式咖啡"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "紅茶"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "綠茶"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "沒有咖啡因提醒墮胎。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "您的杯子準備就緒的秒數無效。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "如果您想提供飲料的名稱，請查看下面的清單："
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "你的杯子現在準備好了！"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "指定秒數或飲品名稱"
+    }
+  ]
+}

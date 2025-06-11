@@ -1,0 +1,414 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_MODS_MODCANTLOAD",
+      "text": "Мод не може бути завантажений через наступне:"
+    },
+    {
+      "loc": "NKS_MODS_MODSTARTED",
+      "text": "{0} v{1} розпочато"
+    },
+    {
+      "loc": "NKS_MODS_MODHASINVALIDLANG",
+      "text": "Недійсна мова"
+    },
+    {
+      "loc": "NKS_MODS_MODPARSESAFEMODE",
+      "text": "Розбір модів заборонений у безпечному режимі."
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED1",
+      "text": "Мод {0} зупинено"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPED2",
+      "text": "{0} v{1} зупинено"
+    },
+    {
+      "loc": "NKS_MODS_CANTFINALIZE",
+      "text": "Не вдалося завершити мод {0}: {1}"
+    },
+    {
+      "loc": "NKS_MODS_STARTINGMOD",
+      "text": "Запуск мода"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODVER",
+      "text": "Мод версія:"
+    },
+    {
+      "loc": "NKS_MODS_MODNOTFOUND",
+      "text": "Мод {0} не знайдено."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNAME",
+      "text": "Назва мода:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENAME",
+      "text": "Назва файлу мода:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILEPATH",
+      "text": "Шлях до файлу мода:"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_DESC",
+      "text": "Керуйте своїми модами"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_SAFEMODE",
+      "text": "У безпечному режимі керування модами вимкнено."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_NOCOMMAND",
+      "text": "Недійсна команда {0}. Перевірте використання нижче:"
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODNOTFOUND",
+      "text": "Мод не знайдено або файл містить недійсні символи."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MANPAGEINVALID",
+      "text": "Сторінка посібника {0} недійсна."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_NEEDSFILL",
+      "text": "Розгляньте можливість заповнення цієї сторінки посібника."
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_DESC",
+      "text": "Інструкція по моду"
+    },
+    {
+      "loc": "NKS_MODS_MODSTOPPINGSAFEMODE",
+      "text": "Зупинка модів заборонена в безпечному режимі."
+    },
+    {
+      "loc": "NKS_MODS_MODALREADYSTARTED",
+      "text": "Мод вже запущено!"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNTSTARTED",
+      "text": "Мод ще не почався!"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSUPGRADE",
+      "text": "Зверніться до постачальника мода, щоб оновити його до сумісної версії."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
+      "text": "Моди в чорному списку"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC",
+      "text": "Напишіть імена файлів модів, які не запускатимуться під час запуску. Коли ви закінчите, напишіть \"q\". Напишіть знак мінус біля шляху, щоб видалити існуючий мод."
+    },
+    {
+      "loc": "NKS_MODS_MODBLACKLISTED",
+      "text": "Мод {0} у чорному списку."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
+      "text": "Почати модифікацію ядра під час завантаження"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_AUTOSTART_DESC",
+      "text": "Автоматично запускати модифікації ядра під час завантаження."
+    },
+    {
+      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
+      "text": "Файл мод не вказано."
+    },
+    {
+      "loc": "NKS_MODS_MODUPDATING",
+      "text": "Спроба встановити вже встановлений мод. Оновлення мода..."
+    },
+    {
+      "loc": "NKS_MODS_MODINSTALLFAILED",
+      "text": "Помилка встановлення для"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_NOMODSCRIPT",
+      "text": "Наданий файл модифікації несумісний."
+    },
+    {
+      "loc": "NKS_MODS_MODUNINSTALLFAILED",
+      "text": "Не вдалося видалити для"
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
+      "text": "Інформація метаданих, необхідна для встановлення спеціальної мови, не забезпечує необхідні локалізації."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
+      "text": "Показати кількість команд мода в довідці"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_INVALIDMODFILE",
+      "text": "Файл модифікації недійсний."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
+      "text": "Сторінка посібника без назви"
+    },
+    {
+      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
+      "text": "Інформація метаданих, необхідна для встановлення спеціальної мови, не існує."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
+      "text": "Сценарій мода не може бути нульовим."
+    },
+    {
+      "loc": "NKS_MODS_NOMODS",
+      "text": "Модів не виявлено."
+    },
+    {
+      "loc": "NKS_MODS_STOPPINGMODS",
+      "text": "Зупинка мода {0}..."
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_UNSAFEMOD",
+      "text": "Мод не сильно підписаний. Він може містити ненадійний код."
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE1",
+      "text": "Мод не може бути завантажений через несумісність між цією версією ядра та цим модом:"
+    },
+    {
+      "loc": "NKS_MODS_MODINCOMPATIBLE2",
+      "text": "Ось список помилок, які можуть допомогти вам дослідити цю несумісність:"
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSAPIEXACT",
+      "text": "Для модифікації {0} потрібна саме версія API {1}, але у вас є версія {2}. Зазвичай допомагає оновлення Nitrocid KS та/або мода. Помилка аналізу мода."
+    },
+    {
+      "loc": "NKS_MODS_MODHASNOAPIVERSION",
+      "text": "Мод {0} може не працювати належним чином із цією версією API. Мод може не запускатися. Зверніться до постачальника мода, щоб отримати останню копію."
+    },
+    {
+      "loc": "NKS_MODS_MODNEDSNAME",
+      "text": "Мод {0} не має назви. Помилка аналізу мода. Перегляньте вихідний код."
+    },
+    {
+      "loc": "NKS_MODS_MODNEEDSVERSION",
+      "text": "Мод {0} не має версії. Помилка аналізу мода. Перегляньте вихідний код."
+    },
+    {
+      "loc": "NKS_MODS_MODVERSIONINVALID",
+      "text": "Мод {0} містить недійсну версію. Помилка аналізу мода. Версія була"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODVERSION",
+      "text": "Версія"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILENAME",
+      "text": "Ім'я файлу"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODFILEPATH",
+      "text": "Шлях до файлу"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HASNOCONTENTS",
+      "text": "На жаль, ця сторінка посібника не має жодного вмісту. Однак цю документацію можна було знайти на веб-сторінці постачальника мода. Якщо ви все ще не можете знайти цю документацію, зверніться до розробників моду за додатковою інформацією."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_PRESENTED",
+      "text": "Представлено вам"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_CONTENTLENGTH",
+      "text": "Довжина вмісту"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOCONTENTS",
+      "text": "Без вмісту."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_NOREVISION",
+      "text": "Без перегляду."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND",
+      "text": "Неможливо виконати спеціальну функцію з неіснуючим модом"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPSFAILED",
+      "text": "Залежність незадоволена. Невдалі залежності перераховані нижче:"
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND",
+      "text": "Спроба запитати посібники щодо неіснуючого моду {0}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND",
+      "text": "Спроба ініціалізувати посібник {0} для неіснуючого мода {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND",
+      "text": "Спроба ініціалізувати ручний файл {0} для неіснуючого мода {1}."
+    },
+    {
+      "loc": "NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD",
+      "text": "Спроба ініціалізувати ручний файл {0}, який не існує для мода {1}."
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODNAME",
+      "text": "Ім'я"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
+      "text": "Дозволити завантаження ненадійних модів"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC",
+      "text": "Якщо встановлено значення true, ядро не виникатиме помилок під час завантаження модів, які не мають підписаного відкритого ключа."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC",
+      "text": "Показати кількість команд модифікації ядра під час їх переліку в команді довідки"
+    },
+    {
+      "loc": "NKS_MODS_STARTSTOPSAFEMODE",
+      "text": "Запуск і зупинка модів заборонені в безпечному режимі."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_NOFIELDINFO",
+      "text": "Не вдається отримати інформацію про поле для"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_DEPNOMODVER",
+      "text": "Неможливо визначити версію мода"
+    },
+    {
+      "loc": "NKS_MODS_UNKNOWNLOADEREXCEPTION",
+      "text": "Невідомий виняток завантажувача"
+    },
+    {
+      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
+      "text": "Не вдається завантажити локалізацію мода"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODSELECT",
+      "text": "Запустити мод (вибрати)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTMODINPUT",
+      "text": "Почати мод (введення)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPMOD",
+      "text": "Стоп мод"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADMOD",
+      "text": "Перезавантажити мод"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT",
+      "text": "Встановити мод (вибрати)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT",
+      "text": "Встановити мод (введення)"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD",
+      "text": "Видаліть мод"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STARTALL",
+      "text": "Почати все"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_STOPALL",
+      "text": "Зупинити все"
+    },
+    {
+      "loc": "NKS_MODS_TUI_KEYBINDING_RELOADALL",
+      "text": "Перезавантажити все"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND",
+      "text": "Неможливо повернути неіснуючий тип класу зі складання мода"
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND",
+      "text": "Не вдається знайти функцію \"{0}\" у моді \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND",
+      "text": "Не вдається знайти властивість \"{0}\" у моді \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND",
+      "text": "Не вдається знайти поле \"{0}\" у моді \"{1}\"."
+    },
+    {
+      "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
+      "text": "Цей клас не є модним класом"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODLANGUAGES",
+      "text": "Мови"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODENTRYPOINT",
+      "text": "Точка входу"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODPROMPT",
+      "text": "Введіть шлях до мода, який ви хочете запустити"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODSTARTFAILED",
+      "text": "Не вдалося запустити мод"
+    },
+    {
+      "loc": "NKS_MODS_TUI_PATHTOMODINSTALLPROMPT",
+      "text": "Введіть шлях до мода, який ви хочете встановити"
+    },
+    {
+      "loc": "NKS_MODS_TUI_MODINSTALLFAILED",
+      "text": "Не вдалося встановити мод"
+    },
+    {
+      "loc": "NKS_MODS_CANTSTARTORSTOP",
+      "text": "Неможливо запустити або зупинити цей мод!"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC",
+      "text": "Запустити, зупинити, отримати інформацію, перезавантажити, встановити чи видалити мод"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC",
+      "text": "Ім'я мода або ім'я файлу"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC",
+      "text": "Перелік, перезавантаження, зупинка, запуск або інтерактивне керування всіма модами"
+    },
+    {
+      "loc": "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC",
+      "text": "Назва мода"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_DESC",
+      "text": "У цьому розділі можна налаштувати, як працює система модифікації ядра."
+    }
+  ]
+}

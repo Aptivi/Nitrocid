@@ -1,0 +1,37 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "xiǎn shì yǒu guān suǒ xuǎn tíng kào shì tú de quán píng gài shù ， yǐ biàn néng gòu jiāng qí yòng zuò xìn xī miàn bǎn"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "méi yǒu tóng míng de tíng kào píng mù 。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "méi yǒu tóng míng de píng mù dǐ zuò 。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "méi yǒu píng mù dǐ zuò 。"
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "píng mù dǐ zuò bēng kuì liǎo"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "mǎtóu míngchēng"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Lấy backtrace cho tất cả các luồng"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Chúng tôi tin rằng bạn đang sử dụng Windows 8 hoặc phiên bản cũ hơn. Hoạt động này không được hỗ trợ."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Thông tin theo dõi ngăn xếp luồng cho {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Không phải là chủ đề Nitrocid KS"
+    }
+  ]
+}

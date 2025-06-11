@@ -1,0 +1,356 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "que vous pouvez exécuter des commandes de processus de deux manières : en saisissant directement le nom du fichier exécutable et en utilisant la commande « exec » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "que vous pouvez verrouiller votre écran à l'aide de la commande « lockscreen » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "que vous pouvez créer vos propres modifications du noyau en utilisant C# et Visual Basic ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "que vous pouvez utiliser plusieurs commandes en utilisant le point-virgule entre les commandes ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "que vous pouvez échapper aux guillemets doubles à l'intérieur des arguments cités lors de l'exécution de commandes ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "que vous pouvez modifier les paramètres du noyau à l'aide de la commande « settings » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "que vous pouvez enregistrer votre écran à l'aide de la commande « savescreen » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "que vous pouvez nous signaler des bugs en vous rendant sur la page du projet GitHub de Nitrocid ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "que vous pouvez créer un raccourci vers la commande souhaitée à l'aide de la commande « alias » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "que vous pouvez créer votre propre écran de démarrage en utilisant C# et Visual Basic ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "que vous pouvez installer des modules complémentaires pour rendre votre noyau plus utile et amusant ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "que vous pouvez créer vos propres thèmes géniaux en utilisant la commande « mktheme » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "que vous pouvez changer les couleurs de votre noyau en utilisant la commande « paramètres » ou en utilisant l'un des thèmes prédéfinis ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "que vous pouvez réinitialiser votre noyau aux paramètres d'usine par défaut en utilisant l'argument « reset » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "que vous pouvez accéder à notre documentation complète sur notre page GitBook ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "que les versions à long terme sont prises en charge pendant cinq ans pour le support principal et trois ans pour les mises à jour de sécurité ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "que la 0.0.1 était la toute première version de Nitrocid KS sortie le 22 février 2018 ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "que la série 0.0.24.x était la seule série de versions contenant la version API v2.1 ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "que les versions à court terme ne sont prises en charge que pendant neuf mois ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "que la série 0.1.x est rétrocompatible avec la série 0.0.24.x ou une version antérieure ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "que vous pouvez exécuter Nitrocid KS sur Linux, macOS et Android ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "que tu peux te référer à la documentation de l'API pour t'aider à réaliser tes mods ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "que vous pouvez obtenir plusieurs jeux géniaux, comme Hangman et ShipDuet, en installant les modules complémentaires supplémentaires ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "que, dans Meteor, si vous vous écrasez avec une tempête de météores rouges, votre vaisseau spatial s'écrase ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "que vous pouvez convertir votre noyau en centres d'information à l'aide de la fonction d'accueil ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "que vous pouvez créer des groupes d'utilisateurs pour organiser les comptes d'utilisateurs ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "que si vous êtes membre d'un groupe qui accorde certaines autorisations, vous êtes autorisé à effectuer de telles opérations ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "que vous pouvez modifier le fuseau horaire de votre noyau sans affecter votre système hôte ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "que vous pouvez utiliser l'éditeur de texte et hexadécimal interactif pour gagner du temps ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "que le plus ancien éditeur de texte connu pour fonctionner avec le premier système Unix est ed, le premier éditeur de texte sorti en 1973 et livré avec le système Unix trouvé sur un PDP-7 chez AT&T Bell Labs ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "que vous pouvez également forcer la commande d'édition à lancer l'éditeur dans un type spécifique ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "que l'éditeur de texte interactif tente de simuler les fonctionnalités les plus élémentaires des éditeurs de texte Unix les plus populaires, vi et vim ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "qu'à moins que vous ne sachiez ce que vous faites avec le fichier binaire, la modification d'un tel fichier de cette manière entraînera une corruption ou une perte de données dans le fichier ciblé ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "que sur les systèmes Linux, le shell est lancé à l'aide à la fois du gestionnaire de connexion et du programme d'initialisation du système, généralement trouvé dans /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "que vous pouvez effectuer des opérations courantes sur les fichiers, telles que copier, déplacer, supprimer, éditer, etc. ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "que le TUI interactif d'un gestionnaire de fichiers simule les fonctionnalités de Midnight Commander ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "que si le noyau plante, il crée généralement un fichier de vidage ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "que vous pouvez diagnostiquer le noyau en le débogant à l'aide de la fonctionnalité de débogage intégrée ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "que vous pouvez télécharger et télécharger des fichiers directement depuis le shell UESH ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "que le noyau peut être traduit même aux étapes de pré-démarrage en le démarrant avec l'argument « lang » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "que vous pouvez créer vos propres économiseurs d'écran en les enregistrant dans votre mod ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "que le premier économiseur d'écran qui masquait l'écran après trois minutes d'inactivité sur les PC IBM d'origine, scrnsave, a été créé en 1983 par John Socha ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "que certains des économiseurs d'écran rapides peuvent provoquer des crises photosensibles ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "que les journaux du noyau sont utilisés comme journaux de démarrage et d'arrêt ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "que vos mods peuvent désormais devenir traduisibles ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "que vos mods peuvent communiquer avec les modules complémentaires du noyau et d'autres mods, créant ainsi une sorte de communication et réalisant l'interopérabilité ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "que vous pouvez vous connecter au débogueur distant et, éventuellement, au serveur de discussion ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "que vous pouvez utiliser le shell de débogage, qui n'est disponible que pour les versions de développement ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "que vos mods peuvent désormais avoir leur propre configuration en enregistrant leurs classes associées ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "que vos mods peuvent enregistrer leurs propres shells ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "que vos mods peuvent ajouter des commandes aux shells existants pour augmenter le nombre de commandes pouvant être utilisées ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "que vos classes de commandes peuvent représenter avec précision les arguments et les commutateurs passés ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "que vous pouvez interroger les commutateurs passés à l'aide des classes de gestion des commutateurs trouvées dans l'API du noyau ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "que UESH inclut la fonctionnalité de script pour faciliter la création et l'exécution de scripts ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "que le shell inclut une fonctionnalité permettant d'empêcher l'annulation des applications actives ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "que Nitrocid est profondément intégré à Terminaux pour permettre un rendu plus rapide et meilleur ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "que vous pouvez désormais redimensionner les applications interactives sans craindre que la sortie soit corrompue ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "qu'il existe des commandes qui demandent une saisie à l'utilisateur, qui sont utiles pour les scripts ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "que vous pouvez présenter votre question de saisie utilisateur de plusieurs manières, telles que choix, tableau, simple, sélection, etc. ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "que vous pouvez placer les espaces réservés dans votre texte qui les prend en charge ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "que vous pouvez utiliser différents pilotes du noyau pour modifier le fonctionnement d'une opération spécifique ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "que vous pouvez créer vos propres écrans de veille et splashes en C# ou Visual Basic ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "que vous pouvez interroger le système hôte et l'émulateur de terminal à l'aide de la classe de plate-forme du noyau ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "que vous pouvez demander un consentement en matière de confidentialité avant de faire quelque chose de sensible dans votre mod ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "que vous pouvez désactiver les notifications à l'aide de la fonction Ne pas déranger ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "que vous pouvez enregistrer l'historique des notifications à l'aide d'une fonction trouvée dans le gestionnaire de notifications ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "que vous pouvez modifier la façon dont les nombres aléatoires sont générés en changeant le pilote ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "que diverses API fournissent des fonctions utiles pour vos mods ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Cette section vous permet de configurer le fonctionnement des astuces."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Afficher les astuces du noyau"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Si activé, le shell vous montre les conseils à chaque connexion."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "que vous pouvez créer des programmes amorçables en utilisant les mods de votre noyau ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Impossible d'obtenir les entrées de paramètres."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "que Nitrocid (Kernel Simulator 0.0.2) a appelé le shell intégré le shell « UESH » ?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "que les économiseurs d'écran étaient présentés comme une solution contre les brûlures d'écran dans les écrans à tube cathodique (CRT) ou à plasma ?"
+    }
+  ]
+}

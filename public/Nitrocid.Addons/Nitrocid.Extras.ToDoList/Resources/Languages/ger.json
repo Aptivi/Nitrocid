@@ -1,0 +1,55 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Ungültige Aktion."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Aufgabennname"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "To-Do-Aufgabenmanager"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Eine Aufgabe konnte nicht hinzugefügt oder entfernt werden."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Bitte geben Sie einen Namen für Ihre Aufgabe ein."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Eine Aufgabe konnte nicht markiert werden."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Ich kann keine Aufgabenliste abrufen"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Ob eine Aufgabe hinzugefügt, entfernt, als erledigt markiert oder die Markierung als erledigt aufgehoben werden soll"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Ob alle Aufgaben aufgelistet, gespeichert oder geladen werden sollen"
+    }
+  ]
+}

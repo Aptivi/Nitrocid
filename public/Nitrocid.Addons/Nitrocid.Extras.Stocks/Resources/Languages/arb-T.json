@@ -1,0 +1,120 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "يحصل على معلومات الأسهم كل ساعة"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "رمز الشركة القصير"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "أدخل مفتاح AlphaVantage API الخاص بك"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "يرجى تقديم مفتاح API الخاص بك."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "لا يمكن استخدام مفتاح واجهة برمجة التطبيقات التوضيحية."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "يجب أن يتكون مفتاح API الخاص بك من 16 حرفًا."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "حدث خطأ أثناء جلب بيانات الأسهم. معلومات اضافية يمكن ايجادها هنا"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "سعر السهم الافتتاحي"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "ارتفاع سعر السهم"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "انخفاض سعر السهم"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "سعر إغلاق السهم"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "حجم المخزون"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "مطلوب مفتاح API. تكوين من الإعدادات."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "لا توجد بيانات المخزون المتاحة."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "يتيح لك هذا القسم تكوين الأسهم."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "مفتاح API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "مفتاح واجهة برمجة تطبيقات AlphaVantage Stocks"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "رمز الشركة"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "شركة الأسهم"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "لا يمكن الحصول على معلومات المخزون."
+    }
+  ]
+}

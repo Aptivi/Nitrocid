@@ -1,0 +1,72 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informações de licença"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "O Dicionário de Inglês"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informações da palavra para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "A API é licenciada sob"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Palavra:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Significados das palavras para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Parte do discurso:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definição:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Exemplo na frase:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Fontes usadas para definir"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinônimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antônimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Palavra para definir"
+    }
+  ]
+}

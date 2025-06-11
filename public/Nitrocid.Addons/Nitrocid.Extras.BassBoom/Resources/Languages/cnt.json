@@ -1,0 +1,189 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
+      "text": "Yǐ háomiǎo wèi dānwèi de yánchí"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC",
+      "text": "zài jìnxíng xià yīcì xiě rù zhīqián yào děngdài duōshǎo háomiǎo?"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
+      "text": "cóng gē cí wén jiàn zhōng huò qǔ suǒ yǒu gē cí xíng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
+      "text": "bō fàng gē cí wén jiàn"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
+      "text": "bō fàng shēng yīn"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
+      "text": "huò qǔ yǒu guān nín de zài xiàn guǎng bō diàn tái de xìn xī"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOLYRICFILE",
+      "text": "què bǎo zhǐ dìng LRC wén jiàn de lù jìng 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOSOUNDFILE",
+      "text": "wú fǎ bō fàng shēng yīn ， yīn wéi zhǎo bù dào gāi wén jiàn 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDSOUNDFILE",
+      "text": "chéng gōng dǎ kāi yīn lè wén jiàn 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENSOUNDFILE",
+      "text": "wú fǎ dǎ kāi yīn lè wén jiàn 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_TIMEOUT",
+      "text": "yóu yú chāo shí ér wú fǎ bō fàng shēng yīn 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNARTIST",
+      "text": "wèi zhī yì shù jiā"
+    },
+    {
+      "loc": "NKS_BASSBOOM_UNKNOWNGENRE",
+      "text": "wèi zhī lèi xíng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_NAME",
+      "text": "xìng míng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_ARTIST",
+      "text": "yì shù jiā"
+    },
+    {
+      "loc": "NKS_BASSBOOM_GENRE",
+      "text": "lèi xíng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_DURATION",
+      "text": "qī jiān"
+    },
+    {
+      "loc": "NKS_BASSBOOM_STOPPLAYING",
+      "text": "àn “q” tíng zhǐ bō fàng 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTPLAY",
+      "text": "wú fǎ bō fàng shēng yīn 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_TITLE",
+      "text": "biāo tí"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PORTINVALID",
+      "text": "nín de zài xiàn guǎng bō de duān kǒu hào wú xiào 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_FULLURL",
+      "text": "wán zhěng wǎng zhǐ"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLISTENERS",
+      "text": "dāng qián tīng zhòng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PEAKLISTENERS",
+      "text": "tīng zhòng gāo fēng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMS",
+      "text": "liú"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_ACTIVESTREAMS",
+      "text": "huó dòng liú"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STREAMINFO",
+      "text": "ID de liú xìn xī"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_PATH",
+      "text": "xiǎo lù"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CURRENTLYPLAYING",
+      "text": "mù qián zhèng zài bō fàng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_UPTIME",
+      "text": "zhèng cháng yùn xíng shí jiān"
+    },
+    {
+      "loc": "NKS_BASSBOOM_LYRICFILENOTFOUND",
+      "text": "què bǎo zhǐ dìng bāo hán LRC gé shì gē cí wén jiàn de mù lù lù jìng 。 nín huán kě yǐ zhǐ dìng bāo hán gē cí wén jiàn de yīn lè kù wén jiàn jiā de zì dìng yì lù jìng 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND",
+      "text": "gāi gē cí wén jiàn bù cún zài 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
+      "text": "cǐ píng mù bǎo hù chéng xù de shè zhì kě zài cǐ chǔ zhǎo dào 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_DESC",
+      "text": "běn bù fēn yǔn xǔ nín pèi zhì BassBoom chā jiàn de gōng zuò fāng shì 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
+      "text": "gē cí lù jìng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC",
+      "text": "shè zhì bāo hán yī zǔ .lrc wén jiàn de wén jiàn jiā de lù jìng 。 xiě rù rèn hé xiàn yǒu mù lù de jué duì lù jìng 。"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_STATIONTYPE",
+      "text": "Chēzhàn lèixíng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_HEADER",
+      "text": "wǎng lù guǎngbò (FM) xùnxí"
+    },
+    {
+      "loc": "NKS_BASSBOOM_RADIO_CANTGETINFO",
+      "text": "wúfǎ qǔdé wǎng lù guǎngbò zīxùn."
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC",
+      "text": "gēcí dǎng'àn lùjìng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC",
+      "text": "MP3 dǎng'àn de lùjìng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC",
+      "text": "tuōguǎn MPEG guǎngbò diàntái de zhǔjī míng"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
+      "text": "yízhí dào MPEG guǎngbò diàntái"
+    }
+  ]
+}

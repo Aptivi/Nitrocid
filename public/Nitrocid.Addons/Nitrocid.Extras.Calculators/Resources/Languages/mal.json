@@ -1,0 +1,73 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Kalkulator untuk mengira ungkapan."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Ralat dalam pengiraan."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Tunjukkan maklumat tentang formula nombor khayalan yang ditentukan oleh nombor nyata dan nombor khayalan yang ditentukan"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Nombor sebenar tidak sah."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Nombor khayalan tidak sah."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formula:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Jejari:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Nyata kepada Jejari dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Khayalan kepada Jejari dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Sudut dalam Radian:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Eksponen:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "segi tiga:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Ungkapan matematik"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Nombor sebenar"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Nombor khayalan"
+    }
+  ]
+}

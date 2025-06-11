@@ -1,0 +1,97 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "獲取每小時的股票信息"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "公司簡稱"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "輸入您的 AlphaVantage API 金鑰"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "請提供您的 API 金鑰。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "無法使用演示 API 金鑰。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "您的 API 金鑰長度應為 16 個字元。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "取得股票資料時發生錯誤。可以在此處找到更多信息"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "開盤股價"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "高股價"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "股價低"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "收盤股價"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "庫存量"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "需要 API 金鑰。從設定進行配置。"
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "無可用庫存資料。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "此部分允許您配置庫存。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API金鑰"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage 股票 API 的金鑰"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "公司代碼"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "股票公司"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "無法取得股票資訊。"
+    }
+  ]
+}

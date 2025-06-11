@@ -1,0 +1,76 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "إضافة منبه لتنبيهك عندما يكون كوب الشاي أو القهوة جاهزًا."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "يلغي المنبه الذي ينبهك عندما يكون كوب الشاي أو القهوة جاهزًا."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "القهوة الأمريكية"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "شاي احمر"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "شاي أخضر"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "لا توجد تنبيهات الكافيين للإجهاض."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "الثواني التي سيكون فيها كوبك جاهزًا غير صالحة."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "إذا كنت تحاول تقديم اسم للمشروب، فراجع القائمة أدناه:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "كوبك جاهز الآن!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "إما تحديد عدد الثواني أو اسم المشروب"
+    }
+  ]
+}

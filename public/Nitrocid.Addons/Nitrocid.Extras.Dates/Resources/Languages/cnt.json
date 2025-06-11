@@ -1,0 +1,285 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "chūkǒu"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "Huòqǔ rìqí hé shíjiān xìnxī"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MS",
+      "text": "háomiǎo:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "Miǎo:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "Fēnzhōng:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "Xiǎoshí:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "Tiān:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "Yuèfèn:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEARS",
+      "text": "Nián:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
+      "text": "Yī nián zhōng de yītiān:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
+      "text": "Xīngqí jǐ:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "Èrjìnzhì:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "Dāngdì shíjiān:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "Shìjiè shíjiān:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "Unix shíjiān:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "Wúfǎ jiěxī rìqí xìnxī"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "quèbǎo géshì zhèngquè."
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "Rìqí:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "Shíjiān:"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "Yīgè jiǎndān de miǎobiǎo"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "kāishǐ huò tíngzhǐ"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "quān"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "chóngqǐ"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "yīgè jiǎndān de jìshí qì"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "shèzhì jiàngé"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "zhǐshì de chāo shí bùshì shùzì."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "Yǐ háomiǎo wèi dānwèi zhǐdìng chāo shí"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "biānxiě yīgè yóu Figgle kù zhīchí de figlet zìtǐ. Yǒuguān gèng duō xìnxī, qǐng cānyuè kù wéndàng"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "Jìshí qì de Figlet zìtǐ"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "wèi jìshí qì qǐyòng Figlet"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "rúguǒ qǐyòng, jiāng shǐyòng figlet zuòwéi jìshí qì. Qǐng zhùyì, tā xūyào yīgè dà de kòngzhì tái píngmù cáinéng zài qǐyòng Figlet de qíngkuàng xià zhèngquè chéngxiàn shíjiān."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "huò qǔ dāng qián rì qī hé shí jiān xìn xī"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "xìn xī ："
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "miǎo biǎo zhǔn bèi hǎo liǎo 。"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "miǎo biǎo pǎo qǐ lái ！"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "xīn yī quān ！"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "kāi shǐ dǎo jì shí"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "dìngshí qì"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "pǎo biǎo"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "hái méipǎo quān..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "Quān shù lièbiǎo"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "fānqié gōngzuò fǎ"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "fānqié gōngzuò fǎ"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "fānqié gōngzuò fǎ yǐ zhǔnbèi jiùxù"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "fānqié gōngzuò fǎ jìshí qì biānhào wèi {0}, gòng sì cì diédài"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "duǎnzàn xiūxí"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "zhǐdìng zhōngduàn chāo shí shíjiān (yǐ háomiǎo wèi dānwèi)"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "shèdìng xiūxí jiàngé"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "liè yìn zīxùn de rìqí hé shíjiān"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "Cǐ bùfèn ràng nín pèizhì jìshí qì yìngyòng chéngshì de gōngzuò fāngshì."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "Cǐ bùfèn ràng nín pèizhì fānqié gōngzuò fǎ jìshí qì yìngyòng chéngshì de gōngzuò fāngshì."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Wèi fānqié zhōng qǐyòng Figlet"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "rúguǒ qǐyòng, jiāng shǐyòng figlet zuòwéi fānqié gōngzuò fǎ jìshí qì. Qǐng zhùyì, zài qǐyòng Figlet de qíngkuàng xià, xūyào yīgè dà de kòngzhì tái yíngmù cáinéng zhèngquè chéngxiàn shíjiān."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "Fānqié gōngzuò fǎ jìshí qì de Figlet zìtǐ"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "shēngchǎn rìqí wúxiào"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "yǒuxiào qíxiàn wúxiào"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "yǒuxiào qíxiàn wúxiào"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "shēngchǎn rìqí"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "yǒuxiào qíxiàn"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "yǒuxiào qíxiàn kuà"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "chǎnpǐn jiànkāng zhuàngkuàng"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "chǎnpǐn zhuàngtài"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "wúfǎ qǔdé chǎnpǐn yǒuxiào qíxiàn zīxùn"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "qǔdé chǎnpǐn yǒuxiào qíxiàn zīxùn"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "shēngchǎn rìqí (qǐng chákàn chǎnpǐn cèmiàn huò dǐbù)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "yǒuxiào qíxiàn huò qíxiàn (míngquè xiě zài tóngyī wèizhì huò shíduàn, lìrú 6 gè yuè huò 1 nián)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "mùbiāo chǎnpǐn shìfǒu wèi míngquè zhǐdìng yǒuxiào qíxiàn"
+    }
+  ]
+}

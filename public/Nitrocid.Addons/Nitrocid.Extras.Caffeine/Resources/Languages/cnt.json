@@ -1,0 +1,53 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "tiān jiā nào zhōng ， zài nín de chá huò kā fēi zhǔn bèi hǎo shí tí xǐng nín 。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "dāng nín de chá huò kā fēi zhǔn bèi hǎo shí ， zhōng zhǐ tí xǐng nín de jǐng bào 。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "měi shì kā fēi"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "hóng chá"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "lǜ chá"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "méi yǒu kā fēi yīn tí xǐng duò tāi 。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "nín de bēi zǐ zhǔn bèi jiù xù de miǎo shù wú xiào 。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "rú guǒ nín xiǎng tí gōng yǐn liào de míng chēng ， qǐng chá kàn xià miàn de liè biǎo ："
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "nǐ de bēi zǐ xiàn zài zhǔn bèi hǎo liǎo ！"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "zhǐdìng miǎo shù huò yǐnpǐn míngchēng"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Stellt eine Verbindung zu einem SSH-Server her."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Geben Sie das Passwort für {0} ein:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH getrennt."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Fehler beim Versuch, eine Verbindung zum SSH-Server herzustellen: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Die angegebene Option {0} ist ungültig."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Die Antwort muss numerisch sein."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Drücken Sie eine beliebige Taste, um zurückzukehren."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Verbindet sich mit einem SSH-Server, um einen Befehl auszuführen."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Wie möchten Sie sich authentifizieren?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Datei mit privatem Schlüssel"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Passwort"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Geben Sie die Passphrase für den Schlüssel {0} ein:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Schlüsseldatei {0} existiert nicht."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Fehler beim Hinzufügen des privaten Schlüssels:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Fehler beim Ausführen des SSH-Befehls"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Fehler in der SSH-Shell"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Schreiben Sie, wie Ihre Anmeldeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Geben Sie den Speicherort des privaten Schlüssels für {0} ein. Schreiben Sie „q“, um das Hinzufügen von Schlüsseln abzuschließen:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "In diesem Abschnitt können Sie die Funktionsweise von SSH konfigurieren."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Stil der Benutzernamen-Eingabeaufforderung für SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Neue Verbindungen zur SSH-Kurzwahl hinzufügen"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Wenn aktiviert, wird der SSH-Kurzwahl eine neue Verbindung hinzugefügt."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH ist verbunden, aber ohne Client."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH-Server für die Verbindung"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Benutzername zur Authentifizierung"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Befehl zur Remote-Ausführung"
+    }
+  ]
+}

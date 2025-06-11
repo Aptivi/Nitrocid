@@ -1,0 +1,37 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Menunjukkan kepada anda gambaran keseluruhan skrin penuh tentang paparan dok yang dipilih untuk dapat menggunakannya sebagai panel maklumat"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Tiada skrin dok dengan nama ini."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Tiada dok skrin dengan nama ini."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Tiada dok skrin."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Dok skrin telah ranap"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nama dok"
+    }
+  ]
+}
