@@ -2,8 +2,8 @@
   "lang": "ind",
   "name": "Hindi",
   "cultures": [
-    "hi",
-    "hi-IN"
+    "hi-Latn",
+    "hi-Latn-IN"
   ],
   "locs": [
     {
