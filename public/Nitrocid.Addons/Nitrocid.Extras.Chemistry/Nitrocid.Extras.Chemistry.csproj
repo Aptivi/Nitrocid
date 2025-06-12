@@ -11,6 +11,10 @@
     <PackageReference Include="ChemiStar" Version="1.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="LocaleStation" Version="1.2.0" />
+  </ItemGroup>
+
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>
