@@ -2,2791 +2,2791 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.ArgumentExecutor.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.ArgumentInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.ArgumentParameters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.ArgumentParse.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.Help.ArgumentHelpPrint.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.Help.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.IArgument.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Arguments.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Colors.KernelColorTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Colors.KernelColorType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Colors.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.ConsolePointerHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Inputs.InputTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Inputs.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.ThemeCategory.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.ThemeInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.ThemePreviewTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.ThemeSetErrorReasons.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.ThemeTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Themes.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Writers.TextDynamicWriters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Writers.TextWriters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.Writers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.ConsoleBase.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Console.BaseConsoleDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Console.ConsoleDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Console.IConsoleDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Console.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DebugLogger.BaseDebugLoggerDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DebugLogger.DebugLoggerDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DebugLogger.IDebugLoggerDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DebugLogger.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DriverHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.DriverTypes.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.BaseEncodingDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.Bases.AesEncoding.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.Bases.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.EncodingDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.IEncodingDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encoding.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.BaseEncodingAsymmetricDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.Bases.Base64Encoding.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.Bases.RsaEncoding.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.Bases.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.EncodingAsymmetricDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.IEncodingAsymmetricDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.EncodingAsymmetric.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.BaseEncryptionDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.Bases.SHA256.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.Bases.SHA512.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.Bases.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.Encryption.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.EncryptionDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.HashVerifier.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.IEncryptionDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Encryption.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Filesystem.BaseFilesystemDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Filesystem.FilesystemDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Filesystem.IFilesystemDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Filesystem.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.HardwareProber.BaseHardwareProberDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.HardwareProber.HardwareProberDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.HardwareProber.HardwareProberDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.HardwareProber.IHardwareProberDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.HardwareProber.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.IDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Input.BaseInputDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Input.IInputDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Input.InputDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Input.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Network.BaseNetworkDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Network.INetworkDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Network.NetworkDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Network.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.RNG.BaseRandomDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.RNG.IRandomDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.RNG.RandomDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.RNG.RandomDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.RNG.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Regexp.BaseRegexpDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Regexp.IRegexpDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Regexp.RegexpDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Regexp.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Sorting.BaseSortingDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Sorting.ISortingDriver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Sorting.SortingDriverTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.Sorting.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Drivers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Editors.HexEdit.HexEditTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Editors.HexEdit.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Editors.TextEdit.TextEditTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Editors.TextEdit.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Extensions.ExtensionHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Extensions.ExtensionHandlerTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Extensions.MimeTypes.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Extensions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.FilesystemTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Folders.FilesystemSortDirection.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Folders.FilesystemSortOptions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Folders.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Instances.FileSystemEntry.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Instances.FileSystemEntryType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Instances.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.LineEndings.FilesystemNewlineStyle.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.LineEndings.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Paths.KernelPathType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Paths.PathLookupTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Paths.PathsManagement.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.Paths.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Files.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Config.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.ConfigTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.BaseKernelConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.KernelDriverConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.KernelSaverConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.KernelSplashConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.KernelWidgetsConfig.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Instances.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.SettingsApp.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.SettingsEntry.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.SettingsFunctionArgs.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.SettingsKey.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.SettingsKeyType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.Settings.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Configuration.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.DebugCheck.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.DebugLevel.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.DebugWriter.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help.RemoteDebugHelpPrint.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.IRemoteDebugCommand.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugBaseCommand.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandArgumentInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandParameters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugProvidedCommandArgumentInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat.RemoteChatTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteDebugDevice.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteDebugDeviceInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteDebugTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.RemoteDebugger.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.RemoteDebug.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Debugging.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Events.EventType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Events.EventsManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Events.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.KernelErrorException.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.KernelErrorLevel.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.KernelException.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.KernelExceptionTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.KernelExceptionType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Exceptions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.IMod.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.InterAddonTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.InterAddonTranslations.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.KnownAddons.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.ModLoadPriority.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Extensions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Hardware.HardwareList.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Hardware.HardwareProbe.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Hardware.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Journaling.JournalEntry.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Journaling.JournalManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Journaling.JournalStatus.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Journaling.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.KernelMain.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.KernelPlatform.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Power.PowerManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Power.PowerMode.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Power.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Apps.BootManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Apps.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.BootloaderState.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Style.BaseBootStyle.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Style.BootStyleManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Style.IBootStyle.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.Style.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Bootloader.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Environment.BaseEnvironment.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Environment.EnvironmentTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Environment.IEnvironment.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Starting.Environment.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Threading.KernelThread.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Threading.ThreadManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Threading.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Alarm.AlarmEntry.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Alarm.AlarmTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Alarm.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.BaseCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.CalendarTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.CalendarTypes.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.ICalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.ChineseCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.GregorianCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.HijriCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.JapaneseCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.PersianCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.SaudiHijriCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.TaiwaneseCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.ThaiBuddhistCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.VariantCalendar.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.Types.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Calendars.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Converters.TimeDateConverters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Converters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.FormatType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Renderers.TimeDateMiscRenderers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Renderers.TimeDateRenderConstants.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Renderers.TimeDateRenderers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Renderers.TimeDateRenderersUtc.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Renderers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.TimeDateTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Timezones.TimeZoneRenderers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Timezones.TimeZones.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.Timezones.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Time.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Updates.KernelUpdate.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Updates.UpdateKind.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Updates.UpdateManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.Updates.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Kernel.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Languages.CultureManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Languages.LanguageInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Languages.LanguageManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Languages.Translate.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Languages.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Localized.LocalStrings.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Localized.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Audio.AudioCueContainer.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Audio.AudioCueType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Audio.AudioCuesTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Audio.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.FileManagerCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.FileSelectorCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.FilesSelectorCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.FolderSelectorCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.FoldersSelectorCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.SettingsCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.TaskManagerCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.TimeZoneShowCli.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Interactives.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.Notification.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.NotificationManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.NotificationPriority.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.NotificationProgressState.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.NotificationType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Notifications.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Progress.ProgressHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Progress.ProgressManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Progress.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.ArrayTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.AssemblyLookup.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.FieldManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.IntegerTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.MethodManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.PropertyManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Reflection.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.BaseScreensaver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.Displays.MatrixBleedDisplay.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.Displays.PlainDisplay.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.Displays.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.IScreensaver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.ScreensaverManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Screensaver.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.BaseSplash.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.ISplash.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashContext.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashReport.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashReportInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.SplashReportSeverity.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Splash.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.Probers.Placeholder.PlaceInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.Probers.Placeholder.PlaceParse.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.Probers.Placeholder.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.Probers.Regexp.RegexpTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.Probers.Regexp.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.TextLocation.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Misc.Text.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Connections.NetworkConnection.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Connections.NetworkConnectionTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Connections.NetworkConnectionType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Connections.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.NetworkTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.SpeedDial.SpeedDialEntry.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.SpeedDial.SpeedDialTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.SpeedDial.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Transfer.NetworkTransfer.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Transfer.NetworkTransferInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Transfer.NetworkTransferType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Transfer.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Types.RPC.RPCCommands.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Types.RPC.RemoteProcedure.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Types.RPC.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Types.RSS.RSSTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.Types.RSS.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Network.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Permissions.PermissionTypes.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Permissions.PermissionsTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Permissions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Privacy.Consents.ConsentedPermission.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Privacy.Consents.ConsentedPermissionType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Privacy.Consents.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Privacy.PrivacyConsentTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Privacy.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Signing.AssemblySigning.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Security.Signing.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Homepage.HomepageTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Homepage.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Prompts.IPromptPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Prompts.PromptPresetBase.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Prompts.PromptPresetManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Prompts.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Aliases.AliasInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Aliases.AliasManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Aliases.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.ArgumentsParser.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.CommandArgumentInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.CommandArgumentPart.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.CommandArgumentPartOptions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.CommandAutoCompletionList.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.ProvidedArgumentsInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Arguments.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.BaseCommand.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CancellationHandlers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CommandExecutor.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CommandFlags.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CommandInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CommandManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.CommandParameters.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.ICommand.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.ProcessExecution.ProcessExecutor.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.ProcessExecution.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Commands.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Help.HelpPrint.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Help.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.BaseCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.ICondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.ContainsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.DirectoryExistsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.DirectoryNotExistsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.EqualsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.FileExistsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.FileHashMatchCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.FileHashMismatchCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.FileNotExistsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.GreaterThanCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.GreaterThanOrEqualCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.HashesMatchCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.HashesMismatchCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.InvalidFileNameCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.InvalidPathCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.IsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.IsNotCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.IsNotPlatCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.IsPlatCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.LessThanCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.LessThanOrEqualCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.NoneCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.NotContainsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.NotEqualsCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.ValidFileNameCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.ValidPathCondition.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.Types.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.UESHConditional.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.Conditions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.UESHOperators.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.UESHParse.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.UESHVariables.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Scripting.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.BaseShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.BaseShellInfo-1.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.BaseShellInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.IShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.IShellInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.ShellExecuteInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.ShellManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.ShellType.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Shells.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Switches.SwitchInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Switches.SwitchManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Switches.SwitchOptions.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.ShellBase.Switches.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.AdminShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminDefaultPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLine1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLine2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLine3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLineBG1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLineBG2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.AdminPowerLineBG3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.Presets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Admin.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.DebugShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugDefaultPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLine1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLine2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLine3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLineBG1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLineBG2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.DebugPowerLineBG3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.Presets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Debug.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.HexShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexDefaultPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLine1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLine2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLine3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLineBG1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLineBG2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.HexPowerLineBG3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.Presets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Hex.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextDefaultPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLine1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLine2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLine3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLineBG1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLineBG2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.TextPowerLineBG3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.Presets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.TextEditShellCommon.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.TextShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.Text.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.DefaultPreset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLine1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLine2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLine3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLineBG1Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLineBG2Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.PowerLineBG3Preset.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.Presets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.UESHShell.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Shell.Shells.UESH.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Groups.GroupInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Groups.GroupManagement.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Groups.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Handlers.BaseLoginHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Handlers.ILoginHandler.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Handlers.LoginHandlerTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Handlers.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Login.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.LoginErrorReasons.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Motd.MalParse.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Motd.MotdParse.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Motd.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Widgets.BaseWidget.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Widgets.IWidget.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Widgets.WidgetTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.Widgets.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Login.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Settings.UserCustomSettingsManager.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Settings.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.UserFlags.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.UserInfo.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.UserManagement.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Windows.WindowsUserTools.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.Windows.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/api/Nitrocid.Users.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Nitrocid/index.html</loc>
-    <lastmod>2025-06-11T05:07:14+00:00</lastmod>
+    <lastmod>2025-06-12T11:38:47+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
