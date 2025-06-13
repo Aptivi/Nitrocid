@@ -54,7 +54,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="[3.11.0]" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="[4.8.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="[4.8.0]" />
-    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250603102016" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250613182932" />
   </ItemGroup>
 
   <ItemGroup>
