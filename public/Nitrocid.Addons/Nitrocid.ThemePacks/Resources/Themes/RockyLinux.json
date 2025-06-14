@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Rocky Linux",
         "Description": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",

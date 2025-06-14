@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Dynamic Extra",
         "Description": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
-        "Localizable": true,
         "Category": "Exciting",
         "UseAccentTypes": [
             "InputColor",

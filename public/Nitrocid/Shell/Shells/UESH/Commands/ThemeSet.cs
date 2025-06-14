@@ -108,7 +108,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 var themeInstance = ThemeTools.GetThemeInfo(theme);
                                 string name = themeInstance.Name;
-                                string desc = themeInstance.Localizable ? LanguageTools.GetLocalized(themeInstance.Description) : themeInstance.Description;
+                                string desc = LanguageTools.GetLocalized(themeInstance.Description);
                                 var ici = new InputChoiceInfo(
                                     theme,
                                     $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEEXPIRED") : LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEAVAILABLE"))}]" : "")}",
@@ -168,7 +168,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         new("y", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES")),
                         new("n", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO"))
                     ],
-                    TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_PROMPT") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? LanguageTools.GetLocalized(Theme.Description) : Theme.Description)
+                    TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_PROMPT") + "\n{0}: {1}", selectedTheme, LanguageTools.GetLocalized(Theme.Description))
                 );
                 if (answer == 1 && parameters.ArgumentsList.Length > 0)
                     bail = true;

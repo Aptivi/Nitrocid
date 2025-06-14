@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Gentoo",
         "Description": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",

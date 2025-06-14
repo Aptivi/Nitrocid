@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Kubuntu",
         "Description": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",
