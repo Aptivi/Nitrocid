@@ -1845,7 +1845,7 @@
       "text": "إعادة تسمية الملفات المرحلية"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "لا توجد ملفات مرحلية تمت إعادة تسميتها."
     },
     {

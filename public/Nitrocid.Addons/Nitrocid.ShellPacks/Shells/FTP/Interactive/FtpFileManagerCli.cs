@@ -124,7 +124,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return ex.Message;
             }
         }
 
@@ -171,7 +171,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return ex.Message;
             }
         }
 

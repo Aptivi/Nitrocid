@@ -10113,6 +10113,14 @@
     {
       "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
       "text": "के लिए भाषा मेटाडेटा को डीसेरिएलाइज़ करने में विफल रहा"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
+      "text": "Can't deserialize the base configuration {0}"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
+      "text": "Can't deserialize the custom configuration {0}"
     }
   ]
 }

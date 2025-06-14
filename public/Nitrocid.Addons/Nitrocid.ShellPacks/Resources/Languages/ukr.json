@@ -1819,7 +1819,7 @@
       "text": "Перейменовані поетапні файли"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Немає перейменованих поетапних файлів."
     },
     {

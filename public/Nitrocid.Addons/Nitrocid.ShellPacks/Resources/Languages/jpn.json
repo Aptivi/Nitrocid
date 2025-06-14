@@ -1819,7 +1819,7 @@
       "text": "ステージングされたファイルの名前が変更されました"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "名前が変更されたステージングされたファイルはありません。"
     },
     {

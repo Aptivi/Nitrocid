@@ -49,7 +49,7 @@ namespace Nitrocid.Kernel.Extensions
         public static string GetLocalizedAddonName(KnownAddons addon)
         {
             if (knownAddons.TryGetValue(addon, out (string, string) name))
-                return Translate.DoTranslation(name.Item2);
+                return LanguageTools.GetLocalized(name.Item2);
             throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE"), addon.ToString());
         }
     }

@@ -1844,7 +1844,7 @@
       "text": "Archivos preparados renombrados"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "No hay archivos preparados renombrados."
     },
     {

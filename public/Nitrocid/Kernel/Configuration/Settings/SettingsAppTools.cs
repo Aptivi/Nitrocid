@@ -54,9 +54,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 SettingsEntry Section = SettingsEntries[SectionIndex];
                 string displayAs =
                     !string.IsNullOrEmpty(Section.DisplayAs) ?
-                    Translate.DoTranslation(Section.DisplayAs) :
-                    Translate.DoTranslation(Section.Name);
-                string description = Translate.DoTranslation(Section.Desc);
+                    LanguageTools.GetLocalized(Section.DisplayAs) :
+                    LanguageTools.GetLocalized(Section.Name);
+                string description = LanguageTools.GetLocalized(Section.Desc);
 
                 // Populate the choice information
                 var choice = new InputChoiceInfo(

@@ -1822,7 +1822,7 @@
       "text": "File in stage rinominati"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Nessun file in scena rinominato."
     },
     {

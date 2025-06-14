@@ -1820,7 +1820,7 @@
       "text": "Μετονομασία σταδιακά αρχεία"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Δεν υπάρχουν μετονομασμένα σταδιακά αρχεία."
     },
     {

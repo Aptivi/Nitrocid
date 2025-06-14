@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     {
                         string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                         TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, LanguageTools.GetLocalized(cmd.HelpDefinition));
                     }
                 }
             }
@@ -82,7 +82,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     {
                         string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                         TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, LanguageTools.GetLocalized(cmd.HelpDefinition));
                     }
                 }
             }
@@ -102,7 +102,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     {
                         string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                         TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, LanguageTools.GetLocalized(cmd.HelpDefinition));
                     }
                 }
             }
@@ -119,7 +119,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     {
                         string[] usages = [.. cmd.Value.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                         TextWriters.Write("  - {0} -> {1}{2}: ", false, KernelColorType.ListEntry, cmd.Key.Alias, cmd.Value.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.Value.GetTranslatedHelpEntry());
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, LanguageTools.GetLocalized(cmd.Value.HelpDefinition));
                     }
                 }
             }
@@ -136,7 +136,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     {
                         string[] usages = [.. cmd.CommandArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                         TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, cmd.Command, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, LanguageTools.GetLocalized(cmd.HelpDefinition));
                     }
                 }
             }
@@ -199,7 +199,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                     IsMod || IsAddon || IsUnified ? command :
                     IsAlias ? AliasManager.GetAlias(command, commandType).Command :
                     command;
-                string HelpDefinition = FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
+                string HelpDefinition = LanguageTools.GetLocalized(FinalCommandList[FinalCommand].HelpDefinition);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
@@ -239,7 +239,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                             if (string.IsNullOrWhiteSpace(argument.Options.ArgumentDescription))
                                 argumentDescUnlocalized = LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDARGNODESC");
                             string argumentName = argument.ArgumentExpression;
-                            string argumentDesc = Translate.DoTranslation(argumentDescUnlocalized);
+                            string argumentDesc = LanguageTools.GetLocalized(argumentDescUnlocalized);
                             TextWriters.Write($"    {argumentName}: ", false, KernelColorType.ListEntry);
                             TextWriters.Write(argumentDesc, KernelColorType.ListValue);
                         }
@@ -255,7 +255,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                             if (string.IsNullOrWhiteSpace(Switch.HelpDefinition))
                                 switchDescUnlocalized = LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDSWITCHNODESC");
                             string switchName = Switch.SwitchName;
-                            string switchDesc = Translate.DoTranslation(switchDescUnlocalized);
+                            string switchDesc = LanguageTools.GetLocalized(switchDescUnlocalized);
                             TextWriters.Write($"    -{switchName}: ", false, KernelColorType.ListEntry);
                             TextWriters.Write(switchDesc, KernelColorType.ListValue);
                         }

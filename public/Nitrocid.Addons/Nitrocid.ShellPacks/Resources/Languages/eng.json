@@ -1925,8 +1925,8 @@
       "text": "Renamed staged files"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
-      "text": "RENAMEDSTAGEDNo renamed staged files."
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
+      "text": "No renamed staged files."
     },
     {
       "loc": "NKS_SHELLPACKS_GIT_STATUS_RENAMED",

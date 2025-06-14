@@ -125,7 +125,8 @@ namespace Nitrocid.Kernel.Debugging.Testing
             new TestFolderSelector(),
             new TestFoldersSelector(),
         ];
-        internal static Dictionary<TestSection, string> sections = new()
+
+        internal static Dictionary<TestSection, string> Sections => new()
         {
             { TestSection.ConsoleBase,          LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_CONSOLEBASE") },
             { TestSection.Drivers,              LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_DRIVER") },
@@ -145,9 +146,9 @@ namespace Nitrocid.Kernel.Debugging.Testing
             exiting = false;
 
             // List sections and alt options
-            int sectionCount = sections.Count;
-            var listFacadesCodeNames = sections.Keys.Select((sec) => sec).ToArray();
-            var listFacades = sections.Select((kvp) => ($"{kvp.Key}", Translate.DoTranslation(kvp.Value))).ToArray();
+            int sectionCount = Sections.Count;
+            var listFacadesCodeNames = Sections.Keys.Select((sec) => sec).ToArray();
+            var listFacades = Sections.Select((kvp) => ($"{kvp.Key}", kvp.Value)).ToArray();
             var listFacadesAlt = new (string, string)[]
             {
                 (LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC"))

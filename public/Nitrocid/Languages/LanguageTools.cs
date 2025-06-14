@@ -27,12 +27,18 @@ namespace Nitrocid.Languages
         private const string localType = "Nitrocid";
 
         internal static string GetLocalized(string id) =>
-            GetLocalized(id, localType);
+            GetLocalized(id, localType, LanguageCommon.Language);
 
-        internal static string GetLocalized(string id, string localType)
+        internal static string GetLocalized(string id, string localType) =>
+            GetLocalized(id, localType, LanguageCommon.Language);
+
+        internal static string GetLocalized(string id, string localType, string language)
         {
             AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            return LanguageCommon.Translate(id, localType);
+            var type = LanguageCommon.GetAction(localType);
+            if (type.Exists.Invoke(id, language))
+                return LanguageCommon.Translate(id, localType, language);
+            return id;
         }
 
         internal static void AddCustomAction(string localType, LanguageLocalActions action)

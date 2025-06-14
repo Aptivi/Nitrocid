@@ -1820,7 +1820,7 @@
       "text": "이름이 변경된 스테이지 파일"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "이름이 변경된 준비된 파일이 없습니다."
     },
     {

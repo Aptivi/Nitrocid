@@ -1822,7 +1822,7 @@
       "text": "重新命名暫存文件"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "沒有重新命名的暫存檔案。"
     },
     {

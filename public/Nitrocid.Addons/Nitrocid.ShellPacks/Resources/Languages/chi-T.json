@@ -1827,7 +1827,7 @@
       "text": "重命名暂存文件"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "没有重命名的暂存文件。"
     },
     {

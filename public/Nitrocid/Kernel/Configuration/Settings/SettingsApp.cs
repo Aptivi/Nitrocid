@@ -238,7 +238,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Check for platform compatibility
                     string Notes = "";
                     var unsupportedConfigs = SectionToken.Where((sk) => sk.Unsupported).ToArray();
-                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
+                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => LanguageTools.GetLocalized(sk.Name)).ToArray();
                     bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
                     if (hasUnsupportedConfigs)
                         Notes = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG") + $" {string.Join(", ", unsupportedConfigNames)}";
@@ -272,8 +272,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     };
 
                     // Prompt user and check for input
-                    string finalSection = SectionTranslateName ? Translate.DoTranslation(SectionDisplayName) : SectionDisplayName;
-                    int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, Translate.DoTranslation(SectionDescription), Notes),
+                    string finalSection = SectionTranslateName ? LanguageTools.GetLocalized(SectionDisplayName) : SectionDisplayName;
+                    int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, LanguageTools.GetLocalized(SectionDescription), Notes),
                         [.. sections], [.. altSections]);
 
                     // We need to check for exit early

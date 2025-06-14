@@ -186,7 +186,7 @@ namespace Nitrocid.Kernel.Starting
             if (tips.Length > 0)
             {
                 int tipIdx = RandomDriver.RandomIdx(tips.Length);
-                tip = Translate.DoTranslation(tips[tipIdx]);
+                tip = LanguageTools.GetLocalized(tips[tipIdx], "Nitrocid.Extras.Tips");
             }
             return tip;
         }

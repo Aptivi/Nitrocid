@@ -10117,6 +10117,14 @@
     {
       "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
       "text": "Kunne ikke deserialisere språkmetadata for"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
+      "text": "Can't deserialize the base configuration {0}"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
+      "text": "Can't deserialize the custom configuration {0}"
     }
   ]
 }

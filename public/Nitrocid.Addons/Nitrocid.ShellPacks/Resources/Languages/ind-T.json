@@ -1819,7 +1819,7 @@
       "text": "चरणबद्ध फ़ाइलों का नाम बदला गया"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "कोई पुनर्नामित चरणबद्ध फ़ाइलें नहीं."
     },
     {
