@@ -1,25 +1,25 @@
 [
     {
         "Name": "MatrixBleed",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DESC"),
+        "Desc": "NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DESC",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "MatrixBleedDelay",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME"),
+                "Name": "NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME",
                 "Type": "SInt",
                 "Variable": "MatrixBleedMaxSteps",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_DESC")
+                "Description": "NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_NAME"),
+                "Name": "NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "MatrixBleedDropChance",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_DESC"),
+                "Description": "NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_DESC",
                 "MinimumValue": 0,
                 "MaximumValue": 100
             }

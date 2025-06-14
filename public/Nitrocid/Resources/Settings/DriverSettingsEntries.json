@@ -2,7 +2,7 @@
     {
         "Name": "Drivers",
         "Desc": "This section lists the driver settings.",
-        "DisplayAs": LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_INSTANCES_DRIVERSETTINGS"),
+        "DisplayAs": "NKS_KERNEL_CONFIGURATION_INSTANCES_DRIVERSETTINGS",
         "Keys": [
             {
                 "Name": "Current console driver",
@@ -12,7 +12,7 @@
                 "SelectionFunctionName": "GetConsoleDriverNames",
                 "SelectionFunctionType": "ConsoleDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which console driver would you like to use?"
+                "Description": "Which console driver would you like to use?"
             },
             {
                 "Name": "Current random number generator driver",
@@ -22,7 +22,7 @@
                 "SelectionFunctionName": "GetRandomDriverNames",
                 "SelectionFunctionType": "RandomDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which random number generator driver would you like to use?"
+                "Description": "Which random number generator driver would you like to use?"
             },
             {
                 "Name": "Current network driver",
@@ -32,7 +32,7 @@
                 "SelectionFunctionName": "GetNetworkDriverNames",
                 "SelectionFunctionType": "NetworkDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which network driver would you like to use?"
+                "Description": "Which network driver would you like to use?"
             },
             {
                 "Name": "Current filesystem driver",
@@ -42,7 +42,7 @@
                 "SelectionFunctionName": "GetFilesystemDriverNames",
                 "SelectionFunctionType": "FilesystemDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which filesystem driver would you like to use?"
+                "Description": "Which filesystem driver would you like to use?"
             },
             {
                 "Name": "Current encryption driver",
@@ -52,7 +52,7 @@
                 "SelectionFunctionName": "GetEncryptionDriverNames",
                 "SelectionFunctionType": "EncryptionDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which encryption driver would you like to use?"
+                "Description": "Which encryption driver would you like to use?"
             },
             {
                 "Name": "Current regular expression driver",
@@ -62,7 +62,7 @@
                 "SelectionFunctionName": "GetRegexpDriverNames",
                 "SelectionFunctionType": "RegexpDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which regular expression driver would you like to use?"
+                "Description": "Which regular expression driver would you like to use?"
             },
             {
                 "Name": "Current debug logger driver",
@@ -72,7 +72,7 @@
                 "SelectionFunctionName": "GetDebugLoggerDriverNames",
                 "SelectionFunctionType": "DebugLoggerDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which debug logger driver would you like to use?"
+                "Description": "Which debug logger driver would you like to use?"
             },
             {
                 "Name": "Current encoding driver",
@@ -82,7 +82,7 @@
                 "SelectionFunctionName": "GetEncodingDriverNames",
                 "SelectionFunctionType": "EncodingDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which encoding driver would you like to use?"
+                "Description": "Which encoding driver would you like to use?"
             },
             {
                 "Name": "Current hardware prober driver",
@@ -92,7 +92,7 @@
                 "SelectionFunctionName": "GetHardwareProberDriverNames",
                 "SelectionFunctionType": "HardwareProberDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which hardware prober driver would you like to use?"
+                "Description": "Which hardware prober driver would you like to use?"
             },
             {
                 "Name": "Current sorting driver",
@@ -102,7 +102,7 @@
                 "SelectionFunctionName": "GetSortingDriverNames",
                 "SelectionFunctionType": "SortingDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which sorting driver would you like to use?"
+                "Description": "Which sorting driver would you like to use?"
             },
             {
                 "Name": "Current input driver",
@@ -112,7 +112,7 @@
                 "SelectionFunctionName": "GetInputDriverNames",
                 "SelectionFunctionType": "InputDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which input driver would you like to use?"
+                "Description": "Which input driver would you like to use?"
             },
             {
                 "Name": "Current asymmetric encoding driver",
@@ -122,7 +122,7 @@
                 "SelectionFunctionName": "GetEncodingAsymmetricDriverNames",
                 "SelectionFunctionType": "EncodingAsymmetricDriverTools",
                 "SelectionFallback": [ "Default" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): "Which asymmetric encoding driver would you like to use?"
+                "Description": "Which asymmetric encoding driver would you like to use?"
             }
         ]
     }
