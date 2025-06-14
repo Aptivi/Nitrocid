@@ -1456,19 +1456,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.ConsoleBase.Themes.ThemeInfo.IsExpired
   nameWithType: ThemeInfo.IsExpired
-- uid: Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable
-  name: Localizable
-  href: api/Nitrocid.ConsoleBase.Themes.ThemeInfo.html#Nitrocid_ConsoleBase_Themes_ThemeInfo_Localizable
-  commentId: P:Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable
-  fullName: Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable
-  nameWithType: ThemeInfo.Localizable
-- uid: Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable*
-  name: Localizable
-  href: api/Nitrocid.ConsoleBase.Themes.ThemeInfo.html#Nitrocid_ConsoleBase_Themes_ThemeInfo_Localizable_
-  commentId: Overload:Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable
-  isSpec: "True"
-  fullName: Nitrocid.ConsoleBase.Themes.ThemeInfo.Localizable
-  nameWithType: ThemeInfo.Localizable
 - uid: Nitrocid.ConsoleBase.Themes.ThemeInfo.Name
   name: Name
   href: api/Nitrocid.ConsoleBase.Themes.ThemeInfo.html#Nitrocid_ConsoleBase_Themes_ThemeInfo_Name
