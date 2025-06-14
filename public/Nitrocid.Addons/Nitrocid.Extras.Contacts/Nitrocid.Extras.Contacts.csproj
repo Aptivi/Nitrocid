@@ -12,11 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="VisualCard" Version="4.0.0.3" />
-    <PackageReference Include="VisualCard.Extras" Version="4.0.0.3" />
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="VisualCard" Version="4.0.0.3" />
+    <PackageReference Include="VisualCard.Extras" Version="4.0.0.3" />
     <PackageReference Update="LocaleStation" Version="1.2.0" />
   </ItemGroup>
 

@@ -9,6 +9,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Update="LocaleStation" Version="1.2.0" />
