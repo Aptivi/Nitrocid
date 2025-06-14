@@ -1829,7 +1829,7 @@
       "text": "Arquivos preparados renomeados"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Nenhum arquivo testado renomeado."
     },
     {

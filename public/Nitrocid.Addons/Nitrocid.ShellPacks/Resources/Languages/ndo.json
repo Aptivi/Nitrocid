@@ -1819,7 +1819,7 @@
       "text": "Mengganti nama file bertahap"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Tidak ada file bertahap yang diubah namanya."
     },
     {

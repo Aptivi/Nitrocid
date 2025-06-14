@@ -35,7 +35,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         public string Command { get; private set; }
         /// <summary>
-        /// The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The help definition of command.
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
@@ -94,12 +94,6 @@ namespace Nitrocid.Shell.ShellBase.Commands
         internal CommandInfo(string Command, string HelpDefinition) :
             this(Command, HelpDefinition, null, null)
         { }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in commands and addon commands only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() =>
-            Translate.DoTranslation(HelpDefinition);
 
     }
 }

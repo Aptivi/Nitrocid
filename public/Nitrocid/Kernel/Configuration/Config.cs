@@ -298,10 +298,10 @@ namespace Nitrocid.Kernel.Configuration
                 string typeName = type.GetType().Name;
                 if (ConfigTools.IsCustomSettingBuiltin(typeName))
                     baseConfigurations[typeName] = (BaseKernelConfig?)JsonConvert.DeserializeObject(jsonContents, type.GetType()) ??
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation($"Can't deserialize the base configuration {typeName}"));
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE"), typeName);
                 else
                     customConfigurations[typeName] = (BaseKernelConfig?)JsonConvert.DeserializeObject(jsonContents, type.GetType()) ??
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation($"Can't deserialize the custom configuration {typeName}"));
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE"), typeName);
             }
             catch (Exception e)
             {

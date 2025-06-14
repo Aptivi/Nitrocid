@@ -31,15 +31,16 @@ namespace Nitrocid.Kernel.Starting
     internal static class KernelStageTools
     {
         internal static Stopwatch StageTimer = new();
-        internal static List<KernelStage> Stages =
+
+        internal static List<KernelStage> Stages =>
         [
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_DESC"), KernelStageActions.Stage01SystemInitialization),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE2_DESC"), KernelStageActions.Stage02KernelUpdates),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE3_DESC"), KernelStageActions.Stage03HardwareProbe),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE4_DESC"), KernelStageActions.Stage04OptionalComponents, false, false),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE5_DESC"), KernelStageActions.Stage05UserInitialization, true, false),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_DESC"), KernelStageActions.Stage06SysIntegrity),
-            new KernelStage( LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE7_DESC"), KernelStageActions.Stage07Bootables, false, false),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_DESC"), KernelStageActions.Stage01SystemInitialization),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE2_DESC"), KernelStageActions.Stage02KernelUpdates),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE3_DESC"), KernelStageActions.Stage03HardwareProbe),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE4_DESC"), KernelStageActions.Stage04OptionalComponents, false, false),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE5_DESC"), KernelStageActions.Stage05UserInitialization, true, false),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_DESC"), KernelStageActions.Stage06SysIntegrity),
+            new KernelStage(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE7_DESC"), KernelStageActions.Stage07Bootables, false, false),
         ];
 
         internal static void RunKernelStage(int stageNum)
@@ -52,7 +53,7 @@ namespace Nitrocid.Kernel.Starting
                 var stage = Stages[stageIdx];
 
                 // Report the stage to the splash manager
-                ReportNewStage(stageNum, $"{LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
+                ReportNewStage(stageNum, $"{LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE")} {stageNum}: {stage.StageName}");
                 if (KernelEntry.SafeMode && stage.StageRunsInSafeMode || !KernelEntry.SafeMode)
                 {
                     if (KernelEntry.Maintenance && stage.StageRunsInMaintenance || !KernelEntry.Maintenance)

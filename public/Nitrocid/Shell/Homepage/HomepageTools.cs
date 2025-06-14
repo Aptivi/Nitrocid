@@ -613,7 +613,7 @@ namespace Nitrocid.Shell.Homepage
                         continue;
 
                     // Add this action
-                    var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                    var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", LanguageTools.GetLocalized(key));
                     choices.Add((inputChoiceInfo, action));
                 }
             }

@@ -67,7 +67,7 @@ namespace Nitrocid.Misc.Interactives
                     var configs = config.SettingsEntries ??
                         throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                     var configNames = configs.Select((se, idx) =>
-                        (!string.IsNullOrEmpty(se.DisplayAs) ? Translate.DoTranslation(se.DisplayAs) : se.Name, idx)
+                        (!string.IsNullOrEmpty(se.DisplayAs) ? LanguageTools.GetLocalized(se.DisplayAs) : se.Name, idx)
                     ).ToArray();
                     int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
                     var entry = configs[finalIdx];
@@ -125,7 +125,7 @@ namespace Nitrocid.Misc.Interactives
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-            string entryDesc = Translate.DoTranslation(configs[entryIdx].Desc);
+            string entryDesc = LanguageTools.GetLocalized(configs[entryIdx].Desc);
             string status = $"{entryName} - {entryDesc}";
             return status;
         }

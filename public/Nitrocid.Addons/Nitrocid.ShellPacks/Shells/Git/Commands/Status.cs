@@ -111,7 +111,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                     TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(Translate.DoTranslation("No renamed staged files."), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED"), true, KernelColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...renamed unstaged...

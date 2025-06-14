@@ -1828,7 +1828,7 @@
       "text": "Staging-Dateien umbenannt"
     },
     {
-      "loc": "NKS_SHELLPACKS_GIT_STATUS_NO",
+      "loc": "NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED",
       "text": "Keine umbenannten bereitgestellten Dateien."
     },
     {

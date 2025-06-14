@@ -36,7 +36,7 @@ namespace Nitrocid.Tests.Languages
         public void TestTranslate()
         {
             string ExpectedTranslation = "Apagando ...";
-            string ActualTranslation = Translate.DoTranslation("Shutting down...", "spa");
+            string ActualTranslation = LanguageTools.GetLocalized("NKS_KERNEL_POWER_SHUTTINGDOWN", "Nitrocid", "spa");
             ActualTranslation.ShouldBe(ExpectedTranslation);
         }
 

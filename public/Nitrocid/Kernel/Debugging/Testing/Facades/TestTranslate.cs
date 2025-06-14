@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string lang = "spa";
-            string str = Translate.DoTranslation("Welcome to Kernel!", lang);
+            string str = LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TRANSLATE_TEST", "Nitrocid", lang);
             TextWriterColor.Write(str);
         }
     }

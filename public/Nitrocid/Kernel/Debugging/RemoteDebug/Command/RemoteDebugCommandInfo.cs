@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
         /// </summary>
         public string Command { get; private set; }
         /// <summary>
-        /// The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The help definition of command.
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
@@ -58,11 +58,6 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             this.CommandArgumentInfo = CommandArgumentInfo;
             this.CommandBase = CommandBase;
         }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in remote debug commands only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() => Translate.DoTranslation(HelpDefinition);
 
     }
 }

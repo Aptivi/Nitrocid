@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.Tips
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
 
         void IAddon.FinalizeAddon() =>
-            WelcomeMessage.tips = TipsList.Tips;
+            WelcomeMessage.tips = TipsList.tips;
 
         void IAddon.StartAddon()
         {
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Tips
 
         void IAddon.StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.ThemeStudio");
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Tips");
             WelcomeMessage.tips = [];
             ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
         }

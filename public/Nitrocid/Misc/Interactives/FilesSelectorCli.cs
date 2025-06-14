@@ -99,7 +99,7 @@ namespace Nitrocid.Misc.Interactives
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return ex.Message;
             }
         }
 

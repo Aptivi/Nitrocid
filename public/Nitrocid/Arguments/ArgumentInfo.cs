@@ -33,7 +33,7 @@ namespace Nitrocid.Arguments
         /// </summary>
         public string Argument { get; private set; }
         /// <summary>
-        /// The untranslated help definition of argument. Translated by <see cref="GetTranslatedHelpEntry()"/>
+        /// The help definition of argument.
         /// </summary>
         public string HelpDefinition { get; set; }
         /// <summary>
@@ -76,12 +76,6 @@ namespace Nitrocid.Arguments
             this.ArgumentBase = ArgumentBase ?? new UndefinedArgument();
             this.Obsolete = Obsolete;
         }
-
-        /// <summary>
-        /// Gets the translated version of help entry (KS built-in arguments only)
-        /// </summary>
-        public string GetTranslatedHelpEntry() =>
-            Translate.DoTranslation(HelpDefinition);
 
     }
 }
