@@ -50,7 +50,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             if (commandList.Count == 0)
                 DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOLISTING"), true, device);
             foreach (string cmd in commandList.Keys)
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, vars: [cmd, commandList[cmd].GetTranslatedHelpEntry()]);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, vars: [cmd, LanguageTools.GetLocalized(commandList[cmd].HelpDefinition)]);
         }
 
         internal static void ShowCommandListSimple(RemoteDebugDevice device)
@@ -75,7 +75,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             // Now, populate usages for each command
             string FinalCommand = command;
             string RenderedCommand = $"/{command}";
-            string HelpDefinition = commandList[FinalCommand].GetTranslatedHelpEntry();
+            string HelpDefinition = LanguageTools.GetLocalized(commandList[FinalCommand].HelpDefinition);
             var HelpUsages = Array.Empty<string>();
 
             // Populate help usages

@@ -10146,7 +10146,7 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "لا يمكن إلغاء تسلسل التكوين المخصص {0}"
     }
   ]
 }

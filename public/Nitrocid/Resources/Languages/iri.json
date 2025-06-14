@@ -10117,11 +10117,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "Ní féidir an bhunchumraíocht {0} a dhíshriail"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "Ní féidir an chumraíocht shaincheaptha {0} a dhíshrianú"
     }
   ]
 }

@@ -10120,11 +10120,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "Kan ikke deserialisere basiskonfigurasjonen {0}"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "Kan ikke deserialisere den egendefinerte konfigurasjonen {0}"
     }
   ]
 }
