@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Amusements.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("AmusementsSplashSettings.json", ResourcesType.Misc, typeof(AmusementsConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Amusements"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

@@ -1,92 +1,92 @@
 [
     {
-        "Name": "Snaker",
-        "Desc": "A snake game.",
+        "Name": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "SnakerDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC"
             },
             {
-                "Name": "Stage delay in milliseconds",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME",
                 "Type": "SInt",
                 "Variable": "SnakerStageDelay",
-                "Description": "How many milliseconds to wait before drawing the next stage?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC"
             },
             {
-                "Name": "Color settings",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the colors",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
                 "Variables": [
                     {
-                        "Name": "Activate true colors",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
                         "Type": "SBoolean",
                         "Variable": "SnakerTrueColor",
-                        "Description": "Activates the true color support."
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC"
                     },
                     {
-                        "Name": "Minimum red color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMinimumRedColorLevel",
-                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum green color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMinimumGreenColorLevel",
-                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum blue color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMinimumBlueColorLevel",
-                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMinimumColorLevel",
-                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum red color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMaximumRedColorLevel",
-                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum green color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMaximumGreenColorLevel",
-                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum blue color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMaximumBlueColorLevel",
-                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "SnakerMaximumColorLevel",
-                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }
@@ -96,86 +96,86 @@
     },
     {
         "Name": "Quote",
-        "Desc": "Shows you nice famous quotes.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "QuoteDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC"
             },
             {
-                "Name": "Color settings",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME",
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the colors",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC",
                 "Variables": [
                     {
-                        "Name": "Activate true colors",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME",
                         "Type": "SBoolean",
                         "Variable": "QuoteTrueColor",
-                        "Description": "Activates the true color support."
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC"
                     },
                     {
-                        "Name": "Minimum red color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMinimumRedColorLevel",
-                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum green color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMinimumGreenColorLevel",
-                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum blue color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMinimumBlueColorLevel",
-                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMinimumColorLevel",
-                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum red color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMaximumRedColorLevel",
-                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum green color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMaximumGreenColorLevel",
-                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum blue color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMaximumBlueColorLevel",
-                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum color level",
+                        "Name": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "QuoteMaximumColorLevel",
-                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        "Description": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }

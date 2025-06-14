@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,46 +33,46 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var annivPres = new Slideshow(
-                Translate.DoTranslation("Commemorating the 5-year anniversary of the kernel"),
+                LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE", "Nitrocid.Extras.Amusements"),
                 [
                     new PresentationPage(
-                        Translate.DoTranslation("First ever release"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE", "Nitrocid.Extras.Amusements"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    Translate.DoTranslation("This kernel was first released on February 22, 2018 to make a minimalistic simulator that actually simulates how the core of the kernel works.") + " " +
-                                    Translate.DoTranslation("It used to only host one shell, and a few commands, and it only worked with Windows due to its usage of the Windows Management Instrumentation tool.") + " " +
-                                    Translate.DoTranslation("It also didn't have its own documentation.")
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1", "Nitrocid.Extras.Amusements") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2", "Nitrocid.Extras.Amusements") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3", "Nitrocid.Extras.Amusements")
                                 ]
                             }
                         ]
                     ),
                     new PresentationPage(
-                        Translate.DoTranslation("Kernel Refinement"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE", "Nitrocid.Extras.Amusements"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    Translate.DoTranslation("Versions of the kernel were released, such as the second major release to add coloring and basic features, and the fourth major release to add configuration.") + " " +
-                                    Translate.DoTranslation("Documentation started on the sixth major release, and various nice things have been slowly added to the kernel.")
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1", "Nitrocid.Extras.Amusements") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2", "Nitrocid.Extras.Amusements")
                                 ]
                             }
                         ]
                     ),
                     new PresentationPage(
-                        Translate.DoTranslation("Current version"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE", "Nitrocid.Extras.Amusements"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    Translate.DoTranslation("This version now refines the kernel to the point that it no longer behaves like the old versions.") + " " +
-                                    Translate.DoTranslation("Because the new groundbreaking features got released, we decided to name this kernel...") + " \n\n" +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1", "Nitrocid.Extras.Amusements") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2", "Nitrocid.Extras.Amusements") + " \n\n" +
                                     new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
-                                    "< " + Translate.DoTranslation("Happy 5-year anniversary!") + " >\n\n" +
+                                    "< " + LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3", "Nitrocid.Extras.Amusements") + " >\n\n" +
                                     "-- Aptivi"
                                 ]
                             }

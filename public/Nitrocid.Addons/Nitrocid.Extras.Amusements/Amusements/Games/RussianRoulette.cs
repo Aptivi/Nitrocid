@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,20 +33,20 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // First, tell them to select either true or false
             int bet =
-                ChoiceStyle.PromptChoice(Translate.DoTranslation("What's your bet?"), [("t", "True"), ("f", "False")]) == "t" ? 1 : 0;
+                ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_QUESTION", "Nitrocid.Extras.Amusements"), [("t", "True"), ("f", "False")]) == "t" ? 1 : 0;
 
             // Then, compare the value to the randomly selected value for the roulette
             bool unlucky = RandomDriver.RandomRussianRoulette();
             if (Convert.ToBoolean(bet) == unlucky)
-                TextWriterColor.Write(Translate.DoTranslation("You guessed it right!"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_RIGHT", "Nitrocid.Extras.Amusements"));
             else
-                TextWriterColor.Write(Translate.DoTranslation("You got it wrong."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_WRONG", "Nitrocid.Extras.Amusements"));
 
             // Finally, check if the user is lucky or not
             if (unlucky)
-                TextWriters.Write(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_UNLUCKY", "Nitrocid.Extras.Amusements"), true, KernelColorType.Warning);
             else
-                TextWriters.Write(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_LUCKY", "Nitrocid.Extras.Amusements"), true, KernelColorType.Success);
         }
     }
 }
