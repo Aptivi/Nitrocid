@@ -8,7 +8,7 @@
       "commandName": "Project",
       "commandLineArgs": "reset"
     },
-    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME"): {
+    "Nitrocid KS": {
       "commandName": "Project"
     },
     "Nitrocid KS - Test Interactive": {
