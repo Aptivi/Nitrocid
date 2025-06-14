@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -75,7 +75,7 @@ namespace Nitrocid.ConsoleBase.Themes
             if (themes.TryGetValue(theme, out ThemeInfo? resultingTheme))
                 return resultingTheme;
             if (throwNotFound)
-                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);
+                throw new KernelException(KernelExceptionType.NoSuchTheme, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID"), theme);
             return themes["Default"];
         }
 
@@ -122,7 +122,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
                     EventsManager.FireEvent(EventType.ThemeSetError, themeInfo.Name, ThemeSetErrorReasons.EventFinished);
-                    throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), themeInfo.Name, themeInfo.StartMonth, themeInfo.StartDay, themeInfo.EndMonth, themeInfo.EndDay);
+                    throw new KernelException(KernelExceptionType.ThemeManagement, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME"), themeInfo.Name, themeInfo.StartMonth, themeInfo.StartDay, themeInfo.EndMonth, themeInfo.EndDay);
                 }
 
                 // Set colors as appropriate
@@ -134,7 +134,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 // We're trying to apply true color on unsupported console
                 DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
                 EventsManager.FireEvent(EventType.ThemeSetError, themeInfo.Name, ThemeSetErrorReasons.ConsoleUnsupported);
-                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), themeInfo.Name);
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR"), themeInfo.Name);
             }
 
             // Raise event
@@ -161,7 +161,7 @@ namespace Nitrocid.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.NotFound);
-                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);
+                throw new KernelException(KernelExceptionType.NoSuchTheme, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID"), theme);
             }
         }
 
@@ -186,7 +186,7 @@ namespace Nitrocid.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Theme not found.");
                 EventsManager.FireEvent(EventType.ThemeSetError, ThemeFile, ThemeSetErrorReasons.NotFound);
-                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
+                throw new KernelException(KernelExceptionType.NoSuchTheme, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID"), ThemeFile);
             }
         }
 
@@ -203,7 +203,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
             // Check to see if we're trying to preview theme on non-true color console
             if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
-                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR"));
 
             // Set the colors
             try
@@ -226,7 +226,7 @@ namespace Nitrocid.ConsoleBase.Themes
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 EventsManager.FireEvent(EventType.ColorSetError, KernelColorSetErrorReasons.InvalidColors);
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
+                throw new KernelException(KernelExceptionType.Color, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID") + " {0}", ex, ex.Message);
             }
         }
 

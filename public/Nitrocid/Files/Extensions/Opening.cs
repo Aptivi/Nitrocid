@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -57,7 +57,7 @@ namespace Nitrocid.Files
             DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", vars: [forceHex]);
             DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", vars: [forceSql]);
             if (!fileExists)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_FILENOTFOUND"));
 
             // This variable chooses opening mode, with forced types first
             OpeningMode mode =
@@ -88,7 +88,7 @@ namespace Nitrocid.Files
                 case OpeningMode.Json:
                     if (!hasJsonShell)
                     {
-                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSJSONSHELLADDON"), KernelColorType.Warning);
                         ShellManager.StartShell(ShellType.TextShell, path);
                     }
                     else
@@ -97,7 +97,7 @@ namespace Nitrocid.Files
                 case OpeningMode.Sql:
                     if (!hasSqlShell)
                     {
-                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSSQLSHELLADDON"), KernelColorType.Warning);
                         ShellManager.StartShell(ShellType.HexShell, path);
                     }
                     else
@@ -116,7 +116,7 @@ namespace Nitrocid.Files
             // Check the file for existence
             bool fileExists = FilesystemTools.FileExists(file);
             if (!fileExists)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_FILENOTFOUND"));
 
             // Now, check to see if the file is a text or a binary file
             if (FilesystemTools.IsBinaryFile(file))
@@ -124,7 +124,7 @@ namespace Nitrocid.Files
                 // This file is a binary file.
                 string extension = Path.GetExtension(file);
                 var handler = ExtensionHandlerTools.GetExtensionHandler(extension) ??
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No handler to handle this extension.") + $" {extension}");
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_OPEN_EXCEPTION_NOHANDLER") + $" {extension}");
 
                 // Now that we have the handler, we'll execute it.
                 handler.Handler(file);

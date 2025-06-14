@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,13 +49,13 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         continue;
 
                     // Write the field name and its value
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Field info for") + $" {type.Name}::{fieldName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    TextWriters.Write(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_TITLE") + $" {type.Name}::{fieldName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{field.GetValue(null)}", KernelColorType.ListValue);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}::{fieldName}: {ex.Message}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}::{fieldName}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;

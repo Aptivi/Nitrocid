@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         {
             if (KernelPlatform.IsOnWindows())
             {
-                TextWriters.Write(Translate.DoTranslation("This command is not supported on Windows."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), KernelColorType.Error);
                 return 33;
             }
             ConsoleTools.PreviewMainBuffer();

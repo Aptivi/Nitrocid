@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CliDoublePaneTest : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a double pane interaction");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC");
         public override void Run() =>
             InteractiveTuiTools.OpenInteractiveTui(new CliDoublePaneTestData());
     }

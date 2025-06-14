@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -120,12 +120,12 @@ namespace Nitrocid.Kernel.Journaling
             // Now, formulate a valid journal path and check it for existence
             string journalPath = PathsManagement.JournalingPath.Insert(PathsManagement.JournalingPath.Length - 5, $"-{sessionNum}");
             if (!FilesystemTools.FileExists(journalPath))
-                throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Journal file '{0}' doesn't exist."), journalPath);
+                throw new KernelException(KernelExceptionType.Journaling, LanguageTools.GetLocalized("NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND"), journalPath);
 
             // Assuming that the file exists (guarded by the above check), deserialize the contents
             string entriesValue = FilesystemTools.ReadContentsText(journalPath);
             JournalEntry[] entries = JsonConvert.DeserializeObject<JournalEntry[]>(entriesValue) ??
-                throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Can't get journal entries"));
+                throw new KernelException(KernelExceptionType.Journaling, LanguageTools.GetLocalized("NKS_KERNEL_JOURNALING_EXCEPTION_GETENTRIES"));
 
             // Now, return the journal entries
             return entries;

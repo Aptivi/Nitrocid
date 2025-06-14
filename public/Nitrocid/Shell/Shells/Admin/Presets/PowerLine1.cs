@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.Admin.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Translate.DoTranslation("Administrator Shell")),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), LanguageTools.GetLocalized("NKS_SHELL_PROMPTS_PRESETS_ADMIN")),
             ];
 
             // Builder

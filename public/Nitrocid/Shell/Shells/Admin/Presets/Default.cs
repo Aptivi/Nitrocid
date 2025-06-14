@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,7 +33,7 @@ namespace Nitrocid.Shell.Shells.Admin.Presets
 
         /// <inheritdoc/>
         public override string PresetPrompt =>
-            Translate.DoTranslation("Administrator Shell") + "> ";
+            LanguageTools.GetLocalized("NKS_SHELL_PROMPTS_PRESETS_ADMIN") + "> ";
 
         /// <inheritdoc/>
         public override string PresetPromptShowcase =>

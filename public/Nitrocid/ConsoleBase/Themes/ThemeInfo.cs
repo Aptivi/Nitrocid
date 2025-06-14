@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -155,7 +155,7 @@ namespace Nitrocid.ConsoleBase.Themes
         public ThemeInfo() :
             this(JToken.Parse(ResourcesManager.ConvertToString(
                 ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
-                    throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Failed to populate default theme")))))
+                    throw new KernelException(KernelExceptionType.ThemeManagement, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED")))))
         { }
 
         /// <summary>
@@ -182,9 +182,9 @@ namespace Nitrocid.ConsoleBase.Themes
         {
             // Parse the metadata
             var metadataObj = ThemeResourceJson["Metadata"] ??
-                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("There is no theme metadata defined."));
+                throw new KernelException(KernelExceptionType.ThemeManagement, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA"));
             metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString()) ??
-                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Can't deserialize metadata."));
+                throw new KernelException(KernelExceptionType.ThemeManagement, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID"));
             metadataToken = ThemeResourceJson;
 
             // Populate colors

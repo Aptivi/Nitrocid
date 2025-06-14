@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (IPAddress Device in NetworkTools.GetOnlineDevicesInNetwork())
             {
                 string address = string.Join(".", Device.GetAddressBytes());
-                string host = Translate.DoTranslation("Unknown host");
+                string host = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSNET_UNKNOWNHOST");
 
                 // Try to get host name from device
                 try

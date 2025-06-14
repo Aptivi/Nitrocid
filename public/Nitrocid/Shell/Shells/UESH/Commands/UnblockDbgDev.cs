@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,18 +44,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (RemoteDebugTools.TryRemoveFromBlockList(address))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), address);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_UNBLOCKDBGDEV_SUCCESS"), address);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), address);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_UNBLOCKDBGDEV_UNBLOCKFAILED"), address);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), address);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_UNBLOCKDBGDEV_NOTBLOCKED"), address);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -59,7 +59,7 @@ namespace Nitrocid.Network.Connections
         public bool ConnectionAlive =>
             connectionIsInstance ?
             throw new KernelException(KernelExceptionType.NetworkConnection,
-                Translate.DoTranslation("This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.")) :
+                LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION")) :
             ConnectionThread?.IsAlive ?? false;
 
         internal KernelThread? ConnectionThread { get; }

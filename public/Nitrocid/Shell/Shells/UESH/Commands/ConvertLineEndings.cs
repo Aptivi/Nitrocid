@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -76,7 +76,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Convert the line endings
             if (FilesystemTools.IsBinaryFile(TargetTextFile) && !force)
             {
-                TextWriters.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CONVERTLINEENDINGS_BINARYFILE"), true, KernelColorType.Error);
                 return 7;
             }
             FilesystemTools.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);

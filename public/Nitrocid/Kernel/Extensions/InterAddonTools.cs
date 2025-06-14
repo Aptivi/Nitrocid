@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Extensions
             // Get the addon types and get the type
             var types = ListAvailableTypes(addonName);
             var type = types.SingleOrDefault(t => t.FullName == typeName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't return non-existent class type from addon assembly"));
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_CLASSTYPENOTFOUND"));
             return type;
         }
 
@@ -523,7 +523,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Get the field
             var field = GetFieldInfo(addonName, fieldName, type) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDINFO") + $" {addonName} -> {fieldName}");
 
             // Try to get a value from it.
             return FieldManager.GetFieldValue(field);
@@ -580,7 +580,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Get the field
             var field = GetFieldInfo(addonName, fieldName, type) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDINFO") + $" {addonName} -> {fieldName}");
 
             // Try to set a value in it.
             FieldManager.SetFieldValue(field, value);
@@ -712,7 +712,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Assuming that we have functions, get a single function containing that name
             if (!functions.TryGetValue(functionName, out MethodInfo? methodInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonName);
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND"), functionName, addonName);
 
             // Assuming that we have that function, get a single function delegate
             return methodInfo;
@@ -725,7 +725,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Assuming that we have properties, get a single property containing that name
             if (!properties.TryGetValue(propertyName, out PropertyInfo? propertyInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonName);
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND"), propertyName, addonName);
 
             // Assuming that we have that property, get a single property delegate
             var property = propertyInfo;
@@ -739,7 +739,7 @@ namespace Nitrocid.Kernel.Extensions
 
             // Assuming that we have fields, get a single field containing that name
             if (!fields.TryGetValue(fieldName, out FieldInfo? fieldInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonName);
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND"), fieldName, addonName);
 
             // Assuming that we have that field, get a single field delegate
             var field = fieldInfo;
@@ -756,7 +756,7 @@ namespace Nitrocid.Kernel.Extensions
         {
             // Get the addon
             var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_CUSTOMFUNCTIONADDONNONEXISTENT"));
 
             // Now, check the list of available functions
             var addon = addonInfo.Addon;
@@ -771,7 +771,7 @@ namespace Nitrocid.Kernel.Extensions
             // Check to see if this type is a valid addon type
             var addonTypes = ListAvailableTypes(addonName);
             if (!addonTypes.Contains(type))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This class is not an addon class") + $": {type.FullName}");
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOTADDONCLASS") + $": {type.FullName}");
         }
     }
 }

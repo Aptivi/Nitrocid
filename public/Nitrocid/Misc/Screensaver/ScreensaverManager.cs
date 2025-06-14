@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -135,7 +135,7 @@ namespace Nitrocid.Misc.Screensaver
             if (!IsScreensaverRegistered(saver))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
-                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NOTFOUND"), saver);
             }
 
             // Now, get the screensaver instance
@@ -177,7 +177,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", vars: [saver]);
                 if (!IsScreensaverRegistered(saver))
                 {
-                    TextWriters.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_NOTFOUND"), true, KernelColorType.Error, saver);
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", vars: [saver]);
                     return;
                 }
@@ -209,7 +209,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Error when trying to start screensaver:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CANNOTSTART") + " {0}", true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -267,7 +267,7 @@ namespace Nitrocid.Misc.Screensaver
             if (!IsScreensaverRegistered(saver))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
-                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NOTFOUND"), saver);
             }
 
             // Now, set the default screensaver.
@@ -313,7 +313,7 @@ namespace Nitrocid.Misc.Screensaver
         public static void RegisterCustomScreensaver(string name, BaseScreensaver screensaver)
         {
             if (IsScreensaverRegistered(name))
-                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver already exists."));
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_CUSTOMSAVERALREADYEXISTS"));
 
             // Add a custom screensaver to the list of available screensavers.
             CustomSavers.Add(name.ToLower(), screensaver);
@@ -326,7 +326,7 @@ namespace Nitrocid.Misc.Screensaver
         public static void UnregisterCustomScreensaver(string name)
         {
             if (!IsScreensaverRegistered(name))
-                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver not found."));
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_CUSTOMSAVERNOTEXISTS"));
 
             // Remove a custom screensaver from the list of available screensavers.
             CustomSavers.Remove(name.ToLower());
@@ -383,7 +383,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", vars: [Exception.Message]);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel(initialVisible);
-                TextWriters.Write(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CRASH"), true, KernelColorType.Error, Exception.Message);
             }
         }
 

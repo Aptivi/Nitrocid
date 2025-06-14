@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!Enum.TryParse(typeof(PermissionTypes), perm, out object? permission))
             {
                 // Permission not found
-                TextWriters.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERM"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
 
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 // No mode
-                TextWriters.Write(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERMMODE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
             return 0;

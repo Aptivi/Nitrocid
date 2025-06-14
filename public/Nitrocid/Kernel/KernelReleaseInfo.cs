@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -72,9 +72,9 @@ namespace Nitrocid.Kernel
             var currentDate = TimeDateTools.KernelDateTime.Date;
             var supportWindowWarn = supportWindow.Subtract(new TimeSpan(30, 0, 0, 0));
             if (currentDate >= supportWindowWarn && currentDate < supportWindow)
-                TextWriters.Write("* " + Translate.DoTranslation("We'll no longer support this version of Nitrocid KS after this date") + $": {TimeDateRenderers.RenderDate(supportWindow)}. " + Translate.DoTranslation("Make sure that you upgrade to the supported version soon if you want to continue receiving support."), KernelColorType.Warning);
+                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLWARNING") + $": {TimeDateRenderers.RenderDate(supportWindow)}. " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), KernelColorType.Warning);
             else if (currentDate >= supportWindow)
-                TextWriters.Write("* " + Translate.DoTranslation("This version of Nitrocid KS is no longer supported.") + " " + Translate.DoTranslation("Make sure that you upgrade to the supported version soon if you want to continue receiving support."), KernelColorType.Warning);
+                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOL") + " " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), KernelColorType.Warning);
         }
     }
 }

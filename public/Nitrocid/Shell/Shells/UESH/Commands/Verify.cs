@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -69,42 +69,42 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
                         return 4;
                     }
                 }
                 else if (HashVerifier.VerifyHashFromHash(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
                     return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihae.ExceptionType);
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriters.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_MALFORMEDHASHES"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihe.ExceptionType);
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, KernelColorType.Error, parameters.ArgumentsList[3]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }

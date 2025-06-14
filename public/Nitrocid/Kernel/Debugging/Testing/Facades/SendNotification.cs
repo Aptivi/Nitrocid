@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,13 +27,13 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class SendNotification : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Sends a notification to test the receiver");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC");
         public override void Run()
         {
             foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {
                 SplashReport._KernelBooted = true;
-                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (NotificationPriority)value, NotificationType.Normal);
+                var Notif = new Notification(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_TITLE"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_DESC"), (NotificationPriority)value, NotificationType.Normal);
                 NotificationManager.NotifySend(Notif);
                 Thread.Sleep(500);
                 SplashReport._KernelBooted = false;

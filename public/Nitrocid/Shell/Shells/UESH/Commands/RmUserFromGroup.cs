@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
             GroupManagement.RemoveUserFromGroup(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(Translate.DoTranslation("Removed {0} from group {1}."), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSERFROMGROUP_SUCCESS"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
 

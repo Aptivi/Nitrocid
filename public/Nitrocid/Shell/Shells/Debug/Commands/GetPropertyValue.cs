@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,13 +49,13 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         continue;
 
                     // Write the property name and its value
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Property info for") + $" {type.Name}::{propertyName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    TextWriters.Write(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_TITLE") + $" {type.Name}::{propertyName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{property.GetValue(null)}", KernelColorType.ListValue);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to get property info for") + $" {type.Name}::{propertyName}: {ex.Message}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}::{propertyName}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;

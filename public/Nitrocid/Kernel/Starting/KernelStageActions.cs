@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -65,18 +65,18 @@ namespace Nitrocid.Kernel.Starting
             // Now, initialize remote debugger if the kernel is running in debug mode
             if (Config.MainConfig.RDebugAutoStart & KernelEntry.DebugMode)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTING"), 3);
                 RemoteDebugger.StartRDebugThread();
                 if (!RemoteDebugger.RDebugFailed)
-                    SplashReport.ReportProgress(Translate.DoTranslation("Debug listening on all addresses using port {0}."), 5, Config.MainConfig.DebugPort);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED"), 5, Config.MainConfig.DebugPort);
                 else if (RemoteDebugger.RDebugFailedReason is not null)
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}"), RemoteDebugger.RDebugFailedReason.Message);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED"), RemoteDebugger.RDebugFailedReason.Message);
                 else
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start for unknown reasons."));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN"));
             }
 
             // Try to start the remote procedure call server
-            SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RPCSTARTED"), 3);
             RemoteProcedure.WrapperStartRPC();
         }
 
@@ -92,7 +92,7 @@ namespace Nitrocid.Kernel.Starting
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 string changes = UpdateManager.FetchCurrentChangelogsFromResources();
                 InfoBoxButtonsColor.WriteInfoBoxButtons([
-                    new InputChoiceInfo(Translate.DoTranslation("Acknowledged"), Translate.DoTranslation("Acknowledged")),
+                    new InputChoiceInfo(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_ACKED"), LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_ACKED")),
                 ], changes);
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
@@ -102,7 +102,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void Stage03HardwareProbe()
         {
             if (!Config.MainConfig.QuietHardwareProbe)
-                SplashReport.ReportProgress(Translate.DoTranslation("Please wait while the kernel initializes your hardware..."), 15);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE3_HWINIT"), 15);
             HardwareProbe.StartProbing();
             if (!Config.MainConfig.EnableSplash & !KernelEntry.QuietKernel)
                 HardwareList.ListHardware();
@@ -115,22 +115,22 @@ namespace Nitrocid.Kernel.Starting
         {
             UserManagement.InitializeUsers();
             GroupManagement.InitializeGroups();
-            SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE5_USERSINITIALIZED"), 5);
         }
 
         internal static void Stage06SysIntegrity()
         {
-            SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_INTEGRITY"), 5);
 
             // Check for configuration errors
             if (ConfigTools.NotifyConfigError)
             {
                 ConfigTools.NotifyConfigError = false;
-                SplashReport.ReportProgressError(Translate.DoTranslation("Configuration error will be notified"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_INTEGRITY_CONFIGERROR"));
                 NotificationManager.NotifySend(
                     new Notification(
-                        Translate.DoTranslation("Configuration error"),
-                        Translate.DoTranslation("There is a problem with one of the configuration files. Please check its contents."),
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_INTEGRITY_CONFIGERROR_NOTIFTITLE"),
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE6_INTEGRITY_CONFIGERROR_NOTIFDESC"),
                         NotificationPriority.High,
                         NotificationType.Normal
                     )
@@ -143,7 +143,7 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void Stage07Bootables()
         {
-            SplashReport.ReportProgress(Translate.DoTranslation("Checking for multiple installed environments"), 5);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE7_CHECKINGENVS"), 5);
 
             // Check for multiple environments
             if (BootManager.GetBootApps().Count > 1)

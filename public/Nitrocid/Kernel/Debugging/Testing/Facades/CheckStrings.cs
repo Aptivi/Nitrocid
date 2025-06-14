@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,13 +26,13 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CheckStrings : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Checks to see if the translatable strings exist in the KS resources");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
         public override void Run()
         {
-            string TextPath = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
+            string TextPath = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             var Texts = FilesystemTools.ReadContents(TextPath);
             bool hasMissingEntries = false;

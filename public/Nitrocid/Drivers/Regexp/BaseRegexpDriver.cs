@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -68,7 +68,7 @@ namespace Nitrocid.Drivers.Regexp
         public Match Match(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             return new Regex(pattern).Match(text);
         }
@@ -77,7 +77,7 @@ namespace Nitrocid.Drivers.Regexp
         public MatchCollection Matches(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             return new Regex(pattern).Matches(text);
         }
@@ -86,7 +86,7 @@ namespace Nitrocid.Drivers.Regexp
         public string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             return new Regex(pattern).Replace(text, "");
         }
@@ -95,7 +95,7 @@ namespace Nitrocid.Drivers.Regexp
         public string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern, string replaceWith)
         {
             if (!IsValidRegex(pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             return new Regex(pattern).Replace(text, replaceWith);
         }
@@ -104,7 +104,7 @@ namespace Nitrocid.Drivers.Regexp
         public string[] Split(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             return new Regex(pattern).Split(text);
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Check to see if invalid number is provided
                 if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Session number is invalid."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Journaling);
                 }
                 var entries = JournalManager.GetJournalEntries(sessionNum);

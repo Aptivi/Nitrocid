@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -134,12 +134,12 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
                         {
                             // Not blocked yet. Add the connection.
                             DebugChatDevices.Add(RDebugInstance);
-                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Chat: version") + $" {RemoteDebugger.RDebugVersion}\r\n");
-                            RDebugSWriter.Write(Translate.DoTranslation(">> Your address is {0}.") + "\r\n", RDebugIP);
+                            RDebugSWriter.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_VERSION") + $" {RemoteDebugger.RDebugVersion}\r\n");
+                            RDebugSWriter.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_ADDRESS") + "\r\n", RDebugIP);
                             if (string.IsNullOrEmpty(RDebugName))
-                                RDebugSWriter.Write(Translate.DoTranslation(">> Welcome! This is your first time entering remote chat. In the remote debugger, use \"/register <name>\" to register. You can't talk until you register.") + "\r\n", RDebugName);
+                                RDebugSWriter.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME") + "\r\n", RDebugName);
                             else
-                                RDebugSWriter.Write(Translate.DoTranslation(">> Your name is {0}.") + "\r\n", RDebugName);
+                                RDebugSWriter.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_NAME") + "\r\n", RDebugName);
 
                             // Acknowledge the debugger
                             DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", vars: [RDebugName, RDebugIP]);
@@ -157,12 +157,12 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
                 {
                     if (Config.MainConfig.NotifyOnRemoteDebugConnectionError)
                     {
-                        var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, NotificationPriority.Medium, NotificationType.Normal);
+                        var RemoteDebugError = new Notification(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR"), ex.Message, NotificationPriority.Medium, NotificationType.Normal);
                         NotificationManager.NotifySend(RemoteDebugError);
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, KernelColorType.Error, ex.Message);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR") + ": {0}", true, KernelColorType.Error, ex.Message);
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
@@ -187,7 +187,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
                 {
                     Thread.Sleep(1);
                     if (device is null)
-                        throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Remote debug device doesn't seem to exist."));
+                        throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED"));
 
                     // Variables
                     var MessageBuffer = new byte[65537];

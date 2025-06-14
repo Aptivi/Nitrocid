@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -63,9 +63,9 @@ namespace Nitrocid.Languages
 
                 // For each language, get information for localization and cache them
                 var languageData = ResourcesManager.ConvertToString(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata")));
+                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NOMETADATA")));
                 LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(languageData) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata array"));
+                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY"));
                 foreach (var Language in LanguageMetadata)
                     AddBaseLanguage(Language);
 
@@ -126,7 +126,7 @@ namespace Nitrocid.Languages
             }
             else
             {
-                throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", lang);
+                throw new KernelException(KernelExceptionType.NoSuchLanguage, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + " {0}", lang);
             }
             return false;
         }
@@ -200,19 +200,19 @@ namespace Nitrocid.Languages
                                 else if (ThrowOnAlreadyInstalled)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.E, "Can't add existing language.");
-                                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The language already exists and can't be overwritten."));
+                                    throw new KernelException(KernelExceptionType.LanguageInstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NOOVERWRITE"));
                                 }
                             }
                             else
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
-                                throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
+                                throw new KernelException(KernelExceptionType.LanguageInstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS"));
                             }
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                            throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
+                            throw new KernelException(KernelExceptionType.LanguageInstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL"));
                         }
                     }
                 }
@@ -221,7 +221,7 @@ namespace Nitrocid.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom language {0}: {1}", vars: [LanguageName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguageInstallError, LanguageName, ex);
-                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom language {0}."), ex, LanguageName);
+                    throw new KernelException(KernelExceptionType.LanguageInstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED"), ex, LanguageName);
                 }
             }
         }
@@ -250,7 +250,7 @@ namespace Nitrocid.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to install custom languages: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguagesInstallError, ex);
-                    throw new KernelException(KernelExceptionType.LanguageInstall, Translate.DoTranslation("Failed to install custom languages."), ex);
+                    throw new KernelException(KernelExceptionType.LanguageInstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED"), ex);
                 }
             }
         }
@@ -289,14 +289,14 @@ namespace Nitrocid.Languages
                             if (!CustomLanguages.Remove(LanguageName))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language");
-                                throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."));
+                                throw new KernelException(KernelExceptionType.LanguageUninstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2"));
                             }
                             EventsManager.FireEvent(EventType.LanguageUninstalled, LanguageName);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                            throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."));
+                            throw new KernelException(KernelExceptionType.LanguageUninstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL"));
                         }
                     }
                 }
@@ -305,7 +305,7 @@ namespace Nitrocid.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", vars: [LanguageName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguageUninstallError, LanguageName, ex);
-                    throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName);
+                    throw new KernelException(KernelExceptionType.LanguageUninstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1"), ex, LanguageName);
                 }
             }
         }
@@ -332,7 +332,7 @@ namespace Nitrocid.Languages
                             if (!CustomLanguages.Remove(Language))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages");
-                                throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages."));
+                                throw new KernelException(KernelExceptionType.LanguageUninstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1"));
                             }
                         }
                         EventsManager.FireEvent(EventType.LanguagesUninstalled);
@@ -343,7 +343,7 @@ namespace Nitrocid.Languages
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to uninstall custom languages: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     EventsManager.FireEvent(EventType.LanguagesUninstallError, ex);
-                    throw new KernelException(KernelExceptionType.LanguageUninstall, Translate.DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex);
+                    throw new KernelException(KernelExceptionType.LanguageUninstall, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2"), ex);
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -111,7 +111,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write(Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHOICE_HELPER"));
 
     }
 }

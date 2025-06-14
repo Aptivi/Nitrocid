@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -63,13 +63,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 TargetLanguagePath = FilesystemTools.NeutralizePath(TargetLanguage + ".json", PathsManagement.GetKernelPath(KernelPathType.CustomLanguages));
                                 if (!(FilesystemTools.TryParsePath(TargetLanguagePath) && FilesystemTools.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
-                                    TextWriters.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND"), true, KernelColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
                                 }
                             }
                             else
                             {
-                                TextWriters.Write(Translate.DoTranslation("Language is not specified."), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG"), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
                             }
 
@@ -110,13 +110,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             foreach (string Language in LanguageManager.ListLanguages(LanguageListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparatorColor(Language, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                                TextWriters.Write("- " + Translate.DoTranslation("Language short name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(LanguageManager.Languages[Language].ThreeLetterLanguageName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + Translate.DoTranslation("Language full name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(LanguageManager.Languages[Language].FullLanguageName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + Translate.DoTranslation("Language transliterable:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write($"{LanguageManager.Languages[Language].Transliterable}", true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + Translate.DoTranslation("Custom language:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write($"{LanguageManager.Languages[Language].Custom}", true, KernelColorType.ListValue);
                             }
 
@@ -130,7 +130,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         }
                     default:
                         {
-                            TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("langman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
                         }
@@ -138,7 +138,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
             }
             return 0;

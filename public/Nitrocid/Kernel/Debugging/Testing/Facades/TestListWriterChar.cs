@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,15 +26,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestListWriterChar : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the list writer with the char and char array");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal char list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST"));
             TextWriters.WriteList(NormalCharList);
-            TextWriterColor.Write(Translate.DoTranslation("Array char list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST"));
             TextWriters.WriteList(ArrayCharList);
         }
     }

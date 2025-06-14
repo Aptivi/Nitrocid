@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -65,7 +65,7 @@ namespace Nitrocid.Misc.Interactives
                     if (config is null)
                         return entryNames;
                     var configs = config.SettingsEntries ??
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                     var configNames = configs.Select((se, idx) =>
                         (!string.IsNullOrEmpty(se.DisplayAs) ? Translate.DoTranslation(se.DisplayAs) : se.Name, idx)
                     ).ToArray();
@@ -124,7 +124,7 @@ namespace Nitrocid.Misc.Interactives
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryDesc = Translate.DoTranslation(configs[entryIdx].Desc);
             string status = $"{entryName} - {entryDesc}";
             return status;
@@ -142,7 +142,7 @@ namespace Nitrocid.Misc.Interactives
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryDesc = configs[entryIdx].Desc;
             string status =
                 $"""
@@ -162,7 +162,7 @@ namespace Nitrocid.Misc.Interactives
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
             string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
             string status = $"{entryName} > {keyName} - {keyDesc}";
@@ -181,7 +181,7 @@ namespace Nitrocid.Misc.Interactives
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
             string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
             string status =
@@ -206,7 +206,7 @@ namespace Nitrocid.Misc.Interactives
 
                 // Get the key and try to set
                 var configs = config.SettingsEntries ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                 var key = configs[entryIdx].Keys[keyIdx];
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
                 var input = key.KeyInput.PromptForSet(key, defaultValue, config, out bool provided);
@@ -220,7 +220,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't set settings entry") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSETENTRY") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -235,7 +235,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSAVE") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -250,7 +250,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSAVE") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -269,7 +269,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't load settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTLOAD") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -284,7 +284,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reload settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTRELOAD") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -295,7 +295,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 // Migrate the config
                 if (!ConfigMigration.MigrateAllConfig())
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     });
@@ -303,7 +303,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't migrate settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTMIGRATE") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -318,7 +318,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't check for updates") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTCHECK") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -333,7 +333,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get system information") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSYSINFO") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -347,9 +347,9 @@ namespace Nitrocid.Misc.Interactives
 
                 // Get the config entries
                 var configs = config.SettingsEntries ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                 var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_EXCEPTION_FALLBACK"));
 
                 // Helper function
                 void ResetKeys(SettingsKey[] keys)
@@ -377,7 +377,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset all settings entries for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_RESETALLFAILED") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
             finally
@@ -398,9 +398,9 @@ namespace Nitrocid.Misc.Interactives
 
                 // Get the config entries
                 var configs = config.SettingsEntries ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                 var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get fallback settings"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_EXCEPTION_FALLBACK"));
                 var key = configs[entryIdx].Keys[keyIdx];
                 
                 // Helper function
@@ -418,8 +418,8 @@ namespace Nitrocid.Misc.Interactives
                         {
                             // Prompt for it
                             var keysChoices = keys.Select((sk, idx) => new InputChoiceInfo($"{idx + 1}", $"{sk.Name} [{(sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, config))}]: {sk.Description}")).ToList();
-                            keysChoices.Add(new($"{keysChoices.Count + 1}", Translate.DoTranslation("Exit")));
-                            int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], Translate.DoTranslation("Choose an entry for") + $" \"{key.Name}\"");
+                            keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
+                            int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{key.Name}\"");
 
                             // Check to see if exit is requested
                             if (choiceIdx < 0 || choiceIdx == keysChoices.Count - 1)
@@ -447,7 +447,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset this settings entry for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_RESETFAILED") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -469,7 +469,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't select configuration") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_FAILED") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }

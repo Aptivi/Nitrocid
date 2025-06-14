@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ShowTimeDate : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Shows local kernel date and time");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SHOWTIMEDATE_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run() => TextWriterColor.Write(TimeDateRenderers.Render());
     }

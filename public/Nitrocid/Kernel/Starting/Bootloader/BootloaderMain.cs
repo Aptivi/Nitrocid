@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,8 +54,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 // Failure in the bootloader
                 DebugWriter.WriteDebug(DebugLevel.E, "Bootloader has failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("GRILO has experienced an internal error") + ": {0}", ex.Message);
-                TextWriterColor.Write(Translate.DoTranslation("Press any key to exit."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_ERROR") + ": {0}", ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXIT"));
                 Input.ReadKey();
             }
             finally
@@ -155,24 +155,24 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                             bootloaderBuffer.Clear();
                             bootloaderBuffer.AddDynamicText(() =>
                             {
-                                string section1 = Translate.DoTranslation("Standard controls");
-                                string section2 = Translate.DoTranslation("Controls defined by custom boot style");
+                                string section1 = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_STDCONTROLS");
+                                string section2 = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_CUSTOMCONTROLS");
                                 string renderedCustomKeys =
                                     style.CustomKeys is not null && style.CustomKeys.Count > 0 ?
                                     string.Join("\n", style.CustomKeys
                                         .Select((cki) => $"[{string.Join(" + ", cki.Key.Modifiers)} + {cki.Key.Key}]")) :
-                                    Translate.DoTranslation("No controls defined by custom boot style");
+                                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NOCUSTOMCONTROLS");
                                 return BootStyleManager.RenderDialog(
                                     $"""
                                     {section1}
                                     {new string('=', ConsoleChar.EstimateCellWidth(section1))}
 
-                                    [UP ARROW]   | {Translate.DoTranslation("Selects the previous boot entry")}
-                                    [DOWN ARROW] | {Translate.DoTranslation("Selects the next boot entry")}
-                                    [HOME]       | {Translate.DoTranslation("Selects the first boot entry")}
-                                    [END]        | {Translate.DoTranslation("Selects the last boot entry")}
-                                    [SHIFT + H]  | {Translate.DoTranslation("Opens this help page")}
-                                    [ENTER]      | {Translate.DoTranslation("Boots the selected entry")}
+                                    [UP ARROW]   | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_PREVENTRY")}
+                                    [DOWN ARROW] | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_NEXTENTRY")}
+                                    [HOME]       | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_FIRSTENTRY")}
+                                    [END]        | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_LASTENTRY")}
+                                    [SHIFT + H]  | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_HELP")}
+                                    [ENTER]      | {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT")}
 
                                     {section2}
                                     {new string('=', ConsoleChar.EstimateCellWidth(section2))}

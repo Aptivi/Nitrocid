@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -59,7 +59,7 @@ namespace Nitrocid.Users.Login
             {
                 // Extremely rare state reached
                 DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
-                throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
+                throw new KernelException(KernelExceptionType.NullUsers, LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_NOUSERS"));
             }
 
             // Get the handler!
@@ -68,7 +68,7 @@ namespace Nitrocid.Users.Login
                 // Sanity check...
                 string handlerName = LoginHandlerTools.CurrentHandlerName;
                 var handler = LoginHandlerTools.GetHandler(handlerName) ??
-                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
+                    throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_NOHANDLER") + $" {handlerName}");
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
                 string user = "";
@@ -80,7 +80,7 @@ namespace Nitrocid.Users.Login
                         (UserManagement.UserExists("root") ?
                          UserManagement.GetUser("root") :
                          UserManagement.fallbackRootAccount) ??
-                        throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't set root account."));
+                        throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_SETROOT"));
                     UserManagement.CurrentUserInfo = userInfo;
 
                     // Now, show the Login screen
@@ -109,7 +109,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNOTFOUND"), true, KernelColorType.Error);
                         continue;
                     }
 
@@ -122,14 +122,14 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
                     }
                     else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
                     {
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), new InfoBoxSettings()
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_POWERUNAUTHORIZED"), new InfoBoxSettings()
                         {
                             ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                         });
@@ -147,7 +147,7 @@ namespace Nitrocid.Users.Login
                 DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel panicking...");
-                KernelPanic.KernelError(KernelErrorLevel.F, true, 10, Translate.DoTranslation("Login handler has crashed!") + $" {ex.Message}", ex);
+                KernelPanic.KernelError(KernelErrorLevel.F, true, 10, LanguageTools.GetLocalized("NKS_USERS_LOGIN_HANDLERCRASH") + $" {ex.Message}", ex);
             }
         }
 
@@ -163,7 +163,7 @@ namespace Nitrocid.Users.Login
                 // Sanity check...
                 string handlerName = LoginHandlerTools.CurrentHandlerName;
                 var handler = LoginHandlerTools.GetHandler(handlerName) ??
-                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
+                    throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_NOHANDLER") + $" {handlerName}");
 
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(usernamerequested);
@@ -180,7 +180,7 @@ namespace Nitrocid.Users.Login
                         return true;
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -222,7 +222,7 @@ namespace Nitrocid.Users.Login
 
             // Sign in to user.
             UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser) ??
-                throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {signedInUser}");
+                throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {signedInUser}");
 
             // Set preferred language
             string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage ?? "";
@@ -249,7 +249,7 @@ namespace Nitrocid.Users.Login
         {
             if (Config.MainConfig.EnableSplash)
                 KernelColorTools.LoadBackground();
-            TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE"));
             string user = "root";
             if (UserManagement.UserExists(user))
             {
@@ -261,10 +261,10 @@ namespace Nitrocid.Users.Login
                     else
                     {
                         KernelColorTools.LoadBackground();
-                        TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_INCORRECT"), 3 - (tries + 1), true, KernelColorType.Error);
                         if (tries == 2)
                         {
-                            TextWriters.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_OUTOFCHANCES"), true, KernelColorType.Error);
                             PowerManager.PowerManage(PowerMode.Reboot);
                         }
                     }
@@ -274,7 +274,7 @@ namespace Nitrocid.Users.Login
             {
                 // Some malicious mod removed the root account, or rare situation happened and it was gone.
                 DebugWriter.WriteDebug(DebugLevel.F, "Root account not found for maintenance.");
-                throw new KernelException(KernelExceptionType.NoSuchUser, Translate.DoTranslation("Some malicious mod removed the root account, or rare situation happened and it was gone."));
+                throw new KernelException(KernelExceptionType.NoSuchUser, LanguageTools.GetLocalized("NKS_USERS_LOGIN_NOROOTACCOUNT"));
             }
         }
 

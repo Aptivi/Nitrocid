@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,7 +24,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestTranslate : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests translating a string that exists in resources to specific language");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {

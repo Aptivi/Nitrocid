@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,29 +56,29 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         if (!URL.StartsWith(" "))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Uploading {0} to {1}..."), FileName, URL);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_PROGRESS"), FileName, URL);
                             if (NetworkTransfer.UploadFile(FileName, URL))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Upload has completed."));
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_SUCCESS"));
                                 return 0;
                             }
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_NEEDSADDRESS"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to upload files to the FTP server."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
                     }
                 }
                 catch (Exception ex)
                 {
                     NetworkTools.TransferFinished = false;
-                    TextWriters.Write(Translate.DoTranslation("Upload failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_FAILED"), true, KernelColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);

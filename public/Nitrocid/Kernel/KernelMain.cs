@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -115,7 +115,7 @@ namespace Nitrocid.Kernel
                     }
                     catch (Exception ex)
                     {
-                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel environment error:") + $" {ex.Message}", ex);
+                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ex);
                     }
                     finally
                     {
@@ -146,14 +146,14 @@ namespace Nitrocid.Kernel
 
                 // If "No APM" is enabled, simply print the text
                 if (Config.MainConfig.SimulateNoAPM)
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("It's now safe to turn off your computer."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_NOAPMSIMULATION"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
                     });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_FATALERROR") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });

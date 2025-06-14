@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.Files
         public static void RemoveDirectory(string Target)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, Config.MainConfig.ShowFilesystemProgress);
         }
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Files
         public static void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, ShowProgress, secureRemove);
         }
 
@@ -86,7 +86,7 @@ namespace Nitrocid.Files
         public static void RemoveFile(string Target, bool secureRemove = false)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveFile(Target, secureRemove);
         }
 
@@ -118,7 +118,7 @@ namespace Nitrocid.Files
         public static void RemoveFileOrDir(string Target, bool secureRemove = false)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveFileOrDir(Target, secureRemove);
         }
 

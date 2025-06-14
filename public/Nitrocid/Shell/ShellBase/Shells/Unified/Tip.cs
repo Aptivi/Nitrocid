@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
         {
             string tip = WelcomeMessage.GetRandomTip();
             TextWriters.Write(
-                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
+                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + tip, true, KernelColorType.Tip);
             return 0;
         }
 

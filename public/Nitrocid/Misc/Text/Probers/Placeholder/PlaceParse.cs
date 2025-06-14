@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -130,7 +130,7 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
                 DebugWriter.WriteDebugStackTrace(ex);
                 EventsManager.FireEvent(EventType.PlaceholderParseError, text, ex);
                 if (ThrowIfFailure)
-                    throw new KernelException(KernelExceptionType.InvalidPlaceholder, Translate.DoTranslation("Error trying to parse placeholders. {0}"), ex.Message);
+                    throw new KernelException(KernelExceptionType.InvalidPlaceholder, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR"), ex.Message);
             }
             return text;
         }
@@ -144,9 +144,9 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (placeholderAction is null)
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL"));
 
             // Try to register
             if (!IsPlaceholderRegistered($"<{placeholder}>"))
@@ -164,11 +164,11 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT") + ": <place>");
 
             // Try to unregister
             var place = GetPlaceholder(placeholder);
@@ -185,9 +185,9 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT") + ": <place>");
 
             // Check to see if we have this placeholder
             string placeNoArg = StripPlaceholderArgs(placeholder);
@@ -204,9 +204,9 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT") + ": <place>");
 
             // Check to see if we have this placeholder
             string placeNoArg = StripPlaceholderArgs(placeholder);
@@ -223,11 +223,11 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT") + ": <place>");
 
             // Try to get a placeholder
             string placeNoArg = StripPlaceholderArgs(placeholder);
@@ -245,11 +245,11 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, LanguageTools.GetLocalized("NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT") + ": <place>");
 
             // Try to get a placeholder action
             string placeNoArg = StripPlaceholderArgs(placeholder);

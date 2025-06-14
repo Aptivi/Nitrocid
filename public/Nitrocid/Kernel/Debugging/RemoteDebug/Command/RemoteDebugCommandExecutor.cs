@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,12 +37,12 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 
         internal static Dictionary<string, RemoteDebugCommandInfo> RemoteDebugCommands = new()
         {
-            { "help", new RemoteDebugCommandInfo("help", /* Localizable */ "Help page", new RemoteDebugCommandArgumentInfo(["[command]"]), new HelpCommand()) },
-            { "register", new RemoteDebugCommandInfo("register", /* Localizable */ "Registers your name to your remote debug device", new RemoteDebugCommandArgumentInfo(["<name>"], true, 1), new RegisterCommand()) },
-            { "exit", new RemoteDebugCommandInfo("exit", /* Localizable */ "Disconnects from the remote debugger", new RemoteDebugCommandArgumentInfo(), new ExitCommand()) },
-            { "mutelogs", new RemoteDebugCommandInfo("mutelogs", /* Localizable */ "Mutes or unmutes the kernel logs", new RemoteDebugCommandArgumentInfo(), new MuteLogsCommand()) },
-            { "trace", new RemoteDebugCommandInfo("trace", /* Localizable */ "Shows last stack trace on exception", new RemoteDebugCommandArgumentInfo(["<tracenumber>"], true, 1), new TraceCommand()) },
-            { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
+            { "help", new RemoteDebugCommandInfo("help", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_DESC"), new RemoteDebugCommandArgumentInfo(["[command]"]), new HelpCommand()) },
+            { "register", new RemoteDebugCommandInfo("register", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_REGISTER_DESC"), new RemoteDebugCommandArgumentInfo(["<name>"], true, 1), new RegisterCommand()) },
+            { "exit", new RemoteDebugCommandInfo("exit", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_EXIT_DESC"), new RemoteDebugCommandArgumentInfo(), new ExitCommand()) },
+            { "mutelogs", new RemoteDebugCommandInfo("mutelogs", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_MUTELOGS_DESC"), new RemoteDebugCommandArgumentInfo(), new MuteLogsCommand()) },
+            { "trace", new RemoteDebugCommandInfo("trace", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_TRACE_DESC"), new RemoteDebugCommandArgumentInfo(["<tracenumber>"], true, 1), new TraceCommand()) },
+            { "username", new RemoteDebugCommandInfo("username", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_USERNAME_DESC"), new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
 
         internal static void ExecuteCommand(string RequestedCommand, RemoteDebugDevice Device)
@@ -62,7 +62,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
                 // Check to see if the command exists
                 if (!RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo? rdci))
                 {
-                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("Command not found."), true, Device);
+                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND"), true, Device);
                     return;
                 }
 
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", vars: [Command]);
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("There were not enough arguments. See below for usage:"), true, Device);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_NOTENOUGHARGS"), true, Device);
                         RemoteDebugHelpPrint.ShowHelp(Command, Device);
                     }
                 }
@@ -100,7 +100,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             {
                 EventsManager.FireEvent(EventType.RemoteDebugCommandError, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, vars: [ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand]);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), true, Device, vars: [ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand]);
             }
         }
 

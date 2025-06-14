@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CliInfoPaneTestRefreshing : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a single pane interaction and with refreshing the second pane info");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC");
         public override void Run() =>
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneTestRefreshingData());
     }

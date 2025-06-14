@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,15 +26,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestListWriterStr : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the list writer with the string and string array");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal string list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST"));
             TextWriters.WriteList(NormalStringList);
-            TextWriterColor.Write(Translate.DoTranslation("Array string list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST"));
             TextWriters.WriteList(ArrayStringList);
         }
     }

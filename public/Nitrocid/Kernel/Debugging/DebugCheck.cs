@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -128,7 +128,7 @@ namespace Nitrocid.Kernel.Debugging
             DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! {0}", vars: [reason]);
             DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [memberName, fileName, memberLine]);
             DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
-            KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+            KernelPanic.KernelErrorContinuable(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_ASSERTFAIL") + $" {message}", exc);
             throw exc;
         }
     }

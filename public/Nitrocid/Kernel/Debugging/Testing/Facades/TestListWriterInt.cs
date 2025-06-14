@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,15 +26,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestListWriterInt : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the list writer with the integer and integer array");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal integer list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST"));
             TextWriters.WriteList(NormalIntegerList);
-            TextWriterColor.Write(Translate.DoTranslation("Array integer list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST"));
             TextWriters.WriteList(ArrayIntegerList);
         }
     }

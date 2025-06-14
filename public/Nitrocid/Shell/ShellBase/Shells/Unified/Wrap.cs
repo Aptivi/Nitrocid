@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             var currentShell = ShellManager.ShellStack[^1];
             var currentType = currentShell.ShellType;
             var WrappableCmds = CommandExecutor.GetWrappableCommands(currentType);
-            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER"));
             TextWriters.WriteList(WrappableCmds);
         }
 

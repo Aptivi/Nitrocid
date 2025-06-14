@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.Users.Settings
 
             // Check to see if we have the key
             if (DoesSettingsEntryExist(user, key))
-                throw new KernelException(KernelExceptionType.CustomSettings, Translate.DoTranslation("The key specified, {0}, already exists."), key);
+                throw new KernelException(KernelExceptionType.CustomSettings, LanguageTools.GetLocalized("NKS_USERS_SETTINGS_EXCEPTION_KEYEXISTS"), key);
 
             // Now, add the key with its value to the user info and then save the file
             int userIndex = UserManagement.GetUserIndex(user);
@@ -67,7 +67,7 @@ namespace Nitrocid.Users.Settings
 
             // Check to see if we have the key
             if (!DoesSettingsEntryExist(user, key))
-                throw new KernelException(KernelExceptionType.CustomSettings, Translate.DoTranslation("The key specified, {0}, doesn't exist."), key);
+                throw new KernelException(KernelExceptionType.CustomSettings, LanguageTools.GetLocalized("NKS_USERS_SETTINGS_EXCEPTION_KEYNOTEXISTS"), key);
 
             // Now, modify the key with its value in the user info and then save the file
             int userIndex = UserManagement.GetUserIndex(user);
@@ -90,7 +90,7 @@ namespace Nitrocid.Users.Settings
 
             // Check to see if we have the key
             if (!DoesSettingsEntryExist(user, key))
-                throw new KernelException(KernelExceptionType.CustomSettings, Translate.DoTranslation("The key specified, {0}, doesn't exist."), key);
+                throw new KernelException(KernelExceptionType.CustomSettings, LanguageTools.GetLocalized("NKS_USERS_SETTINGS_EXCEPTION_KEYNOTEXISTS"), key);
 
             // Now, remove the key from the user info and then save the file
             int userIndex = UserManagement.GetUserIndex(user);
@@ -132,7 +132,7 @@ namespace Nitrocid.Users.Settings
 
             // Check to see if we have the key
             if (!DoesSettingsEntryExist(user, key))
-                throw new KernelException(KernelExceptionType.CustomSettings, Translate.DoTranslation("The key specified, {0}, doesn't exist."), key);
+                throw new KernelException(KernelExceptionType.CustomSettings, LanguageTools.GetLocalized("NKS_USERS_SETTINGS_EXCEPTION_KEYNOTEXISTS"), key);
 
             // Get the entry.
             int userIndex = UserManagement.GetUserIndex(user);

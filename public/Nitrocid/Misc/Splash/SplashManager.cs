@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -97,15 +97,15 @@ namespace Nitrocid.Misc.Splash
         {
             // Check for splash info sanity
             if (splashInfo is null)
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register empty splash"));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_EMPTYSPLASH"));
             if (string.IsNullOrEmpty(splashInfo.SplashName))
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register splash with no name"));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_SPLASHNONAME"));
             if (splashInfo.EntryPoint is null)
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register splash with no entry point"));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_SPLASHNOENTRYPOINT"));
 
             // Now, register the splash to the custom splash list
             if (IsSplashRegistered(splashInfo.SplashName))
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't re-register splash. You need to unregister that splash first."));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_CANTOVERWRITE"));
             customSplashes.Add(splashInfo);
         }
 
@@ -118,9 +118,9 @@ namespace Nitrocid.Misc.Splash
         {
             // Check to see if we have the splash
             if (string.IsNullOrEmpty(splashName))
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't unregister splash with no name"));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_UNREGISTERSPLASHNONAME"));
             if (IsSplashRegistered(splashName))
-                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't unregister non-existent splash"));
+                throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_UNREGISTERNOSPLASH"));
 
             // Now, unregister the splash
             var splash = GetSplashFromName(splashName);
@@ -305,7 +305,7 @@ namespace Nitrocid.Misc.Splash
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_SPLASH_CLOSINGDISPLAYFAILED") + $".\n  - {ex.Message}", new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     });
@@ -422,7 +422,7 @@ namespace Nitrocid.Misc.Splash
                 if (splashOut)
                 {
                     BeginSplashOut(context);
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEMO_REACHED"), vars: prog);
                     EndSplashOut(context);
                 }
             }
@@ -436,7 +436,7 @@ namespace Nitrocid.Misc.Splash
             try
             {
                 if (threadParameters is null)
-                    throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Splash thread parameters are not specified"));
+                    throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_EMPTYSPLASHTHREADPARAMS"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
                 while (!splash.SplashClosing && !SplashThread.IsStopping)
                 {

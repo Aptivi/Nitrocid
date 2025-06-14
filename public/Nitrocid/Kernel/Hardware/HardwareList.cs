@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,28 +51,28 @@ namespace Nitrocid.Kernel.Hardware
             if (processors is null || processors is not null && processors.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "CPU failed to probe.");
-                SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the CPU cores failed to probe. Showing information anyway..."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_PROBEFAILED_CPU"));
             }
 
             // then RAM
             if (pcMemory is null || pcMemory is not null && pcMemory.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "RAM failed to probe.");
-                SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the RAM chips failed to probe. Showing information anyway..."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_PROBEFAILED_RAM"));
             }
 
             // then GPU
             if (graphics is null || graphics is not null && graphics.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "GPU failed to probe.");
-                SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the graphics cards failed to probe. Showing information anyway..."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_PROBEFAILED_GPU"));
             }
 
             // and finally HDD
             if (hardDrive is null || hardDrive is not null && hardDrive.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "HDD failed to probe.");
-                SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the hard drives failed to probe. Showing information anyway..."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_PROBEFAILED_HDD"));
             }
 
             // Print information about the probed hardware, starting from the CPU info

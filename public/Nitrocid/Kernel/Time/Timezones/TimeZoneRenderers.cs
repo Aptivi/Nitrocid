@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.Kernel.Time.Timezones
         {
             bool ZoneFound = TimeZones.TimeZoneExists(Zone);
             if (TimeZones.TimeZoneExists(Zone))
-                TextWriterColor.Write(Translate.DoTranslation("- Time of {0}: {1}") + " ({2})", Zone, GetZoneTimeString(Zone), ShowTimeZoneUtcOffset(Zone).ToString());
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_LISTENTRY") + " ({2})", Zone, GetZoneTimeString(Zone), ShowTimeZoneUtcOffset(Zone).ToString());
             return ZoneFound;
         }
 
@@ -82,7 +82,7 @@ namespace Nitrocid.Kernel.Time.Timezones
         public static DateTime GetZoneTime(string Zone)
         {
             if (!TimeZones.TimeZoneExists(Zone))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone {0} not found"), Zone);
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NOTFOUND1"), Zone);
             var ZoneTimes = TimeZones.GetTimeZoneTimes();
             return ZoneTimes[Zone];
         }
@@ -162,7 +162,7 @@ namespace Nitrocid.Kernel.Time.Timezones
         public static TimeSpan ShowTimeZoneUtcOffset(string Zone)
         {
             if (!TimeZones.TimeZoneExists(Zone))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone {0} not found"), Zone);
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NOTFOUND1"), Zone);
             return TimeZoneInfo.FindSystemTimeZoneById(Zone).GetUtcOffset(TimeDateTools.KernelDateTime);
         }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
                 else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                    TextWriters.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, KernelColorType.Error);
             }
             return 0;
         }

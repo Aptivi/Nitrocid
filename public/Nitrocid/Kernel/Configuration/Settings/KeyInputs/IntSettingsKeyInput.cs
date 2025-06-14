@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{Translate.DoTranslation("Write a natural number in the below prompt.")} [{KeyDefaultValue}]", new InfoBoxSettings()
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEINTEGER")} [{KeyDefaultValue}]", new InfoBoxSettings()
             {
                 Title = keyName,
             });
@@ -88,8 +88,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
                 Input.ReadKey();
             }
         }

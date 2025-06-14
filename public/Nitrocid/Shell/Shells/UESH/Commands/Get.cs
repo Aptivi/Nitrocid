@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -57,38 +57,38 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         if (!string.IsNullOrEmpty(URL))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Downloading from {0}..."), URL);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_DOWNLOADING"), URL);
                             if (string.IsNullOrEmpty(outputPath))
                             {
                                 // Use the current output path
                                 if (NetworkTransfer.DownloadFile(parameters.ArgumentsList[0]))
-                                    TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_COMPLETE"));
                             }
                             else
                             {
                                 // Use the custom path
                                 outputPath = FilesystemTools.NeutralizePath(outputPath);
                                 if (NetworkTransfer.DownloadFile(parameters.ArgumentsList[0], outputPath))
-                                    TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_COMPLETE"));
                             }
                             return 0;
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_NEEDSADDRESS"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.HTTPNetwork);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to download files from the FTP server."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HTTPNetwork);
                     }
                 }
                 catch (Exception ex)
                 {
                     NetworkTools.TransferFinished = false;
-                    TextWriters.Write(Translate.DoTranslation("Download failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_FAILEDTRY"), true, KernelColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);

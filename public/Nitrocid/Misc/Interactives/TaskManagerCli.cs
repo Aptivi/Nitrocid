@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -87,13 +87,13 @@ namespace Nitrocid.Misc.Interactives
             if (osThreadMode)
             {
                 ProcessThread selectedThread = (ProcessThread)item.Item2;
-                string finalRenderedTaskID = Translate.DoTranslation("Task ID") + $": {selectedThread.Id}";
-                string finalRenderedTaskPPT = Translate.DoTranslation("Privileged processor time") + $": {selectedThread.PrivilegedProcessorTime}";
-                string finalRenderedTaskUPT = Translate.DoTranslation("User processor time") + $": {selectedThread.UserProcessorTime}";
-                string finalRenderedTaskTPT = Translate.DoTranslation("Total processor time") + $": {selectedThread.TotalProcessorTime}";
-                string finalRenderedTaskState = Translate.DoTranslation("Task state") + $": {selectedThread.ThreadState}";
-                string finalRenderedTaskPriority = Translate.DoTranslation("Priority level") + $": {selectedThread.CurrentPriority}";
-                string finalRenderedTaskMemAddress = Translate.DoTranslation("Task memory address") + $": 0x{selectedThread.StartAddress:X16}";
+                string finalRenderedTaskID = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSTASKID") + $": {selectedThread.Id}";
+                string finalRenderedTaskPPT = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSPRIVCPUTIME") + $": {selectedThread.PrivilegedProcessorTime}";
+                string finalRenderedTaskUPT = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSUSERCPUTIME") + $": {selectedThread.UserProcessorTime}";
+                string finalRenderedTaskTPT = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSTOTALCPUTIME") + $": {selectedThread.TotalProcessorTime}";
+                string finalRenderedTaskState = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSTASKSTATE") + $": {selectedThread.ThreadState}";
+                string finalRenderedTaskPriority = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSPRIORITY") + $": {selectedThread.CurrentPriority}";
+                string finalRenderedTaskMemAddress = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_OSTASKMEMADDRESS") + $": 0x{selectedThread.StartAddress:X16}";
                 return
                     finalRenderedTaskID + CharManager.NewLine +
                     finalRenderedTaskPPT + CharManager.NewLine +
@@ -107,11 +107,11 @@ namespace Nitrocid.Misc.Interactives
             else
             {
                 KernelThread selectedThread = (KernelThread)item.Item2;
-                string finalRenderedTaskName = Translate.DoTranslation("Task name") + $": {selectedThread.Name}";
-                string finalRenderedTaskAlive = Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}";
-                string finalRenderedTaskBackground = Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}";
-                string finalRenderedTaskCritical = Translate.DoTranslation("Critical") + $": {selectedThread.IsCritical}";
-                string finalRenderedTaskReady = Translate.DoTranslation("Ready") + $": {selectedThread.IsReady}";
+                string finalRenderedTaskName = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELTASKNAME") + $": {selectedThread.Name}";
+                string finalRenderedTaskAlive = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELALIVE") + $": {selectedThread.IsAlive}";
+                string finalRenderedTaskBackground = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELBG") + $": {selectedThread.IsBackground}";
+                string finalRenderedTaskCritical = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELCRITICAL") + $": {selectedThread.IsCritical}";
+                string finalRenderedTaskReady = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELREADY") + $": {selectedThread.IsReady}";
                 return
                     finalRenderedTaskName + CharManager.NewLine +
                     finalRenderedTaskAlive + CharManager.NewLine +
@@ -170,12 +170,12 @@ namespace Nitrocid.Misc.Interactives
                 if (!thread.IsCritical && thread.IsAlive)
                     thread.Stop();
                 else if (!thread.IsAlive)
-                    taskStatus = Translate.DoTranslation("Kernel task is already killed.");
+                    taskStatus = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_TASKALREADYKILLED");
                 else
-                    taskStatus = Translate.DoTranslation("Kernel task is critical and can't be killed.");
+                    taskStatus = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_TASKCRITICAL");
             }
             else
-                taskStatus = Translate.DoTranslation("OS threads can't be killed.");
+                taskStatus = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_TASKOSTHREADSCANTKILL");
         }
 
         internal void SwitchMode()
@@ -187,8 +187,8 @@ namespace Nitrocid.Misc.Interactives
         internal static void OpenTaskManagerCli()
         {
             var tui = new TaskManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KEYBINDING_KILL"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

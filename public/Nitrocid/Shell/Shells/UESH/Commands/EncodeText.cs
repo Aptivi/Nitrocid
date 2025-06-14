@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 string decomposed = driver.DecomposeBytesFromString(encoded);
                 TextWriters.Write(decomposed, true, KernelColorType.Success);
                 if (driver.TryRepresentAsText(encoded, out string? strEncoded))
-                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, KernelColorType.Success);
             }
             else
             {
@@ -79,14 +79,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 string decomposed = driver.DecomposeBytesFromString(encoded);
                 TextWriters.Write(decomposed, true, KernelColorType.Success);
                 if (driver.TryRepresentAsText(encoded, out string? strEncoded))
-                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, KernelColorType.Success);
 
                 // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
-                TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
             }
             return 0;

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,12 +44,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             int NotifIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (NotificationManager.NotifDismiss(NotifIndex))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISMISSNOTIF_SUCCESS"));
                 return 0;
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISMISSNOTIF_FAILURE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NotificationManagement);
             }
         }

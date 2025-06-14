@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Starting.Environment
         public static void SetEnvironment(BaseEnvironment? baseEnvironment)
         {
             if (baseEnvironment is null)
-                throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("Environment is not specified"));
+                throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
             if (baseEnvironment != mainEnvironment)
                 anotherEnvPending = true;
             environment = baseEnvironment;
@@ -55,7 +55,7 @@ namespace Nitrocid.Kernel.Starting.Environment
         public static void SetEnvironmentArgs(BaseEnvironment baseEnvironment, params string[] args)
         {
             if (baseEnvironment is null)
-                throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("Environment is not specified"));
+                throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
             baseEnvironment.Arguments = args;
         }
 

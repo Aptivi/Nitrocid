@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.Debug.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), Translate.DoTranslation("Debug Shell")),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), LanguageTools.GetLocalized("NKS_SHELL_PROMPTS_PRESETS_DEBUG")),
             ];
 
             // Builder

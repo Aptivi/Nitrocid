@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,12 +62,12 @@ namespace Nitrocid.Network.Types.RPC
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to start RPC while it's already started."));
+                    throw new KernelException(KernelExceptionType.RemoteProcedure, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_ALREADYSTARTED"));
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Not starting RPC because it's disabled."));
+                throw new KernelException(KernelExceptionType.RemoteProcedure, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED"));
             }
         }
 
@@ -81,17 +81,17 @@ namespace Nitrocid.Network.Types.RPC
                 try
                 {
                     StartRPC();
-                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}."), 5, Config.MainConfig.RPCPort);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_RUNNING"), 5, Config.MainConfig.RPCPort);
                 }
                 catch (ThreadStateException ex)
                 {
-                    SplashReport.ReportProgressError(Translate.DoTranslation("RPC is already running."));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_ALREADYRUNNING"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Not starting RPC because it's disabled."), 3);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED"), 3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Security.Signing
         {
             // Check to see if the assembly is specified
             if (assembly is null)
-                throw new KernelException(KernelExceptionType.Security, Translate.DoTranslation("You didn't specify an assembly."));
+                throw new KernelException(KernelExceptionType.Security, LanguageTools.GetLocalized("NKS_SECURITY_SIGNING_EXCEPTION_NEEDSASSEMBLY"));
 
             // Now, get the assembly name from it and return its public key token
             var asmName = new AssemblyName(assembly.FullName ?? "");
@@ -54,7 +54,7 @@ namespace Nitrocid.Security.Signing
         {
             // Check to see if the assembly path is specified
             if (string.IsNullOrEmpty(assemblyPath))
-                throw new KernelException(KernelExceptionType.Security, Translate.DoTranslation("You didn't specify an assembly path."));
+                throw new KernelException(KernelExceptionType.Security, LanguageTools.GetLocalized("NKS_SECURITY_SIGNING_EXCEPTION_NEEDSPATH"));
 
             // Now, get the assembly path, get its name, and return its public key token
             assemblyPath = FilesystemTools.NeutralizePath(assemblyPath);
@@ -71,7 +71,7 @@ namespace Nitrocid.Security.Signing
         {
             // Check to see if the assembly name is specified
             if (assemblyName is null)
-                throw new KernelException(KernelExceptionType.Security, Translate.DoTranslation("You didn't specify an assembly name."));
+                throw new KernelException(KernelExceptionType.Security, LanguageTools.GetLocalized("NKS_SECURITY_SIGNING_EXCEPTION_NEEDSNAME"));
 
             // Now, return the public key token
             var asmPublicKey = assemblyName.GetPublicKeyToken();

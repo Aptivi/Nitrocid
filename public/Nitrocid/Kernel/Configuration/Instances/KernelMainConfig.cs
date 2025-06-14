@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -68,7 +68,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override string Name =>
-            Translate.DoTranslation("Kernel main settings");
+            LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_INSTANCES_MAINSETTINGS");
 
         /// <inheritdoc/>
         [JsonIgnore]
@@ -77,7 +77,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get
             {
                 var dataStream = ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRIESFAILED_MAIN"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }
@@ -993,7 +993,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 if (FilesystemTools.FolderExists(value))
                     FilesystemTools._CurrentDirectory = value;
                 else
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found"), value);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), value);
             }
         }
         /// <summary>

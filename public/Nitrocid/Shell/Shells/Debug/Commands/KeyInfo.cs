@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,30 +38,30 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_PROMPT"));
             var KeyPress = Input.ReadKey();
 
             // Pressed key
-            TextWriters.Write("- " + Translate.DoTranslation("Pressed key") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEY") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(KeyPress.Key.ToString(), true, KernelColorType.ListValue);
 
             // If the pressed key is a control key, don't write the actual key char so as not to corrupt the output
             if (!char.IsControl(KeyPress.KeyChar))
             {
-                TextWriters.Write("- " + Translate.DoTranslation("Pressed key character") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHAR") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(Convert.ToString(KeyPress.KeyChar), true, KernelColorType.ListValue);
             }
 
             // Pressed key character code
-            TextWriters.Write("- " + Translate.DoTranslation("Pressed key character code") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHARCODE") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, KernelColorType.ListValue);
 
             // Pressed modifiers
-            TextWriters.Write("- " + Translate.DoTranslation("Pressed modifiers") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYMODIFIERS") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(KeyPress.Modifiers.ToString(), true, KernelColorType.ListValue);
 
             // Keyboard shortcut
-            TextWriters.Write("- " + Translate.DoTranslation("Keyboard shortcut") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYSHORTCUT") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split([", "], StringSplitOptions.None))} + {KeyPress.Key}", true, KernelColorType.ListValue);
             return 0;
         }

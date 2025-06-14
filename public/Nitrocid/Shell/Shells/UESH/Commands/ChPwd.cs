@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (parameters.ArgumentsList[3].Contains(' '))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
                 else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
@@ -59,13 +59,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
                 {
-                    TextWriters.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Failed to change password of username: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_FAILURE"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }

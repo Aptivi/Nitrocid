@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,8 +44,8 @@ namespace Nitrocid.Misc.Interactives
 
             // Render them to the second pane
             return
-                Translate.DoTranslation("Screensaver name") + $": {name}" + CharManager.NewLine +
-                Translate.DoTranslation("Screensaver contains flashing images") + $": {flashing}";
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_ARGUMENT_SAVER_DESC") + $": {name}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_SCREENSAVERTUI_FLASHING") + $": {flashing}";
             ;
         }
 

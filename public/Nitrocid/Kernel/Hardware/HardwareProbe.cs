@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,14 +62,14 @@ namespace Nitrocid.Kernel.Hardware
                     pcMemory = Array.Empty<object>();
                     hardDrive = Array.Empty<object>();
                     graphics = Array.Empty<object>();
-                    SplashReport.ReportProgressWarning(Translate.DoTranslation("Hardware won't be parsed because of insufficient privileges. Use \"winelevate\" to restart Nitrocid in elevated mode."));
+                    SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_NEEDSELEVATION"));
                 }
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to probe hardware: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelError(KernelErrorLevel.F, true, 10L, Translate.DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message);
+                KernelPanic.KernelError(KernelErrorLevel.F, true, 10L, LanguageTools.GetLocalized("NKS_KERNEL_HARDWARE_FAILED"), ex, ex.Message);
             }
 
             // Raise event

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -35,14 +35,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
             TextWriters.Write(
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
                 true, KernelColorType.Tip
             );
-            TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
             TextWriters.Write(
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
@@ -53,9 +53,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
             TextWriters.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, KernelColorType.Tip);
-            TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
             TextWriters.Write("    https://aptivi.github.io/Nitrocid", true, KernelColorType.Tip);
             return 0;
         }

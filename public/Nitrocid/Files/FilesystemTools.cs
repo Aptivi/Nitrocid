@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -90,7 +90,7 @@ namespace Nitrocid.Files
                 if (FilesystemTools.Exists(Path))
                     return Path;
                 else
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}", Path);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NEUTRALIZENONEXISTENTPATH") + " {0}", Path);
             else
                 return Path;
         }
@@ -106,7 +106,7 @@ namespace Nitrocid.Files
 
             // We can't perform this operation on nonexistent file
             if (!FilesystemTools.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), Path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), Path);
 
             // Try to open the file exclusively to check to see if we can open the file or just error out with sharing violation
             // error.
@@ -135,7 +135,7 @@ namespace Nitrocid.Files
 
             // We can't perform this operation on nonexistent folder
             if (!FilesystemTools.FolderExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1"), Path);
 
             // Check every file inside the folder and its subdirectories for lock
             var files = FilesystemTools.GetFilesystemEntries(Path, false, true);
@@ -158,7 +158,7 @@ namespace Nitrocid.Files
 
             // We can't perform this operation on nonexistent file
             if (!FilesystemTools.Exists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILEORFOLDERNOTFOUND"), Path);
 
             // Wait until the lock is released
             var info = new FileSystemEntry(Path);
@@ -176,7 +176,7 @@ namespace Nitrocid.Files
 
             // We can't perform this operation on nonexistent path
             if (!FilesystemTools.Exists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILEORFOLDERNOTFOUND"), Path);
 
             // We also can't wait for lock too little or too much
             if (lockMs < 100 || lockMs > 60000)
@@ -193,7 +193,7 @@ namespace Nitrocid.Files
                 {
                     estimatedLockMs += lockMs;
                     if (estimatedLockMs > maxLockTimeoutMs)
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} is still locked even after waiting for {1} seconds."), Path, maxLockTimeoutMs / 1000);
+                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_LOCKTIMEOUT"), Path, maxLockTimeoutMs / 1000);
                 }
             }
         }
@@ -208,7 +208,7 @@ namespace Nitrocid.Files
 
             // We can't perform this operation on nonexistent file
             if (!FilesystemTools.Exists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILEORFOLDERNOTFOUND"), Path);
 
             // Wait until the lock is released
             var info = new FileSystemEntry(Path);
@@ -225,20 +225,20 @@ namespace Nitrocid.Files
                 firstPanePath = FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
                 secondPanePath = FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
             };
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UP"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_INFO"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_GOTO"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPYTO"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVETO"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_RENAME"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_NEWFOLDER"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

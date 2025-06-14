@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -30,7 +30,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_LISTING"), true, KernelColorType.ListTitle);
             ArgumentHelpPrint.ShowArgsHelp();
             PowerManager.hardShutdown = true;
             PowerManager.KernelShutdown = true;

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, vars: [parameters.ArgumentsList[0], DebugWriter.DebugStackTraces.Length, ex.Message]);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_TRACE_INVALIDINDEX") + " {2}", true, device, vars: [parameters.ArgumentsList[0], DebugWriter.DebugStackTraces.Length, ex.Message]);
                     }
                 }
                 else
@@ -46,7 +46,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
             }
             else
             {
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("No stack trace"), true, device);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_TRACE_NOSTACKTRACE"), true, device);
             }
         }
     }

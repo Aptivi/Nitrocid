@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 // Show the current value
                 double slider = 100d * (CurrentValue / (double)key.MaximumValue);
-                InfoBoxProgressColor.WriteInfoBoxProgress(slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", new InfoBoxSettings()
+                InfoBoxProgressColor.WriteInfoBoxProgress(slider, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE") + " {0} / {1} - {2}", new InfoBoxSettings()
                 {
                     Title = keyName,
                 }, CurrentValue, key.MinimumValue, key.MaximumValue);

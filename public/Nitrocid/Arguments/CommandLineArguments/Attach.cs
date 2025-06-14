@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -28,13 +28,13 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Kernel is waiting for the debugger..."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_DEBUG_WAITING"));
             if (!Debugger.Launch())
-                TextWriterColor.Write(Translate.DoTranslation("Debugger failed to attach. Starting anyways..."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_DEBUG_FAILED"));
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write(Translate.DoTranslation("Make sure that you have an appropriate debugger set up in your system before being able to attach Nitrocid to it."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_DEBUG_HELPER"));
 
     }
 }

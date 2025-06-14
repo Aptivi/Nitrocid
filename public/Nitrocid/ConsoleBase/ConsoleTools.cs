@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -71,8 +71,8 @@ namespace Nitrocid.ConsoleBase
             {
                 string message =
                     KernelPlatform.IsOnWindows() ?
-                    Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
-                    Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n";
+                    LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING") + "\n" :
+                    LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO") + "\n";
                 return TextWriterWhereColor.RenderWhere(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 1, KernelColorTools.GetColor(KernelColorType.Warning), KernelColorTools.GetColor(KernelColorType.Background));
             });
 
@@ -136,7 +136,7 @@ namespace Nitrocid.ConsoleBase
             rampPart.AddDynamicText(() =>
             {
                 return
-                    TextWriterWhereColor.RenderWhereColorBack(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
                     KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground;
             });
             screen.AddBufferedPart("Ramp screen part", rampPart);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,8 +41,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                     string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{sk.Name}..." : $"{sk.Name} [{currentValue}]";
                     return new InputChoiceInfo($"{idx + 1}", finalKeyName, sk.Description);
                 }).ToList();
-                keysChoices.Add(new($"{keysChoices.Count + 1}", Translate.DoTranslation("Exit")));
-                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], Translate.DoTranslation("Choose an entry for") + $" \"{key.Name}\"");
+                keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
+                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{key.Name}\"");
 
                 // Check to see if exit is requested
                 if (choiceIdx < 0)

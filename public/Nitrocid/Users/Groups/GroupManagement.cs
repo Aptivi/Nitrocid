@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Users.Groups
 
             // Check to see if we have the target group
             if (DoesGroupExist(groupName))
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't add a group with the same name."));
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPALREADYEXISTS"));
 
             // Add the new group to the group list
             GroupInfo group = new(groupName, []);
@@ -68,11 +68,11 @@ namespace Nitrocid.Users.Groups
 
             // Check to see if we have the target group
             if (!DoesGroupExist(groupName))
-                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a nonexistent group."));
+                throw new KernelException(KernelExceptionType.NoSuchGroup, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_REMOVE"));
 
             // Add the new group to the group list
             GroupInfo? group = GetGroup(groupName) ??
-                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a nonexistent group."));
+                throw new KernelException(KernelExceptionType.NoSuchGroup, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_REMOVE"));
             AvailableGroups.Remove(group);
             SaveGroups();
         }
@@ -91,13 +91,13 @@ namespace Nitrocid.Users.Groups
             if (!UserManagement.UserExists(user))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
             if (!DoesGroupExist(groupName))
-                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't add a user to a nonexistent group."));
+                throw new KernelException(KernelExceptionType.NoSuchGroup, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_ADDUSER"));
 
             // Get a user and add them to the group
             int userIndex = UserManagement.GetUserIndex(user);
             var userGroups = new List<string>(UserManagement.Users[userIndex].Groups);
             if (userGroups.Contains(groupName))
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already joined the group!"));
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_USERINGROUP"));
             userGroups.Add(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
@@ -118,13 +118,13 @@ namespace Nitrocid.Users.Groups
             if (!UserManagement.UserExists(user))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
             if (!DoesGroupExist(groupName))
-                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a user from a nonexistent group."));
+                throw new KernelException(KernelExceptionType.NoSuchGroup, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_REMOVEUSER"));
 
             // Get a user and remove them from the group
             int userIndex = UserManagement.GetUserIndex(user);
             var userGroups = new List<string>(UserManagement.Users[userIndex].Groups);
             if (!userGroups.Contains(groupName))
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already left the group!"));
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_USERNOTINGROUP"));
             userGroups.Remove(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
@@ -149,11 +149,11 @@ namespace Nitrocid.Users.Groups
         {
             // Check to see if we have the target group
             if (!DoesGroupExist(groupName))
-                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't query a user from a nonexistent group."));
+                throw new KernelException(KernelExceptionType.NoSuchGroup, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_QUERYUSER"));
 
             // Get the user group array first, then check to see if we have a group entry for a user
             var userInstance = UserManagement.GetUser(user) ??
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
             string[] groupNames = userInstance.Groups;
             DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", vars: [user, groupName, string.Join(", ", groupNames)]);
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
@@ -172,7 +172,7 @@ namespace Nitrocid.Users.Groups
 
             // Get the user group array first, then compare against all the group elements for the group name
             var userInstance = UserManagement.GetUser(user) ??
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
             string[] groupNames = userInstance.Groups;
             DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", vars: [user, string.Join(", ", groupNames)]);
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
@@ -215,12 +215,12 @@ namespace Nitrocid.Users.Groups
             // Get the group information instances to the user groups path
             string groupInfosJson = FilesystemTools.ReadContentsText(PathsManagement.UserGroupsPath);
             JArray? groupInfoArrays = (JArray?)JsonConvert.DeserializeObject(groupInfosJson) ??
-                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info array"));
+                throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPINFOARRAY"));
             List<GroupInfo> groups = [];
             foreach (var groupInfoArray in groupInfoArrays)
             {
                 GroupInfo groupInfo = JsonConvert.DeserializeObject<GroupInfo>(groupInfoArray.ToString()) ??
-                    throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info"));
+                    throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPINFO"));
                 groups.Add(groupInfo);
             }
             AvailableGroups = groups;

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             UserManagement.RemoveUser(parameters.ArgumentsList[0]);
             if (!UserManagement.UserExists(parameters.ArgumentsList[0]))
-                TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSER_REMOVED"), parameters.ArgumentsList[0]);
             return 0;
         }
 

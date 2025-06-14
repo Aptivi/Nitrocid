@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,14 +40,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             foreach (var handler in handlers)
             {
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Extension handler information for") + $" {handler.Extension}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write("- " + Translate.DoTranslation("Handler implementer") + $": ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_INFOFOR") + $" {handler.Extension}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_IMPLEMENTER") + $": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Implementer, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Handler metadata") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_METADATA") + $": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.MimeType, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Contains handler function") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HEADERINFO") + $": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{handler.Handler is not null}", true, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Contains info handler function") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HANDLERFUNCTION") + $": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{handler.InfoHandler is not null}\n", true, KernelColorType.ListValue);
             }
             return 0;

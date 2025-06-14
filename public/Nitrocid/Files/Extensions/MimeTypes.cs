@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -598,7 +598,7 @@ namespace Nitrocid.Files.Extensions
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Now, check to see if we have this extension
             if (mimeTypes.TryGetValue(extension, out string? mimeType))

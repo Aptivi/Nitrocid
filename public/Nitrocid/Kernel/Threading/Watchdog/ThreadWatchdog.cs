@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,7 +56,7 @@ namespace Nitrocid.Kernel.Threading.Watchdog
             // Check to see if all the critical threads have started
             var unstartedCriticals = threads.Where((thread) => !thread.IsAlive && !whitelistedThreads.Contains(thread.Name)).ToArray();
             if (unstartedCriticals.Length > 0)
-                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} critical threads that haven't started yet.") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => $"{thread.Name} [{thread.BaseThread.ThreadState}]")));
+                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => $"{thread.Name} [{thread.BaseThread.ThreadState}]")));
         }
 
         private static void Watch()
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Threading.Watchdog
 
                     // Check to see if we have dead threads
                     if (deadThreads.Count > 0)
-                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} dead threads.") + " [{1}]", null, deadThreads.Count, string.Join(", ", deadThreads.Select((thread) => thread.Name)));
+                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_DEADTHREADS") + " [{1}]", null, deadThreads.Count, string.Join(", ", deadThreads.Select((thread) => thread.Name)));
 
                     // Sleep to avoid CPU usage.
                     Thread.Sleep(100);
@@ -98,7 +98,7 @@ namespace Nitrocid.Kernel.Threading.Watchdog
                 // Watchdog error, so reboot
                 DebugWriter.WriteDebug(DebugLevel.F, "Kernel thread supervisor (watchdog) failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor failed") + ": {0}", ex, ex.Message);
+                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_FAILURE") + ": {0}", ex, ex.Message);
             }
         }
     }

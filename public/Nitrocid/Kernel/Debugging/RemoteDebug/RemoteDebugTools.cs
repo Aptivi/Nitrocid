@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -109,13 +109,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", vars: [address]);
-                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists in the block list."));
+                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED"));
                 }
             }
             else if (throwIfNotFound)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to add a non-existent device {0}.", vars: [address]);
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Device not found to block."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK"));
             }
         }
 
@@ -158,7 +158,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}.", vars: [address]);
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Device doesn't exist in the block list."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_NOLONGERBLOCKED"));
             }
         }
 
@@ -232,7 +232,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                 return remoteDebugDevices[^1];
             }
             else if (throwException)
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICEALREADYEXISTS"));
             return GetDeviceFromIp(address);
         }
 
@@ -251,7 +251,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             }
             else
             {
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND"));
             }
         }
 
@@ -353,7 +353,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             string devicesPath = PathsManagement.GetKernelPath(KernelPathType.DebugDevices);
             if (FilesystemTools.FileExists(devicesPath))
                 remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(FilesystemTools.ReadContentsText(devicesPath)) ??
-                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Can't get remote debug devices from") + $" {devicesPath}");
+                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_LOADDEVICESFAILED") + $" {devicesPath}");
         }
     }
 }

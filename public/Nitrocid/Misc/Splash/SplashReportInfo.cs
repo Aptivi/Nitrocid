@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,7 +62,7 @@ namespace Nitrocid.Misc.Splash
             this.progress = progress;
             this.severity = severity;
             this.renderedMessage = renderedMessage ??
-                Translate.DoTranslation("Reporter didn't provide any info!");
+                LanguageTools.GetLocalized("NKS_MISC_SPLASH_NOINFO");
         }
     }
 }

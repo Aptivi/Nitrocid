@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -71,7 +71,7 @@ namespace Nitrocid.Files.Instances
         public FileSystemInfo BaseEntryUnprocessed =>
             Type == FileSystemEntryType.File ? new FileInfo(OriginalFilePath) :
             Type == FileSystemEntryType.Directory ? new DirectoryInfo(OriginalFilePath) :
-            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't get base entry out of non-existent file or directory.") + $" {OriginalFilePath}");
+            throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_INSTANCES_EXCEPTION_BASEENTRYFAILED") + $" {OriginalFilePath}");
 
         /// <summary>
         /// Gets the base entry from the processed file path
@@ -79,7 +79,7 @@ namespace Nitrocid.Files.Instances
         public FileSystemInfo BaseEntry =>
             Type == FileSystemEntryType.File ? new FileInfo(FilePath) :
             Type == FileSystemEntryType.Directory ? new DirectoryInfo(FilePath) :
-            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't get base entry out of non-existent file or directory.") + $" {FilePath}");
+            throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_INSTANCES_EXCEPTION_BASEENTRYFAILED") + $" {FilePath}");
 
         /// <summary>
         /// Makes a new instance of this class

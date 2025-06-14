@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -83,12 +83,12 @@ namespace Nitrocid.Kernel.Events
         {
             // Check to see if event exists
             if (!Enum.IsDefined(typeof(EventType), Event))
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
+                throw new KernelException(KernelExceptionType.NoSuchEvent, LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_EVENTNOTFOUND"), Event);
 
             // Add fired event to the list
             DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
-            JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
+            JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_LISTING") + $" {Event} [{FiredEvents.Count}]");
 
             // Now, respond to the event
             if (!IsEventHandled(Event))
@@ -116,9 +116,9 @@ namespace Nitrocid.Kernel.Events
         public static void RegisterEventHandler(EventType eventType, Action<object?[]?> eventAction)
         {
             if (eventAction == null)
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
+                throw new KernelException(KernelExceptionType.NoSuchEvent, LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_NEEDSACTION"));
             if (!IsEventFound(eventType))
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
+                throw new KernelException(KernelExceptionType.NoSuchEvent, LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_EVENTNOTFOUND"), eventType);
             if (!IsEventHandled(eventType))
                 eventHandlers.Add(eventType, []);
             eventHandlers[eventType].Add(eventAction);
@@ -132,9 +132,9 @@ namespace Nitrocid.Kernel.Events
         public static void UnregisterEventHandler(EventType eventType, Action<object?[]?> eventAction)
         {
             if (eventAction == null)
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
+                throw new KernelException(KernelExceptionType.NoSuchEvent, LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_NEEDSACTION"));
             if (!IsEventFound(eventType))
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
+                throw new KernelException(KernelExceptionType.NoSuchEvent, LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_EVENTNOTFOUND"), eventType);
             if (!IsEventHandled(eventType))
                 eventHandlers.Add(eventType, []);
             eventHandlers[eventType].Remove(eventAction);

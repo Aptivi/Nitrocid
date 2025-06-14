@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (parameters.ArgumentsList.Length == 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
                 UserManagement.AddUser(parameters.ArgumentsList[0]);
                 return 0;
             }
@@ -52,13 +52,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (parameters.ArgumentsList[1] == parameters.ArgumentsList[2])
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), parameters.ArgumentsList[0]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
                     UserManagement.AddUser(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Passwords don't match."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_PASSWORDMISMATCH"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }

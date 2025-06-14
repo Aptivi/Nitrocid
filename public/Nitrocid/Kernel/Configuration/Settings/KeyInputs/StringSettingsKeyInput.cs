@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -50,8 +50,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputColor.WriteInfoBoxInputPassword($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}", settings) :
-                InfoBoxInputColor.WriteInfoBoxInput($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]", settings);
+                InfoBoxInputColor.WriteInfoBoxInputPassword($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,9 +54,9 @@ namespace Nitrocid.Misc.Interactives
 
             // Render them to the second pane
             return
-                Translate.DoTranslation("Alarm name") + $": {name}" + CharManager.NewLine +
-                Translate.DoTranslation("Alarm description") + $": {description}" + CharManager.NewLine +
-                Translate.DoTranslation("Alarm due date") + $": {due}";
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME") + $": {name}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMDESC") + $": {description}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMDUE") + $": {due}";
             ;
         }
 
@@ -77,16 +77,16 @@ namespace Nitrocid.Misc.Interactives
 
         internal void Start()
         {
-            string name = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm name"));
+            string name = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEPROMPT"));
             if (string.IsNullOrWhiteSpace(name))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Alarm name is not specified."));
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMENOTSPECCED"));
                 return;
             }
-            string interval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm interval in this format") + ": HH:MM:SS");
+            string interval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEINTERVALPROMPT") + ": HH:MM:SS");
             if (!TimeSpan.TryParse(interval, out TimeSpan span))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Alarm interval is either not specified or is invalid."));
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEINTERVALINVALID"));
                 return;
             }
             AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
@@ -101,8 +101,8 @@ namespace Nitrocid.Misc.Interactives
         internal static void OpenAlarmCli()
         {
             var tui = new AlarmCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_KEYBINDING_ADD"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_KEYBINDING_REMOVE"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

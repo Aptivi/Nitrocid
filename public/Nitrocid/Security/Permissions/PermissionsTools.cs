@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -85,9 +85,9 @@ namespace Nitrocid.Security.Permissions
                 {
                     bool granted = IsPermissionGranted(type);
                     DebugWriter.WriteDebug(DebugLevel.I, "Demanded permission {0}, and granted is {1}.", vars: [type.ToString(), granted]);
-                    JournalManager.WriteJournal(Translate.DoTranslation("Demanding permission") + $" {type} [{permissionType}]: {granted}");
+                    JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_SECURITY_PERMISSIONS_DEMANDING") + $" {type} [{permissionType}]: {granted}");
                     if (!granted)
-                        throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
+                        throw new KernelException(KernelExceptionType.PermissionDenied, LanguageTools.GetLocalized("NKS_SECURITY_PERMISSIONS_EXCEPTION_UNGRANTED") + ": {0}", permissionType.ToString());
                 }
             }
         }

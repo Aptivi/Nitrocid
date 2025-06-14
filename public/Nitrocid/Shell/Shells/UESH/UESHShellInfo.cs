@@ -47,69 +47,69 @@ namespace Nitrocid.Shell.Shells.UESH
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("addgroup", /* Localizable */ "Adds groups",
+            new CommandInfo("addgroup", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDGROUP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "groupName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "New group name to add"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDGROUP_ARGUMENT_GROUPNAME_DESC")
                         })
                     ])
                 ], new AddGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("adduser", /* Localizable */ "Adds users",
+            new CommandInfo("adduser", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "New user name to add"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(false, "password", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "New password to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC")
                         }),
                         new CommandArgumentPart(false, "confirm", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Confirm the new password"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC")
                         }),
                     ])
                 ], new AddUserCommand(), CommandFlags.Strict),
 
-            new CommandInfo("addusertogroup", /* Localizable */ "Adds users to a group",
+            new CommandInfo("addusertogroup", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "User name to be added to the group"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "group", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Group name to add the user to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_GROUP_DESC")
                         }),
                     ])
                 ], new AddUserToGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("admin", /* Localizable */ "Administrative shell", new AdminCommand(), CommandFlags.Strict),
+            new CommandInfo("admin", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADMIN_DESC"), new AdminCommand(), CommandFlags.Strict),
 
-            new CommandInfo("alarm", /* Localizable */ "Manage your alarms",
+            new CommandInfo("alarm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "start", new()
                         {
                             ExactWording = ["start"],
-                            ArgumentDescription = /* Localizable */ "Starts the alarm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_DESC")
                         }),
                         new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Alarm name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME")
                         }),
                         new CommandArgumentPart(true, "interval", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Alarm interval in a time span in hours, minutes, and seconds"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_INTERVAL_DESC")
                         }),
                     ])
                     {
@@ -120,11 +120,11 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "stop", new()
                         {
                             ExactWording = ["stop"],
-                            ArgumentDescription = /* Localizable */ "Stops the alarm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_DESC")
                         }),
                         new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Alarm name to stop"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_NAME_DESC")
                         }),
                     ])
                     {
@@ -135,37 +135,37 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "list", new()
                         {
                             ExactWording = ["list"],
-                            ArgumentDescription = /* Localizable */ "Lists the alarms"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Manage your alarms in an interactive TUI", new SwitchOptions()
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ]),
                 ], new AlarmCommand(), CommandFlags.Strict),
 
-            new CommandInfo("alias", /* Localizable */ "Adds aliases to commands",
+            new CommandInfo("alias", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "add", new()
                         {
                             ExactWording = ["add"],
-                            ArgumentDescription = /* Localizable */ "Adds an alias"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC")
                         }),
                         new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Shell type to fetch commands from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC")
                         }),
                         new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Alias name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC")
                         }),
                         new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Command to be used as a shortcut"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC")
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -173,261 +173,261 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "rem", new()
                         {
                             ExactWording = ["rem"],
-                            ArgumentDescription = /* Localizable */ "Removes an alias"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC")
                         }),
                         new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Shell type to fetch commands from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC")
                         }),
                         new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Alias name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC")
                         }),
                     ]),
                 ], new AliasCommand(), CommandFlags.Strict),
 
-            new CommandInfo("beep", /* Localizable */ "Beeps from the console",
+            new CommandInfo("beep", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "freq", new()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Frequency in Hz"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC")
                         }),
                         new CommandArgumentPart(false, "ms", new()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Time interval for a single beep"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_INTERVAL_DESC")
                         }),
                     ])
                 ], new BeepCommand()),
 
-            new CommandInfo("blockdbgdev", /* Localizable */ "Block a debug device by IP address",
+            new CommandInfo("blockdbgdev", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BLOCKDBGDEV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ipaddress", new()
                         {
-                            ArgumentDescription = /* Localizable */ "IP address to block"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BLOCKDBGDEV_ARGUMENT_IPADDRESS_DESC")
                         }),
                     ])
                 ], new BlockDbgDevCommand(), CommandFlags.Strict),
 
-            new CommandInfo("bulkrename", /* Localizable */ "Renames group of files to selected format",
+            new CommandInfo("bulkrename", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "targetdir", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Target directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_TARGETDIR_DESC")
                         }),
                         new CommandArgumentPart(true, "pattern", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Search pattern"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_PATTERN_DESC")
                         }),
                         new CommandArgumentPart(false, "newname", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New name to rename all found files to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_NEWNAME_DESC")
                         }),
                     ])
                 ], new BulkRenameCommand()),
 
-            new CommandInfo("cat", /* Localizable */ "Prints content of file to console",
+            new CommandInfo("cat", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file to print its contents"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("lines", /* Localizable */ "Prints the line numbers alongside the contents", new SwitchOptions()
+                        new SwitchInfo("lines", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_LINES_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["nolines"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("nolines", /* Localizable */ "Prints only the contents", new SwitchOptions()
+                        new SwitchInfo("nolines", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_NOLINES_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["lines"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("plain", /* Localizable */ "Force treating binary files as plain text", new SwitchOptions()
+                        new SwitchInfo("plain", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_PLAIN_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new CatCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("cdir", /* Localizable */ "Gets the current directory",
+            new CommandInfo("cdir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CDIR_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new CDirCommand()),
 
-            new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?", new ChangesCommand()),
+            new CommandInfo("changes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC"), new ChangesCommand()),
 
-            new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
+            new CommandInfo("chattr", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                         }),
                         new CommandArgumentPart(true, "add/rem", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Either addition or removal"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_ADDREMOVE_DESC")
                         }),
                         new CommandArgumentPart(true, "Normal/ReadOnly/Hidden/Archive", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Attribute name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_NAME_DESC")
                         }),
                     ])
                 ], new ChAttrCommand()),
 
-            new CommandInfo("chculture", /* Localizable */ "Changes culture",
+            new CommandInfo("chculture", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "culture", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Culture ID to change to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_ARGUMENT_CULTUREID_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("user", /* Localizable */ "Changes the user culture instead of the system culture", new SwitchOptions()
+                        new SwitchInfo("user", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_SWITCH_USER_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ])
                 ], new ChCultureCommand(), CommandFlags.Strict),
 
-            new CommandInfo("chdir", /* Localizable */ "Changes directory",
+            new CommandInfo("chdir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHDIR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory/..", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Target directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_TARGETDIR_DESC")
                         }),
                     ])
                 ], new ChDirCommand()),
 
-            new CommandInfo("chhostname", /* Localizable */ "Changes host name",
+            new CommandInfo("chhostname", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "hostname", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New host name to change to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_ARGUMENT_HOSTNAME_DESC")
                         }),
                     ])
                 ], new ChHostNameCommand(), CommandFlags.Strict),
 
-            new CommandInfo("chklock", /* Localizable */ "Checks the file or the folder lock",
+            new CommandInfo("chklock", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file or the folder is unlocked", new SwitchOptions()
+                        new SwitchInfo("waitforunlock", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_SWITCH_WAITFORUNLOCK_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ChkLockCommand()),
 
-            new CommandInfo("chlang", /* Localizable */ "Changes language",
+            new CommandInfo("chlang", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "language", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Language ID"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_ARGUMENT_LANGID_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("user", /* Localizable */ "Changes the user language instead of the system language", new SwitchOptions()
+                        new SwitchInfo("user", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_USER_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("country", /* Localizable */ "Changes the language using a country (you might get prompted to choose a language)", new SwitchOptions()
+                        new SwitchInfo("country", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ])
                 ], new ChLangCommand(), CommandFlags.Strict),
 
-            new CommandInfo("chmal", /* Localizable */ "Changes MAL, the MOTD After Login",
+            new CommandInfo("chmal", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHMAL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "message", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New message to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC")
                         }),
                     ])
                 ], new ChMalCommand(), CommandFlags.Strict),
 
-            new CommandInfo("chmotd", /* Localizable */ "Changes MOTD, the Message Of The Day",
+            new CommandInfo("chmotd", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "message", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New message to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC")
                         }),
                     ])
                 ], new ChMotdCommand(), CommandFlags.Strict),
 
-            new CommandInfo("choice", /* Localizable */ "Makes user choices",
+            new CommandInfo("choice", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "answers", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Answers to split with a slash"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC")
                         }),
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Question to print to the screen"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC")
                         }),
                         new CommandArgumentPart(false, "answertitle1", new()
                         {
-                            ArgumentDescription = /* Localizable */ "First answer title"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC")
                         }),
                         new CommandArgumentPart(false, "answertitle2", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Second answer title, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("o", /* Localizable */ "One line choice style", new SwitchOptions()
+                        new SwitchInfo("o", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["t", "m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("t", /* Localizable */ "Two lines choice style", new SwitchOptions()
+                        new SwitchInfo("t", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["o", "m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", /* Localizable */ "Modern choice style", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["t", "o"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("single", /* Localizable */ "The output can be only one character", new SwitchOptions()
+                        new SwitchInfo("single", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["multiple"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("multiple", /* Localizable */ "The output can be more than a character", new SwitchOptions()
+                        new SwitchInfo("multiple", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["single"],
                             AcceptsValues = false
@@ -435,305 +435,305 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true, true)
                 ], new ChoiceCommand()),
 
-            new CommandInfo("chpwd", /* Localizable */ "Changes password for current user",
+            new CommandInfo("chpwd", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "Username", new()
                         {
-                            ArgumentDescription = /* Localizable */ "User name to change password"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "UserPass", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Current user password"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC")
                         }),
                         new CommandArgumentPart(true, "newPass", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New password to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC")
                         }),
                         new CommandArgumentPart(true, "confirm", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Confirm the new password"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC")
                         }),
                     ])
                 ], new ChPwdCommand(), CommandFlags.Strict),
 
-            new CommandInfo("chusrname", /* Localizable */ "Changes user name",
+            new CommandInfo("chusrname", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. UserManagement.ListAllUsers()],
-                            ArgumentDescription = /* Localizable */ "Old username to change",
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC"),
                         }),
                         new CommandArgumentPart(true, "newUserName", new()
                         {
-                            ArgumentDescription = /* Localizable */ "New username to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_NEWNAME_DESC")
                         }),
                     ])
                 ], new ChUsrNameCommand(), CommandFlags.Strict),
 
-            new CommandInfo("cls", /* Localizable */ "Clears the screen", new ClsCommand()),
+            new CommandInfo("cls", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC"), new ClsCommand()),
 
-            new CommandInfo("combinestr", /* Localizable */ "Combines the two text files or more into the console.",
+            new CommandInfo("combinestr", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = /* Localizable */ "First input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_FIRSTINPUT_DESC")
                         }),
                         new CommandArgumentPart(true, "input2", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Second input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_SECONDINPUT_DESC")
                         }),
                         new CommandArgumentPart(false, "input3", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Third input text file, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_THIRDINPUT_DESC")
                         }),
                     ], true, true)
                 ], new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("combine", /* Localizable */ "Combines the two text files or more into the output file.",
+            new CommandInfo("combine", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "output", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Output file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_ARGUMENT_OUTPUT_DESC")
                         }),
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = /* Localizable */ "First input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_FIRSTINPUT_DESC")
                         }),
                         new CommandArgumentPart(true, "input2", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Second input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_SECONDINPUT_DESC")
                         }),
                         new CommandArgumentPart(false, "input3", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Third input text file, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_THIRDINPUT_DESC")
                         }),
                     ], false, true)
                 ], new CombineCommand()),
 
-            new CommandInfo("compare", /* Localizable */ "Compares between the two text files.",
+            new CommandInfo("compare", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "source", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Source input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_SOURCEINPUT_DESC")
                         }),
                         new CommandArgumentPart(true, "target", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Target input text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_TARGETINPUT_DESC")
                         }),
                     ])
                 ], new CompareCommand()),
 
-            new CommandInfo("convertlineendings", /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
+            new CommandInfo("convertlineendings", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "textfile", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to text file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_ARGUMENT_TEXTFILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format", new SwitchOptions()
+                        new SwitchInfo("w", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_W_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["u", "m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("u", /* Localizable */ "Converts the line endings to the Unix format", new SwitchOptions()
+                        new SwitchInfo("u", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_U_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["m", "w"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_M_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["u", "w"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("force", /* Localizable */ "Forces the line ending conversion", new SwitchOptions()
+                        new SwitchInfo("force", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ])
                 ], new ConvertLineEndingsCommand()),
 
-            new CommandInfo("copy", /* Localizable */ "Creates another copy of a file under different directory or name.",
+            new CommandInfo("copy", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COPY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "source", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Source file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COPY_ARGUMENT_SOURCE_DESC")
                         }),
                         new CommandArgumentPart(true, "target", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Target file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COPY_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new CopyCommand()),
 
-            new CommandInfo("date", /* Localizable */ "Shows date and time",
+            new CommandInfo("date", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC"),
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
+                        new SwitchInfo("date", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["time", "full"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("time", /* Localizable */ "Shows just the time", new SwitchOptions()
+                        new SwitchInfo("time", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["date", "full"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("full", /* Localizable */ "Shows date and time", new SwitchOptions()
+                        new SwitchInfo("full", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["date", "time"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", new SwitchOptions()
+                        new SwitchInfo("utc", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ], true)
                 ], new DateCommand(), CommandFlags.RedirectionSupported),
 
-            new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell", new DebugShellCommand(), CommandFlags.Strict),
+            new CommandInfo("debugshell", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC"), new DebugShellCommand(), CommandFlags.Strict),
 
-            new CommandInfo("decodefile", /* Localizable */ "Decodes the encoded file",
+            new CommandInfo("decodefile", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to encoded file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                        new SwitchInfo("key", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("iv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("algorithm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
                     ])
                 ], new DecodeFileCommand()),
 
-            new CommandInfo("decodetext", /* Localizable */ "Decodes the encoded text",
+            new CommandInfo("decodetext", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "encodedString", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Encoded string representation"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                        new SwitchInfo("key", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("iv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("algorithm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
                     ])
                 ], new DecodeTextCommand()),
 
-            new CommandInfo("decodebase64", /* Localizable */ "Decodes the text from the BASE64 representation",
+            new CommandInfo("decodebase64", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "encoded", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Encoded BASE64 string"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC")
                         })
                     ])
                 ], new DecodeBase64Command()),
 
-            new CommandInfo("dirinfo", /* Localizable */ "Provides information about a directory",
+            new CommandInfo("dirinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC")
                         }),
                     ])
                 ], new DirInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("disconndbgdev", /* Localizable */ "Disconnect a debug device",
+            new CommandInfo("disconndbgdev", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISCONNDBGDEV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ip", new()
                         {
-                            ArgumentDescription = /* Localizable */ "IP address to disconnect"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISCONNDBGDEV_ARGUMENT_IP_DESC")
                         }),
                     ])
                 ], new DisconnDbgDevCommand(), CommandFlags.Strict),
 
-            new CommandInfo("diskinfo", /* Localizable */ "Provides information about a disk",
+            new CommandInfo("diskinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Disk number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_ARGUMENT_DISKNUM_DESC")
                         }),
                     ], true)
                 ], new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("dismissnotif", /* Localizable */ "Dismisses a notification",
+            new CommandInfo("dismissnotif", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIF_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "notificationNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Notification number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIF_ARGUMENT_NOTIFICATIONNUM_DESC")
                         }),
                     ])
                 ], new DismissNotifCommand()),
 
-            new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications", new DismissNotifsCommand()),
+            new CommandInfo("dismissnotifs", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIFS_DESC"), new DismissNotifsCommand()),
 
-            new CommandInfo("driverman", /* Localizable */ "Manage your drivers",
+            new CommandInfo("driverman", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "change", new()
                         {
                             ExactWording = ["change"],
-                            ArgumentDescription = /* Localizable */ "Change a driver"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DESC")
                         }),
                         new CommandArgumentPart(true, "type", new()
                         {
                             AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
-                            ArgumentDescription = /* Localizable */ "Target driver type"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC")
                         }),
                         new CommandArgumentPart(true, "driver", new()
                         {
                             AutoCompleter = (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1])),
-                            ArgumentDescription = /* Localizable */ "Target driver to change to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DRIVER_DESC")
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -741,12 +741,12 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "list", new()
                         {
                             ExactWording = ["list"],
-                            ArgumentDescription = /* Localizable */ "List drivers"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC")
                         }),
                         new CommandArgumentPart(true, "type", new()
                         {
                             AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
-                            ArgumentDescription = /* Localizable */ "Target driver type"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC")
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -754,51 +754,51 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "types", new()
                         {
                             ExactWording = ["types"],
-                            ArgumentDescription = /* Localizable */ "List driver types"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC")
                         }),
                     ]),
                 ], new DriverManCommand(), CommandFlags.Strict),
 
-            new CommandInfo("echo", /* Localizable */ "Writes text into the console",
+            new CommandInfo("echo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "text", new()
                         {
-                            ArgumentDescription = /* Localizable */ "String to print"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("noparse", /* Localizable */ "Prints the text as it is with no placeholder parsing", false, false, [], 0, false)
+                        new SwitchInfo("noparse", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC"), false, false, [], 0, false)
                     ], true)
                 ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("edit", /* Localizable */ "Edits a file",
+            new CommandInfo("edit", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("text", /* Localizable */ "Forces text mode", new SwitchOptions()
+                        new SwitchInfo("text", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_TEXT_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["sql", "json", "hex"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("hex", /* Localizable */ "Forces hex mode", new SwitchOptions()
+                        new SwitchInfo("hex", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_HEX_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["text", "json", "sql"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("json", /* Localizable */ "Forces JSON mode", new SwitchOptions()
+                        new SwitchInfo("json", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_JSON_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["text", "sql", "hex"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("sql", /* Localizable */ "Forces SQL mode", new SwitchOptions()
+                        new SwitchInfo("sql", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_SQL_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["text", "json", "hex"],
                             AcceptsValues = false
@@ -806,344 +806,344 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new EditCommand()),
 
-            new CommandInfo("encodefile", /* Localizable */ "Encodes the file",
+            new CommandInfo("encodefile", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "File to encode"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                        new SwitchInfo("key", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("iv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("algorithm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
                     ])
                 ], new EncodeFileCommand()),
 
-            new CommandInfo("encodetext", /* Localizable */ "Encodes the text",
+            new CommandInfo("encodetext", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "string", new()
                         {
-                            ArgumentDescription = /* Localizable */ "String to encode"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                        new SwitchInfo("key", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("iv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        new SwitchInfo("algorithm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
                     ])
                 ], new EncodeTextCommand()),
 
-            new CommandInfo("encodebase64", /* Localizable */ "Encodes the text to a BASE64 representation",
+            new CommandInfo("encodebase64", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "string", new()
                         {
-                            ArgumentDescription = /* Localizable */ "String to encode"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC")
                         })
                     ])
                 ], new EncodeBase64Command()),
 
-            new CommandInfo("fileinfo", /* Localizable */ "Provides information about a file",
+            new CommandInfo("fileinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                         }),
                     ])
                 ], new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("find", /* Localizable */ "Finds a file in the specified directory or in the current directory",
+            new CommandInfo("find", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new()
                         {
-                            ArgumentDescription = /* Localizable */ "File name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENAME")
                         }),
                         new CommandArgumentPart(true, "directory", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", new SwitchOptions()
+                        new SwitchInfo("recursive", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", new SwitchOptions()
+                        new SwitchInfo("exec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         })
                     ], true)
                 ], new FindCommand()),
 
-            new CommandInfo("findreg", /* Localizable */ "Finds a file in the specified directory or in the current directory using regular expressions",
+            new CommandInfo("findreg", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FINDREG_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "fileRegex", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Regular expression to find a file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FINDREG_ARGUMENT_REGEXP_DESC")
                         }),
                         new CommandArgumentPart(true, "directory", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", new SwitchOptions()
+                        new SwitchInfo("recursive", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", new SwitchOptions()
+                        new SwitchInfo("exec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         })
                     ], true)
                 ], new FindRegCommand()),
 
-            new CommandInfo("fork", /* Localizable */ "Forks the UESH shell to create another instance", new ForkCommand()),
+            new CommandInfo("fork", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC"), new ForkCommand()),
 
-            new CommandInfo("get", /* Localizable */ "Downloads a file to current working directory",
+            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "url", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Link to a remote resource, such as HTTPS"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_ARGUMENT_URL_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("outputpath", /* Localizable */ "Specifies the output path", new SwitchOptions()
+                        new SwitchInfo("outputpath", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         })
                     ])
                 ], new GetCommand()),
 
-            new CommandInfo("getaddons", /* Localizable */ "Gets all the addons from the official download page and installs them",
+            new CommandInfo("getaddons", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("reinstall", /* Localizable */ "Reinstalls the addons", new SwitchOptions()
+                        new SwitchInfo("reinstall", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_SWITCH_REINSTALL_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new GetAddonsCommand()),
 
-            new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions", new GetAllExtHandlersCommand()),
+            new CommandInfo("getallexthandlers", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETALLEXTHANDLERS_DESC"), new GetAllExtHandlersCommand()),
 
-            new CommandInfo("getconfigvalue", /* Localizable */ "Gets a configuration variable and its value",
+            new CommandInfo("getconfigvalue", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_DESC"),
                 [
                     new CommandArgumentInfo(new CommandArgumentPart[]
                     {
                         new(true, "config", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Kernel configuration name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_CONFIG_DESC")
                         }),
                         new(true, "variable", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => ConfigTools.GetSettingsKeys(arg[0]).Select((sk) => sk.Variable).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Variable to get info"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_VARIABLE_DESC")
                         })
                     }, true)
                 ], new GetConfigValueCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("getdefaultexthandler", /* Localizable */ "Gets the default extension handler from the specified extension",
+            new CommandInfo("getdefaultexthandler", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray(),
-                            ArgumentDescription = /* Localizable */ "File extension"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_ARGUMENT_EXTENSION_DESC")
                         }),
                     ], true)
                 ], new GetDefaultExtHandlerCommand()),
 
-            new CommandInfo("getdefaultexthandlers", /* Localizable */ "Gets the default extension handlers from all the extensions", new GetDefaultExtHandlersCommand()),
+            new CommandInfo("getdefaultexthandlers", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLERS_DESC"), new GetDefaultExtHandlersCommand()),
 
-            new CommandInfo("getexthandlers", /* Localizable */ "Gets the extension handlers from the specified extension",
+            new CommandInfo("getexthandlers", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETEXTHANDLERS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray(),
-                            ArgumentDescription = /* Localizable */ "File extension"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_ARGUMENT_EXTENSION_DESC")
                         }),
                     ], true)
                 ], new GetExtHandlersCommand()),
 
-            new CommandInfo("getkeyiv", /* Localizable */ "Gets the key and the initialization vector for symmetrical encoding",
+            new CommandInfo("getkeyiv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames(),
-                            ArgumentDescription = /* Localizable */ "Encoding algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_ARGUMENT_ALGORITHM_DESC")
                         }),
                     ], true)
                 ], new GetKeyIvCommand()),
 
-            new CommandInfo("host", /* Localizable */ "Gets the current host name",
+            new CommandInfo("host", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_HOST_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new HostCommand()),
 
-            new CommandInfo("hwinfo", /* Localizable */ "Prints hardware information",
+            new CommandInfo("hwinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => DriverHandler.CurrentHardwareProberDriverLocal.SupportedHardwareTypes.Union(["all"]).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Hardware type"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_ARGUMENT_TYPE_DESC")
                         })
                     ])
                 ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("if", /* Localizable */ "Executes commands once the UESH expressions are satisfied",
+            new CommandInfo("if", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ueshExpression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "UESH expression to test"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC")
                         }),
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Command to execute upon successful evaluation"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC")
                         }),
                     ])
                 ], new IfCommand()),
 
-            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
+            new CommandInfo("ifm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "firstPanePath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory for the left pane"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC")
                         }),
                         new CommandArgumentPart(false, "secondPanePath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory for the right pane"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC")
                         }),
                     ])
                 ], new IfmCommand()),
 
-            new CommandInfo("input", /* Localizable */ "Allows user to enter input",
+            new CommandInfo("input", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Question to print to the screen"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC")
                         }),
                     ], true)
                 ], new InputCommand()),
 
-            new CommandInfo("inputpass", /* Localizable */ "Allows user to enter input as password",
+            new CommandInfo("inputpass", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Question to print to the screen"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC")
                         }),
                     ], true)
                 ], new InputPassCommand()),
 
-            new CommandInfo("langman", /* Localizable */ "Manage your languages",
+            new CommandInfo("langman", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "reload/load/unload", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Reloads, loads, or unloads a custom language"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC")
                         }),
                         new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. LanguageManager.CustomLanguages.Keys],
-                            ArgumentDescription = /* Localizable */ "Custom language name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC")
                         }),
                     ]),
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "list/reloadall", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Lists or reloads all custom languages"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC")
                         }),
                     ])
                 ], new LangManCommand(), CommandFlags.Strict),
 
-            new CommandInfo("license", /* Localizable */ "Shows license information for the kernel", new LicenseCommand()),
+            new CommandInfo("license", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC"), new LicenseCommand()),
 
-            new CommandInfo("lintscript", /* Localizable */ "Checks a UESH script for syntax errors",
+            new CommandInfo("lintscript", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "script", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to UESH script"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC")
                         }),
                     ], true)
                 ], new LintScriptCommand()),
 
-            new CommandInfo("list", /* Localizable */ "List file/folder contents in current folder",
+            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory to list"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
+                        new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", new SwitchOptions()
+                        new SwitchInfo("suppressmessages", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively", new SwitchOptions()
+                        new SwitchInfo("recursive", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["tree"]
                         }),
-                        new SwitchInfo("tree", /* Localizable */ "Lists a folder using the tree form", new SwitchOptions()
+                        new SwitchInfo("tree", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_TREE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["recursive"]
@@ -1151,175 +1151,175 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lockscreen", /* Localizable */ "Locks your screen with a password", new LockScreenCommand()),
+            new CommandInfo("lockscreen", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LOCKSCREEN_DESC"), new LockScreenCommand()),
 
-            new CommandInfo("logout", /* Localizable */ "Logs you out", new LogoutCommand(), CommandFlags.NoMaintenance),
+            new CommandInfo("logout", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LOGOUT_DESC"), new LogoutCommand(), CommandFlags.NoMaintenance),
 
-            new CommandInfo("lsconfigs", /* Localizable */ "Lists all available configurations",
+            new CommandInfo("lsconfigs", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGS_DESC"),
                 [
                     new CommandArgumentInfo(new SwitchInfo[]
                     {
-                        new("deep", /* Localizable */ "Deep details about all configurations, including their entries")
+                        new("deep", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGS_SWITCH_DEEP_DESC"))
                     })
                 ], new LsConfigsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsconfigvalues", /* Localizable */ "Lists all configuration variables and their values",
+            new CommandInfo("lsconfigvalues", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGVALUES_DESC"),
                 [
                     new CommandArgumentInfo(new CommandArgumentPart[]
                     {
                         new(true, "config", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Kernel configuration name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_CONFIG_DESC")
                         })
                     })
                 ], new LsConfigValuesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsconnections", /* Localizable */ "Lists all available connections", new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsconnections", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONNECTIONS_DESC"), new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsdbgdev", /* Localizable */ "Lists debugging devices connected", new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsdbgdev", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSDBGDEV_DESC"), new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsexthandlers", /* Localizable */ "Lists available extension handlers", new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsexthandlers", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSEXTHANDLERS_DESC"), new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsdiskparts", /* Localizable */ "Lists all the disk partitions",
+            new CommandInfo("lsdiskparts", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSDISKPARTS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Disk number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_ARGUMENT_DISKNUM_DESC")
                         }),
                     ], true)
                 ], new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsdisks", /* Localizable */ "Lists all the disks",
+            new CommandInfo("lsdisks", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSDISKS_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsnet", /* Localizable */ "Lists online network devices", new LsNetCommand(), CommandFlags.Strict),
+            new CommandInfo("lsnet", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSNET_DESC"), new LsNetCommand(), CommandFlags.Strict),
 
-            new CommandInfo("lsvars", /* Localizable */ "Lists available UESH variables", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsvars", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC"), new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("md", /* Localizable */ "Creates a directory",
+            new CommandInfo("md", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Directory name to create"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MD_ARGUMENT_DIRECTORY_DESC")
                         }),
                     ], true)
                 ], new MdCommand()),
 
-            new CommandInfo("mkfile", /* Localizable */ "Makes a new file",
+            new CommandInfo("mkfile", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File name to create"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_ARGUMENT_FILE_DESC")
                         }),
                     ], true)
                 ], new MkFileCommand()),
 
-            new CommandInfo("move", /* Localizable */ "Moves a file to another directory",
+            new CommandInfo("move", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "source", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Directory or name to move from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_SOURCE_DESC")
                         }),
                         new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Directory or name to move to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new MoveCommand()),
 
-            new CommandInfo("partinfo", /* Localizable */ "Provides information about a partition from the specified disk",
+            new CommandInfo("partinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PARTINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Disk number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_ARGUMENT_DISKNUM_DESC")
                         }),
                         new CommandArgumentPart(true, "partNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Partition number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PARTINFO_ARGUMENT_PARTNUM_DESC")
                         }),
                     ], true)
                 ], new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("pathfind", /* Localizable */ "Finds a given file name from path lookup directories",
+            new CommandInfo("pathfind", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PATHFIND_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "fileName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File name to lookup"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PATHFIND_ARGUMENT_FILENAME_DESC")
                         }),
                     ], true)
                 ], new PathFindCommand()),
 
-            new CommandInfo("perm", /* Localizable */ "Manage permissions for users",
+            new CommandInfo("perm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "userName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "User name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "allow/revoke", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either allow or revoke"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC")
                         }),
                         new CommandArgumentPart(true, "perm", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Permission name to grant or deny"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC")
                         }),
                     ])
                 ], new PermCommand(), CommandFlags.Strict),
 
-            new CommandInfo("permgroup", /* Localizable */ "Manage permissions for groups",
+            new CommandInfo("permgroup", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "groupName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Group name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_ARGUMENT_GROUPNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "allow/revoke", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either allow or revoke"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC")
                         }),
                         new CommandArgumentPart(true, "perm", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Permission name to grant or deny"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC")
                         }),
                     ])
                 ], new PermGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("ping", /* Localizable */ "Pings an address",
+            new CommandInfo("ping", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "Address1", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "First IP address or host name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC")
                         }),
                         new CommandArgumentPart(false, "Address2", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Second IP address or host name, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("times", /* Localizable */ "Specifies number of times to ping", new SwitchOptions()
+                        new SwitchInfo("times", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_SWITCH_TIMES_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsNumeric = true
@@ -1327,31 +1327,31 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], false, true)
                 ], new PingCommand()),
 
-            new CommandInfo("platform", /* Localizable */ "Gets the current platform",
+            new CommandInfo("platform", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("n", /* Localizable */ "Shows the platform name", new SwitchOptions()
+                        new SwitchInfo("n", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_N_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["r", "v", "b", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("v", /* Localizable */ "Shows the platform version", new SwitchOptions()
+                        new SwitchInfo("v", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_V_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["n", "r", "b", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("b", /* Localizable */ "Shows the platform bits", new SwitchOptions()
+                        new SwitchInfo("b", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_B_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["n", "v", "r", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("c", /* Localizable */ "Shows the .NET platform version", new SwitchOptions()
+                        new SwitchInfo("c", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_C_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["n", "v", "b", "r"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("r", /* Localizable */ "Shows the .NET platform runtime identifier", new SwitchOptions()
+                        new SwitchInfo("r", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_R_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["n", "v", "b", "c"],
                             AcceptsValues = false
@@ -1359,38 +1359,38 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new PlatformCommand()),
 
-            new CommandInfo("put", /* Localizable */ "Uploads a file to specified website",
+            new CommandInfo("put", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "FileName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file to upload"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PUT_ARGUMENT_FILE_DESC")
                         }),
                         new CommandArgumentPart(true, "URL", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "URL pointing to the upload endpoint"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PUT_ARGUMENT_URL_DESC")
                         }),
                     ])
                 ], new PutCommand()),
 
-            new CommandInfo("rdebug", /* Localizable */ "Enables or disables remote debugging.", new RdebugCommand(), CommandFlags.Strict),
+            new CommandInfo("rdebug", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RDEBUG_DESC"), new RdebugCommand(), CommandFlags.Strict),
 
-            new CommandInfo("reboot", /* Localizable */ "Restarts the kernel",
+            new CommandInfo("reboot", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("safe", /* Localizable */ "Restarts the kernel to safe mode.", new()
+                        new SwitchInfo("safe", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["maintenance", "debug"]
                         }),
-                        new SwitchInfo("maintenance", /* Localizable */ "Restarts the kernel to maintenance mode.", new()
+                        new SwitchInfo("maintenance", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["safe", "debug"]
                         }),
-                        new SwitchInfo("debug", /* Localizable */ "Restarts the kernel to debug mode.", new()
+                        new SwitchInfo("debug", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["safe", "maintenance"]
@@ -1398,113 +1398,113 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new RebootCommand()),
 
-            new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.", new ReloadConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("reloadconfig", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RELOADCONFIG_DESC"), new ReloadConfigCommand(), CommandFlags.Strict),
 
-            new CommandInfo("rexec", /* Localizable */ "Remotely executes a command to remote PC",
+            new CommandInfo("rexec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Host name that runs Nitrocid KS"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Port of Nitrocid KS on the remote target"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC")
                         }),
                         new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Command to execute remotely"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC")
                         }),
                     ])
                 ], new RexecCommand(), CommandFlags.Strict),
 
-            new CommandInfo("rm", /* Localizable */ "Removes a directory or a file",
+            new CommandInfo("rm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target directory or file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RM_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new RmCommand()),
 
-            new CommandInfo("rmsec", /* Localizable */ "Removes a file or a directory securely",
+            new CommandInfo("rmsec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMSEC_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target directory or file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RM_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new RmSecCommand()),
 
-            new CommandInfo("rmuser", /* Localizable */ "Removes a user from the list",
+            new CommandInfo("rmuser", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "Username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "User name to remove"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new RmUserCommand(), CommandFlags.Strict),
 
-            new CommandInfo("rmgroup", /* Localizable */ "Removes a group from the list",
+            new CommandInfo("rmgroup", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "GroupName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Group name to remove"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new RmGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("rmuserfromgroup", /* Localizable */ "Removes a user from the group",
+            new CommandInfo("rmuserfromgroup", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "UserName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "User name to remove from group"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "GroupName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Group name to remove user from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_GROUPNAME_DESC")
                         }),
                     ])
                 ], new RmUserFromGroupCommand(), CommandFlags.Strict),
 
-            new CommandInfo("rreboot", /* Localizable */ "Restarts a remote kernel instance",
+            new CommandInfo("rreboot", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RREBOOT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Host name that runs Nitrocid KS"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Port of Nitrocid KS on the remote target"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("safe", /* Localizable */ "Restarts the kernel to safe mode.", new()
+                        new SwitchInfo("safe", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["maintenance", "debug"]
                         }),
-                        new SwitchInfo("maintenance", /* Localizable */ "Restarts the kernel to maintenance mode.", new()
+                        new SwitchInfo("maintenance", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["safe", "debug"]
                         }),
-                        new SwitchInfo("debug", /* Localizable */ "Restarts the kernel to debug mode.", new()
+                        new SwitchInfo("debug", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC"), new()
                         {
                             AcceptsValues = false,
                             ConflictsWith = ["safe", "maintenance"]
@@ -1512,239 +1512,239 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new RebootCommand()),
 
-            new CommandInfo("rshutdown", /* Localizable */ "The kernel in the remote instance will be shut down",
+            new CommandInfo("rshutdown", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Host name that runs Nitrocid KS"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Port of Nitrocid KS on the remote target"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC")
                         }),
                     ])
                 ], new RShutdownCommand()),
 
-            new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file", new SaveConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("saveconfig", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVECONFIG_DESC"), new SaveConfigCommand(), CommandFlags.Strict),
 
-            new CommandInfo("savescreen", /* Localizable */ "Saves your screen from burn outs",
+            new CommandInfo("savescreen", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "saver/random", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either the screensaver name or 'random'"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("select", /* Localizable */ "Gives you an option to select the screensaver to try out", new()
+                        new SwitchInfo("select", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_SELECT_DESC"), new()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SaveScreenCommand()),
 
-            new CommandInfo("search", /* Localizable */ "Searches for specified string in the provided file using regular expressions",
+            new CommandInfo("search", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "Regexp", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Regular expression to search"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC")
                         }),
                         new CommandArgumentPart(true, "File", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_FILE_DESC")
                         }),
                     ])
                 ], new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("searchword", /* Localizable */ "Searches for specified string in the provided file",
+            new CommandInfo("searchword", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCHWORD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "StringEnclosedInDoubleQuotes", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Word or phrase to search"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCHWORD_ARGUMENT_STRING_DESC")
                         }),
                         new CommandArgumentPart(true, "File", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_FILE_DESC")
                         }),
                     ])
                 ], new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("select", /* Localizable */ "Provides a selection choice",
+            new CommandInfo("select", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "answers", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Answers to split with a slash"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC")
                         }),
                         new CommandArgumentPart(true, "input", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Question to print to the screen"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC")
                         }),
                         new CommandArgumentPart(false, "answertitle1", new()
                         {
-                            ArgumentDescription = /* Localizable */ "First answer title"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC")
                         }),
                         new CommandArgumentPart(false, "answertitle2", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Second answer title, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC")
                         }),
                     ], true, true)
                 ], new SelectCommand()),
 
-            new CommandInfo("setsaver", /* Localizable */ "Sets up kernel screensavers",
+            new CommandInfo("setsaver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "saver", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Screensaver name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_ARGUMENT_SAVER_DESC")
                         }),
                     ])
                 ], new SetSaverCommand(), CommandFlags.Strict),
 
-            new CommandInfo("settings", /* Localizable */ "Changes kernel configuration",
+            new CommandInfo("settings", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_DESC"),
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
+                        new SwitchInfo("saver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("addonsaver", /* Localizable */ "Opens the addon screensaver settings", new SwitchOptions()
+                        new SwitchInfo("addonsaver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", new SwitchOptions()
+                        new SwitchInfo("splash", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("addonsplash", /* Localizable */ "Opens the addon splash settings", new SwitchOptions()
+                        new SwitchInfo("addonsplash", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("driver", /* Localizable */ "Opens the driver settings", new SwitchOptions()
+                        new SwitchInfo("driver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("type", /* Localizable */ "Opens the custom settings", new SwitchOptions()
+                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
                             ArgumentsRequired = true
                         }),
-                        new SwitchInfo("sel", /* Localizable */ "Uses the legacy settings style", new SwitchOptions()
+                        new SwitchInfo("sel", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SettingsCommand(), CommandFlags.Strict),
 
-            new CommandInfo("set", /* Localizable */ "Sets a variable to a value in a script",
+            new CommandInfo("set", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "value", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Value to set"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC")
                         }),
                     ], true)
                 ], new SetCommand()),
 
-            new CommandInfo("setconfigvalue", /* Localizable */ "Sets a configuration variable to a specified value",
+            new CommandInfo("setconfigvalue", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_DESC"),
                 [
                     new CommandArgumentInfo(new CommandArgumentPart[]
                     {
                         new(true, "config", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Kernel configuration name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_CONFIG_DESC")
                         }),
                         new(true, "variable", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => ConfigTools.GetSettingsKeys(arg[0]).Select((sk) => sk.Variable).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Configuration variable name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC")
                         }),
                         new(true, "value")
                     })
                 ], new SetConfigValueCommand()),
 
-            new CommandInfo("setexthandler", /* Localizable */ "Sets the default extension handler of the specified extension to the specific implementer",
+            new CommandInfo("setexthandler", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETEXTHANDLER_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray(),
-                            ArgumentDescription = /* Localizable */ "File extension"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_ARGUMENT_EXTENSION_DESC")
                         }),
                         new CommandArgumentPart(true, "implementer", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (args) => ExtensionHandlerTools.GetExtensionHandlers(args[0]).Select((h) => h.Implementer).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Implementer name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETEXTHANDLER_ARGUMENT_IMPLEMENTER_DESC")
                         }),
                     ])
                 ], new SetExtHandlerCommand()),
 
-            new CommandInfo("setrange", /* Localizable */ "Creates a variable array with the provided values",
+            new CommandInfo("setrange", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "First value"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC")
                         }),
                         new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Second value"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC")
                         }),
                         new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Third value, and so on..."
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC")
                         }),
                     ], true, true)
                 ], new SetRangeCommand()),
 
-            new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
+            new CommandInfo("shownotifs", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Shows all received notifications in an interactive TUI", new SwitchOptions()
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("showtd", /* Localizable */ "Shows date and time", new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("showtd", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC"), new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("showtdzone", /* Localizable */ "Shows date and time in zones",
+            new CommandInfo("showtdzone", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "timezone", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Time zone name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("all", /* Localizable */ "Shows all the time zones", new SwitchOptions()
+                        new SwitchInfo("all", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("selection", /* Localizable */ "Opens an interactive TUI in which you'll be able to see the world clock in real time", new SwitchOptions()
+                        new SwitchInfo("selection", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_SELECTION_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
@@ -1752,216 +1752,216 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down", new ShutdownCommand()),
+            new CommandInfo("shutdown", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHUTDOWN_DESC"), new ShutdownCommand()),
 
-            new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
+            new CommandInfo("sleep", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Interval to sleep"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC")
                         }),
                     ])
                 ], new SleepCommand()),
-            new CommandInfo("sudo", /* Localizable */ "Runs the command as the root user",
+            new CommandInfo("sudo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Command to run"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC")
                         }),
                     ])
                 ], new SudoCommand()),
 
-            new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
+            new CommandInfo("sumfile", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                         }),
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Input file to calculate the hash sum"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_FILE_DESC")
                         }),
                         new CommandArgumentPart(false, "outputFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Output file to save hash sum info"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_OUTPUTFILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", new SwitchOptions()
+                        new SwitchInfo("relative", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SumFileCommand()),
 
-            new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
+            new CommandInfo("sumfiles", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILES_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                         }),
                         new CommandArgumentPart(true, "dir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC")
                         }),
                         new CommandArgumentPart(false, "outputFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Output file to save hash sum info"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_OUTPUTFILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", new SwitchOptions()
+                        new SwitchInfo("relative", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SumFilesCommand()),
 
-            new CommandInfo("sumtext", /* Localizable */ "Calculates text sums.",
+            new CommandInfo("sumtext", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMTEXT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                         }),
                         new CommandArgumentPart(true, "text", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Text to get hash sum"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMTEXT_ARGUMENT_TEXT_DESC")
                         }),
                     ])
                 ], new SumTextCommand()),
 
-            new CommandInfo("symlink", /* Localizable */ "Creates a symbolic link to a file or a folder",
+            new CommandInfo("symlink", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYMLINK_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "linkname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Symbolic link name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYMLINK_ARGUMENT_LINKNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target file to create a shortcut from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYMLINK_ARGUMENT_TARGET_DESC")
                         }),
                     ])
                 ], new SymlinkCommand()),
 
-            new CommandInfo("sysinfo", /* Localizable */ "System information",
+            new CommandInfo("sysinfo", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO"),
                 [
                     new CommandArgumentInfo([],
                     [
-                        new SwitchInfo("s", /* Localizable */ "Shows the system information", new SwitchOptions()
+                        new SwitchInfo("s", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_S_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("h", /* Localizable */ "Shows the hardware information", new SwitchOptions()
+                        new SwitchInfo("h", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_H_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("u", /* Localizable */ "Shows the user information", new SwitchOptions()
+                        new SwitchInfo("u", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_U_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", /* Localizable */ "Shows the message of the day", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_M_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("l", /* Localizable */ "Shows the message of the day after login", new SwitchOptions()
+                        new SwitchInfo("l", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_L_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("a", /* Localizable */ "Shows all information", new SwitchOptions()
+                        new SwitchInfo("a", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_A_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ])
                 ], new SysInfoCommand()),
 
-            new CommandInfo("taskman", /* Localizable */ "Task manager", new TaskManCommand()),
+            new CommandInfo("taskman", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_TASKMAN_DESC"), new TaskManCommand()),
 
-            new CommandInfo("themeprev", /* Localizable */ "Previews a theme",
+            new CommandInfo("themeprev", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "theme", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Theme name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC")
                         }),
                     ])
                 ], new ThemePrevCommand()),
 
-            new CommandInfo("themeset", /* Localizable */ "Selects a theme and sets it",
+            new CommandInfo("themeset", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "theme", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Theme name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("y", /* Localizable */ "Immediately set the theme on selection", new SwitchOptions()
+                        new SwitchInfo("y", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ThemeSetCommand()),
 
-            new CommandInfo("unblockdbgdev", /* Localizable */ "Unblock a debug device by IP address",
+            new CommandInfo("unblockdbgdev", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "ipaddress", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "IP address to unblock"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC")
                         }),
                     ])
                 ], new UnblockDbgDevCommand(), CommandFlags.Strict),
 
-            new CommandInfo("unset", /* Localizable */ "Removes a variable from the UESH variable list",
+            new CommandInfo("unset", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Variable name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("justwipe", /* Localizable */ "Just wipes the variable value without removing it", new SwitchOptions()
+                        new SwitchInfo("justwipe", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new UnsetCommand()),
 
-            new CommandInfo("unzip", /* Localizable */ "Extracts a ZIP archive",
+            new CommandInfo("unzip", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to ZIP file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC")
                         }),
                         new CommandArgumentPart(false, "path", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target path to extract"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_PATH_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("createdir", /* Localizable */ "Creates a directory that contains the contents of the ZIP file", new SwitchOptions()
+                        new SwitchInfo("createdir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_SWITCH_CREATEDIR_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
@@ -1969,50 +1969,50 @@ namespace Nitrocid.Shell.Shells.UESH
                 ], new UnZipCommand()),
 
             #if SPECIFIERREL
-            new CommandInfo("update", /* Localizable */ "System update", new UpdateCommand(), CommandFlags.Strict),
+            new CommandInfo("update", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC"), new UpdateCommand(), CommandFlags.Strict),
             #endif
 
-            new CommandInfo("uptime", /* Localizable */ "Shows the kernel uptime",
+            new CommandInfo("uptime", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new UptimeCommand()),
 
-            new CommandInfo("usermanual", /* Localizable */ "Shows the two useful URLs for manual.", new UserManualCommand()),
+            new CommandInfo("usermanual", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC"), new UserManualCommand()),
 
-            new CommandInfo("verify", /* Localizable */ "Verifies sanity of the file",
+            new CommandInfo("verify", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                         }),
                         new CommandArgumentPart(true, "calculatedhash", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Calculated hash"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_CALCULATEDHASH_DESC")
                         }),
                         new CommandArgumentPart(true, "hashfile/expectedhash", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Hash file or expected hash"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_HASHFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File to test"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_FILE_DESC")
                         }),
                     ])
                 ], new VerifyCommand()),
 
-            new CommandInfo("version", /* Localizable */ "Gets the current version",
+            new CommandInfo("version", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_M_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["k"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("k", /* Localizable */ "Shows the kernel version", new SwitchOptions()
+                        new SwitchInfo("k", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_K_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["m"],
                             AcceptsValues = false
@@ -2020,27 +2020,27 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new VersionCommand()),
 
-            new CommandInfo("whoami", /* Localizable */ "Gets the current user name",
+            new CommandInfo("whoami", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WHOAMI_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new WhoamiCommand()),
 
-            new CommandInfo("winelevate", /* Localizable */ "Restarts Nitrocid with the elevated permissions (Windows only)",
+            new CommandInfo("winelevate", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WINELEVATE_DESC"),
                 [
                     new CommandArgumentInfo(true)
                 ], new WinElevateCommand()),
 
-            new CommandInfo("wraptext", /* Localizable */ "Wraps the text file",
+            new CommandInfo("wraptext", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("columns", /* Localizable */ "Specifies the columns per line", new SwitchOptions()
+                        new SwitchInfo("columns", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_SWITCH_COLUMNS_DESC"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsNumeric = true
@@ -2048,31 +2048,31 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new WrapTextCommand()),
 
-            new CommandInfo("zip", /* Localizable */ "Creates a ZIP archive",
+            new CommandInfo("zip", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "ZIP file name to create"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_ZIPFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "path", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to compress"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_PATH_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("fast", /* Localizable */ "Fast compression", new SwitchOptions()
+                        new SwitchInfo("fast", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_FAST_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["nocomp"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("nocomp", /* Localizable */ "No compression", new SwitchOptions()
+                        new SwitchInfo("nocomp", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOCOMP_DESC"), new SwitchOptions()
                         {
                             ConflictsWith = ["fast"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("nobasedir", /* Localizable */ "Don't create base directory in archive", new SwitchOptions()
+                        new SwitchInfo("nobasedir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })

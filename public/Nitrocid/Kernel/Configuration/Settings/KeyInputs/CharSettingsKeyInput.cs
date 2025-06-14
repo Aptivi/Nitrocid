@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriters.Write($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
+            TextWriters.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", KernelColorType.Tip);
             TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue ?? ' ');
             var keypressTerm = Input.ReadKey();
             var keypress = keypressTerm.KeyChar;

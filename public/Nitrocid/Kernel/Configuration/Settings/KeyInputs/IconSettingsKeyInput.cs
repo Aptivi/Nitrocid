@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The icons addon needs to be installed before being able to set this value."));
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ICON_NEEDSADDON"));
                 bail = true;
                 return KeyDefaultValue;
             }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Bail if there are addons already installed
             if (AddonTools.ListAddons().Count > 0 && !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-reinstall"))
             {
-                TextWriters.Write(Translate.DoTranslation("Some or all your addons have been installed. If you wish to re-install them, use the -reinstall switch."), KernelColorType.Progress);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_ALREADYINSTALLED"), KernelColorType.Progress);
                 return 0;
             }
 
@@ -55,14 +55,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             KernelUpdate? addonsPackage;
             try
             {
-                TextWriters.Write(Translate.DoTranslation("Fetching the addons package..."), KernelColorType.Progress);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHING"), KernelColorType.Progress);
                 addonsPackage = UpdateManager.FetchAddonPack();
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to fetch the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Failed to fetch the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHFAILED") + $": {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
@@ -70,29 +70,29 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             try
             {
                 if (addonsPackage is null)
-                    throw new KernelException(KernelExceptionType.Unknown, Translate.DoTranslation("Can't obtain addons package."));
-                TextWriters.Write(Translate.DoTranslation("Downloading the addons package..."), KernelColorType.Progress);
+                    throw new KernelException(KernelExceptionType.Unknown, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED"));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADING"), KernelColorType.Progress);
                 NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), PathsManagement.AppDataPath + "/addons.zip");
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to download the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Failed to download the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADFAILED") + $": {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
             // Finally, try to install the addons package
             try
             {
-                TextWriters.Write(Translate.DoTranslation("Installing the addons package..."), KernelColorType.Progress);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLING"), KernelColorType.Progress);
                 ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to install the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Failed to install the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLFAILED") + $": {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
             return 0;

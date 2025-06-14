@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), parameters.ArgumentsList[1]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), parameters.ArgumentsList[1]);
             if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
                 Login.LogoutRequested = true;
             return 0;

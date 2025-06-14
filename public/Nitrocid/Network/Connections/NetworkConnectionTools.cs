@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -67,7 +67,7 @@ namespace Nitrocid.Network.Connections
         {
             var connections = networkConnections.Where((connection) => connection.ConnectionType == connectionType);
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
             return connections.ToArray();
         }
 
@@ -90,7 +90,7 @@ namespace Nitrocid.Network.Connections
             // Check to see if we have this connection
             if (connectionIndex >= networkConnections.Count)
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Connection is not found."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOCONNECTION"));
 
             // Now, try to close this connection
             DebugWriter.WriteDebug(DebugLevel.I, "Closing connection {0}...", vars: [connectionIndex]);
@@ -136,14 +136,14 @@ namespace Nitrocid.Network.Connections
         public static NetworkConnection EstablishConnection(string name, string url, string connectionType, KernelThread connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // First, parse the URL
             if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri? uri))
                 return EstablishConnection(name, uri, connectionType, connectionThread);
             else
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Invalid link for connection."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDLINK"));
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Nitrocid.Network.Connections
         public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, KernelThread connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Now, make a connection and start the connection thread
             try
@@ -172,7 +172,7 @@ namespace Nitrocid.Network.Connections
             catch (Exception e)
             {
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Failed to establish connection with {0}.") + " {1}", e, uri.ToString(), e.Message);
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_ESTABLISHFAILED") + " {1}", e, uri.ToString(), e.Message);
             }
         }
 
@@ -212,14 +212,14 @@ namespace Nitrocid.Network.Connections
         public static NetworkConnection EstablishConnection(string name, string url, string connectionType, object connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // First, parse the URL
             if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri? uri))
                 return EstablishConnection(name, uri, connectionType, connectionInstance);
             else
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Invalid link for connection."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDLINK"));
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Nitrocid.Network.Connections
         public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, object connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Now, make a connection and start the connection thread
             try
@@ -252,7 +252,7 @@ namespace Nitrocid.Network.Connections
             catch (Exception e)
             {
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Failed to establish connection with {0}.") + " {1}", e, uri.ToString(), e.Message);
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_ESTABLISHFAILED") + " {1}", e, uri.ToString(), e.Message);
             }
         }
 
@@ -267,10 +267,10 @@ namespace Nitrocid.Network.Connections
             // Check to see if we have this connection
             if (connection is null)
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Connection is not established yet."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTESTABLISHED"));
             if (!networkConnections.Contains(connection))
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Connection is not established yet."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTESTABLISHED"));
             return networkConnections.IndexOf(connection);
         }
 
@@ -294,13 +294,13 @@ namespace Nitrocid.Network.Connections
         public static int GetConnectionIndexSpecific(NetworkConnection connection, string connectionType)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Check to see if we have this connection
             var availableConnections = GetNetworkConnections(connectionType);
             if (!availableConnections.Contains(connection))
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("Connection is not established yet."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTESTABLISHED"));
             return Array.IndexOf(availableConnections, connection);
         }
 
@@ -315,7 +315,7 @@ namespace Nitrocid.Network.Connections
             // Check to see if we have this connection
             if (index >= networkConnections.Count || index < 0)
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("The connection index is out of range."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_IDXOUTOFRANGE"));
             return networkConnections[index];
         }
 
@@ -339,13 +339,13 @@ namespace Nitrocid.Network.Connections
         public static NetworkConnection GetConnectionFromIndexSpecific(int index, string connectionType)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Check to see if we have this connection
             var availableConnections = GetNetworkConnections(connectionType);
             if (index >= availableConnections.Length || index < 0)
                 throw new KernelException(KernelExceptionType.NetworkConnection,
-                    Translate.DoTranslation("The connection index is out of range."));
+                    LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_IDXOUTOFRANGE"));
             return availableConnections[index];
         }
 
@@ -357,7 +357,7 @@ namespace Nitrocid.Network.Connections
         public static void RegisterCustomConnectionType(string connectionType)
         {
             if (networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type already exists"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS"));
 
             // Now, add the connection type
             networkTypes.Add(connectionType);
@@ -371,7 +371,7 @@ namespace Nitrocid.Network.Connections
         public static void UnregisterCustomConnectionType(string connectionType)
         {
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Now, add the connection type
             networkTypes.Remove(connectionType);
@@ -407,12 +407,12 @@ namespace Nitrocid.Network.Connections
             // Get shell info to check to see if the shell accepts network connections
             var shellInfo = ShellManager.GetShellInfo(shellType);
             if (!shellInfo.AcceptsNetworkConnection)
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The shell {0} doesn't accept network connections."), shellType);
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS"), shellType);
 
             // Determine the network connection type
             string connectionType = shellInfo.NetworkConnectionType;
             if (!networkTypes.Contains(connectionType))
-                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 
             // Now, do the job!
             try
@@ -433,7 +433,7 @@ namespace Nitrocid.Network.Connections
                     {
                         // Prompt the user to provide connection information
                         DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                        address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                        address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
                         connection = establisher(address);
                     }
                     else if (selectedConnection == availableConnections + 2)
@@ -447,8 +447,8 @@ namespace Nitrocid.Network.Connections
                             DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", vars: [connectionUrl]);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
-                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), [.. connectionsChoiceList], [
-                            new InputChoiceInfo($"{speedDials.Length + 1}", Translate.DoTranslation("Create a new connection")),
+                        int selectedSpeedDial = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECTCONNECTION_SPEEDDIAL"), [.. connectionsChoiceList], [
+                            new InputChoiceInfo($"{speedDials.Length + 1}", LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_CREATE")),
                         ]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", vars: [selectedSpeedDial, speedDials.Length]);
                         if (selectedSpeedDial == -1)
@@ -459,7 +459,7 @@ namespace Nitrocid.Network.Connections
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                            address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                            address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
                             connection = establisher(address);
                         }
                         else
@@ -493,7 +493,7 @@ namespace Nitrocid.Network.Connections
                         }
 
                         // Get connection from user selection
-                        int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), [.. connectionsChoiceList]);
+                        int selectedConnectionNumber = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECTCONNECTION"), [.. connectionsChoiceList]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", vars: [selectedConnectionNumber, availableConnectionInstances.Length]);
                         if (selectedConnectionNumber == -1)
                             return;
@@ -509,7 +509,7 @@ namespace Nitrocid.Network.Connections
 
                 // Check the connection for validity
                 if (connection is null)
-                    throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The network connection might not have been established properly due to an error."));
+                    throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR"));
 
                 // Use that information to start the shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Finalizing the shell...");
@@ -519,7 +519,7 @@ namespace Nitrocid.Network.Connections
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", vars: [shellType, address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_UNKNOWNSHELLERROR") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 
@@ -51,7 +52,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         public SwitchInfo[] Switches { get; private set; } =
         [
-            new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
+            new SwitchInfo("set", LanguageTools.GetLocalized("NKS_SHELL_BASE_SWITCH_SET_DESC"), false, true)
         ];
         /// <summary>
         /// Whether to accept the -set switch to set the UESH variable value

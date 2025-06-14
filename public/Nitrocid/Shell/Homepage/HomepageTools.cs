@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -74,23 +74,23 @@ namespace Nitrocid.Shell.Homepage
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
-            { /* Localizable */ "File Manager", FilesystemTools.OpenFileManagerTui },
-            { /* Localizable */ "Alarm Manager", AlarmCli.OpenAlarmCli },
-            { /* Localizable */ "Notifications", NotificationsCli.OpenNotificationsCli },
-            { /* Localizable */ "Task Manager", TaskManagerCli.OpenTaskManagerCli },
+            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_FILEMANAGER"), FilesystemTools.OpenFileManagerTui },
+            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ALARMMANAGER"), AlarmCli.OpenAlarmCli },
+            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS"), NotificationsCli.OpenNotificationsCli },
+            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_TASKMANAGER"), TaskManagerCli.OpenTaskManagerCli },
         };
         private static readonly Keybinding[] bindings =
         [
             // Keyboard
-            new(/* Localizable */ "Execute", ConsoleKey.Enter),
-            new(/* Localizable */ "Logout", ConsoleKey.Escape),
-            new(/* Localizable */ "Shell", ConsoleKey.S),
-            new(/* Localizable */ "Keybindings", ConsoleKey.K),
-            new(/* Localizable */ "Switch", ConsoleKey.Tab),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
             new("Play...", ConsoleKey.P, true),
 
             // Mouse
-            new(/* Localizable */ "Execute", PointerButton.Left),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), PointerButton.Left),
         ];
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Nitrocid.Shell.Homepage
                     var greeting = new AlignedText()
                     {
                         Top = 0,
-                        Text = Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!").FormatString(displayName),
+                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_HEADER").FormatString(displayName),
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -219,7 +219,7 @@ namespace Nitrocid.Shell.Homepage
                             try
                             {
                                 if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                    rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
+                                    rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
                                 else
                                 {
                                     var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
@@ -237,20 +237,20 @@ namespace Nitrocid.Shell.Homepage
                                         }
                                     }
                                     if (!found)
-                                        rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
+                                        rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED"));
                                 }
                             }
                             catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
+                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
                             }
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
+                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"));
                             }
                             rssSequence = rssSequenceBuilder.ToString();
                         }
@@ -292,7 +292,7 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = settingsButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
-                        Text = Translate.DoTranslation("Settings"),
+                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_SETTINGS"),
                         ForegroundColor = foregroundSettingsText,
                         BackgroundColor = backgroundSettings,
                         Width = buttonWidth,
@@ -323,7 +323,7 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = aboutButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
-                        Text = Translate.DoTranslation("About"),
+                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT"),
                         ForegroundColor = foregroundAboutText,
                         BackgroundColor = backgroundAbout,
                         Width = buttonWidth,
@@ -581,7 +581,7 @@ namespace Nitrocid.Shell.Homepage
             catch (Exception ex)
             {
                 KernelColorTools.LoadBackground();
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_CRASH") + $": {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 });
@@ -668,11 +668,11 @@ namespace Nitrocid.Shell.Homepage
         public static void RegisterAction(string actionName, Action? action)
         {
             if (string.IsNullOrEmpty(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTIONNAME"));
             if (action is null)
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTION"));
             if (IsHomepageActionRegistered(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action already exists."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONFOUND"));
             choiceActionsCustom.Add(actionName, action);
         }
 
@@ -684,45 +684,45 @@ namespace Nitrocid.Shell.Homepage
         public static void UnregisterAction(string actionName)
         {
             if (string.IsNullOrEmpty(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTIONNAME"));
             if (!IsHomepageActionRegistered(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action doesn't exist."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONNOTFOUND"));
             if (IsHomepageActionBuiltin(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Built-in action can't be removed."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONUNREMOVABLE"));
             choiceActionsCustom.Remove(actionName);
         }
 
         internal static void RegisterBuiltinAction(string actionName, Action? action)
         {
             if (string.IsNullOrEmpty(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTIONNAME"));
             if (action is null)
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTION"));
             if (IsHomepageActionRegistered(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action already exists."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONFOUND"));
             choiceActionsAddons.Add(actionName, action);
         }
 
         internal static void UnregisterBuiltinAction(string actionName)
         {
             if (string.IsNullOrEmpty(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_NEEDSACTIONNAME"));
             if (!IsHomepageActionRegistered(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action doesn't exist."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONNOTFOUND"));
             if (IsHomepageActionBuiltin(actionName))
-                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Built-in action can't be removed."));
+                throw new KernelException(KernelExceptionType.Homepage, LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONUNREMOVABLE"));
             choiceActionsAddons.Remove(actionName);
         }
 
         private static void OpenAboutBox()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
-                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
-                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
-                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
+                LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_DESC") + "\n\n" +
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_VERSION") + $": {KernelMain.VersionFullStr}" + "\n" +
+                LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_MODAPI") + $": {KernelMain.ApiVersion}" + "\n\n" +
+                LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_COPYRIGHT") + " - https://aptivi.github.io", new InfoBoxSettings()
                 {
-                    Title = Translate.DoTranslation("About Nitrocid"),
+                    Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
                 }
             );
         }

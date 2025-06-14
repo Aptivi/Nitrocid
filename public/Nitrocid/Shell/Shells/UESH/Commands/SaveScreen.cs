@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (selectionMode)
             {
                 var tui = new ScreensaverCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Preview"), ConsoleKey.Enter, (saver, _, _, _) => tui.PressAndBailHelper(saver)));
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.Enter, (saver, _, _, _) => tui.PressAndBailHelper(saver)));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
             }
             else
@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var screensavers = ScreensaverManager.GetScreensaverNames();
-            TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SAVESCREEN_LISTING"));
             TextWriters.WriteList(screensavers);
         }
 

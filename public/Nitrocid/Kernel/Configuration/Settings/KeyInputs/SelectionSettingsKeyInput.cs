@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,12 +54,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Populate items
             if (SelectFrom is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOSELECT"));
             int MaxKeyOptions = SelectFrom.Count();
             var items = new List<(string, string)>();
             var altItems = new List<(string, string)>()
             {
-                ($"{MaxKeyOptions + 1}", Translate.DoTranslation("Go Back..."))
+                ($"{MaxKeyOptions + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_GOBACK"))
             };
 
             // Since there is no way to index the SelectFrom enumerable, we have to manually initialize a counter. Ugly!
@@ -85,7 +85,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             PopulateInfo(key);
             if (SelectFrom is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOSELECT"));
 
             if (string.IsNullOrEmpty(value))
                 return 0;
@@ -98,7 +98,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             PopulateInfo(key);
             if (SelectFrom is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOSELECT"));
 
             if (string.IsNullOrEmpty(value))
                 return (int?)KeyDefaultValue;
@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             PopulateInfo(key);
             if (SelectFrom is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOSELECT"));
 
             // We're dealing with selection
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
@@ -152,23 +152,23 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                    TextWriters.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
-                    TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
                     Input.ReadKey();
                 }
             }
             else if (AnswerInt == 0 & !SelectionEnumZeroBased)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
                 Input.ReadKey();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
                 Input.ReadKey();
             }
         }
@@ -192,14 +192,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 {
                     // Apparently, we need to have a full assembly name for getting types.
                     SelectionEnumType = Type.GetType($"{KernelMain.rootNameSpace}.{enumeration}, {Assembly.GetExecutingAssembly().FullName}") ??
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get type from") + $" {enumeration}");
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOTYPEFROM") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }
                 else
                 {
                     SelectionEnumType = Type.GetType(enumeration + ", " + SelectionEnumAssembly) ??
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get type from") + $" {enumeration}");
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOTYPEFROM") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }

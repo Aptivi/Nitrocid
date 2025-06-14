@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,16 +27,16 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestEvent : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests an event");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            string Text = InputTools.ReadLine(Translate.DoTranslation("Write an event name:") + " ");
+            string Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_PROMPT") + " ");
             string[] eventArgs = ["RanByTest"];
             if (Enum.TryParse(Text, out EventType eventType))
                 EventsManager.FireEvent(eventType, eventArgs);
             else
-                TextWriterColor.Write(Translate.DoTranslation("Event {0} not found."), Text);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_EVENTS_EXCEPTION_EVENTNOTFOUND"), Text);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -72,7 +72,7 @@ namespace Nitrocid.Users
 
                 // Check the lock
                 if (IsLocked(uninitUser))
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERLOCKED"));
 
                 // Compute hash of a password
                 var Regexp = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").HashRegex;
@@ -85,7 +85,7 @@ namespace Nitrocid.Users
                 else if (!Regexp.IsMatch(unpassword))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Unencrypted password!");
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to add unencrypted password to users list."));
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_UNENCRYPTEDPASS"));
                 }
 
                 // Add user locally
@@ -112,7 +112,7 @@ namespace Nitrocid.Users
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName ?? "<null>", ex.Message);
+                throw new KernelException(KernelExceptionType.UserCreation, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_ADDERROR") + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), ex, ex.GetType().FullName ?? "<null>", ex.Message);
             }
         }
 
@@ -132,7 +132,7 @@ namespace Nitrocid.Users
             // Get the content and parse it
             string UsersTokenContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
             JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info array"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFOARRAY"));
 
             // Now, get each user from the config file
             List<UserInfo> users = [];
@@ -142,7 +142,7 @@ namespace Nitrocid.Users
             {
                 // Add the user info to the users list after populating it
                 UserInfo? userInfo = JsonConvert.DeserializeObject<UserInfo>(userInfoArray.ToString()) ??
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info instance"));
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFO"));
                 users.Add(userInfo);
                 if (userInfo.Username == "root")
                     sawRoot = true;
@@ -199,11 +199,11 @@ namespace Nitrocid.Users
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
+                    throw new KernelException(KernelExceptionType.UserCreation, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CREATEFAILED"), ex, newUser, ex.Message);
                 }
             }
             else
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't add username. Make sure that the username doesn't exist."));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD"));
         }
 
         /// <summary>
@@ -218,20 +218,20 @@ namespace Nitrocid.Users
 
             // Check the lock
             if (IsLocked(user))
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERLOCKED"));
             if (!ValidateUsername(user))
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANNOTVALIDATE_DELETE"));
 
             // Try to remove user
             if (user == "root")
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User is root, and is a system account");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} isn't allowed to be removed."), user);
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_UNREMOVABLE"), user);
             }
             else if (user == CurrentUser?.Username)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "User has logged in, so can't delete self.");
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user);
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_DELETESELF"), user);
             }
             else
             {
@@ -242,7 +242,7 @@ namespace Nitrocid.Users
                     // Remove user
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", vars: [user]);
                     var userInfo = GetUser(user) ??
-                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {user}");
+                        throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {user}");
                     Users.Remove(userInfo);
 
                     // Remove user from Users.json
@@ -254,7 +254,7 @@ namespace Nitrocid.Users
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Error trying to remove username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_REMOVEERROR") + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), ex, ex.Message);
                 }
             }
         }
@@ -292,14 +292,14 @@ namespace Nitrocid.Users
             {
                 // Check the lock
                 if (IsLocked(OldName))
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERLOCKED"));
                 if (!UserExists(Username))
                 {
                     try
                     {
                         // Store user info
                         var oldInfo = GetUser(OldName) ??
-                            throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {OldName}");
+                            throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {OldName}");
                         var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.PreferredCulture ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
@@ -315,17 +315,17 @@ namespace Nitrocid.Users
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to rename user. {0}"), ex, ex.Message);
+                        throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_RENAMEFAILED"), ex, ex.Message);
                     }
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("The new name you entered is already found."));
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_NEWNAMEALREADYEXISTS"));
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User {0} not found."), OldName);
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"), OldName);
             }
         }
 
@@ -360,18 +360,18 @@ namespace Nitrocid.Users
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
 
             var currentUser = GetUser(CurrentUser.Username) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get current user"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETCURRENTUSER"));
             var targetUser = GetUser(Target) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {Target}");
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {Target}");
             bool currentUserAdmin = currentUser.Flags.HasFlag(UserFlags.Administrator);
             bool targetUserAdmin = targetUser.Flags.HasFlag(UserFlags.Administrator);
 
             if (!UserExists(Target))
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"));
 
             // Check the lock
             if (IsLocked(Target))
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERLOCKED"));
 
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
             if (CurrentPass == targetUser.Password)
@@ -391,12 +391,12 @@ namespace Nitrocid.Users
                 }
                 else if (targetUserAdmin & !currentUserAdmin)
                 {
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target);
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN"), Target);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Wrong user password."));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_WRONGUSERPASSWORD"));
             }
         }
 
@@ -462,7 +462,7 @@ namespace Nitrocid.Users
             var UsersList = ListAllUsers(IncludeAnonymous, IncludeDisabled);
             string SelectedUsername = UsersList[UserNumber - 1];
             var user = GetUser(SelectedUsername) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {SelectedUsername}");
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {SelectedUsername}");
             return user.Username;
         }
 
@@ -519,7 +519,7 @@ namespace Nitrocid.Users
                 else
                     return "$";
             else
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"));
         }
 
         /// <summary>
@@ -588,7 +588,7 @@ namespace Nitrocid.Users
 
             // Now, check to see if the password matches
             var userInstance = GetUser(User) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {User}");
             if (userInstance.Password == Password)
             {
                 // Password matches
@@ -613,7 +613,7 @@ namespace Nitrocid.Users
             if (!IsLocked(User))
             {
                 var userInstance = GetUser(User) ??
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {User}");
                 LockedUsers.Add(userInstance);
             }
         }
@@ -627,7 +627,7 @@ namespace Nitrocid.Users
             if (IsLocked(User))
             {
                 var userInstance = GetUser(User) ??
-                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {User}");
                 LockedUsers.Remove(userInstance);
             }
         }

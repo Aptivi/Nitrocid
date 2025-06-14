@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -35,7 +35,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestScreen : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the screen feature for the console");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
@@ -62,7 +62,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                     }
                 }
                 if (!ConditionFound)
-                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("The condition was not found in the expression."));
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND"));
 
                 // Check the expression for argument numbers and middle condition
                 int RequiredArguments = ConditionBase.ConditionRequiredArguments;
@@ -106,12 +106,12 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                 if (EnclosedWords.Length < RequiredArguments)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", vars: [EnclosedWords.Length, RequiredArguments]);
-                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Length);
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH"), ConditionType, RequiredArguments, EnclosedWords.Length);
                 }
                 if (!AvailableConditions.ContainsKey(EnclosedWords[ConditionPosition - 1]))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", vars: [ConditionPosition, EnclosedWords[ConditionPosition - 1]]);
-                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("The condition needs to be placed in the end."));
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END"));
                 }
 
                 // Execute the conditions
@@ -191,7 +191,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Syntax error in {0}: {1}", vars: [ConditionToSatisfy, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
+                    throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message);
                 }
             }
             return false;
@@ -205,9 +205,9 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
         public static void RegisterCondition(string name, BaseCondition condition)
         {
             if (Conditions.ContainsKey(name) || CustomConditions.ContainsKey(name))
-                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't register a condition that already exists."));
+                throw new KernelException(KernelExceptionType.UESHConditional, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE"));
             if (condition is null)
-                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't register an empty condition."));
+                throw new KernelException(KernelExceptionType.UESHConditional, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY"));
 
             // Add a custom condition
             CustomConditions.Add(name, condition);
@@ -220,7 +220,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
         public static void UnregisterCondition(string name)
         {
             if (!CustomConditions.ContainsKey(name))
-                throw new KernelException(KernelExceptionType.UESHConditional, Translate.DoTranslation("Can't unregister a condition that doesn't exist."));
+                throw new KernelException(KernelExceptionType.UESHConditional, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND"));
 
             // Add a custom condition
             CustomConditions.Remove(name);

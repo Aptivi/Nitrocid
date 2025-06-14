@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,17 +49,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (string.IsNullOrEmpty(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_BLANKHOSTNAME"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
             }
             else if (parameters.ArgumentsList[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                TextWriters.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), Config.MainConfig.HostName, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_PROGRESS"), Config.MainConfig.HostName, parameters.ArgumentsList[0]);
                 NetworkTools.ChangeHostname(parameters.ArgumentsList[0]);
                 return 0;
             }

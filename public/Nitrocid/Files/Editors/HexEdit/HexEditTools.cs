@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -103,9 +103,9 @@ namespace Nitrocid.Files.Editors.HexEdit
             try
             {
                 if (HexEditShellCommon.FileStream is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 var FileBytes = HexEditShellCommon.FileBytes ??
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 HexEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
@@ -165,7 +165,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 HexEditShellCommon.FileBytes[^1] = Content;
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -179,9 +179,9 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 // Check the position
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (pos < 1 || pos > HexEditShellCommon.FileBytes.Length)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
 
                 var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 long ByteIndex = pos - 1L;
@@ -196,10 +196,10 @@ namespace Nitrocid.Files.Editors.HexEdit
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                     AddNewByte(ByteContent);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -226,9 +226,9 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (HexEditShellCommon.FileStream is not null)
             {
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (ByteNumber < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
                 DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, ByteNumber]);
@@ -242,10 +242,10 @@ namespace Nitrocid.Files.Editors.HexEdit
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void DeleteBytes(long StartByteNumber)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             DeleteBytes(StartByteNumber, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -269,9 +269,9 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (HexEditShellCommon.FileStream is not null)
             {
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (StartByteNumber < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 StartByteNumber.SwapIfSourceLarger(ref EndByteNumber);
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
@@ -290,12 +290,12 @@ namespace Nitrocid.Files.Editors.HexEdit
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > HexEditShellCommon.FileBytes.LongLength)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"));
                 else if (EndByteNumber > HexEditShellCommon.FileBytes.LongLength)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void DisplayHex()
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             DisplayHex(1L, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -314,7 +314,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void DisplayHex(long Start)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             DisplayHex(Start, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -326,13 +326,13 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (HexEditShellCommon.FileStream is not null)
             {
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 FilesystemTools.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -341,7 +341,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void QueryByteAndDisplay(byte ByteContent)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -351,7 +351,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void QueryByteAndDisplay(byte ByteContent, long Start)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -363,26 +363,26 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (HexEditShellCommon.FileStream is not null)
             {
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, HexEditShellCommon.FileBytes);
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
             }
         }
 
@@ -394,7 +394,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void Replace(byte FromByte, byte WithByte)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             Replace(FromByte, WithByte, 1L, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -407,7 +407,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         public static void Replace(byte FromByte, byte WithByte, long Start)
         {
             if (HexEditShellCommon.FileBytes is null)
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             Replace(FromByte, WithByte, Start, HexEditShellCommon.FileBytes.LongLength);
         }
 
@@ -423,9 +423,9 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (HexEditShellCommon.FileStream is not null)
             {
                 if (HexEditShellCommon.FileBytes is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [FromByte, WithByte]);
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
                 if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
@@ -440,12 +440,12 @@ namespace Nitrocid.Files.Editors.HexEdit
                     }
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
         }
 
         /// <summary>
@@ -461,7 +461,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 bytes[^1] = Content;
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 
@@ -477,7 +477,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 // Check the position
                 if (pos < 1 || pos > bytes.Length)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
 
                 var FileBytesList = bytes.ToList();
                 long ByteIndex = pos - 1L;
@@ -492,10 +492,10 @@ namespace Nitrocid.Files.Editors.HexEdit
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 
@@ -512,7 +512,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                     bytes = AddNewByte(bytes, ByteContent);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 
@@ -526,7 +526,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (bytes is not null)
             {
                 if (ByteNumber < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 var FileBytesList = bytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
                 DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, ByteNumber]);
@@ -540,10 +540,10 @@ namespace Nitrocid.Files.Editors.HexEdit
                     bytes = [.. FileBytesList];
                 }
                 else
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 
@@ -566,7 +566,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (bytes is not null)
             {
                 if (StartByteNumber < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 StartByteNumber.SwapIfSourceLarger(ref EndByteNumber);
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
@@ -585,12 +585,12 @@ namespace Nitrocid.Files.Editors.HexEdit
                     bytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > bytes.LongLength)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"));
                 else if (EndByteNumber > bytes.LongLength)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"));
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 
@@ -620,11 +620,11 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (bytes is not null)
             {
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 FilesystemTools.DisplayInHex(StartByte, EndByte, bytes);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
         }
 
         /// <summary>
@@ -657,16 +657,16 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [bytes.LongLength]);
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
                     DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, bytes);
                 else if (StartByte > bytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
                 else if (EndByte > bytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
         }
 
         /// <summary>
@@ -701,7 +701,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             if (bytes is not null)
             {
                 if (StartByte < 1)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [FromByte, WithByte]);
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [bytes.LongLength]);
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
@@ -716,12 +716,12 @@ namespace Nitrocid.Files.Editors.HexEdit
                     }
                 }
                 else if (StartByte > bytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
                 else if (EndByte > bytes.LongLength)
-                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
             }
             else
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
             return bytes;
         }
 

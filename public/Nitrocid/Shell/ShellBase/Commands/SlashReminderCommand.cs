@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -29,7 +29,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriters.Write(
-                "* " + Translate.DoTranslation("This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:") + $" /{parameters.CommandText} {parameters.ArgumentsText}", true, KernelColorType.Tip);
+                "* " + LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_NEEDSSLASH") + $" /{parameters.CommandText} {parameters.ArgumentsText}", true, KernelColorType.Tip);
             return 0;
         }
 

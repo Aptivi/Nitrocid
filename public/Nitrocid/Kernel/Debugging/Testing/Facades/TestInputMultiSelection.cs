@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestInputMultiSelection : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the input multiple selection style");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,22 +46,22 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriters.Write(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED"), true, KernelColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_WAITING"), true, KernelColorType.Progress);
                     if (waitForUnlockTimed)
                         FilesystemTools.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         FilesystemTools.WaitForLockReleaseIndefinite(path);
-                    TextWriters.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             else
-                TextWriters.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
             return 0;
         }
     }

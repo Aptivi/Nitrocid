@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                     }
                     break;
                 default:
-                    TextWriterColor.Write(Translate.DoTranslation("The specified main flag type is invalid") + ": {0}", type);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFLAG_FLAGINVALID") + ": {0}", type);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
             }
             UserManagement.Users[userIndex].Flags = flags;

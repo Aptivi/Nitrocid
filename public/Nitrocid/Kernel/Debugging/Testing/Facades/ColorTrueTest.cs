@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,17 +26,17 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ColorTrueTest : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the VT sequence for true color");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             string TextR = "", TextG = "", TextB = "";
             if (string.IsNullOrEmpty(TextR))
-                TextR = InputTools.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextR = InputTools.ReadLine("R - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (string.IsNullOrEmpty(TextG))
-                TextG = InputTools.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextG = InputTools.ReadLine("G - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (string.IsNullOrEmpty(TextB))
-                TextB = InputTools.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextB = InputTools.ReadLine("B - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);

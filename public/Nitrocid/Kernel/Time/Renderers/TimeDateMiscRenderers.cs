@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -102,7 +102,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             {
                 TextWriterColor.Write
                 (
-                    Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
+                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0} @ {1} ({2}), {3} @ UTC",
                     TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
                     TimeDateRenderersUtc.RenderUtc()
                 );
@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             {
                 TextWriterColor.Write
                 (
-                    Translate.DoTranslation("Today is") + " {0}, {1} @ UTC",
+                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0}, {1} @ UTC",
                     TimeDateRenderers.Render(), TimeDateRenderersUtc.RenderUtc()
                 );
             }
@@ -119,7 +119,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Can't show time of day with {nameof(ShowCurrentTimes)}(): {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Failed to show current times:") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TIMESHOWFAILED") + $" {ex.Message}", KernelColorType.Error);
             }
         }
     }

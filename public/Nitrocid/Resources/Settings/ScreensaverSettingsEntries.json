@@ -1,25 +1,25 @@
 [
     {
         "Name": "MatrixBleed",
-        "Desc": "Falling line of matrix numbers.",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DESC"),
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
                 "Type": "SInt",
                 "Variable": "MatrixBleedDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
             },
             {
-                "Name": "Max Fade Steps",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME"),
                 "Type": "SInt",
                 "Variable": "MatrixBleedMaxSteps",
-                "Description": "How many fade steps to do?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_DESC")
             },
             {
-                "Name": "Drop chance",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_NAME"),
                 "Type": "SIntSlider",
                 "Variable": "MatrixBleedDropChance",
-                "Description": "Chance to drop a new falling matrix",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_DESC"),
                 "MinimumValue": 0,
                 "MaximumValue": 100
             }

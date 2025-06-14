@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -283,8 +283,8 @@ namespace Nitrocid.Misc.Notifications
                                 bool indeterminate = NewNotification.ProgressIndeterminate;
                                 string ProgressTitle = Title;
                                 string renderedProgressTitle = ProgressTitle.Truncate(36);
-                                string renderedProgressTitleSuccess = $"{ProgressTitle} ({Translate.DoTranslation("Success")})".Truncate(36);
-                                string renderedProgressTitleFailure = $"{ProgressTitle} ({Translate.DoTranslation("Failure")})".Truncate(36);
+                                string renderedProgressTitleSuccess = $"{ProgressTitle} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGSUCCESS")})".Truncate(36);
+                                string renderedProgressTitleFailure = $"{ProgressTitle} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGFAILURE")})".Truncate(36);
 
                                 // Loop until the progress is finished
                                 var progress = new SimpleProgress(NewNotification.Progress, 100)

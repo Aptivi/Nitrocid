@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -82,7 +82,7 @@ namespace Nitrocid.Drivers.HardwareProber
                 return $"[{drive.HardDiskNumber}] {drive.HardDiskSize.SizeString()}";
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKNONEXISTENT"));
             return "";
         }
 
@@ -106,10 +106,10 @@ namespace Nitrocid.Drivers.HardwareProber
                     return $"[{diskPartitionIndex + 1}] {id} - {size}";
                 }
                 else
-                    TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTNONEXISTENT"));
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKNONEXISTENT"));
             return "";
         }
 
@@ -133,7 +133,7 @@ namespace Nitrocid.Drivers.HardwareProber
                 return $"[{string.Join(", ", parts.Select((pp) => pp.PartitionNumber))}]";
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTNONEXISTENT"));
             return "";
         }
 
@@ -144,7 +144,7 @@ namespace Nitrocid.Drivers.HardwareProber
             if (hardDrives is not null && hardDrives.Length == 0 || hardDrives is null)
             {
                 // SpecProbe may have failed to parse hard disks due to insufficient permissions.
-                TextWriters.Write(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_STORAGEFAILED"), true, KernelColorType.Warning);
                 return "";
             }
             for (int i = 0; i < hardDrives.Length; i++)
@@ -164,59 +164,59 @@ namespace Nitrocid.Drivers.HardwareProber
         {
             if (!WindowsUserTools.IsAdministrator())
             {
-                SplashReport.ReportProgressError(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"));
                 return;
             }
 
             // Verify the types
             if (processors is not ProcessorPart[] procDict)
             {
-                SplashReport.ReportProgressError("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("CPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CPUPARSEFAILED"));
                 return;
             }
             if (memory is not MemoryPart[] memList)
             {
-                SplashReport.ReportProgressError("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("RAM: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_RAMPARSEFAILED"));
                 return;
             }
             if (graphics is not VideoPart[] gpuDict)
             {
-                SplashReport.ReportProgressError("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("GPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_GPUPARSEFAILED"));
                 return;
             }
             if (hardDrives is not HardDiskPart[] hddDict)
             {
-                SplashReport.ReportProgressError("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("HDD: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_HDDPARSEFAILED"));
                 return;
             }
 
             // Print information about the probed hardware, starting from the CPU info
             foreach (var cpu in procDict)
             {
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", cpu.Name);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0} MHz", cpu.Speed);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {cpu.LogicalCores} ({cpu.ProcessorCores} x{cpu.Cores})", 3);
+                SplashReport.ReportProgress("CPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_CPUNAME") + " {0}", cpu.Name);
+                SplashReport.ReportProgress("CPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED") + " {0} MHz", cpu.Speed);
+                SplashReport.ReportProgress("CPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALCPUS") + $" {cpu.LogicalCores} ({cpu.ProcessorCores} x{cpu.Cores})", 3);
             }
             PrintErrors(HardwarePartType.Processor);
 
             // Print RAM info
             var mem = memList[0];
-            SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, mem.TotalMemory.SizeString());
+            SplashReport.ReportProgress("RAM: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALMEMORY") + " {0}", 2, mem.TotalMemory.SizeString());
             PrintErrors(HardwarePartType.Memory);
 
             // GPU info
             foreach (var gpu in gpuDict)
-                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", gpu.VideoCardName);
+                SplashReport.ReportProgress("GPU: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_GFXCARD") + " {0}", gpu.VideoCardName);
             PrintErrors(HardwarePartType.Video);
 
             // Drive Info
             foreach (var hdd in hddDict)
             {
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", hdd.HardDiskSize.SizeString());
+                SplashReport.ReportProgress("HDD: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKSIZE") + " {0}", hdd.HardDiskSize.SizeString());
 
                 // Partition info
                 foreach (var part in hdd.Partitions)
-                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", hdd.HardDiskNumber, part.PartitionSize);
+                    SplashReport.ReportProgress("HDD [{0}]: " + LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_PARTITIONSIZE") + " {1}", hdd.HardDiskNumber, part.PartitionSize);
             }
             PrintErrors(HardwarePartType.HardDisk);
         }
@@ -226,7 +226,7 @@ namespace Nitrocid.Drivers.HardwareProber
         {
             if (!WindowsUserTools.IsAdministrator())
             {
-                SplashReport.ReportProgressError(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"));
                 return;
             }
 
@@ -266,15 +266,15 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var processor in hardwareList)
                             {
-                                TextWriters.Write(Translate.DoTranslation("Processor name:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_CPUNAME"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Name}", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Processor vendor:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PROCESSORVENDOR"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Speed} MHz", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALCORES"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.LogicalCores} ({processor.ProcessorCores} x{processor.Cores})", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Cache sizes:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CACHEDSIZES"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, KernelColorType.ListValue);
                             }
                         }
@@ -287,11 +287,11 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var ram in hardwareList)
                             {
-                                TextWriters.Write(Translate.DoTranslation("Total usable memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALUSABLEMEMORY"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {ram.TotalMemory.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Total memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALMEMORY"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {ram.TotalPhysicalMemory.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Reserved memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALRESERVEDMEMORY"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {ram.SystemReservedMemory.SizeString()}", true, KernelColorType.ListValue);
                             }
                         }
@@ -304,17 +304,17 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var hdd in hardwareList)
                             {
-                                TextWriters.Write(Translate.DoTranslation("Disk number:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKNUM"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {hdd.HardDiskNumber}", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Disk size:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKSIZE"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {hdd.HardDiskSize.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriters.Write(Translate.DoTranslation("Partitions:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONS"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {hdd.PartitionCount}", true, KernelColorType.ListValue);
                                 foreach (var part in hdd.Partitions)
                                 {
-                                    TextWriters.Write(Translate.DoTranslation("Partition number:"), false, KernelColorType.ListEntry);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONNUM"), false, KernelColorType.ListEntry);
                                     TextWriters.Write($" {part.PartitionNumber}", true, KernelColorType.ListValue);
-                                    TextWriters.Write(Translate.DoTranslation("Partition size:"), false, KernelColorType.ListEntry);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_PARTITIONSIZE"), false, KernelColorType.ListEntry);
                                     TextWriters.Write($" {part.PartitionSize.SizeString()}", true, KernelColorType.ListValue);
                                 }
                             }
@@ -328,14 +328,14 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var gpu in hardwareList)
                             {
-                                TextWriters.Write(Translate.DoTranslation("Graphics card name:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_GFXCARDNAME"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {gpu.VideoCardName}", true, KernelColorType.ListValue);
                             }
                         }
                         break;
                     }
                 default:
-                    TextWriters.Write(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TYPENOTFOUND"), true, KernelColorType.Error, hardwareType);
                     break;
             }
         }
@@ -345,7 +345,7 @@ namespace Nitrocid.Drivers.HardwareProber
             var errors = HwProber.GetParseExceptions(type);
             if (errors.Length > 0)
             {
-                SplashReport.ReportProgressError(Translate.DoTranslation("SpecProbe failed to parse some of the hardware. Below are the errors reported by SpecProbe:"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARSEFAILED"));
                 DebugWriter.WriteDebug(DebugLevel.E, "SpecProbe failed to parse hardware due to the following errors:");
                 foreach (var error in errors)
                 {

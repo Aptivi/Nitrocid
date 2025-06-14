@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             RemoteDebugTools.DisconnectDevice(parameters.ArgumentsList[0]);
-            TextWriterColor.Write(Translate.DoTranslation("Device {0} disconnected."), parameters.ArgumentsList[0]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISCONNDBGDEV_SUCCESS"), parameters.ArgumentsList[0]);
             return 0;
         }
 

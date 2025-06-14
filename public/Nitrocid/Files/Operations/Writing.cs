@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.Files
         public static void WriteContents(string filename, string[] contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteContents(filename, contents);
         }
 
@@ -51,7 +51,7 @@ namespace Nitrocid.Files
         public static void WriteContentsText(string filename, string contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteContentsText(filename, contents);
         }
 
@@ -63,7 +63,7 @@ namespace Nitrocid.Files
         public static void WriteAllLinesNoBlock(string path, string[] contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteAllLinesNoBlock(path, contents);
         }
 
@@ -75,7 +75,7 @@ namespace Nitrocid.Files
         public static void WriteAllTextNoBlock(string path, string contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteAllTextNoBlock(path, contents);
         }
 
@@ -87,7 +87,7 @@ namespace Nitrocid.Files
         public static void WriteAllBytes(string path, byte[] contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteAllBytes(path, contents);
         }
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Files
         public static void WriteAllBytesNoBlock(string path, byte[] contents)
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             DriverHandler.CurrentFilesystemDriverLocal.WriteAllBytesNoBlock(path, contents);
         }
     }

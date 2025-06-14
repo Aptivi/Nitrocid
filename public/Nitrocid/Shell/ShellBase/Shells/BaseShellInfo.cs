@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
@@ -32,8 +33,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
         internal List<CommandInfo> modCommands = [];
         internal List<CommandInfo> addonCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
-        internal static CommandInfo fallbackNonSlashCommand =
-            new("slashreminder", /* Localizable */ "Reminder for the slash commands", new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
@@ -55,7 +54,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         public virtual bool SlashCommand => false;
         /// <inheritdoc/>
         public virtual CommandInfo NonSlashCommandInfo =>
-            fallbackNonSlashCommand;
+            new("slashreminder", LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC"), new SlashReminderCommand());
         /// <inheritdoc/>
         public virtual BaseShell? ShellBase =>
             Activator.CreateInstance<BaseShell>();

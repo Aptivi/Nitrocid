@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,8 +40,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int headerY = 0;
             int footerY = ConsoleWrapper.WindowHeight - 1;
             int barLength = ConsoleWrapper.WindowWidth - 4;
-            string header = Translate.DoTranslation("Windows Boot Manager");
-            string footer = Translate.DoTranslation("ENTER=Choose");
+            string header = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_TITLE");
+            string footer = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_KEYBINDING1");
             int headerTextX = ConsoleWrapper.WindowWidth / 2 - header.Length / 2;
             var builder = new StringBuilder();
             ConsoleColor barColor = ConsoleColor.Gray;
@@ -59,9 +59,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int chooseHelpY = 2;
             int optionHelpY = 12;
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Choose an operating system to start, or press TAB to select a tool:"), marginX, chooseHelpY, new Color(promptColor)) +
-                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("(Use the arrow keys to highlight your choice, then press ENTER.)"), marginX, chooseHelpY + 1, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("To specify an advanced option for this choice, press F8."), marginX, optionHelpY, new Color(promptColor))
+                TextWriterWhereColor.RenderWhereColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_CHOOSE"), marginX, chooseHelpY, new Color(promptColor)) +
+                TextWriterWhereColor.RenderWhereColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_KEYBINDING2"), marginX, chooseHelpY + 1, new Color(hintColor)) +
+                TextWriterWhereColor.RenderWhereColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_ADVOPTIONS"), marginX, optionHelpY, new Color(promptColor))
             );
 
             // Return the result
@@ -106,7 +106,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             ConsoleColor hintColor = ConsoleColor.Gray;
             int marginX = 2;
             int optionHelpY = 12;
-            string secs = Translate.DoTranslation("Seconds until the highlighted choice will be started automatically:");
+            string secs = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_TIMEOUT");
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(secs, marginX, optionHelpY + 1, true, new Color(hintColor))
             );

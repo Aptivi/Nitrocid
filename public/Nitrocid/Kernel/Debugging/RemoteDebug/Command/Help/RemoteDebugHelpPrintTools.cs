@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,11 +44,11 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             var commandList = GetCommands();
 
             // The built-in commands
-            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, device, vars: [commandList.Count]);
+            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_GENERALLISTING") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, device, vars: [commandList.Count]);
 
             // Check the command list count and print not implemented. This is an extremely rare situation.
             if (commandList.Count == 0)
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, device);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOLISTING"), true, device);
             foreach (string cmd in commandList.Keys)
                 DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, vars: [cmd, commandList[cmd].GetTranslatedHelpEntry()]);
         }
@@ -68,7 +68,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             if (!commandList.ContainsKey(command))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", vars: [command]);
-                TextWriters.Write(Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOHELP"), true, KernelColorType.Error, command);
                 return;
             }
 
@@ -84,12 +84,12 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
 
             // Print usage information
             foreach (string HelpUsage in HelpUsages)
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Usage:") + $" {RenderedCommand} {HelpUsage}", true, device);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_USAGE") + $" {RenderedCommand} {HelpUsage}", true, device);
 
             // Write the description now
             if (string.IsNullOrEmpty(HelpDefinition))
-                HelpDefinition = Translate.DoTranslation("No remote debug command description");
-            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, device);
+                HelpDefinition = LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_NOCOMMANDDESC");
+            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION") + $" {HelpDefinition}", true, device);
 
             // Extra help action for some commands
             commandList[FinalCommand].CommandBase?.HelpHelper();

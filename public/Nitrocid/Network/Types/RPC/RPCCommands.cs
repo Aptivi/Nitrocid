@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -134,7 +134,7 @@ namespace Nitrocid.Network.Types.RPC
                     DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", vars: [Cmd]);
             }
             else
-                throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to send an RPC command while RPC didn't start."));
+                throw new KernelException(KernelExceptionType.RemoteProcedure, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_SENDWITHOUTRPC"));
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Nitrocid.Network.Types.RPC
         {
             string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
             DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [IPAddr]);
-            NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), TextTools.FormatString(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationPriority.Low, NotificationType.Normal));
+            NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_TITLE"), TextTools.FormatString(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_DESC"), IPAddr), NotificationPriority.Low, NotificationType.Normal));
         }
     }
 }

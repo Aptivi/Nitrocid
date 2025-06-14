@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -188,9 +188,9 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(string configTypeName)
         {
             if (string.IsNullOrEmpty(configTypeName))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no type specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOTYPE"));
             var config = Config.GetKernelConfig(configTypeName) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when the kernel config is not specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NEEDSCONFIG"));
             return CheckConfigVariables(config);
         }
 
@@ -200,7 +200,7 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(BaseKernelConfig? entries)
         {
             if (entries is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
             return CheckConfigVariables(entries.SettingsEntries ?? [], entries);
         }
 
@@ -210,9 +210,9 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
         {
             if (config is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
             if (entries is null || entries.Length == 0)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOENTRIES"));
             var Results = new List<bool>();
 
             // Parse all the settings
@@ -235,9 +235,9 @@ namespace Nitrocid.Kernel.Configuration
         public static List<bool> CheckConfigVariables(SettingsKey[]? keys, BaseKernelConfig? config)
         {
             if (config is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no base kernel configuration is specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
             if (keys is null || keys.Length == 0)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no keys are specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOKEYS"));
             var Results = new List<bool>();
 
             // Parse all the settings
@@ -305,7 +305,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Check to see if the kernel config is null
             if (kernelConfig is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with no content."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNOCONTENT_REGISTER"));
 
             // Now, register!
             string name = kernelConfig.GetType().Name;
@@ -320,7 +320,7 @@ namespace Nitrocid.Kernel.Configuration
             if (vars.Any((varFound) => !varFound))
             {
                 Config.customConfigurations.Remove(name);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with invalid content. Consult the kernel debugger for more info."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED_CUSTOM"));
             }
 
             // Make a configuration file
@@ -337,7 +337,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Check to see if the kernel config is null
             if (string.IsNullOrEmpty(setting))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a custom setting with no name."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNONAME_UNREGISTER"));
 
             // Now, register!
             if (IsCustomSettingRegistered(setting))
@@ -373,18 +373,18 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Check to see if the kernel config is null
             if (string.IsNullOrEmpty(setting))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a custom setting with no name."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNONAME_UNREGISTER"));
 
             // Now, register!
             if (IsCustomSettingRegistered(setting))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", vars: [setting]);
                 var config = Config.GetKernelConfig(setting) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when the kernel config is not specified."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NEEDSCONFIG"));
                 return GetPathToCustomSettingsFile(config);
             }
             else
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The custom setting is not registered.") + $" {setting}");
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNOTREGISTERED") + $" {setting}");
         }
 
         /// <summary>
@@ -397,7 +397,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Sanity checks...
             if (setting is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to query an empty custom setting."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNEEDED"));
 
             // Now, do the job!
             string path = FilesystemTools.NeutralizePath($"{setting.GetType().Name}.json", PathsManagement.AppDataPath);
@@ -454,10 +454,10 @@ namespace Nitrocid.Kernel.Configuration
         public static SettingsKey GetSettingsKey(string settingsType, string varName)
         {
             if (!IsCustomSettingRegistered(settingsType))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings type not found."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_TYPENOTFOUND"));
             var keys = GetSettingsKeys(settingsType);
             var key = keys.SingleOrDefault((sk) => sk.Variable == varName) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key not found to match the specified variable."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_KEYNOTFOUNDMATCH"));
             return key;
         }
 
@@ -471,30 +471,30 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Some sanity checks
             if (string.IsNullOrEmpty(entriesText))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOENTRIESJSONTEXT"));
 
             // Deserialize the settings entry array
             var entries = JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_INVALIDENTRIES"));
 
             // Validate the contents
             foreach (var entry in entries)
             {
                 // Name, description, and a non-empty key list is required.
                 if (string.IsNullOrEmpty(entry.Name))
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry name may not be empty"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRYNAMEEMPTY"));
                 if (string.IsNullOrEmpty(entry.Desc))
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry description may not be empty") + $" [{entry.Name}]");
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRYDESCEMPTY") + $" [{entry.Name}]");
                 if (entry.Keys is null || entry.Keys.Length == 0)
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings entry may not have empty settings key list") + $" [{entry.Name}]");
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRYKEYLISTEMPTY") + $" [{entry.Name}]");
 
                 // Validate the keys
                 foreach (var key in entry.Keys)
                 {
                     if (string.IsNullOrEmpty(key.Name))
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key name may not be empty") + $" [{entry.Name}]");
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRYKEYNAMEEMPTY") + $" [{entry.Name}]");
                     if (!Enum.IsDefined(key.Type))
-                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key may not hold invalid key type") + $" [{entry.Name} -> {key.Name}]");
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRYKEYTYPEINVALID") + $" [{entry.Name} -> {key.Name}]");
                 }
             }
 
@@ -510,7 +510,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Check to see if the kernel config is null
             if (kernelConfig is null)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with no content."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_BASESETTINGSNOCONTENT_REGISTER"));
 
             // Now, register!
             string name = kernelConfig.GetType().Name;
@@ -525,7 +525,7 @@ namespace Nitrocid.Kernel.Configuration
             if (vars.Any((varFound) => !varFound))
             {
                 Config.baseConfigurations.Remove(name);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with invalid content. Consult the kernel debugger for more info"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED_BASE"));
             }
 
             // Make a configuration file
@@ -542,7 +542,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Check to see if the kernel config is null
             if (string.IsNullOrEmpty(setting))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a base setting with no name."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_BASESETTINGSNONAME_UNREGISTER"));
 
             // Now, register!
             if (IsCustomSettingBuiltin(setting))

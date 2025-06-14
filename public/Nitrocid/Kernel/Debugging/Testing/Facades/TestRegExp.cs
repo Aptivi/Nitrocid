@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,22 +27,22 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestRegExp : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC");
         public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             string Text = "";
             string Regex = "";
             if (string.IsNullOrEmpty(Text))
-                Text = InputTools.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
+                Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_STRINGPROMPT") + " ");
             if (string.IsNullOrEmpty(Regex))
-                Regex = InputTools.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
+                Regex = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_REGEXPROMPT") + " ");
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;
             foreach (Match Mat in Matches.Cast<Match>())
             {
-                TextWriterColor.Write(Translate.DoTranslation("Match {0} ({1}): {2}"), MatchNum, Regex, Mat);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTREGEXP_MATCH"), MatchNum, Regex, Mat);
                 MatchNum += 1;
             }
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             bool valid = uint.TryParse(timesString, out uint times);
             if (!valid)
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid number of times."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES"), true, KernelColorType.Error);
                 return 18;
             }
 
@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             var argumentInfo = ArgumentsParser.ParseShellCommandArguments(lastCommand, ShellManager.CurrentShellType).total[0];
             if (argumentInfo.Command == "repeat")
             {
-                TextWriters.Write(Translate.DoTranslation("Can't repeat self."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_REPEAT_REPEATSELF"), true, KernelColorType.Error);
                 return 19;
             }
 

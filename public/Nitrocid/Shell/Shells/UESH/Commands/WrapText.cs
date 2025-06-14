@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
                 if (!int.TryParse(parsedColumns, out columns))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid number of columns."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID"), true, KernelColorType.Error);
                     return 20;
                 }
             }

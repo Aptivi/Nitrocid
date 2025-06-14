@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -52,11 +52,11 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
         public static void AddBootApp(string name, BaseEnvironment environment)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNAMEUNSPECIFIED"));
             if (environment is null)
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app environment is not specified"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPENVUNSPECIFIED"));
             if (CheckBootApp(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app already exists"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPFOUND"));
             bootApps.Add(name, environment);
         }
 
@@ -68,9 +68,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
         public static void RemoveBootApp(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNAMEUNSPECIFIED"));
             if (!CheckBootApp(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app doesn't exist"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNOTFOUND"));
             bootApps.Remove(name);
         }
 
@@ -82,7 +82,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
         public static bool CheckBootApp(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNAMEUNSPECIFIED"));
             return bootApps.ContainsKey(name);
         }
 
@@ -92,7 +92,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
         public static BaseEnvironment? GetBootApp(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
-                throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));
+                throw new KernelException(KernelExceptionType.Bootloader, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNAMEUNSPECIFIED"));
             bootApps.TryGetValue(name, out var info);
             DebugWriter.WriteDebug(DebugLevel.I, "Got boot app {0}!", vars: [name]);
             return info;

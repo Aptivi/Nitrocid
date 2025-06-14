@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,10 +44,10 @@ namespace Nitrocid.Network.Connections
                 connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
             }
 
-            return SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers."),
+            return SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_PROMPT"),
                 [.. connectionsChoiceList], [
-                    new InputChoiceInfo($"{connectionNames.Length + 1}", Translate.DoTranslation("Create a new connection")),
-                    new InputChoiceInfo($"{connectionNames.Length + 2}", Translate.DoTranslation("Use speed dial")),
+                    new InputChoiceInfo($"{connectionNames.Length + 1}", LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_CREATE")),
+                    new InputChoiceInfo($"{connectionNames.Length + 2}", LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_SPEEDDIAL")),
                 ]
             );
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,20 +42,20 @@ namespace Nitrocid.Misc.Interactives
             // Generate the rendered text
             string name = item.Title;
             string description = item.Desc;
-            StringBuilder builder = new(Translate.DoTranslation("Notification importance") + $": {item.Priority}" + CharManager.NewLine);
+            StringBuilder builder = new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_IMPORTANCE") + $": {item.Priority}" + CharManager.NewLine);
 
             // If the notification is a progress one, go ahead and add progress info
             if (item.Type == NotificationType.Progress)
             {
-                builder.AppendLine(Translate.DoTranslation("Progress percentage") + $": {item.Progress}%");
-                builder.AppendLine(Translate.DoTranslation("Progress completed") + $": {item.ProgressCompleted}");
-                builder.AppendLine(Translate.DoTranslation("Progress is indeterminate") + $": {item.ProgressIndeterminate}");
-                builder.AppendLine(Translate.DoTranslation("Progress state") + $": {item.ProgressState}");
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_PROGPERCENT") + $": {item.Progress}%");
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_PROGCOMPLETED") + $": {item.ProgressCompleted}");
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_PROGINDETERMINATE") + $": {item.ProgressIndeterminate}");
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_PROGSTATE") + $": {item.ProgressState}");
             }
 
             // Render them to the second pane
             return
-                Translate.DoTranslation("Notification title") + $": {name}" + CharManager.NewLine +
+                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_NOTIFTITLE") + $": {name}" + CharManager.NewLine +
                 $"{builder}" + CharManager.NewLine +
                 $"{description}";
             ;
@@ -88,8 +88,8 @@ namespace Nitrocid.Misc.Interactives
         internal static void OpenNotificationsCli()
         {
             var tui = new NotificationsCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_KEYBINDING_DISMISS"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_KEYBINDING_DISMISSALL"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

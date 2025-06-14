@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,18 +38,18 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Now, change the name in the user config
                 UserManagement.Users[userIndex].FullName = "";
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Full name set to {0}. You may want to log in again."), fullName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
             }
             else if (!string.IsNullOrWhiteSpace(fullName))
             {
                 // Now, change the name in the user config
                 UserManagement.Users[userIndex].FullName = fullName;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Full name set to {0}. You may want to log in again."), fullName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("The full name is empty."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_EMPTY"));
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
             }
             return 0;

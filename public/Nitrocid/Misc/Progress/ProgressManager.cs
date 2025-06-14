@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Misc.Progress
         public static void RegisterProgressHandler(ProgressHandler handler)
         {
             if (handler is null)
-                throw new KernelException(KernelExceptionType.ProgressHandler, Translate.DoTranslation("The progress handler may not be null."));
+                throw new KernelException(KernelExceptionType.ProgressHandler, LanguageTools.GetLocalized("NKS_MISC_PROGRESS_EXCEPTION_NEEDSHANDLER"));
             handlers.Add(handler);
         }
 
@@ -49,7 +49,7 @@ namespace Nitrocid.Misc.Progress
         public static void UnregisterProgressHandler(ProgressHandler handler)
         {
             if (handler is null)
-                throw new KernelException(KernelExceptionType.ProgressHandler, Translate.DoTranslation("The progress handler may not be null."));
+                throw new KernelException(KernelExceptionType.ProgressHandler, LanguageTools.GetLocalized("NKS_MISC_PROGRESS_EXCEPTION_NEEDSHANDLER"));
             handlers.Remove(handler);
         }
 
@@ -59,7 +59,7 @@ namespace Nitrocid.Misc.Progress
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="context">Progress context</param>
         public static void ReportProgress(double progress, string context) =>
-            ReportProgress(progress, context, Translate.DoTranslation("Processing..."));
+            ReportProgress(progress, context, LanguageTools.GetLocalized("NKS_MISC_PROGRESS_DEFAULTMESSAGE"));
 
         /// <summary>
         /// Reports the progress to each progress handler

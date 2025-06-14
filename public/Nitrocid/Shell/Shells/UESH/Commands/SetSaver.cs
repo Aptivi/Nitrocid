@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,25 +49,25 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
                 return 0;
             }
             else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
                 return 0;
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND"), true, KernelColorType.Error, finalSaverName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchScreensaver);
             }
         }
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("where saver will be") + " {0}", string.Join(", ", ScreensaverManager.GetScreensaverNames()));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING") + " {0}", string.Join(", ", ScreensaverManager.GetScreensaverNames()));
         }
 
     }

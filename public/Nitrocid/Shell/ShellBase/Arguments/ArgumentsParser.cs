@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -194,7 +194,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
             var argInfos = (isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get argument info for command or argument"));
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO"));
             if (argInfos.Length == 0)
                 argInfos = [new CommandArgumentInfo()];
             foreach (var argInfo in argInfos)

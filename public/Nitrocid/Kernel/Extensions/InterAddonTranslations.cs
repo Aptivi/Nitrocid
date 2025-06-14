@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,7 +37,7 @@ namespace Nitrocid.Kernel.Extensions
         {
             if (knownAddons.TryGetValue(addon, out (string, string) name))
                 return name.Item2;
-            throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
+            throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE"), addon.ToString());
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Nitrocid.Kernel.Extensions
         {
             if (knownAddons.TryGetValue(addon, out (string, string) name))
                 return Translate.DoTranslation(name.Item2);
-            throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
+            throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE"), addon.ToString());
         }
     }
 }

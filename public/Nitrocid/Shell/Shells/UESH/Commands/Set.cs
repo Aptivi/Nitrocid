@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!parameters.SwitchSetPassed)
             {
-                TextWriters.Write(Translate.DoTranslation("You must pass the -set switch with the variable that you want to set this value to."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
             variableValue = parameters.ArgumentsList[0];

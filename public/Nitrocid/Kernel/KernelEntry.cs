@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel
                 AudioCuesTools.PlayAudioCue(AudioCueType.Startup);
 
             // Show the closing screen
-            SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
             if (!Config.MainConfig.EnableSplash)
@@ -108,7 +108,7 @@ namespace Nitrocid.Kernel
                 InfoBoxNonModalColor.WriteInfoBox(
                     WelcomeMessage.GetLicenseString(), new InfoBoxSettings()
                     {
-                        Title = Translate.DoTranslation("License information"),
+                        Title = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"),
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.License)
                     }
                 );
@@ -135,7 +135,7 @@ namespace Nitrocid.Kernel
             // Play the shutdown sound
             if (Config.MainConfig.EnableShutdownSounds)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Playing shutdown sound..."));
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_PLAYINGSHUTDOWNSOUND"));
                 AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown, false);
             }
         }
@@ -149,7 +149,7 @@ namespace Nitrocid.Kernel
             {
                 KernelPanic.KernelErrored = false;
                 var exception = KernelPanic.LastKernelErrorException;
-                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception?.Message ?? "");
+                throw new KernelErrorException(LanguageTools.GetLocalized("NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR"), exception, exception?.Message ?? "");
             }
         }
 
@@ -202,7 +202,7 @@ namespace Nitrocid.Kernel
                         WelcomeMessage.ShowRandomTip();
 
                     // Show a tip telling users to see license information
-                    TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
+                    TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), KernelColorType.Tip);
 
                     // Show another tip for release window
                     KernelReleaseInfo.NotifyReleaseSupportWindow();

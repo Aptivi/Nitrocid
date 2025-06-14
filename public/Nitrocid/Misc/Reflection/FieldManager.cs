@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -70,7 +70,7 @@ namespace Nitrocid.Misc.Reflection
             {
                 // Variable not found on any of the modules.
                 DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHVAR"));
             }
 
             // The "obj" description says this: "The object whose field value will be set."
@@ -122,7 +122,7 @@ namespace Nitrocid.Misc.Reflection
             {
                 // Variable not found on any of the modules.
                 DebugWriter.WriteDebug(DebugLevel.E, "Field not found in instance type {0}.", vars: [instance?.GetType().Name ?? "<unknown type>"]);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHVAR"));
             }
 
             // This is how to set a value in instance variables.
@@ -187,7 +187,7 @@ namespace Nitrocid.Misc.Reflection
             {
                 // Variable not found on any of the modules.
                 DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHVAR"));
             }
 
             // The "obj" description says this: "The object whose field value will be set."
@@ -239,7 +239,7 @@ namespace Nitrocid.Misc.Reflection
             {
                 // Variable not found on any of the modules.
                 DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHVAR"));
             }
 
             // This is how to get a value in instance variables.

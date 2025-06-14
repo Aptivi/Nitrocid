@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,15 +27,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestExecuteAssembly : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests assembly entry point execution");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC");
         public override void Run()
         {
             string path = "";
             if (string.IsNullOrEmpty(path))
-                path = InputTools.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
+                path = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_PROMPT") + " ");
             path = FilesystemTools.NeutralizePath(path);
             var entryPoint = Assembly.LoadFrom(path).EntryPoint ??
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Failed to get entry point."));
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET"));
             entryPoint.Invoke("", []);
         }
     }

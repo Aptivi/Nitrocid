@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,21 +54,21 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 string country = parameters.ArgumentsList[0];
                 if (!countries.TryGetValue(country, out LanguageInfo[]? countryLanguages))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid country") + $" {country}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY") + $" {country}", true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
                 }
 
                 if (countryLanguages.Length > 1)
                 {
                     var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName} [{li.ThreeLetterLanguageName}]")).ToArray();
-                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices, new()
+                    string choice = ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY") + $" {country}", langChoices, new()
                     {
                         OutputType = ChoiceOutputType.Modern,
                         PressEnter = true,
                     });
                     if (!int.TryParse(choice, out int langNum) || langNum < 1 || langNum >= langChoices.Length)
                     {
-                        TextWriters.Write(Translate.DoTranslation("Invalid language selection for") + $" {country}", true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG") + $" {country}", true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
                     }
                     language = countryLanguages[langNum - 1].ThreeLetterLanguageName;
@@ -83,7 +83,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 var languages = LanguageManager.ListAllLanguages();
                 if (!languages.ContainsKey(language))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + $" {language}", true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
                 }
             }
@@ -96,7 +96,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
                 LanguageManager.SetLang(language);
-            TextWriterColor.Write(Translate.DoTranslation("You may need to log out and log back in for changes to take effect."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_RESTARTREQUIRED"));
             return 0;
         }
 

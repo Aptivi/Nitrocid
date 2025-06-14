@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
             string Name = parameters.ArgumentsList[0];
             device.DeviceInfo.name = Name;
             RemoteDebugTools.SaveAllDevices();
-            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), true, vars: [Name]);
+            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_REGISTERED"), true, vars: [Name]);
         }
     }
 }

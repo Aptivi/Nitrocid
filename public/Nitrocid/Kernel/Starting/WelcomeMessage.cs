@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,7 +45,7 @@ namespace Nitrocid.Kernel.Starting
         internal static string GetCustomBanner()
         {
             // The default message to write
-            string MessageWrite = "     --> " + Translate.DoTranslation("Welcome to Nitrocid Kernel! - Version") + " v{0} <--     ";
+            string MessageWrite = "     --> " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE") + " v{0} <--     ";
 
             // Check to see if user specified custom message
             if (!string.IsNullOrWhiteSpace(customBanner))
@@ -78,13 +78,13 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void WriteLicense()
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("License information"), KernelColorTools.GetColor(KernelColorType.Stage));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"), KernelColorTools.GetColor(KernelColorType.Stage));
             TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 
         internal static string GetLicenseString() =>
             $"""
-            {Translate.DoTranslation("This program is licensed under GNU General Public License 3.0 or later.")}
+            {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE1")}
 
                 Nitrocid KS  Copyright (C) 2018-2025  Aptivi
                 This program comes with ABSOLUTELY NO WARRANTY, not even
@@ -92,20 +92,20 @@ namespace Nitrocid.Kernel.Starting
                 This is free software, and you are welcome to redistribute it
                 under certain conditions; See COPYING file in source code.
 
-            * {Translate.DoTranslation("For more information about the terms and conditions of using this software, visit")} http://www.gnu.org/licenses/
+            * {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2")} http://www.gnu.org/licenses/
             """;
 
         internal static void ShowDevelopmentDisclaimer()
         {
             // See UpdateManager.CheckKernelUpdates() comment for more info.
-            string devMessage = Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.");
-            string rcMessage = Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.");
-            string unsupportedMessage = Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.");
-            string devNoticeTitle = Translate.DoTranslation("Development notice");
-            string devNoticeMessage = Translate.DoTranslation("To dismiss forever, either press ENTER on the \"Acknowledged\" button here by highlighting it using the left arrow on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings.");
-            string devNoticeOk = Translate.DoTranslation("OK");
-            string devNoticeAck = Translate.DoTranslation("Acknowledged");
-            string devNoticeClassic = Translate.DoTranslation("To dismiss forever, either press ENTER on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings. Any other key goes ahead without acknowledgement.");
+            string devMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE");
+            string rcMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE");
+            string unsupportedMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED");
+            string devNoticeTitle = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_TITLE");
+            string devNoticeMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISSTIP");
+            string devNoticeOk = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_OK");
+            string devNoticeAck = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_ACKED");
+            string devNoticeClassic = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC");
 
             // Actual code
 #if SPECIFIERREL
@@ -154,20 +154,20 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void ShowUnusualEnvironmentWarning()
         {
-            string message = Translate.DoTranslation("You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.");
-            string message2 = Translate.DoTranslation("Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.");
+            string message = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNUSUALENV");
+            string message2 = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNUSUALENV_DESC");
 
             // Show unusual environment notice
             if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
-                    new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
+                    new InputChoiceInfo("ok", LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_OK")),
                 ];
                 InfoBoxButtonsColor.WriteInfoBoxButtons(
                     answers,
                     message + "\n\n" + message2, new InfoBoxSettings()
                     {
-                        Title = Translate.DoTranslation("Unusual environment notice"),
+                        Title = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNUSUALENV_TITLE"),
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Warning)
                     }
                 );
@@ -182,7 +182,7 @@ namespace Nitrocid.Kernel.Starting
         internal static string GetRandomTip()
         {
             // Get a random tip
-            string tip = Translate.DoTranslation("that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?");
+            string tip = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_ADDONNEEDED");
             if (tips.Length > 0)
             {
                 int tipIdx = RandomDriver.RandomIdx(tips.Length);
@@ -195,7 +195,7 @@ namespace Nitrocid.Kernel.Starting
         {
             // Get a random tip and print it
             TextWriters.Write(
-                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + GetRandomTip(), true, KernelColorType.Tip);
+                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + GetRandomTip(), true, KernelColorType.Tip);
         }
     }
 }

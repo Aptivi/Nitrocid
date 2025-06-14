@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,14 +48,14 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (properties.Count > 0)
                     {
                         // Write the property names and their values
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of properties for") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSPROPERTIES_TITLE") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                         TextWriters.WriteList(properties);
                     }
                 }
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(Translate.DoTranslation("Failed to get property info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;
@@ -72,7 +72,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (properties.Count > 0)
                     {
                         // Write the property names and their values
-                        TextWriterColor.Write(Translate.DoTranslation("List of properties for") + $" {type.Name}", true);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSPROPERTIES_TITLE") + $" {type.Name}", true);
                         foreach (var property in properties)
                             TextWriterColor.Write($"  - {property.Key} [{property.Value}]");
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(Translate.DoTranslation("Failed to get property info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;
