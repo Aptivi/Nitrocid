@@ -153,43 +153,5 @@ namespace Nitrocid.ConsoleBase
             ScreenTools.UnsetCurrent(screen);
             KernelColorTools.LoadBackground();
         }
-
-        internal static string BufferChar(string text, (VtSequenceType type, Match[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
-        {
-            // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
-            // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
-            // do in Windows.
-            //
-            // Windows 10, Windows 11, and higher contain cmd.exe that checks to see if we passed it the escape character
-            // alone, and it tries to parse each sequence passed to it.
-            //
-            // Linux, on the other hand, the terminal emulator has a completely different behavior, because it just omits
-            // the escape character, which results in the entire sequence being printed except the Escape \u001b key, which
-            // is not the way that it's supposed to work.
-            //
-            // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
-            // control sequence matcher to match how it works on Windows.
-            char ch = text[i];
-            string seq = "";
-            bool vtSeq = false;
-            foreach ((var _, var sequences) in sequencesCollections)
-            {
-                if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
-                {
-                    // We're at an index which is the same as the captured VT sequence. Get the sequence
-                    seq = sequences[vtSeqIdx].Value;
-                    vtSeq = true;
-
-                    // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                    if (vtSeqIdx + 1 < sequences.Length)
-                        vtSeqIdx++;
-
-                    // Raise the paragraph index by the length of the sequence
-                    i += seq.Length - 1;
-                }
-            }
-            isVtSequence = vtSeq;
-            return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
-        }
     }
 }
