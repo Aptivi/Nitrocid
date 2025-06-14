@@ -18225,19 +18225,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SeparatorTextColor
   nameWithType: KernelMainConfig.SeparatorTextColor
-- uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage
-  name: SetCodepage
-  href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_SetCodepage
-  commentId: P:Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage
-  fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage
-  nameWithType: KernelMainConfig.SetCodepage
-- uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage*
-  name: SetCodepage
-  href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_SetCodepage_
-  commentId: Overload:Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage
-  isSpec: "True"
-  fullName: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetCodepage
-  nameWithType: KernelMainConfig.SetCodepage
 - uid: Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.SetTitleOnCommandExecution
   name: SetTitleOnCommandExecution
   href: api/Nitrocid.Kernel.Configuration.Instances.KernelMainConfig.html#Nitrocid_Kernel_Configuration_Instances_KernelMainConfig_SetTitleOnCommandExecution
@@ -28023,24 +28010,15 @@ references:
   commentId: T:Nitrocid.Languages.LanguageInfo
   fullName: Nitrocid.Languages.LanguageInfo
   nameWithType: LanguageInfo
-- uid: Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.Int32,System.String)
-  name: LanguageInfo(string, string, bool, int, string)
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_Int32_System_String_
-  commentId: M:Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.Int32,System.String)
-  name.vb: New(String, String, Boolean, Integer, String)
-  fullName: Nitrocid.Languages.LanguageInfo.LanguageInfo(string, string, bool, int, string)
-  fullName.vb: Nitrocid.Languages.LanguageInfo.New(String, String, Boolean, Integer, String)
-  nameWithType: LanguageInfo.LanguageInfo(string, string, bool, int, string)
-  nameWithType.vb: LanguageInfo.New(String, String, Boolean, Integer, String)
-- uid: Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.String[],System.String)
-  name: LanguageInfo(string, string, bool, string[]?, string)
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_String___System_String_
-  commentId: M:Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.String[],System.String)
-  name.vb: New(String, String, Boolean, String(), String)
-  fullName: Nitrocid.Languages.LanguageInfo.LanguageInfo(string, string, bool, string[]?, string)
-  fullName.vb: Nitrocid.Languages.LanguageInfo.New(String, String, Boolean, String(), String)
-  nameWithType: LanguageInfo.LanguageInfo(string, string, bool, string[]?, string)
-  nameWithType.vb: LanguageInfo.New(String, String, Boolean, String(), String)
+- uid: Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name: LanguageInfo(string, string, Dictionary<string, string>)
+  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: New(String, String, Dictionary(Of String, String))
+  fullName: Nitrocid.Languages.LanguageInfo.LanguageInfo(string, string, System.Collections.Generic.Dictionary<string, string>)
+  fullName.vb: Nitrocid.Languages.LanguageInfo.New(String, String, System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: LanguageInfo.LanguageInfo(string, string, Dictionary<string, string>)
+  nameWithType.vb: LanguageInfo.New(String, String, Dictionary(Of String, String))
 - uid: Nitrocid.Languages.LanguageInfo.#ctor*
   name: LanguageInfo
   href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo__ctor_
@@ -28051,45 +28029,6 @@ references:
   fullName.vb: Nitrocid.Languages.LanguageInfo.New
   nameWithType: LanguageInfo.LanguageInfo
   nameWithType.vb: LanguageInfo.New
-- uid: Nitrocid.Languages.LanguageInfo.Codepage
-  name: Codepage
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Codepage
-  commentId: P:Nitrocid.Languages.LanguageInfo.Codepage
-  fullName: Nitrocid.Languages.LanguageInfo.Codepage
-  nameWithType: LanguageInfo.Codepage
-- uid: Nitrocid.Languages.LanguageInfo.Codepage*
-  name: Codepage
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Codepage_
-  commentId: Overload:Nitrocid.Languages.LanguageInfo.Codepage
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageInfo.Codepage
-  nameWithType: LanguageInfo.Codepage
-- uid: Nitrocid.Languages.LanguageInfo.Country
-  name: Country
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Country
-  commentId: P:Nitrocid.Languages.LanguageInfo.Country
-  fullName: Nitrocid.Languages.LanguageInfo.Country
-  nameWithType: LanguageInfo.Country
-- uid: Nitrocid.Languages.LanguageInfo.Country*
-  name: Country
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Country_
-  commentId: Overload:Nitrocid.Languages.LanguageInfo.Country
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageInfo.Country
-  nameWithType: LanguageInfo.Country
-- uid: Nitrocid.Languages.LanguageInfo.Custom
-  name: Custom
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Custom
-  commentId: P:Nitrocid.Languages.LanguageInfo.Custom
-  fullName: Nitrocid.Languages.LanguageInfo.Custom
-  nameWithType: LanguageInfo.Custom
-- uid: Nitrocid.Languages.LanguageInfo.Custom*
-  name: Custom
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Custom_
-  commentId: Overload:Nitrocid.Languages.LanguageInfo.Custom
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageInfo.Custom
-  nameWithType: LanguageInfo.Custom
 - uid: Nitrocid.Languages.LanguageInfo.FullLanguageName
   name: FullLanguageName
   href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_FullLanguageName
@@ -28129,19 +28068,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.LanguageInfo.ThreeLetterLanguageName
   nameWithType: LanguageInfo.ThreeLetterLanguageName
-- uid: Nitrocid.Languages.LanguageInfo.Transliterable
-  name: Transliterable
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Transliterable
-  commentId: P:Nitrocid.Languages.LanguageInfo.Transliterable
-  fullName: Nitrocid.Languages.LanguageInfo.Transliterable
-  nameWithType: LanguageInfo.Transliterable
-- uid: Nitrocid.Languages.LanguageInfo.Transliterable*
-  name: Transliterable
-  href: api/Nitrocid.Languages.LanguageInfo.html#Nitrocid_Languages_LanguageInfo_Transliterable_
-  commentId: Overload:Nitrocid.Languages.LanguageInfo.Transliterable
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageInfo.Transliterable
-  nameWithType: LanguageInfo.Transliterable
 - uid: Nitrocid.Languages.LanguageManager
   name: LanguageManager
   href: api/Nitrocid.Languages.LanguageManager.html
@@ -28161,51 +28087,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.LanguageManager.CurrentLanguageInfo
   nameWithType: LanguageManager.CurrentLanguageInfo
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguage(System.String,System.Boolean)
-  name: InstallCustomLanguage(string, bool)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguage_System_String_System_Boolean_
-  commentId: M:Nitrocid.Languages.LanguageManager.InstallCustomLanguage(System.String,System.Boolean)
-  name.vb: InstallCustomLanguage(String, Boolean)
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguage(string, bool)
-  fullName.vb: Nitrocid.Languages.LanguageManager.InstallCustomLanguage(String, Boolean)
-  nameWithType: LanguageManager.InstallCustomLanguage(string, bool)
-  nameWithType.vb: LanguageManager.InstallCustomLanguage(String, Boolean)
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguage*
-  name: InstallCustomLanguage
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguage_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.InstallCustomLanguage
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguage
-  nameWithType: LanguageManager.InstallCustomLanguage
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName(System.String,System.Boolean)
-  name: InstallCustomLanguageByName(string, bool)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguageByName_System_String_System_Boolean_
-  commentId: M:Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName(System.String,System.Boolean)
-  name.vb: InstallCustomLanguageByName(String, Boolean)
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName(string, bool)
-  fullName.vb: Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName(String, Boolean)
-  nameWithType: LanguageManager.InstallCustomLanguageByName(string, bool)
-  nameWithType.vb: LanguageManager.InstallCustomLanguageByName(String, Boolean)
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName*
-  name: InstallCustomLanguageByName
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguageByName_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguageByName
-  nameWithType: LanguageManager.InstallCustomLanguageByName
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguages
-  name: InstallCustomLanguages()
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguages
-  commentId: M:Nitrocid.Languages.LanguageManager.InstallCustomLanguages
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguages()
-  nameWithType: LanguageManager.InstallCustomLanguages()
-- uid: Nitrocid.Languages.LanguageManager.InstallCustomLanguages*
-  name: InstallCustomLanguages
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_InstallCustomLanguages_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.InstallCustomLanguages
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.InstallCustomLanguages
-  nameWithType: LanguageManager.InstallCustomLanguages
 - uid: Nitrocid.Languages.LanguageManager.Languages
   name: Languages
   href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_Languages
@@ -28219,28 +28100,12 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.LanguageManager.Languages
   nameWithType: LanguageManager.Languages
-- uid: Nitrocid.Languages.LanguageManager.ListAllCountries
-  name: ListAllCountries()
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListAllCountries
-  commentId: M:Nitrocid.Languages.LanguageManager.ListAllCountries
-  fullName: Nitrocid.Languages.LanguageManager.ListAllCountries()
-  nameWithType: LanguageManager.ListAllCountries()
-- uid: Nitrocid.Languages.LanguageManager.ListAllCountries*
-  name: ListAllCountries
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListAllCountries_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.ListAllCountries
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.ListAllCountries
-  nameWithType: LanguageManager.ListAllCountries
-- uid: Nitrocid.Languages.LanguageManager.ListAllLanguages(System.Boolean)
-  name: ListAllLanguages(bool)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListAllLanguages_System_Boolean_
-  commentId: M:Nitrocid.Languages.LanguageManager.ListAllLanguages(System.Boolean)
-  name.vb: ListAllLanguages(Boolean)
-  fullName: Nitrocid.Languages.LanguageManager.ListAllLanguages(bool)
-  fullName.vb: Nitrocid.Languages.LanguageManager.ListAllLanguages(Boolean)
-  nameWithType: LanguageManager.ListAllLanguages(bool)
-  nameWithType.vb: LanguageManager.ListAllLanguages(Boolean)
+- uid: Nitrocid.Languages.LanguageManager.ListAllLanguages
+  name: ListAllLanguages()
+  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListAllLanguages
+  commentId: M:Nitrocid.Languages.LanguageManager.ListAllLanguages
+  fullName: Nitrocid.Languages.LanguageManager.ListAllLanguages()
+  nameWithType: LanguageManager.ListAllLanguages()
 - uid: Nitrocid.Languages.LanguageManager.ListAllLanguages*
   name: ListAllLanguages
   href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListAllLanguages_
@@ -28248,31 +28113,15 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.LanguageManager.ListAllLanguages
   nameWithType: LanguageManager.ListAllLanguages
-- uid: Nitrocid.Languages.LanguageManager.ListCountries(System.String)
-  name: ListCountries(string)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListCountries_System_String_
-  commentId: M:Nitrocid.Languages.LanguageManager.ListCountries(System.String)
-  name.vb: ListCountries(String)
-  fullName: Nitrocid.Languages.LanguageManager.ListCountries(string)
-  fullName.vb: Nitrocid.Languages.LanguageManager.ListCountries(String)
-  nameWithType: LanguageManager.ListCountries(string)
-  nameWithType.vb: LanguageManager.ListCountries(String)
-- uid: Nitrocid.Languages.LanguageManager.ListCountries*
-  name: ListCountries
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListCountries_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.ListCountries
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.ListCountries
-  nameWithType: LanguageManager.ListCountries
-- uid: Nitrocid.Languages.LanguageManager.ListLanguages(System.String,System.Boolean)
-  name: ListLanguages(string, bool)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListLanguages_System_String_System_Boolean_
-  commentId: M:Nitrocid.Languages.LanguageManager.ListLanguages(System.String,System.Boolean)
-  name.vb: ListLanguages(String, Boolean)
-  fullName: Nitrocid.Languages.LanguageManager.ListLanguages(string, bool)
-  fullName.vb: Nitrocid.Languages.LanguageManager.ListLanguages(String, Boolean)
-  nameWithType: LanguageManager.ListLanguages(string, bool)
-  nameWithType.vb: LanguageManager.ListLanguages(String, Boolean)
+- uid: Nitrocid.Languages.LanguageManager.ListLanguages(System.String)
+  name: ListLanguages(string)
+  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListLanguages_System_String_
+  commentId: M:Nitrocid.Languages.LanguageManager.ListLanguages(System.String)
+  name.vb: ListLanguages(String)
+  fullName: Nitrocid.Languages.LanguageManager.ListLanguages(string)
+  fullName.vb: Nitrocid.Languages.LanguageManager.ListLanguages(String)
+  nameWithType: LanguageManager.ListLanguages(string)
+  nameWithType.vb: LanguageManager.ListLanguages(String)
 - uid: Nitrocid.Languages.LanguageManager.ListLanguages*
   name: ListLanguages
   href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_ListLanguages_
@@ -28312,91 +28161,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Languages.LanguageManager.SetLangDry
   nameWithType: LanguageManager.SetLangDry
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguage(System.String)
-  name: UninstallCustomLanguage(string)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguage_System_String_
-  commentId: M:Nitrocid.Languages.LanguageManager.UninstallCustomLanguage(System.String)
-  name.vb: UninstallCustomLanguage(String)
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguage(string)
-  fullName.vb: Nitrocid.Languages.LanguageManager.UninstallCustomLanguage(String)
-  nameWithType: LanguageManager.UninstallCustomLanguage(string)
-  nameWithType.vb: LanguageManager.UninstallCustomLanguage(String)
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguage*
-  name: UninstallCustomLanguage
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguage_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.UninstallCustomLanguage
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguage
-  nameWithType: LanguageManager.UninstallCustomLanguage
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName(System.String)
-  name: UninstallCustomLanguageByName(string)
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguageByName_System_String_
-  commentId: M:Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName(System.String)
-  name.vb: UninstallCustomLanguageByName(String)
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName(string)
-  fullName.vb: Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName(String)
-  nameWithType: LanguageManager.UninstallCustomLanguageByName(string)
-  nameWithType.vb: LanguageManager.UninstallCustomLanguageByName(String)
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName*
-  name: UninstallCustomLanguageByName
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguageByName_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguageByName
-  nameWithType: LanguageManager.UninstallCustomLanguageByName
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguages
-  name: UninstallCustomLanguages()
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguages
-  commentId: M:Nitrocid.Languages.LanguageManager.UninstallCustomLanguages
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguages()
-  nameWithType: LanguageManager.UninstallCustomLanguages()
-- uid: Nitrocid.Languages.LanguageManager.UninstallCustomLanguages*
-  name: UninstallCustomLanguages
-  href: api/Nitrocid.Languages.LanguageManager.html#Nitrocid_Languages_LanguageManager_UninstallCustomLanguages_
-  commentId: Overload:Nitrocid.Languages.LanguageManager.UninstallCustomLanguages
-  isSpec: "True"
-  fullName: Nitrocid.Languages.LanguageManager.UninstallCustomLanguages
-  nameWithType: LanguageManager.UninstallCustomLanguages
-- uid: Nitrocid.Languages.Translate
-  name: Translate
-  href: api/Nitrocid.Languages.Translate.html
-  commentId: T:Nitrocid.Languages.Translate
-  fullName: Nitrocid.Languages.Translate
-  nameWithType: Translate
-- uid: Nitrocid.Languages.Translate.DoTranslation(System.String)
-  name: DoTranslation(string)
-  href: api/Nitrocid.Languages.Translate.html#Nitrocid_Languages_Translate_DoTranslation_System_String_
-  commentId: M:Nitrocid.Languages.Translate.DoTranslation(System.String)
-  name.vb: DoTranslation(String)
-  fullName: Nitrocid.Languages.Translate.DoTranslation(string)
-  fullName.vb: Nitrocid.Languages.Translate.DoTranslation(String)
-  nameWithType: Translate.DoTranslation(string)
-  nameWithType.vb: Translate.DoTranslation(String)
-- uid: Nitrocid.Languages.Translate.DoTranslation(System.String,Nitrocid.Languages.LanguageInfo)
-  name: DoTranslation(string, LanguageInfo)
-  href: api/Nitrocid.Languages.Translate.html#Nitrocid_Languages_Translate_DoTranslation_System_String_Nitrocid_Languages_LanguageInfo_
-  commentId: M:Nitrocid.Languages.Translate.DoTranslation(System.String,Nitrocid.Languages.LanguageInfo)
-  name.vb: DoTranslation(String, LanguageInfo)
-  fullName: Nitrocid.Languages.Translate.DoTranslation(string, Nitrocid.Languages.LanguageInfo)
-  fullName.vb: Nitrocid.Languages.Translate.DoTranslation(String, Nitrocid.Languages.LanguageInfo)
-  nameWithType: Translate.DoTranslation(string, LanguageInfo)
-  nameWithType.vb: Translate.DoTranslation(String, LanguageInfo)
-- uid: Nitrocid.Languages.Translate.DoTranslation(System.String,System.String)
-  name: DoTranslation(string, string)
-  href: api/Nitrocid.Languages.Translate.html#Nitrocid_Languages_Translate_DoTranslation_System_String_System_String_
-  commentId: M:Nitrocid.Languages.Translate.DoTranslation(System.String,System.String)
-  name.vb: DoTranslation(String, String)
-  fullName: Nitrocid.Languages.Translate.DoTranslation(string, string)
-  fullName.vb: Nitrocid.Languages.Translate.DoTranslation(String, String)
-  nameWithType: Translate.DoTranslation(string, string)
-  nameWithType.vb: Translate.DoTranslation(String, String)
-- uid: Nitrocid.Languages.Translate.DoTranslation*
-  name: DoTranslation
-  href: api/Nitrocid.Languages.Translate.html#Nitrocid_Languages_Translate_DoTranslation_
-  commentId: Overload:Nitrocid.Languages.Translate.DoTranslation
-  isSpec: "True"
-  fullName: Nitrocid.Languages.Translate.DoTranslation
-  nameWithType: Translate.DoTranslation
 - uid: Nitrocid.Localized
   name: Nitrocid.Localized
   href: api/Nitrocid.Localized.html

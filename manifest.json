@@ -3207,20 +3207,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Languages.Translate.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Languages.Translate.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Languages.Translate",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Languages.Translate.yml\" sourcestartlinenumber=\"1\">Translation module</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Languages.yml",
       "output": {
         ".html": {

@@ -101,19 +101,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.%23ctor(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.%23ctor(System.String%2CSystem.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L109">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L60">View Source</a>
   </span>
   <a id="Nitrocid_Languages_LanguageInfo__ctor_" data-uid="Nitrocid.Languages.LanguageInfo.#ctor*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_Int32_System_String_" data-uid="Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.Int32,System.String)">LanguageInfo(string, string, bool, int, string)</h4>
+  <h4 id="Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">LanguageInfo(string, string, Dictionary&lt;string, string&gt;)</h4>
   <div class="markdown level1 summary"><p>Initializes the new instance of language information</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string country = &quot;&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public LanguageInfo(string LangName, string FullLanguageName, Dictionary&lt;string, string&gt; strings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped">
@@ -138,79 +138,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Transliterable</span></td>
-        <td><p>Whether or not the language is transliterable (Arabic, Korea, ...)</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">int</span></td>
-        <td><span class="parametername">Codepage</span></td>
-        <td><p>Appropriate codepage number for language</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">country</span></td>
-        <td><p>The country</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_String___System_String_.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.%23ctor(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.String%5B%5D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L161">View Source</a>
-  </span>
-  <a id="Nitrocid_Languages_LanguageInfo__ctor_" data-uid="Nitrocid.Languages.LanguageInfo.#ctor*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo__ctor_System_String_System_String_System_Boolean_System_String___System_String_" data-uid="Nitrocid.Languages.LanguageInfo.#ctor(System.String,System.String,System.Boolean,System.String[],System.String)">LanguageInfo(string, string, bool, string[]?, string)</h4>
-  <div class="markdown level1 summary"><p>Initializes the new instance of language information</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string country = &quot;&quot;)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">LangName</span></td>
-        <td><p>The three-letter language name found in resources. Some languages have translated variants, and they usually end with &quot;_T&quot; in resources and &quot;-T&quot; in KS.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">FullLanguageName</span></td>
-        <td><p>The full name of language without the country specifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td><span class="parametername">Transliterable</span></td>
-        <td><p>Whether or not the language is transliterable (Arabic, Korea, ...)</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span>[]</td>
-        <td><span class="parametername">LanguageToken</span></td>
-        <td><p>The language token containing localization information</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td><span class="parametername">country</span></td>
-        <td><p>The country</p>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <span class="xref">string</span>&gt;</td>
+        <td><span class="parametername">strings</span></td>
+        <td><p>List of strings (for info purposes)</p>
 </td>
       </tr>
     </tbody>
@@ -219,106 +149,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_Codepage.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.Codepage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L69">View Source</a>
-  </span>
-  <a id="Nitrocid_Languages_LanguageInfo_Codepage_" data-uid="Nitrocid.Languages.LanguageInfo.Codepage*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo_Codepage" data-uid="Nitrocid.Languages.LanguageInfo.Codepage">Codepage</h4>
-  <div class="markdown level1 summary"><p>The codepage number for the language</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public int Codepage { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">int</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_Country.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.Country%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L76">View Source</a>
-  </span>
-  <a id="Nitrocid_Languages_LanguageInfo_Country_" data-uid="Nitrocid.Languages.LanguageInfo.Country*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo_Country" data-uid="Nitrocid.Languages.LanguageInfo.Country">Country</h4>
-  <div class="markdown level1 summary"><p>Country</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public string Country { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">string</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_Custom.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.Custom%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L90">View Source</a>
-  </span>
-  <a id="Nitrocid_Languages_LanguageInfo_Custom_" data-uid="Nitrocid.Languages.LanguageInfo.Custom*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo_Custom" data-uid="Nitrocid.Languages.LanguageInfo.Custom">Custom</h4>
-  <div class="markdown level1 summary"><p>Whether the language is custom</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool Custom { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_FullLanguageName.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.FullLanguageName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L62">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L45">View Source</a>
   </span>
   <a id="Nitrocid_Languages_LanguageInfo_FullLanguageName_" data-uid="Nitrocid.Languages.LanguageInfo.FullLanguageName*"></a>
   <h4 id="Nitrocid_Languages_LanguageInfo_FullLanguageName" data-uid="Nitrocid.Languages.LanguageInfo.FullLanguageName">FullLanguageName</h4>
@@ -327,8 +161,7 @@ public bool Custom { get; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public string FullLanguageName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string FullLanguageName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped">
@@ -350,17 +183,16 @@ public string FullLanguageName { get; }</code></pre>
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_Strings.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.Strings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L97">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L51">View Source</a>
   </span>
   <a id="Nitrocid_Languages_LanguageInfo_Strings_" data-uid="Nitrocid.Languages.LanguageInfo.Strings*"></a>
   <h4 id="Nitrocid_Languages_LanguageInfo_Strings" data-uid="Nitrocid.Languages.LanguageInfo.Strings">Strings</h4>
-  <div class="markdown level1 summary"><p>The localization information containing KS strings</p>
+  <div class="markdown level1 summary"><p>The localization information containing strings (for info purposes)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public Dictionary&lt;string, string&gt; Strings { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; Strings { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped">
@@ -382,7 +214,7 @@ public Dictionary&lt;string, string&gt; Strings { get; }</code></pre>
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_ThreeLetterLanguageName.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.ThreeLetterLanguageName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L55">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L39">View Source</a>
   </span>
   <a id="Nitrocid_Languages_LanguageInfo_ThreeLetterLanguageName_" data-uid="Nitrocid.Languages.LanguageInfo.ThreeLetterLanguageName*"></a>
   <h4 id="Nitrocid_Languages_LanguageInfo_ThreeLetterLanguageName" data-uid="Nitrocid.Languages.LanguageInfo.ThreeLetterLanguageName">ThreeLetterLanguageName</h4>
@@ -391,8 +223,7 @@ public Dictionary&lt;string, string&gt; Strings { get; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public string ThreeLetterLanguageName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ThreeLetterLanguageName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped">
@@ -409,38 +240,6 @@ public string ThreeLetterLanguageName { get; }</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo_Transliterable.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo.Transliterable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L83">View Source</a>
-  </span>
-  <a id="Nitrocid_Languages_LanguageInfo_Transliterable_" data-uid="Nitrocid.Languages.LanguageInfo.Transliterable*"></a>
-  <h4 id="Nitrocid_Languages_LanguageInfo_Transliterable" data-uid="Nitrocid.Languages.LanguageInfo.Transliterable">Transliterable</h4>
-  <div class="markdown level1 summary"><p>Whether or not the language is transliterable (Arabic, Korea, ...)</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool Transliterable { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">bool</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 </article>
           </div>
@@ -453,7 +252,7 @@ public bool Transliterable { get; }</code></pre>
                     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Languages_LanguageInfo.md&amp;value=---%0Auid%3A%20Nitrocid.Languages.LanguageInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L33" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid/Languages/LanguageInfo.cs/#L29" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
