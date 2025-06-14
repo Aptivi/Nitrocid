@@ -10141,11 +10141,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "No se puede deserializar la configuración base {0}"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "No se puede deserializar la configuración personalizada {0}"
     }
   ]
 }

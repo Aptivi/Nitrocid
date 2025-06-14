@@ -10117,11 +10117,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "기본 구성 {0}을 역직렬화할 수 없습니다."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "사용자 정의 구성 {0}을 역직렬화할 수 없습니다."
     }
   ]
 }

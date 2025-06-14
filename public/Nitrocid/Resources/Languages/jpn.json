@@ -10116,11 +10116,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "基本構成 {0} をデシリアル化できません"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "カスタム構成 {0} をデシリアライズできません"
     }
   ]
 }

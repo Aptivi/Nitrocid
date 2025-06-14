@@ -47,7 +47,7 @@ namespace Nitrocid.Arguments.Help
             var argumentList = GetArguments();
             foreach (string arg in argumentList.Keys)
             {
-                string entry = argumentList[arg].GetTranslatedHelpEntry();
+                string entry = LanguageTools.GetLocalized(argumentList[arg].HelpDefinition);
                 string[] usages = [.. argumentList[arg].ArgArgumentInfo.Select((cai) => cai.RenderedUsage).Where((usage) => !string.IsNullOrEmpty(usage))];
                 DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", vars: [arg, entry]);
                 TextWriters.Write("  - {0}{1}: ", false, KernelColorType.ListEntry, arg, usages.Length > 0 ? $" {string.Join(" | ", usages)}" : "");
@@ -74,7 +74,7 @@ namespace Nitrocid.Arguments.Help
             }
 
             // Now, populate usages for each argument
-            string HelpDefinition = argInfo.GetTranslatedHelpEntry();
+            string HelpDefinition = LanguageTools.GetLocalized(argInfo.HelpDefinition);
             var argumentInfos = argInfo.ArgArgumentInfo;
             foreach (var argumentInfo in argumentInfos)
             {

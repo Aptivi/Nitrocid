@@ -10117,11 +10117,11 @@
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
-      "text": "Can't deserialize the base configuration {0}"
+      "text": "Temel yapılandırma {0} seri hale getirilemiyor"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
-      "text": "Can't deserialize the custom configuration {0}"
+      "text": "Özel yapılandırma {0} seri hale getirilemiyor"
     }
   ]
 }
