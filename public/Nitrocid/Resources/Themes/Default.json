@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Default",
         "Description": "NKS_THEMES_DEFAULT_DESC",
-        "Localizable": true,
         "Category": "Standard"
     },
     "InputColor": "15",

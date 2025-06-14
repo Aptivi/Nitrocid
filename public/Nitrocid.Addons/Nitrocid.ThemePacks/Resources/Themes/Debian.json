@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Debian",
         "Description": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",

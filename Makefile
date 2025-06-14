@@ -54,9 +54,7 @@ install:
 	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
 	install -m 755 -t $(FDESTDIR)/lib/ks-$(MODAPI)/ $(BRANDINGS)
 	mv $(FDESTDIR)/bin/ks $(FDESTDIR)/bin/ks-$(MODAPI)
-	mv $(FDESTDIR)/bin/ks-jl $(FDESTDIR)/bin/ks-jl-$(MODAPI)
 	mv $(FDESTDIR)/share/man/man1/ks.1 $(FDESTDIR)/share/man/man1/ks-$(MODAPI).1
-	mv $(FDESTDIR)/share/man/man1/ks-jl.1 $(FDESTDIR)/share/man/man1/ks-jl-$(MODAPI).1
 	mv $(FDESTDIR)/share/applications/ks.desktop $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/bin/ks-*
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop

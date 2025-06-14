@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Alma Linux",
         "Description": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "#F7C512",

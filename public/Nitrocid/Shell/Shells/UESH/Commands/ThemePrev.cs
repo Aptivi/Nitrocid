@@ -104,7 +104,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 var themeInstance = ThemeTools.GetThemeInfo(theme);
                                 string name = themeInstance.Name;
-                                string desc = themeInstance.Localizable ? LanguageTools.GetLocalized(themeInstance.Description) : themeInstance.Description;
+                                string desc = LanguageTools.GetLocalized(themeInstance.Description);
                                 var ici = new InputChoiceInfo(
                                     theme,
                                     $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEEXPIRED") : LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEAVAILABLE"))}]" : "")}",

@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Night Sky",
         "Description": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
-        "Localizable": true,
         "Category": "Mesmerizing"
     },
     "InputColor": "255;255;255",

@@ -17,6 +17,7 @@
         <RepositoryType>git</RepositoryType>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <AptLocDisableInvalidCultureWarnings>true</AptLocDisableInvalidCultureWarnings>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
 

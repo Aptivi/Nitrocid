@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Red Hat",
         "Description": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",

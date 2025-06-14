@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Linux (colored defaults)",
         "Description": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
-        "Localizable": true,
         "Category": "Standard"
     },
     "InputColor": "7",

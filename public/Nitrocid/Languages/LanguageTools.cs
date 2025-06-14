@@ -18,7 +18,7 @@
 //
 
 using LocaleStation.Tools;
-using Terminaux.Localized;
+using Nitrocid.Localized;
 
 namespace Nitrocid.Languages
 {

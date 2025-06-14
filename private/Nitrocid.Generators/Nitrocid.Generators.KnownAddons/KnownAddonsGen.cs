@@ -102,7 +102,7 @@ namespace Nitrocid.Generators.KnownAddons
                 string project = addonData.Project;
                 builder.AppendLine(
                     $$"""
-                                { KnownAddons.{{name}}, ("{{project}}", /* Localizable */ "{{display}}") },
+                                { KnownAddons.{{name}}, ("{{project}}", "{{display}}") },
                     """
                 );
             }

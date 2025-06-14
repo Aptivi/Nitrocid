@@ -42,7 +42,6 @@ namespace Nitrocid.ConsoleBase.Themes
     public class ThemeInfo
     {
 
-        internal bool localizable = false;
         internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
@@ -102,11 +101,6 @@ namespace Nitrocid.ConsoleBase.Themes
         /// The category in which the theme is categorized
         /// </summary>
         public ThemeCategory Category { get; }
-        /// <summary>
-        /// Whether the theme description is localizable (Only set this to true on internal Nitrocid KS themes)
-        /// </summary>
-        public bool Localizable =>
-            localizable;
         /// <summary>
         /// The calendar name in which the event is assigned to
         /// </summary>
@@ -195,7 +189,6 @@ namespace Nitrocid.ConsoleBase.Themes
             Description = metadata.Description;
             TrueColorRequired = ThemeTools.MinimumTypeRequired(ThemeColors, ColorType.TrueColor);
             Category = metadata.Category;
-            localizable = metadata.Localizable;
 
             // Parse event-related info
             IsEvent = metadata.IsEvent;

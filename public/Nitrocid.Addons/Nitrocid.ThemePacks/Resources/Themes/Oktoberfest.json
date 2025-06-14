@@ -7,7 +7,6 @@
         "StartDay": 26,
         "EndMonth": 10,
         "EndDay": 12,
-        "Localizable": true,
         "Category": "Exciting"
     },
     "InputColor": "129;69;3",

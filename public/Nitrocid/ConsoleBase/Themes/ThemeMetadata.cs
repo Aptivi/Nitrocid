@@ -41,8 +41,6 @@ namespace Nitrocid.ConsoleBase.Themes
         private readonly string calendar;
         [JsonProperty(nameof(Category))]
         private readonly ThemeCategory category;
-        [JsonProperty(nameof(Localizable))]
-        private readonly bool localizable;
         [JsonProperty(nameof(UseAccentTypes))]
         private readonly string[] useAccentTypes;
 
@@ -74,14 +72,11 @@ namespace Nitrocid.ConsoleBase.Themes
         public ThemeCategory Category =>
             category;
         [JsonIgnore]
-        public bool Localizable =>
-            localizable;
-        [JsonIgnore]
         public string[] UseAccentTypes =>
             useAccentTypes;
 
         [JsonConstructor]
-        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, ThemeCategory category, bool localizable, string[] useAccentTypes)
+        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, ThemeCategory category, string[] useAccentTypes)
         {
             this.name = name;
             this.description = description;
@@ -92,7 +87,6 @@ namespace Nitrocid.ConsoleBase.Themes
             this.endDay = endDay;
             this.calendar = calendar;
             this.category = category;
-            this.localizable = localizable;
             this.useAccentTypes = useAccentTypes ?? [];
         }
     }

@@ -2,7 +2,6 @@
     "Metadata": {
         "Name": "Arch Linux",
         "Description": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
-        "Localizable": true,
         "Category": "Linux"
     },
     "InputColor": "15",
