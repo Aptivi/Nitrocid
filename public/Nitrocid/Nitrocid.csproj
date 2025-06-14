@@ -57,9 +57,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Themes\*.json" />
     <EmbeddedResource Include="Resources\Settings\*.json" />
-    <EmbeddedResource Include="Resources\Languages\*.json" />
   </ItemGroup>
   <!-- KS Manifest End -->
+
+  <!-- KS Localizations -->
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
+  </ItemGroup>
+  <!-- KS Localizations End -->
 
   <!-- KS Audio Themes -->
   <ItemGroup>
