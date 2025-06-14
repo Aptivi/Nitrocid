@@ -1,28 +1,28 @@
 [
     {
         "Name": "General",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_GENERAL_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_GENERAL_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
                 "Type": "SBoolean",
                 "Variable": "DevNoticeConsented",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowLicenseInfoBox",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME",
                         "Type": "SSelection",
                         "Variable": "CurrentLanguage",
                         "IsEnumeration": false,
@@ -36,166 +36,166 @@
                             }
                         ],
                         "SelectionFallback": [ "eng" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_NAME",
                         "Type": "SSelection",
                         "Variable": "CurrentCultureName",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetCultureCodes",
                         "SelectionFunctionType": "CultureManager",
                         "SelectionFallback": [ "en-US" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
                         "Type": "SBoolean",
                         "Variable": "SetCodepage",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC"),
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
                         "UnsupportedPlatforms": [ "Unix", "macOS" ]
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
                         "Type": "SBoolean",
                         "Variable": "UseSystemTimeZone",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_NAME",
                         "Type": "SSelection",
                         "Variable": "KernelWideTimeZone",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetTimeZoneNames",
                         "SelectionFunctionType": "TimeZones",
                         "SelectionFallback": [ "Etc/UTC", "GMT" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_NAME",
                         "Type": "SString",
                         "Variable": "BootStyle",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_NAME",
                         "Type": "SIntSlider",
                         "Variable": "BootSelectTimeoutSeconds",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_DESC"),
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 600
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_NAME",
                         "Type": "SInt",
                         "Variable": "BootSelect",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableHomepage",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableHomepageWidgets",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableHomepageRssFeed",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME",
                         "Type": "SSelection",
                         "Variable": "HomepageWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
                         "Type": "SBoolean",
                         "Variable": "CheckUpdateStart",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_NAME",
                         "Type": "SBoolean",
                         "Variable": "NotifyFaultsBoot",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowStackTraceOnKernelError",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
                         "Type": "SBoolean",
                         "Variable": "SimulateNoAPM",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_NAME",
                         "Type": "SBoolean",
                         "Variable": "BeepOnShutdown",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_NAME",
                         "Type": "SBoolean",
                         "Variable": "DelayOnShutdown",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_DESC"
                     }
                 ]
             }
@@ -203,347 +203,347 @@
     },
     {
         "Name": "Colors",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ACCENT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_ACCENT_NAME",
                 "Type": "SBoolean",
                 "Variable": "UseAccentColors",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ACCENT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_ACCENT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_FGACCENT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_FGACCENT_NAME",
                 "Type": "SColor",
                 "Variable": "AccentForegroundColor",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_FGACCENT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_FGACCENT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_BGACCENT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_BGACCENT_NAME",
                 "Type": "SColor",
                 "Variable": "AccentBackgroundColor",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_BGACCENT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_BGACCENT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_NAME",
                 "Type": "SBoolean",
                 "Variable": "UseConsoleColorPalette",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_NAME",
                 "Type": "SBoolean",
                 "Variable": "AllowBackgroundColor",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_NAME",
                 "Type": "SBoolean",
                 "Variable": "ConsoleSupportsTrueColor",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERNAMECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERNAMECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "UserNameShellColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_HOSTNAMECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_HOSTNAMECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "HostNameShellColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_CONTKERNELERRORCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_CONTKERNELERRORCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ContinuableKernelErrorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_UNCONTKERNELERRORCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_UNCONTKERNELERRORCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "UncontinuableKernelErrorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TEXTCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TEXTCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TextColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LICENSECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_LICENSECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "LicenseColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_BGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "BackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_INPUTCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_INPUTCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "InputColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTENTRYCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTENTRYCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ListEntryColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTVALUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTVALUECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ListValueColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "KernelStageColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_ERRORCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_ERRORCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ErrorTextColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_WARNINGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_WARNINGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "WarningTextColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "OptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BANNERCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_BANNERCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "BannerColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONTITLECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONTITLECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "NotificationTitleColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONDESCCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONDESCCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "NotificationDescriptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONPROGRESSCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONPROGRESSCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "NotificationProgressColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONFAILURECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONFAILURECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "NotificationFailureColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_QUESTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_QUESTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "QuestionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SUCCESSCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SUCCESSCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "SuccessColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERDOLLARCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERDOLLARCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "UserDollarColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TIPCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TIPCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TipColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPTEXTCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPTEXTCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "SeparatorTextColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "SeparatorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTTITLECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTTITLECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ListTitleColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DEVWARNINGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_DEVWARNINGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "DevelopmentWarningColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGETIMECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGETIMECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "StageTimeColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PROGRESSCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_PROGRESSCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "ProgressColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BACKOPTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_BACKOPTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "BackOptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LPBORDERCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_LPBORDERCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "LowPriorityBorderColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_MPBORDERCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_MPBORDERCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "MediumPriorityBorderColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_HPBORDERCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_HPBORDERCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "HighPriorityBorderColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLESEPCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLESEPCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TableSeparatorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEHEADERCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEHEADERCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TableHeaderColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEVALUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEVALUECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TableValueColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDOPTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDOPTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "SelectedOptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_ALTOPTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_ALTOPTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "AlternativeOptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_WEEKENDDAYCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_WEEKENDDAYCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "WeekendDayColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_EVENTDAYCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_EVENTDAYCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "EventDayColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLETITLECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLETITLECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TableTitleColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TODAYDAYCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TODAYDAYCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TodayDayColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiBackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiForegroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANEBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANEBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneBackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANESEPARATORCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANESEPARATORCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneSeparatorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUISELECTEDPANESEPARATORCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUISELECTEDPANESEPARATORCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedSeparatorColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedItemForeColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedItemBackColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneItemForeColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiPaneItemBackColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiOptionBackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiOptionForegroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBINDINGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBINDINGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingOptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiBoxBackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiBoxForegroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DISABLEDOPTIONCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_DISABLEDOPTIONCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "DisabledOptionColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinBackgroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGFGCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGFGCOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinForegroundColor"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinColor"
                     }
@@ -553,162 +553,162 @@
     },
     {
         "Name": "Hardware",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"),
+        "Desc": "NKS_SETTINGS_KERNEL_HARDWARE_DESC",
+        "DisplayAs": "NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_NAME",
                 "Type": "SBoolean",
                 "Variable": "QuietHardwareProbe",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_NAME",
                 "Type": "SBoolean",
                 "Variable": "VerboseHardwareProbe",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_DESC"
             }
         ]
     },
     {
-        "Name": LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGIN"),
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_DISPLAYAS"),
+        "Name": "NKS_USERS_LOGIN_MODERNLOGON_LOGIN",
+        "Desc": "NKS_SETTINGS_KERNEL_LOGIN_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_LOGIN_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowMOTD",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
                 "Type": "SBoolean",
                 "Variable": "ClearOnLogin",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME",
                 "Type": "SString",
                 "Variable": "HostName",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowAvailableUsers",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
                 "Type": "SString",
                 "Variable": "MotdFilePath",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
                 "Type": "SString",
                 "Variable": "MalFilePath",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MALPATH_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "UsernamePrompt",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "PasswordPrompt",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowMAL",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_NAME",
                 "Type": "SBoolean",
                 "Variable": "IncludeAnonymous",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_NAME",
                 "Type": "SBoolean",
                 "Variable": "IncludeDisabled",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentLoginHandler",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetHandlerNames",
                 "SelectionFunctionType": "LoginHandlerTools",
                 "SelectionFallback": [ "classic", "modern" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HANDLER_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
                         "Type": "SBoolean",
                         "Variable": "MotdHeadlineBottom",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableWidgets",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
                         "Type": "SSelection",
                         "Variable": "FirstWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
                         "Type": "SSelection",
                         "Variable": "SecondWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC"
                     }
                 ]
             }
         ]
     },
     {
-        "Name": LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"),
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_DISPLAYAS"),
+        "Name": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL",
+        "Desc": "NKS_SETTINGS_KERNEL_SHELL_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_SHELL_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CURRDIR_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_CURRDIR_NAME",
                 "Type": "SString",
                 "Variable": "CurrentDir",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CURRDIR_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_CURRDIR_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
                 "Type": "SList",
                 "Variable": "PathsToLookup",
                 "SelectionFunctionName": "GetPathList",
@@ -716,10 +716,10 @@
                 "DelimiterVariable": "PathLookupDelimiter",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME",
                 "Type": "SSelection",
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
@@ -727,108 +727,108 @@
                 "Enumeration": "Terminaux.Inputs.Styles.Choice.ChoiceOutputType",
                 "EnumerationAssembly": "Terminaux",
                 "EnumerationZeroBased": true,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_NAME",
                 "Type": "SBoolean",
                 "Variable": "SetTitleOnCommandExecution",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_COUNT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_COUNT_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowShellCount",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_COUNT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_COUNT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_NAME",
                 "Type": "SBoolean",
                 "Variable": "InputHistoryEnabled",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_NAME",
                         "Type": "SBoolean",
                         "Variable": "SimHelp",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowCommandsCount",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowShellCommandsCount",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowShellAliasesCount",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowUnifiedCommandsCount",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowAddonCommandsCount",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_SHELLPRESET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_SHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "PromptPreset",
-                        "ShellType": LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"),
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
+                        "ShellType": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL",
+                        "Description": ""
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_TEXTSHELLPRESET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_TEXTSHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "TextEditPromptPreset",
                         "ShellType": "TextShell",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
+                        "Description": ""
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_HEXSHELLPRESET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_HEXSHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "HexEditPromptPreset",
                         "ShellType": "HexShell",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
+                        "Description": ""
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_ADMINSHELLPRESET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_ADMINSHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "AdminShellPromptPreset",
                         "ShellType": "AdminShell",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
+                        "Description": ""
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_DEBUGSHELLPRESET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_DEBUGSHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "DebugShellPromptPreset",
                         "ShellType": "DebugShell",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
+                        "Description": ""
                     }
                 ]
             }
@@ -836,671 +836,671 @@
     },
     {
         "Name": "Filesystem",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_FILESYSTEM_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_FILESYSTEM_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_NAME",
                 "Type": "SSelection",
                 "Variable": "SortMode",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Files.Folders.FilesystemSortOptions",
                 "EnumerationZeroBased": false,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_NAME",
                 "Type": "SSelection",
                 "Variable": "SortDirection",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Files.Folders.FilesystemSortDirection",
                 "EnumerationZeroBased": false,
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_NAME",
                 "Type": "SBoolean",
                 "Variable": "HiddenFiles",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_NAME",
                 "Type": "SBoolean",
                 "Variable": "FullParseMode",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowFilesystemProgress",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowFileDetailsList",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_NAME",
                 "Type": "SBoolean",
                 "Variable": "SuppressUnauthorizedMessages",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_NAME",
                 "Type": "SBoolean",
                 "Variable": "PrintLineNumbers",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_NAME",
                 "Type": "SBoolean",
                 "Variable": "SortList",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowTotalSizeInList",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_NAME",
                 "Type": "SBoolean",
                 "Variable": "SortLogically",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_DESC"
             }
         ]
     },
     {
         "Name": "Network",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_NETWORK_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_NETWORK_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_NAME",
                 "Type": "SInt",
                 "Variable": "DownloadRetries",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_NAME",
                 "Type": "SInt",
                 "Variable": "UploadRetries",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowProgress",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
                 "Type": "SBoolean",
                 "Variable": "SSHBanner",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
                 "Type": "SBoolean",
                 "Variable": "RPCEnabled",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_NAME",
                 "Type": "SInt",
                 "Variable": "RPCPort",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "PingTimeout",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_NAME",
                 "Type": "SString",
                 "Variable": "DownloadPercentagePrint",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_NAME",
                 "Type": "SString",
                 "Variable": "UploadPercentagePrint",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_NAME",
                 "Type": "SBoolean",
                 "Variable": "DownloadNotificationProvoke",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_NAME",
                 "Type": "SBoolean",
                 "Variable": "UploadNotificationProvoke",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_NAME",
                         "Type": "SInt",
                         "Variable": "DebugPort",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_NAME",
                         "Type": "SInt",
                         "Variable": "DebugChatPort",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_NAME",
                         "Type": "SBoolean",
                         "Variable": "RecordChatToDebugLog",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_NAME",
                         "Type": "SBoolean",
                         "Variable": "RDebugAutoStart",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_NAME",
                         "Type": "SString",
                         "Variable": "RDebugMessageFormat",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_NAME",
                         "Type": "SBoolean",
                         "Variable": "NotifyOnRemoteDebugConnectionError",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_DESC"
                     }
                 ]
             }
         ]
     },
     {
-        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DISPLAYAS"),
+        "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME",
+        "Desc": "NKS_SETTINGS_KERNEL_SCREENSAVER_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_SCREENSAVER_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME",
                 "Type": "SSelection",
                 "Variable": "DefaultSaverName",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetScreensaverNames",
-                "SelectionFunctionType": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
+                "SelectionFunctionType": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME",
                 "SelectionFallback": [ "matrixbleed" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_NAME",
                 "Type": "SBoolean",
                 "Variable": "ScreenTimeoutEnabled",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_NAME",
                 "Type": "SString",
                 "Variable": "ScreenTimeout",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_NAME",
                 "Type": "SBoolean",
                 "Variable": "ScreensaverDebug",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_NAME"),
+                "Name": "NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_NAME",
                 "Type": "SBoolean",
                 "Variable": "PasswordLock",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_DESC")
+                "Description": "NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_NAME",
                 "Type": "SBoolean",
                 "Variable": "ScreensaverSeizureAcknowledged",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_NAME",
                 "Type": "SBoolean",
                 "Variable": "ScreensaverUnifiedDelay",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "ScreensaverDelay",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
             }
         ]
     },
     {
         "Name": "Audio",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_AUDIO_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_AUDIO_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableAudio",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableKeyboardCues",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableStartupSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableShutdownSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableNavigationSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableLowPriorityNotificationSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableMediumPriorityNotificationSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableHighPriorityNotificationSounds",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableAmbientSoundFx",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableAmbientSoundFxIntense",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
                 "Type": "SDouble",
                 "Variable": "AudioCueVolume",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_THEME_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_THEME_NAME",
                 "Type": "SSelection",
                 "Variable": "AudioCueThemeName",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetAudioThemeNames",
                 "SelectionFunctionType": "AudioCuesTools",
                 "SelectionFallback": [ "the_mirage" ],
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_THEME_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_THEME_DESC"
             }
         ]
     },
     {
         "Name": "Misc",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DESC"),
-        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DISPLAYAS"),
+        "Desc": "NKS_SETTINGS_KERNEL_MISC_DESC",
+        "DisplayAs": "NKS_SETTINGS_KERNEL_MISC_DISPLAYAS",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DND_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_DND_NAME",
                 "Type": "SBoolean",
                 "Variable": "DoNotDisturb",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DND_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_MISC_DND_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME",
                         "Type": "SBoolean",
                         "Variable": "TextEditAutoSaveFlag",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_NAME",
                         "Type": "SInt",
                         "Variable": "TextEditAutoSaveInterval",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_NAME",
                         "Type": "SBoolean",
                         "Variable": "HexEditAutoSaveFlag",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVEINTERVAL_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVEINTERVAL_NAME",
                         "Type": "SInt",
                         "Variable": "HexEditAutoSaveInterval",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEADLINE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_HEADLINE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEADLINE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_HEADLINE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowHeadlineOnLogin",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
                         "Type": "SString",
                         "Variable": "RssHeadlineUrl",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_MOUSE_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_MOUSE_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
                         "Type": "SBoolean",
                         "Variable": "InitializeCursorHandler",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_NAME",
                         "Type": "SBoolean",
                         "Variable": "HandleCursorMovement",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_NAME",
                         "Type": "SBoolean",
                         "Variable": "DebugCensorPrivateInfo",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_NAME",
                         "Type": "SBoolean",
                         "Variable": "CpuUsageDebugEnabled",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_NAME",
                         "Type": "SIntSlider",
                         "Variable": "CpuUsageUpdateInterval",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_DESC"),
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_DESC",
                         "MinimumValue": 1000,
                         "MaximumValue": 1000000
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_NAME",
                         "Type": "SBoolean",
                         "Variable": "EventDebug",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_DESC"
                     }
                 ]
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NAME",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DESC"),
+                "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableSplash",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_NAME",
                         "Type": "SSelection",
                         "Variable": "SplashName",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetNamesOfSplashes",
                         "SelectionFunctionType": "SplashManager",
                         "SelectionFallback": [ "Simple" ],
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
                         "Type": "SString",
                         "Variable": "CustomBanner",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowAppInfoOnBoot",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowStageFinishTimes",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_NAME",
                         "Type": "SBoolean",
                         "Variable": "ShowCurrentTimeBeforeLogin",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_NAME",
                         "Type": "SBoolean",
                         "Variable": "StartScroll",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_NAME",
                         "Type": "SBoolean",
                         "Variable": "LongTimeDate",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_NAME",
                         "Type": "SBoolean",
                         "Variable": "DrawBorderNotification",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME",
                         "Type": "SMultivar",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DESC"),
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DESC",
                         "Variables": [
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_ULCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_ULCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperLeftCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_URCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_URCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperRightCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_URCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_URCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LLCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LLCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerLeftCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LRCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LRCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerRightCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_UPFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_UPFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LOFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LOFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LEFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LEFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyLeftFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_RIFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_RIFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "NotifyRightFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC"
                             }
                         ]
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
                         "Type": "SChar",
                         "Variable": "CurrentMask",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableScrollBarInSelection",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_NAME",
                         "Type": "SMultivar",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_DESC"),
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_DESC",
                         "Variables": [
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_ULCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_ULCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderUpperLeftCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_URCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_URCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderUpperRightCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_URCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_URCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LLCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_LLCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderLowerLeftCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LRCORNERCHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_LRCORNERCHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderLowerRightCornerChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_UPFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_UPFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderUpperFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LOFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_LOFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderLowerFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LEFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_LEFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderLeftFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC"
                             },
                             {
-                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RIFRAMECHAR_NAME"),
+                                "Name": "NKS_SETTINGS_KERNEL_MISC_RIFRAMECHAR_NAME",
                                 "Type": "SChar",
                                 "Variable": "BorderRightFrameChar",
-                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC")
+                                "Description": "NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC"
                             }
                         ]
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_NAME",
                         "Type": "SBoolean",
                         "Variable": "NotifyDisplayAsAsterisk",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_NAME",
                         "Type": "SBoolean",
                         "Variable": "IfmShowFileSize",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_NAME",
                         "Type": "SBoolean",
                         "Variable": "ClassicSettingsHeaderStyle",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_NAME"),
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_NAME",
                         "Type": "SFiglet",
                         "Variable": "DefaultFigletFontName",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_DESC")
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_DESC"
                     }
                 ]
             }

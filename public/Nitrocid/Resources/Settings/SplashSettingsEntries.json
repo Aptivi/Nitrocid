@@ -1,13 +1,13 @@
 [
     {
         "Name": "Welcome",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_SPLASH_WELCOME_DESC"),
+        "Desc": "NKS_SETTINGS_SPLASH_WELCOME_DESC",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_NAME"),
+                "Name": "NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "WelcomeShowProgress",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_DESC")
+                "Description": "NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_DESC"
             }
         ]
     }

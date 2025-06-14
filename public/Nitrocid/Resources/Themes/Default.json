@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Default",
-        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_THEMES_DEFAULT_DESC"),
+        "Description": "NKS_THEMES_DEFAULT_DESC",
         "Localizable": true,
         "Category": "Standard"
     },

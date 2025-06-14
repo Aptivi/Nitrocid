@@ -1,92 +1,92 @@
 [
     {
         "Name": "Analog",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_DESC"),
+        "Desc": "NKS_SETTINGS_WIDGETS_ANALOG_DESC",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "AnalogDelay",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_NAME"),
+                "Name": "NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_NAME",
                 "Type": "SBoolean",
                 "Variable": "AnalogShowSecondsHand",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_DESC")
+                "Description": "NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC"),
+                "Description": "NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_TRUECOLORS_NAME",
                         "Type": "SBoolean",
                         "Variable": "AnalogTrueColor",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_DESC")
+                        "Description": "NKS_SETTINGS_COMMON_TRUECOLORS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumRedColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumGreenColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumBlueColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumRedColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumGreenColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumBlueColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }
@@ -96,92 +96,92 @@
     },
     {
         "Name": "Digital",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DESC"),
+        "Desc": "NKS_SETTINGS_WIDGETS_DIGITAL_DESC",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "DigitalDelay",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_NAME"),
+                "Name": "NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_NAME",
                 "Type": "SBoolean",
                 "Variable": "DigitalDisplayDate",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_DESC")
+                "Description": "NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
+                "Name": "NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS",
                 "Type": "SMultivar",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC"),
+                "Description": "NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC",
                 "Variables": [
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_TRUECOLORS_NAME",
                         "Type": "SBoolean",
                         "Variable": "DigitalTrueColor",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_DESC")
+                        "Description": "NKS_SETTINGS_COMMON_TRUECOLORS_DESC"
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumRedColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumGreenColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumBlueColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MINCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MINCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumRedColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumGreenColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumBlueColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_NAME"),
+                        "Name": "NKS_SETTINGS_COMMON_MAXCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumColorLevel",
-                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_DESC"),
+                        "Description": "NKS_SETTINGS_COMMON_MAXCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }
@@ -191,19 +191,19 @@
     },
     {
         "Name": "Emoji",
-        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_DESC"),
+        "Desc": "NKS_SETTINGS_WIDGETS_EMOJI_DESC",
         "Keys": [
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_NAME"),
+                "Name": "NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_NAME",
                 "Type": "SBoolean",
                 "Variable": "EmojiWidgetCycleEmoticons",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_DESC")
+                "Description": "NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_DESC"
             },
             {
-                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_NAME"),
+                "Name": "NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_NAME",
                 "Type": "SIcon",
                 "Variable": "EmojiWidgetEmoticonName",
-                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_DESC")
+                "Description": "NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_DESC"
             }
         ]
     }
