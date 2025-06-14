@@ -1,10 +1,5 @@
 [
     {
-        "name": "AddonLanguagePacks",
-        "display": "Extra Languages Pack",
-        "project": "LanguagePacks"
-    },
-    {
         "name": "AddonScreensaverPacks",
         "display": "Extra Screensavers Pack",
         "project": "ScreensaverPacks"
