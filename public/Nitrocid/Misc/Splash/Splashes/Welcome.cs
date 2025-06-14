@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -65,18 +65,18 @@ namespace Nitrocid.Misc.Splash.Splashes
             // Populate some text
             string text =
                 (context == SplashContext.Preboot ?
-                 Translate.DoTranslation("Please wait") :
-                 Translate.DoTranslation("Loading"))
+                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT") :
+                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING"))
                 .ToUpper();
             string bottomText =
-                context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing") :
-                context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down") :
-                context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting") :
-                $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}";
+                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
+                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
+                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART") :
+                $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}";
             bottomText +=
-                KernelEntry.SafeMode ? $" - {Translate.DoTranslation("Safe Mode")}"  :
-                KernelEntry.Maintenance ? $" - {Translate.DoTranslation("Maintenance Mode")}" :
-                KernelEntry.DebugMode ? $" - {Translate.DoTranslation("Debug Mode")}" :
+                KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}"  :
+                KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
+                KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
                 "";
 
             // Write a glorious Welcome screen
@@ -134,8 +134,8 @@ namespace Nitrocid.Misc.Splash.Splashes
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text =
                 (context == SplashContext.StartingUp ?
-                 Translate.DoTranslation("Welcome!") :
-                 Translate.DoTranslation("Goodbye!"))
+                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
+                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -189,8 +189,8 @@ namespace Nitrocid.Misc.Splash.Splashes
             Color col = KernelColorTools.GetColor(colorType);
             string text =
                 (SplashManager.CurrentSplashContext == SplashContext.StartingUp ?
-                 Translate.DoTranslation("Welcome!") :
-                 Translate.DoTranslation("Goodbye!"))
+                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
+                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;

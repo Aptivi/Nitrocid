@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,11 +25,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class Debug : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Enables the debugger");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelEntry.DebugMode);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_PREV") + ": {0}", KernelEntry.DebugMode);
             if (!KernelEntry.DebugMode)
             {
                 KernelEntry.DebugMode = true;
@@ -43,7 +43,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 KernelEntry.DebugMode = false;
                 PowerManager.RebootRequested = false;
             }
-            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", KernelEntry.DebugMode);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_CURR") + ": {0}", KernelEntry.DebugMode);
         }
     }
 }

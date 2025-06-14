@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,12 +45,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (!int.TryParse(parameters.ArgumentsList[0], out var freq))
                 {
-                    TextWriters.Write(Translate.DoTranslation("The frequency is invalid. Make sure that you've correctly written the frequency in hertz."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
                 if (!int.TryParse(parameters.ArgumentsList[1], out var ms))
                 {
-                    TextWriters.Write(Translate.DoTranslation("The duration is invalid. Make sure that you've correctly written the duration in milliseconds."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
                 ConsoleWrapper.Beep(freq, ms);

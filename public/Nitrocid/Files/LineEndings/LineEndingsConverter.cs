@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,7 +53,7 @@ namespace Nitrocid.Files
         public static void ConvertLineEndings(string TextFile, bool force)
         {
             if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NEEDSTEXTFILE"));
             DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile);
         }
 
@@ -66,7 +66,7 @@ namespace Nitrocid.Files
         public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle, bool force)
         {
             if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NEEDSTEXTFILE"));
             DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile, LineEndingStyle);
         }
 

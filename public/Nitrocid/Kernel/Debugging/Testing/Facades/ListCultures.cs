@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,11 +26,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ListCultures : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Lists supported cultures");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
-            string Text = InputTools.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
+            string Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_PROMPT") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo Cult in Cults)
             {

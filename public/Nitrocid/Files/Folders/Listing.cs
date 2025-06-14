@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -96,7 +96,7 @@ namespace Nitrocid.Files
                 {
                     enumeration = CreateList(folder, Sort, Recursive);
                     if (enumeration.Count == 0)
-                        TextWriters.Write(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, KernelColorType.Warning);
 
                     // Enumerate each entry
                     long TotalSize = 0L;
@@ -119,24 +119,24 @@ namespace Nitrocid.Files
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.Write("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
 
                     // Show total size in list optionally
                     if (Config.MainConfig.ShowTotalSizeInList)
-                        TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", TotalSize.SizeString());
+                        TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_FILES_LISTTOTALSIZE") + " {0}", TotalSize.SizeString());
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -149,19 +149,19 @@ namespace Nitrocid.Files
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, KernelColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.Write("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, KernelColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
@@ -214,7 +214,7 @@ namespace Nitrocid.Files
                 {
                     enumeration = CreateList(folder, Sort);
                     if (enumeration.Count == 0)
-                        TextWriters.Write(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, KernelColorType.Warning);
 
                     // Enumerate each entry
                     foreach (FileSystemEntry Entry in enumeration)
@@ -237,20 +237,20 @@ namespace Nitrocid.Files
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.WriteListEntry(name, Translate.DoTranslation("Unauthorized"), indent: level);
+                                TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), indent: level);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.WriteListEntry(name, Translate.DoTranslation("Error"), indent: level);
+                                TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_ERROR"), indent: level);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -265,19 +265,19 @@ namespace Nitrocid.Files
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.WriteListEntry(name, Translate.DoTranslation("Unauthorized"));
+                        TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.WriteListEntry(name, Translate.DoTranslation("Error"));
+                        TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_ERROR"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }

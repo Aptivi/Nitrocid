@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,18 +45,18 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditTools.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
-                    TextWriters.Write(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }

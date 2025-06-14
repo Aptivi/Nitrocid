@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,12 +38,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("No such extension."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), KernelColorType.Error);
                 return 23;
             }
             if (!ExtensionHandlerTools.IsHandlerRegisteredSpecific(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriters.Write(Translate.DoTranslation("No such implementer."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSIMPLEMENTER"), KernelColorType.Error);
                 return 24;
             }
             ExtensionHandlerTools.SetExtensionHandler(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);

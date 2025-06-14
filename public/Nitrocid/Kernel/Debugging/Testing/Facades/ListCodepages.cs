@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ListCodepages : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Lists all supported codepages");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCODEPAGES_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {

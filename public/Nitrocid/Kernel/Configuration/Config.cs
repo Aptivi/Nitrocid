@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Configuration
                 return;
 
             if (!FilesystemTools.FolderExists(ConfigFolder))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NEEDSFOLDER"));
             DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", vars: [ConfigFolder]);
 
             // Save all configuration types
@@ -282,12 +282,12 @@ namespace Nitrocid.Kernel.Configuration
         {
             // Open the config JSON file
             if (!FilesystemTools.FileExists(ConfigPath))
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NEEDSFILE"));
 
             // Fix up and read!
             DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so fixing and reading...", vars: [ConfigPath]);
             if (type is not BaseKernelConfig baseType)
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Not a valid config class."));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_INVALIDCLASS"));
             try
             {
                 // First, fix the configuration file up
@@ -307,7 +307,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Fatal error trying to parse and validate config file! {0}", vars: [e.Message]);
                 DebugWriter.WriteDebugStackTrace(e);
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."), e);
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_INVALID"), e);
             }
         }
 
@@ -328,8 +328,8 @@ namespace Nitrocid.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
-                    NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationPriority.Medium, NotificationType.Normal));
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
+                    NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_NOTIFICATION_LOADERROR_TITLE"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_NOTIFICATION_LOADERROR_DESC"), NotificationPriority.Medium, NotificationType.Normal));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_READFAILED"), ex, ex.Message);
             }
         }
 
@@ -354,11 +354,11 @@ namespace Nitrocid.Kernel.Configuration
             {
                 var vars = ConfigTools.CheckConfigVariables();
                 if (vars.Any((varFound) => !varFound))
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Kernel configuration will not work properly. Consult the kernel debugger for more info."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED"));
             }
             catch (KernelException cex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_VALIDATIONFAILED") + $" {cex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });
@@ -373,7 +373,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_READINGFAILED") + $" {cex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });
@@ -384,7 +384,7 @@ namespace Nitrocid.Kernel.Configuration
                 ConfigTools.NotifyConfigError = true;
 
                 // Fix anyways, for compatibility...
-                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Trying to fix configuration..."), new InfoBoxSettings()
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_TRYINGTOFIX"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool isAsymmetric = DriverHandler.IsRegistered<IEncodingAsymmetricDriver>(algorithm);
             if (isAsymmetric)
             {
-                TextWriters.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encoding);
             }
 
@@ -57,9 +57,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             byte[] iv = driver.Iv;
             string keyDecomposed = driver.DecomposeBytesFromString(key);
             string ivDecomposed = driver.DecomposeBytesFromString(iv);
-            TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
             variableValue = $"[{keyDecomposed}, {ivDecomposed}]";
             return 0;

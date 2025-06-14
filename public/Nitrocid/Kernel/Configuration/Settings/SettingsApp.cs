@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,7 +64,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             // Verify that we actually have the type
             if (settingsType is null)
             {
-                TextWriters.Write(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND"), true, KernelColorType.Error);
                 return;
             }
 
@@ -79,17 +79,17 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     config = settingsType,
                     lastFirstPaneIdx = -1,
                 };
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save as"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Load from"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reload"), ConsoleKey.F4, (_, _, _, _) => tui.Reload()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Migrate"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Check for system updates"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("System information"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset all"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset entry"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Select configuration"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SET"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVEAS"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_LOADFROM"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RELOAD"), ConsoleKey.F4, (_, _, _, _) => tui.Reload()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_MIGRATE"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETALL"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETENTRY"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
@@ -99,39 +99,39 @@ namespace Nitrocid.Kernel.Configuration.Settings
             SettingsEntry[]? SettingsEntries = settingsType.SettingsEntries;
             if (SettingsEntries is null || SettingsEntries.Length == 0)
             {
-                TextWriters.Write(Translate.DoTranslation("Settings entries are not found."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"), true, KernelColorType.Error);
                 return;
             }
             int MaxSections = SettingsEntries.Length;
 
             // TODO: We need to remove the legacy settings app in v0.2.1.
-            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The legacy settings app has been deprecated and will be removed in a future release."));
+            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN"));
             while (!PromptFinished)
             {
                 // Populate sections and alt options
                 var sections = SettingsAppTools.GetSectionChoices(SettingsEntries);
                 var altSections = new InputChoiceInfo[]
                 {
-                    new($"{MaxSections + 1}", Translate.DoTranslation("Find an option"), Translate.DoTranslation("Allows you to easily search for a settings entry using either its title or its value.")),
-                    new($"{MaxSections + 2}", Translate.DoTranslation("Save settings"), Translate.DoTranslation("Saves your kernel configuration changes to the config file found in the application data folder.")),
-                    new($"{MaxSections + 3}", Translate.DoTranslation("Save settings as"), Translate.DoTranslation("Saves your kernel configuration changes to the config file found in the specified folder.")),
-                    new($"{MaxSections + 4}", Translate.DoTranslation("Load settings from"), Translate.DoTranslation("Loads the kernel configuration from the specified config file.")),
-                    new($"{MaxSections + 5}", Translate.DoTranslation("Reload settings"), Translate.DoTranslation("Reloads the kernel configuration for any external changes")),
-                    new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates"), Translate.DoTranslation("Checks for system updates (requires an active Internet connection).")),
-                    new($"{MaxSections + 7}", Translate.DoTranslation("System information"), Translate.DoTranslation("Shows you basic system information (more info available in the 'sysinfo' command).")),
-                    new($"{MaxSections + 8}", Translate.DoTranslation("Migrate old configuration"), Translate.DoTranslation("Migrates some of your old configuration from older versions of the kernel")),
-                    new($"{MaxSections + 9}", Translate.DoTranslation("Select configuration"), Translate.DoTranslation("Prompts you to select a configuration instance")),
-                    new($"{MaxSections + 10}", Translate.DoTranslation("Exit")),
+                    new($"{MaxSections + 1}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC")),
+                    new($"{MaxSections + 2}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC")),
+                    new($"{MaxSections + 3}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC")),
+                    new($"{MaxSections + 4}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC")),
+                    new($"{MaxSections + 5}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC")),
+                    new($"{MaxSections + 6}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC")),
+                    new($"{MaxSections + 7}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC")),
+                    new($"{MaxSections + 8}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC")),
+                    new($"{MaxSections + 9}", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG"), LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC")),
+                    new($"{MaxSections + 10}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")),
                 };
 
                 // Prompt for selection and check the answer
-                string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, TextTools.FormatString(Translate.DoTranslation("You're on the landing page of the {0} settings. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel."), settingsType.GetType().Name)),
+                string finalTitle = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER");
+                int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, TextTools.FormatString(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING"), settingsType.GetType().Name)),
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
                     // The selected answer is a section
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading section..."));
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION"));
                     SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", vars: [SelectedSection.Name]);
                     OpenSection(SelectedSection.Name, SelectedSection, settingsType);
@@ -175,8 +175,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // The selected answer is "Select configuration"
                     if (!ConfigMigration.MigrateAllConfig())
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
-                            Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS") + " " +
+                            LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), new InfoBoxSettings()
                             {
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                             });
@@ -203,7 +203,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID") + " " + LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     }, Answer);
@@ -241,7 +241,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
                     bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
                     if (hasUnsupportedConfigs)
-                        Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", unsupportedConfigNames)}";
+                        Notes = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG") + $" {string.Join(", ", unsupportedConfigNames)}";
 
                     // Populate sections
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
@@ -268,7 +268,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Populate the alt sections correctly
                     var altSections = new List<InputChoiceInfo>()
                     {
-                        new($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
+                        new($"{MaxOptions + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_GOBACK"))
                     };
 
                     // Prompt user and check for input
@@ -303,15 +303,15 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                        TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID"), true, KernelColorType.Error, Answer);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
                         Input.ReadKey();
                     }
                 }
             }
             catch (Exception ex)
             {
-                SettingsAppTools.HandleError(Translate.DoTranslation("Invalid section. Please go back."), ex);
+                SettingsAppTools.HandleError(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION"), ex);
             }
         }
 
@@ -361,7 +361,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                SettingsAppTools.HandleError(Translate.DoTranslation("Invalid key. Please go back."), ex);
+                SettingsAppTools.HandleError(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY"), ex);
             }
         }
 
@@ -375,16 +375,16 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 List<InputChoiceInfo> Results;
                 List<InputChoiceInfo> Back =
                 [
-                    new InputChoiceInfo("<---", Translate.DoTranslation("Go Back..."))
+                    new InputChoiceInfo("<---", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_GOBACK"))
                 ];
 
                 // Prompt the user
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
-                string SearchFor = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write what do you want to search for."));
+                string SearchFor = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT"));
 
                 // Search for the setting
                 ConsoleWrapper.CursorVisible = false;
-                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."));
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING"));
                 Results = ConfigTools.FindSetting(SearchFor, configType);
                 InputChoiceInfo[] finalResults = Results.Union(Back).ToArray();
 
@@ -395,7 +395,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     while (sel != Results.Count)
                     {
                         // Prompt for setting
-                        sel = InfoBoxSelectionColor.WriteInfoBoxSelection([.. finalResults], Translate.DoTranslation("These settings are found. Please select one."));
+                        sel = InfoBoxSelectionColor.WriteInfoBoxSelection([.. finalResults], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND"));
 
                         // If pressed back, bail
                         if (sel == Results.Count || sel == -1)
@@ -406,7 +406,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
                         int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
                         var Section = configType.SettingsEntries?[SectionIndex] ??
-                            throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get section"));
+                            throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION"));
                         OpenKey(KeyNumber, Section, configType);
                         Results = ConfigTools.FindSetting(SearchFor, configType);
                         finalResults = Results.Union(Back).ToArray();
@@ -414,7 +414,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     });
@@ -422,7 +422,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });

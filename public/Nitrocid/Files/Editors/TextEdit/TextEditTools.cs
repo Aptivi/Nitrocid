@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,7 +51,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
                 TextEditShellCommon.fileStream = new FileStream(File, FileMode.Open);
                 if (TextEditShellCommon.FileStream is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Text file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOTOPENYET"));
                 TextEditShellCommon.fileLines ??= [];
                 TextEditShellCommon.FileLinesOrig ??= [];
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, TextEditShellCommon.FileStream.Length, TextEditShellCommon.FileStream.Position]);
@@ -106,7 +106,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             try
             {
                 if (TextEditShellCommon.FileStream is null)
-                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Text file is not open yet."));
+                    throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOTOPENYET"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 TextEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
@@ -168,7 +168,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (TextEditShellCommon.FileStream is not null)
                 TextEditShellCommon.FileLines.Add(Content);
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                     TextEditShellCommon.FileLines.Add(Line);
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -203,10 +203,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 }
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -252,10 +252,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     TextEditShellCommon.FileLines[(int)LineIndex] = Regex.Replace(TextEditShellCommon.FileLines[(int)LineIndex], From, With);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 }
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -301,10 +301,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     TextEditShellCommon.FileLines[(int)LineIndex] = TextEditShellCommon.FileLines[(int)LineIndex].Replace(From, With);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -328,10 +328,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, TextEditShellCommon.FileLines.Count]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -355,10 +355,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, TextEditShellCommon.FileLines[LineIndex]]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -411,11 +411,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     }
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -470,11 +470,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     }
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -499,7 +499,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -523,11 +523,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                         Results.Add(MatchIndex);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The text editor hasn't opened a file stream yet."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM"));
         }
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines is not null)
                 lines.Add(Content);
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -557,7 +557,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                     lines.Add(Line);
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -579,10 +579,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", vars: [lines.Count]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -606,7 +606,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 }
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -632,10 +632,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     lines[(int)LineIndex] = Regex.Replace(lines[(int)LineIndex], From, With);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -659,7 +659,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 }
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -685,10 +685,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     lines[(int)LineIndex] = lines[(int)LineIndex].Replace(From, With);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -714,10 +714,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, lines.Count]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -743,10 +743,10 @@ namespace Nitrocid.Files.Editors.TextEdit
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [LineIndex, lines[LineIndex]]);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
             return lines;
         }
 
@@ -775,7 +775,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
         /// <summary>
@@ -802,11 +802,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     }
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
         /// <summary>
@@ -835,7 +835,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
         /// <summary>
@@ -863,11 +863,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     }
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
         /// <summary>
@@ -893,7 +893,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return Lines;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
         /// <summary>
@@ -918,11 +918,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                         Results.Add(MatchIndex);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                    throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"));
                 return Results;
             }
             else
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST"));
         }
 
     }

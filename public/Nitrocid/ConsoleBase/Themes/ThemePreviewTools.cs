@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,7 +64,7 @@ namespace Nitrocid.ConsoleBase.Themes
         {
             // Check to see if we're trying to preview theme on non-true color console
             if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
-                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR"));
 
             // Render the choices
             var choices = new List<InputChoiceInfo>();
@@ -80,13 +80,13 @@ namespace Nitrocid.ConsoleBase.Themes
             // Alt choices for exiting
             var altChoices = new List<InputChoiceInfo>
             {
-                new(Translate.DoTranslation("Exit"), Translate.DoTranslation("Exit the preview"))
+                new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT"), LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC"))
             };
 
             // Give a prompt for theme preview
             while (true)
             {
-                int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {theme.Description}\n\n" : "") + Translate.DoTranslation("Here's how your theme will look like:"), [.. choices], [.. altChoices], true);
+                int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {theme.Description}\n\n" : "") + LanguageTools.GetLocalized("NKS_CONSOLEBASE_THEMES_THEMESHOWCASE"), [.. choices], [.. altChoices], true);
                 if (prev == choices.Count + 1)
                     break;
                 else

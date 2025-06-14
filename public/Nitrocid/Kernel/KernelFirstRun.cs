@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,14 +44,14 @@ namespace Nitrocid.Kernel
                 // Populate the first run presentations in case language changed during the first start-up
                 Slideshow firstRunPres = new(
                     // Presentation name
-                    Translate.DoTranslation("Kernel first-run"),
+                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE"),
 
                     // Presentation list
                     [
                         // First page - introduction
                         new PresentationPage(
                             // Page name
-                            Translate.DoTranslation("Welcome!"),
+                            LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME"),
 
                             // Page elements
                             [
@@ -59,14 +59,14 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!")
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE1_TEXT1")
                                     ]
                                 },
                                 new TextElement()
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("To get started, press ENTER.")
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE1_TEXT2")
                                     ]
                                 }
                             ],
@@ -74,11 +74,11 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new PresentationInputInfo(
-                                    Translate.DoTranslation("Language"), Translate.DoTranslation("Select your language."),
+                                    LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_LANGAUGE_PROMPT"),
                                     new ComboBoxModule()
                                     {
-                                        Name = Translate.DoTranslation("Language"),
-                                        Description = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here."),
+                                        Name = LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_LANGPROMPT"),
                                         Choices = [new("Language", [new("Language group", LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.FullLanguageName)).ToArray())])]
                                     }, true
                                 )
@@ -92,7 +92,7 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Out of introductory run. Going straight to the rest once language configuration has been saved.");
 
                 // Save all the changes
-                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS"));
                 int selectedLanguageIdx = firstRunPres.Pages[0].Inputs[0].InputMethod.GetValue<int?>() ?? 0;
                 string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", vars: [selectedLanguage]);
@@ -106,8 +106,8 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.E, "Error in introductory run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
-                TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
-                TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH1") + " {0}", ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH2"));
                 Input.ReadKey();
             }
         }
@@ -122,14 +122,14 @@ namespace Nitrocid.Kernel
 
                 Slideshow firstRunPresUser = new(
                     // Presentation name
-                    Translate.DoTranslation("Kernel first-run"),
+                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE"),
 
                     // Presentation list
                     [
                         // Second page - username creation
                         new PresentationPage(
                             // Page name
-                            Translate.DoTranslation("Create your first user"),
+                            LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE2_TITLE"),
 
                             // Page elements
                             [
@@ -137,7 +137,7 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:")
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE2_TEXT1")
                                     ]
                                 },
                                 new DynamicTextElement()
@@ -159,19 +159,19 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new PresentationInputInfo(
-                                    Translate.DoTranslation("Username"), Translate.DoTranslation("Enter the username"),
+                                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_USERNAMEPROMPT"),
                                     new TextBoxModule()
                                     {
-                                        Name = Translate.DoTranslation("Username"),
-                                        Description = Translate.DoTranslation("Enter your new username. You should enter a new username that doesn't already exist."),
+                                        Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC"),
                                     }, true
                                 ),
                                 new PresentationInputInfo(
-                                    Translate.DoTranslation("Password"), Translate.DoTranslation("Enter the password"),
+                                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PASSWORDPROMPT"),
                                     new TextBoxModule()
                                     {
-                                        Name = Translate.DoTranslation("Password"),
-                                        Description = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
+                                        Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC"),
                                     }
                                 )
                             ]
@@ -197,20 +197,20 @@ namespace Nitrocid.Kernel
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "We shouldn't move on. Failed to create username. {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        userStepFailureReason = Translate.DoTranslation("Failed to create username. Please ensure that your username doesn't contain spaces and special characters.");
+                        userStepFailureReason = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_USERCREATIONFAILED");
                     }
                 }
 
                 Slideshow firstRunPresUpdates = new(
                     // Presentation name
-                    Translate.DoTranslation("Kernel first-run"),
+                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE"),
 
                     // Presentation list
                     [
                         // Fifth page - Automatic updates
                         new PresentationPage(
                             // Page name
-                            Translate.DoTranslation("Automatic updates"),
+                            LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TITLE"),
 
                             // Page elements
                             [
@@ -218,9 +218,9 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.") + " " +
-                                        Translate.DoTranslation("In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.") + " " +
-                                        Translate.DoTranslation("You can always check for kernel updates using the \"update\" command.")
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1") + " " +
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2") + " " +
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3")
                                     ]
                                 }
                             ],
@@ -228,14 +228,14 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new PresentationInputInfo(
-                                    Translate.DoTranslation("Automatic Update Check"), Translate.DoTranslation("Automatic Update Check"),
+                                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_PROMPT"),
                                     new ComboBoxModule()
                                     {
-                                        Name = Translate.DoTranslation("Automatic Update Check"),
-                                        Description = Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
+                                        Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_PROMPT"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT"),
                                         Choices = [new("Choices", [new("Choices", [
-                                            new InputChoiceInfo("y", Translate.DoTranslation("Yes, I do!")),
-                                            new InputChoiceInfo("n", Translate.DoTranslation("No, thanks.")),
+                                            new InputChoiceInfo("y", LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_AGREE")),
+                                            new InputChoiceInfo("n", LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_DISAGREE")),
                                         ])])]
                                     }, true
                                 ),
@@ -249,14 +249,14 @@ namespace Nitrocid.Kernel
 
                 Slideshow firstRunPresOutro = new(
                     // Presentation name
-                    Translate.DoTranslation("Kernel first-run"),
+                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE"),
 
                     // Presentation list
                     [
                         // Third page - get started
                         new PresentationPage(
                             // Page name
-                            Translate.DoTranslation("Get Started!"),
+                            LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE"),
 
                             // Page elements
                             [
@@ -264,14 +264,14 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        () => TextTools.FormatString(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user)
+                                        () => TextTools.FormatString(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1"), user)
                                     ]
                                 },
                                 new TextElement()
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!")
+                                        LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2")
                                     ]
                                 }
                             ]
@@ -286,8 +286,8 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.E, "Error in first run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
-                TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
-                TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH1") + " {0}", ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH2"));
                 Input.ReadKey();
             }
         }

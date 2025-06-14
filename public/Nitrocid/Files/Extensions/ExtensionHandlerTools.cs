@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Files.Extensions
         };
         internal static readonly List<ExtensionHandler> extensionHandlers =
         [
-            new ExtensionHandler(".bin", "NitrocidBin", (path) => FilesystemTools.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
+            new ExtensionHandler(".bin", "NitrocidBin", (path) => FilesystemTools.OpenEditor(path, false, false, true), (path) => $"{LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_BIN_HASHSUM")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
         ];
         internal static readonly List<ExtensionHandler> customHandlers = [];
 
@@ -150,12 +150,12 @@ namespace Nitrocid.Files.Extensions
                 if (IsHandlerRegistered(extension))
                 {
                     var handler = GetFirstExtensionHandler(extension) ??
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NOHANDLER") + $" {extension}");
                     defHandlerName = handler.Implementer;
                     SetExtensionHandler(extension, defHandlerName);
                 }
                 else
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NOHANDLER") + $" {extension}");
             }
 
             // Now, get the default handler name and get the handler instance from it
@@ -177,7 +177,7 @@ namespace Nitrocid.Files.Extensions
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Get the handler
             return GetExtensionHandlers().First((ext) => ext.Extension == extension && ext.Implementer == implementer);
@@ -196,7 +196,7 @@ namespace Nitrocid.Files.Extensions
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Get the handler
             return GetExtensionHandlers().First((ext) => ext.Extension == extension);
@@ -215,7 +215,7 @@ namespace Nitrocid.Files.Extensions
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Get the handler
             return GetExtensionHandlers().Where((ext) => ext.Extension == extension).ToArray();
@@ -230,11 +230,11 @@ namespace Nitrocid.Files.Extensions
         {
             // If nothing is registered, indicate that it isn't registered
             if (!IsHandlerRegisteredSpecific(extension, implementer))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No such implementer.") + $" .{extension}, {implementer}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSIMPLEMENTER") + $" .{extension}, {implementer}");
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Set the handler
             if (!defaultHandlers.TryAdd(extension, implementer))
@@ -252,13 +252,13 @@ namespace Nitrocid.Files.Extensions
         {
             // Extension and implementer must not be null
             if (string.IsNullOrEmpty(extension))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The extension isn't specified."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NOEXTENSION"));
             if (string.IsNullOrEmpty(implementer))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The implementer name isn't specified."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NOIMPLEMENTER"));
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Add the handler
             var handler = new ExtensionHandler(extension, implementer, handlerAction, infoHandlerAction);
@@ -277,11 +277,11 @@ namespace Nitrocid.Files.Extensions
         {
             // Don't register if the handler is not registered
             if (!IsHandlerRegisteredSpecific(extension, implementer))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_HANDLERNOTREGGED") + $" {extension}");
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Remove the handler
             var handler = GetExtensionHandler(extension, implementer);
@@ -297,13 +297,13 @@ namespace Nitrocid.Files.Extensions
         {
             // Don't register if the handler is not registered
             if (!IsHandlerRegistered(extension))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_HANDLERNOTREGGED") + $" {extension}");
             if (handler is null)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not specified.") + $" {extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSHANDLER") + $" {extension}");
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Remove the handler
             customHandlers.Remove(handler);
@@ -315,7 +315,7 @@ namespace Nitrocid.Files.Extensions
                 // implementers.
                 if (IsHandlerRegistered(extension))
                     defaultHandlers[extension] = GetFirstExtensionHandler(extension)?.Implementer ??
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to obtain default handler"));
+                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_CANTGETDEFAULTHANDLER"));
                 else
                     defaultHandlers.Remove(extension);
             }
@@ -329,11 +329,11 @@ namespace Nitrocid.Files.Extensions
         {
             // Don't register if the handler is not registered
             if (!IsHandlerRegistered(extension))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_HANDLERNOTREGGED") + $" {extension}");
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSADOT") + $" .{extension}");
 
             // Remove the handler
             var handlers = GetExtensionHandlers(extension);
@@ -365,7 +365,7 @@ namespace Nitrocid.Files.Extensions
                 SaveAllHandlers();
             string contents = FilesystemTools.ReadContentsText(PathsManagement.ExtensionHandlersPath);
             defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents) ??
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Loading default handlers failed."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_CANTGETDEFAULTHANDLERS"));
         }
     }
 }

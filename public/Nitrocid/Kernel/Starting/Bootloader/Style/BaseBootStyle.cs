@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,7 +47,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         {
             // Write the section title
             var builder = new StringBuilder();
-            string finalRenderedSection = "-- " + Translate.DoTranslation("Select boot entry") + " --";
+            string finalRenderedSection = "-- " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_BOOTENTRY") + " --";
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, KernelColorTools.GetColor(KernelColorType.SeparatorText))
@@ -65,7 +65,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             builder.Append(border.Render());
 
             // Offer help for new users
-            string help = Translate.DoTranslation("SHIFT + H for help. Version") + $" {KernelMain.Version}";
+            string help = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_HELPTIP") + $" {KernelMain.Version}";
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.NeutralText))
             );
@@ -135,7 +135,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
 
         /// <inheritdoc/>
         public virtual string RenderBootingMessage(string chosenBootName) =>
-            Translate.DoTranslation("Booting {0}...").FormatString(chosenBootName);
+            LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_BOOTING").FormatString(chosenBootName);
 
         /// <inheritdoc/>
         public virtual string RenderSelectTimeout(int timeout) =>

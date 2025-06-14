@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Creating group {0}..."), parameters.ArgumentsList[0]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDGROUP_PROGRESS"), parameters.ArgumentsList[0]);
             GroupManagement.AddGroup(parameters.ArgumentsList[0]);
             return 0;
         }

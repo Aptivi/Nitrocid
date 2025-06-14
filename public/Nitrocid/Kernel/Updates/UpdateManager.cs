@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -120,12 +120,12 @@ namespace Nitrocid.Kernel.Updates
             // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
             // translated in the compiler pre-processor directives, so we need to move all translations here to
             // avoid this happening again and for the locale tools to actually see them.
-            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled because you're running a development version.");
-            string checkFailed = Translate.DoTranslation("Failed to check for updates.");
-            string checking = Translate.DoTranslation("Checking for system updates...");
-            string newVersion = Translate.DoTranslation("Found new version: ");
-            string downloadManually = Translate.DoTranslation("You can download it at: ");
-            string upToDate = Translate.DoTranslation("You're up to date!");
+            string devVersionWarning = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED");
+            string checkFailed = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED");
+            string checking = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING");
+            string newVersion = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND");
+            string downloadManually = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_LINK");
+            string upToDate = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE");
 
 #if SPECIFIERREL
             // Check for updates now

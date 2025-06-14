@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -92,7 +92,7 @@ namespace Nitrocid.Files
         public static FilesystemNewlineStyle GetLineEndingFromFile(string TextFile, bool force)
         {
             if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NEEDSTEXTFILE"));
             return DriverHandler.CurrentFilesystemDriverLocal.GetLineEndingFromFile(TextFile);
         }
 

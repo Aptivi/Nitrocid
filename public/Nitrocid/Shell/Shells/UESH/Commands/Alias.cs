@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         AliasManager.AddAlias(destCmd, aliasCmd, type);
                         shouldSave = true;
-                        TextWriters.Write(Translate.DoTranslation("You can now run '{0}' as '{1}'!"), KernelColorType.Success, aliasCmd, destCmd);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS"), KernelColorType.Success, aliasCmd, destCmd);
                     }
                     catch (Exception ex)
                     {
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE"), KernelColorType.Error, type);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.AliasNoSuchType);
                 }
             }
@@ -84,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         AliasManager.RemoveAlias(aliasCmd, type);
                         shouldSave = true;
-                        TextWriters.Write(Translate.DoTranslation("Removed alias {0} successfully."), KernelColorType.Success, aliasCmd);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS"), KernelColorType.Success, aliasCmd);
                     }
                     catch (Exception ex)
                     {
@@ -95,7 +95,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE"), KernelColorType.Error, type);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.AliasNoSuchType);
                 }
             }

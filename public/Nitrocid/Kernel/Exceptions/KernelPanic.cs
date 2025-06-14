@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -85,7 +85,7 @@ namespace Nitrocid.Kernel.Exceptions
                             // If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                             // generate a second kernel error stating that there is something wrong with the reboot time.
                             DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", vars: [ErrorType, RebootTime]);
-                            KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), null, ((int)ErrorType).ToString());
+                            KernelErrorDouble(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DOUBLEPANIC_REBOOTTIME"), null, ((int)ErrorType).ToString());
                             return;
                         }
                         else if (!Reboot)
@@ -93,7 +93,7 @@ namespace Nitrocid.Kernel.Exceptions
                             // If the error type is unrecoverable, or double, and the rebooting is false where it should
                             // not be false, then it can deal with this issue by enabling reboot.
                             DebugWriter.WriteDebug(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", vars: [ErrorType]);
-                            SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), ErrorType);
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_REBOOTENABLEDERRORLEVEL"), ErrorType);
                             Reboot = true;
                         }
                     }
@@ -101,7 +101,7 @@ namespace Nitrocid.Kernel.Exceptions
                     {
                         // If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
                         DebugWriter.WriteDebug(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", vars: [RebootTime]);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), ErrorType, RebootTime.ToString());
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_REBOOTEXCEEDSONEHOUR"), ErrorType, RebootTime.ToString());
                         RebootTime = 60L;
                     }
                 }
@@ -109,7 +109,7 @@ namespace Nitrocid.Kernel.Exceptions
                 {
                     // If the error type is other than F/U/S, then it will generate a second error.
                     DebugWriter.WriteDebug(DebugLevel.E, "Error type {0} is not valid.", vars: [ErrorType]);
-                    KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), null, ((int)ErrorType).ToString());
+                    KernelErrorDouble(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DOUBLEPANIC_TYPEINVALID"), null, ((int)ErrorType).ToString());
                     return;
                 }
 
@@ -127,7 +127,7 @@ namespace Nitrocid.Kernel.Exceptions
                 {
                     // Offer the user to wait for the set time interval before the kernel reboots.
                     DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", vars: [RebootTime, ErrorType]);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_ERRORREBOOT"), Exc, ErrorType, Description, RebootTime);
                     if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     Thread.Sleep((int)(RebootTime * 1000L));
@@ -138,7 +138,7 @@ namespace Nitrocid.Kernel.Exceptions
                     // If rebooting is disabled, offer the user to shutdown the kernel
                     DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
                     DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", vars: [RebootTime, ErrorType]);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_ERRORSHUTDOWN"), Exc, ErrorType, Description);
                     if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     Input.ReadKey();
@@ -150,7 +150,7 @@ namespace Nitrocid.Kernel.Exceptions
                 // Alright, we have a double panic.
                 DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
+                KernelErrorDouble(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DOUBLEPANIC_KERNELBUG"), ex, ex.Message);
             }
         }
 
@@ -177,7 +177,7 @@ namespace Nitrocid.Kernel.Exceptions
 
                 // Double panic printed and reboot initiated
                 DebugWriter.WriteDebug(DebugLevel.F, "Double panic caused by bug in kernel crash.");
-                SplashReport.ReportProgressError("[D] dpanic: " + Translate.DoTranslation("{0} -- Rebooting in {1} seconds..."), Description, 5);
+                SplashReport.ReportProgressError("[D] dpanic: " + LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DOUBLEPANIC_MESSAGE"), Description, 5);
                 Thread.Sleep(5000);
                 DebugWriter.WriteDebug(DebugLevel.F, "Rebooting");
                 PowerManager.PowerManage(PowerMode.Reboot);
@@ -205,17 +205,17 @@ namespace Nitrocid.Kernel.Exceptions
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
                 DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", vars: [Description, Exc?.Message]);
-                SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
+                SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_CONTINUABLE_MESSAGE") + " {0}", Exc, Description);
                 if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null && Exc.StackTrace is not null)
                     SplashReport.ReportProgressWarning(Exc.StackTrace);
-                SplashReport.ReportProgressWarning(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. You can continue using the kernel at your own risk."));
+                SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_CONTINUABLE_WARNING"));
             }
             catch (Exception ex)
             {
                 // Alright, we have a double panic.
                 DebugWriter.WriteDebug(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelErrorDouble(Translate.DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message);
+                KernelErrorDouble(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DOUBLEPANIC_KERNELBUG"), ex, ex.Message);
             }
         }
 
@@ -244,19 +244,19 @@ namespace Nitrocid.Kernel.Exceptions
                         return;
 
                     // Write an in-depth analysis of the error
-                    WriteHeader(dumpBuilder, Translate.DoTranslation("In-depth analysis of the error"));
+                    WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_INDEPTHANALYSIS"));
                     dumpBuilder.AppendLine(
-                        Translate.DoTranslation("Exception type") + $" {Exc.GetType().FullName}" + CharManager.NewLine +
-                        Translate.DoTranslation("Error code") + $": {Exc.HResult} [0x{Exc.HResult:X8}]" + CharManager.NewLine +
-                        Translate.DoTranslation("Error source") + $": {Exc.Source} [{(Exc.TargetSite is not null ? Exc.TargetSite.Name : Translate.DoTranslation("Unknown error source method"))}]" + CharManager.NewLine
+                        LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_INDEPTHANALYSIS_EXCEPTIONTYPE") + $" {Exc.GetType().FullName}" + CharManager.NewLine +
+                        LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_INDEPTHANALYSIS_ERRORCODE") + $": {Exc.HResult} [0x{Exc.HResult:X8}]" + CharManager.NewLine +
+                        LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_INDEPTHANALYSIS_ERRORSOURCE") + $": {Exc.Source} [{(Exc.TargetSite is not null ? Exc.TargetSite.Name : LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_INDEPTHANALYSIS_NOSOURCE"))}]" + CharManager.NewLine
                     );
 
                     // Write a description
-                    WriteHeader(dumpBuilder, Translate.DoTranslation("Error description"));
+                    WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORDESC"));
                     dumpBuilder.AppendLine(Exc.Message + CharManager.NewLine);
 
                     // Write stack trace
-                    WriteHeader(dumpBuilder, Translate.DoTranslation("Stack trace"));
+                    WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_STACKTRACE"));
                     dumpBuilder.AppendLine(Exc.StackTrace + CharManager.NewLine);
                 }
 
@@ -264,15 +264,15 @@ namespace Nitrocid.Kernel.Exceptions
                 var dumpBuilder = new StringBuilder();
 
                 // Write the summary of the kernel panic
-                WriteHeader(dumpBuilder, Translate.DoTranslation("Kernel error information"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO"));
                 dumpBuilder.AppendLine(
-                    Translate.DoTranslation("The kernel error happened at") + $" {TimeDateRenderers.Render()}" + CharManager.NewLine +
-                    Translate.DoTranslation("Error type") + $": {ErrorType}" + CharManager.NewLine +
-                    Translate.DoTranslation("Contains an exception?") + $" {Exc is not null}" + CharManager.NewLine
+                    LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_TIME") + $" {TimeDateRenderers.Render()}" + CharManager.NewLine +
+                    LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_ERRORTYPE") + $": {ErrorType}" + CharManager.NewLine +
+                    LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_HASEXCEPTION") + $" {Exc is not null}" + CharManager.NewLine
                 );
 
                 // Write an error description
-                WriteHeader(dumpBuilder, Translate.DoTranslation("Kernel error description"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_DESC"));
                 dumpBuilder.AppendLine(Description + CharManager.NewLine);
 
                 // Write exception information
@@ -286,15 +286,15 @@ namespace Nitrocid.Kernel.Exceptions
                     var InnerExc = Exc.InnerException;
                     while (InnerExc is not null)
                     {
-                        WriteHeader(dumpBuilder, Translate.DoTranslation("Analysis of inner error, number") + $" {Count}");
+                        WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_INNER") + $" {Count}");
                         WriteInDepthAnalysis(dumpBuilder, InnerExc);
                         InnerExc = InnerExc.InnerException;
                         Count += 1;
                     }
-                    dumpBuilder.AppendLine(Translate.DoTranslation("The last inner error is the root cause, which is number") + $" {Count}" + CharManager.NewLine);
+                    dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_INNER_LAST") + $" {Count}" + CharManager.NewLine);
 
                     // Write frame info for further analysis
-                    WriteHeader(dumpBuilder, Translate.DoTranslation("Frame analysis"));
+                    WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_FRAME"));
                     try
                     {
                         var ExcTrace = new StackTrace(Exc, true);
@@ -328,46 +328,46 @@ namespace Nitrocid.Kernel.Exceptions
                             }
                         }
                         else
-                            dumpBuilder.AppendLine(Translate.DoTranslation("There are no frames to analyze."));
+                            dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_FRAME_NOFRAMES"));
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        dumpBuilder.AppendLine(Translate.DoTranslation("Frame analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                        dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_FRAME_FRAMESFAILED") + $" {ex.Message}");
                     }
                 }
                 else
-                    dumpBuilder.AppendLine(Translate.DoTranslation("Unfortunately, there is no helpful error information provided to help you analyze the issue."));
+                    dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_ERRORINFO_NOINFO"));
                 dumpBuilder.AppendLine();
 
                 // All kernel threads
-                WriteHeader(dumpBuilder, Translate.DoTranslation("All kernel threads"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS"));
                 try
                 {
                     var threads = ThreadManager.KernelThreads;
                     foreach (var thread in threads)
                     {
                         dumpBuilder.AppendLine($"[{thread.ThreadId}] {thread.Name}:");
-                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is alive")}: {thread.IsAlive}");
-                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is a background thread")}: {thread.IsBackground}");
-                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is system-critical")}: {thread.IsCritical}");
-                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is ready")}: {thread.IsReady}");
-                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is stopping")}: {thread.IsStopping}");
+                        dumpBuilder.AppendLine($"  - {LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_ALIVE")}: {thread.IsAlive}");
+                        dumpBuilder.AppendLine($"  - {LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_BG")}: {thread.IsBackground}");
+                        dumpBuilder.AppendLine($"  - {LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_CRITICAL")}: {thread.IsCritical}");
+                        dumpBuilder.AppendLine($"  - {LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_READY")}: {thread.IsReady}");
+                        dumpBuilder.AppendLine($"  - {LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_STOPPING")}: {thread.IsStopping}");
                         dumpBuilder.AppendLine();
                     }
-                    dumpBuilder.AppendLine($"{Translate.DoTranslation("Total threads")}: {threads.Count}");
+                    dumpBuilder.AppendLine($"{LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_TOTAL")}: {threads.Count}");
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze threads: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    dumpBuilder.AppendLine(Translate.DoTranslation("Thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                    dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS_FAILED") + $" {ex.Message}");
                 }
                 dumpBuilder.AppendLine();
 
                 // All operating system threads
-                WriteHeader(dumpBuilder, Translate.DoTranslation("All operating system threads"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_OSTHREADS"));
                 try
                 {
                     var threads = ThreadManager.OperatingSystemThreads;
@@ -378,25 +378,25 @@ namespace Nitrocid.Kernel.Exceptions
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze OS threads: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    dumpBuilder.AppendLine(Translate.DoTranslation("Operating system thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                    dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_OSTHREADS_FAILED") + $" {ex.Message}");
                 }
                 dumpBuilder.AppendLine();
 
                 // All thread backtraces
-                WriteHeader(dumpBuilder, Translate.DoTranslation("All thread backtraces"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES"));
                 try
                 {
                     Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
                     if (result.Count == 0)
                     {
-                        dumpBuilder.AppendLine(Translate.DoTranslation("Thread backtraces is empty. Either this information is not available, an error occurred while fetching it, or the Diagnostics Extras addon is not installed. Investigate the debug logs."));
+                        dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES_EMPTY"));
                         dumpBuilder.AppendLine();
                     }
                     foreach (var trace in result)
                     {
                         string threadAddress = trace.Key;
                         string[] threadTrace = trace.Value;
-                        WriteHeader(dumpBuilder, Translate.DoTranslation("Stack trace for thread") + $" {threadAddress}");
+                        WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES_STACKTRACE") + $" {threadAddress}");
                         foreach (var traceVal in threadTrace)
                             dumpBuilder.AppendLine(traceVal);
                         dumpBuilder.AppendLine();
@@ -406,12 +406,12 @@ namespace Nitrocid.Kernel.Exceptions
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze thread backtraces: ", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    dumpBuilder.AppendLine(Translate.DoTranslation("Thread backtrace analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                    dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES_STACKTRACE_FAILED") + $" {ex.Message}");
                     dumpBuilder.AppendLine();
                 }
 
                 // Versions
-                WriteHeader(dumpBuilder, Translate.DoTranslation("Version information"));
+                WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_VERSIONINFO"));
                 dumpBuilder.AppendLine(KernelReleaseInfo.ConsoleTitle);
                 dumpBuilder.AppendLine(Environment.OSVersion.ToString());
 
@@ -422,7 +422,7 @@ namespace Nitrocid.Kernel.Exceptions
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_DUMPFAILED") + " {0}: {1}", true, KernelColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -431,19 +431,19 @@ namespace Nitrocid.Kernel.Exceptions
         {
             if (NotifyKernelError)
             {
-                string translated = Translate.DoTranslation("Previous boot failed");
+                string translated = LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_BOOTFAILED");
                 var failureBuilder = new StringBuilder();
                 NotifyKernelError = false;
                 string finalMessage =
                     LastKernelErrorException is not null ?
                     LastKernelErrorException.Message :
-                    Translate.DoTranslation("Unfortunately, the last failure is unknown, so we don't exactly know what went wrong. However, it could be helpful if you've consulted the kernel debug logs.");
+                    LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_UNKNOWN");
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 failureBuilder.AppendLine(translated);
                 failureBuilder.AppendLine(new string('=', translated.Length) + "\n");
-                failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
+                failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_DESCRIPTION") + "\n");
                 failureBuilder.AppendLine(finalMessage + "\n");
-                failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
+                failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_TIP"));
                 InfoBoxModalColor.WriteInfoBoxModal(failureBuilder.ToString(), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)

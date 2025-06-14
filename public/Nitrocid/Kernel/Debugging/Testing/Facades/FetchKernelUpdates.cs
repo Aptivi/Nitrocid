@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class FetchKernelUpdates : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the kernel update functionality");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_FETCHKERNELUPDATES_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
@@ -33,7 +33,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             if (update != null)
             {
                 TextWriterColor.Write($"U: {update.UpdateVersion} - {update.UpdateURL}");
-                TextWriterColor.Write(Translate.DoTranslation("Is the kernel up to date?") + $" {update.Updated}");
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_FETCHKERNELUPDATES_TEST") + $" {update.Updated}");
             }
         }
     }

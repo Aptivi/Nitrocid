@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,7 +64,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             List<InputChoiceInfo> themeCategoryChoices = [];
                             List<InputChoiceInfo> themeCategoryAltChoices =
                             [
-                                new($"{categoryNames.Length + 1}", Translate.DoTranslation("Exit"))
+                                new($"{categoryNames.Length + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT"))
                             ];
                             for (int i = 0; i < categoryNames.Length; i++)
                             {
@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
+                            categoryIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTCATEGORY"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
 
                             // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2
@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             List<InputChoiceInfo> themeChoices = [];
                             List<InputChoiceInfo> themeAltChoices =
                             [
-                                new("<--", Translate.DoTranslation("Back"))
+                                new("<--", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_GOBACK"))
                             ];
                             foreach (string theme in ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys)
                             {
@@ -107,12 +107,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 string desc = themeInstance.Localizable ? Translate.DoTranslation(themeInstance.Description) : themeInstance.Description;
                                 var ici = new InputChoiceInfo(
                                     theme,
-                                    $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}",
+                                    $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEEXPIRED") : LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEAVAILABLE"))}]" : "")}",
                                     desc
                                 );
                                 themeChoices.Add(ici);
                             }
-                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
+                            int colorIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTTHEME"), [.. themeChoices], [.. themeAltChoices]) - 1;
 
                             // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2

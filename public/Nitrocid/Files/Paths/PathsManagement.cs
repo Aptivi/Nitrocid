@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -288,7 +288,7 @@ namespace Nitrocid.Files.Paths
                 if (typeName == typeString)
                     return typeName;
             }
-            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_PATHTYPEINVALID"));
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace Nitrocid.Files.Paths
                 return pathDelegate.Item1();
             if (customPaths.TryGetValue(PathType, out string? path))
                 return path;
-            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_PATHTYPEINVALID"));
         }
 
         /// <summary>
@@ -343,15 +343,15 @@ namespace Nitrocid.Files.Paths
         {
             // Check to see if the path type has been provided
             if (string.IsNullOrEmpty(pathType))
-                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty kernel path type."));
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_EXCEPTION_NOTYPE"));
 
             // Now, check for registration
             if (IsKernelPathRegistered(pathType))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Kernel path type is already registered."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_PATHS_EXCEPTION_TYPEEXISTS"));
 
             // Check the path (not necessarily exists)
             if (string.IsNullOrEmpty(path))
-                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty path."));
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_EXCEPTION_NOPATH"));
 
             // Now, register the kernel path to the custom path list
             customPaths.Add(pathType, path);
@@ -366,11 +366,11 @@ namespace Nitrocid.Files.Paths
         {
             // Check to see if the path type has been provided
             if (string.IsNullOrEmpty(pathType))
-                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty kernel path type."));
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_EXCEPTION_NOTYPE"));
 
             // Now, check for registration
             if (!IsKernelPathRegistered(pathType))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Kernel path type is not registered."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_PATHS_EXCEPTION_TYPENOTEXISTS"));
 
             // Now, unregister the kernel path to the custom path list
             customPaths.Remove(pathType);
@@ -386,7 +386,7 @@ namespace Nitrocid.Files.Paths
             string name = GetKernelPathName(PathType);
             if (knownPaths.TryGetValue(name, out (Func<string>, bool) pathDelegate))
                 return pathDelegate.Item2;
-            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_PATHTYPEINVALID"));
         }
 
     }

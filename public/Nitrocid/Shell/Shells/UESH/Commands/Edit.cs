@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (FilesystemTools.FileExists(path))
                 FilesystemTools.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
-                TextWriters.Write(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND"), true, KernelColorType.Error, path);
             return 0;
         }
 

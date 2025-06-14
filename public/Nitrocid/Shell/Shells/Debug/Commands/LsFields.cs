@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,14 +48,14 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (fields.Count > 0)
                     {
                         // Write the field names and their values
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of fields for") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFIELDS_TITLE") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                         TextWriters.WriteList(fields);
                     }
                 }
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;
@@ -72,7 +72,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (fields.Count > 0)
                     {
                         // Write the field names and their values
-                        TextWriterColor.Write(Translate.DoTranslation("List of fields for") + $" {type.Name}");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFIELDS_TITLE") + $" {type.Name}");
                         foreach (var field in fields)
                             TextWriterColor.Write($"  - {field.Key} [{field.Value}]");
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;

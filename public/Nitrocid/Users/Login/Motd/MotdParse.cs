@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,8 +43,8 @@ namespace Nitrocid.Users.Login.Motd
         /// </summary>
         public static string MotdMessage
         {
-            get => motdMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");
-            set => motdMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");
+            get => motdMessage ?? LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_DEFAULTMOTD");
+            set => motdMessage = value ?? LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_DEFAULTMOTD");
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Nitrocid.Users.Login.Motd
         public static void InitMotd()
         {
             if (!FilesystemTools.FileExists(PathsManagement.GetKernelPath(KernelPathType.MOTD)))
-                SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
+                SetMotd(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_DEFAULTMOTD"));
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Nitrocid.Users.Login.Motd
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("Error when trying to set MOTD: {0}"), ex.Message);
+                throw new KernelException(KernelExceptionType.MOTD, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_EXCEPTION_SETFAILED_MOTD"), ex.Message);
             }
         }
 
@@ -97,7 +97,7 @@ namespace Nitrocid.Users.Login.Motd
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("Error when trying to get MOTD: {0}"), ex.Message);
+                throw new KernelException(KernelExceptionType.MOTD, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_EXCEPTION_GETFAILED_MOTD"), ex.Message);
             }
         }
 
@@ -109,7 +109,7 @@ namespace Nitrocid.Users.Login.Motd
         public static void RegisterDynamicMotd(Func<string> dynamicMotd)
         {
             if (dynamicMotd is null)
-                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day may not be null."));
+                throw new KernelException(KernelExceptionType.MOTD, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD"));
 
             // Now, register it.
             motdDynamics.Add(dynamicMotd);
@@ -123,7 +123,7 @@ namespace Nitrocid.Users.Login.Motd
         public static void UnregisterDynamicMotd(Func<string> dynamicMotd)
         {
             if (dynamicMotd is null)
-                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day may not be null."));
+                throw new KernelException(KernelExceptionType.MOTD, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD"));
 
             // Now, unregister it.
             motdDynamics.Remove(dynamicMotd);
@@ -142,7 +142,7 @@ namespace Nitrocid.Users.Login.Motd
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("Error when trying to get MOTD: {0}"), ex.Message);
+                throw new KernelException(KernelExceptionType.MOTD, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_EXCEPTION_GETFAILED_MOTD"), ex.Message);
             }
         }
 

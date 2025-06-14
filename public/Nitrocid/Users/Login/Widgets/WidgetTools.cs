@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,10 +47,10 @@ namespace Nitrocid.Users.Login.Widgets
         public static void AddWidget(BaseWidget widget)
         {
             if (widget is null)
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGET"));
             string widgetName = GetWidgetName(widget);
             if (CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget already exists."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETEXISTS"));
             customWidgets.Add(widget);
         }
 
@@ -62,11 +62,11 @@ namespace Nitrocid.Users.Login.Widgets
         public static void RemoveWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             if (IsWidgetBuiltin(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget can't be removed."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETUNREMOVABLE"));
             var widget = GetWidget(widgetName);
             customWidgets.Remove(widget);
         }
@@ -80,9 +80,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static BaseWidget GetWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             if (IsWidgetBuiltin(widgetName))
                 return baseWidgets.Single((w) => GetWidgetName(w) == widgetName);
             else
@@ -98,7 +98,7 @@ namespace Nitrocid.Users.Login.Widgets
         public static bool CheckWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             return
                 IsWidgetBuiltin(widgetName) || customWidgets.Any((w) => GetWidgetName(w) == widgetName);
         }
@@ -112,7 +112,7 @@ namespace Nitrocid.Users.Login.Widgets
         public static bool IsWidgetBuiltin(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             return baseWidgets.Any((w) => GetWidgetName(w) == widgetName);
         }
 
@@ -125,7 +125,7 @@ namespace Nitrocid.Users.Login.Widgets
         public static string GetWidgetName(BaseWidget widget)
         {
             if (widget is null)
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGET"));
             return widget.GetType().Name;
         }
 
@@ -137,9 +137,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void RenderWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Render();
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -157,9 +157,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void RenderWidget(string widgetName, int left, int top, int width, int height)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Render(left, top, width, height);
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -173,9 +173,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void InitializeWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Initialize();
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -193,9 +193,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void InitializeWidget(string widgetName, int left, int top, int width, int height)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Initialize(left, top, width, height);
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -209,9 +209,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void CleanupWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Cleanup();
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -229,9 +229,9 @@ namespace Nitrocid.Users.Login.Widgets
         public static void CleanupWidget(string widgetName, int left, int top, int width, int height)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             var widget = GetWidget(widgetName);
             string widgetSeq = widget.Cleanup(left, top, width, height);
             TextWriterRaw.WriteRaw(widgetSeq);
@@ -251,21 +251,21 @@ namespace Nitrocid.Users.Login.Widgets
         internal static void AddBaseWidget(BaseWidget widget)
         {
             if (widget is null)
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGET"));
             string widgetName = GetWidgetName(widget);
             if (CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget already exists."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETEXISTS"));
             baseWidgets.Add(widget);
         }
 
         internal static void RemoveBaseWidget(string widgetName)
         {
             if (string.IsNullOrWhiteSpace(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             if (!CheckWidget(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             if (!IsWidgetBuiltin(widgetName))
-                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not a built-in widget."));
+                throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTBUILTIN"));
             var widget = GetWidget(widgetName);
             baseWidgets.Remove(widget);
         }

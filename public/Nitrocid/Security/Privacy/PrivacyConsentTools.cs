@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Security.Privacy
         {
             // Get the namespace of the calling method
             var methodInfo = new StackTrace().GetFrame(2)?.GetMethod() ??
-                throw new KernelException(KernelExceptionType.PrivacyConsent, Translate.DoTranslation("Can't get method from the last two frames."));
+                throw new KernelException(KernelExceptionType.PrivacyConsent, LanguageTools.GetLocalized("NKS_SECURITY_PRIVACY_EXCEPTION_LASTTWOFRAMES"));
             var context = methodInfo.ReflectedType?.Namespace ?? "";
             string finalContext = context.Contains('.') ? context[..context.IndexOf('.')] : context;
 
@@ -73,7 +73,7 @@ namespace Nitrocid.Security.Privacy
         {
             // Check the consent
             if (consent is null)
-                throw new KernelException(KernelExceptionType.PrivacyConsent, Translate.DoTranslation("Can't consent an empty permission."));
+                throw new KernelException(KernelExceptionType.PrivacyConsent, LanguageTools.GetLocalized("NKS_SECURITY_PERMISSIONS_EXCEPTION_EMPTY"));
 
             // If already consented, return true.
             if (consentedPermissions.Contains(consent))
@@ -84,7 +84,7 @@ namespace Nitrocid.Security.Privacy
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
             string consentAnswer = ChoiceStyle.PromptChoice(
                 TextTools.FormatString(
-                    Translate.DoTranslation("It looks like that a mod with the root namespace of {0} tries to access your data with the permission of {1}. Do you want to allow this mod to access your data?"),
+                    LanguageTools.GetLocalized("NKS_SECURITY_PRIVACY_TRYINGACCESS"),
                     consent.Type.ToString(), consent.Context
                 ), [("y", "Yes"), ("n", "No")]
             );

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,14 +38,14 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of function parameters for") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
             var listing = new Listing()
             {
                 Objects = list,
-                Stringifier = (para) => $"[{((ParameterInfo)para).ParameterType.FullName ?? Translate.DoTranslation("Unknown type")}] {((ParameterInfo)para).Name ?? Translate.DoTranslation("Unknown parameter")}",
+                Stringifier = (para) => $"[{((ParameterInfo)para).ParameterType.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}] {((ParameterInfo)para).Name ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNPARAM")}",
                 KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                 ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
@@ -55,12 +55,12 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of function parameters for") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}");
 
             // List all the available addons
             var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
             foreach (var parameter in list)
-                TextWriterColor.Write($"  - [{parameter.ParameterType.FullName ?? Translate.DoTranslation("Unknown type")}] {parameter.Name ?? Translate.DoTranslation("Unknown parameter")}");
+                TextWriterColor.Write($"  - [{parameter.ParameterType.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}] {parameter.Name ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNPARAM")}");
             return 0;
         }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextEditTools.ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriters.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, KernelColorType.Success);
             return 0;
         }
 

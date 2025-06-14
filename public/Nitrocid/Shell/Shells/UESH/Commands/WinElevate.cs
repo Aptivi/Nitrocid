@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,16 +41,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 bool isAdmin = WindowsUserTools.IsAdministrator();
                 if (isAdmin)
-                    TextWriterColor.Write(Translate.DoTranslation("You're already running the elevated Nitrocid session!"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WINELEVATE_ELEVATED"));
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Elevating your Nitrocid session..."));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WINELEVATE_ELEVATING"));
                     PowerManager.elevating = true;
                     PowerManager.PowerManage(PowerMode.Shutdown);
                 }
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("This command is unavailable for your platform."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WINELEVATE_UNAVAILABLE"));
             return 0;
         }
     }

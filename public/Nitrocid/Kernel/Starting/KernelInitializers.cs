@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -74,7 +74,7 @@ namespace Nitrocid.Kernel.Starting
                     // Initialize the VT sequences
                     if (!ConsoleMisc.InitializeSequences())
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CANNOTINITVTSQUENCES"));
                         InputTools.DetectKeypress();
                     }
                 }
@@ -102,7 +102,7 @@ namespace Nitrocid.Kernel.Starting
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to start critical components") + $": {ex}");
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CRITICALFAILED") + $": {ex}");
                 throw;
             }
         }
@@ -132,8 +132,8 @@ namespace Nitrocid.Kernel.Starting
                 // Show initializing
                 if (KernelEntry.TalkativePreboot)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"));
-                    SplashReport.ReportProgress(Translate.DoTranslation("Starting Nitrocid..."));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STARTING"));
                 }
 
                 // Turn on safe mode in unusual environments
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Starting
                 try
                 {
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(Translate.DoTranslation("Loading custom languages..."));
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CUSTOMLANGS"));
                     LanguageManager.InstallCustomLanguages();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
                 }
@@ -158,14 +158,14 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load custom languages") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES") + $": {exc.Message}");
                 }
 
                 // Initialize addons
                 try
                 {
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(Translate.DoTranslation("Loading important kernel addons..."));
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTADDONS"));
                     AddonTools.ProcessAddons(ModLoadPriority.Important);
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded important kernel addons.");
                 }
@@ -176,7 +176,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important kernel addons") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
                 }
 
                 // Stop the splash prior to loading config
@@ -187,7 +187,7 @@ namespace Nitrocid.Kernel.Starting
                 try
                 {
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(Translate.DoTranslation("Loading configuration..."));
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIG"));
                     if (!KernelEntry.SafeMode)
                         Config.InitializeConfig();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
@@ -199,7 +199,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important kernel addons") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
                 }
 
                 // Read privacy consents
@@ -215,7 +215,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load privacy consents") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONSENTS") + $": {exc.Message}");
                 }
 
                 // Load background
@@ -235,7 +235,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load splash") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPLASH") + $": {exc.Message}");
                 }
 
                 // Initialize important mods
@@ -251,7 +251,7 @@ namespace Nitrocid.Kernel.Starting
                         {
                             // Check for kernel mod addon
                             if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
+                                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTMODS"));
                             InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Important);
                             DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
                         }
@@ -262,7 +262,7 @@ namespace Nitrocid.Kernel.Starting
                             DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                             DebugWriter.WriteDebugStackTrace(exc);
                             if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important mods") + $": {exc.Message}");
+                                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPMODS") + $": {exc.Message}");
                         }
                     }
                 }
@@ -280,7 +280,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load remote debug devices") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_RDEBUGDEVICES") + $": {exc.Message}");
                 }
 
                 // Show first-time color calibration for first-time run
@@ -289,7 +289,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to initialize essential components."));
+                    throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ESSENTIALSLOADFAILED"));
             }
             catch (Exception ex)
             {
@@ -297,8 +297,8 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize essential components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxModalColor.WriteInfoBoxModal(
-                    Translate.DoTranslation("The kernel failed to initialize some of the essential components. The kernel will not work properly at this point.") + "\n\n" +
-                    Translate.DoTranslation("Error information:") + $" {ex.Message}\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ESSENTIALSFAILED") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ERRORINFO") + $" {ex.Message}\n\n" +
                     PopulateExceptionText(exceptions)
                 );
                 SplashManager.EndSplashOut(SplashContext.StartingUp);
@@ -313,8 +313,8 @@ namespace Nitrocid.Kernel.Starting
             // Some information
             if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Kernel environment information"), KernelColorTools.GetColor(KernelColorType.Stage));
-                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVINFO"), KernelColorTools.GetColor(KernelColorType.Stage));
+                TextWriterColor.Write("OS: " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OS"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("KSAPI: " + $"v{KernelMain.ApiVersion}");
             }
         }
@@ -338,7 +338,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load notification thread") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_NOTIFICATIONTHREAD") + $": {exc.Message}");
                 }
 
                 try
@@ -354,7 +354,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load cancellation handler") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CANCELLATIONHANDLER") + $": {exc.Message}");
                 }
 
                 try
@@ -370,7 +370,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load aliases") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES") + $": {exc.Message}");
                 }
 
                 try
@@ -386,7 +386,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load speed dial entries") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL") + $": {exc.Message}");
                 }
 
                 try
@@ -402,7 +402,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load environment variables") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ENVVARS") + $": {exc.Message}");
                 }
 
                 try
@@ -418,7 +418,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load alarm listener") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALARM") + $": {exc.Message}");
                 }
 
                 try
@@ -435,7 +435,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize addons") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS") + $": {exc.Message}");
                 }
 
                 try
@@ -452,7 +452,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load MOTD and MAL") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MOTD") + $": {exc.Message}");
                 }
 
                 try
@@ -468,7 +468,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load shell command histories") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES") + $": {exc.Message}");
                 }
 
                 try
@@ -484,7 +484,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load extension handlers") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS") + $": {exc.Message}");
                 }
 
                 // Initialize mods
@@ -500,7 +500,7 @@ namespace Nitrocid.Kernel.Starting
                         {
                             // Check for kernel mod addon
                             if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
+                                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_LOADINGMODS"));
                             InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Optional);
                             DebugWriter.WriteDebug(DebugLevel.I, "Loaded mods.");
                         }
@@ -511,14 +511,14 @@ namespace Nitrocid.Kernel.Starting
                             DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                             DebugWriter.WriteDebugStackTrace(exc);
                             if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load mods") + $": {exc.Message}");
+                                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MODS") + $": {exc.Message}");
                         }
                     }
                 }
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to initialize optional components."));
+                    throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OPTIONALSLOADFAILED"));
             }
             catch (Exception ex)
             {
@@ -526,8 +526,8 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize optional components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxModalColor.WriteInfoBoxModal(
-                    Translate.DoTranslation("The kernel failed to initialize some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.") + "\n\n" +
-                    Translate.DoTranslation("Error information:") + $" {ex.Message}\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OPTIONALSFAILED") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ERRORINFO") + $" {ex.Message}\n\n" +
                     PopulateExceptionText(exceptions)
                 );
                 SplashManager.EndSplashOut(SplashContext.StartingUp);
@@ -547,7 +547,7 @@ namespace Nitrocid.Kernel.Starting
                     SplashReport._ProgressText = "";
                     SplashReport._KernelBooted = false;
                     DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
-                    SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GENERALVARSRESET"));
                 }
                 catch (Exception exc)
                 {
@@ -555,7 +555,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to reset general variables");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to reset general variables") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_VARS") + $": {exc.Message}");
                 }
 
                 try
@@ -563,7 +563,7 @@ namespace Nitrocid.Kernel.Starting
                     // Save shell command histories
                     ShellManager.SaveHistories();
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_HISTORIESSAVED"));
                 }
                 catch (Exception exc)
                 {
@@ -571,7 +571,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to save shell command histories");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save shell command histories") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES") + $": {exc.Message}");
                 }
 
                 try
@@ -586,7 +586,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to save privacy consents");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save privacy consents") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS") + $": {exc.Message}");
                 }
 
                 try
@@ -601,7 +601,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop remote debugger");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop remote debugger") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_RDEBUG") + $": {exc.Message}");
                 }
 
                 try
@@ -619,7 +619,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to reset languages");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to reset languages") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_LANGS") + $": {exc.Message}");
                 }
 
                 try
@@ -634,7 +634,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to save extension handlers");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save extension handlers") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_EXTHANDLERS") + $": {exc.Message}");
                 }
 
                 try
@@ -649,7 +649,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop alarm listener");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop alarm listener") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_ALARM") + $": {exc.Message}");
                 }
 
                 try
@@ -657,7 +657,7 @@ namespace Nitrocid.Kernel.Starting
                     // Save all settings
                     Config.CreateConfig();
                     DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Config saved."));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIGSAVED"));
                 }
                 catch (Exception exc)
                 {
@@ -665,7 +665,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to save configuration");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save configuration") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_CONFIG") + $": {exc.Message}");
                 }
 
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
@@ -683,7 +683,7 @@ namespace Nitrocid.Kernel.Starting
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop mods");
                         DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                         DebugWriter.WriteDebugStackTrace(exc);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop mods") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_MODS") + $": {exc.Message}");
                     }
                 }
 
@@ -693,7 +693,7 @@ namespace Nitrocid.Kernel.Starting
                     AddonTools.UnloadAddons();
                     ScreensaverManager.AddonSavers.Clear();
                     DebugWriter.WriteDebug(DebugLevel.I, "Addons and their registered components stopped");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions and their registered components stopped."));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_EXTRASTOPPED"));
                 }
                 catch (Exception exc)
                 {
@@ -701,7 +701,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addons");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop addons") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_ADDONS") + $": {exc.Message}");
                 }
 
                 try
@@ -716,7 +716,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop RPC");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop RPC") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_RPC") + $": {exc.Message}");
                 }
 
                 try
@@ -731,7 +731,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to close all connections");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to close all connections") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_CLOSE_CONNECTIONS") + $": {exc.Message}");
                 }
 
                 // Disable safe mode
@@ -750,7 +750,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop screensaver timeout");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop screensaver timeout") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_SCREENSAVER") + $": {exc.Message}");
                 }
 
                 try
@@ -765,7 +765,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to reset boot log buffer");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to reset boot log buffer") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_BOOTLOG") + $": {exc.Message}");
                 }
 
                 try
@@ -780,7 +780,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop the cursor handler");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop the cursor handler") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_CURSOR") + $": {exc.Message}");
                 }
 
                 // Disable Debugger
@@ -797,7 +797,7 @@ namespace Nitrocid.Kernel.Starting
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop the debugger");
                         DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                         DebugWriter.WriteDebugStackTrace(exc);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop the debugger") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_DEBUGGER") + $": {exc.Message}");
                     }
                 }
 
@@ -812,12 +812,12 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop all kernel threads");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop all kernel threads") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_THREADS") + $": {exc.Message}");
                 }
 
                 // Check for errors
                 if (exceptions.Count > 0)
-                    throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to reset components."));
+                    throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RESETFAILED"));
             }
             catch (Exception ex)
             {
@@ -827,8 +827,8 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxModalColor.WriteInfoBoxModal(
-                    Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
-                    Translate.DoTranslation("Error information:") + $" {ex.Message}\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RESETALLFAILED") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ERRORINFO") + $" {ex.Message}\n\n" +
                     PopulateExceptionText(exceptions)
                 );
                 SplashManager.EndSplashOut(context);
@@ -836,7 +836,7 @@ namespace Nitrocid.Kernel.Starting
             finally
             {
                 // Unload all custom splashes
-                SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"));
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"));
                 SplashManager.CloseSplash(context);
                 SplashManager.customSplashes.Clear();
 
@@ -873,7 +873,7 @@ namespace Nitrocid.Kernel.Starting
                 Exception exception = exceptions[i];
 
                 // Write the exception header
-                string exceptionHeader = $"{Translate.DoTranslation("Exception")} {i + 1}/{exceptions.Count}";
+                string exceptionHeader = $"{LanguageTools.GetLocalized("NKS_KERNEL_STARTING_EXCEPTIONTEXT_EXCEPTION")} {i + 1}/{exceptions.Count}";
                 exceptionsBuilder.AppendLine(exceptionHeader);
                 exceptionsBuilder.AppendLine(new string('=', ConsoleChar.EstimateCellWidth(exceptionHeader)));
 
@@ -886,7 +886,7 @@ namespace Nitrocid.Kernel.Starting
                     exceptionsBuilder.AppendLine("\n\n");
             }
             if (exceptions.Count == 0)
-                exceptionsBuilder.AppendLine(Translate.DoTranslation("Consult the kernel debug logs for more info."));
+                exceptionsBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_EXCEPTIONTEXT_TIP"));
             return exceptionsBuilder.ToString();
         }
     }

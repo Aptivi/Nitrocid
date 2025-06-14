@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -127,16 +127,16 @@ namespace Nitrocid.Kernel.Debugging.Testing
         ];
         internal static Dictionary<TestSection, string> sections = new()
         {
-            { TestSection.ConsoleBase,          /* Localizable */ "Base console tests" },
-            { TestSection.Drivers,              /* Localizable */ "Driver tests" },
-            { TestSection.Files,                /* Localizable */ "Filesystem tests" },
-            { TestSection.Kernel,               /* Localizable */ "Main kernel component tests" },
-            { TestSection.Languages,            /* Localizable */ "Language and localization tests" },
-            { TestSection.Misc,                 /* Localizable */ "Miscellaneous tests" },
-            { TestSection.Modification,         /* Localizable */ "Kernel modification tests" },
-            { TestSection.Network,              /* Localizable */ "Network system tests" },
-            { TestSection.Shell,                /* Localizable */ "UESH shell tests" },
-            { TestSection.Users,                /* Localizable */ "User tests" },
+            { TestSection.ConsoleBase,          LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_CONSOLEBASE") },
+            { TestSection.Drivers,              LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_DRIVER") },
+            { TestSection.Files,                LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_FILESYSTEM") },
+            { TestSection.Kernel,               LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_KERNEL") },
+            { TestSection.Languages,            LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_LANGUAGES") },
+            { TestSection.Misc,                 LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_MISC") },
+            { TestSection.Modification,         LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION") },
+            { TestSection.Network,              LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK") },
+            { TestSection.Shell,                LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL") },
+            { TestSection.Users,                LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS") },
         };
         private static bool exiting;
 
@@ -150,14 +150,14 @@ namespace Nitrocid.Kernel.Debugging.Testing
             var listFacades = sections.Select((kvp) => ($"{kvp.Key}", Translate.DoTranslation(kvp.Value))).ToArray();
             var listFacadesAlt = new (string, string)[]
             {
-                (Translate.DoTranslation("Shutdown"), Translate.DoTranslation("Exits the testing mode and shuts down the kernel"))
+                (LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC"))
             };
 
             // Prompt for section
             while (!exiting)
             {
                 // Now, prompt for the selection of the section
-                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test section to run"), listFacades, listFacadesAlt, true);
+                int sel = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT"), listFacades, listFacadesAlt, true);
                 if (sel <= sectionCount)
                     OpenSection(listFacadesCodeNames[sel - 1]);
                 else

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -127,7 +127,7 @@ namespace Nitrocid.Network.SpeedDial
                 if (!NetworkConnectionTools.ConnectionTypeExists(SpeedDialType))
                 {
                     if (ThrowException)
-                        throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Can't add a speed dial with non-existent type."));
+                        throw new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_NETWORK_SPEEDDIAL_EXCEPTION_TYPENOTFOUND"));
                     else
                         return;
                 }
@@ -142,7 +142,7 @@ namespace Nitrocid.Network.SpeedDial
             else if (ThrowException)
             {
                 // Entry already exists! Throw an exception if needed.
-                throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Entry already exists."));
+                throw new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_NETWORK_SPEEDDIAL_EXCEPTION_ENTRYALREADYEXISTS"));
             }
         }
 

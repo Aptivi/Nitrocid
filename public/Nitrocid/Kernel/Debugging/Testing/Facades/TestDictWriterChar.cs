@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,15 +26,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestDictWriterChar : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the dictionary writer with the char and char array");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal char dictionary:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST"));
             TextWriters.WriteList(NormalCharDict);
-            TextWriterColor.Write(Translate.DoTranslation("Array char dictionary:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST"));
             TextWriters.WriteList(ArrayCharDict);
         }
     }

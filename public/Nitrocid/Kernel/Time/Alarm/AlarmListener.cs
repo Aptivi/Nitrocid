@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Time.Alarm
                             // The alarm has been fired! Send a notification
                             notifiedAlarms.Add(alarm.Key);
                             var alarmNotif = new Notification(
-                                !string.IsNullOrWhiteSpace(alarm.Value.Description) ? alarm.Value.Name : Translate.DoTranslation("Alarm fired!"),
+                                !string.IsNullOrWhiteSpace(alarm.Value.Description) ? alarm.Value.Name : LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_FIRED"),
                                 !string.IsNullOrWhiteSpace(alarm.Value.Description) ? alarm.Value.Description : alarm.Value.Name,
                                 NotificationPriority.High, NotificationType.Normal
                             );

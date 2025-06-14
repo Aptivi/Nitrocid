@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,13 +26,13 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ColorTest : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the VT sequence for 255 colors");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             string Text = "";
             if (string.IsNullOrEmpty(Text))
-                Text = InputTools.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);

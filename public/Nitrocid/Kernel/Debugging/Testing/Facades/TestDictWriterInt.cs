@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,15 +26,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestDictWriterInt : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the dictionary writer with the integer and integer array");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };
             var ArrayIntegerDict = new Dictionary<string, int[]>() { { "One", new int[] { 1, 2, 3 } }, { "Two", new int[] { 1, 2, 3 } }, { "Three", new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write(Translate.DoTranslation("Normal integer dictionary:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST"));
             TextWriters.WriteList(NormalIntegerDict);
-            TextWriterColor.Write(Translate.DoTranslation("Array integer dictionary:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST"));
             TextWriters.WriteList(ArrayIntegerDict);
         }
     }

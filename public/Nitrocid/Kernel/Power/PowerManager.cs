@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -125,7 +125,7 @@ namespace Nitrocid.Kernel.Power
                         // Simulate 0.0.1's behavior on shutting down
                         if (!Config.MainConfig.EnableSplash)
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_POWER_SHUTTINGDOWN"));
                             if (Config.MainConfig.BeepOnShutdown)
                                 ConsoleWrapper.Beep();
                             if (Config.MainConfig.DelayOnShutdown)
@@ -150,7 +150,7 @@ namespace Nitrocid.Kernel.Power
                         EventsManager.FireEvent(EventType.PreReboot);
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
                         if (!Config.MainConfig.EnableSplash)
-                            TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_POWER_REBOOTING"));
 
                         // Set appropriate flags
                         RebootRequested = true;
@@ -169,31 +169,31 @@ namespace Nitrocid.Kernel.Power
                     }
                 case PowerMode.RemoteShutdown:
                     {
-                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestart:
                     {
-                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:Reboot>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestartSafe:
                     {
-                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestartDebug:
                     {
-                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:RebootDebug>(" + IP + ")", IP, Port);
                         break;
                     }
                 case PowerMode.RemoteRestartMaintenance:
                     {
-                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:RebootMaintenance>(" + IP + ")", IP, Port);
                         break;
                     }

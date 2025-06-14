@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
         internal static void ExecuteProcess(ExecuteProcessThreadParameters? ThreadParams)
         {
             if (ThreadParams is null)
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get thread parameters for process execution."));
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION"));
             ExecuteProcess(ThreadParams.File, ThreadParams.Args);
         }
 
@@ -128,7 +128,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
             return -1;
         }
@@ -225,7 +225,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
                 exitCode = -1;
             }
             return commandOutputBuilder.ToString();
@@ -280,7 +280,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", vars: [File, WorkingDirectory, Args, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_ERROREXECUTE1") + " {2}." + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
         }
 
@@ -322,7 +322,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
             var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
             var startInfoType = processStartInfo.GetType();
             var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get internal field for environment variables"));
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS"));
             envVarsField.SetValue(processStartInfo, null);
             // 
             // --- UseShellExecute and the Environment property population Hack End ---

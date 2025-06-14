@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     spent.Start();
                     string encrypted = Encryption.GetEncryptedFile(file, parameters.ArgumentsList[0]);
                     TextWriterColor.Write(encrypted);
-                    TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
                     if (UseRelative)
                     {
                         FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({parameters.ArgumentsList[0]})");
@@ -82,7 +82,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         spent.Start();
                         string encrypted = Encryption.GetEncryptedFile(file, driverName);
                         TextWriterColor.Write($"{driverName}: {encrypted}");
-                        TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
                         if (UseRelative)
                         {
                             FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({driverName})");
@@ -96,7 +96,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
                 }
                 if (!string.IsNullOrEmpty(@out))
@@ -109,7 +109,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, KernelColorType.Error, file);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }

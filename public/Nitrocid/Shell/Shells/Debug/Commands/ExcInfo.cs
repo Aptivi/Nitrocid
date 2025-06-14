@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,14 +42,14 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (!Enum.TryParse(exceptionStr, out KernelExceptionType type))
             {
                 // There is no such exception number being requested
-                TextWriters.Write(Translate.DoTranslation("No such exception type") + $" {exceptionStr}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_NOTYPE") + $" {exceptionStr}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Get the exception type and its message
-            TextWriters.Write("- " + Translate.DoTranslation("Exception type name") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_TYPENAME") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{type} [{(int)type}]", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Message") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_MESSAGE") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(KernelExceptionMessages.GetMessageFromType(type), true, KernelColorType.ListValue);
             return 0;
         }

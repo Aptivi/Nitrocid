@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of addons"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONS_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             var addonNames = AddonTools.ListAddons().Select((addon) => addon.AddonName);
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of addons"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONS_TITLE"));
 
             // List all the available addons
             var addonNames = AddonTools.ListAddons().Select((addon) => addon.AddonName);

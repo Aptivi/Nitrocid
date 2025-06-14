@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -68,7 +68,7 @@ namespace Nitrocid.Files.Extensions
             this.extension = extension;
             this.implementer = implementer;
             this.handler = handler;
-            this.infoHandler = infoHandler ?? ((_) => Translate.DoTranslation("No extra information."));
+            this.infoHandler = infoHandler ?? ((_) => LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_NOEXTRAINFO"));
         }
     }
 }

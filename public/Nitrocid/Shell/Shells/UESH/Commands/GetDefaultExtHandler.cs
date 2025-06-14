@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,12 +39,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("No such extension."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), KernelColorType.Error);
                 return 21;
             }
             var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]) ??
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {parameters.ArgumentsList[0]}");
-            TextWriters.Write("- " + Translate.DoTranslation("Default extension handler") + ": ", false, KernelColorType.ListEntry);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {parameters.ArgumentsList[0]}");
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
             variableValue = handler.Implementer;
             return 0;

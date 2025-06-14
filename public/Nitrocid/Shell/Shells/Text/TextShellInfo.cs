@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.Shells.Text.Commands;
 using Nitrocid.Shell.Shells.Text.Presets;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Text
 {
@@ -37,248 +38,248 @@ namespace Nitrocid.Shell.Shells.Text
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
+            new CommandInfo("addline", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "text", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Content to add at the end of the file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_ARGUMENT_TEXT_DESC")
                         })
                     ])
                 ], new AddLineCommand()),
 
-            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file", new AddLinesCommand()),
+            new CommandInfo("addlines", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINES_DESC"), new AddLinesCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the text file", new ClearCommand()),
+            new CommandInfo("clear", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC"), new ClearCommand()),
 
-            new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
+            new CommandInfo("delcharnum", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Character number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_CHARNUM_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC")
                         })
                     ])
                 ], new DelCharNumCommand()),
 
-            new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
+            new CommandInfo("delline", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new DelLineCommand()),
 
-            new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
+            new CommandInfo("delword", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Word or phrase to be deleted"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_ARGUMENT_WORD_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new DelWordCommand()),
 
-            new CommandInfo("editline", /* Localizable */ "Edits the specified line",
+            new CommandInfo("editline", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC")
                         })
                     ])
                 ], new EditLineCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor", new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_EXITNOSAVE_DESC"), new ExitNoSaveCommand()),
 
-            new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
+            new CommandInfo("print", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_PRINT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
+            new CommandInfo("querychar", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "char", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A character to query"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_CHAR_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new QueryCharCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
+            new CommandInfo("queryword", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to query"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new QueryWordCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
+            new CommandInfo("querywordregex", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A regular expression to query"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_ARGUMENT_REGEX_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to query a character in all lines"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new QueryWordRegexCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
+            new CommandInfo("replace", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to be replaced"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC")
                         }),
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                         })
                     ])
                 ], new ReplaceCommand()),
 
-            new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
+            new CommandInfo("replaceinline", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to be replaced"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC")
                         }),
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to replace in all lines"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new ReplaceInlineCommand()),
 
-            new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
+            new CommandInfo("replaceregex", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A regular expression to match phrases that are to be replaced"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC")
                         }),
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                         })
                     ])
                 ], new ReplaceRegexCommand()),
 
-            new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
+            new CommandInfo("replaceinlineregex", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINEREGEX_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A regular expression to match phrases that are to be replaced"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC")
                         }),
                         new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "A word or phrase to replace with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                         }),
                         new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Line number (either singular or start of the range), or 'all' to replace in all lines"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC")
                         }),
                         new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Line number ending range"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                         })
                     ])
                 ], new ReplaceInlineRegexCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
+            new CommandInfo("save", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_COMMAND_SAVE_DESC"), new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor", new TuiCommand()),
+            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_TUI_DESC"), new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

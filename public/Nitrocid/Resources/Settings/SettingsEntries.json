@@ -1,28 +1,28 @@
 [
     {
         "Name": "General",
-        "Desc": "This section lists all general kernel settings, mainly for maintaining the kernel.",
-        "DisplayAs": "General kernel settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Development notice acknowledged",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "DevNoticeConsented",
-                "Description": "If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC")
             },
             {
-                "Name": "Show the license information box",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowLicenseInfoBox",
-                "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC")
             },
             {
-                "Name": "Culture and language settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the culture and language",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Language",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME"),
                         "Type": "SSelection",
                         "Variable": "CurrentLanguage",
                         "IsEnumeration": false,
@@ -36,166 +36,166 @@
                             }
                         ],
                         "SelectionFallback": [ "eng" ],
-                        "Description": "Specifies the kernel language."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_DESC")
                     },
                     {
-                        "Name": "Culture",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_NAME"),
                         "Type": "SSelection",
                         "Variable": "CurrentCultureName",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetCultureCodes",
                         "SelectionFunctionType": "CultureManager",
                         "SelectionFallback": [ "en-US" ],
-                        "Description": "Which culture is being used to change the month names, calendar, etc.?"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC")
                     },
                     {
-                        "Name": "Set codepage",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "SetCodepage",
-                        "Description": "Set the language codepage upon switching languages.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC"),
                         "UnsupportedPlatforms": [ "Unix", "macOS" ]
                     }
                 ]
             },
             {
-                "Name": "Time and date settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the time and date",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Use system time zone",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "UseSystemTimeZone",
-                        "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_DESC")
                     },
                     {
-                        "Name": "Kernel-wide time zone",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_NAME"),
                         "Type": "SSelection",
                         "Variable": "KernelWideTimeZone",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetTimeZoneNames",
                         "SelectionFunctionType": "TimeZones",
                         "SelectionFallback": [ "Etc/UTC", "GMT" ],
-                        "Description": "The kernel-wide time zone to use"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC")
                     }
                 ]
             },
             {
-                "Name": "Bootloader settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the bootloader",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_DESC"),
                 "Variables": [
                     {
-                        "Name": "Bootloader style",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_NAME"),
                         "Type": "SString",
                         "Variable": "BootStyle",
-                        "Description": "Select a bootloader style to match your preference."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_STYLE_DESC")
                     },
                     {
-                        "Name": "Bootloader default selection timeout",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "BootSelectTimeoutSeconds",
-                        "Description": "Timeout in seconds to boot to the default FilesystemTools.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_TIMEOUT_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 600
                     },
                     {
-                        "Name": "Bootloader default selection",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_NAME"),
                         "Type": "SInt",
                         "Variable": "BootSelect",
-                        "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_DESC")
                     }
                 ]
             },
             {
-                "Name": "The Nitrocid Homepage",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure The Nitrocid Homepage",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Enable 'The Nitrocid Homepage'",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableHomepage",
-                        "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC")
                     },
                     {
-                        "Name": "Enable 'The Nitrocid Homepage' widgets",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableHomepageWidgets",
-                        "Description": "Enables 'The Nitrocid Homepage' widgets at the right side of the screen."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC")
                     },
                     {
-                        "Name": "Enable 'The Nitrocid Homepage' RSS feed",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableHomepageRssFeed",
-                        "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC")
                     },
                     {
-                        "Name": "'The Nitrocid Homepage' widget",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME"),
                         "Type": "SSelection",
                         "Variable": "HomepageWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock" ],
-                        "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC")
                     }
                 ]
             },
             {
-                "Name": "Kernel update settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the kernel updates",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Check for Updates on Startup",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME"),
                         "Type": "SBoolean",
                         "Variable": "CheckUpdateStart",
-                        "Description": "Each startup, it will check for updates."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC")
                     }
                 ]
             },
             {
-                "Name": "Kernel error settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the kernel errors",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_DESC"),
                 "Variables": [
                     {
-                        "Name": "Notify for any fault during boot",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_NAME"),
                         "Type": "SBoolean",
                         "Variable": "NotifyFaultsBoot",
-                        "Description": "If there is a minor fault during kernel boot, notifies the user about it."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_NOTIFY_DESC")
                     },
                     {
-                        "Name": "Show stack trace on kernel error",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowStackTraceOnKernelError",
-                        "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELERROR_SHOWSTACKTRACE_DESC")
                     }
                 ]
             },
             {
-                "Name": "Kernel power settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the kernel power mechanism",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DESC"),
                 "Variables": [
                     {
-                        "Name": "Simulate No APM Mode",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME"),
                         "Type": "SBoolean",
                         "Variable": "SimulateNoAPM",
-                        "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_DESC")
                     },
                     {
-                        "Name": "Beep on shutdown or reboot",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_NAME"),
                         "Type": "SBoolean",
                         "Variable": "BeepOnShutdown",
-                        "Description": "Enables beeping upon shutting down the kernel."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_BEEP_DESC")
                     },
                     {
-                        "Name": "Delay on shutdown or reboot",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_NAME"),
                         "Type": "SBoolean",
                         "Variable": "DelayOnShutdown",
-                        "Description": "Enables delaying upon shutting down the kernel."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_DELAY_DESC")
                     }
                 ]
             }
@@ -203,347 +203,347 @@
     },
     {
         "Name": "Colors",
-        "Desc": "This section lets you choose what type of color do you want to change.",
-        "DisplayAs": "Color settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Use accent colors",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ACCENT_NAME"),
                 "Type": "SBoolean",
                 "Variable": "UseAccentColors",
-                "Description": "If set to true, the theme manager populates accent colors for specific color types that the theme supports."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ACCENT_DESC")
             },
             {
-                "Name": "Foreground accent color",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_FGACCENT_NAME"),
                 "Type": "SColor",
                 "Variable": "AccentForegroundColor",
-                "Description": "For themes that support accents, this is the accented foregound color."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_FGACCENT_DESC")
             },
             {
-                "Name": "Background accent color",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_BGACCENT_NAME"),
                 "Type": "SColor",
                 "Variable": "AccentBackgroundColor",
-                "Description": "For themes that support accents, this is the accented backgound color."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_BGACCENT_DESC")
             },
             {
-                "Name": "Use console color palette",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "UseConsoleColorPalette",
-                "Description": "When this is set to true, the color palette defined by the terminal is used."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_DESC")
             },
             {
-                "Name": "Allow background color",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_NAME"),
                 "Type": "SBoolean",
                 "Variable": "AllowBackgroundColor",
-                "Description": "When this is set to true, the current background color is honored. Else, it uses your terminal's default colors."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_DESC")
             },
             {
-                "Name": "Console supports true color",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ConsoleSupportsTrueColor",
-                "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC")
             },
             {
-                "Name": "Kernel color schemes",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to set multiple kernel color schemes",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC"),
                 "Variables": [
                     {
-                        "Name": "User Name Shell Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERNAMECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "UserNameShellColor"
                     },
                     {
-                        "Name": "Host Name Shell Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_HOSTNAMECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "HostNameShellColor"
                     },
                     {
-                        "Name": "Continuable Kernel Error Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_CONTKERNELERRORCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ContinuableKernelErrorColor"
                     },
                     {
-                        "Name": "Uncontinuable Kernel Error Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_UNCONTKERNELERRORCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "UncontinuableKernelErrorColor"
                     },
                     {
-                        "Name": "Text Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TEXTCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TextColor"
                     },
                     {
-                        "Name": "License Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LICENSECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "LicenseColor"
                     },
                     {
-                        "Name": "Background Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "BackgroundColor"
                     },
                     {
-                        "Name": "Input Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_INPUTCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "InputColor"
                     },
                     {
-                        "Name": "List Entry Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTENTRYCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ListEntryColor"
                     },
                     {
-                        "Name": "List Value Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTVALUECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ListValueColor"
                     },
                     {
-                        "Name": "Kernel Stage Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "KernelStageColor"
                     },
                     {
-                        "Name": "Error Text Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_ERRORCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ErrorTextColor"
                     },
                     {
-                        "Name": "Warning Text Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_WARNINGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "WarningTextColor"
                     },
                     {
-                        "Name": "Option Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "OptionColor"
                     },
                     {
-                        "Name": "Banner Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BANNERCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "BannerColor"
                     },
                     {
-                        "Name": "Notification Title Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONTITLECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "NotificationTitleColor"
                     },
                     {
-                        "Name": "Notification Description Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONDESCCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "NotificationDescriptionColor"
                     },
                     {
-                        "Name": "Notification Progress Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONPROGRESSCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "NotificationProgressColor"
                     },
                     {
-                        "Name": "Notification Failure Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_NOTIFICATIONFAILURECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "NotificationFailureColor"
                     },
                     {
-                        "Name": "Question Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_QUESTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "QuestionColor"
                     },
                     {
-                        "Name": "Success Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SUCCESSCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "SuccessColor"
                     },
                     {
-                        "Name": "User Dollar Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERDOLLARCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "UserDollarColor"
                     },
                     {
-                        "Name": "Tip Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TIPCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TipColor"
                     },
                     {
-                        "Name": "Separator Text Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPTEXTCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "SeparatorTextColor"
                     },
                     {
-                        "Name": "Separator Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SEPCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "SeparatorColor"
                     },
                     {
-                        "Name": "List Title Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LISTTITLECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ListTitleColor"
                     },
                     {
-                        "Name": "Development Warning Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DEVWARNINGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "DevelopmentWarningColor"
                     },
                     {
-                        "Name": "Stage Time Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_STAGETIMECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "StageTimeColor"
                     },
                     {
-                        "Name": "Progress Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PROGRESSCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "ProgressColor"
                     },
                     {
-                        "Name": "Back Option Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BACKOPTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "BackOptionColor"
                     },
                     {
-                        "Name": "Low Priority Border Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_LPBORDERCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "LowPriorityBorderColor"
                     },
                     {
-                        "Name": "Medium Priority Border Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_MPBORDERCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "MediumPriorityBorderColor"
                     },
                     {
-                        "Name": "High Priority Border Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_HPBORDERCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "HighPriorityBorderColor"
                     },
                     {
-                        "Name": "Table Separator Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLESEPCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TableSeparatorColor"
                     },
                     {
-                        "Name": "Table Header Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEHEADERCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TableHeaderColor"
                     },
                     {
-                        "Name": "Table Value Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLEVALUECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TableValueColor"
                     },
                     {
-                        "Name": "Selected Option Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDOPTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "SelectedOptionColor"
                     },
                     {
-                        "Name": "Alternative Option Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_ALTOPTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "AlternativeOptionColor"
                     },
                     {
-                        "Name": "Weekend Day Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_WEEKENDDAYCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "WeekendDayColor"
                     },
                     {
-                        "Name": "Event Day Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_EVENTDAYCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "EventDayColor"
                     },
                     {
-                        "Name": "Table Title Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TABLETITLECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TableTitleColor"
                     },
                     {
-                        "Name": "Today Day Color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TODAYDAYCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TodayDayColor"
                     },
                     {
-                        "Name": "Interactive TUI background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiBackgroundColor"
                     },
                     {
-                        "Name": "Interactive TUI foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiForegroundColor"
                     },
                     {
-                        "Name": "Interactive TUI pane background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANEBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneBackgroundColor"
                     },
                     {
-                        "Name": "Interactive TUI pane separator color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIPANESEPARATORCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneSeparatorColor"
                     },
                     {
-                        "Name": "Interactive TUI selected pane separator color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUISELECTEDPANESEPARATORCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedSeparatorColor"
                     },
                     {
-                        "Name": "Interactive TUI selected pane item foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedItemForeColor"
                     },
                     {
-                        "Name": "Interactive TUI selected pane item background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_SELECTEDPANEITEMBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneSelectedItemBackColor"
                     },
                     {
-                        "Name": "Interactive TUI pane item foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneItemForeColor"
                     },
                     {
-                        "Name": "Interactive TUI pane item background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_PANEITEMBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiPaneItemBackColor"
                     },
                     {
-                        "Name": "Interactive TUI option background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiOptionBackgroundColor"
                     },
                     {
-                        "Name": "Interactive TUI option foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiOptionForegroundColor"
                     },
                     {
-                        "Name": "Interactive TUI option binding name color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_OPTIONBINDINGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingOptionColor"
                     },
                     {
-                        "Name": "Interactive TUI box background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiBoxBackgroundColor"
                     },
                     {
-                        "Name": "Interactive TUI box foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_BOXFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiBoxForegroundColor"
                     },
                     {
-                        "Name": "Disabled option color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_DISABLEDOPTIONCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "DisabledOptionColor"
                     },
                     {
-                        "Name": "Interactive TUI builtin key binding background color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinBackgroundColor"
                     },
                     {
-                        "Name": "Interactive TUI builtin key binding foreground color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGFGCOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinForegroundColor"
                     },
                     {
-                        "Name": "Interactive TUI builtin key binding name color",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME"),
                         "Type": "SColor",
                         "Variable": "TuiKeyBindingBuiltinColor"
                     }
@@ -553,162 +553,162 @@
     },
     {
         "Name": "Hardware",
-        "Desc": "This section changes hardware probe behavior.",
-        "DisplayAs": "Hardware settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"),
         "Keys": [
             {
-                "Name": "Quiet Probe",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "QuietHardwareProbe",
-                "Description": "Keep hardware probing messages silent."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_QUIETPROBE_DESC")
             },
             {
-                "Name": "Verbose Probe",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "VerboseHardwareProbe",
-                "Description": "Make hardware probing messages a bit talkative."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_HARDWARE_VERBOSEPROBE_DESC")
             }
         ]
     },
     {
-        "Name": "Login",
-        "Desc": "This section represents the login settings. Log out of your account for the changes to take effect.",
-        "DisplayAs": "Login settings",
+        "Name": LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGIN"),
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Show MOTD on Log-in",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowMOTD",
-                "Description": "Show Message of the Day before displaying login screen."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_DESC")
             },
             {
-                "Name": "Clear Screen on Log-in",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ClearOnLogin",
-                "Description": "Clear screen before displaying login screen."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_DESC")
             },
             {
-                "Name": "Host Name",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME"),
                 "Type": "SString",
                 "Variable": "HostName",
-                "Description": "The kernel host name to communicate with the rest of the computers"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_DESC")
             },
             {
-                "Name": "Show available usernames",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowAvailableUsers",
-                "Description": "Shows available users if enabled."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERS_DESC")
             },
             {
-                "Name": "MOTD Path",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME"),
                 "Type": "SString",
                 "Variable": "MotdFilePath",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                "Description": "Which file is the MOTD text file? Write an absolute path to the text file."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_DESC")
             },
             {
-                "Name": "MAL Path",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME"),
                 "Type": "SString",
                 "Variable": "MalFilePath",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                "Description": "Which file is the MAL text file? Write an absolute path to the text file."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MALPATH_DESC")
             },
             {
-                "Name": "Username prompt style",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_NAME"),
                 "Type": "SString",
                 "Variable": "UsernamePrompt",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_USERNAMEPROMPT_DESC")
             },
             {
-                "Name": "Password prompt style",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_NAME"),
                 "Type": "SString",
                 "Variable": "PasswordPrompt",
-                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_PASSWORDPROMPT_DESC")
             },
             {
-                "Name": "Show MAL on Log-in",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowMAL",
-                "Description": "Shows Message of the Day after displaying login screen."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_DESC")
             },
             {
-                "Name": "Include anonymous users",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "IncludeAnonymous",
-                "Description": "Includes the anonymous users in the list"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEANONYMOUS_DESC")
             },
             {
-                "Name": "Include disabled users",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_NAME"),
                 "Type": "SBoolean",
                 "Variable": "IncludeDisabled",
-                "Description": "Includes the disabled users in the list"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_INCLUDEDISABLED_DESC")
             },
             {
-                "Name": "Login handler",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME"),
                 "Type": "SSelection",
                 "Variable": "CurrentLoginHandler",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetHandlerNames",
                 "SelectionFunctionType": "LoginHandlerTools",
                 "SelectionFallback": [ "classic", "modern" ],
-                "Description": "Login handler to use for sign-in prompts."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_HANDLER_DESC")
             },
             {
-                "Name": "Modern logon handler settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the modern logon handler",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC"),
                 "Variables": [
                     {
-                        "Name": "MOTD and Headline at the bottom of the modern logon clock",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "MotdHeadlineBottom",
-                        "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC")
                     },
                     {
-                        "Name": "Enable widgets",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableWidgets",
-                        "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC")
                     },
                     {
-                        "Name": "First widget",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME"),
                         "Type": "SSelection",
                         "Variable": "FirstWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC")
                     },
                     {
-                        "Name": "Second widget",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME"),
                         "Type": "SSelection",
                         "Variable": "SecondWidget",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetWidgetNames",
                         "SelectionFunctionType": "WidgetTools",
                         "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC")
                     }
                 ]
             }
         ]
     },
     {
-        "Name": "Shell",
-        "Desc": "This section lists the shell settings.",
-        "DisplayAs": "General shell settings",
+        "Name": LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"),
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Current Directory",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CURRDIR_NAME"),
                 "Type": "SString",
                 "Variable": "CurrentDir",
-                "Description": "Sets the shell's current directory. Write an absolute path to any existing directory."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CURRDIR_DESC")
             },
             {
-                "Name": "Lookup Directories",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME"),
                 "Type": "SList",
                 "Variable": "PathsToLookup",
                 "SelectionFunctionName": "GetPathList",
@@ -716,10 +716,10 @@
                 "DelimiterVariable": "PathLookupDelimiter",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_DESC")
             },
             {
-                "Name": "Default choice output type",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME"),
                 "Type": "SSelection",
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
@@ -727,108 +727,108 @@
                 "Enumeration": "Terminaux.Inputs.Styles.Choice.ChoiceOutputType",
                 "EnumerationAssembly": "Terminaux",
                 "EnumerationZeroBased": true,
-                "Description": "Default choice output type"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_CHOICEOUTPUTTYPE_NAME")
             },
             {
-                "Name": "Set console title on command execution",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "SetTitleOnCommandExecution",
-                "Description": "Sets console title on command execution."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_TITLECHANGE_DESC")
             },
             {
-                "Name": "Show the shell count",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_COUNT_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowShellCount",
-                "Description": "Shows the shell count in the normal UESH shell (depending on the preset)"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_COUNT_DESC")
             },
             {
-                "Name": "Input history enabled",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_NAME"),
                 "Type": "SBoolean",
                 "Variable": "InputHistoryEnabled",
-                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC")
             },
             {
-                "Name": "Help system",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the shell help system",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_DESC"),
                 "Variables": [
                     {
-                        "Name": "Simplified Help Command",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_NAME"),
                         "Type": "SBoolean",
                         "Variable": "SimHelp",
-                        "Description": "Simplified help command for all the shells"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_DESC")
                     },
                     {
-                        "Name": "Show the commands count on help",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowCommandsCount",
-                        "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_DESC")
                     },
                     {
-                        "Name": "Show the shell commands count on help",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowShellCommandsCount",
-                        "Description": "Show the count of shell commands when listing them in the help command"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_DESC")
                     },
                     {
-                        "Name": "Show the aliases count on help",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowShellAliasesCount",
-                        "Description": "Show the count of aliased commands when listing them in the help command"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_DESC")
                     },
                     {
-                        "Name": "Show the unified commands count on help",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowUnifiedCommandsCount",
-                        "Description": "Show the count of unified shell commands when listing them in the help command"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_DESC")
                     },
                     {
-                        "Name": "Show the addon commands count on help",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowAddonCommandsCount",
-                        "Description": "Show the count of kernel addon commands when listing them in the help command"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ADDONCOMMANDCOUNT_DESC")
                     }
                 ]
             },
             {
-                "Name": "Shell presets",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the shell presets",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_DESC"),
                 "Variables": [
                     {
-                        "Name": "Prompt Preset",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_SHELLPRESET_NAME"),
                         "Type": "SPreset",
                         "Variable": "PromptPreset",
-                        "ShellType": "Shell",
-                        "Description": ""
+                        "ShellType": LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"),
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
                     },
                     {
-                        "Name": "Text Edit Prompt Preset",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_TEXTSHELLPRESET_NAME"),
                         "Type": "SPreset",
                         "Variable": "TextEditPromptPreset",
                         "ShellType": "TextShell",
-                        "Description": ""
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
                     },
                     {
-                        "Name": "Hex Edit Prompt Preset",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_HEXSHELLPRESET_NAME"),
                         "Type": "SPreset",
                         "Variable": "HexEditPromptPreset",
                         "ShellType": "HexShell",
-                        "Description": ""
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
                     },
                     {
-                        "Name": "Admin Shell Prompt Preset",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_ADMINSHELLPRESET_NAME"),
                         "Type": "SPreset",
                         "Variable": "AdminShellPromptPreset",
                         "ShellType": "AdminShell",
-                        "Description": ""
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
                     },
                     {
-                        "Name": "Debug Shell Prompt Preset",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SHELL_PRESETS_DEBUGSHELLPRESET_NAME"),
                         "Type": "SPreset",
                         "Variable": "DebugShellPromptPreset",
                         "ShellType": "DebugShell",
-                        "Description": ""
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): ""
                     }
                 ]
             }
@@ -836,671 +836,671 @@
     },
     {
         "Name": "Filesystem",
-        "Desc": "This section lists the filesystem settings.",
-        "DisplayAs": "Filesystem settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Filesystem sort mode",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_NAME"),
                 "Type": "SSelection",
                 "Variable": "SortMode",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Files.Folders.FilesystemSortOptions",
                 "EnumerationZeroBased": false,
-                "Description": "Controls how the files will be sorted."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTMODE_DESC")
             },
             {
-                "Name": "Filesystem sort direction",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_NAME"),
                 "Type": "SSelection",
                 "Variable": "SortDirection",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Files.Folders.FilesystemSortDirection",
                 "EnumerationZeroBased": false,
-                "Description": "Controls the direction of filesystem sorting whether it's ascending or descending."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_DESC")
             },
             {
-                "Name": "Show Hidden Files",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_NAME"),
                 "Type": "SBoolean",
                 "Variable": "HiddenFiles",
-                "Description": "Shows hidden files."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_HIDDENFILES_DESC")
             },
             {
-                "Name": "Size parse mode",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "FullParseMode",
-                "Description": "If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PARSEMODE_DESC")
             },
             {
-                "Name": "Show progress on filesystem operations",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowFilesystemProgress",
-                "Description": "Shows what file is being processed during the filesystem operations"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_DESC")
             },
             {
-                "Name": "Show file details in list",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowFileDetailsList",
-                "Description": "Shows the brief file details while listing files"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_FILEDETAILSLIST_DESC")
             },
             {
-                "Name": "Suppress unauthorized messages",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_NAME"),
                 "Type": "SBoolean",
                 "Variable": "SuppressUnauthorizedMessages",
-                "Description": "Hides the annoying message if the listing function tries to open an unauthorized folder"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SUPPRESSUNAUTHORIZED_DESC")
             },
             {
-                "Name": "Print line numbers on printing file contents",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "PrintLineNumbers",
-                "Description": "Makes the \"cat\" command print the file's line numbers."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC")
             },
             {
-                "Name": "Sort the list",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_NAME"),
                 "Type": "SBoolean",
                 "Variable": "SortList",
-                "Description": "Sorts the filesystem list professionally."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC")
             },
             {
-                "Name": "Show total size in list",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowTotalSizeInList",
-                "Description": "If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_SHOWTOTALSIZE_DESC")
             },
             {
-                "Name": "Sort logically",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_NAME"),
                 "Type": "SBoolean",
                 "Variable": "SortLogically",
-                "Description": "Sorts the list alphanumerically if enabled or alphabetically if disabled."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_FILESYSTEM_LOGICALSORT_DESC")
             }
         ]
     },
     {
         "Name": "Network",
-        "Desc": "This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.",
-        "DisplayAs": "General networking settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Download Retry Times",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_NAME"),
                 "Type": "SInt",
                 "Variable": "DownloadRetries",
-                "Description": "Write how many times the \"get\" command should retry failed downloads. It must be numeric."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC")
             },
             {
-                "Name": "Upload Retry Times",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_NAME"),
                 "Type": "SInt",
                 "Variable": "UploadRetries",
-                "Description": "Write how many times the \"put\" command should retry failed uploads. It must be numeric."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC")
             },
             {
-                "Name": "Show progress bar while downloading or uploading from \"get\" or \"put\" command",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ShowProgress",
-                "Description": "If true, it makes \"get\" or \"put\" show the progress bar while downloading or uploading."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC")
             },
             {
-                "Name": "Show SSH banner",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME"),
                 "Type": "SBoolean",
                 "Variable": "SSHBanner",
-                "Description": "Shows the SSH server banner on connection."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_DESC")
             },
             {
-                "Name": "Enable RPC",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME"),
                 "Type": "SBoolean",
                 "Variable": "RPCEnabled",
-                "Description": "Whether or not to enable RPC."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_DESC")
             },
             {
-                "Name": "RPC Port",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_NAME"),
                 "Type": "SInt",
                 "Variable": "RPCPort",
-                "Description": "Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_DESC")
             },
             {
-                "Name": "Ping timeout",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_NAME"),
                 "Type": "SInt",
                 "Variable": "PingTimeout",
-                "Description": "How many milliseconds to wait before declaring timeout?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_PINGTIMEOUT_DESC")
             },
             {
-                "Name": "Download percentage text",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_NAME"),
                 "Type": "SString",
                 "Variable": "DownloadPercentagePrint",
-                "Description": "Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_DESC")
             },
             {
-                "Name": "Upload percentage text",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_UPLOADPERCENTAGETEXT_NAME"),
                 "Type": "SString",
                 "Variable": "UploadPercentagePrint",
-                "Description": "Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_DOWNLOADPERCENTAGETEXT_DESC")
             },
             {
-                "Name": "Show notification for download progress",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_NAME"),
                 "Type": "SBoolean",
                 "Variable": "DownloadNotificationProvoke",
-                "Description": "Shows the notification showing the download progress."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONDOWNLOAD_DESC")
             },
             {
-                "Name": "Show notification for upload progress",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_NAME"),
                 "Type": "SBoolean",
                 "Variable": "UploadNotificationProvoke",
-                "Description": "Shows the notification showing the upload progress."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC")
             },
             {
-                "Name": "Remote debugger settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the remote debugger",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DESC"),
                 "Variables": [
                     {
-                        "Name": "Debug Port",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_NAME"),
                         "Type": "SInt",
                         "Variable": "DebugPort",
-                        "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGPORT_DESC")
                     },
                     {
-                        "Name": "Debug Chat Port",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_NAME"),
                         "Type": "SInt",
                         "Variable": "DebugChatPort",
-                        "Description": "Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DEBUGCHATPORT_DESC")
                     },
                     {
-                        "Name": "Record chat to debug log",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "RecordChatToDebugLog",
-                        "Description": "Records remote debug chat to debug log."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_RECORDCHAT_DESC")
                     },
                     {
-                        "Name": "Automatically start remote debug on startup",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_NAME"),
                         "Type": "SBoolean",
                         "Variable": "RDebugAutoStart",
-                        "Description": "If you want remote debug to start on boot, enable this."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_AUTOSTART_DESC")
                     },
                     {
-                        "Name": "Remote debug message format",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_NAME"),
                         "Type": "SString",
                         "Variable": "RDebugMessageFormat",
-                        "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_MESSAGEFORMAT_DESC")
                     },
                     {
-                        "Name": "Notify on remote debug connection error",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_NAME"),
                         "Type": "SBoolean",
                         "Variable": "NotifyOnRemoteDebugConnectionError",
-                        "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NOTIFYONERROR_DESC")
                     }
                 ]
             }
         ]
     },
     {
-        "Name": "Screensaver",
-        "Desc": "This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.",
-        "DisplayAs": "Basic screensaver settings",
+        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Screensaver",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
                 "Type": "SSelection",
                 "Variable": "DefaultSaverName",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetScreensaverNames",
-                "SelectionFunctionType": "Screensaver",
+                "SelectionFunctionType": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME"),
                 "SelectionFallback": [ "matrixbleed" ],
-                "Description": "Which screensaver do you want to lock your screen with?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_DESC")
             },
             {
-                "Name": "Enable screensaver locking when idle",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ScreenTimeoutEnabled",
-                "Description": "If enabled, the screensaver automatically launches after idling for the specified period."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_LOCKIDLE_DESC")
             },
             {
-                "Name": "Screensaver minimum idling interval",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_NAME"),
                 "Type": "SString",
                 "Variable": "ScreenTimeout",
-                "Description": "Minimum idling interval to launch screensaver. The unit is in time span format (HH:MM:SS)."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC")
             },
             {
-                "Name": "Enable screensaver debugging",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ScreensaverDebug",
-                "Description": "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DEBUGGING_DESC")
             },
             {
-                "Name": "Ask for password after locking",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_NAME"),
                 "Type": "SBoolean",
                 "Variable": "PasswordLock",
-                "Description": "After locking the screen, ask for password"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_SCREENSAVER_PASSAFTERLOCK_DESC")
             },
             {
-                "Name": "Acknowledge the photosensitive seizure warning",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ScreensaverSeizureAcknowledged",
-                "Description": "If you aren't photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren't responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_DESC")
             },
             {
-                "Name": "Unified delay",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_NAME"),
                 "Type": "SBoolean",
                 "Variable": "ScreensaverUnifiedDelay",
-                "Description": "If true, enables unified writing delay for all screensavers. Otherwise, it uses screensaver-specific configured delay values."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_UNIFIEDDELAY_DESC")
             },
             {
-                "Name": "Delay in Milliseconds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
                 "Type": "SInt",
                 "Variable": "ScreensaverDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
             }
         ]
     },
     {
         "Name": "Audio",
-        "Desc": "This section lists all the audio settings.",
-        "DisplayAs": "Audio settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Enable audio support",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableAudio",
-                "Description": "Enables the whole audio system for system cues"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SUPPORT_DESC")
             },
             {
-                "Name": "Enable keyboard cues",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableKeyboardCues",
-                "Description": "Whether to play keyboard cues for each keypress or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_KEYBOARDCUES_DESC")
             },
             {
-                "Name": "Enable startup sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableStartupSounds",
-                "Description": "Whether to play the startup sound or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_STARTUPSOUNDS_DESC")
             },
             {
-                "Name": "Enable shutdown sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableShutdownSounds",
-                "Description": "Whether to play the shutdown sound or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_SHUTDOWNSOUNDS_DESC")
             },
             {
-                "Name": "Enable navigation sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableNavigationSounds",
-                "Description": "Whether to play the navigation sound for each keypress or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_NAVSOUNDS_DESC")
             },
             {
-                "Name": "Enable low-priority notification sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableLowPriorityNotificationSounds",
-                "Description": "Whether to play the notification sound for low-priority alerts or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_LPNOTIFSSOUNDS_DESC")
             },
             {
-                "Name": "Enable medium-priority notification sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableMediumPriorityNotificationSounds",
-                "Description": "Whether to play the notification sound for medium-priority alerts or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_MPNOTIFSSOUNDS_DESC")
             },
             {
-                "Name": "Enable high-priority notification sounds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableHighPriorityNotificationSounds",
-                "Description": "Whether to play the notification sound for high-priority alerts or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_HPNOTIFSSOUNDS_DESC")
             },
             {
-                "Name": "Enable ambient screensaver sound effects",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableAmbientSoundFx",
-                "Description": "Whether to play ambient screensaver sound effects or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC")
             },
             {
-                "Name": "Intensify the ambient screensaver sound effects",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EnableAmbientSoundFxIntense",
-                "Description": "Whether to intensify the ambient screensaver sound effects or not"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC")
             },
             {
-                "Name": "Audio cue volume",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME"),
                 "Type": "SDouble",
                 "Variable": "AudioCueVolume",
-                "Description": "Specify how loud do you want the audio cues to be"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_DESC")
             },
             {
-                "Name": "Audio theme",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_THEME_NAME"),
                 "Type": "SSelection",
                 "Variable": "AudioCueThemeName",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetAudioThemeNames",
                 "SelectionFunctionType": "AudioCuesTools",
                 "SelectionFallback": [ "the_mirage" ],
-                "Description": "Which audio theme do you want to use for audio cues?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_AUDIO_THEME_DESC")
             }
         ]
     },
     {
         "Name": "Misc",
-        "Desc": "Settings that don't fit in their appropriate sections land here.",
-        "DisplayAs": "Miscellaneous settings",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DESC"),
+        "DisplayAs": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DISPLAYAS"),
         "Keys": [
             {
-                "Name": "Do Not Disturb",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DND_NAME"),
                 "Type": "SBoolean",
                 "Variable": "DoNotDisturb",
-                "Description": "If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DND_DESC")
             },
             {
-                "Name": "Text editor settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the text editor",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_DESC"),
                 "Variables": [
                     {
-                        "Name": "Enable text editor autosave",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "TextEditAutoSaveFlag",
-                        "Description": "Turns on or off the text editor autosave feature."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_DESC")
                     },
                     {
-                        "Name": "Text editor autosave interval",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_NAME"),
                         "Type": "SInt",
                         "Variable": "TextEditAutoSaveInterval",
-                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC")
                     }
                 ]
             },
             {
-                "Name": "Hex editor settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the hex editor",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_DESC"),
                 "Variables": [
                     {
-                        "Name": "Enable hex editor autosave",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "HexEditAutoSaveFlag",
-                        "Description": "Turns on or off the hex editor autosave feature."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVE_DESC")
                     },
                     {
-                        "Name": "Hex editor autosave interval",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEXEDITOR_AUTOSAVEINTERVAL_NAME"),
                         "Type": "SInt",
                         "Variable": "HexEditAutoSaveInterval",
-                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC")
                     }
                 ]
             },
             {
-                "Name": "RSS headline settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEADLINE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the RSS headlines",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_HEADLINE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Show latest RSS headline on login",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowHeadlineOnLogin",
-                        "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC")
                     },
                     {
-                        "Name": "RSS headline URL",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME"),
                         "Type": "SString",
                         "Variable": "RssHeadlineUrl",
-                        "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC")
                     }
                 ]
             },
             {
-                "Name": "Mouse settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the mouse",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_DESC"),
                 "Variables": [
                     {
-                        "Name": "Mouse support",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "InitializeCursorHandler",
-                        "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_DESC")
                     },
                     {
-                        "Name": "Mouse movement support",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "HandleCursorMovement",
-                        "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_MOUSE_MOVESUPPORT_DESC")
                     }
                 ]
             },
             {
-                "Name": "Debug settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the debugging routine",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_DESC"),
                 "Variables": [
                     {
-                        "Name": "Censor private info on debug logs",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_NAME"),
                         "Type": "SBoolean",
                         "Variable": "DebugCensorPrivateInfo",
-                        "Description": "Censor private information that may be printed to the debug logs."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_PRIVINFOCENSOR_DESC")
                     },
                     {
-                        "Name": "CPU usage debug enabled",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_NAME"),
                         "Type": "SBoolean",
                         "Variable": "CpuUsageDebugEnabled",
-                        "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUG_DESC")
                     },
                     {
-                        "Name": "CPU usage debug update interval",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "CpuUsageUpdateInterval",
-                        "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_USAGEDEBUGUPDATE_DESC"),
                         "MinimumValue": 1000,
                         "MaximumValue": 1000000
                     },
                     {
-                        "Name": "Enable event debugging",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EventDebug",
-                        "Description": "Enables debugging for the kernel event system"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_DEBUGGING_EVENTDEBUG_DESC")
                     }
                 ]
             },
             {
-                "Name": "Aesthetics",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NAME"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the kernel aesthetics",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DESC"),
                 "Variables": [
                     {
-                        "Name": "Stylish splash screen",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableSplash",
-                        "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_DESC")
                     },
                     {
-                        "Name": "Splash name",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_NAME"),
                         "Type": "SSelection",
                         "Variable": "SplashName",
                         "IsEnumeration": false,
                         "SelectionFunctionName": "GetNamesOfSplashes",
                         "SelectionFunctionType": "SplashManager",
                         "SelectionFallback": [ "Simple" ],
-                        "Description": "Splash name from the available splashes implemented in the kernel."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHNAME_DESC")
                     },
                     {
-                        "Name": "Custom Startup Banner",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME"),
                         "Type": "SString",
                         "Variable": "CustomBanner",
-                        "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_DESC")
                     },
                     {
-                        "Name": "Show app information during boot",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowAppInfoOnBoot",
-                        "Description": "Shows brief information about the application on boot."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_APPINFODURINGBOOT_DESC")
                     },
                     {
-                        "Name": "Show stage finish times",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowStageFinishTimes",
-                        "Description": "Shows how much time did the kernel take to finish a stage."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_STAGEFINISHTIMES_DESC")
                     },
                     {
-                        "Name": "Show current time before login",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ShowCurrentTimeBeforeLogin",
-                        "Description": "Shows the current time, time zone, and date before logging in."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_TIMEONLOGIN_DESC")
                     },
                     {
-                        "Name": "Marquee on startup",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_NAME"),
                         "Type": "SBoolean",
                         "Variable": "StartScroll",
-                        "Description": "Enables eyecandy on startup"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MARQUEEONSTARTUP_DESC")
                     },
                     {
-                        "Name": "Long Time and Date",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_NAME"),
                         "Type": "SBoolean",
                         "Variable": "LongTimeDate",
-                        "Description": "The time and date will be longer, showing full month names, etc."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_LONGTIMEDATE_DESC")
                     },
                     {
-                        "Name": "Draw notification border",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_NAME"),
                         "Type": "SBoolean",
                         "Variable": "DrawBorderNotification",
-                        "Description": "Covers the notification with the border."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DRAWBORDER_DESC")
                     },
                     {
-                        "Name": "Notification border settings",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME"),
                         "Type": "SMultivar",
-                        "Description": "This allows you to configure the notification border",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_DESC"),
                         "Variables": [
                             {
-                                "Name": "Upper left corner character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_ULCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperLeftCornerChar",
-                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Upper right corner character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_URCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperRightCornerChar",
-                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_URCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Lower left corner character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LLCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerLeftCornerChar",
-                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Lower right corner character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LRCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerRightCornerChar",
-                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Upper frame character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_UPFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyUpperFrameChar",
-                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Lower frame character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LOFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyLowerFrameChar",
-                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Left frame character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_LEFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyLeftFrameChar",
-                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Right frame character for notification border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_RIFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "NotifyRightFrameChar",
-                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC")
                             }
                         ]
                     },
                     {
-                        "Name": "Password mask character",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME"),
                         "Type": "SChar",
                         "Variable": "CurrentMask",
-                        "Description": "A character that masks the password. Leave blank for more security."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC")
                     },
                     {
-                        "Name": "Enable scroll bar in selection",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_NAME"),
                         "Type": "SBoolean",
                         "Variable": "EnableScrollBarInSelection",
-                        "Description": "Enables the scroll bar in selection screens"
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_DESC")
                     },
                     {
-                        "Name": "General border settings",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_NAME"),
                         "Type": "SMultivar",
-                        "Description": "This allows you to configure the general border",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_GENERALBORDER_DESC"),
                         "Variables": [
                             {
-                                "Name": "Upper left corner character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_ULCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderUpperLeftCornerChar",
-                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Upper right corner character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_URCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderUpperRightCornerChar",
-                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_URCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Lower left corner character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LLCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderLowerLeftCornerChar",
-                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LLCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Lower right corner character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LRCORNERCHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderLowerRightCornerChar",
-                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LRCORNERCHAR_DESC")
                             },
                             {
-                                "Name": "Upper frame character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_UPFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderUpperFrameChar",
-                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_UPFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Lower frame character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LOFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderLowerFrameChar",
-                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LOFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Left frame character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_LEFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderLeftFrameChar",
-                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_LEFRAMECHAR_DESC")
                             },
                             {
-                                "Name": "Right frame character for general border",
+                                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_RIFRAMECHAR_NAME"),
                                 "Type": "SChar",
                                 "Variable": "BorderRightFrameChar",
-                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_RIFRAMECHAR_DESC")
                             }
                         ]
                     },
                     {
-                        "Name": "Display new notifications as asterisks",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "NotifyDisplayAsAsterisk",
-                        "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NEWNOTIFICATIONSASTERISKS_DESC")
                     },
                     {
-                        "Name": "Show file size in the file manager",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_NAME"),
                         "Type": "SBoolean",
                         "Variable": "IfmShowFileSize",
-                        "Description": "Whether to show the file size in the status."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_FILESIZEIFM_DESC")
                     },
                     {
-                        "Name": "Use classic style of headers in the Settings app",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "ClassicSettingsHeaderStyle",
-                        "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CLASSICHEADERSSETTINGS_DESC")
                     },
                     {
-                        "Name": "Default figlet font",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_NAME"),
                         "Type": "SFiglet",
                         "Variable": "DefaultFigletFontName",
-                        "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_MISC_AESTHETICS_DEFAULTFIGLET_DESC")
                     }
                 ]
             }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -110,7 +110,7 @@ namespace Nitrocid.Languages
         {
             // Check to see if the language being installed is found in resources
             string localizationTokenValue = ResourcesManager.ConvertToString(ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language resource for") + $" {LangName}"));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED") + $" {LangName}"));
             if (!string.IsNullOrEmpty(localizationTokenValue))
             {
                 // Install values to the object instance
@@ -122,12 +122,12 @@ namespace Nitrocid.Languages
 
                 // Get instance of language resource
                 var localizations = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get localized text"));
+                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_LOCALIZED"));
                 string[] LanguageResource = localizations.Localizations;
                 var englishData = ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English localizations")));
+                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS")));
                 var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
+                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOC"));
                 string[] LanguageResourceEnglish = englishLocalizations.Localizations;
                 custom = false;
 
@@ -146,7 +146,7 @@ namespace Nitrocid.Languages
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No such language or invalid language. Perhaps, you should use the second overload that takes the LanguageToken for your custom languages?");
-                throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", LangName);
+                throw new KernelException(KernelExceptionType.NoSuchLanguage, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + " {0}", LangName);
             }
         }
 
@@ -168,11 +168,11 @@ namespace Nitrocid.Languages
 
             // Install it
             var englishData = ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English localizations")));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS")));
             var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOC"));
             if (LanguageToken is null)
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Language token must be specified"));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN"));
             string[] LanguageResourceEnglish = englishLocalizations.Localizations;
             custom = true;
             DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", vars: [LanguageToken.Length, LanguageResourceEnglish.Length]);
@@ -194,7 +194,7 @@ namespace Nitrocid.Languages
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", vars: [LanguageResourceEnglish.Length, LanguageToken.Length]);
-                throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
+                throw new KernelException(KernelExceptionType.LanguageParse, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT"));
             }
         }
 

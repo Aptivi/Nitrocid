@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,19 +25,19 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestListEntryWriter : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the list entry writer");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalStringListEntries = new List<string>() { "String 1", "String 2", "String 3" };
             var NormalStringListValues = new List<string>() { "Value 1", "Value 2", "Value 3" };
-            TextWriterColor.Write(Translate.DoTranslation("Normal string list:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i]);
-            TextWriterColor.Write(Translate.DoTranslation("Indent 1:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 1);
-            TextWriterColor.Write(Translate.DoTranslation("Indent 2:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 2);
         }

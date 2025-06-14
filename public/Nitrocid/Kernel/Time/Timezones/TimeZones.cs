@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Time.Timezones
             CheckZoneInfoDirectory();
             if (TimeZoneExists(zone))
                 return TimeZoneInfo.FindSystemTimeZoneById(zone);
-            throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone not found.") + $" {zone}");
+            throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NOTFOUND2") + $" {zone}");
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Nitrocid.Kernel.Time.Timezones
                 return TimeZoneInfo.Local;
             if (TimeZoneExists(defaultZoneName))
                 return TimeZoneInfo.FindSystemTimeZoneById(defaultZoneName);
-            throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone not found.") + $" {defaultZoneName}");
+            throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NOTFOUND2") + $" {defaultZoneName}");
         }
 
         internal static void CheckZoneInfoDirectory()
@@ -135,7 +135,7 @@ namespace Nitrocid.Kernel.Time.Timezones
             if (KernelPlatform.IsOnUnix() && !FilesystemTools.FolderExists("/usr/share/zoneinfo"))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "System is on Unix but /usr/share/zoneinfo is not installed!");
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA"));
             }
         }
     }

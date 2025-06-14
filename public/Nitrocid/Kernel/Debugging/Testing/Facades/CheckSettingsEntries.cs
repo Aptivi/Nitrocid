@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CheckSettingsEntries : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Checks all the KS settings to see if the variables are written correctly");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var Results = ConfigTools.CheckConfigVariables();
             bool failed = Results.Any((res) => !res);
             if (failed)
-                TextWriters.Write(Translate.DoTranslation("One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, KernelColorType.Warning);
             TestActualValue = failed;
         }
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,13 +41,13 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var FileBytes = HexEditShellCommon.FileBytes ??
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 2)
             {
                 byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                 byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                 HexEditTools.Replace(ByteFrom, ByteWith);
-                TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 3)
@@ -59,12 +59,12 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                         byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                         HexEditTools.Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
-                        TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
@@ -81,12 +81,12 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
-                        TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }

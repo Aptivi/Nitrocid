@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -96,9 +96,9 @@ namespace Nitrocid.Misc.Reflection
         public static object? InvokeMethod(MethodBase? method, object obj, params object?[]? args)
         {
             if (method is null)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent."));
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHMETHOD"));
             if (method.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is static. Use the non-object overload.") + $" {method.Name}");
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_METHODSTATIC") + $" {method.Name}");
 
             // Now, invoke the method.
             if (args is not null && args.Length > 0)
@@ -137,9 +137,9 @@ namespace Nitrocid.Misc.Reflection
         public static object? InvokeMethodStatic(MethodBase? method, params object?[]? args)
         {
             if (method is null)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent."));
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_NOSUCHMETHOD"));
             if (!method.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is not static. Use the object overload.") + $" {method.Name}");
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_MISC_REFLECTION_EXCEPTION_METHODNONSTATIC") + $" {method.Name}");
 
             // Now, invoke the method.
             if (args is not null && args.Length > 0)

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -104,7 +104,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSaversConfig";
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("To get additional screensavers, install the screensaver pack addon."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSAVERS"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
@@ -116,7 +116,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSplashesConfig";
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("To get additional splashes, install the splash pack addon."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSPLASHES"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
@@ -129,10 +129,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriters.Write(Translate.DoTranslation("You can use the type switch to open the following settings") + ": ", true, KernelColorType.Tip);
-            TextWriters.Write("- " + Translate.DoTranslation("Base settings") + ": ", true, KernelColorType.ListTitle);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, KernelColorType.Tip);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, KernelColorType.ListTitle);
             TextWriters.WriteList(Config.baseConfigurations.Keys);
-            TextWriters.Write("- " + Translate.DoTranslation("Custom settings") + ": ", true, KernelColorType.ListTitle);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_CUSTOM") + ": ", true, KernelColorType.ListTitle);
             TextWriters.WriteList(Config.customConfigurations.Keys);
         }
 

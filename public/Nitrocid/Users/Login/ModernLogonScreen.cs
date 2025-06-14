@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -82,20 +82,20 @@ namespace Nitrocid.Users.Login
                         var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
                         var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                         if (Feed is (string feedTitle, string articleTitle))
-                            return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
-                        return Translate.DoTranslation("No feed.");
+                            return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM") + $" {feedTitle}: {articleTitle}";
+                        return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED");
                     }
                     catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        return Translate.DoTranslation("Install the RSS Shell Extras addon!");
+                        return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        return Translate.DoTranslation("Failed to get the latest news.");
+                        return LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
                     }
                 }
 
@@ -200,7 +200,7 @@ namespace Nitrocid.Users.Login
                                     }
 
                                     // Print the instructions
-                                    string instStr = Translate.DoTranslation("Press any key to start, or ESC for more options...");
+                                    string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
                                     int consoleInstY = ConsoleWrapper.WindowHeight - 2;
                                     var instText = new AlignedText()
                                     {
@@ -257,7 +257,7 @@ namespace Nitrocid.Users.Login
                             var part = new ScreenPart();
                             part.AddDynamicText(() =>
                             {
-                                string text = Translate.DoTranslation("Unknown screen number.");
+                                string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_UNKNOWNSCREENNUM");
                                 string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
                                 int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                                 var errorText = new AlignedText()
@@ -285,7 +285,7 @@ namespace Nitrocid.Users.Login
                         var part = new ScreenPart();
                         part.AddDynamicText(() =>
                         {
-                            string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                            string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILED") + (KernelEntry.DebugMode ? $"\n\n{LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILTIP")}" : "");
                             string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
                             int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                             var errorText = new AlignedText()

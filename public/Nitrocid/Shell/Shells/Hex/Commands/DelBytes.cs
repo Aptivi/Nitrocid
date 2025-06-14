@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var FileBytes = HexEditShellCommon.FileBytes ??
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 1)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
@@ -50,18 +50,18 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
                     {
                         HexEditTools.DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
-                        TextWriters.Write(Translate.DoTranslation("Deleted bytes."), true, KernelColorType.Success);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_SUCCESS"), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Specified Byte number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_INVALIDNUM"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }
@@ -80,13 +80,13 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, KernelColorType.Error);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[1]]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }

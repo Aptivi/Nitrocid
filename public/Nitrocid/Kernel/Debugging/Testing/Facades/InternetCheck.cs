@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,14 +25,14 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class InternetCheck : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Checks for the connection to the Internet");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_INTERNETCHECK_DESC");
         public override TestSection TestSection => TestSection.Network;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
         public override void Run()
         {
             bool netFound = NetworkTools.InternetAvailable;
-            TextWriterColor.Write(Translate.DoTranslation("Internet availability is") + $": {netFound}");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_INTERNETCHECK_TEST") + $": {netFound}");
             TestActualValue = netFound;
         }
     }

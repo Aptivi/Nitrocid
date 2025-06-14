@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -180,7 +180,7 @@ namespace Nitrocid.Misc.Audio
                 AudioCueType.SpecialBeep => SpecialBeepStream,
                 AudioCueType.Startup => StartupStream,
                 AudioCueType.Full => FullStream,
-                _ => throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("There is no such audio cue type.")),
+                _ => throw new KernelException(KernelExceptionType.AudioCue, LanguageTools.GetLocalized("NKS_MISC_AUDIO_EXCEPTION_NOCUETYPE")),
             };
 
         internal AudioCueContainer()

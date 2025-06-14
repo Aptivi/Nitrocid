@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,7 +24,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class DismissNotifications : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Dismisses all sent notifications");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_DISMISSNOTIFICATIONS_DESC");
         public override void Run()
         {
             for (int i = NotificationManager.NotifRecents.Count - 1; i >= 0; i--)

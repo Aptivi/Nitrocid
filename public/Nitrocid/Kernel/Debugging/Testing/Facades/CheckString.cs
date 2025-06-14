@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,21 +27,21 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CheckString : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Checks to see if the translatable string exists in the KS resources");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             string Text = "";
             if (string.IsNullOrEmpty(Text))
-                Text = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");
+                Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {
-                TextWriters.Write(Translate.DoTranslation("String found in the localization resources."), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND"), true, KernelColorType.Success);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("String not found in the localization resources."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND"));
             }
         }
     }

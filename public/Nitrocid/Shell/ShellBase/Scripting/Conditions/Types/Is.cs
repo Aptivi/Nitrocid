@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -82,7 +82,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
         {
             // SecondVariable is actually a data type needed for parsing.
             if (!DataTypes.TryGetValue(SecondVariable, out Func<string, bool>? dataFunc))
-                throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Data type {0} specified is invalid."), SecondVariable);
+                throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE"), SecondVariable);
 
             // Get the action needed to get the comparer and test the condition defined above
             return dataFunc(FirstVariable);

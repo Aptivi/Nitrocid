@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -87,30 +87,30 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("exec", /* Localizable */ "Executes an external process",
+            new CommandInfo("exec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_EXEC_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "process", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to a process"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC")
                         }),
                         new CommandArgumentPart(false, "args", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Arguments to pass to a process"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.", new SwitchOptions()
+                        new SwitchInfo("forked", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExecUnifiedCommand()),
 
-            new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell", new ExitUnifiedCommand()),
+            new CommandInfo("exit", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC"), new ExitUnifiedCommand()),
 
-            new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
+            new CommandInfo("findcmds", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
@@ -121,97 +121,97 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
-            new CommandInfo("help", /* Localizable */ "Help page",
+            new CommandInfo("help", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = /* Localizable */ "Command to show help entry"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
+                        new SwitchInfo("general", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("mod", /* Localizable */ "Shows mod commands", new SwitchOptions()
+                        new SwitchInfo("mod", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("alias", /* Localizable */ "Shows aliased commands", new SwitchOptions()
+                        new SwitchInfo("alias", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("unified", /* Localizable */ "Shows unified commands", new SwitchOptions()
+                        new SwitchInfo("unified", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("addon", /* Localizable */ "Shows kernel addon commands", new SwitchOptions()
+                        new SwitchInfo("addon", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("all", /* Localizable */ "Shows all commands", new SwitchOptions()
+                        new SwitchInfo("all", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("simplified", /* Localizable */ "Uses simplified help", new SwitchOptions()
+                        new SwitchInfo("simplified", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories", new LoadHistoriesUnifiedCommand()),
+            new CommandInfo("loadhistories", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC"), new LoadHistoriesUnifiedCommand()),
 
-            new CommandInfo("pipe", /* Localizable */ "Pipes the command output to another command as parameters",
+            new CommandInfo("pipe", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PIPE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = /* Localizable */ "Source command to pipe its output to the target command as the last parameter"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC")
                         }),
                         new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = /* Localizable */ "Target command to execute upon building argument based on the source command output"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("quoted", /* Localizable */ "Whether to pass the output of the source command as one quoted argument or unquoted argument")
+                        new SwitchInfo("quoted", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC"))
                     ], true)
                 ], new PipeUnifiedCommand()),
 
-            new CommandInfo("presets", /* Localizable */ "Opens the shell preset library", new PresetsUnifiedCommand()),
+            new CommandInfo("presets", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC"), new PresetsUnifiedCommand()),
 
-            new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
+            new CommandInfo("repeat", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Target command to execute upon building argument based on the source command output"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC")
                         }),
                         new CommandArgumentPart(false, "command"),
                     ])
                 ], new RepeatUnifiedCommand()),
 
-            new CommandInfo("savehistories", /* Localizable */ "Saves shell histories", new SaveHistoriesUnifiedCommand()),
+            new CommandInfo("savehistories", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC"), new SaveHistoriesUnifiedCommand()),
 
-            new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip", new TipUnifiedCommand()),
+            new CommandInfo("tip", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_TIP_DESC"), new TipUnifiedCommand()),
 
-            new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
+            new CommandInfo("wrap", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_WRAP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType),
-                            ArgumentDescription = /* Localizable */ "Command to wrap its output"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC")
                         })
                     ])
                 ], new WrapUnifiedCommand()),
@@ -422,7 +422,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         // Not a slash command. Do things differently
                         var ShellInstance = ShellStack[^1];
                         DebugWriter.WriteDebug(DebugLevel.I, "Non-slash cmd exec succeeded. Running with {0}", vars: [Command]);
-                        var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo ?? BaseShellInfo.fallbackNonSlashCommand, ShellType, ShellInstance);
+                        var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo, ShellType, ShellInstance);
                         CommandExecutor.StartCommandThread(Params);
                         UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
                         continue;
@@ -521,7 +521,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                             !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [commandName]);
-                                            TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
+                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, commandName);
                                             UESHVariables.SetVariable("UESHErrorCode", "-4");
                                             break;
                                         }
@@ -532,7 +532,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 if (KernelEntry.Maintenance & cmdInfo.Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", vars: [commandName]);
-                                    TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UNUSABLEINMAINTENANCE"), true, KernelColorType.Error, commandName);
                                     UESHVariables.SetVariable("UESHErrorCode", "-3");
                                 }
                                 else
@@ -570,7 +570,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 catch (Exception ex)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", vars: [ex.Message]);
-                                    TextWriters.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDSTARTFAILED"), true, KernelColorType.Error, commandName, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
                                         UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
@@ -589,7 +589,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                                 }
                                 catch (Exception ex)
                                 {
-                                    TextWriters.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE"), true, KernelColorType.Error, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
                                         UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
@@ -600,21 +600,21 @@ namespace Nitrocid.Shell.ShellBase.Shells
                             else
                             {
                                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", vars: [commandName]);
-                                TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMANDNOTFOUND"), true, KernelColorType.Error, commandName);
                                 UESHVariables.SetVariable("UESHErrorCode", "-2");
                             }
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", vars: [commandName]);
-                            TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMANDNOTFOUND"), true, KernelColorType.Error, commandName);
                             UESHVariables.SetVariable("UESHErrorCode", "-1");
                         }
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2") + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                         if (ex is KernelException kex)
                             UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
                         else
@@ -695,7 +695,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 StartShellInternal(ShellType, ShellArgs);
             }
             else
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Shells can't start unless the mother shell has started."));
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL"));
         }
 
         /// <summary>
@@ -705,7 +705,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         {
             // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
             if (IsOnMotherShell())
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL"));
 
             // Not a mother shell, so bail.
             KillShellInternal();
@@ -905,7 +905,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
                 // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
                 var ShellExecute = GetShellExecutor(ShellType) ??
-                    throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get shell executor for") + $" {ShellType}");
+                    throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR") + $" {ShellType}");
 
                 // Make a new instance of shell information
                 var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
@@ -928,7 +928,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", vars: [nameof(StartShellInternal)]);
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
+                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL"), ex);
             }
             finally
             {

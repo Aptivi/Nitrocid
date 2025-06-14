@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (!Guid.TryParse(sessionGuidStr, out Guid sessionGuid))
             {
                 // There is invalid session GUID being requested
-                TextWriters.Write(Translate.DoTranslation("Invalid session GUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (string.IsNullOrEmpty(finalDebug))
             {
                 // There is no such session GUID being requested
-                TextWriters.Write(Translate.DoTranslation("No such session GUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 

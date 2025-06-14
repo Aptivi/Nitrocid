@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -29,19 +29,19 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CheckLocalizationLines : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Checks all the localization text line numbers to see if they're all equal");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             var EnglishJson = JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the English localization resource"))));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_EXCEPTION_OPENENGRSOURCE"))));
             JToken LanguageJson;
             foreach (string LanguageName in LanguageManager.Languages.Keys)
             {
                 LanguageJson = JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the localization resource for") + $" {LanguageName}")));
+                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_EXCEPTION_OPENRSOURCE") + $" {LanguageName}")));
                 if (LanguageJson.Count() != EnglishJson.Count())
-                    TextWriters.Write(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_MISMATCH") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
             }
         }
     }

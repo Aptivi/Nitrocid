@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFIELDS_TITLE") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of fields for") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFIELDS_TITLE") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}");
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFields(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);

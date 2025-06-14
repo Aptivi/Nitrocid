@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Time.Alarm
         internal AlarmEntry(string alarmName, string alarmDesc, DateTime alarmSpan)
         {
             if (alarmSpan < TimeDateTools.KernelDateTime)
-                throw new KernelException(KernelExceptionType.Alarm, Translate.DoTranslation("Alarm date and time may not be in the past."));
+                throw new KernelException(KernelExceptionType.Alarm, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT"));
             this.alarmName = alarmName ?? "";
             this.alarmDesc = alarmDesc ?? "";
             this.alarmSpan = alarmSpan;

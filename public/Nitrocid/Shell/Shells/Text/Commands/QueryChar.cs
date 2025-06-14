@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,7 +64,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
@@ -117,7 +117,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }

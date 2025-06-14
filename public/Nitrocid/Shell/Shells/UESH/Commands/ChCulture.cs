@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var cultures = CultureManager.GetCultureCodes();
             if (!cultures.Contains(culture))
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid culture") + $" {culture}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_FAILURE") + $" {culture}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
 
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
                 CultureManager.UpdateCulture(culture);
-            TextWriterColor.Write(Translate.DoTranslation("You may need to log out and log back in for changes to take effect."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_RESTARTREQUIRED"));
             return 0;
         }
 

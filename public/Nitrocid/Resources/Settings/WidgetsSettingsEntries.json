@@ -1,92 +1,92 @@
 [
     {
         "Name": "Analog",
-        "Desc": "Analog clock with a simple date and time in the bottom of the screen.",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_DESC"),
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
                 "Type": "SInt",
                 "Variable": "AnalogDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
             },
             {
-                "Name": "Show seconds hand",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_NAME"),
                 "Type": "SBoolean",
                 "Variable": "AnalogShowSecondsHand",
-                "Description": "Whether to show the seconds hand or not."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_SECONDSHAND_DESC")
             },
             {
-                "Name": "Color settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the colors",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC"),
                 "Variables": [
                     {
-                        "Name": "Activate true colors",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "AnalogTrueColor",
-                        "Description": "Activates the true color support."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_DESC")
                     },
                     {
-                        "Name": "Minimum red color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumRedColorLevel",
-                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum green color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumGreenColorLevel",
-                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum blue color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumBlueColorLevel",
-                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumColorLevel",
-                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum red color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumRedColorLevel",
-                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum green color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumGreenColorLevel",
-                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum blue color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumBlueColorLevel",
-                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "AnalogMaximumColorLevel",
-                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }
@@ -96,92 +96,92 @@
     },
     {
         "Name": "Digital",
-        "Desc": "Simple date and time in the middle of the screen.",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DESC"),
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME"),
                 "Type": "SInt",
                 "Variable": "DigitalDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC")
             },
             {
-                "Name": "Display date",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "DigitalDisplayDate",
-                "Description": "Whether to show the date or not."
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_DESC")
             },
             {
-                "Name": "Color settings",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS"),
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the colors",
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC"),
                 "Variables": [
                     {
-                        "Name": "Activate true colors",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_NAME"),
                         "Type": "SBoolean",
                         "Variable": "DigitalTrueColor",
-                        "Description": "Activates the true color support."
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_TRUECOLORS_DESC")
                     },
                     {
-                        "Name": "Minimum red color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumRedColorLevel",
-                        "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINREDCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum green color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumGreenColorLevel",
-                        "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum blue color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumBlueColorLevel",
-                        "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Minimum color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMinimumColorLevel",
-                        "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MINCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum red color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumRedColorLevel",
-                        "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum green color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumGreenColorLevel",
-                        "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum blue color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumBlueColorLevel",
-                        "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     },
                     {
-                        "Name": "Maximum color level",
+                        "Name": LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_NAME"),
                         "Type": "SIntSlider",
                         "Variable": "DigitalMaximumColorLevel",
-                        "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                        LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_COMMON_MAXCOLOR_DESC"),
                         "MinimumValue": 0,
                         "MaximumValue": 255
                     }
@@ -191,19 +191,19 @@
     },
     {
         "Name": "Emoji",
-        "Desc": "Shows an emoji in the middle of the screen.",
+        "Desc": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_DESC"),
         "Keys": [
             {
-                "Name": "Enable Emoticon Cycling",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_NAME"),
                 "Type": "SBoolean",
                 "Variable": "EmojiWidgetCycleEmoticons",
-                "Description": "Whether to cycle between emoticons"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_CYCLE_DESC")
             },
             {
-                "Name": "Emoticon",
+                "Name": LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_NAME"),
                 "Type": "SIcon",
                 "Variable": "EmojiWidgetEmoticonName",
-                "Description": "Emoticon to show"
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"): LanguageTools.GetLocalized("NKS_SETTINGS_WIDGETS_EMOJI_EMOJI_DESC")
             }
         ]
     }

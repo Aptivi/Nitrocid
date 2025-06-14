@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,12 +25,12 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ChangeLanguage : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests changing the language to your preferred language");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             var langChoices = LanguageManager.Languages.Select(kvp => (kvp.Key, kvp.Value.FullLanguageName)).ToArray();
-            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices) - 1;
+            int langIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE"), langChoices) - 1;
             if (langIndex < 0)
                 return;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);

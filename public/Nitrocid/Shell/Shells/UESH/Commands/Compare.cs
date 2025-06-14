@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,24 +43,24 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             if (!FilesystemTools.FileExists(pathOne))
             {
-                TextWriters.Write(Translate.DoTranslation("Source file doesn't exist."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (!FilesystemTools.FileExists(pathTwo))
             {
-                TextWriters.Write(Translate.DoTranslation("Target file doesn't exist."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             var compared = FilesystemTools.Compare(pathOne, pathTwo);
             if (compared.Length == 0)
             {
-                TextWriters.Write(Translate.DoTranslation("The two files are identical."), KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL"), KernelColorType.Warning);
                 return 0;
             }
-            TextWriterColor.Write(Translate.DoTranslation("The two files are different."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DIFFERENT"));
             foreach (var (line, one, two) in compared)
             {
-                TextWriters.WriteListEntry($"[{line}]", Translate.DoTranslation("Different"), KernelColorType.ListEntry, KernelColorType.ListValue);
+                TextWriters.WriteListEntry($"[{line}]", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DETAILS_DIFFERENT"), KernelColorType.ListEntry, KernelColorType.ListValue);
                 TextWriters.WriteListEntry("[-]", one, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
                 TextWriters.WriteListEntry("[+]", two, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
             }

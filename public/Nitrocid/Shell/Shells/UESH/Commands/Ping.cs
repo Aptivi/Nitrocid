@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -66,23 +66,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             var PingReplied = NetworkTools.PingAddress(PingedAddress);
                             if (PingReplied.Status == IPStatus.Success)
                             {
-                                TextWriterColor.Write("[{1}] " + Translate.DoTranslation("Ping succeeded in {0} ms."), PingReplied.RoundtripTime, CurrentTime);
+                                TextWriterColor.Write("[{1}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_SUCCESS"), PingReplied.RoundtripTime, CurrentTime);
                             }
                             else
                             {
-                                TextWriters.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
+                                TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
                             }
                         }
                         catch (Exception ex)
                         {
-                            TextWriters.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
+                            TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR"), true, KernelColorType.Error);
                 }
             }
             return 0;

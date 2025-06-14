@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -90,17 +90,17 @@ namespace Nitrocid.Shell.ShellBase.Aliases
                 if (SourceAlias == Destination)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Assertion succeeded: {0} = {1}", vars: [SourceAlias, Destination]);
-                    throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));
+                    throw new KernelException(KernelExceptionType.AliasInvalidOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME"));
                 }
                 else if (!CommandManager.IsCommandFound(SourceAlias, Type))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", vars: [Destination]);
-                    throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
+                    throw new KernelException(KernelExceptionType.AliasNoSuchCommand, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND"), Destination);
                 }
                 else if (DoesAliasExist(Destination, Type))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Alias {0} already found", vars: [SourceAlias]);
-                    throw new KernelException(KernelExceptionType.AliasAlreadyExists, Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
+                    throw new KernelException(KernelExceptionType.AliasAlreadyExists, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS"), SourceAlias);
                 }
                 else
                 {
@@ -118,7 +118,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", vars: [Type]);
-                throw new KernelException(KernelExceptionType.AliasNoSuchType, Translate.DoTranslation("Invalid type {0}."), Type);
+                throw new KernelException(KernelExceptionType.AliasNoSuchType, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE"), Type);
             }
         }
 
@@ -149,7 +149,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", vars: [TargetAlias, Type.ToString()]);
-                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
+                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE"), TargetAlias);
             }
         }
 
@@ -219,7 +219,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         public static AliasInfo GetAlias(string TargetAlias, string Type)
         {
             if (!DoesAliasExist(TargetAlias, Type))
-                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be queried."), TargetAlias);
+                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, LanguageTools.GetLocalized("NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY"), TargetAlias);
 
             // Get the list of available aliases and get an alias matching the target alias
             var aliases = GetEntireAliasListFromType(Type);

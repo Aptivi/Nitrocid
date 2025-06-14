@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -55,51 +55,51 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     var FileInfo = new FileInfo(FilePath);
 
                     // General info
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.SizeString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(FileInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
-                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{FilesystemTools.IsBinaryFile(FileInfo.FullName)}");
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FileInfo.Extension));
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata (extended)") + ": {0}", MagicHandler.GetMagicMimeInfo(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File type") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), FileInfo.Name);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_FULLNAME"), FilesystemTools.NeutralizePath(FileInfo.FullName));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_FILESIZE"), FileInfo.Length.SizeString());
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_CREATIONTIME"), TimeDateRenderers.Render(FileInfo.CreationTime));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTACCESSTIME"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTWRITETIME"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_ATTRIBUTES"), FileInfo.Attributes);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_WHERETOFIND"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_BINARYFILE") + " {0}", $"{FilesystemTools.IsBinaryFile(FileInfo.FullName)}");
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATA") + " {0}", MimeTypes.GetMimeType(FileInfo.Extension));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT") + ": {0}", MagicHandler.GetMagicMimeInfo(FileInfo.FullName));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILETYPE") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
                     if (!FilesystemTools.IsBinaryFile(FileInfo.FullName))
                     {
                         var Style = FilesystemTools.GetLineEndingFromFile(FilePath);
-                        TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWLINESTYLE") + " {0}", Style.ToString());
                     }
                     TextWriterRaw.Write();
 
                     // .NET managed info
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation(".NET assembly info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name ?? "");
-                        TextWriterColor.Write(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName);
-                        TextWriterColor.Write(Translate.DoTranslation("Version") + ": {0}", asmName.Version?.ToString() ?? "0.0.0.0");
-                        TextWriterColor.Write(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName ?? "");
-                        TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), asmName.Name ?? "");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": {0}", asmName.FullName);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_VERSION") + ": {0}", asmName.Version?.ToString() ?? "0.0.0.0");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CULTURENAME") + ": {0}", asmName.CultureName ?? "");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CONTENTTYPE") + ": {0}", asmName.ContentType.ToString());
                     }
                     else
-                        TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_NOTDOTNETASM"));
                     TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Extra info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_EXTRAINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
-                            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {FileInfo.Extension}");
+                            throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {FileInfo.Extension}");
                         TextWriterColor.Write(handler.InfoHandler(FilePath));
                     }
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Can't get information about nonexistent file."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, KernelColorType.Error);
                 }
             }
             return 0;

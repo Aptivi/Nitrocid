@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class KernelThreadTest : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the kernel thread");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_KERNELTHREADTEST_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             string FinalByte = "";
 
             // Keep prompting for bytes until the user finishes
-            TextWriterColor.Write(Translate.DoTranslation("Enter a byte on its own line that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT"));
             while (FinalByte != "EOF")
             {
                 TextWriters.Write(">> ", false, KernelColorType.Input);
@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Not a valid byte."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, KernelColorType.Error);
                     }
                 }
             }

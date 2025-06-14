@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestInputInfoBoxSelectionLargeTitled : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the input selection style in the informational box (large number of items to test scrolling and paging) (titled");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {

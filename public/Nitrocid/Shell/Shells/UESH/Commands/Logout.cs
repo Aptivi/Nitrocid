@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
         }

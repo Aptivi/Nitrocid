@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -155,7 +155,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // Verify that the provided regex is valid
             if (!RegexpTools.IsValidRegex(namePattern))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Invalid command pattern provided."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID"));
 
             // Get all the commands first
             var allCommands = GetCommands(ShellType);
@@ -187,7 +187,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", vars: [Command, ShellType]);
             var commandList = GetCommands(ShellType);
             if (!IsCommandFound(Command, ShellType))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND"));
             return commandList.Single((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
         }
 
@@ -208,29 +208,29 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND"), ShellType);
             if (commandBase is null)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED"));
             string command = commandBase.Command;
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", vars: [command, ShellType]);
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED"));
 
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or mod commands.", vars: [command]);
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The command specified is already added! It's possible that you may have conflicting mods."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS"));
             }
 
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_NODEFINITION"), command);
                 DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", vars: [command]);
-                commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
+                commandBase.HelpDefinition = LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_UNDEFINED");
             }
 
             // Now, add the command to the mod list
@@ -271,7 +271,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the custom commands can't be loaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
 
         /// <summary>
@@ -291,13 +291,13 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND"), ShellType);
             if (string.IsNullOrEmpty(commandName))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED"));
 
             // Check to see if we have this command
             if (!GetCommandNames(ShellType).Contains(commandName))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The custom command specified is not found."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM"));
             else
             {
                 // We have the command. Remove it.
@@ -336,7 +336,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the custom commands can't be unloaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
 
         /// <summary>
@@ -356,29 +356,29 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND"), ShellType);
             if (commandBase is null)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED"));
             string command = commandBase.Command;
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", vars: [command, ShellType]);
 
             // Check the command name
             if (string.IsNullOrEmpty(command))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED"));
 
             // Check to see if the command conflicts with pre-existing shell commands
             if (IsCommandFound(command, ShellType))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or addon commands.", vars: [command]);
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The command specified is already added! It's possible that you may have conflicting addons."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM"));
             }
 
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_NODEFINITION"), command);
                 DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", vars: [command]);
-                commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
+                commandBase.HelpDefinition = LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_UNDEFINED");
             }
 
             // Now, add the command to the addon list
@@ -418,7 +418,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the addon commands can't be loaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
 
         /// <summary>
@@ -438,13 +438,13 @@ namespace Nitrocid.Shell.ShellBase.Commands
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND"), ShellType);
             if (string.IsNullOrEmpty(commandName))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED"));
 
             // Check to see if we have this command
             if (!GetCommandNames(ShellType).Contains(commandName))
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The addon command specified is not found."));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON"));
             else
             {
                 // We have the command. Remove it.
@@ -483,7 +483,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 }
             }
             if (failedCommands.Count > 0)
-                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the addon commands can't be unloaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+                throw new KernelException(KernelExceptionType.CommandManager, LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
             if (Enum.IsDefined(typeof(ConfigOldPathType), PathType))
                 return FilesystemTools.NeutralizePath(oldPaths[PathType.ToString()]);
             else
-                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, LanguageTools.GetLocalized("NKS_FILES_PATHS_PATHTYPEINVALID"));
         }
 
         private static void InitOldPaths()

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             ConsoleColor boxBorderColor = ConsoleColor.DarkGray;
 
             // Write the section title
-            string finalRenderedSection = Translate.DoTranslation("GNU GRUB  version 0.97  (638K lower / 1046784K upper memory)");
+            string finalRenderedSection = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_TITLE");
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 2, new Color(sectionTitle))
@@ -63,9 +63,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
             // Offer help for new users
             string help =
-                Translate.DoTranslation("Use the ↑ and ↓ keys to select which entry is highlighted.") + "\n" +
-                Translate.DoTranslation("Press enter to boot the selected OS, `e' to edit the") + "\n" +
-                Translate.DoTranslation("commands before booting or `c' for a command line.");
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING1") + "\n" +
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1") + "\n" +
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2");
             int longest = help.Split(['\n']).Max((text) => text.Length);
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth / 2 - longest / 2 - 2, ConsoleWrapper.WindowHeight - 8, new Color(sectionTitle))
@@ -107,8 +107,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
         public override string RenderBootingMessage(string chosenBootName)
         {
-            string message1 = Translate.DoTranslation("Booting '{0}'").FormatString(chosenBootName);
-            string message2 = Translate.DoTranslation("Filesystem type is") + " fat, " + Translate.DoTranslation("partition type") + " 0x0C";
+            string message1 = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1").FormatString(chosenBootName);
+            string message2 = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2") + " fat, " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING3") + " 0x0C";
             return
                 $"  {message1}\n\n" +
                 $" {message2}";
@@ -116,13 +116,13 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
         public override string RenderSelectTimeout(int timeout)
         {
-            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(timeout) + " ";
+            string help = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT").FormatString(timeout) + " ";
             return TextWriterWhereColor.RenderWhereColor(help, 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
 
         public override string ClearSelectTimeout()
         {
-            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(Config.MainConfig.BootSelectTimeoutSeconds) + " ";
+            string help = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT").FormatString(Config.MainConfig.BootSelectTimeoutSeconds) + " ";
             return TextWriterWhereColor.RenderWhereColor(new string(' ', help.Length), 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
     }

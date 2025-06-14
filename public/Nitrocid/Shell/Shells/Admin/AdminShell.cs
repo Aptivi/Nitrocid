@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.Admin
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Error in administrative shell: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_ERROR"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

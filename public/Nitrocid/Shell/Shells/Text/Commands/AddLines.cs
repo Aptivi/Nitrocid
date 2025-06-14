@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             string FinalLine = "";
 
             // Keep prompting for lines until the user finishes
-            TextWriterColor.Write(Translate.DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT"));
             while (FinalLine != "EOF")
             {
                 TextWriters.Write(">> ", false, KernelColorType.Input);

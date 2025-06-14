@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,10 +51,10 @@ namespace Nitrocid.Misc.Interactives
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
             var info = TimeZones.GetZoneInfo(selectedZone);
             return
-                $"{Translate.DoTranslation("Date")}: {TimeDateRenderers.RenderDate(time)}\n" +
-                $"{Translate.DoTranslation("Time")}: {TimeDateRenderers.RenderTime(time)}\n" +
-                $"{Translate.DoTranslation("Display name")}: {info.DisplayName}\n" +
-                $"{Translate.DoTranslation("Standard name")}: {info.StandardName}";
+                $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TZTUI_DATE")}: {TimeDateRenderers.RenderDate(time)}\n" +
+                $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TZTUI_TIME")}: {TimeDateRenderers.RenderTime(time)}\n" +
+                $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TZTUI_DISPLAY")}: {info.DisplayName}\n" +
+                $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TZTUI_STDNAME")}: {info.StandardName}";
         }
 
         /// <inheritdoc/>

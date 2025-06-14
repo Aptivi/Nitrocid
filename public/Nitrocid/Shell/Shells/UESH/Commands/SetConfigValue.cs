@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,13 +53,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Key not found."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNOTFOUND"), KernelColorType.Error);
                     return 28;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Config not found."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGNOTFOUND"), KernelColorType.Error);
                 return 28;
             }
             return 0;
@@ -68,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
-            TextWriters.WriteListEntry(Translate.DoTranslation("Available configuration types"), string.Join(", ", names));
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGTYPES"), string.Join(", ", names));
         }
 
     }

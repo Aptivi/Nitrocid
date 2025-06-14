@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
                 TextWriters.Write(command.Command, KernelColorType.ListValue);
             }
             if (commands.Length == 0)
-                TextWriters.Write(Translate.DoTranslation("No commands found."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND"), KernelColorType.Error);
             return 0;
         }
 

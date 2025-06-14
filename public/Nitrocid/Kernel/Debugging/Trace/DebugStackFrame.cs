@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,16 +42,16 @@ namespace Nitrocid.Kernel.Debugging.Trace
             var trace = new StackTrace(true);
             frameNumber += 1;
             if (frameNumber <= 0 || frameNumber > trace.FrameCount)
-                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Stack frame number shouldn't exceed current amount of frames or shouldn't be negative."));
+                throw new KernelException(KernelExceptionType.Debug, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE"));
 
             var frame = trace.GetFrame(frameNumber) ??
-                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Can't get frame"));
+                throw new KernelException(KernelExceptionType.Debug, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME"));
             string FrameFilePath = frame.GetFileName() ?? "";
             string Source = Path.GetFileName(FrameFilePath);
             int LineNum = frame.GetFileLineNumber();
             int ColNum = frame.GetFileColumnNumber();
             var Method = frame.GetMethod() ??
-                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Can't get method"));
+                throw new KernelException(KernelExceptionType.Debug, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOMETHOD"));
             string Func = Method.Name;
             string FullFunc = Method.ReflectedType?.FullName ?? "";
 

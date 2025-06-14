@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -29,13 +29,13 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class PowerLineTest : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests your console for PowerLine support");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_DESC");
         public override void Run()
         {
             char TransitionChar = Convert.ToChar(0xE0B0);
             char PadlockChar = Convert.ToChar(0xE0A2);
             char GitBranchChar = Convert.ToChar(0xE0A0);
-            TextWriters.Write(Translate.DoTranslation("Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend") + " Cascadia Code/Mono PL", true, KernelColorType.Warning);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_WARNING") + " Cascadia Code/Mono PL", true, KernelColorType.Warning);
             TextWriterColor.WriteColorBack(" One ", false, new Color(ConsoleColors.Black), new Color(85, 255, 255));
             TextWriterColor.WriteColorBack(Convert.ToString(TransitionChar), false, new Color(85, 255, 255), new Color(255, 85, 255));
             TextWriterColor.WriteColorBack(" Two ", false, new Color(ConsoleColors.Black), new Color(255, 85, 255));

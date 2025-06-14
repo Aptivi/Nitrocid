@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,27 +45,27 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             if (user is not null)
             {
                 // First off, basic user information
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Basic user info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write(Translate.DoTranslation("Username") + ": ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.Username, true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.FullName, true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Preferred language") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFLANG") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.PreferredLanguage ?? "", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Preferred culture") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFCULTURE") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.PreferredCulture ?? "", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_FLAGS") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the permissions.
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Permissions"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PERMS"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (string perm in user.Permissions)
                     TextWriters.Write($"  - {perm}", true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the groups.
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Groups"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_GROUPS"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (string group in user.Groups)
                     TextWriters.Write($"  - {group}", true, KernelColorType.ListValue);
             }

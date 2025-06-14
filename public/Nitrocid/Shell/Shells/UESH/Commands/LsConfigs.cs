@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,20 +44,20 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (config is null || config.SettingsEntries is null)
                     continue;
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.WriteListEntry(Translate.DoTranslation("Entries count"), $"{config.SettingsEntries.Length}");
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_COUNT"), $"{config.SettingsEntries.Length}");
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Displaying as"), entry.DisplayAs, indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Description"), entry.Desc, indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Keys count"), $"{entry.Keys.Length}", indent: 1);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), entry.DisplayAs, indent: 1);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), entry.Desc, indent: 1);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_KEYS"), $"{entry.Keys.Length}", indent: 1);
                     }
                 }
             }
-            TextWriterColor.Write(Translate.DoTranslation("Use the {0} command to get the individual keys"), "lsconfigvalues");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_COMMANDTIP"), "lsconfigvalues");
             return 0;
         }
 

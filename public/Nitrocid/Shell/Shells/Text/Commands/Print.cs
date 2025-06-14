@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,13 +62,13 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
@@ -97,13 +97,13 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }

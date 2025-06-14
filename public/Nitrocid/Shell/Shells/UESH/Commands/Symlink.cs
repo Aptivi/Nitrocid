@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,12 +44,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string target = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             if (!FilesystemTools.Exists(target))
             {
-                TextWriters.Write(Translate.DoTranslation("The target file or directory isn't found."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_TARGETNOTFOUND"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (FilesystemTools.Exists(linkName))
             {
-                TextWriters.Write(Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_OVERWRITEWITHSYMLINK"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             try
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Can't make a symbolic link.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYMLINK_FAILED") + $" {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;

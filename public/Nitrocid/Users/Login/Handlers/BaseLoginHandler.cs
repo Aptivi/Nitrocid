@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -66,7 +66,7 @@ namespace Nitrocid.Users.Login.Handlers
             if (Config.MainConfig.ShowAvailableUsers)
             {
                 var UsersList = UserManagement.ListAllUsers();
-                TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ACCOUNTLISTING"));
                 TextWriters.WriteList(UsersList);
             }
             return true;
@@ -90,7 +90,7 @@ namespace Nitrocid.Users.Login.Handlers
                     if (!string.IsNullOrWhiteSpace(Config.MainConfig.PasswordPrompt))
                         TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.PasswordPrompt), false, KernelColorType.Input);
                     else
-                        TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, KernelColorType.Input, user);
 
                     // Get input
                     string answerpass = InputTools.ReadLineNoInputUnsafe();
@@ -99,7 +99,7 @@ namespace Nitrocid.Users.Login.Handlers
                         return true;
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -127,7 +127,7 @@ namespace Nitrocid.Users.Login.Handlers
             if (!string.IsNullOrWhiteSpace(Config.MainConfig.UsernamePrompt))
                 TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.UsernamePrompt), false, KernelColorType.Input);
             else
-                TextWriters.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNAMEPROMPT"), false, KernelColorType.Input);
             return InputTools.ReadLine();
         }
     }

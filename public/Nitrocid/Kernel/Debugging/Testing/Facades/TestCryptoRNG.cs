@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,14 +26,14 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestCryptoRNG : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the cryptographically secure random number generator");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC");
         public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             DriverHandler.SetDriver<IRandomDriver>("Cryptographic");
             int randomNum = RandomDriver.Random();
             double randomDbl = RandomDriver.RandomDouble();
-            TextWriterColor.Write(Translate.DoTranslation("Returned numbers:") + $" [{randomNum} | {randomDbl}]");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_TEST") + $" [{randomNum} | {randomDbl}]");
             DriverHandler.SetDriver<IRandomDriver>("Default");
         }
     }

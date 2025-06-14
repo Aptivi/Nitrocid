@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -120,9 +120,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int textY = 11;
             int textX = halfX + 1;
             string help =
-                Translate.DoTranslation("Hit any key to cancel timeout") + "\n" +
-                Translate.DoTranslation("Use arrow keys to make selection") + "\n" +
-                Translate.DoTranslation("Enter choice & options, hit CR to boot");
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_LILO_TIMEOUT") + "\n" +
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_LILO_KEYBINDING1") + "\n" +
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_LILO_KEYBINDING2");
             builder.Append(
                 TextWriterWhereColor.RenderWhereColorBack(help, textX, textY, new Color(boxBorderColor), new Color(boxBorderBackgroundColor))
             );

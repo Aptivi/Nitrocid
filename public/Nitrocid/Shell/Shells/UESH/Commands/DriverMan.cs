@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -81,17 +81,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             if (DriverHandler.IsRegistered(typeTerm, driverValue))
                                 DriverHandler.SetDriverSafe(typeTerm, driverValue);
                             else
-                                TextWriters.Write(Translate.DoTranslation("The driver is not found."), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND"), true, KernelColorType.Error);
                             break;
                         }
                     case "list":
                         {
-                            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Drivers for") + $" {typeTerm}", KernelColorTools.GetColor(KernelColorType.Separator));
+                            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERSFOR") + $" {typeTerm}", KernelColorTools.GetColor(KernelColorType.Separator));
                             foreach (var driver in DriverHandler.GetDrivers(typeTerm))
                             {
                                 if (!driver.DriverInternal)
                                 {
-                                    TextWriters.Write("- " + Translate.DoTranslation("Driver name") + ": ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME") + ": ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(driver.DriverName, true, KernelColorType.ListValue);
                                 }
                             }
@@ -102,9 +102,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             var types = DriverHandler.knownTypes;
                             foreach (var type in types)
                             {
-                                TextWriters.Write("- " + Translate.DoTranslation("Driver type name") + ": ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME") + ": ", false, KernelColorType.ListEntry);
                                 TextWriters.Write($"{type.Key.Name} [{type.Key.FullName}]", true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + Translate.DoTranslation("Driver type") + ": ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPE") + ": ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(type.Value.ToString(), true, KernelColorType.ListValue);
                             }
                             break;
@@ -112,7 +112,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                     default:
                         {
-                            TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandDriver);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandDriver);
                             HelpPrint.ShowHelp("driverman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
                         }
@@ -120,7 +120,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Driver management is disabled in safe mode."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_SAFEMODE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
             }
             return 0;

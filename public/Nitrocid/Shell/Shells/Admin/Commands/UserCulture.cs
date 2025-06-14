@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Now, change the culture in the user config
                 UserManagement.Users[userIndex].PreferredCulture = null;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Preferred user culture set to {0}. You may want to log in again."), culture);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS"), culture);
             }
             else if (CultureManager.GetCulturesDictionary().TryGetValue(culture, out CultureInfo? cultureInfo))
             {
@@ -61,11 +61,11 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Now, change the culture in the user config
                 UserManagement.Users[userIndex].PreferredCulture = culture;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Preferred user culture set to {0}. You may want to log in again."), culture);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS"), culture);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid culture") + " {0}", culture);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_FAILURE") + " {0}", culture);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchCulture);
             }
             return 0;

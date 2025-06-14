@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -23,7 +23,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class PrintD : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Print a string to debugger");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {

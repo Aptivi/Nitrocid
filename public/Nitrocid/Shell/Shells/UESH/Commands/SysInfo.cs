@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -68,14 +68,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowSystemInfo)
             {
                 // Kernel section
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Kernel settings"), KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(Translate.DoTranslation("Kernel Version:") + " ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Running on usual environment:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Safe Mode:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.SafeMode.ToString(), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
             }
@@ -83,25 +83,25 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowHardwareInfo)
             {
                 // Hardware section
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Hardware settings"), KernelColorTools.GetColor(KernelColorType.Separator));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
                 HardwareList.ListHardware();
 
                 if (!WindowsUserTools.IsAdministrator())
-                    TextWriters.Write(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, KernelColorType.Error);
                 else
-                    TextWriters.Write(Translate.DoTranslation("Use \"hwinfo\" for extended information about hardware."), true, KernelColorType.Tip);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, KernelColorType.Tip);
                 TextWriterRaw.Write();
             }
 
             if (ShowUserInfo)
             {
                 // User section
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("User settings"), KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(Translate.DoTranslation("Current user name:") + " ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(UserManagement.CurrentUser.Username, true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Current host name:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(Config.MainConfig.HostName, true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Available usernames:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
             }

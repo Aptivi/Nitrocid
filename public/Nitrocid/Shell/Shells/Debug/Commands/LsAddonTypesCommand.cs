@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,14 +38,14 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of types for") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONTYPES_LISTING") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableTypes(parameters.ArgumentsList[0]);
             var listing = new Listing()
             {
                 Objects = list,
-                Stringifier = (type) => ((Type)type).FullName ?? Translate.DoTranslation("Unknown type"),
+                Stringifier = (type) => ((Type)type).FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE"),
                 KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
                 ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
             };
@@ -55,12 +55,12 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("List of types for") + $" {parameters.ArgumentsList[0]}");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONTYPES_LISTING") + $" {parameters.ArgumentsList[0]}");
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableTypes(parameters.ArgumentsList[0]);
             foreach (var type in list)
-                TextWriterColor.Write($"  - {type.FullName ?? Translate.DoTranslation("Unknown type")}");
+                TextWriterColor.Write($"  - {type.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}");
             return 0;
         }
 

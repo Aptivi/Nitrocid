@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,13 +40,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string? filePath = "";
             if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath) && filePath is not null)
             {
-                TextWriters.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_FOUND") + " {0}", true, KernelColorType.Success, filePath);
                 variableValue = filePath;
                 return 0;
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_NOTFOUND"), true, KernelColorType.Warning);
                 variableValue = "";
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }

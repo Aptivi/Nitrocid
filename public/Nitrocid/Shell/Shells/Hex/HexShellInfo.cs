@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.Shells.Hex.Commands;
 using Nitrocid.Shell.Shells.Hex.Presets;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Hex
 {
@@ -38,124 +39,124 @@ namespace Nitrocid.Shell.Shells.Hex
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
+            new CommandInfo("addbyte", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "byte", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC")
                         })
                     ])
                 ], new AddByteCommand()),
 
-            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file", new AddBytesCommand()),
+            new CommandInfo("addbytes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTES_DESC"), new AddBytesCommand()),
 
-            new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
+            new CommandInfo("addbyteto", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTESTO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "byte", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC")
                         }),
                         new CommandArgumentPart(true, "pos", new()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC")
                         })
                     ])
                 ], new AddByteToCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the binary file", new ClearCommand()),
+            new CommandInfo("clear", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_CLEAR_DESC"), new ClearCommand()),
 
-            new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
+            new CommandInfo("delbyte", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_DELBYTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC")
                         })
                     ])
                 ], new DelByteCommand()),
 
-            new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
+            new CommandInfo("delbytes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_DELBYTES_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte starting position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC")
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte ending position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC")
                         })
                     ])
                 ], new DelBytesCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor", new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_EXITNOSAVE_DESC"), new ExitNoSaveCommand()),
 
-            new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
+            new CommandInfo("print", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_PRINT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte starting position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC")
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte ending position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC")
                         })
                     ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
+            new CommandInfo("querybyte", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_QUERYBYTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "byte", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC")
                         }),
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte starting position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC")
                         }),
                         new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Byte ending position number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC")
                         })
                     ])
                 ], new QueryByteCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
+            new CommandInfo("replace", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_REPLACE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "byte", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255 to be replaced"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_ARGUMENT_BYTE_DESC")
                         }),
                         new CommandArgumentPart(true, "replacebyte", new()
                         {
-                            ArgumentDescription = /* Localizable */ "Byte number ranging from 0 to 255 to replace with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_ARGUMENT_REPLACEBYTE_DESC")
                         })
                     ])
                 ], new ReplaceCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
+            new CommandInfo("save", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_COMMAND_SAVE_DESC"), new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI", new TuiCommand()),
+            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_TUI_DESC"), new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

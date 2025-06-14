@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -75,7 +75,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
             try
             {
-                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS"));
                 Config.CreateConfig();
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
             try
             {
-                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings to") + $" {location}...");
+                InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGTO") + $" {location}...");
                 Config.CreateConfig(location);
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         internal static void SaveSettingsAs()
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to save the current kernel settings?"), new InfoBoxSettings()
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
             });
@@ -118,7 +118,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             if (!FilesystemTools.FileExists(Location))
                 SaveSettings(Location);
             else
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't save kernel settings on top of existing file."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CANTOVERWRITE"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });
@@ -126,15 +126,15 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), KernelColorTools.GetColor(KernelColorType.Question));
             Location = FilesystemTools.NeutralizePath(Location);
             if (FilesystemTools.FileExists(Location))
             {
                 try
                 {
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading settings..."));
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADING"));
                     Config.ReadConfig(config, Location);
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS"));
                     Config.CreateConfig();
                 }
                 catch (Exception ex)
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("File not found."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_FILENOTFOUND"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });
@@ -156,9 +156,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
         internal static void ReloadConfig()
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Reloading...");
-            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Reloading settings..."));
+            InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOADING"));
             ConfigTools.ReloadConfig();
-            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
+            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOADED"));
         }
 
         internal static void CheckForSystemUpdates()
@@ -166,11 +166,11 @@ namespace Nitrocid.Kernel.Configuration.Settings
             // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
             // translated in the compiler pre-processor directives, so we need to move all translations here to
             // avoid this happening again and for the locale tools to actually see them.
-            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled because you're running a development version.");
-            string checkFailed = Translate.DoTranslation("Failed to check for updates.");
-            string checking = Translate.DoTranslation("Checking for system updates...");
-            string newVersion = Translate.DoTranslation("Found new version: ");
-            string upToDate = Translate.DoTranslation("You're up to date!");
+            string devVersionWarning = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED");
+            string checkFailed = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED");
+            string checking = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING");
+            string newVersion = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND");
+            string upToDate = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE");
 
 #if SPECIFIERREL
             // Check for updates now
@@ -193,10 +193,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
         internal static void SystemInformation()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
-                $"{Translate.DoTranslation("Kernel version")}: {KernelMain.VersionFullStr}\n" +
-                $"{Translate.DoTranslation("Kernel API version")}: {KernelMain.ApiVersion}\n" +
-                $"{Translate.DoTranslation("Host ID")}: {KernelPlatform.GetCurrentRid()}\n" +
-                $"{Translate.DoTranslation("Host Generic ID")}: {KernelPlatform.GetCurrentGenericRid()}"
+                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_KERNELVERSION")}: {KernelMain.VersionFullStr}\n" +
+                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_KERNELAPI")}: {KernelMain.ApiVersion}\n" +
+                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTID")}: {KernelPlatform.GetCurrentRid()}\n" +
+                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID")}: {KernelPlatform.GetCurrentGenericRid()}"
             );
         }
 
@@ -206,7 +206,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             var choices = configs.Select((bkc, idx) => new InputChoiceInfo(bkc.GetType().Name, bkc.Name)).ToArray();
 
             // Prompt user to provide the base kernel config
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a configuration instance to switch to."));
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT"));
 
             // Check the index
             if (selected == -1)
@@ -218,7 +218,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 SettingsEntry[]? settingsEntries = selectedConfig.SettingsEntries;
                 if (settingsEntries is null || settingsEntries.Length == 0)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Settings entries are not found."));
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"));
                     return null;
                 }
                 return configs[selected];
@@ -285,11 +285,11 @@ namespace Nitrocid.Kernel.Configuration.Settings
             if (ex is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
-                string finalSection = Translate.DoTranslation("You're Lost!");
+                string finalSection = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE");
                 InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
-                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION")}", new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     }
@@ -298,13 +298,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", vars: [ex.Message]);
-                string finalSection = Translate.DoTranslation("You're Lost!");
+                string finalSection = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE");
                 InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
-                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +
+                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS")}\n" +
                     $"  - {ex.Message}\n\n" +
-                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP")}", new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                     }
@@ -326,7 +326,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                 // Try to get the type
                 Type type = Type.GetType(arg.ArgType) ??
-                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Specified argument type is not valid") + $": {arg.ArgType}");
+                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_ARGTYPE") + $": {arg.ArgType}");
 
                 // Use this type to convert the string value to that type
                 var converted = Convert.ChangeType(arg.ArgValue, type);

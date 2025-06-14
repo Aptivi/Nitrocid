@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,16 +38,16 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             // Prompt the user for selection
             var bootApps = BootManager.GetBootApps();
             var builder = new StringBuilder();
-            builder.AppendLine("\n\n" + Translate.DoTranslation("Please select the operating system to start") + ":\n\n");
+            builder.AppendLine("\n\n" + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_PROMPT") + ":\n\n");
             for (int i = 0; i < bootApps.Count; i++)
             {
                 string bootApp = BootManager.GetBootAppNameByIndex(i);
                 bootEntryPositions.Add((0, 5 + i));
                 builder.AppendLine($"    {bootApp}");
             }
-            builder.AppendLine("\n" + Translate.DoTranslation("Use the up and down arrow keys to move the highlight to your choice."));
-            builder.AppendLine(Translate.DoTranslation("Press ENTER to choose.") + "\n\n\n");
-            builder.AppendLine(Translate.DoTranslation("For troubleshooting and advanced startup options for Windows, press F8."));
+            builder.AppendLine("\n" + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_KEYBINDING1"));
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_KEYBINDING2") + "\n\n\n");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_ADVOPTIONS"));
             return builder.ToString();
         }
 
@@ -79,11 +79,11 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             builder.AppendLine(
                 $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryForeground))}" +
                 $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryBackground), true)}" +
-                 "    " + Translate.DoTranslation("Continue") +
+                 "    " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_CONTINUE") +
                 $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor)}" +
                 $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}"
             );
-            builder.AppendLine("\n" + Translate.DoTranslation("Use the up and down arrow keys to move the highlight to your choice."));
+            builder.AppendLine("\n" + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_KEYBINDING1"));
             return builder.ToString();
         }
 
@@ -96,7 +96,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
                 bootEntryPositions.Count > 0 ?
                 bootEntryPositions[bootEntryPositions.Count - 1].Item2 + 9 :
                 17;
-            string secs = Translate.DoTranslation("Seconds until the highlighted choice will be started automatically:");
+            string secs = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_TIMEOUT");
             int timeoutX = marginX + ConsoleChar.EstimateCellWidth(secs) + 1;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(secs, marginX, optionHelpY, true, new Color(hintColor)) +

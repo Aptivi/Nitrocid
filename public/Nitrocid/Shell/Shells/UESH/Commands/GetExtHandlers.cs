@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("No such extension."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), KernelColorType.Error);
                 return 22;
             }
             var handlers = ExtensionHandlerTools.GetExtensionHandlers(parameters.ArgumentsList[0]);
@@ -48,9 +48,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 ExtensionHandler handler = handlers[i];
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Extension, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";

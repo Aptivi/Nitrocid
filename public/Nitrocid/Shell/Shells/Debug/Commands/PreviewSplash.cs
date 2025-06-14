@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,7 +51,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 !customContext || Enum.TryParse(contextName, out context);
             if (!contextValid)
             {
-                TextWriters.Write(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_CONTEXTINVALID"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Splash);
             }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         public override void HelpHelper()
         {
             var splashes = SplashManager.GetNamesOfSplashes();
-            TextWriterColor.Write(Translate.DoTranslation("Available splashes:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_HELPER"));
             TextWriters.WriteList(splashes);
         }
 

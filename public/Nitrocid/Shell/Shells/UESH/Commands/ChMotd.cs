@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -50,12 +50,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMOTD_BLANK"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.MOTD);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMOTD_PROGRESS"));
                     MotdParse.SetMotd(parameters.ArgumentsText);
                     return 0;
                 }
@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 ShellManager.StartShell(ShellType.TextShell, PathsManagement.GetKernelPath(KernelPathType.MOTD));
-                TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMOTD_PROGRESS"));
                 MotdParse.ReadMotd();
                 return 0;
             }

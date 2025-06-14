@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
             {
-                TextWriters.Write(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMBINE_MAYNOTMIX"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -74,11 +74,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         foreach (var alarm in AlarmTools.alarms)
                         {
                             SeparatorWriterColor.WriteSeparatorColor(alarm.Key, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                            TextWriters.Write("- " + Translate.DoTranslation("Alarm name:") + " ", false, KernelColorType.ListEntry);
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME") + " ", false, KernelColorType.ListEntry);
                             TextWriters.Write(alarm.Value.Name, true, KernelColorType.ListValue);
-                            TextWriters.Write("- " + Translate.DoTranslation("Alarm description:") + " ", false, KernelColorType.ListEntry);
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC") + " ", false, KernelColorType.ListEntry);
                             TextWriters.Write(alarm.Value.Description, true, KernelColorType.ListValue);
-                            TextWriters.Write("- " + Translate.DoTranslation("Alarm due date:") + " ", false, KernelColorType.ListEntry);
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE") + " ", false, KernelColorType.ListEntry);
                             TextWriters.Write($"{alarm.Value.Length}", true, KernelColorType.ListValue);
                         }
 
@@ -87,7 +87,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                 default:
                     {
-                        TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandMode);
                         HelpPrint.ShowHelp("alarm");
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                     }
@@ -108,18 +108,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             string interval = parameters.ArgumentsList[2];
                             if (AlarmTools.IsAlarmRegistered(name))
                             {
-                                TextWriters.Write(Translate.DoTranslation("Alarm already exists."), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_FOUND"), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                             if (!TimeSpan.TryParse(interval, out _))
                             {
-                                TextWriters.Write(Translate.DoTranslation("Alarm interval is invalid."), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_INTERVALINVALID"), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name and interval is not specified."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAMEINTERVALNEEDED"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                         }
 
@@ -132,13 +132,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             string name = parameters.ArgumentsList[1];
                             if (!AlarmTools.IsAlarmRegistered(name))
                             {
-                                TextWriters.Write(Translate.DoTranslation("Alarm doesn't exist."), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NOTFOUND"), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name is not specified."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMENOTSPECCED"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                         }
 

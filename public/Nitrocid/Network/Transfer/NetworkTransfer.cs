@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -212,7 +212,7 @@ namespace Nitrocid.Network.Transfer
                 // Distinguish download from upload
                 bool NotificationProvoke = TransferInfo.TransferType == NetworkTransferType.Download ? Config.MainConfig.DownloadNotificationProvoke : Config.MainConfig.UploadNotificationProvoke;
                 var NotificationInstance = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotif : UploadNotif;
-                string indicator = TransferInfo.TransferType == NetworkTransferType.Download ? Translate.DoTranslation("{0} of {1} downloaded.") : Translate.DoTranslation("{0} of {1} uploaded.");
+                string indicator = TransferInfo.TransferType == NetworkTransferType.Download ? LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_DOWNLOADINDICATOR") : LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_UPLOADINDICATOR");
 
                 // Report the progress
                 if (!NetworkTools.TransferFinished)

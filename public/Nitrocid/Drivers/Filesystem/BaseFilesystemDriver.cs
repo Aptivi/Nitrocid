@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -111,7 +111,7 @@ namespace Nitrocid.Drivers.Filesystem
 
                 // Add the input contents
                     if (!FilesystemTools.IsBinaryFile(Input))
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINETEXT") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
                 CombinedContents.AddRange(FilesystemTools.ReadAllBytes(Input));
 
                 // Enumerate the target inputs
@@ -119,7 +119,7 @@ namespace Nitrocid.Drivers.Filesystem
                 {
                     string TargetInput = TargetInputs[i];
                             if (!FilesystemTools.IsBinaryFile(TargetInput))
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
+                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINETEXT") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
                     ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineBinaryFiles), $"{Input} + {TargetInput}");
                     CombinedContents.AddRange(FilesystemTools.ReadAllBytes(TargetInput));
                 }
@@ -131,7 +131,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINEFAILED"), ex);
             }
         }
 
@@ -144,7 +144,7 @@ namespace Nitrocid.Drivers.Filesystem
 
                 // Add the input contents
                     if (FilesystemTools.IsBinaryFile(Input))
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINEBINARY") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
                 CombinedContents.AddRange(FilesystemTools.ReadContents(Input));
 
                 // Enumerate the target inputs
@@ -152,7 +152,7 @@ namespace Nitrocid.Drivers.Filesystem
                 {
                     string TargetInput = TargetInputs[i];
                             if (FilesystemTools.IsBinaryFile(TargetInput))
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
+                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINEBINARY") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
                     ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineTextFiles), $"{Input} + {TargetInput}");
                     CombinedContents.AddRange(FilesystemTools.ReadContents(TargetInput));
                 }
@@ -164,7 +164,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINEFAILED"), ex);
             }
         }
 
@@ -177,7 +177,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             TextFile = FS.NeutralizePath(TextFile);
             if (!FilesystemTools.FileExists(TextFile))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), TextFile);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), TextFile);
 
             // Get all the file lines, regardless of the new line style on the target file
             var FileContents = FilesystemTools.ReadAllLinesNoBlock(TextFile);
@@ -207,7 +207,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void CopyDirectory(string Source, string Destination, bool ShowProgress)
         {
             if (!FilesystemTools.FolderExists(Source))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Source);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1"), Source);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -276,7 +276,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source is either not found or isn't a file."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_SOURCENOTEXISTS"));
             }
         }
 
@@ -316,7 +316,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The path is neither a file nor a directory."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_NOTFILEORDIR"));
             }
         }
 
@@ -339,7 +339,7 @@ namespace Nitrocid.Drivers.Filesystem
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", vars: [folder, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_LISTCREATEFAILED") + " {0}", ex, folder);
                 }
                 foreach (string Entry in enumeration)
                 {
@@ -423,7 +423,7 @@ namespace Nitrocid.Drivers.Filesystem
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 return;
             }
             if (StartByte <= FileByte.LongLength & EndByte <= FileByte.LongLength)
@@ -475,11 +475,11 @@ namespace Nitrocid.Drivers.Filesystem
             }
             else if (StartByte > FileByte.LongLength)
             {
-                TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
             }
             else if (EndByte > FileByte.LongLength)
             {
-                TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
             }
         }
 
@@ -495,7 +495,7 @@ namespace Nitrocid.Drivers.Filesystem
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
                 return;
             }
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
@@ -504,9 +504,9 @@ namespace Nitrocid.Drivers.Filesystem
                 TextWriters.Write(rendered, false, KernelColorType.ListEntry);
             }
             else if (StartByte > FileByte.LongLength)
-                TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
             else if (EndByte > FileByte.LongLength)
-                TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
         }
 
         /// <inheritdoc/>
@@ -525,7 +525,7 @@ namespace Nitrocid.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -576,11 +576,11 @@ namespace Nitrocid.Drivers.Filesystem
                 return builder.ToString();
             }
             else if (StartByte > FileByte.LongLength)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"));
             else if (EndByte > FileByte.LongLength)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"));
             else
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified byte number is invalid."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISINVALID"));
         }
 
         /// <inheritdoc/>
@@ -595,7 +595,7 @@ namespace Nitrocid.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
 
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
@@ -657,11 +657,11 @@ namespace Nitrocid.Drivers.Filesystem
                 return builder.ToString();
             }
             else if (StartByte > FileByte.LongLength)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"));
             else if (EndByte > FileByte.LongLength)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"));
             else
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified byte number is invalid."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISINVALID"));
         }
 
         /// <inheritdoc/>
@@ -718,7 +718,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             // Check for null
             if (DirectoryInfo is null)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory info is not specified."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_DIRINFONEEDED"));
 
             // Determine parse mode
             List<FileInfo> Files;
@@ -838,7 +838,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             // Ensure that the regex is valid
             if (!RegexpTools.IsValidRegex(Pattern))
-                throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
+                throw new KernelException(KernelExceptionType.RegularExpression, LanguageTools.GetLocalized("NKS_DRIVERS_REGEXP_BASE_EXCEPTION_INVALID"));
 
             // Get the entries and match them against the given pattern
             var AllFileEntries = FilesystemTools.GetFilesystemEntries(Parent, "*", Recursive);
@@ -889,7 +889,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             TextFile = FS.NeutralizePath(TextFile);
             if (!FilesystemTools.FileExists(TextFile))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), TextFile);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), TextFile);
 
             // Open the file stream
             var NewlineStyle = FilesystemTools.NewlineStyle;
@@ -1050,7 +1050,7 @@ namespace Nitrocid.Drivers.Filesystem
             }
             else if (ThrowIfDirectoryExists)
             {
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} already exists."), NewDirectory);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_DIRECTORYEXISTS"), NewDirectory);
             }
         }
 
@@ -1074,12 +1074,12 @@ namespace Nitrocid.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}"), ex.Message);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILECREATEFAILED"), ex.Message);
                 }
             }
             else if (ThrowIfFileExists)
             {
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File already exists."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEEXISTS"));
             }
         }
 
@@ -1107,12 +1107,12 @@ namespace Nitrocid.Drivers.Filesystem
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Error trying to create a file: {0}"), ex.Message);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILECREATEFAILED"), ex.Message);
                 }
             }
             else if (ThrowIfFileExists)
             {
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File already exists."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEEXISTS"));
             }
         }
 
@@ -1125,9 +1125,9 @@ namespace Nitrocid.Drivers.Filesystem
 
             // Check for path existence
             if (!FilesystemTools.Exists(target))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The target file or directory isn't found."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_TARGETNOTFOUND"));
             if (FilesystemTools.Exists(linkName))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_OVERWRITEWITHSYMLINK"));
 
             // Now, make a symlink
             File.CreateSymbolicLink(linkName, target);
@@ -1141,7 +1141,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MoveDirectory(string Source, string Destination, bool ShowProgress)
         {
             if (!FilesystemTools.FolderExists(Source))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Source);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1"), Source);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
@@ -1213,7 +1213,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source is either not found or isn't a file."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_SOURCENOTEXISTS"));
             }
         }
 
@@ -1253,7 +1253,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The path is neither a file nor a directory."));
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_NOTFILEORDIR"));
             }
         }
 
@@ -1343,7 +1343,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 // Get all file sizes in a folder
                 var finalDirInfo = DirectoryInfo.BaseEntry as DirectoryInfo ??
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory info is not specified."));
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_DIRINFONEEDED"));
                 long TotalSize = FilesystemTools.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
@@ -1353,14 +1353,14 @@ namespace Nitrocid.Drivers.Filesystem
                     if (ShowDirectoryDetails)
                     {
                         TextWriters.Write(": ", false, KernelColorType.ListEntry);
-                        TextWriters.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, KernelColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterRaw.Write();
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FilePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, DirectoryInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", vars: [DirectoryInfo.FilePath]);
             }
         }
@@ -1375,7 +1375,7 @@ namespace Nitrocid.Drivers.Filesystem
             if (FileInfo.Type == FileSystemEntryType.File)
             {
                 var finalDirInfo = FileInfo.BaseEntry as FileInfo ??
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File info is not specified."));
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEINFONEEDED"));
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     if (finalDirInfo.Name.EndsWith(".uesh"))
@@ -1392,14 +1392,14 @@ namespace Nitrocid.Drivers.Filesystem
                     }
                     if (ShowFileDetails)
                     {
-                        TextWriters.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterRaw.Write();
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FilePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND"), true, KernelColorType.Error, FileInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", vars: [FileInfo.FilePath]);
             }
         }
@@ -1544,7 +1544,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
         {
             if (!FilesystemTools.FolderExists(Target))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Target);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1"), Target);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Target);
@@ -1619,7 +1619,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", vars: [Target]);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't remove {0} because it doesn't exist."), Target);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_REMOVENONEXISTENTFILE"), Target);
             }
         }
 
@@ -1658,7 +1658,7 @@ namespace Nitrocid.Drivers.Filesystem
                     if (Str.Contains(StringLookup))
                     {
                         ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForString) + "Matched", $"+ {Str}");
-                        Matches.Add($"[{LineNumber}] " + TextTools.FormatString(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
+                        Matches.Add($"[{LineNumber}] " + TextTools.FormatString(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_MATCH"), MatchNum, Str));
                         MatchNum += 1;
                     }
                     LineNumber += 1;
@@ -1668,7 +1668,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED"), StringLookup, ex.Message);
             }
         }
 
@@ -1689,7 +1689,7 @@ namespace Nitrocid.Drivers.Filesystem
                     if (StringLookup.IsMatch(Str))
                     {
                         ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForStringRegexp) + "Matched", $"+ {Str}");
-                        Matches.Add($"[{LineNumber}] " + TextTools.FormatString(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
+                        Matches.Add($"[{LineNumber}] " + TextTools.FormatString(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_MATCH"), MatchNum, Str));
                         MatchNum += 1;
                     }
                     LineNumber += 1;
@@ -1699,7 +1699,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED"), StringLookup, ex.Message);
             }
         }
 
@@ -1726,7 +1726,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}"), StringLookup, ex.Message);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED"), StringLookup, ex.Message);
             }
         }
 
@@ -1794,7 +1794,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             // Check to see if we're interacting with a text file
             if (IsBinaryFile(path) || IsJson(path) || IsSql(path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption."), path);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_NEEDSREALTEXTFILE"), path);
 
             // Now, do the wrapping!
             string contents = ReadContentsText(path);
@@ -1810,9 +1810,9 @@ namespace Nitrocid.Drivers.Filesystem
 
             // Check to see if we're interacting with a text file
             if (IsBinaryFile(pathOne) || IsSql(pathOne))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source file you provided, {0}, is not a valid text file."), pathOne);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_SOURCEISNOTREALTEXTFILE"), pathOne);
             if (IsBinaryFile(pathTwo) || IsSql(pathTwo))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The target file you provided, {0}, is not a valid text file."), pathTwo);
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_TARGETISNOTREALTEXTFILE"), pathTwo);
 
             // Now, filter the lines according to the added and the removed lines
             var sourceLines = ReadContents(pathOne).Select((ln, lnidx) => $"{lnidx + 1}|{ln}").ToDictionary((spec) => spec[..spec.IndexOf('|')], (spec) => spec[(spec.IndexOf('|') + 1)..]);

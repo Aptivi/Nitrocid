@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Failed to satisfy condition. More info here:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

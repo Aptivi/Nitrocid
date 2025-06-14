@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -77,12 +77,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
                         if (FilesystemTools.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully.") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS") + " {0}", parameters.ArgumentsList[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute.") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDFAILED") + " {0}", parameters.ArgumentsList[2]);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
@@ -91,25 +91,25 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
                         if (FilesystemTools.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully.") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVESUCCESS") + " {0}", parameters.ArgumentsList[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute.") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVEFAILED") + " {0}", parameters.ArgumentsList[2]);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR"), true, KernelColorType.Error, parameters.ArgumentsList[2]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_FILENOTFOUND"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
@@ -117,15 +117,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("where <attributes> is one of the following:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_LIST"));
             TextWriters.Write("- Normal: ", false, KernelColorType.ListEntry);
-            TextWriters.Write(Translate.DoTranslation("The file is a normal file"), true, KernelColorType.ListValue);                   // Normal   = 128
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_NORMAL"), true, KernelColorType.ListValue);                   // Normal   = 128
             TextWriters.Write("- ReadOnly: ", false, KernelColorType.ListEntry);
-            TextWriters.Write(Translate.DoTranslation("The file is a read-only file"), true, KernelColorType.ListValue);              // ReadOnly = 1
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_READONLY"), true, KernelColorType.ListValue);              // ReadOnly = 1
             TextWriters.Write("- Hidden: ", false, KernelColorType.ListEntry);
-            TextWriters.Write(Translate.DoTranslation("The file is a hidden file"), true, KernelColorType.ListValue);                   // Hidden   = 2
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_HIDDEN"), true, KernelColorType.ListValue);                   // Hidden   = 2
             TextWriters.Write("- Archive: ", false, KernelColorType.ListEntry);
-            TextWriters.Write(Translate.DoTranslation("The file is an archive. Used for backups."), true, KernelColorType.ListValue);  // Archive  = 32
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_ARCHIVE"), true, KernelColorType.ListValue);  // Archive  = 32
         }
 
     }

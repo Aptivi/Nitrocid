@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -52,7 +52,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
         {
             // FirstVariable is actually a platform needed for parsing.
             if (!Platforms.TryGetValue(FirstVariable, out Func<bool>? platFunc))
-                throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Platform {0} specified is invalid."), FirstVariable);
+                throw new KernelException(KernelExceptionType.UESHConditionParse, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM"), FirstVariable);
 
             // Get the action needed to get the comparer and test the condition defined above
             return platFunc();

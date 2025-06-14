@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 spent.Start();
                 string encrypted = Encryption.GetEncryptedString(text, parameters.ArgumentsList[0]);
                 TextWriterColor.Write(encrypted);
-                TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
                 spent.Stop();
             }
             else if (parameters.ArgumentsList[0] == "all")
@@ -60,13 +60,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     spent.Start();
                     string encrypted = Encryption.GetEncryptedString(text, driverName);
                     TextWriterColor.Write($"{driverName}: {encrypted}");
-                    TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
                     spent.Stop();
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
             return 0;

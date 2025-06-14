@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,7 +26,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestSHA1 : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Encrypts a string using SHA1");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA1_DESC");
         public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var spent = new Stopwatch();
             spent.Start();
             TextWriterColor.Write(Encryption.GetEncryptedString("Nitrocid KS", "SHA1"));
-            TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
             spent.Stop();
         }
     }

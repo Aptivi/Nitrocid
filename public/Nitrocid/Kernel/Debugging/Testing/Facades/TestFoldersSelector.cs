@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,12 +25,12 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestFoldersSelector : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the multiple folders selector");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFOLDERSSELECTOR_DESC");
         public override TestSection TestSection => TestSection.Files;
         public override void Run()
         {
             string[] selected = FilesystemTools.SelectFolders();
-            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've selected") + $": {string.Join(", ", selected)}");
+            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFILESELECTOR_TEST") + $": {string.Join(", ", selected)}");
         }
     }
 }

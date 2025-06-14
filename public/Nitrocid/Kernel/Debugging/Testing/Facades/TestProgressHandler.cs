@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestProgressHandler : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests the progress handler");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC");
         public override void Run()
         {
             int progress = 0;
@@ -43,8 +43,8 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 Thread.Sleep(100);
                 progress += 1;
-                ProgressManager.ReportProgress(progress, "General", Translate.DoTranslation("Initializing..."));
-                ProgressManager.ReportProgress(progress, "Nongeneral", Translate.DoTranslation("Initializing..."));
+                ProgressManager.ReportProgress(progress, "General", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_TEST"));
+                ProgressManager.ReportProgress(progress, "Nongeneral", LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_TEST"));
             }
             ProgressManager.UnregisterProgressHandler(handler);
             ProgressManager.UnregisterProgressHandler(handler2);

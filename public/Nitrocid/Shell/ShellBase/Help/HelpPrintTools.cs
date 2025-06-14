@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,14 +51,14 @@ namespace Nitrocid.Shell.ShellBase.Help
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            TextWriters.Write(Translate.DoTranslation("Available commands:") + (Config.MainConfig.ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Length);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDLISTING") + (Config.MainConfig.ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Length);
 
             // The built-in commands
             if (showGeneral)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("General commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_GENERALLISTING") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
-                    TextWriters.Write("  - " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOLISTING"), true, KernelColorType.Warning);
                 foreach (var cmd in commandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -73,9 +73,9 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The addon commands
             if (showAddon)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_ADDONLISTING") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
                 if (AddonCommandList.Count == 0)
-                    TextWriters.Write("  - " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOADDONLISTING"), true, KernelColorType.Warning);
                 foreach (var cmd in AddonCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -93,9 +93,9 @@ namespace Nitrocid.Shell.ShellBase.Help
                 var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
                 var modEnableCountKey = ConfigTools.GetSettingsKey(modSettingsInstance, "ShowModCommandsCount");
                 bool showModCommandsCount = (bool)(ConfigTools.GetValueFromEntry(modEnableCountKey, modSettingsInstance) ?? false);
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (Config.MainConfig.ShowCommandsCount & showModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_MODLISTING") + (Config.MainConfig.ShowCommandsCount & showModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
                 if (ModCommandList.Count == 0)
-                    TextWriters.Write("  - " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOMODLISTING"), true, KernelColorType.Warning);
                 foreach (var cmd in ModCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -110,9 +110,9 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The alias commands
             if (showAlias)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_ALIASLISTING") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
-                    TextWriters.Write("  - " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOALIASLISTING"), true, KernelColorType.Warning);
                 foreach (var cmd in AliasedCommandList)
                 {
                     if ((!cmd.Value.Flags.HasFlag(CommandFlags.Strict) | cmd.Value.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Value.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -127,9 +127,9 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The unified commands
             if (showUnified)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_UNIFIEDLISTING") + (Config.MainConfig.ShowCommandsCount & Config.MainConfig.ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
-                    TextWriters.Write("  - " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING"), true, KernelColorType.Warning);
                 foreach (var cmd in unifiedCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -203,10 +203,10 @@ namespace Nitrocid.Shell.ShellBase.Help
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
-                    HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
-                TextWriters.Write(Translate.DoTranslation("Command:"), false, KernelColorType.ListEntry);
+                    HelpDefinition = LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DEFINEDBY") + command;
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_COMMAND"), false, KernelColorType.ListEntry);
                 TextWriters.Write($" {FinalCommand}", KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Description:"), false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION"), false, KernelColorType.ListEntry);
                 TextWriters.Write($" {HelpDefinition}", KernelColorType.ListValue);
 
                 // Iterate through command argument information instances
@@ -232,12 +232,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                     // If we have arguments, print their descriptions
                     if (Arguments.Length != 0)
                     {
-                        TextWriters.Write("* " + Translate.DoTranslation("This command has the below arguments that change how it works:"), KernelColorType.NeutralText);
+                        TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDARGLISTING"), KernelColorType.NeutralText);
                         foreach (var argument in Arguments)
                         {
                             string argumentDescUnlocalized = argument.Options.ArgumentDescription;
                             if (string.IsNullOrWhiteSpace(argument.Options.ArgumentDescription))
-                                argumentDescUnlocalized = /* Localizable */ "Unspecified argument description";
+                                argumentDescUnlocalized = LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDARGNODESC");
                             string argumentName = argument.ArgumentExpression;
                             string argumentDesc = Translate.DoTranslation(argumentDescUnlocalized);
                             TextWriters.Write($"    {argumentName}: ", false, KernelColorType.ListEntry);
@@ -248,12 +248,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriters.Write("* " + Translate.DoTranslation("This command has the below switches that change how it works:"), KernelColorType.NeutralText);
+                        TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_SWITCHLISTING"), KernelColorType.NeutralText);
                         foreach (var Switch in Switches)
                         {
                             string switchDescUnlocalized = Switch.HelpDefinition;
                             if (string.IsNullOrWhiteSpace(Switch.HelpDefinition))
-                                switchDescUnlocalized = /* Localizable */ "Unspecified switch description";
+                                switchDescUnlocalized = LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_CMDSWITCHNODESC");
                             string switchName = Switch.SwitchName;
                             string switchDesc = Translate.DoTranslation(switchDescUnlocalized);
                             TextWriters.Write($"    -{switchName}: ", false, KernelColorType.ListEntry);
@@ -266,7 +266,7 @@ namespace Nitrocid.Shell.ShellBase.Help
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
             }
             else
-                TextWriters.Write(Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOHELP"), true, KernelColorType.Error, command);
         }
     }
 }

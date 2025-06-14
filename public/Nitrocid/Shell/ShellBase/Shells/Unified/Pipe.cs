@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -67,14 +67,14 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
                 if (buildingTarget)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Execution of {sourceCommand} to the buffer failed.");
-                    TextWriters.Write(Translate.DoTranslation("Source command execution failed."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_SOURCEFAILED"), KernelColorType.Error);
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Execution of {targetCommandBuilder} failed.");
-                    TextWriters.Write(Translate.DoTranslation("Target command execution failed. The contents may not have been populated properly. Command executed was") + $"\n    {targetCommandBuilder}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_TARGETFAILED") + $"\n    {targetCommandBuilder}", KernelColorType.Error);
                 }
-                TextWriters.Write(Translate.DoTranslation("Pipe is broken."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_WRAP_FAILED"), KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Reason for failure: {ex.Message}.");
                 DebugWriter.WriteDebugStackTrace(ex);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -69,7 +69,7 @@ namespace Nitrocid.Arguments.Help
             if (!argumentList.TryGetValue(argument, out ArgumentInfo? argInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", vars: [argument]);
-                TextWriters.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_NOHELP"), true, KernelColorType.Error, argument);
                 return;
             }
 
@@ -95,7 +95,7 @@ namespace Nitrocid.Arguments.Help
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    TextWriters.Write(Translate.DoTranslation("Usage:") + $" {argument}", false, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_USAGE") + $" {argument}", false, KernelColorType.ListEntry);
 
                     // Enumerate through the available switches first
                     foreach (var Switch in Switches)
@@ -120,14 +120,14 @@ namespace Nitrocid.Arguments.Help
                     TextWriterRaw.Write();
                 }
                 else
-                    TextWriters.Write(Translate.DoTranslation("Usage:") + $" {argument}", true, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_USAGE") + $" {argument}", true, KernelColorType.ListEntry);
             }
 
             // Write the description now
             DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", vars: [HelpDefinition]);
             if (string.IsNullOrEmpty(HelpDefinition))
-                HelpDefinition = Translate.DoTranslation("No argument help description");
-            TextWriters.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
+                HelpDefinition = LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_NOHELPDESC");
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION") + $" {HelpDefinition}", true, KernelColorType.ListValue);
             argInfo.ArgumentBase.HelpHelper();
         }
     }

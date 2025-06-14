@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,7 +24,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ProbeHardware : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests probing the hardware");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,19 +45,19 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 try
                 {
                     DebugWriter.RemoveDebugLogs();
-                    TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS"));
                     return 0;
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_FAILURE"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return ex.GetHashCode();
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must turn on debug mode before you can clear debug log."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_NEEDSDEBUG"));
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }

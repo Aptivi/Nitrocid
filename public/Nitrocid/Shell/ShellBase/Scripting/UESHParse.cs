@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -103,10 +103,10 @@ namespace Nitrocid.Shell.ShellBase.Scripting
 
                         // If it still starts with the new stack indicator, throw an error
                         if (Line.StartsWith('|'))
-                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, KernelColorType.Error));
+                            throw new KernelException(KernelExceptionType.UESHScript, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, KernelColorType.Error));
                     }
                     else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
-                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, KernelColorType.Error));
+                        throw new KernelException(KernelExceptionType.UESHScript, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, GetLineHandle(ScriptPath, LineNo, commandStackNum, KernelColorType.Error));
                     else
                     {
                         if (retryLoopCondition && !justLint)
@@ -233,14 +233,14 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                 EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", vars: [ScriptPath, ScriptArguments, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors.") + "\n{0}", ex, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
+                throw new KernelException(KernelExceptionType.UESHScript, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED") + "\n{0}", ex, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
             }
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", vars: [ScriptPath, ScriptArguments, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}") + "\n{1}", ex, ex.Message, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
+                throw new KernelException(KernelExceptionType.UESHScript, LanguageTools.GetLocalized("NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED") + "\n{1}", ex, ex.Message, GetLineHandle(ScriptPath, LineNo, 0, KernelColorType.Error));
             }
         }
 

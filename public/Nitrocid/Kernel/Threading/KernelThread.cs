@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -299,7 +299,7 @@ namespace Nitrocid.Kernel.Threading
             // We can't regen the kernel thread unless Stop() is called first.
             DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", vars: [!IsReady || BaseThread.ThreadState != ThreadState.Running]);
             if (IsReady && BaseThread.ThreadState == ThreadState.Running)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
+                throw new KernelException(KernelExceptionType.ThreadOperation, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING"));
 
             // Remake the thread to avoid illegal state exceptions
             if (IsParameterized && ThreadDelegateParameterized is not null)
@@ -307,7 +307,7 @@ namespace Nitrocid.Kernel.Threading
             else if (ThreadDelegate is not null)
                 BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
             else
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Thread can't be regenerated") + $". {Name}");
+                throw new KernelException(KernelExceptionType.ThreadOperation, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN") + $". {Name}");
             DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} successfully.", vars: [Name, ThreadId]);
             isReady = true;
         }
@@ -322,7 +322,7 @@ namespace Nitrocid.Kernel.Threading
         public void AddChild(string ThreadName, bool Background, ThreadStart Executor)
         {
             if (Executor is null)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread start action can't be null."));
+                throw new KernelException(KernelExceptionType.ThreadOperation, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM"));
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
@@ -341,7 +341,7 @@ namespace Nitrocid.Kernel.Threading
         public void AddChild(string ThreadName, bool Background, ParameterizedThreadStart Executor)
         {
             if (Executor is null)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread start action can't be null."));
+                throw new KernelException(KernelExceptionType.ThreadOperation, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM"));
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
@@ -359,7 +359,7 @@ namespace Nitrocid.Kernel.Threading
         public KernelThread GetChild(int threadIdx)
         {
             if (threadIdx < 0 || threadIdx >= ChildThreads.Count)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread index number is invalid."));
+                throw new KernelException(KernelExceptionType.ThreadOperation, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID"));
 
             return ChildThreads[threadIdx];
         }
@@ -376,7 +376,7 @@ namespace Nitrocid.Kernel.Threading
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", vars: [Name, ThreadId, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+                KernelPanic.KernelErrorContinuable(LanguageTools.GetLocalized("NKS_KERNEL_THREADING_FAILED") + " {1}", ex, Name, ex.Message);
             }
         }
 
@@ -392,7 +392,7 @@ namespace Nitrocid.Kernel.Threading
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", vars: [Name, ThreadId, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
+                KernelPanic.KernelErrorContinuable(LanguageTools.GetLocalized("NKS_KERNEL_THREADING_FAILED") + " {1}", ex, Name, ex.Message);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Kernel.Time.Alarm
         {
             // Check the alarm name
             if (string.IsNullOrEmpty(alarmId))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm name is empty."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_NONAME"));
 
             // Now, check the ID
             return alarms.Any((kvp) => kvp.Key == alarmId);
@@ -55,9 +55,9 @@ namespace Nitrocid.Kernel.Time.Alarm
         {
             // Check the alarm name
             if (string.IsNullOrEmpty(alarmId))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm name is empty."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_NONAME"));
             if (!IsAlarmRegistered(alarmId))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm is not found."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_NOALARM"));
 
             // Now, check the ID
             return alarms.First((kvp) => kvp.Key == alarmId);
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Time.Alarm
             // Now, start the alarm
             var alarmDate = TimeDateTools.KernelDateTime.AddSeconds(alarmValue);
             if (alarmDate < TimeDateTools.KernelDateTime)
-                throw new KernelException(KernelExceptionType.Alarm, Translate.DoTranslation("Alarm date and time may not be in the past."));
+                throw new KernelException(KernelExceptionType.Alarm, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT"));
             var entryInstance = new AlarmEntry(alarmName, alarmDesc, alarmDate);
             alarms.Add(alarmId, entryInstance);
         }
@@ -96,7 +96,7 @@ namespace Nitrocid.Kernel.Time.Alarm
             if (alarmIdx < 0)
                 alarmIdx = 0;
             if (alarmIdx >= alarms.Count)
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The zero-based alarm number is invalid."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_INVALIDALARMNUM"));
 
             // Now, get an alarm and stop it
             var alarm = alarms.ElementAt(alarmIdx);
@@ -111,9 +111,9 @@ namespace Nitrocid.Kernel.Time.Alarm
         {
             // Check the alarm name
             if (string.IsNullOrEmpty(alarmId))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm name is empty."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_NONAME"));
             if (!IsAlarmRegistered(alarmId))
-                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The alarm is not found."));
+                throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_ALARM_EXCEPTION_NOALARM"));
 
             // Now, get an alarm and stop it
             if (alarms.Remove(alarmId))
