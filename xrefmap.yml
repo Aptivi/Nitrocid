@@ -112,19 +112,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Arguments.ArgumentInfo.ArgumentBase
   nameWithType: ArgumentInfo.ArgumentBase
-- uid: Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry
-  name: GetTranslatedHelpEntry()
-  href: api/Nitrocid.Arguments.ArgumentInfo.html#Nitrocid_Arguments_ArgumentInfo_GetTranslatedHelpEntry
-  commentId: M:Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry
-  fullName: Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry()
-  nameWithType: ArgumentInfo.GetTranslatedHelpEntry()
-- uid: Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry*
-  name: GetTranslatedHelpEntry
-  href: api/Nitrocid.Arguments.ArgumentInfo.html#Nitrocid_Arguments_ArgumentInfo_GetTranslatedHelpEntry_
-  commentId: Overload:Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry
-  isSpec: "True"
-  fullName: Nitrocid.Arguments.ArgumentInfo.GetTranslatedHelpEntry
-  nameWithType: ArgumentInfo.GetTranslatedHelpEntry
 - uid: Nitrocid.Arguments.ArgumentInfo.HelpDefinition
   name: HelpDefinition
   href: api/Nitrocid.Arguments.ArgumentInfo.html#Nitrocid_Arguments_ArgumentInfo_HelpDefinition
@@ -20845,19 +20832,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.CommandBase
   nameWithType: RemoteDebugCommandInfo.CommandBase
-- uid: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry
-  name: GetTranslatedHelpEntry()
-  href: api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.html#Nitrocid_Kernel_Debugging_RemoteDebug_Command_RemoteDebugCommandInfo_GetTranslatedHelpEntry
-  commentId: M:Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry
-  fullName: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry()
-  nameWithType: RemoteDebugCommandInfo.GetTranslatedHelpEntry()
-- uid: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry*
-  name: GetTranslatedHelpEntry
-  href: api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.html#Nitrocid_Kernel_Debugging_RemoteDebug_Command_RemoteDebugCommandInfo_GetTranslatedHelpEntry_
-  commentId: Overload:Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry
-  isSpec: "True"
-  fullName: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.GetTranslatedHelpEntry
-  nameWithType: RemoteDebugCommandInfo.GetTranslatedHelpEntry
 - uid: Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.HelpDefinition
   name: HelpDefinition
   href: api/Nitrocid.Kernel.Debugging.RemoteDebug.Command.RemoteDebugCommandInfo.html#Nitrocid_Kernel_Debugging_RemoteDebug_Command_RemoteDebugCommandInfo_HelpDefinition
@@ -36741,19 +36715,6 @@ references:
   isSpec: "True"
   fullName: Nitrocid.Shell.ShellBase.Commands.CommandInfo.Flags
   nameWithType: CommandInfo.Flags
-- uid: Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry
-  name: GetTranslatedHelpEntry()
-  href: api/Nitrocid.Shell.ShellBase.Commands.CommandInfo.html#Nitrocid_Shell_ShellBase_Commands_CommandInfo_GetTranslatedHelpEntry
-  commentId: M:Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry
-  fullName: Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry()
-  nameWithType: CommandInfo.GetTranslatedHelpEntry()
-- uid: Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry*
-  name: GetTranslatedHelpEntry
-  href: api/Nitrocid.Shell.ShellBase.Commands.CommandInfo.html#Nitrocid_Shell_ShellBase_Commands_CommandInfo_GetTranslatedHelpEntry_
-  commentId: Overload:Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry
-  isSpec: "True"
-  fullName: Nitrocid.Shell.ShellBase.Commands.CommandInfo.GetTranslatedHelpEntry
-  nameWithType: CommandInfo.GetTranslatedHelpEntry
 - uid: Nitrocid.Shell.ShellBase.Commands.CommandInfo.HelpDefinition
   name: HelpDefinition
   href: api/Nitrocid.Shell.ShellBase.Commands.CommandInfo.html#Nitrocid_Shell_ShellBase_Commands_CommandInfo_HelpDefinition
