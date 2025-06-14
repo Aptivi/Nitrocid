@@ -23833,12 +23833,6 @@ references:
   commentId: T:Nitrocid.Kernel.Extensions.KnownAddons
   fullName: Nitrocid.Kernel.Extensions.KnownAddons
   nameWithType: KnownAddons
-- uid: Nitrocid.Kernel.Extensions.KnownAddons.AddonLanguagePacks
-  name: AddonLanguagePacks
-  href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_AddonLanguagePacks
-  commentId: F:Nitrocid.Kernel.Extensions.KnownAddons.AddonLanguagePacks
-  fullName: Nitrocid.Kernel.Extensions.KnownAddons.AddonLanguagePacks
-  nameWithType: KnownAddons.AddonLanguagePacks
 - uid: Nitrocid.Kernel.Extensions.KnownAddons.AddonScreensaverPacks
   name: AddonScreensaverPacks
   href: api/Nitrocid.Kernel.Extensions.KnownAddons.html#Nitrocid_Kernel_Extensions_KnownAddons_AddonScreensaverPacks
