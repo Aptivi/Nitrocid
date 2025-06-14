@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -20,11 +20,13 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Docking.Commands;
 using Nitrocid.Extras.Docking.Dock;
+using Nitrocid.Extras.Docking.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Docking
 {
@@ -32,14 +34,14 @@ namespace Nitrocid.Extras.Docking
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
+            new CommandInfo("dock", LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC", "Nitrocid.Extras.Docking"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "dockName", new()
                         {
                             AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                            ArgumentDescription = /* Localizable */ "Dock name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC", "Nitrocid.Extras.Docking")
                         }),
                     ])
                 ], new DockCommand())
@@ -53,10 +55,16 @@ namespace Nitrocid.Extras.Docking
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Docking", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Docking");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

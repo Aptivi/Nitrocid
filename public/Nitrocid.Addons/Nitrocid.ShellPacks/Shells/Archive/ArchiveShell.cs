@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,13 +62,13 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                 ArchiveFile = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(ArchiveFile))
                 {
-                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -95,7 +95,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                     ArchiveShellCommon.Archive ??= TarArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 default:
-                    TextWriters.Write(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED", "Nitrocid.ShellPacks") + $" {type}", true, KernelColorType.Error);
                     Bail = true;
                     break;
             }
@@ -115,7 +115,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType()?.FullName ?? "<null>", ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR", "Nitrocid.ShellPacks") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType()?.FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

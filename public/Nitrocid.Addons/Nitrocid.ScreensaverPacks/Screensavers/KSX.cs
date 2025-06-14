@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -523,7 +523,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
                         break;
                     case 13:
-                        string tbc = Translate.DoTranslation("To be continued...").ToUpper();
+                        string tbc = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_KSX_CONTINUED").ToUpper();
                         ScreensaverManager.Delay(100, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
                         ScreensaverManager.Delay(40, true);

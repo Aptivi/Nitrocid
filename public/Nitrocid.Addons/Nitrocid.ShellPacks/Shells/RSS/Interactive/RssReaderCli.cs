@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             get
             {
                 if (rssConnection is null || rssConnection.ConnectionInstance is not RSSFeed feed)
-                    throw new KernelException(KernelExceptionType.RSSNetwork, Translate.DoTranslation("This connection contains an invalid RSS feed instance."));
+                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE", "Nitrocid.ShellPacks"));
                 return feed;
             }
         }
@@ -65,11 +65,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             string finalRenderedArticleTitle =
                 hasTitle ?
                 $"{selectedArticle.ArticleTitle}" :
-                Translate.DoTranslation("Unknown article title") + $" -> {selectedArticle.ArticleLink}";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE", "Nitrocid.ShellPacks") + $" -> {selectedArticle.ArticleLink}";
             string finalRenderedArticleBody =
                 hasDescription ?
                 selectedArticle.ArticleDescription :
-                Translate.DoTranslation("Unfortunately, this article doesn't have any contents. You can still follow the article at") + $" {selectedArticle.ArticleLink}.";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS", "Nitrocid.ShellPacks") + $" {selectedArticle.ArticleLink}.";
 
             // Render them to the second pane
             return
@@ -106,15 +106,15 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             string finalRenderedArticleTitle =
                 hasTitle ?
                 $"{item.ArticleTitle}" :
-                Translate.DoTranslation("Unknown article title") + $" -> {item.ArticleLink}";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE", "Nitrocid.ShellPacks") + $" -> {item.ArticleLink}";
             string finalRenderedArticleBody =
                 hasDescription ?
                 item.ArticleDescription :
-                Translate.DoTranslation("Unfortunately, this article doesn't have any contents. You can still follow the article at") + $" {item.ArticleLink}.";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS", "Nitrocid.ShellPacks") + $" {item.ArticleLink}.";
             string finalRenderedArticleVars =
                 hasVars ?
                 $"  - {string.Join("\n  - ", item.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value.InnerText}]"))}" :
-                Translate.DoTranslation("No revision.");
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV", "Nitrocid.ShellPacks");
             finalInfoRendered.AppendLine(finalRenderedArticleTitle);
             finalInfoRendered.AppendLine(finalRenderedArticleBody);
             finalInfoRendered.AppendLine(finalRenderedArticleVars);
@@ -131,7 +131,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("This article doesn't have a link."), Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOLINK", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
                 return;
             }
 
@@ -142,7 +142,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
             catch (Exception e)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED", "Nitrocid.ShellPacks") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }
 

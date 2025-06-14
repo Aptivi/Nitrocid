@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,9 +39,9 @@ namespace Nitrocid.Extras.Caffeine.Commands
 
         private static readonly Dictionary<string, int> caffeines = new()
         {
-            { /* Localizable */ "American Coffee",  60 * 5 },
-            { /* Localizable */ "Red Tea",          60 * 10 },
-            { /* Localizable */ "Green Tea",        60 * 10 },
+            { LanguageTools.GetLocalized("NKS_CAFFEINE_AMERICANCOFFEE", "Nitrocid.Extras.Caffeine"),  60 * 5 },
+            { LanguageTools.GetLocalized("NKS_CAFFEINE_REDTEA", "Nitrocid.Extras.Caffeine"),          60 * 10 },
+            { LanguageTools.GetLocalized("NKS_CAFFEINE_GREENTEA", "Nitrocid.Extras.Caffeine"),        60 * 10 },
         };
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
             {
                 if (!AlarmTools.IsAlarmRegistered("Caffeine"))
                 {
-                    TextWriters.Write(Translate.DoTranslation("No caffeine alerts to abort."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_NOALERTS", "Nitrocid.Extras.Caffeine"), KernelColorType.Error);
                     return 32;
                 }
                 var id = AlarmTools.alarms.Keys.Last((alarm) => alarm.Contains("Caffeine"));
@@ -63,12 +63,12 @@ namespace Nitrocid.Extras.Caffeine.Commands
                 bool nameSpecified = caffeines.ContainsKey(secsOrName);
                 if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
                 {
-                    TextWriters.Write(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
-                    TextWriters.Write(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDS", "Nitrocid.Extras.Caffeine"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDSTIP", "Nitrocid.Extras.Caffeine"), KernelColorType.Tip);
                     TextWriters.WriteList(caffeines);
                     return 26;
                 }
-                AlarmTools.StartAlarm("Caffeine", Translate.DoTranslation("Your cup is now ready!"), alarmSeconds, nameSpecified ? Translate.DoTranslation(secsOrName) : "");
+                AlarmTools.StartAlarm("Caffeine", LanguageTools.GetLocalized("NKS_CAFFEINE_ALARMNAME", "Nitrocid.Extras.Caffeine"), alarmSeconds, nameSpecified ? Translate.DoTranslation(secsOrName) : "");
             }
             return 0;
         }

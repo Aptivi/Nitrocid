@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -103,7 +103,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."), false);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND", "Nitrocid.Extras.BassBoom"), false);
                 return;
             }
 
@@ -192,7 +192,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("This lyrics file doesn't exist.") + $" {path}");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND") + $" {path}", "Nitrocid.Extras.BassBoom");
             }
 
             // Here, the lyric file is given. Process it...

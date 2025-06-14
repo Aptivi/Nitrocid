@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection EstablishHttpConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ", "Nitrocid.ShellPacks");
             return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
         }
 

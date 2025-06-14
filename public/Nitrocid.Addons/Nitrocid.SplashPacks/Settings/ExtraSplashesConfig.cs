@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.SplashPacks.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("AddonSplashSettings.json", ResourcesType.Misc, typeof(ExtraSplashesConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

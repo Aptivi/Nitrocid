@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,8 +26,10 @@ using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Extras.Stocks.Commands;
+using Nitrocid.Extras.Stocks.Localized;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Extras.Stocks.Widgets;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Stocks
 {
@@ -35,13 +37,13 @@ namespace Nitrocid.Extras.Stocks
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("stock", /* Localizable */ "Gets an hourly stock information",
+            new CommandInfo("stock", LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC", "Nitrocid.Extras.Stocks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Short company symbol"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC", "Nitrocid.Extras.Stocks")
                         }),
                     ])
                 ], new StockCommand()),
@@ -57,6 +59,7 @@ namespace Nitrocid.Extras.Stocks
 
         void IAddon.StartAddon()
         {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Stocks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new StocksConfig();
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ConfigTools.RegisterBaseSetting(config);
@@ -65,6 +68,7 @@ namespace Nitrocid.Extras.Stocks
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Stocks");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(StocksConfig));
             WidgetTools.RemoveBaseWidget(nameof(StocksWidget));

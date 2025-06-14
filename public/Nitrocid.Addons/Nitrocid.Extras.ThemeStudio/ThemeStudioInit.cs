@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,12 +19,14 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.ThemeStudio.Commands;
+using Nitrocid.Extras.ThemeStudio.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
@@ -32,17 +34,17 @@ namespace Nitrocid.Extras.ThemeStudio
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
+            new CommandInfo("mktheme", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC", "Nitrocid.Extras.ThemeStudio"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Theme name to create"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC", "Nitrocid.Extras.ThemeStudio")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Makes a new theme in an interactive TUI")
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC", "Nitrocid.Extras.ThemeStudio"))
                     ])
                 ], new MkThemeCommand()),
         ];
@@ -52,11 +54,17 @@ namespace Nitrocid.Extras.ThemeStudio
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.ThemeStudio", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.ThemeStudio");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

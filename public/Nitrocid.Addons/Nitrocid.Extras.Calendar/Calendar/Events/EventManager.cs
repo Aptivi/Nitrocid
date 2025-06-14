@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,9 +48,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         internal static List<EventInfo> CalendarEvents = [];
         internal static readonly EventInfo[] baseEvents =
         [
-            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary"
+            new(new(2018, 2, 22), LanguageTools.GetLocalized("NKS_CALENDAR_BUILTIN_NKSANNIVERSARY", "Nitrocid.Extras.Calendar")
                 , true, 2, 22, 2, 22, "Gregorian"),
-            new(new(2018, 2, 22), /* Localizable */ "Ramadan"
+            new(new(2018, 2, 22), LanguageTools.GetLocalized("NKS_CALENDAR_BUILTIN_RAMADAN", "Nitrocid.Extras.Calendar")
                 , true, 9, 1, 10, 1, "Hijri"),
         ];
 
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void AddEvent(DateTime EventDate, string EventTitle)
         {
             if (string.IsNullOrWhiteSpace(EventTitle))
-                EventTitle = Translate.DoTranslation("Untitled event");
+                EventTitle = LanguageTools.GetLocalized("NKS_CALENDAR_UNTITLEDEVENT", "Nitrocid.Extras.Calendar");
             var EventInstance = new EventInfo(EventDate, EventTitle);
             DebugWriter.WriteDebug(DebugLevel.I, "Adding event {0} @ {1} to list...", vars: [EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate)]);
             AddEvent(EventInstance);
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             int EventIndex = EventId - 1;
             if (EventIndex >= CalendarEvents.Count)
-                throw new KernelException(KernelExceptionType.Calendar, Translate.DoTranslation("There is no event."));
+                throw new KernelException(KernelExceptionType.Calendar, LanguageTools.GetLocalized("NKS_CALENDAR_EXCEPTION_NOEVENT", "Nitrocid.Extras.Calendar"));
             var EventInstance = CalendarEvents[EventIndex];
             if (EventInstance.EventDate == EventDate)
             {

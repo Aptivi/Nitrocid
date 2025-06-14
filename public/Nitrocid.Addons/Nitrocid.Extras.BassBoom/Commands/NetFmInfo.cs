@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             // Check for the port integrity
             if (!int.TryParse(internetFmPort, out int internetFmPortInt))
             {
-                TextWriters.Write(Translate.DoTranslation("The port number for your online radio is invalid."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_PORTINVALID", "Nitrocid.Extras.BassBoom"), KernelColorType.Error);
                 return 25;
             }
 
@@ -49,36 +49,36 @@ namespace Nitrocid.Extras.BassBoom.Commands
             if (internetFm is not null)
             {
                 internetFm.Refresh();
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_HEADER", "Nitrocid.Extras.BassBoom") + $" {internetFmUrl}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_FULLURL", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Station type") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_STATIONTYPE", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.ServerType}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_CURRENTLISTENERS", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_PEAKLISTENERS", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_STREAMS", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_ACTIVESTREAMS", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{internetFm.ActiveStreams}\n", true, KernelColorType.ListValue);
 
                 // Now, the stream info
                 foreach (var stream in internetFm.Streams)
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    TextWriters.Write(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_STREAMINFO", "Nitrocid.Extras.BassBoom") + $" {stream.StreamId}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TITLE", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{stream.StreamTitle}", true, KernelColorType.ListValue);
-                    TextWriters.Write(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_PATH", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{stream.StreamPath}", true, KernelColorType.ListValue);
-                    TextWriters.Write(Translate.DoTranslation("Currently playing") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_CURRENTLYPLAYING", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{stream.SongTitle}", true, KernelColorType.ListValue);
-                    TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_UPTIME", "Nitrocid.Extras.BassBoom") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
                 }
             }
             else
-                TextWriters.Write(Translate.DoTranslation("Can't get internet radio information."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_RADIO_CANTGETINFO", "Nitrocid.Extras.BassBoom"), KernelColorType.Error);
             return 0;
         }
 

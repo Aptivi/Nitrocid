@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
 
         /// <inheritdoc/>
         public override string GetStatusFromItem(object item) =>
-            $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
+            $"{GetUnits().OfType<string>().Count()} " + LanguageTools.GetLocalized("NKS_UNITCONV_CLI_UNITSTOCONVERT", "Nitrocid.Extras.UnitConv");
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>
@@ -60,15 +60,15 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a number to convert..."), Settings.InfoBoxSettings);
+                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You haven't entered a number to convert."), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
                     return;
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The entered number is invalid."), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_INVALIDNUMBER", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -93,7 +93,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't convert unit.") + ex.Message, Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_CANTCONVERT", "Nitrocid.Extras.UnitConv") + ex.Message, Settings.InfoBoxSettings);
             }
         }
 

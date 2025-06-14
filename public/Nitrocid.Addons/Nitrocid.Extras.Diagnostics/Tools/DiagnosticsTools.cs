@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Diagnostics.Tools
             foreach (var t in runtime.Threads)
             {
                 var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
-                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
+                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : LanguageTools.GetLocalized("NKS_DIAG_NOTNKSTHREAD", "Nitrocid.Extras.Diagnostics");
                 string[] trace = t.EnumerateStackTrace(true).Select(f =>
                 {
                     if (f.Method != null)

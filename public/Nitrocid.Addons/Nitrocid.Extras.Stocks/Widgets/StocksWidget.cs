@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
             };
             if (!isReady)
             {
-                displayer.Text = Translate.DoTranslation("API Key is required. Configure from the settings.");
+                displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYCONFIGURE", "Nitrocid.Extras.Stocks");
                 display.Append(displayer.Render());
             }
             else
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 var stocksIntervalToken = stocksToken["Time Series (60min)"];
                 if (stocksIntervalToken is null)
                 {
-                    displayer.Text = Translate.DoTranslation("No stock data available.");
+                    displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_NODATA", "Nitrocid.Extras.Stocks");
                     display.Append(displayer.Render());
                 }
                 else

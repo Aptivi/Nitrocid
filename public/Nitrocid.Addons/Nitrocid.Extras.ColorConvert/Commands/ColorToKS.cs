@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,22 +42,22 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             int fourth = 0;
             if (!int.TryParse(parameters.ArgumentsList[2], out int first))
             {
-                TextWriters.Write(Translate.DoTranslation("The first color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FIRSTLEVELNUMERIC", "Nitrocid.Extras.ColorConvert"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[3], out int second))
             {
-                TextWriters.Write(Translate.DoTranslation("The second color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_SECONDLEVELNUMERIC", "Nitrocid.Extras.ColorConvert"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[4], out int third))
             {
-                TextWriters.Write(Translate.DoTranslation("The third color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_THIRDLEVELNUMERIC", "Nitrocid.Extras.ColorConvert"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (parameters.ArgumentsList.Length > 5 && !int.TryParse(parameters.ArgumentsList[3], out fourth))
             {
-                TextWriters.Write(Translate.DoTranslation("The fourth key level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FOURTHLEVELNUMERIC", "Nitrocid.Extras.ColorConvert"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConvert = ColorConvertTools.GetConvertFuncFromModel(source, target);
             if (modelConvert is null)
             {
-                TextWriters.Write(Translate.DoTranslation("Model specification is invalid."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL", "Nitrocid.Extras.ColorConvert"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             var modelConverted = modelConvert.Invoke(first, second, third, fourth);

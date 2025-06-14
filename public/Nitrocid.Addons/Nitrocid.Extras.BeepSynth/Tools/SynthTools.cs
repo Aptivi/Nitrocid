@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.BeepSynth.Tools
         public static SynthInfo GetSynthInfo(string synthJson)
         {
             var synthInfo = JsonConvert.DeserializeObject<SynthInfo>(synthJson) ??
-                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("Can't get synth info from the provided representation."));
+                throw new KernelException(KernelExceptionType.Console, LanguageTools.GetLocalized("NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO", "Nitrocid.Extras.BeepSynth"));
             return synthInfo;
         }
     }

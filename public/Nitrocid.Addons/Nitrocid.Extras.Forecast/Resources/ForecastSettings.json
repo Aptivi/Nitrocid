@@ -1,13 +1,13 @@
 [
     {
         "Name": "Forecast",
-        "Desc": "This section lets you configure how Forecast works.",
+        "Desc": "NKS_FORECAST_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Preferred Unit for Temperature",
+                "Name": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PreferredUnit",
-                "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command). 1 is Kelvin, 2 is Metric, and 3 is Imperial.",
+                "Description": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
                 "MinimumValue": 1,
                 "MaximumValue": 3
             }

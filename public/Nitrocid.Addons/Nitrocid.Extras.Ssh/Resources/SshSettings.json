@@ -1,19 +1,19 @@
 [
     {
         "Name": "SSH",
-        "Desc": "This section lets you configure how the SSH works.",
+        "Desc": "NKS_SSH_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Username prompt style for SSH",
+                "Name": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "SSHUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC"
             },
             {
-                "Name": "Add new connections to SSH speed dial",
+                "Name": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
                 "Type": "SBoolean",
                 "Variable": "SSHNewConnectionsToSpeedDial",
-                "Description": "If enabled, adds a new connection to the SSH speed dial."
+                "Description": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC"
             }
         ]
     }

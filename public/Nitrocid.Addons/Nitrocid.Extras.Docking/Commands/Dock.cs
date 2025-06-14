@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
-                TextWriters.Write(Translate.DoTranslation("There is no dock screen by this name."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1", "Nitrocid.Extras.Docking"), KernelColorType.Error);
                 return 34;
             }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -50,7 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             base.ScreensaverPreparation();
 
             // Write loading
-            string word = Translate.DoTranslation("Loading...");
+            string word = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_WORD_LOADING");
             string wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
             var figFont = FigletTools.GetFigletFont("small");
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.NameGen.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("NameGenSaverSettings.json", ResourcesType.Misc, typeof(NameGenSaversConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.NameGen"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

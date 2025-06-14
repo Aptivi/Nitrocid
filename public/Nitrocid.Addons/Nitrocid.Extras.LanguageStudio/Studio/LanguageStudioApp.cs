@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (!FilesystemTools.FileExists(englishFile))
             {
                 string answer = ChoiceStyle.PromptChoice(
-                    Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), [("e", "Empty"), ("n", "Nitrocid's English strings")]
+                    LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_BASEFILENOTFOUND", "Nitrocid.Extras.LanguageStudio"), [("e", "Empty"), ("n", "Nitrocid's English strings")]
                 ).ToLower();
                 switch (answer)
                 {
@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (finalLangs.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
-                TextWriters.Write(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED", "Nitrocid.Extras.LanguageStudio"), true, KernelColorType.Error);
                 return;
             }
 
@@ -130,10 +130,10 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     pathToTranslations = pathToTranslations,
                     englishLines = englishLines,
                 };
-                new InteractiveTuiBinding<string>(Translate.DoTranslation("Translate"), ConsoleKey.Enter, (line, _, _, _) => tui.DoTranslate(line), true);
-                new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Add(), true);
-                new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (_, idx, _, _) => tui.Remove(idx));
-                new InteractiveTuiBinding<string>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save(), true);
+                new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_TRANSLATE", "Nitrocid.Extras.LanguageStudio"), ConsoleKey.Enter, (line, _, _, _) => tui.DoTranslate(line), true);
+                new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_ADD", "Nitrocid.Extras.LanguageStudio"), ConsoleKey.A, (_, _, _, _) => tui.Add(), true);
+                new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_REMOVE", "Nitrocid.Extras.LanguageStudio"), ConsoleKey.Delete, (_, idx, _, _) => tui.Remove(idx));
+                new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TUI_KEYBINDING_SAVE", "Nitrocid.Extras.LanguageStudio"), ConsoleKey.F1, (_, _, _, _) => tui.Save(), true);
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
@@ -150,25 +150,25 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 }
 
                 // Now, show all strings to select, as well as several options
-                string finalTitle = Translate.DoTranslation("Welcome to the Language Studio!");
+                string finalTitle = LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_HEADER", "Nitrocid.Extras.LanguageStudio");
                 List<InputChoiceInfo> altChoices =
                 [
-                    new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("New string")),
-                    new InputChoiceInfo($"{englishLines.Count + 2}", Translate.DoTranslation("Remove string")),
-                    new InputChoiceInfo($"{englishLines.Count + 3}", Translate.DoTranslation("Save translations")),
-                    new InputChoiceInfo($"{englishLines.Count + 4}", Translate.DoTranslation("Exit")),
+                    new InputChoiceInfo($"{englishLines.Count + 1}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NEWSTRING", "Nitrocid.Extras.LanguageStudio")),
+                    new InputChoiceInfo($"{englishLines.Count + 2}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_REMOVESTRING", "Nitrocid.Extras.LanguageStudio")),
+                    new InputChoiceInfo($"{englishLines.Count + 3}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_SAVE", "Nitrocid.Extras.LanguageStudio")),
+                    new InputChoiceInfo($"{englishLines.Count + 4}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_EXIT", "Nitrocid.Extras.LanguageStudio")),
                 ];
                 List<InputChoiceInfo> altChoicesRemove =
                 [
-                    new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("Go Back...")),
+                    new InputChoiceInfo($"{englishLines.Count + 1}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_GOBACK", "Nitrocid.Extras.LanguageStudio")),
                 ];
-                int selectedStringNum = SelectionStyle.PromptSelection("\n  * " + finalTitle + " " + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
+                int selectedStringNum = SelectionStyle.PromptSelection("\n  * " + finalTitle + " " + CharManager.NewLine + CharManager.NewLine + LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_SELECTSTRINGTRANSLATE", "Nitrocid.Extras.LanguageStudio"), [.. choices], [.. altChoices]);
 
                 // Check the answer
                 if (selectedStringNum == englishLines.Count + 1)
                 {
                     // User chose to make a new string.
-                    string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string") + ": ");
+                    string newString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT", "Nitrocid.Extras.LanguageStudio") + ": ");
                     englishLines.Add(newString);
                     foreach (var translatedLang in translatedLines.Keys)
                         translatedLines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
@@ -176,8 +176,8 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 else if (selectedStringNum == englishLines.Count + 2)
                 {
                     // User chose to remove a string.
-                    finalTitle = Translate.DoTranslation("Remove string");
-                    int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to remove:"), [.. choices], [.. altChoicesRemove]);
+                    finalTitle = LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_REMOVESTRING", "Nitrocid.Extras.LanguageStudio");
+                    int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_SELECTSTRINGREMOVE", "Nitrocid.Extras.LanguageStudio"), [.. choices], [.. altChoicesRemove]);
                     if (selectedRemovedStringNum == englishLines.Count + 1 || selectedRemovedStringNum == -1)
                         continue;
                     else
@@ -190,7 +190,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 else if (selectedStringNum == englishLines.Count + 3)
                 {
                     // User chose to save the translations.
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_SAVINGLANG", "Nitrocid.Extras.LanguageStudio"));
                     foreach (var translatedLine in translatedLines)
                     {
                         string language = translatedLine.Key;
@@ -198,7 +198,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string languagePath = $"{pathToTranslations}/{language}.txt";
                         FilesystemTools.WriteContents(languagePath, [.. localizations]);
                     }
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_SAVESUCCESS", "Nitrocid.Extras.LanguageStudio") + $" {pathToTranslations}");
                 }
                 else if (selectedStringNum == englishLines.Count + 4 || selectedStringNum == -1)
                 {
@@ -230,16 +230,16 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 }
                 List<InputChoiceInfo> altChoices =
                 [
-                    new InputChoiceInfo($"{targetLanguages.Length + 1}", Translate.DoTranslation("Go Back...")),
+                    new InputChoiceInfo($"{targetLanguages.Length + 1}", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_GOBACK", "Nitrocid.Extras.LanguageStudio")),
                 ];
-                string finalTitle = Translate.DoTranslation("Select language");
-                int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), [.. choices], [.. altChoices]);
+                string finalTitle = LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_SELECTLANGTITLE", "Nitrocid.Extras.LanguageStudio");
+                int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_SELECTLANGPROMPT", "Nitrocid.Extras.LanguageStudio"), [.. choices], [.. altChoices]);
                 if (selectedLangNum == targetLanguages.Length + 1 || selectedLangNum == -1)
                     return;
 
                 // Try to get a language and prompt the user for the translation
                 string selectedLang = targetLanguages[selectedLangNum - 1];
-                string translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
+                string translated = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT", "Nitrocid.Extras.LanguageStudio") + $" \"{str}\": ");
                 translatedLines[selectedLang][index] = translated;
             }
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Nitrocid.ShellPacks.Shells.Json.Commands;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {
@@ -38,100 +39,100 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("add", /* Localizable */ "Adds a new array, object, or property",
+            new CommandInfo("add", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "JSON value to add"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
+                        new SwitchInfo("parentPath", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
-                        new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
+                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsRequired = true
                         }),
-                        new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
+                        new SwitchInfo("propName", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
                     ])
                 ], new AddCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the JSON file", new ClearCommand()),
+            new CommandInfo("clear", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC", "Nitrocid.ShellPacks"), new ClearCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes", new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC", "Nitrocid.ShellPacks"), new ExitNoSaveCommand()),
 
-            new CommandInfo("findproperty", /* Localizable */ "Finds a property",
+            new CommandInfo("findproperty", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "propertyName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "JSON property name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        new SwitchInfo("parentProperty", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         })
                     ])
                 ], new FindPropertyCommand()),
 
-            new CommandInfo("jsoninfo", /* Localizable */ "Shows information about the JSON file",
+            new CommandInfo("jsoninfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
+                        new SwitchInfo("simplified", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("showvals", /* Localizable */ "Show all values", new SwitchOptions()
+                        new SwitchInfo("showvals", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new JsonInfoCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("print", /* Localizable */ "Prints the JSON file",
+            new CommandInfo("print", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "JSON property name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("rm", /* Localizable */ "Removes a target object",
+            new CommandInfo("rm", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_RM_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "objectPath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Object path"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new RmCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the JSON file",
+            new CommandInfo("save", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
+                        new SwitchInfo("b", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ConflictsWith = ["m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", /* Localizable */ "Minified JSON", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ConflictsWith = ["b"],
                             AcceptsValues = false
@@ -139,33 +140,33 @@ namespace Nitrocid.ShellPacks.Shells.Json
                     ])
                 ], new SaveCommand()),
 
-            new CommandInfo("set", /* Localizable */ "Sets a value to an existing array, object, or property",
+            new CommandInfo("set", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SET_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "JSON value"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
+                        new SwitchInfo("parentPath", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
-                        new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
+                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsRequired = true
                         }),
-                        new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
+                        new SwitchInfo("propName", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
                     ])
                 ], new SetCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor", new TuiCommand()),
+            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC", "Nitrocid.ShellPacks"), new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

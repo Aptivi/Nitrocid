@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Notes.Interactive
 
             // Generate the rendered text
             string finalRenderedNote = noteEmpty ?
-                Translate.DoTranslation("This note is empty") :
+                LanguageTools.GetLocalized("NKS_NOTES_TUI_EMPTYNOTE", "Nitrocid.Extras.Notes") :
                 $"{noteInstance}";
 
             // Render them to the second pane
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Notes.Interactive
 
             // Generate the rendered text
             string finalRenderedNote = noteEmpty ?
-                Translate.DoTranslation("This note is empty") :
+                LanguageTools.GetLocalized("NKS_NOTES_TUI_EMPTYNOTE", "Nitrocid.Extras.Notes") :
                 $"{noteInstance.SplitNewLines()[0]}";
 
             // Render them to the status
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.Notes.Interactive
 
             // Generate the rendered text
             string finalRenderedNote = noteEmpty ?
-                Translate.DoTranslation("This note is empty") :
+                LanguageTools.GetLocalized("NKS_NOTES_TUI_EMPTYNOTE", "Nitrocid.Extras.Notes") :
                 $"{noteInstance.SplitNewLines()[0]}";
 
             // Render them to the second pane

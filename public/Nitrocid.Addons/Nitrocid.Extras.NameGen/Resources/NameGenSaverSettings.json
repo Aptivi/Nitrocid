@@ -1,49 +1,49 @@
 [
     {
         "Name": "PersonLookup",
-        "Desc": "Simulates a database lookup for a random person.",
+        "Desc": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "PersonLookupDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "New Screen Delay in Milliseconds",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_NAME",
                 "Type": "SInt",
                 "Variable": "PersonLookupLookedUpDelay",
-                "Description": "How many milliseconds to wait before writing in the new screen?"
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_SCREENDELAY_DESC"
             },
             {
-                "Name": "Minimum names count",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMinimumNames",
-                "Description": "Minimum amount of names to generate",
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINNAMES_DESC",
                 "MinimumValue": 10,
                 "MaximumValue": 1000
             },
             {
-                "Name": "Maximum names count",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMaximumNames",
-                "Description": "Maximum amount of names to generate",
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXNAMES_DESC",
                 "MinimumValue": 10,
                 "MaximumValue": 1000
             },
             {
-                "Name": "Minimum age years count",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMinimumNames",
-                "Description": "Minimum amount of age years to generate",
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
             },
             {
-                "Name": "Maximum age years count",
+                "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMaximumNames",
-                "Description": "Maximum amount of age years to generate",
+                "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
             }

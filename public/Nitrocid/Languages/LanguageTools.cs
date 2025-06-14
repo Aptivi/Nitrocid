@@ -26,11 +26,25 @@ namespace Nitrocid.Languages
     {
         private const string localType = "Nitrocid";
 
-        internal static string GetLocalized(string id)
+        internal static string GetLocalized(string id) =>
+            GetLocalized(id, localType);
+
+        internal static string GetLocalized(string id, string localType)
+        {
+            AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            return LanguageCommon.Translate(id, localType);
+        }
+
+        internal static void AddCustomAction(string localType, LanguageLocalActions action)
         {
             if (!LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            return LanguageCommon.Translate(id, localType);
+                LanguageCommon.AddCustomAction(localType, action);
+        }
+
+        internal static void RemoveCustomAction(string localType)
+        {
+            if (LanguageCommon.IsCustomActionDefined(localType))
+                LanguageCommon.RemoveCustomAction(localType);
         }
     }
 }

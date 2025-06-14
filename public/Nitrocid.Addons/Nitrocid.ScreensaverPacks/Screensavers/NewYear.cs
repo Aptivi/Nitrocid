@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterRaw.WriteRaw(yearText.Render());
 
                 // Congratulate!
-                string cong = Translate.DoTranslation("Happy new year!");
+                string cong = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS");
                 int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                 var congratsText = new AlignedText()
                 {
@@ -123,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Print the time remaining
                 var nextYearDate = new DateTime(currentYear + 1, 1, 1);
                 var distance = nextYearDate - TimeDateTools.KernelDateTime;
-                string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss") + " " + Translate.DoTranslation("left until the next year");
+                string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss") + " " + LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_NEWYEAR_LEFT");
                 int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                 var distanceText = new AlignedText()
                 {

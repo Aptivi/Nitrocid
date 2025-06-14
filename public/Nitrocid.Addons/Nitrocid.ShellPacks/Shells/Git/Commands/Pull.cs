@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriters.Write(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 return 14;
             }
             var merger = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
@@ -51,18 +51,18 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             switch (pullResult.Status)
             {
                 case MergeStatus.UpToDate:
-                    TextWriterColor.Write(Translate.DoTranslation("Your local copy of the repo is up to date!"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_UPTODATE", "Nitrocid.ShellPacks"));
                     break;
                 case MergeStatus.FastForward:
-                    TextWriterColor.Write(Translate.DoTranslation("Fast forwarded to") + $":");
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_FASTFORWARD") + $":", "Nitrocid.ShellPacks");
                     TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
                     break;
                 case MergeStatus.NonFastForward:
-                    TextWriterColor.Write(Translate.DoTranslation("Updated repository to") + $":");
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_UPDATED") + $":", "Nitrocid.ShellPacks");
                     TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
                     break;
                 case MergeStatus.Conflicts:
-                    TextWriters.Write(Translate.DoTranslation("Your merge resulted in conflicts. Please resolve any of the conflicts."), true, KernelColorType.Warning);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS", "Nitrocid.ShellPacks"), true, KernelColorType.Warning);
                     break;
             }
             return 0;

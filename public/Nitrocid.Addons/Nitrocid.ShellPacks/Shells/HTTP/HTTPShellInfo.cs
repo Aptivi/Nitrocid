@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP
 {
@@ -37,153 +38,153 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("addheader", /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
+            new CommandInfo("addheader", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Header key"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Header value"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new AddHeaderCommand()),
 
-            new CommandInfo("curragent", /* Localizable */ "Gets current user agent", new CurrAgentCommand()),
+            new CommandInfo("curragent", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC", "Nitrocid.ShellPacks"), new CurrAgentCommand()),
 
-            new CommandInfo("delete", /* Localizable */ "Deletes content from HTTP server",
+            new CommandInfo("delete", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new DeleteCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
+            new CommandInfo("detach", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", "Nitrocid.ShellPacks"), new DetachCommand()),
 
-            new CommandInfo("editheader", /* Localizable */ "Edits a key on the header to all the upcoming requests",
+            new CommandInfo("editheader", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Header key"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Header value"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new EditHeaderCommand()),
 
-            new CommandInfo("get", /* Localizable */ "Gets the response from the HTTP server using the specified request",
+            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new GetCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("getstring", /* Localizable */ "Gets the string from the HTTP server using the specified request",
+            new CommandInfo("getstring", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new GetStringCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("lsheader", /* Localizable */ "Lists the request headers", new LsHeaderCommand(), CommandFlags.Wrappable),
+            new CommandInfo("lsheader", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC", "Nitrocid.ShellPacks"), new LsHeaderCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("put", /* Localizable */ "Puts the file to the HTTP server using the specified request",
+            new CommandInfo("put", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "pathtofile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File to upload"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PutCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("putstring", /* Localizable */ "Puts the string to the HTTP server using the specified request",
+            new CommandInfo("putstring", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "String to upload"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PutStringCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("post", /* Localizable */ "Posts the file to the HTTP server using the specified request",
+            new CommandInfo("post", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "pathtofile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File to upload"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PostCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("poststring", /* Localizable */ "Posts the string to the HTTP server using the specified request",
+            new CommandInfo("poststring", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "HTTP request"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "String to upload"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PostStringCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("rmheader", /* Localizable */ "Removes a key on the header to all the upcoming requests",
+            new CommandInfo("rmheader", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Header key"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new RmHeaderCommand()),
 
-            new CommandInfo("setagent", /* Localizable */ "Sets a user agent",
+            new CommandInfo("setagent", LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "userAgent", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "User agent string"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new SetAgentCommand()),

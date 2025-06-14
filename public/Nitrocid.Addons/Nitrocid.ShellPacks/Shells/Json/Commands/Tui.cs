@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
         {
             if (JsonShellCommon.FileStream is null)
             {
-                TextWriters.Write(Translate.DoTranslation("The file stream is not open yet."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN", "Nitrocid.ShellPacks"), KernelColorType.Error);
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;

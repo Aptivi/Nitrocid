@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(Translate.DoTranslation("No modifications are done to stage."), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_NOCHANGES", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
                 return 0;
             }
 
@@ -54,11 +54,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 try
                 {
                     GitCommand.Stage(GitShellCommon.Repository, item.FilePath);
-                    TextWriters.Write(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_SUCCESS", "Nitrocid.ShellPacks"), true, KernelColorType.Success, item.FilePath);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_FAILURE", "Nitrocid.ShellPacks") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
                 }
             }
             return 0;

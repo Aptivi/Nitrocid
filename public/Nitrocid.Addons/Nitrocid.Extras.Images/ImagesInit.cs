@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,8 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
 using Nitrocid.Extras.Images.Commands;
+using Nitrocid.Extras.Images.Localized;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Images
 {
@@ -31,13 +33,13 @@ namespace Nitrocid.Extras.Images
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("preview", /* Localizable */ "Previews an image",
+            new CommandInfo("preview", LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_DESC", "Nitrocid.Extras.Images"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to image file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC", "Nitrocid.Extras.Images")
                         }),
                     ])
                 ], new PreviewCommand()),
@@ -51,10 +53,16 @@ namespace Nitrocid.Extras.Images
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Images", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Images");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

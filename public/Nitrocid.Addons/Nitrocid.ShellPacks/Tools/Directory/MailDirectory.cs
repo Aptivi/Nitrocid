@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED", "Nitrocid.ShellPacks"), ex, Directory, ex.Message);
             }
         }
 
@@ -80,7 +80,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED", "Nitrocid.ShellPacks"), ex, Directory, ex.Message);
             }
         }
 
@@ -105,7 +105,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED", "Nitrocid.ShellPacks"), ex, Directory, ex.Message);
             }
         }
 
@@ -127,7 +127,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", vars: [Directory, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message);
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER", "Nitrocid.ShellPacks"), ex, Directory, ex.Message);
             }
         }
 
@@ -189,7 +189,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             }
             else
             {
-                throw new KernelException(KernelExceptionType.NoSuchMailDirectory, Translate.DoTranslation("Mail folder {0} not found."), FolderString);
+                throw new KernelException(KernelExceptionType.NoSuchMailDirectory, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND", "Nitrocid.ShellPacks"), FolderString);
             }
         }
 

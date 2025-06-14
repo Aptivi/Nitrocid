@@ -1,120 +1,120 @@
 [
     {
-        "Name": "Calendar",
-        "Desc": "This section lets you configure how Calendar works.",
+        "Name": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+        "Desc": "NKS_CALENDAR_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Save all events and/or reminders destructively",
+                "Name": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
                 "Type": "SBoolean",
                 "Variable": "SaveEventsRemindersDestructively",
-                "Description": "If enabled, deletes all events and/or reminders before saving all of them using the calendar command."
+                "Description": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC"
             },
             {
-                "Name": "Screensaver settings...",
+                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
                 "Type": "SMultivar",
-                "Description": "This allows you to configure the culture used by the calendar screensaver",
+                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
                 "Variables": [
                     {
-                        "Name": "Delay in Milliseconds",
+                        "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME",
                         "Type": "SInt",
                         "Variable": "CalendarDelay",
-                        "Description": "How many milliseconds to wait before making the next write?"
+                        "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC"
                     },
                     {
-                        "Name": "Culture settings",
+                        "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
                         "Type": "SMultivar",
-                        "Description": "This allows you to configure the culture used by the calendar screensaver",
+                        "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC",
                         "Variables": [
                             {
-                                "Name": "Use the system culture",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME",
                                 "Type": "SBoolean",
                                 "Variable": "CalendarUseSystemCulture",
-                                "Description": "Whether the screensaver uses the culture set by the main kernel settings or by this screensaver settings."
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC"
                             },
                             {
-                                "Name": "Culture",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
                                 "Type": "SSelection",
                                 "Variable": "CalendarCultureName",
                                 "IsEnumeration": false,
                                 "SelectionFunctionName": "GetCultureCodes",
                                 "SelectionFunctionType": "CultureManager",
                                 "SelectionFallback": [ "en-US" ],
-                                "Description": "Which culture is being used to change the month names, calendar, etc.?"
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC"
                             }
                         ]
                     },
                     {
-                        "Name": "Color settings",
+                        "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME",
                         "Type": "SMultivar",
-                        "Description": "This allows you to configure the colors",
+                        "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC",
                         "Variables": [
                             {
-                                "Name": "Activate true colors",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME",
                                 "Type": "SBoolean",
                                 "Variable": "CalendarTrueColor",
-                                "Description": "Activates the true color support."
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC"
                             },
                             {
-                                "Name": "Minimum red color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMinimumRedColorLevel",
-                                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Minimum green color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMinimumGreenColorLevel",
-                                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Minimum blue color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMinimumBlueColorLevel",
-                                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Minimum color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMinimumColorLevel",
-                                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Maximum red color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMaximumRedColorLevel",
-                                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Maximum green color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMaximumGreenColorLevel",
-                                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Maximum blue color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMaximumBlueColorLevel",
-                                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             },
                             {
-                                "Name": "Maximum color level",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME",
                                 "Type": "SIntSlider",
                                 "Variable": "CalendarMaximumColorLevel",
-                                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                                "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC",
                                 "MinimumValue": 0,
                                 "MaximumValue": 255
                             }

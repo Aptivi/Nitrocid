@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,11 +36,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Base info
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Base JSON token information"), KernelColorTools.GetColor(KernelColorType.Separator));
-            TextWriters.WriteListEntry(Translate.DoTranslation("Base type"), $"{JsonShellCommon.FileToken.Type}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Base has values"), $"{JsonShellCommon.FileToken.HasValues}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Children token count"), $"{JsonShellCommon.FileToken.Count()}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Base path"), JsonShellCommon.FileToken.Path);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE", "Nitrocid.ShellPacks"), KernelColorTools.GetColor(KernelColorType.Separator));
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TYPE", "Nitrocid.ShellPacks"), $"{JsonShellCommon.FileToken.Type}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_VALUES", "Nitrocid.ShellPacks"), $"{JsonShellCommon.FileToken.HasValues}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS", "Nitrocid.ShellPacks"), $"{JsonShellCommon.FileToken.Count()}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH", "Nitrocid.ShellPacks"), JsonShellCommon.FileToken.Path);
             TextWriterRaw.Write();
 
             // Individual properties
@@ -48,26 +48,26 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             {
                 foreach (var token in JsonShellCommon.FileToken)
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Individual JSON token information") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
-                    TextWriters.WriteListEntry(Translate.DoTranslation("Token type"), $"{token.Type}");
-                    TextWriters.WriteListEntry(Translate.DoTranslation("Token has values"), $"{token.HasValues}");
-                    TextWriters.WriteListEntry(Translate.DoTranslation("Children token count"), $"{token.Count()}");
-                    TextWriters.WriteListEntry(Translate.DoTranslation("Token path"), token.Path);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE", "Nitrocid.ShellPacks") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE", "Nitrocid.ShellPacks"), $"{token.Type}");
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES", "Nitrocid.ShellPacks"), $"{token.HasValues}");
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS", "Nitrocid.ShellPacks"), $"{token.Count()}");
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH", "Nitrocid.ShellPacks"), token.Path);
                     if (parameters.SwitchesList.Contains("-showvals"))
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Token value"), $"{token}");
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE", "Nitrocid.ShellPacks"), $"{token}");
                     TextWriterRaw.Write();
 
                     // Check to see if the token is a property
                     if (token.Type == JTokenType.Property)
                     {
                         var prop = (JProperty)token;
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Property information for") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Property type"), $"{prop.Value.Type}");
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Property count"), $"{prop.Count}");
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Property name"), prop.Name);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Property path"), prop.Path);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE", "Nitrocid.ShellPacks") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE", "Nitrocid.ShellPacks"), $"{prop.Value.Type}");
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT", "Nitrocid.ShellPacks"), $"{prop.Count}");
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME", "Nitrocid.ShellPacks"), prop.Name);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH", "Nitrocid.ShellPacks"), prop.Path);
                         if (parameters.SwitchesList.Contains("-showvals"))
-                            TextWriters.WriteListEntry(Translate.DoTranslation("Property value"), $"{prop.Value}");
+                            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE", "Nitrocid.ShellPacks"), $"{prop.Value}");
                         TextWriterRaw.Write();
                     }
                 }

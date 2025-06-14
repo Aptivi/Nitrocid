@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,17 +42,17 @@ namespace Nitrocid.Extras.Stocks.Commands
             string apiKey = StocksInit.StocksConfig.StocksApiKey;
             while (string.IsNullOrWhiteSpace(apiKey))
             {
-                apiKey = TermReader.Read(Translate.DoTranslation("Enter your AlphaVantage API key") + ": ");
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ", "Nitrocid.Extras.Stocks");
                 if (string.IsNullOrWhiteSpace(apiKey))
-                    TextWriters.Write(Translate.DoTranslation("Please provide your API key."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
                 if (apiKey == "demo")
                 {
-                    TextWriters.Write(Translate.DoTranslation("Demonstration API key can't be used."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
                     apiKey = "";
                 }
                 if (apiKey.Length != 16)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Your API key should be 16 characters long."), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
                     apiKey = "";
                 }
             }
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.Stocks.Commands
             var stocksIntervalToken = stocksToken["Time Series (60min)"];
             if (stocksIntervalToken is null)
             {
-                TextWriters.Write(Translate.DoTranslation("An error occurred while fetching the stocks data. Additional information can be found here") + ":", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED", "Nitrocid.Extras.Stocks") + ":", KernelColorType.Error);
                 TextWriters.Write(stocksJson, KernelColorType.NeutralText);
                 return 40;
             }

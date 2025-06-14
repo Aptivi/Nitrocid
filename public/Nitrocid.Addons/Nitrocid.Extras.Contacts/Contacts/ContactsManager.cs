@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -144,7 +144,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             // Check to see if we're dealing with the non-existent contacts file
             if (string.IsNullOrEmpty(meCardSyntax))
-                throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("The MeCard syntax can't be empty."));
+                throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_MECARDEMPTY", "Nitrocid.Extras.Contacts"));
 
             // Now, ensure that the parser is able to return the base parsers required to parse contacts
             var parsers = MeCard.GetContactsFromMeCardString(meCardSyntax);
@@ -167,7 +167,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 if (cards is null || cards.Length == 0)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "There are no added cards. Marking contact file as invalid...");
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Either the provided contacts file doesn't have information about any contact or isn't valid."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOCONTACT", "Nitrocid.Extras.Contacts"));
                 }
 
                 // Debug.
@@ -199,7 +199,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Failed to parse contacts. See the error details for more information."), ex);
+                throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED", "Nitrocid.Extras.Contacts"), ex);
             }
         }
 
@@ -217,7 +217,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 if (!FilesystemTools.FolderExists(contactsPath))
                     FilesystemTools.MakeDirectory(contactsPath);
                 if (contactIndex < 0 || contactIndex >= cards.Count)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE", "Nitrocid.Extras.Contacts"), cards.Count - 1, contactIndex);
 
                 // Now, remove the contact
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0}... Cards: {1}", vars: [contactIndex, cards.Count]);
@@ -287,9 +287,9 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index
                 if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to get."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET", "Nitrocid.Extras.Contacts"));
                 if (contactIndex < 0 || contactIndex >= cards.Count)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE", "Nitrocid.Extras.Contacts"), cards.Count - 1, contactIndex);
 
                 // Now, get the contact
                 return cards[contactIndex];
@@ -320,11 +320,11 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index
                 if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to search for."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH", "Nitrocid.Extras.Contacts"));
 
                 // Validate the expression
                 if (!RegexpTools.IsValidRegex(expression))
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_INVALIDREGEX", "Nitrocid.Extras.Contacts"));
 
                 // Compare between the cached expression and the given expression
                 if (expression == cachedSearchExpression)
@@ -372,11 +372,11 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index
                 if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to search for."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH", "Nitrocid.Extras.Contacts"));
 
                 // Validate the expression
                 if (!RegexpTools.IsValidRegex(expression))
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
+                    throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_INVALIDREGEX", "Nitrocid.Extras.Contacts"));
 
                 // Get the list of cards satisfying the expression
                 var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetString(CardStringsEnum.FullName)[0].Value ?? "", expression)).ToArray();
@@ -409,17 +409,17 @@ namespace Nitrocid.Extras.Contacts.Contacts
         internal static void OpenContactsTui()
         {
             var tui = new ContactsManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete"), ConsoleKey.F1, (_, index, _, _) => tui.RemoveContact(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete All"), ConsoleKey.F2, (_, _, _, _) => tui.RemoveContacts()));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import"), ConsoleKey.F3, (_, _, _, _) => tui.ImportContacts(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From"), ConsoleKey.F4, (_, _, _, _) => tui.ImportContactsFrom(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Info"), ConsoleKey.F5, (_, index, _, _) => tui.ShowContactInfo(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search"), ConsoleKey.F6, (_, _, _, _) => tui.SearchBox()));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Next"), ConsoleKey.F7, (_, _, _, _) => tui.SearchNext()));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Back"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Raw Info"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From MeCard"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Edit..."), ConsoleKey.F11, (card, _, _, _) => tui.EditName(card), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE", "Nitrocid.Extras.Contacts"), ConsoleKey.F1, (_, index, _, _) => tui.RemoveContact(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETEALL", "Nitrocid.Extras.Contacts"), ConsoleKey.F2, (_, _, _, _) => tui.RemoveContacts()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_IMPORT", "Nitrocid.Extras.Contacts"), ConsoleKey.F3, (_, _, _, _) => tui.ImportContacts(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM", "Nitrocid.Extras.Contacts"), ConsoleKey.F4, (_, _, _, _) => tui.ImportContactsFrom(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_INFO", "Nitrocid.Extras.Contacts"), ConsoleKey.F5, (_, index, _, _) => tui.ShowContactInfo(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SEARCH", "Nitrocid.Extras.Contacts"), ConsoleKey.F6, (_, _, _, _) => tui.SearchBox()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT", "Nitrocid.Extras.Contacts"), ConsoleKey.F7, (_, _, _, _) => tui.SearchNext()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK", "Nitrocid.Extras.Contacts"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_RAWINFO", "Nitrocid.Extras.Contacts"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD", "Nitrocid.Extras.Contacts"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_EDIT", "Nitrocid.Extras.Contacts"), ConsoleKey.F11, (card, _, _, _) => tui.EditName(card), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

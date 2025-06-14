@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Contact MeCard syntax may not be empty"), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY", "Nitrocid.Extras.Contacts"), KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND", "Nitrocid.Extras.Contacts"), KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS", "Nitrocid.Extras.Contacts") + ex.Message, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

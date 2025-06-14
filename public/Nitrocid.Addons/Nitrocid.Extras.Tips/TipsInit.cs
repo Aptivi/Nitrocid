@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Tips.Localized;
 using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Starting;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Tips
 {
@@ -35,10 +37,11 @@ namespace Nitrocid.Extras.Tips
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
 
         void IAddon.FinalizeAddon() =>
-            WelcomeMessage.tips = TipsList.tips;
+            WelcomeMessage.tips = TipsList.Tips;
 
         void IAddon.StartAddon()
         {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Tips", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
             WelcomeMessage.ShowTip = TipsConfig.ShowTip;
@@ -46,6 +49,7 @@ namespace Nitrocid.Extras.Tips
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.ThemeStudio");
             WelcomeMessage.tips = [];
             ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
         }

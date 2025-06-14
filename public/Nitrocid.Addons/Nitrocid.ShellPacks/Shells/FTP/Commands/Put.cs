@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,18 +44,18 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
         {
             string LocalFile = parameters.ArgumentsList[0];
             string RemoteFile = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriters.Write(Translate.DoTranslation("Uploading file {0}..."), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE", "Nitrocid.ShellPacks"), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPUploadFile(RemoteFile, LocalFile) : FTPTransfer.FTPUploadFile(RemoteFile);
             if (Result)
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(Translate.DoTranslation("Uploaded file {0}"), true, KernelColorType.Success, LocalFile);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Success, LocalFile);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, LocalFile);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PUT_FAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error, LocalFile);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

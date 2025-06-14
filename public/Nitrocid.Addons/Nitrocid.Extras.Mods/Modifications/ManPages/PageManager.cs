@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         public static List<Manual> ListAllPagesByMod(string modName)
         {
             if (!ModManager.Mods.ContainsKey(modName))
-                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), modName);
+                throw new KernelException(KernelExceptionType.ModManual, LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND", "Nitrocid.Extras.Mods"), modName);
 
             // Populate manual pages by mod
             return Pages.Where((manual) => manual.ModName == modName).ToList();
@@ -80,13 +80,13 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         public static void AddManualPage(string modName, string Name, Manual Page)
         {
             if (!ModManager.Mods.ContainsKey(modName))
-                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual {0} for nonexistent mod {1}."), Name, modName);
+                throw new KernelException(KernelExceptionType.ModManual, LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND", "Nitrocid.Extras.Mods"), Name, modName);
 
             // Check to see if title is defined
             if (string.IsNullOrWhiteSpace(Name))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Title not defined.");
-                Name = Translate.DoTranslation("Untitled manual page") + $" {Pages.Count}";
+                Name = LanguageTools.GetLocalized("NKS_MODS_MANPAGE_UNTITLEDMANPAGE", "Nitrocid.Extras.Mods") + $" {Pages.Count}";
             }
 
             // Add the page if valid
@@ -95,7 +95,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                 if (Page.ValidManpage)
                     Pages.Add(Page);
                 else
-                    throw new KernelException(KernelExceptionType.InvalidManpage, Translate.DoTranslation("The manual page {0} is invalid."), Name);
+                    throw new KernelException(KernelExceptionType.InvalidManpage, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MANPAGEINVALID", "Nitrocid.Extras.Mods"), Name);
             }
         }
 
