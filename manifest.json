@@ -3235,34 +3235,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Misc.Audio.AudioCueContainer.yml",
       "output": {
         ".html": {
