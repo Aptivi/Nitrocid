@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,17 +42,17 @@ namespace Nitrocid.Extras.BeepSynth.Commands
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(Translate.DoTranslation("Beep synth file doesn't exist."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_FILENOTFOUND", "Nitrocid.Extras.BeepSynth"), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
             }    
             var synthInfo = SynthTools.GetSynthInfoFromFile(path);
-            TextWriters.Write(Translate.DoTranslation("Now playing") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_NOWPLAYING", "Nitrocid.Extras.BeepSynth") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(synthInfo.Name, KernelColorType.ListValue);
             for (int i = 0; i < synthInfo.Chapters.Length; i++)
             {
                 SynthInfo.Chapter chapter = synthInfo.Chapters[i];
                 TextWriters.Write($"- [{i + 1}/{synthInfo.Chapters.Length}] ", false, KernelColorType.NeutralText);
-                TextWriters.Write(Translate.DoTranslation("Chapter name") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_CHAPTERNAME", "Nitrocid.Extras.BeepSynth") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(chapter.Name, KernelColorType.ListValue);
                 for (int j = 0; j < chapter.Synths.Length; j++)
                 {
@@ -60,17 +60,17 @@ namespace Nitrocid.Extras.BeepSynth.Commands
                     var split = synth.Split(' ');
                     if (split.Length != 2)
                     {
-                        TextWriters.Write(Translate.DoTranslation("Synth representation is invalid.") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDSYNTH", "Nitrocid.Extras.BeepSynth") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (!int.TryParse(split[0], out int freq))
                     {
-                        TextWriters.Write(Translate.DoTranslation("Frequency is invalid.") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDFREQ", "Nitrocid.Extras.BeepSynth") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (!int.TryParse(split[1], out int ms))
                     {
-                        TextWriters.Write(Translate.DoTranslation("Duration is invalid.") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDDURATION", "Nitrocid.Extras.BeepSynth") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (freq == 0)

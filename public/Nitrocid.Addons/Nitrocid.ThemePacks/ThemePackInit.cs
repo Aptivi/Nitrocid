@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Nitrocid.Misc.Reflection.Internal;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Nitrocid.ThemePacks.Localized;
 
 namespace Nitrocid.ThemePacks
 {
@@ -38,13 +39,14 @@ namespace Nitrocid.ThemePacks
         void IAddon.StartAddon()
         {
             // Add them all!
+            LanguageTools.AddCustomAction("Nitrocid.ThemePacks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Can't get necessary data to initialize this addon.")));
+                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA", "Nitrocid.ThemePacks")));
                 var themeToken = JToken.Parse(data);
                 bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);
@@ -54,6 +56,7 @@ namespace Nitrocid.ThemePacks
         void IAddon.StopAddon()
         {
             // Remove them all!
+            LanguageTools.RemoveCustomAction("Nitrocid.ThemePacks");
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {

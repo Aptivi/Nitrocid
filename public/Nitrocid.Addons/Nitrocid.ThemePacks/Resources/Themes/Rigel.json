@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Rigel",
-        "Description": "A theme inspired by a VIM theme of the same name",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
         "Localizable": true
     },
     "InputColor": "#f08e48",

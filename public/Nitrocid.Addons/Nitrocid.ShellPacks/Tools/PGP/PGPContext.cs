@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Tools.PGP
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailGPGPromptStyle))
                 TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             else
-                TextWriters.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.Input, key.KeyId);
             string Password = InputTools.ReadLineNoInput();
             return Password;
         }

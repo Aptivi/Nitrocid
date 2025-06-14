@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -69,7 +69,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 if (!string.IsNullOrEmpty(Path))
                     Listing = instance.GetListing(Path, FtpListOption.Auto);
                 else
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                         if (!string.IsNullOrEmpty(finalDirListFTP.LinkTarget))
                             EntryBuilder.Append(finalDirListFTP.LinkTarget);
                         else
-                            EntryBuilder.Append(Translate.DoTranslation("No symlink info"));
+                            EntryBuilder.Append(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO", "Nitrocid.ShellPacks"));
                         finalDirListFTP = finalDirListFTP.LinkObject;
                     }
 
@@ -100,7 +100,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                                 FileSize = instance.GetFileSize(finalDirListFTP.FullName);
                                 ModDate = instance.GetModifiedTime(finalDirListFTP.FullName);
                                 EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground +
-                                    $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified on")} {ModDate}");
+                                    $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON", "Nitrocid.ShellPacks")} {ModDate}");
                             }
                         }
                         else if (finalDirListFTP.Type == FtpObjectType.Directory)
@@ -116,7 +116,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_LIST_FAILED", "Nitrocid.ShellPacks"), ex, ex.Message);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
 
             // Delete a file or folder
             var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
             if (instance.FileExists(Target))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", vars: [Target]);
@@ -145,7 +145,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), Target);
             }
             DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
             return true;
@@ -163,7 +163,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             if (!string.IsNullOrEmpty(Directory))
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 if (instance.DirectoryExists(Directory))
                 {
                     // Directory exists, go to the new directory
@@ -174,12 +174,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     // Directory doesn't exist, go to the old directory
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND", "Nitrocid.ShellPacks"), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR", "Nitrocid.ShellPacks"));
             }
         }
 
@@ -206,12 +206,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND", "Nitrocid.ShellPacks"), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
+                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR", "Nitrocid.ShellPacks"));
             }
         }
 
@@ -226,7 +226,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         {
             var Success = false;
             var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
 
             // Begin the moving process
             string SourceFile = Source.Split('/').Last();
@@ -253,7 +253,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             bool Success = true;
             object? Result = null;
             var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
 
             // Begin the copying process
             string SourceFile = Source.Split('/').Last();
@@ -316,7 +316,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 instance.Chmod(Target, Chmod);
                 return true;
             }
@@ -338,7 +338,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 return instance.CreateDirectory(name);
             }
             catch (Exception ex)
@@ -367,7 +367,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 return instance.FileExists(name);
             }
             catch (Exception ex)
@@ -388,7 +388,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
                 return instance.DirectoryExists(name);
             }
             catch (Exception ex)

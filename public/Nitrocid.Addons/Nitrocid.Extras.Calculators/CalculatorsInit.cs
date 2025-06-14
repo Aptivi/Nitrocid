@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,11 +19,13 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Calculators.Commands;
+using Nitrocid.Extras.Calculators.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Calculators
 {
@@ -31,30 +33,30 @@ namespace Nitrocid.Extras.Calculators
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
+            new CommandInfo("calc", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_CALC_DESC", "Nitrocid.Extras.Calculators"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Mathematical expression"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_EXPRESSION", "Nitrocid.Extras.Calculators")
                         }),
                     ], true)
                 ], new CalcCommand()),
 
-            new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
+            new CommandInfo("imaginary", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_IMAGINARY_DESC", "Nitrocid.Extras.Calculators"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Real number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_REAL", "Nitrocid.Extras.Calculators")
                         }),
                         new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Imaginary number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_IMAG", "Nitrocid.Extras.Calculators")
                         }),
                     ])
                 ], new ImaginaryCommand()),
@@ -65,11 +67,17 @@ namespace Nitrocid.Extras.Calculators
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Calculators", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Calculators");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

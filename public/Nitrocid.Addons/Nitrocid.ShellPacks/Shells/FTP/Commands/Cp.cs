@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,15 +43,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Copying {0} to {1}..."), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPYING", "Nitrocid.ShellPacks"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             if (FTPFilesystem.FTPCopyItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Copied successfully"), true, KernelColorType.Success);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPIED", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Failed to copy {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPYFAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
         }

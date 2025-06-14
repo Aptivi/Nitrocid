@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,11 +19,13 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.ColorConvert.Commands;
+using Nitrocid.Extras.ColorConvert.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ColorConvert
 {
@@ -31,152 +33,152 @@ namespace Nitrocid.Extras.ColorConvert
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("colorto", /* Localizable */ "Converts the source color model to the target color model in numbers.",
+            new CommandInfo("colorto", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTO_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorToCommand()),
 
-            new CommandInfo("colortoks", /* Localizable */ "Converts the source color model to the target color model in KS format.",
+            new CommandInfo("colortoks", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorToKSCommand()),
             
-            new CommandInfo("colortohex", /* Localizable */ "Converts the source color model to hex.",
+            new CommandInfo("colortohex", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
 
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorToHexCommand()),
             
-            new CommandInfo("colorspecto", /* Localizable */ "Converts the source color model using the color specifier to the target color model.",
+            new CommandInfo("colorspecto", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorSpecToCommand()),
             
-            new CommandInfo("colorspectoks", /* Localizable */ "Converts the source color model using the color specifier to the target color model in KS format.",
+            new CommandInfo("colorspectoks", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorSpecToKSCommand()),
             
-            new CommandInfo("colorspectohex", /* Localizable */ "Converts the source color model using the color specifier to the target color model in hex.",
+            new CommandInfo("colorspectohex", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC", "Nitrocid.Extras.ColorConvert"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC", "Nitrocid.Extras.ColorConvert")
                         }),
                     ], true)
                 ], new ColorSpecToHexCommand()),
@@ -187,11 +189,17 @@ namespace Nitrocid.Extras.ColorConvert
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.ColorConvert", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.ColorConvert");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

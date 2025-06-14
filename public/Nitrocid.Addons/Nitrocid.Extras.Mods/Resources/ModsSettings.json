@@ -1,28 +1,28 @@
 [
     {
         "Name": "Mods",
-        "Desc": "This section lets you configure how the kernel modification system works.",
+        "Desc": "NKS_MODS_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Show the mod commands count on help",
+                "Name": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowModCommandsCount",
-                "Description": "Show the count of kernel modification commands when listing them in the help command"
+                "Description": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC"
             },
             {
-                "Name": "Start kernel modifications on boot",
+                "Name": "NKS_MODS_SETTINGS_AUTOSTART_NAME",
                 "Type": "SBoolean",
                 "Variable": "StartKernelMods",
-                "Description": "Automatically start the kernel modifications on boot."
+                "Description": "NKS_MODS_SETTINGS_AUTOSTART_DESC"
             },
             {
-                "Name": "Allow loading untrusted mods",
+                "Name": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME",
                 "Type": "SBoolean",
                 "Variable": "AllowUntrustedMods",
-                "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
+                "Description": "NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC"
             },
             {
-                "Name": "Blacklisted mods",
+                "Name": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME",
                 "Type": "SList",
                 "Variable": "BlacklistedModsString",
                 "SelectionFunctionName": "GetBlacklistedMods",
@@ -31,7 +31,7 @@
                 "IsValuePath": true,
                 "IsPathCurrentPath": false,
                 "ValuePathType": "Mods",
-                "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
+                "Description": "NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC"
             }
         ]
     }

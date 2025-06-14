@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "No Frils (acme)",
-        "Description": "A theme inspired by a VIM theme of the same name",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
         "Localizable": true
     },
     "InputColor": "#585858",

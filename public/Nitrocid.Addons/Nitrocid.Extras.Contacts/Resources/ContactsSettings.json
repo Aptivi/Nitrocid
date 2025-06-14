@@ -1,13 +1,13 @@
 [
     {
-        "Name": "Contacts",
-        "Desc": "This section lets you configure how the contacts addon works.",
+        "Name": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+        "Desc": "NKS_CONTACTS_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Show profile pictures",
+                "Name": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowImages",
-                "Description": "If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons."
+                "Description": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC"
             }
         ]
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -20,6 +20,7 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Extras.NameGen.Commands;
+using Nitrocid.Extras.NameGen.Localized;
 using Nitrocid.Extras.NameGen.Screensavers;
 using Nitrocid.Extras.NameGen.Settings;
 using Nitrocid.Kernel.Configuration;
@@ -29,6 +30,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.NameGen
 {
@@ -36,39 +38,39 @@ namespace Nitrocid.Extras.NameGen
     {
         private readonly List<CommandInfo> addonCommands =
         [
-                new CommandInfo("findfirstname", /* Localizable */ "First name finder",
+                new CommandInfo("findfirstname", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC", "Nitrocid.Extras.NameGen"),
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Search term"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Name prefix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Name suffix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                         ],
                         [
-                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
+                            new SwitchInfo("t", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
-                            new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
+                            new SwitchInfo("male", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
+                            new SwitchInfo("female", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
+                            new SwitchInfo("both", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,
@@ -76,67 +78,67 @@ namespace Nitrocid.Extras.NameGen
                         ], true)
                     ], new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-                new CommandInfo("findsurname", /* Localizable */ "Surname finder",
+                new CommandInfo("findsurname", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC", "Nitrocid.Extras.NameGen"),
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Search term"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Surname prefix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Surname suffix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                         ], true)
                     ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-                new CommandInfo("genname", /* Localizable */ "Name and surname generator",
+                new CommandInfo("genname", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_GENNAME_DESC", "Nitrocid.Extras.NameGen"),
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true,
-                                ArgumentDescription = /* Localizable */ "How many names to generate?"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Name prefix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Name suffix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Surname prefix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                             new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Surname suffix to search"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC", "Nitrocid.Extras.NameGen")
                             }),
                         ],
                         [
-                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
+                            new SwitchInfo("t", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
-                            new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
+                            new SwitchInfo("male", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
+                            new SwitchInfo("female", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
+                            new SwitchInfo("both", LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", "Nitrocid.Extras.NameGen"), new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,
@@ -156,6 +158,7 @@ namespace Nitrocid.Extras.NameGen
         void IAddon.StartAddon()
         {
             // Initialize everything
+            LanguageTools.AddCustomAction("Nitrocid.Extras.NameGen", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
@@ -166,6 +169,7 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.NameGen");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("personlookup");
             ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));

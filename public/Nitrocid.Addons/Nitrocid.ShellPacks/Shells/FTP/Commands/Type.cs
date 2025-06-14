@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,8 +45,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.ASCII;
                 client.Config.ListingDataType = FtpDataType.ASCII;
                 client.Config.UploadDataType = FtpDataType.ASCII;
-                TextWriters.Write(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
-                TextWriters.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING", "Nitrocid.ShellPacks"), true, KernelColorType.Warning);
                 return 0;
             }
             else if (parameters.ArgumentsList[0].Equals("b", System.StringComparison.OrdinalIgnoreCase))
@@ -54,12 +54,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.Binary;
                 client.Config.ListingDataType = FtpDataType.Binary;
                 client.Config.UploadDataType = FtpDataType.Binary;
-                TextWriters.Write(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_BINARY", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_INVALID", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

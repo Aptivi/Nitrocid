@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             // If there is no lyric file, bail.
             if (string.IsNullOrWhiteSpace(pathToLyrics) || !FilesystemTools.FileExists(pathToLyrics))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to an LRC file."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOLYRICFILE", "Nitrocid.Extras.BassBoom"));
                 return 17;
             }
 

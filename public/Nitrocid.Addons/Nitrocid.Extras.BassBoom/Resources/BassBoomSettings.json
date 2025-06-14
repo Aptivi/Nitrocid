@@ -1,13 +1,13 @@
 [
     {
         "Name": "BassBoom",
-        "Desc": "This section lets you configure how the BassBoom addon works.",
+        "Desc": "NKS_BASSBOOM_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Lyrics Path",
+                "Name": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME",
                 "Type": "SString",
                 "Variable": "LyricsPath",
-                "Description": "Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory."
+                "Description": "NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC"
             }
         ]
     }

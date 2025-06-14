@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 int lineIdx = FirstPaneCurrentSelection - 1;
                 var translatedLines = this.translatedLines[lang];
                 string translated = translatedLines[lineIdx];
-                translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{translated}\"");
+                translated = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_TRANSLATIONPROMPT", "Nitrocid.Extras.LanguageStudio") + $" \"{translated}\"");
                 translated = string.IsNullOrWhiteSpace(translated) ? translatedLines[lineIdx] : translated;
                 translatedLines[lineIdx] = translated;
             }
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (CurrentPane == 1)
             {
                 // Requested to add string
-                string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string"));
+                string newString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NEWSTRINGPROMPT", "Nitrocid.Extras.LanguageStudio"));
                 englishLines.Add(newString);
                 var lines = translatedLines;
                 foreach (var translatedLang in lines.Keys)
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
         internal void Save()
         {
-            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
+            InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_SAVINGLANG", "Nitrocid.Extras.LanguageStudio"));
             var lines = translatedLines;
             var pathToTranslations = this.pathToTranslations;
             foreach (var translatedLine in lines)
@@ -109,7 +109,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 string languagePath = $"{pathToTranslations}/{language}.txt";
                 FilesystemTools.WriteContents(languagePath, [.. localizations]);
             }
-            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
+            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_SAVESUCCESS", "Nitrocid.Extras.LanguageStudio") + $" {pathToTranslations}");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,7 +46,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             if (!string.IsNullOrEmpty(File))
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
                 if (client.FileExists(File))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [File, HashAlgorithm.ToString()]);
@@ -55,12 +55,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [File]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), File);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), File);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote file to be hashed."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH", "Nitrocid.ShellPacks"));
             }
         }
 
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             if (!string.IsNullOrEmpty(Directory))
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
                 if (client.DirectoryExists(Directory))
                 {
                     var Hashes = new Dictionary<string, FtpHash>();
@@ -109,12 +109,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Directory]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Enter a remote directory."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED", "Nitrocid.ShellPacks"));
             }
         }
 

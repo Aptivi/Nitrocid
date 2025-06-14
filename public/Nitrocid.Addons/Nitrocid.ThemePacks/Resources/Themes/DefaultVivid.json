@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "DefaultVivid",
-        "Description": "The vivid default theme for the kernel",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
         "Localizable": true
     },
     "InputColor": "15",

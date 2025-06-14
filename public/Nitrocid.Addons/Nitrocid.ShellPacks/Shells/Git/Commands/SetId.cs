@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             GitShellCommon.email = parameters.ArgumentsList[0];
             GitShellCommon.name = parameters.ArgumentsList[1];
             GitShellCommon.isIdentified = true;
-            TextWriters.Write(Translate.DoTranslation("You've successfully identified yourself as") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS", "Nitrocid.ShellPacks") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
             return 0;
         }
 

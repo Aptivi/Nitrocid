@@ -1,10 +1,10 @@
 [
     {
         "Name": "Archive",
-        "Desc": "This section lets you configure how the archive shell work.",
+        "Desc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "ArchivePromptPreset",
                 "ShellType": "ArchiveShell",
@@ -14,107 +14,107 @@
     },
     {
         "Name": "FTP",
-        "Desc": "This section lets you configure how the FTP shell works.",
+        "Desc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "FtpPromptPreset",
                 "ShellType": "FTPShell",
                 "Description": ""
             },
             {
-                "Name": "Log FTP username",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpLoggerUsername",
-                "Description": "Whether or not to log FTP username."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC"
             },
             {
-                "Name": "Log FTP IP address",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpLoggerIP",
-                "Description": "Whether or not to log FTP IP address."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC"
             },
             {
-                "Name": "Return only first FTP profile",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpFirstProfileOnly",
-                "Description": "Pick the first profile only when connecting."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC"
             },
             {
-                "Name": "Show file details in FTP list",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpShowDetailsInList",
-                "Description": "Shows the FTP file details while listing remote directories."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC"
             },
             {
-                "Name": "Username prompt style for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "FtpUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Password prompt style for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "FtpPassPromptStyle",
-                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC"
             },
             {
-                "Name": "Use first FTP profile",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpUseFirstProfile",
-                "Description": "Uses the first FTP profile to connect to FTP."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC"
             },
             {
-                "Name": "Add new connections to FTP speed dial",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpNewConnectionsToSpeedDial",
-                "Description": "If enabled, adds a new connection to the FTP speed dial."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC"
             },
             {
-                "Name": "Try to validate secure FTP certificates",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpTryToValidateCertificate",
-                "Description": "Tries to validate the FTP certificates. Turning it off is not recommended."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC"
             },
             {
-                "Name": "Show FTP MOTD on connection",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpShowMotd",
-                "Description": "Shows the FTP message of the day on login."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC"
             },
             {
-                "Name": "Always accept invalid FTP certificates",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpAlwaysAcceptInvalidCerts",
-                "Description": "Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC"
             },
             {
-                "Name": "Recursive hashing for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpRecursiveHashing",
-                "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC"
             },
             {
-                "Name": "Verify retry attempts for FTP transmission",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
                 "Type": "SInt",
                 "Variable": "FtpVerifyRetryAttempts",
-                "Description": "How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC"
             },
             {
-                "Name": "FTP connection timeout",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "FtpConnectTimeout",
-                "Description": "How many milliseconds to wait before the FTP connection timeout?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC"
             },
             {
-                "Name": "FTP data connection timeout",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "FtpDataConnectTimeout",
-                "Description": "How many milliseconds to wait before the FTP data connection timeout?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC"
             },
             {
-                "Name": "FTP IP versions",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
                 "Type": "SSelection",
                 "Variable": "FtpProtocolVersions",
                 "IsEnumeration": true,
@@ -122,16 +122,16 @@
                 "Enumeration": "FluentFTP.FtpIpVersion",
                 "EnumerationAssembly": "FluentFTP",
                 "EnumerationZeroBased": false,
-                "Description": "Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC"
             }
         ]
     },
     {
         "Name": "Git",
-        "Desc": "This section lets you configure how the Git shell work.",
+        "Desc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "GitPromptPreset",
                 "ShellType": "GitShell",
@@ -141,10 +141,10 @@
     },
     {
         "Name": "HTTP",
-        "Desc": "This section lets you configure how the HTTP shell works.",
+        "Desc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "HttpShellPromptPreset",
                 "ShellType": "HTTPShell",
@@ -154,29 +154,29 @@
     },
     {
         "Name": "JSON",
-        "Desc": "This section lets you configure how the JSON shell works.",
+        "Desc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "JSON Shell Prompt Preset",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "JsonShellPromptPreset",
                 "ShellType": "JsonShell",
                 "Description": ""
             },
             {
-                "Name": "Enable JSON editor autosave",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
                 "Type": "SBoolean",
                 "Variable": "JsonEditAutoSaveFlag",
-                "Description": "Turns on or off the JSON editor autosave feature."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC"
             },
             {
-                "Name": "JSON editor autosave interval",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
                 "Type": "SInt",
                 "Variable": "JsonEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC"
             },
             {
-                "Name": "Default JSON formatting for JSON shell",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
                 "Type": "SSelection",
                 "Variable": "JsonShellFormatting",
                 "IsEnumeration": true,
@@ -184,89 +184,89 @@
                 "Enumeration": "Newtonsoft.Json.Formatting",
                 "EnumerationAssembly": "Newtonsoft.Json",
                 "EnumerationZeroBased": true,
-                "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC"
             }
         ]
     },
     {
         "Name": "Mail",
-        "Desc": "This section lets you configure how the mail shell works.",
+        "Desc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "MailPromptPreset",
                 "ShellType": "MailShell",
                 "Description": ""
             },
             {
-                "Name": "Show mail message preview",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowPreview",
-                "Description": "When listing mail messages, show body preview."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC"
             },
             {
-                "Name": "Username prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Password prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailPassPromptStyle",
-                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC"
             },
             {
-                "Name": "IMAP prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailIMAPPromptStyle",
-                "Description": "Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC"
             },
             {
-                "Name": "SMTP prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailSMTPPromptStyle",
-                "Description": "Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC"
             },
             {
-                "Name": "Automatically detect mail server",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailAutoDetectServer",
-                "Description": "Automatically detect the mail server based on the given address."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC"
             },
             {
-                "Name": "Enable mail debug",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailDebug",
-                "Description": "Enables mail server debug."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC"
             },
             {
-                "Name": "Notify for new mail messages",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailNotifyNewMail",
-                "Description": "Notifies you for any new mail messages."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC"
             },
             {
-                "Name": "GPG password prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailGPGPromptStyle",
-                "Description": "Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC"
             },
             {
-                "Name": "Send IMAP ping interval",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
                 "Type": "SInt",
                 "Variable": "MailImapPingInterval",
-                "Description": "How many milliseconds to send the IMAP ping?"
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC"
             },
             {
-                "Name": "Send SMTP ping interval",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
                 "Type": "SInt",
                 "Variable": "MailSmtpPingInterval",
-                "Description": "How many milliseconds to send the SMTP ping?"
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC"
             },
             {
-                "Name": "Mail text format",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
                 "Type": "SSelection",
                 "Variable": "MailTextFormat",
                 "IsEnumeration": true,
@@ -274,110 +274,110 @@
                 "Enumeration": "MimeKit.Text.TextFormat",
                 "EnumerationAssembly": "MimeKit",
                 "EnumerationZeroBased": true,
-                "Description": "Controls how the mail text will be shown."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC"
             },
             {
-                "Name": "Maximum number of e-mails in one page",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
                 "Type": "SIntSlider",
                 "Variable": "MailMaxMessagesInPage",
-                "Description": "How many e-mail messages to display in one page?",
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
                 "MinimumValue": 0,
                 "MaximumValue": 25
             },
             {
-                "Name": "Show mail transfer progress",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailShowProgress",
-                "Description": "If enabled, the mail shell will show how many bytes transmitted when downloading mail."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC"
             },
             {
-                "Name": "Mail transfer progress",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
                 "Type": "SString",
                 "Variable": "MailProgressStyle",
-                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC"
             },
             {
-                "Name": "Mail transfer progress (single)",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
                 "Type": "SString",
                 "Variable": "MailProgressStyleSingle",
-                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC"
             }
         ]
     },
     {
         "Name": "RSS",
-        "Desc": "This section lets you configure how the RSS shell works.",
+        "Desc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "RSS Prompt Preset",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "RSSPromptPreset",
                 "ShellType": "RSSShell",
                 "Description": ""
             },
             {
-                "Name": "RSS feed URL prompt style",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "RSSFeedUrlPromptStyle",
-                "Description": "Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC"
             },
             {
-                "Name": "Auto refresh RSS feed",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
                 "Type": "SBoolean",
                 "Variable": "RSSRefreshFeeds",
-                "Description": "Auto refresh RSS feed"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME"
             },
             {
-                "Name": "Auto refresh RSS feed interval",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
                 "Type": "SInt",
                 "Variable": "RSSRefreshInterval",
-                "Description": "How many milliseconds to refresh the RSS feed?"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC"
             },
             {
-                "Name": "RSS feed fetch timeout",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "RSSFetchTimeout",
-                "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC"
             }
         ]
     },
     {
         "Name": "SFTP",
-        "Desc": "This section lets you configure how the SFTP shell works.",
+        "Desc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "SftpPromptPreset",
                 "ShellType": "SFTPShell",
                 "Description": ""
             },
             {
-                "Name": "Show file details in SFTP list",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
                 "Type": "SBoolean",
                 "Variable": "SFTPShowDetailsInList",
-                "Description": "Shows the SFTP file details while listing remote directories."
+                "Description": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC"
             },
             {
-                "Name": "Username prompt style for SFTP",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "SFTPUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Add new connections to SFTP speed dial",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "SFTPNewConnectionsToSpeedDial",
-                "Description": "If enabled, adds a new connection to the SFTP speed dial."
+                "Description": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC"
             }
         ]
     },
     {
         "Name": "SQL",
-        "Desc": "This section lets you configure how the SQL shell works.",
+        "Desc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "SQL Shell Prompt Preset",
+                "Name": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "SqlShellPromptPreset",
                 "ShellType": "SqlShell",

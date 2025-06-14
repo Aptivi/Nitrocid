@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,11 +19,13 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Dictionary.Commands;
+using Nitrocid.Extras.Dictionary.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Dictionary
 {
@@ -31,13 +33,13 @@ namespace Nitrocid.Extras.Dictionary
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dict", /* Localizable */ "The English Dictionary",
+            new CommandInfo("dict", LanguageTools.GetLocalized("NKS_DICTIONARY_DICTIONARY", "Nitrocid.Extras.Dictionary"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Word to define"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DICTIONARY_WORDTODEFINE", "Nitrocid.Extras.Dictionary")
                         }),
                     ])
                 ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
@@ -48,11 +50,17 @@ namespace Nitrocid.Extras.Dictionary
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Dictionary", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Dictionary");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

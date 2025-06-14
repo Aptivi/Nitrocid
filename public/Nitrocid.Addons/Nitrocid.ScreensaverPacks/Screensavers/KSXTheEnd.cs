@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -466,7 +466,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Step 5: "THE END" shows for a few seconds
                     case 5:
                         {
-                            string theEnd = Translate.DoTranslation("The End").ToUpper();
+                            string theEnd = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_KSX_THEEND").ToUpper();
                             int figHeight = FigletTools.GetFigletHeight(theEnd, font) / 2;
                             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var endText = new AlignedFigletText(font)
@@ -516,7 +516,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             Color col = new(currentR, currentG, currentB);
                             Color colBG = new(currentBGR, currentBGG, currentBGB);
                             ColorTools.LoadBackDry(colBG);
-                            string theEnd = Translate.DoTranslation("The End").ToUpper();
+                            string theEnd = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_KSX_THEEND").ToUpper();
                             int figHeight = FigletTools.GetFigletHeight(theEnd, font) / 2;
                             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var endText = new AlignedFigletText(font)

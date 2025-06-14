@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -66,7 +66,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 var renamed = tree.Renamed;
 
                 // List the general changes
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("General changes in") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES", "Nitrocid.ShellPacks") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var change in modified)
                     TextWriters.Write($"[M] * {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in added)
@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
             if (doPatch)
             {
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Content changes in") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES", "Nitrocid.ShellPacks") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriterColor.Write(patch.Content);
             }
 

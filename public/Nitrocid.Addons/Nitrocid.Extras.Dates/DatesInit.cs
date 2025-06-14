@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Extras.Dates.Commands;
+using Nitrocid.Extras.Dates.Localized;
 using Nitrocid.Extras.Dates.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -29,6 +30,7 @@ using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Dates.Timers;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Dates
 {
@@ -36,17 +38,17 @@ namespace Nitrocid.Extras.Dates
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
+            new CommandInfo("gettimeinfo", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC", "Nitrocid.Extras.Dates"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Date and time to print info from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC", "Nitrocid.Extras.Dates")
                         })
                     ],
                     [
-                        new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
+                        new SwitchInfo("now", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", "Nitrocid.Extras.Dates"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
@@ -54,32 +56,32 @@ namespace Nitrocid.Extras.Dates
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
             
-            new CommandInfo("expiry", /* Localizable */ "Gets the product expiry information",
+            new CommandInfo("expiry", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC", "Nitrocid.Extras.Dates"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Production date (look at either the side or the bottom of the product)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC", "Nitrocid.Extras.Dates")
                         }),
                         new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC", "Nitrocid.Extras.Dates")
                         })
                     ],
                     [
-                        new SwitchInfo("implicit", /* Localizable */ "Whether the target product doesn't specify the expiry date explicitly", new SwitchOptions()
+                        new SwitchInfo("implicit", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", "Nitrocid.Extras.Dates"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExpiryCommand()),
 
-            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch", new StopwatchCommand()),
+            new CommandInfo("stopwatch", LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC", "Nitrocid.Extras.Dates"), new StopwatchCommand()),
 
-            new CommandInfo("timer", /* Localizable */ "A simple timer", new TimerCommand()),
+            new CommandInfo("timer", LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC", "Nitrocid.Extras.Dates"), new TimerCommand()),
 
-            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer", new PomodoroCommand()),
+            new CommandInfo("pomodoro", LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC", "Nitrocid.Extras.Dates"), new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>
@@ -92,6 +94,7 @@ namespace Nitrocid.Extras.Dates
 
         void IAddon.StartAddon()
         {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Dates", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
@@ -99,6 +102,7 @@ namespace Nitrocid.Extras.Dates
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Dates");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
             HomepageTools.UnregisterBuiltinAction("Timer");
@@ -109,9 +113,9 @@ namespace Nitrocid.Extras.Dates
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Timer", TimerScreen.OpenTimer);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Stopwatch", StopwatchScreen.OpenStopwatch);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pomodoro", PomodoroScreen.OpenPomodoro);
+            HomepageTools.RegisterBuiltinAction("Timer", TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction("Stopwatch", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction("Pomodoro", PomodoroScreen.OpenPomodoro);
         }
     }
 }

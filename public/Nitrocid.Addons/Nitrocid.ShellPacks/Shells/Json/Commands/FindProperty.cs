@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,9 +39,9 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
             var token = JsonTools.GetTokenSafe(parent, parameters.ArgumentsList[0]);
             if (token != null)
-                TextWriterColor.Write(Translate.DoTranslation("Property is found in") + $" {token.Path}");
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_FOUND") + $" {token.Path}", "Nitrocid.ShellPacks");
             else
-                TextWriterColor.Write(Translate.DoTranslation("Property is not found"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND", "Nitrocid.ShellPacks"));
             return 0;
         }
     }

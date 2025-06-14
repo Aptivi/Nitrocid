@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -20,11 +20,13 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Caffeine.Commands;
+using Nitrocid.Extras.Caffeine.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Caffeine
 {
@@ -32,17 +34,17 @@ namespace Nitrocid.Extras.Caffeine
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
+            new CommandInfo("caffeine", LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_DESC", "Nitrocid.Extras.Caffeine"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either specify a number of seconds or a drink name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC", "Nitrocid.Extras.Caffeine")
                         }),
                     ],
                     [
-                        new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()
+                        new SwitchInfo("abort", LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", "Nitrocid.Extras.Caffeine"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1
                         })
@@ -55,11 +57,17 @@ namespace Nitrocid.Extras.Caffeine
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Caffeine", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Caffeine");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

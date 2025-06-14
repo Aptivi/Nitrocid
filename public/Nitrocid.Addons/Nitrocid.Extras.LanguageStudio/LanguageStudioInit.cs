@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,12 +19,14 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.LanguageStudio.Commands;
+using Nitrocid.Extras.LanguageStudio.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.LanguageStudio
 {
@@ -32,17 +34,17 @@ namespace Nitrocid.Extras.LanguageStudio
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mklang", /* Localizable */ "Makes a new language",
+            new CommandInfo("mklang", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC", "Nitrocid.Extras.LanguageStudio"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "pathToTranslations", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to translations directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC", "Nitrocid.Extras.LanguageStudio")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Makes a new language in an interactive TUI")
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC", "Nitrocid.Extras.LanguageStudio"))
                     ])
                 ], new MkLangCommand())
         ];
@@ -52,11 +54,17 @@ namespace Nitrocid.Extras.LanguageStudio
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.LanguageStudio", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.LanguageStudio");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

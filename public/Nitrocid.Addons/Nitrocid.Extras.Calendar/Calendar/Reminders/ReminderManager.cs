@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void AddReminder(DateTime ReminderDate, string ReminderTitle, NotificationPriority ReminderImportance)
         {
             if (string.IsNullOrWhiteSpace(ReminderTitle))
-                ReminderTitle = Translate.DoTranslation("Untitled reminder");
+                ReminderTitle = LanguageTools.GetLocalized("NKS_CALENDAR_UNTITLEDREMINDER", "Nitrocid.Extras.Calendar");
             var Reminder = new ReminderInfo(ReminderDate, ReminderTitle, ReminderImportance);
             DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", vars: [Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate)]);
             AddReminder(Reminder);
@@ -124,7 +124,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             int ReminderIndex = ReminderId - 1;
             if (ReminderIndex >= Reminders.Count)
-                throw new KernelException(KernelExceptionType.Calendar, Translate.DoTranslation("There is no reminder."));
+                throw new KernelException(KernelExceptionType.Calendar, LanguageTools.GetLocalized("NKS_CALENDAR_EXCEPTION_NOREMINDER", "Nitrocid.Extras.Calendar"));
             var Reminder = Reminders[ReminderIndex];
             if (Reminder.ReminderDate == ReminderDate)
             {

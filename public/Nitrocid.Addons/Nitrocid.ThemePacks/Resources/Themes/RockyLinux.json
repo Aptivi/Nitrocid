@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Rocky Linux",
-        "Description": "Color schemes from Rocky Linux, a spinoff of a Linux operating system, Red Hat",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
         "Localizable": true,
         "Category": "Linux"
     },

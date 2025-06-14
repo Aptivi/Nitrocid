@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -45,17 +45,17 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1)
             {
-                TextWriters.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
             else
             {
                 var Article = RSSShellCommon.RSSFeedInstance?.FeedArticles[ArticleIndex] ??
-                    throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("There is no article."));
-                TextWriters.Write("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
+                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE", "Nitrocid.ShellPacks"));
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(Article.ArticleTitle, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
                 foreach (string Variable in Article.ArticleVariables.Keys)
                 {

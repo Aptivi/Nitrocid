@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,19 +38,19 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             if (GitShellCommon.Repository is null)
                 return 43;
             var info = GitShellCommon.Repository.Info;
-            TextWriters.Write("- " + Translate.DoTranslation("Bare repository") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_BARE", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.IsBare}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Head detached") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_DETACHED", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.IsHeadDetached}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("No reference") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_NOREF", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.IsHeadUnborn}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Shallow clone") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_SHALLOW", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.IsShallow}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Path to .git") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.Path}", true, KernelColorType.ListValue);
             if (!info.IsBare)
             {
-                TextWriters.Write("- " + Translate.DoTranslation("Path to working directory") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{info.WorkingDirectory}", true, KernelColorType.ListValue);
             }
             return 0;

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -71,8 +71,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 }
                 else if (string.IsNullOrEmpty(APIKey))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."));
-                    TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY", "Nitrocid.Extras.Forecast"));
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT", "Nitrocid.Extras.Forecast") + " ", false, KernelColorType.Input);
                     APIKey = InputTools.ReadLineNoInput();
                     Forecast.ApiKeyOwm = APIKey;
                 }
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("You can either consult the below link for the list of cities with their IDs, or, pass \"-list\" to this command."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_CITYLISTLINK", "Nitrocid.Extras.Forecast"));
             TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 

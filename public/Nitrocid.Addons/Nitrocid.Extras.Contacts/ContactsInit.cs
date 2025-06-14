@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -30,9 +30,11 @@ using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
+using Nitrocid.Extras.Contacts.Localized;
 using Nitrocid.Kernel.Configuration;
 using VisualCard.Common.Diagnostics;
 using Nitrocid.Kernel;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -44,33 +46,33 @@ namespace Nitrocid.Extras.Contacts
         ];
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("contacts", /* Localizable */ "Manages your contacts", new ContactsCommand()),
-            new CommandInfo("listcontacts", /* Localizable */ "Lists your contacts", new ListContactsCommand()),
-            new CommandInfo("loadcontacts", /* Localizable */ "Loads your contacts", new LoadContactsCommand()),
-            new CommandInfo("importcontacts", /* Localizable */ "Imports your contacts",
+            new CommandInfo("contacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTS_DESC", "Nitrocid.Extras.Contacts"), new ContactsCommand()),
+            new CommandInfo("listcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC", "Nitrocid.Extras.Contacts"), new ListContactsCommand()),
+            new CommandInfo("loadcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC", "Nitrocid.Extras.Contacts"), new LoadContactsCommand()),
+            new CommandInfo("importcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC", "Nitrocid.Extras.Contacts"),
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Either a path to a vCard contact file or a MeCard represnetation"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC", "Nitrocid.Extras.Contacts")
                             })
                         ],
                         [
-                            new SwitchInfo("mecard", /* Localizable */ "Treats the required input as MeCard string", new(){
+                            new SwitchInfo("mecard", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", "Nitrocid.Extras.Contacts"), new(){
                                 AcceptsValues = false,
                             }),
                         ]
                     )
                 ], new ImportContactsCommand()),
-            new CommandInfo("contactinfo", /* Localizable */ "Gets contact information",
+            new CommandInfo("contactinfo", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_DESC", "Nitrocid.Extras.Contacts"),
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "contactNum", new()
                             {
                                 IsNumeric = true,
-                                ArgumentDescription = /* Localizable */ "Contact number"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC", "Nitrocid.Extras.Contacts")
                             })
                         ]
                     )
@@ -88,11 +90,12 @@ namespace Nitrocid.Extras.Contacts
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Contacts", ContactsManager.OpenContactsTui);
+            HomepageTools.RegisterBuiltinAction("Contacts", ContactsManager.OpenContactsTui);
         }
 
         void IAddon.StartAddon()
         {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Contacts", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
@@ -106,6 +109,7 @@ namespace Nitrocid.Extras.Contacts
         void IAddon.StopAddon()
         {
             // Unload all contacts
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Contacts");
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);

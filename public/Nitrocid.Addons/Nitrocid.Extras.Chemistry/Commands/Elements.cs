@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,16 +39,16 @@ namespace Nitrocid.Extras.Chemistry.Commands
 
                 // Print information
                 SeparatorWriterColor.WriteSeparatorColor(substance.Name, KernelColorTools.GetColor(KernelColorType.ListTitle), true, substance.Name);
-                TextWriters.WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}");
-                TextWriters.WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}");
-                TextWriters.WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol);
-                TextWriters.WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary);
-                TextWriters.WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}");
-                TextWriters.WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}");
-                TextWriters.WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
-                TextWriters.WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer);
-                TextWriters.WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy);
-                TextWriters.WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER", "Nitrocid.Extras.Chemistry"), $"{substance.AtomicNumber}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICMASS", "Nitrocid.Extras.Chemistry"), $"{substance.AtomicMass}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SYMBOL", "Nitrocid.Extras.Chemistry"), substance.Symbol);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SUMMARY", "Nitrocid.Extras.Chemistry"), substance.Summary);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_PHASE", "Nitrocid.Extras.Chemistry"), $"{substance.Phase}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONPT", "Nitrocid.Extras.Chemistry"), $"{substance.Period}, {substance.Group}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONCOORD", "Nitrocid.Extras.Chemistry"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_DISCOVERER", "Nitrocid.Extras.Chemistry"), substance.Discoverer);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAMEDBY", "Nitrocid.Extras.Chemistry"), substance.NamedBy);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ELECTRON", "Nitrocid.Extras.Chemistry"), substance.ElectronConfiguration);
                 if (i + 1 < substances.Length)
                     TextWriterRaw.Write();
             }

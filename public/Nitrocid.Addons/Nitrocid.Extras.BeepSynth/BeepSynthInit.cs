@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,8 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
 using Nitrocid.Extras.BeepSynth.Commands;
+using Nitrocid.Extras.BeepSynth.Localized;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.BeepSynth
 {
@@ -31,13 +33,13 @@ namespace Nitrocid.Extras.BeepSynth
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("beepsynth", /* Localizable */ "Reads a beep synth file",
+            new CommandInfo("beepsynth", LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC", "Nitrocid.Extras.BeepSynth"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to the synth file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC", "Nitrocid.Extras.BeepSynth")
                         }),
                     ])
                 ], new BeepSynthCommand())
@@ -48,11 +50,17 @@ namespace Nitrocid.Extras.BeepSynth
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.BeepSynth", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.BeepSynth");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
         void IAddon.FinalizeAddon()
         { }

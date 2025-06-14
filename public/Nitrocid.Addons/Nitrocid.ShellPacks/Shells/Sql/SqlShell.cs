@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -63,7 +63,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
@@ -84,7 +84,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR", "Nitrocid.ShellPacks") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

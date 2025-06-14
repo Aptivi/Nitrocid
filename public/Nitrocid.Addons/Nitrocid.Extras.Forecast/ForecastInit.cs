@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -20,6 +20,7 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
+using Nitrocid.Extras.Forecast.Localized;
 using Nitrocid.Extras.Forecast.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -27,6 +28,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Forecast
 {
@@ -34,11 +36,11 @@ namespace Nitrocid.Extras.Forecast
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses The Weather Channel from IBM.",
+            new CommandInfo("weather", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_DESC", "Nitrocid.Extras.Forecast"),
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Weather info in an interactive TUI", new SwitchOptions()
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", "Nitrocid.Extras.Forecast"), new SwitchOptions()
                         {
                             AcceptsValues = false,
                         })
@@ -47,19 +49,19 @@ namespace Nitrocid.Extras.Forecast
                     [
                         new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Latitude to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC", "Nitrocid.Extras.Forecast")
                         }),
                         new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Longitude to use"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC", "Nitrocid.Extras.Forecast")
                         }),
                         new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Weather.com API key"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC", "Nitrocid.Extras.Forecast")
                         }),
                     ],
                     [
-                        new SwitchInfo("list", /* Localizable */ "Shows all the available cities and their latitude/longitude pairs", new SwitchOptions()
+                        new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", "Nitrocid.Extras.Forecast"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 3,
                             AcceptsValues = true,
@@ -67,21 +69,21 @@ namespace Nitrocid.Extras.Forecast
                         })
                     ])
                 ], new WeatherCommand()),
-            new CommandInfo("weather-old", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+            new CommandInfo("weather-old", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_DESC", "Nitrocid.Extras.Forecast"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "City ID or city name known to OpenWeatherMap"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC", "Nitrocid.Extras.Forecast")
                         }),
                         new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "OpenWeatherMap API key"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC", "Nitrocid.Extras.Forecast")
                         }),
                     ],
                     [
-                        new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()
+                        new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", "Nitrocid.Extras.Forecast"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 2,
                             AcceptsValues = false
@@ -103,6 +105,7 @@ namespace Nitrocid.Extras.Forecast
 
         void IAddon.StartAddon()
         {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Forecast", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);
@@ -110,6 +113,7 @@ namespace Nitrocid.Extras.Forecast
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Forecast");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
         }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             var Quantities = Quantity.Infos.Where(x => x.Name == parameters.ArgumentsList[0]);
             if (Quantities.Any())
             {
-                TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS", "Nitrocid.Extras.UnitConv"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
                     TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
@@ -58,14 +58,14 @@ namespace Nitrocid.Extras.UnitConv.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE", "Nitrocid.Extras.UnitConv") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Available unit types:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPES", "Nitrocid.Extras.UnitConv"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
                 TextWriters.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
         }

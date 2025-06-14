@@ -1,13 +1,13 @@
 [
     {
         "Name": "Lyrics",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "LyricsDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                "Description": "NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC"
             }
         ]
     }

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Check to see if the script is null or zero. If so, throw exception.
             if (ModScript is null)
             {
-                throw new KernelException(KernelExceptionType.ModWithoutMod, Translate.DoTranslation("The mod script may not be null."));
+                throw new KernelException(KernelExceptionType.ModWithoutMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MODSCRIPTNEEDED", "Nitrocid.Extras.Mods"));
             }
 
             // Install values to new instance

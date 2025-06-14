@@ -1,59 +1,59 @@
 [
     {
         "Name": "Simple",
-        "Desc": "Simple splash screen.",
+        "Desc": "NKS_SPLASHPACKS_SETTINGS_SIMPLE_DESC",
         "Keys": [
             {
-                "Name": "Progress text location",
+                "Name": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
                 "Type": "SSelection",
                 "Variable": "SimpleProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
-                "Description": "Select your preferred progress text location."
+                "Description": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC"
             }
         ]
     },
     {
         "Name": "Progress",
-        "Desc": "A splash screen that shows you progress.",
+        "Desc": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_DESC",
         "Keys": [
             {
-                "Name": "Progress bar color",
+                "Name": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
                 "Type": "SColor",
                 "Variable": "ProgressProgressColor"
             },
             {
-                "Name": "Progress text location",
+                "Name": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
                 "Type": "SSelection",
                 "Variable": "ProgressProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
-                "Description": "Select your preferred progress text location."
+                "Description": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC"
             }
         ]
     },
     {
         "Name": "PowerLineProgress",
-        "Desc": "A splash screen that shows you progress using the PowerLine text.",
+        "Desc": "NKS_SPLASHPACKS_SETTINGS_POWERLINEPROGRESS_DESC",
         "Keys": [
             {
-                "Name": "Progress bar color",
+                "Name": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_COLOR",
                 "Type": "SColor",
                 "Variable": "PowerLineProgressProgressColor"
             },
             {
-                "Name": "Progress text location",
+                "Name": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION",
                 "Type": "SSelection",
                 "Variable": "PowerLineProgressProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
-                "Description": "Select your preferred progress text location."
+                "Description": "NKS_SPLASHPACKS_SETTINGS_PROGRESS_LOCATION_DESC"
             }
         ]
     }

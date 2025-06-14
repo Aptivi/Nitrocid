@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             if (!ReminderNotified)
             {
-                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, NotificationType.Normal);
+                var ReminderNotification = new Notification(ReminderTitle, LanguageTools.GetLocalized("NKS_CALENDAR_REMINDER_NOTIFICATION", "Nitrocid.Extras.Calendar"), ReminderImportance, NotificationType.Normal);
                 NotificationManager.NotifySend(ReminderNotification);
                 ReminderNotified = true;
             }

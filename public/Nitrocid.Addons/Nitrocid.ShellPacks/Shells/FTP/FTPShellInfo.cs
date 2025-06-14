@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {
@@ -38,278 +39,278 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
+            new CommandInfo("cat", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new CatCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
+            new CommandInfo("cdl", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new CdlCommand()),
 
-            new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
+            new CommandInfo("cdr", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new CdrCommand()),
 
-            new CommandInfo("cp", /* Localizable */ "Copies file or directory to another file or directory.",
+            new CommandInfo("cp", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_CP_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Source file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new CpCommand()),
 
-            new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
+            new CommandInfo("del", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote file to delete"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new DelCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
+            new CommandInfo("detach", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", "Nitrocid.ShellPacks"), new DetachCommand()),
 
-            new CommandInfo("execute", /* Localizable */ "Executes an FTP server command",
+            new CommandInfo("execute", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Server command to execute"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new ExecuteCommand()),
 
-            new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
+            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new GetCommand()),
 
-            new CommandInfo("getfolder", /* Localizable */ "Downloads remote folder to local directory using binary or text",
+            new CommandInfo("getfolder", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new GetFolderCommand()),
 
-            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
+            new CommandInfo("ifm", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC", "Nitrocid.ShellPacks"), new IfmCommand()),
 
-            new CommandInfo("info", /* Localizable */ "FTP server information", new InfoCommand()),
+            new CommandInfo("info", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TITLE", "Nitrocid.ShellPacks"), new InfoCommand()),
 
-            new CommandInfo("lsl", /* Localizable */ "Lists local directory",
+            new CommandInfo("lsl", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
+                        new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", new SwitchOptions()
+                        new SwitchInfo("suppressmessages", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new LslCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
+            new CommandInfo("lsr", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
+                        new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new LsrCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("mkldir", /* Localizable */ "Creates a local directory",
+            new CommandInfo("mkldir", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                     ], true)
                 ], new MkldirCommand()),
 
-            new CommandInfo("mkrdir", /* Localizable */ "Creates a remote directory",
+            new CommandInfo("mkrdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                     ], true)
                 ], new MkrdirCommand()),
 
-            new CommandInfo("mv", /* Localizable */ "Moves file or directory to another file or directory. You can also use that to rename files.",
+            new CommandInfo("mv", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_MV_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to source file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "targetfileordir", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to target file or directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new MvCommand()),
 
-            new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
+            new CommandInfo("put", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(false, "output", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PutCommand()),
 
-            new CommandInfo("putfolder", /* Localizable */ "Uploads local folder to remote directory using binary or text",
+            new CommandInfo("putfolder", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(false, "outputfolder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PutFolderCommand()),
 
-            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),
+            new CommandInfo("pwdl", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC", "Nitrocid.ShellPacks"), new PwdlCommand()),
 
-            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory", new PwdrCommand()),
+            new CommandInfo("pwdr", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC", "Nitrocid.ShellPacks"), new PwdrCommand()),
 
-            new CommandInfo("perm", /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
+            new CommandInfo("perm", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "permnumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Permission numbers according to chmod"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new PermCommand()),
 
-            new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
+            new CommandInfo("sumfile", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new SumFileCommand()),
 
-            new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
+            new CommandInfo("sumfiles", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to remote directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC", "Nitrocid.ShellPacks")
                         }),
                         new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Encryption algorithm"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new SumFilesCommand()),
 
-            new CommandInfo("type", /* Localizable */ "Sets the type for this session",
+            new CommandInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "a/b", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Specifies whether the transfer type is ASCII or Binary"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new TypeCommand()),

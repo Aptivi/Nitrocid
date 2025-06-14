@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -23,6 +23,7 @@ using Nitrocid.ShellPacks.Shells.Sql.Commands;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.Sql
 {
@@ -36,11 +37,11 @@ namespace Nitrocid.ShellPacks.Shells.Sql
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cmd", /* Localizable */ "Executes an SQL query", new CmdCommand()),
+            new CommandInfo("cmd", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC", "Nitrocid.ShellPacks"), new CmdCommand()),
 
-            new CommandInfo("dbinfo", /* Localizable */ "Database info", new DbInfoCommand()),
+            new CommandInfo("dbinfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC", "Nitrocid.ShellPacks"), new DbInfoCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI", new TuiCommand()),
+            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC", "Nitrocid.ShellPacks"), new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

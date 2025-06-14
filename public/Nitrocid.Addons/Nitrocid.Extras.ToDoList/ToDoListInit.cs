@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -19,6 +19,7 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.ToDoList.ToDoList;
+using Nitrocid.Extras.ToDoList.Localized;
 using Nitrocid.Extras.ToDoList.ToDoList.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -26,6 +27,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ToDoList
 {
@@ -33,18 +35,18 @@ namespace Nitrocid.Extras.ToDoList
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("todo", /* Localizable */ "To-do task manager",
+            new CommandInfo("todo", LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_DESC", "Nitrocid.Extras.ToDoList"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "add/remove/done/undone", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["add", "remove", "done", "undone"],
-                            ArgumentDescription = /* Localizable */ "Whether to add, remove, mark as done, or unmark as done on a task"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC", "Nitrocid.Extras.ToDoList")
                         }),
                         new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Task name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC", "Nitrocid.Extras.ToDoList")
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -52,7 +54,7 @@ namespace Nitrocid.Extras.ToDoList
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["list", "save", "load"],
-                            ArgumentDescription = /* Localizable */ "Whether to list, save, or load all tasks"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC", "Nitrocid.Extras.ToDoList")
                         }),
                     ]),
                 ], new TodoCommand()),
@@ -70,10 +72,16 @@ namespace Nitrocid.Extras.ToDoList
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded tasks.");
         }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.ToDoList", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.ToDoList");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

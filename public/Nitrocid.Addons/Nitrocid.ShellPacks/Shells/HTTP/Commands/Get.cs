@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_GETTING", "Nitrocid.ShellPacks"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             try
             {

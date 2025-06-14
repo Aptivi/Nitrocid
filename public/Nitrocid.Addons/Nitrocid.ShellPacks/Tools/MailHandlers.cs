@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Tools
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
-            TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING", "Nitrocid.ShellPacks"));
             PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
 
@@ -73,7 +73,7 @@ namespace Nitrocid.ShellPacks.Tools
             if (folder.Count > messages.Count())
             {
                 int NewMessagesCount = folder.Count - messages.Count();
-                NotificationManager.NotifySend(new Notification(Translate.DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount), Translate.DoTranslation("Open \"mail\" to see them."), NotificationPriority.Medium, NotificationType.Normal));
+                NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE").FormatString(NewMessagesCount), LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC", "Nitrocid.ShellPacks"), NotificationPriority.Medium, NotificationType.Normal));
             }
         }
 

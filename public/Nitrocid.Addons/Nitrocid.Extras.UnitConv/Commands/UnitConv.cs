@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         public override void HelpHelper()
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
-            TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS", "Nitrocid.Extras.UnitConv"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
                 TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 return 43;
             string file = parameters.ArgumentsList[0];
             var status = GitShellCommon.Repository.RetrieveStatus(file);
-            TextWriterColor.Write(Translate.DoTranslation("Status for file") + $" {Path.GetFileName(file)}: {status}");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FILESTATUS_TITLE") + $" {Path.GetFileName(file)}: {status}", "Nitrocid.ShellPacks");
             return 0;
         }
 

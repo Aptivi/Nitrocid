@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,13 +49,13 @@ namespace Nitrocid.ShellPacks.Shells.Json
                 FilePath = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(FilePath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.ShellPacks.Shells.Json
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!JsonTools.OpenJsonFile(FilePath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                     Bail = true;
                 }
                 JsonShellCommon.AutoSave.Start();

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -130,7 +130,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
                 FilesystemTools.MakeJsonFile(path, true, true);
             string serializedTasks = FilesystemTools.ReadContentsText(path);
             toDoTasks = JsonConvert.DeserializeObject<List<ToDoTask>>(serializedTasks) ??
-                throw new Exception(Translate.DoTranslation("Can't get a list of tasks"));
+                throw new Exception(LanguageTools.GetLocalized("NKS_TODO_LOADFAILED", "Nitrocid.Extras.ToDoList"));
         }
     }
 }

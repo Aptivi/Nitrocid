@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -59,7 +59,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
@@ -101,7 +101,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
@@ -174,7 +174,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
         public static bool FTPUploadFile(string File, string LocalFile)
         {
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
 
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, File);
@@ -205,7 +205,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
         public static bool FTPUploadFolder(string Folder, string LocalFolder)
         {
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
 
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
@@ -264,7 +264,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
@@ -287,7 +287,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Download failed for file {0}.") + " {1}", File, ex.Message);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED", "Nitrocid.ShellPacks") + " {1}", File, ex.Message);
             }
         }
 

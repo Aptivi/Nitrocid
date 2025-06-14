@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,10 +54,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static (int Year, int Month, int Day, CalendarTypes calendar) state;
         private static readonly Keybinding[] bindings =
         [
-            new Keybinding( /* Localizable */ "Exit", ConsoleKey.Escape),
-            new Keybinding( /* Localizable */ "Keybindings", ConsoleKey.K),
-            new Keybinding( /* Localizable */ "Events...", ConsoleKey.E),
-            new Keybinding( /* Localizable */ "Reminders...", ConsoleKey.R),
+            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EXIT", "Nitrocid.Extras.Calendar"), ConsoleKey.Escape),
+            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS", "Nitrocid.Extras.Calendar"), ConsoleKey.K),
+            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EVENTS", "Nitrocid.Extras.Calendar"), ConsoleKey.E),
+            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_REMINDERS", "Nitrocid.Extras.Calendar"), ConsoleKey.R),
         ];
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             // Set status
             state = (Year, Month, Day, calendar);
-            status = Translate.DoTranslation("Ready");
+            status = LanguageTools.GetLocalized("NKS_CALENDAR_TUI_STATUS_READY", "Nitrocid.Extras.Calendar");
             bail = false;
 
             // Main loop
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Interactive calendar failed: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The interactive calendar failed:") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_FAILED", "Nitrocid.Extras.Calendar") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });
@@ -239,7 +239,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int eventBoxHeight = ConsoleWrapper.WindowHeight - 8;
                 var eventBorder = new Border()
                 {
-                    Title = Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}",
+                    Title = LanguageTools.GetLocalized("NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE", "Nitrocid.Extras.Calendar") + $" {CalendarTitle}",
                     Left = eventBoxLeft,
                     Top = eventBoxTop,
                     Width = eventBoxWidth,
@@ -279,8 +279,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             // Change the status to reflect the selected day
             status =
                 $"MM/DD/YYYY: {state.Month}/{state.Day}/{state.Year} | " +
-                $"{Translate.DoTranslation("Long form")}: {TimeDateRenderers.RenderDate(new DateTime(state.Year, state.Month, state.Day), FormatType.Long)} | " +
-                $"{Translate.DoTranslation("Calendar type")}: {state.calendar}";
+                $"{LanguageTools.GetLocalized("NKS_CALENDAR_TUI_LONGFORM", "Nitrocid.Extras.Calendar")}: {TimeDateRenderers.RenderDate(new DateTime(state.Year, state.Month, state.Day), FormatType.Long)} | " +
+                $"{LanguageTools.GetLocalized("NKS_CALENDAR_TUI_CALENDARTYPE", "Nitrocid.Extras.Calendar")}: {state.calendar}";
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key, ref (int Year, int Month, int Day, CalendarTypes calendar) state)
@@ -505,7 +505,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 }
             }
             if (!found)
-                builder.AppendLine(Translate.DoTranslation("No reminders found for the selected month"));
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_NOREMINDERSMONTH", "Nitrocid.Extras.Calendar"));
             else
             {
                 foreach (string date in remindersString.Keys)
@@ -568,7 +568,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 }
             }
             if (!found)
-                builder.AppendLine(Translate.DoTranslation("No events found for the selected month"));
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_NOEVENTSMONTH", "Nitrocid.Extras.Calendar"));
             else
             {
                 foreach (string date in eventsString.Keys)
@@ -604,7 +604,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 }
             }
             if (!found)
-                builder.AppendLine(Translate.DoTranslation("No reminders found for the selected day"));
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_NOREMINDERSDAY", "Nitrocid.Extras.Calendar"));
             else
             {
                 builder.AppendLine($"{state.Month}/{state.Day}/{state.Year}");
@@ -644,7 +644,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 }
             }
             if (!found)
-                builder.AppendLine(Translate.DoTranslation("No events found for the selected day"));
+                builder.AppendLine(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_NOEVENTSDAY", "Nitrocid.Extras.Calendar"));
             else
             {
                 builder.AppendLine($"{state.Month}/{state.Day}/{state.Year}");

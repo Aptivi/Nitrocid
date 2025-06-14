@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Nitrocid.ShellPacks.Shells.RSS.Commands;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {
@@ -38,81 +39,81 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
+            new CommandInfo("articleinfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Feed number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new ArticleInfoCommand()),
 
-            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed", new BookmarkCommand()),
+            new CommandInfo("bookmark", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC", "Nitrocid.ShellPacks"), new BookmarkCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
+            new CommandInfo("detach", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", "Nitrocid.ShellPacks"), new DetachCommand()),
 
-            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info", new FeedInfoCommand()),
+            new CommandInfo("feedinfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC", "Nitrocid.ShellPacks"), new FeedInfoCommand()),
 
-            new CommandInfo("list", /* Localizable */ "Lists all feeds", new ListCommand(), CommandFlags.Wrappable),
+            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC", "Nitrocid.ShellPacks"), new ListCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds", new ListBookmarkCommand(), CommandFlags.Wrappable),
+            new CommandInfo("listbookmark", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC", "Nitrocid.ShellPacks"), new ListBookmarkCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
+            new CommandInfo("read", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_READ_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Feed number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new ReadCommand()),
 
-            new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
+            new CommandInfo("search", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Phrase to search"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC", "Nitrocid.ShellPacks")
                         })
                     ],
                     [
-                        new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
+                        new SwitchInfo("t", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("d", /* Localizable */ "Search for description", new SwitchOptions()
+                        new SwitchInfo("d", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("a", /* Localizable */ "Search for title and description", new SwitchOptions()
+                        new SwitchInfo("a", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("cs", /* Localizable */ "Case sensitive search", new SwitchOptions()
+                        new SwitchInfo("cs", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC", "Nitrocid.ShellPacks"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SearchCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("selfeed", /* Localizable */ "Searches the feed library for a feed",
+            new CommandInfo("selfeed", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC", "Nitrocid.ShellPacks"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Phrase to search"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC", "Nitrocid.ShellPacks")
                         })
                     ])
                 ], new SelFeedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark", new UnbookmarkCommand()),
+            new CommandInfo("unbookmark", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC", "Nitrocid.ShellPacks"), new UnbookmarkCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -55,9 +55,9 @@ namespace Nitrocid.Extras.Dates.Timers
         private static Timer? _Timer;
         private readonly static Keybinding[] keyBindings =
         [
-            new( /* Localizable */ "Start counting down", ConsoleKey.Enter),
-            new( /* Localizable */ "Set interval", ConsoleKey.T),
-            new( /* Localizable */ "Exit", ConsoleKey.Escape),
+            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN", "Nitrocid.Extras.Dates"), ConsoleKey.Enter),
+            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_SETTIME", "Nitrocid.Extras.Dates"), ConsoleKey.T),
+            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT", "Nitrocid.Extras.Dates"), ConsoleKey.Escape),
         ];
 
         internal static Timer? Timer
@@ -222,7 +222,7 @@ namespace Nitrocid.Extras.Dates.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", new InfoBoxSettings()
+                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTPROMPT", "Nitrocid.Extras.Dates") + " [{0}] ", new InfoBoxSettings()
                         {
                             ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
                         }, TimerInterval);
@@ -230,7 +230,7 @@ namespace Nitrocid.Extras.Dates.Timers
                         {
                             // Not numeric.
                             timerScreen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
+                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER", "Nitrocid.Extras.Dates"), new InfoBoxSettings()
                             {
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                             });

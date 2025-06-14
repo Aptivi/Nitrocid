@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Tips.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_TIPS_KERNELTIP_73", "Nitrocid.Extras.Tips"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

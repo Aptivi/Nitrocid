@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("The JSON shell failed to add an item.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE", "Nitrocid.ShellPacks") + $" {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;

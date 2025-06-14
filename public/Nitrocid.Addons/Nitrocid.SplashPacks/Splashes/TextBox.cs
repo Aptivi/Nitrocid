@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -58,7 +58,7 @@ namespace Nitrocid.SplashPacks.Splashes
             string exceptionMessage =
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
-                Translate.DoTranslation("Unknown error!");
+                LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
             KernelColorTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";
@@ -69,7 +69,7 @@ namespace Nitrocid.SplashPacks.Splashes
             string exceptionMessage =
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
-                Translate.DoTranslation("Unknown error!");
+                LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
             KernelColorTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";

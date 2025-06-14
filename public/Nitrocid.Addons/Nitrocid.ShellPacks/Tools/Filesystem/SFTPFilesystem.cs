@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -63,7 +63,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
                 if (!string.IsNullOrEmpty(Path))
                     Listing = client.ListDirectory(Path);
                 else
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
+                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED", "Nitrocid.ShellPacks")} {ModDate}");
                         }
                     }
                     else if (DirListSFTP.IsDirectory)
@@ -101,7 +101,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Failed to list remote files: {0}"), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_LIST_FAILED", "Nitrocid.ShellPacks"), ex, ex.Message);
             }
         }
 
@@ -113,7 +113,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         public static bool SFTPDeleteRemote(string Target)
         {
             var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
             // Delete a file or folder
@@ -125,7 +125,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), Target);
             }
             DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
             return true;
@@ -141,7 +141,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         public static bool SFTPChangeRemoteDir(string Directory)
         {
             var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
             if (!string.IsNullOrEmpty(Directory))
             {
                 if (client.Exists(Directory))
@@ -154,12 +154,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     // Directory doesn't exist, go to the old directory
-                    throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Directory {0} not found."), Directory);
+                    throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND", "Nitrocid.ShellPacks"), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Enter a remote directory. \"..\" to go back"));
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR", "Nitrocid.ShellPacks"));
             }
         }
 
@@ -185,7 +185,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             }
             else
             {
-                throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("Local directory {0} doesn't exist."), Directory);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND", "Nitrocid.ShellPacks"), Directory);
             }
         }
 
@@ -197,7 +197,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
         public static string SFTPGetCanonicalPath(string Path)
         {
             var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
 
             // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
             var SFTPType = client.GetType();
@@ -222,7 +222,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
                 client.CreateDirectory(name);
                 return true;
             }
@@ -252,7 +252,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
                 return client.Exists(name) && !client.Get(name).IsDirectory;
             }
             catch (Exception ex)
@@ -273,7 +273,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
                 return client.Exists(name) && client.Get(name).IsDirectory;
             }
             catch (Exception ex)

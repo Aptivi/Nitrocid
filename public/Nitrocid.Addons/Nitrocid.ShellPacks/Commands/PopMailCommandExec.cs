@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -34,7 +34,7 @@ namespace Nitrocid.ShellPacks.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Implement on 0.1.1.
-            TextWriters.Write(Translate.DoTranslation("POP3 mail is returning from 0.0.20.0, but we don't currently plan to release it in this version. Wait for the next version."), KernelColorType.Warning);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING", "Nitrocid.ShellPacks"), KernelColorType.Warning);
             // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;

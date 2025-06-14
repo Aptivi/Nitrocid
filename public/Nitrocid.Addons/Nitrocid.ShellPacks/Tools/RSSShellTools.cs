@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,7 +51,7 @@ namespace Nitrocid.ShellPacks.Tools
                     return (Feed.FeedTitle, Feed.FeedArticles[0].ArticleTitle);
                 if (!string.IsNullOrEmpty(Feed.FeedDescription))
                     return (Feed.FeedTitle, Feed.FeedDescription);
-                return (Feed.FeedTitle, Translate.DoTranslation("No description"));
+                return (Feed.FeedTitle, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDNODESC", "Nitrocid.ShellPacks"));
             }
             catch (Exception ex)
             {

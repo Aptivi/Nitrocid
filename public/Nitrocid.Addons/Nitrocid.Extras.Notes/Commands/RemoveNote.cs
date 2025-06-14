@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
-                TextWriters.Write(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC", "Nitrocid.Extras.Notes"), true, KernelColorType.Error);
                 return 8;
             }
             return 0;

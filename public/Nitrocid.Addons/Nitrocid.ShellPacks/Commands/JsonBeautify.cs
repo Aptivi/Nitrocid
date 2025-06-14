@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -60,7 +60,7 @@ namespace Nitrocid.ShellPacks.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND", "Nitrocid.ShellPacks"), true, KernelColorType.Error, JsonFile);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
         }

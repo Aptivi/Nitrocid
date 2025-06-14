@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Message number is not a numeric value."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }

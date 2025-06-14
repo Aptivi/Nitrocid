@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Back to School",
-        "Description": "This is the first day of the new school year",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
         "IsEvent": true,
         "StartMonth": 8,
         "StartDay": 27,

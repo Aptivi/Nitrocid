@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
         {
             if (!ArchiveTools.ChangeWorkingArchiveDirectory(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("Archive directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND", "Nitrocid.ShellPacks"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Archive);
             }
             return 0;

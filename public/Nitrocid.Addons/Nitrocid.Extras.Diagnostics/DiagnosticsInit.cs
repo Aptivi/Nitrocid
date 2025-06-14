@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -18,11 +18,13 @@
 //
 
 using Nitrocid.Extras.Diagnostics.Commands;
+using Nitrocid.Extras.Diagnostics.Localized;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Diagnostics
 {
@@ -30,7 +32,7 @@ namespace Nitrocid.Extras.Diagnostics
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("threadsbt", LanguageTools.GetLocalized("NKS_DIAG_COMMAND_THREADSBT_DESC", "Nitrocid.Extras.Diagnostics"), new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>
@@ -41,10 +43,16 @@ namespace Nitrocid.Extras.Diagnostics
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Diagnostics", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Diagnostics");
             CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

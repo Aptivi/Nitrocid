@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,14 +33,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var tui = new MailManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Create folder"), ConsoleKey.F1, (_, _, _, _) => tui.MakeFolder()));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Move..."), ConsoleKey.F2, (_, _, _, index) => tui.MoveMessage(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Move all..."), ConsoleKey.F2, ConsoleModifiers.Shift, (_, _, _, index) => tui.MoveAllMessages(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Rename folder"), ConsoleKey.F3, (entry1, _, _, _) => tui.RenameFolder(entry1)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Remove folder"), ConsoleKey.F4, (entry1, _, _, _) => tui.RemoveFolder(entry1)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Remove message"), ConsoleKey.F5, (_, _, _, index) => tui.RemoveMessage(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(Translate.DoTranslation("Remove all..."), ConsoleKey.F5, ConsoleModifiers.Shift, (_, _, _, index) => tui.RemoveAllMessages(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN", "Nitrocid.ShellPacks"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER", "Nitrocid.ShellPacks"), ConsoleKey.F1, (_, _, _, _) => tui.MakeFolder()));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE", "Nitrocid.ShellPacks"), ConsoleKey.F2, (_, _, _, index) => tui.MoveMessage(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL", "Nitrocid.ShellPacks"), ConsoleKey.F2, ConsoleModifiers.Shift, (_, _, _, index) => tui.MoveAllMessages(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER", "Nitrocid.ShellPacks"), ConsoleKey.F3, (entry1, _, _, _) => tui.RenameFolder(entry1)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER", "Nitrocid.ShellPacks"), ConsoleKey.F4, (entry1, _, _, _) => tui.RemoveFolder(entry1)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE", "Nitrocid.ShellPacks"), ConsoleKey.F5, (_, _, _, index) => tui.RemoveMessage(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL", "Nitrocid.ShellPacks"), ConsoleKey.F5, ConsoleModifiers.Shift, (_, _, _, index) => tui.RemoveAllMessages(index)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }
