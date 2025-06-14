@@ -47,13 +47,6 @@
                         "SelectionFunctionType": "CultureManager",
                         "SelectionFallback": [ "en-US" ],
                         "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC"
-                    },
-                    {
-                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-                        "Type": "SBoolean",
-                        "Variable": "SetCodepage",
-                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-                        "UnsupportedPlatforms": [ "Unix", "macOS" ]
                     }
                 ]
             },

@@ -356,10 +356,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("country", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC"), new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
                     ])
                 ], new ChLangCommand(), CommandFlags.Strict),
 
@@ -1083,29 +1079,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ], true)
                 ], new InputPassCommand()),
-
-            new CommandInfo("langman", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "reload/load/unload", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC")
-                        }),
-                        new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => [.. LanguageManager.CustomLanguages.Keys],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC")
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "list/reloadall", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC")
-                        }),
-                    ])
-                ], new LangManCommand(), CommandFlags.Strict),
 
             new CommandInfo("license", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC"), new LicenseCommand()),
 

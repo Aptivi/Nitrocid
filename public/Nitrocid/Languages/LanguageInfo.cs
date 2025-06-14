@@ -18,12 +18,8 @@
 //
 
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using System.Diagnostics;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages.Decoy;
-using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Languages
 {
@@ -33,68 +29,25 @@ namespace Nitrocid.Languages
     [DebuggerDisplay("[{threeLetterLanguageName}] {fullLanguageName}")]
     public class LanguageInfo
     {
-
-        [JsonProperty(nameof(ThreeLetterLanguageName))]
         private readonly string threeLetterLanguageName;
-        [JsonProperty(nameof(FullLanguageName))]
         private readonly string fullLanguageName;
-        [JsonProperty(nameof(Codepage))]
-        private readonly int codepage;
-        [JsonProperty(nameof(Country))]
-        private readonly string country;
-        [JsonIgnore]
-        private readonly bool transliterable;
-        [JsonIgnore]
-        private readonly bool custom;
-        [JsonIgnore]
-        private readonly Dictionary<string, string> strings;
+        private readonly Dictionary<string, string> strings = [];
 
         /// <summary>
         /// The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.
         /// </summary>
-        [JsonIgnore]
         public string ThreeLetterLanguageName =>
             threeLetterLanguageName;
 
         /// <summary>
         /// The full name of language without the country specifier.
         /// </summary>
-        [JsonIgnore]
         public string FullLanguageName =>
             fullLanguageName;
 
         /// <summary>
-        /// The codepage number for the language
+        /// The localization information containing strings (for info purposes)
         /// </summary>
-        [JsonIgnore]
-        public int Codepage =>
-            codepage;
-
-        /// <summary>
-        /// Country
-        /// </summary>
-        [JsonIgnore]
-        public string Country =>
-            country;
-
-        /// <summary>
-        /// Whether or not the language is transliterable (Arabic, Korea, ...)
-        /// </summary>
-        [JsonIgnore]
-        public bool Transliterable =>
-            transliterable;
-
-        /// <summary>
-        /// Whether the language is custom
-        /// </summary>
-        [JsonIgnore]
-        public bool Custom =>
-            custom;
-
-        /// <summary>
-        /// The localization information containing KS strings
-        /// </summary>
-        [JsonIgnore]
         public Dictionary<string, string> Strings =>
             strings;
 
@@ -103,100 +56,16 @@ namespace Nitrocid.Languages
         /// </summary>
         /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
-        /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
-        /// <param name="Codepage">Appropriate codepage number for language</param>
-        /// <param name="country">The country</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string country = "")
-        {
-            // Check to see if the language being installed is found in resources
-            string localizationTokenValue = ResourcesManager.ConvertToString(ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED") + $" {LangName}"));
-            if (!string.IsNullOrEmpty(localizationTokenValue))
-            {
-                // Install values to the object instance
-                threeLetterLanguageName = LangName;
-                fullLanguageName = FullLanguageName;
-                transliterable = Transliterable;
-                codepage = Codepage;
-                this.country = string.IsNullOrEmpty(country) ? "World" : country;
-
-                // Get instance of language resource
-                var localizations = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_LOCALIZED"));
-                string[] LanguageResource = localizations.Localizations;
-                var englishData = ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS")));
-                var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
-                    throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOC"));
-                string[] LanguageResourceEnglish = englishLocalizations.Localizations;
-                custom = false;
-
-                // Populate language strings
-                var langStrings = new Dictionary<string, string>();
-                for (int i = 0; i < LanguageResourceEnglish.Length; i++)
-                {
-                    string UntranslatedProperty = LanguageResourceEnglish[i];
-                    string TranslatedProperty = LanguageResource[i];
-                    if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
-                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", vars: [i + 1, UntranslatedProperty]);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", vars: [langStrings.Count]);
-                strings = langStrings;
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "No such language or invalid language. Perhaps, you should use the second overload that takes the LanguageToken for your custom languages?");
-                throw new KernelException(KernelExceptionType.NoSuchLanguage, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + " {0}", LangName);
-            }
-        }
-
-        /// <summary>
-        /// Initializes the new instance of language information
-        /// </summary>
-        /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
-        /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
-        /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
-        /// <param name="LanguageToken">The language token containing localization information</param>
-        /// <param name="country">The country</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string country = "")
+        /// <param name="strings">List of strings (for info purposes)</param>
+        public LanguageInfo(string LangName, string FullLanguageName, Dictionary<string, string> strings)
         {
             // Install values to the object instance
             threeLetterLanguageName = LangName;
             fullLanguageName = FullLanguageName;
-            transliterable = Transliterable;
-            this.country = string.IsNullOrEmpty(country) ? "World" : country;
 
-            // Install it
-            var englishData = ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS")));
-            var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_ENGLISHLOC"));
-            if (LanguageToken is null)
-                throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN"));
-            string[] LanguageResourceEnglish = englishLocalizations.Localizations;
-            custom = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", vars: [LanguageToken.Length, LanguageResourceEnglish.Length]);
-            if (LanguageToken.Length == LanguageResourceEnglish.Length)
-            {
-                // Populate language strings
-                var langStrings = new Dictionary<string, string>();
-                for (int i = 0; i < LanguageResourceEnglish.Length; i++)
-                {
-                    string UntranslatedProperty = LanguageResourceEnglish[i];
-                    string TranslatedProperty = LanguageToken[i];
-                    if (!langStrings.TryAdd(UntranslatedProperty, TranslatedProperty))
-                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", vars: [i + 1, UntranslatedProperty]);
-                }
-
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", vars: [langStrings.Count]);
-                strings = langStrings;
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", vars: [LanguageResourceEnglish.Length, LanguageToken.Length]);
-                throw new KernelException(KernelExceptionType.LanguageParse, LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT"));
-            }
+            // Populate language strings
+            this.strings = new Dictionary<string, string>(strings);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", vars: [this.strings.Count]);
         }
-
     }
 }

@@ -143,24 +143,6 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize journal path
                 JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
 
-                // Initialize custom languages
-                try
-                {
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CUSTOMLANGS"));
-                    LanguageManager.InstallCustomLanguages();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load custom languages");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES") + $": {exc.Message}");
-                }
-
                 // Initialize addons
                 try
                 {

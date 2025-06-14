@@ -34,7 +34,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Security.Signing;
-using Nitrocid.Languages.Decoy;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.Dependencies;
 
@@ -176,59 +175,6 @@ namespace Nitrocid.Extras.Mods.Modifications
                         SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODHASNOAPIVERSION", "Nitrocid.Extras.Mods"), modFile);
                     }
 
-                    // Locate the mod's localization files
-                    string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
-                    Dictionary<string, string[]> localizations = [];
-                    if (FilesystemTools.FolderExists(ModLocalizationPath))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", vars: [ModLocalizationPath]);
-                        foreach (string ModLocFile in Directory.GetFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
-                        {
-                            // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
-                            string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
-                            string ModLocFileContents = FilesystemTools.ReadContentsText(ModLocFile);
-                            var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents) ??
-                                throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED", "Nitrocid.Extras.Mods"));
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", vars: [modLocs.Length]);
-                            foreach (var modLoc in modLocs)
-                            {
-                                // Parse the values and install the language
-                                var ParsedLanguageLocalizations = modLoc.Localizations;
-
-                                // Check to see if we have that language...
-                                if (!LanguageManager.Languages.ContainsKey(LanguageName))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata contains nonexistent language!");
-                                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODHASINVALIDLANG", "Nitrocid.Extras.Mods") + " {0} [{1}]", LanguageName, LanguageName);
-                                    return;
-                                }
-
-                                // Check the localizations...
-                                DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", vars: [ParsedLanguageLocalizations is null]);
-                                if (ParsedLanguageLocalizations is not null)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", vars: [ParsedLanguageLocalizations.Length]);
-
-                                    // Try to install the localizations
-                                    if (!localizations.ContainsKey(LanguageName))
-                                        localizations.Add(LanguageName, LanguageManager.ProbeLocalizations(modLoc));
-                                }
-                                else
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
-                                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODHASNOVALIDLOCALIZATION", "Nitrocid.Extras.Mods"));
-                                    return;
-                                }
-                            }
-                            if (modLocs.Length == 0)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_METADATANEEDEDFORCUSTOMLANG", "Nitrocid.Extras.Mods"));
-                                return;
-                            }
-                        }
-                    }
-
                     // See if the mod has name
                     string ModName = script.Name;
                     if (string.IsNullOrWhiteSpace(ModName))
@@ -267,7 +213,7 @@ namespace Nitrocid.Extras.Mods.Modifications
 
                     // Prepare the mod and part instances
                     queued.Add(modFilePath);
-                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version, localizations);
+                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version);
 
                     // Satisfy the dependencies
                     ModDependencySatisfier.SatisfyDependencies(ModInstance);
