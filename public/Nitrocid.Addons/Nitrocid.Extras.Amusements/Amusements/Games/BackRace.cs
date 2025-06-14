@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                     };
                     builder.Append(
-                        TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
+                        TextWriterWhereColor.RenderWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_HORSEID", "Nitrocid.Extras.Amusements") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
                         border.Render() +
                         TextWriterWhereColor.RenderWhereColor("🐎", 2, height + 1, finalColor) +
                         RendererTools.RenderRenderable(progress, new(progressLeft, height + 1))
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 }
 
                 // Check to see if we're on the rest mode or on the race mode
-                string bindings = Translate.DoTranslation("[ENTER] Start the race | [ESC] Exit | [UP/DOWN] Move selection");
+                string bindings = LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS", "Nitrocid.Extras.Amusements");
                 int bindingsPositionY = ConsoleWrapper.WindowHeight - 2;
                 var alignedText = new AlignedText()
                 {
@@ -135,7 +135,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         .ToArray();
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
-                        positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
+                        positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_HORSEID", "Nitrocid.Extras.Amusements")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
                     alignedText.Text = string.Join(" | ", positions);
                 }
                 builder.Append(
@@ -178,7 +178,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Your horse won the race!"), new InfoBoxSettings()
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_YOUWIN", "Nitrocid.Extras.Amusements"), new InfoBoxSettings()
                         {
                             ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
                         });
@@ -187,7 +187,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
                     else if (winner > 0)
                     {
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Your horse lost the race!"));
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_YOULOSE", "Nitrocid.Extras.Amusements"));
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }

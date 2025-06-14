@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 
             // Now, get the content and the author
             var quoteToken = JToken.Parse(quoteString);
-            string? content = (string?)quoteToken[0]?["content"] ?? Translate.DoTranslation("Unknown quote.");
-            string? author = (string?)quoteToken[0]?["author"] ?? Translate.DoTranslation("Unknown author.");
+            string? content = (string?)quoteToken[0]?["content"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN", "Nitrocid.Extras.Amusements");
+            string? author = (string?)quoteToken[0]?["author"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN", "Nitrocid.Extras.Amusements");
             return (content, author);
         }
 

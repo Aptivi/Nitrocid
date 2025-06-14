@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -126,7 +126,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     CsiSequences.GenerateCsiCursorPosition(1, 1) +
                     ColorTools.RenderRevertBackground() +
                     ColorTools.RenderSetConsoleColor(FloorColor) +
-                    Translate.DoTranslation("Score") +
+                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE", "Nitrocid.Extras.Amusements") +
                     $": {SnakeLength - 1}"
                 );
 

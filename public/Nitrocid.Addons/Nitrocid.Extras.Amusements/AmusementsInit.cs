@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -20,6 +20,7 @@
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Amusements.Commands;
+using Nitrocid.Extras.Amusements.Localized;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
@@ -33,6 +34,7 @@ using Nitrocid.Misc.Splash;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -40,27 +42,27 @@ namespace Nitrocid.Extras.Amusements
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?", new BackRaceCommand()),
+            new CommandInfo("backrace", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC", "Nitrocid.Extras.Amusements"), new BackRaceCommand()),
 
-            new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
+            new CommandInfo("hangman", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC", "Nitrocid.Extras.Amusements"),
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
+                        new SwitchInfo("hardcore", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["practice"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", new SwitchOptions()
+                        new SwitchInfo("practice", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["hardcore"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["uncommon"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["common"],
                             AcceptsValues = false
@@ -68,46 +70,46 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new HangmanCommand()),
 
-            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?", new MeteorCommand()),
+            new CommandInfo("meteor", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_METEOR_DESC", "Nitrocid.Extras.Amusements"), new MeteorCommand()),
 
-            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?", new MeteorDodgeCommand()),
+            new CommandInfo("meteordodge", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC", "Nitrocid.Extras.Amusements"), new MeteorDodgeCommand()),
 
-            new CommandInfo("pong", /* Localizable */ "The ping-pong game!", new PongCommand()),
+            new CommandInfo("pong", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_PONG_DESC", "Nitrocid.Extras.Amusements"), new PongCommand()),
 
-            new CommandInfo("quote", /* Localizable */ "Gets a random quote", new QuoteCommand()),
+            new CommandInfo("quote", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_QUOTE_DESC", "Nitrocid.Extras.Amusements"), new QuoteCommand()),
 
-            new CommandInfo("roulette", /* Localizable */ "Russian Roulette", new RouletteCommand()),
+            new CommandInfo("roulette", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC", "Nitrocid.Extras.Amusements"), new RouletteCommand()),
 
-            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.", new ShipDuetCommand()),
+            new CommandInfo("shipduet", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC", "Nitrocid.Extras.Amusements"), new ShipDuetCommand()),
 
-            new CommandInfo("snaker", /* Localizable */ "The snake game!", new SnakerCommand()),
+            new CommandInfo("snaker", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SNAKER_DESC", "Nitrocid.Extras.Amusements"), new SnakerCommand()),
 
-            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time", new SolverCommand()),
+            new CommandInfo("solver", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SOLVER_DESC", "Nitrocid.Extras.Amusements"), new SolverCommand()),
 
-            new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
+            new CommandInfo("speedpress", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC", "Nitrocid.Extras.Amusements"),
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
+                        new SwitchInfo("e", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", new SwitchOptions()
+                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["v", "h", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", new SwitchOptions()
+                        new SwitchInfo("h", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["m", "v", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", new SwitchOptions()
+                        new SwitchInfo("v", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", new SwitchOptions()
+                        new SwitchInfo("c", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "e"],
                             ArgumentsRequired = true
@@ -115,19 +117,19 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new SpeedPressCommand()),
 
-            new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
+            new CommandInfo("wordle", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_DESC", "Nitrocid.Extras.Amusements"),
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
+                        new SwitchInfo("orig", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["uncommon"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", "Nitrocid.Extras.Amusements"), new SwitchOptions()
                         {
                             ConflictsWith = ["common"],
                             AcceptsValues = false
@@ -135,7 +137,7 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new WordleCommand()),
 
-            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release", new AnniversaryCommand()),
+            new CommandInfo("2018", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_2018_DESC", "Nitrocid.Extras.Amusements"), new AnniversaryCommand()),
         ];
 
         string IAddon.AddonName =>
@@ -157,20 +159,21 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.FinalizeAddon()
         {
             // Add the amusements to the homepage
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Horse Racing", BackRace.OpenBackRace);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Hangman", () => Hangman.InitializeHangman(HangmanDifficulty.None));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Dodge", () => MeteorShooter.InitializeMeteor(false, true));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Shooter", () => MeteorShooter.InitializeMeteor());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pong", Pong.InitializePong);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Ship Duet", () => ShipDuetShooter.InitializeShipDuet());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Snaker", () => Snaker.InitializeSnaker(false));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle", () => Wordle.InitializeWordle());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle (original)", () => Wordle.InitializeWordle(true));
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", "Nitrocid.Extras.Amusements"), BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", "Nitrocid.Extras.Amusements"), () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", "Nitrocid.Extras.Amusements"), () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", "Nitrocid.Extras.Amusements"), () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_PONG", "Nitrocid.Extras.Amusements"), Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", "Nitrocid.Extras.Amusements"), () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_SNAKER", "Nitrocid.Extras.Amusements"), () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_WORDLE", "Nitrocid.Extras.Amusements"), () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", "Nitrocid.Extras.Amusements"), () => Wordle.InitializeWordle(true));
         }
 
         void IAddon.StartAddon()
         {
             // Initialize everything
+            LanguageTools.AddCustomAction("Nitrocid.Extras.Amusements", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
@@ -194,6 +197,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StopAddon()
         {
+            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Amusements");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("meteordodge");
