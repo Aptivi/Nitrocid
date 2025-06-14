@@ -160,10 +160,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ConsoleSupportsTrueColor { get; set; } = true;
         /// <summary>
-        /// Set the language codepage upon switching languages (Windows only)
-        /// </summary>
-        public bool SetCodepage { get; set; } = true;
-        /// <summary>
         /// Development notice acknowledged
         /// </summary>
         public bool DevNoticeConsented { get; set; }

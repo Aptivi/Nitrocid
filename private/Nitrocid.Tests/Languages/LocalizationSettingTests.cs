@@ -84,8 +84,6 @@ namespace Nitrocid.Tests.Languages
             InfoInstance.Strings.ShouldNotBeNull();
 
             // Check for property correctness
-            InfoInstance.Transliterable.ShouldBeFalse();
-            InfoInstance.Custom.ShouldBeTrue();
             InfoInstance.FullLanguageName.ShouldBe("Spanish");
             InfoInstance.ThreeLetterLanguageName.ShouldBe("spa");
             InfoInstance.Strings.ShouldNotBeEmpty();
@@ -107,8 +105,6 @@ namespace Nitrocid.Tests.Languages
             InfoInstance.Strings.ShouldNotBeNull();
 
             // Check for property correctness
-            InfoInstance.Transliterable.ShouldBeTrue();
-            InfoInstance.Custom.ShouldBeTrue();
             InfoInstance.FullLanguageName.ShouldBe("Arabic");
             InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
             InfoInstance.Strings.ShouldNotBeEmpty();

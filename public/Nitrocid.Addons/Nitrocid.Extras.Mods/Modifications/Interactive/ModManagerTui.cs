@@ -58,7 +58,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILENAME", "Nitrocid.Extras.Mods"), selectedMod.ModFileName) + CharManager.NewLine +
                 ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILEPATH", "Nitrocid.Extras.Mods"), selectedMod.ModFilePath) + CharManager.NewLine +
                 ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODVERSION", "Nitrocid.Extras.Mods"), selectedMod.ModVersion) + CharManager.NewLine + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODLANGUAGES", "Nitrocid.Extras.Mods"), $"{selectedMod.ModStrings.Count}") + CharManager.NewLine +
                 ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODENTRYPOINT", "Nitrocid.Extras.Mods"), selectedMod.ModScript.GetType().ToString());
             ;
         }

@@ -18,6 +18,7 @@
 //
 
 using LocaleStation.Tools;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Localized;
 
 namespace Nitrocid.Languages
@@ -26,11 +27,19 @@ namespace Nitrocid.Languages
     {
         private const string localType = "Nitrocid";
 
-        internal static string GetLocalized(string id) =>
-            GetLocalized(id, localType, LanguageCommon.Language);
+        internal static string GetLocalized(string id)
+        {
+            if (LanguageCommon.Language != Config.MainConfig.CurrentLanguage)
+                LanguageCommon.Language = Config.MainConfig.CurrentLanguage;
+            return GetLocalized(id, localType, LanguageCommon.Language);
+        }
 
-        internal static string GetLocalized(string id, string localType) =>
-            GetLocalized(id, localType, LanguageCommon.Language);
+        internal static string GetLocalized(string id, string localType)
+        {
+            if (LanguageCommon.Language != Config.MainConfig.CurrentLanguage)
+                LanguageCommon.Language = Config.MainConfig.CurrentLanguage;
+            return GetLocalized(id, localType, LanguageCommon.Language);
+        }
 
         internal static string GetLocalized(string id, string localType, string language)
         {
