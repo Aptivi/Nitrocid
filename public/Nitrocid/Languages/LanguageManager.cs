@@ -54,7 +54,7 @@ namespace Nitrocid.Languages
                     return new(baseLanguages);
 
                 // Open all localized strings list
-                foreach (string lang in LocalStrings.Languages)
+                foreach (string lang in LocalStrings.Languages.Keys)
                 {
                     Dictionary<string, string> strings = [];
                     foreach (string id in LocalStrings.Localizations)
@@ -66,9 +66,10 @@ namespace Nitrocid.Languages
                         }
                     }
 
-                    // TODO: Fetch the language names from LocaleStation
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}", vars: [lang, "<TODO: Fill this!!!>"]);
-                    baseLanguages.Add(lang, new(lang, "", strings));
+                    // Get the language name
+                    string langName = LocalStrings.Languages[lang];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}", vars: [lang, langName]);
+                    baseLanguages.Add(lang, new(lang, langName, strings));
                 }
 
                 // Return the list

@@ -159,15 +159,15 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.FinalizeAddon()
         {
             // Add the amusements to the homepage
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", "Nitrocid.Extras.Amusements"), BackRace.OpenBackRace);
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", "Nitrocid.Extras.Amusements"), () => Hangman.InitializeHangman(HangmanDifficulty.None));
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", "Nitrocid.Extras.Amusements"), () => MeteorShooter.InitializeMeteor(false, true));
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", "Nitrocid.Extras.Amusements"), () => MeteorShooter.InitializeMeteor());
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_PONG", "Nitrocid.Extras.Amusements"), Pong.InitializePong);
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", "Nitrocid.Extras.Amusements"), () => ShipDuetShooter.InitializeShipDuet());
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_SNAKER", "Nitrocid.Extras.Amusements"), () => Snaker.InitializeSnaker(false));
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_WORDLE", "Nitrocid.Extras.Amusements"), () => Wordle.InitializeWordle());
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", "Nitrocid.Extras.Amusements"), () => Wordle.InitializeWordle(true));
+            HomepageTools.RegisterBuiltinAction("Horse Racing", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction("Hangman", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction("Meteor Dodge", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction("Meteor Shooter", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction("Pong", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction("Ship Duet", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction("Snaker", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction("Wordle", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction("Wordle (original)", () => Wordle.InitializeWordle(true));
         }
 
         void IAddon.StartAddon()
