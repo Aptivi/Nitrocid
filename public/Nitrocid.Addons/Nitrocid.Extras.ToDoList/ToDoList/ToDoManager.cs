@@ -130,7 +130,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
                 FilesystemTools.MakeJsonFile(path, true, true);
             string serializedTasks = FilesystemTools.ReadContentsText(path);
             toDoTasks = JsonConvert.DeserializeObject<List<ToDoTask>>(serializedTasks) ??
-                throw new Exception(LanguageTools.GetLocalized("NKS_TODO_LOADFAILED", "Nitrocid.Extras.ToDoList"));
+                throw new Exception(LanguageTools.GetLocalized("NKS_TODO_LOADFAILED"));
         }
     }
 }

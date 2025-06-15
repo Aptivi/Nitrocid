@@ -85,7 +85,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE", "Nitrocid.ShellPacks"), PadlockChar)
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"), PadlockChar)
             ];
 
             // Builder

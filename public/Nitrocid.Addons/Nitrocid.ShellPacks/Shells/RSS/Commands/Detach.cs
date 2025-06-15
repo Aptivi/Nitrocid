@@ -37,7 +37,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var shell = (RSSShell?)ShellManager.ShellStack[^1].ShellBase ??
-                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             shell.detaching = true;
             ShellManager.KillShell();
             return 0;

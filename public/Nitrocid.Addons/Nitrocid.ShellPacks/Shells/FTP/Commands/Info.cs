@@ -41,24 +41,24 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
             if (client is null)
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TITLE", "Nitrocid.ShellPacks"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Host, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_PORT", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_PORT") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Port.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TYPE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TYPE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.ServerType.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.SystemType, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.ServerOS.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Config.EncryptionMode.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Config.DataConnectionType.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Config.DownloadDataType.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Config.UploadDataType.ToString(), true, KernelColorType.ListValue);
             return 0;
         }

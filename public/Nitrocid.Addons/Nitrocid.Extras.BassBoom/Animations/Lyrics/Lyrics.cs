@@ -103,7 +103,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND", "Nitrocid.Extras.BassBoom"), false);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND"), false);
                 return;
             }
 
@@ -192,7 +192,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND") + $" {path}", "Nitrocid.Extras.BassBoom");
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND") + $" {path}");
             }
 
             // Here, the lyric file is given. Process it...

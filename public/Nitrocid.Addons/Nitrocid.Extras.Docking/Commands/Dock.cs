@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1", "Nitrocid.Extras.Docking"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), KernelColorType.Error);
                 return 34;
             }
 

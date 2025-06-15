@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Mods.Commands
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND", "Nitrocid.Extras.Mods"), true, KernelColorType.Error, modName);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND"), true, KernelColorType.Error, modName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
             }
 

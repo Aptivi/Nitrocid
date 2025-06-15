@@ -87,8 +87,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER", "Nitrocid.ShellPacks")),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE", "Nitrocid.ShellPacks"), PadlockChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER")),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"), PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/dir"),
             ];
 

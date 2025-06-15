@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Forecast.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("ForecastSettings.json", ResourcesType.Misc, typeof(ForecastConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Forecast"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

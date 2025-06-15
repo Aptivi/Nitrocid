@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED", "Nitrocid.Extras.Contacts"), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 }, path);
@@ -44,14 +44,14 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 ContactsManager.InstallContacts(path);
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_IMPORTSUCCESS", "Nitrocid.Extras.Contacts"), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_IMPORTSUCCESS"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
                 });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED", "Nitrocid.Extras.Contacts") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 }, path);
@@ -62,28 +62,28 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED", "Nitrocid.Extras.Contacts"), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 }, path);
-                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED", "Nitrocid.Extras.Contacts");
+                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED");
             }
             try
             {
                 var builder = new StringBuilder();
                 var cards = CardTools.GetCards(path);
-                builder.AppendLine($"{cards.Length} {LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTSCOUNT", "Nitrocid.Extras.Contacts")}");
+                builder.AppendLine($"{cards.Length} {LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTSCOUNT")}");
                 foreach (var card in cards)
                     builder.AppendLine($"  - {card.GetString(CardStringsEnum.FullName)[0].Value}");
                 return builder.ToString();
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED", "Nitrocid.Extras.Contacts") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 }, path);
-                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED", "Nitrocid.Extras.Contacts");
+                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED");
             }
         }
     }

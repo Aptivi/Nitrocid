@@ -46,7 +46,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             if (!string.IsNullOrEmpty(File))
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
                 if (client.FileExists(File))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [File, HashAlgorithm.ToString()]);
@@ -55,12 +55,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [File]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), File);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), File);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH"));
             }
         }
 
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
             if (!string.IsNullOrEmpty(Directory))
             {
                 var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
                 if (client.DirectoryExists(Directory))
                 {
                     var Hashes = new Dictionary<string, FtpHash>();
@@ -109,12 +109,12 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Directory]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND", "Nitrocid.ShellPacks"), Directory);
+                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), Directory);
                 }
             }
             else
             {
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED"));
             }
         }
 

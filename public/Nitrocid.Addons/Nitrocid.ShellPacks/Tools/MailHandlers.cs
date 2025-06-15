@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Tools
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING", "Nitrocid.ShellPacks"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING"));
             PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
 
@@ -73,7 +73,7 @@ namespace Nitrocid.ShellPacks.Tools
             if (folder.Count > messages.Count())
             {
                 int NewMessagesCount = folder.Count - messages.Count();
-                NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE").FormatString(NewMessagesCount), LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC", "Nitrocid.ShellPacks"), NotificationPriority.Medium, NotificationType.Normal));
+                NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE").FormatString(NewMessagesCount), LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC"), NotificationPriority.Medium, NotificationType.Normal));
             }
         }
 

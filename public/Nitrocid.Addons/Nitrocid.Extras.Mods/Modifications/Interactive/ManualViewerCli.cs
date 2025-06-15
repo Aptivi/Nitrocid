@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             bool hasBody = !string.IsNullOrEmpty(selectedManual.Body?.ToString());
 
             // Generate the rendered text
-            string noDocs = LanguageTools.GetLocalized("NKS_MODS_MANTUI_HASNOCONTENTS", "Nitrocid.Extras.Mods");
+            string noDocs = LanguageTools.GetLocalized("NKS_MODS_MANTUI_HASNOCONTENTS");
             string finalRenderedManualTitle = hasTitle ?
                 $"{selectedManual.Title} [v{selectedManual.Revision}]" :
                 $"{selectedManual.Name} [v{selectedManual.Revision}]";
@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 finalRenderedManualTitle + CharManager.NewLine +
                 new string('-', finalRenderedManualTitle.Length) + CharManager.NewLine + CharManager.NewLine +
                 finalRenderedManualBody + CharManager.NewLine + CharManager.NewLine +
-                LanguageTools.GetLocalized("NKS_MODS_MANTUI_PRESENTED", "Nitrocid.Extras.Mods") + $" {selectedManual.ModName}";
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_PRESENTED") + $" {selectedManual.ModName}";
             ;
         }
 
@@ -101,11 +101,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 $"{manual.Title}" :
                 $"{manual.Name}";
             string finalRenderedManualBody = hasBody ?
-                LanguageTools.GetLocalized("NKS_MODS_MANTUI_CONTENTLENGTH", "Nitrocid.Extras.Mods") + $": {manual.Body?.Length}" :
-                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOCONTENTS", "Nitrocid.Extras.Mods");
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_CONTENTLENGTH") + $": {manual.Body?.Length}" :
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOCONTENTS");
             string finalRenderedManualRevision = hasBody ?
                 $"v{manual.Revision}" :
-                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOREVISION", "Nitrocid.Extras.Mods");
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOREVISION");
             finalInfoRendered.AppendLine(finalRenderedManualTitle);
             finalInfoRendered.AppendLine(finalRenderedManualBody);
             finalInfoRendered.AppendLine(finalRenderedManualRevision);

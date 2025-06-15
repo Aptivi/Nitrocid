@@ -63,13 +63,13 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"), true, KernelColorType.Error);
                 return;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"), true, KernelColorType.Error);
                 return;
             }
 
@@ -97,7 +97,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 foreach (InternetAddress Address in Msg.From)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM", "Nitrocid.ShellPacks"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
@@ -105,12 +105,12 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 foreach (InternetAddress Address in Msg.To)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO", "Nitrocid.ShellPacks"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [Msg.Date.DateTime.ToString()]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN", "Nitrocid.ShellPacks"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 TextWriterRaw.Write();
@@ -180,7 +180,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 // Populate attachments
                 if (Msg.Attachments.Any())
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS", "Nitrocid.ShellPacks"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
                     var AttachmentEntities = new List<MimeEntity>();
                     if (Decrypt)
                     {

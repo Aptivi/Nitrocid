@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
             };
             if (!isReady)
             {
-                displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYCONFIGURE", "Nitrocid.Extras.Stocks");
+                displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYCONFIGURE");
                 display.Append(displayer.Render());
             }
             else
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 var stocksIntervalToken = stocksToken["Time Series (60min)"];
                 if (stocksIntervalToken is null)
                 {
-                    displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_NODATA", "Nitrocid.Extras.Stocks");
+                    displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_NODATA");
                     display.Append(displayer.Render());
                 }
                 else

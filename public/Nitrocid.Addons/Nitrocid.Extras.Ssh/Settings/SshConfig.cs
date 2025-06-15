@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Ssh.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("SshSettings.json", ResourcesType.Misc, typeof(SshConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Ssh"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

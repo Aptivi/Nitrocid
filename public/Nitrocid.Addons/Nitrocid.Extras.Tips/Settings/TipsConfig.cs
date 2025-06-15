@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Tips.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_TIPS_KERNELTIP_73", "Nitrocid.Extras.Tips"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_TIPS_KERNELTIP_73"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

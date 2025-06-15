@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
         {
             if (JsonShellCommon.FileStream is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN", "Nitrocid.ShellPacks"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), KernelColorType.Error);
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;

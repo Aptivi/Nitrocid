@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
             // Parse shell arguments
             NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
             RSSFeed? rssFeed = (RSSFeed?)rssConnection.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
             RSSShellCommon.feedInstance = rssFeed;
             RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
 
@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR", "Nitrocid.ShellPacks") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
 

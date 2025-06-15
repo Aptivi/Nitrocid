@@ -35,36 +35,36 @@ namespace Nitrocid.Extras.Ssh
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("sshell", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHELL_DESC", "Nitrocid.Extras.Ssh"),
+            new CommandInfo("sshell", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHELL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC", "Nitrocid.Extras.Ssh")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC", "Nitrocid.Extras.Ssh")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
                         }),
                     ])
                 ], new SshellCommand()),
 
-            new CommandInfo("sshcmd", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_DESC", "Nitrocid.Extras.Ssh"),
+            new CommandInfo("sshcmd", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC", "Nitrocid.Extras.Ssh")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC", "Nitrocid.Extras.Ssh")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC", "Nitrocid.Extras.Ssh")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC")
                         }),
                     ])
                 ], new SshcmdCommand()),

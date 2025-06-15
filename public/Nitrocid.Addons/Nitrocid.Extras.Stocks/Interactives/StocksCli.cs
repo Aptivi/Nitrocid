@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Stocks.Interactives
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             stocksToken?.Select((token) => ((JProperty)token).Name) ??
-                throw new KernelException(KernelExceptionType.Unknown, LanguageTools.GetLocalized("NKS_STOCKS_TUI_CANTOBTAININFO", "Nitrocid.Extras.Stocks"));
+                throw new KernelException(KernelExceptionType.Unknown, LanguageTools.GetLocalized("NKS_STOCKS_TUI_CANTOBTAININFO"));
 
         /// <inheritdoc/>
         public override string GetStatusFromItem(string item) =>
@@ -63,11 +63,11 @@ namespace Nitrocid.Extras.Stocks.Interactives
             string? close = (string?)itemToken["4. close"];
             string? volume = (string?)itemToken["5. volume"];
 
-            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_OPENING", "Nitrocid.Extras.Stocks") + $": {open}");
-            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_HIGH", "Nitrocid.Extras.Stocks") + $": {high}");
-            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_LOW", "Nitrocid.Extras.Stocks") + $": {low}");
-            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_CLOSING", "Nitrocid.Extras.Stocks") + $": {close}");
-            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_VOLUME", "Nitrocid.Extras.Stocks") + $": {volume}");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_OPENING") + $": {open}");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_HIGH") + $": {high}");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_LOW") + $": {low}");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_CLOSING") + $": {close}");
+            builder.AppendLine(LanguageTools.GetLocalized("NKS_STOCKS_TUI_VOLUME") + $": {volume}");
             return builder.ToString();
         }
     }

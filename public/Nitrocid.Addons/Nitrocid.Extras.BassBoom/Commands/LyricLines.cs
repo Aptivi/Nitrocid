@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             // If there is no lyric file, bail.
             if (string.IsNullOrWhiteSpace(pathToLyrics) || !FilesystemTools.FileExists(pathToLyrics))
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOLYRICFILE", "Nitrocid.Extras.BassBoom"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOLYRICFILE"));
                 return 27;
             }
 

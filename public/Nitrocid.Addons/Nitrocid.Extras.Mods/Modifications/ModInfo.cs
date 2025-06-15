@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Check to see if the script is null or zero. If so, throw exception.
             if (ModScript is null)
             {
-                throw new KernelException(KernelExceptionType.ModWithoutMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MODSCRIPTNEEDED", "Nitrocid.Extras.Mods"));
+                throw new KernelException(KernelExceptionType.ModWithoutMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MODSCRIPTNEEDED"));
             }
 
             // Install values to new instance

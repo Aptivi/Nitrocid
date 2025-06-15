@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC", "Nitrocid.Extras.Notes"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, KernelColorType.Error);
                 return 8;
             }
             return 0;

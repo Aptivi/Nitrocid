@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Diagnostics.Tools
             foreach (var t in runtime.Threads)
             {
                 var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
-                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : LanguageTools.GetLocalized("NKS_DIAG_NOTNKSTHREAD", "Nitrocid.Extras.Diagnostics");
+                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : LanguageTools.GetLocalized("NKS_DIAG_NOTNKSTHREAD");
                 string[] trace = t.EnumerateStackTrace(true).Select(f =>
                 {
                     if (f.Method != null)

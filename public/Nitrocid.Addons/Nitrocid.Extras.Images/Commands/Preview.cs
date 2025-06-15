@@ -38,12 +38,12 @@ namespace Nitrocid.Extras.Images.Commands
             string path = parameters.ArgumentsList[0];
             if (string.IsNullOrEmpty(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_PATHNEEDED", "Nitrocid.Extras.Images"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_PATHNEEDED"), KernelColorType.Error);
                 return 39;
             }
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_IMAGENOTFOUND", "Nitrocid.Extras.Images"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_IMAGENOTFOUND"), KernelColorType.Error);
                 return 39;
             }
 

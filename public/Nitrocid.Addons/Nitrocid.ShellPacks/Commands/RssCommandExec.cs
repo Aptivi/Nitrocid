@@ -41,19 +41,19 @@ namespace Nitrocid.ShellPacks.Commands
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
                 var tui = new RssReaderCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO", "Nitrocid.ShellPacks"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE", "Nitrocid.ShellPacks"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH", "Nitrocid.ShellPacks"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
                 var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
                 if (parameters.ArgumentsList.Length > 0)
                     tui.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
                 else
                 {
-                    string address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT", "Nitrocid.ShellPacks") + ": ", Config.MainConfig.RssHeadlineUrl);
+                    string address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri? uri))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE", "Nitrocid.ShellPacks"), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
                     tui.rssConnection = EstablishRssConnection(address);
@@ -70,7 +70,7 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection EstablishRssConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ", "Nitrocid.ShellPacks");
+                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
             return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 

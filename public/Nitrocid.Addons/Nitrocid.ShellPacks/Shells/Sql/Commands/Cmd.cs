@@ -47,7 +47,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ", "Nitrocid.ShellPacks");
+                    string paramValue = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }
@@ -56,14 +56,14 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             string[] replies = [];
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, KernelColorType.Success);
                 foreach (string reply in replies)
                     TextWriters.Write(reply, true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }

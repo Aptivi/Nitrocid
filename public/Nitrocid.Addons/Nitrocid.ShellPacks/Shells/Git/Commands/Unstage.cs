@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES", "Nitrocid.ShellPacks"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES"), true, KernelColorType.Success);
                 return 0;
             }
 
@@ -53,11 +53,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             try
             {
                 GitCommand.Unstage(GitShellCommon.Repository, modified.FilePath);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS", "Nitrocid.ShellPacks"), true, KernelColorType.Success, modified.FilePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS"), true, KernelColorType.Success, modified.FilePath);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE", "Nitrocid.ShellPacks") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
             }
             return 0;
         }

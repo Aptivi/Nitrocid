@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             get
             {
                 if (rssConnection is null || rssConnection.ConnectionInstance is not RSSFeed feed)
-                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));
                 return feed;
             }
         }
@@ -65,11 +65,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             string finalRenderedArticleTitle =
                 hasTitle ?
                 $"{selectedArticle.ArticleTitle}" :
-                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE", "Nitrocid.ShellPacks") + $" -> {selectedArticle.ArticleLink}";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE") + $" -> {selectedArticle.ArticleLink}";
             string finalRenderedArticleBody =
                 hasDescription ?
                 selectedArticle.ArticleDescription :
-                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS", "Nitrocid.ShellPacks") + $" {selectedArticle.ArticleLink}.";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS") + $" {selectedArticle.ArticleLink}.";
 
             // Render them to the second pane
             return
@@ -106,15 +106,15 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             string finalRenderedArticleTitle =
                 hasTitle ?
                 $"{item.ArticleTitle}" :
-                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE", "Nitrocid.ShellPacks") + $" -> {item.ArticleLink}";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE") + $" -> {item.ArticleLink}";
             string finalRenderedArticleBody =
                 hasDescription ?
                 item.ArticleDescription :
-                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS", "Nitrocid.ShellPacks") + $" {item.ArticleLink}.";
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS") + $" {item.ArticleLink}.";
             string finalRenderedArticleVars =
                 hasVars ?
                 $"  - {string.Join("\n  - ", item.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value.InnerText}]"))}" :
-                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV", "Nitrocid.ShellPacks");
+                LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV");
             finalInfoRendered.AppendLine(finalRenderedArticleTitle);
             finalInfoRendered.AppendLine(finalRenderedArticleBody);
             finalInfoRendered.AppendLine(finalRenderedArticleVars);
@@ -131,7 +131,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOLINK", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOLINK"), Settings.InfoBoxSettings);
                 return;
             }
 
@@ -142,7 +142,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
             catch (Exception e)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED", "Nitrocid.ShellPacks") + $" {e.Message}", Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }
 

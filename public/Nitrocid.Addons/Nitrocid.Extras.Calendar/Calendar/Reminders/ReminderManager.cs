@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void AddReminder(DateTime ReminderDate, string ReminderTitle, NotificationPriority ReminderImportance)
         {
             if (string.IsNullOrWhiteSpace(ReminderTitle))
-                ReminderTitle = LanguageTools.GetLocalized("NKS_CALENDAR_UNTITLEDREMINDER", "Nitrocid.Extras.Calendar");
+                ReminderTitle = LanguageTools.GetLocalized("NKS_CALENDAR_UNTITLEDREMINDER");
             var Reminder = new ReminderInfo(ReminderDate, ReminderTitle, ReminderImportance);
             DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", vars: [Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate)]);
             AddReminder(Reminder);
@@ -124,7 +124,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             int ReminderIndex = ReminderId - 1;
             if (ReminderIndex >= Reminders.Count)
-                throw new KernelException(KernelExceptionType.Calendar, LanguageTools.GetLocalized("NKS_CALENDAR_EXCEPTION_NOREMINDER", "Nitrocid.Extras.Calendar"));
+                throw new KernelException(KernelExceptionType.Calendar, LanguageTools.GetLocalized("NKS_CALENDAR_EXCEPTION_NOREMINDER"));
             var Reminder = Reminders[ReminderIndex];
             if (Reminder.ReminderDate == ReminderDate)
             {

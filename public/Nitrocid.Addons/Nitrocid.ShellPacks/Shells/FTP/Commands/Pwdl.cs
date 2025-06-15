@@ -34,7 +34,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_LOCALDIR", "Nitrocid.ShellPacks"), FTPShellCommon.FtpCurrentDirectory);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_LOCALDIR"), FTPShellCommon.FtpCurrentDirectory);
             return 0;
         }
     }

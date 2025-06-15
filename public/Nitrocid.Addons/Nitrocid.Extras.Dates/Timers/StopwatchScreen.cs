@@ -52,11 +52,11 @@ namespace Nitrocid.Extras.Dates.Timers
         internal static bool running;
         private readonly static Keybinding[] keyBindings =
         [
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STARTSTOP", "Nitrocid.Extras.Dates"), ConsoleKey.Enter),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP", "Nitrocid.Extras.Dates"), ConsoleKey.L),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAPLIST", "Nitrocid.Extras.Dates"), ConsoleKey.L, ConsoleModifiers.Shift),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_RESET", "Nitrocid.Extras.Dates"), ConsoleKey.R),
-            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT", "Nitrocid.Extras.Dates"), ConsoleKey.Escape),
+            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STARTSTOP"), ConsoleKey.Enter),
+            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP"), ConsoleKey.L),
+            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAPLIST"), ConsoleKey.L, ConsoleModifiers.Shift),
+            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_RESET"), ConsoleKey.R),
+            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
         ];
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Dates.Timers
             ScreenPart watchScreenPart = new();
             ScreenTools.SetCurrent(watchScreen);
             KernelColorTools.LoadBackground();
-            string status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY", "Nitrocid.Extras.Dates");
+            string status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY");
 
             // Set the random lap color
             int RedValue = RandomDriver.Random(255);
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Dates.Timers
                 var builder = new StringBuilder();
 
                 // Populate the positions for time
-                string LapsText = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP", "Nitrocid.Extras.Dates");
+                string LapsText = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP");
                 int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 var elapsed = Stopwatch.Elapsed;
@@ -175,7 +175,7 @@ namespace Nitrocid.Extras.Dates.Timers
                 for (int LapIndex = BorderDifference; LapIndex <= Laps.Count - 1; LapIndex++)
                 {
                     var Lap = Laps[LapIndex];
-                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP", "Nitrocid.Extras.Dates") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
+                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
                 }
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
@@ -219,7 +219,7 @@ namespace Nitrocid.Extras.Dates.Timers
                             else
                                 Stopwatch.Start();
                             running = Stopwatch.IsRunning;
-                            status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_RUNNING", "Nitrocid.Extras.Dates");
+                            status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_RUNNING");
                             break;
                         }
                     case ConsoleKey.L:
@@ -241,7 +241,7 @@ namespace Nitrocid.Extras.Dates.Timers
                                 GreenValue = RandomDriver.Random(255);
                                 BlueValue = RandomDriver.Random(255);
                                 LapColor = new Color(RedValue, GreenValue, BlueValue);
-                                status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_NEWLAP", "Nitrocid.Extras.Dates") + $" {Lap.LapInterval}";
+                                status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_NEWLAP") + $" {Lap.LapInterval}";
                             }
                             break;
                         }
@@ -257,7 +257,7 @@ namespace Nitrocid.Extras.Dates.Timers
                             // Clear the laps
                             Laps.Clear();
                             LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                            status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY", "Nitrocid.Extras.Dates");
+                            status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY");
                             break;
                         }
                     case ConsoleKey.Escape:
@@ -287,10 +287,10 @@ namespace Nitrocid.Extras.Dates.Timers
             for (int i = 0; i < Laps.Count; i++)
             {
                 LapDisplayInfo? lap = Laps[i];
-                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground + LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP", "Nitrocid.Extras.Dates") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
+                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground + LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
             }
             if (Laps.Count == 0)
-                lapsListBuilder.AppendLine(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_NOLAPS", "Nitrocid.Extras.Dates"));
+                lapsListBuilder.AppendLine(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_NOLAPS"));
             return lapsListBuilder.ToString();
         }
     }

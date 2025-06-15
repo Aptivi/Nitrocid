@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
 
         /// <inheritdoc/>
         public override string GetStatusFromItem(object item) =>
-            $"{GetUnits().OfType<string>().Count()} " + LanguageTools.GetLocalized("NKS_UNITCONV_CLI_UNITSTOCONVERT", "Nitrocid.Extras.UnitConv");
+            $"{GetUnits().OfType<string>().Count()} " + LanguageTools.GetLocalized("NKS_UNITCONV_CLI_UNITSTOCONVERT");
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>
@@ -60,15 +60,15 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
+                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT"), Settings.InfoBoxSettings);
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER"), Settings.InfoBoxSettings);
                     return;
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_INVALIDNUMBER", "Nitrocid.Extras.UnitConv"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_INVALIDNUMBER"), Settings.InfoBoxSettings);
                     return;
                 }
                 else
@@ -93,7 +93,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_CANTCONVERT", "Nitrocid.Extras.UnitConv") + ex.Message, Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_CANTCONVERT") + ex.Message, Settings.InfoBoxSettings);
             }
         }
 

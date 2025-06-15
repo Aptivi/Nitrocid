@@ -37,16 +37,16 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var feed = RSSShellCommon.RSSFeedInstance ??
-                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED", "Nitrocid.ShellPacks"));
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED"));
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(feed.FeedTitle, true, KernelColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(feed.FeedUrl, true, KernelColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(feed.FeedDescription, true, KernelColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(feed.FeedType.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(feed.FeedArticles.Length.ToString(), true, KernelColorType.ListValue);
             return 0;
         }

@@ -77,14 +77,14 @@ namespace Nitrocid.Extras.Mods.Modifications
             if (KernelEntry.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be loaded in safe mode!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODPARSESAFEMODE", "Nitrocid.Extras.Mods"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODPARSESAFEMODE"));
                 return;
             }
 
             if (!FilesystemTools.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODNOTFOUND", "Nitrocid.Extras.Mods"), ModFilename);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODNOTFOUND"), ModFilename);
                 return;
             }
 
@@ -92,19 +92,19 @@ namespace Nitrocid.Extras.Mods.Modifications
             if (HasModStarted(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod already started!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODALREADYSTARTED", "Nitrocid.Extras.Mods"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODALREADYSTARTED"));
                 return;
             }
 
             if (GetBlacklistedMods().Contains(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", vars: [ModFilename]);
-                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODBLACKLISTED", "Nitrocid.Extras.Mods"), ModFilename);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODBLACKLISTED"), ModFilename);
                 return;
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", vars: [ModFilename]);
-            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD", "Nitrocid.Extras.Mods") + " {0}...", ModFilename);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD") + " {0}...", ModFilename);
             ModParser.ParseMod(ModFilename, priority);
         }
 
@@ -122,24 +122,24 @@ namespace Nitrocid.Extras.Mods.Modifications
             if (KernelEntry.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPINGSAFEMODE", "Nitrocid.Extras.Mods"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPINGSAFEMODE"));
                 return;
             }
             if (!FilesystemTools.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNOTFOUND", "Nitrocid.Extras.Mods"), ModFilename);
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNOTFOUND"), ModFilename);
                 return;
             }
             if (!HasModStarted(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODHASNTSTARTED", "Nitrocid.Extras.Mods"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODHASNTSTARTED"));
                 return;
             }
 
             // Iterate through all the mods
-            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_STOPPINGMODS", "Nitrocid.Extras.Mods"), ModFilename);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_STOPPINGMODS"), ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", vars: [ModFilename]);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
@@ -156,10 +156,10 @@ namespace Nitrocid.Extras.Mods.Modifications
                 DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
                 Script.StopMod();
                 if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(Script.Version))
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED2", "Nitrocid.Extras.Mods"), TargetMod.ModName, Script.Version);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED2"), TargetMod.ModName, Script.Version);
 
                 // Remove the mod from the list
-                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED1", "Nitrocid.Extras.Mods"), TargetMod.ModName);
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED1"), TargetMod.ModName);
                 Mods.Remove(TargetModKey);
 
                 // Remove the mod dependency from the lookup
@@ -271,7 +271,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Check for upgrade
             if (FilesystemTools.FileExists(TargetModPath))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUPDATING", "Nitrocid.Extras.Mods"), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUPDATING"), true, KernelColorType.Warning);
                 StopMod(Path.GetFileName(TargetModPath));
             }
 
@@ -285,20 +285,20 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         Script = ModParser.GetModInstance(Assembly.LoadFrom(ModPath));
                         if (Script is null)
-                            throw new KernelException(KernelExceptionType.ModInstall, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_NOMODSCRIPT", "Nitrocid.Extras.Mods"));
+                            throw new KernelException(KernelExceptionType.ModInstall, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_NOMODSCRIPT"));
                     }
                     catch (ReflectionTypeLoadException ex)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [ModPath, ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD"), true, KernelColorType.Error);
                         foreach (Exception? LoaderException in ex.LoaderExceptions)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", vars: [LoaderException?.Message ?? "Unknown loader exception"]);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
-                            TextWriters.Write(LoaderException?.Message ?? LanguageTools.GetLocalized("NKS_MODS_UNKNOWNLOADEREXCEPTION", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                            TextWriters.Write(LoaderException?.Message ?? LanguageTools.GetLocalized("NKS_MODS_UNKNOWNLOADEREXCEPTION"), true, KernelColorType.Error);
                         }
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"), true, KernelColorType.Error);
                         throw;
                     }
                 }
@@ -316,20 +316,20 @@ namespace Nitrocid.Extras.Mods.Modifications
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
                         var ManualInstance = new Manual(ModName, ModManualFile);
                         if (!ManualInstance.ValidManpage)
-                            throw new KernelException(KernelExceptionType.ModInstall, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MANPAGEINVALID", "Nitrocid.Extras.Mods"), ManualFileName);
+                            throw new KernelException(KernelExceptionType.ModInstall, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MANPAGEINVALID"), ManualFileName);
                         FilesystemTools.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
                     }
                 }
 
                 // Finally, start the mod
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD", "Nitrocid.Extras.Mods") + " {0}...", Path.GetFileNameWithoutExtension(TargetModPath));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD") + " {0}...", Path.GetFileNameWithoutExtension(TargetModPath));
                 StartMod(Path.GetFileName(TargetModPath));
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODINSTALLFAILED", "Nitrocid.Extras.Mods") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODINSTALLFAILED") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
         }
 
@@ -364,7 +364,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUNINSTALLFAILED", "Nitrocid.Extras.Mods") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUNINSTALLFAILED") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
         }
 
@@ -472,20 +472,20 @@ namespace Nitrocid.Extras.Mods.Modifications
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Can't start or stop mod {0}!", vars: [mod]);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTSTARTORSTOP", "Nitrocid.Extras.Mods"));
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTSTARTORSTOP"));
                         }
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_NOMODS", "Nitrocid.Extras.Mods"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_NOMODS"));
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped or started in safe mode!");
-                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_STARTSTOPSAFEMODE", "Nitrocid.Extras.Mods"));
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_STARTSTOPSAFEMODE"));
             }
         }
 

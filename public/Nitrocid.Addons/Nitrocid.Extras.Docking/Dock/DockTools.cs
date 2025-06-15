@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Docking.Dock
         {
             // Check to see if there is a dock by this name
             if (!DoesDockScreenExist(dockName, out BaseWidget? dock))
-                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN2", "Nitrocid.Extras.Docking"));
+                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN2"));
 
             // Now, dock the screen
             DebugWriter.WriteDebug(DebugLevel.I, $"Docking screen with name: {dockName}");
@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.Docking.Dock
         {
             // Check to see if there is a dock
             if (dockInstance is null)
-                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCK", "Nitrocid.Extras.Docking"));
+                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCK"));
 
             // Now, dock the screen
             try
@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.Docking.Dock
                 KernelColorTools.LoadBackground();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.GetType().Name}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DOCKING_DOCKCRASHED", "Nitrocid.Extras.Docking") + $": {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DOCKING_DOCKCRASHED") + $": {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                 });

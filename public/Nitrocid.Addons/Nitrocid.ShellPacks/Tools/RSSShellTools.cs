@@ -51,7 +51,7 @@ namespace Nitrocid.ShellPacks.Tools
                     return (Feed.FeedTitle, Feed.FeedArticles[0].ArticleTitle);
                 if (!string.IsNullOrEmpty(Feed.FeedDescription))
                     return (Feed.FeedTitle, Feed.FeedDescription);
-                return (Feed.FeedTitle, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDNODESC", "Nitrocid.ShellPacks"));
+                return (Feed.FeedTitle, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDNODESC"));
             }
             catch (Exception ex)
             {

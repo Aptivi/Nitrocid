@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         public override void HelpHelper()
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS", "Nitrocid.Extras.UnitConv"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
                 TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);

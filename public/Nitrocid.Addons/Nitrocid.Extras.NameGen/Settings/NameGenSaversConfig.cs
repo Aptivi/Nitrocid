@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.NameGen.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("NameGenSaverSettings.json", ResourcesType.Misc, typeof(NameGenSaversConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.NameGen"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

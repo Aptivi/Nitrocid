@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 
             // Now, get the content and the author
             var quoteToken = JToken.Parse(quoteString);
-            string? content = (string?)quoteToken[0]?["content"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN", "Nitrocid.Extras.Amusements");
-            string? author = (string?)quoteToken[0]?["author"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN", "Nitrocid.Extras.Amusements");
+            string? content = (string?)quoteToken[0]?["content"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN");
+            string? author = (string?)quoteToken[0]?["author"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN");
             return (content, author);
         }
 

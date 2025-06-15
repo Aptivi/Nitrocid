@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Tools.PGP
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailGPGPromptStyle))
                 TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD", "Nitrocid.ShellPacks") + ": ", false, KernelColorType.Input, key.KeyId);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD") + ": ", false, KernelColorType.Input, key.KeyId);
             string Password = InputTools.ReadLineNoInput();
             return Password;
         }

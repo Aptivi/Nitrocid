@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
                     {
                         // Do the job!
                         var version = SemVer.Parse(dep.ModVersion) ??
-                            throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_DEPNOMODVER") + $": {dep.ModVersion}", "Nitrocid.Extras.Mods");
+                            throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_DEPNOMODVER") + $": {dep.ModVersion}");
                         DebugWriter.WriteDebug(DebugLevel.I, "Parsed version as {0}", vars: [version.ToString()]);
                         finalDeps.Add(dep);
                         DebugWriter.WriteDebug(DebugLevel.I, "Added");
@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Dependencies
 
             // Check for failed deps
             if (failedDeps.Count > 0)
-                throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_DEPSFAILED") + $"\n  - {string.Join("\n  - ", failedDeps)}", "Nitrocid.Extras.Mods");
+                throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_DEPSFAILED") + $"\n  - {string.Join("\n  - ", failedDeps)}");
         }
     }
 }

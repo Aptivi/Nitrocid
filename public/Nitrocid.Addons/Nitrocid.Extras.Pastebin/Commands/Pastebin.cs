@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
             string contents = parameters.ArgumentsList[0];
             if (string.IsNullOrWhiteSpace(contents))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT", "Nitrocid.Extras.Pastebin"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT"), KernelColorType.Error);
                 return 35;
             }
 
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
             }
             if (type != "raw" && type != "http" && type != "https")
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED", "Nitrocid.Extras.Pastebin"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED"), KernelColorType.Error);
                 return 36;
             }
 
@@ -96,12 +96,12 @@ namespace Nitrocid.Extras.Pastebin.Commands
 
                     // Decode the response
                     string response = Encoding.UTF8.GetString(buffer);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS", "Nitrocid.Extras.Pastebin"), KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
                     TextWriters.Write(response, KernelColorType.NeutralText);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE", "Nitrocid.Extras.Pastebin"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE"), KernelColorType.Error);
                     TextWriters.Write(ex.Message, KernelColorType.NeutralText);
                     return 37;
                 }
@@ -122,11 +122,11 @@ namespace Nitrocid.Extras.Pastebin.Commands
                 string reply = response.Content.ReadAsStringAsync().Result;
                 if (!response.IsSuccessStatusCode)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE", "Nitrocid.Extras.Pastebin") + $" [{(int)response.StatusCode}] {response.StatusCode}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE") + $" [{(int)response.StatusCode}] {response.StatusCode}", KernelColorType.Error);
                     TextWriters.Write(reply, KernelColorType.NeutralText);
                     return 37;
                 }
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS", "Nitrocid.Extras.Pastebin"), KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
                 TextWriters.Write(reply, KernelColorType.NeutralText);
             }
             return 0;

@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 // Parse the production date
                 if (!DateTimeOffset.TryParse(parameters.ArgumentsList[0], out var production))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID", "Nitrocid.Extras.Dates"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), KernelColorType.Error);
                     return 45;
                 }
 
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 {
                     if (!TimeSpan.TryParse(parameters.ArgumentsList[1], out expirySpan))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID", "Nitrocid.Extras.Dates"), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), KernelColorType.Error);
                         return 45;
                     }
                 }
@@ -64,17 +64,17 @@ namespace Nitrocid.Extras.Dates.Commands
                     expirySpan = expiryDate - production;
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID", "Nitrocid.Extras.Dates"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID"), KernelColorType.Error);
                     return 45;
                 }
 
                 // Make the expiry info instance to print info
                 var expiryInfo = new ProductExpiryInfo(production, expirySpan);
                 var productHealth = expiryInfo.GetProductHealth();
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATE", "Nitrocid.Extras.Dates"), $"{expiryInfo.ProductionDate}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATE", "Nitrocid.Extras.Dates"), $"{expiryInfo.ExpiryDate}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIME", "Nitrocid.Extras.Dates"), $"{expiryInfo.ExpirySpan}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH", "Nitrocid.Extras.Dates"), $"{productHealth}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATE"), $"{expiryInfo.ProductionDate}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATE"), $"{expiryInfo.ExpiryDate}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIME"), $"{expiryInfo.ExpirySpan}");
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH"), $"{productHealth}");
 
                 // Write the status
                 string status =
@@ -89,12 +89,12 @@ namespace Nitrocid.Extras.Dates.Commands
                     productHealth <= 25 ? KernelColorType.Error :
                     productHealth <= 50 ? KernelColorType.Warning : KernelColorType.Success;
                 TextWriterRaw.Write();
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS", "Nitrocid.Extras.Dates"), status, KernelColorType.ListEntry, statusColor);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS"), status, KernelColorType.ListEntry, statusColor);
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO", "Nitrocid.Extras.Dates") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO") + $": {ex.Message}", KernelColorType.Error);
                 return 45;
             }
         }

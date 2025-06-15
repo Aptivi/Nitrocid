@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Dates.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("DatesSettings.json", ResourcesType.Misc, typeof(DatesConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Dates"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }
