@@ -141,10 +141,10 @@ namespace Nitrocid.Kernel.Configuration
                     {
                         var Setting = keys[SettingIndex];
                         object? CurrentValue = GetValueFromEntry(Setting, configType);
-                        string KeyName = Setting.Name + $" [{CurrentValue}]";
+                        string KeyName = LanguageTools.GetLocalized((Setting.Name)) + $" [{CurrentValue}]";
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
-                            string desc = Setting.Description;
+                            string desc = LanguageTools.GetLocalized(Setting.Description);
                             InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
                             DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [KeyName, SectionIndex + 1, SettingIndex + 1]);
                             Results.Add(ici);

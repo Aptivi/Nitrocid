@@ -227,7 +227,6 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 var SectionToken = SettingsSection.Keys;
                 var SectionDescription = SettingsSection.Desc;
                 var SectionDisplayName = SettingsSection.DisplayAs ?? Section;
-                bool SectionTranslateName = SettingsSection.DisplayAs != null;
                 int MaxOptions = SectionToken.Length;
 
                 while (!SectionFinished)
@@ -254,8 +253,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         object? CurrentValue =
                             Setting.Masked ? "***" : ConfigTools.GetValueFromEntry(Setting, settingsType);
                         string choiceName = $"{SectionIndex + 1}";
-                        string choiceTitle = $"{Setting.Name} [{CurrentValue}]";
-                        string choiceDesc = Setting.Description;
+                        string choiceTitle = $"{LanguageTools.GetLocalized(Setting.Name)} [{CurrentValue}]";
+                        string choiceDesc = LanguageTools.GetLocalized(Setting.Description);
                         var ici = new InputChoiceInfo(
                             choiceName,
                             choiceTitle,
@@ -272,7 +271,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     };
 
                     // Prompt user and check for input
-                    string finalSection = SectionTranslateName ? LanguageTools.GetLocalized(SectionDisplayName) : SectionDisplayName;
+                    string finalSection = LanguageTools.GetLocalized(SectionDisplayName);
                     int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, LanguageTools.GetLocalized(SectionDescription), Notes),
                         [.. sections], [.. altSections]);
 
