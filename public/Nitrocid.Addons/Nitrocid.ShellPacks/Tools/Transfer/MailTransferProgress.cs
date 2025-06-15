@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailProgressStyle))
                     TextWriters.WriteWhere(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailProgressStyle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
                 else
-                    TextWriters.WriteWhere("{0}/{1} " + LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS", "Nitrocid.ShellPacks") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
+                    TextWriters.WriteWhere("{0}/{1} " + LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
             }
         }
 
@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailProgressStyleSingle))
                     TextWriters.WriteWhere(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailProgressStyleSingle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
                 else
-                    TextWriters.WriteWhere("{0} " + LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS", "Nitrocid.ShellPacks") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
+                    TextWriters.WriteWhere("{0} " + LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
             }
         }
 

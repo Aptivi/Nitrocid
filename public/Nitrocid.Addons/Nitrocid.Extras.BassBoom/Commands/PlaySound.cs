@@ -50,17 +50,17 @@ namespace Nitrocid.Extras.BassBoom.Commands
             path = FilesystemTools.NeutralizePath(path);
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOSOUNDFILE", "Nitrocid.Extras.BassBoom"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOSOUNDFILE"), KernelColorType.Error);
                 return 29;
             }
             try
             {
                 FileTools.OpenFile(media, path);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDSOUNDFILE", "Nitrocid.Extras.BassBoom"), KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDSOUNDFILE"), KernelColorType.Success);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENSOUNDFILE", "Nitrocid.Extras.BassBoom") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENSOUNDFILE") + $" {ex.Message}", KernelColorType.Error);
                 return ex.HResult;
             }
             if (FileTools.IsOpened(media))
@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     PlaybackTools.PlayAsync(media);
                     if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(media) == PlaybackState.Playing, 15000))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TIMEOUT", "Nitrocid.Extras.BassBoom"), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TIMEOUT"), KernelColorType.Error);
                         return 30;
                     }
 
@@ -87,22 +87,22 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     string musicArtist =
                         !string.IsNullOrEmpty(managedV2.Artist) ? managedV2.Artist :
                         !string.IsNullOrEmpty(managedV1.Artist) ? managedV1.Artist :
-                        LanguageTools.GetLocalized("NKS_BASSBOOM_UNKNOWNARTIST", "Nitrocid.Extras.BassBoom");
+                        LanguageTools.GetLocalized("NKS_BASSBOOM_UNKNOWNARTIST");
                     string musicGenre =
                         !string.IsNullOrEmpty(managedV2.Genre) ? managedV2.Genre :
                         managedV1.GenreIndex >= 0 ? $"{managedV1.Genre} [{managedV1.GenreIndex}]" :
-                        LanguageTools.GetLocalized("NKS_BASSBOOM_UNKNOWNGENRE", "Nitrocid.Extras.BassBoom");
+                        LanguageTools.GetLocalized("NKS_BASSBOOM_UNKNOWNGENRE");
                     var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(media, total);
                     string duration = totalSpan.ToString();
 
                     // Write the entries
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_NAME", "Nitrocid.Extras.BassBoom"), musicName);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_ARTIST", "Nitrocid.Extras.BassBoom"), musicArtist);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_GENRE", "Nitrocid.Extras.BassBoom"), musicGenre);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_DURATION", "Nitrocid.Extras.BassBoom"), duration);
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_NAME"), musicName);
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_ARTIST"), musicArtist);
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_GENRE"), musicGenre);
+                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_DURATION"), duration);
 
                     // Wait until the song stops or the user bails
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING", "Nitrocid.Extras.BassBoom"), KernelColorType.Tip);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING"), KernelColorType.Tip);
                     while (PlaybackTools.GetState(media) == PlaybackState.Playing)
                     {
                         if (ConsoleWrapper.KeyAvailable)
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTPLAY", "Nitrocid.Extras.BassBoom") + $" {ex.Message}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTPLAY") + $" {ex.Message}", KernelColorType.Error);
                     return ex.HResult;
                 }
                 finally

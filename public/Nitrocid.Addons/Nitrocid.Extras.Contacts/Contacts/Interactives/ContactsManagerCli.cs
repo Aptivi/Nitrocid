@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             // Get some info from the contact
             Card selectedContact = item;
             if (selectedContact is null)
-                return LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACT", "Nitrocid.Extras.Contacts");
+                return LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACT");
 
             // Generate the rendered text
             string finalRenderedContactPicture =
@@ -123,14 +123,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS", "Nitrocid.Extras.Contacts") + ex.Message, Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, Settings.InfoBoxSettings);
             }
         }
 
         internal void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PATHVCFPROMPT", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PATHVCFPROMPT"), Settings.InfoBoxSettings);
             if (FilesystemTools.FileExists(path))
             {
                 try
@@ -140,17 +140,17 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED"), Settings.InfoBoxSettings);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND"), Settings.InfoBoxSettings);
         }
 
         internal void ImportContactFromMeCard()
         {
             // Now, render the search box
-            string meCard = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDPROMPT", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+            string meCard = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDPROMPT"), Settings.InfoBoxSettings);
             if (!string.IsNullOrEmpty(meCard))
             {
                 try
@@ -160,11 +160,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDINVALID", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDINVALID"), Settings.InfoBoxSettings);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY"), Settings.InfoBoxSettings);
         }
 
         internal void ShowContactInfo(int index)
@@ -228,17 +228,17 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         internal void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_SEARCHPROMPT", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+            string exp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_SEARCHPROMPT"), Settings.InfoBoxSettings);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTSSEARCH", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTSSEARCH"), Settings.InfoBoxSettings);
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_INVALIDREGEX", "Nitrocid.Extras.Contacts"), Settings.InfoBoxSettings);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_INVALIDREGEX"), Settings.InfoBoxSettings);
         }
 
         internal void SearchNext()
@@ -281,9 +281,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasName = card.GetPartsArray<NameInfo>().Length != 0;
 
             if (hasName)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNAME", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.FullName)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNAME") + $": {card.GetString(CardStringsEnum.FullName)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -304,7 +304,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             if (hasAddress)
             {
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESS", "Nitrocid.Extras.Contacts") + ": ");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESS") + ": ");
 
                 var address = card.GetPartsArray<AddressInfo>()[0];
                 List<string> fullElements = [];
@@ -332,7 +332,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(string.Join(", ", fullElements));
             }
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -352,9 +352,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasMail = card.GetString(CardStringsEnum.Mails).Length != 0;
 
             if (hasMail)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAIL", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Mails)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAIL") + $": {card.GetString(CardStringsEnum.Mails)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOMAIL", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOMAIL"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -375,7 +375,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             if (hasOrganization)
             {
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORG", "Nitrocid.Extras.Contacts") + ": ");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORG") + ": ");
 
                 var org = card.GetPartsArray<OrganizationInfo>()[0];
                 List<string> fullElements = [];
@@ -391,7 +391,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(string.Join(", ", fullElements));
             }
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOORG", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOORG"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -411,9 +411,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasTelephone = card.GetString(CardStringsEnum.Telephones).Length != 0;
 
             if (hasTelephone)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PHONE", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Telephones)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PHONE") + $": {card.GetString(CardStringsEnum.Telephones)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOPHONE", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOPHONE"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -433,9 +433,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasURL = card.GetString(CardStringsEnum.Url).Length != 0;
 
             if (hasURL)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URL", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Url)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URL") + $": {card.GetString(CardStringsEnum.Url)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOURL", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOURL"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -455,9 +455,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasGeo = card.GetString(CardStringsEnum.Geo).Length != 0;
 
             if (hasGeo)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEO", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Geo)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEO") + $": {card.GetString(CardStringsEnum.Geo)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOGEO", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOGEO"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -477,9 +477,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasImpp = card.GetString(CardStringsEnum.Impps).Length != 0;
 
             if (hasImpp)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPP", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Impps)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPP") + $": {card.GetString(CardStringsEnum.Impps)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOIMPP", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOIMPP"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -499,9 +499,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasNickname = card.GetString(CardStringsEnum.Nicknames).Length != 0;
 
             if (hasNickname)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICK", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Nicknames)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICK") + $": {card.GetString(CardStringsEnum.Nicknames)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NONICK", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NONICK"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -521,9 +521,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasRoles = card.GetString(CardStringsEnum.Roles).Length != 0;
 
             if (hasRoles)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLE", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Roles)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLE") + $": {card.GetString(CardStringsEnum.Roles)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOROLE", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOROLE"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -543,9 +543,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasTitles = card.GetString(CardStringsEnum.Titles).Length != 0;
 
             if (hasTitles)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLE", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Titles)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLE") + $": {card.GetString(CardStringsEnum.Titles)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTITLE", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTITLE"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -565,9 +565,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             bool hasNotes = card.GetString(CardStringsEnum.Notes).Length > 0;
 
             if (hasNotes)
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTES", "Nitrocid.Extras.Contacts") + $": {card.GetString(CardStringsEnum.Notes)[0].Value}");
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTES") + $": {card.GetString(CardStringsEnum.Notes)[0].Value}");
             else
-                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NONOTES", "Nitrocid.Extras.Contacts"));
+                finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NONOTES"));
 
             // Now, return the value
             return finalInfoRendered.ToString();
@@ -603,7 +603,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return;
 
             // Ask for the new name
-            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT", "Nitrocid.Extras.Contacts") + $": {GetContactNameFinal(card)}", Settings.InfoBoxSettings).Trim();
+            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT") + $": {GetContactNameFinal(card)}", Settings.InfoBoxSettings).Trim();
             if (string.IsNullOrWhiteSpace(newName))
                 newName = "Unnamed contact";
 

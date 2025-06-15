@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, KernelColorType.Error);
                 return 15;
             }
 
@@ -49,7 +49,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             string message = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
             var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
             var tag = GitShellCommon.Repository.ApplyTag(tagName, author, message);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_MAKETAG_CREATED", "Nitrocid.ShellPacks"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_MAKETAG_CREATED"));
             TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
             TextWriters.Write($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
             return 0;

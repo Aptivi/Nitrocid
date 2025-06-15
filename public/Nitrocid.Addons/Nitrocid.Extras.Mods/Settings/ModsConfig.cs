@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Mods.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("ModsSettings.json", ResourcesType.Misc, typeof(ModsConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Mods"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

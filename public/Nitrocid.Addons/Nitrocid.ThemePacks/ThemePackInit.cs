@@ -46,7 +46,7 @@ namespace Nitrocid.ThemePacks
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA", "Nitrocid.ThemePacks")));
+                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
                 var themeToken = JToken.Parse(data);
                 bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);

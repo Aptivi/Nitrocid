@@ -54,11 +54,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
 
             // Render them to the second pane
             return
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODNAME", "Nitrocid.Extras.Mods"), selectedMod.ModName) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILENAME", "Nitrocid.Extras.Mods"), selectedMod.ModFileName) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILEPATH", "Nitrocid.Extras.Mods"), selectedMod.ModFilePath) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODVERSION", "Nitrocid.Extras.Mods"), selectedMod.ModVersion) + CharManager.NewLine + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODENTRYPOINT", "Nitrocid.Extras.Mods"), selectedMod.ModScript.GetType().ToString());
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODNAME"), selectedMod.ModName) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILENAME"), selectedMod.ModFileName) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILEPATH"), selectedMod.ModFilePath) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODVERSION"), selectedMod.ModVersion) + CharManager.NewLine + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODENTRYPOINT"), selectedMod.ModScript.GetType().ToString());
             ;
         }
 
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODPROMPT", "Nitrocid.Extras.Mods"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODPROMPT"));
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODSTARTFAILED", "Nitrocid.Extras.Mods") + $" {path}: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODSTARTFAILED") + $" {path}: {ex.Message}");
             }
         }
 
@@ -142,7 +142,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODINSTALLPROMPT", "Nitrocid.Extras.Mods"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODINSTALLPROMPT"));
                 }
                 else
                 {
@@ -155,7 +155,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODINSTALLFAILED", "Nitrocid.Extras.Mods") + $" {path}: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODINSTALLFAILED") + $" {path}: {ex.Message}");
             }
         }
 

@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Contacts.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("ContactsSettings.json", ResourcesType.Misc, typeof(ContactsConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Contacts"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

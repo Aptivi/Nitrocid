@@ -71,8 +71,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 }
                 else if (string.IsNullOrEmpty(APIKey))
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY", "Nitrocid.Extras.Forecast"));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT", "Nitrocid.Extras.Forecast") + " ", false, KernelColorType.Input);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY"));
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, KernelColorType.Input);
                     APIKey = InputTools.ReadLineNoInput();
                     Forecast.ApiKeyOwm = APIKey;
                 }
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_CITYLISTLINK", "Nitrocid.Extras.Forecast"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_CITYLISTLINK"));
             TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 

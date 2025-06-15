@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Calendar.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("CalendarSettings.json", ResourcesType.Misc, typeof(CalendarConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Calendar"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

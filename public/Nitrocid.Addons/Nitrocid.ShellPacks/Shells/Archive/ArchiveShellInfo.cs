@@ -39,70 +39,70 @@ namespace Nitrocid.ShellPacks.Shells.Archive
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC", "Nitrocid.ShellPacks"), new CDirCommand()),
+            new CommandInfo("cdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC"), new CDirCommand()),
 
-            new CommandInfo("chdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("chdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC")
                         })
                     ])
                 ], new ChDirCommand()),
 
-            new CommandInfo("chadir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("chadir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "archivedirectory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC")
                         })
                     ])
                 ], new ChADirCommand()),
 
-            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "entry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("absolute", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC", "Nitrocid.ShellPacks"))
+                        new SwitchInfo("absolute", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC"))
                     ])
                 ], new GetCommand()),
 
-            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC")
                         })
                     ])
                 ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("pack", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("pack", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "localfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC")
                         })
                     ])
                 ], new PackCommand()),

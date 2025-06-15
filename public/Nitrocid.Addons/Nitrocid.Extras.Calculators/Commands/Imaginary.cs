@@ -41,37 +41,37 @@ namespace Nitrocid.Extras.Calculators.Commands
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(parameters.ArgumentsList[0], out double Real))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID", "Nitrocid.Extras.Calculators"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID"), true, KernelColorType.Error);
                 return 2;
             }
             if (!double.TryParse(parameters.ArgumentsList[1], out double Imaginary))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID", "Nitrocid.Extras.Calculators"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID"), true, KernelColorType.Error);
                 return 2;
             }
 
             // Print the Z formula, first of all.
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_FORMULA", "Nitrocid.Extras.Calculators") + " Z = {0} + {1}i", Real, Imaginary);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_FORMULA") + " Z = {0} + {1}i", Real, Imaginary);
 
             // Process the radius
             double Radius = Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_RADIUS", "Nitrocid.Extras.Calculators") + " {0}", Radius);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_RADIUS") + " {0}", Radius);
 
             // Determine the cosine (Real to Radius) and the sine (Imaginary to Radius)
             double RealRadius = Math.Cos(Real / Radius);
             double ImaginaryRadius = Math.Sin(Imaginary / Radius);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALTORAD", "Nitrocid.Extras.Calculators") + " {0} rad", RealRadius);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGTORAD", "Nitrocid.Extras.Calculators") + " {0} rad", ImaginaryRadius);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALTORAD") + " {0} rad", RealRadius);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGTORAD") + " {0} rad", ImaginaryRadius);
 
             // Try to find out the angle from the given cos/sin values
             double AngleCos = Math.Acos(RealRadius);
             double AngleSin = Math.Asin(ImaginaryRadius);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_ANGLE", "Nitrocid.Extras.Calculators") + " {0} rad, {1} rad", AngleCos, AngleSin);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_ANGLE") + " {0} rad, {1} rad", AngleCos, AngleSin);
 
             // Now, write the result in both the exponentional format (Z = r * (e)^{angle}i)
             //                           and the triangular format    (Z = r (cos {angle} + i sin {angle})
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL", "Nitrocid.Extras.Calculators") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR", "Nitrocid.Extras.Calculators") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
             return 0;
         }
     }

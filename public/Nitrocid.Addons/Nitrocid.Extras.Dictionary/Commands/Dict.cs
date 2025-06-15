@@ -45,43 +45,43 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 // First, print the license out
                 if (Word.LicenseInfo is not null)
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_LICENSEINFO", "Nitrocid.Extras.Dictionary"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    TextWriterColor.Write("dictionaryapi.dev " + LanguageTools.GetLocalized("NKS_DICTIONARY_APILICENSE") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}", "Nitrocid.Extras.Dictionary");
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_LICENSEINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    TextWriterColor.Write("dictionaryapi.dev " + LanguageTools.GetLocalized("NKS_DICTIONARY_APILICENSE") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
                 }
 
                 // Now, we can write the word information
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_WORDINFO", "Nitrocid.Extras.Dictionary") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_WORD", "Nitrocid.Extras.Dictionary"), false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_WORDINFO") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_WORD"), false, KernelColorType.ListEntry);
                 TextWriters.Write($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_MEAININGS", "Nitrocid.Extras.Dictionary") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_MEAININGS") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings ?? [])
                 {
                     // Base part of speech
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_PARTOFSPEECH", "Nitrocid.Extras.Dictionary"), false, KernelColorType.ListEntry);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_PARTOFSPEECH"), false, KernelColorType.ListEntry);
                     TextWriters.Write($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
 
                     // Get the definitions
                     foreach (DictionaryWord.DefinitionType DefinitionBase in MeaningBase.Definitions ?? [])
                     {
                         // Write definition and, if applicable, example
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_DEF", "Nitrocid.Extras.Dictionary"), false, KernelColorType.ListEntry);
+                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_DEF"), false, KernelColorType.ListEntry);
                         TextWriters.Write($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_EXAMPLE", "Nitrocid.Extras.Dictionary"), false, KernelColorType.ListEntry);
+                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_EXAMPLE"), false, KernelColorType.ListEntry);
                         TextWriters.Write($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
                         if (DefinitionBase.Synonyms is not null && DefinitionBase.Synonyms.Length != 0)
                         {
-                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS", "Nitrocid.Extras.Dictionary"), true, KernelColorType.ListEntry);
+                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, KernelColorType.ListEntry);
                             TextWriters.WriteList(DefinitionBase.Synonyms);
                         }
 
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms is not null && DefinitionBase.Antonyms.Length != 0)
                         {
-                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS", "Nitrocid.Extras.Dictionary"), true, KernelColorType.ListEntry);
+                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, KernelColorType.ListEntry);
                             TextWriters.WriteList(DefinitionBase.Antonyms);
                         }
                     }
@@ -89,20 +89,20 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     // Now, write the base synonyms (usually blank)
                     if (MeaningBase.Synonyms is not null && MeaningBase.Synonyms.Length != 0)
                     {
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS", "Nitrocid.Extras.Dictionary"), true, KernelColorType.ListEntry);
+                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, KernelColorType.ListEntry);
                         TextWriters.WriteList(MeaningBase.Synonyms);
                     }
 
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms is not null && MeaningBase.Antonyms.Length != 0)
                     {
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS", "Nitrocid.Extras.Dictionary"), true, KernelColorType.ListEntry);
+                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, KernelColorType.ListEntry);
                         TextWriters.WriteList(MeaningBase.Antonyms);
                     }
                 }
 
                 // Sources...
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_SOURCES", "Nitrocid.Extras.Dictionary") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_SOURCES") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 TextWriters.WriteList(Word.SourceUrls ?? []);
             }
             return 0;

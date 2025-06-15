@@ -38,17 +38,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE", "Nitrocid.ShellPacks"), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE"), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
             if (SFTPTransfer.SFTPGetFile(parameters.ArgumentsList[0]))
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE", "Nitrocid.ShellPacks"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SFTPFilesystem);
             }
         }

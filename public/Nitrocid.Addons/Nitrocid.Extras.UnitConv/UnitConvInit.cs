@@ -37,43 +37,43 @@ namespace Nitrocid.Extras.UnitConv
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("listunits", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_LISTUNITS_DESC", "Nitrocid.Extras.UnitConv"),
+            new CommandInfo("listunits", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_LISTUNITS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC", "Nitrocid.Extras.UnitConv")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                         }),
                     ])
                 ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("unitconv", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC", "Nitrocid.Extras.UnitConv"),
+            new CommandInfo("unitconv", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC", "Nitrocid.Extras.UnitConv")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                         }),
                         new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC", "Nitrocid.Extras.UnitConv")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC")
                         }),
                         new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC", "Nitrocid.Extras.UnitConv")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC")
                         }),
                         new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC", "Nitrocid.Extras.UnitConv")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC", "Nitrocid.Extras.UnitConv"), new SwitchOptions()
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 4,
                             AcceptsValues = false

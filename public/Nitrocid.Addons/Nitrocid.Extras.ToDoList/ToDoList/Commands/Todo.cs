@@ -56,13 +56,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED", "Nitrocid.Extras.ToDoList") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED", "Nitrocid.Extras.ToDoList"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -80,13 +80,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED", "Nitrocid.Extras.ToDoList") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED", "Nitrocid.Extras.ToDoList"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -104,13 +104,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED", "Nitrocid.Extras.ToDoList") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED", "Nitrocid.Extras.ToDoList"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -128,13 +128,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED", "Nitrocid.Extras.ToDoList") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED", "Nitrocid.Extras.ToDoList"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -164,7 +164,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 default:
                     {
                         // Invalid action.
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_INVALIDACTION", "Nitrocid.Extras.ToDoList"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_TODO_INVALIDACTION"), true, KernelColorType.Error);
                         return 5;
                     }
             }

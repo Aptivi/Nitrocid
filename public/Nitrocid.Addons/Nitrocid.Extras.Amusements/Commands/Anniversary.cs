@@ -33,46 +33,46 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var annivPres = new Slideshow(
-                LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE", "Nitrocid.Extras.Amusements"),
+                LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE"),
                 [
                     new PresentationPage(
-                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE", "Nitrocid.Extras.Amusements"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1", "Nitrocid.Extras.Amusements") + " " +
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2", "Nitrocid.Extras.Amusements") + " " +
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3", "Nitrocid.Extras.Amusements")
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3")
                                 ]
                             }
                         ]
                     ),
                     new PresentationPage(
-                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE", "Nitrocid.Extras.Amusements"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1", "Nitrocid.Extras.Amusements") + " " +
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2", "Nitrocid.Extras.Amusements")
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2")
                                 ]
                             }
                         ]
                     ),
                     new PresentationPage(
-                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE", "Nitrocid.Extras.Amusements"),
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE"),
                         [
                             new TextElement()
                             {
                                 Arguments =
                                 [
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1", "Nitrocid.Extras.Amusements") + " " +
-                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2", "Nitrocid.Extras.Amusements") + " \n\n" +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1") + " " +
+                                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2") + " \n\n" +
                                     new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
-                                    "< " + LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3", "Nitrocid.Extras.Amusements") + " >\n\n" +
+                                    "< " + LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3") + " >\n\n" +
                                     "-- Aptivi"
                                 ]
                             }

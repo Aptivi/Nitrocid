@@ -42,17 +42,17 @@ namespace Nitrocid.Extras.Stocks.Commands
             string apiKey = StocksInit.StocksConfig.StocksApiKey;
             while (string.IsNullOrWhiteSpace(apiKey))
             {
-                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ", "Nitrocid.Extras.Stocks");
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ");
                 if (string.IsNullOrWhiteSpace(apiKey))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), KernelColorType.Error);
                 if (apiKey == "demo")
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), KernelColorType.Error);
                     apiKey = "";
                 }
                 if (apiKey.Length != 16)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH", "Nitrocid.Extras.Stocks"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), KernelColorType.Error);
                     apiKey = "";
                 }
             }
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.Stocks.Commands
             var stocksIntervalToken = stocksToken["Time Series (60min)"];
             if (stocksIntervalToken is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED", "Nitrocid.Extras.Stocks") + ":", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED") + ":", KernelColorType.Error);
                 TextWriters.Write(stocksJson, KernelColorType.NeutralText);
                 return 40;
             }

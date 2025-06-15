@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             var Quantities = Quantity.Infos.Where(x => x.Name == parameters.ArgumentsList[0]);
             if (Quantities.Any())
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS", "Nitrocid.Extras.UnitConv"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
                     TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
@@ -58,14 +58,14 @@ namespace Nitrocid.Extras.UnitConv.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE", "Nitrocid.Extras.UnitConv") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPES", "Nitrocid.Extras.UnitConv"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPES"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
                 TextWriters.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
         }

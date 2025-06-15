@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Notes.Management
         {
             // Check to see if the index is valid
             if (noteIndex < 0 || noteIndex >= notes.Count)
-                throw new KernelException(KernelExceptionType.NoteManagement, LanguageTools.GetLocalized("NKS_NOTES_EXCEPTION_NOTENOTFOUND") + $" {noteIndex}.", "Nitrocid.Extras.Notes");
+                throw new KernelException(KernelExceptionType.NoteManagement, LanguageTools.GetLocalized("NKS_NOTES_EXCEPTION_NOTENOTFOUND") + $" {noteIndex}.");
 
             // Now, remove the target note.
             notes.RemoveAt(noteIndex);
@@ -112,12 +112,12 @@ namespace Nitrocid.Extras.Notes.Management
         internal static void OpenNotesTui()
         {
             var tui = new NoteViewerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_ADD", "Nitrocid.Extras.Notes"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_EDIT", "Nitrocid.Extras.Notes"), ConsoleKey.F2, (_, noteIdx, _, _) => tui.Edit(noteIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_REMOVE", "Nitrocid.Extras.Notes"), ConsoleKey.F3, (_, noteIdx, _, _) => tui.Remove(noteIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_REMOVEALL", "Nitrocid.Extras.Notes"), ConsoleKey.F4, (_, _, _, _) => tui.RemoveAll()));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_LOAD", "Nitrocid.Extras.Notes"), ConsoleKey.F5, (_, _, _, _) => tui.Load()));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_SAVE", "Nitrocid.Extras.Notes"), ConsoleKey.F6, (_, _, _, _) => tui.Save()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_ADD"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_EDIT"), ConsoleKey.F2, (_, noteIdx, _, _) => tui.Edit(noteIdx)));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_REMOVE"), ConsoleKey.F3, (_, noteIdx, _, _) => tui.Remove(noteIdx)));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_REMOVEALL"), ConsoleKey.F4, (_, _, _, _) => tui.RemoveAll()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_LOAD"), ConsoleKey.F5, (_, _, _, _) => tui.Load()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_NOTES_TUI_KEYBINDING_SAVE"), ConsoleKey.F6, (_, _, _, _) => tui.Save()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

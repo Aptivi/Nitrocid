@@ -33,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING", "Nitrocid.ShellPacks"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             try
             {

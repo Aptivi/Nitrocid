@@ -34,41 +34,41 @@ namespace Nitrocid.Extras.Pastebin
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("pastebin", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC", "Nitrocid.Extras.Pastebin"),
+            new CommandInfo("pastebin", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC", "Nitrocid.Extras.Pastebin")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC")
                         }),
                         new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC", "Nitrocid.Extras.Pastebin")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("provider", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", "Nitrocid.Extras.Pastebin"), new()
+                        new SwitchInfo("provider", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", "Nitrocid.Extras.Pastebin"), new()
+                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postpage", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", "Nitrocid.Extras.Pastebin"), new()
+                        new SwitchInfo("postpage", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postformat", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", "Nitrocid.Extras.Pastebin"), new()
+                        new SwitchInfo("postformat", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postfield", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", "Nitrocid.Extras.Pastebin"), new()
+                        new SwitchInfo("postfield", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,

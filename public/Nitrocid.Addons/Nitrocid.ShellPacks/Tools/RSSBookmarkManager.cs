@@ -76,10 +76,10 @@ namespace Nitrocid.ShellPacks.Tools
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL", "Nitrocid.ShellPacks") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL", "Nitrocid.ShellPacks") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                 }
             }
             else
@@ -120,7 +120,7 @@ namespace Nitrocid.ShellPacks.Tools
                         SaveBookmarks(RssBookmarks);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS", "Nitrocid.ShellPacks"));
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS"));
                 }
                 catch (Exception ex)
                 {
@@ -129,10 +129,10 @@ namespace Nitrocid.ShellPacks.Tools
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL", "Nitrocid.ShellPacks") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL", "Nitrocid.ShellPacks") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                 }
             }
             else

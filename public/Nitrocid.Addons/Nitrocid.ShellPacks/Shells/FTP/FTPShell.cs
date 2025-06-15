@@ -55,7 +55,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             // Parse shell arguments
             NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
             FtpClient? clientFTP = (FtpClient?)ftpConnection.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
             FTPShellCommon.clientConnection = ftpConnection;
@@ -104,7 +104,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR", "Nitrocid.ShellPacks") + " {0}", ex, ex.Message);
+                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR") + " {0}", ex, ex.Message);
                 }
 
                 // Check if the shell is going to exit

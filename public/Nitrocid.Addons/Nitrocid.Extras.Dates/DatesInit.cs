@@ -38,17 +38,17 @@ namespace Nitrocid.Extras.Dates
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("gettimeinfo", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC", "Nitrocid.Extras.Dates"),
+            new CommandInfo("gettimeinfo", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC", "Nitrocid.Extras.Dates")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("now", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", "Nitrocid.Extras.Dates"), new SwitchOptions()
+                        new SwitchInfo("now", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
@@ -56,32 +56,32 @@ namespace Nitrocid.Extras.Dates
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
             
-            new CommandInfo("expiry", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC", "Nitrocid.Extras.Dates"),
+            new CommandInfo("expiry", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC", "Nitrocid.Extras.Dates")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC")
                         }),
                         new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC", "Nitrocid.Extras.Dates")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("implicit", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", "Nitrocid.Extras.Dates"), new SwitchOptions()
+                        new SwitchInfo("implicit", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExpiryCommand()),
 
-            new CommandInfo("stopwatch", LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC", "Nitrocid.Extras.Dates"), new StopwatchCommand()),
+            new CommandInfo("stopwatch", LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC"), new StopwatchCommand()),
 
-            new CommandInfo("timer", LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC", "Nitrocid.Extras.Dates"), new TimerCommand()),
+            new CommandInfo("timer", LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC"), new TimerCommand()),
 
-            new CommandInfo("pomodoro", LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC", "Nitrocid.Extras.Dates"), new PomodoroCommand()),
+            new CommandInfo("pomodoro", LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC"), new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>

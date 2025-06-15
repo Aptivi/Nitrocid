@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (string.Join("", chars) == RandomWord)
                             {
                                 RenderBoxes(RandomWord, maxGuesses, currentTries);
-                                TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_WORDLE_WIN", "Nitrocid.Extras.Amusements"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green);
+                                TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_WORDLE_WIN"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green);
                                 Thread.Sleep(3000);
                                 done = true;
                                 break;
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (currentGuessTry > maxGuesses)
                             {
                                 RenderBoxes(RandomWord, maxGuesses, currentTries);
-                                TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER", "Nitrocid.Extras.Amusements"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                                TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                                 Thread.Sleep(3000);
                                 done = true;
                             }

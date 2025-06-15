@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Stocks.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("StocksSettings.json", ResourcesType.Misc, typeof(StocksConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.Stocks"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

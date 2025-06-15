@@ -72,7 +72,7 @@ namespace Nitrocid.ShellPacks.Tools
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailUserPromptStyle))
                 TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailUserPromptStyle), false, KernelColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT", "Nitrocid.ShellPacks"), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, KernelColorType.Input);
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = InputTools.ReadLine();
@@ -94,7 +94,7 @@ namespace Nitrocid.ShellPacks.Tools
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT", "Nitrocid.ShellPacks"), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, KernelColorType.Input);
             }
             Authentication.Password = InputTools.ReadLineNoInput();
 
@@ -120,7 +120,7 @@ namespace Nitrocid.ShellPacks.Tools
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
                 TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, KernelColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT", "Nitrocid.ShellPacks"), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, KernelColorType.Input);
             IMAP_Address = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
 
@@ -128,7 +128,7 @@ namespace Nitrocid.ShellPacks.Tools
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailSMTPPromptStyle))
                 TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, KernelColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT", "Nitrocid.ShellPacks"), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, KernelColorType.Input);
             string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
@@ -182,7 +182,7 @@ namespace Nitrocid.ShellPacks.Tools
                         if (ImapServers is not null && ImapServers.Any())
                         {
                             var ImapServer = ImapServers.ElementAtOrDefault(0) ??
-                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP", "Nitrocid.ShellPacks"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP"));
                             ReturnedMailAddress = ImapServer.Hostname;
                             ReturnedMailPort = ImapServer.Port;
                         }
@@ -192,7 +192,7 @@ namespace Nitrocid.ShellPacks.Tools
                 case ServerType.SMTP:
                     {
                         var SmtpServer = DynamicConfiguration.EmailProvider?.OutgoingServer ??
-                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP", "Nitrocid.ShellPacks"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP"));
                         ReturnedMailAddress = SmtpServer.Hostname;
                         ReturnedMailPort = SmtpServer.Port;
                         break;
@@ -226,18 +226,18 @@ namespace Nitrocid.ShellPacks.Tools
                 CryptographyContext.Register(typeof(PGPContext));
 
                 // IMAP Connection
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING", "Nitrocid.ShellPacks"), Address);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
                 IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
 
                 // SMTP Connection
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING", "Nitrocid.ShellPacks"), SmtpAddress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), SmtpAddress);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", vars: [SmtpAddress, SmtpPort]);
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
 
                 // IMAP Authentication
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING", "Nitrocid.ShellPacks"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [Authentication.UserName, Address]);
                 IMAP_Client.Authenticate(Authentication);
 
@@ -253,7 +253,7 @@ namespace Nitrocid.ShellPacks.Tools
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED", "Nitrocid.ShellPacks"), true, KernelColorType.Error, Address, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED"), true, KernelColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);

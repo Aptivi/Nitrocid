@@ -126,7 +126,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     CsiSequences.GenerateCsiCursorPosition(1, 1) +
                     ColorTools.RenderRevertBackground() +
                     ColorTools.RenderSetConsoleColor(FloorColor) +
-                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE", "Nitrocid.Extras.Amusements") +
+                    LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE") +
                     $": {SnakeLength - 1}"
                 );
 

@@ -60,16 +60,16 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
                 var tui = new WeatherCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD", "Nitrocid.Extras.Forecast"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
-                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL", "Nitrocid.Extras.Forecast"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.AddManually(), true));
-                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE", "Nitrocid.Extras.Forecast"), ConsoleKey.F2, (_, idx, _, _) => tui.Remove(idx)));
-                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL", "Nitrocid.Extras.Forecast"), ConsoleKey.F3, (_, _, _, _) => tui.RemoveAll()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.AddManually(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE"), ConsoleKey.F2, (_, idx, _, _) => tui.Remove(idx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL"), ConsoleKey.F3, (_, _, _, _) => tui.RemoveAll()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return 0;
             }
             if (parameters.ArgumentsList.Length <= 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT", "Nitrocid.Extras.Forecast"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), KernelColorType.Error);
                 return 38;
             }
             string APIKey = Forecast.ApiKey;
@@ -79,8 +79,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             }
             else if (string.IsNullOrEmpty(APIKey))
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY", "Nitrocid.Extras.Forecast"));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT", "Nitrocid.Extras.Forecast") + " ", false, KernelColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, KernelColorType.Input);
                 APIKey = InputTools.ReadLineNoInput();
                 Forecast.ApiKey = APIKey;
             }

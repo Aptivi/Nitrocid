@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             if (!ReminderNotified)
             {
-                var ReminderNotification = new Notification(ReminderTitle, LanguageTools.GetLocalized("NKS_CALENDAR_REMINDER_NOTIFICATION", "Nitrocid.Extras.Calendar"), ReminderImportance, NotificationType.Normal);
+                var ReminderNotification = new Notification(ReminderTitle, LanguageTools.GetLocalized("NKS_CALENDAR_REMINDER_NOTIFICATION"), ReminderImportance, NotificationType.Normal);
                 NotificationManager.NotifySend(ReminderNotification);
                 ReminderNotified = true;
             }

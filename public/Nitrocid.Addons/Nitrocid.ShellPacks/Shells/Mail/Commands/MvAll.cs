@@ -39,12 +39,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
         {
             if (MailManager.MailMoveAllBySender(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_SUCCESS", "Nitrocid.ShellPacks"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_SUCCESS"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_FAILURE", "Nitrocid.ShellPacks"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_FAILURE"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }

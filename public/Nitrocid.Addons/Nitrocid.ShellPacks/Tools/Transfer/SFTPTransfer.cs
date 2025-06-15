@@ -52,7 +52,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);
@@ -94,7 +94,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreUpload, File);
@@ -126,7 +126,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             try
             {
                 var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
+                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);

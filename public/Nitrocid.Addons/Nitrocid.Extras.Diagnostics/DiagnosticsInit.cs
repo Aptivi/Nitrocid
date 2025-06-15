@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.Diagnostics
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("threadsbt", LanguageTools.GetLocalized("NKS_DIAG_COMMAND_THREADSBT_DESC", "Nitrocid.Extras.Diagnostics"), new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("threadsbt", LanguageTools.GetLocalized("NKS_DIAG_COMMAND_THREADSBT_DESC"), new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>

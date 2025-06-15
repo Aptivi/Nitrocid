@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.UnitConv.Tools
         internal static void OpenUnitConvTui()
         {
             var tui = new UnitConverterCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<object>(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_KEYBINDING_CONVERT", "Nitrocid.Extras.UnitConv"), ConsoleKey.F1, (_, _, _, _) => tui.OpenConvert()));
+            tui.Bindings.Add(new InteractiveTuiBinding<object>(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_KEYBINDING_CONVERT"), ConsoleKey.F1, (_, _, _, _) => tui.OpenConvert()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

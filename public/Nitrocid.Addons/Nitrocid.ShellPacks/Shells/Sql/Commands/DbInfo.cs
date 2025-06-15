@@ -38,18 +38,18 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             var connection = SqlShellCommon.sqliteConnection;
             if (connection is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION", "Nitrocid.ShellPacks"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION"), KernelColorType.Error);
                 return 41;
             }
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.DataSource, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.ServerVersion, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.State.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.ConnectionString, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME", "Nitrocid.ShellPacks") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.Database, true, KernelColorType.ListValue);
             return 0;
         }

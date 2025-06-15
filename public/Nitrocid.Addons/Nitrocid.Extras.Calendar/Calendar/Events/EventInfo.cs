@@ -139,7 +139,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             if (!EventNotified)
             {
-                var EventNotification = new Notification(EventTitle, LanguageTools.GetLocalized("NKS_CALENDAR_EVENT_NOTIFICATION", "Nitrocid.Extras.Calendar"), NotificationPriority.Medium, NotificationType.Normal);
+                var EventNotification = new Notification(EventTitle, LanguageTools.GetLocalized("NKS_CALENDAR_EVENT_NOTIFICATION"), NotificationPriority.Medium, NotificationType.Normal);
                 NotificationManager.NotifySend(EventNotification);
                 EventNotified = true;
             }

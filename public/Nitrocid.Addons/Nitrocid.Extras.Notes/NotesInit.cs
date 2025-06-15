@@ -35,50 +35,50 @@ namespace Nitrocid.Extras.Notes
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("addnote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("addnote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC", "Nitrocid.Extras.Notes")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC")
                         })
                     ]),
                 ], new AddNote()),
 
-            new CommandInfo("removenote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("removenote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC", "Nitrocid.Extras.Notes")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC")
                         })
                     ]),
                 ], new RemoveNote()),
 
-            new CommandInfo("removenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTES_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("removenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new RemoveNotes()),
 
-            new CommandInfo("listnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("listnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new ListNotes()),
 
-            new CommandInfo("savenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_SAVENOTES_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("savenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_SAVENOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new SaveNotes()),
 
-            new CommandInfo("reloadnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_RELOADNOTES_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("reloadnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_RELOADNOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new ReloadNotes()),
 
-            new CommandInfo("notestui", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_NOTESTUI_DESC", "Nitrocid.Extras.Notes"),
+            new CommandInfo("notestui", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_NOTESTUI_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new NotesTui()),

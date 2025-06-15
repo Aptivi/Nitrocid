@@ -89,7 +89,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     {
                         refreshSecondPaneListing = false;
                         var instance = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
-                            throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2", "Nitrocid.ShellPacks"));
+                            throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                         SFTPShellCommon.SFTPCurrentRemoteDir = SFTPShellCommon.SFTPCurrentRemoteDir;
                         secondPaneListing = [.. instance.ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir)];
                     }
@@ -115,7 +115,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
-                return LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO", "Nitrocid.ShellPacks");
+                return LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO");
 
             // Now, populate the info to the status
             try
@@ -162,7 +162,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
-                return LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO", "Nitrocid.ShellPacks");
+                return LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO");
 
             // Now, populate the info to the status
             try
@@ -254,7 +254,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -293,13 +293,13 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                         return;
 
                     // Get the current SFTP entry info details
-                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME", "Nitrocid.ShellPacks").FormatString(currentEntry.Name));
-                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME", "Nitrocid.ShellPacks").FormatString(currentEntry.FullName));
+                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME").FormatString(currentEntry.Name));
+                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME").FormatString(currentEntry.FullName));
                     if (!currentEntry.IsDirectory)
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE", "Nitrocid.ShellPacks").FormatString(currentEntry.Length.SizeString()));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE").FormatString(currentEntry.Length.SizeString()));
                     else if (currentEntry.IsSymbolicLink)
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK", "Nitrocid.ShellPacks").FormatString(SFTPFilesystem.SFTPGetCanonicalPath(currentEntry.FullName)));
-                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(currentEntry.LastWriteTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK").FormatString(SFTPFilesystem.SFTPGetCanonicalPath(currentEntry.FullName)));
+                    finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME").FormatString(TimeDateRenderers.Render(currentEntry.LastWriteTime)));
                 }
                 else
                 {
@@ -313,59 +313,59 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     {
                         // The file system info instance points to a folder
                         var DirInfo = new DirectoryInfo(fullPath);
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME", "Nitrocid.ShellPacks").FormatString(DirInfo.Name));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME", "Nitrocid.ShellPacks").FormatString(FilesystemTools.NeutralizePath(DirInfo.FullName)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE", "Nitrocid.ShellPacks").FormatString(FilesystemTools.GetAllSizesInFolder(DirInfo).SizeString()));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(DirInfo.CreationTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(DirInfo.LastAccessTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(DirInfo.LastWriteTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES", "Nitrocid.ShellPacks").FormatString(DirInfo.Attributes));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME").FormatString(DirInfo.Name));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME").FormatString(FilesystemTools.NeutralizePath(DirInfo.FullName)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE").FormatString(FilesystemTools.GetAllSizesInFolder(DirInfo).SizeString()));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME").FormatString(TimeDateRenderers.Render(DirInfo.CreationTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME").FormatString(TimeDateRenderers.Render(DirInfo.LastAccessTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME").FormatString(TimeDateRenderers.Render(DirInfo.LastWriteTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES").FormatString(DirInfo.Attributes));
                         if (DirInfo.Parent is not null)
-                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR", "Nitrocid.ShellPacks").FormatString(FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
+                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR").FormatString(FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
                     }
                     else
                     {
                         // The file system info instance points to a file
                         FileInfo fileInfo = new(fullPath);
                         bool isBinary = FilesystemTools.IsBinaryFile(fileInfo.FullName);
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME", "Nitrocid.ShellPacks").FormatString(fileInfo.Name));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME", "Nitrocid.ShellPacks").FormatString(FilesystemTools.NeutralizePath(fileInfo.FullName)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE", "Nitrocid.ShellPacks").FormatString(fileInfo.Length.SizeString()));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(fileInfo.CreationTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(fileInfo.LastAccessTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME", "Nitrocid.ShellPacks").FormatString(TimeDateRenderers.Render(fileInfo.LastWriteTime)));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES", "Nitrocid.ShellPacks").FormatString(fileInfo.Attributes));
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND", "Nitrocid.ShellPacks").FormatString(FilesystemTools.NeutralizePath(fileInfo.DirectoryName)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME").FormatString(fileInfo.Name));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME").FormatString(FilesystemTools.NeutralizePath(fileInfo.FullName)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE").FormatString(fileInfo.Length.SizeString()));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME").FormatString(TimeDateRenderers.Render(fileInfo.CreationTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME").FormatString(TimeDateRenderers.Render(fileInfo.LastAccessTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME").FormatString(TimeDateRenderers.Render(fileInfo.LastWriteTime)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES").FormatString(fileInfo.Attributes));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND").FormatString(FilesystemTools.NeutralizePath(fileInfo.DirectoryName)));
                         if (!isBinary)
                         {
                             var Style = FilesystemTools.GetLineEndingFromFile(fullPath);
-                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE", "Nitrocid.ShellPacks") + " {0}").FormatString(Style.ToString()));
+                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE") + " {0}").FormatString(Style.ToString()));
                         }
-                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE", "Nitrocid.ShellPacks") + " {0}").FormatString(isBinary));
-                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA", "Nitrocid.ShellPacks") + " {0}").FormatString(MimeTypes.GetMimeType(fileInfo.Extension)));
-                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED", "Nitrocid.ShellPacks") + ": {0}").FormatString(MimeTypes.GetExtendedMimeType(fileInfo.FullName)));
-                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE", "Nitrocid.ShellPacks") + ": {0}\n").FormatString(MimeTypes.GetMagicInfo(fileInfo.FullName)));
+                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE") + " {0}").FormatString(isBinary));
+                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA") + " {0}").FormatString(MimeTypes.GetMimeType(fileInfo.Extension)));
+                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED") + ": {0}").FormatString(MimeTypes.GetExtendedMimeType(fileInfo.FullName)));
+                        finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE") + ": {0}\n").FormatString(MimeTypes.GetMagicInfo(fileInfo.FullName)));
 
                         // .NET managed info
                         if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName? asmName) && asmName is not null)
                         {
-                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME", "Nitrocid.ShellPacks").FormatString(asmName.Name));
-                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2", "Nitrocid.ShellPacks") + ": {0}").FormatString(asmName.FullName));
+                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME").FormatString(asmName.Name));
+                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2") + ": {0}").FormatString(asmName.FullName));
                             if (asmName.Version is not null)
-                                finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION", "Nitrocid.ShellPacks") + ": {0}").FormatString(asmName.Version.ToString()));
-                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME", "Nitrocid.ShellPacks") + ": {0}").FormatString(asmName.CultureName));
-                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE", "Nitrocid.ShellPacks") + ": {0}\n").FormatString(asmName.ContentType.ToString()));
+                                finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION") + ": {0}").FormatString(asmName.Version.ToString()));
+                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME") + ": {0}").FormatString(asmName.CultureName));
+                            finalInfoRendered.AppendLine((LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE") + ": {0}\n").FormatString(asmName.ContentType.ToString()));
                         }
                         else
                         {
-                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY", "Nitrocid.ShellPacks"));
+                            finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY"));
                         }
 
                         // Other info handled by the extension handler
                         if (ExtensionHandlerTools.IsHandlerRegistered(fileInfo.Extension))
                         {
                             var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension) ??
-                                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED") + $" {fileInfo.Extension}", "Nitrocid.ShellPacks");
+                                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED") + $" {fileInfo.Extension}");
                             finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                         }
                     }
@@ -377,7 +377,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -428,7 +428,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -483,7 +483,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -524,7 +524,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -537,7 +537,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT"), Settings.InfoBoxSettings);
 
                 // Determine whether to run this action locally or from the remote
                 if (CurrentPane == 2)
@@ -558,7 +558,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                         refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND"), Settings.InfoBoxSettings);
                 }
                 else
                 {
@@ -580,16 +580,16 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                             refreshSecondPaneListing = true;
                         }
                         else
-                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH"), Settings.InfoBoxSettings);
                     }
                     else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND"), Settings.InfoBoxSettings);
                 }
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
@@ -602,7 +602,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT"), Settings.InfoBoxSettings);
                 
                 // Determine whether to run this action locally or from the remote
                 if (CurrentPane == 2)
@@ -627,7 +627,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                         refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND"), Settings.InfoBoxSettings);
                 }
                 else
                 {
@@ -653,23 +653,23 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                             refreshFirstPaneListing = true;
                         }
                         else
-                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH"), Settings.InfoBoxSettings);
                     }
                     else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND"), Settings.InfoBoxSettings);
                 }
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE", "Nitrocid.ShellPacks") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }
 
         internal void MakeDir()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings);
 
             // Determine whether to run this action locally or from the remote
             if (CurrentPane == 2)
@@ -681,7 +681,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     refreshFirstPaneListing = true;
                 }
                 else
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND"), Settings.InfoBoxSettings);
             }
             else
             {
@@ -693,7 +693,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     refreshFirstPaneListing = true;
                 }
                 else
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND", "Nitrocid.ShellPacks"), Settings.InfoBoxSettings);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND"), Settings.InfoBoxSettings);
             }
         }
     }

@@ -303,7 +303,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Game is over with an unexpected error.
                 try
                 {
-                    TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR", "Nitrocid.Extras.Amusements") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
                     ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                 }
                 catch
@@ -323,7 +323,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     try
                     {
-                        TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER", "Nitrocid.Extras.Amusements"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                        TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                         ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                     }
                     catch

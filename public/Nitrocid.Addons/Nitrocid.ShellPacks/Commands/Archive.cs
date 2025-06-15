@@ -47,7 +47,7 @@ namespace Nitrocid.ShellPacks.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;

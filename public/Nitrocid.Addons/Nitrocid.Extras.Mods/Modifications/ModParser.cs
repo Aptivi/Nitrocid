@@ -79,15 +79,15 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (!signed)
                     {
                         if (ModsInit.ModsConfig.AllowUntrustedMods)
-                            SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD", "Nitrocid.Extras.Mods"));
+                            SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD"));
                         else
-                            throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD", "Nitrocid.Extras.Mods"));
+                            throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD"));
                     }
 
                     // Check to see if the DLL is actually a mod
                     var modAsm = Assembly.LoadFrom(ModPath + modFile);
                     var script = GetModInstance(modAsm) ??
-                        throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_INVALIDMODFILE", "Nitrocid.Extras.Mods"));
+                        throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_INVALIDMODFILE"));
 
                     // Finalize the mod
                     if (script.LoadPriority == priority)
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD", "Nitrocid.Extras.Mods"));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD"));
                     foreach (Exception? LoaderException in ex.LoaderExceptions)
                     {
                         if (LoaderException is null)
@@ -108,27 +108,27 @@ namespace Nitrocid.Extras.Mods.Modifications
                         DebugWriter.WriteDebugStackTrace(LoaderException);
                         SplashReport.ReportProgressError(LoaderException.Message);
                     }
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE", "Nitrocid.Extras.Mods"));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
                 }
                 catch (TargetInvocationException ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE1") + $" {ex.Message}", "Nitrocid.Extras.Mods");
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE2", "Nitrocid.Extras.Mods"));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE1") + $" {ex.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE2"));
                     Exception? inner = ex.InnerException;
                     while (inner != null)
                     {
                         SplashReport.ReportProgressError(inner.Message);
                         inner = inner.InnerException;
                     }
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE", "Nitrocid.Extras.Mods"));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD", "Nitrocid.Extras.Mods") + ex.Message);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD") + ex.Message);
                 }
             }
             else
@@ -165,14 +165,14 @@ namespace Nitrocid.Extras.Mods.Modifications
                         if (KernelMain.ApiVersion != script.MinimumSupportedApiVersion)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString()]);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT", "Nitrocid.Extras.Mods"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
                             return;
                         }
                     }
                     catch
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", vars: [modFile]);
-                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODHASNOAPIVERSION", "Nitrocid.Extras.Mods"), modFile);
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODHASNOAPIVERSION"), modFile);
                     }
 
                     // See if the mod has name
@@ -181,7 +181,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         // Mod has no name!
                         DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", vars: [modFile]);
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEDSNAME", "Nitrocid.Extras.Mods"), modFile);
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEDSNAME"), modFile);
                         return;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", vars: [ModName]);
@@ -190,7 +190,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", vars: [modFile, script.Name]);
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSVERSION", "Nitrocid.Extras.Mods"), modFile);
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSVERSION"), modFile);
                         return;
                     }
                     else
@@ -200,13 +200,13 @@ namespace Nitrocid.Extras.Mods.Modifications
                         {
                             // Parse the semantic version of the mod
                             var versionInfo = SemVer.Parse(script.Version);
-                            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTARTED", "Nitrocid.Extras.Mods"), script.Name, script.Version);
+                            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTARTED"), script.Name, script.Version);
                         }
                         catch (Exception ex)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", vars: [script.Version, ex.Message]);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODVERSIONINVALID", "Nitrocid.Extras.Mods") + ": {1}\n{2}", modFile, script.Version, ex.Message);
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODVERSIONINVALID") + ": {1}\n{2}", modFile, script.Version, ex.Message);
                             return;
                         }
                     }
@@ -235,7 +235,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     EventsManager.FireEvent(EventType.ModFinalizationFailed, modFile, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTFINALIZE", "Nitrocid.Extras.Mods"), modFile, ex.Message);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTFINALIZE"), modFile, ex.Message);
                 }
                 finally
                 {

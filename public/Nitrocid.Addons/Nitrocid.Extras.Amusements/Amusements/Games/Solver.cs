@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var Operations = new string[] { "+", "-", "*", "/" };
 
             // Show tip to exit
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT", "Nitrocid.Extras.Amusements"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT"));
             DebugWriter.WriteDebug(DebugLevel.I, "Initialized expressions.");
             while (true)
             {
@@ -94,12 +94,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     if (UserEvaluatedNumber == EvaluatedNumber)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_CORRECT", "Nitrocid.Extras.Amusements"));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_CORRECT"));
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_INCORRECT", "Nitrocid.Extras.Amusements"));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_INCORRECT"));
                     }
                 }
                 else if (UserEvaluated == "q")
@@ -110,7 +110,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", vars: [UserEvaluated]);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_NEEDSNUM", "Nitrocid.Extras.Amusements"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_NEEDSNUM"), true, KernelColorType.Error);
                 }
             }
         }

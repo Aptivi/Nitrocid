@@ -34,17 +34,17 @@ namespace Nitrocid.Extras.ThemeStudio
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mktheme", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC", "Nitrocid.Extras.ThemeStudio"),
+            new CommandInfo("mktheme", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC", "Nitrocid.Extras.ThemeStudio")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC", "Nitrocid.Extras.ThemeStudio"))
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC"))
                     ])
                 ], new MkThemeCommand()),
         ];

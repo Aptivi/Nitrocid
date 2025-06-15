@@ -31,13 +31,12 @@ namespace Nitrocid.Languages
         {
             if (LanguageCommon.Language != Config.MainConfig.CurrentLanguage)
                 LanguageCommon.Language = Config.MainConfig.CurrentLanguage;
-            return GetLocalized(id, localType, LanguageCommon.Language);
-        }
-
-        internal static string GetLocalized(string id, string localType)
-        {
-            if (LanguageCommon.Language != Config.MainConfig.CurrentLanguage)
-                LanguageCommon.Language = Config.MainConfig.CurrentLanguage;
+            foreach (string type in LanguageCommon.Actions)
+            {
+                var action = LanguageCommon.GetAction(type);
+                if (action.Exists.Invoke(id, LanguageCommon.Language))
+                    return GetLocalized(id, type, LanguageCommon.Language);
+            }
             return GetLocalized(id, localType, LanguageCommon.Language);
         }
 

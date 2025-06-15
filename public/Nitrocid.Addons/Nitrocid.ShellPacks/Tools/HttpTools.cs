@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task HttpDelete(string ContentUri)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             await client.DeleteAsync(TargetUri);
         }
@@ -55,7 +55,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<string> HttpGetString(string ContentUri)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             return await client.GetStringAsync(TargetUri);
         }
@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<HttpResponseMessage> HttpGet(string ContentUri)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             return await client.GetAsync(TargetUri);
         }
@@ -80,7 +80,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
             return await client.PutAsync(TargetUri, stringContent);
@@ -94,7 +94,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
@@ -110,7 +110,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
             return await client.PostAsync(TargetUri, stringContent);
@@ -124,7 +124,7 @@ namespace Nitrocid.ShellPacks.Tools
         public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
@@ -140,11 +140,11 @@ namespace Nitrocid.ShellPacks.Tools
         public static void HttpAddHeader(string key, string value)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             if (!HttpHeaderExists(key))
                 client.DefaultRequestHeaders.Add(key, value);
             else
-                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS"));
         }
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace Nitrocid.ShellPacks.Tools
         public static void HttpRemoveHeader(string key)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             if (HttpHeaderExists(key))
                 client.DefaultRequestHeaders.Remove(key);
             else
-                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE"));
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Nitrocid.ShellPacks.Tools
                 HttpAddHeader(key, value);
             }
             else
-                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT"));
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Nitrocid.ShellPacks.Tools
         public static (string, string)[] HttpListHeaders()
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var headers = client.DefaultRequestHeaders;
             var finalHeaders = new List<(string, string)>();
 
@@ -208,7 +208,7 @@ namespace Nitrocid.ShellPacks.Tools
         public static bool HttpHeaderExists(string key)
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             return client.DefaultRequestHeaders.Contains(key);
         }
 
@@ -222,7 +222,7 @@ namespace Nitrocid.ShellPacks.Tools
         public static string HttpGetCurrentUserAgent()
         {
             var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var userAgents = client.DefaultRequestHeaders.UserAgent;
             if (userAgents.Count > 0)
                 // We don't support more than one UserAgent value, so return the last one and ignore the rest

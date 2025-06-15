@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.BeepSynth.Tools
         public static SynthInfo GetSynthInfo(string synthJson)
         {
             var synthInfo = JsonConvert.DeserializeObject<SynthInfo>(synthJson) ??
-                throw new KernelException(KernelExceptionType.Console, LanguageTools.GetLocalized("NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO", "Nitrocid.Extras.BeepSynth"));
+                throw new KernelException(KernelExceptionType.Console, LanguageTools.GetLocalized("NKS_BEEPSYNTH_EXCEPTION_NOSYNTHINFO"));
             return synthInfo;
         }
     }

@@ -39,9 +39,9 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
             var token = JsonTools.GetTokenSafe(parent, parameters.ArgumentsList[0]);
             if (token != null)
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_FOUND") + $" {token.Path}", "Nitrocid.ShellPacks");
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_FOUND") + $" {token.Path}");
             else
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND", "Nitrocid.ShellPacks"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND"));
             return 0;
         }
     }

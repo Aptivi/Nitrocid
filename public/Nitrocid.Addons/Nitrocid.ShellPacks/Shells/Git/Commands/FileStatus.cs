@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 return 43;
             string file = parameters.ArgumentsList[0];
             var status = GitShellCommon.Repository.RetrieveStatus(file);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FILESTATUS_TITLE") + $" {Path.GetFileName(file)}: {status}", "Nitrocid.ShellPacks");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FILESTATUS_TITLE") + $" {Path.GetFileName(file)}: {status}");
             return 0;
         }
 

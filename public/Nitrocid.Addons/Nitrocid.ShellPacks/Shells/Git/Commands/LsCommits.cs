@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             if (GitShellCommon.Repository is null)
                 return 43;
             var commits = GitShellCommon.Repository.Commits;
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {GitShellCommon.BranchName}:", "Nitrocid.ShellPacks");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)
             {
                 TextWriters.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);

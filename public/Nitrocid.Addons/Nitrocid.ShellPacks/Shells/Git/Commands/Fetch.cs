@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, KernelColorType.Error);
                 return 11;
             }
 
@@ -58,7 +58,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND", "Nitrocid.ShellPacks") + $" {requestedRemote}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND") + $" {requestedRemote}", true, KernelColorType.Error);
                     return 12;
                 }
             }
@@ -70,7 +70,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                     // We don't have origin! Let's select the first remote
                     if (remoteNames.Length == 0)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_NOREMOTES", "Nitrocid.ShellPacks"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_NOREMOTES"), true, KernelColorType.Error);
                         return 13;
                     }
                     selectedRemote = remoteNames[0];

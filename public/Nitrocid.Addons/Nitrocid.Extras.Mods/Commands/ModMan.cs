@@ -73,13 +73,13 @@ namespace Nitrocid.Extras.Mods.Commands
                                 TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
                                 if (!(FilesystemTools.TryParsePath(TargetModPath) && FilesystemTools.FileExists(TargetModPath)))
                                 {
-                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, KernelColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                                 }
                             }
                             else
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED"), true, KernelColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                             }
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.Mods.Commands
                 {
                     case "start":
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD", "Nitrocid.Extras.Mods") + " {0}...", Path.GetFileNameWithoutExtension(TargetMod));
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_STARTINGMOD") + " {0}...", Path.GetFileNameWithoutExtension(TargetMod));
                             ModManager.StartMod(Path.GetFileName(TargetModPath));
                             break;
                         }
@@ -115,13 +115,13 @@ namespace Nitrocid.Extras.Mods.Commands
                                 if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
                                     SeparatorWriterColor.WriteSeparatorColor(script, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(ModManager.Mods[script].ModFileName, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
                                 }
                             }
@@ -148,13 +148,13 @@ namespace Nitrocid.Extras.Mods.Commands
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparatorColor(Mod, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(ModManager.Mods[Mod].ModFileName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER", "Nitrocid.Extras.Mods") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
                             }
 
@@ -179,16 +179,16 @@ namespace Nitrocid.Extras.Mods.Commands
                         {
                             var tui = new ModManagerTui();
                             tui.Bindings.AddRange([
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTMODSELECT", "Nitrocid.Extras.Mods"), ConsoleKey.F1, (_, _, _, _) => tui.StartModPrompt(false), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTMODINPUT", "Nitrocid.Extras.Mods"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.StartModPrompt(true), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STOPMOD", "Nitrocid.Extras.Mods"), ConsoleKey.F2, (modName, _, _, _) => tui.StopMod(modName)),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_RELOADMOD", "Nitrocid.Extras.Mods"), ConsoleKey.F3, (modName, _, _, _) => tui.ReloadMod(modName)),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT", "Nitrocid.Extras.Mods"), ConsoleKey.F4, (_, _, _, _) => tui.InstallModPrompt(false), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT", "Nitrocid.Extras.Mods"), ConsoleKey.F4, ConsoleModifiers.Shift, (_, _, _, _) => tui.InstallModPrompt(true), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD", "Nitrocid.Extras.Mods"), ConsoleKey.F5, (modName, _, _, _) => tui.UninstallMod(modName)),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTALL", "Nitrocid.Extras.Mods"), ConsoleKey.F6, (_, _, _, _) => ModManager.StartMods(), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STOPALL", "Nitrocid.Extras.Mods"), ConsoleKey.F7, (_, _, _, _) => ModManager.StopMods(), true),
-                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_RELOADALL", "Nitrocid.Extras.Mods"), ConsoleKey.F8, (_, _, _, _) => ModManager.ReloadMods(), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTMODSELECT"), ConsoleKey.F1, (_, _, _, _) => tui.StartModPrompt(false), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTMODINPUT"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.StartModPrompt(true), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STOPMOD"), ConsoleKey.F2, (modName, _, _, _) => tui.StopMod(modName)),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_RELOADMOD"), ConsoleKey.F3, (modName, _, _, _) => tui.ReloadMod(modName)),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT"), ConsoleKey.F4, (_, _, _, _) => tui.InstallModPrompt(false), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT"), ConsoleKey.F4, ConsoleModifiers.Shift, (_, _, _, _) => tui.InstallModPrompt(true), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD"), ConsoleKey.F5, (modName, _, _, _) => tui.UninstallMod(modName)),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STARTALL"), ConsoleKey.F6, (_, _, _, _) => ModManager.StartMods(), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_STOPALL"), ConsoleKey.F7, (_, _, _, _) => ModManager.StopMods(), true),
+                                new(LanguageTools.GetLocalized("NKS_MODS_TUI_KEYBINDING_RELOADALL"), ConsoleKey.F8, (_, _, _, _) => ModManager.ReloadMods(), true),
                             ]);
                             InteractiveTuiTools.OpenInteractiveTui(tui);
                             break;
@@ -196,7 +196,7 @@ namespace Nitrocid.Extras.Mods.Commands
 
                     default:
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND", "Nitrocid.Extras.Mods"), true, KernelColorType.Error, CommandMode);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND"), true, KernelColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("modman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
                         }
@@ -204,7 +204,7 @@ namespace Nitrocid.Extras.Mods.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_SAFEMODE", "Nitrocid.Extras.Mods"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_SAFEMODE"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
             }
             return 0;

@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER", "Nitrocid.Extras.Diagnostics"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO", "Nitrocid.Extras.Diagnostics") + "\n", true, KernelColorType.ListTitle, threadAddress);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 TextWriters.WriteList(threadTrace);
             }
             return 0;
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER", "Nitrocid.Extras.Diagnostics"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO", "Nitrocid.Extras.Diagnostics") + "\n", true, KernelColorType.ListTitle, threadAddress);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 foreach (string threadTraceStr in threadTrace)
                     TextWriterColor.Write(threadTraceStr);
                 TextWriterRaw.Write();

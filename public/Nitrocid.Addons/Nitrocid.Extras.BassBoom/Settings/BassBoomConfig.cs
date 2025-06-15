@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
             get
             {
                 var dataStream = ResourcesManager.GetData("BassBoomSettings.json", ResourcesType.Misc, typeof(BassBoomConfig).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED", "Nitrocid.Extras.BassBoom"));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }

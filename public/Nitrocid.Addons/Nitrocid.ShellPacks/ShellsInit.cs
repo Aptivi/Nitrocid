@@ -50,13 +50,13 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> archiveAddonCommands =
         [
-            new CommandInfo("archive", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("archive", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC")
                         }),
                     ])
                 ], new ArchiveCommand())
@@ -64,13 +64,13 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> ftpAddonCommands =
         [
-            new CommandInfo("ftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("ftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC")
                         }),
                     ])
                 ], new FtpCommandExec())
@@ -78,13 +78,13 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> gitAddonCommands =
         [
-            new CommandInfo("gitsh", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("gitsh", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC")
                         })
                     ]),
                 ], new GitCommandExec())
@@ -92,52 +92,52 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> httpAddonCommands =
         [
-            new CommandInfo("http", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC", "Nitrocid.ShellPacks"), new HttpCommandExec())
+            new CommandInfo("http", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC"), new HttpCommandExec())
         ];
 
         private readonly List<CommandInfo> jsonAddonCommands =
         [
-            new CommandInfo("jsondiff", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("jsondiff", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC")
                         }),
                         new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC")
                         }),
                     ])
                 ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("jsonbeautify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("jsonbeautify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
                         }),
                     ], true)
                 ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("jsonminify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("jsonminify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
                         }),
                     ], true)
                 ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
@@ -145,23 +145,23 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> mailAddonCommands =
         [
-            new CommandInfo("mail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("mail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
                         }),
                     ])
                 ], new MailCommandExec()),
-            new CommandInfo("popmail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("popmail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
                         }),
                     ])
                 ], new PopMailCommandExec()),
@@ -169,30 +169,30 @@ namespace Nitrocid.ShellPacks
 
         private readonly List<CommandInfo> rssAddonCommands =
         [
-            new CommandInfo("rss", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("rss", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC", "Nitrocid.ShellPacks")),
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC")),
                     ])
                 ], new RssCommandExec())
         ];
 
         private readonly List<CommandInfo> sftpAddonCommands =
         [
-            new CommandInfo("sftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC", "Nitrocid.ShellPacks"),
+            new CommandInfo("sftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC", "Nitrocid.ShellPacks")
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC")
                         }),
                     ])
                 ], new SftpCommandExec()),

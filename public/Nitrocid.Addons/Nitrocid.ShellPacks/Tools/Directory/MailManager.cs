@@ -131,12 +131,12 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to remove message 0 or less than 0.");
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"));
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
             lock (client.SyncRoot)
@@ -208,7 +208,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     Dir.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX", "Nitrocid.ShellPacks"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
@@ -219,7 +219,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     client.Inbox.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX", "Nitrocid.ShellPacks"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
                             }
@@ -252,12 +252,12 @@ namespace Nitrocid.ShellPacks.Tools.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to move message 0 or less than 0.");
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"));
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND", "Nitrocid.ShellPacks"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
             lock (client.SyncRoot)
@@ -329,7 +329,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                     Dir.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX", "Nitrocid.ShellPacks"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
@@ -340,7 +340,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                     client.Inbox.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX", "Nitrocid.ShellPacks"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
                             }
