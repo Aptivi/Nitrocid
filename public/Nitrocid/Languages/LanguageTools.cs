@@ -29,8 +29,8 @@ namespace Nitrocid.Languages
 
         internal static string GetLocalized(string id)
         {
-            if (LanguageCommon.Language != Config.MainConfig.CurrentLanguage)
-                LanguageCommon.Language = Config.MainConfig.CurrentLanguage;
+            if (LanguageCommon.Language != LanguageManager.CurrentLanguageInfo.ThreeLetterLanguageName)
+                LanguageCommon.Language = LanguageManager.CurrentLanguageInfo.ThreeLetterLanguageName;
             foreach (string type in LanguageCommon.Actions)
             {
                 var action = LanguageCommon.GetAction(type);
