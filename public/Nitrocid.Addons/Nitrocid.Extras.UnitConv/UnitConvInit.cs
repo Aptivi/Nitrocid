@@ -97,13 +97,13 @@ namespace Nitrocid.Extras.UnitConv
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.UnitConv");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
-            HomepageTools.UnregisterBuiltinAction("Unit Converter");
+            HomepageTools.UnregisterBuiltinAction("NKS_UNITCONV_HOMEPAGE_UNITCONV");
         }
 
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction("Unit Converter", UnitConvTools.OpenUnitConvTui);
+            HomepageTools.RegisterBuiltinAction("NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
         }
     }
 }

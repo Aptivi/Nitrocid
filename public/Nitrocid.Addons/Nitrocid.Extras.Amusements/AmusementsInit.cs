@@ -159,15 +159,15 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.FinalizeAddon()
         {
             // Add the amusements to the homepage
-            HomepageTools.RegisterBuiltinAction("Horse Racing", BackRace.OpenBackRace);
-            HomepageTools.RegisterBuiltinAction("Hangman", () => Hangman.InitializeHangman(HangmanDifficulty.None));
-            HomepageTools.RegisterBuiltinAction("Meteor Dodge", () => MeteorShooter.InitializeMeteor(false, true));
-            HomepageTools.RegisterBuiltinAction("Meteor Shooter", () => MeteorShooter.InitializeMeteor());
-            HomepageTools.RegisterBuiltinAction("Pong", Pong.InitializePong);
-            HomepageTools.RegisterBuiltinAction("Ship Duet", () => ShipDuetShooter.InitializeShipDuet());
-            HomepageTools.RegisterBuiltinAction("Snaker", () => Snaker.InitializeSnaker(false));
-            HomepageTools.RegisterBuiltinAction("Wordle", () => Wordle.InitializeWordle());
-            HomepageTools.RegisterBuiltinAction("Wordle (original)", () => Wordle.InitializeWordle(true));
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
 
         void IAddon.StartAddon()
@@ -210,15 +210,15 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
 
             // Remove all options
-            HomepageTools.UnregisterBuiltinAction("Horse Racing");
-            HomepageTools.UnregisterBuiltinAction("Hangman");
-            HomepageTools.UnregisterBuiltinAction("Meteor Dodge");
-            HomepageTools.UnregisterBuiltinAction("Meteor Shooter");
-            HomepageTools.UnregisterBuiltinAction("Pong");
-            HomepageTools.UnregisterBuiltinAction("Ship Duet");
-            HomepageTools.UnregisterBuiltinAction("Snaker");
-            HomepageTools.UnregisterBuiltinAction("Wordle");
-            HomepageTools.UnregisterBuiltinAction("Wordle (original)");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_PONG");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SNAKER");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLE");
+            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG");
         }
     }
 }
