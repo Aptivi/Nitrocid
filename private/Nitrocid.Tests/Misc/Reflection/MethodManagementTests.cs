@@ -76,7 +76,9 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestInvokeMethod()
         {
             var instance = new ReflectedCommand();
-            var value = MethodManager.InvokeMethod(nameof(instance.Execute), instance);
+            var parameters = new CommandParameters("", [], "", [], [], "reflected");
+            string varValue = "";
+            var value = MethodManager.InvokeMethod(nameof(instance.Execute), instance, parameters, varValue);
             value.ShouldNotBeNull();
             value.ShouldBeOfType(typeof(int));
             value.ShouldBe(0);
