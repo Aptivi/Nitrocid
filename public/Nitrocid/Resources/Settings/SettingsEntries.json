@@ -29,12 +29,6 @@
                         "SelectionFunctionName": "ListAllLanguages",
                         "SelectionFunctionType": "LanguageManager",
                         "IsSelectionFunctionDict": true,
-                        "SelectionFunctionArgs": [
-                            {
-                                "ArgType": "System.Boolean",
-                                "ArgValue": "False"
-                            }
-                        ],
                         "SelectionFallback": [ "eng" ],
                         "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_DESC"
                     },
