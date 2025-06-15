@@ -75,7 +75,7 @@ namespace Nitrocid.Misc.Interactives
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
                         object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
-                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{key.Name}..." : $"{key.Name} [{currentValue}]";
+                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(key.Name)}..." : $"{LanguageTools.GetLocalized(key.Name)} [{currentValue}]";
                         return (finalKeyName, idx);
                     }).ToArray();
                     entryNames.Clear();
@@ -164,7 +164,7 @@ namespace Nitrocid.Misc.Interactives
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
-            string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            string keyDesc = LanguageTools.GetLocalized(configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description);
             string status = $"{entryName} > {keyName} - {keyDesc}";
             return status;
         }
@@ -183,7 +183,7 @@ namespace Nitrocid.Misc.Interactives
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
-            string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            string keyDesc = LanguageTools.GetLocalized(configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description);
             string status =
                 $"""
                 {entryName} > {keyName}

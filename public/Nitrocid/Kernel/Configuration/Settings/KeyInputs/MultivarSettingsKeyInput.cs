@@ -38,11 +38,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 var keysChoices = keys.Select((sk, idx) =>
                 {
                     object? currentValue = sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, configType);
-                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{sk.Name}..." : $"{sk.Name} [{currentValue}]";
-                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, sk.Description);
+                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(sk.Name)}..." : $"{LanguageTools.GetLocalized(sk.Name)} [{currentValue}]";
+                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, LanguageTools.GetLocalized(sk.Description));
                 }).ToList();
                 keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
-                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{key.Name}\"");
+                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{LanguageTools.GetLocalized(key.Name)}\"");
 
                 // Check to see if exit is requested
                 if (choiceIdx < 0)
