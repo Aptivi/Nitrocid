@@ -99,13 +99,13 @@ namespace Nitrocid.Extras.Notes
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Notes");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
-            HomepageTools.UnregisterBuiltinAction("Notes");
+            HomepageTools.UnregisterBuiltinAction("NKS_NOTES_HOMEPAGE_NOTES");
         }
 
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction("Notes", NoteManagement.OpenNotesTui);
+            HomepageTools.RegisterBuiltinAction("NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);
 
             // Load notes
             NoteManagement.LoadNotes();

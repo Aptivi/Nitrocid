@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.Contacts
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction("Contacts", ContactsManager.OpenContactsTui);
+            HomepageTools.RegisterBuiltinAction("NKS_CONTACTS_HOMEPAGE_CONTACTS", ContactsManager.OpenContactsTui);
         }
 
         void IAddon.StartAddon()
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.Contacts
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
-            HomepageTools.UnregisterBuiltinAction("Contacts");
+            HomepageTools.UnregisterBuiltinAction("NKS_CONTACTS_HOMEPAGE_CONTACTS");
             ConfigTools.UnregisterBaseSetting(nameof(ContactsConfig));
             LoggingTools.EnableLogging = false;
         }

@@ -105,17 +105,17 @@ namespace Nitrocid.Extras.Dates
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Dates");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
-            HomepageTools.UnregisterBuiltinAction("Timer");
-            HomepageTools.UnregisterBuiltinAction("Stopwatch");
-            HomepageTools.UnregisterBuiltinAction("Pomodoro");
+            HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_TIMER");
+            HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_STOPWATCH");
+            HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_POMODORO");
         }
 
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction("Timer", TimerScreen.OpenTimer);
-            HomepageTools.RegisterBuiltinAction("Stopwatch", StopwatchScreen.OpenStopwatch);
-            HomepageTools.RegisterBuiltinAction("Pomodoro", PomodoroScreen.OpenPomodoro);
+            HomepageTools.RegisterBuiltinAction("NKS_DATES_HOMEPAGE_TIMER", TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction("NKS_DATES_HOMEPAGE_STOPWATCH", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction("NKS_DATES_HOMEPAGE_POMODORO", PomodoroScreen.OpenPomodoro);
         }
     }
 }
