@@ -2,8 +2,8 @@ MODAPI = 28
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
 OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net8.0"
-BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-jl"
-MANUALS = "$(ROOT_DIR)/assets/ks.1" "$(ROOT_DIR)/assets/ks-jl.1"
+BINARIES = "$(ROOT_DIR)/assets/ks"
+MANUALS = "$(ROOT_DIR)/assets/ks.1"
 DESKTOPS = "$(ROOT_DIR)/assets/ks.desktop"
 BRANDINGS = "$(ROOT_DIR)/public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png"
 
