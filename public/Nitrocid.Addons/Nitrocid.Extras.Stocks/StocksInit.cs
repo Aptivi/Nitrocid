@@ -37,13 +37,13 @@ namespace Nitrocid.Extras.Stocks
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("stock", LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC"),
+            new CommandInfo("stock", "NKS_STOCKS_COMMAND_STOCK_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC")
+                            ArgumentDescription = "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
                         }),
                     ])
                 ], new StockCommand()),

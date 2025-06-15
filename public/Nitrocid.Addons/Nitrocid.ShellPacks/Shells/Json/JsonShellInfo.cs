@@ -39,100 +39,100 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("add", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC"),
+            new CommandInfo("add", "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("parentPath", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC"), new SwitchOptions()
+                        new SwitchInfo("parentPath", "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
-                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC"), new SwitchOptions()
+                        new SwitchInfo("type", "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsRequired = true
                         }),
-                        new SwitchInfo("propName", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC"), new SwitchOptions()
+                        new SwitchInfo("propName", "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
                     ])
                 ], new AddCommand()),
 
-            new CommandInfo("clear", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC"), new ClearCommand()),
+            new CommandInfo("clear", "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC", new ClearCommand()),
 
-            new CommandInfo("exitnosave", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC"), new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC", new ExitNoSaveCommand()),
 
-            new CommandInfo("findproperty", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC"),
+            new CommandInfo("findproperty", "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "propertyName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("parentProperty", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC"), new SwitchOptions()
+                        new SwitchInfo("parentProperty", "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         })
                     ])
                 ], new FindPropertyCommand()),
 
-            new CommandInfo("jsoninfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC"),
+            new CommandInfo("jsoninfo", "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("simplified", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC"), new SwitchOptions()
+                        new SwitchInfo("simplified", "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("showvals", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC"), new SwitchOptions()
+                        new SwitchInfo("showvals", "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new JsonInfoCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("print", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC"),
+            new CommandInfo("print", "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
                         })
                     ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("rm", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_RM_DESC"),
+            new CommandInfo("rm", "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "objectPath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC"
                         })
                     ])
                 ], new RmCommand()),
 
-            new CommandInfo("save", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC"),
+            new CommandInfo("save", "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("b", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC"), new SwitchOptions()
+                        new SwitchInfo("b", "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["m"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC"), new SwitchOptions()
+                        new SwitchInfo("m", "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["b"],
                             AcceptsValues = false
@@ -140,33 +140,33 @@ namespace Nitrocid.ShellPacks.Shells.Json
                     ])
                 ], new SaveCommand()),
 
-            new CommandInfo("set", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SET_DESC"),
+            new CommandInfo("set", "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("parentPath", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC"), new SwitchOptions()
+                        new SwitchInfo("parentPath", "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
-                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC"), new SwitchOptions()
+                        new SwitchInfo("type", "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                             IsRequired = true
                         }),
-                        new SwitchInfo("propName", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC"), new SwitchOptions()
+                        new SwitchInfo("propName", "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
                     ])
                 ], new SetCommand()),
 
-            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC"), new TuiCommand()),
+            new CommandInfo("tui", "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

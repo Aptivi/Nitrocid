@@ -42,27 +42,27 @@ namespace Nitrocid.Extras.Amusements
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("backrace", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC"), new BackRaceCommand()),
+            new CommandInfo("backrace", "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC", new BackRaceCommand()),
 
-            new CommandInfo("hangman", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC"),
+            new CommandInfo("hangman", "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("hardcore", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC"), new SwitchOptions()
+                        new SwitchInfo("hardcore", "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["practice"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("practice", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC"), new SwitchOptions()
+                        new SwitchInfo("practice", "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["hardcore"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC"), new SwitchOptions()
+                        new SwitchInfo("common", "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["uncommon"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC"), new SwitchOptions()
+                        new SwitchInfo("uncommon", "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["common"],
                             AcceptsValues = false
@@ -70,46 +70,46 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new HangmanCommand()),
 
-            new CommandInfo("meteor", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_METEOR_DESC"), new MeteorCommand()),
+            new CommandInfo("meteor", "NKS_AMUSEMENTS_COMMAND_METEOR_DESC", new MeteorCommand()),
 
-            new CommandInfo("meteordodge", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC"), new MeteorDodgeCommand()),
+            new CommandInfo("meteordodge", "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC", new MeteorDodgeCommand()),
 
-            new CommandInfo("pong", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_PONG_DESC"), new PongCommand()),
+            new CommandInfo("pong", "NKS_AMUSEMENTS_COMMAND_PONG_DESC", new PongCommand()),
 
-            new CommandInfo("quote", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_QUOTE_DESC"), new QuoteCommand()),
+            new CommandInfo("quote", "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC", new QuoteCommand()),
 
-            new CommandInfo("roulette", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC"), new RouletteCommand()),
+            new CommandInfo("roulette", "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC", new RouletteCommand()),
 
-            new CommandInfo("shipduet", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC"), new ShipDuetCommand()),
+            new CommandInfo("shipduet", "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC", new ShipDuetCommand()),
 
-            new CommandInfo("snaker", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SNAKER_DESC"), new SnakerCommand()),
+            new CommandInfo("snaker", "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC", new SnakerCommand()),
 
-            new CommandInfo("solver", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SOLVER_DESC"), new SolverCommand()),
+            new CommandInfo("solver", "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC", new SolverCommand()),
 
-            new CommandInfo("speedpress", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC"),
+            new CommandInfo("speedpress", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("e", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC"), new SwitchOptions()
+                        new SwitchInfo("e", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("m", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC"), new SwitchOptions()
+                        new SwitchInfo("m", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["v", "h", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("h", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC"), new SwitchOptions()
+                        new SwitchInfo("h", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "v", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("v", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC"), new SwitchOptions()
+                        new SwitchInfo("v", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "e", "c"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("c", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC"), new SwitchOptions()
+                        new SwitchInfo("c", "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "e"],
                             ArgumentsRequired = true
@@ -117,19 +117,19 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new SpeedPressCommand()),
 
-            new CommandInfo("wordle", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_DESC"),
+            new CommandInfo("wordle", "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
                 [
                     new CommandArgumentInfo([
-                        new SwitchInfo("orig", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC"), new SwitchOptions()
+                        new SwitchInfo("orig", "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC"), new SwitchOptions()
+                        new SwitchInfo("common", "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["uncommon"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC"), new SwitchOptions()
+                        new SwitchInfo("uncommon", "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["common"],
                             AcceptsValues = false
@@ -137,7 +137,7 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new WordleCommand()),
 
-            new CommandInfo("2018", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_2018_DESC"), new AnniversaryCommand()),
+            new CommandInfo("2018", "NKS_AMUSEMENTS_COMMAND_2018_DESC", new AnniversaryCommand()),
         ];
 
         string IAddon.AddonName =>

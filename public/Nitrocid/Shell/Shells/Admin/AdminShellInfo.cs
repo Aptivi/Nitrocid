@@ -39,116 +39,116 @@ namespace Nitrocid.Shell.Shells.Admin
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("arghelp", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_DESC"),
+            new CommandInfo("arghelp", "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC"
                         })
                     ])
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("bootlog", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_BOOTLOG_DESC"), new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("bootlog", "NKS_SHELL_SHELLS_ADMIN_COMMAND_BOOTLOG_DESC", new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("cdbglog", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_DESC"), new CdbgLogCommand()),
+            new CommandInfo("cdbglog", "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_DESC", new CdbgLogCommand()),
 
-            new CommandInfo("clearfiredevents", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_CLEARFIREDEVENTS_DESC"), new ClearFiredEventsCommand()),
+            new CommandInfo("clearfiredevents", "NKS_SHELL_SHELLS_ADMIN_COMMAND_CLEARFIREDEVENTS_DESC", new ClearFiredEventsCommand()),
 
-            new CommandInfo("journal", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_DESC"),
+            new CommandInfo("journal", "NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "sessionNum", new()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_ARGUMENT_SESSIONNUM_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_ARGUMENT_SESSIONNUM_DESC"
                         }),
                     ])
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsevents", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_LSEVENTS_DESC"), new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsevents", "NKS_SHELL_SHELLS_ADMIN_COMMAND_LSEVENTS_DESC", new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsusers", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_LSUSERS_DESC"),
+            new CommandInfo("lsusers", "NKS_SHELL_SHELLS_ADMIN_COMMAND_LSUSERS_DESC",
                 [
                     new CommandArgumentInfo(true)
                 ], new LsUsersCommand()),
 
-            new CommandInfo("savenotifs", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_SAVENOTIFS_DESC"), new SaveNotifsCommand()),
+            new CommandInfo("savenotifs", "NKS_SHELL_SHELLS_ADMIN_COMMAND_SAVENOTIFS_DESC", new SaveNotifsCommand()),
 
-            new CommandInfo("userflag", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_DESC"),
+            new CommandInfo("userflag", "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "user", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
                         }),
                         new CommandArgumentPart(true, "admin/anonymous/disabled", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_TYPE_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_TYPE_DESC"
                         }),
                         new CommandArgumentPart(true, "false/true", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_GRANT_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_GRANT_DESC"
                         })
                     ])
                 ], new UserFlagCommand()),
 
-            new CommandInfo("userfullname", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC"),
+            new CommandInfo("userfullname", "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "user", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
                         }),
                         new CommandArgumentPart(true, "name/clear", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC"
                         })
                     ])
                 ], new UserFullNameCommand()),
 
-            new CommandInfo("userinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERINFO_DESC"),
+            new CommandInfo("userinfo", "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "user", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
                         })
                     ])
                 ], new UserInfoCommand()),
 
-            new CommandInfo("userlang", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_DESC"),
+            new CommandInfo("userlang", "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "user", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
                         }),
                         new CommandArgumentPart(true, "lang/clear", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC"
                         })
                     ])
                 ], new UserLangCommand()),
 
-            new CommandInfo("userculture", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC"),
+            new CommandInfo("userculture", "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "user", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
                         }),
                         new CommandArgumentPart(true, "culture/clear", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC"
                         })
                     ])
                 ], new UserCultureCommand()),

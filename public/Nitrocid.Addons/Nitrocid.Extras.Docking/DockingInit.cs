@@ -34,14 +34,14 @@ namespace Nitrocid.Extras.Docking
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dock", LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC"),
+            new CommandInfo("dock", "NKS_DOCKING_COMMAND_DOCK_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "dockName", new()
                         {
                             AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC")
+                            ArgumentDescription = "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
                         }),
                     ])
                 ], new DockCommand())

@@ -38,153 +38,153 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cd", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC"),
+            new CommandInfo("cd", "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC"
                         })
                     ])
                 ], new CdCommand()),
 
-            new CommandInfo("detach", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC"), new DetachCommand()),
+            new CommandInfo("detach", "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", new DetachCommand()),
 
-            new CommandInfo("lsdirs", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC"), new LsDirsCommand()),
+            new CommandInfo("lsdirs", "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC", new LsDirsCommand()),
 
-            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC"),
+            new CommandInfo("list", "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC"
                         })
                     ])
                 ], new ListCommand()),
 
-            new CommandInfo("mkdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC"),
+            new CommandInfo("mkdir", "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC"
                         })
                     ])
                 ], new MkdirCommand()),
 
-            new CommandInfo("mv", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC"),
+            new CommandInfo("mv", "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
                         }),
                         new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC"
                         })
                     ])
                 ], new MvCommand()),
 
-            new CommandInfo("mvall", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC"),
+            new CommandInfo("mvall", "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "senderName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC"
                         }),
                         new CommandArgumentPart(true, "targetFolder", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC"
                         })
                     ])
                 ], new MvAllCommand()),
 
-            new CommandInfo("read", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC"),
+            new CommandInfo("read", "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
                         })
                     ])
                 ], new ReadCommand()),
 
-            new CommandInfo("readenc", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC"),
+            new CommandInfo("readenc", "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
                         })
                     ])
                 ], new ReadEncCommand()),
 
-            new CommandInfo("ren", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC"),
+            new CommandInfo("ren", "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "oldFolderName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC"
                         }),
                         new CommandArgumentPart(true, "newFolderName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC"
                         })
                     ])
                 ], new RenCommand()),
 
-            new CommandInfo("rm", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC"),
+            new CommandInfo("rm", "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
                         })
                     ])
                 ], new RmCommand()),
 
-            new CommandInfo("rmall", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC"),
+            new CommandInfo("rmall", "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sendername", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC"
                         })
                     ])
                 ], new RmAllCommand()),
 
-            new CommandInfo("rmdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC"),
+            new CommandInfo("rmdir", "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "foldername", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC")
+                            ArgumentDescription = "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC"
                         })
                     ])
                 ], new RmdirCommand()),
 
-            new CommandInfo("send", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC"), new SendCommand()),
+            new CommandInfo("send", "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC", new SendCommand()),
 
-            new CommandInfo("sendenc", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC"), new SendEncCommand()),
+            new CommandInfo("sendenc", "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC", new SendEncCommand()),
 
-            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC"), new TuiCommand()),
+            new CommandInfo("tui", "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

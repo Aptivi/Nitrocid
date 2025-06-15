@@ -64,50 +64,50 @@ namespace Nitrocid.Extras.BassBoom
 
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("lyriclines", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_LYRICLINES_DESC"),
+            new CommandInfo("lyriclines", "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC")
+                            ArgumentDescription = "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
                         }),
                     ])
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("playlyric", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC"),
+            new CommandInfo("playlyric", "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC")
+                            ArgumentDescription = "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
                         }),
                     ])
                 ], new PlayLyricCommand()),
 
-            new CommandInfo("playsound", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC"),
+            new CommandInfo("playsound", "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC")
+                            ArgumentDescription = "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC"
                         }),
                     ])
                 ], new PlaySoundCommand()),
 
-            new CommandInfo("netfminfo", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_DESC"),
+            new CommandInfo("netfminfo", "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC")
+                            ArgumentDescription = "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC"
                         }),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC")
+                            ArgumentDescription = "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC"
                         }),
                     ])
                 ], new NetFmInfoCommand()),

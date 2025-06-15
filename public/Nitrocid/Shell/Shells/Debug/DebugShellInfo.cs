@@ -43,192 +43,192 @@ namespace Nitrocid.Shell.Shells.Debug
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("currentbt", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_CURRENTBT_DESC"), new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("currentbt", "NKS_SHELL_SHELLS_DEBUG_COMMAND_CURRENTBT_DESC", new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("debuglog", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_DESC"),
+            new CommandInfo("debuglog", "NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sessionGuid", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC"
                         })
                     ])
                 ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("excinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_DESC"),
+            new CommandInfo("excinfo", "NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC"
                         })
                     ])
                 ], new ExcInfoCommand()),
 
-            new CommandInfo("getfieldvalue", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_DESC"),
+            new CommandInfo("getfieldvalue", "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_ARGUMENT_NAME_DESC"
                         })
                     ], true)
                 ], new GetFieldValueCommand()),
 
-            new CommandInfo("getpropertyvalue", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_DESC"),
+            new CommandInfo("getpropertyvalue", "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_ARGUMENT_NAME_DESC"
                         })
                     ], true)
                 ], new GetPropertyValueCommand()),
 
-            new CommandInfo("keyinfo", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_KEYINFO_DESC"), new KeyInfoCommand()),
+            new CommandInfo("keyinfo", "NKS_SHELL_SHELLS_DEBUG_COMMAND_KEYINFO_DESC", new KeyInfoCommand()),
 
-            new CommandInfo("lsaddons", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONS_DESC"), new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsaddons", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONS_DESC", new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsaddonfields", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_DESC"),
+            new CommandInfo("lsaddonfields", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
                         }),
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
                         }),
                     ])
                 ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsaddonfuncs", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCS_DESC"),
+            new CommandInfo("lsaddonfuncs", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
                         }),
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
                         }),
                     ])
                 ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsaddonfuncparams", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC"),
+            new CommandInfo("lsaddonfuncparams", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
                         }),
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
                         }),
                         new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC"
                         }),
                     ])
                 ], new LsAddonFuncParamsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsaddonprops", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONPROPERTIES_DESC"),
+            new CommandInfo("lsaddonprops", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONPROPERTIES_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
                         }),
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
                         }),
                     ])
                 ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsaddontypes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC"),
+            new CommandInfo("lsaddontypes", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => AddonTools.GetAddons(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
                         }),
                     ])
                 ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsbaseaddons", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC"), new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsbaseaddons", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsfields", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSFIELDS_DESC"),
+            new CommandInfo("lsfields", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSFIELDS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("suppress", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC"), new SwitchOptions()
+                        new SwitchInfo("suppress", "NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsproperties", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSPROPERTIES_DESC"),
+            new CommandInfo("lsproperties", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSPROPERTIES_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("suppress", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC"), new SwitchOptions()
+                        new SwitchInfo("suppress", "NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsshells", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSSHELLS_DESC"), new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsshells", "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSSHELLS_DESC", new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("previewsplash", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_DESC"),
+            new CommandInfo("previewsplash", "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "splashName", new()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC")
+                            ArgumentDescription = "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("splashout", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC"), new SwitchOptions()
+                        new SwitchInfo("splashout", "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("context", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC"), new SwitchOptions()
+                        new SwitchInfo("context", "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC", new SwitchOptions()
                         {
                             ArgumentsRequired = true
                         }),
                     ])
                 ], new PreviewSplashCommand()),
 
-            new CommandInfo("showmainbuffer", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC"), new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("showmainbuffer", "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC", new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
