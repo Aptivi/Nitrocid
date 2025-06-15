@@ -33,13 +33,13 @@ namespace Nitrocid.Extras.Images
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("preview", LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_DESC"),
+            new CommandInfo("preview", "NKS_IMAGES_COMMAND_PREVIEW_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC")
+                            ArgumentDescription = "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC"
                         }),
                     ])
                 ], new PreviewCommand()),

@@ -52,12 +52,13 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static string status = "";
         private static bool bail;
         private static (int Year, int Month, int Day, CalendarTypes calendar) state;
-        private static readonly Keybinding[] bindings =
+
+        private static Keybinding[] Bindings =>
         [
-            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EXIT"), ConsoleKey.Escape),
-            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
-            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EVENTS"), ConsoleKey.E),
-            new Keybinding( LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_REMINDERS"), ConsoleKey.R),
+            new Keybinding(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new Keybinding(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
+            new Keybinding(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_EVENTS"), ConsoleKey.E),
+            new Keybinding(LanguageTools.GetLocalized("NKS_CALENDAR_TUI_KEYBINDING_REMINDERS"), ConsoleKey.R),
         ];
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 var keybindings = new Keybindings()
                 {
-                    KeybindingList = bindings,
+                    KeybindingList = Bindings,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -286,7 +287,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static void HandleKeypress(ConsoleKeyInfo key, ref (int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             // Check to see if we have this binding
-            if (!bindings.Any((heb) => heb.BindingKeyName == key.Key && heb.BindingKeyModifiers == key.Modifiers))
+            if (!Bindings.Any((heb) => heb.BindingKeyName == key.Key && heb.BindingKeyModifiers == key.Modifiers))
             {
                 switch (key.Key)
                 {
@@ -339,9 +340,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static void RenderKeybindingsBox()
         {
             // Show the available keys list
-            if (bindings.Length == 0)
+            if (Bindings.Length == 0)
                 return;
-            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(Bindings), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)

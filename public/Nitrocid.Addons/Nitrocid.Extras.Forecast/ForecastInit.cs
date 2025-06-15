@@ -36,11 +36,11 @@ namespace Nitrocid.Extras.Forecast
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("weather", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_DESC"),
+            new CommandInfo("weather", "NKS_FORECAST_COMMAND_WEATHER_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC"), new SwitchOptions()
+                        new SwitchInfo("tui", "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false,
                         })
@@ -49,19 +49,19 @@ namespace Nitrocid.Extras.Forecast
                     [
                         new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC")
+                            ArgumentDescription = "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC"
                         }),
                         new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC")
+                            ArgumentDescription = "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC"
                         }),
                         new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC")
+                            ArgumentDescription = "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC"), new SwitchOptions()
+                        new SwitchInfo("list", "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 3,
                             AcceptsValues = true,
@@ -69,21 +69,21 @@ namespace Nitrocid.Extras.Forecast
                         })
                     ])
                 ], new WeatherCommand()),
-            new CommandInfo("weather-old", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_DESC"),
+            new CommandInfo("weather-old", "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC")
+                            ArgumentDescription = "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC"
                         }),
                         new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC")
+                            ArgumentDescription = "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC"), new SwitchOptions()
+                        new SwitchInfo("list", "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 2,
                             AcceptsValues = false

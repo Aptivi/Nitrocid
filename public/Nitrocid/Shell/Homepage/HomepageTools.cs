@@ -69,17 +69,18 @@ namespace Nitrocid.Shell.Homepage
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
         private static bool isThemeMusicPlaying = false;
-        private static KernelThread themeMusicThread = new("Theme Music Thread", true, () => HandleThemeMusic());
+        private static readonly KernelThread themeMusicThread = new("Theme Music Thread", true, HandleThemeMusic);
         private static readonly Dictionary<string, Action> choiceActionsAddons = [];
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
-            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_FILEMANAGER"), FilesystemTools.OpenFileManagerTui },
-            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ALARMMANAGER"), AlarmCli.OpenAlarmCli },
-            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS"), NotificationsCli.OpenNotificationsCli },
-            { LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_TASKMANAGER"), TaskManagerCli.OpenTaskManagerCli },
+            { "NKS_SHELL_HOMEPAGE_FILEMANAGER", FilesystemTools.OpenFileManagerTui },
+            { "NKS_SHELL_HOMEPAGE_ALARMMANAGER", AlarmCli.OpenAlarmCli },
+            { "NKS_SHELL_HOMEPAGE_NOTIFICATIONS", NotificationsCli.OpenNotificationsCli },
+            { "NKS_SHELL_HOMEPAGE_TASKMANAGER", TaskManagerCli.OpenTaskManagerCli },
         };
-        private static readonly Keybinding[] bindings =
+
+        private static Keybinding[] Bindings =>
         [
             // Keyboard
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
@@ -164,7 +165,7 @@ namespace Nitrocid.Shell.Homepage
                     // Show bindings
                     var keybindings = new Keybindings()
                     {
-                        KeybindingList = bindings,
+                        KeybindingList = Bindings,
                         BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                         BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
                         BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
@@ -556,7 +557,7 @@ namespace Nitrocid.Shell.Homepage
                                 break;
                             case ConsoleKey.K:
                                 InfoBoxModalColor.WriteInfoBoxModal(
-                                    KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+                                    KeybindingTools.RenderKeybindingHelpText(Bindings), new InfoBoxSettings()
                                     {
                                         Title = "Available keys",
                                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),

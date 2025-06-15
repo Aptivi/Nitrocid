@@ -53,11 +53,12 @@ namespace Nitrocid.Extras.Dates.Timers
         internal static bool running;
         internal static Color? timerColor;
         private static Timer? _Timer;
-        private readonly static Keybinding[] keyBindings =
+
+        private static Keybinding[] KeyBindings =>
         [
-            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN"), ConsoleKey.Enter),
-            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_SETTIME"), ConsoleKey.T),
-            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_SETTIME"), ConsoleKey.T),
+            new(LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
         ];
 
         internal static Timer? Timer
@@ -150,7 +151,7 @@ namespace Nitrocid.Extras.Dates.Timers
                 int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 1;
                 var keybindings = new Keybindings()
                 {
-                    KeybindingList = keyBindings,
+                    KeybindingList = KeyBindings,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),

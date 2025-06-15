@@ -50,13 +50,14 @@ namespace Nitrocid.Extras.Dates.Timers
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool running;
-        private readonly static Keybinding[] keyBindings =
+
+        private static Keybinding[] KeyBindings =>
         [
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STARTSTOP"), ConsoleKey.Enter),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP"), ConsoleKey.L),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAPLIST"), ConsoleKey.L, ConsoleModifiers.Shift),
-            new( LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_RESET"), ConsoleKey.R),
-            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STARTSTOP"), ConsoleKey.Enter),
+            new(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP"), ConsoleKey.L),
+            new(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAPLIST"), ConsoleKey.L, ConsoleModifiers.Shift),
+            new(LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_RESET"), ConsoleKey.R),
+            new(LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
         ];
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Nitrocid.Extras.Dates.Timers
                 int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 1;
                 var keybindings = new Keybindings()
                 {
-                    KeybindingList = keyBindings,
+                    KeybindingList = KeyBindings,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
