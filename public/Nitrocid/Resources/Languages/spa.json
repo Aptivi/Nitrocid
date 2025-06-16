@@ -3937,7 +3937,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "El archivo no es un ensamblado .NET válido.\\n"
+      "text": "El archivo no es un ensamblado .NET válido."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

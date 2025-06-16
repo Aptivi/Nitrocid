@@ -3913,7 +3913,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Dosya geçerli bir .NET derlemesi değil.\\n"
+      "text": "Dosya geçerli bir .NET derlemesi değil."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

@@ -3915,7 +3915,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "文件不是有效的 .NET 程序集。\\n"
+      "text": "文件不是有效的 .NET 程序集。"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

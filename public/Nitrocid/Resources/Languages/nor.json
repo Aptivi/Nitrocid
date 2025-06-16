@@ -3916,7 +3916,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Filen er ikke en gyldig .NET-sammenstilling.\\n"
+      "text": "Filen er ikke en gyldig .NET-sammenstilling."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

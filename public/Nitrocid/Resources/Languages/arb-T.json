@@ -3938,7 +3938,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "الملف ليس تجميعاً صالحاً لـ .NET.\\n"
+      "text": "الملف ليس تجميعاً صالحاً لـ .NET."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",
