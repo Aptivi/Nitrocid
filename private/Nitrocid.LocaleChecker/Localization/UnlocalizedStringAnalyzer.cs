@@ -31,6 +31,7 @@ using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Nitrocid.Analyzers.Common;
+using System.Diagnostics;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -38,7 +39,8 @@ namespace Nitrocid.LocaleChecker.Localization
     public class UnlocalizedStringAnalyzer : DiagnosticAnalyzer
     {
         // This assembly
-        private readonly Assembly thisAssembly = typeof(UnlocalizedStringAnalyzer).Assembly;
+        private static readonly Assembly thisAssembly = typeof(UnlocalizedStringAnalyzer).Assembly;
+        private static readonly string[] languageManifestNames = [.. thisAssembly.GetManifestResourceNames().Where((name) => name.StartsWith("Nitrocid.Langs"))];
 
         // Some constants
         public const string DiagnosticId = "NLOC0001";
@@ -82,23 +84,28 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void PopulateEnglishLocalizations(CompilationStartAnalysisContext context)
         {
-            // Find the English JSON stream and open it.
-            var stream = thisAssembly.GetManifestResourceStream("Nitrocid.LocaleChecker.eng.json") ??
-                throw new Exception("Opening the eng.json resource stream has failed.");
-            var reader = new StreamReader(stream);
-            var jsonReader = new JsonTextReader(reader);
-            var document = JToken.Load(jsonReader) ??
-                throw new Exception("Unable to parse JSON for English localizations.");
-            var localizations = document["Localizations"]?.Values<string>() ??
-                throw new Exception("Unable to get localizations.");
-
-            // Now, add all localizations to a separate array
-            foreach (var localization in localizations)
+            foreach (string langStream in languageManifestNames)
             {
-                if (localization is null)
-                    throw new Exception("There is no localization.");
-                string localizationString = localization.ToString();
-                localizationList.Add(localizationString);
+                // Find the English JSON stream and open it.
+                var stream = thisAssembly.GetManifestResourceStream(langStream) ??
+                    throw new Exception("Opening the eng.json resource stream has failed.");
+                var reader = new StreamReader(stream);
+                var jsonReader = new JsonTextReader(reader);
+                var document = JToken.Load(jsonReader) ??
+                    throw new Exception("Unable to parse JSON for English localizations.");
+                var locs = document["locs"] ??
+                    throw new Exception("Unable to get localizations.");
+                var localizations = JsonConvert.DeserializeObject<LocalizationInfo[]>(locs.ToString()) ??
+                    throw new Exception("Unable to get localizations.");
+
+                // Now, add all localizations to a separate array
+                foreach (var localization in localizations)
+                {
+                    if (localization is null)
+                        throw new Exception("There is no localization.");
+                    string localizationString = localization.Localization.ToString();
+                    localizationList.Add(localizationString);
+                }
             }
 
             // Register the localization analysis action
@@ -117,19 +124,19 @@ namespace Nitrocid.LocaleChecker.Localization
             var localizableStringArgument = args[0] ??
                 throw new Exception("Can't get localizable string");
 
-            // Now, check for the Translate.DoTranslation() call
+            // Now, check for the LanguageTools.GetLocalized() call
             if (exp.Expression is not MemberAccessExpressionSyntax expMaes)
                 return;
             if (expMaes.Expression is IdentifierNameSyntax expIdentifier && expMaes.Name is IdentifierNameSyntax identifier)
             {
-                // Verify that we're dealing with Translate.DoTranslation()
+                // Verify that we're dealing with LanguageTools.GetLocalized()
                 var location = context.Node.GetLocation();
                 var idExpression = expIdentifier.Identifier.Text;
                 var idName = identifier.Identifier.Text;
-                if (idExpression == "Translate" && idName == "DoTranslation")
+                if (idExpression == "LanguageTools" && idName == "GetLocalized")
                 {
                     // Now, get the string representation from the argument count and compare it with the list of translations.
-                    // You'll notice that we sometimes call Translate.DoTranslation() with a variable instead of a string, so
+                    // You'll notice that we sometimes call LanguageTools.GetLocalized() with a variable instead of a string, so
                     // check that first, because they're usually obtained from a string representation usually prefixed with
                     // either the /* Localizable */ comment or in individual kernel resources. However, the resources don't
                     // have a prefix, so the key names alone are enough.
@@ -215,7 +222,7 @@ namespace Nitrocid.LocaleChecker.Localization
         {
             // Open every resource except the English translations file and the analyzer string resources
             var resourceNames = thisAssembly.GetManifestResourceNames().Except([
-                "Nitrocid.LocaleChecker.eng.json",
+                .. languageManifestNames,
                 "Nitrocid.LocaleChecker.Resources.AnalyzerResources.resources",
             ]).Where((path) => path.Contains($"\\{context.Compilation.Assembly.Name}\\"));
             foreach (var resourceName in resourceNames)
