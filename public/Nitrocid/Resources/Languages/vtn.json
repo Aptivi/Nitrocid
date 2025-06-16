@@ -3912,7 +3912,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Tệp không phải là tệp .NET hợp lệ.\\n"
+      "text": "Tệp không phải là tệp .NET hợp lệ."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

@@ -3918,7 +3918,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Bestand is geen geldige .NET-assembly.\\n"
+      "text": "Bestand is geen geldige .NET-assembly."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

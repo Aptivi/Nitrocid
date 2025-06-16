@@ -3915,7 +3915,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Il file non è un assembly .NET valido.\\n"
+      "text": "Il file non è un assembly .NET valido."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

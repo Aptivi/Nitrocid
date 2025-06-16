@@ -3912,7 +3912,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "फ़ाइल मान्य .NET असेंबली नहीं है.\\n"
+      "text": "फ़ाइल मान्य .NET असेंबली नहीं है."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

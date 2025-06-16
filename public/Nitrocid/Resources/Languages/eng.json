@@ -4018,7 +4018,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "File is not a valid .NET assembly.\\n"
+      "text": "File is not a valid .NET assembly."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

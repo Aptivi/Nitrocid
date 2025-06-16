@@ -3912,7 +3912,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Файл не є дійсною збіркою .NET.\\n"
+      "text": "Файл не є дійсною збіркою .NET."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

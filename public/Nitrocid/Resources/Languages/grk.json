@@ -3913,7 +3913,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Το αρχείο δεν είναι έγκυρο συγκρότημα .NET.\\n"
+      "text": "Το αρχείο δεν είναι έγκυρο συγκρότημα .NET."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

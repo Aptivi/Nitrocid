@@ -3915,7 +3915,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Fail bukan perhimpunan .NET yang sah.\\n"
+      "text": "Fail bukan perhimpunan .NET yang sah."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

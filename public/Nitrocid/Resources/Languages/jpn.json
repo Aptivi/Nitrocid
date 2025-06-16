@@ -3912,7 +3912,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "ファイルは有効な .NET アセンブリではありません。\\n"
+      "text": "ファイルは有効な .NET アセンブリではありません。"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",

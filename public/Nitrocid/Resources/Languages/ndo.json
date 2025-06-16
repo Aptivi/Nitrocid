@@ -3912,7 +3912,7 @@
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM",
-      "text": "Berkas bukan rakitan .NET yang valid.\\n"
+      "text": "Berkas bukan rakitan .NET yang valid."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO",
