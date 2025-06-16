@@ -38,17 +38,17 @@ namespace Nitrocid.Extras.Dates
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("gettimeinfo", "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+            new CommandInfo("gettimeinfo", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("now", "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
+                        new SwitchInfo("now", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
@@ -56,32 +56,32 @@ namespace Nitrocid.Extras.Dates
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
             
-            new CommandInfo("expiry", "NKS_DATES_COMMAND_EXPIRY_DESC",
+            new CommandInfo("expiry", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
                         }),
                         new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("implicit", "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
+                        new SwitchInfo("implicit", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExpiryCommand()),
 
-            new CommandInfo("stopwatch", "NKS_DATES_COMMAND_STOPWATCH_DESC", new StopwatchCommand()),
+            new CommandInfo("stopwatch", /* Localizable */ "NKS_DATES_COMMAND_STOPWATCH_DESC", new StopwatchCommand()),
 
-            new CommandInfo("timer", "NKS_DATES_COMMAND_TIMER_DESC", new TimerCommand()),
+            new CommandInfo("timer", /* Localizable */ "NKS_DATES_COMMAND_TIMER_DESC", new TimerCommand()),
 
-            new CommandInfo("pomodoro", "NKS_DATES_COMMAND_POMODORO_DESC", new PomodoroCommand()),
+            new CommandInfo("pomodoro", /* Localizable */ "NKS_DATES_COMMAND_POMODORO_DESC", new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>

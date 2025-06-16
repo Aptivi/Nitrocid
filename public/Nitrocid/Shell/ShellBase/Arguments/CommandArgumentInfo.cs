@@ -52,7 +52,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         public SwitchInfo[] Switches { get; private set; } =
         [
-            new SwitchInfo("set", "NKS_SHELL_BASE_SWITCH_SET_DESC", false, true)
+            new SwitchInfo("set", /* Localizable */ "NKS_SHELL_BASE_SWITCH_SET_DESC", false, true)
         ];
         /// <summary>
         /// Whether to accept the -set switch to set the UESH variable value

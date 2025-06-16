@@ -33,13 +33,13 @@ namespace Nitrocid.Extras.BeepSynth
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("beepsynth", "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
+            new CommandInfo("beepsynth", /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC"
                         }),
                     ])
                 ], new BeepSynthCommand())

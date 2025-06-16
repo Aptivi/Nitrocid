@@ -33,30 +33,30 @@ namespace Nitrocid.Extras.Calculators
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("calc", "NKS_CALCULATORS_COMMAND_CALC_DESC",
+            new CommandInfo("calc", /* Localizable */ "NKS_CALCULATORS_COMMAND_CALC_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALCULATORS_EXPRESSION"
+                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_EXPRESSION"
                         }),
                     ], true)
                 ], new CalcCommand()),
 
-            new CommandInfo("imaginary", "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+            new CommandInfo("imaginary", /* Localizable */ "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALCULATORS_REAL"
+                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_REAL"
                         }),
                         new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALCULATORS_IMAG"
+                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_IMAG"
                         }),
                     ])
                 ], new ImaginaryCommand()),

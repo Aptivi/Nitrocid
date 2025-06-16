@@ -39,81 +39,81 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("articleinfo", "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
+            new CommandInfo("articleinfo", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
                         })
                     ])
                 ], new ArticleInfoCommand()),
 
-            new CommandInfo("bookmark", "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC", new BookmarkCommand()),
+            new CommandInfo("bookmark", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC", new BookmarkCommand()),
 
-            new CommandInfo("detach", "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", new DetachCommand()),
 
-            new CommandInfo("feedinfo", "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC", new FeedInfoCommand()),
+            new CommandInfo("feedinfo", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC", new FeedInfoCommand()),
 
-            new CommandInfo("list", "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC", new ListCommand(), CommandFlags.Wrappable),
+            new CommandInfo("list", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC", new ListCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("listbookmark", "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC", new ListBookmarkCommand(), CommandFlags.Wrappable),
+            new CommandInfo("listbookmark", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC", new ListBookmarkCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("read", "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
+            new CommandInfo("read", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_READ_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
                         })
                     ])
                 ], new ReadCommand()),
 
-            new CommandInfo("search", "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
+            new CommandInfo("search", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("t", "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC", new SwitchOptions()
+                        new SwitchInfo("t", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("d", "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC", new SwitchOptions()
+                        new SwitchInfo("d", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("a", "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC", new SwitchOptions()
+                        new SwitchInfo("a", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("cs", "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC", new SwitchOptions()
+                        new SwitchInfo("cs", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new SearchCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("selfeed", "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
+            new CommandInfo("selfeed", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
                         })
                     ])
                 ], new SelFeedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("unbookmark", "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC", new UnbookmarkCommand()),
+            new CommandInfo("unbookmark", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC", new UnbookmarkCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

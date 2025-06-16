@@ -34,17 +34,17 @@ namespace Nitrocid.Extras.LanguageStudio
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mklang", "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
+            new CommandInfo("mklang", /* Localizable */ "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "pathToTranslations", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_ARGUMENT_PATH_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC")
+                        new SwitchInfo("tui", /* Localizable */ "NKS_LANGUAGESTUDIO_COMMAND_MKLANG_SWITCH_TUI_DESC")
                     ])
                 ], new MkLangCommand())
         ];

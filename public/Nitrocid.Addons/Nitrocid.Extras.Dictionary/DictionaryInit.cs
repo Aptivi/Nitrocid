@@ -33,13 +33,13 @@ namespace Nitrocid.Extras.Dictionary
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dict", "NKS_DICTIONARY_DICTIONARY",
+            new CommandInfo("dict", /* Localizable */ "NKS_DICTIONARY_DICTIONARY",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_DICTIONARY_WORDTODEFINE"
+                            ArgumentDescription = /* Localizable */ "NKS_DICTIONARY_WORDTODEFINE"
                         }),
                     ])
                 ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)

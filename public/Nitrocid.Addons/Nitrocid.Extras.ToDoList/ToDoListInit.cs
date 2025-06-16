@@ -35,18 +35,18 @@ namespace Nitrocid.Extras.ToDoList
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("todo", "NKS_TODO_COMMAND_TODO_DESC",
+            new CommandInfo("todo", /* Localizable */ "NKS_TODO_COMMAND_TODO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "add/remove/done/undone", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["add", "remove", "done", "undone"],
-                            ArgumentDescription = "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
                         }),
                         new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ToDoList
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["list", "save", "load"],
-                            ArgumentDescription = "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
                         }),
                     ]),
                 ], new TodoCommand()),
