@@ -135,7 +135,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5C239BD3-9597-4D5C-86C8-1940B9437A1C}"
 	ProjectSection(SolutionItems) = preProject
 		CHANGES = CHANGES
-		tools\changes.chg = tools\changes.chg
+		vnd\changes.chg = vnd\changes.chg
 		CHANGES.TITLE = CHANGES.TITLE
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
