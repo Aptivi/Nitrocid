@@ -5,7 +5,7 @@
                 {
                     "files": [
                         "public/Nitrocid/Nitrocid.csproj",
-                        "public/Nitrocid.LocaleGen.Core/Nitrocid.LocaleGen.Core.csproj"
+                        "public/Nitrocid.Addons/**/*.csproj"
                     ],
                     "src": ".."
                 }
