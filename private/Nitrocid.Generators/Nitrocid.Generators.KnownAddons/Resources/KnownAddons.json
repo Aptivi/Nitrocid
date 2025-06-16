@@ -1,212 +1,212 @@
 [
     {
         "name": "AddonScreensaverPacks",
-        "display": "Extra Screensavers Pack",
+        "display": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
         "project": "ScreensaverPacks"
     },
     {
         "name": "AddonSplashPacks",
-        "display": "Extra Splashes Pack",
+        "display": "NKS_KNOWNADDONS_PACKS_SPLASHES",
         "project": "SplashPacks"
     },
     {
         "name": "AddonThemePacks",
-        "display": "Extra Themes Pack",
+        "display": "NKS_KNOWNADDONS_PACKS_THEMES",
         "project": "ThemePacks"
     },
     {
         "name": "AddonShellPacks",
-        "display": "Extra Shells Pack",
+        "display": "NKS_KNOWNADDONS_PACKS_SHELLS",
         "project": "ShellPacks"
     },
     {
         "name": "ExtrasAmusements",
-        "display": "Extras - Amusements",
+        "display": "NKS_KNOWNADDONS_EXTRAS_AMUSEMENTS",
         "project": "Extras.Amusements"
     },
     {
         "name": "ExtrasArchiveShell",
-        "display": "Extras - Archive Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_ARCHIVE",
         "project": "Extras.ArchiveShell"
     },
     {
         "name": "ExtrasBassBoom",
-        "display": "Extras - BassBoom",
+        "display": "NKS_KNOWNADDONS_EXTRAS_BASSBOOM",
         "project": "Extras.BassBoom"
     },
     {
         "name": "ExtrasCaffeine",
-        "display": "Extras - Caffeine",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CAFFEINE",
         "project": "Extras.Caffeine"
     },
     {
         "name": "ExtrasCalculators",
-        "display": "Extras - Calculators",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CALCULATORS",
         "project": "Extras.Calculators"
     },
     {
         "name": "ExtrasCalendar",
-        "display": "Extras - Calendar",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CALENDAR",
         "project": "Extras.Calendar"
     },
     {
         "name": "ExtrasColorConvert",
-        "display": "Extras - Color Converter",
+        "display": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
         "project": "Extras.ColorConvert"
     },
     {
         "name": "ExtrasContacts",
-        "display": "Extras - Contacts",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
         "project": "Extras.Contacts"
     },
     {
         "name": "ExtrasDiagnostics",
-        "display": "Extras - Diagnostics",
+        "display": "NKS_KNOWNADDONS_EXTRAS_DIAGS",
         "project": "Extras.Diagnostics"
     },
     {
         "name": "ExtrasDictionary",
-        "display": "Extras - Dictionary",
+        "display": "NKS_KNOWNADDONS_EXTRAS_DICTIONARY",
         "project": "Extras.Dictionary"
     },
     {
         "name": "ExtrasDocking",
-        "display": "Extras - Docking",
+        "display": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
         "project": "Extras.Docking"
     },
     {
         "name": "ExtrasForecast",
-        "display": "Extras - Forecast",
+        "display": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
         "project": "Extras.Forecast"
     },
     {
         "name": "ExtrasFtpShell",
-        "display": "Extras - FTP Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_FTP",
         "project": "Extras.FtpShell"
     },
     {
         "name": "ExtrasGitShell",
-        "display": "Extras - Git Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_GIT",
         "project": "Extras.GitShell"
     },
     {
         "name": "ExtrasHttpShell",
-        "display": "Extras - HTTP Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_HTTP",
         "project": "Extras.HttpShell"
     },
     {
         "name": "ExtrasJsonShell",
-        "display": "Extras - JSON Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_JSON",
         "project": "Extras.JsonShell"
     },
     {
         "name": "ExtrasLanguageStudio",
-        "display": "Extras - Language Studio",
+        "display": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
         "project": "Extras.LanguageStudio"
     },
     {
         "name": "ExtrasMailShell",
-        "display": "Extras - Mail Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_MAIL",
         "project": "Extras.MailShell"
     },
     {
         "name": "ExtrasNameGen",
-        "display": "Extras - Name Generator",
+        "display": "NKS_KNOWNADDONS_EXTRAS_NAMEGEN",
         "project": "Extras.NameGen"
     },
     {
         "name": "ExtrasNotes",
-        "display": "Extras - Notes",
+        "display": "NKS_KNOWNADDONS_EXTRAS_NOTES",
         "project": "Extras.Notes"
     },
     {
         "name": "ExtrasRssShell",
-        "display": "Extras - RSS Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_RSS",
         "project": "Extras.RssShell"
     },
     {
         "name": "ExtrasSftpShell",
-        "display": "Extras - SFTP Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_SFTP",
         "project": "Extras.SftpShell"
     },
     {
         "name": "ExtrasSqlShell",
-        "display": "Extras - SQL Shell",
+        "display": "NKS_KNOWNADDONS_EXTRAS_SQL",
         "project": "Extras.SqlShell"
     },
     {
         "name": "ExtrasThemeStudio",
-        "display": "Extras - Theme Studio",
+        "display": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
         "project": "Extras.ThemeStudio"
     },
     {
         "name": "ExtrasDates",
-        "display": "Extras - Dates",
+        "display": "NKS_KNOWNADDONS_EXTRAS_DATES",
         "project": "Extras.Dates"
     },
     {
         "name": "ExtrasTips",
-        "display": "Extras - Kernel Tips",
+        "display": "NKS_KNOWNADDONS_EXTRAS_TIPS",
         "project": "Extras.Tips"
     },
     {
         "name": "ExtrasToDoList",
-        "display": "Extras - To-do List",
+        "display": "NKS_KNOWNADDONS_EXTRAS_TODO",
         "project": "Extras.ToDoList"
     },
     {
         "name": "ExtrasUnitConv",
-        "display": "Extras - Unit Converter",
+        "display": "NKS_KNOWNADDONS_EXTRAS_UNITCONV",
         "project": "Extras.UnitConv"
     },
     {
         "name": "ExtrasPastebin",
-        "display": "Extras - Pastebin",
+        "display": "NKS_KNOWNADDONS_EXTRAS_PASTEBIN",
         "project": "Extras.Pastebin"
     },
     {
         "name": "ExtrasImages",
-        "display": "Extras - Images",
+        "display": "NKS_KNOWNADDONS_EXTRAS_IMAGES",
         "project": "Extras.Images"
     },
     {
         "name": "ExtrasStocks",
-        "display": "Extras - Stocks",
+        "display": "NKS_KNOWNADDONS_EXTRAS_STOCKS",
         "project": "Extras.Stocks"
     },
     {
         "name": "ExtrasBeepSynth",
-        "display": "Extras - Beep Synth",
+        "display": "NKS_KNOWNADDONS_EXTRAS_BEEPSYNTH",
         "project": "Extras.BeepSynth"
     },
     {
         "name": "ExtrasSsh",
-        "display": "Extras - SSH",
+        "display": "NKS_KNOWNADDONS_EXTRAS_SSH",
         "project": "Extras.Ssh"
     },
     {
         "name": "ExtrasChemistry",
-        "display": "Extras - Chemistry",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CHEMISTRY",
         "project": "Extras.Chemistry"
     },
     {
         "name": "ExtrasMods",
-        "display": "Extras - Mods",
+        "display": "NKS_KNOWNADDONS_EXTRAS_MODS",
         "project": "Extras.Mods"
     },
     {
         "name": "ExtrasImagesIcons",
-        "display": "Extras - Icons",
+        "display": "NKS_KNOWNADDONS_EXTRAS_ICONS",
         "project": "Extras.Images.Icons"
     },
     {
         "name": "ExtrasHashes",
-        "display": "Extras - Hashes",
+        "display": "NKS_KNOWNADDONS_EXTRAS_HASHES",
         "project": "Extras.Hashes"
     },
     {
         "name": "ExtrasChatbotAI",
-        "display": "Extras - Chatbot AI",
+        "display": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
         "project": "Extras.ChatbotAI"
     }
 ]
