@@ -87,30 +87,30 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
         internal readonly static List<CommandInfo> unifiedCommandDict =
         [
-            new CommandInfo("exec", "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
+            new CommandInfo("exec", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "process", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC"
                         }),
                         new CommandArgumentPart(false, "args", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("forked", "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
+                        new SwitchInfo("forked", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ])
                 ], new ExecUnifiedCommand()),
 
-            new CommandInfo("exit", "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC", new ExitUnifiedCommand()),
+            new CommandInfo("exit", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC", new ExitUnifiedCommand()),
 
-            new CommandInfo("findcmds", "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
+            new CommandInfo("findcmds", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
                 [
                     new CommandArgumentInfo(
                     [
@@ -121,97 +121,97 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     ], false)
                 ], new FindCmdsUnifiedCommand()),
 
-            new CommandInfo("help", "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
+            new CommandInfo("help", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("general", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC", new SwitchOptions()
+                        new SwitchInfo("general", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("mod", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC", new SwitchOptions()
+                        new SwitchInfo("mod", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("alias", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC", new SwitchOptions()
+                        new SwitchInfo("alias", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("unified", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                        new SwitchInfo("unified", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("addon", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC", new SwitchOptions()
+                        new SwitchInfo("addon", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("all", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC", new SwitchOptions()
+                        new SwitchInfo("all", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("simplified", "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
+                        new SwitchInfo("simplified", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
                     ], false)
                 ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("loadhistories", "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
+            new CommandInfo("loadhistories", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC", new LoadHistoriesUnifiedCommand()),
 
-            new CommandInfo("pipe", "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
+            new CommandInfo("pipe", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC"
                         }),
                         new CommandArgumentPart(true, "targetCommand", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType),
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("quoted", "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC")
+                        new SwitchInfo("quoted", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC")
                     ], true)
                 ], new PipeUnifiedCommand()),
 
-            new CommandInfo("presets", "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC", new PresetsUnifiedCommand()),
+            new CommandInfo("presets", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC", new PresetsUnifiedCommand()),
 
-            new CommandInfo("repeat", "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
+            new CommandInfo("repeat", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC"
                         }),
                         new CommandArgumentPart(false, "command"),
                     ])
                 ], new RepeatUnifiedCommand()),
 
-            new CommandInfo("savehistories", "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
+            new CommandInfo("savehistories", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
 
-            new CommandInfo("tip", "NKS_SHELL_SHELLS_COMMAND_TIP_DESC", new TipUnifiedCommand()),
+            new CommandInfo("tip", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_TIP_DESC", new TipUnifiedCommand()),
 
-            new CommandInfo("wrap", "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
+            new CommandInfo("wrap", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType),
-                            ArgumentDescription = "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC"
                         })
                     ])
                 ], new WrapUnifiedCommand()),

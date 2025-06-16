@@ -34,41 +34,41 @@ namespace Nitrocid.Extras.Pastebin
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("pastebin", "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+            new CommandInfo("pastebin", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC"
                         }),
                         new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("provider", "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", new()
+                        new SwitchInfo("provider", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("type", "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", new()
+                        new SwitchInfo("type", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postpage", "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", new()
+                        new SwitchInfo("postpage", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postformat", "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", new()
+                        new SwitchInfo("postformat", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postfield", "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", new()
+                        new SwitchInfo("postfield", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,

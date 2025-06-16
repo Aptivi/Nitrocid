@@ -38,39 +38,39 @@ namespace Nitrocid.Extras.NameGen
     {
         private readonly List<CommandInfo> addonCommands =
         [
-                new CommandInfo("findfirstname", "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+                new CommandInfo("findfirstname", /* Localizable */ "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC"
                             }),
                             new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC"
                             }),
                             new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC"
                             }),
                         ],
                         [
-                            new SwitchInfo("t", "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", new SwitchOptions()
+                            new SwitchInfo("t", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
-                            new SwitchInfo("male", "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", new SwitchOptions()
+                            new SwitchInfo("male", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("female", "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", new SwitchOptions()
+                            new SwitchInfo("female", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("both", "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                            new SwitchInfo("both", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,
@@ -78,67 +78,67 @@ namespace Nitrocid.Extras.NameGen
                         ], true)
                     ], new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-                new CommandInfo("findsurname", "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+                new CommandInfo("findsurname", /* Localizable */ "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC"
                             }),
                             new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC"
                             }),
                             new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC"
                             }),
                         ], true)
                     ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-                new CommandInfo("genname", "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+                new CommandInfo("genname", /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
                     [
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true,
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC"
                             }),
                             new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC"
                             }),
                             new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC"
                             }),
                             new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC"
                             }),
                             new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC"
                             }),
                         ],
                         [
-                            new SwitchInfo("t", "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", new SwitchOptions()
+                            new SwitchInfo("t", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
-                            new SwitchInfo("male", "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", new SwitchOptions()
+                            new SwitchInfo("male", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("female", "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", new SwitchOptions()
+                            new SwitchInfo("female", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
-                            new SwitchInfo("both", "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                            new SwitchInfo("both", /* Localizable */ "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC", new SwitchOptions()
                             {
                                 ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,

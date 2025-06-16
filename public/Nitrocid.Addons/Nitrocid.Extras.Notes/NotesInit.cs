@@ -35,50 +35,50 @@ namespace Nitrocid.Extras.Notes
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("addnote", "NKS_NOTES_COMMAND_ADDNOTE_DESC",
+            new CommandInfo("addnote", /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC"
                         })
                     ]),
                 ], new AddNote()),
 
-            new CommandInfo("removenote", "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
+            new CommandInfo("removenote", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
                         })
                     ]),
                 ], new RemoveNote()),
 
-            new CommandInfo("removenotes", "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
+            new CommandInfo("removenotes", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
                 [
                     new CommandArgumentInfo(),
                 ], new RemoveNotes()),
 
-            new CommandInfo("listnotes", "NKS_NOTES_COMMAND_LISTNOTES_DESC",
+            new CommandInfo("listnotes", /* Localizable */ "NKS_NOTES_COMMAND_LISTNOTES_DESC",
                 [
                     new CommandArgumentInfo(),
                 ], new ListNotes()),
 
-            new CommandInfo("savenotes", "NKS_NOTES_COMMAND_SAVENOTES_DESC",
+            new CommandInfo("savenotes", /* Localizable */ "NKS_NOTES_COMMAND_SAVENOTES_DESC",
                 [
                     new CommandArgumentInfo(),
                 ], new SaveNotes()),
 
-            new CommandInfo("reloadnotes", "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
+            new CommandInfo("reloadnotes", /* Localizable */ "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
                 [
                     new CommandArgumentInfo(),
                 ], new ReloadNotes()),
 
-            new CommandInfo("notestui", "NKS_NOTES_COMMAND_NOTESTUI_DESC",
+            new CommandInfo("notestui", /* Localizable */ "NKS_NOTES_COMMAND_NOTESTUI_DESC",
                 [
                     new CommandArgumentInfo(),
                 ], new NotesTui()),

@@ -34,17 +34,17 @@ namespace Nitrocid.Extras.Caffeine
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("caffeine", "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+            new CommandInfo("caffeine", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
                         }),
                     ],
                     [
-                        new SwitchInfo("abort", "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
+                        new SwitchInfo("abort", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1
                         })

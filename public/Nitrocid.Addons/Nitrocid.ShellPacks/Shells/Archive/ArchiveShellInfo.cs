@@ -39,70 +39,70 @@ namespace Nitrocid.ShellPacks.Shells.Archive
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cdir", "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC", new CDirCommand()),
+            new CommandInfo("cdir", /* Localizable */ "NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC", new CDirCommand()),
 
-            new CommandInfo("chdir", "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
+            new CommandInfo("chdir", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC"
                         })
                     ])
                 ], new ChDirCommand()),
 
-            new CommandInfo("chadir", "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
+            new CommandInfo("chadir", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "archivedirectory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC"
                         })
                     ])
                 ], new ChADirCommand()),
 
-            new CommandInfo("get", "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
+            new CommandInfo("get", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "entry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC"
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("absolute", "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC")
+                        new SwitchInfo("absolute", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC")
                     ])
                 ], new GetCommand()),
 
-            new CommandInfo("list", "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
+            new CommandInfo("list", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC"
                         })
                     ])
                 ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("pack", "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
+            new CommandInfo("pack", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "localfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC"
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC"
                         })
                     ])
                 ], new PackCommand()),

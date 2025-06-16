@@ -46,33 +46,33 @@ namespace Nitrocid.Extras.Contacts
         ];
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("contacts", "NKS_CONTACTS_COMMAND_CONTACTS_DESC", new ContactsCommand()),
-            new CommandInfo("listcontacts", "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC", new ListContactsCommand()),
-            new CommandInfo("loadcontacts", "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC", new LoadContactsCommand()),
-            new CommandInfo("importcontacts", "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+            new CommandInfo("contacts", /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTS_DESC", new ContactsCommand()),
+            new CommandInfo("listcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC", new ListContactsCommand()),
+            new CommandInfo("loadcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC", new LoadContactsCommand()),
+            new CommandInfo("importcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
                             })
                         ],
                         [
-                            new SwitchInfo("mecard", "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
+                            new SwitchInfo("mecard", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
                                 AcceptsValues = false,
                             }),
                         ]
                     )
                 ], new ImportContactsCommand()),
-            new CommandInfo("contactinfo", "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+            new CommandInfo("contactinfo", /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "contactNum", new()
                             {
                                 IsNumeric = true,
-                                ArgumentDescription = "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
                             })
                         ]
                     )

@@ -35,18 +35,18 @@ namespace Nitrocid.Extras.Mods
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("modman", "NKS_MODS_COMMAND_MODMAN_DESC",
+            new CommandInfo("modman", /* Localizable */ "NKS_MODS_COMMAND_MODMAN_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
                         {
                             ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
-                            ArgumentDescription = "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
                         }),
                         new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -54,18 +54,18 @@ namespace Nitrocid.Extras.Mods
                         new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
                         {
                             ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
-                            ArgumentDescription = "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
                         }),
                     ]),
                 ], new ModManCommand(), CommandFlags.Strict),
 
-            new CommandInfo("modmanual", "NKS_MODS_COMMAND_MODMANUAL_DESC",
+            new CommandInfo("modmanual", /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC"
                         }),
                     ])
                 ], new ModManualCommand()),

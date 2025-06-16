@@ -37,11 +37,11 @@ namespace Nitrocid.ShellPacks.Shells.Sql
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cmd", "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC", new CmdCommand()),
+            new CommandInfo("cmd", /* Localizable */ "NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC", new CmdCommand()),
 
-            new CommandInfo("dbinfo", "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC", new DbInfoCommand()),
+            new CommandInfo("dbinfo", /* Localizable */ "NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC", new DbInfoCommand()),
 
-            new CommandInfo("tui", "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC", new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

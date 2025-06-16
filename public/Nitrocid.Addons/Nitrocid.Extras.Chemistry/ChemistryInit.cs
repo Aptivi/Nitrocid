@@ -35,18 +35,18 @@ namespace Nitrocid.Extras.Chemistry
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("element", "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+            new CommandInfo("element", /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
                         }),
                     ])
                 ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("elements", "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("elements", /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>

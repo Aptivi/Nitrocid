@@ -43,61 +43,61 @@ namespace Nitrocid.Extras.Calendar
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("altdate", "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
+            new CommandInfo("altdate", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "culture", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("date", "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC", new SwitchOptions()
+                        new SwitchInfo("date", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["full", "time"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("time", "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC", new SwitchOptions()
+                        new SwitchInfo("time", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["date", "full"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("full", "NKS_CALENDAR_COMMAND_ALTDATE_DESC", new SwitchOptions()
+                        new SwitchInfo("full", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["date", "time"],
                             AcceptsValues = false
                         }),
-                        new SwitchInfo("utc", "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC", new SwitchOptions()
+                        new SwitchInfo("utc", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
                     ], true)
                 ], new AltDateCommand(), CommandFlags.RedirectionSupported),
 
-            new CommandInfo("calendar", "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
+            new CommandInfo("calendar", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["tui"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC"
                         }),
                         new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC"
                         }),
                         new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC"
                         })
                     ],
                     [
-                        new SwitchInfo("calendar", "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC"),
-                        new SwitchInfo("legacy", "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC", new SwitchOptions()
+                        new SwitchInfo("calendar", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC"),
+                        new SwitchInfo("legacy", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
                         }),
@@ -107,20 +107,20 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["add"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC"
                         }),
                         new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC"
                         }),
                         new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -128,17 +128,17 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["remove"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC"
                         }),
                         new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -146,12 +146,12 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["list"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -159,12 +159,12 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["saveall"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -172,7 +172,7 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
@@ -180,11 +180,11 @@ namespace Nitrocid.Extras.Calendar
                         }),
                         new CommandArgumentPart(true, "dateandtime", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC"
                         }),
                         new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -192,17 +192,17 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["remove"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC"
                         }),
                         new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -210,12 +210,12 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["list"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC"
                         })
                     ]),
                     new CommandArgumentInfo(
@@ -223,12 +223,12 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["saveall"],
-                            ArgumentDescription = "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC"
+                            ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC"
                         })
                     ]),
                 ], new CalendarCommand()),

@@ -40,21 +40,21 @@ namespace Nitrocid.Arguments
         internal readonly static Dictionary<string, ArgumentInfo> outArgs = new()
         {
             { "help",
-                new ArgumentInfo("help", "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
+                new ArgumentInfo("help", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new HelpArgument())
             },
 
             { "version",
-                new ArgumentInfo("version", "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
+                new ArgumentInfo("version", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new VersionArgument())
             },
 
             { "apiversion",
-                new ArgumentInfo("apiversion", "NKS_ARGUMENTS_ARGUMENT_APIVERSION_DESC",
+                new ArgumentInfo("apiversion", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_APIVERSION_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new ApiVersionArgument())
@@ -64,63 +64,63 @@ namespace Nitrocid.Arguments
         private readonly static Dictionary<string, ArgumentInfo> args = new()
         {
             { "quiet",
-                new ArgumentInfo("quiet", "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
+                new ArgumentInfo("quiet", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new QuietArgument())
             },
 
             { "maintenance",
-                new ArgumentInfo("maintenance", "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
+                new ArgumentInfo("maintenance", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new MaintenanceArgument())
             },
 
             { "safe",
-                new ArgumentInfo("safe", "NKS_ARGUMENTS_ARGUMENT_SAFE_DESC",
+                new ArgumentInfo("safe", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_SAFE_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new SafeArgument())
             },
 
             { "testInteractive",
-                new ArgumentInfo("testInteractive", "NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC",
+                new ArgumentInfo("testInteractive", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new TestInteractiveArgument())
             },
 
             { "debug",
-                new ArgumentInfo("debug", "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
+                new ArgumentInfo("debug", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new DebugArgument())
             },
 
             { "terminaldebug",
-                new ArgumentInfo("terminaldebug", "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
+                new ArgumentInfo("terminaldebug", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new TerminalDebugArgument())
             },
 
             { "reset",
-                new ArgumentInfo("reset", "NKS_ARGUMENTS_ARGUMENT_RESET_DESC",
+                new ArgumentInfo("reset", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_RESET_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new ResetArgument())
             },
 
             { "noaltbuffer",
-                new ArgumentInfo("noaltbuffer", "NKS_ARGUMENTS_ARGUMENT_NOALTBUFFER_DESC",
+                new ArgumentInfo("noaltbuffer", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_NOALTBUFFER_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new NoAltBufferArgument())
             },
 
             { "lang",
-                new ArgumentInfo("lang", "NKS_ARGUMENTS_ARGUMENT_LANG_DESC",
+                new ArgumentInfo("lang", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_LANG_DESC",
                     [
                         new CommandArgumentInfo(
                         [
@@ -130,21 +130,21 @@ namespace Nitrocid.Arguments
             },
 
             { "attach",
-                new ArgumentInfo("attach", "NKS_ARGUMENTS_ARGUMENT_ATTACH_DESC",
+                new ArgumentInfo("attach", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_ATTACH_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new AttachArgument())
             },
 
             { "verbosepreboot",
-                new ArgumentInfo("verbosepreboot", "NKS_ARGUMENTS_ARGUMENT_VERBOSEPREBOOT_DESC",
+                new ArgumentInfo("verbosepreboot", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_VERBOSEPREBOOT_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new VerbosePrebootArgument())
             },
 
             { "noprebootsplash",
-                new ArgumentInfo("noprebootsplash", "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
+                new ArgumentInfo("noprebootsplash", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
                     [
                         new CommandArgumentInfo()
                     ], new NoPrebootSplashArgument())
