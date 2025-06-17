@@ -10130,6 +10130,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "Die benutzerdefinierte Konfiguration {0} kann nicht deserialisiert werden"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "Dieser Abschnitt listet die Treibereinstellungen auf."
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "Aktueller Konsolentreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "Welchen Konsolentreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "Aktueller Zufallszahlengenerator-Treiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "Welchen Zufallszahlengenerator-Treiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "Aktueller Netzwerktreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "Welchen Netzwerktreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "Aktueller Dateisystemtreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "Welchen Dateisystemtreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "Aktueller Verschlüsselungstreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "Welchen Verschlüsselungstreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "Aktueller Treiber für reguläre Ausdrücke"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "Welchen Treiber für reguläre Ausdrücke möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "Aktueller Treiber für den Debug-Logger-Generator"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "Welchen Treiber für den Debug-Logger-Generator möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "Aktueller Kodierungstreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "Welchen Kodierungstreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "Aktueller Treiber für den Hardware-Prober"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "Welchen Treiber für den Hardware-Prober möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "Aktueller Sortiertreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "Welchen Sortiertreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "Aktueller Eingabetreiber"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "Welchen Eingabetreiber möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "Aktueller Treiber für die asymmetrische Kodierung"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "Welchen Treiber für die asymmetrische Kodierung möchten Sie verwenden?"
     }
   ]
 }

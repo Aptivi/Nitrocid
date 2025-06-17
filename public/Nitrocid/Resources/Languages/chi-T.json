@@ -10129,6 +10129,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "无法反序列化自定义配置 {0}"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "本部分列出了驱动程序设置。"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "当前控制台驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "您想使用哪个控制台驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "当前随机数生成器驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "您想使用哪个随机数生成器驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "当前网络驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "您想使用哪个网络驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "当前文件系统驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "您想使用哪个文件系统驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "当前加密驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "您想使用哪个加密驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "当前正则表达式驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "您想使用哪个正则表达式驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "当前调试记录器生成器驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "您想使用哪个调试记录器生成器驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "当前编码驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "您想使用哪个编码驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "当前硬件探测器驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "您想使用哪个硬件探测器驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "当前排序驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "您想使用哪个排序驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "当前输入驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "您想使用哪个输入驱动程序？"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "当前非对称编码驱动程序"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "您想使用哪个非对称编码驱动程序？"
     }
   ]
 }

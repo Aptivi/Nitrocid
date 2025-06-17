@@ -10122,6 +10122,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "Δεν είναι δυνατή η αφαίρεση της προσαρμοσμένης διαμόρφωσης {0}"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "Αυτή η ενότητα παραθέτει τις ρυθμίσεις του προγράμματος οδήγησης."
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης κονσόλας"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης κονσόλας θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης για τη δημιουργία τυχαίων αριθμών"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης γεννήτριας τυχαίων αριθμών θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης δικτύου"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης δικτύου θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης συστήματος αρχείων"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης συστήματος αρχείων θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης κρυπτογράφησης"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης κρυπτογράφησης θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης κανονικής έκφρασης"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης τυπικής έκφρασης θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης δημιουργίας καταγραφικού εντοπισμού σφαλμάτων"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης δημιουργίας καταγραφικού εντοπισμού σφαλμάτων θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης κωδικοποίησης"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης κωδικοποίησης θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης για ανιχνευτή υλικού"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης ανιχνευτή υλικού θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης ταξινόμησης"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης ταξινόμησης θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης εισόδου"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης εισόδου θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "Τρέχον πρόγραμμα οδήγησης ασύμμετρης κωδικοποίησης"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "Ποιο πρόγραμμα οδήγησης ασύμμετρης κωδικοποίησης θα θέλατε να χρησιμοποιήσετε;"
     }
   ]
 }

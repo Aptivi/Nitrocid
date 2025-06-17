@@ -10121,6 +10121,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "Неможливо десеріалізувати спеціальну конфігурацію {0}"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "У цьому розділі наведено параметри драйвера."
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "Поточний драйвер консолі"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "Який драйвер консолі ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "Поточний драйвер генератора випадкових чисел"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "Який драйвер генератора випадкових чисел ви хотіли б використати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "Актуальний мережевий драйвер"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "Який мережевий драйвер ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "Поточний драйвер файлової системи"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "Який драйвер файлової системи ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "Актуальний драйвер шифрування"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "Який драйвер шифрування ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "Поточний драйвер регулярного виразу"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "Який драйвер регулярного виразу ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "Поточний драйвер генератора реєстратора налагодження"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "Який драйвер генератора журналу налагодження ви хотіли б використати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "Актуальний драйвер кодування"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "Який драйвер кодування ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "Поточний драйвер обладнання"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "Який драйвер обладнання ви б хотіли використати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "Поточний драйвер сортування"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "Який драйвер сортування ви хочете використовувати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "Поточний вхідний драйвер"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "Який вхідний драйвер ви б хотіли використати?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "Поточний драйвер асиметричного кодування"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "Який драйвер асиметричного кодування ви хотіли б використати?"
     }
   ]
 }

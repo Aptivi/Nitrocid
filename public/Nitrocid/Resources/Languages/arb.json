@@ -10147,6 +10147,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "la yumkin 'iilgha' tasalsul altakwin almukhasas {0}"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "yasrud hadha alqism 'iiedadat barnamaj altashghili."
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "barnamaj tashghil wahdat altahakum alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil wahdat altahakum aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "barnamaj tashghil mawlid al'arqam aleashwayiyat alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil mawlid al'arqam aleashwayiyat aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "barnamaj tashghil alshabakat alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil alshabakat aladhi targhab fi astikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "barnamaj tashghil nizam almilafaat alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil nizam almilafaat aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "barnamaj tashghil altashfir alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil altashfir aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "barnamaj tashghil altaebirat aleadiat alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil altaebirat aleadiat aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "barnamaj tashghil muld musjl altashih alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil muld musjl altashih aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "barnamaj tashghil altarmiz alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil altarmiz aladhi targhab fi astikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "barnamaj tashghil mustkshf al'ajhizat alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil mustkshf al'ajhizat aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "barnamaj tashghil alfarz alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil alfarz aladhi targhab fi astikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "barnamaj tashghil al'iidkhal alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil al'iidkhal aladhi targhab fi aistikhdamihi?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "barnamaj tashghil altarmiz ghayr almutamathil alhalii"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "ma hu barnamaj tashghil altarmiz ghayr almutamathil aladhi targhab fi astikhdamihi?"
     }
   ]
 }
