@@ -25,7 +25,6 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Textify.Versioning;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;

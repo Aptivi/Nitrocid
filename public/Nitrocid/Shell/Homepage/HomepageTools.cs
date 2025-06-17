@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
