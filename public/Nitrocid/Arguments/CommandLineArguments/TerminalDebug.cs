@@ -19,6 +19,7 @@
 
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Console;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
