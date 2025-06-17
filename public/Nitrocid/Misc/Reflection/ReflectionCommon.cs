@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
 using System;
 using System.Linq;

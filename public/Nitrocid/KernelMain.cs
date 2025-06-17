@@ -38,8 +38,9 @@ using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
 using Aptivestigate.CrashHandler;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Nitrocid.Kernel;
 
-namespace Nitrocid.Kernel
+namespace Nitrocid
 {
     /// <summary>
     /// Kernel main class

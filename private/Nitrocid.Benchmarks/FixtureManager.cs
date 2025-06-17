@@ -18,7 +18,6 @@
 //
 
 using BenchmarkDotNet.Running;
-using Nitrocid.Kernel;
 
 namespace Nitrocid.Benchmarks
 {
