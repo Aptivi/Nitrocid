@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Shell.Arguments.Base;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Diagnostics;

@@ -29,6 +29,7 @@ using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Shell.Arguments.Base;
 using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Arguments
@@ -131,7 +132,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         internal static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText, bool earlyStage)
         {
             string Argument;
-            var KernelArguments = earlyStage ? ArgumentParse.outArgs : ArgumentParse.AvailableCMDLineArgs;
+            var kernelArguments = earlyStage ? KernelArguments.outArgs : KernelArguments.AvailableCMDLineArgs;
 
             // Split the requested argument string into words
             var words = ArgumentText.SplitEncloseDoubleQuotes();
@@ -143,7 +144,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
+            var ArgumentInfo = kernelArguments.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
             var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);

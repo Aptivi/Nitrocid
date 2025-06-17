@@ -42,6 +42,7 @@ using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
 using Nitrocid.Misc.Audio;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -61,7 +62,7 @@ namespace Nitrocid.Kernel
             KernelInitializers.InitializeCritical();
 
             // Check for kernel command-line arguments
-            ArgumentParse.ParseArguments(args);
+            ArgumentParse.ParseArguments(args, KernelArguments.AvailableCMDLineArgs);
 
             // Some command-line arguments may request kernel shutdown
             if (PowerManager.KernelShutdown)

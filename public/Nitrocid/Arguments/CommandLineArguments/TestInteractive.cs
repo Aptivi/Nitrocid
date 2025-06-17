@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging.Testing;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Starting;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
