@@ -1,128 +1,128 @@
 [
     {
         "Name": "Drivers",
-        "Desc": "This section lists the driver settings.",
+        "Desc": "NKS_SETTINGS_DRIVERS_DESC",
         "DisplayAs": "NKS_KERNEL_CONFIGURATION_INSTANCES_DRIVERSETTINGS",
         "Keys": [
             {
-                "Name": "Current console driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentConsoleDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetConsoleDriverNames",
                 "SelectionFunctionType": "ConsoleDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which console driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC"
             },
             {
-                "Name": "Current random number generator driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentRandomDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetRandomDriverNames",
                 "SelectionFunctionType": "RandomDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which random number generator driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC"
             },
             {
-                "Name": "Current network driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentNetworkDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetNetworkDriverNames",
                 "SelectionFunctionType": "NetworkDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which network driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC"
             },
             {
-                "Name": "Current filesystem driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentFilesystemDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetFilesystemDriverNames",
                 "SelectionFunctionType": "FilesystemDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which filesystem driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC"
             },
             {
-                "Name": "Current encryption driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentEncryptionDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetEncryptionDriverNames",
                 "SelectionFunctionType": "EncryptionDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which encryption driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC"
             },
             {
-                "Name": "Current regular expression driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentRegexpDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetRegexpDriverNames",
                 "SelectionFunctionType": "RegexpDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which regular expression driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC"
             },
             {
-                "Name": "Current debug logger driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentDebugLoggerDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetDebugLoggerDriverNames",
                 "SelectionFunctionType": "DebugLoggerDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which debug logger driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC"
             },
             {
-                "Name": "Current encoding driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentEncodingDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetEncodingDriverNames",
                 "SelectionFunctionType": "EncodingDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which encoding driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC"
             },
             {
-                "Name": "Current hardware prober driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentHardwareProberDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetHardwareProberDriverNames",
                 "SelectionFunctionType": "HardwareProberDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which hardware prober driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC"
             },
             {
-                "Name": "Current sorting driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentSortingDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetSortingDriverNames",
                 "SelectionFunctionType": "SortingDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which sorting driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC"
             },
             {
-                "Name": "Current input driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentInputDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetInputDriverNames",
                 "SelectionFunctionType": "InputDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which input driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC"
             },
             {
-                "Name": "Current asymmetric encoding driver",
+                "Name": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentEncodingAsymmetricDriver",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetEncodingAsymmetricDriverNames",
                 "SelectionFunctionType": "EncodingAsymmetricDriverTools",
                 "SelectionFallback": [ "Default" ],
-                "Description": "Which asymmetric encoding driver would you like to use?"
+                "Description": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC"
             }
         ]
     }

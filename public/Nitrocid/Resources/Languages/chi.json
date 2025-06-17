@@ -10129,6 +10129,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "Wúfǎ fǎn xùliè huà zì dìngyì pèizhì {0}"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "Běn bùfèn liè chūle qūdòng chéngxù shèzhì."
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "Dāngqián kòngzhì tái qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge kòngzhì tái qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "Dāngqián suíjī shù shēngchéng qì qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge suíjī shù shēngchéng qì qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "Dāngqián wǎngluò qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge wǎngluò qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "Dāngqiáng wénjiàn xìtǒng qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge wénjiàn xìtǒng qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "Dāngqián jiāmì qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge jiāmì qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "Dāngqián zhèngzé biǎodá shì qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge zhèngzé biǎodá shì qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "Dāngqián tiáoshì jìlù qì shēngchéng qì qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge tiáoshì jìlù qì shēngchéng qì qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "Dāngqián biānmǎ qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge biānmǎ qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "Dāngqián yìngjiàn tàncè qì qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge yìngjiàn tàncè qì qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "Dāngqián páixù qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge páixù qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "Dāngqián shūrù qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge shūrù qūdòng chéngxù?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "Dāngqián fēi duìchèn biānmǎ qūdòng chéngxù"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "nín xiǎng shǐyòng nǎge fēi duìchèn biānmǎ qūdòng chéngxù?"
     }
   ]
 }

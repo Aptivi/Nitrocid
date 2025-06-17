@@ -10121,6 +10121,106 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE",
       "text": "कस्टम कॉन्फ़िगरेशन {0} को डिसेरिएलाइज़ नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_DESC",
+      "text": "यह अनुभाग ड्राइवर सेटिंग्स को सूचीबद्ध करता है।"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
+      "text": "वर्तमान कंसोल ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
+      "text": "आप किस कंसोल ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
+      "text": "वर्तमान रैंडम नंबर जनरेटर ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
+      "text": "आप किस रैंडम नंबर जनरेटर ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
+      "text": "वर्तमान नेटवर्क ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
+      "text": "आप किस नेटवर्क ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
+      "text": "वर्तमान फाइल सिस्टम ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_DESC",
+      "text": "आप किस फाइल सिस्टम ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_NAME",
+      "text": "वर्तमान एन्क्रिप्शन ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCRYPTIONDRIVER_DESC",
+      "text": "आप किस एन्क्रिप्शन ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_NAME",
+      "text": "वर्तमान रेगुलर एक्सप्रेशन ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTREGEXPDRIVER_DESC",
+      "text": "आप किस रेगुलर एक्सप्रेशन ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
+      "text": "वर्तमान डिबग लॉगर जनरेटर ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_DESC",
+      "text": "आप किस डिबग लॉगर जनरेटर ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_NAME",
+      "text": "वर्तमान एन्कोडिंग ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGDRIVER_DESC",
+      "text": "आप किस एन्कोडिंग ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_NAME",
+      "text": "वर्तमान हार्डवेयर जांचकर्ता ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTHWPROBERDRIVER_DESC",
+      "text": "आप किस हार्डवेयर जांचकर्ता ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_NAME",
+      "text": "वर्तमान सॉर्टिंग ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
+      "text": "आप किस सॉर्टिंग ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
+      "text": "वर्तमान इनपुट ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
+      "text": "आप किस इनपुट ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
+      "text": "वर्तमान असममित एन्कोडिंग ड्राइवर"
+    },
+    {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "आप किस असममित एन्कोडिंग ड्राइवर का उपयोग करना चाहेंगे?"
     }
   ]
 }
