@@ -102,7 +102,6 @@
   <!-- KS Base/Core projects -->
   <ItemGroup>
     <ProjectReference Include="..\Nitrocid.Base\Nitrocid.Base.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Base/Core projects End -->
 </Project>

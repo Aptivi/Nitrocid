@@ -37,8 +37,5 @@
     <None Include="..\Nitrocid\OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" />
-  </ItemGroup>
   <!-- KS Package Files End -->
 </Project>
