@@ -4789,20 +4789,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Kernel.KernelMain.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Kernel.KernelMain.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Kernel.KernelMain",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Kernel.KernelMain.yml\" sourcestartlinenumber=\"1\">Kernel main class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Kernel.KernelPlatform.yml",
       "output": {
         ".html": {
@@ -5570,6 +5556,20 @@
       "IsMRef": true,
       "Title": "Nitrocid.Kernel",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.KernelMain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.KernelMain.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.KernelMain",
+      "Summary": "<p sourcefile=\"api/Nitrocid.KernelMain.yml\" sourcestartlinenumber=\"1\">Kernel main class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -12849,6 +12849,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Users",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid",
       "Summary": null
     },
     {

@@ -1704,11 +1704,6 @@
     "title": "Namespace Nitrocid.Kernel.Journaling | Nitrocid KS API - Aptivi",
     "summary": "Namespace Nitrocid.Kernel.Journaling Classes JournalEntry A kernel journal entry class JournalManager Kernel journalling manager Enums JournalStatus Journaling status to write to the kernel journal"
   },
-  "api/Nitrocid.Kernel.KernelMain.html": {
-    "href": "api/Nitrocid.Kernel.KernelMain.html",
-    "title": "Class KernelMain | Nitrocid KS API - Aptivi",
-    "summary": "Class KernelMain Kernel main class Inheritance object KernelMain Namespace: Nitrocid.Kernel Assembly: Nitrocid.dll Syntax public static class KernelMain Properties | Edit this page View Source ApiVersion Kernel API version Declaration public static Version ApiVersion { get; } Property Value Type Description Version | Edit this page View Source Version Kernel version Declaration public static Version? Version { get; } Property Value Type Description Version | Edit this page View Source VersionFull Kernel version (full) Declaration public static SemVer? VersionFull { get; } Property Value Type Description SemVer | Edit this page View Source VersionFullStr Kernel version (full) Declaration public static string VersionFullStr { get; } Property Value Type Description string"
-  },
   "api/Nitrocid.Kernel.KernelPlatform.html": {
     "href": "api/Nitrocid.Kernel.KernelPlatform.html",
     "title": "Class KernelPlatform | Nitrocid KS API - Aptivi",
@@ -1982,7 +1977,12 @@
   "api/Nitrocid.Kernel.html": {
     "href": "api/Nitrocid.Kernel.html",
     "title": "Namespace Nitrocid.Kernel | Nitrocid KS API - Aptivi",
-    "summary": "Namespace Nitrocid.Kernel Classes KernelMain Kernel main class KernelPlatform Kernel platform query"
+    "summary": "Namespace Nitrocid.Kernel Classes KernelPlatform Kernel platform query"
+  },
+  "api/Nitrocid.KernelMain.html": {
+    "href": "api/Nitrocid.KernelMain.html",
+    "title": "Class KernelMain | Nitrocid KS API - Aptivi",
+    "summary": "Class KernelMain Kernel main class Inheritance object KernelMain Namespace: Nitrocid Assembly: Nitrocid.dll Syntax public static class KernelMain Properties | Edit this page View Source ApiVersion Kernel API version Declaration public static Version ApiVersion { get; } Property Value Type Description Version | Edit this page View Source Version Kernel version Declaration public static Version? Version { get; } Property Value Type Description Version | Edit this page View Source VersionFull Kernel version (full) Declaration public static SemVer? VersionFull { get; } Property Value Type Description SemVer | Edit this page View Source VersionFullStr Kernel version (full) Declaration public static string VersionFullStr { get; } Property Value Type Description string"
   },
   "api/Nitrocid.Languages.CultureManager.html": {
     "href": "api/Nitrocid.Languages.CultureManager.html",
@@ -4583,6 +4583,11 @@
     "href": "api/Nitrocid.Users.html",
     "title": "Namespace Nitrocid.Users | Nitrocid KS API - Aptivi",
     "summary": "Namespace Nitrocid.Users Classes UserInfo User information class UserManagement User management module Enums UserFlags User flags"
+  },
+  "api/Nitrocid.html": {
+    "href": "api/Nitrocid.html",
+    "title": "Namespace Nitrocid | Nitrocid KS API - Aptivi",
+    "summary": "Namespace Nitrocid Classes KernelMain Kernel main class"
   },
   "index.html": {
     "href": "index.html",
