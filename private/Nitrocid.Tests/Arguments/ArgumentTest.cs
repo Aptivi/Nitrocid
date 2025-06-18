@@ -19,6 +19,7 @@
 
 using Nitrocid.Arguments;
 using System;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Tests.Arguments
 {

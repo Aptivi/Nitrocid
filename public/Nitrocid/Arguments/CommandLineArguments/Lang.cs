@@ -28,16 +28,8 @@ namespace Nitrocid.Arguments.CommandLineArguments
     class LangArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(ArgumentParameters parameters)
-        {
-            string langPacksAddonPath = PathsManagement.AddonsPath + "/LanguagePacks";
-            if (FilesystemTools.FolderExists(langPacksAddonPath))
-            {
-                AddonTools.ProcessAddon(langPacksAddonPath, ModLoadPriority.Important);
-                LanguageManager.SetLangDry(parameters.ArgumentsList[0]);
-                AddonTools.probedAddons.Clear();
-            }
-        }
+        public override void Execute(ArgumentParameters parameters) =>
+            LanguageManager.SetLangDry(parameters.ArgumentsList[0]);
 
     }
 }

@@ -159,6 +159,26 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
             // Check the command and argument info
             bool isCommand = CommandInfo is not null;
+            var argInfos = new List<CommandArgumentInfo>();
+            if (isCommand)
+                argInfos.AddRange(CommandInfo?.CommandArgumentInfo ??
+                    throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO")));
+            else
+            {
+                // TODO: Temporary conversion work while possibly exploring options to match features of the Terminaux shell
+                var argArgInfos = ArgumentInfo?.ArgArgumentInfo ??
+                    throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO"));
+                foreach (var argArgInfo in argArgInfos)
+                {
+                    List<CommandArgumentPart> argumentParts = [];
+                    List<SwitchInfo> switchInfos = [];
+                    foreach (var argumentPart in argArgInfo.Arguments)
+                        argumentParts.Add(new(argumentPart.ArgumentRequired, argumentPart.ArgumentExpression, argumentPart.Options.AutoCompleter, argumentPart.Options.IsNumeric, argumentPart.Options.ExactWording, argumentPart.Options.ArgumentDescription));
+                    foreach (var switchPart in argArgInfo.Switches)
+                        switchInfos.Add(new(switchPart.SwitchName, switchPart.HelpDefinition, switchPart.IsRequired, switchPart.ArgumentsRequired, switchPart.ConflictsWith, switchPart.OptionalizeLastRequiredArguments, switchPart.AcceptsValues, switchPart.IsNumeric));
+                    argInfos.Add(new([.. argumentParts], [.. switchInfos], false, argArgInfo.InfiniteBounds));
+                }
+            }
 
             // Split the switches properly now
             string switchRegex =
@@ -194,9 +214,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string[] unknownSwitchesList = [];
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
-            var argInfos = (isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, LanguageTools.GetLocalized("NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO"));
-            if (argInfos.Length == 0)
+            if (argInfos.Count == 0)
                 argInfos = [new CommandArgumentInfo()];
             foreach (var argInfo in argInfos)
             {
