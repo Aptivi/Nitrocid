@@ -15,101 +15,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.ArgumentExecutor.yml",
+      "source_relative_path": "api/Nitrocid.Arguments.KernelArguments.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Arguments.ArgumentExecutor.html"
+          "relative_path": "api/Nitrocid.Arguments.KernelArguments.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Arguments.ArgumentExecutor",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.ArgumentExecutor.yml\" sourcestartlinenumber=\"1\">Argument executor base class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.ArgumentInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.ArgumentInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.ArgumentInfo",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.ArgumentInfo.yml\" sourcestartlinenumber=\"1\">Argument information class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.ArgumentParameters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.ArgumentParameters.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.ArgumentParameters",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.ArgumentParameters.yml\" sourcestartlinenumber=\"1\">Argument parameters that holds information about arguments and switches</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.ArgumentParse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.ArgumentParse.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.ArgumentParse",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.ArgumentParse.yml\" sourcestartlinenumber=\"1\">Argument parser class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.Help.ArgumentHelpPrint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.Help.ArgumentHelpPrint.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.Help.ArgumentHelpPrint",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.Help.ArgumentHelpPrint.yml\" sourcestartlinenumber=\"1\">Argument help system module</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.Help.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.Help.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.Help",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Arguments.IArgument.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Arguments.IArgument.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Arguments.IArgument",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.IArgument.yml\" sourcestartlinenumber=\"1\">Base kernel argument executor</p>\n"
+      "Title": "Nitrocid.Arguments.KernelArguments",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Arguments.KernelArguments.yml\" sourcestartlinenumber=\"1\">Argument parser class</p>\n"
     },
     {
       "type": "ManagedReference",

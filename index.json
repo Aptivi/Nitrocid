@@ -1,43 +1,13 @@
 {
-  "api/Nitrocid.Arguments.ArgumentExecutor.html": {
-    "href": "api/Nitrocid.Arguments.ArgumentExecutor.html",
-    "title": "Class ArgumentExecutor | Nitrocid KS API - Aptivi",
-    "summary": "Class ArgumentExecutor Argument executor base class Inheritance object ArgumentExecutor Implements IArgument Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public abstract class ArgumentExecutor : IArgument Methods | Edit this page View Source Execute(ArgumentParameters) Executes the argument Declaration public virtual void Execute(ArgumentParameters parameters) Parameters Type Name Description ArgumentParameters parameters Argument parameters including passed arguments and switches information Exceptions Type Condition InvalidOperationException | Edit this page View Source HelpHelper() The help helper Declaration public virtual void HelpHelper() Implements IArgument"
-  },
-  "api/Nitrocid.Arguments.ArgumentInfo.html": {
-    "href": "api/Nitrocid.Arguments.ArgumentInfo.html",
-    "title": "Class ArgumentInfo | Nitrocid KS API - Aptivi",
-    "summary": "Class ArgumentInfo Argument information class Inheritance object ArgumentInfo Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public class ArgumentInfo Constructors | Edit this page View Source ArgumentInfo(string, string, ArgumentExecutor?, bool) Installs a new instance of argument info class Declaration public ArgumentInfo(string Argument, string HelpDefinition, ArgumentExecutor? ArgumentBase, bool Obsolete = false) Parameters Type Name Description string Argument Argument string HelpDefinition Argument help definition ArgumentExecutor ArgumentBase Kernel argument base for execution bool Obsolete Is the command obsolete? | Edit this page View Source ArgumentInfo(string, string, CommandArgumentInfo[]?, ArgumentExecutor?, bool) Installs a new instance of argument info class Declaration public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[]? ArgArgumentInfo, ArgumentExecutor? ArgumentBase, bool Obsolete = false) Parameters Type Name Description string Argument Argument string HelpDefinition Argument help definition CommandArgumentInfo[] ArgArgumentInfo Argument info ArgumentExecutor ArgumentBase Kernel argument base for execution bool Obsolete Is the command obsolete? Properties | Edit this page View Source ArgArgumentInfo Argument info Declaration public CommandArgumentInfo[] ArgArgumentInfo { get; } Property Value Type Description CommandArgumentInfo[] | Edit this page View Source Argument The argument Declaration public string Argument { get; } Property Value Type Description string | Edit this page View Source ArgumentBase Kernel argument base for execution Declaration public ArgumentExecutor ArgumentBase { get; } Property Value Type Description ArgumentExecutor | Edit this page View Source HelpDefinition The help definition of argument. Declaration public string HelpDefinition { get; set; } Property Value Type Description string | Edit this page View Source Obsolete Is the argument obsolete? Declaration public bool Obsolete { get; } Property Value Type Description bool"
-  },
-  "api/Nitrocid.Arguments.ArgumentParameters.html": {
-    "href": "api/Nitrocid.Arguments.ArgumentParameters.html",
-    "title": "Class ArgumentParameters | Nitrocid KS API - Aptivi",
-    "summary": "Class ArgumentParameters Argument parameters that holds information about arguments and switches Inheritance object ArgumentParameters Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public class ArgumentParameters Properties | Edit this page View Source ArgumentText Name of argument Declaration public string ArgumentText { get; } Property Value Type Description string | Edit this page View Source ArgumentsList List of passed arguments (filtered) Declaration public string[] ArgumentsList { get; } Property Value Type Description string[] | Edit this page View Source ArgumentsOriginalList List of passed arguments (original) Declaration public string[] ArgumentsOriginalList { get; } Property Value Type Description string[] | Edit this page View Source ArgumentsOriginalText Text of arguments (original) Declaration public string ArgumentsOriginalText { get; } Property Value Type Description string | Edit this page View Source ArgumentsText Text of arguments (filtered) Declaration public string ArgumentsText { get; } Property Value Type Description string | Edit this page View Source SwitchesList List of passed switches Declaration public string[] SwitchesList { get; } Property Value Type Description string[]"
-  },
-  "api/Nitrocid.Arguments.ArgumentParse.html": {
-    "href": "api/Nitrocid.Arguments.ArgumentParse.html",
-    "title": "Class ArgumentParse | Nitrocid KS API - Aptivi",
-    "summary": "Class ArgumentParse Argument parser class Inheritance object ArgumentParse Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public static class ArgumentParse Properties | Edit this page View Source AvailableCMDLineArgs Available command line arguments Declaration public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs { get; } Property Value Type Description Dictionary<string, ArgumentInfo> Methods | Edit this page View Source IsArgumentPassed(string[]?, string) Checks to see if the specific argument name is passed Declaration public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName) Parameters Type Name Description string[] ArgumentsInput List of passed arguments string argumentName Argument name to check Returns Type Description bool True if found in the arguments list and passed. False otherwise. | Edit this page View Source ParseArguments(string[]?) Parses specified arguments Declaration public static void ParseArguments(string[]? ArgumentsInput) Parameters Type Name Description string[] ArgumentsInput Input Arguments"
-  },
-  "api/Nitrocid.Arguments.Help.ArgumentHelpPrint.html": {
-    "href": "api/Nitrocid.Arguments.Help.ArgumentHelpPrint.html",
-    "title": "Class ArgumentHelpPrint | Nitrocid KS API - Aptivi",
-    "summary": "Class ArgumentHelpPrint Argument help system module Inheritance object ArgumentHelpPrint Namespace: Nitrocid.Arguments.Help Assembly: Nitrocid.dll Syntax public static class ArgumentHelpPrint Methods | Edit this page View Source ShowArgsHelp() Shows the help of an argument, or argument list if nothing is specified Declaration public static void ShowArgsHelp() | Edit this page View Source ShowArgsHelp(string) Shows the help of an argument, or argument list if nothing is specified Declaration public static void ShowArgsHelp(string Argument) Parameters Type Name Description string Argument A specified argument"
-  },
-  "api/Nitrocid.Arguments.Help.html": {
-    "href": "api/Nitrocid.Arguments.Help.html",
-    "title": "Namespace Nitrocid.Arguments.Help | Nitrocid KS API - Aptivi",
-    "summary": "Namespace Nitrocid.Arguments.Help Classes ArgumentHelpPrint Argument help system module"
-  },
-  "api/Nitrocid.Arguments.IArgument.html": {
-    "href": "api/Nitrocid.Arguments.IArgument.html",
-    "title": "Interface IArgument | Nitrocid KS API - Aptivi",
-    "summary": "Interface IArgument Base kernel argument executor Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public interface IArgument Methods | Edit this page View Source Execute(ArgumentParameters) Executes the kernel argument with the given argument Declaration void Execute(ArgumentParameters parameters) Parameters Type Name Description ArgumentParameters parameters Argument parameters including passed arguments and switches information | Edit this page View Source HelpHelper() Shows additional information for the argument when \"arghelp argument\" is invoked in the admin shell Declaration void HelpHelper()"
+  "api/Nitrocid.Arguments.KernelArguments.html": {
+    "href": "api/Nitrocid.Arguments.KernelArguments.html",
+    "title": "Class KernelArguments | Nitrocid KS API - Aptivi",
+    "summary": "Class KernelArguments Argument parser class Inheritance object KernelArguments Namespace: Nitrocid.Arguments Assembly: Nitrocid.dll Syntax public static class KernelArguments Properties | Edit this page View Source AvailableCMDLineArgs Available command line arguments Declaration public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs { get; } Property Value Type Description Dictionary<string, ArgumentInfo>"
   },
   "api/Nitrocid.Arguments.html": {
     "href": "api/Nitrocid.Arguments.html",
     "title": "Namespace Nitrocid.Arguments | Nitrocid KS API - Aptivi",
-    "summary": "Namespace Nitrocid.Arguments Classes ArgumentExecutor Argument executor base class ArgumentInfo Argument information class ArgumentParameters Argument parameters that holds information about arguments and switches ArgumentParse Argument parser class Interfaces IArgument Base kernel argument executor"
+    "summary": "Namespace Nitrocid.Arguments Classes KernelArguments Argument parser class"
   },
   "api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.html": {
     "href": "api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.html",
