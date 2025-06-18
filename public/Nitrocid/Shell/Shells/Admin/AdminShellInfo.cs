@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Admin
                     [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
+                            AutoCompleter = (_) => [.. KernelArguments.AvailableCMDLineArgs.Keys],
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC"
                         })
                     ])

@@ -33,7 +33,7 @@
     },
     "Nitrocid KS - Pre-boot in Spanish": {
       "commandName": "Project",
-      "commandLineArgs": "lang spa verbosepreboot"
+      "commandLineArgs": "\"lang spa\" verbosepreboot"
     },
     "Nitrocid KS - Enable pre-boot messages": {
       "commandName": "Project",

@@ -17,8 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Arguments.Help;
+using Nitrocid.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Arguments.Base.Help;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -35,9 +36,9 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
         {
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                ArgumentHelpPrint.ShowArgsHelp();
+                ArgumentHelpPrint.ShowArgsHelp(KernelArguments.AvailableCMDLineArgs);
             else
-                ArgumentHelpPrint.ShowArgsHelp(parameters.ArgumentsList[0]);
+                ArgumentHelpPrint.ShowArgsHelp(parameters.ArgumentsList[0], KernelArguments.AvailableCMDLineArgs);
             return 0;
         }
 
