@@ -735,7 +735,7 @@
       "text": "Không đổi tên được người dùng. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Không tìm thấy người dùng"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "Danh sách ký tự bình thường:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Mảng danh sách ký tự:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "Nhà cung cấp bộ xử lý:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Tốc độ đồng hồ:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "Lỗi không xác định khi liệt kê trong thư mục: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Không được phép"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "Liệt kê tất cả các thuộc tính có sẵn từ tiện ích bổ sung được chỉ định"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Liệt kê tất cả các tiện ích bổ sung cơ bản và trạng thái của chúng"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "Không thể đăng ký điều kiện trống."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Không thể hủy đăng ký một điều kiện không tồn tại."
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "Tên máy chủ hạt nhân để giao tiếp với các máy tính còn lại"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Hiển thị tên người dùng có sẵn"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "Đường dẫn MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Đường dẫn MAL"
     },
     {

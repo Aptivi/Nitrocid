@@ -735,7 +735,7 @@
       "text": "upayogakarta ka naam badalane mein viphal. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "upayogakarta nahin mila"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "saamaany chaar soochee:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "saranee chaar soochee:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "prosesar vikreta:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "ghadee kee gati:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "nirdeshika mein soocheebaddh karate samay agyaat truti: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "anadhikrt"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "nirdisht aidon se sabhee upalabdh propartee soocheebaddh karata hai"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "sabhee bes aidon aur unakee sthiti soocheebaddh karata hai"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "khaalee shart ko panjeekrt nahin kiya ja sakata."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "aisee shart ko apanjeekrt nahin kiya ja sakata jo maujood nahin hai."
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "baakee kampyootaron ke saath sanchaar karane ke lie karnel host naam"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "upalabdh upayogakarta naam dikhaen"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "motd path"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "mal path"
     },
     {

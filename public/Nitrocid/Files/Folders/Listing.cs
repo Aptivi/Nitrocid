@@ -237,7 +237,7 @@ namespace Nitrocid.Files
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), indent: level);
+                                TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED2"), indent: level);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
@@ -265,7 +265,7 @@ namespace Nitrocid.Files
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"));
+                        TextWriters.WriteListEntry(name, LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED2"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)

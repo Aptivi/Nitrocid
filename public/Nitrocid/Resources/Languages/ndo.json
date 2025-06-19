@@ -735,7 +735,7 @@
       "text": "Gagal mengganti nama pengguna. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Pengguna tidak ditemukan"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "Daftar karakter normal:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Daftar karakter array:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "Vendor prosesor:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Kecepatan jam:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "Kesalahan tidak diketahui saat mencantumkan dalam direktori: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Tidak sah"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "Mencantumkan semua properti yang tersedia dari addon yang ditentukan"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Mencantumkan semua add-on dasar dan statusnya"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "Tidak dapat mendaftarkan kondisi kosong."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Tidak dapat membatalkan pendaftaran kondisi yang tidak ada."
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "Nama host kernel untuk berkomunikasi dengan komputer lainnya"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Tampilkan nama pengguna yang tersedia"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "Jalur MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Jalur MAL"
     },
     {

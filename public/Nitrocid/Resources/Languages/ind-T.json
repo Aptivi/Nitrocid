@@ -735,7 +735,7 @@
       "text": "उपयोगकर्ता का नाम बदलने में विफल। {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "उपयोगकर्ता नहीं मिला"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "सामान्य चार सूची:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "सरणी चार सूची:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "प्रोसेसर विक्रेता:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "घडी की गति:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "निर्देशिका में सूचीबद्ध करते समय अज्ञात त्रुटि: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "अनधिकृत"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "निर्दिष्ट ऐडऑन से सभी उपलब्ध संपत्तियों को सूचीबद्ध करता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "सभी आधार ऐडऑन और उनकी स्थिति को सूचीबद्ध करता है"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "खाली स्थिति दर्ज नहीं की जा सकती."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "ऐसी शर्त को अपंजीकृत नहीं किया जा सकता जो अस्तित्व में ही नहीं है।"
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "बाकी कंप्यूटरों के साथ संचार करने के लिए कर्नेल होस्ट नाम"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "उपलब्ध उपयोक्तानाम दिखाएँ"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "एमओटीडी पथ"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "एमएएल पथ"
     },
     {

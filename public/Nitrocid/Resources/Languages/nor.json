@@ -739,7 +739,7 @@
       "text": "Kunne ikke endre navn på bruker. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Bruker ikke funnet"
     },
     {
@@ -1255,7 +1255,7 @@
       "text": "Normal røyeliste:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Array-tegnliste:"
     },
     {
@@ -2815,7 +2815,7 @@
       "text": "Prosessorleverandør:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Klokkehastighet:"
     },
     {
@@ -2907,7 +2907,7 @@
       "text": "Ukjent feil under oppføring i katalog: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Uautorisert"
     },
     {
@@ -5059,7 +5059,7 @@
       "text": "Viser alle tilgjengelige egenskaper fra det angitte tillegget"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Viser alle basistilleggene og deres status"
     },
     {
@@ -6003,7 +6003,7 @@
       "text": "Kan ikke registrere en tom tilstand."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Kan ikke avregistrere en tilstand som ikke eksisterer."
     },
     {
@@ -7011,7 +7011,7 @@
       "text": "Kjernens vertsnavn for å kommunisere med resten av datamaskinene"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Vis tilgjengelige brukernavn"
     },
     {
@@ -7019,7 +7019,7 @@
       "text": "MOTD-sti"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL-sti"
     },
     {

@@ -581,7 +581,7 @@
                 "Description": "NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_DESC"
             },
             {
-                "Name": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowAvailableUsers",
                 "Description": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERS_DESC"
@@ -595,7 +595,7 @@
                 "Description": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_DESC"
             },
             {
-                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
                 "Type": "SString",
                 "Variable": "MalFilePath",
                 "IsValuePath": true,

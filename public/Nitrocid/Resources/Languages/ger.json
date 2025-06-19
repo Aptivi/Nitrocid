@@ -744,7 +744,7 @@
       "text": "Benutzer konnte nicht umbenannt werden. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Benutzer nicht gefunden"
     },
     {
@@ -1260,7 +1260,7 @@
       "text": "Normale Zeichenliste:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Liste der Array-Zeichen:"
     },
     {
@@ -2820,7 +2820,7 @@
       "text": "Prozessoranbieter:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Taktfrequenz:"
     },
     {
@@ -2912,7 +2912,7 @@
       "text": "Unbekannter Fehler beim Eintragen im Verzeichnis: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Nicht autorisiert"
     },
     {
@@ -5064,7 +5064,7 @@
       "text": "Listet alle verfügbaren Eigenschaften des angegebenen Add-Ons auf"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Listet alle Basis-Add-ons und deren Status auf"
     },
     {
@@ -6008,7 +6008,7 @@
       "text": "Es kann keine leere Bedingung registriert werden."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Die Registrierung einer nicht vorhandenen Bedingung kann nicht aufgehoben werden."
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "Der Kernel-Hostname für die Kommunikation mit den übrigen Computern"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Verfügbare Benutzernamen anzeigen"
     },
     {
@@ -7024,7 +7024,7 @@
       "text": "MOTD-Pfad"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL-Pfad"
     },
     {

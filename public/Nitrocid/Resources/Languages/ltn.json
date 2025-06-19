@@ -735,7 +735,7 @@
       "text": "Defecit in secunda nomine user. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "User non inveni"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "Normalis char album:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Ordina char list:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "Processus venditoris:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Horologium celeritatis:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "Error ignotus dum in indice recensit: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "cu"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "Omnia praesto proprietates ex certa addon"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Omnia basi addita et eorum status"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "Vacua conditio subcriptio non potest."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Non potest unregister conditionem quae non est."
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "Nomen hospitis nucleo communicandi cum reliquis computatris"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Donec ostende praesto"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "MOTD Path"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL Path"
     },
     {

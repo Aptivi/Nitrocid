@@ -738,7 +738,7 @@
       "text": "Impossibile rinominare l'utente. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Utente non trovato"
     },
     {
@@ -1254,7 +1254,7 @@
       "text": "Elenco di caratteri normale:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Elenco dei caratteri dell'array:"
     },
     {
@@ -2814,7 +2814,7 @@
       "text": "Fornitore del processore:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Velocità dell'orologio:"
     },
     {
@@ -2906,7 +2906,7 @@
       "text": "Errore sconosciuto durante l'inserimento nella directory: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Non autorizzato"
     },
     {
@@ -5058,7 +5058,7 @@
       "text": "Elenca tutte le proprietà disponibili dal componente aggiuntivo specificato"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Elenca tutti i componenti aggiuntivi di base e il loro stato"
     },
     {
@@ -6002,7 +6002,7 @@
       "text": "Impossibile registrare una condizione vuota."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Impossibile annullare la registrazione di una condizione che non esiste."
     },
     {
@@ -7010,7 +7010,7 @@
       "text": "Il nome host del kernel per comunicare con il resto dei computer"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Mostra i nomi utente disponibili"
     },
     {
@@ -7018,7 +7018,7 @@
       "text": "Percorso MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Percorso MAL"
     },
     {

@@ -735,7 +735,7 @@
       "text": "ユーザーの名前変更に失敗しました。 {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "ユーザーが見つかりません"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "通常の文字リスト:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "配列文字リスト:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "プロセッサベンダー:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "クロック速度:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "ディレクトリのリスト中に不明なエラーが発生しました: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "無許可"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "指定されたアドオンから使用可能なすべてのプロパティをリストします。"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "すべての基本アドオンとそのステータスをリストします。"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "空の条件は登録できません。"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "存在しない条件は登録解除できません。"
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "残りのコンピュータと通信するためのカーネルのホスト名"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "利用可能なユーザー名を表示する"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "MOTD パス"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL パス"
     },
     {

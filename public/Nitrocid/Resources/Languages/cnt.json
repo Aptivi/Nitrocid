@@ -738,7 +738,7 @@
       "text": "Zhòng mìngmíng yònghù shībài. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Wèi zhǎodào yònghù"
     },
     {
@@ -1254,7 +1254,7 @@
       "text": "Pǔtōng zìfú lièbiǎo:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Shùzǔ zìfú lièbiǎo:"
     },
     {
@@ -2814,7 +2814,7 @@
       "text": "chǔ lǐ qì gōng yīng shāng ："
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "shí zhōng sù dù ："
     },
     {
@@ -2906,7 +2906,7 @@
       "text": "zài mù lù zhōng liè chū shí chū xiàn wèi zhī cuò wù ：{0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "wèi jīng shòu quán"
     },
     {
@@ -5058,7 +5058,7 @@
       "text": "liè chū zhǐ dìng chā jiàn de suǒ yǒu kě yòng shǔ xìng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "liè chū suǒ yǒu jī běn chā jiàn jí qí zhuàng tài"
     },
     {
@@ -6002,7 +6002,7 @@
       "text": "wú fǎ zhù cè kōng tiáo jiàn 。"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "wú fǎ qǔ xiāo zhù cè bù cún zài de tiáo jiàn 。"
     },
     {
@@ -7010,7 +7010,7 @@
       "text": "yǔ qí yú jì suàn jī tōng xìn de nèi hé zhǔ jī míng"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "xiǎn shì kě yòng de yòng hù míng"
     },
     {
@@ -7018,7 +7018,7 @@
       "text": "MOTD lù jìng"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "mǎ ěr lù jìng"
     },
     {

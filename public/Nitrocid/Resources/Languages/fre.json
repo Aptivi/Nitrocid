@@ -781,7 +781,7 @@
       "text": "Échec du changement de nom de l'utilisateur. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Utilisateur non trouvé"
     },
     {
@@ -1297,7 +1297,7 @@
       "text": "Liste de caractères normale :"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Liste de caractères du tableau :"
     },
     {
@@ -2857,7 +2857,7 @@
       "text": "Fournisseur de processeur :"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Vitesse de l'horloge:"
     },
     {
@@ -2949,7 +2949,7 @@
       "text": "Erreur inconnue lors de l'inscription dans le répertoire : {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Non autorisé"
     },
     {
@@ -5101,7 +5101,7 @@
       "text": "Répertorie toutes les propriétés disponibles à partir du module complémentaire spécifié"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Répertorie tous les modules complémentaires de base et leur statut"
     },
     {
@@ -6045,7 +6045,7 @@
       "text": "Impossible d'enregistrer une condition vide."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Impossible de désenregistrer une condition qui n'existe pas."
     },
     {
@@ -7053,7 +7053,7 @@
       "text": "Le nom d'hôte du noyau pour communiquer avec le reste des ordinateurs"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Afficher les noms d'utilisateur disponibles"
     },
     {
@@ -7061,7 +7061,7 @@
       "text": "Chemin MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Chemin MAL"
     },
     {

@@ -736,7 +736,7 @@
       "text": "Nu s-a putut redenumi utilizatorul. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Utilizator nu a fost găsit"
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "Lista de caractere normale:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Lista de caractere cu matrice:"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "Furnizor procesor:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Viteza ceasului:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "Eroare necunoscută la listarea în director: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Neautorizat"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "Listează toate proprietățile disponibile din suplimentul specificat"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Listează toate suplimentele de bază și starea acestora"
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "Nu se poate înregistra o condiție goală."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Nu se poate anula înregistrarea unei afecțiuni care nu există."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "Numele gazdei nucleului pentru a comunica cu restul computerelor"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Afișați numele de utilizator disponibile"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "Calea MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Calea MAL"
     },
     {

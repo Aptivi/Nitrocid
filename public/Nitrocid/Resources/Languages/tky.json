@@ -736,7 +736,7 @@
       "text": "Kullanıcının adı değiştirilemedi. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Kullanıcı bulunamadı"
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "Normal karakter listesi:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Dizi karakter listesi:"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "İşlemci satıcısı:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Saat hızı:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "{0} dizininde listeleme sırasında bilinmeyen hata oluştu"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Yetkisiz"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "Belirtilen eklentiden tüm kullanılabilir özellikleri listeler"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Tüm temel eklentileri ve durumlarını listeler"
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "Boş bir koşul kaydedilemez."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Var olmayan bir koşulun kaydı iptal edilemez."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "Diğer bilgisayarlarla iletişim kurmak için çekirdek ana bilgisayar adı"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Mevcut kullanıcı adlarını göster"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "MOTD Yolu"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL Yolu"
     },
     {

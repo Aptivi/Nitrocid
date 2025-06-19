@@ -146,46 +146,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ]),
                 ], new AlarmCommand(), CommandFlags.Strict),
 
-            new CommandInfo("alias", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "add", new()
-                        {
-                            ExactWording = ["add"],
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC"
-                        }),
-                        new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
-                        }),
-                        new CommandArgumentPart(true, "cmd", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC"
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "rem", new()
-                        {
-                            ExactWording = ["rem"],
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC"
-                        }),
-                        new CommandArgumentPart(true, "shell", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "alias", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC"
-                        }),
-                    ]),
-                ], new AliasCommand(), CommandFlags.Strict),
-
             new CommandInfo("beep", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_DESC",
                 [
                     new CommandArgumentInfo(
@@ -381,56 +341,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new ChMotdCommand(), CommandFlags.Strict),
 
-            new CommandInfo("choice", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "answers", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC"
-                        }),
-                        new CommandArgumentPart(true, "input", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC"
-                        }),
-                        new CommandArgumentPart(false, "answertitle1", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC"
-                        }),
-                        new CommandArgumentPart(false, "answertitle2", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("o", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["t", "m"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("t", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["o", "m"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["t", "o"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("single", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["multiple"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("multiple", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["single"],
-                            AcceptsValues = false
-                        })
-                    ], true, true)
-                ], new ChoiceCommand()),
-
             new CommandInfo("chpwd", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
                 [
                     new CommandArgumentInfo(
@@ -469,8 +379,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ])
                 ], new ChUsrNameCommand(), CommandFlags.Strict),
-
-            new CommandInfo("cls", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC", new ClsCommand()),
 
             new CommandInfo("combinestr", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
                 [
@@ -575,31 +483,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ])
                 ], new CopyCommand()),
-
-            new CommandInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["time", "full"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("time", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["date", "full"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("full", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["date", "time"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("utc", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ], true)
-                ], new DateCommand(), CommandFlags.RedirectionSupported),
 
             new CommandInfo("debugshell", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC", new DebugShellCommand(), CommandFlags.Strict),
 
@@ -754,20 +637,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ]),
                 ], new DriverManCommand(), CommandFlags.Strict),
-
-            new CommandInfo("echo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "text", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("noparse", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC", false, false, [], 0, false)
-                    ], true)
-                ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("edit", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
                 [
@@ -924,8 +793,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new FindRegCommand()),
 
-            new CommandInfo("fork", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC", new ForkCommand()),
-
             new CommandInfo("get", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC",
                 [
                     new CommandArgumentInfo(
@@ -1028,21 +895,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("if", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "ueshExpression", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC"
-                        }),
-                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC"
-                        }),
-                    ])
-                ], new IfCommand()),
-
             new CommandInfo("ifm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
                 [
                     new CommandArgumentInfo(
@@ -1057,28 +909,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ])
                 ], new IfmCommand()),
-
-            new CommandInfo("input", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC"
-                        }),
-                    ], true)
-                ], new InputCommand()),
-
-            new CommandInfo("inputpass", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "question", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC"
-                        }),
-                    ], true)
-                ], new InputPassCommand()),
 
             new CommandInfo("license", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC", new LicenseCommand()),
 
@@ -1550,29 +1380,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("select", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "answers", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC"
-                        }),
-                        new CommandArgumentPart(true, "input", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC"
-                        }),
-                        new CommandArgumentPart(false, "answertitle1", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC"
-                        }),
-                        new CommandArgumentPart(false, "answertitle2", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC"
-                        }),
-                    ], true, true)
-                ], new SelectCommand()),
-
             new CommandInfo("setsaver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_DESC",
                 [
                     new CommandArgumentInfo(
@@ -1624,17 +1431,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new SettingsCommand(), CommandFlags.Strict),
 
-            new CommandInfo("set", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "value", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC"
-                        }),
-                    ], true)
-                ], new SetCommand()),
-
             new CommandInfo("setconfigvalue", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_DESC",
                 [
                     new CommandArgumentInfo(new CommandArgumentPart[]
@@ -1669,25 +1465,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ])
                 ], new SetExtHandlerCommand()),
-
-            new CommandInfo("setrange", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC"
-                        }),
-                        new CommandArgumentPart(false, "value2", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC"
-                        }),
-                        new CommandArgumentPart(false, "value3", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC"
-                        }),
-                    ], true, true)
-                ], new SetRangeCommand()),
 
             new CommandInfo("shownotifs", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_DESC",
                 [
@@ -1727,16 +1504,6 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("shutdown", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHUTDOWN_DESC", new ShutdownCommand()),
 
-            new CommandInfo("sleep", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "ms", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC"
-                        }),
-                    ])
-                ], new SleepCommand()),
             new CommandInfo("sudo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
                 [
                     new CommandArgumentInfo(
@@ -1902,23 +1669,6 @@ namespace Nitrocid.Shell.Shells.UESH
                         }),
                     ])
                 ], new UnblockDbgDevCommand(), CommandFlags.Strict),
-
-            new CommandInfo("unset", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "$variable", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("justwipe", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new UnsetCommand()),
 
             new CommandInfo("unzip", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
                 [
