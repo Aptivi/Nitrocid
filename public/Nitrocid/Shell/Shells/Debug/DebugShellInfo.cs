@@ -181,7 +181,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     ])
                 ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsbaseaddons", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsbaseaddons", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsfields", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSFIELDS_DESC",
                 [

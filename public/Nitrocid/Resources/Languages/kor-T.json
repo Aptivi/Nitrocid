@@ -736,7 +736,7 @@
       "text": "사용자 이름을 바꾸지 못했습니다. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "사용자를 찾을 수 없습니다."
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "일반 문자 목록 :"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "배열 문자 목록 :"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "프로세서 공급업체:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "시계 속도:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "디렉토리에 나열하는 동안 알 수 없는 오류: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "승인되지 않은"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "지정된 애드온에서 사용 가능한 모든 속성을 나열합니다."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "모든 기본 애드온과 해당 상태를 나열합니다."
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "빈 조건을 등록할 수 없습니다."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "존재하지 않는 조건을 등록 취소할 수 없습니다."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "나머지 컴퓨터와 통신하기 위한 커널 호스트 이름"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "사용 가능한 사용자 이름 표시"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "MOTD 경로"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL 경로"
     },
     {

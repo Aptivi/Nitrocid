@@ -736,7 +736,7 @@
       "text": "Theip ar an úsáideoir a athainmniú. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Úsáideoir gan aimsiú"
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "Gnáthliosta charachtair:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Liosta charachtair eagar:"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "Díoltóir próiseálaí:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Luas an chloig:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "Earráid anaithnid agus liostáil san eolaire: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Neamhúdaraithe"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "Liostaíonn sé gach maoin atá ar fáil ón addon sonraithe"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Liostaíonn sé na bun bhreiseáin go léir agus a stádas"
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "Ní féidir riocht folamh a chlárú."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Ní féidir coinníoll nach ann a dhíchlárú."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "An t-ainm óstach eithne chun cumarsáid a dhéanamh leis an gcuid eile de na ríomhairí"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Taispeáin na hainmneacha úsáideora atá ar fáil"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "Conair MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL Conair"
     },
     {

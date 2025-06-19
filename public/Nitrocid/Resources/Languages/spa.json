@@ -760,7 +760,7 @@
       "text": "No se pudo cambiar el nombre del usuario. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Usuario no encontrado"
     },
     {
@@ -1276,7 +1276,7 @@
       "text": "Lista de caracteres normales:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Lista de caracteres de matriz:"
     },
     {
@@ -2836,7 +2836,7 @@
       "text": "Proveedor de procesador:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Velocidad de reloj:"
     },
     {
@@ -2928,7 +2928,7 @@
       "text": "Error desconocido al incluir en el directorio: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "No autorizado"
     },
     {
@@ -5080,7 +5080,7 @@
       "text": "Enumera todas las propiedades disponibles del complemento especificado"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Enumera todos los complementos básicos y su estado."
     },
     {
@@ -6024,7 +6024,7 @@
       "text": "No se puede registrar una condición vacía."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "No se puede cancelar el registro de una condición que no existe."
     },
     {
@@ -7032,7 +7032,7 @@
       "text": "El nombre del host del kernel para comunicarse con el resto de las computadoras."
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Mostrar nombres de usuario disponibles"
     },
     {
@@ -7040,7 +7040,7 @@
       "text": "Ruta MODT"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Ruta MAL"
     },
     {

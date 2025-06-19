@@ -741,7 +741,7 @@
       "text": "Het wijzigen van de naam van de gebruiker is mislukt. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Gebruiker niet gevonden"
     },
     {
@@ -1257,7 +1257,7 @@
       "text": "Normale char lijst:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Array-tekenlijst:"
     },
     {
@@ -2817,7 +2817,7 @@
       "text": "Processorleverancier:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Kloksnelheid:"
     },
     {
@@ -2909,7 +2909,7 @@
       "text": "Onbekende fout bij vermelding in directory: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Ongeautoriseerd"
     },
     {
@@ -5061,7 +5061,7 @@
       "text": "Geeft een overzicht van alle beschikbare eigenschappen van de opgegeven add-on"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Geeft een overzicht van alle basis-add-ons en hun status"
     },
     {
@@ -6005,7 +6005,7 @@
       "text": "Kan een lege voorwaarde niet registreren."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Kan de registratie van een voorwaarde die niet bestaat niet ongedaan maken."
     },
     {
@@ -7013,7 +7013,7 @@
       "text": "De kernelhostnaam om met de rest van de computers te communiceren"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Toon beschikbare gebruikersnamen"
     },
     {
@@ -7021,7 +7021,7 @@
       "text": "MOTD-pad"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAL-pad"
     },
     {

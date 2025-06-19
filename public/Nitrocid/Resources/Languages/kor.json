@@ -736,7 +736,7 @@
       "text": "sayongja ileum-eul bakkuji moshaessseubnida. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "sayongjaleul chaj-eul su eobs-seubnida."
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "ilban munja moglog :"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "baeyeol munja moglog :"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "peuroseseo gonggeubeopche:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "sigye sokdo:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "direktorie nayeolhaneun dongan al su eopsneun oryu: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "seungindoeji anheun"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "jijeongdoen aedeuoneseo sayong ganeunghan modeun sokseongeul nayeolhapnida."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "modeun gibon aedeuongwa haedang sangtaereul nayeolhapnida."
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "bin jogeoneul deungrokhal su eopsseupnida."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "jonjaehaji anhneun jogeoneul deungrok chwisohal su eopsseupnida."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "nameoji keompyuteowa tongsinhagi wihan keoneol hoseuteu ireum"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "sayong ganeunghan sayongja ireum pyosi"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "MOTt gyeongro"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "MAl gyeongro"
     },
     {

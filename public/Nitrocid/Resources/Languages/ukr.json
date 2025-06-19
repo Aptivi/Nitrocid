@@ -735,7 +735,7 @@
       "text": "Не вдалося перейменувати користувача. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Користувача не знайдено"
     },
     {
@@ -1251,7 +1251,7 @@
       "text": "Звичайний список символів:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Список символів масиву:"
     },
     {
@@ -2811,7 +2811,7 @@
       "text": "Постачальник процесора:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Тактова частота:"
     },
     {
@@ -2903,7 +2903,7 @@
       "text": "Невідома помилка під час розміщення списку в каталозі: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Несанкціонований"
     },
     {
@@ -5055,7 +5055,7 @@
       "text": "Перелічує всі доступні властивості вказаного аддона"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Перелічує всі базові аддони та їхній статус"
     },
     {
@@ -5999,7 +5999,7 @@
       "text": "Неможливо зареєструвати порожню умову."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Неможливо скасувати реєстрацію умови, якої не існує."
     },
     {
@@ -7007,7 +7007,7 @@
       "text": "Ім’я хоста ядра для зв’язку з рештою комп’ютерів"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Показати доступні імена користувачів"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "Шлях MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Шлях MAL"
     },
     {

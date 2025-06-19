@@ -736,7 +736,7 @@
       "text": "Η μετονομασία χρήστη απέτυχε. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Ο χρήστης δεν βρέθηκε"
     },
     {
@@ -1252,7 +1252,7 @@
       "text": "Λίστα κανονικών χαρακτήρων:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Λίστα χαρακτήρων πίνακα:"
     },
     {
@@ -2812,7 +2812,7 @@
       "text": "Πωλητής επεξεργαστή:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Ταχύτητα ρολογιού:"
     },
     {
@@ -2904,7 +2904,7 @@
       "text": "Άγνωστο σφάλμα κατά την καταχώριση στον κατάλογο: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Ανεξουσιοδότητος"
     },
     {
@@ -5056,7 +5056,7 @@
       "text": "Εμφανίζει όλες τις διαθέσιμες ιδιότητες από το καθορισμένο πρόσθετο"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Εμφανίζει όλα τα βασικά πρόσθετα και την κατάστασή τους"
     },
     {
@@ -6000,7 +6000,7 @@
       "text": "Δεν είναι δυνατή η εγγραφή μιας κενή συνθήκης."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Δεν είναι δυνατή η κατάργηση της εγγραφής μιας συνθήκης που δεν υπάρχει."
     },
     {
@@ -7008,7 +7008,7 @@
       "text": "Το όνομα του κεντρικού υπολογιστή του πυρήνα για επικοινωνία με τους υπόλοιπους υπολογιστές"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Εμφάνιση διαθέσιμων ονομάτων χρήστη"
     },
     {
@@ -7016,7 +7016,7 @@
       "text": "Μονοπάτι MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Μονοπάτι MAL"
     },
     {

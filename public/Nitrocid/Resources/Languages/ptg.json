@@ -745,7 +745,7 @@
       "text": "Falha ao renomear o usuário. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "Usuário não encontrado"
     },
     {
@@ -1261,7 +1261,7 @@
       "text": "Lista normal de caracteres:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "Lista de caracteres da matriz:"
     },
     {
@@ -2821,7 +2821,7 @@
       "text": "Fornecedor do processador:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "Velocidade do relógio:"
     },
     {
@@ -2913,7 +2913,7 @@
       "text": "Erro desconhecido ao listar no diretório: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "Não autorizado"
     },
     {
@@ -5065,7 +5065,7 @@
       "text": "Lista todas as propriedades disponíveis do complemento especificado"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "Lista todos os complementos básicos e seus status"
     },
     {
@@ -6009,7 +6009,7 @@
       "text": "Não é possível registrar uma condição vazia."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "Não é possível cancelar o registro de uma condição que não existe."
     },
     {
@@ -7017,7 +7017,7 @@
       "text": "O nome do host do kernel para se comunicar com o restante dos computadores"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "Mostrar nomes de usuário disponíveis"
     },
     {
@@ -7025,7 +7025,7 @@
       "text": "Caminho MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "Caminho MAL"
     },
     {

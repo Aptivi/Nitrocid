@@ -738,7 +738,7 @@
       "text": "重命名用戶失敗。 {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "未找到用戶"
     },
     {
@@ -1254,7 +1254,7 @@
       "text": "普通字符列表："
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "數組字符列表："
     },
     {
@@ -2814,7 +2814,7 @@
       "text": "處理器供應商："
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "時脈速度："
     },
     {
@@ -2906,7 +2906,7 @@
       "text": "在目錄中列出時出現未知錯誤：{0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "未經授權"
     },
     {
@@ -5058,7 +5058,7 @@
       "text": "列出指定插件的所有可用屬性"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "列出所有基本插件及其狀態"
     },
     {
@@ -6002,7 +6002,7 @@
       "text": "無法註冊空條件。"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "無法取消註冊不存在的條件。"
     },
     {
@@ -7010,7 +7010,7 @@
       "text": "與其餘電腦通訊的核心主機名"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "顯示可用的使用者名稱"
     },
     {
@@ -7018,7 +7018,7 @@
       "text": "MOTD路徑"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "馬爾路徑"
     },
     {

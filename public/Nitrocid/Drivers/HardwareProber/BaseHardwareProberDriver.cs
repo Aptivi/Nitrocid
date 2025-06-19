@@ -270,7 +270,7 @@ namespace Nitrocid.Drivers.HardwareProber
                                 TextWriters.Write($" {processor.Name}", true, KernelColorType.ListValue);
                                 TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PROCESSORVENDOR"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, KernelColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED"), false, KernelColorType.ListEntry);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Speed} MHz", true, KernelColorType.ListValue);
                                 TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALCORES"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.LogicalCores} ({processor.ProcessorCores} x{processor.Cores})", true, KernelColorType.ListValue);

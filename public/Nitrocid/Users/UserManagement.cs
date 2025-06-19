@@ -367,7 +367,7 @@ namespace Nitrocid.Users
             bool targetUserAdmin = targetUser.Flags.HasFlag(UserFlags.Administrator);
 
             if (!UserExists(Target))
-                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND2"));
 
             // Check the lock
             if (IsLocked(Target))
@@ -519,7 +519,7 @@ namespace Nitrocid.Users
                 else
                     return "$";
             else
-                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND2"));
         }
 
         /// <summary>

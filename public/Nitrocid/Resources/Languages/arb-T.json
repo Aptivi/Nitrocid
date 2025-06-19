@@ -761,7 +761,7 @@
       "text": "فشلت إعادة تسمية المستخدم. {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "المستخدم ليس موجود"
     },
     {
@@ -1277,7 +1277,7 @@
       "text": "قائمة الأحرف العادية:"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "قائمة أحرف المصفوفة:"
     },
     {
@@ -2837,7 +2837,7 @@
       "text": "بائع المعالج:"
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "سرعة الساعة:"
     },
     {
@@ -2929,7 +2929,7 @@
       "text": "خطأ غير معروف أثناء الإدراج في الدليل: {0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "غير مصرح"
     },
     {
@@ -5081,7 +5081,7 @@
       "text": "يسرد جميع الخصائص المتاحة من الملحق المحدد"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "يسرد جميع الإضافات الأساسية وحالتها"
     },
     {
@@ -6025,7 +6025,7 @@
       "text": "لا يمكن تسجيل حالة فارغة."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "لا يمكن إلغاء تسجيل شرط غير موجود."
     },
     {
@@ -7033,7 +7033,7 @@
       "text": "اسم مضيف النواة للتواصل مع بقية أجهزة الكمبيوتر"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "إظهار أسماء المستخدمين المتاحة"
     },
     {
@@ -7041,7 +7041,7 @@
       "text": "مسار MOTD"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "مسار مال"
     },
     {

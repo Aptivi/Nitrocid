@@ -743,7 +743,7 @@
       "text": "重命名用户失败。 {0}"
     },
     {
-      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND",
+      "loc": "NKS_USERS_EXCEPTION_USERNOTFOUND2",
       "text": "找不到使用者"
     },
     {
@@ -1259,7 +1259,7 @@
       "text": "普通字符列表："
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
       "text": "数组字符列表："
     },
     {
@@ -2819,7 +2819,7 @@
       "text": "处理器供应商："
     },
     {
-      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED",
+      "loc": "NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2",
       "text": "时钟速度："
     },
     {
@@ -2911,7 +2911,7 @@
       "text": "在目录中列出时出现未知错误：{0}"
     },
     {
-      "loc": "NKS_FILES_UNAUTHORIZED",
+      "loc": "NKS_FILES_UNAUTHORIZED2",
       "text": "未经授权"
     },
     {
@@ -5063,7 +5063,7 @@
       "text": "列出指定插件的所有可用属性"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONTYPES_DESC",
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC",
       "text": "列出所有基本插件及其状态"
     },
     {
@@ -6007,7 +6007,7 @@
       "text": "无法注册空条件。"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
+      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
       "text": "无法取消注册不存在的条件。"
     },
     {
@@ -7015,7 +7015,7 @@
       "text": "与其余计算机通信的内核主机名"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWUSERNAMES_NAME",
       "text": "显示可用的用户名"
     },
     {
@@ -7023,7 +7023,7 @@
       "text": "MOTD路径"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MOTDPATH_NAME",
+      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MALPATH_NAME",
       "text": "马尔路径"
     },
     {
