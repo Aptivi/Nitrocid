@@ -4980,7 +4980,7 @@
       "text": "Speichert Shell-Verläufe"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_TIP_DESC",
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Zeigt einen zufälligen Kernel-Tipp"
     },
     {
