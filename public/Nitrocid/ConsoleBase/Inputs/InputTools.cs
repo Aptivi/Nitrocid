@@ -201,33 +201,9 @@ namespace Nitrocid.ConsoleBase.Inputs
                 return;
 
             // Initialize console wrappers for Terminaux
-            ConsoleWrapperTools.ActionBeep = DriverHandler.CurrentConsoleDriverLocal.Beep;
-            ConsoleWrapperTools.ActionBufferHeight = () => DriverHandler.CurrentConsoleDriverLocal.BufferHeight;
-            ConsoleWrapperTools.ActionClear = () => DriverHandler.CurrentConsoleDriverLocal.Clear();
-            ConsoleWrapperTools.ActionClearLoadBack = () => DriverHandler.CurrentConsoleDriverLocal.Clear(true);
-            ConsoleWrapperTools.ActionCursorLeft = () => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
-            ConsoleWrapperTools.ActionSetCursorLeft = DriverHandler.CurrentConsoleDriverLocal.SetCursorLeft;
-            ConsoleWrapperTools.ActionCursorTop = () => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
-            ConsoleWrapperTools.ActionSetCursorTop = DriverHandler.CurrentConsoleDriverLocal.SetCursorTop;
-            ConsoleWrapperTools.ActionCursorVisible = (value) => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value;
-            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            ConsoleWrapperTools.ActionKeyAvailable = () => DriverHandler.CurrentConsoleDriverLocal.KeyAvailable;
-            ConsoleWrapperTools.ActionReadKey = DriverHandler.CurrentConsoleDriverLocal.ReadKey;
-            ConsoleWrapperTools.ActionSetCursorPosition = DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition;
-            ConsoleWrapperTools.ActionSetWindowDimensions = DriverHandler.CurrentConsoleDriverLocal.SetWindowDimensions;
-            ConsoleWrapperTools.ActionSetBufferDimensions = DriverHandler.CurrentConsoleDriverLocal.SetBufferDimensions;
-            ConsoleWrapperTools.ActionTreatCtrlCAsInput = (value) => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput = value;
-            ConsoleWrapperTools.ActionGetTreatCtrlCAsInput = () => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput;
-            ConsoleWrapperTools.ActionSetWindowHeight = DriverHandler.CurrentConsoleDriverLocal.SetWindowHeight;
-            ConsoleWrapperTools.ActionWindowHeight = () => DriverHandler.CurrentConsoleDriverLocal.WindowHeight;
-            ConsoleWrapperTools.ActionSetWindowWidth = DriverHandler.CurrentConsoleDriverLocal.SetWindowWidth;
-            ConsoleWrapperTools.ActionWindowWidth = () => DriverHandler.CurrentConsoleDriverLocal.WindowWidth;
-            ConsoleWrapperTools.ActionWriteChar = DriverHandler.CurrentConsoleDriverLocal.Write;
-            ConsoleWrapperTools.ActionWriteLine = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineParameterized = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineString = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
-            ConsoleWrapperTools.ActionWriteParameterized = DriverHandler.CurrentConsoleDriverLocal.Write;
-            ConsoleWrapperTools.ActionWriteString = DriverHandler.CurrentConsoleDriverLocal.Write;
+            var wrapper = new NitrocidWrapper();
+            ConsoleWrapperTools.RegisterWrapper(nameof(NitrocidWrapper), wrapper);
+            ConsoleWrapperTools.SetWrapper(nameof(NitrocidWrapper));
             isWrapperInitialized = true;
         }
 

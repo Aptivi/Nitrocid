@@ -3322,7 +3322,7 @@
       "text": "Ralat pengurus kenalan berlaku semasa cuba melaksanakan operasi yang diminta. Pastikan fail kenalan wujud dalam folder yang betul dan ia adalah fail kenalan vCard 2.1, 3.0 atau 4.0 yang sah."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Sistem keadaan UESH gagal semasa menjalankan operasi yang diminta. Lihat mesej ralat di bawah untuk mendapatkan butiran lanjut."
     },
     {

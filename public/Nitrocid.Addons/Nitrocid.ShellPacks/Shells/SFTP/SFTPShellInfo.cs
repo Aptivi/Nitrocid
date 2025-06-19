@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Arguments;
 using Nitrocid.ShellPacks.Shells.SFTP.Presets;
 using Nitrocid.ShellPacks.Shells.SFTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP

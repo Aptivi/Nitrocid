@@ -3320,7 +3320,7 @@
       "text": "İstenen işlemi gerçekleştirmeye çalışırken bir kişiler yöneticisi hatası oluştu. Kişi dosyasının doğru klasörde bulunduğundan ve geçerli bir vCard 2.1, 3.0 veya 4.0 kişi dosyası olduğundan emin olun."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "İstenen işlemi gerçekleştirirken bir UESH koşul sistemi başarısız oldu. Daha fazla ayrıntı için aşağıdaki hata mesajına bakın."
     },
     {

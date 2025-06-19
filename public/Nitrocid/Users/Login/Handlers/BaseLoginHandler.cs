@@ -28,7 +28,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 

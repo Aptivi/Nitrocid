@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help;
@@ -93,7 +93,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             }
             catch (ThreadInterruptedException)
             {
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.DismissRequest();
                 return;
             }
             catch (Exception ex)

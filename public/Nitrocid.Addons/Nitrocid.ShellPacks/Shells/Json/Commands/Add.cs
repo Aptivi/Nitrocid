@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using System;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands

@@ -21,15 +21,15 @@ using Nitrocid.Extras.Dates.Commands;
 using Nitrocid.Extras.Dates.Localized;
 using Nitrocid.Extras.Dates.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Dates.Timers;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Dates
@@ -97,13 +97,13 @@ namespace Nitrocid.Extras.Dates
             LanguageTools.AddCustomAction("Nitrocid.Extras.Dates", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Dates");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
             HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_TIMER");
             HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_STOPWATCH");

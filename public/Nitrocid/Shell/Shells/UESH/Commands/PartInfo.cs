@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

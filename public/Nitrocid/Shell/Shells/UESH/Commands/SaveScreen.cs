@@ -20,8 +20,8 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Pointer;

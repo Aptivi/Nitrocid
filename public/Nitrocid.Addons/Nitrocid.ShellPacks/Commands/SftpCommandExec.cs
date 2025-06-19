@@ -19,7 +19,7 @@
 
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Commands

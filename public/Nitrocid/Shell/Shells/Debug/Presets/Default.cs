@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Shell.Shells.Debug.Presets
 {

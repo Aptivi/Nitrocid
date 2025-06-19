@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files.Instances;
 using Nitrocid.Languages;
 using System;

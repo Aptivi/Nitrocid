@@ -19,8 +19,8 @@
 
 using System.IO;
 using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
@@ -33,6 +33,8 @@ using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
 using System;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -49,6 +51,14 @@ namespace Nitrocid.Extras.Mods.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             if (!KernelEntry.SafeMode)
             {
                 PermissionsTools.Demand(PermissionTypes.ManageMods);

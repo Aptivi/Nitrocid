@@ -3319,7 +3319,7 @@
       "text": "Đã xảy ra lỗi trình quản lý danh bạ khi cố gắng thực hiện thao tác được yêu cầu. Đảm bảo rằng tệp danh bạ nằm trong đúng thư mục và đó là tệp danh bạ vCard 2.1, 3.0 hoặc 4.0 hợp lệ."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Hệ thống điều kiện UESH bị lỗi khi thực hiện thao tác được yêu cầu. Xem thông báo lỗi bên dưới để biết thêm chi tiết."
     },
     {

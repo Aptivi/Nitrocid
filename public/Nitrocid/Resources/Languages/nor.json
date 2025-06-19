@@ -3323,7 +3323,7 @@
       "text": "Det oppstod en kontaktbehandlingsfeil under forsøk på å utføre den forespurte operasjonen. Kontroller at kontaktfilen finnes i riktig mappe og at det er en gyldig vCard 2.1, 3.0 eller 4.0 kontaktfil."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Et UESH-tilstandssystem mislyktes mens den forespurte operasjonen ble utført. Se feilmeldingen nedenfor for mer informasjon."
     },
     {

@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {

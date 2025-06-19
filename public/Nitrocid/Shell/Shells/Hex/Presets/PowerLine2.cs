@@ -20,7 +20,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -73,7 +73,7 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -92,7 +92,7 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =

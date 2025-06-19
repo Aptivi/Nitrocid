@@ -24,9 +24,9 @@ using Terminaux.Colors;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
@@ -69,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), UserManagement.CurrentUser.Username, default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Config.MainConfig.HostName, PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), $"{FilesystemTools.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}", default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), $"{FilesystemTools.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellCount}]" : "")}", default, TransitionPartChar),
             ];
 
             // Builder
@@ -94,7 +94,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
@@ -130,7 +130,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =

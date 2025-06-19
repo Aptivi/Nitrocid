@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands

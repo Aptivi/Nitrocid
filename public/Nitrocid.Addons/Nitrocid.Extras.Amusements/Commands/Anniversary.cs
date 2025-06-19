@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 

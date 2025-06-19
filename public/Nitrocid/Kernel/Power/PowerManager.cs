@@ -25,8 +25,8 @@ using System.IO;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands.ProcessExecution;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Starting.Environment;
@@ -218,7 +218,6 @@ namespace Nitrocid.Kernel.Power
                     Arguments = string.Join(" ", EnvironmentTools.kernelArguments)
                 },
             };
-            selfProcess.StartInfo = ProcessExecutor.StripEnvironmentVariables(selfProcess.StartInfo);
 
             // Now, go ahead and start.
             selfProcess.Start();

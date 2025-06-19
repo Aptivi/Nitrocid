@@ -26,7 +26,7 @@ using System.Threading;
 using System.Linq;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;

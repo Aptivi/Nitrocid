@@ -3322,7 +3322,7 @@
       "text": "Si è verificato un errore nel gestore dei contatti durante il tentativo di eseguire l'operazione richiesta. Assicurati che il file di contatto esista nella cartella corretta e che sia un file di contatto vCard 2.1, 3.0 o 4.0 valido."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Un sistema di condizioni UESH non è riuscito durante l'esecuzione dell'operazione richiesta. Per ulteriori dettagli, vedere il messaggio di errore riportato di seguito."
     },
     {

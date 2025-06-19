@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Common;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Events;
@@ -267,8 +267,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             try
             {
                 // Add handler for SSH
-                Console.CancelKeyPress += SSHDisconnect;
-                Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
+                CancellationHandlers.BeginLocalCancelScope(SSHDisconnect);
                 EventsManager.FireEvent(EventType.SSHConnected, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
@@ -311,8 +310,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 DisconnectionRequested = false;
 
                 // Remove handler for SSH
-                Console.CancelKeyPress += CancellationHandlers.CancelCommand;
-                Console.CancelKeyPress -= SSHDisconnect;
+                CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
             }
         }
 
@@ -342,8 +340,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             try
             {
                 // Add handler for SSH
-                Console.CancelKeyPress += SSHDisconnect;
-                Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
+                CancellationHandlers.BeginLocalCancelScope(SSHDisconnect);
                 EventsManager.FireEvent(EventType.SSHConnected, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation
@@ -392,8 +389,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 EventsManager.FireEvent(EventType.SSHPostExecuteCommand, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
 
                 // Remove handler for SSH
-                Console.CancelKeyPress += CancellationHandlers.CancelCommand;
-                Console.CancelKeyPress -= SSHDisconnect;
+                CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
             }
         }
 

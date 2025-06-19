@@ -23,8 +23,8 @@ using System.Threading;
 using System;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

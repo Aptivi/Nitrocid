@@ -3320,7 +3320,7 @@
       "text": "A apărut o eroare a managerului de contacte la încercarea de a efectua operațiunea solicitată. Asigurați-vă că fișierul de contact există în folderul corect și că este un fișier de contact valid vCard 2.1, 3.0 sau 4.0."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Un sistem de condiție UESH a eșuat în timpul efectuării operației solicitate. Consultați mesajul de eroare de mai jos pentru mai multe detalii."
     },
     {

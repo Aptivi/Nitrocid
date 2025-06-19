@@ -3319,7 +3319,7 @@
       "text": "Terjadi kesalahan pengelola kontak saat mencoba melakukan operasi yang diminta. Pastikan berkas kontak ada di folder yang benar dan merupakan berkas kontak vCard 2.1, 3.0, atau 4.0 yang valid."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Sistem kondisi UESH gagal saat menjalankan operasi yang diminta. Lihat pesan kesalahan di bawah untuk detail selengkapnya."
     },
     {

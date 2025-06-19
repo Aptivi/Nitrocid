@@ -19,7 +19,7 @@
 
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using System;
 

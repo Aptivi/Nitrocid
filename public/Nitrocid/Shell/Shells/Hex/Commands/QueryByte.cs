@@ -24,7 +24,7 @@ using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands

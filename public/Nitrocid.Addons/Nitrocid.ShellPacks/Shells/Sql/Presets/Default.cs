@@ -19,7 +19,7 @@
 
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Presets
@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "SqlShell";
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
@@ -66,7 +66,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();

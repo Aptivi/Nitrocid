@@ -24,8 +24,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH
@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     }
                     catch (ThreadInterruptedException)
                     {
-                        CancellationHandlers.CancelRequested = false;
+                        CancellationHandlers.DismissRequest();
                         Bail = true;
                     }
                     catch (Exception ex)

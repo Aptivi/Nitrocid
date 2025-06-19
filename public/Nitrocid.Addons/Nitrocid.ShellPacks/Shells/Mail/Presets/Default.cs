@@ -20,7 +20,7 @@
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
@@ -45,7 +45,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "MailShell";
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
@@ -71,7 +71,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();

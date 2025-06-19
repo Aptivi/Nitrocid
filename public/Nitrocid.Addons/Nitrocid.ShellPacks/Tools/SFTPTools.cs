@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Renci.SshNet;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;

@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json.Linq;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;

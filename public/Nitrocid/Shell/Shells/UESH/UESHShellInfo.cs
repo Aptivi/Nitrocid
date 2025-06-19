@@ -21,15 +21,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Drivers.Encoding;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Shell.Shells.UESH.Commands;
 using Nitrocid.Shell.Shells.UESH.Presets;
@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDGROUP_ARGUMENT_GROUPNAME_DESC"
                         })
                     ])
-                ], new AddGroupCommand(), CommandFlags.Strict),
+                ], new AddGroupCommand()),
 
             new CommandInfo("adduser", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_DESC",
                 [
@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC"
                         }),
                     ])
-                ], new AddUserCommand(), CommandFlags.Strict),
+                ], new AddUserCommand()),
 
             new CommandInfo("addusertogroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_DESC",
                 [
@@ -90,9 +90,9 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_GROUP_DESC"
                         }),
                     ])
-                ], new AddUserToGroupCommand(), CommandFlags.Strict),
+                ], new AddUserToGroupCommand()),
 
-            new CommandInfo("admin", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADMIN_DESC", new AdminCommand(), CommandFlags.Strict),
+            new CommandInfo("admin", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADMIN_DESC", new AdminCommand()),
 
             new CommandInfo("alarm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_DESC",
                 [
@@ -144,7 +144,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             AcceptsValues = false
                         })
                     ]),
-                ], new AlarmCommand(), CommandFlags.Strict),
+                ], new AlarmCommand()),
 
             new CommandInfo("beep", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_DESC",
                 [
@@ -172,7 +172,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BLOCKDBGDEV_ARGUMENT_IPADDRESS_DESC"
                         }),
                     ])
-                ], new BlockDbgDevCommand(), CommandFlags.Strict),
+                ], new BlockDbgDevCommand()),
 
             new CommandInfo("bulkrename", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_DESC",
                 [
@@ -261,7 +261,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             AcceptsValues = false
                         }),
                     ])
-                ], new ChCultureCommand(), CommandFlags.Strict),
+                ], new ChCultureCommand()),
 
             new CommandInfo("chdir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHDIR_DESC",
                 [
@@ -283,7 +283,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_ARGUMENT_HOSTNAME_DESC"
                         }),
                     ])
-                ], new ChHostNameCommand(), CommandFlags.Strict),
+                ], new ChHostNameCommand()),
 
             new CommandInfo("chklock", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC",
                 [
@@ -317,7 +317,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             AcceptsValues = false
                         }),
                     ])
-                ], new ChLangCommand(), CommandFlags.Strict),
+                ], new ChLangCommand()),
 
             new CommandInfo("chmal", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHMAL_DESC",
                 [
@@ -328,7 +328,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC"
                         }),
                     ])
-                ], new ChMalCommand(), CommandFlags.Strict),
+                ], new ChMalCommand()),
 
             new CommandInfo("chmotd", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_DESC",
                 [
@@ -339,7 +339,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC"
                         }),
                     ])
-                ], new ChMotdCommand(), CommandFlags.Strict),
+                ], new ChMotdCommand()),
 
             new CommandInfo("chpwd", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
                 [
@@ -362,7 +362,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC"
                         }),
                     ])
-                ], new ChPwdCommand(), CommandFlags.Strict),
+                ], new ChPwdCommand()),
 
             new CommandInfo("chusrname", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_DESC",
                 [
@@ -378,7 +378,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_NEWNAME_DESC"
                         }),
                     ])
-                ], new ChUsrNameCommand(), CommandFlags.Strict),
+                ], new ChUsrNameCommand()),
 
             new CommandInfo("combinestr", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
                 [
@@ -484,7 +484,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new CopyCommand()),
 
-            new CommandInfo("debugshell", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC", new DebugShellCommand(), CommandFlags.Strict),
+            new CommandInfo("debugshell", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC", new DebugShellCommand()),
 
             new CommandInfo("decodefile", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_DESC",
                 [
@@ -567,7 +567,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DISCONNDBGDEV_ARGUMENT_IP_DESC"
                         }),
                     ])
-                ], new DisconnDbgDevCommand(), CommandFlags.Strict),
+                ], new DisconnDbgDevCommand()),
 
             new CommandInfo("diskinfo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
                 [
@@ -636,7 +636,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC"
                         }),
                     ]),
-                ], new DriverManCommand(), CommandFlags.Strict),
+                ], new DriverManCommand()),
 
             new CommandInfo("edit", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
                 [
@@ -956,7 +956,7 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("lockscreen", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LOCKSCREEN_DESC", new LockScreenCommand()),
 
-            new CommandInfo("logout", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LOGOUT_DESC", new LogoutCommand(), CommandFlags.NoMaintenance),
+            new CommandInfo("logout", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LOGOUT_DESC", new LogoutCommand()),
 
             new CommandInfo("lsconfigs", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGS_DESC",
                 [
@@ -978,9 +978,9 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new LsConfigValuesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsconnections", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSCONNECTIONS_DESC", new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsconnections", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSCONNECTIONS_DESC", new LsConnectionsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsdbgdev", /* Localizable */ "NKS_SHELL_SHELLS_UESH_LSDBGDEV_DESC", new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new CommandInfo("lsdbgdev", /* Localizable */ "NKS_SHELL_SHELLS_UESH_LSDBGDEV_DESC", new LsDbgDevCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("lsexthandlers", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSEXTHANDLERS_DESC", new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -994,14 +994,14 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_ARGUMENT_DISKNUM_DESC"
                         }),
                     ], true)
-                ], new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+                ], new LsDiskPartsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("lsdisks", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSDISKS_DESC",
                 [
                     new CommandArgumentInfo(true)
-                ], new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+                ], new LsDisksCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("lsnet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSNET_DESC", new LsNetCommand(), CommandFlags.Strict),
+            new CommandInfo("lsnet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSNET_DESC", new LsNetCommand()),
 
             new CommandInfo("lsvars", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
@@ -1087,7 +1087,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC"
                         }),
                     ])
-                ], new PermCommand(), CommandFlags.Strict),
+                ], new PermCommand()),
 
             new CommandInfo("permgroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_DESC",
                 [
@@ -1106,7 +1106,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC"
                         }),
                     ])
-                ], new PermGroupCommand(), CommandFlags.Strict),
+                ], new PermGroupCommand()),
 
             new CommandInfo("ping", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_DESC",
                 [
@@ -1177,7 +1177,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new PutCommand()),
 
-            new CommandInfo("rdebug", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RDEBUG_DESC", new RdebugCommand(), CommandFlags.Strict),
+            new CommandInfo("rdebug", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RDEBUG_DESC", new RdebugCommand()),
 
             new CommandInfo("reboot", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_DESC",
                 [
@@ -1201,7 +1201,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new RebootCommand()),
 
-            new CommandInfo("reloadconfig", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RELOADCONFIG_DESC", new ReloadConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("reloadconfig", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RELOADCONFIG_DESC", new ReloadConfigCommand()),
 
             new CommandInfo("rexec", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_DESC",
                 [
@@ -1221,7 +1221,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC"
                         }),
                     ])
-                ], new RexecCommand(), CommandFlags.Strict),
+                ], new RexecCommand()),
 
             new CommandInfo("rm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RM_DESC",
                 [
@@ -1254,7 +1254,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_ARGUMENT_TARGET_DESC"
                         }),
                     ])
-                ], new RmUserCommand(), CommandFlags.Strict),
+                ], new RmUserCommand()),
 
             new CommandInfo("rmgroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_DESC",
                 [
@@ -1265,7 +1265,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_ARGUMENT_TARGET_DESC"
                         }),
                     ])
-                ], new RmGroupCommand(), CommandFlags.Strict),
+                ], new RmGroupCommand()),
 
             new CommandInfo("rmuserfromgroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_DESC",
                 [
@@ -1280,7 +1280,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_GROUPNAME_DESC"
                         }),
                     ])
-                ], new RmUserFromGroupCommand(), CommandFlags.Strict),
+                ], new RmUserFromGroupCommand()),
 
             new CommandInfo("rreboot", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RREBOOT_DESC",
                 [
@@ -1331,7 +1331,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new RShutdownCommand()),
 
-            new CommandInfo("saveconfig", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVECONFIG_DESC", new SaveConfigCommand(), CommandFlags.Strict),
+            new CommandInfo("saveconfig", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVECONFIG_DESC", new SaveConfigCommand()),
 
             new CommandInfo("savescreen", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_DESC",
                 [
@@ -1389,7 +1389,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_ARGUMENT_SAVER_DESC"
                         }),
                     ])
-                ], new SetSaverCommand(), CommandFlags.Strict),
+                ], new SetSaverCommand()),
 
             new CommandInfo("settings", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_DESC",
                 [
@@ -1429,7 +1429,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             AcceptsValues = false
                         })
                     ])
-                ], new SettingsCommand(), CommandFlags.Strict),
+                ], new SettingsCommand()),
 
             new CommandInfo("setconfigvalue", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_DESC",
                 [
@@ -1670,7 +1670,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC"
                         }),
                     ])
-                ], new UnblockDbgDevCommand(), CommandFlags.Strict),
+                ], new UnblockDbgDevCommand()),
 
             new CommandInfo("unzip", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
                 [
@@ -1694,7 +1694,7 @@ namespace Nitrocid.Shell.Shells.UESH
                 ], new UnZipCommand()),
 
             #if SPECIFIERREL
-            new CommandInfo("update", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC", new UpdateCommand(), CommandFlags.Strict),
+            new CommandInfo("update", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC", new UpdateCommand()),
             #endif
 
             new CommandInfo("uptime", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
