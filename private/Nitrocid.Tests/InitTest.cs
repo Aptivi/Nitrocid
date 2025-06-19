@@ -34,6 +34,8 @@ using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Admin;
 using Nitrocid.Shell.Shells.Debug;
+using Nitrocid.Kernel.Starting;
+using Textify.Tools.Placeholder;
 
 [assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
 
@@ -72,6 +74,10 @@ namespace Nitrocid.Tests
                 ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
             if (!ShellManager.ShellTypeExists("DebugShell"))
                 ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
+
+            // Add the placeholders
+            foreach (var placeholder in KernelInitializers.placeholders)
+                PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
 
             // Create config
             Config.CreateConfig();
