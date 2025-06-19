@@ -202,8 +202,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
             new CommandInfo("savehistories", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC", new SaveHistoriesUnifiedCommand()),
 
-            new CommandInfo("tip", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_TIP_DESC", new TipUnifiedCommand()),
-
             new CommandInfo("wrap", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
                 [
                     new CommandArgumentInfo(

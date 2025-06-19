@@ -23,7 +23,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Kernel.Starting;
 
-namespace Nitrocid.Shell.ShellBase.Shells.Unified
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Gets a random tip
@@ -31,7 +31,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
     /// <remarks>
     /// You can learn more about what the kernel can do using this command to get a random tip.
     /// </remarks>
-    class TipUnifiedCommand : BaseCommand, ICommand
+    class TipCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
