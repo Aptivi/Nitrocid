@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelInitializers
     {
-        private static readonly List<PlaceInfo> placeholders =
+        internal static readonly List<PlaceInfo> placeholders =
         [
             new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
             new PlaceInfo("host", (_) => Config.MainConfig.HostName),

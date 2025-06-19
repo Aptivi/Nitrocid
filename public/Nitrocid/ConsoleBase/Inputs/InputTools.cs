@@ -202,7 +202,8 @@ namespace Nitrocid.ConsoleBase.Inputs
 
             // Initialize console wrappers for Terminaux
             var wrapper = new NitrocidWrapper();
-            ConsoleWrapperTools.RegisterWrapper(nameof(NitrocidWrapper), wrapper);
+            if (!ConsoleWrapperTools.IsRegistered(nameof(NitrocidWrapper)))
+                ConsoleWrapperTools.RegisterWrapper(nameof(NitrocidWrapper), wrapper);
             ConsoleWrapperTools.SetWrapper(nameof(NitrocidWrapper));
             isWrapperInitialized = true;
         }
