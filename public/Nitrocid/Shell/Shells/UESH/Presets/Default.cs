@@ -23,8 +23,8 @@ using Nitrocid.Files;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users;
 using Terminaux.Colors;
 
@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
         /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             var PresetStringBuilder = new StringBuilder();
             string UserDollarSign = UserManagement.GetUserDollarSign(UserManagement.CurrentUser.Username);
@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Opening
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"{ShellManager.ShellStack.Count}:" : "")}");
+                PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"{ShellManager.ShellCount}:" : "")}");
 
                 // Current username
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
@@ -84,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             var PresetStringBuilder = new StringBuilder();
 

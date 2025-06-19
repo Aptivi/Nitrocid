@@ -3328,7 +3328,7 @@
       "text": "Beim Versuch, den angeforderten Vorgang auszuführen, ist ein Fehler im Kontaktmanager aufgetreten. Stellen Sie sicher, dass die Kontaktdatei im richtigen Ordner vorhanden ist und dass es sich um eine gültige vCard 2.1-, 3.0- oder 4.0-Kontaktdatei handelt."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Ein UESH-Bedingungssystem ist beim Ausführen des angeforderten Vorgangs fehlgeschlagen. Weitere Einzelheiten finden Sie in der Fehlermeldung unten."
     },
     {

@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Nitrocid.ShellPacks.Shells.FTP;
 using Nitrocid.ShellPacks.Shells.Json;
 using Nitrocid.ShellPacks.Shells.Mail;

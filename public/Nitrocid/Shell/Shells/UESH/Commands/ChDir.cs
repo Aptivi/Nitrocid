@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

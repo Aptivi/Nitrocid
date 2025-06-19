@@ -28,6 +28,12 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base.Checks;
 using System.Reflection;
+using Terminaux.Shell.Shells;
+using Nitrocid.Shell.Shells.UESH;
+using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Shell.Shells.Hex;
+using Nitrocid.Shell.Shells.Admin;
+using Nitrocid.Shell.Shells.Debug;
 
 [assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
 
@@ -54,6 +60,18 @@ namespace Nitrocid.Tests
             if (FilesystemTools.FolderExists(PathsManagement.AppDataPath))
                 FilesystemTools.RemoveDirectory(PathsManagement.AppDataPath, false);
             FilesystemTools.MakeDirectory(PathsManagement.AppDataPath, false);
+
+            // Add necessary prompt presets
+            if (!ShellManager.ShellTypeExists("Shell"))
+                ShellManager.RegisterShell("Shell", new UESHShellInfo());
+            if (!ShellManager.ShellTypeExists("TextShell"))
+                ShellManager.RegisterShell("TextShell", new TextShellInfo());
+            if (!ShellManager.ShellTypeExists("HexShell"))
+                ShellManager.RegisterShell("HexShell", new HexShellInfo());
+            if (!ShellManager.ShellTypeExists("AdminShell"))
+                ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
+            if (!ShellManager.ShellTypeExists("DebugShell"))
+                ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
 
             // Create config
             Config.CreateConfig();

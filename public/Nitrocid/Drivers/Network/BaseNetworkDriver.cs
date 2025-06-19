@@ -27,7 +27,7 @@ using System.Net.Http;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;

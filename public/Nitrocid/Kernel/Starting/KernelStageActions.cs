@@ -1,3 +1,4 @@
+
 //
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
@@ -16,6 +17,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
+
+extern alias TextifyDep;
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging.RemoteDebug;

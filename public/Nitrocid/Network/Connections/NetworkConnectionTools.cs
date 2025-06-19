@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
@@ -384,16 +384,6 @@ namespace Nitrocid.Network.Connections
         /// <returns>True if found; false otherwise.</returns>
         public static bool ConnectionTypeExists(string connectionType) =>
             networkTypes.Contains(connectionType);
-
-        /// <summary>
-        /// Opens a connection for the selected shell
-        /// </summary>
-        /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
-        /// <param name="establisher">The function responsible for establishing the network connection</param>
-        /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
-        /// <param name="address">Target address to connect to</param>
-        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection?> establisher, Func<string, SpeedDialEntry, NetworkConnection?> speedEstablisher, string address = "") =>
-            OpenConnectionForShell(ShellManager.GetShellTypeName(shellType), establisher, speedEstablisher, address);
 
         /// <summary>
         /// Opens a connection for the selected shell

@@ -23,9 +23,12 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login.Motd;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -46,6 +49,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             if (parameters.ArgumentsList.Length > 0)
             {
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
@@ -62,7 +73,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell(ShellType.TextShell, PathsManagement.GetKernelPath(KernelPathType.MOTD));
+                ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMOTD_PROGRESS"));
                 MotdParse.ReadMotd();
                 return 0;

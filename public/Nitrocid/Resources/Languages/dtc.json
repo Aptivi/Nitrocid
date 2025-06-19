@@ -3325,7 +3325,7 @@
       "text": "Er is een contactbeheerfout opgetreden bij het uitvoeren van de gevraagde bewerking. Zorg ervoor dat het contactbestand in de juiste map staat en dat het een geldig vCard 2.1, 3.0 of 4.0 contactbestand is."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Een UESH-conditiesysteem is mislukt tijdens het uitvoeren van de gevraagde bewerking. Zie het onderstaande foutbericht voor meer details."
     },
     {

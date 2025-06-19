@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ShellPacks.Shells.Mail;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

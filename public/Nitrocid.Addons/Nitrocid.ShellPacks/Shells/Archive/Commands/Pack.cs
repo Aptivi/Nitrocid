@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands

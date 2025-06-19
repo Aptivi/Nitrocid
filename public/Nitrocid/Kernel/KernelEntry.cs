@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Arguments;
@@ -29,7 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
@@ -209,7 +209,7 @@ namespace Nitrocid.Kernel
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
                     // Start the shell
-                    ShellManager.StartShellInternal(ShellType.Shell);
+                    ShellManager.StartShell("Shell");
                 }
                 Login.LoggedIn = false;
                 Login.LogoutRequested = false;

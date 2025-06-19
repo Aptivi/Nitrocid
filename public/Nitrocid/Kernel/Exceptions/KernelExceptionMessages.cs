@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.OldModDetected,                   LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED") },
                 { KernelExceptionType.RegularExpression,                LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_REGULAREXPRESSION") },
                 { KernelExceptionType.Contacts,                         LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS") },
-                { KernelExceptionType.UESHConditional,                  LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL") },
+                { KernelExceptionType.MESHConditional,                  LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional") },
                 { KernelExceptionType.SqlEditor,                        LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR") },
                 { KernelExceptionType.NoSuchGroup,                      LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP") },
                 { KernelExceptionType.InteractiveTui,                   LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI") },

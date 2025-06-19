@@ -19,10 +19,10 @@
 
 using Nitrocid.Extras.Diagnostics.Commands;
 using Nitrocid.Extras.Diagnostics.Localized;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -46,13 +46,13 @@ namespace Nitrocid.Extras.Diagnostics
         void IAddon.StartAddon()
         {
             LanguageTools.AddCustomAction("Nitrocid.Extras.Diagnostics", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("DebugShell", [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Diagnostics");
-            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("DebugShell", [.. addonCommands.Select((ci) => ci.Command)]);
         }
     }
 }

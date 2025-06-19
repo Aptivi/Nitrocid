@@ -24,7 +24,7 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Base;
 
 namespace Nitrocid.Extras.BeepSynth.Commands

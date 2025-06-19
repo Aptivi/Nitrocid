@@ -19,8 +19,8 @@
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var shell = (SFTPShell?)ShellManager.ShellStack[^1].ShellBase ??
+            var shell = (SFTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             shell.detaching = true;
             ShellManager.KillShell();

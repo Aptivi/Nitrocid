@@ -20,8 +20,8 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {

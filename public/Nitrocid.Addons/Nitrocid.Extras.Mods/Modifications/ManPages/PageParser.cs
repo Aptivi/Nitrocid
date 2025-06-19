@@ -25,7 +25,7 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.Extras.Mods.Modifications.ManPages
 {

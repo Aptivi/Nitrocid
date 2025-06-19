@@ -22,8 +22,8 @@ using System.Threading;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using FluentFTP;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
@@ -98,7 +98,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

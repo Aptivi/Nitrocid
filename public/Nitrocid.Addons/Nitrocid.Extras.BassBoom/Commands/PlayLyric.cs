@@ -20,7 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 
 namespace Nitrocid.Extras.BassBoom.Commands

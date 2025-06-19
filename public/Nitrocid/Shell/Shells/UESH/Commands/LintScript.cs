@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Scripting;
 using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -36,7 +36,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             try
             {
                 string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                UESHParse.Execute(pathToScript, "", true);
+                MESHParse.Execute(pathToScript, "", true);
                 TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS"), true, KernelColorType.Success);
                 variableValue = "1";
                 return 0;

@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using System;
 using Nitrocid.ShellPacks.Shells.Mail.Interactive;

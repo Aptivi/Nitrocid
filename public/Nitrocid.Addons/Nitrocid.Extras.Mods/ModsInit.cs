@@ -23,9 +23,9 @@ using Nitrocid.Extras.Mods.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Mods
                             ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
                         }),
                     ]),
-                ], new ModManCommand(), CommandFlags.Strict),
+                ], new ModManCommand()),
 
             new CommandInfo("modmanual", /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_DESC",
                 [
@@ -87,13 +87,13 @@ namespace Nitrocid.Extras.Mods
             LanguageTools.AddCustomAction("Nitrocid.Extras.Mods", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new ModsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Mods");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ModsConfig));
         }
     }

@@ -25,7 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

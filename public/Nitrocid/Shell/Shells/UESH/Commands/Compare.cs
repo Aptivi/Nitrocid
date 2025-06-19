@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;

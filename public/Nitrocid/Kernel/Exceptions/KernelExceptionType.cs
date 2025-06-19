@@ -347,7 +347,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// <summary>
         /// A UESH condition system failed while performing the requested operation. See the error message below for more details.
         /// </summary>
-        UESHConditional,
+        MESHConditional,
         /// <summary>
         /// An invalid SQL editor operation is being performed.
         /// </summary>

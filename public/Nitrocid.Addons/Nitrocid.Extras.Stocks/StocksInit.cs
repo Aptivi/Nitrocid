@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Kernel.Configuration;
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Stocks
         {
             LanguageTools.AddCustomAction("Nitrocid.Extras.Stocks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new StocksConfig();
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ConfigTools.RegisterBaseSetting(config);
             WidgetTools.AddBaseWidget(new StocksWidget());
         }
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Stocks
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Stocks");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(StocksConfig));
             WidgetTools.RemoveBaseWidget(nameof(StocksWidget));
         }

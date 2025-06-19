@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.ShellPacks.Tools.Filesystem;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;

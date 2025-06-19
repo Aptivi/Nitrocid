@@ -23,10 +23,10 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Commands;
 using Nitrocid.ShellPacks.Localized;
 using Nitrocid.ShellPacks.Settings;
@@ -211,23 +211,23 @@ namespace Nitrocid.ShellPacks
             LanguageTools.AddCustomAction("Nitrocid.ShellPacks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new ShellsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("ArchiveShell", new ArchiveShellInfo());
-            ShellManager.RegisterAddonShell("FTPShell", new FTPShellInfo());
-            ShellManager.RegisterAddonShell("GitShell", new GitShellInfo());
-            ShellManager.RegisterAddonShell("HTTPShell", new HTTPShellInfo());
-            ShellManager.RegisterAddonShell("JsonShell", new JsonShellInfo());
-            ShellManager.RegisterAddonShell("MailShell", new MailShellInfo());
-            ShellManager.RegisterAddonShell("RSSShell", new RSSShellInfo());
-            ShellManager.RegisterAddonShell("SFTPShell", new SFTPShellInfo());
-            ShellManager.RegisterAddonShell("SqlShell", new SqlShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. archiveAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. ftpAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. gitAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. httpAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. jsonAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. mailAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. rssAddonCommands]);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. sftpAddonCommands]);
+            ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
+            ShellManager.RegisterShell("FTPShell", new FTPShellInfo());
+            ShellManager.RegisterShell("GitShell", new GitShellInfo());
+            ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
+            ShellManager.RegisterShell("JsonShell", new JsonShellInfo());
+            ShellManager.RegisterShell("MailShell", new MailShellInfo());
+            ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
+            ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
+            ShellManager.RegisterShell("SqlShell", new SqlShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. archiveAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. ftpAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. gitAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. httpAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. jsonAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. mailAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. rssAddonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. sftpAddonCommands]);
 
             // Set the native lib path for Git
             if (!gitNativeLibIsSet)
@@ -243,24 +243,24 @@ namespace Nitrocid.ShellPacks
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.ShellPacks");
-            ShellManager.UnregisterAddonShell("ArchiveShell");
-            ShellManager.UnregisterAddonShell("FTPShell");
-            ShellManager.UnregisterAddonShell("GitShell");
-            ShellManager.UnregisterAddonShell("HTTPShell");
-            ShellManager.UnregisterAddonShell("JsonShell");
-            ShellManager.UnregisterAddonShell("MailShell");
-            ShellManager.UnregisterAddonShell("RSSShell");
-            ShellManager.UnregisterAddonShell("SFTPShell");
-            ShellManager.UnregisterAddonShell("SqlShell");
+            ShellManager.UnregisterShell("ArchiveShell");
+            ShellManager.UnregisterShell("FTPShell");
+            ShellManager.UnregisterShell("GitShell");
+            ShellManager.UnregisterShell("HTTPShell");
+            ShellManager.UnregisterShell("JsonShell");
+            ShellManager.UnregisterShell("MailShell");
+            ShellManager.UnregisterShell("RSSShell");
+            ShellManager.UnregisterShell("SFTPShell");
+            ShellManager.UnregisterShell("SqlShell");
             ConfigTools.UnregisterBaseSetting(nameof(ShellsConfig));
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. archiveAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. ftpAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. gitAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. httpAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. jsonAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. mailAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. rssAddonCommands.Select((ci) => ci.Command)]);
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. sftpAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. archiveAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. ftpAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. gitAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. httpAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. jsonAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. mailAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. rssAddonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. sftpAddonCommands.Select((ci) => ci.Command)]);
         }
     }
 }

@@ -3327,7 +3327,7 @@
       "text": "尝试执行请求的操作时发生联系人管理器错误。确保联系人文件存在于正确的文件夹中，并且是有效的 vCard 2.1、3.0 或 4.0 联系人文件。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "UESH 条件系统在执行请求的操作时失败。有关更多详细信息，请参阅下面的错误消息。"
     },
     {

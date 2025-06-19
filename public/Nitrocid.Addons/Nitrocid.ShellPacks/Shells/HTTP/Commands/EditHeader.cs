@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {

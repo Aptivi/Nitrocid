@@ -20,11 +20,11 @@
 using System.Collections.Generic;
 using Nitrocid.ShellPacks.Shells.Archive.Commands;
 using Nitrocid.ShellPacks.Shells.Archive.Presets;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.Archive

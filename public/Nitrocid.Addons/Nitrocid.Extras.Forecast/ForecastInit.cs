@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
 using Nitrocid.Extras.Forecast.Localized;
 using Nitrocid.Extras.Forecast.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -106,7 +106,7 @@ namespace Nitrocid.Extras.Forecast
         void IAddon.StartAddon()
         {
             LanguageTools.AddCustomAction("Nitrocid.Extras.Forecast", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);
         }
@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.Forecast
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Forecast");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
         }
     }

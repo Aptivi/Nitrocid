@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Contacts.Contacts;
 using Nitrocid.Extras.Contacts.Contacts.Commands;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Extras.Contacts.Localized;
@@ -98,7 +98,7 @@ namespace Nitrocid.Extras.Contacts
             LanguageTools.AddCustomAction("Nitrocid.Extras.Contacts", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Enable logging if debugging is enabled
@@ -112,7 +112,7 @@ namespace Nitrocid.Extras.Contacts
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.Contacts");
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction("NKS_CONTACTS_HOMEPAGE_CONTACTS");

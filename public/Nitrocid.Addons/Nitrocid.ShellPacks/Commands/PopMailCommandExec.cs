@@ -24,7 +24,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 // using Nitrocid.Network.Connections;
 // using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Commands
 {

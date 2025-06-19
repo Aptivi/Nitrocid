@@ -3319,7 +3319,7 @@
       "text": "要求された操作を実行しようとしたときに、連絡先マネージャー エラーが発生しました。連絡先ファイルが正しいフォルダーに存在すること、およびそれが有効な vCard 2.1、3.0、または 4.0 連絡先ファイルであることを確認してください。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "要求された操作の実行中に UESH 条件システムが失敗しました。詳細については、以下のエラー メッセージを参照してください。"
     },
     {

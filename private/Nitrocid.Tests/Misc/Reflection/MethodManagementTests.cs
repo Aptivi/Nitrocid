@@ -19,11 +19,12 @@
 
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;
 using Nitrocid.Tests.Misc.Reflection.Data;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
@@ -75,13 +76,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestInvokeMethod()
         {
-            var instance = new ReflectedCommand();
-            var parameters = new CommandParameters("", [], "", [], [], "reflected");
             string varValue = "";
-            var value = MethodManager.InvokeMethod(nameof(instance.Execute), instance, parameters, varValue);
-            value.ShouldNotBeNull();
-            value.ShouldBeOfType(typeof(int));
-            value.ShouldBe(0);
+            var instance = new KernelThread("Test thread", false, () => varValue = "Test");
+            var value = MethodManager.InvokeMethod(nameof(instance.Start), instance);
+            while (instance.IsAlive) ;
+            varValue.ShouldBe("Test");
         }
 
     }

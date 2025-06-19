@@ -19,7 +19,7 @@
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands

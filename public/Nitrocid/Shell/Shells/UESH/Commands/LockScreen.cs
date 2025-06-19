@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

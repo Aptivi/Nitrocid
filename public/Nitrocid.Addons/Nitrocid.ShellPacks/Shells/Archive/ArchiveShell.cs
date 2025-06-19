@@ -27,8 +27,8 @@ using SharpCompress.Archives.Zip;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
@@ -109,7 +109,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

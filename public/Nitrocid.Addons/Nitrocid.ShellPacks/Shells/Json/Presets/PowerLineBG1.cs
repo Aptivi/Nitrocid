@@ -21,7 +21,7 @@ using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Presets
@@ -54,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -73,7 +73,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -92,7 +92,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =

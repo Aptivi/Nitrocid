@@ -1,3 +1,4 @@
+extern alias TextifyDep;
 //
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
@@ -19,16 +20,16 @@
 
 using System;
 using System.IO;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Scripting;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Aliases;
+using Terminaux.Shell.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
@@ -56,11 +57,51 @@ using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files;
+using Nitrocid.Shell.Shells.UESH;
+using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Shell.Shells.Hex;
+using Nitrocid.Shell.Shells.Admin;
+using Nitrocid.Shell.Shells.Debug;
+using TextifyDep::Textify.Tools.Placeholder;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Kernel.Time;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelInitializers
     {
+        private static readonly List<PlaceInfo> placeholders =
+        [
+            new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
+            new PlaceInfo("host", (_) => Config.MainConfig.HostName),
+            new PlaceInfo("currentdirectory", (_) => FilesystemTools.CurrentDir),
+            new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(FilesystemTools.CurrentDir) ? new DirectoryInfo(FilesystemTools.CurrentDir).Name : ""),
+            new PlaceInfo("shortdate", (_) => TimeDateRenderers.RenderDate(FormatType.Short)),
+            new PlaceInfo("longdate", (_) => TimeDateRenderers.RenderDate(FormatType.Long)),
+            new PlaceInfo("shorttime", (_) => TimeDateRenderers.RenderTime(FormatType.Short)),
+            new PlaceInfo("longtime", (_) => TimeDateRenderers.RenderTime(FormatType.Long)),
+            new PlaceInfo("date", (_) => TimeDateRenderers.RenderDate()),
+            new PlaceInfo("time", (_) => TimeDateRenderers.RenderTime()),
+            new PlaceInfo("timezone", (_) => TimeZones.GetCurrentZoneInfo().StandardName),
+            new PlaceInfo("summertimezone", (_) => TimeZones.GetCurrentZoneInfo().DaylightName),
+            new PlaceInfo("dollar", (_) => UserManagement.GetUserDollarSign()),
+            new PlaceInfo("randomfile", (_) => FilesystemTools.GetRandomFileName()),
+            new PlaceInfo("randomfolder", (_) => FilesystemTools.GetRandomFolderName()),
+            new PlaceInfo("rid", (_) => KernelPlatform.GetCurrentRid()),
+            new PlaceInfo("ridgeneric", (_) => KernelPlatform.GetCurrentGenericRid()),
+            new PlaceInfo("termemu", (_) => KernelPlatform.GetTerminalEmulator()),
+            new PlaceInfo("termtype", (_) => KernelPlatform.GetTerminalType()),
+            new PlaceInfo("f", (c) => new Color(c).VTSequenceForeground),
+            new PlaceInfo("b", (c) => new Color(c).VTSequenceBackground),
+            new PlaceInfo("fgreset", (_) => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground),
+            new PlaceInfo("bgreset", (_) => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground),
+            new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
+            new PlaceInfo("$", MESHVariables.GetVariable),
+        ];
+
         internal static void InitializeCritical()
         {
             try
@@ -121,6 +162,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // A title
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ShellManager.InitialTitle = KernelReleaseInfo.ConsoleTitle;
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
@@ -142,6 +184,23 @@ namespace Nitrocid.Kernel.Starting
 
                 // Initialize journal path
                 JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
+
+                // Add the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.RegisterShell("Shell", new UESHShellInfo());
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.RegisterShell("TextShell", new TextShellInfo());
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.RegisterShell("HexShell", new HexShellInfo());
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
+
+                // Add the placeholders
+                foreach (var placeholder in placeholders)
+                    PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
 
                 // Initialize addons
                 try
@@ -374,7 +433,7 @@ namespace Nitrocid.Kernel.Starting
                 try
                 {
                     // Load system env vars and convert them
-                    UESHVariables.ConvertSystemEnvironmentVariables();
+                    MESHVariables.ConvertSystemEnvironmentVariables();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
                 }
                 catch (Exception exc)
@@ -435,22 +494,6 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MOTD") + $": {exc.Message}");
-                }
-
-                try
-                {
-                    // Load shell command histories
-                    ShellManager.LoadHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES") + $": {exc.Message}");
                 }
 
                 try
@@ -538,22 +581,6 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_VARS") + $": {exc.Message}");
-                }
-
-                try
-                {
-                    // Save shell command histories
-                    ShellManager.SaveHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_HISTORIESSAVED"));
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to save shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES") + $": {exc.Message}");
                 }
 
                 try
@@ -796,6 +823,23 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_THREADS") + $": {exc.Message}");
                 }
+
+                // Remove the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.UnregisterShell("Shell");
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.UnregisterShell("TextShell");
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.UnregisterShell("HexShell");
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.UnregisterShell("AdminShell");
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.UnregisterShell("DebugShell");
+
+                // Add the placeholders
+                foreach (var placeholder in placeholders)
+                    PlaceParse.UnregisterCustomPlaceholder(placeholder.Placeholder);
 
                 // Check for errors
                 if (exceptions.Count > 0)

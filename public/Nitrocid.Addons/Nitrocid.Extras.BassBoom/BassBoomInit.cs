@@ -36,7 +36,7 @@
 //   You should have received a copy of the GNU General Public License
 //   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
@@ -45,9 +45,9 @@ using System;
 using System.Collections.Generic;
 using BassBoom.Basolia;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;
@@ -127,7 +127,7 @@ namespace Nitrocid.Extras.BassBoom
         void IAddon.StartAddon()
         {
             LanguageTools.AddCustomAction("Nitrocid.Extras.BassBoom", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.BassBoom
         void IAddon.StopAddon()
         {
             LanguageTools.RemoveCustomAction("Nitrocid.Extras.BassBoom");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));

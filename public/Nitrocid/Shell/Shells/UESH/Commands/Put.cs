@@ -25,7 +25,7 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Kernel.Configuration;

@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands

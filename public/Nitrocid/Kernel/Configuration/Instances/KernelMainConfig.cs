@@ -23,7 +23,7 @@ using Terminaux.Colors;
 using Textify.Data.Figlet;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Shell.Shells.Hex;
@@ -35,7 +35,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -1016,40 +1016,40 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string PromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.Shell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("Shell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "Shell", false);
         }
         /// <summary>
         /// Text Edit Prompt Preset
         /// </summary>
         public string TextEditPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.TextShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.TextShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("TextShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "TextShell", false);
         }
         /// <summary>
         /// Hex Edit Prompt Preset
         /// </summary>
         public string HexEditPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HexShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.HexShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("HexShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "HexShell", false);
         }
         /// <summary>
         /// Admin Shell Prompt Preset
         /// </summary>
         public string AdminShellPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.AdminShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.AdminShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("AdminShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "AdminShell", false);
         }
         /// <summary>
         /// Debug Shell Prompt Preset
         /// </summary>
         public string DebugShellPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("DebugShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "DebugShell", false);
         }
         #endregion
 

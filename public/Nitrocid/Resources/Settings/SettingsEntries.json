@@ -786,7 +786,7 @@
                         "Name": "NKS_SETTINGS_KERNEL_SHELL_PRESETS_SHELLPRESET_NAME",
                         "Type": "SPreset",
                         "Variable": "PromptPreset",
-                        "ShellType": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL",
+                        "ShellType": "Shell",
                         "Description": ""
                     },
                     {

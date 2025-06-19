@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.Dates.Timers;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Dates.Commands
 {

@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Arguments.Base.Help;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands

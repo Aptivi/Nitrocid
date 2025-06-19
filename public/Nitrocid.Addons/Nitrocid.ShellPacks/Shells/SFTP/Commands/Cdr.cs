@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ShellPacks.Tools.Filesystem;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {

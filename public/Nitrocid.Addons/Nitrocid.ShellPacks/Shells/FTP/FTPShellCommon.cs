@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using FluentFTP;
 using Nitrocid.Network.Connections;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

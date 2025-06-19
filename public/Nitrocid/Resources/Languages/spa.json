@@ -3344,7 +3344,7 @@
       "text": "Se produjo un error en el administrador de contactos al intentar realizar la operación solicitada. Asegúrese de que el archivo de contacto exista en la carpeta correcta y que sea un archivo de contacto vCard 2.1, 3.0 o 4.0 válido."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONAL",
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
       "text": "Un sistema de condición UESH falló al realizar la operación solicitada. Consulte el mensaje de error a continuación para obtener más detalles."
     },
     {

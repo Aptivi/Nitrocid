@@ -25,8 +25,8 @@ using System.Reflection;
 using System.Diagnostics;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
@@ -393,20 +393,6 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
             return ListedMods;
         }
-
-        /// <summary>
-        /// Lists the mod commands based on the shell
-        /// </summary>
-        /// <param name="ShellType">Selected shell type</param>
-        public static CommandInfo[] ListModCommands(ShellType ShellType) =>
-            ListModCommands(ShellManager.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Lists the mod commands based on the shell
-        /// </summary>
-        /// <param name="ShellType">Selected shell type</param>
-        public static CommandInfo[] ListModCommands(string ShellType) =>
-            [.. ShellManager.GetShellInfo(ShellType).ModCommands];
 
         /// <summary>
         /// Gets a mod from the name

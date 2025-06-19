@@ -20,10 +20,10 @@
 using System.Collections.Generic;
 using Nitrocid.ShellPacks.Shells.HTTP.Presets;
 using Nitrocid.ShellPacks.Shells.HTTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP
