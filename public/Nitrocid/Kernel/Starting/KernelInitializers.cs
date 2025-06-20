@@ -823,7 +823,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Add the placeholders
                 foreach (var placeholder in placeholders)
-                    PlaceParse.UnregisterCustomPlaceholder(placeholder.Placeholder);
+                    PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
 
                 // Check for errors
                 if (exceptions.Count > 0)
