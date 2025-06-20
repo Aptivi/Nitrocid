@@ -19,14 +19,14 @@
     <PackageReference Include="Magico" Version="1.4.1" PrivateAssets="all" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="3.5.1" PrivateAssets="all" />
-    <PackageReference Include="LocaleStation" Version="1.3.1" PrivateAssets="all" />
+    <PackageReference Include="LocaleStation" Version="1.3.2" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250620113754" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250620113754" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250620151818" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250620151818" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.12.0.1" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
