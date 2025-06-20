@@ -23,7 +23,12 @@ namespace Nitrocid.Tests.Misc.Reflection.Data
 {
     internal class ReflectedCommand : BaseCommand, ICommand
     {
+        internal string doSet = "";
+
         public override int Execute(CommandParameters parameters, ref string variableValue) =>
             0;
+
+        public override void HelpHelper() =>
+            doSet = "yes";
     }
 }

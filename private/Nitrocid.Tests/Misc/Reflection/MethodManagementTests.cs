@@ -76,11 +76,9 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestInvokeMethod()
         {
-            string varValue = "";
-            var instance = new KernelThread("Test thread", false, (_) => varValue = "Test");
-            var value = MethodManager.InvokeMethod(nameof(instance.Start), instance, [null]);
-            while (instance.IsAlive) ;
-            varValue.ShouldBe("Test");
+            var instance = new ReflectedCommand();
+            var value = MethodManager.InvokeMethod(nameof(instance.HelpHelper), instance, []);
+            instance.doSet.ShouldBe("yes");
         }
 
     }
