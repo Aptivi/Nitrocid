@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Extensions
         public static string GetAddonName(KnownAddons addon)
         {
             if (knownAddons.TryGetValue(addon, out (string, string) name))
-                return name.Item2;
+                return name.Item1;
             throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE"), addon.ToString());
         }
 
