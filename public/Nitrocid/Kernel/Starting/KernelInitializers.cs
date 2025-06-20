@@ -400,22 +400,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Initialize aliases
-                    AliasManager.InitAliases();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load aliases");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Initialize speed dial
                     SpeedDialTools.LoadAll();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
