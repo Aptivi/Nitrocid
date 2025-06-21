@@ -281,62 +281,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Drivers.Console.BaseConsoleDriver.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Drivers.Console.BaseConsoleDriver.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Drivers.Console.BaseConsoleDriver",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Drivers.Console.BaseConsoleDriver.yml\" sourcestartlinenumber=\"1\">Base console driver</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Drivers.Console.ConsoleDriverTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Drivers.Console.ConsoleDriverTools.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Drivers.Console.ConsoleDriverTools",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Drivers.Console.ConsoleDriverTools.yml\" sourcestartlinenumber=\"1\">Console driver tools (strongly typed)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Drivers.Console.IConsoleDriver.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Drivers.Console.IConsoleDriver.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Drivers.Console.IConsoleDriver",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Drivers.Console.IConsoleDriver.yml\" sourcestartlinenumber=\"1\">Console driver interface</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Drivers.Console.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Drivers.Console.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Drivers.Console",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Drivers.DebugLogger.BaseDebugLoggerDriver.yml",
       "output": {
         ".html": {
