@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Commands;
 
@@ -39,9 +39,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)
             {
-                TextWriters.Write($"- {remote.Name}:", true, KernelColorType.ListEntry);
-                TextWriters.Write($"  - R: {remote.Url}", true, KernelColorType.ListValue);
-                TextWriters.Write($"  - P: {remote.PushUrl}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- {remote.Name}:", true, ThemeColorType.ListEntry);
+                TextWriters.Write($"  - R: {remote.Url}", true, ThemeColorType.ListValue);
+                TextWriters.Write($"  - P: {remote.PushUrl}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

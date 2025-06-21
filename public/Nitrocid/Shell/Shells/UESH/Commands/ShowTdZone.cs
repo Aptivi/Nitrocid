@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Timezones;
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
                 else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, ThemeColorType.Error);
             }
             return 0;
         }

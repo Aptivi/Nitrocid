@@ -27,7 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -77,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    KernelColorTools.LoadBackground();
+                    ThemeColorsTools.LoadBackground();
                 }
 
                 if (goAhead)

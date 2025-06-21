@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Terminaux.Base;
@@ -230,17 +230,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Fill progress for first, second, and third
                 if (firstPosition != 0)
                 {
-                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionFirst, true, KernelColorType.NeutralText, KernelColorType.Background);
+                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionFirst, true, ThemeColorType.NeutralText, ThemeColorType.Background);
                     TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(firstPosition, 100, 10)), 5, ProgressFillPositionFirst, true, Color.Empty, ColorStorageFirst);
                 }
                 if (secondPosition != 0)
                 {
-                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionSecond, true, KernelColorType.NeutralText, KernelColorType.Background);
+                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionSecond, true, ThemeColorType.NeutralText, ThemeColorType.Background);
                     TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(secondPosition, 100, 10)), 5, ProgressFillPositionSecond, true, Color.Empty, ColorStorageSecond);
                 }
                 if (thirdPosition != 0)
                 {
-                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionThird, true, KernelColorType.NeutralText, KernelColorType.Background);
+                    TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionThird, true, ThemeColorType.NeutralText, ThemeColorType.Background);
                     TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(thirdPosition, 100, 10)), 5, ProgressFillPositionThird, true, Color.Empty, ColorStorageThird);
                 }
 

@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Exceptions;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                 byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                 byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                 HexEditTools.Replace(ByteFrom, ByteWith);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 3)
@@ -59,12 +59,12 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                         byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                         HexEditTools.Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
@@ -81,12 +81,12 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, KernelColorType.Success);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }

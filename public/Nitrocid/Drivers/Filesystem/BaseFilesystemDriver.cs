@@ -39,7 +39,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
@@ -415,8 +415,8 @@ namespace Nitrocid.Drivers.Filesystem
             }
 
             // Get the un-highlighted and highlighted colors
-            var unhighlightedColor = KernelColorTools.GetColor(KernelColorType.ListValue);
-            var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
+            var unhighlightedColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
+            var highlightedColor = HighlightResults ? ThemeColorsTools.GetColor(ThemeColorType.Success) : unhighlightedColor;
 
             // Go ahead...
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
@@ -433,7 +433,7 @@ namespace Nitrocid.Drivers.Filesystem
                 //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 // ... and so on.
-                TextWriters.Write($"0x{StartByte - 1L:X8}", false, KernelColorType.ListEntry);
+                TextWriters.Write($"0x{StartByte - 1L:X8}", false, ThemeColorType.ListEntry);
                 int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
                 int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                 int ByteNumberEachSixteen = 1;
@@ -465,7 +465,7 @@ namespace Nitrocid.Drivers.Filesystem
                     if (ByteNumberEachSixteen > 16)
                     {
                         // OK, let's increase the byte iteration and get the next line ready
-                        TextWriters.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, KernelColorType.ListEntry);
+                        TextWriters.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, ThemeColorType.ListEntry);
                         ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
                         ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                         ByteNumberEachSixteen = 1;
@@ -475,11 +475,11 @@ namespace Nitrocid.Drivers.Filesystem
             }
             else if (StartByte > FileByte.LongLength)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             }
             else if (EndByte > FileByte.LongLength)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             }
         }
 
@@ -501,12 +501,12 @@ namespace Nitrocid.Drivers.Filesystem
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
                 string rendered = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-                TextWriters.Write(rendered, false, KernelColorType.ListEntry);
+                TextWriters.Write(rendered, false, ThemeColorType.ListEntry);
             }
             else if (StartByte > FileByte.LongLength)
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             else if (EndByte > FileByte.LongLength)
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
         }
 
         /// <inheritdoc/>
@@ -517,9 +517,9 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // Get the un-highlighted and highlighted colors
-            var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
-            var unhighlightedColor = KernelColorTools.GetColor(KernelColorType.ListValue);
-            var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
+            var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
+            var unhighlightedColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
+            var highlightedColor = HighlightResults ? ThemeColorsTools.GetColor(ThemeColorType.Success) : unhighlightedColor;
 
             // Now, do the job!
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
@@ -587,9 +587,9 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte)
         {
             // Get the un-highlighted and highlighted colors
-            var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
-            var unhighlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Background);
-            var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
+            var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
+            var unhighlightedColorBackground = ThemeColorsTools.GetColor(ThemeColorType.Background);
+            var highlightedColorBackground = ThemeColorsTools.GetColor(ThemeColorType.Success);
 
             // Now, do the job!
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
@@ -1276,11 +1276,11 @@ namespace Nitrocid.Drivers.Filesystem
             for (int i = 0; i < array.Length; i++)
             {
                 string FilePath = array[i];
-                var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
+                var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
                 var valueColor =
                     PrintLineNumbers ?
-                    KernelColorTools.GetColor(KernelColorType.ListValue) :
-                    KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    ThemeColorsTools.GetColor(ThemeColorType.ListValue) :
+                    ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
 
                 if (array.Length > 1)
                     builder.AppendLine(FilePath);
@@ -1349,18 +1349,18 @@ namespace Nitrocid.Drivers.Filesystem
                 // Print information
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    TextWriters.Write("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
+                    TextWriters.Write("- " + finalDirInfo.Name + "/", false, ThemeColorType.ListEntry);
                     if (ShowDirectoryDetails)
                     {
-                        TextWriters.Write(": ", false, KernelColorType.ListEntry);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, KernelColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
+                        TextWriters.Write(": ", false, ThemeColorType.ListEntry);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, ThemeColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterRaw.Write();
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, DirectoryInfo.FilePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, ThemeColorType.Error, DirectoryInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", vars: [DirectoryInfo.FilePath]);
             }
         }
@@ -1380,26 +1380,26 @@ namespace Nitrocid.Drivers.Filesystem
                 {
                     if (finalDirInfo.Name.EndsWith(".uesh"))
                     {
-                        TextWriters.Write("- " + finalDirInfo.Name, false, KernelColorType.Stage);
+                        TextWriters.Write("- " + finalDirInfo.Name, false, ThemeColorType.Stage);
                         if (ShowFileDetails)
-                            TextWriters.Write(": ", false, KernelColorType.Stage);
+                            TextWriters.Write(": ", false, ThemeColorType.Stage);
                     }
                     else
                     {
-                        TextWriters.Write("- " + finalDirInfo.Name, false, KernelColorType.ListEntry);
+                        TextWriters.Write("- " + finalDirInfo.Name, false, ThemeColorType.ListEntry);
                         if (ShowFileDetails)
-                            TextWriters.Write(": ", false, KernelColorType.ListEntry);
+                            TextWriters.Write(": ", false, ThemeColorType.ListEntry);
                     }
                     if (ShowFileDetails)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, ThemeColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterRaw.Write();
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND"), true, KernelColorType.Error, FileInfo.FilePath);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND"), true, ThemeColorType.Error, FileInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", vars: [FileInfo.FilePath]);
             }
         }

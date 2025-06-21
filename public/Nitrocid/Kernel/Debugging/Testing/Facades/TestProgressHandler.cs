@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Progress;
@@ -32,10 +32,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             int progress = 0;
             var handler = new ProgressHandler((num, text) =>
-                TextWriters.Write($"{num}% {text}", KernelColorType.Progress)
+                TextWriters.Write($"{num}% {text}", ThemeColorType.Progress)
             , "General");
             var handler2 = new ProgressHandler((num, text) =>
-                TextWriters.Write($"{num}% {text}", KernelColorType.NeutralText)
+                TextWriters.Write($"{num}% {text}", ThemeColorType.NeutralText)
             , "Nongeneral");
             ProgressManager.RegisterProgressHandler(handler);
             ProgressManager.RegisterProgressHandler(handler2);

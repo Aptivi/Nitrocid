@@ -18,7 +18,7 @@
 //
 
 using LibGit2Sharp;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -44,96 +44,96 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOCHANGES"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOCHANGES"), true, ThemeColorType.Success);
                 return 0;
             }
 
             // Show all the statuses starting from untracked...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_UNTRACKED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_UNTRACKED") + ":", true, ThemeColorType.ListEntry);
             if (status.Untracked.Any())
             {
                 foreach (var item in status.Untracked)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...added...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_ADDED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_ADDED") + ":", true, ThemeColorType.ListEntry);
             if (status.Added.Any())
             {
                 foreach (var item in status.Added)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOADDED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOADDED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...modified...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_MODIFIED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_MODIFIED") + ":", true, ThemeColorType.ListEntry);
             if (status.Modified.Any())
             {
                 foreach (var item in status.Modified)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...removed...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_REMOVED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_REMOVED") + ":", true, ThemeColorType.ListEntry);
             if (status.Removed.Any())
             {
                 foreach (var item in status.Removed)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOREMOVED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOREMOVED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...staged...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_STAGED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_STAGED") + ":", true, ThemeColorType.ListEntry);
             if (status.Staged.Any())
             {
                 foreach (var item in status.Staged)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOSTAGED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOSTAGED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...renamed...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED") + ":", true, ThemeColorType.ListEntry);
             if (status.RenamedInIndex.Any())
             {
                 foreach (var item in status.RenamedInIndex)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...renamed unstaged...
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_RENAMED") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_RENAMED") + ":", true, ThemeColorType.ListEntry);
             if (status.RenamedInWorkDir.Any())
             {
                 foreach (var item in status.RenamedInWorkDir)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NORENAMED"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NORENAMED"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
 
             // ...and missing
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_MISSING") + ":", true, KernelColorType.ListEntry);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_MISSING") + ":", true, ThemeColorType.ListEntry);
             if (status.Missing.Any())
             {
                 foreach (var item in status.Missing)
-                    TextWriters.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriters.Write("  - {0}: {1}", true, ThemeColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOMISSING"), true, KernelColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_NOMISSING"), true, ThemeColorType.ListValue);
             TextWriterRaw.Write();
             return 0;
         }

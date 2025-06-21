@@ -21,7 +21,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Configuration;
@@ -373,11 +373,11 @@ namespace Nitrocid.Files.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
                 }
             }
             else
@@ -440,9 +440,9 @@ namespace Nitrocid.Files.Editors.HexEdit
                     }
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET"));
@@ -661,9 +661,9 @@ namespace Nitrocid.Files.Editors.HexEdit
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
                     DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, bytes);
                 else if (StartByte > bytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
                 else if (EndByte > bytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));
@@ -716,9 +716,9 @@ namespace Nitrocid.Files.Editors.HexEdit
                     }
                 }
                 else if (StartByte > bytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
                 else if (EndByte > bytes.LongLength)
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY"));

@@ -21,7 +21,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Languages;
@@ -74,7 +74,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -98,7 +98,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -117,7 +117,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

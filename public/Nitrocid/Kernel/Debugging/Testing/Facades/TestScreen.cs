@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base.Buffered;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using System;
@@ -64,7 +64,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED") + $" {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             }
             finally

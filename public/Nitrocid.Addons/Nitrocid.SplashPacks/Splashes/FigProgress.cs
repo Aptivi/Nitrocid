@@ -26,7 +26,7 @@ using System.Text;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Kernel;
 using Terminaux.Base;
@@ -59,7 +59,7 @@ namespace Nitrocid.SplashPacks.Splashes
             );
 
             // Write a glorious Welcome screen
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             string text = $"{SplashReport.Progress}%";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
@@ -116,8 +116,8 @@ namespace Nitrocid.SplashPacks.Splashes
             var builder = new StringBuilder();
             try
             {
-                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
-                Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
+                Color firstColor = ThemeColorsTools.GetColor(ThemeColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                Color secondColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
                 Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
@@ -161,7 +161,7 @@ namespace Nitrocid.SplashPacks.Splashes
             }
 
             // Write a glorious Welcome screen
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             string text =
                 (context == SplashContext.StartingUp ?
                  LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_WELCOME") :
@@ -234,18 +234,18 @@ namespace Nitrocid.SplashPacks.Splashes
         }
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
-            ReportProgress(Progress, ProgressReport, KernelColorType.Stage, Vars);
+            ReportProgress(Progress, ProgressReport, ThemeColorType.Stage, Vars);
 
         public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, WarningReport, KernelColorType.Warning, Vars);
+            ReportProgress(Progress, WarningReport, ThemeColorType.Warning, Vars);
 
         public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, ErrorReport, KernelColorType.Error, Vars);
+            ReportProgress(Progress, ErrorReport, ThemeColorType.Error, Vars);
 
-        private string ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)
+        private string ReportProgress(int Progress, string ProgressReport, ThemeColorType colorType, params object[] Vars)
         {
             var builder = new StringBuilder();
-            Color col = KernelColorTools.GetColor(colorType);
+            Color col = ThemeColorsTools.GetColor(colorType);
             string percentage = $"{Progress}%";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(percentage, figFont) / 2;

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
@@ -72,9 +72,9 @@ namespace Nitrocid.Kernel
             var currentDate = TimeDateTools.KernelDateTime.Date;
             var supportWindowWarn = supportWindow.Subtract(new TimeSpan(30, 0, 0, 0));
             if (currentDate >= supportWindowWarn && currentDate < supportWindow)
-                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLWARNING") + $": {TimeDateRenderers.RenderDate(supportWindow)}. " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), KernelColorType.Warning);
+                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLWARNING") + $": {TimeDateRenderers.RenderDate(supportWindow)}. " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), ThemeColorType.Warning);
             else if (currentDate >= supportWindow)
-                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOL") + " " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), KernelColorType.Warning);
+                TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOL") + " " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), ThemeColorType.Warning);
         }
     }
 }

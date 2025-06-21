@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
@@ -56,13 +56,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNOTFOUND"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNOTFOUND"), ThemeColorType.Error);
                     return 28;
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGNOTFOUND"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGNOTFOUND"), ThemeColorType.Error);
                 return 28;
             }
             return 0;

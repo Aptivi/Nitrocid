@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                         continue;
                     }
                 }

@@ -26,7 +26,7 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files.Paths;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
@@ -92,7 +92,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             // Neutralize the path
             path = FilesystemTools.NeutralizePath(path);
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Get the height and the maximum number of characters
             int infoHeight = ConsoleWrapper.WindowHeight - 3;
@@ -129,7 +129,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             for (int i = 3; i > 0; i--)
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                TextWriters.WriteWhere($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, KernelColorType.NeutralText);
+                TextWriters.WriteWhere($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, ThemeColorType.NeutralText);
                 if (ThreadManager.SleepUntilInput(1000))
                 {
                     bail = true;
@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             // Go!
             DebugWriter.WriteDebug(DebugLevel.I, "Let's do this!");
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-            TextWriters.WriteWhere("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
+            TextWriters.WriteWhere("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, ThemeColorType.NeutralText);
             var sw = new Stopwatch();
             sw.Start();
             foreach (var ts in lyricLines)
@@ -167,7 +167,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                     if (ts.LineSpan != lyricLines[^1].LineSpan)
                         DebugWriter.WriteDebug(DebugLevel.I, "Next lyric occurs at {0}. {1}", vars: [lyricLines[lyricLines.IndexOf(ts) + 1].LineSpan, lyricLines[lyricLines.IndexOf(ts) + 1].Line]);
                     TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                    TextWriters.WriteWhere(tsLine.Truncate(infoMaxChars), ConsoleWrapper.WindowWidth / 2 - tsLine.Length / 2, infoHeight, KernelColorType.NeutralText);
+                    TextWriters.WriteWhere(tsLine.Truncate(infoMaxChars), ConsoleWrapper.WindowWidth / 2 - tsLine.Length / 2, infoHeight, ThemeColorType.NeutralText);
                     shownLines.Add(ts);
                     DebugWriter.WriteDebug(DebugLevel.I, "shownLines = {0} / {1}", vars: [shownLines.Count, lyricLines.Count]);
                     if (shownLines.Count == lyricLines.Count)

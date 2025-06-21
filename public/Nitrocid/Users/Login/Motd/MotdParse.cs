@@ -19,7 +19,7 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -136,7 +136,7 @@ namespace Nitrocid.Users.Login.Motd
                 foreach (var motdDynamic in motdDynamics)
                 {
                     string result = motdDynamic();
-                    TextWriters.Write(result, KernelColorType.Banner);
+                    TextWriters.Write(result, ThemeColorType.Banner);
                 }
             }
             catch (Exception ex)

@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Terminaux.Shell.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Commands
             var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
             var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));
             var diff = JsonTools.FindDifferences(source, target);
-            TextWriters.Write(diff.ToString(Formatting.Indented), KernelColorType.NeutralText);
+            TextWriters.Write(diff.ToString(Formatting.Indented), ThemeColorType.NeutralText);
             return 0;
         }
     }

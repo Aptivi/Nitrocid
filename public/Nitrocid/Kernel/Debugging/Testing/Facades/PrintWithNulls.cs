@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Base;
@@ -30,8 +30,8 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            TextWriters.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
-            TextWriters.Write(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+            TextWriters.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, ThemeColorType.Success);
+            TextWriters.Write(" [{0}, {1}] ", true, ThemeColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
         }
     }
 }

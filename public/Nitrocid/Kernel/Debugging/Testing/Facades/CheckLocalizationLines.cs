@@ -21,7 +21,7 @@ using Newtonsoft.Json.Linq;
 using System.Linq;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Kernel.Exceptions;
 
@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 LanguageJson = JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_EXCEPTION_OPENRSOURCE") + $" {LanguageName}")));
                 if (LanguageJson.Count() != EnglishJson.Count())
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_MISMATCH") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_MISMATCH") + " {0}: {1} <> {2}", true, ThemeColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
             }
         }
     }

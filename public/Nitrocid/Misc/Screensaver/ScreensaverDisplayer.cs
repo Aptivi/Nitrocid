@@ -26,7 +26,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Misc.Audio;
 using BassBoom.Basolia;
@@ -87,7 +87,7 @@ namespace Nitrocid.Misc.Screensaver
                 ScreensaverManager.HandleSaverCancel(initialVisible);
                 ColorTools.AllowBackground = initialBack;
                 ColorTools.GlobalSettings.UseTerminalPalette = initialPalette;
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
             }
         }
 

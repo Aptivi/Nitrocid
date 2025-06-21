@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Extensions;
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -40,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSBASEADDONS_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSBASEADDONS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
             foreach (var enumValue in Enum.GetValues<KnownAddons>())

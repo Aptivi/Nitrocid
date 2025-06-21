@@ -18,7 +18,7 @@
 //
 
 using Textify.Data.Figlet;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
@@ -66,9 +66,9 @@ namespace Nitrocid.Kernel.Starting
 
                 // Finally, write the message
                 if (Config.MainConfig.StartScroll)
-                    TextWriterSlowColor.WriteSlowlyColor(MessageWrite, true, 10d, KernelColorTools.GetColor(KernelColorType.Banner), KernelMain.VersionFullStr);
+                    TextWriterSlowColor.WriteSlowlyColor(MessageWrite, true, 10d, ThemeColorsTools.GetColor(ThemeColorType.Banner), KernelMain.VersionFullStr);
                 else
-                    TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
+                    TextWriters.Write(MessageWrite, true, ThemeColorType.Banner, KernelMain.VersionFullStr);
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", Config.MainConfig.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
@@ -78,8 +78,8 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void WriteLicense()
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"), KernelColorTools.GetColor(KernelColorType.Stage));
-            TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Stage));
+            TextWriters.Write(GetLicenseString(), true, ThemeColorType.License);
         }
 
         internal static string GetLicenseString() =>
@@ -135,7 +135,7 @@ namespace Nitrocid.Kernel.Starting
                     $"{devNoticeMessage}", new InfoBoxSettings()
                     {
                         Title = devNoticeTitle,
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
+                        ForegroundColor = ThemeColorsTools.GetColor("DevelopmentWarningColor")
                     }
                 );
                 if (answer == 1)
@@ -143,8 +143,8 @@ namespace Nitrocid.Kernel.Starting
             }
             else
             {
-                TextWriters.Write($"  * {message}", true, KernelColorType.DevelopmentWarning);
-                TextWriters.Write($"  * {devNoticeClassic}", true, KernelColorType.DevelopmentWarning);
+                TextWriterColor.WriteColor($"  * {message}", true, ThemeColorsTools.GetColor("DevelopmentWarningColor"));
+                TextWriterColor.WriteColor($"  * {devNoticeClassic}", true, ThemeColorsTools.GetColor("DevelopmentWarningColor"));
                 var key = Input.ReadKey();
                 if (key.Key == ConsoleKey.Enter)
                     Config.MainConfig.DevNoticeConsented = true;
@@ -168,14 +168,14 @@ namespace Nitrocid.Kernel.Starting
                     message + "\n\n" + message2, new InfoBoxSettings()
                     {
                         Title = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNUSUALENV_TITLE"),
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Warning)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Warning)
                     }
                 );
             }
             else
             {
-                TextWriters.Write($"* {message}", true, KernelColorType.Warning);
-                TextWriters.Write($"* {message2}", true, KernelColorType.Warning);
+                TextWriters.Write($"* {message}", true, ThemeColorType.Warning);
+                TextWriters.Write($"* {message2}", true, ThemeColorType.Warning);
             }
         }
 
@@ -195,7 +195,7 @@ namespace Nitrocid.Kernel.Starting
         {
             // Get a random tip and print it
             TextWriters.Write(
-                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + GetRandomTip(), true, KernelColorType.Tip);
+                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + GetRandomTip(), true, ThemeColorType.Tip);
         }
     }
 }

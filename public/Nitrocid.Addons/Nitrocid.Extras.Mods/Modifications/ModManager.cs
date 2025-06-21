@@ -35,7 +35,7 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
@@ -271,7 +271,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Check for upgrade
             if (FilesystemTools.FileExists(TargetModPath))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUPDATING"), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUPDATING"), true, ThemeColorType.Warning);
                 StopMod(Path.GetFileName(TargetModPath));
             }
 
@@ -291,14 +291,14 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [ModPath, ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD"), true, ThemeColorType.Error);
                         foreach (Exception? LoaderException in ex.LoaderExceptions)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", vars: [LoaderException?.Message ?? "Unknown loader exception"]);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
-                            TextWriters.Write(LoaderException?.Message ?? LanguageTools.GetLocalized("NKS_MODS_UNKNOWNLOADEREXCEPTION"), true, KernelColorType.Error);
+                            TextWriters.Write(LoaderException?.Message ?? LanguageTools.GetLocalized("NKS_MODS_UNKNOWNLOADEREXCEPTION"), true, ThemeColorType.Error);
                         }
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"), true, ThemeColorType.Error);
                         throw;
                     }
                 }
@@ -329,7 +329,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODINSTALLFAILED") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODINSTALLFAILED") + " {0}: {1}", true, ThemeColorType.Error, ModPath, ex.Message);
             }
         }
 
@@ -364,7 +364,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUNINSTALLFAILED") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODUNINSTALLFAILED") + " {0}: {1}", true, ThemeColorType.Error, ModPath, ex.Message);
             }
         }
 

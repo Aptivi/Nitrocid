@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Paths;
@@ -422,7 +422,7 @@ namespace Nitrocid.Kernel.Exceptions
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_DUMPFAILED") + " {0}: {1}", true, KernelColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_DUMPFAILED") + " {0}: {1}", true, ThemeColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -446,7 +446,7 @@ namespace Nitrocid.Kernel.Exceptions
                 failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_TIP"));
                 InfoBoxModalColor.WriteInfoBoxModal(failureBuilder.ToString(), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }

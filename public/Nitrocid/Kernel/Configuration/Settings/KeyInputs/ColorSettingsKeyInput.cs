@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Reflection;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             Color keyColorValue = Color.Empty;
 
             // Check to see if the color is contained in the dictionary
-            if (KeyDefaultValue is KeyValuePair<KernelColorType, Color> keyColorValuePair)
+            if (KeyDefaultValue is KeyValuePair<ThemeColorType, Color> keyColorValuePair)
                 keyColorValue = keyColorValuePair.Value;
             else if (KeyDefaultValue is string keyColorString)
                 keyColorValue = new Color(keyColorString);
@@ -60,7 +60,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             Color keyColorValue = Color.Empty;
 
             // Check to see if the color is contained in the dictionary
-            if (KeyDefaultValue is KeyValuePair<KernelColorType, Color> keyColorValuePair)
+            if (KeyDefaultValue is KeyValuePair<ThemeColorType, Color> keyColorValuePair)
                 keyColorValue = keyColorValuePair.Value;
             else if (KeyDefaultValue is string keyColorString)
                 keyColorValue = new Color(keyColorString);
@@ -80,7 +80,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // key.Variable is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
             // be either the Color type or a String type.
             if (PropertyManager.CheckProperty(key.Variable) &&
-                SettingsAppTools.GetPropertyValue(key.Variable, configType) is Dictionary<KernelColorType, Color> colors2)
+                SettingsAppTools.GetPropertyValue(key.Variable, configType) is Dictionary<ThemeColorType, Color> colors2)
             {
                 var colorTypeOnDict = colors2.ElementAt(key.EnumerableIndex).Key;
                 colors2[colorTypeOnDict] = new Color(colorValue);

@@ -40,7 +40,7 @@ using Nitrocid.Security.Privacy;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Time.Alarm;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Journaling;
 using Terminaux.Writer.ConsoleWriters;
@@ -96,8 +96,8 @@ namespace Nitrocid.Kernel.Starting
             new PlaceInfo("termtype", (_) => KernelPlatform.GetTerminalType()),
             new PlaceInfo("f", (c) => new Color(c).VTSequenceForeground),
             new PlaceInfo("b", (c) => new Color(c).VTSequenceBackground),
-            new PlaceInfo("fgreset", (_) => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground),
-            new PlaceInfo("bgreset", (_) => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground),
+            new PlaceInfo("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground),
+            new PlaceInfo("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground),
             new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
             new PlaceInfo("$", MESHVariables.GetVariable),
         ];
@@ -260,7 +260,7 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // Load background
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
 
                 // Load splash
@@ -354,7 +354,7 @@ namespace Nitrocid.Kernel.Starting
             // Some information
             if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVINFO"), KernelColorTools.GetColor(KernelColorType.Stage));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVINFO"), ThemeColorsTools.GetColor(ThemeColorType.Stage));
                 TextWriterColor.Write("OS: " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OS"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("KSAPI: " + $"v{KernelMain.ApiVersion}");
             }
@@ -832,7 +832,7 @@ namespace Nitrocid.Kernel.Starting
             catch (Exception ex)
             {
                 // We could fail with the debugger enabled
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 SplashManager.BeginSplashOut(context);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);

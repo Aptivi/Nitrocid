@@ -80,8 +80,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Console.ResetColor))
                         continue;
 
-                    // We need to have a syntax that calls KernelColorTools.ResetColors
-                    var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
+                    // We need to have a syntax that calls ThemeColorsTools.ResetColors
+                    var classSyntax = SyntaxFactory.IdentifierName("ThemeColorsTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("ResetColors");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax

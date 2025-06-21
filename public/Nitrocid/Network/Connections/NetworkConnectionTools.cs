@@ -28,7 +28,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Network.SpeedDial;
 using Terminaux.Inputs.Styles;
 
@@ -509,7 +509,7 @@ namespace Nitrocid.Network.Connections
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", vars: [shellType, address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_UNKNOWNSHELLERROR") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_UNKNOWNSHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
             }
         }
     }

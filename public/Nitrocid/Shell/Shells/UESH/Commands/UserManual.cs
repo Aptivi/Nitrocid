@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
@@ -40,23 +40,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
-                true, KernelColorType.Tip
+                true, ThemeColorType.Tip
             );
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
             TextWriters.Write(
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.github.io/Nitrocid",
-                true, KernelColorType.Tip);
+                true, ThemeColorType.Tip);
             return 0;
         }
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
-            TextWriters.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, KernelColorType.Tip);
+            TextWriters.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, ThemeColorType.Tip);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
-            TextWriters.Write("    https://aptivi.github.io/Nitrocid", true, KernelColorType.Tip);
+            TextWriters.Write("    https://aptivi.github.io/Nitrocid", true, ThemeColorType.Tip);
             return 0;
         }
 

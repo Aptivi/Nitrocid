@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Textify.Tools.Placeholder;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Terminaux.Colors;
@@ -76,9 +76,9 @@ namespace Nitrocid.ShellPacks.Tools
 
             // Prompt for password
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.FtpPassPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpPassPromptStyle), false, KernelColorType.Input, user);
+                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpPassPromptStyle), false, ThemeColorType.Input, user);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD"), false, KernelColorType.Input, user);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD"), false, ThemeColorType.Input, user);
 
             // Get input
             FTPShellCommon.FtpPass = InputTools.ReadLineNoInput();
@@ -107,7 +107,7 @@ namespace Nitrocid.ShellPacks.Tools
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED"), true, ThemeColorType.Error);
                     return null;
                 }
 
@@ -133,9 +133,9 @@ namespace Nitrocid.ShellPacks.Tools
 
                 // Prompt for username
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.FtpUserPromptStyle))
-                    TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, KernelColorType.Input, address);
+                    TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, ThemeColorType.Input, address);
                 else
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, KernelColorType.Input, address);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
                 FTPShellCommon.FtpUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
                 {
@@ -150,7 +150,7 @@ namespace Nitrocid.ShellPacks.Tools
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", vars: [address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING"), true, KernelColorType.Error, address, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING"), true, ThemeColorType.Error, address, ex.Message);
                 return null;
             }
         }
@@ -210,7 +210,7 @@ namespace Nitrocid.ShellPacks.Tools
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_INVALIDPROFILE") + CharManager.NewLine, true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_INVALIDPROFILE") + CharManager.NewLine, true, ThemeColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
@@ -223,7 +223,7 @@ namespace Nitrocid.ShellPacks.Tools
             else
             {
                 // Failed trying to get profiles
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT"), true, KernelColorType.Error, clientFTP.Host);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT"), true, ThemeColorType.Error, clientFTP.Host);
                 return null;
             }
 
@@ -234,7 +234,7 @@ namespace Nitrocid.ShellPacks.Tools
             var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 
             // Show that it's connected
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO"), true, KernelColorType.Success, clientFTP.Host);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO"), true, ThemeColorType.Success, clientFTP.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             return ftpConnection;
         }
@@ -254,8 +254,8 @@ namespace Nitrocid.ShellPacks.Tools
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE"), true, KernelColorType.Error);
-                TextWriters.Write("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE"), true, ThemeColorType.Error);
+                TextWriters.Write("- {0}", true, ThemeColorType.Error, e.PolicyErrors.ToString());
                 if (ShellsInit.ShellsConfig.FtpAlwaysAcceptInvalidCerts)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
@@ -267,8 +267,8 @@ namespace Nitrocid.ShellPacks.Tools
                     string Answer = "";
                     while (!Answer.Equals("y", StringComparison.OrdinalIgnoreCase) || !Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT") + " (y/n) ", false, KernelColorType.Question);
-                        ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT") + " (y/n) ", false, ThemeColorType.Question);
+                        ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Input));
                         Answer = Convert.ToString(Input.ReadKey().KeyChar);
                         TextWriterRaw.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
@@ -281,7 +281,7 @@ namespace Nitrocid.ShellPacks.Tools
                         else if (!Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID"), true, ThemeColorType.Error);
                         }
                     }
                 }

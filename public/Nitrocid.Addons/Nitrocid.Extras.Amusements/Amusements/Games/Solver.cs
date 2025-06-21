@@ -20,7 +20,7 @@
 using System;
 using System.Data;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Generate the expression
                 RandomExpression = FirstNumber.ToString() + Operations.ElementAt(OperationIndex) + SecondNumber.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Expression to be solved: {0}", vars: [RandomExpression]);
-                TextWriters.Write(RandomExpression, true, KernelColorType.Input);
+                TextWriters.Write(RandomExpression, true, ThemeColorType.Input);
 
                 // Wait for response
                 UserEvaluated = SolverShowInput ? InputTools.ReadLine() : InputTools.ReadLineNoInput(Convert.ToChar("\0"));
@@ -110,7 +110,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", vars: [UserEvaluated]);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_NEEDSNUM"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_NEEDSNUM"), true, ThemeColorType.Error);
                 }
             }
         }

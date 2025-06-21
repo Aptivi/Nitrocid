@@ -29,7 +29,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Textify.General;
@@ -83,10 +83,10 @@ namespace Nitrocid.Extras.Ssh.SSH
             while (true)
             {
                 // Ask for authentication method
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_QUESTION") + CharManager.NewLine, true, KernelColorType.Question);
-                TextWriters.Write("1) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PRIVATEKEY"), true, KernelColorType.Option);
-                TextWriters.Write("2) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, KernelColorType.Option);
-                TextWriters.Write(">> ", false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_QUESTION") + CharManager.NewLine, true, ThemeColorType.Question);
+                TextWriters.Write("1) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
+                TextWriters.Write("2) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
+                TextWriters.Write(">> ", false, ThemeColorType.Input);
                 if (int.TryParse(InputTools.ReadLine(), out Answer))
                 {
                     // Check for answer
@@ -99,8 +99,8 @@ namespace Nitrocid.Extras.Ssh.SSH
                             break;
                         default:
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_INVALIDOPTION"), true, KernelColorType.Error, Answer);
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_GOBACK"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_INVALIDOPTION"), true, ThemeColorType.Error, Answer);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_GOBACK"), true, ThemeColorType.Error);
                             Input.ReadKey();
                             break;
                     }
@@ -111,8 +111,8 @@ namespace Nitrocid.Extras.Ssh.SSH
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_ANSWERNEEDSNUM"), true, KernelColorType.Error);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_GOBACK"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_ANSWERNEEDSNUM"), true, ThemeColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_GOBACK"), true, ThemeColorType.Error);
                     Input.ReadKey();
                 }
             }
@@ -130,13 +130,13 @@ namespace Nitrocid.Extras.Ssh.SSH
                         PrivateKeyFile PrivateKeyAuth;
 
                         // Ask for location
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PRIVKEYLOCATIONPROMPT"), false, KernelColorType.Input, Username);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PRIVKEYLOCATIONPROMPT"), false, ThemeColorType.Input, Username);
                         PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PASSPHRASEPROMPT"), false, KernelColorType.Input, PrivateKeyFile);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PASSPHRASEPROMPT"), false, ThemeColorType.Input, PrivateKeyFile);
                             PrivateKeyPassphrase = InputTools.ReadLineNoInput();
 
                             // Add authentication method
@@ -152,13 +152,13 @@ namespace Nitrocid.Extras.Ssh.SSH
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
                                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_CANTADDPRIVKEY") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_CANTADDPRIVKEY") + " {0}", true, ThemeColorType.Error, ex.Message);
                             }
                         }
                         else if (PrivateKeyFile.EndsWith("/q"))
                             break;
                         else
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_KEYFILENOTFOUND"), true, KernelColorType.Error, PrivateKeyFile);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_KEYFILENOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
                     }
 
                     // Add authentication method
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                     string Pass;
 
                     // Ask for password
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PASSWORDPROMPT"), false, KernelColorType.Input, Username);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
                     Pass = InputTools.ReadLineNoInput();
 
                     // Add authentication method
@@ -221,7 +221,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.SSHError, ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_CONNECTFAILED"), true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_CONNECTFAILED"), true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -301,7 +301,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", vars: [SSHClient.ConnectionInfo.Host, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_SSHELLFAILED") + ": {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_SSHELLFAILED") + ": {0}", true, ThemeColorType.Error, ex.Message);
             }
             finally
             {
@@ -378,7 +378,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", vars: [Command, SSHClient.ConnectionInfo.Host, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_SSHCMDFAILED") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SSH_SSHCMDFAILED") + " {0}: {1}", true, ThemeColorType.Error, Command, ex.Message);
                 EventsManager.FireEvent(EventType.SSHCommandError, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally

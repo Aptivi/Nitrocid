@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Languages;
@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), ThemeColorType.Error);
                 return 34;
             }
 

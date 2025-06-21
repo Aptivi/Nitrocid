@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 
@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string rendered = "Hi, {0}!";
-            TextWriters.Write(rendered, true, KernelColorType.Success, "Nitrocid KS");
+            TextWriters.Write(rendered, true, ThemeColorType.Success, "Nitrocid KS");
         }
     }
 }

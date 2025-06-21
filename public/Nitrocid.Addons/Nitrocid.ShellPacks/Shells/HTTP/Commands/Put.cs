@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
@@ -33,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE"), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE"), true, ThemeColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {
@@ -48,20 +48,20 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
             }
             catch (AggregateException aex)
             {
-                TextWriters.Write(aex.Message + ":", true, KernelColorType.Error);
+                TextWriters.Write(aex.Message + ":", true, ThemeColorType.Error);
                 foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    TextWriters.Write("- " + InnerException.Message, true, KernelColorType.Error);
+                    TextWriters.Write("- " + InnerException.Message, true, ThemeColorType.Error);
                     if (InnerException.InnerException is not null)
                     {
-                        TextWriters.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
+                        TextWriters.Write("- " + InnerException.InnerException.Message, true, ThemeColorType.Error);
                     }
                 }
                 return aex.GetHashCode();
             }
             catch (Exception ex)
             {
-                TextWriters.Write(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Configuration.Migration;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
@@ -297,7 +297,7 @@ namespace Nitrocid.Misc.Interactives
                 if (!ConfigMigration.MigrateAllConfig())
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS"), new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     });
             }
             catch (Exception ex)

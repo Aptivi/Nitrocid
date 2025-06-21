@@ -28,7 +28,7 @@ using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
@@ -80,14 +80,14 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
             }
 
             // Present final string
@@ -116,14 +116,14 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
             }
 
             // Present final string
@@ -143,7 +143,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

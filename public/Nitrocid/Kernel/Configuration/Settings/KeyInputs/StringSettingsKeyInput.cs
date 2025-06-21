@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
+            TextWriters.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
             var settings = new InfoBoxSettings()

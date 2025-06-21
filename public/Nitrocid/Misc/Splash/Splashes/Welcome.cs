@@ -25,7 +25,7 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base.Extensions;
@@ -80,7 +80,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                 "";
 
             // Write a glorious Welcome screen
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
@@ -131,7 +131,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             }
 
             // Write a glorious Welcome screen
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             string text =
                 (context == SplashContext.StartingUp ?
                  LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
@@ -175,18 +175,18 @@ namespace Nitrocid.Misc.Splash.Splashes
         }
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
-            ReportProgress(Progress, ProgressReport, KernelColorType.Stage, Vars);
+            ReportProgress(Progress, ProgressReport, ThemeColorType.Stage, Vars);
 
         public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, WarningReport, KernelColorType.Warning, Vars);
+            ReportProgress(Progress, WarningReport, ThemeColorType.Warning, Vars);
 
         public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, ErrorReport, KernelColorType.Error, Vars);
+            ReportProgress(Progress, ErrorReport, ThemeColorType.Error, Vars);
 
-        private string ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)
+        private string ReportProgress(int Progress, string ProgressReport, ThemeColorType colorType, params object[] Vars)
         {
             var builder = new StringBuilder();
-            Color col = KernelColorTools.GetColor(colorType);
+            Color col = ThemeColorsTools.GetColor(colorType);
             string text =
                 (SplashManager.CurrentSplashContext == SplashContext.StartingUp ?
                  LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :

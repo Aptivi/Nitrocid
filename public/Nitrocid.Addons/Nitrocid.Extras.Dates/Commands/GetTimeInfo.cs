@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.Dates.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TimeDate);
             }
         }

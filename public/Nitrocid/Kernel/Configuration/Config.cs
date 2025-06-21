@@ -33,7 +33,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Instances;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using TextifyDep::Textify.Tools;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
@@ -360,7 +360,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_VALIDATIONFAILED") + $" {cex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
@@ -375,7 +375,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_READINGFAILED") + $" {cex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
@@ -386,7 +386,7 @@ namespace Nitrocid.Kernel.Configuration
                 // Fix anyways, for compatibility...
                 InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_TRYINGTOFIX"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 RepairConfig();
             }

@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation.Contrast;
 
@@ -53,8 +53,8 @@ namespace Nitrocid.SplashPacks.Splashes
                     noAppend = false;
                     currMs = 0;
                 }
-                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
-                Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
+                Color firstColor = ThemeColorsTools.GetColor(ThemeColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                Color secondColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
                 Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;

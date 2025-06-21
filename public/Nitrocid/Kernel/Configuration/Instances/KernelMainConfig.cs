@@ -39,7 +39,7 @@ using Terminaux.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Network.Types.RPC;
@@ -233,22 +233,26 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// Whether to use accent colors for themes that support accents
         /// </summary>
-        public bool UseAccentColors { get; set; }
+        public bool UseAccentColors
+        {
+            get => ThemeColorsTools.UseAccentColors;
+            set => ThemeColorsTools.UseAccentColors = value;
+        }
         /// <summary>
         /// Accent color (foreground)
         /// </summary>
         public string AccentForegroundColor
         {
-            get => KernelColorTools.accentForegroundColor.PlainSequence;
-            set => KernelColorTools.accentForegroundColor = new Color(value);
+            get => ThemeColorsTools.AccentForegroundColor;
+            set => ThemeColorsTools.AccentForegroundColor = value;
         }
         /// <summary>
         /// Accent color (background)
         /// </summary>
         public string AccentBackgroundColor
         {
-            get => KernelColorTools.accentBackgroundColor.PlainSequence;
-            set => KernelColorTools.accentBackgroundColor = new Color(value);
+            get => ThemeColorsTools.AccentBackgroundColor;
+            set => ThemeColorsTools.AccentBackgroundColor = value;
         }
         /// <summary>
         /// Whether to use accent colors for themes that support accents
@@ -271,43 +275,43 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string UserNameShellColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
+            get => ThemeColorsTools.GetColor("UserNameShellColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("UserNameShell", new Color(value));
         }
         /// <summary>
         /// Host Name Shell Color
         /// </summary>
         public string HostNameShellColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
+            get => ThemeColorsTools.GetColor("HostNameShellColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("HostNameShell", new Color(value));
         }
         /// <summary>
         /// Continuable Kernel Error Color
         /// </summary>
         public string ContinuableKernelErrorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
+            get => ThemeColorsTools.GetColor("ContKernelErrorColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("ContKernelError", new Color(value));
         }
         /// <summary>
         /// Uncontinuable Kernel Error Color
         /// </summary>
         public string UncontinuableKernelErrorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
+            get => ThemeColorsTools.GetColor("UncontKernelErrorColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("UncontKernelError", new Color(value));
         }
         /// <summary>
         /// Text Color
         /// </summary>
         public string TextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.NeutralText, color);
+                ThemeColorsTools.SetColor(ThemeColorType.NeutralText, color);
                 SelectionStyleSettings.GlobalSettings.TextColor = color;
             }
         }
@@ -316,19 +320,19 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string LicenseColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.License).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.License, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.License).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.License, new Color(value));
         }
         /// <summary>
         /// Background Color
         /// </summary>
         public string BackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Background).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.Background).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.Background, color);
+                ThemeColorsTools.SetColor(ThemeColorType.Background, color);
                 SelectionStyleSettings.GlobalSettings.BackgroundColor = color;
             }
         }
@@ -337,11 +341,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string InputColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Input).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.Input).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.Input, color);
+                ThemeColorsTools.SetColor(ThemeColorType.Input, color);
                 SelectionStyleSettings.GlobalSettings.InputColor = color;
             }
         }
@@ -350,51 +354,51 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string ListEntryColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.ListEntry).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.ListEntry, new Color(value));
         }
         /// <summary>
         /// List Value Color
         /// </summary>
         public string ListValueColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListValue, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.ListValue).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.ListValue, new Color(value));
         }
         /// <summary>
         /// Kernel Stage Color
         /// </summary>
         public string KernelStageColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Stage).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Stage, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Stage).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Stage, new Color(value));
         }
         /// <summary>
         /// Error Text Color
         /// </summary>
         public string ErrorTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Error).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Error, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Error).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Error, new Color(value));
         }
         /// <summary>
         /// Warning Text Color
         /// </summary>
         public string WarningTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Warning).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Warning, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Warning).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Warning, new Color(value));
         }
         /// <summary>
         /// Option Color
         /// </summary>
         public string OptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Option).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.Option).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.Option, color);
+                ThemeColorsTools.SetColor(ThemeColorType.Option, color);
                 SelectionStyleSettings.GlobalSettings.OptionColor = color;
             }
         }
@@ -403,51 +407,51 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string BannerColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Banner).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Banner, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Banner).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Banner, new Color(value));
         }
         /// <summary>
         /// Notification Title Color
         /// </summary>
         public string NotificationTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
+            get => ThemeColorsTools.GetColor("NotificationTitleColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("NotificationTitle", new Color(value));
         }
         /// <summary>
         /// Notification Description Color
         /// </summary>
         public string NotificationDescriptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
+            get => ThemeColorsTools.GetColor("NotificationDescriptionColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("NotificationDescription", new Color(value));
         }
         /// <summary>
         /// Notification Progress Color
         /// </summary>
         public string NotificationProgressColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
+            get => ThemeColorsTools.GetColor("NotificationProgressColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("NotificationProgress", new Color(value));
         }
         /// <summary>
         /// Notification Failure Color
         /// </summary>
         public string NotificationFailureColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
+            get => ThemeColorsTools.GetColor("NotificationFailureColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("NotificationFailure", new Color(value));
         }
         /// <summary>
         /// Question Color
         /// </summary>
         public string QuestionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Question).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.Question).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.Question, color);
+                ThemeColorsTools.SetColor(ThemeColorType.Question, color);
                 SelectionStyleSettings.GlobalSettings.QuestionColor = color;
             }
         }
@@ -456,43 +460,43 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string SuccessColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Success).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Success, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Success).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Success, new Color(value));
         }
         /// <summary>
         /// User Dollar Color
         /// </summary>
         public string UserDollarColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.UserDollar).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.UserDollar, new Color(value));
         }
         /// <summary>
         /// Tip Color
         /// </summary>
         public string TipColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Tip).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Tip, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Tip).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Tip, new Color(value));
         }
         /// <summary>
         /// Separator Text Color
         /// </summary>
         public string SeparatorTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.SeparatorText).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.SeparatorText, new Color(value));
         }
         /// <summary>
         /// Separator Color
         /// </summary>
         public string SeparatorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Separator).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.Separator).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.Separator, color);
+                ThemeColorsTools.SetColor(ThemeColorType.Separator, color);
                 SelectionStyleSettings.GlobalSettings.SeparatorColor = color;
             }
         }
@@ -501,99 +505,99 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string ListTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.ListTitle).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.ListTitle, new Color(value));
         }
         /// <summary>
         /// Development Warning Color
         /// </summary>
         public string DevelopmentWarningColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
+            get => ThemeColorsTools.GetColor("DevelopmentWarningColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("DevelopmentWarning", new Color(value));
         }
         /// <summary>
         /// Stage Time Color
         /// </summary>
         public string StageTimeColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.StageTime, new Color(value));
+            get => ThemeColorsTools.GetColor("StageTimeColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("StageTime", new Color(value));
         }
         /// <summary>
         /// Progress Color
         /// </summary>
         public string ProgressColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Progress, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.Progress).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.Progress, new Color(value));
         }
         /// <summary>
         /// Back Option Color
         /// </summary>
         public string BackOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.BackOption, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.BackOption).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.BackOption, new Color(value));
         }
         /// <summary>
         /// Low Priority Border Color
         /// </summary>
         public string LowPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
+            get => ThemeColorsTools.GetColor("LowPriorityBorderColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("LowPriorityBorder", new Color(value));
         }
         /// <summary>
         /// Medium Priority Border Color
         /// </summary>
         public string MediumPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
+            get => ThemeColorsTools.GetColor("MediumPriorityBorderColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("MediumPriorityBorder", new Color(value));
         }
         /// <summary>
         /// High Priority Border Color
         /// </summary>
         public string HighPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
+            get => ThemeColorsTools.GetColor("HighPriorityBorderColor").PlainSequence;
+            set => ThemeColorsTools.SetColor("HighPriorityBorder", new Color(value));
         }
         /// <summary>
         /// Table Separator Color
         /// </summary>
         public string TableSeparatorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.TableSeparator).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.TableSeparator, new Color(value));
         }
         /// <summary>
         /// Table Header Color
         /// </summary>
         public string TableHeaderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.TableHeader).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.TableHeader, new Color(value));
         }
         /// <summary>
         /// Table Value Color
         /// </summary>
         public string TableValueColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableValue, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.TableValue).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.TableValue, new Color(value));
         }
         /// <summary>
         /// Selected Option Color
         /// </summary>
         public string SelectedOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.SelectedOption).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.SelectedOption, color);
+                ThemeColorsTools.SetColor(ThemeColorType.SelectedOption, color);
                 SelectionStyleSettings.GlobalSettings.SelectedOptionColor = color;
             }
         }
@@ -602,11 +606,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string AlternativeOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.AlternativeOption).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.AlternativeOption, color);
+                ThemeColorsTools.SetColor(ThemeColorType.AlternativeOption, color);
                 SelectionStyleSettings.GlobalSettings.AltOptionColor = color;
             }
         }
@@ -615,43 +619,43 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string WeekendDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.WeekendDay).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.WeekendDay, new Color(value));
         }
         /// <summary>
         /// Event Day Color
         /// </summary>
         public string EventDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.EventDay, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.EventDay).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.EventDay, new Color(value));
         }
         /// <summary>
         /// Table Title Color
         /// </summary>
         public string TableTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.TableTitle).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.TableTitle, new Color(value));
         }
         /// <summary>
         /// Today Day Color
         /// </summary>
         public string TodayDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
+            get => ThemeColorsTools.GetColor(ThemeColorType.TodayDay).PlainSequence;
+            set => ThemeColorsTools.SetColor(ThemeColorType.TodayDay, new Color(value));
         }
         /// <summary>
         /// Interactive TUI background color
         /// </summary>
         public string TuiBackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiBackground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiBackground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiBackground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiBackground, color);
                 InteractiveTuiSettings.GlobalSettings.BackgroundColor = color;
             }
         }
@@ -660,11 +664,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiForegroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiForeground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiForeground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiForeground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiForeground, color);
                 InteractiveTuiSettings.GlobalSettings.ForegroundColor = color;
             }
         }
@@ -673,11 +677,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneBackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneBackground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneBackground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneBackground, color);
                 InteractiveTuiSettings.GlobalSettings.PaneBackgroundColor = color;
             }
         }
@@ -686,11 +690,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSeparatorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSeparator, color);
                 InteractiveTuiSettings.GlobalSettings.PaneSeparatorColor = color;
             }
         }
@@ -699,11 +703,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedSeparatorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedSeparator, color);
                 InteractiveTuiSettings.GlobalSettings.PaneSelectedSeparatorColor = color;
             }
         }
@@ -712,11 +716,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedItemForeColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemFore).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemFore).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemFore, color);
                 InteractiveTuiSettings.GlobalSettings.PaneSelectedItemForeColor = color;
             }
         }
@@ -725,11 +729,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedItemBackColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemBack).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemBack).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemBack, color);
                 InteractiveTuiSettings.GlobalSettings.PaneSelectedItemBackColor = color;
             }
         }
@@ -738,11 +742,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneItemForeColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemFore).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemFore).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemFore, color);
                 InteractiveTuiSettings.GlobalSettings.PaneItemForeColor = color;
             }
         }
@@ -751,11 +755,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneItemBackColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemBack).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemBack).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemBack, color);
                 InteractiveTuiSettings.GlobalSettings.PaneItemBackColor = color;
             }
         }
@@ -764,11 +768,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiOptionBackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiOptionBackground, color);
                 InteractiveTuiSettings.GlobalSettings.OptionBackgroundColor = color;
             }
         }
@@ -777,11 +781,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiOptionForegroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiOptionForeground, color);
                 InteractiveTuiSettings.GlobalSettings.OptionForegroundColor = color;
             }
         }
@@ -790,11 +794,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiKeyBindingOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingOption, color);
                 InteractiveTuiSettings.GlobalSettings.KeyBindingOptionColor = color;
             }
         }
@@ -803,11 +807,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiBoxBackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiBoxBackground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiBoxBackground, color);
                 InteractiveTuiSettings.GlobalSettings.BoxBackgroundColor = color;
             }
         }
@@ -816,11 +820,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiBoxForegroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiBoxForeground, color);
                 InteractiveTuiSettings.GlobalSettings.BoxForegroundColor = color;
             }
         }
@@ -829,11 +833,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string DisabledOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.DisabledOption).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.DisabledOption, color);
+                ThemeColorsTools.SetColor(ThemeColorType.DisabledOption, color);
                 SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
             }
         }
@@ -842,11 +846,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiKeyBindingBuiltinBackgroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinBackground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinBackground, color);
                 InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinBackgroundColor = color;
             }
         }
@@ -855,11 +859,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiKeyBindingBuiltinForegroundColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinForeground, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinForeground, color);
                 InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinForegroundColor = color;
             }
         }
@@ -868,11 +872,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiKeyBindingBuiltinColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin).PlainSequence;
+            get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin).PlainSequence;
             set
             {
                 var color = new Color(value);
-                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltin, color);
+                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltin, color);
                 InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinColor = color;
             }
         }

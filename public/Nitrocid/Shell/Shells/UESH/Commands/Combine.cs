@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMBINE_MAYNOTMIX"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMBINE_MAYNOTMIX"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
 

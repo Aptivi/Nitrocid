@@ -34,7 +34,7 @@ using Nitrocid.Files.Instances;
 using Nitrocid.Files.Extensions;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using FluentFTP;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.ShellPacks.Tools.Transfer;
@@ -244,7 +244,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     else if (currentEntry.Type == FileSystemEntryType.File)
                     {
                         // We're dealing with a file. Clear the screen and open the appropriate editor.
-                        KernelColorTools.LoadBackground();
+                        ThemeColorsTools.LoadBackground();
                         FilesystemTools.OpenDeterministically(currentEntry.FilePath);
                     }
                 }

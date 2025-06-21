@@ -20,7 +20,7 @@
 using System;
 using System.Data;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -47,18 +47,18 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
-                    TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                    TextWriters.Write("- {0}:", true, ThemeColorType.ListEntry, QuantityInfo.Name);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                        TextWriters.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
+                        TextWriters.Write("  - {0}: ", false, ThemeColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                        TextWriters.Write(UnitValues.ToString(), true, ThemeColorType.ListValue);
                     }
                 }
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE") + " {0}", true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPES"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
-                TextWriters.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                TextWriters.Write("- {0}", true, ThemeColorType.ListEntry, QuantityInfo.Name);
         }
 
     }

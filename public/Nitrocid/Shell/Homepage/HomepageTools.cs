@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
@@ -112,7 +112,7 @@ namespace Nitrocid.Shell.Homepage
                 var homeScreenBuffer = new ScreenPart();
                 string rssSequence = "";
                 ScreenTools.SetCurrent(homeScreen);
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
 
                 // Prepare the widget
                 var widget =
@@ -141,7 +141,7 @@ namespace Nitrocid.Shell.Homepage
                         Top = 1,
                         Width = ConsoleWrapper.WindowWidth - 2,
                         Height = ConsoleWrapper.WindowHeight - 4,
-                        Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
+                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(masterBorder.Render());
 
@@ -165,12 +165,12 @@ namespace Nitrocid.Shell.Homepage
                     var keybindings = new Keybindings()
                     {
                         KeybindingList = Bindings,
-                        BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
-                        BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
-                        BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
-                        OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
-                        OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
-                        OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                        BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
+                        BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
+                        BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
+                        OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
+                        OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
+                        OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
                         Width = ConsoleWrapper.WindowWidth - 1,
                     };
                     builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
@@ -188,7 +188,7 @@ namespace Nitrocid.Shell.Homepage
                         Top = widgetTop,
                         Width = widgetWidth,
                         Height = widgetHeight,
-                        Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
+                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                     };
                     var rssBorder = new Border()
                     {
@@ -196,7 +196,7 @@ namespace Nitrocid.Shell.Homepage
                         Top = rssTop,
                         Width = widgetWidth,
                         Height = rssHeight,
-                        Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
+                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(
                         widgetBorder.Render() +
@@ -276,9 +276,9 @@ namespace Nitrocid.Shell.Homepage
                     int aboutButtonPosX = settingsButtonPosX + buttonWidth + 3;
 
                     // Populate the settings button
-                    var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                    var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
+                    var backgroundSettings = buttonHighlight == 1 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                     var settingsBorder = new Border()
                     {
                         Left = settingsButtonPosX,
@@ -307,9 +307,9 @@ namespace Nitrocid.Shell.Homepage
                     );
 
                     // Populate the about button
-                    var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                    var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
+                    var backgroundAbout = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                     var aboutBorder = new Border()
                     {
                         Left = aboutButtonPosX,
@@ -345,7 +345,7 @@ namespace Nitrocid.Shell.Homepage
                         Top = widgetTop,
                         Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
                         Height = widgetHeight + 2,
-                        Color = KernelColorTools.GetColor(buttonHighlight == 0 ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator),
+                        Color = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.TuiPaneSeparator),
                     };
                     var choicesSelection = new Selection(availableChoices)
                     {
@@ -357,8 +357,8 @@ namespace Nitrocid.Shell.Homepage
                         Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
                         Settings = new()
                         {
-                            OptionColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
-                            SelectedOptionColor = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
+                            OptionColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
+                            SelectedOptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                         },
                     };
                     builder.Append(
@@ -559,8 +559,8 @@ namespace Nitrocid.Shell.Homepage
                                     KeybindingTools.RenderKeybindingHelpText(Bindings), new InfoBoxSettings()
                                     {
                                         Title = "Available keys",
-                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground),
+                                        BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground),
                                     });
                                 break;
                             case ConsoleKey.P:
@@ -580,17 +580,17 @@ namespace Nitrocid.Shell.Homepage
             }
             catch (Exception ex)
             {
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_CRASH") + $": {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
                 });
             }
             finally
             {
                 isOnHomepage = false;
                 ScreenTools.UnsetCurrent(homeScreen);
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
             }
         }
 

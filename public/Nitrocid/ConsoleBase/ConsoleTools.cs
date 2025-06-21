@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
@@ -74,7 +74,7 @@ namespace Nitrocid.ConsoleBase
                     KernelPlatform.IsOnWindows() ?
                     LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING") + "\n" :
                     LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO") + "\n";
-                return TextWriterWhereColor.RenderWhere(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 1, KernelColorTools.GetColor(KernelColorType.Warning), KernelColorTools.GetColor(KernelColorType.Background));
+                return TextWriterWhereColor.RenderWhere(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 1, ThemeColorsTools.GetColor(ThemeColorType.Warning), ThemeColorsTools.GetColor(ThemeColorType.Background));
             });
 
             // Show three color bands
@@ -137,8 +137,8 @@ namespace Nitrocid.ConsoleBase
             rampPart.AddDynamicText(() =>
             {
                 return
-                    TextWriterWhereColor.RenderWhereColorBack(LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
-                    KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground;
+                    TextWriterWhereColor.RenderWhereColorBack(LanguageTools.GetLocalized("NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, ThemeColorsTools.GetColor(ThemeColorType.Question), ThemeColorsTools.GetColor(ThemeColorType.Background)) +
+                    ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground;
             });
             screen.AddBufferedPart("Ramp screen part", rampPart);
             ConsoleKey answer = ConsoleKey.None;
@@ -152,7 +152,7 @@ namespace Nitrocid.ConsoleBase
 
             // Clear the screen and remove the screen
             ScreenTools.UnsetCurrent(screen);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
         }
     }
 }

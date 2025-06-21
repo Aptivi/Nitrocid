@@ -18,7 +18,7 @@
 //
 
 using FluentFTP;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
@@ -44,15 +44,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
             var ExecutedReply = client.Execute(parameters.ArgumentsText);
             if (ExecutedReply.Success)
             {
-                TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriters.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriters.Write(">>> [{0}] M: {1}", true, ThemeColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriters.Write(">>> [{0}] I: {1}", true, ThemeColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 return 0;
             }
             else
             {
-                TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriters.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                TextWriters.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
+                TextWriters.Write(">>> [{0}] M: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriters.Write(">>> [{0}] I: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriters.Write(">>> [{0}] E: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             }
         }

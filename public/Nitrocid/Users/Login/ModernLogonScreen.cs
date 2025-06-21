@@ -29,7 +29,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Extensions;
 using Textify.General;
@@ -129,7 +129,7 @@ namespace Nitrocid.Users.Login
                                     {
                                         Top = consoleY,
                                         Text = timeStr,
-                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Stage),
+                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
                                         Settings = new()
                                         {
                                             Alignment = TextAlignment.Middle,
@@ -144,7 +144,7 @@ namespace Nitrocid.Users.Login
                                     {
                                         Top = consoleInfoY,
                                         Text = dateStr,
-                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Stage),
+                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
                                         OneLine = true,
                                         Settings = new()
                                         {
@@ -166,7 +166,7 @@ namespace Nitrocid.Users.Login
                                         {
                                             Top = consoleHeadlineInfoY,
                                             Text = headlineStr,
-                                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                                             OneLine = true,
                                             Settings = new()
                                             {
@@ -189,7 +189,7 @@ namespace Nitrocid.Users.Login
                                         {
                                             Top = consoleMotdInfoY,
                                             Text = motdStr,
-                                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                                             OneLine = true,
                                             Settings = new()
                                             {
@@ -206,7 +206,7 @@ namespace Nitrocid.Users.Login
                                     {
                                         Top = consoleInstY,
                                         Text = instStr,
-                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                                         OneLine = true,
                                         Settings = new()
                                         {
@@ -264,7 +264,7 @@ namespace Nitrocid.Users.Login
                                 {
                                     Top = top,
                                     Text = text,
-                                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
                                     Settings = new()
                                     {
                                         Alignment = TextAlignment.Middle,
@@ -292,7 +292,7 @@ namespace Nitrocid.Users.Login
                             {
                                 Top = top,
                                 Text = text,
-                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
                                 Settings = new()
                                 {
                                     Alignment = TextAlignment.Middle,

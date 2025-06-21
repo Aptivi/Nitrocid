@@ -22,7 +22,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System.Reflection;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
@@ -46,8 +46,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = list,
                 Stringifier = (para) => $"[{((ParameterInfo)para).ParameterType.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}] {((ParameterInfo)para).Name ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNPARAM")}",
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
+                KeyColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry),
+                ValueColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

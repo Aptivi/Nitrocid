@@ -25,7 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -41,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
@@ -181,7 +181,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BarRotNextRampDelay);
 
             // Clear the scene
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

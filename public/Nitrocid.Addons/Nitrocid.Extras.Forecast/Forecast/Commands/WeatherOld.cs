@@ -20,7 +20,7 @@
 using System;
 using System.Linq;
 using Nettify.Weather;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 else if (string.IsNullOrEmpty(APIKey))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY"));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
                     APIKey = InputTools.ReadLineNoInput();
                     Forecast.ApiKeyOwm = APIKey;
                 }

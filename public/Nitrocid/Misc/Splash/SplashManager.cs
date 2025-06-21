@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Base.Buffered;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -213,7 +213,7 @@ namespace Nitrocid.Misc.Splash
                 ScreenTools.SetCurrent(splashScreen);
 
                 // Finally, render it
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 ScreenTools.Render();
 
                 // Render the display
@@ -307,7 +307,7 @@ namespace Nitrocid.Misc.Splash
                     DebugWriter.WriteDebugStackTrace(ex);
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_SPLASH_CLOSINGDISPLAYFAILED") + $".\n  - {ex.Message}", new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     });
                 }
                 finally

@@ -21,7 +21,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSSHELLS_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSSHELLS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available shells
             var shellNames = ShellManager.AvailableShells.Keys;

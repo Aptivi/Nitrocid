@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
@@ -37,7 +37,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND"), true, ThemeColorType.Success);
             }
             else
             {

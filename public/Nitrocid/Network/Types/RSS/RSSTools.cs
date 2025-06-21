@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Extensions;
 
 namespace Nitrocid.Network.Types.RSS
@@ -46,21 +46,21 @@ namespace Nitrocid.Network.Types.RSS
                     var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);
-                        TextWriters.Write(articleTitle, true, KernelColorType.ListValue);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + " {0}: ", false, ThemeColorType.ListEntry, feedTitle);
+                        TextWriters.Write(articleTitle, true, ThemeColorType.ListValue);
                     }
                 }
                 catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"), true, KernelColorType.Tip);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"), true, ThemeColorType.Tip);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"), true, ThemeColorType.Error);
                 }
             }
         }

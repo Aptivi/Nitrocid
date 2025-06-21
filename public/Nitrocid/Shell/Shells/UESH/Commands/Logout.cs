@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -48,14 +48,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
             if (KernelEntry.Maintenance)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UNUSABLEINMAINTENANCE"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UNUSABLEINMAINTENANCE"), true, ThemeColorType.Error, parameters.CommandText);
                 return -3;
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
         }

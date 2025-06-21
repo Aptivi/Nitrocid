@@ -24,7 +24,7 @@ using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Some essential variables
             int chance = 30;
@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             int selected = 1;
             bool racing = false;
             int winner = 0;
-            Color color = KernelColorTools.GetColor(KernelColorType.NeutralText);
+            Color color = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
             part.AddDynamicText(() =>
             {
                 StringBuilder builder = new();
@@ -180,7 +180,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_YOUWIN"), new InfoBoxSettings()
                         {
-                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Success)
                         });
                         ConsoleWrapper.Clear();
                         ResetAll();
@@ -226,7 +226,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset everything
             ScreenTools.UnsetCurrent(screen);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
         }
     }
 

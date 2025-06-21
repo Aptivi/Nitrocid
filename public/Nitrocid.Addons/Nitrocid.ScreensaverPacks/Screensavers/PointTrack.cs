@@ -29,7 +29,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using System.Text;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -65,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // First, prepare how many dots to render according to the console size
             int Height = ConsoleWrapper.WindowHeight - 4;

@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
@@ -64,7 +64,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             // Verify that we actually have the type
             if (settingsType is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND"), true, ThemeColorType.Error);
                 return;
             }
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             SettingsEntry[]? SettingsEntries = settingsType.SettingsEntries;
             if (SettingsEntries is null || SettingsEntries.Length == 0)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"), true, ThemeColorType.Error);
                 return;
             }
             int MaxSections = SettingsEntries.Length;
@@ -178,7 +178,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS") + " " +
                             LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), new InfoBoxSettings()
                             {
-                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                             });
                 }
                 else if (Answer == MaxSections + 9)
@@ -205,7 +205,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID") + " " + LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     }, Answer);
                 }
             }
@@ -302,8 +302,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID"), true, KernelColorType.Error, Answer);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID"), true, ThemeColorType.Error, Answer);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
                         Input.ReadKey();
                     }
                 }
@@ -415,7 +415,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS"), new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     });
                 }
             }
@@ -423,7 +423,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE") + $" {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             }
         }

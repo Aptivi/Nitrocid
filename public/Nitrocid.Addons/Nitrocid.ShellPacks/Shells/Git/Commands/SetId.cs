@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             GitShellCommon.email = parameters.ArgumentsList[0];
             GitShellCommon.name = parameters.ArgumentsList[1];
             GitShellCommon.isIdentified = true;
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, ThemeColorType.Success);
             return 0;
         }
 

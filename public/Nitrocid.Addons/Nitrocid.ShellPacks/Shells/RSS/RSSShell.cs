@@ -25,7 +25,7 @@ using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
 

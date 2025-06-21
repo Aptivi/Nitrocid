@@ -30,7 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Get a random word and populate some variables
             string RandomWord = WordManager.GetRandomWord(wordDifficulty == HangmanWordDifficulty.Uncommon ? WordDataType.Words : WordDataType.CommonWords);
@@ -231,7 +231,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Clear after ourselves
             ScreenTools.UnsetCurrent(screen);
             ConsoleWrapper.CursorVisible = true;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
         }
 
     }

@@ -32,7 +32,7 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Languages;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Variables
             int SnakeLength = 1;
@@ -387,7 +387,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Reset mass and console display and screen
             ScreenTools.UnsetCurrent(screen);
             SnakeMassPositions.Clear();
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             ConsoleResizeHandler.WasResized();
         }
 

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Commands;
 
@@ -39,8 +39,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var tags = GitShellCommon.Repository.Tags;
             foreach (var tag in tags)
             {
-                TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriters.Write($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, ThemeColorType.ListEntry);
+                TextWriters.Write($"  {tag.Target.Sha}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

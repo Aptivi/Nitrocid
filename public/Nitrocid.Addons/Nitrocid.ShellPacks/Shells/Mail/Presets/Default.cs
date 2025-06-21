@@ -18,7 +18,7 @@
 //
 
 using System.Text;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
@@ -55,7 +55,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             PresetStringBuilder.Append('[');
 
             // Mail username
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", MailLogin.Authentication.UserName);
 
             // Closing
@@ -65,7 +65,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0} > ", MailShellCommon.IMAP_CurrentDirectory);
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -81,7 +81,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             PresetStringBuilder.Append('[');
 
             // Mail username
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat("address@fabrikam.com");
 
             // Closing
@@ -91,7 +91,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.AppendFormat("Inbox > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

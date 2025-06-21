@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT"));
             while (FinalByte != "EOF")
             {
-                TextWriters.Write(">> ", false, KernelColorType.Input);
+                TextWriters.Write(">> ", false, ThemeColorType.Input);
                 FinalByte = InputTools.ReadLine();
                 if (FinalByte != "EOF")
                 {
@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, ThemeColorType.Error);
                     }
                 }
             }

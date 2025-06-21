@@ -21,7 +21,7 @@ using System;
 using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs;
 
@@ -42,27 +42,27 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             var KeyPress = Input.ReadKey();
 
             // Pressed key
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEY") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write(KeyPress.Key.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEY") + ": ", false, ThemeColorType.ListEntry);
+            TextWriters.Write(KeyPress.Key.ToString(), true, ThemeColorType.ListValue);
 
             // If the pressed key is a control key, don't write the actual key char so as not to corrupt the output
             if (!char.IsControl(KeyPress.KeyChar))
             {
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHAR") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Convert.ToString(KeyPress.KeyChar), true, KernelColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHAR") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(Convert.ToString(KeyPress.KeyChar), true, ThemeColorType.ListValue);
             }
 
             // Pressed key character code
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHARCODE") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYCHARCODE") + ": ", false, ThemeColorType.ListEntry);
+            TextWriters.Write($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, ThemeColorType.ListValue);
 
             // Pressed modifiers
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYMODIFIERS") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write(KeyPress.Modifiers.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYMODIFIERS") + ": ", false, ThemeColorType.ListEntry);
+            TextWriters.Write(KeyPress.Modifiers.ToString(), true, ThemeColorType.ListValue);
 
             // Keyboard shortcut
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYSHORTCUT") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split([", "], StringSplitOptions.None))} + {KeyPress.Key}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_KEYINFO_KEYSHORTCUT") + ": ", false, ThemeColorType.ListEntry);
+            TextWriters.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split([", "], StringSplitOptions.None))} + {KeyPress.Key}", true, ThemeColorType.ListValue);
             return 0;
         }
 

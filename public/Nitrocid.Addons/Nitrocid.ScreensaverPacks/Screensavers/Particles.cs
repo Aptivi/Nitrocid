@@ -26,7 +26,7 @@ using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -82,7 +82,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ParticlesDelay);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
         }
 
     }

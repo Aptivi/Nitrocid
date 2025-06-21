@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -140,8 +140,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             foreach (ReminderInfo Reminder in Reminders)
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
-                TextWriters.Write(Reminder.ReminderTitle, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, Reminder.ReminderDate);
+                TextWriters.Write(Reminder.ReminderTitle, true, ThemeColorType.ListValue);
             }
         }
 

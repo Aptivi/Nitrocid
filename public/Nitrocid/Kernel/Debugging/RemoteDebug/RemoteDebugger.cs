@@ -31,7 +31,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Exceptions;
 
@@ -197,7 +197,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR") + ": {0}", true, KernelColorType.Error, ex.Message);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR") + ": {0}", true, ThemeColorType.Error, ex.Message);
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

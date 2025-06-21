@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -43,7 +43,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection, true, KernelColorType.Question);
+            TextWriters.Write(finalSection, true, ThemeColorType.Question);
             while (PressedKey.Key != ConsoleKey.Enter)
             {
                 // Show the current value

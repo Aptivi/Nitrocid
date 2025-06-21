@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Themes;
+using Terminaux.Colors.Themes;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
@@ -48,8 +48,8 @@ namespace Nitrocid.ThemePacks
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
                     throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
                 var themeToken = JToken.Parse(data);
-                bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);
+                ThemeTools.RegisterTheme(themeName, new ThemeInfo(themeToken));
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", vars: [themeName]);
             }
         }
 
@@ -62,8 +62,8 @@ namespace Nitrocid.ThemePacks
             {
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
-                bool result = ThemeTools.themes.Remove(themeName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", vars: [themeName, result]);
+                ThemeTools.UnregisterTheme(themeName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}", vars: [themeName]);
             }
         }
 

@@ -27,7 +27,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Files.Instances;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -89,14 +89,14 @@ namespace Nitrocid.Files
             if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
-                SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(folder, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
                 // Try to create a list
                 try
                 {
                     enumeration = CreateList(folder, Sort, Recursive);
                     if (enumeration.Count == 0)
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, ThemeColorType.Warning);
 
                     // Enumerate each entry
                     long TotalSize = 0L;
@@ -119,13 +119,13 @@ namespace Nitrocid.Files
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, ThemeColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, ThemeColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -136,7 +136,7 @@ namespace Nitrocid.Files
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -149,19 +149,19 @@ namespace Nitrocid.Files
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_UNAUTHORIZED"), true, ThemeColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_FILES_INFOFAILED"), true, ThemeColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, folder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, ThemeColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
@@ -207,14 +207,14 @@ namespace Nitrocid.Files
             {
                 List<FileSystemEntry> enumeration;
                 if (level == 0)
-                    SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(folder, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
                 // Try to create a list
                 try
                 {
                     enumeration = CreateList(folder, Sort);
                     if (enumeration.Count == 0)
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTFOLDEREMPTY"), true, ThemeColorType.Warning);
 
                     // Enumerate each entry
                     foreach (FileSystemEntry Entry in enumeration)
@@ -250,7 +250,7 @@ namespace Nitrocid.Files
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_LISTDIRUNKNOWNERROR"), true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -277,7 +277,7 @@ namespace Nitrocid.Files
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, KernelColorType.Error, folder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), true, ThemeColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }

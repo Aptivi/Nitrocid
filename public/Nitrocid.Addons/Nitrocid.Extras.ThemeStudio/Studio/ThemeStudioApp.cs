@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Themes;
+using Terminaux.Colors.Themes;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             // Maximum options is number of kernel colors plus more options
             int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9;
             var StudioExiting = false;
-            var originalColors = new Dictionary<KernelColorType, Color>(ThemeStudioTools.SelectedColors);
+            var originalColors = new Dictionary<string, Color>(ThemeStudioTools.SelectedColors);
 
             // Check for TUI
             if (useTui)
@@ -67,10 +67,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     originalColors = originalColors,
                     themeName = ThemeName,
                 };
-                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE"), ConsoleKey.Enter, (line, _, _, _) => tui.Change(line)));
-                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
-                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD"), ConsoleKey.F2, (_, _, _, _) => tui.Load()));
-                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY"), ConsoleKey.F3, (line, _, _, _) => tui.Copy(line)));
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE"), ConsoleKey.Enter, (colorType, _, _, _) => tui.Change(colorType ?? ThemeColorType.NeutralText.ToString())));
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD"), ConsoleKey.F2, (_, _, _, _) => tui.Load()));
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY"), ConsoleKey.F3, (colorType, _, _, _) => tui.Copy(colorType ?? ThemeColorType.NeutralText.ToString())));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
@@ -122,7 +122,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", false, ThemeColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
@@ -132,7 +132,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to current directory as...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", false, KernelColorType.Input, ThemeName);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", false, ThemeColorType.Input, ThemeName);
                     string AltThemeName = InputTools.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
@@ -142,12 +142,12 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory as...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", false, KernelColorType.Input, FilesystemTools.CurrentDir);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", false, ThemeColorType.Input, FilesystemTools.CurrentDir);
                     string DirectoryName = InputTools.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", false, KernelColorType.Input, ThemeName);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", false, ThemeColorType.Input, ThemeName);
                     string AltThemeName = InputTools.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Load Theme From File...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT") + " ", false, ThemeColorType.Input);
                     string AltThemeName = InputTools.ReadLine() + ".json";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.LoadThemeFromFile(AltThemeName);
@@ -166,7 +166,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Load Theme From Prebuilt Themes...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " ", false, ThemeColorType.Input);
                     string AltThemeName = InputTools.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);
@@ -192,20 +192,20 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     int sourceColorIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT"));
                     if (sourceColorIdx < 0)
                         continue;
-                    var sourceType = (KernelColorType)sourceColorIdx;
+                    var sourceType = (ThemeColorType)sourceColorIdx;
                     var sourceColorType = choices[sourceColorIdx];
-                    var sourceColor = colors[sourceType];
+                    var sourceColor = colors.ElementAt(sourceColorIdx).Key;
 
                     // Specify the target...
                     int[] targetColors = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple([.. choices], LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT").FormatString(sourceColorType.ChoiceTitle));
                     if (targetColors.Length == 0)
                         continue;
 
-                    // FilesystemTools...
+                    // Copy the color
                     foreach (int idx in targetColors)
                     {
-                        var type = (KernelColorType)idx;
-                        colors[type] = sourceColor;
+                        var targetType = originalColors.ElementAt(idx).Key;
+                        colors[targetType] = sourceColor;
                     }
                 }
                 else if (response == colors.Count + 10)

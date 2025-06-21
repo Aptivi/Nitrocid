@@ -29,7 +29,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 foreach (string file in Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {
                     string finalFile = FilesystemTools.NeutralizePath(file);
-                    SeparatorWriterColor.WriteSeparatorColor(finalFile, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(finalFile, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                     if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                     {
                         // Time when you're on a breakpoint is counted
@@ -100,7 +100,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
                     }
                     TextWriterRaw.Write();
@@ -115,7 +115,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, KernelColorType.Error, folder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, ThemeColorType.Error, folder);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }

@@ -21,7 +21,7 @@ using LibGit2Sharp;
 using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Switches;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -66,23 +66,23 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 var renamed = tree.Renamed;
 
                 // List the general changes
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES") + $" {GitShellCommon.RepoName}:", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 foreach (var change in modified)
-                    TextWriters.Write($"[M] * {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[M] * {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in added)
-                    TextWriters.Write($"[A] + {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[A] + {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in deleted)
-                    TextWriters.Write($"[D] - {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[D] - {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in conflicted)
-                    TextWriters.Write($"[C] X {change.OldPath} vs. {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[C] X {change.OldPath} vs. {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in renamed)
-                    TextWriters.Write($"[R] / {change.OldPath} -> {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[R] / {change.OldPath} -> {change.Path}", ThemeColorType.ListEntry);
             }
             TextWriterRaw.Write();
 
             if (doPatch)
             {
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES") + $" {GitShellCommon.RepoName}:", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 TextWriterColor.Write(patch.Content);
             }
 

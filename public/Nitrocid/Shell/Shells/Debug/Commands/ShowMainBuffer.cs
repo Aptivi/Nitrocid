@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         {
             if (KernelPlatform.IsOnWindows())
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
                 return 33;
             }
             ConsoleTools.PreviewMainBuffer();

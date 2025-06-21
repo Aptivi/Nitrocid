@@ -35,7 +35,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Misc.Reflection.Internal;
 
@@ -108,7 +108,7 @@ namespace Nitrocid.Kernel.Configuration
                     CurrentValue = PropertyManager.GetPropertyValueInstanceExplicit(configType, Variable, configTypeInstance);
 
                 // Get the plain sequence from the color
-                if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
+                if (CurrentValue is KeyValuePair<ThemeColorType, Color> color)
                     CurrentValue = color.Value.PlainSequence;
                 if (CurrentValue is Color color2)
                     CurrentValue = color2.PlainSequence;

@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -45,7 +45,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             var article = articles[ArticleIndex];
             if (ArticleIndex > articleCount - 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, articleCount - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
@@ -57,7 +57,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READ_NOLINK"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READ_NOLINK"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", vars: [ArticleIndex, article.ArticleLink]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }

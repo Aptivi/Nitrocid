@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Benchmarks
@@ -28,7 +28,7 @@ namespace Nitrocid.Benchmarks
         {
             if (args.Length == 0)
             {
-                TextWriters.Write("Specify a benchmark to run.", KernelColorType.Error);
+                TextWriters.Write("Specify a benchmark to run.", ThemeColorType.Error);
                 return;
             }
             string benchName = args[0];

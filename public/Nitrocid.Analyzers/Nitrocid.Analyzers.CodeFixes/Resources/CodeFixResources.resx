@@ -143,14 +143,14 @@
       ConsoleForeColor usage code fix
   -->
   <data name="ConsoleForeColorUsageCodeFixTitle" xml:space="preserve">
-    <value>Use SetConsoleColor(Color) from KernelColorTools</value>
+    <value>Use SetConsoleColor(Color) from ThemeColorsTools</value>
   </data>
 
   <!--
       ConsoleBackColor usage code fix
   -->
   <data name="ConsoleBackColorUsageCodeFixTitle" xml:space="preserve">
-    <value>Use SetConsoleColor(Color, true) from KernelColorTools</value>
+    <value>Use SetConsoleColor(Color, true) from ThemeColorsTools</value>
   </data>
 
   <!--

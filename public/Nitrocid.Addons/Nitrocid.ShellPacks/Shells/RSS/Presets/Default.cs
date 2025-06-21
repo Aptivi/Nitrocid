@@ -19,7 +19,7 @@
 
 using System;
 using System.Text;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 
@@ -55,13 +55,13 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Presets
             PresetStringBuilder.Append('[');
 
             // RSS site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", new Uri(RSSShellCommon.RSSFeedLink).Host);
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -77,13 +77,13 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Presets
             PresetStringBuilder.Append('[');
 
             // RSS site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat("rss.fabrikam.com/news/tech.rss");
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

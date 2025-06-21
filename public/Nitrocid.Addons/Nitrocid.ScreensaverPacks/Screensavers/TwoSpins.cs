@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
@@ -257,7 +257,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground +
                     " "
                 );
             }
@@ -266,7 +266,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground +
                     " "
                 );
             }

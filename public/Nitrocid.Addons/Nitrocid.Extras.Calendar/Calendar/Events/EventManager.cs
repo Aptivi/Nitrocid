@@ -23,7 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -132,8 +132,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             foreach (EventInfo EventInstance in CalendarEvents.Union(baseEvents))
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
-                TextWriters.Write($"{EventInstance.EventTitle}{(EventInstance.IsYearly ? $" [{EventInstance.StartMonth}/{EventInstance.StartDay} -> {EventInstance.EndMonth}/{EventInstance.EndDay}]" : "")}", true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, EventInstance.EventDate);
+                TextWriters.Write($"{EventInstance.EventTitle}{(EventInstance.IsYearly ? $" [{EventInstance.StartMonth}/{EventInstance.StartDay} -> {EventInstance.EndMonth}/{EventInstance.EndDay}]" : "")}", true, ThemeColorType.ListValue);
             }
         }
 

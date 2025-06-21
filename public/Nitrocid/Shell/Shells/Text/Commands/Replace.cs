@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Languages;
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, KernelColorType.Success);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, ThemeColorType.Success);
             return 0;
         }
 

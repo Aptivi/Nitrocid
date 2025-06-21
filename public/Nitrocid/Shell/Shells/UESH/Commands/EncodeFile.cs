@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
@@ -76,10 +76,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(keyDecomposed, true, ThemeColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(ivDecomposed, true, ThemeColorType.ListValue);
             }
             return 0;
         }

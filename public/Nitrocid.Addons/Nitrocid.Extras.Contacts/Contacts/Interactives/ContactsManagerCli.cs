@@ -32,7 +32,7 @@ using Terminaux.Images;
 using Terminaux.Colors;
 using System.IO;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using VisualCard.Parts.Enums;
 using Nitrocid.Files;
 using System.Linq;
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             // Generate the rendered text
             string finalRenderedContactPicture =
                 ContactsInit.ContactsConfig.ShowImages ?
-                GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, KernelColorTools.GetColor(KernelColorType.TuiBackground)) :
+                GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, ThemeColorsTools.GetColor(ThemeColorType.TuiBackground)) :
                 "";
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
             string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
@@ -199,13 +199,13 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             // If there is a profile picture and preview is enabled, print it
             string picture =
                 ContactsInit.ContactsConfig.ShowImages ?
-                GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)) :
+                GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground)) :
                 "";
             if (!string.IsNullOrEmpty(picture))
             {
                 finalInfoRendered.AppendLine("\n");
                 finalInfoRendered.AppendLine(picture);
-                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), true));
+                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground), true));
             }
 
             // Now, render the info box

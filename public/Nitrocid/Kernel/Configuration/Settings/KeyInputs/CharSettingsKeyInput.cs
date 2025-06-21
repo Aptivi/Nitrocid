@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
@@ -39,11 +39,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
+            TextWriters.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
-            TextWriters.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", KernelColorType.Tip);
-            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue ?? ' ');
+            TextWriters.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", ThemeColorType.Tip);
+            TextWriters.Write("[{0}] ", false, ThemeColorType.Input, KeyDefaultValue ?? ' ');
             var keypressTerm = Input.ReadKey();
             var keypress = keypressTerm.KeyChar;
             keypress =

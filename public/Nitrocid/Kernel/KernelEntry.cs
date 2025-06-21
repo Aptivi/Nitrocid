@@ -30,7 +30,7 @@ using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
 using Textify.Tools.Placeholder;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base.Checks;
@@ -110,12 +110,12 @@ namespace Nitrocid.Kernel
                     WelcomeMessage.GetLicenseString(), new InfoBoxSettings()
                     {
                         Title = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"),
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.License)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.License)
                     }
                 );
                 ConsoleWrapper.CursorVisible = false;
                 ThreadManager.SleepUntilInput(15000);
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
             }
 
             // Start the main loop
@@ -125,7 +125,7 @@ namespace Nitrocid.Kernel
 
             // Load splash for reboot or shutdown
             SplashReport._KernelBooted = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             if (!PowerManager.KernelShutdown)
                 SplashManager.OpenSplash(SplashContext.Rebooting);
             else
@@ -184,7 +184,7 @@ namespace Nitrocid.Kernel
                     BaseLoginHandler.ShowMOTDOnceFlag = true;
                     if (Config.MainConfig.ShowMAL)
                     {
-                        TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
+                        TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.Banner);
                         MalParse.ProcessDynamicMal();
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
@@ -203,7 +203,7 @@ namespace Nitrocid.Kernel
                         WelcomeMessage.ShowRandomTip();
 
                     // Show a tip telling users to see license information
-                    TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), KernelColorType.Tip);
+                    TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), ThemeColorType.Tip);
 
                     // Show another tip for release window
                     KernelReleaseInfo.NotifyReleaseSupportWindow();

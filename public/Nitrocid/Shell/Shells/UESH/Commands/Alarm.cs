@@ -22,7 +22,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using System;
 using Nitrocid.Kernel.Time.Alarm;
 using Terminaux.Shell.Switches;
@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -84,13 +84,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         foreach (var alarm in AlarmTools.alarms)
                         {
-                            SeparatorWriterColor.WriteSeparatorColor(alarm.Key, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME") + " ", false, KernelColorType.ListEntry);
-                            TextWriters.Write(alarm.Value.Name, true, KernelColorType.ListValue);
-                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC") + " ", false, KernelColorType.ListEntry);
-                            TextWriters.Write(alarm.Value.Description, true, KernelColorType.ListValue);
-                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE") + " ", false, KernelColorType.ListEntry);
-                            TextWriters.Write($"{alarm.Value.Length}", true, KernelColorType.ListValue);
+                            SeparatorWriterColor.WriteSeparatorColor(alarm.Key, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME") + " ", false, ThemeColorType.ListEntry);
+                            TextWriters.Write(alarm.Value.Name, true, ThemeColorType.ListValue);
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC") + " ", false, ThemeColorType.ListEntry);
+                            TextWriters.Write(alarm.Value.Description, true, ThemeColorType.ListValue);
+                            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE") + " ", false, ThemeColorType.ListEntry);
+                            TextWriters.Write($"{alarm.Value.Length}", true, ThemeColorType.ListValue);
                         }
 
                         break;
@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                 default:
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandMode);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, CommandMode);
                         HelpPrint.ShowHelp("alarm");
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                     }
@@ -119,18 +119,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             string interval = parameters.ArgumentsList[2];
                             if (AlarmTools.IsAlarmRegistered(name))
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_FOUND"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_FOUND"), true, ThemeColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                             if (!TimeSpan.TryParse(interval, out _))
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_INTERVALINVALID"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_INTERVALINVALID"), true, ThemeColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAMEINTERVALNEEDED"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAMEINTERVALNEEDED"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                         }
 
@@ -143,13 +143,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             string name = parameters.ArgumentsList[1];
                             if (!AlarmTools.IsAlarmRegistered(name))
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NOTFOUND"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NOTFOUND"), true, ThemeColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMENOTSPECCED"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMENOTSPECCED"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                         }
 

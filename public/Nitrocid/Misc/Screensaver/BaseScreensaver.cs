@@ -23,7 +23,7 @@ using Nitrocid.Languages;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Screensaver
@@ -50,7 +50,7 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public virtual void ScreensaverSeizureWarning()
         {
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox(
                 LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_TITLE") + CharManager.NewLine + CharManager.NewLine +
                 LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_DESC"), new InfoBoxSettings()
@@ -67,7 +67,7 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public virtual void ScreensaverPreparation()
         {
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             ConsoleWrapper.CursorVisible = false;
         }
 

@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.Admin
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_ERROR"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_ERROR"), true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools.Directory;
 using Nitrocid.Kernel.Debugging;
@@ -48,7 +48,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }

@@ -25,7 +25,7 @@ using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.Sql
@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, ThemeColorType.Error);
                 Bail = true;
             }
 
@@ -63,7 +63,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED"), true, ThemeColorType.Error);
                     Bail = true;
                 }
             }
@@ -84,7 +84,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

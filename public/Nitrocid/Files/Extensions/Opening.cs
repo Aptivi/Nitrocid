@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
@@ -88,7 +88,7 @@ namespace Nitrocid.Files
                 case OpeningMode.Json:
                     if (!hasJsonShell)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSJSONSHELLADDON"), KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSJSONSHELLADDON"), ThemeColorType.Warning);
                         ShellManager.StartShell("TextShell", path);
                     }
                     else
@@ -97,7 +97,7 @@ namespace Nitrocid.Files
                 case OpeningMode.Sql:
                     if (!hasSqlShell)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSSQLSHELLADDON"), KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSSQLSHELLADDON"), ThemeColorType.Warning);
                         ShellManager.StartShell("HexShell", path);
                     }
                     else

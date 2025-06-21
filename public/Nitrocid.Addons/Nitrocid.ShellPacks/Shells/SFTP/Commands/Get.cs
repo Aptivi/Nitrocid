@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Transfer;
@@ -38,17 +38,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE"), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE"), false, ThemeColorType.Progress, parameters.ArgumentsList[0]);
             if (SFTPTransfer.SFTPGetFile(parameters.ArgumentsList[0]))
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE"), true, ThemeColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SFTPFilesystem);
             }
         }

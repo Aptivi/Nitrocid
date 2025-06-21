@@ -18,7 +18,7 @@
 //
 
 using System.IO;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, ThemeColorType.Warning);
                         return 4;
                     }
                 }
@@ -85,26 +85,26 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, ThemeColorType.Warning);
                     return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihae.ExceptionType);
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_MALFORMEDHASHES"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_MALFORMEDHASHES"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihe.ExceptionType);
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, KernelColorType.Error, parameters.ArgumentsList[3]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, ThemeColorType.Error, parameters.ArgumentsList[3]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }

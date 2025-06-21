@@ -22,7 +22,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -44,13 +44,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (config is null || config.SettingsEntries is null)
                     continue;
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR") + $" {config.GetType().Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_COUNT"), $"{config.SettingsEntries.Length}");
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
-                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                         TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), entry.DisplayAs, indent: 1);
                         TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), entry.Desc, indent: 1);
                         TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_KEYS"), $"{entry.Keys.Length}", indent: 1);

@@ -23,7 +23,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Languages;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Dates.Timers
             Screen watchScreen = new();
             ScreenPart watchScreenPart = new();
             ScreenTools.SetCurrent(watchScreen);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             string status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY");
 
             // Set the random lap color
@@ -101,19 +101,19 @@ namespace Nitrocid.Extras.Dates.Timers
                 {
                     KeybindingList = KeyBindings,
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
-                    BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
-                    BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
-                    OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
-                    OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
-                    OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                    BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
+                    BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
+                    BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
+                    OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
+                    OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
+                    OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
                 };
                 builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval and the current lap
                 builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(elapsedString, TimeLeftPosition, TimeTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background)) +
-                    TextWriterWhereColor.RenderWhereColorBack(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture))
+                    TextWriterWhereColor.RenderWhereColorBack(elapsedString, TimeLeftPosition, TimeTopPosition, true, LapColor, ThemeColorsTools.GetColor(ThemeColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, ThemeColorsTools.GetColor(ThemeColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture))
                 );
 
                 // Also, print the time difference of the last lap if required
@@ -127,7 +127,7 @@ namespace Nitrocid.Extras.Dates.Timers
                     string elapsedDiff = diff.ToString((slower ? "\\+" : "\\-") + @"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture);
                     Color finalLapColor = slower ? new Color(ConsoleColors.Red) : new Color(ConsoleColors.Lime);
                     builder.Append(
-                        TextWriterWhereColor.RenderWhereColorBack(elapsedDiff, TimeLeftPosition, lapTopPosition, true, finalLapColor, KernelColorTools.GetColor(KernelColorType.Background))
+                        TextWriterWhereColor.RenderWhereColorBack(elapsedDiff, TimeLeftPosition, lapTopPosition, true, finalLapColor, ThemeColorsTools.GetColor(ThemeColorType.Background))
                     );
                 }
 
@@ -143,7 +143,7 @@ namespace Nitrocid.Extras.Dates.Timers
                     Width = SeparatorHalfConsoleWidthInterior,
                     Height = SeparatorMaximumHeightInterior,
                     FrameColor = ColorTools.GetGray(),
-                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                    BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
                 };
                 var stopwatchBoxFrame = new BoxFrame()
                 {
@@ -152,7 +152,7 @@ namespace Nitrocid.Extras.Dates.Timers
                     Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
                     Height = SeparatorMaximumHeightInterior,
                     FrameColor = ColorTools.GetGray(),
-                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                    BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
                 };
                 builder.Append(
                     lapsBoxFrame.Render() +
@@ -161,7 +161,7 @@ namespace Nitrocid.Extras.Dates.Timers
 
                 // Print informational messages
                 builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(status, 0, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(status, 0, 0, false, ThemeColorsTools.GetColor(ThemeColorType.NeutralText), ThemeColorsTools.GetColor(ThemeColorType.Background)) +
                     ConsoleClearing.GetClearLineToRightSequence()
                 );
 
@@ -179,7 +179,7 @@ namespace Nitrocid.Extras.Dates.Timers
                     LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_LAP") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
                 }
                 builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, ThemeColorsTools.GetColor(ThemeColorType.Background))
                 );
 
                 // Return the resultant buffer
@@ -257,7 +257,7 @@ namespace Nitrocid.Extras.Dates.Timers
 
                             // Clear the laps
                             Laps.Clear();
-                            LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+                            LapColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                             status = LanguageTools.GetLocalized("NKS_DATES_STOPWATCH_STATUS_READY");
                             break;
                         }
@@ -267,7 +267,7 @@ namespace Nitrocid.Extras.Dates.Timers
                                 LappedStopwatch.Reset();
                             if (Stopwatch.IsRunning)
                                 Stopwatch.Reset();
-                            LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+                            LapColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                             exiting = true;
                             break;
                         }

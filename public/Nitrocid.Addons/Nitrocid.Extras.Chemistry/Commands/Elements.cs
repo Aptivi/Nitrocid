@@ -19,7 +19,7 @@
 
 using ChemiStar;
 using ChemiStar.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 SubstanceInfo substance = substances[i];
 
                 // Print information
-                SeparatorWriterColor.WriteSeparatorColor(substance.Name, KernelColorTools.GetColor(KernelColorType.ListTitle), true, substance.Name);
+                SeparatorWriterColor.WriteSeparatorColor(substance.Name, ThemeColorsTools.GetColor(ThemeColorType.ListTitle), true, substance.Name);
                 TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER"), $"{substance.AtomicNumber}");
                 TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICMASS"), $"{substance.AtomicMass}");
                 TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SYMBOL"), substance.Symbol);

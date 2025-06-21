@@ -22,7 +22,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONTYPES_LISTING") + $" {parameters.ArgumentsList[0]}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONTYPES_LISTING") + $" {parameters.ArgumentsList[0]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableTypes(parameters.ArgumentsList[0]);
@@ -46,8 +46,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 Objects = list,
                 Stringifier = (type) => ((Type)type).FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE"),
-                KeyColor = KernelColorTools.GetColor(KernelColorType.ListEntry),
-                ValueColor = KernelColorTools.GetColor(KernelColorType.ListValue),
+                KeyColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry),
+                ValueColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue),
             };
             TextWriterRaw.WriteRaw(listing.Render());
             return 0;

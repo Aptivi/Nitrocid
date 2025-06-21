@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
             string contents = parameters.ArgumentsList[0];
             if (string.IsNullOrWhiteSpace(contents))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT"), ThemeColorType.Error);
                 return 35;
             }
 
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
             }
             if (type != "raw" && type != "http" && type != "https")
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED"), ThemeColorType.Error);
                 return 36;
             }
 
@@ -95,13 +95,13 @@ namespace Nitrocid.Extras.Pastebin.Commands
 
                     // Decode the response
                     string response = Encoding.UTF8.GetString(buffer);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
-                    TextWriters.Write(response, KernelColorType.NeutralText);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), ThemeColorType.Success);
+                    TextWriters.Write(response, ThemeColorType.NeutralText);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE"), KernelColorType.Error);
-                    TextWriters.Write(ex.Message, KernelColorType.NeutralText);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE"), ThemeColorType.Error);
+                    TextWriters.Write(ex.Message, ThemeColorType.NeutralText);
                     return 37;
                 }
             }
@@ -121,12 +121,12 @@ namespace Nitrocid.Extras.Pastebin.Commands
                 string reply = response.Content.ReadAsStringAsync().Result;
                 if (!response.IsSuccessStatusCode)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE") + $" [{(int)response.StatusCode}] {response.StatusCode}", KernelColorType.Error);
-                    TextWriters.Write(reply, KernelColorType.NeutralText);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE") + $" [{(int)response.StatusCode}] {response.StatusCode}", ThemeColorType.Error);
+                    TextWriters.Write(reply, ThemeColorType.NeutralText);
                     return 37;
                 }
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
-                TextWriters.Write(reply, KernelColorType.NeutralText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), ThemeColorType.Success);
+                TextWriters.Write(reply, ThemeColorType.NeutralText);
             }
             return 0;
         }

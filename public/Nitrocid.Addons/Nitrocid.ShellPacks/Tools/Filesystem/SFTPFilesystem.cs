@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED")} {ModDate}");
+                            EntryBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED")} {ModDate}");
                         }
                     }
                     else if (DirListSFTP.IsDirectory)

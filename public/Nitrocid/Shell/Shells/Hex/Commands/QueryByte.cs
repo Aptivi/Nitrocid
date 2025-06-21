@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Exceptions;
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
@@ -80,7 +80,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }

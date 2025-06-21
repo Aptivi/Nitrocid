@@ -23,7 +23,7 @@ using System.Linq;
 using MailKit;
 using MailKit.Net.Imap;
 using MimeKit;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
@@ -96,8 +96,8 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                     DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", vars: [MsgFrom, MsgSubject]);
 
                     // Display them now.
-                    TextWriters.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(MsgSubject, true, KernelColorType.ListValue);
+                    TextWriters.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, ThemeColorType.ListEntry);
+                    TextWriters.Write(MsgSubject, true, ThemeColorType.ListValue);
                     if (ShellsInit.ShellsConfig.ShowPreview & !string.IsNullOrWhiteSpace(MsgPreview))
                     {
                         // For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
@@ -105,7 +105,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                         // displays 200 character long body.
                         //
                         // Concept: Msg.Preview(LazyMode:=True)
-                        TextWriters.Write(MsgPreview, true, KernelColorType.ListValue);
+                        TextWriters.Write(MsgPreview, true, ThemeColorType.ListValue);
                     }
                 }
                 else
