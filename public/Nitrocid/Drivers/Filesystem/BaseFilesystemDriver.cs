@@ -407,7 +407,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // First, check for dumb console
-            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+            if (ConsoleWrapper.IsDumb)
             {
                 // Go to dumb mode
                 DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
