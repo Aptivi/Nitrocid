@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-beta4-20250621105231" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-beta4-20250621114748" />
     <PackageReference Update="LocaleStation" Version="1.3.2" />
   </ItemGroup>
 
