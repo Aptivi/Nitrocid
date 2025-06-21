@@ -23,6 +23,7 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using System;
 using System.Threading;
+using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ConsoleBase.Writers
@@ -229,7 +230,10 @@ namespace Nitrocid.ConsoleBase.Writers
                     KernelColorTools.SetConsoleColorDry(colorType);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    if (ConsoleWrapper.IsDumb)
+                        TextWriters.Write(Text, Line, colorType, vars);
+                    else
+                        WrappedWriter.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -258,7 +262,10 @@ namespace Nitrocid.ConsoleBase.Writers
                     KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    if (ConsoleWrapper.IsDumb)
+                        TextWriters.Write(Text, Line, colorTypeForeground, colorTypeBackground, vars);
+                    else
+                        WrappedWriter.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
