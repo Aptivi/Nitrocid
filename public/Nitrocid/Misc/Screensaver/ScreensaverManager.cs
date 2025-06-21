@@ -34,7 +34,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Power;
@@ -176,7 +176,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", vars: [saver]);
                 if (!IsScreensaverRegistered(saver))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_NOTFOUND"), true, KernelColorType.Error, saver);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_NOTFOUND"), true, ThemeColorType.Error, saver);
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", vars: [saver]);
                     return;
                 }
@@ -208,7 +208,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CANNOTSTART") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CANNOTSTART") + " {0}", true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -382,7 +382,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", vars: [Exception.Message]);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel(initialVisible);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CRASH"), true, KernelColorType.Error, Exception.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CRASH"), true, ThemeColorType.Error, Exception.Message);
             }
         }
 
@@ -392,7 +392,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static void HandleSaverCancel(bool initialVisible)
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();

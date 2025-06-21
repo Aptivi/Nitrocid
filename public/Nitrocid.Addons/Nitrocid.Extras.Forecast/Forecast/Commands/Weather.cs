@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             }
             if (parameters.ArgumentsList.Length <= 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), ThemeColorType.Error);
                 return 38;
             }
             string APIKey = Forecast.ApiKey;
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             else if (string.IsNullOrEmpty(APIKey))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
                 APIKey = InputTools.ReadLineNoInput();
                 Forecast.ApiKey = APIKey;
             }

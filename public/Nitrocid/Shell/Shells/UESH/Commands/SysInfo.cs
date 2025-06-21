@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Hardware;
@@ -68,57 +68,57 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShowSystemInfo)
             {
                 // Kernel section
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelEntry.SafeMode.ToString(), true, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(KernelEntry.DebugMode.ToString(), true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(KernelEntry.SafeMode.ToString(), true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
             }
 
             if (ShowHardwareInfo)
             {
                 // Hardware section
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
                 HardwareList.ListHardware();
 
                 if (!WindowsUserTools.IsAdministrator())
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, ThemeColorType.Error);
                 else
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, KernelColorType.Tip);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, ThemeColorType.Tip);
                 TextWriterRaw.Write();
             }
 
             if (ShowUserInfo)
             {
                 // User section
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(UserManagement.CurrentUser.Username, true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Config.MainConfig.HostName, true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(UserManagement.CurrentUser.Username, true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(Config.MainConfig.HostName, true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
             }
 
             if (ShowMessageOfTheDay)
             {
                 // Show MOTD
-                SeparatorWriterColor.WriteSeparatorColor("MOTD", KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.NeutralText);
+                SeparatorWriterColor.WriteSeparatorColor("MOTD", ThemeColorsTools.GetColor(ThemeColorType.Separator));
+                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, ThemeColorType.NeutralText);
                 TextWriterRaw.Write();
             }
 
             if (ShowMal)
             {
                 // Show MAL
-                SeparatorWriterColor.WriteSeparatorColor("MAL", KernelColorTools.GetColor(KernelColorType.Separator));
-                TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.NeutralText);
+                SeparatorWriterColor.WriteSeparatorColor("MAL", ThemeColorsTools.GetColor(ThemeColorType.Separator));
+                TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.NeutralText);
             }
             return 0;
         }

@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using System;
 using Terminaux.Colors;
 
@@ -138,37 +138,37 @@ namespace Nitrocid.Misc.Notifications
         /// Custom color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomColor { get; set; } = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
+        public Color CustomColor { get; set; } = ThemeColorsTools.GetColor("LowPriorityBorderColor");
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomTitleColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
+        public Color CustomTitleColor { get; set; } = ThemeColorsTools.GetColor("NotificationTitleColor");
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomDescriptionColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
+        public Color CustomDescriptionColor { get; set; } = ThemeColorsTools.GetColor("NotificationDescriptionColor");
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
+        public Color CustomProgressColor { get; set; } = ThemeColorsTools.GetColor("NotificationProgressColor");
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomProgressFailureColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
+        public Color CustomProgressFailureColor { get; set; } = ThemeColorsTools.GetColor("NotificationFailureColor");
 
         /// <summary>
         /// Custom progress success color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomProgressSuccessColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Success);
+        public Color CustomProgressSuccessColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Success);
 
         /// <summary>
         /// Upper left corner character for custom priority notification

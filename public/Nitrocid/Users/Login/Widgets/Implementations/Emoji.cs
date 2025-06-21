@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
@@ -52,7 +52,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                     Top = iconTop,
                     Left = left,
                     Width = width,
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle

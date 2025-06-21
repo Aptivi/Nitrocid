@@ -24,7 +24,7 @@ using Timer = System.Timers.Timer;
 using Textify.Data.Figlet;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Base.Buffered;
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.Dates.Timers
             Screen timerScreen = new();
             ScreenPart timerScreenPart = new();
             ScreenTools.SetCurrent(timerScreen);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Populate the figlet font (if any)
             timerColor = ConsoleColors.Aqua;
@@ -159,12 +159,12 @@ namespace Nitrocid.Extras.Dates.Timers
                 {
                     KeybindingList = KeyBindings,
                     Width = ConsoleWrapper.WindowWidth - 1,
-                    BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
-                    BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
-                    BuiltinBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
-                    OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
-                    OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
-                    OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                    BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
+                    BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
+                    BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
+                    OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
+                    OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
+                    OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
                 };
                 builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
@@ -176,7 +176,7 @@ namespace Nitrocid.Extras.Dates.Timers
                     {
                         Text = UntilText,
                         ForegroundColor = timerColor,
-                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                        BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
                     };
                     builder.Append(RendererTools.RenderRenderable(figlet, new(TimeLeftPosition, TimeTopPosition)));
                     modeY += FigletTools.GetFigletHeight(UntilText, FigletFont);
@@ -184,7 +184,7 @@ namespace Nitrocid.Extras.Dates.Timers
                 else
                 {
                     builder.Append(
-                        TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, timerColor, KernelColorTools.GetColor(KernelColorType.Background))
+                        TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, timerColor, ThemeColorsTools.GetColor(ThemeColorType.Background))
                     );
                 }
 
@@ -256,7 +256,7 @@ namespace Nitrocid.Extras.Dates.Timers
                         {
                             string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
-                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
                             }, TimerInterval);
                             if (!double.TryParse(UnparsedInterval, out TimerInterval))
                             {
@@ -264,7 +264,7 @@ namespace Nitrocid.Extras.Dates.Timers
                                 timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
-                                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                                 });
                                 TimerInterval = 60000 * 25;
                             }
@@ -280,7 +280,7 @@ namespace Nitrocid.Extras.Dates.Timers
                         {
                             string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_POMODORO_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
-                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
                             }, breakTimerInterval);
                             if (!double.TryParse(UnparsedInterval, out breakTimerInterval))
                             {
@@ -288,7 +288,7 @@ namespace Nitrocid.Extras.Dates.Timers
                                 timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
-                                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                                 });
                                 breakTimerInterval = 60000 * 5;
                             }

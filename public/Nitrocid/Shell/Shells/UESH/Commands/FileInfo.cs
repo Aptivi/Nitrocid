@@ -26,7 +26,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files.Extensions;
 using Terminaux.Writer.ConsoleWriters;
 using Magico.Files;
@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string FilePath = FilesystemTools.NeutralizePath(FileName);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [FilePath, FilesystemTools.FileExists(FilePath)]);
-                SeparatorWriterColor.WriteSeparatorColor(FileName, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(FileName, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 if (FilesystemTools.FileExists(FilePath))
                 {
                     var FileInfo = new FileInfo(FilePath);
@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterRaw.Write();
 
                     // .NET managed info
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                     if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), asmName.Name ?? "");
@@ -89,7 +89,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_EXTRAINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_EXTRAINFO"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
@@ -99,7 +99,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, ThemeColorType.Error);
                 }
             }
             return 0;

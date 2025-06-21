@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using System;
@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 }, path);
                 return;
             }
@@ -46,14 +46,14 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 ContactsManager.InstallContacts(path);
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_IMPORTSUCCESS"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Success)
                 });
             }
             catch (Exception ex)
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 }, path);
             }
         }
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 }, path);
                 return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED");
             }
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 }, path);
                 return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED");
             }

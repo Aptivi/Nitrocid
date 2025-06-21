@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -41,12 +41,12 @@ namespace Nitrocid.Extras.Calculators.Commands
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(parameters.ArgumentsList[0], out double Real))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID"), true, ThemeColorType.Error);
                 return 2;
             }
             if (!double.TryParse(parameters.ArgumentsList[1], out double Imaginary))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID"), true, ThemeColorType.Error);
                 return 2;
             }
 
@@ -70,8 +70,8 @@ namespace Nitrocid.Extras.Calculators.Commands
 
             // Now, write the result in both the exponentional format (Z = r * (e)^{angle}i)
             //                           and the triangular format    (Z = r (cos {angle} + i sin {angle})
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL") + " Z = {0} * (e)^{1}i", true, ThemeColorType.Success, Radius, AngleSin);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, ThemeColorType.Success, Radius, AngleCos, AngleSin);
             return 0;
         }
     }

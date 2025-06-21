@@ -21,7 +21,7 @@ using System;
 using System.Linq;
 using MailKit;
 using MailKit.Net.Imap;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
@@ -55,7 +55,7 @@ namespace Nitrocid.ShellPacks.Tools
         public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
-            TextWriters.Write(e.Message, true, KernelColorType.Warning);
+            TextWriters.Write(e.Message, true, ThemeColorType.Warning);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING"));
             PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }

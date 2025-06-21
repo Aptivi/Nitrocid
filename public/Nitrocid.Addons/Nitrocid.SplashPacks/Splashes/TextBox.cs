@@ -23,7 +23,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -48,7 +48,7 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox($"*) {ProgressReport}\n\n{Progress}%", Vars);
             return "";
         }
@@ -59,7 +59,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";
         }
@@ -70,7 +70,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             InfoBoxNonModalColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";
         }

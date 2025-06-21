@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
@@ -45,14 +45,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
             {
-                TextWriters.Write($"- {DebugDevice.ClientIP}: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(DebugDevice.ClientName, true, KernelColorType.ListValue);
+                TextWriters.Write($"- {DebugDevice.ClientIP}: ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(DebugDevice.ClientName, true, ThemeColorType.ListValue);
             }
             return 0;
         }

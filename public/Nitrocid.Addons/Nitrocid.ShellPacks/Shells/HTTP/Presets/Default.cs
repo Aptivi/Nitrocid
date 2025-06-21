@@ -18,7 +18,7 @@
 //
 
 using System.Text;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
@@ -55,13 +55,13 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
             PresetStringBuilder.Append('[');
 
             // HTTP site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -77,13 +77,13 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
             PresetStringBuilder.Append('[');
 
             // HTTP site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
             PresetStringBuilder.AppendFormat(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"));
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

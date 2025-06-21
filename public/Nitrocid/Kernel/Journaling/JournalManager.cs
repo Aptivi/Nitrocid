@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -157,10 +157,10 @@ namespace Nitrocid.Kernel.Journaling
 
                 // Now, print the entries
                 var finalColor =
-                    Status == JournalStatus.Error ? KernelColorType.Error :
-                    Status == JournalStatus.Warning ? KernelColorType.Warning :
-                    KernelColorType.NeutralText;
-                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}] : ", false, KernelColorType.ListEntry);
+                    Status == JournalStatus.Error ? ThemeColorType.Error :
+                    Status == JournalStatus.Warning ? ThemeColorType.Warning :
+                    ThemeColorType.NeutralText;
+                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}] : ", false, ThemeColorType.ListEntry);
                 TextWriters.Write(Message, true, finalColor);
             }
         }

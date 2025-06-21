@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var Results = ConfigTools.CheckConfigVariables();
             bool failed = Results.Any((res) => !res);
             if (failed)
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, ThemeColorType.Warning);
             TestActualValue = failed;
         }
     }

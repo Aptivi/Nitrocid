@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
@@ -57,7 +57,7 @@ namespace Nitrocid.Users.Login.Handlers
             if (ShowMOTDOnceFlag && Config.MainConfig.ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
-                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
+                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, ThemeColorType.Banner);
                 MotdParse.ProcessDynamicMotd();
                 ShowMOTDOnceFlag = false;
             }
@@ -88,9 +88,9 @@ namespace Nitrocid.Users.Login.Handlers
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(Config.MainConfig.PasswordPrompt))
-                        TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.PasswordPrompt), false, KernelColorType.Input);
+                        TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.PasswordPrompt), false, ThemeColorType.Input);
                     else
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, KernelColorType.Input, user);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, user);
 
                     // Get input
                     string answerpass = InputTools.ReadLineNoInputUnsafe();
@@ -99,7 +99,7 @@ namespace Nitrocid.Users.Login.Handlers
                         return true;
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -125,9 +125,9 @@ namespace Nitrocid.Users.Login.Handlers
         {
             // Prompt user to login
             if (!string.IsNullOrWhiteSpace(Config.MainConfig.UsernamePrompt))
-                TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.UsernamePrompt), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(Config.MainConfig.UsernamePrompt), false, ThemeColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNAMEPROMPT"), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNAMEPROMPT"), false, ThemeColorType.Input);
             return InputTools.ReadLine();
         }
     }

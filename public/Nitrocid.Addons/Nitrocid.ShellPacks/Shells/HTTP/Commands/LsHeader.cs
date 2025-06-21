@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
@@ -35,8 +35,8 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
             var headers = HttpTools.HttpListHeaders();
             foreach (var header in headers)
             {
-                TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
-                TextWriters.Write("{0}", true, KernelColorType.ListValue, header.Item2);
+                TextWriters.Write("  - {0}: ", false, ThemeColorType.ListEntry, header.Item1);
+                TextWriters.Write("{0}", true, ThemeColorType.ListValue, header.Item2);
             }
             return 0;
         }

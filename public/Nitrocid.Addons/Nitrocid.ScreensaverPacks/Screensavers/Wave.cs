@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
@@ -46,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             posIdx = 0;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
         }
 
         /// <inheritdoc/>
@@ -92,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveDelay);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
-                        TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
                     TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
                 }
             }

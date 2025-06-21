@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Debugging;
@@ -108,7 +108,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             ).ToArray();
 
             // Then, make the choices and prompt for the selection
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
             return
@@ -129,7 +129,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 
             // The password is not empty. Prompt for password.
             pass = InfoBoxInputColor.WriteInfoBoxInputPassword(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ");
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Validate the password
             if (UserManagement.ValidatePassword(user, pass))
@@ -139,7 +139,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 // Wrong password.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_WRONGPASSWORD"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             return false;
         }

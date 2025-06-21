@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Docking.Dock
                 // screen, you're essentially idling because you've successfully converted your device to the information
                 // center that displays continuously, and we don't want screensavers to interfere with the operation.
                 ScreensaverManager.PreventLock();
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 TextWriterRaw.WriteRaw(dockInstance.Initialize());
                 while (!ConsoleWrapper.KeyAvailable)
                 {
@@ -97,17 +97,17 @@ namespace Nitrocid.Extras.Docking.Dock
             }
             catch (Exception ex)
             {
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.GetType().Name}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DOCKING_DOCKCRASHED") + $": {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             }
             finally
             {
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
                 ScreensaverManager.AllowLock();
             }
         }

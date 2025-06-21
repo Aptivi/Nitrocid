@@ -31,7 +31,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 
@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
             ScreensaverManager.Delay(10000);
 
             // Clear the scene
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

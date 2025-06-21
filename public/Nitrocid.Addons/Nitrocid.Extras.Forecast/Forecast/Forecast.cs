@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {
@@ -89,7 +89,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
 
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_HEADER"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_HEADER"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WEATHER"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
@@ -191,7 +191,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
             double feelsLike = (double?)WeatherInfo.WeatherToken?["main"]?["feels_like"] ?? 0d;
             double pressure = (double?)WeatherInfo.WeatherToken?["main"]?["pressure"] ?? 0d;
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", vars: [name, CityID]);
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_HEADER"), KernelColorTools.GetColor(KernelColorType.ListTitle), true, name);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_HEADER"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle), true, name);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WEATHER"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";

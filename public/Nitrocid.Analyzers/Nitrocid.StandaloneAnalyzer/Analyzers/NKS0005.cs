@@ -75,7 +75,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 if (exp.Expression is IdentifierNameSyntax identifier && exp.Name is IdentifierNameSyntax idName)
                 {
                     // Build the replacement syntax
-                    var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
+                    var classSyntax = SyntaxFactory.IdentifierName("ThemeColorsTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("SetConsoleColor");
                     if (identifier.Identifier.Text != nameof(Console))
                         continue;

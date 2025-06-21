@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
@@ -51,8 +51,8 @@ namespace Nitrocid.Extras.BassBoom.Commands
             var lines = Lyrics.GetLyricLines(pathToLyrics);
             foreach (var line in lines)
             {
-                TextWriters.Write($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, KernelColorType.ListEntry);
-                TextWriters.Write(line.Line, KernelColorType.ListValue);
+                TextWriters.Write($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(line.Line, ThemeColorType.ListValue);
             }
             return 0;
         }

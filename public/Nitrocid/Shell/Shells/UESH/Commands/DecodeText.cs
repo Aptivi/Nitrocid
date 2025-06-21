@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
@@ -54,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 byte[] iv = driver.ComposeBytesFromString(ivValue);
                 decoded = driver.GetDecodedString(composed, key, iv);
             }
-            TextWriters.Write(decoded, true, KernelColorType.Success);
+            TextWriters.Write(decoded, true, ThemeColorType.Success);
             return 0;
         }
     }

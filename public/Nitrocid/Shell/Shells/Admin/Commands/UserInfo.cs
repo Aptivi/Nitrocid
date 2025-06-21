@@ -21,7 +21,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Users;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
@@ -45,29 +45,29 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             if (user is not null)
             {
                 // First off, basic user information
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(user.Username, true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(user.FullName, true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFLANG") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(user.PreferredLanguage ?? "", true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFCULTURE") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(user.PreferredCulture ?? "", true, KernelColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_FLAGS") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(user.Username, true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(user.FullName, true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFLANG") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(user.PreferredLanguage ?? "", true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PREFCULTURE") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(user.PreferredCulture ?? "", true, ThemeColorType.ListValue);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_FLAGS") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(string.Join(", ", user.Flags), true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the permissions.
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PERMS"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_PERMS"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 foreach (string perm in user.Permissions)
-                    TextWriters.Write($"  - {perm}", true, KernelColorType.ListValue);
+                    TextWriters.Write($"  - {perm}", true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the groups.
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_GROUPS"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERINFO_GROUPS"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 foreach (string group in user.Groups)
-                    TextWriters.Write($"  - {group}", true, KernelColorType.ListValue);
+                    TextWriters.Write($"  - {group}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

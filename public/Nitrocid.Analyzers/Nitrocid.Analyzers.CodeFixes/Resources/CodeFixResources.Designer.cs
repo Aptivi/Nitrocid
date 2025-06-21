@@ -61,7 +61,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use SetConsoleColor(Color, true) from KernelColorTools.
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color, true) from ThemeColorsTools.
         /// </summary>
         internal static string ConsoleBackColorUsageCodeFixTitle {
             get {
@@ -70,7 +70,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use SetConsoleColor(Color) from KernelColorTools.
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color) from ThemeColorsTools.
         /// </summary>
         internal static string ConsoleForeColorUsageCodeFixTitle {
             get {

@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
@@ -45,7 +45,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
@@ -53,10 +53,10 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             {
                 var Article = RSSShellCommon.RSSFeedInstance?.FeedArticles[ArticleIndex] ??
                     throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE"));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Article.ArticleTitle, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(Article.ArticleTitle, true, ThemeColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 foreach (string Variable in Article.ArticleVariables.Keys)
                 {
                     if (Variable != "title" &&
@@ -65,8 +65,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
                         Variable != "description" &&
                         Variable != "content")
                     {
-                        TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Variable);
-                        TextWriters.Write(Article.ArticleVariables[Variable].InnerText, true, KernelColorType.ListValue);
+                        TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, Variable);
+                        TextWriters.Write(Article.ArticleVariables[Variable].InnerText, true, ThemeColorType.ListValue);
                     }
                 }
                 TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription);

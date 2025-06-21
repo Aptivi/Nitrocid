@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
@@ -68,7 +68,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
             if (!commandList.ContainsKey(command))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", vars: [command]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOHELP"), true, KernelColorType.Error, command);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_NOHELP"), true, ThemeColorType.Error, command);
                 return;
             }
 

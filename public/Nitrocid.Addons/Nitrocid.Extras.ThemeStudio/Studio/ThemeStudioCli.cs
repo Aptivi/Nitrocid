@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -31,24 +31,24 @@ using Textify.General;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
-    internal class ThemeStudioCli : BaseInteractiveTui<KernelColorType>, IInteractiveTui<KernelColorType>
+    internal class ThemeStudioCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        internal Dictionary<KernelColorType, Color> originalColors = [];
+        internal Dictionary<string, Color> originalColors = [];
         internal string themeName = "";
 
         /// <inheritdoc/>
-        public override IEnumerable<KernelColorType> PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             originalColors.Keys;
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(KernelColorType item) =>
+        public override string GetStatusFromItem(string item) =>
             $"{item} [{originalColors[item]}]";
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(KernelColorType item) =>
+        public override string GetEntryFromItem(string item) =>
             $"{item} [{originalColors[item]}]";
 
-        public override string GetInfoFromItem(KernelColorType item)
+        public override string GetInfoFromItem(string item)
         {
             var color = originalColors[item];
             return
@@ -60,10 +60,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 $"{ColorTools.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ColorTools.RenderRevertForeground()}";
         }
 
-        internal void Change(object type)
+        internal void Change(string colorType)
         {
-            // Requested to remove language
-            var colorType = (KernelColorType)type;
+            // Requested to change the color type
             var color = ColorSelector.OpenColorSelector(originalColors[colorType]);
             originalColors[colorType] = color;
         }
@@ -168,9 +167,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             }
         }
 
-        internal void Copy(object type)
+        internal void Copy(string colorType)
         {
-            var colorType = (KernelColorType)type;
             var sourceColor = originalColors[colorType];
 
             // Specify the target...
@@ -179,10 +177,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             if (targetColors.Length == 0)
                 return;
 
-            // FilesystemTools...
+            // Copy the color
             foreach (int idx in targetColors)
             {
-                var targetType = (KernelColorType)idx;
+                var targetType = originalColors.ElementAt(idx).Key;
                 originalColors[targetType] = sourceColor;
             }
         }

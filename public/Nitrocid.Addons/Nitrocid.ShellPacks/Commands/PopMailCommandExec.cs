@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 // using Nitrocid.ShellPacks.Tools;
@@ -34,7 +34,7 @@ namespace Nitrocid.ShellPacks.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Implement on 0.1.1.
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), KernelColorType.Warning);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
             // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;

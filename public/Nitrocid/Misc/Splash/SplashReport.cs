@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base.Buffered;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
@@ -195,10 +195,10 @@ namespace Nitrocid.Misc.Splash
         /// </remarks>
         public static void ReportProgress(string Text, int Progress, bool force = false, Exception? exception = null, SplashReportSeverity severity = SplashReportSeverity.Info, ISplash? splash = null, params object[] Vars)
         {
-            KernelColorType finalColor =
-                severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
-                severity == SplashReportSeverity.Error ? KernelColorType.Error :
-                KernelColorType.Tip;
+            ThemeColorType finalColor =
+                severity == SplashReportSeverity.Warning ? ThemeColorType.Warning :
+                severity == SplashReportSeverity.Error ? ThemeColorType.Error :
+                ThemeColorType.Tip;
             if (!KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && InSplash || !Config.MainConfig.EnableSplash) || force)
             {
                 // Check the progress value

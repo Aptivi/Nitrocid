@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Starting;
 using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Users.Windows;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
@@ -128,7 +128,7 @@ namespace Nitrocid
                             PowerSignalHandlers.DisposeHandlers();
 
                             // Clear the console
-                            KernelColorTools.LoadBackground();
+                            ThemeColorsTools.LoadBackground();
                         }
 
                         // Always switch back to the main environment
@@ -150,14 +150,14 @@ namespace Nitrocid
                 if (Config.MainConfig.SimulateNoAPM)
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_NOAPMSIMULATION"), new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Success)
                     });
             }
             catch (Exception ex)
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_FATALERROR") + $" {ex.Message}", new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             }
             finally
@@ -170,7 +170,7 @@ namespace Nitrocid
                 if (!PowerManager.hardShutdown)
                     ConsoleClearing.ResetAll();
                 else
-                    KernelColorTools.ResetColors();
+                    ThemeColorsTools.ResetColors();
 
                 // Reset cursor state
                 ConsoleWrapper.CursorVisible = true;

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools.Directory;
 using Terminaux.Shell.Commands;
@@ -35,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, KernelColorType.NeutralText);
+            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
             return 0;
         }
     }

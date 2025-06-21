@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Nitrocid.Network;
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(PingedAddress, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(PingedAddress, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                     for (int CurrentTime = 1; CurrentTime <= PingTimes; CurrentTime++)
                     {
                         try
@@ -70,19 +70,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             }
                             else
                             {
-                                TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
+                                TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
                             }
                         }
                         catch (Exception ex)
                         {
-                            TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
+                            TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, ex.Message, CurrentTime);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR"), true, ThemeColorType.Error);
                 }
             }
             return 0;

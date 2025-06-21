@@ -28,7 +28,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Security.Permissions;
@@ -109,7 +109,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNOTFOUND"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNOTFOUND"), true, ThemeColorType.Error);
                         continue;
                     }
 
@@ -122,7 +122,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                     }
                     else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
                     {
@@ -131,7 +131,7 @@ namespace Nitrocid.Users.Login
                         PowerManager.KernelShutdown = false;
                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_POWERUNAUTHORIZED"), new InfoBoxSettings()
                         {
-                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                         });
                     }
                     else
@@ -180,7 +180,7 @@ namespace Nitrocid.Users.Login
                         return true;
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -248,7 +248,7 @@ namespace Nitrocid.Users.Login
         internal static void PromptMaintenanceLogin()
         {
             if (Config.MainConfig.EnableSplash)
-                KernelColorTools.LoadBackground();
+                ThemeColorsTools.LoadBackground();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE"));
             string user = "root";
             if (UserManagement.UserExists(user))
@@ -260,11 +260,11 @@ namespace Nitrocid.Users.Login
                         SignIn(user);
                     else
                     {
-                        KernelColorTools.LoadBackground();
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_INCORRECT"), 3 - (tries + 1), true, KernelColorType.Error);
+                        ThemeColorsTools.LoadBackground();
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_INCORRECT"), 3 - (tries + 1), true, ThemeColorType.Error);
                         if (tries == 2)
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_OUTOFCHANCES"), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_OUTOFCHANCES"), true, ThemeColorType.Error);
                             PowerManager.PowerManage(PowerMode.Reboot);
                         }
                     }

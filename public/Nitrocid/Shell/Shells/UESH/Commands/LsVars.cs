@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
@@ -37,8 +37,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             foreach (string VarName in MESHVariables.Variables.Keys)
             {
-                TextWriters.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(MESHVariables.Variables[VarName], true, KernelColorType.ListValue);
+                TextWriters.Write($"- {VarName}: ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(MESHVariables.Variables[VarName], true, ThemeColorType.ListValue);
             }
             return 0;
         }

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
@@ -38,12 +38,12 @@ namespace Nitrocid.Extras.Images.Commands
             string path = parameters.ArgumentsList[0];
             if (string.IsNullOrEmpty(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_PATHNEEDED"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_PATHNEEDED"), ThemeColorType.Error);
                 return 39;
             }
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_IMAGENOTFOUND"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_IMAGENOTFOUND"), ThemeColorType.Error);
                 return 39;
             }
 

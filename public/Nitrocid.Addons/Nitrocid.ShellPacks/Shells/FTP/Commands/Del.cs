@@ -23,7 +23,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
             string answer = ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM").FormatString(parameters.ArgumentsList[0]), [("y", "Yes"), ("n", "No")]);
@@ -58,7 +58,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

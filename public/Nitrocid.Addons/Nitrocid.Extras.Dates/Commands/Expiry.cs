@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Dates.Tools;
 using Nitrocid.Languages;
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 // Parse the production date
                 if (!DateTimeOffset.TryParse(parameters.ArgumentsList[0], out var production))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), ThemeColorType.Error);
                     return 45;
                 }
 
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 {
                     if (!TimeSpan.TryParse(parameters.ArgumentsList[1], out expirySpan))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), ThemeColorType.Error);
                         return 45;
                     }
                 }
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Dates.Commands
                     expirySpan = expiryDate - production;
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID"), ThemeColorType.Error);
                     return 45;
                 }
 
@@ -83,18 +83,18 @@ namespace Nitrocid.Extras.Dates.Commands
                     productHealth <= 25 ? "Poor" :
                     productHealth <= 50 ? "Average" :
                     productHealth <= 75 ? "Good" : "Excellent";
-                KernelColorType statusColor =
-                    productHealth == -1 ? KernelColorType.ListValue :
-                    productHealth == 0 ? KernelColorType.Error :
-                    productHealth <= 25 ? KernelColorType.Error :
-                    productHealth <= 50 ? KernelColorType.Warning : KernelColorType.Success;
+                ThemeColorType statusColor =
+                    productHealth == -1 ? ThemeColorType.ListValue :
+                    productHealth == 0 ? ThemeColorType.Error :
+                    productHealth <= 25 ? ThemeColorType.Error :
+                    productHealth <= 50 ? ThemeColorType.Warning : ThemeColorType.Success;
                 TextWriterRaw.Write();
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS"), status, KernelColorType.ListEntry, statusColor);
+                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS"), status, ThemeColorType.ListEntry, statusColor);
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO") + $": {ex.Message}", ThemeColorType.Error);
                 return 45;
             }
         }

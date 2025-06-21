@@ -23,7 +23,7 @@ using System.Linq;
 using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 MinLine = start,
                 MaxLine = end,
             });
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE") + $" {Path.GetFileName(file)}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE") + $" {Path.GetFileName(file)}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
             foreach (var hunk in blameHunks)
             {
                 int lines = hunk.LineCount;
@@ -66,41 +66,41 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 var finalCommit = hunk.FinalCommit;
 
                 // Display some info about the blame hunk
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM") + $" {hunkNum}/{blameHunks.Count()}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{lines}", true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialStart}", true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalStart}", true, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM") + $" {hunkNum}/{blameHunks.Count()}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{lines}", true, ThemeColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialStart}", true, ThemeColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalStart}", true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Initial commit info
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE"), true, KernelColorType.ListEntry);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialCommit.Sha}", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialCommit.MessageShort}", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialCommit.Author.Name} <{initialCommit.Author.Email}>", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialCommit.Committer.Name} <{initialCommit.Committer.Email}>", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{initialCommit.Parents.Count()}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE"), true, ThemeColorType.ListEntry);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Sha}", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.MessageShort}", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Author.Name} <{initialCommit.Author.Email}>", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Committer.Name} <{initialCommit.Committer.Email}>", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Parents.Count()}", true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Final commit info
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE"), true, KernelColorType.ListEntry);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalCommit.Sha}", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalCommit.MessageShort}", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalCommit.Author.Name} <{finalCommit.Author.Email}>", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalCommit.Committer.Name} <{finalCommit.Committer.Email}>", true, KernelColorType.ListValue);
-                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{finalCommit.Parents.Count()}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE"), true, ThemeColorType.ListEntry);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Sha}", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.MessageShort}", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Author.Name} <{finalCommit.Author.Email}>", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Committer.Name} <{finalCommit.Committer.Email}>", true, ThemeColorType.ListValue);
+                TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Parents.Count()}", true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Increment the hunk number for display

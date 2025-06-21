@@ -20,7 +20,7 @@
 using System;
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
@@ -94,16 +94,16 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             var rendered = new StringBuilder();
             var finalColor =
-                ProgressErrored ? KernelColorTools.GetColor(KernelColorType.Error) :
-                ProgressWarning ? KernelColorTools.GetColor(KernelColorType.Warning) :
-                KernelColorTools.GetColor(KernelColorType.Progress);
+                ProgressErrored ? ThemeColorsTools.GetColor(ThemeColorType.Error) :
+                ProgressWarning ? ThemeColorsTools.GetColor(ThemeColorType.Warning) :
+                ThemeColorsTools.GetColor(ThemeColorType.Progress);
             string indicator =
                 ProgressErrored ? "[X] " :
                 ProgressWarning ? "[!] " :
                 "    ";
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             rendered.Append(
-                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
+                ThemeColorsTools.GetColor(ThemeColorType.Progress).VTSequenceForeground +
                 TextWriterWhereColor.RenderWhere("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
                 finalColor.VTSequenceForeground +
                 TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, Vars) +

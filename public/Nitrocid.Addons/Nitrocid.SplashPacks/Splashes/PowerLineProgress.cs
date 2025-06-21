@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
@@ -117,13 +117,13 @@ namespace Nitrocid.SplashPacks.Splashes
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
             builder.Append(
-                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
-                TextWriterWhereColor.RenderWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
+                ThemeColorsTools.GetColor(ThemeColorType.Progress).VTSequenceForeground +
+                TextWriterWhereColor.RenderWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, ThemeColorType.Progress, Vars) +
                 ConsoleClearing.GetClearLineToRightSequence()
             );
 
@@ -131,13 +131,13 @@ namespace Nitrocid.SplashPacks.Splashes
             Color progressColor =
                 ColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) ?
                 SplashPackInit.SplashConfig.PowerLineProgressProgressColor :
-                KernelColorTools.GetColor(KernelColorType.Progress);
+                ThemeColorsTools.GetColor(ThemeColorType.Progress);
             var progress = new SimpleProgress(Progress, 100)
             {
                 Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = progressColor,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
-                ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
+                ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
             };
             builder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
             return builder.ToString();

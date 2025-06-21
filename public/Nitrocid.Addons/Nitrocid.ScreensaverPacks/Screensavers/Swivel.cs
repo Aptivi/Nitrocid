@@ -28,7 +28,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -50,7 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             posIdxVertical = 0;
             posIdxHorizontal = 0;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Make an initial color storage
             int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TrailsMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TrailsMaximumRedColorLevel);

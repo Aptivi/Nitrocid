@@ -34,7 +34,7 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
@@ -137,19 +137,19 @@ namespace Nitrocid.Misc.Notifications
 
                             // Set the border color
                             DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", vars: [NewNotification.Priority]);
-                            var NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
-                            var NotifyTitleColor = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
-                            var NotifyDescColor = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
-                            var NotifyProgressColor = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
-                            var NotifyProgressFailureColor = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
-                            var NotifyProgressSuccessColor = KernelColorTools.GetColor(KernelColorType.Success);
+                            var NotifyBorderColor = ThemeColorsTools.GetColor("LowPriorityBorderColor");
+                            var NotifyTitleColor = ThemeColorsTools.GetColor("NotificationTitleColor");
+                            var NotifyDescColor = ThemeColorsTools.GetColor("NotificationDescriptionColor");
+                            var NotifyProgressColor = ThemeColorsTools.GetColor("NotificationProgressColor");
+                            var NotifyProgressFailureColor = ThemeColorsTools.GetColor("NotificationFailureColor");
+                            var NotifyProgressSuccessColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                             switch (NewNotification.Priority)
                             {
                                 case NotificationPriority.Medium:
-                                    NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder);
+                                    NotifyBorderColor = ThemeColorsTools.GetColor("MediumPriorityBorderColor");
                                     break;
                                 case NotificationPriority.High:
-                                    NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.HighPriorityBorder);
+                                    NotifyBorderColor = ThemeColorsTools.GetColor("HighPriorityBorderColor");
                                     break;
                                 case NotificationPriority.Custom:
                                     NotifyBorderColor = NewNotification.CustomColor;
@@ -178,8 +178,8 @@ namespace Nitrocid.Misc.Notifications
 
                             // Make a string builder for our buffer
                             var printBuffer = new StringBuilder();
-                            var textColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                            var background = KernelColorTools.GetColor(KernelColorType.Background);
+                            var textColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                            var background = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
                             // Return to the original position
                             (int x, int y) = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);

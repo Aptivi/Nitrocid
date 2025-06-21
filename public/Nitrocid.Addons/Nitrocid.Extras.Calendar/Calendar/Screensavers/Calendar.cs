@@ -27,7 +27,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
 {
@@ -66,10 +66,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
                 var cultures = CultureManager.GetCulturesDictionary();
                 var calendar = new FullCalendar()
                 {
-                    HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
-                    TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
-                    WeekendColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                    HeaderColor = ThemeColorsTools.GetColor(ThemeColorType.TuiForeground),
+                    TodayColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay),
+                    WeekendColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay),
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                     Year = TimeDateTools.KernelDateTime.Year,
                     Month = TimeDateTools.KernelDateTime.Month,
                     Left = ConsoleWrapper.WindowWidth / 2 - FullCalendar.calendarWidth / 2,

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Exceptions;
@@ -44,12 +44,12 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             }
             catch (KernelException kex)
             {
-                TextWriters.Write(kex.Message, KernelColorType.Error);
+                TextWriters.Write(kex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_REMOVEITEMFAILED") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_REMOVEITEMFAILED") + $" {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;

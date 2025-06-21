@@ -29,7 +29,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 
@@ -64,9 +64,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             if (ShellsInit.ShellsConfig.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
-                    TextWriters.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
+                    TextWriters.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, ThemeColorType.Banner);
                 else if (clientFTP.FileExists(".message"))
-                    TextWriters.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
+                    TextWriters.Write(FTPTransfer.FTPDownloadToString(".message"), true, ThemeColorType.Banner);
             }
 
             // Prepare to print current FTP directory

@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using System;
@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (!Guid.TryParse(sessionGuidStr, out Guid sessionGuid))
             {
                 // There is invalid session GUID being requested
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID") + $" {sessionGuidStr}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (string.IsNullOrEmpty(finalDebug))
             {
                 // There is no such session GUID being requested
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID") + $" {sessionGuidStr}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 

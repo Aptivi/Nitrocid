@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -82,7 +82,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
@@ -101,7 +101,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
@@ -111,7 +111,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         {
             string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEPROMPT"), new InfoBoxSettings()
             {
-                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
             });
             Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
@@ -120,13 +120,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
             else
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CANTOVERWRITE"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
         }
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), ThemeColorsTools.GetColor(ThemeColorType.Question));
             Location = FilesystemTools.NeutralizePath(Location);
             if (FilesystemTools.FileExists(Location))
             {
@@ -141,7 +141,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     });
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
@@ -149,7 +149,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             else
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_FILENOTFOUND"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
         }
 
@@ -291,7 +291,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     $"{message}\n\n" +
                     $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION")}", new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     }
                 );
             }
@@ -306,7 +306,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     $"  - {ex.Message}\n\n" +
                     $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP")}", new InfoBoxSettings()
                     {
-                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                     }
                 );
             }

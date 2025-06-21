@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Terminaux.Shell.Commands;
@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
             }
             Entries.Sort();
             foreach (string Entry in Entries)
-                TextWriters.Write(Entry, true, KernelColorType.ListEntry);
+                TextWriters.Write(Entry, true, ThemeColorType.ListEntry);
             return 0;
         }
 

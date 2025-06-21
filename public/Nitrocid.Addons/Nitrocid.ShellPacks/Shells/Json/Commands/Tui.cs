@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Files;
@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
         {
             if (JsonShellCommon.FileStream is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), ThemeColorType.Error);
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;

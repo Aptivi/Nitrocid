@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
@@ -119,7 +119,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Can't show time of day with {nameof(ShowCurrentTimes)}(): {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TIMESHOWFAILED") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TIMESHOWFAILED") + $" {ex.Message}", ThemeColorType.Error);
             }
         }
     }

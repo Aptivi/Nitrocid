@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Terminaux.Shell.Commands;
@@ -39,10 +39,10 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             foreach (var line in logLines)
             {
                 var finalColor =
-                    line.Severity == SplashReportSeverity.Error ? KernelColorType.Error :
-                    line.Severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
-                    KernelColorType.NeutralText;
-                TextWriters.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, KernelColorType.ListEntry);
+                    line.Severity == SplashReportSeverity.Error ? ThemeColorType.Error :
+                    line.Severity == SplashReportSeverity.Warning ? ThemeColorType.Warning :
+                    ThemeColorType.NeutralText;
+                TextWriters.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, ThemeColorType.ListEntry);
                 TextWriters.Write(line.RenderedMessage, true, finalColor);
             }
             return 0;

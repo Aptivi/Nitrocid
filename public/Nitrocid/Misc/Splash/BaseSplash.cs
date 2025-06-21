@@ -20,7 +20,7 @@
 using System;
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
@@ -49,7 +49,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiCursorPosition(1, 1) +
                 CsiSequences.GenerateCsiEraseInDisplay(0)
@@ -76,7 +76,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiCursorPosition(1, 1) +
                 CsiSequences.GenerateCsiEraseInDisplay(0)

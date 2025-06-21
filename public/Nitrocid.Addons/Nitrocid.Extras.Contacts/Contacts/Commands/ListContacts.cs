@@ -21,7 +21,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Exceptions;
 using VisualCard.Parts.Implementations;
 using System.Text;
@@ -48,13 +48,13 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                         finalNameRendered.Append(contact.GetString(CardStringsEnum.FullName)[0].Value);
                     else
                         finalNameRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME"));
-                    TextWriters.Write(finalNameRendered.ToString(), KernelColorType.NeutralText);
+                    TextWriters.Write(finalNameRendered.ToString(), ThemeColorType.NeutralText);
                 }
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

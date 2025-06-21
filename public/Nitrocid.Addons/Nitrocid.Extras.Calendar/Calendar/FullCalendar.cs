@@ -30,7 +30,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -278,7 +278,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                          (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                     {
-                        foreground = IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) : KernelColorTools.GetColor(KernelColorType.EventDay);
+                        foreground = IsToday ? ThemeColorsTools.GetColor(ThemeColorType.TodayDay) : ThemeColorsTools.GetColor(ThemeColorType.EventDay);
                         EventMarked = true;
                     }
                 }

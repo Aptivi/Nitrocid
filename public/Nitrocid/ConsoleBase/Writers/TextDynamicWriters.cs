@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Debugging;
 using System;
 using System.Threading;
@@ -39,14 +39,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ThemeColorType colorType, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorType);
+                    ThemeColorsTools.SetConsoleColorDry(colorType);
 
                     // Write text slowly
                     TextWriterSlowColor.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -68,15 +68,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
-                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
+                    ThemeColorsTools.SetConsoleColorDry(colorTypeForeground);
+                    ThemeColorsTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write text slowly
                     TextWriterSlowColor.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -99,7 +99,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorType, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType colorType, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, 0, colorType, vars);
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorType, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType colorType, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, colorType, vars);
 
         /// <summary>
@@ -128,14 +128,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="RightMargin">The right margin</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType colorType, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorType);
+                    ThemeColorsTools.SetConsoleColorDry(colorType);
 
                     // Write text in another place slowly
                     TextWriterWhereSlowColor.WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -159,7 +159,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, false, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -190,15 +190,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
-                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
+                    ThemeColorsTools.SetConsoleColorDry(colorTypeForeground);
+                    ThemeColorsTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write text in another place slowly
                     TextWriterWhereSlowColor.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -218,13 +218,13 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
+        public static void WriteWrapped(string Text, bool Line, ThemeColorType colorType, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
-                    var foreground = KernelColorTools.GetColor(colorType);
+                    var foreground = ThemeColorsTools.GetColor(colorType);
                     WrappedWriter.WriteWrapped(Text, Line, foreground, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -243,14 +243,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteWrapped(string Text, bool Line, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
-                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
-                    var background = KernelColorTools.GetColor(colorTypeBackground);
+                    var foreground = ThemeColorsTools.GetColor(colorTypeForeground);
+                    var background = ThemeColorsTools.GetColor(colorTypeBackground);
                     WrappedWriter.WriteWrapped(Text, Line, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Starting
@@ -98,7 +98,7 @@ namespace Nitrocid.Kernel.Starting
                 if (!Config.MainConfig.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterRaw.Write();
-                    SeparatorWriterColor.WriteSeparatorColor(StageText, KernelColorTools.GetColor(KernelColorType.Stage));
+                    SeparatorWriterColor.WriteSeparatorColor(StageText, ThemeColorsTools.GetColor(ThemeColorType.Stage));
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }

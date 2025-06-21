@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -46,22 +46,22 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED"), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED"), true, ThemeColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_WAITING"), true, KernelColorType.Progress);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_WAITING"), true, ThemeColorType.Progress);
                     if (waitForUnlockTimed)
                         FilesystemTools.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         FilesystemTools.WaitForLockReleaseIndefinite(path);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, ThemeColorType.Success);
             return 0;
         }
     }

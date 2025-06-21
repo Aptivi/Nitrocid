@@ -24,7 +24,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Drivers;
 using System;
 using Terminaux.Writer.ConsoleWriters;
@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -91,18 +91,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             if (DriverHandler.IsRegistered(typeTerm, driverValue))
                                 DriverHandler.SetDriverSafe(typeTerm, driverValue);
                             else
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND"), true, ThemeColorType.Error);
                             break;
                         }
                     case "list":
                         {
-                            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERSFOR") + $" {typeTerm}", KernelColorTools.GetColor(KernelColorType.Separator));
+                            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERSFOR") + $" {typeTerm}", ThemeColorsTools.GetColor(ThemeColorType.Separator));
                             foreach (var driver in DriverHandler.GetDrivers(typeTerm))
                             {
                                 if (!driver.DriverInternal)
                                 {
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME") + ": ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(driver.DriverName, true, KernelColorType.ListValue);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME") + ": ", false, ThemeColorType.ListEntry);
+                                    TextWriters.Write(driver.DriverName, true, ThemeColorType.ListValue);
                                 }
                             }
                             break;
@@ -112,17 +112,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             var types = DriverHandler.knownTypes;
                             foreach (var type in types)
                             {
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME") + ": ", false, KernelColorType.ListEntry);
-                                TextWriters.Write($"{type.Key.Name} [{type.Key.FullName}]", true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPE") + ": ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(type.Value.ToString(), true, KernelColorType.ListValue);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME") + ": ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write($"{type.Key.Name} [{type.Key.FullName}]", true, ThemeColorType.ListValue);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPE") + ": ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write(type.Value.ToString(), true, ThemeColorType.ListValue);
                             }
                             break;
                         }
 
                     default:
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandDriver);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, CommandDriver);
                             HelpPrint.ShowHelp("driverman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
                         }
@@ -130,7 +130,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_SAFEMODE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_SAFEMODE"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
             }
             return 0;

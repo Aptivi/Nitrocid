@@ -27,7 +27,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Mods.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -83,13 +83,13 @@ namespace Nitrocid.Extras.Mods.Commands
                                 TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
                                 if (!(FilesystemTools.TryParsePath(TargetModPath) && FilesystemTools.FileExists(TargetModPath)))
                                 {
-                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, KernelColorType.Error);
+                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, ThemeColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                                 }
                             }
                             else
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED"), true, KernelColorType.Error);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED"), true, ThemeColorType.Error);
                                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                             }
 
@@ -124,15 +124,15 @@ namespace Nitrocid.Extras.Mods.Commands
                             {
                                 if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
-                                    SeparatorWriterColor.WriteSeparatorColor(script, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(ModManager.Mods[script].ModFileName, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
+                                    SeparatorWriterColor.WriteSeparatorColor(script, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, ThemeColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModName, true, ThemeColorType.ListValue);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, ThemeColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModFileName, true, ThemeColorType.ListValue);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, ThemeColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModFilePath, true, ThemeColorType.ListValue);
+                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, ThemeColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModVersion, true, ThemeColorType.ListValue);
                                 }
                             }
 
@@ -157,15 +157,15 @@ namespace Nitrocid.Extras.Mods.Commands
                         {
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
-                                SeparatorWriterColor.WriteSeparatorColor(Mod, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(ModManager.Mods[Mod].ModFileName, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
+                                SeparatorWriterColor.WriteSeparatorColor(Mod, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNAME") + " ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModName, true, ThemeColorType.ListValue);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENAME") + " ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModFileName, true, ThemeColorType.ListValue);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILEPATH") + " ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModFilePath, true, ThemeColorType.ListValue);
+                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODVER") + " ", false, ThemeColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModVersion, true, ThemeColorType.ListValue);
                             }
 
                             break;
@@ -206,7 +206,7 @@ namespace Nitrocid.Extras.Mods.Commands
 
                     default:
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND"), true, KernelColorType.Error, CommandMode);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND"), true, ThemeColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("modman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
                         }
@@ -214,7 +214,7 @@ namespace Nitrocid.Extras.Mods.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_SAFEMODE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_SAFEMODE"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
             }
             return 0;

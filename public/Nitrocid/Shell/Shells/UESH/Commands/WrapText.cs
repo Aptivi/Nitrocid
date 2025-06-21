@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
                 if (!int.TryParse(parsedColumns, out columns))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID"), true, ThemeColorType.Error);
                     return 20;
                 }
             }

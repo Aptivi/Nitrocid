@@ -45,9 +45,6 @@
     <None Include="TestData\TestJson.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestData\Hacker.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="TestData\ScriptValid.uesh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -61,7 +58,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250621121131" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250621201555" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,10 +67,6 @@
       <Name>Nitrocid</Name>
     </ProjectReference>
   </ItemGroup>
-  
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Copy SourceFiles="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
-  </Target>
   
   <!--
       WARNING: Make sure that you put new addons into the project dependencies of N.Tests in the solution itself!

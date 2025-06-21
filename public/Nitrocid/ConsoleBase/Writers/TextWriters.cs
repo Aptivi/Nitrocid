@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using System;
@@ -28,7 +28,7 @@ using Terminaux.Writer.CyclicWriters.Simple;
 namespace Nitrocid.ConsoleBase.Writers
 {
     /// <summary>
-    /// Text writer wrapper for writing with <see cref="KernelColorType"/> (<see cref="Terminaux.Writer.ConsoleWriters"/>)
+    /// Text writer wrapper for writing with <see cref="ThemeColorType"/> (<see cref="Terminaux.Writer.ConsoleWriters"/>)
     /// </summary>
     public static class TextWriters
     {
@@ -40,8 +40,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="indent">Indentation level</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue, int indent = 0) =>
-            ListEntryWriterColor.WriteListEntry(entry, value, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), indent);
+        public static void WriteListEntry(string entry, string value, ThemeColorType ListKeyColor = ThemeColorType.ListEntry, ThemeColorType ListValueColor = ThemeColorType.ListValue, int indent = 0) =>
+            ListEntryWriterColor.WriteListEntry(entry, value, ThemeColorsTools.GetColor(ListKeyColor), ThemeColorsTools.GetColor(ListValueColor), indent);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -49,14 +49,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue)
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, ThemeColorType ListKeyColor = ThemeColorType.ListEntry, ThemeColorType ListValueColor = ThemeColorType.ListValue)
             where TKey : notnull
         {
             var listing = new Listing()
             {
                 Objects = List,
-                KeyColor = KernelColorTools.GetColor(ListKeyColor),
-                ValueColor = KernelColorTools.GetColor(ListValueColor),
+                KeyColor = ThemeColorsTools.GetColor(ListKeyColor),
+                ValueColor = ThemeColorsTools.GetColor(ListValueColor),
             };
             TextWriterRaw.WriteRaw(listing.Render());
         }
@@ -67,13 +67,13 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor = KernelColorType.ListEntry, KernelColorType ListValueColor = KernelColorType.ListValue)
+        public static void WriteList<T>(IEnumerable<T> List, ThemeColorType ListKeyColor = ThemeColorType.ListEntry, ThemeColorType ListValueColor = ThemeColorType.ListValue)
         {
             var listing = new Listing()
             {
                 Objects = List,
-                KeyColor = KernelColorTools.GetColor(ListKeyColor),
-                ValueColor = KernelColorTools.GetColor(ListValueColor),
+                KeyColor = ThemeColorsTools.GetColor(ListKeyColor),
+                ValueColor = ThemeColorsTools.GetColor(ListValueColor),
             };
             TextWriterRaw.WriteRaw(listing.Render());
         }
@@ -84,7 +84,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, KernelColorType colorType, params object[] vars) =>
+        public static void Write(string Text, ThemeColorType colorType, params object[] vars) =>
             Write(Text, true, false, colorType, vars);
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, KernelColorType colorType, params object[] vars) =>
+        public static void Write(string Text, bool Line, ThemeColorType colorType, params object[] vars) =>
             Write(Text, Line, false, colorType, vars);
 
         /// <summary>
@@ -105,15 +105,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, ThemeColorType colorType, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Get the colors
-                    var foreground = KernelColorTools.GetColor(colorType);
-                    var background = KernelColorTools.GetColor(KernelColorType.Background);
+                    var foreground = ThemeColorsTools.GetColor(colorType);
+                    var background = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
                     // Write the text to console
                     if (Highlight)
@@ -136,7 +136,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void Write(string Text, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             Write(Text, true, false, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void Write(string Text, bool Line, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             Write(Text, Line, false, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -159,15 +159,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void Write(string Text, bool Line, bool Highlight, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Get the colors
-                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
-                    var background = KernelColorTools.GetColor(colorTypeBackground);
+                    var foreground = ThemeColorsTools.GetColor(colorTypeForeground);
+                    var background = ThemeColorsTools.GetColor(colorTypeBackground);
 
                     // Write the text to console
                     if (Highlight)
@@ -191,7 +191,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Row number in console</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, KernelColorType colorType, params object[] vars) =>
+        public static void WriteWhere(string msg, int Left, int Top, ThemeColorType colorType, params object[] vars) =>
             WriteWhere(msg, Left, Top, false, 0, colorType, vars);
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, KernelColorType colorType, params object[] vars) =>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ThemeColorType colorType, params object[] vars) =>
             WriteWhere(msg, Left, Top, Return, 0, colorType, vars);
 
         /// <summary>
@@ -216,15 +216,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="RightMargin">The right margin</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ThemeColorType colorType, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Get the colors
-                    var foreground = KernelColorTools.GetColor(colorType);
-                    var background = KernelColorTools.GetColor(KernelColorType.Background);
+                    var foreground = ThemeColorsTools.GetColor(colorType);
+                    var background = ThemeColorsTools.GetColor(ThemeColorType.Background);
 
                     // Write the text to console
                     TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);
@@ -246,7 +246,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void WriteWhere(string msg, int Left, int Top, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             WriteWhere(msg, Left, Top, false, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars) =>
             WriteWhere(msg, Left, Top, Return, 0, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
@@ -273,15 +273,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, ThemeColorType colorTypeForeground, ThemeColorType colorTypeBackground, params object[] vars)
         {
             lock (ConsoleTools.WriteLock)
             {
                 try
                 {
                     // Get the colors
-                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
-                    var background = KernelColorTools.GetColor(colorTypeBackground);
+                    var foreground = ThemeColorsTools.GetColor(colorTypeForeground);
+                    var background = ThemeColorsTools.GetColor(colorTypeBackground);
 
                     // Write the text to console
                     TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);

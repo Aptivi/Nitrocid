@@ -28,7 +28,7 @@ using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
 
             // Variables
             var Direction = Enum.Parse<BallDirection>(RandomDriver.Random(3).ToString());
@@ -130,7 +130,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         "     |     " +
                         LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE") + $": {p2Score,3}",
                     Top = 1,
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle
@@ -355,7 +355,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset console display and screen
             ScreenTools.UnsetCurrent(screen);
-            KernelColorTools.LoadBackground();
+            ThemeColorsTools.LoadBackground();
             ConsoleResizeHandler.WasResized();
         }
 

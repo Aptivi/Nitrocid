@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
@@ -54,7 +54,7 @@ namespace Nitrocid.SplashPacks.Settings
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
-        public string ProgressProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string ProgressProgressColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress).PlainSequence;
         /// <summary>
         /// [Progress] The progress text location
         /// </summary>
@@ -62,7 +62,7 @@ namespace Nitrocid.SplashPacks.Settings
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
-        public string PowerLineProgressProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string PowerLineProgressProgressColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress).PlainSequence;
         /// <summary>
         /// [PowerLineProgress] The progress text location
         /// </summary>

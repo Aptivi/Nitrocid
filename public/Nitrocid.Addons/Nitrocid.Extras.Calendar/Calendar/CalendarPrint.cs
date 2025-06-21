@@ -24,7 +24,7 @@ using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.ConsoleBase.Writers;
@@ -84,8 +84,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             }
 
             // Populate the calendar data
-            KernelColorTools.LoadBackground();
-            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, KernelColorType.TableTitle);
+            ThemeColorsTools.LoadBackground();
+            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, ThemeColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);
@@ -105,8 +105,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var WeekendOptions = new CellOptions(currentDay, CurrentWeek)
                     {
                         ColoredCell = true,
-                        CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
-                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
+                        CellColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay),
+                        CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background)
                     };
                     CalendarCellOptions.Add(WeekendOptions);
                 }
@@ -117,8 +117,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var TodayOptions = new CellOptions(currentDay, CurrentWeek)
                     {
                         ColoredCell = true,
-                        CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
-                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
+                        CellColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay),
+                        CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background)
                     };
                     CalendarCellOptions.Add(TodayOptions);
                 }
@@ -150,8 +150,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         var EventCell = new CellOptions(currentDay, CurrentWeek)
                         {
                             ColoredCell = true,
-                            CellColor = KernelColorTools.GetColor(KernelColorType.EventDay),
-                            CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
+                            CellColor = ThemeColorsTools.GetColor(ThemeColorType.EventDay),
+                            CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background)
                         };
                         CalendarCellOptions.Add(EventCell);
                         EventMarked = true;

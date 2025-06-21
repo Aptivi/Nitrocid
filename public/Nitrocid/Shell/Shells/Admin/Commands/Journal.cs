@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Check to see if invalid number is provided
                 if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Journaling);
                 }
                 var entries = JournalManager.GetJournalEntries(sessionNum);

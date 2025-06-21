@@ -23,7 +23,7 @@ using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 using Terminaux.Base.Extensions;
 
@@ -74,8 +74,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             var foundArticles = RSSShellTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);
+                TextWriters.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

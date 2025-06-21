@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Languages;
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Amusements.Commands
                                 [
                                     LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1") + " " +
                                     LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2") + " \n\n" +
-                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground +
                                     "< " + LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3") + " >\n\n" +
                                     "-- Aptivi"
                                 ]

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Languages;
@@ -50,7 +50,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             string finalRenderedSection = "-- " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_BOOTENTRY") + " --";
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, KernelColorTools.GetColor(KernelColorType.SeparatorText))
+                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, ThemeColorsTools.GetColor(ThemeColorType.SeparatorText))
             );
 
             // Now, render a box
@@ -60,14 +60,14 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 Top = 3,
                 Width = ConsoleWrapper.WindowWidth - 6,
                 Height = ConsoleWrapper.WindowHeight - 8,
-                Color = KernelColorTools.GetColor(KernelColorType.Separator)
+                Color = ThemeColorsTools.GetColor(ThemeColorType.Separator)
             };
             builder.Append(border.Render());
 
             // Offer help for new users
             string help = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_HELPTIP") + $" {KernelMain.Version}";
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.NeutralText))
+                TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, ThemeColorsTools.GetColor(ThemeColorType.NeutralText))
             );
             return builder.ToString();
         }
@@ -93,8 +93,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 Width = ConsoleWrapper.WindowWidth - 6,
                 Settings = new()
                 {
-                    OptionColor = KernelColorTools.GetColor(KernelColorType.Option),
-                    SelectedOptionColor = KernelColorTools.GetColor(KernelColorType.SelectedOption),
+                    OptionColor = ThemeColorsTools.GetColor(ThemeColorType.Option),
+                    SelectedOptionColor = ThemeColorsTools.GetColor(ThemeColorType.SelectedOption),
                 }
             };
             builder.Append(selections.Render());
@@ -103,7 +103,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             string renderedNumber = $"[{chosenBootEntry + 1}/{bootApps.Count}]═[{currentPage + 1}/{pages}]";
             (int, int) lowerRightCornerToWrite = (ConsoleWrapper.WindowWidth - renderedNumber.Length - 3, ConsoleWrapper.WindowHeight - 4);
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(renderedNumber, lowerRightCornerToWrite.Item1, lowerRightCornerToWrite.Item2, KernelColorTools.GetColor(KernelColorType.Separator))
+                TextWriterWhereColor.RenderWhereColor(renderedNumber, lowerRightCornerToWrite.Item1, lowerRightCornerToWrite.Item2, ThemeColorsTools.GetColor(ThemeColorType.Separator))
             );
             return builder.ToString();
         }
@@ -128,7 +128,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 Top = borderY,
                 Width = maxWidth,
                 Height = maxHeight,
-                Color = KernelColorTools.GetColor(KernelColorType.Separator)
+                Color = ThemeColorsTools.GetColor(ThemeColorType.Separator)
             };
             return border.Render();
         }
@@ -139,13 +139,13 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
 
         /// <inheritdoc/>
         public virtual string RenderSelectTimeout(int timeout) =>
-            TextWriterWhereColor.RenderWhereColor($"{timeout} ", 2, ConsoleWrapper.WindowHeight - 2, true,KernelColorTools.GetColor(KernelColorType.NeutralText));
+            TextWriterWhereColor.RenderWhereColor($"{timeout} ", 2, ConsoleWrapper.WindowHeight - 2, true,ThemeColorsTools.GetColor(ThemeColorType.NeutralText));
 
         /// <inheritdoc/>
         public virtual string ClearSelectTimeout()
         {
             string spaces = new(' ', Config.MainConfig.BootSelectTimeoutSeconds.GetDigits());
-            return TextWriterWhereColor.RenderWhereColor(spaces, 2, ConsoleWrapper.WindowHeight - 2, true, KernelColorTools.GetColor(KernelColorType.NeutralText));
+            return TextWriterWhereColor.RenderWhereColor(spaces, 2, ConsoleWrapper.WindowHeight - 2, true, ThemeColorsTools.GetColor(ThemeColorType.NeutralText));
         }
     }
 }

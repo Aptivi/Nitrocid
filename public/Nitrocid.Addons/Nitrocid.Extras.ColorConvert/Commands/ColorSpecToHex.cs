@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Shell.Commands;
 using Terminaux.Colors;
@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         {
             // Do the job
             var color = new Color(parameters.ArgumentsList[0]).ToString();
-            TextWriters.Write(color, KernelColorType.NeutralText);
+            TextWriters.Write(color, ThemeColorType.NeutralText);
             variableValue = color;
             return 0;
         }

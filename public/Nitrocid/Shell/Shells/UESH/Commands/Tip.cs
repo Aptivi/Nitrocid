@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             string tip = WelcomeMessage.GetRandomTip();
             TextWriters.Write(
-                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + tip, true, KernelColorType.Tip);
+                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + tip, true, ThemeColorType.Tip);
             return 0;
         }
 

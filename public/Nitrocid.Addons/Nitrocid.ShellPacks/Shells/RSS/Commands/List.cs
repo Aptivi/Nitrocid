@@ -18,7 +18,7 @@
 //
 
 using Nettify.Rss.Instance;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
@@ -40,8 +40,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);
+                TextWriters.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

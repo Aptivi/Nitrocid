@@ -19,7 +19,7 @@
 
 using ChemiStar;
 using ChemiStar.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 // This is an atomic number.
                 if (!PeriodicTableParser.IsSubstanceRegistered(atomicNumber, out substance))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM") + $" {atomicNumber}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM") + $" {atomicNumber}", ThemeColorType.Error);
                     return 44;
                 }
             }
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 if (!PeriodicTableParser.IsSubstanceRegistered(representation, out substance) &&
                     !PeriodicTableParser.IsSubstanceRegisteredName(representation, out substance))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME") + $" {representation}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME") + $" {representation}", ThemeColorType.Error);
                     return 44;
                 }
             }

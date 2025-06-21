@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
@@ -44,11 +44,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 ExtensionHandler? handler = ExtensionHandlerTools.GetExtensionHandler(handlers.ElementAt(i).Key, handlers.ElementAt(i).Value);
                 if (handler is null)
                     continue;
-                SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Count}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(handler.Extension, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Count}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(handler.Extension, ThemeColorType.ListValue);
+                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
+                TextWriters.Write(handler.Implementer, ThemeColorType.ListValue);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Value))}]";
             return 0;

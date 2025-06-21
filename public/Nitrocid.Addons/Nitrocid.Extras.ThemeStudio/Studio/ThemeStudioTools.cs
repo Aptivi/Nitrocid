@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Themes;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors.Themes;
 using Nitrocid.Files;
 using Terminaux.Colors;
 
@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         /// Selected theme name
         /// </summary>
         internal static string SelectedThemeName = "";
-        internal static readonly Dictionary<KernelColorType, Color> SelectedColors = KernelColorTools.PopulateColorsCurrent();
+        internal static readonly Dictionary<string, Color> SelectedColors = ThemeColorsTools.PopulateColorsCurrent();
 
         /// <summary>
         /// Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -84,10 +84,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void LoadThemeFromThemeInfo(ThemeInfo themeInfo)
         {
             // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
             {
-                KernelColorType type = SelectedColors.Keys.ElementAt(typeIndex);
-                SelectedColors[type] = themeInfo.ThemeColors[type];
+                string type = SelectedColors.Keys.ElementAt(typeIndex);
+                SelectedColors[type] = ThemeTools.GetColorsFromTheme(themeInfo)[type];
             }
         }
 
@@ -97,10 +97,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void LoadThemeFromCurrentColors()
         {
             // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
             {
-                KernelColorType type = SelectedColors.Keys.ElementAt(typeIndex);
-                SelectedColors[type] = KernelColorTools.KernelColors[type];
+                string type = SelectedColors.Keys.ElementAt(typeIndex);
+                SelectedColors[type] = ThemeColorsTools.GetColor(type);
             }
         }
 
@@ -129,10 +129,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             themeJson.Add(metadata);
 
             // Populate the colors
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
             {
                 // Add the color to the final object
-                KernelColorType type = SelectedColors.Keys.ElementAt(typeIndex);
+                string type = SelectedColors.Keys.ElementAt(typeIndex);
                 themeJson.Add(new JProperty($"{type}Color", SelectedColors[type].PlainSequence));
             }
 

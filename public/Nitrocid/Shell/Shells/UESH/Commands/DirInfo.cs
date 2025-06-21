@@ -25,7 +25,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string DirectoryPath = FilesystemTools.NeutralizePath(Dir);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", vars: [DirectoryPath, FilesystemTools.FolderExists(DirectoryPath)]);
-                SeparatorWriterColor.WriteSeparatorColor(Dir, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(Dir, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 if (FilesystemTools.FolderExists(DirectoryPath))
                 {
                     var DirInfo = new DirectoryInfo(DirectoryPath);
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DIRINFO_DIRNOTFOUND"), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DIRINFO_DIRNOTFOUND"), true, ThemeColorType.Error);
                 }
             }
             return 0;

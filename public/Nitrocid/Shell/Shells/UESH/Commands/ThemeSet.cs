@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Themes;
+using Terminaux.Colors.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Languages;
@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Styles;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                             if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
                             {
-                                KernelColorTools.LoadBackground();
+                                ThemeColorsTools.LoadBackground();
                                 return 3;
                             }
                             else
@@ -122,7 +122,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                             if (colorIndex == -2)
                             {
-                                KernelColorTools.LoadBackground();
+                                ThemeColorsTools.LoadBackground();
                                 return 3;
                             }
                             else if (colorIndex < themeChoices.Count)
@@ -181,7 +181,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (FilesystemTools.FileExists(ThemePath))
                 ThemeTools.ApplyThemeFromFile(ThemePath);
             else
-                ThemeTools.ApplyThemeFromResources(selectedTheme);
+                ThemeTools.ApplyThemeFromRegistered(selectedTheme);
             return 0;
         }
 
