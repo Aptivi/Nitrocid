@@ -34,7 +34,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Drivers.Console;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base.Buffered;
@@ -418,7 +417,6 @@ namespace Nitrocid.Misc.Screensaver
         {
             try
             {
-                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                 while (!PowerManager.KernelShutdown)
                 {
@@ -434,7 +432,7 @@ namespace Nitrocid.Misc.Screensaver
                         bool hasMoved = false;
                         SpinWait.SpinUntil(() =>
                         {
-                            hasMoved = termDriver.MovementDetected;
+                            hasMoved = ConsoleWrapper.MovementDetected;
                             return hasMoved || PowerManager.KernelShutdown;
                         }, ScreenTimeout);
 

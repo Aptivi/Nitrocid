@@ -29,7 +29,6 @@ using Nitrocid.Drivers.Sorting;
 using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Regexp;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Drivers.EncodingAsymmetric;
@@ -62,14 +61,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         }
 
         #region Drivers
-        /// <summary>
-        /// Current console driver
-        /// </summary>
-        public string CurrentConsoleDriver
-        {
-            get => DriverHandler.GetDriverName<IConsoleDriver>(DriverHandler.CurrentConsoleDriver);
-            set => ConsoleDriverTools.SetConsoleDriver(value);
-        }
         /// <summary>
         /// Current random number generator driver
         /// </summary>

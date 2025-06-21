@@ -31,7 +31,6 @@ namespace Nitrocid.ConsoleBase.Inputs
     {
         internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
-        internal static bool isWrapperInitialized;
 
         /// <summary>
         /// Reads the line from the console
@@ -195,17 +194,16 @@ namespace Nitrocid.ConsoleBase.Inputs
         public static ConsoleKeyInfo DetectKeypressUnsafe() =>
             DriverHandler.CurrentInputDriverLocal.DetectKeypressUnsafe();
 
-        internal static void InitializeTerminauxWrappers()
+        /// <summary>
+        /// Initializes (and sets) the Terminaux console wrapper for Nitrocid
+        /// </summary>
+        public static void InitializeTerminauxWrappers()
         {
-            if (isWrapperInitialized)
-                return;
-
             // Initialize console wrappers for Terminaux
             var wrapper = new NitrocidWrapper();
             if (!ConsoleWrapperTools.IsRegistered(nameof(NitrocidWrapper)))
                 ConsoleWrapperTools.RegisterWrapper(nameof(NitrocidWrapper), wrapper);
             ConsoleWrapperTools.SetWrapper(nameof(NitrocidWrapper));
-            isWrapperInitialized = true;
         }
 
     }

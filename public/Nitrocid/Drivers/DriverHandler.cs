@@ -33,11 +33,9 @@ using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Drivers.Regexp;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Network.Bases;
 using Nitrocid.Drivers.RNG.Bases;
 using Nitrocid.Drivers.Filesystem.Bases;
-using Nitrocid.Drivers.Console.Bases;
 using Nitrocid.Drivers.Encryption.Bases;
 using Nitrocid.Drivers.Regexp.Bases;
 using Nitrocid.Drivers.DebugLogger.Bases;
@@ -59,21 +57,6 @@ namespace Nitrocid.Drivers
         internal static bool begunLocal = false;
         internal static Dictionary<DriverTypes, List<IDriver>> drivers = new()
         {
-            {
-                DriverTypes.Console, new()
-                {
-                    new Terminal(),
-                    new File(),
-                    new FileSequence(),
-                    new Null(),
-                    new Buffered(),
-
-#if !SPECIFIERREL
-                    // Below are excluded from the final release
-                    new TerminalDebug()
-#endif
-                }
-            },
             {
                 DriverTypes.RNG, new()
                 {
@@ -164,7 +147,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<DriverTypes, List<IDriver>> customDrivers = new()
         {
-            { DriverTypes.Console,              new() },
             { DriverTypes.RNG,                  new() },
             { DriverTypes.Network,              new() },
             { DriverTypes.Filesystem,           new() },
@@ -180,7 +162,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.Console,              drivers[DriverTypes.Console][0] },
             { DriverTypes.RNG,                  drivers[DriverTypes.RNG][0] },
             { DriverTypes.Network,              drivers[DriverTypes.Network][0] },
             { DriverTypes.Filesystem,           drivers[DriverTypes.Filesystem][0] },
@@ -196,7 +177,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
         {
-            { typeof(IConsoleDriver),               DriverTypes.Console },
             { typeof(IRandomDriver),                DriverTypes.RNG },
             { typeof(INetworkDriver),               DriverTypes.Network },
             { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
@@ -217,12 +197,6 @@ namespace Nitrocid.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriverLocal =>
             begunLocal ? (IRandomDriver)currentDriversLocal[DriverTypes.RNG] : CurrentRandomDriver;
-
-        /// <summary>
-        /// Gets the current console driver (use this when possible)
-        /// </summary>
-        public static IConsoleDriver CurrentConsoleDriverLocal =>
-            begunLocal ? (IConsoleDriver)currentDriversLocal[DriverTypes.Console] : CurrentConsoleDriver;
 
         /// <summary>
         /// Gets the current network driver (use this when possible)
@@ -289,12 +263,6 @@ namespace Nitrocid.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
             (IRandomDriver)currentDrivers[DriverTypes.RNG];
-
-        /// <summary>
-        /// Gets the system-wide current console driver
-        /// </summary>
-        public static IConsoleDriver CurrentConsoleDriver =>
-            (IConsoleDriver)currentDrivers[DriverTypes.Console];
 
         /// <summary>
         /// Gets the system-wide current network driver
@@ -981,13 +949,6 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             currentDriversLocal[driverType] = currentDrivers[driverType];
             begunLocal = false;
-
-            // Edge case for terminal drivers: Reset the Terminaux handler
-            if (driverType == DriverTypes.Console)
-            {
-                InputTools.isWrapperInitialized = false;
-                InputTools.InitializeTerminauxWrappers();
-            }
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver has ended.");
         }
 
@@ -1006,13 +967,6 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", vars: [name, driverType.ToString()]);
             currentDriversLocal[driverType] = GetDriver(driverType, name);
-
-            // Edge case for terminal drivers: Reset the Terminaux handler
-            if (driverType == DriverTypes.Console)
-            {
-                InputTools.isWrapperInitialized = false;
-                InputTools.InitializeTerminauxWrappers();
-            }
         }
 
         internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()

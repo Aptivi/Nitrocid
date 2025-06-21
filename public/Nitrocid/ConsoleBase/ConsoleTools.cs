@@ -42,6 +42,7 @@ namespace Nitrocid.ConsoleBase
     internal static class ConsoleTools
     {
         internal static bool UseAltBuffer = true;
+        internal static object WriteLock = new();
 
         internal static void PreviewMainBuffer()
         {
