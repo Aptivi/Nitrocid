@@ -43,62 +43,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Colors.KernelColorSetErrorReasons.yml\" sourcestartlinenumber=\"1\">Enumeration for the color setting error reasons</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorTools.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Colors.KernelColorTools",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Colors.KernelColorTools.yml\" sourcestartlinenumber=\"1\">Color tools module</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Colors.KernelColorType.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Colors.KernelColorType",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Colors.KernelColorType.yml\" sourcestartlinenumber=\"1\">Enumeration for color types</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Colors.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Colors.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Colors",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.ConsoleBase.ConsolePointerHandler.yml",
       "output": {
         ".html": {
@@ -141,90 +85,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeCategory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeCategory.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes.ThemeCategory",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Themes.ThemeCategory.yml\" sourcestartlinenumber=\"1\">Theme category</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeInfo.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes.ThemeInfo",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Themes.ThemeInfo.yml\" sourcestartlinenumber=\"1\">Theme information class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemePreviewTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemePreviewTools.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes.ThemePreviewTools",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Themes.ThemePreviewTools.yml\" sourcestartlinenumber=\"1\">Theme preview tools (simple preview and wheel-based preview)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeSetErrorReasons.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeSetErrorReasons.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes.ThemeSetErrorReasons",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Themes.ThemeSetErrorReasons.yml\" sourcestartlinenumber=\"1\">Enumeration for the theme setting error reasons</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.ThemeTools.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes.ThemeTools",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Themes.ThemeTools.yml\" sourcestartlinenumber=\"1\">Theme tools module</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Themes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Themes.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Themes",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.ConsoleBase.Writers.TextDynamicWriters.yml",
       "output": {
         ".html": {
@@ -249,7 +109,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.ConsoleBase.Writers.TextWriters",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Writers.TextWriters.yml\" sourcestartlinenumber=\"1\">Text writer wrapper for writing with <xref href=\"Nitrocid.ConsoleBase.Colors.KernelColorType\" data-throw-if-not-resolved=\"false\"></xref> (<xref href=\"Terminaux.Writer.ConsoleWriters\" data-throw-if-not-resolved=\"false\"></xref>)</p>\n"
+      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Writers.TextWriters.yml\" sourcestartlinenumber=\"1\">Text writer wrapper for writing with <xref href=\"Terminaux.Colors.Themes.Colors.ThemeColorType\" data-throw-if-not-resolved=\"false\"></xref> (<xref href=\"Terminaux.Writer.ConsoleWriters\" data-throw-if-not-resolved=\"false\"></xref>)</p>\n"
     },
     {
       "type": "ManagedReference",
