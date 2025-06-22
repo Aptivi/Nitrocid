@@ -36,10 +36,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i]);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 1);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 1);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 2);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 2);
         }
     }
 }
