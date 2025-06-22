@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string rendered = "Hello world!";
-            SeparatorWriterColor.WriteSeparator(rendered);
+            SeparatorWriterColor.WriteSeparator(rendered, true);
         }
     }
 }
