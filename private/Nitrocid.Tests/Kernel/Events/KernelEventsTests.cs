@@ -77,9 +77,9 @@ namespace Nitrocid.Tests.Kernel.Events
         {
             bool acknowledged = false;
             var acknowledge = new Action<object?[]?>((_) => acknowledged = true);
-            EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);
-            EventsManager.FireEvent(EventType.ShellInitialized);
-            EventsManager.UnregisterEventHandler(EventType.ShellInitialized, acknowledge);
+            EventsManager.RegisterEventHandler(EventType.ProcessError, acknowledge);
+            EventsManager.FireEvent(EventType.ProcessError);
+            EventsManager.UnregisterEventHandler(EventType.ProcessError, acknowledge);
             acknowledged.ShouldBeTrue();
         }
 
@@ -96,9 +96,9 @@ namespace Nitrocid.Tests.Kernel.Events
                 if (parameters is not null && parameters.Contains("Hello"))
                     acknowledged = true;
             });
-            EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);
-            EventsManager.FireEvent(EventType.ShellInitialized, "Hello");
-            EventsManager.UnregisterEventHandler(EventType.ShellInitialized, acknowledge);
+            EventsManager.RegisterEventHandler(EventType.ProcessError, acknowledge);
+            EventsManager.FireEvent(EventType.ProcessError, "Hello");
+            EventsManager.UnregisterEventHandler(EventType.ProcessError, acknowledge);
             acknowledged.ShouldBeTrue();
         }
 

@@ -89,10 +89,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         HTTPShell,
         /// <summary>
-        /// Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.
-        /// </summary>
-        InsaneConsoleDetected,
-        /// <summary>
         /// Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.
         /// </summary>
         InvalidFeed,
@@ -197,10 +193,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         NoSuchShellPreset,
         /// <summary>
-        /// There is no theme by this name.
-        /// </summary>
-        NoSuchTheme,
-        /// <summary>
         /// There are zero users in the entire kernel. We've reached an extremely rare situation. The kernel can't continue.
         /// </summary>
         NullUsers,
@@ -245,14 +237,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         SFTPShell,
         /// <summary>
-        /// Condition parsing failed. Please check your syntax to meet the operator's expected design.
-        /// </summary>
-        UESHConditionParse,
-        /// <summary>
-        /// An error occurred while trying to parse the UESH script file. Check your script file for errors and correct them.
-        /// </summary>
-        UESHScript,
-        /// <summary>
         /// A user creation error occurred.
         /// </summary>
         UserCreation,
@@ -264,10 +248,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.
         /// </summary>
         Network,
-        /// <summary>
-        /// An unsupported console has been detected.
-        /// </summary>
-        UnsupportedConsole,
         /// <summary>
         /// An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.
         /// </summary>
@@ -345,10 +325,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         Contacts,
         /// <summary>
-        /// A UESH condition system failed while performing the requested operation. See the error message below for more details.
-        /// </summary>
-        MESHConditional,
-        /// <summary>
         /// An invalid SQL editor operation is being performed.
         /// </summary>
         SqlEditor,
@@ -356,10 +332,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// Group doesn't exist. Check to make sure that you've written the group name correctly.
         /// </summary>
         NoSuchGroup,
-        /// <summary>
-        /// An error occurred in the Interactive TUI implementation.
-        /// </summary>
-        InteractiveTui,
         /// <summary>
         /// An error occurred in the custom settings manager for users.
         /// </summary>
@@ -408,10 +380,6 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error in the reflection system.
         /// </summary>
         Reflection,
-        /// <summary>
-        /// There was an error when trying to perform an operation for theme management.
-        /// </summary>
-        ThemeManagement,
         /// <summary>
         /// There was an error when trying to perform an operation for the kernel event management.
         /// </summary>
