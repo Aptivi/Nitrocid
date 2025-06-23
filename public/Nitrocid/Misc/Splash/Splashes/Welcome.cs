@@ -34,6 +34,7 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
@@ -52,6 +53,9 @@ namespace Nitrocid.Misc.Splash.Splashes
             progress.Position = 0;
             progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
             progress.Width = ConsoleWrapper.WindowWidth - 6;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
+            progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
+            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
