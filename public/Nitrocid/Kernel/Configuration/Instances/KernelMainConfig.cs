@@ -307,12 +307,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TextColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.NeutralText, color);
-                SelectionStyleSettings.GlobalSettings.TextColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.NeutralText, new Color(value));
         }
         /// <summary>
         /// License Color
@@ -328,12 +323,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string BackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.Background).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.Background, color);
-                SelectionStyleSettings.GlobalSettings.BackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.Background, new Color(value));
         }
         /// <summary>
         /// Input Color
@@ -341,12 +331,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string InputColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.Input).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.Input, color);
-                SelectionStyleSettings.GlobalSettings.InputColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.Input, new Color(value));
         }
         /// <summary>
         /// List Entry Color
@@ -394,12 +379,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string OptionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.Option).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.Option, color);
-                SelectionStyleSettings.GlobalSettings.OptionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.Option, new Color(value));
         }
         /// <summary>
         /// Banner Color
@@ -447,12 +427,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string QuestionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.Question).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.Question, color);
-                SelectionStyleSettings.GlobalSettings.QuestionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.Question, new Color(value));
         }
         /// <summary>
         /// Success Color
@@ -492,12 +467,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string SeparatorColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.Separator).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.Separator, color);
-                SelectionStyleSettings.GlobalSettings.SeparatorColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.Separator, new Color(value));
         }
         /// <summary>
         /// List Title Color
@@ -593,12 +563,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string SelectedOptionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.SelectedOption).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.SelectedOption, color);
-                SelectionStyleSettings.GlobalSettings.SelectedOptionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.SelectedOption, new Color(value));
         }
         /// <summary>
         /// Alternative Option Color
@@ -606,12 +571,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string AlternativeOptionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.AlternativeOption).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.AlternativeOption, color);
-                SelectionStyleSettings.GlobalSettings.AltOptionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.AlternativeOption, new Color(value));
         }
         /// <summary>
         /// Weekend Day Color
@@ -651,12 +611,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiBackground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiBackground, color);
-                InteractiveTuiSettings.GlobalSettings.BackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiBackground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI foreground color
@@ -664,12 +619,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiForegroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiForeground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiForeground, color);
-                InteractiveTuiSettings.GlobalSettings.ForegroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiForeground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI pane background color
@@ -677,12 +627,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneBackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneBackground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneBackground, color);
-                InteractiveTuiSettings.GlobalSettings.PaneBackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneBackground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI pane separator color
@@ -690,12 +635,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSeparatorColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSeparator, color);
-                InteractiveTuiSettings.GlobalSettings.PaneSeparatorColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSeparator, new Color(value));
         }
         /// <summary>
         /// Interactive TUI selected pane separator color
@@ -703,12 +643,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedSeparatorColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedSeparator, color);
-                InteractiveTuiSettings.GlobalSettings.PaneSelectedSeparatorColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedSeparator, new Color(value));
         }
         /// <summary>
         /// Interactive TUI selected pane item foreground color
@@ -716,12 +651,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedItemForeColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemFore).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemFore, color);
-                InteractiveTuiSettings.GlobalSettings.PaneSelectedItemForeColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemFore, new Color(value));
         }
         /// <summary>
         /// Interactive TUI selected pane item background color
@@ -729,12 +659,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedItemBackColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedItemBack).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemBack, color);
-                InteractiveTuiSettings.GlobalSettings.PaneSelectedItemBackColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneSelectedItemBack, new Color(value));
         }
         /// <summary>
         /// Interactive TUI pane item foreground color
@@ -742,12 +667,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneItemForeColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemFore).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemFore, color);
-                InteractiveTuiSettings.GlobalSettings.PaneItemForeColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemFore, new Color(value));
         }
         /// <summary>
         /// Interactive TUI pane item background color
@@ -755,12 +675,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneItemBackColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiPaneItemBack).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemBack, color);
-                InteractiveTuiSettings.GlobalSettings.PaneItemBackColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiPaneItemBack, new Color(value));
         }
         /// <summary>
         /// Interactive TUI option background color
@@ -768,12 +683,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiOptionBackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiOptionBackground, color);
-                InteractiveTuiSettings.GlobalSettings.OptionBackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiOptionBackground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI option foreground color
@@ -781,12 +691,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiOptionForegroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiOptionForeground, color);
-                InteractiveTuiSettings.GlobalSettings.OptionForegroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiOptionForeground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI option binding name color
@@ -794,12 +699,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingOptionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingOption, color);
-                InteractiveTuiSettings.GlobalSettings.KeyBindingOptionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingOption, new Color(value));
         }
         /// <summary>
         /// Interactive TUI box background color
@@ -807,12 +707,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBoxBackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiBoxBackground, color);
-                InteractiveTuiSettings.GlobalSettings.BoxBackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiBoxBackground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI box foreground color
@@ -820,12 +715,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBoxForegroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiBoxForeground, color);
-                InteractiveTuiSettings.GlobalSettings.BoxForegroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiBoxForeground, new Color(value));
         }
         /// <summary>
         /// Disabled option color
@@ -833,12 +723,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string DisabledOptionColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.DisabledOption).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.DisabledOption, color);
-                SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.DisabledOption, new Color(value));
         }
         /// <summary>
         /// Interactive TUI builtin key binding background color
@@ -846,12 +731,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinBackgroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinBackground, color);
-                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinBackgroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinBackground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI builtin key binding foreground color
@@ -859,12 +739,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinForegroundColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinForeground, color);
-                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinForegroundColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltinForeground, new Color(value));
         }
         /// <summary>
         /// Interactive TUI builtin key binding color
@@ -872,12 +747,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinColor
         {
             get => ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin).PlainSequence;
-            set
-            {
-                var color = new Color(value);
-                ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltin, color);
-                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinColor = color;
-            }
+            set => ThemeColorsTools.SetColor(ThemeColorType.TuiKeyBindingBuiltin, new Color(value));
         }
         #endregion
 
