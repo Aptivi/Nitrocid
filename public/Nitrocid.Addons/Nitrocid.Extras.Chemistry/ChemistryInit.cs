@@ -48,29 +48,29 @@ namespace Nitrocid.Extras.Chemistry
             new CommandInfo("elements", /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasChemistry);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasChemistry);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Chemistry", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Chemistry");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("periodicpreview");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

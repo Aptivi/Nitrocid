@@ -139,13 +139,13 @@ namespace Nitrocid.Extras.Amusements
             new CommandInfo("2018", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_2018_DESC", new AnniversaryCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasAmusements);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static AmusementsSaversConfig SaversConfig =>
             (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];
@@ -158,7 +158,7 @@ namespace Nitrocid.Extras.Amusements
 
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add the amusements to the homepage
             HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
@@ -172,10 +172,10 @@ namespace Nitrocid.Extras.Amusements
             HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
             // Initialize everything
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Amusements", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
@@ -197,9 +197,9 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.RegisterBaseSetting(config);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Amusements");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("meteordodge");

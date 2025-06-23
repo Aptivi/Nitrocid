@@ -19,7 +19,9 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Localized;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
 using System.Collections.Generic;
@@ -135,19 +137,21 @@ namespace Nitrocid.ScreensaverPacks
             { "zebrashift", new ZebraShiftDisplay() },
         };
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonScreensaverPacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
+        public ModLoadPriority AddonType => ModLoadPriority.Important;
 
         internal static ExtraSaversConfig SaversConfig =>
             (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+
             // First, initialize screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Add(saver, Screensavers[saver]);
@@ -157,8 +161,10 @@ namespace Nitrocid.ScreensaverPacks
             ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
+
             // First, unload screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Remove(saver);
@@ -167,7 +173,7 @@ namespace Nitrocid.ScreensaverPacks
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSaversConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

@@ -146,21 +146,21 @@ namespace Nitrocid.Extras.NameGen
                     ], new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasNameGen);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static NameGenSaversConfig SaversConfig =>
             (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
             // Initialize everything
-            LanguageTools.AddCustomAction("Nitrocid.Extras.NameGen", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
@@ -169,15 +169,15 @@ namespace Nitrocid.Extras.NameGen
             ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.NameGen");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("personlookup");
             ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

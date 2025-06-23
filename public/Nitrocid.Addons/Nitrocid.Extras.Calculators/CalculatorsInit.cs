@@ -61,27 +61,27 @@ namespace Nitrocid.Extras.Calculators
                 ], new ImaginaryCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCalculators);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Calculators", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Calculators");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

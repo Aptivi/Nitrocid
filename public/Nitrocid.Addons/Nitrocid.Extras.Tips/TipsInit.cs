@@ -28,31 +28,31 @@ namespace Nitrocid.Extras.Tips
 {
     internal class TipsInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasTips);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static TipsConfig TipsConfig =>
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
 
-        void IAddon.FinalizeAddon() =>
+        public void FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Tips", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
             WelcomeMessage.ShowTip = TipsConfig.ShowTip;
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Tips");
+            LanguageTools.RemoveCustomAction(AddonName);
             WelcomeMessage.tips = [];
             ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
         }

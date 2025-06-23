@@ -83,28 +83,28 @@ namespace Nitrocid.Extras.Notes
                 ], new NotesTui()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasNotes);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Notes", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Notes");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction("NKS_NOTES_HOMEPAGE_NOTES");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction("NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);

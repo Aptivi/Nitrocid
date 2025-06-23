@@ -31,18 +31,18 @@ namespace Nitrocid.ThemePacks
 {
     internal class ThemePackInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonThemePacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
             // Add them all!
-            LanguageTools.AddCustomAction("Nitrocid.ThemePacks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
@@ -56,10 +56,10 @@ namespace Nitrocid.ThemePacks
             }
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
             // Remove them all!
-            LanguageTools.RemoveCustomAction("Nitrocid.ThemePacks");
+            LanguageTools.RemoveCustomAction(AddonName);
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
@@ -70,7 +70,7 @@ namespace Nitrocid.ThemePacks
             }
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

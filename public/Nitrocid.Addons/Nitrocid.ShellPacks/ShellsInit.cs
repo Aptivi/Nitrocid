@@ -198,20 +198,20 @@ namespace Nitrocid.ShellPacks
                 ], new SftpCommandExec()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonShellPacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static ShellsConfig ShellsConfig =>
             (ShellsConfig)Config.baseConfigurations[nameof(ShellsConfig)];
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.ShellPacks", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new ShellsConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
@@ -240,12 +240,12 @@ namespace Nitrocid.ShellPacks
             }
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.ShellPacks");
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("ArchiveShell");
             ShellManager.UnregisterShell("FTPShell");
             ShellManager.UnregisterShell("GitShell");
