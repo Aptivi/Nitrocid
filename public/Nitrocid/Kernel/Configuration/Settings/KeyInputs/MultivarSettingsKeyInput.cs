@@ -76,7 +76,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
-            // We'll do nothing, since PromptForSet alre
+            // We'll do nothing, since PromptForSet already sets the necessary value
             return;
         }
 
